@@ -1,11 +1,11 @@
 {
   "repository": "kairali-digital/kairali-web-factory",
   "tag": "ahv-english-staging-20260915",
-  "asset": "ahv-locale-prerenders-room-categories-20261006.tar.gz",
-  "archive": "ahv-locale-prerenders-room-categories-20261006.tar.gz",
-  "sha256": "3b1fcfa1ac3bbb5154dc0ebfd72af6d36154c6775be83131bc6224014a63843c",
-  "bytes": 46469337,
-  "capturedSource": "bbda2725f plus verified Front Office room-category correction: room 212 Royal/Twin and room 301 King; 24 localized villa snapshots and 12 indexes updated; other 2568 archive members unchanged",
+  "asset": "ahv-locale-prerenders-award-count-20261006.tar.gz",
+  "archive": "ahv-locale-prerenders-award-count-20261006.tar.gz",
+  "sha256": "84f4d6c475546d9566e901d37435fd2d6008bf1f256e77dfc7e06c261a613b9f",
+  "bytes": 46467865,
+  "capturedSource": "a6011e4c4 plus owner-approved 117+ awards count: 12 translated Panchakarma snapshots and 12 indexes updated; other 2580 archive members unchanged",
   "captured": "2026-10-06",
   "sources": [
     {
@@ -858,11 +858,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-panchkarma-treatment-desktop.json",
-      "sha256": "511ba88b4ebb3d98b8bde51a256c5e2c9adbe194a9024f3c615e48ead160c33d"
+      "sha256": "58b457d9cb162e571072e15568889261bbea3e3fc9fb5aa0ea0435d912b10f73"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-panchkarma-treatment-mobile.json",
-      "sha256": "584a803a246316955e5693070fc522acceff736bf5294fda4bc50002e4afc182"
+      "sha256": "b998e1f0b20119d538716e2e3fe98abb300d0e7ea8d745b621a0e1be04ffd432"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-paralysis-recovery-desktop.json",
@@ -1898,11 +1898,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-panchkarma-treatment-desktop.json",
-      "sha256": "013843b894ab9682f3627af905fca9b17de185fedc9b7fc5c7720c282ccb99b9"
+      "sha256": "60d60c270bcc7420dc72d93bee3e38138aad96ffe2f1b7d205c308a5306d458a"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-panchkarma-treatment-mobile.json",
-      "sha256": "7fa2574259757092a1bed487b08ac88584dcbce9b8081d35bf1e880f105d30be"
+      "sha256": "454a53ff4f3d3f2011a77f4a5e944e87c8468468c3afc21a17a3c8bf10450ff1"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-paralysis-recovery-desktop.json",
@@ -2938,11 +2938,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-panchkarma-treatment-desktop.json",
-      "sha256": "034f7cd6deeb379920351034d632e30e417230cd49d1bed7ee6c087c1cb54cd4"
+      "sha256": "597165b3f2a4d500e4755288fb10feffaf25d9cfed0f875579e3a310977ec8b7"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-panchkarma-treatment-mobile.json",
-      "sha256": "6d03faf6b9551caecd303016d22e04cf1c49fa4e8b509bf357201737f9d948bc"
+      "sha256": "7ac6d89dc2176b28a02f4e20f7c0db58cc8514d013a398bb7ead544a647cdec6"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-paralysis-recovery-desktop.json",
@@ -3978,11 +3978,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-panchkarma-treatment-desktop.json",
-      "sha256": "b939334843a3edffe51d2c79c404d6f1079ee14e0da1ec7b8a504597a23c2d5b"
+      "sha256": "74b7b2bdfd43ea62536ce5048010e177fe7922df759ee1680b8a05c6d432ee54"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-panchkarma-treatment-mobile.json",
-      "sha256": "44ea9dcb305296d27e60c7d07ee789c84c933395d2b426589d489c5f229b622c"
+      "sha256": "4fb2d3f88c3ff9fcd6f5598588565bf965b4973d3c12453ab28254368911f37d"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-paralysis-recovery-desktop.json",
@@ -5018,11 +5018,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-panchkarma-treatment-desktop.json",
-      "sha256": "8b041c5b2f755a6a27e0aed727022832e40a1a417f715eb1cf0df1054ccc978b"
+      "sha256": "f850f0f1b7508096c39da1b1c150bfa331af473a77cde5f36c5f525b1c2ea2f8"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-panchkarma-treatment-mobile.json",
-      "sha256": "1fde6d7cb88e51629087e63f2952c2de1233b1e4f25c2e5d6ccc93be25cef449"
+      "sha256": "b56eae38c2ef563d3730f74b2b9c8bd23f293a2333cddf83ee8473439daa147d"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-paralysis-recovery-desktop.json",
@@ -6058,11 +6058,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-panchkarma-treatment-desktop.json",
-      "sha256": "d5bc7a88b77abff6ac62b3a87879fcbf217666a6ef3afb4fb61982a088ecd49e"
+      "sha256": "331e2cc0371d364958311de56a5cb3c5330e69bef28030ccad55ac29fbeaaa91"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-panchkarma-treatment-mobile.json",
-      "sha256": "b1f93cf6d126627fe756fc76ab5b7ea47b82bb05a14adb83fe2a5fb0bcafca81"
+      "sha256": "7a80326275e6b576acc1a1213462b72c45486ecd9a880024c48d586690e53864"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-paralysis-recovery-desktop.json",
@@ -7098,11 +7098,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-panchkarma-treatment-desktop.json",
-      "sha256": "480386ee92f9e654909e69909802d020c41d4eeaef231fcba118dd98a4aff69a"
+      "sha256": "dededa60633e7f7e31d16b3a1789221a5a491c42a241cfd4ffec10bebda0c567"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-panchkarma-treatment-mobile.json",
-      "sha256": "139855ae8c8a62547f0d2cee3c624aac81e7918e1336d2207c4d1531c9946816"
+      "sha256": "5308d47ce01620a36367363256bb7f3bbf35dea05c44c5d3c9669380301d4dad"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-paralysis-recovery-desktop.json",
@@ -8138,11 +8138,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-panchkarma-treatment-desktop.json",
-      "sha256": "84e5dea0c56077085cebea6db4d9faf2f3284823298d6e4a7e0878f179822832"
+      "sha256": "05fc9e6ce60f1a17d683642c844dd1feb389e00f6f26fdfae606eaf006e10ee9"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-panchkarma-treatment-mobile.json",
-      "sha256": "26e4514bebd36ba82491422e1b022a19db5bfbf402783a6ec4a0c6f957d2ae99"
+      "sha256": "37c50eeb2cfc101d4f12c1e262d4fc9e32afb2816f55efb9f0b0968de1ff85dd"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-paralysis-recovery-desktop.json",
@@ -9178,11 +9178,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-panchkarma-treatment-desktop.json",
-      "sha256": "73675188103ad7faf0b8af44220c3cbb8dd6d9ff21a0f28cb026a9276ce74220"
+      "sha256": "550f1a81ee78a25389b46a870085d7b4a53e9c52bfc74a33fc0dbdffbf3683ae"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-panchkarma-treatment-mobile.json",
-      "sha256": "09cf7e71a4aa1342a53d6bee0385843341394c67f63136806f4126f495179611"
+      "sha256": "e9ae61affe77d59ffe1648f2d7ee410bef7bdbc119d2e8b88200fdfac8a1c8e1"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-paralysis-recovery-desktop.json",
@@ -10218,11 +10218,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-panchkarma-treatment-desktop.json",
-      "sha256": "03bea13b96573a252752394cb90366ef466caf6c2531adc75fc061232e094174"
+      "sha256": "aa7f4d5b3f64bf4ec5a21d1cf23a8e89266e84764c771fa3d9c47f6d8801d80b"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-panchkarma-treatment-mobile.json",
-      "sha256": "b0107ad239c8a90c8720bc1c6c945055929249304e3f4b2853ebc6169bd0a8d9"
+      "sha256": "c9f3ba95496094b2cd5617079047abfe8381850e118939950a1158da4f74f0d2"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-paralysis-recovery-desktop.json",
@@ -11258,11 +11258,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-panchkarma-treatment-desktop.json",
-      "sha256": "4cfbc5e77ecf35da7b35b7f2111e076c6c74ac4c2b3d05436b64805864145515"
+      "sha256": "624d6e0822171cfcd5e49d62b8c472313b57ec959e93465cff6182bd1f0d9939"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-panchkarma-treatment-mobile.json",
-      "sha256": "eaae149beee15360df49d231687972f069a635b4970dfcec3023cae26ae74a56"
+      "sha256": "cd70ce99b3365342c41ab68d99ef3ec3a2eb93e8bdca217a93458e5307891920"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-paralysis-recovery-desktop.json",
@@ -12298,11 +12298,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-panchkarma-treatment-desktop.json",
-      "sha256": "405eb6557bd979d6f4aa432e6f58ef1d7a2480ded8facfa3a81bd66d19fbcb2b"
+      "sha256": "7b73dbf07727a47cdfcbc5ebe8a7b6a48e4c68c740ecc1a5a0ffa1bba6be280e"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-panchkarma-treatment-mobile.json",
-      "sha256": "ddd9c7a84f422fbc31114b92dc1ba400fea0f846560233caea38e0cb5866521f"
+      "sha256": "54e957b068299f2a34f0ac75b1efca95705a43b995fdcee3d7e819cdd8f1b236"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-paralysis-recovery-desktop.json",
@@ -12966,7 +12966,7 @@
     },
     {
       "file": "l10n/prerender/hi/index.json",
-      "sha256": "a310ee83ba9d102714c30ab5fe72044c64e60674b9348d93be9b4b3a28248db6",
+      "sha256": "80b4aed799f169cac7e1993a5c30edfe5ef5bd3c2e16cba21b16966705734098",
       "bytes": 53526
     },
     {
@@ -13241,7 +13241,7 @@
     },
     {
       "file": "l10n/prerender/hi/panchkarma-treatment.html.html.gz",
-      "sha256": "dfcff87a66c329d4fed3827c9db705b23d9e04e468c1487d7827a653592b3874",
+      "sha256": "562f59984d77eb2a636b04283f69fac4180b15121fe912cbe7e7fe3b649e2456",
       "bytes": 28619
     },
     {
@@ -14051,7 +14051,7 @@
     },
     {
       "file": "l10n/prerender/de/index.json",
-      "sha256": "00ec2be7f067d0ec55baad526889277678223576e0630267634fa415d9f512a4",
+      "sha256": "ea754f4f5a5be9faf7b5e2dd5f3fc773d7b7f92333ed83a819bc7d976aa754d9",
       "bytes": 53532
     },
     {
@@ -14326,7 +14326,7 @@
     },
     {
       "file": "l10n/prerender/de/panchkarma-treatment.html.html.gz",
-      "sha256": "43972c5a374e1ca9d00c86aa66883556b08a03252900f160d866a9d5d4f0e59c",
+      "sha256": "c96b81eb228f2dd0098c1b40772c6195f2b94d91a0fc7efd047f915e0205efad",
       "bytes": 26744
     },
     {
@@ -15136,7 +15136,7 @@
     },
     {
       "file": "l10n/prerender/fr/index.json",
-      "sha256": "689d544544af82c6ca9b0bf11de1a4f9c63e45d46f3597b9b058af4575eee4ba",
+      "sha256": "0e637cebddba461cb2e7d2f692640a4c5bc3cef72122e5c07d0f3249acd236af",
       "bytes": 53536
     },
     {
@@ -15411,7 +15411,7 @@
     },
     {
       "file": "l10n/prerender/fr/panchkarma-treatment.html.html.gz",
-      "sha256": "2847ac73a83bc0718cbbe5ec7322a984bd9192fb8c238d6c770b9dbc97fa0065",
+      "sha256": "ce9eb29d57970b946af935e99f6579dc5dc4ef83483ebbc724d6ac5a72310da8",
       "bytes": 26738
     },
     {
@@ -16221,7 +16221,7 @@
     },
     {
       "file": "l10n/prerender/es/index.json",
-      "sha256": "0d1d0b1e68245f8d0d3f7114e859e53b11c4e67f9a72056836ea59cd30a055f5",
+      "sha256": "9d96694c5d99b270a37ee66f87039723ef7c0580c0c7158e357f4da0cfd46374",
       "bytes": 53532
     },
     {
@@ -16496,7 +16496,7 @@
     },
     {
       "file": "l10n/prerender/es/panchkarma-treatment.html.html.gz",
-      "sha256": "86e64d6bab609ed8ad57e404d1de19ebb835a391cdabd8e058fc19a130f12ec4",
+      "sha256": "a642d80217b221f6876d1f5a1dcd4a5d8fe765f78da9379d8e4d2bad2e05c006",
       "bytes": 26044
     },
     {
@@ -17306,7 +17306,7 @@
     },
     {
       "file": "l10n/prerender/it/index.json",
-      "sha256": "3efb737e450a7e292efda9e32d234fb12b1e51245f2de5bf91eb49639d3588ba",
+      "sha256": "8f09a9d31bd72ce0791413ee5895a5dc44b6aa6dfc56acac33d50c0fa38f035f",
       "bytes": 53532
     },
     {
@@ -17581,7 +17581,7 @@
     },
     {
       "file": "l10n/prerender/it/panchkarma-treatment.html.html.gz",
-      "sha256": "7c3079f9f9a92dc3330aacbcdc1e7dd962e0535aa868186b3450c7f66c253add",
+      "sha256": "62b619dbd56743f1b8ee4f5d8607d9ccf69530bd1b99a081f73e5dd8b3465ff8",
       "bytes": 25974
     },
     {
@@ -18391,7 +18391,7 @@
     },
     {
       "file": "l10n/prerender/pt/index.json",
-      "sha256": "8488e6f8c67e874fa5d1f4a7af0bc59ec42055a72ba0221d73d01f78e8796cb7",
+      "sha256": "d85bd12f2e1dcb2875b511c651027b76715d9b1de2ec29be6631538c30c8640e",
       "bytes": 53531
     },
     {
@@ -18666,7 +18666,7 @@
     },
     {
       "file": "l10n/prerender/pt/panchkarma-treatment.html.html.gz",
-      "sha256": "f304ee4c3fbcef0184d5d85987f7261ce5f9a388285eff999f9362a6e1cfdedf",
+      "sha256": "bcbfa65011c0883a616ad8dc87ba11f328823d6fa19f9decf03229c33818f142",
       "bytes": 26087
     },
     {
@@ -19476,7 +19476,7 @@
     },
     {
       "file": "l10n/prerender/nl/index.json",
-      "sha256": "63705abb8796222835255ef5b0bef30b8db0b9d9757cbf35f2e3a7a891c7a842",
+      "sha256": "d1bae3a5935b8ba41ac3caa9312d4d762759c3cb170b83d0d545fdaf8dbee3e7",
       "bytes": 53531
     },
     {
@@ -19751,7 +19751,7 @@
     },
     {
       "file": "l10n/prerender/nl/panchkarma-treatment.html.html.gz",
-      "sha256": "9462999378ea3c6627a0ec4795f047dcc6ba8d074f243835c8b53958f279e03b",
+      "sha256": "3856ddf45a427e0de176e8c0d44dca8fd37298b5180a22f809503e41f6202137",
       "bytes": 25809
     },
     {
@@ -20561,7 +20561,7 @@
     },
     {
       "file": "l10n/prerender/ru/index.json",
-      "sha256": "a061709aa4ee47f7920e28bf337768647136f46a326dc7bf02b9d3425063e6a0",
+      "sha256": "231e678311e40a25db09df849d47675dc03615326fccd79f111eb2bd0404a6a2",
       "bytes": 53532
     },
     {
@@ -20836,7 +20836,7 @@
     },
     {
       "file": "l10n/prerender/ru/panchkarma-treatment.html.html.gz",
-      "sha256": "9ec57cc07359eb27d213c45393c5a8d7db4e071858836cdcdc4bc9d0e85a5e83",
+      "sha256": "32aced2bbe551337b9c5ca6344b978ec8fd7249947c8c963000155d91d0f9e00",
       "bytes": 29236
     },
     {
@@ -21646,7 +21646,7 @@
     },
     {
       "file": "l10n/prerender/ar/index.json",
-      "sha256": "f013fa93612f558a38651a8ff75bb793c911ba5975c7a47553dfff5e9bfea15f",
+      "sha256": "26082dcb7b7fbff86882443ddbc1cf08312a429ff248eac12a7e37cc63d9d8f8",
       "bytes": 53522
     },
     {
@@ -21921,7 +21921,7 @@
     },
     {
       "file": "l10n/prerender/ar/panchkarma-treatment.html.html.gz",
-      "sha256": "71327ef3da24b0bfd1817ddf7da2005775618a0a54065cc2bfb532524eb5cb24",
+      "sha256": "3e30e2c62573d42144cce0882980bbab8b2643c0e75f2367b08a479a343ec9fd",
       "bytes": 27375
     },
     {
@@ -22731,7 +22731,7 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/index.json",
-      "sha256": "a3a8be92fcc02debdfcf0bc0edc478da4585f3e4ffdc4848a515597e440aab30",
+      "sha256": "cf791c6929c2b47e036b248e051c5dbdbc830959be3ae9ca9c416d246e0c3164",
       "bytes": 53462
     },
     {
@@ -23006,7 +23006,7 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/panchkarma-treatment.html.html.gz",
-      "sha256": "992537eac764bfe5ef3cc56d380709de71bfc2a8b80b139024a49e8f2464df80",
+      "sha256": "63df1db6af3b365cc8a9508feb7d393dd84170da105323b811d9d42b7c739cdc",
       "bytes": 27281
     },
     {
@@ -23816,7 +23816,7 @@
     },
     {
       "file": "l10n/prerender/ja/index.json",
-      "sha256": "ade45d7c743fe8818391192fcb0410d87d2e0defcc0bc8eaf823c141f322a6c9",
+      "sha256": "268be0c629a9de405985b52c806020509d14f60fa35ddce8bad440f1f0d8769d",
       "bytes": 53474
     },
     {
@@ -24091,7 +24091,7 @@
     },
     {
       "file": "l10n/prerender/ja/panchkarma-treatment.html.html.gz",
-      "sha256": "7dfd7749ccf4e057dcc875c84bf23d3aeeecde812c77e46a1fa1e3b239d66987",
+      "sha256": "d4f580b2131a2e77479ff9c78a44d42928758eef44e6306db497183835ee80f1",
       "bytes": 27977
     },
     {
@@ -24901,7 +24901,7 @@
     },
     {
       "file": "l10n/prerender/ko/index.json",
-      "sha256": "b8c8e1427e0f6a557cd17042e90b7b63efd870066c67be4b06e2901758238e52",
+      "sha256": "5619e982ffc56d6775b40861b950aedf9870bce44a4cb5191003e37d2d22bb51",
       "bytes": 53474
     },
     {
@@ -25176,7 +25176,7 @@
     },
     {
       "file": "l10n/prerender/ko/panchkarma-treatment.html.html.gz",
-      "sha256": "1d7f672a72d5e1a3082519ed4e4a3d9e5cd650d8d10cbdace6b97c7fae6a71f9",
+      "sha256": "68339103c416531bebf6c6138789262264decee551fc4dfe77e7f40b7ed67ab5",
       "bytes": 26904
     },
     {
