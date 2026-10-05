@@ -207,7 +207,7 @@
       clearTimeout(chatTimer); chatTimer = null; chatPending = false; chatLock = null; syncChatState(); return;
     }
     // opening (not minimizing): record the baseline before the provider can touch anything
-    if (!chatWasOpen) { if (chatRestoreTimer) { clearTimeout(chatRestoreTimer); chatRestoreTimer = null; } chatRestoreTries = 0; chatSnapshot(contactChoiceTrigger || ev.currentTarget); }
+    if (!chatWasOpen) { if (chatRestoreTimer) { clearTimeout(chatRestoreTimer); chatRestoreTimer = null; } chatRestoreTries = 0; chatSnapshot(ev.currentTarget && ev.currentTarget.classList && ev.currentTarget.classList.contains("ahv-contact-chat") ? contactChoiceTrigger : ev.currentTarget); }
     var nativeButton = document.getElementById("chatbase-bubble-button");
     if (nativeButton) { nativeButton.click(); syncChatState(); return; }
     chatPending = true; syncChatState();
