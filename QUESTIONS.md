@@ -2091,3 +2091,11 @@ Coordinator continuation 03 (WOPS-AHV-FINAL-DRAFT-20260924-001). Append-only upd
    spec A8 check that compares a string against the Organization @type array since 153ac9d7; D-02 authenticated review (HARD GATE 9).
 8. EF-12: photographs still missing for 9 therapies plus Dhanyamala Dhara / Elakizhi / Muttakizhi / Manalkizhi (text-only now);
    the creative-request draft is prepared, not sent. F7 Netradhara label: evidence supports the current photo; Dr. Deepu John closes it.
+
+## Q-MID15049-INTEGRATION-APPROVAL — 2026-10-05 12:21:47 IST
+Rebuild `sites/kairali-com-rebuild` (MID-15049), branch codex/mid15049-preview-fixes. Raised by the web-developer session; append-only.
+- `434bf952` (Abhilash, 2026-09-30) deliberately removed the rebuild/shared-workspace integration: the factory-gate matrix entries, the pnpm-workspace entry, the lockfile entries and `sites/kairali-com-rebuild/site.config.json` (owner's unapproved-integration separation).
+- `a64ea43ef` (developerkairali725, 2026-10-05 11:02:43 IST) later restored that integration: the two factory-gate matrix entries, `SITE_ENV=production` for that site's build/Lighthouse steps, the `pnpm-workspace.yaml` entry, lockfile changes, and `site.config.json` (adds `appRoot`, `brandTokenProfile`).
+- No approval or reference for reversing the separation has been identified in the repo, QUESTIONS.md or DECISIONS.md. None is claimed.
+- **Decision needed (repository owner/maintainer, Abhilash):** approve or reject the restored integration. Until then it must not be treated as authorized. docs/MID-15049-PREVIEW-FIXES.md (Root CI blockers #2), docs/MID-15049-CI-FOLLOWUP.md and STATUS.md still describe the separation as in force and are deliberately left unedited pending this ruling.
+- Not claimed: the CI result of the restored integration, hosted-candidate verification, or any release readiness.
