@@ -1,3 +1,4 @@
+import './benefits.css';
 import {SpecialistLanding} from '../_traffic/SpecialistLanding';
 import {trafficMetadata} from '../_traffic/metadata';
 import {content} from './content';
