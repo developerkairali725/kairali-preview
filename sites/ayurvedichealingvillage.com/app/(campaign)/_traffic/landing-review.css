@@ -415,3 +415,29 @@
 
 /* Use the existing body face for captions; avoid fetching a separate 324 kB legacy font. */
 .r10-revision main figcaption{font-family:Mulish,Arial,sans-serif}
+
+/* Rejuvenation package rates: one reading order, columns on desktop and rows on phones. */
+.r10-revision.r10-revision.tl-detox .programme-price{margin:24px 0;padding:28px 32px;border:1px solid var(--ahv-release-color-5);border-top:3px solid var(--ahv-release-color-4);background:var(--ahv-release-color-21)}
+.r10-revision.r10-revision.tl-detox .programme-price-heading h3{font-size:26px!important;margin:0 0 8px!important}
+.r10-revision.r10-revision.tl-detox .programme-price-heading p{font-size:18px!important;line-height:1.6!important;margin:0!important}
+.r10-revision.r10-revision.tl-detox .programme-rates{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin:24px 0;padding:0}
+.r10-revision.r10-revision.tl-detox .programme-rates>div{min-width:0;padding-left:28px;border-left:1px solid var(--ahv-release-color-5)}
+.r10-revision.r10-revision.tl-detox .programme-rates>div:first-child{padding-left:0;border-left:0}
+.r10-revision.r10-revision.tl-detox .programme-rates dt{margin:0 0 8px;font:400 18px/1.5 Mulish,Arial,sans-serif}
+.r10-revision.r10-revision.tl-detox .programme-rates dd{margin:0;font:400 36px/1.2 Marcellus,Georgia,serif;color:var(--ahv-release-color-3);font-variant-numeric:tabular-nums;white-space:nowrap}
+.r10-revision.r10-revision.tl-detox .programme-price-minimum{margin:0!important;padding-top:18px;border-top:1px solid var(--ahv-release-color-5);font-size:18px!important;line-height:1.6!important;max-width:none}
+@media(max-width:700px){
+ .r10-revision.r10-revision.tl-detox .programme-price{padding:24px 20px}
+ .r10-revision.r10-revision.tl-detox .programme-price-heading h3{font-size:24px!important}
+ .r10-revision.r10-revision.tl-detox .programme-rates{gap:20px}
+ .r10-revision.r10-revision.tl-detox .programme-rates>div{padding-left:20px}
+ .r10-revision.r10-revision.tl-detox .programme-rates dd{font-size:30px}
+}
+@media(max-width:520px){
+ .r10-revision.r10-revision.tl-detox .programme-rates{display:block;margin:18px 0}
+ .r10-revision.r10-revision.tl-detox .programme-rates>div{display:grid;grid-template-columns:minmax(0,1fr) max-content;align-items:baseline;gap:12px;padding:14px 0;border-left:0;border-top:1px solid var(--ahv-release-color-5)}
+ .r10-revision.r10-revision.tl-detox .programme-rates>div:first-child{border-top:0;padding-top:0}
+ .r10-revision.r10-revision.tl-detox .programme-rates>div:last-child{padding-bottom:0}
+ .r10-revision.r10-revision.tl-detox .programme-rates dt{margin:0;font-size:17px}
+ .r10-revision.r10-revision.tl-detox .programme-rates dd{text-align:right;font-size:29px}
+}
