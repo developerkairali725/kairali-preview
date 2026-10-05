@@ -221,6 +221,7 @@
 .r10-revision.r10-revision .heritage-facts p{margin:0;font-size:16px!important}
 .r10-revision.r10-revision .heritage-facts strong,.r10-revision.r10-revision .heritage-facts span{display:block}
 .r10-revision.r10-revision .family-accommodation .programme-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.r10-revision.r10-revision .family-accommodation>.tariff-note{margin-top:24px}
 .r10-revision.r10-revision .family-villa{padding:0 20px 22px;display:flex;flex-direction:column}
 .r10-revision.r10-revision .family-villa>a:first-child{margin:0 -20px 20px}
 .r10-revision.r10-revision .family-villa .villa-photo{height:180px!important;aspect-ratio:auto!important;object-fit:cover}
