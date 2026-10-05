@@ -1,6 +1,44 @@
 /** Owner 3 Oct: the senior programme must be discoverable before the rate/enquiry. English only; preserve locale source archives. */
 export function offersFlow(html, route, locale = 'en') {
- if(route !== '/offers/' || locale !== 'en' || !html || html.includes('data-senior-flow="1"')) return html;
+ if(route !== '/offers/' || locale !== 'en' || !html) return html;
+ // English-only presentation: the translated source/snapshot contract stays intact.
+ // Keep this self-contained: boot.ts also serializes the function into the browser.
+ const photo = (kind) => {
+  const heritage=kind==='heritage';
+  const base='/ahv/assets/img/gallery-2026/'+(heritage?'photo/hero-grounds-garden-vine-covered-brick-01':'retreats/care-people-physician-white-coat-05');
+  const alt=heritage?'Vine-covered brick buildings and gardens at Kairali in Palakkad':'A Kairali physician speaking with a patient on the verandah';
+  const caption=heritage?'<strong>118 years</strong><span>of Ayurvedic tradition. Offered with purpose.</span>':'Care begins with a conversation.';
+  return `<figure class="ahv-offer-photo ahv-offer-${kind}-photo"><img src="${base}-768.webp" srcset="${base}-768.webp ${heritage?768:511}w, ${base}.webp ${heritage?1600:1066}w" sizes="(max-width: 899px) calc(100vw - 40px), (max-width: 1280px) 45vw, 572px" width="${heritage?768:511}" height="${heritage?511:768}" alt="${alt}" loading="lazy" decoding="async"><figcaption>${caption}</figcaption></figure>`;
+ };
+ html=html.replace(/<section\b[^>]*aria-labelledby="(?:m-)?(?:a-note|why-special-care)"[^>]*>[\s\S]*?<\/section>/g, section => {
+  if(section.includes('ahv-offer-photo')) return section;
+  const mobile=/aria-labelledby="m-/.test(section);
+  if(/aria-labelledby="(?:m-)?a-note"/.test(section)) {
+   // Retire the standalone badge and move its heritage message onto the photo.
+   const count=section.indexOf('118 Years');
+   if(count<0) return section;
+   const badgeStart=section.lastIndexOf('<div',count),badgeEnd=section.indexOf('</div>',count)+6;
+   if(badgeStart<0 || badgeEnd<6) return section;
+   section=section.slice(0,badgeStart)+(mobile?'':photo('heritage'))+section.slice(badgeEnd);
+   section=section.replace(/<p\b[^>]*>118 years of Ayurvedic tradition\. Offered with purpose\.<\/p>/,'');
+   if(mobile) {
+    const intro=section.indexOf('For over a century'),start=section.lastIndexOf('<p',intro),end=section.indexOf('</ul>',intro)+5;
+    if(start>=0 && end>start) section=section.slice(0,start)+'<div class="ahv-offer-story-grid"><div class="ahv-offer-story-copy">'+section.slice(start,end)+'</div>'+photo('heritage')+'</div>'+section.slice(end);
+   } else {
+    section=section.replace(/<div\b[^>]*style="[^"]*grid-template-columns:minmax\(0,1fr\) 300px;[^"]*"[^>]*>/,'<div class="ahv-offer-story-grid">');
+   }
+  } else {
+   const first=section.indexOf('Healing is not equal'),start=section.lastIndexOf('<p',first);
+   const last=section.indexOf('Ayurveda, when practised ethically'),end=section.indexOf('</p>',last)+4;
+   if(start<0 || last<first || end<4) return section;
+   const text=section.slice(start,end);
+   const from=mobile?start:section.lastIndexOf('<div',start),to=mobile?end:section.indexOf('</div>',end)+6;
+   if(from<0 || to<end) return section;
+   section=section.slice(0,from)+'<div class="ahv-offer-care-grid"><div class="ahv-offer-care-copy">'+text+'</div>'+photo('care')+'</div>'+section.slice(to);
+  }
+  return section;
+ });
+ if(html.includes('data-senior-flow="1"')) return html;
  const i=html.indexOf('Holistic Ayurvedic');
  if(i<0)return html;
  const start=html.lastIndexOf('<article',i),end=html.indexOf('</article>',i);

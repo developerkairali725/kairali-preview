@@ -897,6 +897,32 @@
  #ahv-design-root[data-ahv-family="article-reader"] main p[data-ahv-article-action="related"] a { width:100%; }
 }
 
+/* Owner 5 Oct: real photographs alongside the two /offers/ care-story sections. */
+#ahv-design-root[data-ahv-route="/offers/"] :is(#a-note,#m-a-note,#why-special-care,#m-why-special-care) {text-wrap:balance;}
+#ahv-design-root[data-ahv-route="/offers/"] :is(.ahv-offer-story-grid,.ahv-offer-care-grid) {
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:32px 48px;align-items:center;margin-top:28px;
+}
+#ahv-design-root[data-ahv-route="/offers/"] :is(.ahv-offer-story-copy,.ahv-offer-care-copy) {min-width:0;}
+#ahv-design-root[data-ahv-route="/offers/"] :is(.ahv-offer-story-copy,.ahv-offer-care-copy) > p:first-child {margin-top:0 !important;}
+#ahv-design-root[data-ahv-route="/offers/"] .ahv-offer-photo {position:relative;margin:0;min-width:0;overflow:hidden;border-radius:4px;}
+#ahv-design-root[data-ahv-route="/offers/"] .ahv-offer-photo img {display:block;width:100% !important;height:auto !important;max-height:none !important;margin:0 !important;object-fit:cover;}
+#ahv-design-root[data-ahv-route="/offers/"] .ahv-offer-heritage-photo img {aspect-ratio:3/2;object-position:50% 50%;}
+#ahv-design-root[data-ahv-route="/offers/"] .ahv-offer-heritage-photo figcaption {
+  position:absolute;inset:auto 0 0;padding:56px 24px 24px;background:linear-gradient(transparent,rgba(17,30,16,.94));color:#fff;
+}
+#ahv-design-root[data-ahv-route="/offers/"] .ahv-offer-heritage-photo figcaption strong {display:block;font-family:Marcellus,Georgia,serif;font-size:38px;line-height:1.15;font-weight:400;}
+#ahv-design-root[data-ahv-route="/offers/"] .ahv-offer-heritage-photo figcaption span {display:block;margin-top:6px;font-size:18px;line-height:1.5;color:#fff;text-wrap:balance;}
+#ahv-design-root[data-ahv-route="/offers/"] .ahv-offer-care-photo img {aspect-ratio:16/10;object-position:50% 12%;}
+#ahv-design-root[data-ahv-route="/offers/"] .ahv-offer-care-photo figcaption {padding:12px 0 0;color:#514A3F;font-size:18px;line-height:1.5;}
+@media(max-width:899px) {
+  #ahv-design-root[data-ahv-route="/offers/"] :is(.ahv-offer-story-grid,.ahv-offer-care-grid) {grid-template-columns:minmax(0,1fr);gap:22px;margin-top:22px;}
+  #ahv-design-root[data-ahv-route="/offers/"] .ahv-offer-photo {order:-1;}
+  #ahv-design-root[data-ahv-route="/offers/"] .ahv-offer-heritage-photo img {aspect-ratio:4/3;}
+  #ahv-design-root[data-ahv-route="/offers/"] .ahv-offer-heritage-photo figcaption {padding:48px 18px 18px;}
+  #ahv-design-root[data-ahv-route="/offers/"] .ahv-offer-heritage-photo figcaption strong {font-size:32px;}
+  #ahv-design-root[data-ahv-route="/offers/"] .ahv-offer-care-photo img {aspect-ratio:4/3;}
+}
+
 /* source: /design/campaign.css */
 /* AHV — the two legacy campaign families (15 routes).
  *
