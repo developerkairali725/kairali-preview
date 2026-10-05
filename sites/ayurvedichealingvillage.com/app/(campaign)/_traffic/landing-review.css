@@ -338,7 +338,7 @@
 .r10-revision.r10-revision .testimonial-story[open] .story-toggle-icon::before{content:"−"}
 .r10-revision.r10-revision .testimonial-story .story-continuation{margin:6px 0 0;font-family:Mulish,Arial,sans-serif!important;font-size:18px!important;line-height:1.7!important;font-style:normal}
 .r10-revision.r10-revision .testimonial-story>summary:focus-visible{outline:2px solid var(--ahv-release-color-4);outline-offset:4px}
-.r10-revision.r10-revision .dated-recognitions .recognition-grid{align-items:start;gap:24px;margin-top:24px}
+.r10-revision.r10-revision .dated-recognitions .recognition-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch;gap:24px;margin-top:24px}
 .r10-revision.r10-revision .recognition-year{display:block;margin:0 0 6px;font:700 17px/1.5 Mulish,Arial,sans-serif;color:var(--ahv-release-color-3)}
 .r10-revision.r10-revision .dated-recognitions figcaption{padding:14px 8px 0;line-height:1.5}
 .r10-revision.r10-revision .dated-recognitions figcaption a{text-decoration:underline;text-underline-offset:4px}
@@ -348,4 +348,17 @@
  .r10-revision.r10-revision .patient-quote-heading{align-items:start;gap:14px}
  .r10-revision.r10-revision .patient-quote-heading .guest-initials{width:48px;height:48px;flex:0 0 48px;font-size:24px}
  .r10-revision.r10-revision .dated-recognitions .recognition-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}
+}
+
+/* Historical recognitions share the same dated, inset presentation on every landing page. */
+.r10-revision.r10-revision .recognition-archive{padding:24px!important;margin-block:24px!important;border:1px solid var(--ahv-release-color-5)}
+.r10-revision.r10-revision .recognition-archive>summary{padding:8px 36px 8px 0!important;min-height:48px}
+.r10-revision.r10-revision .dated-recognitions .recognition-grid figure{margin:0;padding:20px 16px;background:var(--ahv-release-color-21);text-align:center;min-width:0}
+.r10-revision.r10-revision .dated-recognitions .recognition-grid img{display:block;width:100%;height:110px;max-width:240px;margin:0 auto;object-fit:contain}
+.r10-revision.r10-revision .dated-recognitions figcaption{text-align:center;font-size:17px!important}
+@media(max-width:700px){
+ .r10-revision.r10-revision .recognition-archive{padding:20px!important}
+ .r10-revision.r10-revision .dated-recognitions .recognition-grid figure{padding:16px 8px}
+ .r10-revision.r10-revision .dated-recognitions .recognition-grid img{height:90px}
+ .r10-revision.r10-revision .dated-recognitions figcaption{padding-inline:0}
 }
