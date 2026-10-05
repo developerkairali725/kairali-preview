@@ -288,17 +288,10 @@ export const BOOT_SCRIPT = `
         if (snapshotNodes[i].parentNode) snapshotNodes[i].parentNode.removeChild(snapshotNodes[i]);
       }
       snapshotNodes = [];
-      // The snapshot's served copies of the view's helmet styles (snapshot-styles.mjs) leave with it, each
-      // only once the runtime has written the identical block (or font link) into <head> — so nothing on
-      // screen changes; a copy whose twin has not arrived yet simply stays.
-      var headCss = {}, headLinks = {};
-      document.head.querySelectorAll("style").forEach(function (el) { headCss[(el.textContent || "").trim()] = 1; });
-      document.head.querySelectorAll("link[rel=stylesheet]").forEach(function (el) { headLinks[el.getAttribute("href")] = 1; });
-      document.querySelectorAll("[data-ahv-snapshot-style]").forEach(function (el) {
-        var twin = el.tagName === "LINK" ? headLinks[el.getAttribute("href")] : headCss[(el.textContent || "").trim()];
-        if (twin && el.parentNode) el.parentNode.removeChild(el);
-      });
+      // SnapshotStyles owns these React siblings. It removes matched duplicates only after its
+      // hydration effect runs; boot must never remove nodes React is still about to claim.
       host.setAttribute("data-ahv-snapshot-state", "retired");
+      document.dispatchEvent(new Event("ahv:snapshot-retired"));
       host.removeAttribute("data-ahv-live-pending");
       if (focusTarget) focusTarget.focus({ preventScroll: true });
       return;

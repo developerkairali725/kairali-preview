@@ -92,13 +92,14 @@ test("boot wiring: runtime chain waits for the phone snapshot's paint; repairs +
   assert.ok(sweep > 0 && sweep < wait, "sweepHoneypots (applyConsent) starts before the paint wait, as before");
   assert.equal(BOOT.split("sweepHoneypots(150);").length, 2, "started exactly once");
   assert.match(BOOT, /\(\$\{deferFarSnapshotContent\.toString\(\)\}\)\(window, snapshotNodes, cfg\.breakpoint, 1\.5\)/);
-  // served snapshot styles leave with the snapshot only when their twin is in <head>
-  assert.match(BOOT, /querySelectorAll\("\[data-ahv-snapshot-style\]"\)/);
-  assert.match(BOOT, /if \(twin && el\.parentNode\) el\.parentNode\.removeChild\(el\);/);
+  // React owns style siblings; boot signals readiness without mutating their DOM.
+  assert.match(BOOT, /document\.dispatchEvent\(new Event\("ahv:snapshot-retired"\)\)/);
+  assert.doesNotMatch(BOOT, /querySelectorAll\("\[data-ahv-snapshot-style\]"\)/);
 });
 
 test("design-view serves the snapshot's first-paint styles phone-only; faces skipped on poster-led views", () => {
-  assert.match(VIEW, /<style key=\{i\} media=\{narrowMedia\} data-ahv-snapshot-style=""/);
+  assert.match(VIEW, /<SnapshotStyles key=\{`\$\{locale\}:\$\{route.path\}`\} assets=\{snapshotAssets\}/);
+  assert.match(VIEW, /css, media: narrowMedia/);
   assert.match(VIEW, /rel="preload" as="font" type=\{href\.endsWith\("\.woff2"\) \? "font\/woff2" : "font\/ttf"\} crossOrigin="anonymous" href=\{href\} media=\{narrowMedia\}/);
   assert.match(VIEW, /const snapshotFaces = firstPaint && !firstScreenPoster\(snapshot\) \? firstPaint : null;/);
   // the no-JS fallback rules of 609d5377 are untouched
