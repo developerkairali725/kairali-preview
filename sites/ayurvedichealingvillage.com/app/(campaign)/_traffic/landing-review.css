@@ -363,3 +363,20 @@
  .r10-revision.r10-revision .dated-recognitions .recognition-grid img{height:90px}
  .r10-revision.r10-revision .dated-recognitions figcaption{padding-inline:0}
 }
+
+/* Retreat programme catalogue and visible editorial features, owner review 5 October. */
+.r10-revision.r10-revision.tl-retreat .programme-choice-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 36px}
+.r10-revision.r10-revision.tl-retreat .programme-choice{display:flex;align-items:center;justify-content:space-between;gap:20px;min-width:0;min-height:76px;padding:18px 0;color:var(--ahv-release-color-3);font:600 18px/1.6 Mulish,Arial,sans-serif;text-decoration:none}
+@media(hover:hover){.r10-revision.r10-revision.tl-retreat .programme-choice:hover span:first-child{text-decoration:underline;text-underline-offset:4px}}
+.r10-revision.r10-revision.tl-retreat .programme-arrow{flex:none;font-size:20px}
+.r10-revision.r10-revision.tl-retreat .press-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.r10-revision.r10-revision.tl-retreat .press-card{display:flex;flex-direction:column;min-width:0;padding:24px;border:1px solid var(--ahv-release-color-5);background:var(--ahv-release-color-21)}
+.r10-revision.r10-revision.tl-retreat .press-brand{height:112px;display:flex;align-items:center;margin-bottom:20px}
+.r10-revision.r10-revision.tl-retreat .press-logo{width:200px!important;height:112px!important;max-width:100%;object-fit:contain!important;object-position:left center;box-shadow:none;border-radius:0;margin:0!important}
+.r10-revision.r10-revision.tl-retreat .press-card .press-meta{font:500 15px/1.6 Mulish,Arial,sans-serif!important;margin:0 0 14px;max-width:none}
+.r10-revision.r10-revision.tl-retreat .press-card h3{font-size:25px!important}
+.r10-revision.r10-revision.tl-retreat .press-card>p:not(.press-meta){font-size:17px!important;line-height:1.65!important}
+.r10-revision.r10-revision.tl-retreat .press-link{margin-top:auto;padding-top:6px;min-height:44px;display:inline-flex;align-items:center;gap:10px;align-self:flex-start;font-size:16px!important}
+.r10-revision.r10-revision.tl-retreat :is(.programme-choice,.press-link):focus-visible{outline:2px solid currentColor;outline-offset:4px}
+@media(max-width:1000px){.r10-revision.r10-revision.tl-retreat .press-grid{grid-template-columns:1fr}.r10-revision.r10-revision.tl-retreat .press-brand{height:96px}.r10-revision.r10-revision.tl-retreat .press-logo{height:96px!important}}
+@media(max-width:700px){.r10-revision.r10-revision.tl-retreat .programme-choice-list{grid-template-columns:1fr}.r10-revision.r10-revision.tl-retreat .programme-choice{font-size:17px;min-height:70px}.r10-revision.r10-revision.tl-retreat .press-card{padding:24px 20px}.r10-revision.r10-revision.tl-retreat .press-grid{gap:20px}}
