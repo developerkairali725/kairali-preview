@@ -8,6 +8,7 @@ import { GuestSupport } from './GuestSupport';
 import '@kairali/ui/brand-tokens.css';
 import './r10.css';
 import '../_traffic/refinements.css';
+import '../_traffic/landing-review.css';
 
 const canonical = 'https://ayurvedichealingvillage.com/ayurvedic-treatment-packages.html';
 const title = 'Ayurvedic Treatment Packages in Kerala | Kairali';

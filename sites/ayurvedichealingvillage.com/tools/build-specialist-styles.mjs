@@ -1,6 +1,6 @@
 import {readFileSync,writeFileSync} from 'node:fs';
 // Fixed public stylesheet inputs. Static module avoids request-time filesystem reads.
-const paths=['app/(campaign)/ayurvedic-treatment-packages.html/r10.css','app/(campaign)/_traffic/traffic.css','app/(campaign)/_traffic/refinements.css','app/(campaign)/_traffic/family-pain-refinements.css','app/(campaign)/_traffic/specialist.css'];
+const paths=['app/(campaign)/ayurvedic-treatment-packages.html/r10.css','app/(campaign)/_traffic/traffic.css','app/(campaign)/_traffic/refinements.css','app/(campaign)/_traffic/family-pain-refinements.css','app/(campaign)/_traffic/specialist.css','app/(campaign)/_traffic/landing-review.css'];
 let styles=paths.map(path=>readFileSync(path,'utf8')).join('\n');
 styles=styles.replace(/\bMulish\b/g,'AHVSpecialistMulish').replace(/\bMarcellus\b/g,'AHVSpecialistMarcellus');
 

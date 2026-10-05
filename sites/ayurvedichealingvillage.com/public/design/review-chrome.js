@@ -397,6 +397,7 @@
   }
   function readableHomeLabels(container) {
     container.querySelectorAll("[style]").forEach(function (el) {
+      if (el.closest("a,button,input,select,textarea")) return;
       var size = parseFloat(el.style.fontSize);
       if (size && size < 16) {
         el.style.fontSize = "16px"; el.style.lineHeight = "1.6"; el.style.color = "#514a3f";
