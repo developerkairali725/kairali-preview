@@ -414,4 +414,4 @@
 @media(prefers-reduced-motion:reduce){html:has(.r10-revision){scroll-behavior:auto!important}}
 
 /* Use the existing body face for captions; avoid fetching a separate 324 kB legacy font. */
-.r10-revision figcaption{font-family:Mulish,Arial,sans-serif}
+.r10-revision main figcaption{font-family:Mulish,Arial,sans-serif}
