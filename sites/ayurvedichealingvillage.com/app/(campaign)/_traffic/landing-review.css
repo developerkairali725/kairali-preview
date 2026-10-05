@@ -380,3 +380,35 @@
 .r10-revision.r10-revision.tl-retreat :is(.programme-choice,.press-link):focus-visible{outline:2px solid currentColor;outline-offset:4px}
 @media(max-width:1000px){.r10-revision.r10-revision.tl-retreat .press-grid{grid-template-columns:1fr}.r10-revision.r10-revision.tl-retreat .press-brand{height:96px}.r10-revision.r10-revision.tl-retreat .press-logo{height:96px!important}}
 @media(max-width:700px){.r10-revision.r10-revision.tl-retreat .programme-choice-list{grid-template-columns:1fr}.r10-revision.r10-revision.tl-retreat .programme-choice{font-size:17px;min-height:70px}.r10-revision.r10-revision.tl-retreat .press-card{padding:24px 20px}.r10-revision.r10-revision.tl-retreat .press-grid{gap:20px}}
+
+/* Live/staging benchmark: readable captions, earlier mobile enquiries and compact comparisons. */
+.r10-revision.r10-revision .page-quote figcaption{color:var(--ahv-release-color-3)}
+.r10-revision.r10-revision .villa-row>p:not(.villa-action){margin-inline:28px!important}
+.r10-revision.r10-revision .intro-story{align-items:center!important}
+.r10-revision.r10-revision .intro-story>figure{position:static!important;align-self:center!important}
+.r10-revision.r10-revision .intro-story>figure img{width:100%;height:auto!important;aspect-ratio:4/3!important;max-height:380px;object-fit:cover}
+.r10-revision.r10-revision .hero-copy h1+.primary{margin:0 0 20px!important}
+.r10-revision.r10-revision .family-programme-directory{grid-column:1/-1;background:transparent!important;border:0!important;padding:0!important}
+.r10-revision.r10-revision .family-programme-directory>summary{font:600 18px/1.5 Mulish,Arial,sans-serif!important;min-height:48px;padding:14px 0!important}
+.r10-revision.r10-revision .family-programme-directory>.programme-grid{margin-top:16px}
+.r10-revision.r10-revision .family-programmes .programme-card>summary:has(.programme-preview){display:flex;align-items:center;gap:16px;font-size:21px!important}
+.r10-revision.r10-revision .family-programmes .programme-preview{width:76px!important;height:64px!important;flex:none;object-fit:cover;margin:0!important}
+.r10-revision.r10-revision .family-programmes .programme-card>summary:has(.programme-preview):after{content:'+';font:24px Mulish,sans-serif;margin-left:auto}
+.r10-revision.r10-revision .family-programmes .programme-card[open]>summary:has(.programme-preview):after{content:'−'}
+.r10-revision.r10-revision .skip-link{z-index:70}
+@media(max-width:700px){
+ .r10-revision.r10-revision .campaign-hero-media{aspect-ratio:auto;height:220px}
+ .r10-revision.r10-revision :is(.hero-copy,.cover-copy){padding-top:24px!important}
+ .r10-revision.r10-revision :is(.hero-copy,.cover-copy) h1{font-size:36px!important;line-height:1.17!important;margin-bottom:18px!important}
+ .r10-revision.r10-revision .hero-copy .eyebrow{margin-bottom:12px!important}
+ .r10-revision.r10-revision .hero-copy .hero-deck{font-size:19px!important;margin-bottom:12px!important}
+ .r10-revision.r10-revision .hero-copy .heritage-mark{margin-top:20px!important;padding-top:16px!important}
+ .r10-revision.r10-revision .villa-row>p:not(.villa-action){margin-inline:22px!important}
+ .r10-revision.r10-revision .villa-rates :is(td,th){padding:12px 6px!important;font-size:16px!important;min-width:0!important}
+ .r10-revision.r10-revision .villa-rates td p{font-size:16px!important;line-height:1.5!important;margin:0!important}
+ .r10-revision.r10-revision .villa-card-photo img{height:190px}
+ .r10-revision.r10-revision.p26-page .guest-quote .guest-portrait{width:84px;height:84px;float:left;margin:0 18px 12px 0;border-radius:50%}
+ .r10-revision.r10-revision.p26-page .guest-quote .story-excerpt{clear:both}
+ .r10-revision.r10-revision .family-programmes .programme-card{padding:16px!important}
+}
+@media(prefers-reduced-motion:reduce){html:has(.r10-revision){scroll-behavior:auto!important}}

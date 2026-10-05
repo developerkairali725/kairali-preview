@@ -1,6 +1,8 @@
 /** Owner: eligible care programmes must be discoverable before rates/enquiry. English only; preserve locale source archives. */
 export function offersFlow(html, route, locale = 'en') {
  if(route !== '/offers/' || locale !== 'en' || !html) return html;
+ // A telephone link makes a call; label it without promising WhatsApp.
+ html=html.replace(/(<a\b[^>]*href="tel:[^"]*"[^>]*>)\s*Call\s*\/\s*WhatsApp/gi,'$1Call');
  // English-only presentation: the translated source/snapshot contract stays intact.
  // Keep this self-contained: boot.ts also serializes the function into the browser.
  const photo = (kind) => {

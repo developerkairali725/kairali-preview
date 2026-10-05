@@ -923,6 +923,14 @@
   #ahv-design-root[data-ahv-route="/offers/"] .ahv-offer-care-photo img {aspect-ratio:4/3;}
 }
 
+/* Keep the Offers enquiry eyebrow above AA contrast on its tinted panel. */
+[data-ahv-route="/offers/"] main section:has(:is(#not-sure-which,#m-not-sure-which)) p:first-child{color:#5a4420!important}
+@media(max-width:699px){
+ #ahv-design-root[data-ahv-route="/offers/"] [style*="grid-template-columns"][style*="110px"]:has(.ahv-care-cta-row){grid-template-columns:minmax(0,1fr)!important}
+ #ahv-design-root[data-ahv-route="/offers/"] [style*="grid-template-columns"][style*="110px"]:has(.ahv-care-cta-row)>:first-child{width:100%!important;height:190px!important;min-height:0!important}
+ #ahv-design-root[data-ahv-route="/offers/"] .ahv-care-cta-row a{width:100%;font-size:17px!important;padding:14px 18px!important}
+}
+
 /* source: /design/campaign.css */
 /* AHV — the two legacy campaign families (15 routes).
  *
