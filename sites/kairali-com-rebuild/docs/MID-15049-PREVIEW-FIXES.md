@@ -55,8 +55,8 @@ Evidence files are in `evidence/`: JSON browser/fix/audit/hub reports, verify su
 | Dependency | Owner | Next evidence / date |
 |---|---|---|
 | Final Premium v3 visual acceptance | Abhilash | Staging desktop/mobile review; by 3 October handback |
-| Real iPhone Safari date-control check | Deepu + iPhone tester | Device/browser/date and screenshot; by 3 October |
-| Five vacancy statuses | HR, coordinated by Deepu | Confirm each vacancy before any live “open” claim; report status 3 October |
+| Real iPhone Safari date-control check | Web developer + iPhone tester | Device/browser/date and screenshot; by 3 October |
+| Five vacancy statuses | HR, coordinated by the web developer | Confirm each vacancy before any live “open” claim; report status 3 October |
 | Legal operator / conflicting privacy-policy text | Abhilash + legal/privacy owner | Registry-established operator is Kairali Ayurvedic Health Resorts Private Limited; certificate wording and conflicting privacy policy stay unchanged pending verified revisions |
 | Centre directory / product-store mapping | Abhilash + brand owners | Approved mapping; existing roster and distinct .in/.com store links preserved |
 | Forms activation | Abhilash + form/data owners; Dr. Deepu John for medical handling | Per-form recipients, provider/CRM, privacy/consent/retention, medical handling, upload storage/scanning, server anti-spam and synthetic receipts. Q8-C applies to 3 October; no activation required for this preview |
@@ -64,7 +64,7 @@ Evidence files are in `evidence/`: JSON browser/fix/audit/hub reports, verify su
 | Search Console ownership | Domain/Search Console administrator | Verify owner/access; no invented GTM/Clarity IDs |
 | Dedicated group document-hub view | Abhilash + hub maintainer | Register and verify the actual view; report 3 October. Replacement document review 5 October |
 | Sunaj repository access / employee KPI link | Sunaj / Abhilash | Separate named-access confirmation and genuine existing KPI link; report 3 October |
-| Hosted candidate verification | Deepu + repository/Vercel maintainer | Required PR gates, candidate URL, full deployed verifier, OG fetch, Google Rich Results and throttled mobile Lighthouse; pending normal release path |
+| Hosted candidate verification | Web developer + repository/Vercel maintainer | Required PR gates, candidate URL, full deployed verifier, OG fetch, Google Rich Results and throttled mobile Lighthouse; pending normal release path |
 
 No production analytics firing, live-domain/DNS change, form delivery or credentials by email. Deadline is 3 October 2026 EOD IST. The 5 October document review remains separate. No reply email was sent by this task.
 

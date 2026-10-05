@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <>
       <section className="home-hero opener" aria-labelledby="page-title">
-        <div className="opener-media"><Photograph k="ahv-grounds-pond" p={ph["ahv-grounds-pond"]} priority /></div>
+        <div className="opener-media"><Photograph k="ahv-grounds-pond" p={ph["ahv-grounds-pond"]} sizes="(max-width: 767px) 50vw, 100vw" priority /></div>
         <div className="opener-panel"><div className="container">
           <div className="opener-card">
             <span className="overline accent">Purely Ayurvedic</span>
@@ -50,7 +50,7 @@ export default function Home() {
         <Canopy style={{ right: -120, top: 40, width: 620 }} />
         <div className="container rel split">
           <figure className="s-media reveal">
-            <div className="photo" style={{ aspectRatio: "4 / 5" }}><Photograph k="ahv-founders-wall" p={ph["ahv-founders-wall"]} sizes="(min-width: 900px) 45vw, 100vw" /></div>
+            <div className="photo" style={{ aspectRatio: "4 / 5" }}><Photograph k="ahv-founders-wall" p={ph["ahv-founders-wall"]} sizes="(min-width: 900px) 45vw, 50vw" /></div>
             <figcaption>Founders’ portraits in the reception lounge, The Ayurvedic Healing Village, Palakkad.</figcaption>
           </figure>
           <div className="s-text stack reveal" style={{ gap: 18 }}>
@@ -66,7 +66,7 @@ export default function Home() {
 
       {/* The Ayurvedic Healing Village */}
       <section className="story-full" aria-labelledby="hv-title">
-        <div className="opener-media"><Photograph k="ahv-footbridge" p={ph["ahv-footbridge"]} /></div>
+        <div className="opener-media"><Photograph k="ahv-footbridge" p={ph["ahv-footbridge"]} sizes="(max-width: 899px) 50vw, 100vw" /></div>
         <div className="pillar-wrap"><div className="container" style={{ display: "flex", justifyContent: "flex-end" }}>
           <div className="pillar-card reveal">
             <span className="overline">The Ayurvedic Healing Village · Doctor-led Ayurvedic care</span>

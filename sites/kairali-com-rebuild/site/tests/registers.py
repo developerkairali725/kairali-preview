@@ -1,16 +1,32 @@
 #!/usr/bin/env python3
 """Source-to-render register and metadata-change register (evidence/)."""
-import collections, csv, json, os, re
+import base64, collections, csv, json, os, re
 HERE = os.path.dirname(os.path.abspath(__file__)); SITE = os.path.dirname(HERE); REPO = os.path.dirname(SITE)
 EVID = os.path.join(REPO, "evidence")
-pages = json.load(open(os.path.join(SITE, "content", "pages.json")))
-rep = json.load(open(os.path.join(EVID, "verify-report.json")))
+def load_json(path):
+    with open(path, encoding="utf-8") as fh:
+        return json.load(fh)
+
+def evidence_text(record, plain_key="text", encoded_key="text_base64"):
+    if plain_key in record:
+        return record[plain_key]
+    return base64.b64decode(record[encoded_key]).decode("utf-8")
+
+pages = load_json(os.path.join(SITE, "content", "pages.json"))
+rep = load_json(os.path.join(EVID, "verify-report.json"))
+for parity_page in rep["parity"]:
+    for missing in parity_page.get("missing", []):
+        missing["text"] = evidence_text(missing)
 seo = {r["route"]: r for r in rep["seo"]}
 par = {r["route"]: r for r in rep["parity"]}
 status = {r["route"]: r for r in rep["routes"]}
-mapping = json.load(open(os.path.join(REPO, "reference", "route-family-mapping.json")))
+mapping = load_json(os.path.join(REPO, "reference", "route-family-mapping.json"))
 # Exact captured blocks only; unknown omissions still fail below.
-omissions = {(r["route"], r["source_text"][:200]): r["classification"] for r in json.load(open(os.path.join(EVID, "owner-approved-omissions.json"), encoding="utf-8"))}
+omission_rows = load_json(os.path.join(EVID, "owner-approved-omissions.json"))
+omissions = {
+    (r["route"], evidence_text(r, "source_text", "source_text_base64")[:200]): r["classification"]
+    for r in omission_rows
+}
 def reason(t, route=""):
     if (route, t) in omissions: return omissions[(route, t)]
     t = t.lower()
@@ -30,7 +46,7 @@ def reason(t, route=""):
 def _n(t): return re.sub(r"\W+", " ", t).lower().strip()
 from html import unescape as _u
 _elsewhere = {rt: _n(_u(re.sub(r"<[^>]+>", " ", " ".join(x["html"] for x in p["sections"] if not x.get("form"))))) for rt, p in pages.items()}
-_awards = json.load(open(os.path.join(SITE, "content", "awards-browse.json")))
+_awards = load_json(os.path.join(SITE, "content", "awards-browse.json"))
 _elsewhere["/kairali-group-awards.aspx"] += " " + " ".join(_n(r["title"] + " " + r["summary"]) for r in _awards["records"])
 def moved_to(text, route):
     n = _n(text)
@@ -53,7 +69,7 @@ for o in mapping["observations_not_in_215"]:
     rows.append({"route": rt, "classification": "Observation: " + o["triage"], "family": "", "template": (p or {}).get("template") or "", "disposition": "discovered route (outside the 215)",
                  "http_status": s.get("status"), "redirect_to": s.get("location", ""), "source_url": (p or {}).get("sourceUrl", ""), "source_sha256": (p or {}).get("sourceSha256", ""),
                  "rendered_words": (p or {}).get("words", ""), "source_blocks": "", "unmatched_blocks": "", "unmatched_reasons": "", "owner_fact": ""})
-with open(os.path.join(EVID, "source-to-render.csv"), "w", newline="") as fh:
+with open(os.path.join(EVID, "source-to-render.csv"), "w", newline="", encoding="utf-8") as fh:
     w = csv.DictWriter(fh, fieldnames=list(rows[0].keys())); w.writeheader(); w.writerows(rows)
 review = [(r["route"], r["unmatched_reasons"]) for r in rows if "REVIEW" in str(r["unmatched_reasons"])]
 meta = []
@@ -62,13 +78,13 @@ for rt, p in pages.items():
     meta.append({"route": rt, "live_title": p["title"], "new_title": s.get("title", ""), "title_changed": p["title"] != s.get("title"),
                  "live_description": p["description"], "new_description": s.get("description", ""), "description_changed": p["description"] != s.get("description"),
                  "canonical": s.get("canonical", ""), "og_image": s.get("og_image", ""), "jsonld": ",".join(x for x in s.get("jsonld", []) if x)})
-with open(os.path.join(EVID, "metadata-register.csv"), "w", newline="") as fh:
+with open(os.path.join(EVID, "metadata-register.csv"), "w", newline="", encoding="utf-8") as fh:
     w = csv.DictWriter(fh, fieldnames=list(meta[0].keys())); w.writeheader(); w.writerows(meta)
 unm = [(r["route"], m) for r in rows for m in (par.get(r["route"], {}).get("missing", []))]
 buckets = collections.Counter("moved" if m.get("moved") else reason(m["text"], rt) for rt, m in unm)
 words = collections.Counter()
 for rt, m in unm: words["moved" if m.get("moved") else reason(m["text"], rt)] += m["words"]
-with open(os.path.join(EVID, "parity-classification.csv"), "w", newline="") as fh:
+with open(os.path.join(EVID, "parity-classification.csv"), "w", newline="", encoding="utf-8") as fh:
     w = csv.writer(fh); w.writerow(["route", "unmatched_text", "words", "classification"])
     for rt, m in unm: w.writerow([rt, m["text"], m["words"], f"rendered on {m['moved']}" if m.get("moved") else reason(m["text"], rt)])
 print("parity buckets (blocks):", dict(buckets)); print("parity buckets (words):", dict(words))

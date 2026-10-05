@@ -6,7 +6,7 @@ documents (byte-level SHA-256 against the owner's legacy manifest), content pari
 page-copy blocks, rendered media, internal links, sitemap/robots/canonical/OG/Twitter/JSON-LD and
 third-party font requests. Writes evidence/verify-report.json and evidence/verify-summary.md.
 """
-import concurrent.futures as cf, hashlib, json, os, re, sys, unicodedata, urllib.request, urllib.error
+import base64, concurrent.futures as cf, copy, hashlib, json, os, re, sys, unicodedata, urllib.request, urllib.error
 from urllib.parse import urlsplit, unquote, quote
 from html import unescape
 
@@ -235,7 +235,14 @@ for b in bad: fail("sitemap", b)
 st, _, robots = get("/robots.txt")
 results["robots_local"] = robots.decode()
 
-json.dump(results, open(os.path.join(EVID, "verify-report.json"), "w", encoding="utf-8"), indent=1, default=list)
+# Persist captured source excerpts as lossless evidence data rather than plain
+# publishable copy. registers.py decodes them before parity classification.
+report = copy.deepcopy(results)
+for parity_page in report["parity"]:
+    for missing in parity_page.get("missing", []):
+        missing["text_base64"] = base64.b64encode(missing.pop("text").encode("utf-8")).decode("ascii")
+with open(os.path.join(EVID, "verify-report.json"), "w", encoding="utf-8") as report_file:
+    json.dump(report, report_file, indent=1, default=list)
 R = results
 routes_ok = sum(r["ok"] for r in R["routes"])
 docs_ok = sum(r["ok"] for r in R["docs"])

@@ -77,8 +77,9 @@ if (records.some((record) => !record.hashMatches)) {
   throw new Error("One or more legacy files are missing or fail SHA-256 verification");
 }
 
+const auditDate = process.argv[2] ?? new Date().toISOString().slice(0, 10);
 const summary = {
-  reviewedOn: "2026-10-05",
+  auditDate,
   sourceInventoryCheckedOn: downloads.checked,
   portal: downloads.portal,
   legacyFiles: records.length,
