@@ -258,9 +258,11 @@
       document.body.appendChild(controls);
     }
     root.querySelectorAll("header").forEach(function (header) {
-      if (header.querySelector(".ahv-contact-trigger")) return;
-      var group = header.querySelector("nav") || header.querySelector("div:last-child") || header;
-      group.appendChild(contactTrigger());
+      var familyMenu = header.querySelector(".ahv-fh-btn");
+      var group = (familyMenu && familyMenu.parentElement) || header.querySelector("nav") || header.querySelector("div:last-child") || header;
+      var trigger = header.querySelector(".ahv-contact-trigger");
+      if (!trigger) group.appendChild(contactTrigger());
+      else if (trigger.parentElement !== group) group.appendChild(trigger);
     });
   }
   // OWNER-REG-02 (owner, 28 Sep 2026: "apply the homepage bottom call/enquire/free-consult contact bar
