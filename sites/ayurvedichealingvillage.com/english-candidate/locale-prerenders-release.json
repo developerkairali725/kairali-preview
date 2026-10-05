@@ -1,11 +1,11 @@
 {
   "repository": "kairali-digital/kairali-web-factory",
   "tag": "ahv-english-staging-20260915",
-  "asset": "ahv-locale-prerenders-award-count-20261006.tar.gz",
-  "archive": "ahv-locale-prerenders-award-count-20261006.tar.gz",
-  "sha256": "84f4d6c475546d9566e901d37435fd2d6008bf1f256e77dfc7e06c261a613b9f",
-  "bytes": 46467865,
-  "capturedSource": "a6011e4c4 plus owner-approved 117+ awards count: 12 translated Panchakarma snapshots and 12 indexes updated; other 2580 archive members unchanged",
+  "asset": "ahv-locale-prerenders-award-count-r2-20261006.tar.gz",
+  "archive": "ahv-locale-prerenders-award-count-r2-20261006.tar.gz",
+  "sha256": "c73ac7d39ae8ccff1a612d1a652ae19556dbb5c2c16e178e58b3c1296e825bd7",
+  "bytes": 46465771,
+  "capturedSource": "a6011e4c4 plus owner-approved 117+ awards total: 24 translated Panchakarma/treatment-packages snapshots and 12 indexes updated; other 2568 archive members unchanged",
   "captured": "2026-10-06",
   "sources": [
     {
@@ -546,11 +546,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
-      "sha256": "140976e2b0566f5e325508991b0348ba12abc1826b100f22e27eae248e7e65d6"
+      "sha256": "e7a7fbf0bfe24cd0940181899535048affafebf4e2a7a9b2fd79974df8eb2959"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-ayurvedic-treatment-packages-mobile.json",
-      "sha256": "f91d68775aa6899292fbbe91251f60e11e7ce319a8c1c5f23e2fb2dcdd4f4e9f"
+      "sha256": "5e6f876a96dba933056d40936c10b2e3c6eb8aab4ce8150537f988e20e6ac3ff"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-ayurvedic-treatments-desktop.json",
@@ -1586,11 +1586,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
-      "sha256": "78a723dcc3b1da5dc5809cbb0cf8d4a98a2d724464e1906f49ae1e41a3e3bf6d"
+      "sha256": "a46f1e1a13c6c519758d7ed0286cd22b1cdf9af2d581d3778c1109f4efb999e9"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-ayurvedic-treatment-packages-mobile.json",
-      "sha256": "748268882a0862db1b0312094ac7399390437b0ecba3d3fe2a65e492f03fe30b"
+      "sha256": "ecb01082e69497e46b1a83d0cbf19637365400caf2b826241f66b26f23c8e7af"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-ayurvedic-treatments-desktop.json",
@@ -2626,11 +2626,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
-      "sha256": "cabefe8156e5807b9a1d3d315af67b74997568f54078e671ed172639ff2ed352"
+      "sha256": "26be68f193d6c9684e655c184addc34676424ab222d45921ed3c3814fb00d18a"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-ayurvedic-treatment-packages-mobile.json",
-      "sha256": "d04a6f87f8c85001492e24cac306aa1664beb46d6632a2fa54a9d674ccac46ba"
+      "sha256": "408f0c498c1fad9e46d430680462bef038a40251b4b99fd4fdb0616ab59a3684"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-ayurvedic-treatments-desktop.json",
@@ -3666,11 +3666,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
-      "sha256": "20f2847605450cbaf147ede8a923ca223ab69fc4b36cf6103b5b4a15420b0786"
+      "sha256": "6250c696c9c8a4d081e4f6fbe8b40be12e6d0db98ab82d575106610c576a1e43"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-ayurvedic-treatment-packages-mobile.json",
-      "sha256": "29bea8cdad3747cbc1e8312c8c3766c76b108390e40740962297e5ce36842279"
+      "sha256": "db5f1a281eba13aea75bbc774a0a0a009f13de188ed423cd70d98b588a5f8673"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-ayurvedic-treatments-desktop.json",
@@ -4706,11 +4706,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
-      "sha256": "3d186f71045fe0d7d995ee3eabca7e525cfa078c9ef6f11a661022fc5084faf9"
+      "sha256": "171971f888eaf3157003668f64d80c301d384d82579cef79f74394f09ef0c576"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-ayurvedic-treatment-packages-mobile.json",
-      "sha256": "68c4a14af8c9f3494d98ecd759b391912bd0dd077e2a58bb973d762e285949b0"
+      "sha256": "1a31e2039c0526e8fe3af3ce0fd15c1ed2852d49c00e1e7f26994d7eeb92d4aa"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-ayurvedic-treatments-desktop.json",
@@ -5746,11 +5746,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
-      "sha256": "682638558702c79f666bea3bbf9f982ee5764f933c987c3d00ce179c17db5457"
+      "sha256": "e25c9efcee1e563a89add780a769eac67601df023efe59ff52c4ea465fb0cd01"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-ayurvedic-treatment-packages-mobile.json",
-      "sha256": "5f2cf2636e3f8711c7c37e36fd07b2910a441f21bd547396dd432c164af2c6ac"
+      "sha256": "4f6583445a92de6c9177552d4c035f0f09640352faa410646dd8924fdb1888b8"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-ayurvedic-treatments-desktop.json",
@@ -6786,11 +6786,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
-      "sha256": "42fad6fb3a9065c3d3014a2db16f106bdf743b48ccf8bd9a899c229c696649f1"
+      "sha256": "6cff1be631f08e2aa463b64455adb8b4960e532a4f4ef66127eaaf3693d78a97"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-ayurvedic-treatment-packages-mobile.json",
-      "sha256": "0a94ec07ed599474428fc8907002ff18b63d71799deaa92192d8910b39e65e83"
+      "sha256": "5a2819433806299d4a4f7809469858dc1dddcc96c336be7994f011ffc53c5b2f"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-ayurvedic-treatments-desktop.json",
@@ -7826,11 +7826,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
-      "sha256": "d82d4cd5d9e74ea4a7d9b626d0c8d049968a8649cc21b353670681c095be3fba"
+      "sha256": "4c03f2a95239dc25b261e0f610c0e9a26129a6cf8e4533466cca1986b2093466"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-ayurvedic-treatment-packages-mobile.json",
-      "sha256": "87bd2e01f7f191164e915bdb7e8e9d9bd7d9934eb8d064f6e4bff5598b968963"
+      "sha256": "a25e112d032a1defbc2df96be819c352b567d58fe0cfcd32b1fd3e471cdaf7a5"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-ayurvedic-treatments-desktop.json",
@@ -8866,11 +8866,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
-      "sha256": "e900e9c396c5cda403aaaaea8e34214814326677aedfa09b406af8fbbf05722f"
+      "sha256": "b8f9c7b2cd2729a94cb7488c715daf70a6a222fe17258f94445d909eeabf67af"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-ayurvedic-treatment-packages-mobile.json",
-      "sha256": "8953c3ed40000ba557063d8bcc103c65af0f1aa557333aa07fc772b04fd077ef"
+      "sha256": "f8b2c7379e7c00e8b0c39267c0bcbb40bf1a9cf728a732ea29c4e87ea13d8b34"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-ayurvedic-treatments-desktop.json",
@@ -9906,11 +9906,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
-      "sha256": "93d4a7bcdf37ba14bdb9929bc79a9fb11b35a9628c75a476fcda4a9a47d92b67"
+      "sha256": "366ee0c489290370b0a245d2e761b472338b9956a8bc4de8b25a9dbb6dd24c6e"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-ayurvedic-treatment-packages-mobile.json",
-      "sha256": "376195cf1bbb947ada1fd84b742c894b7d078eb7329650d3e9c9d552968bef37"
+      "sha256": "f4979d4fb8b54838209e7adb2b230a4c3d6b382da13d7445fb1a15ef037ddf33"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-ayurvedic-treatments-desktop.json",
@@ -10946,11 +10946,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
-      "sha256": "d7d38de286605a5f08fbc230b51d39bd5d30d8afa96947ab305bbc7220b5f263"
+      "sha256": "860e15705c789e275758abc64fd434b535d3213a8fb417a2311bde183dc801ec"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-ayurvedic-treatment-packages-mobile.json",
-      "sha256": "54a2da6a93b6d3c0f7ff0fd836083de9db531db6ecdfac2bbd9221591c04bc90"
+      "sha256": "a3f655e88811a286bc7d77a9acdf05d6a2cc15aa51a6e1d78293180df47fafd4"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-ayurvedic-treatments-desktop.json",
@@ -11986,11 +11986,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
-      "sha256": "15864cffef26fa562125bc2685f4f07cb1f1bca26bb0d48c1a2e5f9494acb766"
+      "sha256": "1a40f1d5176c2277b51a8ca4a8f9b4dff71f92ec5a70d9827c3ead450fb79a03"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-ayurvedic-treatment-packages-mobile.json",
-      "sha256": "836f461a25ae18a1b2c3e3b21f216e68da58a5573980234633dc37e08624c2cc"
+      "sha256": "7b93856cb325306a3e6eb32ba18e23d1983cf495b5dc0d707d9c59a6580c7eab"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-ayurvedic-treatments-desktop.json",
@@ -12761,8 +12761,8 @@
     },
     {
       "file": "l10n/prerender/hi/ayurvedic-treatment-packages.html.html.gz",
-      "sha256": "e1999576b92ddadb2a888660541acd7a292234a7578d9888a000c474445b5fda",
-      "bytes": 29377
+      "sha256": "4bfe8e95c232d6e6037769723fdb58eea610d673e2929296be5a4acc81c793ad",
+      "bytes": 29173
     },
     {
       "file": "l10n/prerender/hi/ayurvedic-treatments.html.gz",
@@ -12966,8 +12966,8 @@
     },
     {
       "file": "l10n/prerender/hi/index.json",
-      "sha256": "80b4aed799f169cac7e1993a5c30edfe5ef5bd3c2e16cba21b16966705734098",
-      "bytes": 53526
+      "sha256": "f1336483563100c72dc3f0c84977e46e43d7e44d1d4e1007065d07c87b6113bc",
+      "bytes": 54290
     },
     {
       "file": "l10n/prerender/hi/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
@@ -13242,7 +13242,7 @@
     {
       "file": "l10n/prerender/hi/panchkarma-treatment.html.html.gz",
       "sha256": "562f59984d77eb2a636b04283f69fac4180b15121fe912cbe7e7fe3b649e2456",
-      "bytes": 28619
+      "bytes": 28481
     },
     {
       "file": "l10n/prerender/hi/payment-policy-compliance.html.gz",
@@ -13846,8 +13846,8 @@
     },
     {
       "file": "l10n/prerender/de/ayurvedic-treatment-packages.html.html.gz",
-      "sha256": "c1f8c32fd930109c265dd6cf374f0ebdbc9908c13926e94e87204bbf18dd2f53",
-      "bytes": 27982
+      "sha256": "37aa07664561271606039c8d5e43bd39e38188320ce9f14b7dcecf7782d9fe64",
+      "bytes": 27859
     },
     {
       "file": "l10n/prerender/de/ayurvedic-treatments.html.gz",
@@ -14051,8 +14051,8 @@
     },
     {
       "file": "l10n/prerender/de/index.json",
-      "sha256": "ea754f4f5a5be9faf7b5e2dd5f3fc773d7b7f92333ed83a819bc7d976aa754d9",
-      "bytes": 53532
+      "sha256": "a85cbe07d2202d45da4c419056f35e212e543ac8435950ef6f0cc5c0c9033aed",
+      "bytes": 54296
     },
     {
       "file": "l10n/prerender/de/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
@@ -14327,7 +14327,7 @@
     {
       "file": "l10n/prerender/de/panchkarma-treatment.html.html.gz",
       "sha256": "c96b81eb228f2dd0098c1b40772c6195f2b94d91a0fc7efd047f915e0205efad",
-      "bytes": 26744
+      "bytes": 26673
     },
     {
       "file": "l10n/prerender/de/payment-policy-compliance.html.gz",
@@ -14931,8 +14931,8 @@
     },
     {
       "file": "l10n/prerender/fr/ayurvedic-treatment-packages.html.html.gz",
-      "sha256": "6e75ea6ba909a3343c0c9ff9cbffed2eea87307048e1df8a66f9a9733bfe3cf8",
-      "bytes": 27877
+      "sha256": "2865589fcd173aa3b6ee0a465ebacb807e4df7a674bb76beddf95ae7ca968a7d",
+      "bytes": 27739
     },
     {
       "file": "l10n/prerender/fr/ayurvedic-treatments.html.gz",
@@ -15136,8 +15136,8 @@
     },
     {
       "file": "l10n/prerender/fr/index.json",
-      "sha256": "0e637cebddba461cb2e7d2f692640a4c5bc3cef72122e5c07d0f3249acd236af",
-      "bytes": 53536
+      "sha256": "1c3545ddc932e9eac734902cd19ba907d6c6c7277b045906d740ddcccf5f922c",
+      "bytes": 54300
     },
     {
       "file": "l10n/prerender/fr/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
@@ -15412,7 +15412,7 @@
     {
       "file": "l10n/prerender/fr/panchkarma-treatment.html.html.gz",
       "sha256": "ce9eb29d57970b946af935e99f6579dc5dc4ef83483ebbc724d6ac5a72310da8",
-      "bytes": 26738
+      "bytes": 26656
     },
     {
       "file": "l10n/prerender/fr/payment-policy-compliance.html.gz",
@@ -16016,8 +16016,8 @@
     },
     {
       "file": "l10n/prerender/es/ayurvedic-treatment-packages.html.html.gz",
-      "sha256": "1851428ca7085392af612ac023d2d1d098c514a850546a852c7a9f2ecc7f5d94",
-      "bytes": 27539
+      "sha256": "154f6db4cd67e92b7f9d07aaea6ea561d9f46b7e34e70b08b3b005a4206c6292",
+      "bytes": 27412
     },
     {
       "file": "l10n/prerender/es/ayurvedic-treatments.html.gz",
@@ -16221,8 +16221,8 @@
     },
     {
       "file": "l10n/prerender/es/index.json",
-      "sha256": "9d96694c5d99b270a37ee66f87039723ef7c0580c0c7158e357f4da0cfd46374",
-      "bytes": 53532
+      "sha256": "252f117094589d9f1f25ee650e13336f6a54dabaced028f7a62274a03a43d929",
+      "bytes": 54296
     },
     {
       "file": "l10n/prerender/es/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
@@ -16497,7 +16497,7 @@
     {
       "file": "l10n/prerender/es/panchkarma-treatment.html.html.gz",
       "sha256": "a642d80217b221f6876d1f5a1dcd4a5d8fe765f78da9379d8e4d2bad2e05c006",
-      "bytes": 26044
+      "bytes": 26038
     },
     {
       "file": "l10n/prerender/es/payment-policy-compliance.html.gz",
@@ -17101,8 +17101,8 @@
     },
     {
       "file": "l10n/prerender/it/ayurvedic-treatment-packages.html.html.gz",
-      "sha256": "0228be42cdc179c747f18de08b26161f6e0b8849e6a45f82eedf0a83a33f49b5",
-      "bytes": 27436
+      "sha256": "eff678860cb967a89081164c20064c0141eb80271561283d4464550b461bb972",
+      "bytes": 27318
     },
     {
       "file": "l10n/prerender/it/ayurvedic-treatments.html.gz",
@@ -17306,8 +17306,8 @@
     },
     {
       "file": "l10n/prerender/it/index.json",
-      "sha256": "8f09a9d31bd72ce0791413ee5895a5dc44b6aa6dfc56acac33d50c0fa38f035f",
-      "bytes": 53532
+      "sha256": "5454c0a94105a1d3e0c95c9aac8408a24132ca35798653d0e0277b7035ddb5e4",
+      "bytes": 54296
     },
     {
       "file": "l10n/prerender/it/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
@@ -17582,7 +17582,7 @@
     {
       "file": "l10n/prerender/it/panchkarma-treatment.html.html.gz",
       "sha256": "62b619dbd56743f1b8ee4f5d8607d9ccf69530bd1b99a081f73e5dd8b3465ff8",
-      "bytes": 25974
+      "bytes": 25952
     },
     {
       "file": "l10n/prerender/it/payment-policy-compliance.html.gz",
@@ -18186,8 +18186,8 @@
     },
     {
       "file": "l10n/prerender/pt/ayurvedic-treatment-packages.html.html.gz",
-      "sha256": "cbac46572ffe5f1a590fc57986d76fb83887ddf19ab1d509ba77bd32ca6aba69",
-      "bytes": 27482
+      "sha256": "dc8514a8d87c613e4de490ec75709c9681291fed49a5c7b13daef35a9e23d1fa",
+      "bytes": 27374
     },
     {
       "file": "l10n/prerender/pt/ayurvedic-treatments.html.gz",
@@ -18391,8 +18391,8 @@
     },
     {
       "file": "l10n/prerender/pt/index.json",
-      "sha256": "d85bd12f2e1dcb2875b511c651027b76715d9b1de2ec29be6631538c30c8640e",
-      "bytes": 53531
+      "sha256": "76575c521ae1bf1c3ce815b0d544d29a23a139f6bf07a46d42ace3431a397b8e",
+      "bytes": 54295
     },
     {
       "file": "l10n/prerender/pt/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
@@ -18667,7 +18667,7 @@
     {
       "file": "l10n/prerender/pt/panchkarma-treatment.html.html.gz",
       "sha256": "bcbfa65011c0883a616ad8dc87ba11f328823d6fa19f9decf03229c33818f142",
-      "bytes": 26087
+      "bytes": 26061
     },
     {
       "file": "l10n/prerender/pt/payment-policy-compliance.html.gz",
@@ -19271,8 +19271,8 @@
     },
     {
       "file": "l10n/prerender/nl/ayurvedic-treatment-packages.html.html.gz",
-      "sha256": "9651fc98c30cc106a0e79eaef3a7400ae4c55bd082c9434d62ebfabf456c2646",
-      "bytes": 27394
+      "sha256": "ba7b9edff5956799f56f745ac3bb52903cb836002336108bf7fe36b7d34f8db9",
+      "bytes": 27272
     },
     {
       "file": "l10n/prerender/nl/ayurvedic-treatments.html.gz",
@@ -19476,8 +19476,8 @@
     },
     {
       "file": "l10n/prerender/nl/index.json",
-      "sha256": "d1bae3a5935b8ba41ac3caa9312d4d762759c3cb170b83d0d545fdaf8dbee3e7",
-      "bytes": 53531
+      "sha256": "182f37e4fde314665a68628a8423839798da797a52a86a2769da3bd07f8f4b16",
+      "bytes": 54295
     },
     {
       "file": "l10n/prerender/nl/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
@@ -19752,7 +19752,7 @@
     {
       "file": "l10n/prerender/nl/panchkarma-treatment.html.html.gz",
       "sha256": "3856ddf45a427e0de176e8c0d44dca8fd37298b5180a22f809503e41f6202137",
-      "bytes": 25809
+      "bytes": 25786
     },
     {
       "file": "l10n/prerender/nl/payment-policy-compliance.html.gz",
@@ -20356,8 +20356,8 @@
     },
     {
       "file": "l10n/prerender/ru/ayurvedic-treatment-packages.html.html.gz",
-      "sha256": "cc15417ff192ca859a8da929a5ececc4f00dd65488b8dd0040683c3a2c452540",
-      "bytes": 30166
+      "sha256": "4dfb513a8cfe376a6c94395cad64d70c9c32a491e8b5d6c75a0dee1d382c4e48",
+      "bytes": 29947
     },
     {
       "file": "l10n/prerender/ru/ayurvedic-treatments.html.gz",
@@ -20561,8 +20561,8 @@
     },
     {
       "file": "l10n/prerender/ru/index.json",
-      "sha256": "231e678311e40a25db09df849d47675dc03615326fccd79f111eb2bd0404a6a2",
-      "bytes": 53532
+      "sha256": "968b4dcc43d15722418ff23cb47c458a4557ae0796e5e0be6d811ba86bc33086",
+      "bytes": 54296
     },
     {
       "file": "l10n/prerender/ru/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
@@ -20837,7 +20837,7 @@
     {
       "file": "l10n/prerender/ru/panchkarma-treatment.html.html.gz",
       "sha256": "32aced2bbe551337b9c5ca6344b978ec8fd7249947c8c963000155d91d0f9e00",
-      "bytes": 29236
+      "bytes": 29071
     },
     {
       "file": "l10n/prerender/ru/payment-policy-compliance.html.gz",
@@ -21441,8 +21441,8 @@
     },
     {
       "file": "l10n/prerender/ar/ayurvedic-treatment-packages.html.html.gz",
-      "sha256": "0e16a4b89409b389b4e8b059fc6d4aff3c01039fd9b03576ed2d4822a01fd249",
-      "bytes": 28651
+      "sha256": "3a5a13ab1126fbbb875f8a10812bd21415f1127bde12bd12b817b84da5a6fc75",
+      "bytes": 28402
     },
     {
       "file": "l10n/prerender/ar/ayurvedic-treatments.html.gz",
@@ -21646,8 +21646,8 @@
     },
     {
       "file": "l10n/prerender/ar/index.json",
-      "sha256": "26082dcb7b7fbff86882443ddbc1cf08312a429ff248eac12a7e37cc63d9d8f8",
-      "bytes": 53522
+      "sha256": "c3bb4c26a9ee627468efce9a0a0d554147f74c36054ac6b237c5fadfcd6231d4",
+      "bytes": 54286
     },
     {
       "file": "l10n/prerender/ar/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
@@ -21922,7 +21922,7 @@
     {
       "file": "l10n/prerender/ar/panchkarma-treatment.html.html.gz",
       "sha256": "3e30e2c62573d42144cce0882980bbab8b2643c0e75f2367b08a479a343ec9fd",
-      "bytes": 27375
+      "bytes": 27187
     },
     {
       "file": "l10n/prerender/ar/payment-policy-compliance.html.gz",
@@ -22526,8 +22526,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/ayurvedic-treatment-packages.html.html.gz",
-      "sha256": "a936ac4bf3ff3d3cac748d2331a1fb2f3ff19737950af608e91a1ad30439fd2a",
-      "bytes": 28560
+      "sha256": "97137e760802ac686a2b368f82a5e4e0ada28b32312e379e0c894a84cd72731e",
+      "bytes": 28169
     },
     {
       "file": "l10n/prerender/zh-Hans/ayurvedic-treatments.html.gz",
@@ -22731,8 +22731,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/index.json",
-      "sha256": "cf791c6929c2b47e036b248e051c5dbdbc830959be3ae9ca9c416d246e0c3164",
-      "bytes": 53462
+      "sha256": "7b533253ca72a71d7a4bb603e8e20915660565fe1cd938e569867ff00b821b62",
+      "bytes": 54228
     },
     {
       "file": "l10n/prerender/zh-Hans/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
@@ -23007,7 +23007,7 @@
     {
       "file": "l10n/prerender/zh-Hans/panchkarma-treatment.html.html.gz",
       "sha256": "63df1db6af3b365cc8a9508feb7d393dd84170da105323b811d9d42b7c739cdc",
-      "bytes": 27281
+      "bytes": 26804
     },
     {
       "file": "l10n/prerender/zh-Hans/payment-policy-compliance.html.gz",
@@ -23611,8 +23611,8 @@
     },
     {
       "file": "l10n/prerender/ja/ayurvedic-treatment-packages.html.html.gz",
-      "sha256": "fb255989573e08b96c74688340490878c05df9cc72247d90285dce615d198b6e",
-      "bytes": 29263
+      "sha256": "fec641501fcd5a0fac13923f6486ddb65c806e0a205838b70d61edc50ac8905e",
+      "bytes": 28940
     },
     {
       "file": "l10n/prerender/ja/ayurvedic-treatments.html.gz",
@@ -23816,8 +23816,8 @@
     },
     {
       "file": "l10n/prerender/ja/index.json",
-      "sha256": "268be0c629a9de405985b52c806020509d14f60fa35ddce8bad440f1f0d8769d",
-      "bytes": 53474
+      "sha256": "ca1da932470cacf863d9fed162df4b4e8e6463fe77ac6db1fb68c4b609fbbcbc",
+      "bytes": 54240
     },
     {
       "file": "l10n/prerender/ja/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
@@ -24092,7 +24092,7 @@
     {
       "file": "l10n/prerender/ja/panchkarma-treatment.html.html.gz",
       "sha256": "d4f580b2131a2e77479ff9c78a44d42928758eef44e6306db497183835ee80f1",
-      "bytes": 27977
+      "bytes": 27662
     },
     {
       "file": "l10n/prerender/ja/payment-policy-compliance.html.gz",
@@ -24696,8 +24696,8 @@
     },
     {
       "file": "l10n/prerender/ko/ayurvedic-treatment-packages.html.html.gz",
-      "sha256": "2a6554da87a8894da546b2a24f193376f80e90e5946aaf2c0985df2407e3e6b0",
-      "bytes": 28332
+      "sha256": "4976cff105ef725ddd331800b78f003293ea6443df7876b27dbfdbbcc97c8f8c",
+      "bytes": 27995
     },
     {
       "file": "l10n/prerender/ko/ayurvedic-treatments.html.gz",
@@ -24901,8 +24901,8 @@
     },
     {
       "file": "l10n/prerender/ko/index.json",
-      "sha256": "5619e982ffc56d6775b40861b950aedf9870bce44a4cb5191003e37d2d22bb51",
-      "bytes": 53474
+      "sha256": "f1b127ce2ba79903e3edb87c4b33e9c2af2855a8a54a615741a391311135da04",
+      "bytes": 54239
     },
     {
       "file": "l10n/prerender/ko/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
@@ -25177,7 +25177,7 @@
     {
       "file": "l10n/prerender/ko/panchkarma-treatment.html.html.gz",
       "sha256": "68339103c416531bebf6c6138789262264decee551fc4dfe77e7f40b7ed67ab5",
-      "bytes": 26904
+      "bytes": 26608
     },
     {
       "file": "l10n/prerender/ko/payment-policy-compliance.html.gz",
