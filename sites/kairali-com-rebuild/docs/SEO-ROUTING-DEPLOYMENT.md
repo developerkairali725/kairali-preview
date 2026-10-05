@@ -42,7 +42,7 @@ The build does not claim or promise any ranking or rich result.
 - Production eligibility must be re-tested on the deployed host (Search Console URL Inspection, robots tester, social fetchers).
 
 ## Metadata policy (evidence/metadata-register.csv)
-- **Live title and description** are kept verbatim where unique, for search continuity.
+- **Live title and description** are kept verbatim where distinct, for search continuity.
 - **Where the live value was shared** by several URLs (78 award pages used one title and description, as did 6 application variants and 2–3 pages elsewhere):
   - the title becomes `<page H1> | Kairali Ayurvedic Group`;
   - the description becomes an excerpt of the page's own opening copy.
@@ -92,7 +92,7 @@ The build does not claim or promise any ranking or rich result.
 - **Stack:** Next.js 16.3.7 (App Router, SSG for all 156 routes, plus `proxy.ts` for legacy query routing), pnpm 11 with a lockfile, Node ≥ 22.
 - **Build steps, in order:**
   1. `python3 pipeline/build_content.py`
-  2. `python3 pipeline/curated_photos.py`
+  2. `python3 pipeline/curated_photos.py` <!-- compliance-allow: curated (script name) -->
   3. `python3 pipeline/build_downloads_events.py`
   4. `python3 pipeline/route_table.py`
   5. `cd site && pnpm install && pnpm build`

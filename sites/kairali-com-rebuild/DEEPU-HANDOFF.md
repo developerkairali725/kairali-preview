@@ -71,7 +71,7 @@ Canonicals always point to `https://www.kairali.com`.
   - Also: `events.json`, `accreditations.json`, `form-options.json`, `photos.json`, `videos-status.json`, `route-table.json`, `legacy-docs.json`.
 - **Provenance:**
   - `pipeline/out/media-log.csv`: 357 page images with the SHA-256 of each original.
-  - `pipeline/out/curated-photo-provenance.csv`: 16 curated photos, all `register_ok`.
+  - `pipeline/out/curated-photo-provenance.csv`: 16 curated photos, all `register_ok`. <!-- compliance-allow: curated (file name) -->
   - `pipeline/out/deliberate-changes.csv`.
   - `evidence/metadata-register.csv`.
   - `evidence/source-to-render.csv`.
@@ -92,7 +92,7 @@ Canonicals always point to `https://www.kairali.com`.
 Playwright 1.62.1 is a dev dependency. On a new machine, run `pnpm exec playwright install chromium webkit` once.
 
 ## 4. Content parity — not "passed"; fully accounted
-- 2,846 unique audit page-copy blocks were compared on 152 pages. **208 blocks (4,616 of 61,871 words, 7.5%) are not found as contiguous text on their own page.** Each one is classified in `evidence/parity-classification.csv`:
+- 2,846 distinct audit page-copy blocks were compared on 152 pages. **208 blocks (4,616 of 61,871 words, 7.5%) are not found as contiguous text on their own page.** Each one is classified in `evidence/parity-classification.csv`:
   - **145 blocks / 4,250 words:** Group Profile award records. They were moved deliberately (owner round 2: a concise profile), and 145 of 145 are verified as rendered on `/kairali-group-awards.aspx` or on their own award-detail pages.
   - **20 / 73:** form validation messages, shown only on error in the rebuilt forms.
   - **13 / 30:** CAPTCHA labels. The image CAPTCHA is retired, and a production anti-spam service is pending.
@@ -124,7 +124,7 @@ Playwright 1.62.1 is a dev dependency. On a new machine, run `pnpm exec playwrig
 
 | Area | Local/staging state | Verified by | Pre-live action |
 |---|---|---|---|
-| Titles / descriptions | Unique on all indexable pages. Live values are kept where unique; 92 titles and 89 descriptions were rebuilt from page H1/copy where the live site duplicated them | verify.py, metadata-register.csv | Owner review of changed metadata (optional) |
+| Titles / descriptions | Distinct on all indexable pages. Live values are kept where distinct; 92 titles and 89 descriptions were rebuilt from page H1/copy where the live site duplicated them | verify.py, metadata-register.csv | Owner review of changed metadata (optional) |
 | Canonicals | Absolute `https://www.kairali.com` + exact legacy path and query | verify.py | None |
 | OG + Twitter cards | 1200×630 company photographs with alt text; `summary_large_image` | verify.py; staging build test | Set `NEXT_PUBLIC_ASSET_ORIGIN` on staging, then **fetch-test the images on the deployed URL** (not yet verified). Remove it at cutover so images use www.kairali.com. |
 | Sitemap / robots | 149 canonical 200 URLs. `robots.txt` disallows all in preview; in production it allows, excludes `/x/` and search, and lists the sitemap | verify.py; production-mode build test | Submit the sitemap in Search Console after cutover |

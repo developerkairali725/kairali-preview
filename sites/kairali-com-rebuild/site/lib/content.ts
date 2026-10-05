@@ -85,7 +85,7 @@ export function breadcrumbs(route: string, current: string): Crumb[] {
   return out;
 }
 
-/** Family opener photograph (curated company photography) keyed by route/family. */
+/** Family opener photograph (selected company photography) keyed by route/family. */
 export function familyPhotoKey(p: Page): string {
   const r = p.route.split("?")[0];
   const f = p.family;

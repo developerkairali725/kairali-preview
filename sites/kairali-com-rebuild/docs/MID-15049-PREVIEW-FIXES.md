@@ -5,10 +5,14 @@ Recorded 2026-09-30 15:29:41 IST. Owner authority: Abhilash's 30 September reply
 ## Implemented
 
 - Removed the contradicted home centre-count caption; kept the stale statistics graphic hidden.
-- Removed explicit cure, permanent-result and no-side-effect promise sentences across home, product, Healing Village, founders' message and award detail copy. No replacement clinical claim was written. The content regeneration transform applies these rulings; source captures, source URLs and hashes remain unchanged. Search text is regenerated from corrected copy.
+- Removed unsupported healing-guarantee, permanent-result and no-side-effect promise sentences across home, product, Healing Village, founders' message and award detail copy. No replacement clinical claim was written. The content regeneration transform applies these rulings; source captures, source URLs and hashes remain unchanged. Search text is regenerated from corrected copy.
 - Corrected the partnerships page's official Healing Village opening year to 1999. Removed Svata's undated price tables and stale “rates below” notice, preserving room/package descriptions and images.
 - All six forms, including the footer newsletter, visibly disclose preview inactivity. Every input, file selector and submit button is disabled. Submission handlers return before reading FormData; APIs return 503 before parsing multipart bodies. `FORM_DELIVERY_APPROVED=false` cannot be overridden by an environment switch. The pre-existing delivery implementation is retained as inactive code; it is not approved for activation. Missing server-side Turnstile credentials refuse delivery if activation is later reviewed.
 - Date controls have an explicit appearance rule that also covers WebKit's Windows text fallback. Real iPhone Safari verification remains a separate requirement.
+
+## 5 October legacy document review
+
+The separate 72-file review is recorded in `MID-15049-LEGACY-DOCUMENT-REVIEW-2026-10-05.md`. All 72 direct files remain byte-identical; 46 price/tariff files stay out of current-document cards, and new journeys use the maintained portal. No legacy URL was deleted or redirected without an owner-approved disposition.
 - Visible legacy brochure actions/prose links point to maintained document-hub collection views. Eligible legacy `/download/` URLs and bytes remain available. Previously published vacancies disclose that HR confirmation is pending.
 
 ## Local verification

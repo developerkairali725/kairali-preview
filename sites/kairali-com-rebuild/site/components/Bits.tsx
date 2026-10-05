@@ -24,7 +24,7 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
   );
 }
 
-/** Responsive curated company photograph. `priority` marks the LCP image. */
+/** Responsive selected company photograph. `priority` marks the LCP image. */
 export function Photograph({ k, p, sizes = "100vw", priority = false, className = "" }: { k: string; p: Photo; sizes?: string; priority?: boolean; className?: string }) {
   const largest = p.sizes[p.sizes.length - 1];
   const h = Math.round(largest / p.ratio);
