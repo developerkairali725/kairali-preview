@@ -666,3 +666,6 @@
  #ahv-design-root[data-ahv-route="/offers/"] [style*="grid-template-columns"][style*="110px"]:has(.ahv-care-cta-row)>:first-child{width:100%!important;height:190px!important;min-height:0!important}
  #ahv-design-root[data-ahv-route="/offers/"] .ahv-care-cta-row a{width:100%;font-size:17px!important;padding:14px 18px!important}
 }
+
+/* Preserve the footer contrast while deferred background layers initialise. */
+#ahv-design-root[data-ahv-route="/offers/"] footer{background-color:#2a2014!important}

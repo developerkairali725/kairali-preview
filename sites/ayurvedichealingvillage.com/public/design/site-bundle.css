@@ -931,6 +931,9 @@
  #ahv-design-root[data-ahv-route="/offers/"] .ahv-care-cta-row a{width:100%;font-size:17px!important;padding:14px 18px!important}
 }
 
+/* Preserve the footer contrast while deferred background layers initialise. */
+#ahv-design-root[data-ahv-route="/offers/"] footer{background-color:#2a2014!important}
+
 /* source: /design/campaign.css */
 /* AHV — the two legacy campaign families (15 routes).
  *
