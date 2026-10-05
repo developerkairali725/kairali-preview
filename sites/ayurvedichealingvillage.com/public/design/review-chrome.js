@@ -393,11 +393,20 @@
       }
     });
   }
+  function readableHomeLabels(container) {
+    container.querySelectorAll("[style]").forEach(function (el) {
+      var size = parseFloat(el.style.fontSize);
+      if (size && size < 16) {
+        el.style.fontSize = "16px"; el.style.lineHeight = "1.6"; el.style.color = "#514a3f";
+      }
+    });
+  }
   function homeReviewRefinements() {
     if (root.getAttribute("data-ahv-family") !== "home-hi-fi-v4") return;
     var finder = root.querySelector("[data-ahv-home-finder]");
     if (finder) {
       finder.parentElement.classList.add("ahv-finder-section");
+      readableHomeLabels(finder);
       var input = finder.querySelector("input[name=q]");
       if (input && document.documentElement.lang.indexOf("en") === 0) input.placeholder = "e.g. back pain";
     }
@@ -413,13 +422,14 @@
       var title = section.querySelector("h2");
       var text = title && title.textContent.trim();
       var tr = window.__AHV_T || {};
-      if (text === "Our Experts" || text === tr["Our Experts"]) section.classList.add("ahv-home-experts");
+      if (text === "Our Experts" || text === tr["Our Experts"]) { section.classList.add("ahv-home-experts"); readableHomeLabels(section); }
       if (section.querySelector("button") && Array.from(section.querySelectorAll("a[href]")).some(function(a) { return a.getAttribute("href") === ((window.AHV_LOCAL_PATHS || {})["/gallery/"] || "/gallery/"); })) section.classList.add("ahv-home-gallery");
       if (section.querySelector('a[href*="youtube.com/watch"]')) {
         section.classList.add("ahv-home-stories");
-        section.querySelectorAll('a[href*="youtube.com/watch"] [style*="position:absolute"]').forEach(function (overlay) {
-          if (!overlay.querySelector("svg")) return;
-          overlay.style.inset = "auto"; overlay.style.left = "12px"; overlay.style.bottom = "12px";
+        section.querySelectorAll('a[href*="youtube.com/watch"] [style]').forEach(function (overlay) {
+          if (overlay.style.position !== "absolute" || !overlay.querySelector("svg")) return;
+          if (overlay.style.left !== "12px" || overlay.style.bottom !== "12px") { overlay.style.inset = "auto"; overlay.style.left = "12px"; overlay.style.bottom = "12px"; }
+          if (overlay.style.background !== "transparent") overlay.style.background = "transparent";
         });
       }
     });

@@ -5,7 +5,7 @@ const routes = JSON.parse(fs.readFileSync('l10n/routes.json','utf8')).routes;
 const reviewed = fs.readFileSync('public/design/review-chrome.js','utf8');
 const controls = reviewed.slice(reviewed.indexOf('  // Owner 5 Oct:'), reviewed.indexOf('  // OWNER-REG-02'));
 const actions = reviewed.slice(reviewed.indexOf('  function ctaBar()'), reviewed.indexOf('  window.addEventListener("resize"'));
-const home = reviewed.slice(reviewed.indexOf('  function homeReviewRefinements()'), reviewed.indexOf('  function pass()'));
+const home = reviewed.slice(reviewed.indexOf('  function readableHomeLabels(container)'), reviewed.indexOf('  function pass()'));
 for (const locale of fs.readdirSync('public/ahv/l10n')) {
  const base = `public/ahv/l10n/${locale}/design`;
  if (!fs.existsSync(`${base}/chrome.js`)) continue;
