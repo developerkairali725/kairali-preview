@@ -321,7 +321,7 @@
       if (h.charAt(0) === "/" && h === here && form && form.id) a.setAttribute("href", "#" + form.id);
       // a landing page: "Enquire" goes to its own in-page consultation form (the LP's "Request a consultation" link)
       if (campaignRoot && a.classList.contains("ahv-cta-enquire")) {
-        var campaignForm = root.querySelector("#enquiry, form[id]");
+        var campaignForm = root.querySelector("#enquiry, #consult") || root.querySelector("main form[id]");
         if (campaignForm) a.setAttribute("href", "#" + campaignForm.id);
       }
       if (isLp && a.classList.contains("ahv-cta-enquire")) {
