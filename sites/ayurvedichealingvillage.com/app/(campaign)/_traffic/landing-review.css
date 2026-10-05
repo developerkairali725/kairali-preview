@@ -6,7 +6,7 @@
 .r10-revision.r10-revision .site-header nav a{white-space:nowrap}
 .r10-revision.r10-revision .site-header .primary,.r10-revision.r10-revision .site-header .header-cta{margin:0!important;min-height:44px!important;padding:9px 18px!important;font-size:16px!important}
 .r10-revision.r10-revision [id]{scroll-margin-top:108px}
-.r10-revision.r10-revision .content{width:min(1280px,calc(100% - var(--landing-gutter)*2))!important;margin-inline:auto!important;padding-top:16px}
+.r10-revision.r10-revision .content{width:min(1280px,calc(100% - var(--landing-gutter)*2))!important;margin-inline:auto!important;padding-inline:0!important;padding-top:16px}
 .r10-revision.r10-revision .content-section{padding:var(--landing-section) 0!important;margin:0!important;min-height:0;max-width:100%;width:100%;border-bottom:1px solid var(--ahv-release-color-5)}
 .r10-revision.r10-revision .content-section:before,.r10-revision.r10-revision .content-section:after{content:none!important;display:none!important}
 .r10-revision.r10-revision .content-section>h2:before,.r10-revision.r10-revision .content-section>.reading>h2:first-child:before,.r10-revision.r10-revision .editorial-reading>h2:before{content:"";display:block;width:42px;height:2px;margin:0 0 18px;background:var(--ahv-release-color-4)}
@@ -309,3 +309,9 @@
 .r10-revision.r10-revision .content-section .eyebrow{display:block;color:var(--ahv-release-color-3)!important}
 .r10-revision.r10-revision .programme-directory>summary{min-height:56px;padding:18px 0;font-weight:700;cursor:pointer}
 .r10-revision.r10-revision .why-feature-photo,.r10-revision.r10-revision .feature-photo{object-fit:cover!important}
+
+/* Keep the packages offer photo proportional after Next adds intrinsic dimensions. */
+.r10-revision:not(.tl-page):not(.p26-page) #section-4 figure img{height:auto}
+
+/* The shared mobile action bar already provides the enquiry action. */
+.r10-revision.r10-revision .mobile-cta{display:none!important}
