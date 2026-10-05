@@ -7334,6 +7334,28 @@
     "/apply-now.aspx?id=23"
    ]
   },
+  "/privacy-policy.aspx": {
+   "status": 200,
+   "final": 200,
+   "from": [
+    "/",
+    "/about-us.aspx",
+    "/apply-now.aspx",
+    "/apply-now.aspx?id=17",
+    "/apply-now.aspx?id=23"
+   ]
+  },
+  "/terms-and-conditions.aspx": {
+   "status": 200,
+   "final": 200,
+   "from": [
+    "/",
+    "/about-us.aspx",
+    "/apply-now.aspx",
+    "/apply-now.aspx?id=17",
+    "/apply-now.aspx?id=23"
+   ]
+  },
   "/ayurvedic-hospitality-video-library.aspx": {
    "status": 200,
    "final": 200,
@@ -7357,28 +7379,6 @@
    ]
   },
   "/sitemap.xml": {
-   "status": 200,
-   "final": 200,
-   "from": [
-    "/",
-    "/about-us.aspx",
-    "/apply-now.aspx",
-    "/apply-now.aspx?id=17",
-    "/apply-now.aspx?id=23"
-   ]
-  },
-  "/terms-and-conditions.aspx": {
-   "status": 200,
-   "final": 200,
-   "from": [
-    "/",
-    "/about-us.aspx",
-    "/apply-now.aspx",
-    "/apply-now.aspx?id=17",
-    "/apply-now.aspx?id=23"
-   ]
-  },
-  "/privacy-policy.aspx": {
    "status": 200,
    "final": 200,
    "from": [
@@ -9999,7 +9999,7 @@
   {
    "route": "/",
    "title": "Kairali Ayurvedic Group | Health through Ayurveda since 1908",
-   "description": "Kairali Ayurvedic Group: four generations of Ayurveda since 1908 \u2014 The Ayurvedic Healing Village in Palakkad, Villa Raag in Goa, Ayurvedic treatment centres, products and training.",
+   "description": "Kairali Ayurvedic Group: four generations of Ayurveda since 1908. The Ayurvedic Healing Village in Palakkad, Villa Raag in Goa, products and training.",
    "canonical": "https://www.kairali.com",
    "h1": 1,
    "robots": "noindex, follow",

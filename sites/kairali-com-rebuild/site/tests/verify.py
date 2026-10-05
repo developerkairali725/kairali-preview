@@ -10,6 +10,9 @@ import concurrent.futures as cf, hashlib, json, os, re, sys, unicodedata, urllib
 from urllib.parse import urlsplit, unquote, quote
 from html import unescape
 
+if hasattr(sys.stdout, "reconfigure"):
+    sys.stdout.reconfigure(encoding="utf-8")
+
 BASE = os.environ.get("BASE", "http://127.0.0.1:8774")
 PROD = "https://www.kairali.com"
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -39,7 +42,7 @@ results = {"routes": [], "docs": [], "parity": [], "media": {}, "links": {}, "se
 def fail(kind, detail): results["failures"].append({"kind": kind, "detail": detail})
 
 # ------------------------------------------------------------------ 1. dispositions
-mapping = json.load(open(os.path.join(REF, "route-family-mapping.json")))
+mapping = json.load(open(os.path.join(REF, "route-family-mapping.json"), encoding="utf-8"))
 expect = []
 for r in mapping["routes"]:
     rt = r["route"]
@@ -77,8 +80,8 @@ with cf.ThreadPoolExecutor(8) as ex:
         if not res["ok"]: fail("route", res)
 
 # ------------------------------------------------------------------ 2. documents (byte-exact)
-manifest = json.load(open(os.path.join(REF, "legacy-document-manifest.json")))
-audit_docs = {unquote(urlsplit(d["document_url"]).path): d for d in json.load(open(os.path.join(REF, "downloads-reconciliation.json")))}
+manifest = json.load(open(os.path.join(REF, "legacy-document-manifest.json"), encoding="utf-8"))
+audit_docs = {unquote(urlsplit(d["document_url"]).path): d for d in json.load(open(os.path.join(REF, "downloads-reconciliation.json"), encoding="utf-8"))}
 DOCS_PRESENT = os.path.isdir(PUBLIC_DOCS) and len(os.listdir(PUBLIC_DOCS)) > 0
 doc_paths = {unquote(urlsplit(m["legacy_url"]).path): m["sha256"] for m in manifest}
 for p, d in audit_docs.items():
@@ -110,7 +113,7 @@ def visible_text(html):
     main = m.group(1) if m else html
     main = re.sub(r"<[^>]+>", " ", main)
     return norm(main)
-blocks = json.load(open(os.path.join(REPO, "..", "..", "audits", "kairali-com-rebuild", "audit-page-copy-blocks.json")))
+blocks = json.load(open(os.path.join(REPO, "..", "..", "audits", "kairali-com-rebuild", "audit-page-copy-blocks.json"), encoding="utf-8"))
 by_url = {}
 for b in blocks:
     if b["classification"] != "page-copy": continue
@@ -232,7 +235,7 @@ for b in bad: fail("sitemap", b)
 st, _, robots = get("/robots.txt")
 results["robots_local"] = robots.decode()
 
-json.dump(results, open(os.path.join(EVID, "verify-report.json"), "w"), indent=1, default=list)
+json.dump(results, open(os.path.join(EVID, "verify-report.json"), "w", encoding="utf-8"), indent=1, default=list)
 R = results
 routes_ok = sum(r["ok"] for r in R["routes"])
 docs_ok = sum(r["ok"] for r in R["docs"])
@@ -243,7 +246,7 @@ summary = f"""# Automated verification — {BASE}
 |---|---|
 | Route dispositions (215 mapping + observations + case/guard probes) | {routes_ok}/{len(R['routes'])} as expected |
 | Legacy documents served byte-identical (SHA-256) | {f"{docs_ok}/{len(R['docs'])} ({sum(d['in_owner_manifest'] for d in R['docs'])} in owner legacy manifest)" if R['docs'] else "SKIPPED — documents not restored locally"} |
-| Page-copy parity vs audit blocks (not a pass/fail: classify with tests/registers.py) | {sum(p['blocks'] for p in R['parity'])} unique blocks on {len(R['parity'])} pages; {sum(p['missing_blocks'] for p in R['parity'])} blocks not found as contiguous text on the same page ({missing_total} of {words_total} words) on {len(par_pages)} pages |
+| Page-copy parity vs audit blocks (not a pass/fail: classify with tests/registers.py) | {sum(p['blocks'] for p in R['parity'])} distinct blocks on {len(R['parity'])} pages; {sum(p['missing_blocks'] for p in R['parity'])} blocks not found as contiguous text on the same page ({missing_total} of {words_total} words) on {len(par_pages)} pages |
 | Rendered images | {sum(1 for m in R['media'].values() if m['status'] == 200)}/{len(R['media'])} return 200; missing alt attr {sum(m['missing_alt_attr'] for m in R['media'].values())}; missing width/height {sum(m['missing_dims'] for m in R['media'].values())} |
 | Internal link targets | {sum(1 for l in R['links'].values() if l['final'] == 200)}/{len(R['links'])} resolve to 200 (≤1 redirect) |
 | Sitemap | {R['sitemap']['count']} URLs, non-200: {len(R['sitemap']['non200'])}, production host only: {R['sitemap']['hosts_ok']} |
@@ -252,7 +255,7 @@ summary = f"""# Automated verification — {BASE}
 
 ## Failures by kind
 """ + "\n".join(f"- {k}: {n}" for k, n in sorted({f['kind']: sum(1 for x in R['failures'] if x['kind'] == f['kind']) for f in R['failures']}.items())) + "\n"
-open(os.path.join(EVID, "verify-summary.md"), "w").write(summary)
+open(os.path.join(EVID, "verify-summary.md"), "w", encoding="utf-8").write(summary)
 print(summary)
 for f in R["failures"][:40]:
     print(f["kind"], json.dumps(f["detail"], default=list)[:220])

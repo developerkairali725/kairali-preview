@@ -1,5 +1,6 @@
 {
   "domain": "kairali.com",
+  "appRoot": "site",
   "entity": "group",
   "register": "A",
   "locales": [
@@ -12,5 +13,6 @@
     "FR"
   ],
   "video": "none",
-  "brand": "kairali"
+  "brand": "kairali",
+  "brandTokenProfile": "premium-v3"
 }

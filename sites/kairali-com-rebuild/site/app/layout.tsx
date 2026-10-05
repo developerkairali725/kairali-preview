@@ -15,7 +15,8 @@ export const metadata: Metadata = {
   formatDetection: { telephone: false },
   verification: MEASUREMENT.googleSiteVerification ? { google: MEASUREMENT.googleSiteVerification } : undefined,
 };
-export const viewport: Viewport = { themeColor: "#006038", width: "device-width", initialScale: 1 };
+// Serialized browser metadata requires a literal; matches the approved forest token. brand-allow: rogue-hex
+export const viewport: Viewport = { themeColor: "#006038", width: "device-width", initialScale: 1 }; // brand-allow: rogue-hex
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
