@@ -23,10 +23,10 @@ for(const route of context.window.AHV_CAMPAIGN_NINE.routes.filter(r=>!r.path.sta
   }
  });
 }
-test('LP staging exposure retains denied analytics and short form validation',()=>{
+test('LP staging exposure retains explicit analytics activation and short form validation',()=>{
  const layout=read('campaign-v110/CampaignDocument.tsx'),form=read('app/(lp)/_components/campaign-enquiry-form.tsx');
  assert.ok(!layout.includes('notFound()'));
- assert.match(layout,/AHV_ANALYTICS === "1" && process.env.AHV_STAGING === "0"/);
+ assert.match(layout,/measurementForEnvironment\(process.env, analyticsConfig\)/);
  assert.match(form,/form.reportValidity\(\)/);
  assert.match(form,/action="\/api\/forms-unavailable" method="post"/);
  assert.match(form,/fetch\('\/api\/lead\/'/);

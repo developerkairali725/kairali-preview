@@ -3,7 +3,7 @@ window.AHV_MAHARAJA = {
  "h1": "Maharaja Suite",
  "eyebrow": "Our Villas",
  "facts": [
-  "144 – 432 Sqft",
+  "603 – 654 Sqft",
   "Twin/King Size Bed",
   "Upto 4 Adults",
   "Garden View"

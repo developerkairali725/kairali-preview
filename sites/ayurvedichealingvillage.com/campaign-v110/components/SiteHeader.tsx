@@ -9,7 +9,7 @@ export default function SiteHeader({ enquireLabel = "Enquire" }: { enquireLabel?
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
-        <a className={styles.brand} href="https://ayurvedichealingvillage.com/">
+        <a className={styles.brand} href="/">
           <Image src={logo} alt={site.name} width={180} height={42} priority />
         </a>
         <div className={styles.actions}>

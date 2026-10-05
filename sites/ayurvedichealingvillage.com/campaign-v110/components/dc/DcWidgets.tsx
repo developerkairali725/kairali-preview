@@ -8,7 +8,9 @@
 //   - galleries:   "Previous image" / "Next image" around a swipeable track,
 //                  with the "Image N of M" counter kept in step
 //   - selectors:   "Previous/Next guest experience" over a list of stories
-// One delegated click listener; nothing is rendered.
+//   - read more:   long text shortened with a "Read more" button (added here)
+//   - chevrons:    a sign on detail controls that have none
+// One delegated click listener; nothing else is rendered.
 
 import { useEffect } from "react";
 
@@ -82,6 +84,119 @@ function stepStories(btn: HTMLElement, dir: 1 | -1) {
   if (status) status.textContent = (status.textContent ?? "").replace(/\d+(\s+of\s+)\d+/i, `${j + 1}$1${items.length}`);
 }
 
+// "Read more" for long text: a paragraph (or a block of paragraphs) taller than
+// a few lines is shown shortened with a fade, and a button opens the rest. The
+// words stay in the page (search engines and screen readers get all of them);
+// only the visible height changes. Blocks already hidden (closed tabs) are
+// measured when they are shown.
+const SKIP = "form, header, footer, nav, details, button, a, [role=dialog], #ahv-cta-bar, #ahv-contact-controls, .dc-vt, .dc-feat";
+const LABELS: Record<string, [string, string]> = {
+  de: ["Weiterlesen", "Weniger anzeigen"], fr: ["Lire la suite", "Réduire"],
+  es: ["Leer más", "Leer menos"], it: ["Leggi di più", "Mostra meno"],
+  pt: ["Ler mais", "Ler menos"], nl: ["Meer lezen", "Minder tonen"],
+  ru: ["Читать далее", "Свернуть"], hi: ["और पढ़ें", "कम दिखाएँ"],
+  ar: ["اقرأ المزيد", "عرض أقل"], zh: ["展开阅读", "收起"],
+  ja: ["続きを読む", "折りたたむ"], ko: ["더 읽기", "접기"],
+};
+let moreSeq = 0;
+
+function labels(el: Element): [string, string] {
+  const lang = (el.closest("[lang]")?.getAttribute("lang") ?? document.documentElement.lang ?? "en").slice(0, 2).toLowerCase();
+  return LABELS[lang] ?? ["Read more", "Read less"];
+}
+
+function textBlocks(root: Element): HTMLElement[] {
+  const seen = new Set<HTMLElement>();
+  for (const p of root.querySelectorAll<HTMLElement>("p, blockquote")) {
+    if (p.closest(SKIP) || p.closest("[data-dc-more]")) continue;
+    const parent = p.parentElement;
+    // several paragraphs together in one box read as one block
+    const group =
+      parent && parent !== root && parent.children.length >= 2 && [...parent.children].every((c) => c.tagName === "P")
+        ? parent
+        : p;
+    seen.add(group);
+  }
+  return [...seen];
+}
+
+function addReadMore(root: Element) {
+  const phone = window.innerWidth < 700;
+  // read every block first, then change them all, so the page is laid out once
+  const picks: { el: HTMLElement; h: number }[] = [];
+  for (const el of textBlocks(root)) {
+    if (el.dataset.dcMore !== undefined) continue;
+    const box = el.getBoundingClientRect();
+    if (!box.height) continue;
+    const cs = getComputedStyle(el.tagName === "P" ? el : (el.firstElementChild ?? el));
+    const lh = parseFloat(cs.lineHeight) || parseFloat(cs.fontSize) * 1.6;
+    // a block can ask for its own length (data-dc-more-lines), e.g. the
+    // Panchakarma cards, shown two lines each so the row reads evenly
+    const force = Number(el.dataset.dcMoreLines) || 0;
+    // narrow columns are left whole: clipping them looks broken
+    if (!force && box.width < 200) continue;
+    const keep = force || (phone ? 7 : box.width < 560 ? 6 : 8);
+    if (box.height / lh <= (force ? keep + 0.5 : keep + 1)) continue;
+    // text set in newspaper columns would reflow unevenly when shortened
+    if ([el, el.parentElement].some((e) => e && getComputedStyle(e).columnCount !== "auto")) continue;
+    picks.push({ el, h: Math.round(keep * lh) });
+  }
+  for (const pick of picks) {
+    let { el } = pick;
+    const { h } = pick;
+    // inside a grid or a row (cards, list grids) the button must stay inside the
+    // block itself, or it becomes a separate cell beside the card
+    const parentDisplay = el.parentElement ? getComputedStyle(el.parentElement).display : "block";
+    if (el.tagName === "LI" || /flex|grid/.test(parentDisplay)) {
+      el.dataset.dcMore = "";
+      const inner = document.createElement("div");
+      inner.append(...el.childNodes);
+      el.append(inner);
+      el = inner;
+    }
+    el.dataset.dcMore = "";
+    el.id ||= `dc-more-${++moreSeq}`;
+    el.classList.add("dc-more");
+    el.style.setProperty("--dc-more-h", `${h}px`);
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "dc-more-btn dc-chev";
+    btn.setAttribute("aria-expanded", "false");
+    btn.setAttribute("aria-controls", el.id);
+    btn.dataset.dcMoreBtn = "";
+    btn.textContent = labels(el)[0];
+    el.after(btn);
+  }
+}
+
+function toggleReadMore(btn: HTMLElement) {
+  const el = document.getElementById(btn.getAttribute("aria-controls") ?? "");
+  if (!el) return;
+  const open = btn.getAttribute("aria-expanded") !== "true";
+  btn.setAttribute("aria-expanded", String(open));
+  el.classList.toggle("dc-more-open", open);
+  btn.textContent = labels(el)[open ? 1 : 0];
+  if (!open && el.getBoundingClientRect().top < 0) el.scrollIntoView({ block: "start", behavior: "smooth" });
+}
+
+// A control that opens more detail but shows no sign of it (a FAQ question, a
+// "see the full process" summary) gets a chevron that turns when it is open.
+function markDisclosures(root: Element) {
+  for (const c of root.querySelectorAll<HTMLElement>("details > summary, button[aria-expanded][aria-controls]")) {
+    if (c.classList.contains("dc-chev")) continue;
+    const t = (c.textContent ?? "").trim();
+    const signed =
+      /^[+−-]|[+−-]$/.test(t) ||
+      c.querySelector("svg, [class*=chev], [class*=arrow], [class*=icon]") ||
+      [c, ...c.children].some((e) =>
+        ["::before", "::after"].some((ps) => !["none", "normal", '""'].includes(getComputedStyle(e, ps).content)),
+      );
+    if (signed) continue;
+    c.classList.add("dc-chev");
+    if (/flex/.test(getComputedStyle(c).display)) c.classList.add("dc-chev-end");
+  }
+}
+
 export default function DcWidgets() {
   useEffect(() => {
     const root = document.querySelector(ROOT);
@@ -92,8 +207,13 @@ export default function DcWidgets() {
       if (!btn || !root.contains(btn) || btn.closest("form")) return;
       const label = btn.getAttribute("aria-label") ?? "";
 
+      if (btn.hasAttribute("data-dc-more-btn")) {
+        toggleReadMore(btn);
+        return;
+      }
       if (btn.getAttribute("role") === "tab" && btn.hasAttribute("aria-controls")) {
         selectTab(btn);
+        addReadMore(root);
         return;
       }
       if (btn.hasAttribute("aria-expanded") && btn.hasAttribute("aria-controls")) {
@@ -102,6 +222,7 @@ export default function DcWidgets() {
         const target = document.getElementById(btn.getAttribute("aria-controls") ?? "");
         if (target) target.hidden = !open;
         setSign(btn, open);
+        if (open) addReadMore(root);
         return;
       }
       if (label === "Previous image" || label === "Next image") {
@@ -139,10 +260,50 @@ export default function DcWidgets() {
       if (parts) syncGallery(parts);
     };
 
+    // measure once fonts and layout settle; again when the width changes (a
+    // block that was hidden, or narrower, may now need it)
+    let timer = 0;
+    // each section is measured for "Read more" only as it comes near the screen,
+    // so no work is spent on parts of the page nobody has scrolled to yet
+    const near =
+      typeof IntersectionObserver === "function"
+        ? new IntersectionObserver(
+            (entries) => {
+              for (const e of entries) {
+                if (!e.isIntersecting) continue;
+                near?.unobserve(e.target);
+                addReadMore(e.target);
+              }
+            },
+            { rootMargin: "800px 0px" },
+          )
+        : null;
+    const scan = () => {
+      markDisclosures(root);
+      const parts = root.querySelectorAll("section, article, [data-ahv-rail-col]");
+      if (near && parts.length) for (const s of parts) near.observe(s);
+      else addReadMore(root);
+    };
+    const onResize = () => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(scan, 300);
+    };
+    // after load, when the browser is idle, so it never delays the first paint or input
+    const idle = (fn: () => void) =>
+      typeof window.requestIdleCallback === "function" ? window.requestIdleCallback(fn, { timeout: 2500 }) : setTimeout(fn, 1200);
+    const start = () => document.fonts.ready.then(() => idle(scan));
+    if (document.readyState === "complete") start();
+    else window.addEventListener("load", start, { once: true });
+    window.addEventListener("resize", onResize);
+
     root.addEventListener("click", onClick);
     root.addEventListener("keydown", onKey as EventListener);
     for (const t of tracks.keys()) t.addEventListener("scroll", onScroll, { passive: true });
     return () => {
+      window.clearTimeout(timer);
+      near?.disconnect();
+      window.removeEventListener("resize", onResize);
+      window.removeEventListener("load", start);
       root.removeEventListener("click", onClick);
       root.removeEventListener("keydown", onKey as EventListener);
       for (const t of tracks.keys()) t.removeEventListener("scroll", onScroll);

@@ -3,6 +3,7 @@ import campaignRoutes from "../../../campaign-v110/routes.json";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { DesignView } from "../_families/design-view";
+import { StaticDesignView } from "../_families/static-design-view";
 import { routeMetadata } from "../_families/metadata";
 import { findRoute, subRoutes } from "../_families/registry";
 
@@ -46,5 +47,6 @@ export default async function Page({
   const { slug } = await params;
   const route = findRoute(slug);
   if (!route) notFound();
+  if (route.path === "/contact-us/" || route.path === "/panchakarma-therapy/") return <StaticDesignView route={route} />;
   return <DesignView route={route} />;
 }

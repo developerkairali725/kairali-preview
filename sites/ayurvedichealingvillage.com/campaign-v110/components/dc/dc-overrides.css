@@ -79,7 +79,7 @@
   margin: 0 auto;
   padding: 56px 0 72px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 /* 5 · the shared enquiry form keeps its own colours. Staging's dark form
@@ -246,8 +246,26 @@
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
+/* enquiry band: heading, intro and form centred, with room inside the band */
+#ahv-design-root .campaign-enquiry {
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+  text-align: center;
+}
+#ahv-design-root .campaign-enquiry [class*="formSlot"] {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+@media (max-width: 700px) {
+  #ahv-design-root .campaign-enquiry {
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+  }
+}
 #ahv-design-root .campaign-family-nav {
-  padding-inline: 0;
+  /* tabs start where the page content starts (content is min(1220px, 94%) wide) */
+  padding-inline: max(3vw, calc((100% - 1220px) / 2));
 }
 #ahv-design-root .air-membership .air-section-nav {
   padding-left: var(--container-pad) !important;
@@ -303,10 +321,888 @@
 }
 
 /* 17 · missing source: the family-retreat hero photo (AHV-V2-hero_img.jpg)
-   exists neither in the saved staging files nor on the live site. The hero
-   keeps its dark panel with readable text and no longer requests the file
-   (which returned 404). Recorded as MISSING SOURCE in OPEN-ITEMS. */
+   exists neither in the saved staging files nor on the live site. On the
+   user's instruction the hero shows the Maharaja Suite photo instead, under
+   the same dark tint as the other retreat heroes so the text stays readable. */
 [data-ahv-route="/family-ayurvedic-retreat-kerala.html"] section:first-of-type {
-  background-image: none !important;
+  background-image: linear-gradient(color-mix(in srgb, var(--ink) 74%, transparent), color-mix(in srgb, var(--ink) 80%, transparent)), url(/ahv/assets/img/AHV-Maharaja-G18.webp) !important;
   background-color: var(--ink) !important;
+}
+
+/* KTAHV review (30 Sep 2026) · campaign layout on desktop (>=1000px).
+   Presentation only: no word, image, video, link or order changes.
+   - Gallery: a section whose heading is followed by photo + caption pairs, with a
+     single heading and no bullet list ("Come & Experience The New Look", "Video
+     Testimonials", "Post-Treatment Care" …), reads three across, caption under photo.
+   - Other sections with two or more single photos (and no bullet list) drop the
+     36% float that stacked photos at uneven heights; each photo sits in one
+     right-hand column level with its own caption/text.
+   - Sections with bullet lists keep the original layout.
+   - An empty campaign section or photo grid no longer leaves a blank band.
+   - Lists of 6+ items (the programme lists) read in two columns. */
+#ahv-design-root .campaign-photo-grid:empty,
+#ahv-design-root .campaign-section.dc-empty { display:none; }
+@media(min-width:1000px){
+  #ahv-design-root .campaign-section.dc-pair {
+    display:grid; grid-template-columns:minmax(0,1fr) minmax(0,36%); column-gap:36px; grid-auto-flow:row dense; align-items:start;
+  }
+  #ahv-design-root .campaign-section.dc-pair > * { grid-column:1; min-width:0; }
+  #ahv-design-root .campaign-section.dc-pair > :is(h2, h3, .campaign-heading, .campaign-eyebrow) { grid-column:1 / -1; }
+  #ahv-design-root .campaign-section.dc-pair > .campaign-photo-grid { grid-column:2; float:none; width:auto; margin:0 0 24px; }
+  #ahv-design-root .campaign-copy-block ul:not([role]):has(> li:nth-child(6)) { display:block !important; columns:2; column-gap:48px; max-width:none !important; }
+  #ahv-design-root .campaign-copy-block ul:not([role]):has(> li:nth-child(6)) > li { break-inside:avoid; margin-bottom:8px; }
+}
+
+/* Card sections (desktop >=1000px): a section made of three or more photo units,
+   each a photo with its label and text ("Come & Experience The New Look",
+   "Post-Treatment Care", "Kairali steps to holistic healing", "Why Choose Us?",
+   "Awards & Accreditations" …), reads as cards three across: photo, label, text,
+   every photo box the same height and every card top-aligned. A unit's label may
+   come just before or just after its photo. The section's own heading block (up to
+   four items before the first photo) stays on top; anything after the last unit
+   follows full width, below the cards. Same words, images and order. */
+@media(min-width:1000px){
+  #ahv-design-root .campaign-section.dc-k { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:28px; row-gap:0; align-items:start; grid-auto-flow:row; }
+  #ahv-design-root .campaign-section.dc-k > * { grid-column:1 / -1; min-width:0; }
+  #ahv-design-root .campaign-section.dc-k > .campaign-photo-grid { float:none; width:auto; max-width:none; margin:0 0 14px; }
+  #ahv-design-root .campaign-section.dc-k > .campaign-photo-grid > .campaign-photo:not(.dc-icon) { min-height:180px; align-items:center; }
+  #ahv-design-root .campaign-section.dc-k > .campaign-photo-grid > .campaign-photo img { max-height:100%; width:auto; max-width:100%; object-fit:contain; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kc1 { grid-column:1; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kc2 { grid-column:2; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kc3 { grid-column:3; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr1 { grid-row:1; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr2 { grid-row:2; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr3 { grid-row:3; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr4 { grid-row:4; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr5 { grid-row:5; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr6 { grid-row:6; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr7 { grid-row:7; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr8 { grid-row:8; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr9 { grid-row:9; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr10 { grid-row:10; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr11 { grid-row:11; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr12 { grid-row:12; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr13 { grid-row:13; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr14 { grid-row:14; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr15 { grid-row:15; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr16 { grid-row:16; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr17 { grid-row:17; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr18 { grid-row:18; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr19 { grid-row:19; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr41 { grid-row:41; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr42 { grid-row:42; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr43 { grid-row:43; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr44 { grid-row:44; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr45 { grid-row:45; }
+  #ahv-design-root .campaign-section.dc-k > .dc-kr46 { grid-row:46; }
+  #ahv-design-root .campaign-section.dc-k > .dc-k-label { margin:0 0 8px; }
+  #ahv-design-root .campaign-section.dc-k > .dc-k-copy { margin-bottom:36px; }
+}
+
+/* Video testimonials on every campaign page (>=1000px): one testimonial per row,
+   its text on the left and its video on the right, level with each other — the
+   same pattern as the campaign-section pairs above. Layout only. */
+@media(min-width:1000px){
+  #ahv-design-root div:has(> article > a[data-recorded-embed]) { grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:40px 48px !important; }
+  #ahv-design-root article:has(> a[data-recorded-embed]) { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,48%); column-gap:24px; align-items:center; background:transparent !important; border:0 !important; overflow:visible !important; }
+  #ahv-design-root article:has(> a[data-recorded-embed]) > a[data-recorded-embed] { grid-column:2; grid-row:1; border-radius:4px; overflow:hidden; }
+  #ahv-design-root article:has(> a[data-recorded-embed]) > :not(a) { grid-column:1; grid-row:1; padding:0 !important; border-top:0 !important; }
+  #ahv-design-root ul:has(> li > a[href*="youtube.com/embed"]) { grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:40px 48px !important; }
+  #ahv-design-root ul:has(> li > a[href*="youtube.com/embed"]) > li { background:transparent !important; border:0 !important; overflow:visible !important; }
+  #ahv-design-root ul:has(> li > a[href*="youtube.com/embed"]) > li > a { display:grid !important; grid-template-columns:minmax(0,1fr) minmax(0,48%); column-gap:24px; align-items:center; }
+  #ahv-design-root ul:has(> li > a[href*="youtube.com/embed"]) > li > a > img { grid-column:2; grid-row:1; width:100% !important; max-width:100% !important; height:auto !important; border-radius:4px; }
+  #ahv-design-root ul:has(> li > a[href*="youtube.com/embed"]) > li > a > :not(img) { grid-column:1; grid-row:1; padding:0 !important; }
+}
+
+/* Feature cards ("Are You Looking To ?" on preventive-rejuvenation-detoxification):
+   heading + text pairs, each with its photo and a decorative line icon. The
+   gallery rule above no longer takes sections with h3 headings (it pushed the
+   headings below the photos). Each photo sits over its own heading and text,
+   photos all the same height, and each icon becomes a small round badge on its
+   photo instead of a separate tan block. Same images, same words, same order. */
+#ahv-design-root .campaign-section.dc-feature > .campaign-photo-grid { display:contents !important; }
+#ahv-design-root .campaign-section.dc-feature .campaign-photo { position:relative !important; height:240px !important; margin:0 0 20px !important; align-items:center !important; }
+#ahv-design-root .campaign-section.dc-feature .campaign-photo img { height:100% !important; width:auto !important; max-height:100% !important; max-width:100% !important; object-fit:contain !important; }
+#ahv-design-root .campaign-section.dc-feature .campaign-photo:has(img[src*="/background-"]) { z-index:1 !important; height:76px !important; width:76px !important; padding:12px !important; margin:0 0 -18px !important; align-self:end !important; justify-self:center !important; border-radius:50% !important; border:3px solid var(--ivory) !important; box-shadow:0 2px 10px color-mix(in srgb, black 8%, transparent) !important; }
+#ahv-design-root .campaign-section.dc-feature > h3 { margin-top:28px !important; margin-bottom:14px !important; }
+#ahv-design-root .campaign-section.dc-feature > .campaign-copy-block { margin-bottom:36px !important; }
+@media(max-width:999px){
+  #ahv-design-root .campaign-section.dc-feature { display:flex !important; flex-direction:column !important; }
+  #ahv-design-root .campaign-section.dc-feature .campaign-photo:has(img[src*="/background-"]) { align-self:center !important; margin:-58px 0 0 !important; }
+  #ahv-design-root .campaign-section.dc-feature .campaign-photo:has(img[src$="/image-1.webp"]) { order:1 !important; }
+  #ahv-design-root .campaign-section.dc-feature .campaign-photo:has(img[src$="/background-1.webp"]) { order:2 !important; }
+  #ahv-design-root .campaign-section.dc-feature > :nth-child(1 of h3) { order:3 !important; }
+  #ahv-design-root .campaign-section.dc-feature > :nth-child(1 of .campaign-copy-block) { order:4 !important; }
+  #ahv-design-root .campaign-section.dc-feature .campaign-photo:has(img[src$="/image-2.webp"]) { order:5 !important; }
+  #ahv-design-root .campaign-section.dc-feature .campaign-photo:has(img[src$="/background-2.webp"]) { order:6 !important; }
+  #ahv-design-root .campaign-section.dc-feature > :nth-child(2 of h3) { order:7 !important; }
+  #ahv-design-root .campaign-section.dc-feature > :nth-child(2 of .campaign-copy-block) { order:8 !important; }
+  #ahv-design-root .campaign-section.dc-feature .campaign-photo:has(img[src$="/image-3.webp"]) { order:9 !important; }
+  #ahv-design-root .campaign-section.dc-feature .campaign-photo:has(img[src$="/background-3.webp"]) { order:10 !important; }
+  #ahv-design-root .campaign-section.dc-feature > :nth-child(3 of h3) { order:11 !important; }
+  #ahv-design-root .campaign-section.dc-feature > :nth-child(3 of .campaign-copy-block) { order:12 !important; }
+}
+@media(min-width:1000px){
+  #ahv-design-root .campaign-section.dc-feature { display:grid !important; grid-template-columns:repeat(3,minmax(0,1fr)) !important; column-gap:32px !important; row-gap:0 !important; align-items:start !important; }
+  #ahv-design-root .campaign-section.dc-feature > * { grid-column:1 / -1 !important; min-width:0 !important; }
+  #ahv-design-root .campaign-section.dc-feature > .campaign-eyebrow { grid-row:1 !important; }
+  #ahv-design-root .campaign-section.dc-feature > h2 { grid-row:2 !important; margin-bottom:24px !important; }
+  #ahv-design-root .campaign-section.dc-feature .campaign-photo:has(img[src$="/image-1.webp"]) { grid-column:1 !important; grid-row:3 !important; }
+  #ahv-design-root .campaign-section.dc-feature .campaign-photo:has(img[src$="/background-1.webp"]) { grid-column:1 !important; grid-row:3 !important; }
+  #ahv-design-root .campaign-section.dc-feature > :nth-child(1 of h3) { grid-column:1 !important; grid-row:4 !important; }
+  #ahv-design-root .campaign-section.dc-feature > :nth-child(1 of .campaign-copy-block) { grid-column:1 !important; grid-row:5 !important; }
+  #ahv-design-root .campaign-section.dc-feature .campaign-photo:has(img[src$="/image-2.webp"]) { grid-column:2 !important; grid-row:3 !important; }
+  #ahv-design-root .campaign-section.dc-feature .campaign-photo:has(img[src$="/background-2.webp"]) { grid-column:2 !important; grid-row:3 !important; }
+  #ahv-design-root .campaign-section.dc-feature > :nth-child(2 of h3) { grid-column:2 !important; grid-row:4 !important; }
+  #ahv-design-root .campaign-section.dc-feature > :nth-child(2 of .campaign-copy-block) { grid-column:2 !important; grid-row:5 !important; }
+  #ahv-design-root .campaign-section.dc-feature .campaign-photo:has(img[src$="/image-3.webp"]) { grid-column:3 !important; grid-row:3 !important; }
+  #ahv-design-root .campaign-section.dc-feature .campaign-photo:has(img[src$="/background-3.webp"]) { grid-column:3 !important; grid-row:3 !important; }
+  #ahv-design-root .campaign-section.dc-feature > :nth-child(3 of h3) { grid-column:3 !important; grid-row:4 !important; }
+  #ahv-design-root .campaign-section.dc-feature > :nth-child(3 of .campaign-copy-block) { grid-column:3 !important; grid-row:5 !important; }
+}
+
+/* Read more (DcWidgets): long text is shown to a few lines with a soft fade and
+   a "Read more" button that opens the rest; all words stay in the page.
+   Chevron: any control that opens more detail without a sign of its own gets a
+   small chevron that turns when open (FAQ questions, "see the full process"). */
+#ahv-design-root .dc-more:not(.dc-more-open) {
+  max-height:var(--dc-more-h); overflow:hidden;
+  -webkit-mask-image:linear-gradient(black calc(100% - 2.4em), transparent); mask-image:linear-gradient(black calc(100% - 2.4em), transparent);
+}
+#ahv-design-root .dc-more { margin-bottom:6px !important; }
+#ahv-design-root .dc-more-btn {
+  display:inline-flex; align-items:center; gap:10px; min-height:44px; margin:0 0 18px; padding:0;
+  background:none; border:0; cursor:pointer; color:var(--green-mid);
+  font:600 14px/1 var(--font-body, inherit); letter-spacing:.12em; text-transform:uppercase;
+}
+#ahv-design-root .dc-more-btn:hover, #ahv-design-root .dc-more-btn:focus-visible { color:var(--gold); }
+#ahv-design-root .dc-chev::after {
+  content:""; display:inline-block; flex:none; width:8px; height:8px; margin:0 4px 4px 12px;
+  border-right:2px solid currentColor; border-bottom:2px solid currentColor;
+  transform:rotate(45deg); transition:transform .2s ease;
+}
+#ahv-design-root .dc-more-btn.dc-chev::after { margin-left:0; }
+#ahv-design-root .dc-chev-end { justify-content:space-between; gap:16px; }
+#ahv-design-root .dc-chev-end::after { margin-left:auto; }
+#ahv-design-root details[open] > .dc-chev::after, #ahv-design-root .dc-chev[aria-expanded="true"]::after { transform:rotate(-135deg); margin-bottom:-4px; }
+#ahv-design-root details > summary.dc-chev { cursor:pointer; }
+@media (prefers-reduced-motion:reduce){ #ahv-design-root .dc-chev::after { transition:none; } }
+/* the browser's own ▶ marker gives way to the one chevron, at the end of the line */
+#ahv-design-root summary.dc-chev { list-style:none; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+#ahv-design-root summary.dc-chev::-webkit-details-marker { display:none; }
+#ahv-design-root summary.dc-chev::after { margin-left:auto; }
+
+/* FAQ sections with photos (weight-loss, preventive-rejuvenation-detoxification):
+   the photos floated beside the questions at uneven heights. On desktop the
+   photos now sit three across, each quote under its own photo, and the
+   questions follow at full width, all the same. */
+@media(min-width:1000px){
+  #ahv-design-root .campaign-section.dc-faqphotos { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:24px; row-gap:0; align-items:start; }
+  #ahv-design-root .campaign-section.dc-faqphotos > * { grid-column:1 / -1; min-width:0; }
+  #ahv-design-root .campaign-section.dc-faqphotos > .campaign-photo-grid { float:none; width:auto; max-width:none; margin:8px 0 12px; }
+  #ahv-design-root .campaign-section.dc-faqphotos > .campaign-photo-grid + .campaign-eyebrow { margin:0 0 32px; text-align:center; }
+  #ahv-design-root .campaign-section.dc-faqphotos > :nth-child(1 of .campaign-photo-grid) { grid-column:1; grid-row:3; }
+  #ahv-design-root .campaign-section.dc-faqphotos > :nth-child(1 of .campaign-photo-grid) + .campaign-eyebrow { grid-column:1; grid-row:4; }
+  #ahv-design-root .campaign-section.dc-faqphotos > :nth-child(2 of .campaign-photo-grid) { grid-column:2; grid-row:3; }
+  #ahv-design-root .campaign-section.dc-faqphotos > :nth-child(2 of .campaign-photo-grid) + .campaign-eyebrow { grid-column:2; grid-row:4; }
+  #ahv-design-root .campaign-section.dc-faqphotos > :nth-child(3 of .campaign-photo-grid) { grid-column:3; grid-row:3; }
+  #ahv-design-root .campaign-section.dc-faqphotos > :nth-child(3 of .campaign-photo-grid) + .campaign-eyebrow { grid-column:3; grid-row:4; }
+}
+
+/* Package sections ("Your Ayurvedic Rejuvenation & Detoxification Package",
+   "Your Ayurvedic Weight Loss Package"): the package list was squeezed into two
+   thin columns beside a photo, and the amenity icons were scattered. On desktop
+   each photo sits in the right-hand column beside its text, the list reads in one
+   column beside it, and the amenities after the list line up as icon + label
+   pairs, three to a line. */
+@media(min-width:1000px){
+  #ahv-design-root .campaign-section.dc-package { display:flow-root; }
+  #ahv-design-root .campaign-section.dc-package > .campaign-photo-grid:not(:has(img[data-dc-kind="mark"])) { float:right; clear:right; width:36%; max-width:none; margin:0 0 24px 36px; }
+  #ahv-design-root .campaign-section.dc-package .campaign-copy-block ul:not([role]) { columns:1 !important; }
+  #ahv-design-root .campaign-section.dc-package > .campaign-copy-block:has(ul) ~ .campaign-copy-block { clear:both; }
+  #ahv-design-root .campaign-section.dc-package > .campaign-copy-block:has(ul) ~ .campaign-photo-grid:has(img[data-dc-kind="mark"]) { float:none; display:inline-flex; align-items:center; gap:14px; width:auto; max-width:none; margin:10px 14px 10px 0; vertical-align:middle; }
+  #ahv-design-root .campaign-section.dc-package > .campaign-copy-block:has(ul) ~ .campaign-photo-grid:has(img[data-dc-kind="mark"]) > .campaign-photo { background:transparent; padding:0; width:auto; height:auto; border-radius:0; }
+  #ahv-design-root .campaign-section.dc-package > .campaign-copy-block:has(ul) ~ .campaign-photo-grid:has(img[data-dc-kind="mark"]) > .campaign-photo img { height:40px; width:auto; }
+  #ahv-design-root .campaign-section.dc-package > .campaign-copy-block:has(ul) ~ .campaign-photo-grid:has(img[data-dc-kind="mark"]) + .campaign-eyebrow { display:inline-block; width:calc(33.33% - 84px); margin:10px 0; vertical-align:middle; }
+  #ahv-design-root .campaign-section.dc-package > .campaign-copy-block:has(ul) ~ .campaign-photo-grid:has(img[data-dc-kind="mark"]):nth-child(1 of .campaign-copy-block:has(ul) ~ .campaign-photo-grid) { margin-top:28px; }
+}
+
+/* "Read details" sections (details.campaign-more): the browser's ▶ gives way to
+   the same chevron as "Read more", after the words "Read details" (words unchanged),
+   turning when open; the label matches the "Read more" buttons. */
+#ahv-design-root .campaign-more > summary { list-style:none; cursor:pointer; }
+#ahv-design-root .campaign-more > summary::-webkit-details-marker { display:none; }
+#ahv-design-root .campaign-more > summary::after {
+  display:table; min-height:44px; line-height:44px; margin-top:4px; padding-right:20px;
+  font:600 14px/44px var(--font-body); letter-spacing:.12em; text-transform:uppercase;
+  background:no-repeat right center / 10px 10px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M1 3l4 4 4-4' fill='none' stroke='%232f4a3a' stroke-width='1.8'/%3E%3C/svg%3E");
+}
+#ahv-design-root .campaign-more[open] > summary::after { background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M1 7l4-4 4 4' fill='none' stroke='%232f4a3a' stroke-width='1.8'/%3E%3C/svg%3E"); }
+
+/* banners and text graphics (marked by dc-layout.ts): whole picture, never cut to 3:2; banners 900px+ full width */
+#ahv-design-root .campaign-photo-grid.dc-wide { float:none !important; clear:both; width:auto !important; max-width:100% !important; grid-column:1 / -1 !important; margin-left:0 !important; margin-right:0 !important; }
+#ahv-design-root .campaign-photo > img.dc-graphic { aspect-ratio:auto !important; object-fit:contain !important; height:auto !important; }
+#ahv-design-root .campaign-photo:has(> img.dc-graphic) { display:flex !important; align-items:center; justify-content:center; }
+
+/* --- Premium layout pass (dc-layout.ts adds the structure; words, images, order unchanged) --- */
+
+/* Split sections: text in one column, the photo in the other, centred against
+   each other; mobile keeps one column in reading order. */
+#ahv-design-root .dc-split-media > .campaign-photo-grid { float:none !important; width:auto !important; max-width:none !important; margin:8px 0 12px !important; grid-template-columns:minmax(0,1fr) !important; }
+#ahv-design-root .dc-split-media > .campaign-copy-block { margin:0; text-align:center; }
+#ahv-design-root .dc-split-media > .campaign-copy-block p { margin:4px auto 0 !important; font-size:16px !important; color:var(--muted); font-style:italic; }
+#ahv-design-root .dc-split-text > :last-child { margin-bottom:0; }
+#ahv-design-root .campaign-section > .dc-split { grid-column:1 / -1 !important; min-width:0; }
+#ahv-design-root .dc-split + .dc-split { margin-top:56px; }
+#ahv-design-root .dc-split + :not(.dc-split) { margin-top:32px; }
+#ahv-design-root .dc-split-text .campaign-copy-block ul:not([role]) { columns:1 !important; }
+@media(min-width:1000px){
+  #ahv-design-root .dc-split { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,42%); column-gap:64px; align-items:center; }
+  #ahv-design-root .dc-split--media-first { grid-template-columns:minmax(0,42%) minmax(0,1fr); }
+  #ahv-design-root .dc-split-media > .campaign-photo-grid { margin:0 !important; }
+}
+
+/* A photo and its icon (play / pause / badge) as one picture: the icon sits on the photo */
+#ahv-design-root .campaign-photo-grid.dc-overlay { display:grid !important; grid-template-columns:minmax(0,1fr) !important; gap:0 !important; }
+#ahv-design-root .dc-overlay > .campaign-photo { grid-area:1 / 1; }
+#ahv-design-root .dc-overlay > .dc-badge { z-index:1; align-self:start; justify-self:end; margin:18px !important; padding:0 !important; background:transparent !important; width:auto; }
+#ahv-design-root .dc-overlay > .dc-badge img { max-width:96px !important; height:auto !important; }
+#ahv-design-root .dc-overlay > .dc-play { align-self:center; justify-self:center; margin:0 !important; width:76px; height:76px; border-radius:50%; background:color-mix(in srgb, var(--white) 90%, transparent) !important; box-shadow:0 6px 24px color-mix(in srgb, black 18%, transparent); display:flex !important; align-items:center; justify-content:center; transition:transform .2s ease; }
+#ahv-design-root .dc-overlay > .dc-play img { max-width:30px !important; max-height:30px; }
+#ahv-design-root .dc-overlay > .dc-play img[src*="play-vector"] { max-width:100% !important; max-height:none; }
+#ahv-design-root .dc-play-link { display:block; border-radius:4px; }
+#ahv-design-root .dc-play-link:hover .dc-play, #ahv-design-root .dc-play-link:focus-visible .dc-play { transform:scale(1.08); }
+
+/* "Watch the video" link (a section of its own) sits under its video as a button; same words */
+#ahv-design-root .campaign-section.dc-video-link { padding-top:0 !important; border-top:0 !important; margin-top:-24px; }
+#ahv-design-root .dc-video-link > figure { margin:0 !important; border:0 !important; background:transparent !important; }
+#ahv-design-root .dc-video-link figcaption { padding:0 !important; justify-content:center; }
+#ahv-design-root .dc-video-link figcaption > span { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); }
+#ahv-design-root .dc-video-link figcaption > a { display:inline-flex !important; align-items:center; gap:12px; min-height:48px !important; padding:0 26px; border:1px solid var(--green-mid); border-radius:999px; color:var(--green-mid); text-decoration:none; font-weight:600; font-size:15px; letter-spacing:.1em; text-transform:uppercase; }
+#ahv-design-root .dc-video-link figcaption > a::before { content:""; width:0; height:0; border-left:10px solid currentColor; border-top:6px solid transparent; border-bottom:6px solid transparent; }
+#ahv-design-root .dc-video-link figcaption > a:hover { background:var(--green-mid); color:var(--white); }
+
+/* Decorative images (a section's only photo grid, all aria-hidden) become the section background */
+#ahv-design-root .campaign-section.dc-has-decor { position:relative; isolation:isolate; overflow:hidden; }
+#ahv-design-root .campaign-photo-grid.dc-decor { position:absolute !important; inset:0; margin:0 !important; max-width:none !important; width:auto !important; z-index:-1; pointer-events:none; display:block !important; float:none !important; }
+#ahv-design-root .dc-decor > .campaign-photo { position:absolute; top:0; bottom:0; width:min(30%, 360px); padding:0 !important; background:transparent !important; }
+#ahv-design-root .dc-decor > .campaign-photo:first-child { right:0; }
+#ahv-design-root .dc-decor > .campaign-photo:last-child { left:0; }
+#ahv-design-root .dc-decor > .campaign-photo:only-child { left:auto; right:0; }
+#ahv-design-root .dc-decor img { width:100% !important; height:100% !important; max-height:none !important; aspect-ratio:auto !important; object-fit:cover !important; opacity:.55; border-radius:0 !important; }
+@media(max-width:999px){ #ahv-design-root .dc-decor > .campaign-photo { width:45%; } #ahv-design-root .dc-decor img { opacity:.35; } }
+
+/* "What results can you expect" (preventive-rejuvenation-detoxification): the
+   original ring - the portrait in the middle, three results each side with their
+   icons facing it. Mobile: portrait on top, then icon + result rows. */
+#ahv-design-root .campaign-section.dc-ring > .campaign-photo-grid { display:contents !important; }
+#ahv-design-root .campaign-section.dc-ring .campaign-photo { background:transparent !important; padding:0 !important; margin:0 !important; float:none !important; }
+#ahv-design-root .campaign-section.dc-ring .campaign-photo img[data-dc-kind="mark"] { width:64px !important; height:64px !important; max-width:none !important; object-fit:contain !important; }
+#ahv-design-root .campaign-section.dc-ring .campaign-photo:has(img[src$="/mid-image.webp"]) img { width:100% !important; height:auto !important; aspect-ratio:1 !important; object-fit:cover !important; border-radius:50% !important; box-shadow:0 0 0 10px var(--sand) !important; }
+#ahv-design-root .campaign-section.dc-ring > .campaign-copy-block p { margin:0 !important; font-family:var(--font-display) !important; font-size:22px !important; line-height:1.35 !important; color:var(--ink) !important; }
+#ahv-design-root .campaign-section.dc-ring { display:grid !important; row-gap:22px !important; column-gap:18px !important; align-items:center !important; }
+#ahv-design-root .campaign-section.dc-ring > * { grid-column:1 / -1 !important; min-width:0 !important; }
+#ahv-design-root .campaign-section.dc-ring > .campaign-eyebrow { grid-row:1 !important; }
+#ahv-design-root .campaign-section.dc-ring > h2 { grid-row:2 !important; margin-bottom:18px !important; }
+@media(max-width:999px){
+  #ahv-design-root .campaign-section.dc-ring { grid-template-columns:64px minmax(0,1fr) !important; }
+  #ahv-design-root .campaign-section.dc-ring .campaign-photo:has(img[src$="/mid-image.webp"]) { grid-column:1 / -1 !important; grid-row:3 !important; justify-self:center !important; width:min(78%, 300px) !important; margin:0 0 12px !important; }
+  #ahv-design-root .campaign-section.dc-ring .campaign-photo:has(img[src$="/box-1-img-1.webp"]) { grid-column:1 !important; grid-row:4 !important; }
+  #ahv-design-root .campaign-section.dc-ring > :nth-child(1 of .campaign-copy-block) { grid-column:2 !important; grid-row:4 !important; }
+  #ahv-design-root .campaign-section.dc-ring .campaign-photo:has(img[src$="/box-1-img-2.webp"]) { grid-column:1 !important; grid-row:5 !important; }
+  #ahv-design-root .campaign-section.dc-ring > :nth-child(2 of .campaign-copy-block) { grid-column:2 !important; grid-row:5 !important; }
+  #ahv-design-root .campaign-section.dc-ring .campaign-photo:has(img[src$="/box-1-img-3.webp"]) { grid-column:1 !important; grid-row:6 !important; }
+  #ahv-design-root .campaign-section.dc-ring > :nth-child(3 of .campaign-copy-block) { grid-column:2 !important; grid-row:6 !important; }
+  #ahv-design-root .campaign-section.dc-ring .campaign-photo:has(img[src$="/box-2-img-1.webp"]) { grid-column:1 !important; grid-row:7 !important; }
+  #ahv-design-root .campaign-section.dc-ring > :nth-child(4 of .campaign-copy-block) { grid-column:2 !important; grid-row:7 !important; }
+  #ahv-design-root .campaign-section.dc-ring .campaign-photo:has(img[src$="/box-2-img-2.webp"]) { grid-column:1 !important; grid-row:8 !important; }
+  #ahv-design-root .campaign-section.dc-ring > :nth-child(5 of .campaign-copy-block) { grid-column:2 !important; grid-row:8 !important; }
+  #ahv-design-root .campaign-section.dc-ring .campaign-photo:has(img[src$="/box-2-img-3.webp"]) { grid-column:1 !important; grid-row:9 !important; }
+  #ahv-design-root .campaign-section.dc-ring > :nth-child(6 of .campaign-copy-block) { grid-column:2 !important; grid-row:9 !important; }
+}
+@media(min-width:1000px){
+  #ahv-design-root .campaign-section.dc-ring { grid-template-columns:minmax(0,1fr) 64px minmax(0,32%) 64px minmax(0,1fr) !important; column-gap:24px !important; row-gap:44px !important; }
+  #ahv-design-root .campaign-section.dc-ring > h2 { text-align:center !important; margin-left:auto !important; margin-right:auto !important; justify-self:center !important; }
+  #ahv-design-root .campaign-section.dc-ring > .campaign-eyebrow { text-align:center !important; justify-self:center !important; }
+  #ahv-design-root .campaign-section.dc-ring .campaign-photo:has(img[src$="/mid-image.webp"]) { grid-column:3 !important; grid-row:3 / span 3 !important; padding:0 12px !important; }
+  #ahv-design-root .campaign-section.dc-ring .campaign-photo:has(img[src$="/box-1-img-1.webp"]) { grid-column:2 !important; grid-row:3 !important; }
+  #ahv-design-root .campaign-section.dc-ring > :nth-child(1 of .campaign-copy-block) { grid-column:1 !important; grid-row:3 !important; text-align:right !important; }
+  #ahv-design-root .campaign-section.dc-ring .campaign-photo:has(img[src$="/box-2-img-1.webp"]) { grid-column:4 !important; grid-row:3 !important; }
+  #ahv-design-root .campaign-section.dc-ring > :nth-child(4 of .campaign-copy-block) { grid-column:5 !important; grid-row:3 !important; }
+  #ahv-design-root .campaign-section.dc-ring .campaign-photo:has(img[src$="/box-1-img-2.webp"]) { grid-column:2 !important; grid-row:4 !important; }
+  #ahv-design-root .campaign-section.dc-ring > :nth-child(2 of .campaign-copy-block) { grid-column:1 !important; grid-row:4 !important; text-align:right !important; }
+  #ahv-design-root .campaign-section.dc-ring .campaign-photo:has(img[src$="/box-2-img-2.webp"]) { grid-column:4 !important; grid-row:4 !important; }
+  #ahv-design-root .campaign-section.dc-ring > :nth-child(5 of .campaign-copy-block) { grid-column:5 !important; grid-row:4 !important; }
+  #ahv-design-root .campaign-section.dc-ring .campaign-photo:has(img[src$="/box-1-img-3.webp"]) { grid-column:2 !important; grid-row:5 !important; }
+  #ahv-design-root .campaign-section.dc-ring > :nth-child(3 of .campaign-copy-block) { grid-column:1 !important; grid-row:5 !important; text-align:right !important; }
+  #ahv-design-root .campaign-section.dc-ring .campaign-photo:has(img[src$="/box-2-img-3.webp"]) { grid-column:4 !important; grid-row:5 !important; }
+  #ahv-design-root .campaign-section.dc-ring > :nth-child(6 of .campaign-copy-block) { grid-column:5 !important; grid-row:5 !important; }
+}
+
+/* Video testimonial sections (Brand, Neo, cleansing, wellness): each testimonial's
+   text is centred against its video, not stuck to the top of the row. */
+@media(min-width:1000px){
+  #ahv-design-root .campaign-section.dc-videotest { align-items:center !important; row-gap:28px; }
+}
+
+/* --- Responsive pass (dc-layout.ts: .dc-icon, .dc-icons, .dc-cards) --- */
+
+/* Small marks never sit alone in a big tan mat: an icon takes only its own room;
+   square icons become a small round badge. */
+#ahv-design-root .campaign-photo.dc-icon:not(.dc-badge):not(.dc-play) { background:transparent; padding:0; min-height:0; width:auto; justify-content:flex-start; align-items:center; }
+#ahv-design-root .campaign-photo.dc-icon--round:not(.dc-badge):not(.dc-play) { width:84px; height:84px; flex:none; border-radius:50%; background:var(--sand); justify-content:center; padding:14px; }
+#ahv-design-root .campaign-photo.dc-icon--round:not(.dc-badge):not(.dc-play) img { max-width:52px !important; max-height:52px !important; width:auto !important; height:auto !important; }
+#ahv-design-root .campaign-photo-grid.dc-icons { display:flex !important; flex-wrap:wrap; align-items:center; gap:12px; width:auto !important; max-width:none !important; float:none !important; margin:12px 0 !important; }
+
+/* Cards (villas, nearby places, guest stories inside "Read details"): as many
+   columns as fit — one on phones, two on tablets, three on wide screens. */
+#ahv-design-root .dc-cards { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap:28px; align-items:start; margin:24px 0 8px; }
+#ahv-design-root .dc-card { display:flex; flex-wrap:wrap; align-items:center; align-content:flex-start; column-gap:12px; background:var(--white); border:1px solid var(--sand); border-radius:6px; overflow:hidden; padding-bottom:18px; min-width:0; }
+#ahv-design-root .dc-card > * { flex:0 0 100%; min-width:0; margin-left:0; margin-right:0; padding-left:20px; padding-right:20px; box-sizing:border-box; }
+#ahv-design-root .dc-card > .campaign-photo-grid:not(.dc-icons) { padding:0; margin:0 0 14px !important; float:none !important; width:100% !important; max-width:none !important; grid-template-columns:minmax(0,1fr) !important; }
+#ahv-design-root .dc-card > .campaign-photo-grid:not(.dc-icons) .campaign-photo { padding:0; background:transparent; border-radius:0; }
+#ahv-design-root .dc-card > .campaign-photo-grid:not(.dc-icons) img { border-radius:0 !important; }
+#ahv-design-root .dc-card > h3 { margin-top:16px; }
+#ahv-design-root .dc-card > h3:first-child + .campaign-photo-grid { margin-top:12px !important; }
+#ahv-design-root .dc-card > .dc-icons { flex:0 0 auto; margin:6px 0 0 !important; padding-right:0; }
+#ahv-design-root .dc-card > .dc-icons + .campaign-eyebrow { flex:1 1 0; padding-left:0; margin:6px 0 0; }
+#ahv-design-root .dc-card .campaign-copy-block p { font-size:17px !important; }
+#ahv-design-root .dc-card .dc-icon--round { width:52px !important; height:52px !important; padding:0 !important; overflow:hidden; }
+#ahv-design-root .dc-card .dc-icon--round img { max-width:100% !important; max-height:100% !important; width:100% !important; height:100% !important; object-fit:cover; }
+#ahv-design-root .dc-details-body > :first-child { margin-top:0; }
+
+/* decoration inside "Read details" blocks */
+#ahv-design-root details.dc-has-decor, #ahv-design-root .dc-details-body.dc-has-decor { position:relative; isolation:isolate; }
+#ahv-design-root .campaign-section.dc-ring .campaign-photo { width:auto !important; height:auto !important; border-radius:0 !important; }
+#ahv-design-root .dc-card > .campaign-photo-grid:not(.dc-icons) img { object-position:center 30%; }
+/* icons that are not round badges (white logos, play/pause marks) keep a small tan pill so they stay visible */
+#ahv-design-root .campaign-photo.dc-icon:not(.dc-icon--round):not(.dc-badge):not(.dc-play) { background:var(--sand); padding:10px 16px; border-radius:6px; }
+#ahv-design-root .campaign-section.dc-ring .campaign-photo.dc-icon { background:transparent !important; padding:0 !important; }
+/* decoration inside a "Read details" block stays at the right edge, clear of the text */
+#ahv-design-root .dc-details-body .dc-decor > .campaign-photo { left:auto !important; right:0; width:min(24%, 300px); }
+#ahv-design-root .dc-details-body .dc-decor > .campaign-photo:first-child { top:0; bottom:50%; }
+#ahv-design-root .dc-details-body .dc-decor > .campaign-photo:last-child:not(:first-child) { top:50%; bottom:0; }
+@media(max-width:999px){ #ahv-design-root .dc-details-body .dc-decor img { opacity:.18 !important; } }
+/* two-column blocks that stack on phones keep a clear gap between the stacked halves (Daily Activities) */
+@media(max-width:999px){ #ahv-design-root [style*="grid-template-columns:1.35fr 1fr"] { row-gap:40px !important; } }
+
+/* Article layout (Karkidaka): award badges and doctor photos in one row instead of one per line */
+#ahv-design-root .dc-figrow { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 140px), 1fr)); gap:20px 24px; align-items:center; margin:28px 0; }
+#ahv-design-root .dc-figrow--people { grid-template-columns:repeat(auto-fill, minmax(min(100%, 200px), 1fr)); align-items:start; }
+#ahv-design-root .dc-figrow > div { margin:0 !important; min-width:0; }
+#ahv-design-root .dc-figrow figure { margin:0 !important; }
+#ahv-design-root .dc-figrow img { display:block; width:100% !important; height:auto !important; max-height:none !important; object-fit:contain !important; margin:0 auto !important; }
+#ahv-design-root .dc-figrow:not(.dc-figrow--people) img { max-width:170px !important; }
+#ahv-design-root .dc-figrow--people img { border-radius:6px; }
+/* single article photos stay a comfortable size instead of filling the whole screen height */
+#ahv-design-root[data-ahv-rail] article > div > figure > img[data-dc-kind="photo"] { width:100% !important; max-height:min(620px, 70vh) !important; object-fit:cover !important; object-position:center 30%; }
+/* empty list items left by the source (no text) do not show bare bullets */
+#ahv-design-root li:empty { display:none; }
+#ahv-design-root ul:not(:has(> li:not(:empty))) { display:none; }
+#ahv-design-root .campaign-photo.dc-icon.dc-rule { background:transparent !important; padding:0 !important; }
+#ahv-design-root[data-ahv-rail] img[data-dc-kind="photo"]:not(.dc-figrow *):not([data-ahv-maps] *) { max-height:min(620px, 70vh) !important; object-fit:cover !important; object-position:center 30%; }
+
+
+
+/* Video testimonials (dc-layout.ts .dc-vts): two testimonials a row on wide
+   screens, each with its words beside its video, centred against it; one a row
+   on tablets; video above its words on phones. */
+#ahv-design-root .dc-vts { display:grid; grid-template-columns:minmax(0,1fr); gap:32px; margin:20px 0 12px; grid-column:1 / -1 !important; }
+#ahv-design-root .dc-vt { display:grid; grid-template-columns:minmax(0,1fr); gap:14px; align-items:center; min-width:0; }
+#ahv-design-root .dc-vt > .campaign-photo-grid { float:none !important; width:auto !important; max-width:none !important; margin:0 !important; grid-template-columns:minmax(0,1fr) !important; }
+#ahv-design-root .dc-vt > .campaign-photo-grid .campaign-photo { padding:0; background:transparent; }
+#ahv-design-root .dc-vt > .campaign-photo-grid img { width:100% !important; height:auto !important; aspect-ratio:16 / 9 !important; object-fit:cover !important; border-radius:6px; }
+#ahv-design-root .dc-vt > :not(.campaign-photo-grid) { margin:0 !important; }
+#ahv-design-root .dc-vt > :not(.campaign-photo-grid) p { margin:0 !important; font-size:17px !important; line-height:1.65 !important; }
+@media(min-width:700px){
+  #ahv-design-root .dc-vt { grid-template-columns:minmax(0,1fr) minmax(0,50%); gap:24px; }
+  #ahv-design-root .dc-vt > .campaign-photo-grid { order:2; }
+}
+@media(min-width:1100px){ #ahv-design-root .dc-vts { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:48px; row-gap:40px; } }
+@media(max-width:999px){
+  #ahv-design-root div:has(> article > a[data-recorded-embed]),
+  #ahv-design-root ul:has(> li > a[href*="youtube.com/embed"]) { grid-template-columns:minmax(0,1fr) !important; }
+}
+
+/* Icon features (.dc-feats): each icon beside its own label, in even columns */
+#ahv-design-root .dc-feats { display:grid; grid-template-columns:repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap:18px 28px; margin:20px 0 12px; grid-column:1 / -1 !important; }
+#ahv-design-root .dc-feat { display:flex; align-items:center; gap:14px; min-width:0; }
+#ahv-design-root .dc-feat > .campaign-photo-grid { flex:none; margin:0 !important; float:none !important; width:auto !important; }
+#ahv-design-root .dc-feat > .campaign-photo-grid .campaign-photo.dc-icon { width:64px !important; height:64px !important; padding:12px !important; border-radius:50% !important; background:var(--sand) !important; }
+#ahv-design-root .dc-feat > .campaign-photo-grid .campaign-photo.dc-icon img { max-width:40px !important; max-height:40px !important; width:auto !important; height:auto !important; }
+#ahv-design-root .dc-feat > :not(.campaign-photo-grid) { flex:1 1 0; margin:0 !important; min-width:0; }
+#ahv-design-root .dc-feat > :not(.campaign-photo-grid) p { margin:0 !important; font-size:17px !important; line-height:1.45 !important; }
+
+/* a picture next to a bare heading ("Video") sits under it, centred, not across a wide empty column */
+#ahv-design-root .campaign-photo-grid.dc-stack-media { float:none !important; width:auto !important; max-width:720px !important; margin:16px auto 24px !important; grid-column:1 / -1 !important; }
+#ahv-design-root .dc-pair > .dc-stack-media { grid-column:1 / -1 !important; }
+
+/* "Read more" always starts its own line, also inside cards laid out in a row, and takes the text colour of its block (readable on dark bands) */
+#ahv-design-root :has(> .dc-more-btn) { flex-wrap:wrap; }
+#ahv-design-root .dc-more-btn { flex:0 0 100%; grid-column:1 / -1; justify-self:start; justify-content:flex-start; color:inherit; opacity:.85; }
+#ahv-design-root .dc-more-btn:hover, #ahv-design-root .dc-more-btn:focus-visible { opacity:1; color:var(--gold); }
+#ahv-design-root .dc-stack-media + .campaign-copy-block { text-align:center; }
+#ahv-design-root .dc-stack-media + .campaign-copy-block p { margin-left:auto !important; margin-right:auto !important; font-style:italic; }
+
+/* Safari counted carousel slides beyond the edge as page width (sideways scroll on Mac): the page never scrolls sideways; clip keeps sticky headers working */
+html:has(#ahv-design-root), body:has(#ahv-design-root) { overflow-x:clip; }
+#ahv-design-root .campaign-photo-grid:not(:has(img, iframe, video, picture)) { display:none !important; }
+
+/* award cards (logo beside its text): the logo keeps its designed 84px, so the text has the room (a later max-width had widened it to 210px and squeezed the text to one word a line) */
+#ahv-design-root li[style*="display: flex"] > img[style*="max-width: 84px"] { max-width:84px !important; }
+
+/* "Programs we offer" list (treatment-in-kerala): one list filled column by column,
+   the same number of items in each column — 3 columns on wide screens, 2 on tablets, 1 on phones */
+[data-ahv-programs] { display: grid; grid-template-columns: minmax(0, 1fr); column-gap: 48px; }
+@media (min-width: 660px) {
+  [data-ahv-programs] { grid-auto-flow: column; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(var(--rows-2), auto); }
+}
+@media (min-width: 1000px) {
+  [data-ahv-programs] { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: repeat(var(--rows-3), auto); }
+}
+
+/* Karkidaka (monsoon) page: hero photo beside the hero text, as on the other
+   campaign pages (stacked under the text on phones); the "Not sure which
+   programme fits?" list centred under its heading; no double gap above it. */
+#ahv-design-root [data-ahv-hero-split] {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: 56px;
+  align-items: center;
+}
+#ahv-design-root [data-ahv-hero-split] > nav[data-ahv-crumbs] {
+  grid-column: 1 / -1;
+}
+#ahv-design-root [data-ahv-hero-split] img[data-dc-kind="photo"] {
+  /* the whole photo, scaled down — never cropped */
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto;
+  max-height: 560px;
+  margin-left: auto;
+}
+@media (max-width: 700px) {
+  #ahv-design-root [data-ahv-hero-split] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  #ahv-design-root [data-ahv-hero-split] > [data-dc-tpl="20"] {
+    margin-top: 24px;
+  }
+  #ahv-design-root [data-ahv-hero-split] > nav[data-ahv-crumbs] {
+    order: -2 !important;
+  }
+}
+[data-ahv-route="/karkidaka-chikitsha-or-monsoon-wellness.html"] section[data-ahv-article-cta] ul {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+[data-ahv-route="/karkidaka-chikitsha-or-monsoon-wellness.html"] section[data-ahv-article-cta] {
+  margin-top: 0 !important;
+}
+
+/* Ayurveda retreat page: the green "Kairali in numbers" band lines up with the
+   page content below it (same container width) */
+[data-ahv-route="/ayurveda-retreat-kerala.html"] section[aria-label="Kairali in numbers"] > div {
+  width: var(--container-w) !important;
+}
+/* Ayurveda retreat page: the pond photo (formerly stuck under the hero) sits
+   beside "Holistic Approach to Health"; two columns again on wide screens */
+@media (min-width: 701px) {
+  #ahv-design-root[data-ahv-route="/ayurveda-retreat-kerala.html"] section[aria-labelledby="ro-about-h"][data-dc-tpl="285"] {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr) !important;
+  }
+  #ahv-design-root[data-ahv-route="/ayurveda-retreat-kerala.html"] section[aria-labelledby="ro-about-h"][data-dc-tpl="285"] > div {
+    max-width: none;
+  }
+}
+
+/* Karkidaka page, wide screens: the text runs the full content width like
+   the other campaign pages; photo rows keep the full width; the treatment photo
+   sits beside "Where Kairali's Lineage…"; the two small photos are doubled. */
+@media (min-width: 701px) {
+  #ahv-design-root[data-ahv-route="/karkidaka-chikitsha-or-monsoon-wellness.html"] article[data-dc-tpl="40"] > div:not(.dc-figrow):not(:has(img)),
+  #ahv-design-root[data-ahv-route="/karkidaka-chikitsha-or-monsoon-wellness.html"] article[data-dc-tpl="40"] > div:has(img),
+  #ahv-design-root[data-ahv-route="/karkidaka-chikitsha-or-monsoon-wellness.html"] article[data-dc-tpl="40"] > [data-ahv-side-photo] {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #ahv-design-root[data-ahv-route="/karkidaka-chikitsha-or-monsoon-wellness.html"] article[data-dc-tpl="40"] :is(p, li) {
+    max-width: none !important;
+  }
+  #ahv-design-root[data-ahv-route="/karkidaka-chikitsha-or-monsoon-wellness.html"] article[data-dc-tpl="40"] > [data-ahv-side-photo] {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    column-gap: 40px;
+    align-items: start;
+  }
+  #ahv-design-root[data-ahv-route="/karkidaka-chikitsha-or-monsoon-wellness.html"] article[data-dc-tpl="40"] > [data-ahv-side-photo] figure {
+    margin: 52px 0 0 !important;
+  }
+  #ahv-design-root[data-ahv-route="/karkidaka-chikitsha-or-monsoon-wellness.html"] article[data-dc-tpl="40"] > [data-ahv-side-photo] img {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+  #ahv-design-root[data-ahv-route="/karkidaka-chikitsha-or-monsoon-wellness.html"] article[data-dc-tpl="40"] > .dc-figrow:has(img[src*="karG.webp"]) {
+    max-width: none;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template-columns: repeat(2, 334px);
+  }
+  #ahv-design-root[data-ahv-route="/karkidaka-chikitsha-or-monsoon-wellness.html"] article[data-dc-tpl="40"] > .dc-figrow:has(img[src*="karNabh.webp"]) {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+  #ahv-design-root[data-ahv-route="/karkidaka-chikitsha-or-monsoon-wellness.html"] article[data-dc-tpl="40"] > div:has(> figure img[src*="karC-5.webp"]) img {
+    width: 100% !important;
+    height: auto !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;
+  }
+  #ahv-design-root[data-ahv-route="/karkidaka-chikitsha-or-monsoon-wellness.html"] article[data-dc-tpl="40"] > .dc-figrow:has(img[src*="karG.webp"]) img {
+    max-width: 334px !important;
+  }
+}
+
+/* Weight-loss page: the two "Watch the video" links become the videos
+   themselves (the saved page had them embedded); the third link repeated the
+   video the photo above it already opens, so it is hidden; the play/pause
+   pictures under "Ms.Rupak Weight Loss Journey" were not working controls. */
+#ahv-design-root[data-ahv-route="/weight-loss.html"] .dc-video-link:has(iframe) {
+  margin-top: 0;
+  padding: 8px 0 40px !important;
+}
+#ahv-design-root[data-ahv-route="/weight-loss.html"] .dc-video-link iframe {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+  border-radius: 4px;
+  margin: 0 auto;
+}
+#ahv-design-root[data-ahv-route="/weight-loss.html"] #campaign-section-9 {
+  display: none !important;
+}
+#ahv-design-root[data-ahv-route="/weight-loss.html"] #campaign-section-13 .campaign-photo-grid:has(img[src*="pause-icon"]) {
+  display: none !important;
+}
+/* the clock picture sits beside "Other Weight Loss Plans", in the same box as
+   the Kairali logo beside "Kairali Weight Loss Plan" */
+#ahv-design-root[data-ahv-route="/weight-loss.html"] #campaign-section-7 > .campaign-photo-grid:has(img[src*="clock.webp"]) {
+  display: grid !important;
+  width: 100% !important;
+}
+@media (min-width: 1000px) {
+  #ahv-design-root[data-ahv-route="/weight-loss.html"] #campaign-section-7 > .campaign-photo-grid:has(img[src*="clock.webp"]) {
+    display: grid !important;
+    float: right !important;
+    clear: right;
+    width: 36% !important;
+    margin: 0 0 24px 36px !important;
+  }
+  #ahv-design-root[data-ahv-route="/weight-loss.html"] #campaign-section-7 .campaign-copy-block > ul {
+    max-width: calc(64% - 36px) !important;
+  }
+  #ahv-design-root[data-ahv-route="/weight-loss.html"] #campaign-section-7 > .dc-icons + .campaign-eyebrow + .campaign-copy-block {
+    clear: none !important;
+  }
+}
+#ahv-design-root[data-ahv-route="/weight-loss.html"] #campaign-section-7 > .campaign-photo-grid:has(img[src*="clock.webp"]) > figure {
+  width: auto !important;
+  height: auto !important;
+  padding: 12px !important;
+  background: var(--sand) !important;
+  border-radius: 4px !important;
+  justify-content: center;
+}
+#ahv-design-root[data-ahv-route="/weight-loss.html"] #campaign-section-7 img[src*="clock.webp"] {
+  width: 100% !important;
+  max-width: 87px !important;
+  height: auto !important;
+}
+
+/* Defence & Paramilitary offer: a hero photo beside the heading, its first
+   paragraph and "Plan my programme" (stacked under them on phones) */
+#ahv-design-root [data-ahv-offer-hero] {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px 56px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+#ahv-design-root [data-ahv-offer-hero-photo] img {
+  width: 100% !important;
+  height: auto !important;
+}
+@media (max-width: 700px) {
+  #ahv-design-root [data-ahv-offer-hero] {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* Senior citizen offer: room inside the dark hero banner so the text and
+   photo do not touch its edges; "Offer eligibility and terms" beside the
+   enquiry form (under it on phones), on a card like the form's */
+#ahv-design-root[data-ahv-route="/offers/senior-citizen-offer/"] section[data-dc-tpl="501"] {
+  padding: 40px clamp(20px, 4vw, 48px) !important;
+}
+#ahv-design-root[data-ahv-route="/offers/senior-citizen-offer/"] #consult {
+  flex-wrap: wrap;
+  gap: 32px;
+  align-items: flex-start;
+}
+#ahv-design-root[data-ahv-route="/offers/senior-citizen-offer/"] #consult > [class*="formSlot"] {
+  flex: 1 1 480px;
+  max-width: 640px;
+}
+#ahv-design-root[data-ahv-route="/offers/senior-citizen-offer/"] #consult > #offer-terms {
+  flex: 1 1 340px;
+  max-width: 520px;
+  width: auto;
+  margin: 0;
+  padding: 26px 30px !important;
+  background: var(--cream) !important;
+  border-radius: 12px !important;
+  color: var(--ink) !important;
+}
+#ahv-design-root[data-ahv-route="/offers/senior-citizen-offer/"] #consult > #offer-terms h2 {
+  margin-top: 0;
+  color: var(--green) !important;
+}
+#ahv-design-root[data-ahv-route="/offers/senior-citizen-offer/"] #consult > #offer-terms li {
+  color: var(--ink) !important;
+}
+
+/* Defence & Paramilitary offer: "Offer eligibility and terms" beside the
+   enquiry form inside the "Plan your visit" band (under it on phones) */
+#ahv-design-root [data-ahv-form-terms] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 32px;
+  text-align: left;
+}
+#ahv-design-root [data-ahv-form-terms] > [class*="formSlot"] {
+  flex: 1 1 480px;
+  max-width: 640px;
+  margin: 0 !important;
+}
+#ahv-design-root [data-ahv-form-terms] > #offer-terms {
+  flex: 1 1 340px;
+  max-width: 520px;
+  width: auto !important;
+  margin: 0 !important;
+  padding: 26px 30px !important;
+  background: var(--cream) !important;
+  border-radius: 12px !important;
+}
+#ahv-design-root [data-ahv-form-terms] > #offer-terms h2 {
+  margin-top: 0;
+}
+/* the form + terms row fills the form band (Olympic & Paralympic offer) */
+#ahv-design-root #consult > [data-ahv-form-terms] {
+  width: 100%;
+}
+#ahv-design-root [data-ahv-form-terms] > #offer-terms,
+#ahv-design-root [data-ahv-form-terms] > #offer-terms li {
+  color: var(--ink) !important;
+}
+#ahv-design-root [data-ahv-form-terms] > #offer-terms h2 {
+  color: var(--green) !important;
+}
+
+/* Text runs the full width of the page content on every campaign page:
+   paragraphs, lists and section headings were held at 76ch / 66ch / 28ch
+   (752px / 571px) inside a 1,120px content column, leaving the right side
+   empty. Columns, cards and grids still set the width; the centred form band,
+   the centred "guidance" band and forms keep theirs. */
+#ahv-design-root:not(#x):not(#y) :is(p, ul, ol, h2, h3):not(.campaign-enquiry > *):not([data-ahv-article-cta] *):not(#consult *):not(form *):not([class*="formSlot"] *) {
+  max-width: none !important;
+}
+
+/* Wellness resort: the yoga photo sits beside the opening paragraphs of
+   "AYURVEDIC TREATMENTS & Therapies"; "Benefits of Living…" continues under
+   it at full width, as part of the same section (no divider between them) */
+#ahv-design-root #campaign-section-10:has(+ #campaign-section-10b) {
+  border-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+#ahv-design-root #campaign-section-10 .dc-split {
+  align-items: start;
+}
+#ahv-design-root #campaign-section-10 .dc-split-media {
+  margin-top: 8px;
+}
+#ahv-design-root #campaign-section-10b {
+  border-top: 0 !important;
+  padding-top: 8px !important;
+  margin-top: 0 !important;
+}
+
+/* Panchakarma hero: the village photo beside the heading and text (whole
+   photo, not cropped); the "Book free Doctor Consultation" box runs under
+   both at full width with its three points in a row. Phones stack all three. */
+#ahv-design-root [data-ahv-pk-hero] {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+  gap: 32px 56px !important;
+  align-items: center !important;
+}
+#ahv-design-root [data-ahv-pk-hero] > [data-dc-tpl="54"] {
+  margin: 0 !important;
+}
+#ahv-design-root [data-ahv-pk-hero] > [data-dc-tpl="54"] img {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 4px;
+}
+#ahv-design-root [data-ahv-pk-hero] > [data-dc-tpl="40"] {
+  grid-column: 1 / -1;
+}
+#ahv-design-root [data-ahv-pk-hero] > [data-dc-tpl="40"] > ul {
+  flex-direction: row !important;
+  flex-wrap: wrap;
+  gap: 10px 40px !important;
+}
+@media (max-width: 700px) {
+  #ahv-design-root [data-ahv-pk-hero] {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+  #ahv-design-root [data-ahv-pk-hero] > [data-dc-tpl="40"] > ul {
+    flex-direction: column !important;
+  }
+}
+
+/* "Awards & Accreditations" (converted sections holding the World Luxury
+   award): every award picture sits in the same full-width sand box as the
+   World Luxury one, at the same height, instead of small round icons. */
+#ahv-design-root .campaign-section:has(img[src*="luxury-spa-award"]) .campaign-photo-grid {
+  display: grid !important;
+  width: 100% !important;
+  max-width: none !important;
+  float: none !important;
+  margin: 0 0 12px !important;
+}
+#ahv-design-root .campaign-section:has(img[src*="luxury-spa-award"]) .campaign-photo-grid > figure {
+  width: 100% !important;
+  height: 180px !important;
+  padding: 12px !important;
+  border-radius: 4px !important;
+  background: var(--sand) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+#ahv-design-root .campaign-section:has(img[src*="luxury-spa-award"]) .campaign-photo-grid > figure img {
+  width: auto !important;
+  height: 156px !important;
+  max-width: 100% !important;
+  max-height: 156px !important;
+  object-fit: contain !important;
+}
+#ahv-design-root:not(#x) .campaign-section:has(img[src*="luxury-spa-award"]) .campaign-photo-grid > figure img,
+#ahv-design-root:not(#x) .campaign-section:has(img[src*="luxury-spa-award"]) .dc-icon img {
+  width: auto !important;
+  height: 156px !important;
+  max-width: 100% !important;
+  max-height: 156px !important;
+  border-radius: 0 !important;
+}
+/* Panchakarma awards: each picture fills its box */
+#ahv-design-root:not(#x) section:has(img[src*="national-geographic-traveller-spa-wellness-2026"]) :is([data-dc-tpl="276"], [data-dc-tpl="283"]) img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+}
+#ahv-design-root:not(#x) section:has(img[src*="national-geographic-traveller-spa-wellness-2026"]) img[src*="lotus-travel-quality-partner"] {
+  object-fit: cover !important;
+  border-radius: 4px;
+}
+
+/* Preventive page: the nature-walk video picture shows whole (it was cut to a
+   wide frame); the second, repeated "World Luxury Awards Winner…" block is
+   hidden because the same awards already show under "Awards & Accreditations" */
+#ahv-design-root[data-ahv-route="/preventive-rejuvenation-detoxification.html"] img[src*="background-pic.webp"] {
+  height: auto !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  max-height: none !important;
+}
+#ahv-design-root[data-ahv-route="/preventive-rejuvenation-detoxification.html"] #campaign-section-12 {
+  display: none !important;
+}
+
+/* Short sections (a single heading line, or a closed "Read details" block)
+   keep half the usual space above and below, so they do not leave big empty
+   gaps between the content around them. */
+#ahv-design-root .campaign-section:is(:has(> details.campaign-more:only-child:not([open])), :not(:has(img, iframe, ul, ol, details, .dc-split, .dc-vts, .dc-feats, form)):not(:has(> :nth-child(4)))) {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+#ahv-design-root[data-ahv-route="/weight-loss.html"] #campaign-section-17 {
+  display: none !important;
+}
+
+/* Photos are never cut: they show whole, scaled to the space they have.
+   Photos standing on their own (beside text, under a heading) keep their own
+   shape; photos in a row of same-size cards are fitted inside the card's
+   frame on a sand background. Round portraits and icons are left as they are. */
+#ahv-design-root:not(#x) :is(img[data-dc-kind="photo"], img[src*="AHV-Retreat-Rectangle-9346"]):not(.dc-icon--round img):not([class*="avatar"]):not(.dc-vt img) {
+  object-fit: contain !important;
+  object-position: center !important;
+}
+#ahv-design-root:not(#x) :is(.dc-split-media, .campaign-photo-grid:not(.dc-card *)) img[data-dc-kind="photo"]:not(.dc-icon--round img) {
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+}
+#ahv-design-root:not(#x) :is(.dc-card, li, article) img[data-dc-kind="photo"] {
+  background: var(--sand);
+}
+
+/* Treatment in Kerala: the 18 awards run in one row that scrolls sideways;
+   each card shows the award picture large on top, its name, and three lines
+   of text with "Read more". */
+#ahv-design-root [data-ahv-award-scroll] {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px !important;
+  padding-bottom: 14px !important;
+  scrollbar-color: var(--gold) var(--sand);
+}
+#ahv-design-root [data-ahv-award-scroll] > li {
+  flex: 0 0 280px !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  scroll-snap-align: start;
+}
+#ahv-design-root:not(#x):not(#y) [data-ahv-award-scroll] > li > img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 150px !important;
+  object-fit: contain !important;
+  background: var(--sand);
+  border-radius: 4px;
+  padding: 12px;
+  box-sizing: border-box;
+}
+@media (max-width: 700px) {
+  #ahv-design-root [data-ahv-award-scroll] > li {
+    flex-basis: 82% !important;
+  }
+}
+
+/* Owner-approved Karkidaka route maps: preserve the illustrations and readable captions. */
+#ahv-design-root[data-ahv-route="/karkidaka-chikitsha-or-monsoon-wellness.html"] [data-ahv-maps] {
+  display: block !important;
+  padding-block: clamp(24px, 4vw, 48px);
+}
+#ahv-design-root[data-ahv-route="/karkidaka-chikitsha-or-monsoon-wellness.html"] [data-ahv-maps] img {
+  object-fit: contain !important;
+  max-height: none !important;
 }

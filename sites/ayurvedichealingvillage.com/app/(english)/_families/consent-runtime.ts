@@ -14,6 +14,7 @@ export const CONSENT_RUNTIME = `
   // the notice on every page, including the design's own homepage banner, so
   // the two can never both appear or disagree.
   var CONSENT_KEY = "ktahv-consent";
+  var pageConsentChoice = null;
   // Localized notice copy from the locale layout (window.__AHV_T); English and every page that
   // inlines this runtime WITHOUT the design boot script (native pages, /lp/) fall through to the
   // English string. Self-contained on purpose: a bare T() threw on those pages (25 Sep regression).
@@ -59,6 +60,8 @@ export const CONSENT_RUNTIME = `
       window.gtag = function () { window.dataLayer.push(arguments); };
     }
     window.gtag("consent", "update", state);
+    if (typeof window.clarity === "function") window.clarity("consentv2", { analytics_Storage: granted ? "granted" : "denied", ad_Storage: granted ? "granted" : "denied" });
+    if (typeof window.fbq === "function") window.fbq("consent", granted ? "grant" : "revoke");
     // Mirror into the fleet record so the head snippet re-applies this choice
     // SYNCHRONOUSLY on the next page load, before any tag can fire. The
     // visitor-facing key and notice are unchanged; this is a second, silent
@@ -84,9 +87,11 @@ export const CONSENT_RUNTIME = `
     });
   }
   function consentChoice() {
-    try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return "unavailable"; }
+    if (pageConsentChoice) return pageConsentChoice;
+    try { return localStorage.getItem(CONSENT_KEY); } catch (e) { return null; }
   }
   function recordConsent(value) {
+    pageConsentChoice = value;
     try { localStorage.setItem(CONSENT_KEY, value); } catch (e) { /* private mode: honour the choice for this page view only */ }
     var el = document.getElementById("ahv-consent");
     if (el) el.remove();
@@ -104,9 +109,11 @@ export const CONSENT_RUNTIME = `
     wrap.style.cssText = "position:fixed;left:12px;right:12px;bottom:" + (narrow ? "74px" : "24px") +
       ";z-index:60;max-width:" + (narrow ? "406px" : "880px") + ";margin:0 auto;background:#fff;" + /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
       "border:1px solid #E9E2D3;border-radius:4px;box-shadow:0 7px 25px rgba(60,45,20,.08);padding:18px 20px;" + /* approved home-banner palette, unchanged. brand-allow: rogue-hex */
-      "box-sizing:border-box;display:flex;gap:20px;align-items:center;flex-direction:" + (narrow ? "column" : "row") + ";"; /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
+      "box-sizing:border-box;display:flex;gap:" + (narrow ? "10px" : "20px") + ";align-items:center;flex-direction:" + (narrow ? "column" : "row") + ";"; /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
+    if (narrow) wrap.style.padding = "12px 14px";
     var copy = document.createElement("div");
     copy.style.cssText = "flex:1;min-width:0;font-size:14.5px;color:#514a3f;line-height:1.55"; /* approved design payload palette (site.config.json vendored note). brand-allow: rogue-hex */
+    if (narrow) { copy.style.fontSize = "13px"; copy.style.lineHeight = "1.4"; }
     copy.appendChild(document.createTextNode(CT("We use cookies to improve your experience and analyse site traffic. See our") + " "));
     var policy = document.createElement("a");
     policy.setAttribute("href", (cfg.locale && cfg.locale.privacyHref) || "/new-privacy-policy/");
@@ -155,12 +162,20 @@ export const CONSENT_RUNTIME = `
     var mine = document.getElementById("ahv-consent");
     // The home views render the approved notice THEMSELVES, and they render it
     // after the design mounts — later than the first sweep tick. So this cannot
-    // be a one-shot check: it has to keep looking and withdraw ours the moment
-    // theirs appears, or the homepage shows two banners. That exact double-up
+    // be a one-shot check: it has to keep looking and retire the captured notice
+    // whenever it appears, or the homepage shows two banners. That exact double-up
     // is why this lane has its own root layout in the first place.
-    if (designNotice()) {
-      if (mine) mine.remove();
-      return;
+    var capturedButton = designNotice();
+    if (capturedButton) {
+      // Every homepage variant uses one shared notice. Runtime re-renders may
+      // recreate the approved capture; the sweep retires it without changing copy.
+      var captured = capturedButton.closest("[data-ahv-cta-notice]");
+      if (!captured) {
+        captured = capturedButton.parentElement;
+        while (captured && captured !== host && captured.style.position !== "fixed") captured = captured.parentElement;
+      }
+      if (captured && captured !== host) captured.remove();
+      else return; // Never remove unrelated content if the view contract changes.
     }
     if (mine) return;
     if (choice === "accepted" || choice === "declined") return;
@@ -174,15 +189,112 @@ export const CONSENT_RUNTIME = `
   // Measurement. Every id comes from analytics.config.json, which records what
   // the LIVE site already runs; nothing is invented. Two independent locks:
   // the build must set AHV_ANALYTICS=1, AND the visitor must have accepted.
-  // Both are off on staging by the owner's 15 Sep ruling, so a preview reviewer
-  // never lands in the production GA4 and Clarity data.
-  var measurementStarted = false;
+  // Owner 1 October authorises staging behind a separate explicit build switch.
+  // Staging events carry environment markers; staging leads never fire live Ads goals.
+  var measurementStarted = !!window.__ahvMeasurementStarted;
+  function attributionValueSafe(name, value) {
+    return name.indexOf("utm_") === 0 ? /^[a-zA-Z0-9_.~ -]{1,120}$/.test(value) : /^[a-zA-Z0-9_.~-]{1,120}$/.test(value);
+  }
+  function measurementUrlSafe() {
+    // Meta and Clarity can inspect document.location themselves. Only start
+    // them when every URL parameter is a bounded attribution value.
+    var allowed = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "gbraid", "wbraid", "fbclid"];
+    var safe = !window.location.hash || /^#(?:enquiry|main|contact|section-[0-8]|written-testimonials|press)$/.test(window.location.hash);
+    new URLSearchParams(window.location.search).forEach(function (value, name) {
+      if (allowed.indexOf(name) === -1 || !attributionValueSafe(name, value)) safe = false;
+    });
+    return safe;
+  }
+  function safePageLocation() {
+    // Keep paid attribution parameters, but never send arbitrary URL parameters
+    // or fragments (which can contain names, email addresses or form drafts).
+    var allowed = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "gbraid", "wbraid", "fbclid"];
+    var query = new URLSearchParams();
+    var incoming = new URLSearchParams(window.location.search);
+    allowed.forEach(function (name) {
+      var value = incoming.get(name);
+      if (value && attributionValueSafe(name, value)) query.set(name, value);
+    });
+    return window.location.origin + window.location.pathname + (query.size ? "?" + query.toString() : "");
+  }
+  function safeReferrer() {
+    // Retain the referring site for acquisition reports without forwarding
+    // its query string or path, either of which may carry private values.
+    try {
+      var referrer = new URL(document.referrer);
+      return /^https?:$/.test(referrer.protocol) ? referrer.origin + "/" : "";
+    } catch (e) { return ""; }
+  }
+  function recordAcceptedLead(form, token) {
+    // Careers are applications, not the Ads EnquirySubmission conversion.
+    if (["contact", "enquiry-form", "online-consultation", "opd", "landing-page"].indexOf(form) === -1) return false;
+    if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(String(token || ""))) return false;
+    if (consentChoice() !== "accepted" || !measurementStarted || !cfg.measurement || !measurementUrlSafe()) return false;
+    var key = "ktahv-accepted-lead-events-v1";
+    var seen = window.__ahvLeadEventTokens || (window.__ahvLeadEventTokens = []);
+    try { seen = JSON.parse(localStorage.getItem(key) || "[]"); } catch (e) {}
+    if (!Array.isArray(seen)) seen = [];
+    if (seen.indexOf(token) !== -1) return false;
+    var sent = false;
+    var m = cfg.measurement;
+    if (m.ga4 && typeof window.gtag === "function") {
+      window.gtag("event", m.environment === "staging" ? "ahv_staging_lead" : "generate_lead", { event_id: token, page_location: safePageLocation(), ahv_environment: m.environment || "production", debug_mode: m.environment === "staging" });
+      if (m.adsSendTo && m.environment !== "staging") window.gtag("event", "conversion", { send_to: m.adsSendTo, transaction_id: token, page_location: safePageLocation() });
+      sent = true;
+    }
+    if (m.metaPixel && typeof window.fbq === "function") {
+      window.fbq(m.environment === "staging" ? "trackCustom" : "track", m.environment === "staging" ? "AHVStagingLead" : "Lead", { ahv_environment: m.environment || "production" }, { eventID: token });
+      sent = true;
+    }
+    if (m.clarity && typeof window.clarity === "function") {
+      window.clarity("event", m.environment === "staging" ? "ahv_staging_lead" : "lead_received");
+      sent = true;
+    }
+    if (sent) {
+      seen.push(token);
+      window.__ahvLeadEventTokens = seen.slice(-50);
+      try { localStorage.setItem(key, JSON.stringify(window.__ahvLeadEventTokens)); } catch (e) {}
+    }
+    return sent;
+  }
+  function attribution() {
+    var allowed = ["gclid", "gbraid", "wbraid", "fbclid", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
+    var current = {}, incoming = new URLSearchParams(window.location.search);
+    allowed.forEach(function (name) {
+      var value = incoming.get(name);
+      if (value && attributionValueSafe(name, value)) current[name] = value;
+    });
+    // Retain the paid visit across programme navigation only after consent,
+    // for this tab/session and for at most 30 minutes. Never persist private URLs.
+    if (consentChoice() !== "accepted") return current;
+    try {
+      var key = "ahv-paid-attribution-v1", previous = JSON.parse(sessionStorage.getItem(key) || "null");
+      if (Object.keys(current).length) sessionStorage.setItem(key, JSON.stringify({at:Date.now(),values:current}));
+      else if (previous && Date.now()-previous.at >= 0 && Date.now()-previous.at < 1800000) {
+        allowed.forEach(function (name) {var value=previous.values && previous.values[name];if(typeof value === "string" && attributionValueSafe(name,value)) current[name]=value;});
+      } else sessionStorage.removeItem(key);
+    } catch(e) {}
+    return current;
+  }
+  function recordInteraction(name, target) {
+    var targets = { enquiry_open:["enquiry"], contact_click:["phone","whatsapp","directions","email"], tariff_download:["tariff"], programme_open:["programme"], video_open:["video"], form_start:["enquiry"], exit_help:["shown","dismissed","enquire","whatsapp"] };
+    if (!targets[name] || targets[name].indexOf(target) === -1 || window.location.pathname !== "/ayurvedic-treatment-packages.html") return false;
+    if(consentChoice() !== "accepted" || !measurementStarted || !cfg.measurement || !measurementUrlSafe()) return false;
+    var m=cfg.measurement;
+    if(!m.ga4 || typeof window.gtag !== "function") return false;
+    // Interaction diagnostics are never Ads or Meta lead conversions.
+    window.gtag("event", m.environment === "staging" ? "ahv_staging_"+name : name, { interaction_target:target, page_location:safePageLocation(), ahv_environment:m.environment || "production", debug_mode:m.environment === "staging" });
+    return true;
+  }
+  window.AHV_MEASUREMENT = { recordLead: recordAcceptedLead, recordInteraction:recordInteraction, attribution:attribution };
   function startMeasurement() {
     if (measurementStarted) return;
-    if (window.location.search || window.location.hash) return;
+    if (!measurementUrlSafe()) return;
     var m = cfg.measurement;
     if (!m) return; // build-time switch is off: nothing to start
+    attribution();
     measurementStarted = true;
+    window.__ahvMeasurementStarted = true;
     if (m.ga4) {
       var g = document.createElement("script");
       g.async = true;
@@ -196,25 +308,36 @@ export const CONSENT_RUNTIME = `
         window.gtag = function () { window.dataLayer.push(arguments); };
       }
       window.gtag("js", new Date());
-      window.gtag("config", m.ga4);
+      window.gtag("config", m.ga4, { page_location: safePageLocation(), page_referrer: safeReferrer(), ahv_environment: m.environment || "production", debug_mode: m.environment === "staging" });
+      if (m.adsSendTo) window.gtag("config", m.adsSendTo.split("/")[0], { send_page_view: false });
     }
     if (m.clarity) {
       window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
+      window.clarity("consentv2", { analytics_Storage: "granted", ad_Storage: "granted" });
+      window.clarity("set", "ahv_environment", m.environment || "production");
       var c = document.createElement("script");
       c.async = true;
       c.src = "https://www.clarity.ms/tag/" + encodeURIComponent(m.clarity);
       document.head.appendChild(c);
     }
     if (m.metaPixel) {
+      // Standard Meta bootstrap: dispatch through callMethod after the SDK loads.
+      if (!window.fbq) {
+        var fb = window.fbq = function () {
+          if (fb.callMethod) fb.callMethod.apply(fb, arguments);
+          else fb.queue.push(arguments);
+        };
+        window._fbq = window._fbq || fb;
+        fb.push = fb; fb.loaded = true; fb.version = "2.0"; fb.queue = [];
+      }
+      window.fbq("consent", "grant");
+      window.fbq("set", "autoConfig", false, m.metaPixel);
+      window.fbq("init", m.metaPixel);
+      window.fbq("track", "PageView", { ahv_environment: m.environment || "production" });
       var f = document.createElement("script");
       f.async = true;
       f.src = "https://connect.facebook.net/en_US/fbevents.js";
       document.head.appendChild(f);
-      window.fbq = window.fbq || function () {
-        (window.fbq.queue = window.fbq.queue || []).push(arguments);
-      };
-      window.fbq("init", m.metaPixel);
-      window.fbq("track", "PageView");
     }
   }
 `;

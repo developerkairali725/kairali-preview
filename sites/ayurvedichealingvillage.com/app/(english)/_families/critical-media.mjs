@@ -1,14 +1,23 @@
 /** Selected image variants; only phone templates/snapshots use these. */
 export function phoneCriticalMedia(html) {
-  for (var name of ['wx-hero', 'ktahv-abhyanga-oil-therapy-2025', 'AHV-Enquiry-Garden-Banner', 'wx-welcome', 'kt-317', 'wx-yogahall', 'kt-106']) {
+  for (var name of ['ktahv-abhyanga-oil-therapy-2025', 'AHV-Enquiry-Garden-Banner', 'wx-welcome', 'kt-317', 'wx-yogahall', 'kt-106']) {
     html = html.split('/ahv/assets/img/' + name + '.webp').join('/ahv/assets/img/' + name + '-768.webp');
   }
-  return html;
+  html = html.split('/ahv/assets/img/owner-approved-20260928/ahv-img-002.webp').join('/ahv/assets/img/owner-approved-20260928/ahv-img-002-768.webp');
+  return html.split('/ahv/assets/img/wx-hero.webp').join('/ahv/assets/img/wx-hero-544.avif').split('/ahv/assets/img/wx-hero-544.webp').join('/ahv/assets/img/wx-hero-544.avif')
+    .split('/ahv/assets/img/ktahv-abhyanga-oil-therapy-2025-768.webp').join('/ahv/assets/img/ktahv-abhyanga-oil-therapy-2025-544.webp');
 }
 /** Use the existing accessible award title for descriptive rendered link text.
  * No new content or translation: the title already belongs to this exact link.
  */
-export function descriptiveAwardLinks(html) {
+export function descriptiveAwardLinks(html, route = "") {
+  // An older homepage capture carried a campaign-specific label on the
+  // generic enquiry CTA. Keep the actual home action and its localized name.
+  if (route === "/") html = html.replace(/<a\b([^>]*)>([\s\S]*?)<[/]a>/gi, (full, attrs, body) => {
+    if (!/href="(?:\/[a-zA-Z-]+)?\/(?:contact-us|enquiry-form)\/"/i.test(attrs) || !/Karkidaka/i.test(attrs + body)) return full;
+    const clean = attrs.replace(/\saria-label="[^"]*"/i, "");
+    return '<a' + clean + '>' + body.replace(/<span class="ahv-link-context">[\s\S]*?<[/]span>/gi, '') + '</a>';
+  });
   html = html.split('aria-label="{{ g.alt }}"').join('aria-label="{{ g.caption }}" aria-description="{{ g.alt }}"');
   return html.replace(/<a\b([^>]*)>([^<>]+)<[/]a>/gi, function (full, attrs, text) {
     var label = attrs.match(/aria-label="([^"]+)"/i);
@@ -19,6 +28,40 @@ export function descriptiveAwardLinks(html) {
 }
 
 export function firstCriticalImage(html) {
-  var paths = ['wx-hero', 'ktahv-abhyanga-oil-therapy-2025', 'AHV-Enquiry-Garden-Banner'].map(function (name) { return '/ahv/assets/img/' + name + '-768.webp'; });
+  var paths = ['/ahv/assets/img/wx-hero-544.avif', '/ahv/assets/img/owner-approved-20260928/ahv-img-002-768.webp', '/ahv/assets/img/wx-hero-544.webp', '/ahv/assets/img/ktahv-abhyanga-oil-therapy-2025-544.webp', '/ahv/assets/img/AHV-Enquiry-Garden-Banner-768.webp'];
   return paths.filter(function (path) { return html.indexOf(path) >= 0; }).sort(function (a, b) { return html.indexOf(a) - html.indexOf(b); })[0] || null;
+}
+
+/** Home captures put three images at high priority; only its logo and hero are above the fold. */
+export function deferHomeSnapshotImages(html) {
+  return html.replace(/<img\b[^>]*>/gi, (tag) => {
+    const src = tag.match(/\bsrc=["']([^"']+)["']/i)?.[1] || "";
+    if (/\/(?:kairali-colorful-logo|wx-hero(?:-544)?)\.(?:webp|avif)$/.test(src)) return tag;
+    const attrs = tag.slice(4, -1).replace(/\s(?:loading|fetchpriority)=["'][^"']*["']/gi, "");
+    return '<img loading="lazy" fetchpriority="low"' + attrs + '>';
+  });
+}
+
+/** Thumbnail selection; the expanded villa viewer always keeps the original. Self-contained for boot injection. */
+export function villaImageAttributes(src, id = "") {
+  if (/^\/ahv\/assets\/img\/owner-approved-20260928\/ahv-img-002(?:-768)?\.webp$/.test(src)) return {
+    srcset: '/ahv/assets/img/owner-approved-20260928/ahv-img-002-768.webp 768w, /ahv/assets/img/owner-approved-20260928/ahv-img-002.webp 1600w',
+    sizes: '(max-width:699px) calc(100vw - 24px), 1600px',
+  };
+  if (id === "villa-expanded" || !/^\/ahv\/assets\/img\/AHV-OurVillas-(?:Hero|(?:Maharaja|Royal|Deluxe|Classic)-[0-9]+)\.webp$/.test(src)) return null;
+  const base = src.slice(0, -5), hero = /-Hero\.webp$/.test(src);
+  return {
+    srcset: hero ? base + '-768-hero.avif 768w, ' + src + ' 1024w' : base + '-384.webp 384w, ' + base + '-768.webp 768w, ' + src + ' 1400w',
+    sizes: hero ? '(max-width:699px) calc(100vw - 24px), 1024px' : '(max-width:699px) calc((100vw - 36px)/2), 320px',
+  };
+}
+export function responsiveVillaImages(html) {
+  return html.replace(/<img\b[^>]*>/gi, tag => {
+    const src = tag.match(/\bsrc=["']([^"']+)["']/i)?.[1] || '';
+    const id = tag.match(/\bid=["']([^"']+)["']/i)?.[1] || '';
+    const attrs = villaImageAttributes(src, id);
+    if (!attrs) return tag;
+    const clean = tag.slice(4,-1).replace(/\s(?:srcset|sizes)=["'][^"']*["']/gi, '');
+    return '<img srcset="' + attrs.srcset + '" sizes="' + attrs.sizes + '"' + clean + '>';
+  });
 }

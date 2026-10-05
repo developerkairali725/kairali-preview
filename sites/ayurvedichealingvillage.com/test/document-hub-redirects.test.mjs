@@ -31,7 +31,7 @@ for (const family of families) {
 test('hub PDF redirects are an exact allowlist and leave library pages, forms and Healing Secrets alone', () => {
   const expected = documents.filter(document => families.includes(document.doc))
     .map(document => '/documents/' + document.screen.path).sort();
-  const actual = redirects.filter(rule => rule.source.startsWith('/documents/'));
+  const actual = redirects.filter(rule => rule.source.startsWith('/documents/') && rule.source.endsWith('.pdf'));
   assert.equal(actual.length, 65);
   assert.deepEqual(actual.map(rule => rule.source).sort(), expected);
   assert.equal(new Set(sources).size, sources.length, 'ambiguous duplicate source');
@@ -43,5 +43,13 @@ test('hub PDF redirects are an exact allowlist and leave library pages, forms an
   }
   for (const guide of documents.filter(document => document.doc === 'healing-secrets')) {
     assert.ok(!sources.includes('/documents/' + guide.screen.path), 'do not redirect guide-download delivery');
+  }
+});
+
+test('library aliases use the maintained AHV hub in local and hosted builds', () => {
+  for (const source of ['/documents/', '/documents/index.html']) {
+    const matching = redirects.filter(rule => rule.source === source);
+    assert.equal(matching.length, 1);
+    assert.equal(matching[0].destination, hub + '?property=ahv');
   }
 });

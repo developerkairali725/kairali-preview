@@ -109,3 +109,41 @@ export function snapshotFocusTarget(doc, snapshots, live) {
   }
   return null;
 }
+
+/** Transfer edited visible snapshot fields before replacing that initial page.
+ * Values stay in this document; no storage, logging or network is involved.
+ * Use native setters plus input/change events so controlled live forms receive the draft.
+ */
+export function preserveSnapshotInputs(doc, snapshots, live) {
+  var win = doc.defaultView, count = 0;
+  snapshots.forEach(function (snapshot) {
+    var fields = snapshot.querySelectorAll('input,select,textarea');
+    for (var i = 0; i < fields.length; i++) {
+      var field = fields[i], type = field.type, name = field.name;
+      if (!name || !field.form || field.disabled || !field.getClientRects().length || ['hidden','file','password','submit','button'].indexOf(type) >= 0) continue;
+      var check = type === 'checkbox' || type === 'radio';
+      var edited = check ? field.checked !== field.defaultChecked : field.value !== field.defaultValue;
+      if (field.tagName === 'SELECT') edited = Array.from(field.options).some(function (option) { return option.selected !== option.defaultSelected; });
+      if (!edited) continue;
+      var forms = live.querySelectorAll('form'), targetForm = null;
+      for (var f = 0; f < forms.length; f++) {
+        var candidate = forms[f];
+        if (field.form.hasAttribute('data-ahv-newsletter') ? candidate.hasAttribute('data-ahv-newsletter') : field.form.getAttribute('data-form') ? candidate.getAttribute('data-form') === field.form.getAttribute('data-form') : field.form.id && candidate.id === field.form.id) { targetForm = candidate; break; }
+      }
+      if (!targetForm) continue;
+      var targets = targetForm.elements, target = null;
+      for (var t = 0; t < targets.length; t++) {
+        if (targets[t].name === name && targets[t].type === type && (!check || targets[t].value === field.value)) { target = targets[t]; break; }
+      }
+      if (!target) continue;
+      var key = check ? 'checked' : 'value';
+      var prototype = target.tagName === 'INPUT' ? win.HTMLInputElement.prototype : target.tagName === 'TEXTAREA' ? win.HTMLTextAreaElement.prototype : win.HTMLSelectElement.prototype;
+      var setter = Object.getOwnPropertyDescriptor(prototype, key).set;
+      setter.call(target, check ? field.checked : field.value);
+      target.dispatchEvent(new win.Event('input', { bubbles: true }));
+      target.dispatchEvent(new win.Event('change', { bubbles: true }));
+      count++;
+    }
+  });
+  return count;
+}

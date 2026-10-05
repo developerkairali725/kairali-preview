@@ -36,6 +36,7 @@
  * Usage:
  *   node tools/prerender-english.mjs --base http://127.0.0.1:4321 \
  *        --out english-candidate/prerender [--only /about-us/] [--limit 5]
+ *   Add --width 1280 --height 900 when capturing the desktop variant.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -78,6 +79,8 @@ const CONCURRENCY = Math.max(1, Number(arg("concurrency", "1")) || 1);
 const OUT = arg("out", LOCALE ? `l10n/prerender-tmp/${LOCALE}` : "english-candidate/prerender");
 const ONLY = arg("only", null);
 const LIMIT = Number(arg("limit", "0")) || 0;
+const WIDTH = Number(arg("width", "390")) || 390;
+const HEIGHT = Number(arg("height", "900")) || 900;
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SITE = path.resolve(HERE, "..");
@@ -102,7 +105,11 @@ const EXTRACT = () => {
   const root = document.getElementById("ahv-design-root");
   if (!root || !root.firstElementChild) return null;
 
-  const clone = root.cloneNode(true);
+  // Keep the copy inert: upgraded image-slot clones can mutate their image
+  // attributes while the snapshot is being flattened.
+  const inert = document.createElement("template");
+  inert.innerHTML = root.innerHTML;
+  const clone = inert.content;
 
   // Pair each live slot with its clone by document order, because a clone has no
   // shadow root of its own to read from.
@@ -130,7 +137,9 @@ const EXTRACT = () => {
       } catch { /* leave a relative value alone */ }
     }
     if (!resolved) continue;
-    img.setAttribute("src", resolved);
+    // The live runtime intercepts setAttribute("src") to defer image loads.
+    // A saved inert snapshot needs the actual address, not that live hook.
+    img.setAttributeNS(null, "src", resolved);
     img.setAttribute("alt", el.getAttribute("placeholder") || "");
     // The LCP candidate sits among the first images (image 1 is the header logo,
     // the hero is image 2), so the first three are never lazy-loaded. Lazy on the
@@ -146,6 +155,19 @@ const EXTRACT = () => {
     el.replaceWith(img);
     flattened++;
   }
+
+  // Deferred gallery photos keep real image URLs in the crawlable/no-JS snapshot.
+  // Restore on the inert clone only; the live observer retains its loading policy.
+  clone.querySelectorAll('img[data-ahv-photo-src]').forEach(img => {
+    const src = img.getAttribute('data-ahv-photo-src');
+    const set = img.getAttribute('data-ahv-photo-srcset');
+    img.setAttribute('loading', 'lazy');
+    img.removeAttribute('fetchpriority');
+    if (set) img.setAttributeNS(null, 'srcset', set);
+    if (src) img.setAttributeNS(null, 'src', src);
+    img.removeAttribute('data-ahv-photo-src');
+    img.removeAttribute('data-ahv-photo-srcset');
+  });
 
   // Never ship the cookie notice in the snapshot: consent state is per visitor
   // and the live layer renders it from localStorage on hydration.
@@ -176,7 +198,7 @@ const EXTRACT = () => {
   clone.querySelectorAll("x-dc").forEach((s) => s.remove());
 
   return {
-    html: clone.innerHTML,
+    html: inert.innerHTML,
     textChars: (root.innerText || "").trim().length,
     imgs: clone.querySelectorAll("img").length,
     flattened,
@@ -214,10 +236,17 @@ const run = async () => {
   const worker = async () => { for (let item = queue.shift(); item; item = queue.shift()) await one(...item); };
   const one = async (i, route) => {
     const ctx = await browser.newContext({
-      viewport: { width: 390, height: 900 },
-      hasTouch: true,
-      isMobile: true,
-      deviceScaleFactor: 2,
+      viewport: { width: WIDTH, height: HEIGHT },
+      hasTouch: WIDTH < 700,
+      isMobile: WIDTH < 700,
+      deviceScaleFactor: WIDTH < 700 ? 2 : 1,
+    });
+    // Local release snapshots need only first-party resources. This test-only
+    // switch avoids third-party chat/network waits and emits no tracking events.
+    if (process.argv.includes("--block-external")) await ctx.route("**/*", async (request) => {
+      const target = new URL(request.request().url());
+      if (target.origin !== new URL(BASE).origin && /^https?:$/.test(target.protocol)) await request.abort();
+      else await request.continue();
     });
     const page = await ctx.newPage();
     let rec = { path: route.path, ok: false };
@@ -241,7 +270,9 @@ const run = async () => {
       // payload the page rendered (English or the locale copy), so the visible
       // FAQ and its schema come from one template.
       let html = got.html;
-      const viewId = route.mobileView || route.desktopView;
+      const viewId = WIDTH >= 700
+        ? route.desktopView || route.mobileView
+        : route.mobileView || route.desktopView;
       const viewPath = LOCALE
         ? path.join(SITE, "public", "ahv", "l10n", JSON.parse(fs.readFileSync(path.join(SITE, "l10n/locales.json"), "utf8"))[LOCALE].prefix, "views", viewId + ".json")
         : path.join(SITE, "public", "ahv", "views", viewId + ".json");
@@ -250,7 +281,8 @@ const run = async () => {
         const faq = [...tpl.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map((m) => m[1]).find((j) => /"@type":\s*"FAQPage"/.test(j));
         if (faq) html += `<script type="application/ld+json">${faq}</script>`;
       }
-      fs.writeFileSync(path.join(outDir, file), html);
+      // Browser serialization may leave indentation on otherwise blank lines.
+      fs.writeFileSync(path.join(outDir, file), html.replace(/[ \t]+$/gm, ""));
       rec = {
         path: route.path,
         ok: true,

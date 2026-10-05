@@ -1,3 +1,5 @@
+import { routeStylesFor } from "../_families/route-styles.mjs";
+import { measurementForEnvironment } from "../../../lib/measurement-config.mjs";
 import { translate, localizedPath, LOCALE_INFO, routeTable, type LocaleCode } from "../_families/l10n";
 import { mapSearchHref, resolveSearchLocale } from "./search-language";
 import "@kairali/ui/brand-tokens.css";
@@ -95,20 +97,26 @@ export async function SearchView({ searchParams, locale = "en" }: { searchParams
   // The English root layout remains en-US. Mark this results region honestly,
   // and make its reviewed route map available to the overlay on ?lang= pages.
   const localPaths = Object.fromEntries(Object.keys(routeTable()).map((path) => [path, localizedPath(path, selectedLocale)]).filter(([, path]) => path));
-  const localeScript = `window.__AHV_LOCALE=${JSON.stringify(selectedLocale)};window.AHV_LOCAL_PATHS=${JSON.stringify(localPaths).replace(/</g, "\\u003c")};`;
-  const measurement = process.env[analyticsConfig.activation.env] === analyticsConfig.activation.enabledWhen
-    ? { ga4: analyticsConfig.measurement.ga4.id, clarity: analyticsConfig.measurement.clarity.id, metaPixel: analyticsConfig.measurement.metaPixel.id }
-    : undefined;
+  // Query-language search uses the English root layout, so seed only the
+  // reviewed consent labels rather than shipping the full locale dictionary.
+  const consentLabels = Object.fromEntries(["Cookie notice", "We use cookies to improve your experience and analyse site traffic. See our", "Privacy Policy", "Decline", "Accept All", "Accept all"].map((label) => [label, T(label)]));
+  const localeScript = `window.__AHV_LOCALE=${JSON.stringify(selectedLocale)};window.__AHV_T=Object.assign({},window.__AHV_T,${JSON.stringify(consentLabels).replace(/</g, "\\u003c")});window.AHV_LOCAL_PATHS=${JSON.stringify(localPaths).replace(/</g, "\\u003c")};`;
+  const measurement = measurementForEnvironment(process.env, analyticsConfig);
   const consentScript = `(function () {
     var cfg = ${JSON.stringify({ breakpoint: 700, measurement, locale: { privacyHref: L("/new-privacy-policy/") } })};
     var host = document.getElementById("ahv-design-root");
     ${CONSENT_RUNTIME}
-    ensureConsentNotice();
+    function localNotice() {
+      ensureConsentNotice();
+      var notice = document.getElementById("ahv-consent");
+      if (notice && host) { notice.lang = host.lang; notice.dir = host.dir; }
+    }
+    localNotice();
     if (consentChoice() === "accepted") startMeasurement();
     window.addEventListener("resize", function () {
       var notice = document.getElementById("ahv-consent");
       if (notice) notice.remove();
-      ensureConsentNotice();
+      localNotice();
     });
   })();`;
   const ui = index.ui;
@@ -125,7 +133,7 @@ export async function SearchView({ searchParams, locale = "en" }: { searchParams
     // mobile views' root carries (the narrow header's right-hand group is wider than a 390px viewport by design).
     <div id="ahv-design-root" lang={LOCALE_INFO[selectedLocale].htmlLang} dir={LOCALE_INFO[selectedLocale].dir} style={{ minHeight: "100vh", background: paper, color: ink, fontFamily: "Mulish, sans-serif", fontSize: 17, lineHeight: 1.5, overflowX: "clip" }}>
       <script dangerouslySetInnerHTML={{ __html: localeScript }} />
-      <link rel="stylesheet" href="/ahv/fonts/ahv-33eeac48ab44.css" />
+      <style data-ahv-route-styles="" dangerouslySetInnerHTML={{ __html: routeStylesFor() }} /><link rel="stylesheet" href="/ahv/fonts/ahv-33eeac48ab44.css" />
       {/* the site's own header + footer, lifted from the design's prerendered snapshot (site-chrome.ts) */}
       <style dangerouslySetInnerHTML={{ __html: chrome.css }} />
       <div dangerouslySetInnerHTML={{ __html: chrome.header }} />
