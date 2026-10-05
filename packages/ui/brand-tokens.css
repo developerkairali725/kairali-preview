@@ -415,3 +415,11 @@ a { color: var(--forest-500); transition: color var(--dur-fast) var(--ease-brand
   --ahv-release-color-36: rgba(24,30,19,.8);
   --ahv-release-color-37: rgba(24,30,19,.2);
 }
+
+/* Existing AHV Monsoon landing palette (released fab097); exact-value aliases.
+   These preserve the reviewed design and do not define a new brand ramp. */
+.r10-revision.tl-monsoon {
+  --ahv-monsoon-paper: #f4f2eb;
+  --ahv-monsoon-accent: #a67723;
+  --ahv-monsoon-note: #70531f;
+}
