@@ -100,3 +100,19 @@ test('everyday wording and compressed or misspelled names retain the intended pr
     }
   }
 });
+
+test('Offers and the current awards hub are recognisable in search and finder handoffs', () => {
+  for (const q of ['offer', 'offers', 'discounts', 'deals']) {
+    const r = engine.query(q);
+    assert.equal(r.pages[0].route, '/offers/', q);
+    assert.equal(r.pages[0].data.label, 'Offers', q);
+    assert.equal(engine.query(q, { scope: 'programmes' }).handoff.route, '/offers/', q);
+  }
+  for (const q of ['award', 'awards', 'accreditation', 'accreditations', 'NABH', 'certification', 'Tripadvisor', 'awards and accreditations']) {
+    assert.equal(engine.query(q).pages[0].route, '/awards-and-accreditations/', q);
+    // Certification also legitimately matches training courses; keep those results.
+    const finder = engine.query(q, { scope: 'programmes' });
+    if (q === 'certification') assert.ok(finder.programmes.length);
+    else assert.equal(finder.handoff.route, '/awards-and-accreditations/', q);
+  }
+});

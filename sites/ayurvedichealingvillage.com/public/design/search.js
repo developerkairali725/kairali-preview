@@ -680,18 +680,26 @@
       }
     }
   }, true);
+  var homeSuggestionBinding = null;
   function homeSuggest() {
     var form = doc.querySelector('form[data-ahv-home-finder="1"]');
     if (!form) return;
     var action = localHref("/ayurvedic-treatments/");
     if (form.getAttribute("action") !== action) form.setAttribute("action", action);
-    if (form.getAttribute("data-ahvs-suggest") === "1") return;
     var inp = form.querySelector('input[name="q"]');
     if (!inp) return;
+    // Prerenders can retain the marker, and the view renderer can replace the
+    // input without replacing its form. Only the actual bound node is ready.
+    if (homeSuggestionBinding && homeSuggestionBinding.input === inp && homeSuggestionBinding.box.isConnected) return;
+    if (homeSuggestionBinding) { homeSuggestionBinding.controller.abort(); homeSuggestionBinding.box.remove(); }
+    var controller = new AbortController(), listenOptions = { signal: controller.signal };
     form.setAttribute("data-ahvs-suggest", "1");
     var host = inp.parentNode;
     if (getComputedStyle(host).position === "static") host.style.position = "relative";
+    var staleBox = host.querySelector("#ahvs-home-list");
+    if (staleBox) staleBox.remove();
     var box = doc.createElement("ul");
+    homeSuggestionBinding = { input: inp, box: box, controller: controller };
     box.id = "ahvs-home-list"; box.className = "ahvs-home-list"; box.setAttribute("role", "listbox");
     box.setAttribute("aria-label", "Suggestions"); box.hidden = true;
     host.appendChild(box);
@@ -712,7 +720,7 @@
     }
     function show() {
       var q = inp.value.trim();
-      if (q.length < 2 || !engine) { hide(); return; }
+      if (!inp.isConnected || q.length < 2 || !engine) { hide(); return; }
       var res = engine.query(q, { scope: "site" });
       var list = [];
       res.order.forEach(function (kind) {
@@ -731,20 +739,30 @@
       rows = Array.prototype.slice.call(box.querySelectorAll("li"));
       active = -1; box.hidden = false; inp.setAttribute("aria-expanded", "true"); paint();
     }
-    inp.addEventListener("input", function () { clearTimeout(t2); load().then(function (index) { if (!engine) { engine = createEngine(index); ui = ui || index.ui; } t2 = setTimeout(show, 90); }).catch(function () {}); });
-    inp.addEventListener("focus", function () { load().catch(function () {}); if (inp.value.trim().length >= 2) show(); });
+    function updateSuggestions() {
+      clearTimeout(t2);
+      load().then(function (index) {
+        if (controller.signal.aborted || !inp.isConnected) return;
+        if (!engine) { engine = createEngine(index); ui = ui || index.ui; }
+        t2 = setTimeout(show, 90);
+      }).catch(function () {});
+    }
+    controller.signal.addEventListener("abort", function () { clearTimeout(t2); }, { once: true });
+    inp.addEventListener("input", updateSuggestions, listenOptions);
+    inp.addEventListener("focus", function () { if (inp.value.trim().length >= 2) updateSuggestions(); else load().catch(function () {}); }, listenOptions);
     inp.addEventListener("keydown", function (e) {
       if (box.hidden) return;
       if (e.key === "ArrowDown") { e.preventDefault(); active = Math.min(rows.length - 1, active + 1); paint(); }
       else if (e.key === "ArrowUp") { e.preventDefault(); active = Math.max(-1, active - 1); paint(); }
       else if (e.key === "Escape") { e.preventDefault(); hide(); }
       else if (e.key === "Enter" && active >= 0) { e.preventDefault(); var a = rows[active].querySelector("a"); if (a) choose(a); }
-    });
+    }, listenOptions);
     box.addEventListener("click", function (e) {
       var a = e.target.closest("a");
       if (a) { e.preventDefault(); choose(a); }
-    });
-    doc.addEventListener("click", function (e) { if (!host.contains(e.target)) hide(); });
+    }, listenOptions);
+    doc.addEventListener("click", function (e) { if (!host.contains(e.target)) hide(); }, listenOptions);
+    if (inp.value.trim().length >= 2) updateSuggestions();
   }
   if (doc.readyState === "loading") doc.addEventListener("DOMContentLoaded", homeSuggest); else homeSuggest();
   if (root.MutationObserver) { var hsRoot = doc.getElementById("ahv-design-root"); if (hsRoot) new MutationObserver(function () { setTimeout(homeSuggest, 0); }).observe(hsRoot, { childList: true, subtree: true }); }

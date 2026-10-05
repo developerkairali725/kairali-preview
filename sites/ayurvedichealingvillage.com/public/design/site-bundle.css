@@ -2119,7 +2119,7 @@ html[lang="pt"] #ahv-consent * { font-family: Arial, sans-serif !important; }
 #ahv-design-root[data-ahv-family="home-hi-fi-v4"] [data-ahv-home-finder] :is(div,span,p) { color:#514a3f; }
 #ahv-design-root [data-ahv-home-finder] [style*="font-size:12px"], #ahv-design-root [data-ahv-home-finder] [style*="font-size:11px"] { font-size:16px!important;line-height:1.5!important;letter-spacing:.5px!important; }
 #ahv-design-root [data-ahv-home-finder] button[type=submit] { background:#5A4420!important;color:#F7F4EA!important;min-height:52px!important; }
-#ahv-design-root [data-ahv-home-finder] a { border:1px solid #5A4420!important;color:#5A4420!important;background:transparent!important;min-height:48px!important;font-size:16px!important;letter-spacing:.5px!important; }
+#ahv-design-root [data-ahv-home-finder] > div > a { border:1px solid #5A4420!important;color:#5A4420!important;background:transparent!important;min-height:48px!important;font-size:16px!important;letter-spacing:.5px!important; }
 .ahv-rate-photo { width:100%;height:200px;object-fit:cover;display:block;border-radius:4px;margin-bottom:20px; }
 .ahv-home-rates .ahv-rate-price { font-weight:700!important;font-size:24px!important; }
 .ahv-home-experts p, .ahv-home-experts div[style*="font-size:12"], .ahv-home-experts div[style*="font-size:13"], .ahv-home-experts div[style*="font-size:14"] { color:#514a3f!important;font-size:16px!important;line-height:1.6!important; }
@@ -2135,7 +2135,7 @@ html[lang="pt"] #ahv-consent * { font-family: Arial, sans-serif !important; }
  .ahv-home-experts { padding:40px 20px!important; }
  .ahv-home-stories { padding:40px 20px!important; }
  .ahv-home-experts > div:has(> div > div > img) { gap:24px 16px!important; }
- #ahv-design-root [data-ahv-home-finder] a { width:100%!important;box-sizing:border-box;justify-content:center; }
+ #ahv-design-root [data-ahv-home-finder] > div > a { width:100%!important;box-sizing:border-box;justify-content:center; }
 }
 
 /* Apply to the server snapshot too; source copy and translations stay frozen. */
@@ -2145,11 +2145,21 @@ html[lang="pt"] #ahv-consent * { font-family: Arial, sans-serif !important; }
 @media(max-width:699px) { .ahv-finder-section { margin:28px 20px 0!important; } }
 
 /* Finder actions share one visible, padded control geometry on desktop and phone. */
-#ahv-design-root [data-ahv-home-finder] :is(button[type=submit],a) { display:inline-flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;min-height:52px!important;padding:12px 22px!important;line-height:1.4!important;border-radius:4px!important;font-size:16px!important;letter-spacing:.4px!important;text-align:center!important;text-decoration:none!important; }
+#ahv-design-root [data-ahv-home-finder] button[type=submit],
+#ahv-design-root [data-ahv-home-finder] > div > a { display:inline-flex!important;align-items:center!important;justify-content:center!important;box-sizing:border-box!important;min-height:52px!important;padding:12px 22px!important;line-height:1.4!important;border-radius:4px!important;font-size:16px!important;letter-spacing:.4px!important;text-align:center!important;text-decoration:none!important; }
 #ahv-design-root .ahv-home-experts :is(a,button) { font-size:16px!important;line-height:1.5!important; }
 #ahv-design-root .ahv-home-experts a[style*="background"] { background:#5A4420!important;color:#F7F4EA!important;padding:12px 22px!important;min-height:48px!important;display:inline-flex!important;align-items:center;justify-content:center; }
 /* Preserve the complete Tripadvisor award silhouette and breathing room in home trust blocks. */
 #ahv-design-root[data-ahv-family="home-hi-fi-v4"] img[src*="logo-ta.webp"]{object-fit:contain!important;object-position:center!important;flex-shrink:0!important;box-sizing:border-box!important;padding:6px!important;background:transparent!important}
+
+/* Centre the three finder actions; preserve readable, full-width phone controls. */
+@media(min-width:700px) {
+ #ahv-design-root [data-ahv-home-finder] > div:has(> button[type=submit]) { flex:0 0 100%!important;justify-content:center!important;flex-wrap:wrap; }
+}
+@media(max-width:699px) {
+ #ahv-design-root [data-ahv-home-finder] > div:has(> a) { flex-direction:column;align-items:stretch;gap:12px!important; }
+ #ahv-design-root [data-ahv-home-finder] > div > a { flex:none!important;min-width:0;white-space:normal; }
+}
 
 /* source: /design/newsletter.css */
 /* Shared by desktop/mobile footers, including native English pages.
