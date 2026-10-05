@@ -13,7 +13,7 @@ for (const locale of fs.readdirSync('public/ahv/l10n')) {
  const localeKey = locale === 'zh' ? 'zh-Hans' : locale;
  const paths = Object.fromEntries(Object.entries(routes).map(([path, targets]) => [path, targets[localeKey] || path]));
  const localeActions = actions.replace('var lp = window.AHV_LOCAL_PATHS,', `var lp = window.AHV_LOCAL_PATHS || ${JSON.stringify(paths)},`);
- const dictionary = JSON.parse(fs.readFileSync(`l10n/generated/${locale === "zh" ? "zh-Hans" : locale}.json`,'utf8'));
+ const dictionary = JSON.parse(fs.readFileSync(`l10n/generated/${locale === "zh" ? "zh-Hans" : locale}.json`,'utf8')).ui;
  const oldMarkup = JSON.parse(source.match(/controls\.innerHTML = (".*");/)[1]);
  const priya = oldMarkup.match(/class="ahv-contact-label">([^<]+)/)[1];
  const whatsApp = oldMarkup.match(/class="ahv-contact-wa"[^>]*aria-label="([^"]+)/)[1];
