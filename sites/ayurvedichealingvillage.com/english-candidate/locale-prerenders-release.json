@@ -1,10 +1,10 @@
 {
   "repository": "kairali-digital/kairali-web-factory",
   "tag": "ahv-english-staging-20260915",
-  "asset": "ahv-locale-prerenders-home-search-20261005.tar.gz",
-  "archive": "ahv-locale-prerenders-home-search-20261005.tar.gz",
-  "sha256": "946c3f2679f3dbbbc83ad524feff49f082b721f52ff284722c0cd8cc802bbb43",
-  "bytes": 46687507,
+  "asset": "ahv-locale-prerenders-training-content-20261005.tar.gz",
+  "archive": "ahv-locale-prerenders-training-content-20261005.tar.gz",
+  "sha256": "36971aed2e864328c9eac6be6847b06aae55bfafeebdc6fc039976444de68aa4",
+  "bytes": 46469035,
   "capturedSource": "e32903b13 + reviewed search focus handling; 12 translated homepages recaptured; all other 2592 snapshot members unchanged",
   "captured": "2026-10-05",
   "sources": [
@@ -14,99 +14,99 @@
     },
     {
       "file": "l10n/generated/ar.catalog.json",
-      "sha256": "777fe9d198c283b66f0b64fd01b0879924f6b8099f405bfc4eb0d0022b045f13"
+      "sha256": "520b73b80184f79312569d3d882cb3cadff331de5247ad5f8d932e52a84d4d63"
     },
     {
       "file": "l10n/generated/ar.json",
-      "sha256": "f7a1e6f32494f572ee9b1a2620c4e3dedc9412b63f4c30c8ef73cb84e4fdd619"
+      "sha256": "ae40d6ee1fe5262fff79dd111062903433a797bb3ebf72ffb3a7c1b8ca46aa29"
     },
     {
       "file": "l10n/generated/de.catalog.json",
-      "sha256": "b36c2fab3448ea603cffc375eb89e6e9df23562df3ab3735f3032aefacd722c6"
+      "sha256": "5f0f68418bcc4472fe6334a9ca73219644d3a5feb279ce5965a690ca6a1a2b7d"
     },
     {
       "file": "l10n/generated/de.json",
-      "sha256": "bc20d81a2cc568b1c14cb5112bc4edb0f4212d856fabdbc57f9c90a293d4929c"
+      "sha256": "e9c1ca0432f2743e2e50fb9dac4e97644a8ee62cd5149b06cc86d4c3446c10e5"
     },
     {
       "file": "l10n/generated/es.catalog.json",
-      "sha256": "343001de42fb3017c07ce4f0232556e10f86f9ffe1e67c510883098d4f9c4a0e"
+      "sha256": "28bdd3d0fc825234fb3e3170b3788cc476a51cd15c6591ebc817a2ca50f5e0d4"
     },
     {
       "file": "l10n/generated/es.json",
-      "sha256": "f89a671fcb7595afa55eaebe89c7ef07b54583f211ad744e0ecb845749318771"
+      "sha256": "d1f16c7b38f89ae07087ec5ef8d6708ec6280e62e76da1e1cf605fe220bc58e4"
     },
     {
       "file": "l10n/generated/fr.catalog.json",
-      "sha256": "4252a40c7c295098668925040be2deba9d0f19515c0430d33fe0c9c1322a7eb3"
+      "sha256": "04eb293838e8b0b4dffc2c26031b428afcc117d18d5d1e10dd7a8b34d7b0f3f1"
     },
     {
       "file": "l10n/generated/fr.json",
-      "sha256": "e70c378c6b3c12b79f905c99ed3829b110f65bfbc51873de8612581f6992684d"
+      "sha256": "902beef4fe65852780c811d52347ba3d112444daeaafc85daed8e1d10e9b783f"
     },
     {
       "file": "l10n/generated/hi.catalog.json",
-      "sha256": "81a7c2be7463ee16d4f692d0c49984fed750206c890f398f901e7edd9219c510"
+      "sha256": "d4cbedc748d43a718ec7a330eb87faa3147d7d820f1b31dd3a2600696431e402"
     },
     {
       "file": "l10n/generated/hi.json",
-      "sha256": "a17697a0f7a859e56e94e1825b4d14b55d3db87ce23a7ba9c8256fbd7957842e"
+      "sha256": "504c809eb900e6c9cd26304264c9549ce9b6714f65d4f1b41fa5f5a5a7f3d7de"
     },
     {
       "file": "l10n/generated/it.catalog.json",
-      "sha256": "38165efc07d3fd6c3ef359425a86363584f6fb0ce7c4c79c077f07df5bad1790"
+      "sha256": "03cbd86b4fb670067aa2f33dbd61c818dc00e839e2465fb90b40f162e7a56f0e"
     },
     {
       "file": "l10n/generated/it.json",
-      "sha256": "16fae5c9c9e443c3916b8755f68933a2ac7eaa0f6c9f22f09c8c7323dd9c80cf"
+      "sha256": "7e22ce801642a31164075c6907590e39002825758797ab99e7bfc5528ee76a99"
     },
     {
       "file": "l10n/generated/ja.catalog.json",
-      "sha256": "a7ac58d27f514489c9fa9bc7baeb952a6013a3a3cd212b70c3c6e7b735aff442"
+      "sha256": "055a02bb17935018692fade313cd113819f54d8ecb3d00303f8dbad01901293c"
     },
     {
       "file": "l10n/generated/ja.json",
-      "sha256": "218ea261040ff0a86f8cb67797e236f098858b74472dc64af51759be57a2b81f"
+      "sha256": "03bf099e565c12b9e0405603022e6d04ddf2b97f0b89a24113f04088a4a2fde3"
     },
     {
       "file": "l10n/generated/ko.catalog.json",
-      "sha256": "af6ad438fddcf84c6c9576675bb90172fbf5d12925500a106a712e618adb1ae9"
+      "sha256": "ebaf0d96517bd3e0e50d8921793b73b69fd1cf239424c3f552bcda9f0eae422d"
     },
     {
       "file": "l10n/generated/ko.json",
-      "sha256": "5dcb6d7ce64de3db394ffd86c586d3efdd259014935fcbe9ca919e3511bbc304"
+      "sha256": "3c8527d19c96405ebf84768fbc51f2898521fb9b3628395f8e28001f31a890e6"
     },
     {
       "file": "l10n/generated/nl.catalog.json",
-      "sha256": "7801c614b8a8c3f320678cf304010ddfc3ad9aaecc41adb6b2ba9e9d351488c7"
+      "sha256": "4fdc34adee5a27ff347dc7d3e151e9ee4cc601ee0f4d141b120fdf088d773889"
     },
     {
       "file": "l10n/generated/nl.json",
-      "sha256": "9043e0e74cee4897cdf945d428a3125e43e5bf5de8640aab5f85f9ab03c5687b"
+      "sha256": "733417f715d083ec04bcc6512b9573c759d776e41bb3018adccfe8230a439b23"
     },
     {
       "file": "l10n/generated/pt.catalog.json",
-      "sha256": "1e83a72a98cd8439b0fae778e3f0701c2d43f277adbf9c00eb5b2c34da08a134"
+      "sha256": "714a8290e5f14bfa0670d056e8c0d3355e7e37cea7f6f1bfa396d62f6f75e652"
     },
     {
       "file": "l10n/generated/pt.json",
-      "sha256": "eec146e161d5bfc942261f9075f535ba337db36195e59822100a79026a7d9359"
+      "sha256": "f20c2a00f38272d333a615e0b6585880040f26430d9bd5d7bf10f1d522bd505d"
     },
     {
       "file": "l10n/generated/ru.catalog.json",
-      "sha256": "6ba40a7f8e3305cefe7c8c7f7ede11de4ed4d2d2541aa13b610f1638c66d513b"
+      "sha256": "56f3d9e3a23a010f61166432b87ee31b55007f5046dee74ca8a3f6a3d0af1062"
     },
     {
       "file": "l10n/generated/ru.json",
-      "sha256": "8bcd1bc2e1e8e99c83c2216121c9569bef4697f6e19576b63ad36d9ac1c99b34"
+      "sha256": "68dadc42ed0a2b06783cd691fe0a13175d8841d3a5c81548dafafc27f76b6a6c"
     },
     {
       "file": "l10n/generated/zh-Hans.catalog.json",
-      "sha256": "721be1f1ed2cf309bb98c0e5c1adcc997abe8ef38072390f79d94267c0f71601"
+      "sha256": "733abfde01045280f4672191fe2b2c58769311b04625ef2148efee147879f8bb"
     },
     {
       "file": "l10n/generated/zh-Hans.json",
-      "sha256": "4075698c01e54b3dc5c7e41678666cae0eac64f3225edd007d95a9536ad4a46d"
+      "sha256": "0bf6cf0e77f46ef8043b81fe809800292194abec987e128ec7e2c6de221162fb"
     },
     {
       "file": "l10n/routes.json",
@@ -202,11 +202,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/assets/course-aalct-hv-data.js",
-      "sha256": "a77cf09ffad196aa1ab786beaad61ee3d3082acca0a9ce22448532259b5b3b4e"
+      "sha256": "9c985da85bad0b5ad06c9d11e58271c80d3085dc22056697705ad1951572f6ff"
     },
     {
       "file": "public/ahv/l10n/ar/assets/course-aatp1-hv-data.js",
-      "sha256": "312d326b6176a182a116571e11a3b1f97ee7541c4d29e2247e4960bbbad3448e"
+      "sha256": "3009bdac95068f282598eaf7d7089d5e4ebac4c798e24910380ed846c370bb1b"
     },
     {
       "file": "public/ahv/l10n/ar/assets/course-oap-hv-data.js",
@@ -530,19 +530,19 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-ayurveda-training-programme-desktop.json",
-      "sha256": "4129c5e70411e072a661f0c87b56accb43882dd42b0e333f501008b5cfc3c872"
+      "sha256": "f355a89c74d83865d727be50915dd7a6cdaca768a7b06a1693b4292900e3d3f3"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-ayurveda-training-programme-mobile.json",
-      "sha256": "e6d879161db0b95545b66f3146ee6c6b4108bd52e04301489b7ed5364bf66714"
+      "sha256": "08ba6ff30fe992648b4120a84b5f1a1392d788c557f2ce7617d11a1b20832374"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-ayurveda-training-programs-desktop.json",
-      "sha256": "54f43d08b18a4e78a0950c972043bd4c001d6735b83b17f5a167e47e3aed8d01"
+      "sha256": "90faec3906a26d17864acbb73a317a55a6393f1ced3bfee2b90c2176eb502f4b"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-ayurveda-training-programs-mobile.json",
-      "sha256": "d0ce78ee93a7b084f563c2093939901c67f1ae0352dba3fc910b54b9abace307"
+      "sha256": "42d2cdd1ae3dafa92c2cee33501375a216673726e5e3278e64251ad7339491d3"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
@@ -626,43 +626,43 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-course-consultant-therapist-desktop.json",
-      "sha256": "44449739bdbd4f04314f2dfaaad376e3e5c5ebf2663e59c7408eef7b36e41cc1"
+      "sha256": "3cc99b2b6174f98a09bc58a9bb38bf75d6f6c2fd4a86a1a31a339fd99d891ba8"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-course-consultant-therapist-mobile.json",
-      "sha256": "82c486da2fd725cf4d7cd66e165adf7980f97356c0d6c0ffe346496fcfd0f4e1"
+      "sha256": "07f2ee2a8b78e8c1beb60c5053ab459a35bf9b05aa7727f31916ffcacf5b833b"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-course-five-day-intensive-desktop.json",
-      "sha256": "4d4af705bcd2b5eafbcd9b0e21a997c6fe1eafae3cac965fa19ec5ae26cf3732"
+      "sha256": "494c853d20ab9cbccfce09292391762f79b5ad1c23e1be77d542a5070b2ec951"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-course-five-day-intensive-mobile.json",
-      "sha256": "22c8bc7d0c02ff83f1bc65f110692354917ec1f3844ee5a4701c98486109d3e1"
+      "sha256": "a980c2d233b4ba16dc69ced9b5e3f0636538dcbb7443f95ee2ecb11bfc5227c1"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-course-level-one-advanced-desktop.json",
-      "sha256": "08d6a65178d2f07a29ec3f885216c450235fa049595243f2a5873f3fd932d2dc"
+      "sha256": "5627f27196ce21c7f56a6da68d2a4986179609b1d468dde2be40952a249e200f"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-course-level-one-advanced-mobile.json",
-      "sha256": "936d997ff82f1892094720a6cf752a832013014f7d1ac281189a86add3fc3118"
+      "sha256": "d2571059c98ab1fcf1bd52667fb7a751b6ed135bb584e6c06d3fa191526cbcca"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-course-one-day-workshop-desktop.json",
-      "sha256": "a46c79b0e85b9050ceb751d7eecc127072f09e97df2d9a7668e8bc5f25540740"
+      "sha256": "3e01b164e20354eee691fb08f70a3487a76a54af022ee56fdecdee2624abeac6"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-course-one-day-workshop-mobile.json",
-      "sha256": "d4ef82b1f3e3f89036f72714444f62f1ffa2b79f1c5006d8ef5711115bf83fec"
+      "sha256": "6269cbe2f653a5fa67960d0d817ac7846af939862596bd6d55be6c294468214b"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-course-three-day-certificate-desktop.json",
-      "sha256": "03eed23a37d496823e1b3ecf502206957c0b936f0756473a462f0e98bb893065"
+      "sha256": "172d78add1dc573c233bf1cd03841d9acc70c882fe4d4302740b3144aec85475"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-course-three-day-certificate-mobile.json",
-      "sha256": "76cc51b3342f3aa9f90f5291e13a4919add03484f973b38c7a2b1903371d59e7"
+      "sha256": "fe8a92aa5a7aa5cf3fde348cd985ec7e8e8a6c6d882d5bbe508c172d70dc1d94"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-de-addiction-rehabilitation-desktop.json",
@@ -1098,11 +1098,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-template-course-and-fees-desktop.json",
-      "sha256": "f0b0029c300f6534415d577ea14da2855ebb9f6b565e4d531c3a4fa8107c99e3"
+      "sha256": "ade4732aa103d78c94e9fd11c24d66e43f592cf46299b57fd87a0e3f3cebe1c5"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-template-course-and-fees-mobile.json",
-      "sha256": "9a72c0ac6d27a0220e1cc61695a71908b914865b472e6cb27bcde52b2c21c3cb"
+      "sha256": "c6815f1e3462042db738ff3e464c83a864189fea2ec5e5570cb4b70de4c59861"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-template-legal-policy-desktop.json",
@@ -1242,11 +1242,11 @@
     },
     {
       "file": "public/ahv/l10n/de/assets/course-aalct-hv-data.js",
-      "sha256": "fab285d6f3acf471b94f8dc823a29dabb4829b86c6c09fbb9b26fd8745f22340"
+      "sha256": "a03942c004e6e079dfd9d0b1fcfddf1267de74ef5f3613ede80cf3a9ab96a9ac"
     },
     {
       "file": "public/ahv/l10n/de/assets/course-aatp1-hv-data.js",
-      "sha256": "d8eac1cb48a3d49d3ab30ee214b2edd9ff196e7871b8ad467bd68dc3015cdf00"
+      "sha256": "5cf14c27e8cdbf559a792c08c36e22d9462ac9f343d5b1299bebf808b2a39cfa"
     },
     {
       "file": "public/ahv/l10n/de/assets/course-oap-hv-data.js",
@@ -1570,19 +1570,19 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-ayurveda-training-programme-desktop.json",
-      "sha256": "34ff9ebbfdfb937439d29b434d33fa6abe3317444b075c8359e0c5e876815b2a"
+      "sha256": "479250bc0192549bf706eeb5be26d9f92cdc63349692327d07fcf2d621650ed1"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-ayurveda-training-programme-mobile.json",
-      "sha256": "037e91b845bfa6eb1f1d9621014f2f7ad56e5226f5456ecdc011deb7295cb825"
+      "sha256": "638d2f7acf67578271c19c0328a5a5aec7872087c8d53690206b2d78015204b2"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-ayurveda-training-programs-desktop.json",
-      "sha256": "1c6bfd3473c893bb3f7dfafc7fca5b5a7048726748f3c82b477bd812e66cf522"
+      "sha256": "00696a4a14dc1f58ac52822162227dd991ba279577c06cf8971be2913c1a8f3e"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-ayurveda-training-programs-mobile.json",
-      "sha256": "3294f3cc9c1216fb3c702dc6edb7c577a6151450db4d69592bcf637dcf85dc1b"
+      "sha256": "5eeb5ebbbbf1e70ad1aca9b4b93132c9e00f385c57ee95cfa453eff7bf5fd34d"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
@@ -1666,43 +1666,43 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-course-consultant-therapist-desktop.json",
-      "sha256": "1f516a058205d5b1b7b9017df4d2d4e65836f873f51d9114f435db22ea0772be"
+      "sha256": "1c8daa21974ddde99834d9000b5ba2ba2dd0260e50671966823e9fe640f1786d"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-course-consultant-therapist-mobile.json",
-      "sha256": "454bbbf45f08360e03df477efb34753bfa392d06da31ac0631e129d26d96cc41"
+      "sha256": "6350e5dadd35cf8dd7cf9fdc45f2925b55c5b6d3048ba69a51a8816f43503603"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-course-five-day-intensive-desktop.json",
-      "sha256": "d6b3d6eccbb599b47fa8604d9ee1901214789ccf07e37c8df5c184c4005224d5"
+      "sha256": "1181dcf24b05a4e550818de48f422e72c7a184852c423cd88ec2ef1cf6e90d26"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-course-five-day-intensive-mobile.json",
-      "sha256": "19be6ae6d6a00053f7be7f6ab4761d6a0f3862ea5365ffa2e1406e6b4772f41e"
+      "sha256": "94559234449c81fe10327819410b6cbb9a7d327a156bfb5db3aa0dcad273afe5"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-course-level-one-advanced-desktop.json",
-      "sha256": "7e0349c77b0e0e1f8f51b73adb36871dfaa6510734002d73334975ece51fb5fe"
+      "sha256": "dad2dc978898677d80e986ad47354d872b57ecf8402ac80edf5553656cfbc3e4"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-course-level-one-advanced-mobile.json",
-      "sha256": "eaa8b54d59ba5226e59d18388c5fab8547e2b914d86e7ae0153a41981d89efef"
+      "sha256": "45896e0ee4d458f6b9f8a4507c5af235996680fb1f8d36d0f6029fe2f43bfc75"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-course-one-day-workshop-desktop.json",
-      "sha256": "6f6c5afb3fcdc24840c8a0d1b3efcbaa96e3c0eabd8e7fffbc0fd7b544a86066"
+      "sha256": "c15e229ef8c8dc43386c003cf843d84a6bfddc26318fb277632edd7416c752ce"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-course-one-day-workshop-mobile.json",
-      "sha256": "3592e4878a5905c2bb5a4982bed4b4b358bdad3fcfd8d070d01aee69d85df9fd"
+      "sha256": "dde1375e927841de6ededa66550fac804792e9598e59c7afc78548d271294abe"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-course-three-day-certificate-desktop.json",
-      "sha256": "971d06c7127365cd0cf99f3c977573673dc1245d4978d9e1e5fe82c2f343dd98"
+      "sha256": "a4a600bc19bffd4e87c5c6ea59283ecedfaebf4507b72c028a9522b96339fa93"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-course-three-day-certificate-mobile.json",
-      "sha256": "d3e468f2d142a0826489c080980ba7e2ffc5f984be50ad3d84874647da04c465"
+      "sha256": "350bdfa1b14f98a7e7c528a5ad6e81d7191c09abbfd99a928cbe1c1324033b2b"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-de-addiction-rehabilitation-desktop.json",
@@ -2138,11 +2138,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-template-course-and-fees-desktop.json",
-      "sha256": "f1295bc0a43c84c81edfcd9ab477b1c3e7e0a89c6bfd5f7a73dfb20f18133f9c"
+      "sha256": "ab84dd9d68f25f4b62be2932e517264e24fba882165919fb696653a68242516b"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-template-course-and-fees-mobile.json",
-      "sha256": "9cb561c39deed15f9b3983ba29ea75b4241c9d60dd18091e4ce38460daf024cb"
+      "sha256": "ae204ef77a5dbd1db9f261ca4891bc60c0656934f511effeb0de2ff23ae26151"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-template-legal-policy-desktop.json",
@@ -2282,11 +2282,11 @@
     },
     {
       "file": "public/ahv/l10n/es/assets/course-aalct-hv-data.js",
-      "sha256": "158770af180661bb4cab54f46af0e2faf249574198dbd27a087e649a2d2686bc"
+      "sha256": "164e696fcb50697c9c9bc26e5eb1b5ba0ae760952c1232b5bfc75d51fd8fd4c6"
     },
     {
       "file": "public/ahv/l10n/es/assets/course-aatp1-hv-data.js",
-      "sha256": "4d2cc312d0d46b6d3c3f7f4c8357469f2363fdc0768c87b49aa9771a4f87de3b"
+      "sha256": "144aca2e4d3d2be90e1d50a2d36eaf085bd37fc7d2baee54ca4d3bdd06a12cea"
     },
     {
       "file": "public/ahv/l10n/es/assets/course-oap-hv-data.js",
@@ -2610,19 +2610,19 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-ayurveda-training-programme-desktop.json",
-      "sha256": "1cb15395fec9763e784cfe7349f00311e7a19bb070ed2acefa950953585f95cd"
+      "sha256": "d081496970546888093bde0e6ce45fadca350e4cc79e012fbe809e46e182246e"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-ayurveda-training-programme-mobile.json",
-      "sha256": "f7d9491f9fe433fed4b7e126452e8cb82c6c0b1b5549ea0d9d07a39c5e21938f"
+      "sha256": "d33c06f39a5723bbe262c47c7b7347654b1ad840c38832e3642cc516f8c499ea"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-ayurveda-training-programs-desktop.json",
-      "sha256": "5f4a6360f9b791e15a6bae4ba197e413c03fbc7ce2ed37530cc20941f1cc3a8e"
+      "sha256": "e1309bfd7599b9169313dc9a78c9b5e59e1d59e7d295b7ad29dc45375bf96f4a"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-ayurveda-training-programs-mobile.json",
-      "sha256": "ba6c82c48737dcd80b59d46c243b4df4a36ea49d066e15d8cf173000bbce1a57"
+      "sha256": "d51f26fa0581185cba6b3c590c36e112f18051e082db140ca9e72e07cf9f503e"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
@@ -2706,43 +2706,43 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-course-consultant-therapist-desktop.json",
-      "sha256": "f0189d765351bbc6e134bded74210a96803a99a68cab023f32d85841f357e222"
+      "sha256": "96506d1230f46a2cb72d3d9c231561c89f2efa3fe6e17ce35b0bb3a786fbf4b9"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-course-consultant-therapist-mobile.json",
-      "sha256": "c3aba11ccaf7f190766b4213b4f23a818ec5da7af095b7a27759d40526d9ba1b"
+      "sha256": "4ed1f734502eb0856c72f8f4d2eac946b6d8d52f37917d1d5e00ad7b5eb09103"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-course-five-day-intensive-desktop.json",
-      "sha256": "ccaec0a0ce5f932ac5fc8e7010dbbcd5806015c89cf24161fa39035a1f80f9b3"
+      "sha256": "5411a831a440d70ceb714c982561e410a92ea6f2b4877f2b85c9a4767d452934"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-course-five-day-intensive-mobile.json",
-      "sha256": "7bc9d61916b20b7f6ff883645b21d7c58738443c6da4fd3d59c3adc8b42cd4d3"
+      "sha256": "51e4da33d5358e1e92f4cab0079406fa51d9d9e5d1024fcbb680ccec57f00156"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-course-level-one-advanced-desktop.json",
-      "sha256": "92a94cb4b12e5599f53c2edcab52269a9522ce505ff0be4c41cb983955e5ae3d"
+      "sha256": "f5cc82b1a30f6a98e49ba3ac9468745d0ca359d237e0e6d6b584926ee3915811"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-course-level-one-advanced-mobile.json",
-      "sha256": "106e79f11de698836b21ff57f6de7b9ad6917c319b93ce60bd1e6e960444916f"
+      "sha256": "0ca273ff3aad32a4353c03610cbc784ddab2def02cc293e7141844e9226abab5"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-course-one-day-workshop-desktop.json",
-      "sha256": "1767f0115d876c6fe018fe058614807fac468a3baea2f924861a67a0d2c0b16c"
+      "sha256": "d69fa2ee11036750e18321fed390055e20a85500f5840d4f996c87749ecc3f8a"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-course-one-day-workshop-mobile.json",
-      "sha256": "ef26c768a27dfda5a6b97f7c7c1671825fcbed87e3e49231c31aba988ad90ab2"
+      "sha256": "36cf09742788e13568feebf9de61a5787eb5b92dbb1c2c0e3fc824d5a557b7bd"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-course-three-day-certificate-desktop.json",
-      "sha256": "a5475fbf0d9ec550fcddf3e135276244c8c60675d34666f73af5843d6e05eb03"
+      "sha256": "96a28605458df8acf99dfb4d3aa962272bffb81f6204b37194696607dc0fc4e7"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-course-three-day-certificate-mobile.json",
-      "sha256": "4bd9eae9203d246afcdbd9eb8d5258d01db6d8de69091770131589e7e2247bb1"
+      "sha256": "9ca676fe04dffbdadbdb3c860d5ae5572679e7bf8bc165dedb95891c94d76b30"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-de-addiction-rehabilitation-desktop.json",
@@ -3178,11 +3178,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-template-course-and-fees-desktop.json",
-      "sha256": "e61e0ad898cc930c796bd5ceec781c9f4e19fcdf2e93840a2fb31e95fe5f96d3"
+      "sha256": "02a1b5071a0a476e480ee7b9b496fe8edf8b1d3351f3fc5855f10b316d03cd5e"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-template-course-and-fees-mobile.json",
-      "sha256": "2a9afe7d395bc23695f77622c79e030c0a432c768314cbe256cd831f0bc3a160"
+      "sha256": "d056656511afca93148be04749a6ef607d827a0e64f2d323a8a65538bffd3755"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-template-legal-policy-desktop.json",
@@ -3322,11 +3322,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/assets/course-aalct-hv-data.js",
-      "sha256": "def76768eb8c24abb2934eb396e493915bf844d92aca1648da58dedf6f0a68fa"
+      "sha256": "fc58fdb1ae19c78392204552ed754ac0b1df50966f051f02cc6c4a09f6813631"
     },
     {
       "file": "public/ahv/l10n/fr/assets/course-aatp1-hv-data.js",
-      "sha256": "f0afb044b1b23cb58ddab9c4ce74fe0f3a9525891e4ead1411261b857c28a4a5"
+      "sha256": "9aaf714434761978cadc47a9f30aa73152c601a2a31fd5216101d5246ba0e9d6"
     },
     {
       "file": "public/ahv/l10n/fr/assets/course-oap-hv-data.js",
@@ -3650,19 +3650,19 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-ayurveda-training-programme-desktop.json",
-      "sha256": "a9e79b9d94e2a4e5feb48c346c93057d5edadc214d7f42b4ac5b0dea052d4381"
+      "sha256": "806503dd5a5ee4043a5ca49ba5293c52afbe6668e90506e6a2c9a31b3be2e49e"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-ayurveda-training-programme-mobile.json",
-      "sha256": "c53389cd5b1c81567d6e3e22a94c822cfe9071372241b8d5387c7bc4a451373a"
+      "sha256": "6deb88e4d042f673ce78c2ceb682693b6a2705a21a7a5048d6e7f4d1aafc6af6"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-ayurveda-training-programs-desktop.json",
-      "sha256": "93745fe4b787d2c40fa1126cd38f436f7f574ccac0cf783ac8c7b414e30af73a"
+      "sha256": "c174e5c0f02ee0f3db694fc1a7a2ecd33b5992f48fc3df2f1fcca0a66d5353a2"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-ayurveda-training-programs-mobile.json",
-      "sha256": "6532533e56318277fbf8a2e3669345e7b88602566becd4e400c339664217006c"
+      "sha256": "cc5a80957c2675b007ee01a0fc906a8d290205435e4a3727dbbd39fa23df0887"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
@@ -3746,43 +3746,43 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-course-consultant-therapist-desktop.json",
-      "sha256": "8550f68ff5d0fe269a8faa3a34557421d7774054024b00ba58eddf9300bb0e75"
+      "sha256": "f385641193e0376ce68a3489c6e26b9ba3f9e57b18284932420965dd5cb2d33a"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-course-consultant-therapist-mobile.json",
-      "sha256": "128e65624ed442211437c2f81642d4c1726779defedb84e32b361b5f3de7c0d1"
+      "sha256": "ea98ff51a38d71ae6ffc48734aaaab0d5f494455915f739756790d5b1f747f46"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-course-five-day-intensive-desktop.json",
-      "sha256": "4edd681fb81008aa83992cd42307c2854201dc0d47f8cf5b566109fcacb4d747"
+      "sha256": "deb4a730add92964fb762ee4a367f7f13800f503b4bf5cd5fe050f452b4969f5"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-course-five-day-intensive-mobile.json",
-      "sha256": "b7f3dc3923d9a88e652fef66474c237b5693a6a43f43e8995df6e6b4d6c37a9d"
+      "sha256": "6c764803e211a580d504c97a6565afbf549b05d2132de0958a3e20d9df6d89b3"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-course-level-one-advanced-desktop.json",
-      "sha256": "08b34aa21269eda0fa253f706c41efa58902f8a881517c3fbcca513453f9ed32"
+      "sha256": "fbb4d5c52d0a744d116cf3659d55dca674be1cb7c1335f6a072cff6e784a3937"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-course-level-one-advanced-mobile.json",
-      "sha256": "d3ba9b39bab8965c2f11d554083aa11c07cea399fe4cbbdcbc885e87d90455b6"
+      "sha256": "82d579a5b3d34e0e49b0dbe5e2b0c310ffa9fb2845751e48dadf97840416e6d4"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-course-one-day-workshop-desktop.json",
-      "sha256": "3f09dce4d8606de3d5b2345dbea1b3fd870766f574c3d7ac65c785c09035b1e2"
+      "sha256": "a540f94e68aa57a3ce42fee594e283ee9017d779e6855c22ade086cdcb956875"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-course-one-day-workshop-mobile.json",
-      "sha256": "3ab0bb2d0cfb66c93fc93c83ad690d99313578dc4655fd83eb11e57ba65aa527"
+      "sha256": "14caba86b9b020f9b0cd31ab2b1977c46c62d8aaf668340888b8a14faf0552c5"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-course-three-day-certificate-desktop.json",
-      "sha256": "8b225b3aed448c21d7ce3ec6e0d66878e31b99e92da6f151ce13591c07bcd3c1"
+      "sha256": "41399cdcb0d49bbac565298622f98829b9666254d849d7cc53da0294aa421953"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-course-three-day-certificate-mobile.json",
-      "sha256": "341a06b0a34e8af94c074b2d0db2ba1de55900a46795481cc74f37ad2163be4c"
+      "sha256": "4cb9fd406f7ac7f631555c5dee95a6a1d80373120747d231b16807dcdbb8be50"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-de-addiction-rehabilitation-desktop.json",
@@ -4218,11 +4218,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-template-course-and-fees-desktop.json",
-      "sha256": "53de59d16409a5584eeb732d7e92437e4292ae4ccd32fc1af969a6246ade24e2"
+      "sha256": "d8b218213f41d97b5fdef5fc12bffe0bfda9f2ef0fa75868c0f34dc3912c9aa3"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-template-course-and-fees-mobile.json",
-      "sha256": "1682cf7274de3b1ed129d97c664c026e0321e52956ad5293539abc03f9cab1d6"
+      "sha256": "47f11707da0a3e3c63862e182e61c693309731ade53dd9b450b0b651294cea7c"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-template-legal-policy-desktop.json",
@@ -4362,11 +4362,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/assets/course-aalct-hv-data.js",
-      "sha256": "0cd25fbed9cb855a93382d828ca259d48bbbe8262c86770d0422140230e4514a"
+      "sha256": "1fbada925e297ec9698f36e3205b27d9578c0f1a44d5c1ae07b902124f90923f"
     },
     {
       "file": "public/ahv/l10n/hi/assets/course-aatp1-hv-data.js",
-      "sha256": "2075e9ddbf0ece5c1dea223ed2a4ed3dcd45cb567521bb5222029e0874a37119"
+      "sha256": "57eda822520d30d97ad18ffef00f1a0754e88998dd78f4101b201658dddf79ac"
     },
     {
       "file": "public/ahv/l10n/hi/assets/course-oap-hv-data.js",
@@ -4690,19 +4690,19 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-ayurveda-training-programme-desktop.json",
-      "sha256": "13e57cd7de31647865e3627c6d984276e9809a64c307d591130877acec264dec"
+      "sha256": "b9be7f20720a8819098a79495ab0350873a61429b4170497b6d126a84750ed00"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-ayurveda-training-programme-mobile.json",
-      "sha256": "c2fa464a145f3d41d5f4987d30e1de18995c221f91374baffe593f528046849a"
+      "sha256": "b5beebeb3bd6aa0cad919d658c979cc2ff7c24037e8419d9f8872b28c683b245"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-ayurveda-training-programs-desktop.json",
-      "sha256": "3135da3864db2a508b299c9a245ee59c949b0d640ba9293319b62a0dd34726ac"
+      "sha256": "57294a931e409d2d579b1413f0e4a485ce72d0477bf338f4c9740379c4b736e4"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-ayurveda-training-programs-mobile.json",
-      "sha256": "f15efa85090b63cf521aefb19ea9fc4933295357b7636c50b84c32aca8bf8484"
+      "sha256": "ba750c96221b0f9abd7953037f419995fca5b95ffde476fa171f2abad52e6403"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
@@ -4786,43 +4786,43 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-course-consultant-therapist-desktop.json",
-      "sha256": "5cfcd102774d170dd43784b03f572a271032999b3a96b69760035fbbfee87c75"
+      "sha256": "c34d74e3ee5cf091f22dbc1005b185ffb971d41d4e579b9ec0bf000da0d1f8f6"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-course-consultant-therapist-mobile.json",
-      "sha256": "131c66830ca7dab0c75e820dadfa69ba47e467aa577d31137609a40d69604bd3"
+      "sha256": "e4afd61b7a255cb66c81af1bd71c86c4e7c364cd9914c74223ba6245e8f5fd16"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-course-five-day-intensive-desktop.json",
-      "sha256": "d40f317ac16cbb525a576e7445508ca66963fa1802430a428e53d07b0bd8bdfb"
+      "sha256": "6e3fc91dbfeca94ff9a742b706176c24d489f34a9612fd4e633b319ffc686b47"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-course-five-day-intensive-mobile.json",
-      "sha256": "83898ff94ef446638d0369b5bd7c78456c61509c42d5dd1367bf875cb7083204"
+      "sha256": "b3ee022a88a61b2cbdb2a1b54a1c5bb34e9500d72732df6ab57ebe907b33c963"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-course-level-one-advanced-desktop.json",
-      "sha256": "3c2af5115a982d56c536dc5c6a007eb315967ac10defdf1ef08b866da73c8c8a"
+      "sha256": "09f76ed8bf8138b75b2b63f2732dc8b08b639959e83354e69cc59e5c6ec8766f"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-course-level-one-advanced-mobile.json",
-      "sha256": "1bbc77367ab13df12d8e4fdf361f299c054ba8256b02f30dbe4bad4cc87634a4"
+      "sha256": "8b15c8f0d7f946fae4f1bfd521fea7abc54e399143cac6ed0a46d0ae74039ef9"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-course-one-day-workshop-desktop.json",
-      "sha256": "34ebae172149972924275dbb8ee3614ebe72770a6437737ac000e6a266fcc478"
+      "sha256": "d06f9f873ce0c6afd320ec0aef20379512ff860a10f6b45f0e97bb67beed87b3"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-course-one-day-workshop-mobile.json",
-      "sha256": "45ddfd6eba88ea4b291cca2ef101739d6018c2cb0d8760168a089a480c26b164"
+      "sha256": "af5d4ab66e0ad94ec241465cc883c6229dab6aec8a5f64c9b712d419e4daa69e"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-course-three-day-certificate-desktop.json",
-      "sha256": "b8db5c87f8b7ce646a82fc6fb4fcb6fa310ffb9b0505534e493e29c47ca9ded6"
+      "sha256": "83296cace7538a2040c46e367c349e4f8ef801adaddafb74f0b274657443cdbf"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-course-three-day-certificate-mobile.json",
-      "sha256": "d541ae994d2b330ea6c443ddb26e946edcd2bb2c44700c98f1f6285ac44b9c86"
+      "sha256": "edb21fa0b935c93a2ea85fb22cf6b5f261b2dc077fd32c134e3445fea16de8ce"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-de-addiction-rehabilitation-desktop.json",
@@ -5258,11 +5258,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-template-course-and-fees-desktop.json",
-      "sha256": "7bef5e50d17003eedaf36d69fd2626cc2ad2c7978ad68a991dec022129575ab6"
+      "sha256": "5ae897a978400cd48d0b1f24cc42db43a2f1bb12229458b1528b17a4006c3180"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-template-course-and-fees-mobile.json",
-      "sha256": "2fc4f0aae2d4362776775a0e6e2f1602b0878d7ca9104663b4234581c9e006fc"
+      "sha256": "cf74db97415dbacffffbc2ad33b4a39e1002c4a054e31de440327b324853fc91"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-template-legal-policy-desktop.json",
@@ -5402,11 +5402,11 @@
     },
     {
       "file": "public/ahv/l10n/it/assets/course-aalct-hv-data.js",
-      "sha256": "6d2410f3112c633e0eb2a239e858f8b27756914ac6cee40c3f3a1a2520f2703e"
+      "sha256": "249b8734b40af116ff944db0c271f702e481ac53b6dbdcb7f51b55897ed6d2f5"
     },
     {
       "file": "public/ahv/l10n/it/assets/course-aatp1-hv-data.js",
-      "sha256": "9ccd4bce07488ea9d442e8b8af0c0308d1321e877be8a471708595c69d48f4ac"
+      "sha256": "f058abd8ac7cc9da2bba9cb645edb99a30c41662ee83423ec4dc79e4dc3fb4df"
     },
     {
       "file": "public/ahv/l10n/it/assets/course-oap-hv-data.js",
@@ -5730,19 +5730,19 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-ayurveda-training-programme-desktop.json",
-      "sha256": "b5ec76919b182b5a4bd2726c3453ef283f7fa56b27a610db2bf1b79333088f37"
+      "sha256": "c068b6f664a762c2857c5d4a7cd482767190e37a3dd7a2fd0c40a07f9de510c6"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-ayurveda-training-programme-mobile.json",
-      "sha256": "73ce43867049a589440d759727c8b94dc863cfeace61b533bfb618fcd6e6c863"
+      "sha256": "769b0bfd2578fbc996c992adce52cc8734d4708b0fc1a9b249a61f544e2ebe20"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-ayurveda-training-programs-desktop.json",
-      "sha256": "4140b29def09ce6d853e498c0ad7a05e6fe15112b2109ed195d6f1e26a524fb3"
+      "sha256": "3521a56c591bee0789b32ca459b4845a760dc57df8ff62b7fb5d636ab6a8fc1c"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-ayurveda-training-programs-mobile.json",
-      "sha256": "0e03046a8847a0454e00d0c525bd3b19cd3ee695b7fb156d34e95dfd0f71b43f"
+      "sha256": "0341f26a99951f9df0b01ff331ce3eec30b97812c80f6036c7172eaa5e29340b"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
@@ -5826,43 +5826,43 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-course-consultant-therapist-desktop.json",
-      "sha256": "145991fd313e5bbd0bfbda4418082e856ee071c7dbed2c47c47402dd982a6c5c"
+      "sha256": "caf680c9d76cc85ba9c5590aa99c3ad30868c12722e1e24f9fcc705a8146277f"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-course-consultant-therapist-mobile.json",
-      "sha256": "4405054296e2b0216d239f0e4beb1b9e94fab8ec25dc08fcd2e542a4a41dea3f"
+      "sha256": "d8586fde6937b100868739d8082dff5382af45514a4f6c7c055e563292e8a9eb"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-course-five-day-intensive-desktop.json",
-      "sha256": "d4b541acaa36eb632c5e57adced51c280a7009d2f4c1e9de0410592fbfe76ce8"
+      "sha256": "b0423461bd7b9ab3aa143756a5615dff5d2a7a78fa7e940d0872c671137a4f2a"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-course-five-day-intensive-mobile.json",
-      "sha256": "f7ca33b8997b476ed1dd9fa6951c589504964142b7daeae7e36c66caff225631"
+      "sha256": "a7212241c869a5312aa9f8a9cd169b8ee522038a28972e13e4a59afa9500de7b"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-course-level-one-advanced-desktop.json",
-      "sha256": "9ddb421ad4f46f2a7f16b596cea96add14f033aecea93f20aaa2a88d025fefb1"
+      "sha256": "7620b5878799ac284edf75cd6c8e01cb384d0a44eb43613cb6859cc7b23ee6f6"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-course-level-one-advanced-mobile.json",
-      "sha256": "91547a3dbb85382c315e0317111a4887c44595f91ffe6daed5bf865f589c3dcf"
+      "sha256": "77e0905dbe62331a2d828d70b7935c4ad0f97deb9467e57e5b0208653250de18"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-course-one-day-workshop-desktop.json",
-      "sha256": "e592b8da66f3c6ec1c0501e72b3f4d1a555ccc1260ac7648736649533e404125"
+      "sha256": "a4e00ed6ce05dc0794e7984af76d28642f9ddaf1d17c36fb8bee965ccd0f8f17"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-course-one-day-workshop-mobile.json",
-      "sha256": "2e84d043e362a70280b7270c54f7de471d1d1c8dd9725a726a55c8f6fe21183b"
+      "sha256": "d90eda37ee0a19e4e34ce1e8c5ae2cdeb081a28c5160db1a7748a04cd21b2281"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-course-three-day-certificate-desktop.json",
-      "sha256": "aa2624c5c44f85a97d0038d85cf8a5c3cb805a4b3e0d2f1058e50f036d7087d3"
+      "sha256": "93f8850ab7585555968d28e9f07712f48f6981fccf730262b694aa5fee16f89d"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-course-three-day-certificate-mobile.json",
-      "sha256": "0363b8c2c0d0dcb4199e1096829beeaa4254abfdf627c531b780fa7b990f6c35"
+      "sha256": "daa3bf61534a92f0d5e3b478878edd7f5e6e9a0ad5470a00dd5f317df346d818"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-de-addiction-rehabilitation-desktop.json",
@@ -6298,11 +6298,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-template-course-and-fees-desktop.json",
-      "sha256": "8a80d2bf11a8109652c621b8cbccdc8ba549417e7b417229b3d5dc88f41dcfd6"
+      "sha256": "87af2e0a0f7a240ac764b568ab79d44b12351253bdd3568db5d7b739413718cc"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-template-course-and-fees-mobile.json",
-      "sha256": "3fb2fa3c8629ed558e58e0fb0ecb814c34d7ad6f2ea09f1d2e282a488e18a6a8"
+      "sha256": "4fd756ecabbcee2fb011545cd7421a47ea47f8f212a296b6afdf24b33196360c"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-template-legal-policy-desktop.json",
@@ -6442,11 +6442,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/assets/course-aalct-hv-data.js",
-      "sha256": "b8d506a03542eaadf86f2fec038c610df59d36409c69b67b33fcca29f133a074"
+      "sha256": "f354508eaf63cc93faf868d71f4e5db3243c8bb0acad8a560c1f3f2f80ab598a"
     },
     {
       "file": "public/ahv/l10n/ja/assets/course-aatp1-hv-data.js",
-      "sha256": "1a8cf57ec64524112b84718a18ca473ba29a3d0bc6c437b7b6c91f8144c921f8"
+      "sha256": "1a8b97fb7f3a4712485d502cd4ae9f72e0838b3ff5e30710a4d1864d8a4d1560"
     },
     {
       "file": "public/ahv/l10n/ja/assets/course-oap-hv-data.js",
@@ -6770,19 +6770,19 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-ayurveda-training-programme-desktop.json",
-      "sha256": "196fe7a8747431489f89e17ab7de3d1a02f35496ec1aaf95ec0c8becee5365f5"
+      "sha256": "93085114b5c22dd2db951499361d09ddcea0251b374e805cbc9f6373d8cd6f9d"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-ayurveda-training-programme-mobile.json",
-      "sha256": "215714b96cf6022b977c4e8fabce7409f115cc5962403f631e24fbd7fa7112cf"
+      "sha256": "0966313a758c8ac4930408304bc042a81801815ebb3ec1aa354cf81157c3fa17"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-ayurveda-training-programs-desktop.json",
-      "sha256": "17d3908f9c4db272b848afa1bbc26e3dd319bf1471f31d6b240dd9eddcce49e8"
+      "sha256": "342b75b760a8a1390862fd4d859c28817f1b36053389dcfb0fd290cd3a504b88"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-ayurveda-training-programs-mobile.json",
-      "sha256": "d64072eb96ed35004c88ff146e5c06cb17e9978d8a752dab888674791d5a64c8"
+      "sha256": "8e76fddce0327941c3dd6da3fbb3f2704cf2c5e3d8f83e8fdaaca6bd1da9a073"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
@@ -6866,43 +6866,43 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-course-consultant-therapist-desktop.json",
-      "sha256": "85ba9436cb625a004926978924da62e7a7e7944c5f11e5cb5cfc767efbbc7c73"
+      "sha256": "7206e90d4f7926b4fb6e38c6090f239d53dce81f9c7e6cd5d46ffceb9af12786"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-course-consultant-therapist-mobile.json",
-      "sha256": "d44f4f86c3d235e832289dabdaab77ceb3aff1e9d32ac3315763f7da884ab8d5"
+      "sha256": "6eedb8c4082eb0bd5c875d4d9dfdeca2f297abc8c2902e1627fb3893c2646a40"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-course-five-day-intensive-desktop.json",
-      "sha256": "e38afc9c46fc3e22af822ecb700fa7631d2086d3b88af175c13d0560e2667f49"
+      "sha256": "7e256bb45f02b893064624d0cc921d80c32ca9c3616e520e694f64738ddf3799"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-course-five-day-intensive-mobile.json",
-      "sha256": "6b85341ba5211dd530cc7058d4a0d446360ae15556a573c90f5d06addae7a848"
+      "sha256": "d9405abc3d4df28bf568a559fe6d4f8d6169ce31522077f42d522292c499fb68"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-course-level-one-advanced-desktop.json",
-      "sha256": "cc44c85bd1d4529c13a81800cccb3fee1ed99045f2a2d48e521afc92164bb98a"
+      "sha256": "670e6410f4850fc78002df2912e40f59393665fafe6c6d9c725c063a043286b0"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-course-level-one-advanced-mobile.json",
-      "sha256": "c843b757f58ff91c0270b3b0bcb23b663121bc6f1e43b61859ff06bbc269d766"
+      "sha256": "c06268df423a24259208bd116b1031aaff4316b50cd430e8c32caf67aad46993"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-course-one-day-workshop-desktop.json",
-      "sha256": "e54c50e59453f9285d9e0cbb2356bbcce17b6dc07c6d45ff6f6e5f883502f655"
+      "sha256": "18f02111cf46f58ea46fe942f328be98a351f35ed7b22f0bf890c6f9cac8a769"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-course-one-day-workshop-mobile.json",
-      "sha256": "053a2b50fc0de13dae81f84b73186705195ac74803f09a78826d08bc30a09eb4"
+      "sha256": "0db6114d0ce9b9438194fae174320c2abbb1ba5e6125a24375de94f2c9e60cad"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-course-three-day-certificate-desktop.json",
-      "sha256": "da828a4c179af1a1d3a7ec7ae2af7dcc202b158e96f38500d51a347c5a3b8fca"
+      "sha256": "d7e6e8790b133f9b803cc625806d4d6b2b5f6e9cede7d6702aa4a57495e0ea7e"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-course-three-day-certificate-mobile.json",
-      "sha256": "c88e97f998aacf7621fe219c83039eb16d9f93e318bb9a37003b034e6bbed7d6"
+      "sha256": "b87e54675c4158a286fd3de14dc51cab1d66a2008dcf2ce865210eab583b366f"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-de-addiction-rehabilitation-desktop.json",
@@ -7338,11 +7338,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-template-course-and-fees-desktop.json",
-      "sha256": "a3ef78a4fa67a66f07a8a98dd79f31a8b0c740dd75e64d0d1167da68b4dea721"
+      "sha256": "ecf1f75caf3f92f038c24cc363c207c6c45c39b18a9392b348222a62c1dd316b"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-template-course-and-fees-mobile.json",
-      "sha256": "3f03b7b45c10b5fe67e01e569897ca740c6cb211da9400ff473bbc375455b18e"
+      "sha256": "94b0e00288b12c19bbb49807ccdf58a7a64c541e4ac725d1dea11b54f97fa3b4"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-template-legal-policy-desktop.json",
@@ -7482,11 +7482,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/assets/course-aalct-hv-data.js",
-      "sha256": "537005f547974f86a8b48963b9c000811135e357fd050a2f3ffac48a2d37e715"
+      "sha256": "6da2de04492633e4f5d44b07f1c3a562ecf3c4831b644922c9bd3e8f0c574ce5"
     },
     {
       "file": "public/ahv/l10n/ko/assets/course-aatp1-hv-data.js",
-      "sha256": "7e524b2671cf0bb106a88508a79f14cf279228ba4e6a438482032594e7f3ae96"
+      "sha256": "948ce355dc15461c280eaece25beaa2c8268d8e069f783768dd15f2090b6dde4"
     },
     {
       "file": "public/ahv/l10n/ko/assets/course-oap-hv-data.js",
@@ -7810,19 +7810,19 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-ayurveda-training-programme-desktop.json",
-      "sha256": "c863846bd8e209eb132cce93e67f6effd9071bfb1dcb434a4f4731e2185c287f"
+      "sha256": "182928c2a89e6b1fb1421841735782f328376d4139743ad731363bed1a5f2951"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-ayurveda-training-programme-mobile.json",
-      "sha256": "3f9f91b944fb5e79f71be3394786f7d884954d167d8542b2f0494e3b3335101a"
+      "sha256": "bece6ec2c17a840eb11166014b4637d12d333b8874ffa9aca95210bfc0f0f0a3"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-ayurveda-training-programs-desktop.json",
-      "sha256": "440bf1dc857d1fe383ca2e197c3b119865d787a26b9d0cb4c52b03cd7c655851"
+      "sha256": "7e8483f1fff903fec65973fa407aa5d13d225441b22a88e72595a894d0de5975"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-ayurveda-training-programs-mobile.json",
-      "sha256": "c8629705b2bc3d701db2633954d9a048d4735d4f79c99debbb3589a3827c3469"
+      "sha256": "759d2c0abfd01216f773e08690626cd679de043400b31eaa4e89de05397633b4"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
@@ -7906,43 +7906,43 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-course-consultant-therapist-desktop.json",
-      "sha256": "deaa764f29c4ece4761f640db4bd1a114e341e35241a6d118bbf6ef01c9e4c09"
+      "sha256": "22b25762bf31f6a5d5d32d0b19da45c3191a4616d404eceec3a6006a32661cb5"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-course-consultant-therapist-mobile.json",
-      "sha256": "332c2b3d146b740df6baf88fd0b36e235d0852cff6e3f09bf60997f4a4614db4"
+      "sha256": "701dc6738d88f922c0f0d1721953c057ae843809e8aa5b243b79e0962d990a31"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-course-five-day-intensive-desktop.json",
-      "sha256": "df9677b2860a90ba74ae71ab4402e79065c4af440c64f5be4c158e3fe39ccfdf"
+      "sha256": "e4107c2328aeace9a41c48836ca4a8d781936666c8bc0cf58020b3505afd2f8d"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-course-five-day-intensive-mobile.json",
-      "sha256": "8093940d90a37c93bc933818f5ff8c2330cd61c3cf8895a8685eb4866f33242e"
+      "sha256": "d5cb0d4a5e8ad194d1ced5ce7fabe4cafa8aaac12c73fe8066bd6356cf760301"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-course-level-one-advanced-desktop.json",
-      "sha256": "e3faaf422961c370edb0371375615ac1b0fb1f1f5fef81dc8e9c5b32de4cfcb6"
+      "sha256": "ea0b0a89a3b2ba6fd8429da67450c4ed8cea6ff62cddb402d227fd0f874d6a5a"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-course-level-one-advanced-mobile.json",
-      "sha256": "e363cfe9b5c099c5e58c80125da985cc9a23015bef33945988325712eac40b61"
+      "sha256": "2c092654fe7954f9c4589fe96c3124617e57ef13b35867e3971acd45102174ab"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-course-one-day-workshop-desktop.json",
-      "sha256": "77543cbf9d68d54707a5c1440f2a1ff65785cd463f8e15fe10a8e7b1abc9c0a3"
+      "sha256": "3ab6d4dd356e0becb45c9b7339510240246967d458f82fff182065d655679bcb"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-course-one-day-workshop-mobile.json",
-      "sha256": "1e2ad305e10055c2073c095dc12d128b626198936e42993dfb14aef2fd74c34b"
+      "sha256": "c8925ce866f00c5c66e8600eaebfb538a80b0adf58021248b735612518a654a5"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-course-three-day-certificate-desktop.json",
-      "sha256": "157d047e9d077a8cc3e240348de2847ab623f5d7f7822429b665273ef4567736"
+      "sha256": "12f379772eb7c7e22929791c7f2e646d2354a2e431045392350f41ca41079bab"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-course-three-day-certificate-mobile.json",
-      "sha256": "37c89ad2c922790ce87a43b4be919e2a9b6e9f18539633336ffcaae16170f7ef"
+      "sha256": "6357609b49c923a712b73fb93b83b000da6e75f58f8de07e540a23ff685770df"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-de-addiction-rehabilitation-desktop.json",
@@ -8378,11 +8378,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-template-course-and-fees-desktop.json",
-      "sha256": "8bf3895356cf5100e63d40d344b2ad0233343b0b66a7268157dd74335dd6b846"
+      "sha256": "207646cdf8b3fe440161b82494fca8e0f8b07b4ac76065664a98283a88e4abe7"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-template-course-and-fees-mobile.json",
-      "sha256": "fab298ec0a8480ac0146576b95b1ac2196011ee7a44a8f55ee3432e5a3e5072d"
+      "sha256": "66e9b14cbf303653f73144dea01edd87c9a22be322c6eed5854fe3e48c6ea0cb"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-template-legal-policy-desktop.json",
@@ -8522,11 +8522,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/assets/course-aalct-hv-data.js",
-      "sha256": "235dd55321a138932ce43e3da8d963a17c446e8f2170961fe5050fb73bc18195"
+      "sha256": "9a66489d63bb51034aa42301e328661d57d36bb619df6dbef2dc57740884a141"
     },
     {
       "file": "public/ahv/l10n/nl/assets/course-aatp1-hv-data.js",
-      "sha256": "78ea6693f1377cabc328819bfc3a35c941b77161b839c19900291089c921ca6f"
+      "sha256": "5df9b7b4fd82cbb2b73972d7b8602b68b8beaf1b4b012ceb864f3196abbeb887"
     },
     {
       "file": "public/ahv/l10n/nl/assets/course-oap-hv-data.js",
@@ -8850,19 +8850,19 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-ayurveda-training-programme-desktop.json",
-      "sha256": "5e099b9496286f62791811f9691745a4382988eb33cb814f2b47fea95a0db648"
+      "sha256": "a43f5a6ba03afe0653fb01cde9692883e21bcfd47261f0f7eaca5c53549a229a"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-ayurveda-training-programme-mobile.json",
-      "sha256": "49c51c74fcd682069111e6d8ed3bfc242128089283022128f9e434f2ee4049a1"
+      "sha256": "0a248c3821f615e7eb145d14493da739c1b886806494c3716dcd92706df3c254"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-ayurveda-training-programs-desktop.json",
-      "sha256": "8cc92ce46655e16565351a0b5ca6a6e472550920c7797546bd6a9afc39136fd1"
+      "sha256": "0e0c13d1cfb6ac9623e666c024693c02d2661a6e2f9b2c3ae4e9a3d643b53976"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-ayurveda-training-programs-mobile.json",
-      "sha256": "5d640cb22e01fa3872e0b16897dbc5647e69466c3de8ac26f04cebdf89090454"
+      "sha256": "40b070bcc52b229c1eafd1a9646cd1c19ec78ff39344c108d52a36b665e2f680"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
@@ -8946,43 +8946,43 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-course-consultant-therapist-desktop.json",
-      "sha256": "f49e435380dbb59d457c3185b702ac118003d8b797f93402e97ad8fc5fe5f856"
+      "sha256": "c21e44c21ad3dd5a1212675c17813b118ff4993d129cea85eeb4b86305887be7"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-course-consultant-therapist-mobile.json",
-      "sha256": "1673fca847f6dc1c5032a0f04b8c16b0b6da50614acbde117665c91b64fcbcd9"
+      "sha256": "953fba562b1bca68c726eae7d6281067dedab1fa8ff49f90f4b7821c6fe878a5"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-course-five-day-intensive-desktop.json",
-      "sha256": "8a18277493c6f6c018a881cb0f6fcf9df5324a089de5f59a02b1f5744a3668d1"
+      "sha256": "6b0224bb4d04b41baf08493e7392ce79153692f758e6212ccb1b77e9564cea44"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-course-five-day-intensive-mobile.json",
-      "sha256": "05cbccc631fcfd0eabcb716cc1fde22e3fd58d3d418844c781cc4b16742a5aaa"
+      "sha256": "60196c199a7508eff2e6c98c696e98ff30e079be8488c036446424e943e874ac"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-course-level-one-advanced-desktop.json",
-      "sha256": "30664952cdd0e465e241d3b57607288ba45bd59795d72a3f5ebe7bd4d9b89c1d"
+      "sha256": "3419a08fda46ea5aee1ce89fa904579ba1b85e8da0677d2bcd219e886f4e9653"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-course-level-one-advanced-mobile.json",
-      "sha256": "a77202cb57bad63412a80c11ad5c6c14ddeb634d8b2979acc1ab42616edc6364"
+      "sha256": "80d08b69ca5554ad65b16c814fc7b1365d7c4d6d4fd09228b1224d7905d470ff"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-course-one-day-workshop-desktop.json",
-      "sha256": "b59c9f866f279149911f301848ae3a5f93dcf764899db2cf825aeaa4aead3689"
+      "sha256": "88b9a1e14224df4a8f988dd035b5ce7ea0115050b72610955331b9d341fa99c4"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-course-one-day-workshop-mobile.json",
-      "sha256": "2de8684f9b17015391b3f1d0be8d2ccf2f07ec5d4c1f6e6c57803ebcfc3981d4"
+      "sha256": "e9a38d07a16511bcc65af72923dbfebe1d87068455985c262203a0ac4c903d75"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-course-three-day-certificate-desktop.json",
-      "sha256": "5cd1672805d87283bf7b0225c6fbb3aecece8877abdcf714c5a2d54295e51360"
+      "sha256": "6a020f598dd1c2602b2a70728f59e48dece57ce19e3bf4381ed88aae1eaa6429"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-course-three-day-certificate-mobile.json",
-      "sha256": "c12ac4e9e859943f80d8cf249480a13d001f779707bf250e7395012c0240e36f"
+      "sha256": "e70a68497b9536cf4b64d40d2b2f656b749439441b9fbb0c31fab9d061b01d99"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-de-addiction-rehabilitation-desktop.json",
@@ -9418,11 +9418,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-template-course-and-fees-desktop.json",
-      "sha256": "2a8b40f2c718bb5cd63f9621101aaa1ae3529bb5b132c301c823af4aa7d69173"
+      "sha256": "3bb584a404ead5633022f5b0324ca8b8a76b5219780c925dacabd85cde21db5d"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-template-course-and-fees-mobile.json",
-      "sha256": "fe2c2fedcd139b62380fcd12d3a6fa10c3668d98522c72f91381103bf08f6e71"
+      "sha256": "c91d2fea8b594965785786dff3ecd77eae37ff7272b21b522a70b63feb03f994"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-template-legal-policy-desktop.json",
@@ -9562,11 +9562,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/assets/course-aalct-hv-data.js",
-      "sha256": "fcfea749ca2443a3979b78ee2c481c2adc6af523ac3365ec6f4b9ec9e52af5f8"
+      "sha256": "2cf0e833dd87c633cecd2c8a26b229ab483421d1e2a06ed8f7383504495fa622"
     },
     {
       "file": "public/ahv/l10n/pt/assets/course-aatp1-hv-data.js",
-      "sha256": "029a58db97ca3059eb4edf4890fbe51ccf4dbd7242a2ece84d53a584e9226284"
+      "sha256": "4da2e4bd1f8aa38869a751ec5fa1611856906d925bfa73590fb53dfc6b2b3954"
     },
     {
       "file": "public/ahv/l10n/pt/assets/course-oap-hv-data.js",
@@ -9890,19 +9890,19 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-ayurveda-training-programme-desktop.json",
-      "sha256": "49585490979094081f77b4695e13a2a88cc3c8344f1ca76231933f62e0376aa5"
+      "sha256": "86ebf82f69f6dbad948b32bb9064a7388e07bebc252f42a684382ea5d3bf0e5d"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-ayurveda-training-programme-mobile.json",
-      "sha256": "d6079a72fe01a0ed4a38ea7340a9069172eaa1f747f04e1a3209c07ea8db03d4"
+      "sha256": "35afb9bc5c4d3558533993b9831d4f81b710bdd5b6ec472a0682371fc3ddd554"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-ayurveda-training-programs-desktop.json",
-      "sha256": "731e9955a062012bc8f36009a78579a311cf3f227eda8cf40332bf52429db618"
+      "sha256": "6e69aa38b099240ea000e15715f5972628bab26eb89f5c4604f2a77cf6eb5eb8"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-ayurveda-training-programs-mobile.json",
-      "sha256": "10abba69d26c7c5a92a16cabda115e91d1e74d25ec9c90038ef9ecbce28e4ed4"
+      "sha256": "159d2abc1feb068fc00eb47c92144355f2f4ee230588b200f9031b0af0472b55"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
@@ -9986,43 +9986,43 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-course-consultant-therapist-desktop.json",
-      "sha256": "500d983e52cd581f3d19f9281f3ece9817f08537d4dc52daf69e14919f38ce3e"
+      "sha256": "6bf0eff3ec84530cf4140e7d00818bcb1d9261798ddcdde920fb059daf98f10e"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-course-consultant-therapist-mobile.json",
-      "sha256": "2e8c613ac8c82809fa1274ec23d04bc05ac32967245bce219fe611278d39eb8f"
+      "sha256": "4e6f933474d1269fc0f820a3d94907c9900e14c4a184f16c8f7e92fe30a76b48"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-course-five-day-intensive-desktop.json",
-      "sha256": "d2ef5ac553b4349d90933e646dba0b201e5283e3537922b4be7502207558a3dc"
+      "sha256": "e37484da8fcaecfe3f17b4aa723cdf978a3004251172f34fcf482a112a700e48"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-course-five-day-intensive-mobile.json",
-      "sha256": "9aaf508701ba25d29d3a08b60e7e0e2d55e83b7fca4749ddacf4b77e0bf5e1af"
+      "sha256": "878e785fbe7ae161764b9eda6a92aa34a571a50672fe85c5b7acb3b04aeb052f"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-course-level-one-advanced-desktop.json",
-      "sha256": "6bc085a91d3f1bce6c007f4c799a7bacc109a20bc669b0fda6150d9a081241ad"
+      "sha256": "add5dc8ca1c5158c287d0f43cc602f9ebf6a58b77836a44b22585fb3bd75d304"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-course-level-one-advanced-mobile.json",
-      "sha256": "d11a2bf56101392a43954cda1e793ea6ddf809dbcb089b6f2f2a337e20124d16"
+      "sha256": "e5e2d923c1656c137498770be6bb2724c869c582e6557bbc3d54b4a774692399"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-course-one-day-workshop-desktop.json",
-      "sha256": "6177ecf3591c6ccf9507394a185b99dfa29119167de5f2fd72a4e14f3a7dd7b9"
+      "sha256": "6570f3996c083bd53f559bf5e2bb953be0092afaa0aabb7a9672b0d3f3cab068"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-course-one-day-workshop-mobile.json",
-      "sha256": "f1309ee0af9a8b2ed04713da37bc49e11b84ae79140a3c02449966b1e5959f76"
+      "sha256": "2870bfae8a2eb815f07a3d58eb9512780ad3ade948a89dcdd15ab02b7104fd34"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-course-three-day-certificate-desktop.json",
-      "sha256": "a063aaf636bdbcfc079b7f9d56e1cc68538fdffaca9b03a7a24e88de02333c49"
+      "sha256": "ce3acb2c7141765000074c3e0d509d40890c75a642f6988814809f33bae3d190"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-course-three-day-certificate-mobile.json",
-      "sha256": "0756812db7cc8795d9bc26970bc56776040e187997029dabffbb91513bbd275c"
+      "sha256": "68dcc34271c617de53f39dd6c60d9b1f0a5614f4bfc23d77c46f808c7c5882a1"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-de-addiction-rehabilitation-desktop.json",
@@ -10458,11 +10458,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-template-course-and-fees-desktop.json",
-      "sha256": "6cdd9854bb70d2bb1c635812bf47992082204dcda3715fa02eac56e49e199baa"
+      "sha256": "3fc632087bdf1585ba3e1699baa100904d25096e2bfd3083de0d269f7bfce7f0"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-template-course-and-fees-mobile.json",
-      "sha256": "66afb6469bebab7de8c0b178fa211e42e0019a8b966bb8557b2e8314769d4dde"
+      "sha256": "60f76fb745f14f28aac2bb3561af59b8181cda2a50e562df99cb5d744d21bd48"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-template-legal-policy-desktop.json",
@@ -10602,11 +10602,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/assets/course-aalct-hv-data.js",
-      "sha256": "bdceb3c338e7412cb7ac6cc89d9c30a97a446063c25ffc82cb0b9c0968659591"
+      "sha256": "a8acf343afdbd4f0469864e5cf00be3700c1223e1ef77643c52a9e7ca8749cdf"
     },
     {
       "file": "public/ahv/l10n/ru/assets/course-aatp1-hv-data.js",
-      "sha256": "e945cfb836d42f02ad45b8d1170ae4a60de45b471197ce6150adaf2c0a956984"
+      "sha256": "350befced7e6248d80fdebf65db75282aa670f0e6dcf418e76e496a99e37fdb6"
     },
     {
       "file": "public/ahv/l10n/ru/assets/course-oap-hv-data.js",
@@ -10930,19 +10930,19 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-ayurveda-training-programme-desktop.json",
-      "sha256": "a2a6c1ac8699abf05e844e134ad79db4909a4d8867e518cf1247b7a8b91560b3"
+      "sha256": "a8bb351a9e7af93d35019a18bcbbaf2924ed2aa233f3022b8e379a3719ca6129"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-ayurveda-training-programme-mobile.json",
-      "sha256": "54d095e61f87a6f9fb2ff26aaed40d2e2be2002431bbc029993081139f319228"
+      "sha256": "508bbeb04aea8394f90dd96b618e7bed64aca9ac5e44a5d662a9f9f700a36c58"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-ayurveda-training-programs-desktop.json",
-      "sha256": "e4168faa74e2f34fe869cd4cce3571c4de334432f40fdd5f808846b2701614fd"
+      "sha256": "452c79345fbd7f134f59ec7e8fa81771e049d6edba8a4a754fd300462c77c060"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-ayurveda-training-programs-mobile.json",
-      "sha256": "aa69e30c163049d4b5b294cb28b082e92bb476e59f8fb5b8f979e71953922c06"
+      "sha256": "08c2982144e57bcfb07adbbc19ad411358aecedeca57d69187def300279cdc8f"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
@@ -11026,43 +11026,43 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-course-consultant-therapist-desktop.json",
-      "sha256": "43985e31d352819146d1801d5dbe254518b4a1f5bc022878eccd1e2b58bf0499"
+      "sha256": "bde2b9db42f9bd66b28096a7fe7d2591c81e7057e46c1f34637c678d9e273662"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-course-consultant-therapist-mobile.json",
-      "sha256": "bb2882ac07c26b5952cdf53508b235e6bd8a8efff864742fdf5700063c490e29"
+      "sha256": "c2751c65d30cd1c677821336d04dad815237a4d99be2dda1885a0fa8b9356b30"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-course-five-day-intensive-desktop.json",
-      "sha256": "894bb98871ec49c9682492852f14572c4b78b35765fdc8816f31fb33d20eb199"
+      "sha256": "369ac0175cad0daea1fb19a1a1efed0a3cdd84114acf123dcdebe7bc4b6c7bfe"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-course-five-day-intensive-mobile.json",
-      "sha256": "e76dcdd602495226daa3b0d0665c524a42981e20623c77289e404a560fffa76d"
+      "sha256": "9545e468b780395449f069f9c9ba6017af566a9edf01b738f4e335984d59bbd1"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-course-level-one-advanced-desktop.json",
-      "sha256": "c9c7c96d37947ea0f8b32a3eb21e468e95105c874d7a178f803cb47eb96f1289"
+      "sha256": "1795c90b346458dfe54a8ec93c7d607e7a369091aa9471e3ae338b31d93307c6"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-course-level-one-advanced-mobile.json",
-      "sha256": "07bc8e3dcfb443af82c65b0aba55658bd57962a2942a42190752411fdeaed29d"
+      "sha256": "96eff8879341a5c0ffd9d5939ad712a4c30b5554e6ed44be345a6d32ae2571c6"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-course-one-day-workshop-desktop.json",
-      "sha256": "78d80a5c554beb8389e32e551236354ddaf40681ec2a5e38ebf4e96c5431fabe"
+      "sha256": "98593ee754727d2764cd768a3e49ffc93eed1b7ebbd32b55ac818d2ceb64dc54"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-course-one-day-workshop-mobile.json",
-      "sha256": "6d06a2fec02b0c1fbb8e2ab1dc5fdbd2aadb7f79681e2237e3e7ba8d0f96e88b"
+      "sha256": "ac29f8671f325a078f0bb93b21a2f649b7d6b9baf4f86947f0d05ccde09c4c48"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-course-three-day-certificate-desktop.json",
-      "sha256": "39147b79d7846121b77db74f84c1f7cf92abbc07088824ee513d4378f0f60c28"
+      "sha256": "13be29bf9d42841bf6fb0645ec9fe99d006b5e520070567cac3addbe0c62180f"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-course-three-day-certificate-mobile.json",
-      "sha256": "0b22aa0266ed77472c12393552c606ef6bce3cc0e45038f9d081ccb652a8b61b"
+      "sha256": "857109ae181da3c0db93363d00f4caa5f3b0a812ff2e239bbf79fc8dd534f65d"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-de-addiction-rehabilitation-desktop.json",
@@ -11498,11 +11498,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-template-course-and-fees-desktop.json",
-      "sha256": "2932c44ed14d7a4d8a008e05b32aae36b0627be335d5e5f9ec8236afaf2d18c8"
+      "sha256": "25b39843e734acbc93f8ba63a956acd2c16dae45e411d489f769313eeae60141"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-template-course-and-fees-mobile.json",
-      "sha256": "3dde91e776e65f97f4fb2f97ec7e644f816d1fe6798219a4b170e312c3308ff9"
+      "sha256": "d360551a3cdda8a157c059b08554136647847dca810ddd00599cf903bdfea81e"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-template-legal-policy-desktop.json",
@@ -11642,11 +11642,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/assets/course-aalct-hv-data.js",
-      "sha256": "856f664b94862efc35f75253ae4b890dc08f5aa8b9782322fc9890be078b24d6"
+      "sha256": "ebb38d831fd4ce1144a5fcd97b4ff281c42db1903f67723938bfabb7a29b1404"
     },
     {
       "file": "public/ahv/l10n/zh/assets/course-aatp1-hv-data.js",
-      "sha256": "73a6487122488233f7bd23fc10b5d2cdd700bcb28f2bc47b48b35043ec76ba6c"
+      "sha256": "2e97d5389fade4a524b1bf51093f9975797ce8c3dcd7e7109507b1d71c195d21"
     },
     {
       "file": "public/ahv/l10n/zh/assets/course-oap-hv-data.js",
@@ -11970,19 +11970,19 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-ayurveda-training-programme-desktop.json",
-      "sha256": "18e2ad0941e9310a150601e38cce0b88bc477123beb6b0af14fa89867c6c6545"
+      "sha256": "f2ebdc0caf47d2f8fd4b0befa3a26c4474a2ef136267d2cb36fbacb32995dace"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-ayurveda-training-programme-mobile.json",
-      "sha256": "959e6154ba26fe2046b38b34397de34c33ce1258c12eddee3ed697fd4883b5a5"
+      "sha256": "09b9a2b3ca358424cca16e4c4d666573865447504cd7492dd17434445a06adb4"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-ayurveda-training-programs-desktop.json",
-      "sha256": "4503caf5bf70cbe24a2fa35a1160bfd80ea695ac0bd61f11120ebe440fae2ae9"
+      "sha256": "789f70741277ef1166aa01dcf2696aaf28b0b43e137ca6abd92f52061c9b6541"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-ayurveda-training-programs-mobile.json",
-      "sha256": "06edc56cadbd31a8a07230065c9888d3d72c7ef0a1081be8e4fce93d1dc523e8"
+      "sha256": "1712bdd406f0f72b489bf8946a0b56ca2d4f70cc4c74ec02d24b270a0c6283f2"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
@@ -12066,43 +12066,43 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-course-consultant-therapist-desktop.json",
-      "sha256": "3d4cbf3c6e56df8fbf9363bea9ab7d6cf18068f764d8b5293bab82bf60c1805d"
+      "sha256": "93dbc102cd40e8cd8c716fc591705bfd37a7e5e8b4347d988688327631d80d35"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-course-consultant-therapist-mobile.json",
-      "sha256": "201141078aa841b0f688ff66403d182e292887d0305f6ca198d9f27364064047"
+      "sha256": "29bcae71e77105a3a0ff6b7c0f2cdfa1a542769c0843fabcb02a1cb92bca89c9"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-course-five-day-intensive-desktop.json",
-      "sha256": "1cbf4fb29a6b79f13ba9faf9ad786d038d3f0b772482cc86bfe603c39d97d557"
+      "sha256": "8dc6844cd198a6e0578518a6b9304e921d96cb590f989d25345aa0c3dbb5b033"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-course-five-day-intensive-mobile.json",
-      "sha256": "a2c7d9d9a19044b80649d1c7114442813d174b38ee6e2e80373f97cba63d6529"
+      "sha256": "644b6415f788249622a5550d1c810ddfc283ad038c6e82848267fdff210bb8a1"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-course-level-one-advanced-desktop.json",
-      "sha256": "8490b3ab15d440d6f8ad1a40ec4ce6598b55fcc535cd59c3daf68ee7c4b9a35b"
+      "sha256": "e9adc8c27b7ff83c464b9084786910a82aef8dd0e85857d4cb358e01155a7fad"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-course-level-one-advanced-mobile.json",
-      "sha256": "d67178b1d2be5e8ada5fc88b92b5878a129274df0c832b6930864793c1efa3f2"
+      "sha256": "e2dcaae39d3cd28f7e97d12b50ab54acfb9eaf7d818d3d7a95f64245bea1be45"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-course-one-day-workshop-desktop.json",
-      "sha256": "93ca7a7a32b2c29de6ec9c85655ae59de63732498554cf610becdf38e2bc7d33"
+      "sha256": "98d95f0f191bf1134795a802af7922f2657f0c7c9513167dc7e04bcd640b3d77"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-course-one-day-workshop-mobile.json",
-      "sha256": "bddbf0a3bdcb6301f78696c8ed76d18ac4e62758cbc5dae1402bd65d3505f003"
+      "sha256": "a05fb16507c137abba12a79fcdc8f19a8961f7a2569f204012e2697d7026f6fc"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-course-three-day-certificate-desktop.json",
-      "sha256": "c42b8d44fde5e0386f62f627b21cf6d916ef603149916ebf018cfc127e7f6898"
+      "sha256": "d8b074793e62cb677bbb661f6b1a349a1f67bb9d0c413700ba5b06c6f5db08d6"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-course-three-day-certificate-mobile.json",
-      "sha256": "6b1c93fd529587ba54c3a96c20cc0cd5fc6fa5ad7df8724b51bbd8b595bb43b3"
+      "sha256": "737fe1760f23075b8925904a0a045fb32a98b6a6c0f8df081c22ab427060d118"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-de-addiction-rehabilitation-desktop.json",
@@ -12538,11 +12538,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-template-course-and-fees-desktop.json",
-      "sha256": "e9e331d7ea328718d7ef3c1403503b2d9de32d5f7b3dc66dda86e910104cc4c3"
+      "sha256": "9411b81508887c38ee863d380a0ca6116eccbdcf8fe0037a480131e85a8b2ec3"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-template-course-and-fees-mobile.json",
-      "sha256": "f8384fe7cf99bdd6d59506535acaa51bc23cfc13a026eda338ad9753b638bfd9"
+      "sha256": "2d0a109be36798d6e907abad4bebfb438924a6e20e47c9eda28e117c4fe77050"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-template-legal-policy-desktop.json",
@@ -12606,7 +12606,7 @@
     },
     {
       "file": "l10n/prerender/hi/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
-      "sha256": "bfd926e4e2bd9e62309dc0bc84950ebc8359b39018fe6fcc53bb933ac0f82650",
+      "sha256": "1c4ffab7779df23d6aa4a01499a5f7a2e5ef71761f6c9c68b278e0cf54a5dfd1",
       "bytes": 18731
     },
     {
@@ -12686,7 +12686,7 @@
     },
     {
       "file": "l10n/prerender/hi/ayurveda-training-programme.html.gz",
-      "sha256": "c4d07f0e97d09a9b551661eef72637664ba8b688be3dfebe179dc9d1f50c9304",
+      "sha256": "580a0387b369747c011befbc780fa7c9fe95a6fc96028439f394b0a6def0e2b8",
       "bytes": 19424
     },
     {
@@ -12966,12 +12966,12 @@
     },
     {
       "file": "l10n/prerender/hi/index.json",
-      "sha256": "094ca697a5fafa09b6e5a14b463a00775737318501ea9d92259129d3673639f4",
+      "sha256": "9dec729d952390a2e41852dc91456929c0d2b97550bef91421e19d7b3d87ce71",
       "bytes": 53526
     },
     {
       "file": "l10n/prerender/hi/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
-      "sha256": "616f057ed5c37f8450bf7ca8b883ac13285053e8e9d9b236f3ed6721e229c706",
+      "sha256": "f7c78992933f91966343a47a67c56e39c632d7e7a6425063d7580b5942815d99",
       "bytes": 17562
     },
     {
@@ -13106,7 +13106,7 @@
     },
     {
       "file": "l10n/prerender/hi/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
-      "sha256": "f95da2df6ab4f1148a5bf4abf0fd8b1c089aca9b5835327579fc2437a7602901",
+      "sha256": "bcf1daf109232b2be5f3c545fca7727923aced7d67de7583062a42115b227bbe",
       "bytes": 18215
     },
     {
@@ -13186,7 +13186,7 @@
     },
     {
       "file": "l10n/prerender/hi/one-day-ayurveda-workshop-program-kerala.html.gz",
-      "sha256": "3a0e423443aa2248803e587a826c7380116e4bec69ab4abf45944ef6d09c86d5",
+      "sha256": "fcef824bd85a1acf864cab128078f5d3dea4b2493c868de8558c569cffc5ae7b",
       "bytes": 17302
     },
     {
@@ -13411,12 +13411,12 @@
     },
     {
       "file": "l10n/prerender/hi/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
-      "sha256": "809a4b46c3894fdf90832c2010352c91ba33b150725200cb37790a014f2a7ab6",
+      "sha256": "cd398ab1e5d4e2b59c2f79e512440334670b484ec1f932a7176b997be3a6050d",
       "bytes": 17362
     },
     {
       "file": "l10n/prerender/hi/training-course-fees.html.gz",
-      "sha256": "73cd79814ffec2f1d2b86257397c0ba6eae30343b94bc38a6e5570b042fc4eff",
+      "sha256": "518ec67d0b9e047991bcd455b2f50850c11ef84bfdbd6ace11e75468a865c006",
       "bytes": 16313
     },
     {
@@ -13691,7 +13691,7 @@
     },
     {
       "file": "l10n/prerender/de/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
-      "sha256": "532335fb59cab2a485a12fbd93710b53c6190f167567b7695a5a61d07608d9ff",
+      "sha256": "9cddf0cf172605d98ce1b78a56a4eab6f5a94892bace0eb3a1b7c049436f8a82",
       "bytes": 17098
     },
     {
@@ -13771,7 +13771,7 @@
     },
     {
       "file": "l10n/prerender/de/ayurveda-training-programme.html.gz",
-      "sha256": "1150b9a313f1e5a6f44ce875a00f43164f545339e88fc373d3d8de46c7e74334",
+      "sha256": "7b3cb05c0a8b53a2395845c0defde256b3942ec2ff97794e80efa32dfa3b7f2a",
       "bytes": 18151
     },
     {
@@ -14051,12 +14051,12 @@
     },
     {
       "file": "l10n/prerender/de/index.json",
-      "sha256": "5b52ad516c8c9350f8475d264c5b92db92d62569ce343100abfb2ec491012a60",
+      "sha256": "c9870056395838df69c471d673037b1eadeed2552874c4a517897be858a8eae8",
       "bytes": 53532
     },
     {
       "file": "l10n/prerender/de/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
-      "sha256": "09e57949a437c231e77d3472d0f854e9e77bc91fc016e70664e8e4531a3f464d",
+      "sha256": "b40384c5da7be0744f7e6504407d265757c59a140d678b106d0caa200fe15b44",
       "bytes": 16470
     },
     {
@@ -14191,7 +14191,7 @@
     },
     {
       "file": "l10n/prerender/de/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
-      "sha256": "c22e6e91e376abeda72004bbcc5bd840abcdd9bb2830acaa12c460951a7a6639",
+      "sha256": "c8971192b6ed972ff8b536fde7cc391eec908b303a640d0067a1ee17edea4e28",
       "bytes": 16739
     },
     {
@@ -14271,7 +14271,7 @@
     },
     {
       "file": "l10n/prerender/de/one-day-ayurveda-workshop-program-kerala.html.gz",
-      "sha256": "2b373a96dfd4bc74572e95fdb478a6c5ecc13b143bdf3cbdba2e3261957b38ec",
+      "sha256": "3377a2f314571c303e1dece830710ef723d43edae28478925356b87cd29f1c06",
       "bytes": 16228
     },
     {
@@ -14496,12 +14496,12 @@
     },
     {
       "file": "l10n/prerender/de/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
-      "sha256": "df2b3086712a4cf3c4b65be9cb7b92edef3621457c038e1d7c1ddfd88ab65c9d",
+      "sha256": "74423fa8393b9c0a360ecd5b058c2f1f754c498f73d3ddaa14ee4d73e8f100f6",
       "bytes": 16225
     },
     {
       "file": "l10n/prerender/de/training-course-fees.html.gz",
-      "sha256": "5c9b2ec7155203d3838700d29b2ec2e84ca43ef0f6c9273c3fa66ed6cde3c5fc",
+      "sha256": "8fed2c63cd7d6a3e4d0967043c9a2c7cc3edb4929990435b95dea2010112f4d7",
       "bytes": 15485
     },
     {
@@ -14776,7 +14776,7 @@
     },
     {
       "file": "l10n/prerender/fr/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
-      "sha256": "bd74ef1ca7479f6e534648566ed7ba583027a16ee6fe2aaedf76a78251f07d61",
+      "sha256": "e3474f33676575b71cf83b09cb9801c85b447cb1aa4ad8f33dd1c7a7aa7492b5",
       "bytes": 17094
     },
     {
@@ -14856,7 +14856,7 @@
     },
     {
       "file": "l10n/prerender/fr/ayurveda-training-programme.html.gz",
-      "sha256": "ba236b492224af7a7eabd8598251b16c5a659d31a795d3e34750d9f5eb4011da",
+      "sha256": "382d8302cad95a33fc40dfe296fbe6f64742e8edeace16edb1232877fec15bcb",
       "bytes": 18061
     },
     {
@@ -15136,12 +15136,12 @@
     },
     {
       "file": "l10n/prerender/fr/index.json",
-      "sha256": "cf872f029973fc47a9b80f31aa40ba5593cf7f8dbcea84c172b107fbb7e82217",
+      "sha256": "65f19bdb48a416086d0b78db48471aa0db982bb9b8ea876737bdc8c03fd6e276",
       "bytes": 53536
     },
     {
       "file": "l10n/prerender/fr/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
-      "sha256": "6f97874f853bdcb3ce30d9b37e18cde745c7fd05a15ef7087b954b0adf07e8ad",
+      "sha256": "0fcb32fb558d79f3f51639df4fb5f9079ac235818038b0711d185c81c037a110",
       "bytes": 16363
     },
     {
@@ -15276,7 +15276,7 @@
     },
     {
       "file": "l10n/prerender/fr/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
-      "sha256": "aed513cbd8f99a37bfa0ce22ab3fc35ea97cbb7600d77681dfb6c5abd2998845",
+      "sha256": "09282672e4d98ee07438e1db33da4b22076e06edda9e1917a8483f6bab5704e2",
       "bytes": 16851
     },
     {
@@ -15356,7 +15356,7 @@
     },
     {
       "file": "l10n/prerender/fr/one-day-ayurveda-workshop-program-kerala.html.gz",
-      "sha256": "61591d9f16fdba0ef76daa6f2ed2eac175088621fa167e7b3d85bf3251a89c23",
+      "sha256": "b8eef15c1cfc10aa20047fb613dd06fdb98070853f84b18141c5af3c715e8a6a",
       "bytes": 16125
     },
     {
@@ -15581,12 +15581,12 @@
     },
     {
       "file": "l10n/prerender/fr/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
-      "sha256": "db81025740f46f158d79206f8a88a10e46969a163ea78afc7dc6ae7966e18d0d",
+      "sha256": "13bf283088dc61d330214a45fc8f8b63c08268f74c04c2d7a25e229c0700816e",
       "bytes": 16232
     },
     {
       "file": "l10n/prerender/fr/training-course-fees.html.gz",
-      "sha256": "4b0732ccde721b772142cf960e5a753ca696d0673a27130e890547bc756bc72d",
+      "sha256": "f42251362bf6c8cfdfc7d94df9759f4f3f877944c4a23687be7e5f77ee75068a",
       "bytes": 15503
     },
     {
@@ -15861,7 +15861,7 @@
     },
     {
       "file": "l10n/prerender/es/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
-      "sha256": "b03a5a8b4f65d1f877c1a8a5f2ac5bf81f1d8ee3138a738d0c21945ce89b8ee3",
+      "sha256": "20e9f0c4bdf2a5feb62bd0479bedd0fd58a9c30008d6d7813ac874bb41a87b45",
       "bytes": 16995
     },
     {
@@ -15941,7 +15941,7 @@
     },
     {
       "file": "l10n/prerender/es/ayurveda-training-programme.html.gz",
-      "sha256": "57d70b0e303e0d02ccc584355fbb52f2be0567073569fe7031d8ec48acc4a988",
+      "sha256": "3837b4989fe17ee1d931ffc28926d5f9fa15ad952a9b7c78e918d319c676b42d",
       "bytes": 17765
     },
     {
@@ -16221,12 +16221,12 @@
     },
     {
       "file": "l10n/prerender/es/index.json",
-      "sha256": "477bbb8f422e094678e104efbee6974b6f1d6ec579f9560fc93a63a6ecd59928",
+      "sha256": "2ae4bd1dd352ea05b11d69f6e33306bf8f7099d12708143a4afd8ff64c72b649",
       "bytes": 53532
     },
     {
       "file": "l10n/prerender/es/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
-      "sha256": "49fa0f23da97632d4a3ae2db08ae0b6ed1c76a34f2d309bd57929cd8c174c09d",
+      "sha256": "8bcbf97c6d4532df69cdb125c2e4af354d6aa895d9a152236b71d9cbf0528fde",
       "bytes": 16181
     },
     {
@@ -16361,7 +16361,7 @@
     },
     {
       "file": "l10n/prerender/es/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
-      "sha256": "a8aaf4d657df571f6029007e1616b90286231184764ad24f2092d291694b7291",
+      "sha256": "db320125ac65b2255737f73c6b1ef47f43ec1a7fbaf64720aa02927e88139964",
       "bytes": 16569
     },
     {
@@ -16441,7 +16441,7 @@
     },
     {
       "file": "l10n/prerender/es/one-day-ayurveda-workshop-program-kerala.html.gz",
-      "sha256": "b291fe4d44902dc5e5cfcb21e8c6de3a8f00eb4fc0adf4b27e49e74d4b7eba02",
+      "sha256": "1a4a4aafa46cabcf2636bb93340043c271c7ddceadf0403b2f22e6b9e622ea78",
       "bytes": 15995
     },
     {
@@ -16666,12 +16666,12 @@
     },
     {
       "file": "l10n/prerender/es/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
-      "sha256": "58b508cc1ef1732560fed98c7961fb5a918e9d3d4854aba774870b4b54f21e88",
+      "sha256": "ed7bcab370ca0c4c04f244c61994dc8ec0010351b5fad0f57fda94d2352726f1",
       "bytes": 16015
     },
     {
       "file": "l10n/prerender/es/training-course-fees.html.gz",
-      "sha256": "1d1135715284e7cd416f721a7a75150752b8dd4d08c2fac3c2f4b1cbc4053be4",
+      "sha256": "ba4e2b61b8913949d43ca64025c63b77155f26f369b17765e3b5dc455fb2261b",
       "bytes": 15446
     },
     {
@@ -16946,7 +16946,7 @@
     },
     {
       "file": "l10n/prerender/it/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
-      "sha256": "16b2d404c4125484ea7a53111ea44995828e9831d9d7a7e33f9def4497965045",
+      "sha256": "7721737c8be8ba05356b9ffd4e167448d6a77b9221a32a3d53a2405ac9cf499d",
       "bytes": 16886
     },
     {
@@ -17026,7 +17026,7 @@
     },
     {
       "file": "l10n/prerender/it/ayurveda-training-programme.html.gz",
-      "sha256": "a0f661fd276804a9e5a863ad4184bbdf43032f7af0d70a9d64c372bf0c631094",
+      "sha256": "15e4aea74b43ea9c689ed5ae707b5de92b33bffd82fba640f5c86d6501db723b",
       "bytes": 17802
     },
     {
@@ -17306,12 +17306,12 @@
     },
     {
       "file": "l10n/prerender/it/index.json",
-      "sha256": "56d6b92480952b48f65c2943cd5a946fe3be923a08babaf070edb72633470cde",
+      "sha256": "f82290c105a240c52c5a4cea3dd1a74f614d684ce8a5e72a96b916ca23343a5f",
       "bytes": 53532
     },
     {
       "file": "l10n/prerender/it/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
-      "sha256": "8d1acd8e5916d0837781af0a1625644e7f51c9d3b47cba99b67148ac643b8db2",
+      "sha256": "1fc3c6139a9cd2a9ce4448974d49c8ee0eeb86fcdc48b42b2f421652db95c683",
       "bytes": 16204
     },
     {
@@ -17446,7 +17446,7 @@
     },
     {
       "file": "l10n/prerender/it/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
-      "sha256": "dc39fb59ebd6dc3cbe93420c8e2a372fcd1e9182f9829b93158c148477d1a80f",
+      "sha256": "c10a3c5cc2e5c132e8e01a59a0fafb755dd349bac9bbd5c87edc9cda1a612a9e",
       "bytes": 16561
     },
     {
@@ -17526,7 +17526,7 @@
     },
     {
       "file": "l10n/prerender/it/one-day-ayurveda-workshop-program-kerala.html.gz",
-      "sha256": "9ea536c5b23e3bbd85af0de90fc60f29282a45ae2f985a7730c69e94c4aee266",
+      "sha256": "ba068532d87b57cdce8e3dca29078d4e79b9d1c5800b821b5ce5e24ac3f341e5",
       "bytes": 16038
     },
     {
@@ -17751,12 +17751,12 @@
     },
     {
       "file": "l10n/prerender/it/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
-      "sha256": "30235e2267b57c95d4578dec82ff056847f16be2285ea62dd8d3fb1c15ec95e3",
+      "sha256": "fe4e85f657ff605abb75889555ebdbccdc44662020dd98090c9f4d944ddf5ce7",
       "bytes": 16055
     },
     {
       "file": "l10n/prerender/it/training-course-fees.html.gz",
-      "sha256": "441fff193ac4b9bca6f4b33941288f9c90db64b8d82a9c2506f127f5b55a8c2f",
+      "sha256": "9aea17ae3d3108662cac56c1818e94de0dab7d5d8d6fe65c28141c9ba8db1133",
       "bytes": 15380
     },
     {
@@ -18031,7 +18031,7 @@
     },
     {
       "file": "l10n/prerender/pt/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
-      "sha256": "f0aff0f5b565aceafee7f3598b1a0cc74f2783a1473c2147398c1a999204ad10",
+      "sha256": "fdbef6ed1e65f23887ea43b8767418031b8267a17519c518650d7df6bdf0bfeb",
       "bytes": 16951
     },
     {
@@ -18111,7 +18111,7 @@
     },
     {
       "file": "l10n/prerender/pt/ayurveda-training-programme.html.gz",
-      "sha256": "d1602044d5df984ce1b8945b4960f9b83b18771436305f191a3e5bf592c971a9",
+      "sha256": "395e5e315ed541a19e21473f9c4ab178732d75611a91013def0e7f1d93220c73",
       "bytes": 17847
     },
     {
@@ -18391,12 +18391,12 @@
     },
     {
       "file": "l10n/prerender/pt/index.json",
-      "sha256": "013d3b48aee06ddfd5ec703345dc05b2ff1d71a1c665fdd560b341d3da2dd3b7",
+      "sha256": "049197710403ec9d60c974d74e469c0ad38c6724e96aed14dc5271559e711f2c",
       "bytes": 53531
     },
     {
       "file": "l10n/prerender/pt/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
-      "sha256": "40ba7cf81e510f53575599cbd004e02423f9f957827faa5410178fc6abbbab69",
+      "sha256": "a6afef1dec619cef8d44e31ff0d2464f313e45cf2f1b97d575ff9e93fd94f7c0",
       "bytes": 16251
     },
     {
@@ -18531,7 +18531,7 @@
     },
     {
       "file": "l10n/prerender/pt/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
-      "sha256": "48b509c3dfa8736e804b75db37b218cb043a62d29dc16ec63aedf137b5ccfba2",
+      "sha256": "60054d5399e5031633f7bb82f2ca5c11b5dc6b3c0df2e6aedad00733cd0ea586",
       "bytes": 16628
     },
     {
@@ -18611,7 +18611,7 @@
     },
     {
       "file": "l10n/prerender/pt/one-day-ayurveda-workshop-program-kerala.html.gz",
-      "sha256": "3a7412e08f03f01df8b796b8c3d68593e6549eef234f0adabe1b952267f8b494",
+      "sha256": "a52439db5b70a168b021b8d6d3ec1e8a56e531c2ad2e91fa34a71856f6341cf0",
       "bytes": 16077
     },
     {
@@ -18836,12 +18836,12 @@
     },
     {
       "file": "l10n/prerender/pt/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
-      "sha256": "4cc09b45cd47941209b9834a093329e013a488a5d88be4858fd44cb909817d52",
+      "sha256": "bb5009481cfb50304284370f334c641ff5006e49465c772fa2ce85664b2d043b",
       "bytes": 16065
     },
     {
       "file": "l10n/prerender/pt/training-course-fees.html.gz",
-      "sha256": "6548d7a77d126e25c5541fcd1760adfc82eb4ba99aa30ed708c3c393dfe25d07",
+      "sha256": "b33e4fffd6eb8492e9a0dc466261d917f3bba4853808e30e5660db2d1d2fcd14",
       "bytes": 15474
     },
     {
@@ -19116,7 +19116,7 @@
     },
     {
       "file": "l10n/prerender/nl/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
-      "sha256": "07b3f5520455ca31e8387db060775e774d7e0d689431de85e45a96d7db014a5e",
+      "sha256": "adc1c6fdf88f494828d8389fd8ca1b887233944ec754deb62a51ab3324f96546",
       "bytes": 16859
     },
     {
@@ -19196,7 +19196,7 @@
     },
     {
       "file": "l10n/prerender/nl/ayurveda-training-programme.html.gz",
-      "sha256": "f486cbc5af36069bf614e0a378e4bc3d3e3298fc691a673920484e8825d99024",
+      "sha256": "144664b7a5af5752622d8be2ef9eaa73e93f9f1e105e186b973a2f710e20f444",
       "bytes": 17734
     },
     {
@@ -19476,12 +19476,12 @@
     },
     {
       "file": "l10n/prerender/nl/index.json",
-      "sha256": "c20c2c4b265c33638a9686b6d36f4b9e70b47eab41f56a5d529eb2b961fd7eaa",
+      "sha256": "f487662ac5cdd65839de40fea602f76596934725c85ad967077617c65e22e7ad",
       "bytes": 53531
     },
     {
       "file": "l10n/prerender/nl/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
-      "sha256": "84b0b4657bf685911bc81787fe0248aa37f12ff16371af4cfe37f0bfe487d61d",
+      "sha256": "45d45596988d5cdbaf2858eff4261e421f477e4e116f4071c2e610c625258e2c",
       "bytes": 16151
     },
     {
@@ -19616,7 +19616,7 @@
     },
     {
       "file": "l10n/prerender/nl/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
-      "sha256": "b99ae5557219b7ef7da894875e1b289e0ac662bedd926a0c1ac2e872e658b6d6",
+      "sha256": "5a9643c2f3a9644b13d4332e191b6e50baf854266ed9a72fede978562654ec2f",
       "bytes": 16532
     },
     {
@@ -19696,7 +19696,7 @@
     },
     {
       "file": "l10n/prerender/nl/one-day-ayurveda-workshop-program-kerala.html.gz",
-      "sha256": "bd34fb0a51ff22eb15997135c1c6cde8e287c30bf71c8faa50c3c1dd56d8344f",
+      "sha256": "73f8401e8914a20cb4a5279fe1e67667b24167421e26da3932b508b2debd83cf",
       "bytes": 15953
     },
     {
@@ -19921,12 +19921,12 @@
     },
     {
       "file": "l10n/prerender/nl/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
-      "sha256": "54e218c138c0af7a5fe94dbbfa03b9eb837a9add6287b507454c28fa5a76f545",
+      "sha256": "7cf3ef7b79ebe64e4fe9736f25af85c264ef856b5c5356f5980ba052b967c305",
       "bytes": 16006
     },
     {
       "file": "l10n/prerender/nl/training-course-fees.html.gz",
-      "sha256": "6bf7b2236410a2063984d4a033a0778b2d91905de29d6d382e405e8b4486d336",
+      "sha256": "1d4a76077dcfdece85ff5ebed917afd5ae44784178c60d860e0390a5964ce5d1",
       "bytes": 15335
     },
     {
@@ -20201,7 +20201,7 @@
     },
     {
       "file": "l10n/prerender/ru/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
-      "sha256": "ccc40118db22814a95f7e7641aca58fc92bce89e2d1543d972950b77a2e1075f",
+      "sha256": "a4ee57310c5b3a5e8b542af034ca6bc19ee26482c30a6572b82351deddcbd6a3",
       "bytes": 18931
     },
     {
@@ -20281,7 +20281,7 @@
     },
     {
       "file": "l10n/prerender/ru/ayurveda-training-programme.html.gz",
-      "sha256": "7037af39fbd90be21f2597b7c72f65711033e0dade018a5ecbbbb450d411e229",
+      "sha256": "84fb0e9df148e0958dd95512150baa62d4f6520a3b6c2f7792bb67176b9a4b5a",
       "bytes": 19811
     },
     {
@@ -20561,12 +20561,12 @@
     },
     {
       "file": "l10n/prerender/ru/index.json",
-      "sha256": "357af33ad668b8499e0c9c416e20fd598da0b378adc48183af7150eee6498eb3",
+      "sha256": "335d3c83d7971791312473ee782f33d7594cb977460f9c3ce9b0990b5e360319",
       "bytes": 53532
     },
     {
       "file": "l10n/prerender/ru/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
-      "sha256": "09fc5f3f073d9beac1f115117268a1325204add7824325f9f1d6ff79ab0d9984",
+      "sha256": "bbf2fec7a4e67ba2b22ccb9661ff797419b60aec536aff8193a89a931e447590",
       "bytes": 18085
     },
     {
@@ -20701,7 +20701,7 @@
     },
     {
       "file": "l10n/prerender/ru/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
-      "sha256": "0c1aa06d2231c250f5a230ab6b3d76e9ecf963d97372cbcc4a38584de22969d5",
+      "sha256": "cfd4fe60cefc0ca0b31181e9a625b82a9ae3cfa822624576d078c3d736699eb8",
       "bytes": 18572
     },
     {
@@ -20781,7 +20781,7 @@
     },
     {
       "file": "l10n/prerender/ru/one-day-ayurveda-workshop-program-kerala.html.gz",
-      "sha256": "fc3f22d4d07084b55a797a94052c817eaa23c481ec5a7b6fd3935897b076d83d",
+      "sha256": "10d4bcfea5c9b83b1a4785c00c2fd2834549a10d0a45587761174b8fbf7e5eac",
       "bytes": 17739
     },
     {
@@ -21006,12 +21006,12 @@
     },
     {
       "file": "l10n/prerender/ru/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
-      "sha256": "b273aca44061b6d896a42cf16ac3a52c67851668d40f31efc4a872ccd59daa54",
+      "sha256": "5c4f0d540397f8ef9aaabf9fd359d7d3d42f88505c5a09b7411495e79a1cdb5f",
       "bytes": 17747
     },
     {
       "file": "l10n/prerender/ru/training-course-fees.html.gz",
-      "sha256": "44fe882a144efa057528ebc66c1bb03db86d7920a938dce4950bbe38226da2b5",
+      "sha256": "06323cb3212d367bcc1c38d055d84ddba10c37aca622f2a31a471b17ceee45a3",
       "bytes": 16822
     },
     {
@@ -21286,7 +21286,7 @@
     },
     {
       "file": "l10n/prerender/ar/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
-      "sha256": "ef84d09a7f60e53c2bbfd96900d59843303c77078165539e2663fe21bd70ccf8",
+      "sha256": "987744600597e701dfd30f5b32fe54e7cd9973db89fe9e5ff68517404b18307d",
       "bytes": 17830
     },
     {
@@ -21366,7 +21366,7 @@
     },
     {
       "file": "l10n/prerender/ar/ayurveda-training-programme.html.gz",
-      "sha256": "d747831468d7619f6070dcdcb3494fbdaf31566ed4137ef8f2cf0c8f23c96f62",
+      "sha256": "c5add9e99a457a592a8a08a945216aed2dbd2fcb7d599545728a083cc02bc32c",
       "bytes": 18705
     },
     {
@@ -21646,12 +21646,12 @@
     },
     {
       "file": "l10n/prerender/ar/index.json",
-      "sha256": "6eada02ef499017e8e51f4eadf3915af8054d1c9fceaf0cddf563e66755a8686",
+      "sha256": "8ac1b51351b2dbf46dcb375028fc8ab4e8c9ebce91f1bfc05af232cce7bb3268",
       "bytes": 53522
     },
     {
       "file": "l10n/prerender/ar/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
-      "sha256": "69da6154cd117ef4a9da80825d787e90e31940bcf50e1578b0383bcb38c585b4",
+      "sha256": "0d55751428bdaf23485cf920a6577acb7694171169ae0d8ceb8bc408a0d98f56",
       "bytes": 17135
     },
     {
@@ -21786,7 +21786,7 @@
     },
     {
       "file": "l10n/prerender/ar/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
-      "sha256": "217835e20b0e2a4ce3c8936450bc1b901b72dce9c54537a76b9230183e93c562",
+      "sha256": "b84488586f2dd649b51e0302c4de92d6082084d5cbc23d06a8e12b3bf5d8d589",
       "bytes": 17677
     },
     {
@@ -21866,7 +21866,7 @@
     },
     {
       "file": "l10n/prerender/ar/one-day-ayurveda-workshop-program-kerala.html.gz",
-      "sha256": "d42ef6f78d6c252c34357da712961c018513d684b1140981e51029c421089ee8",
+      "sha256": "ab5f8c0df403fdacc0434dcc33423eddcbcc837488d9d15b3f4d56e3e80e34a0",
       "bytes": 16869
     },
     {
@@ -22091,12 +22091,12 @@
     },
     {
       "file": "l10n/prerender/ar/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
-      "sha256": "ee87a4510c98f709f9f105a37e38016cff2e4abad2fd4a34435b89708f773b5f",
+      "sha256": "423eccc2c215e236116f872dc33c13de22e6898aacc29ed04ee33037dfdc5f03",
       "bytes": 16959
     },
     {
       "file": "l10n/prerender/ar/training-course-fees.html.gz",
-      "sha256": "91b403eb2bbfc0dfc09b1c70901885b533aef6be91fffe8a610092cf509531a9",
+      "sha256": "8c4e1a3a3e65802abe266ae25778e2e3fd4fa7af06cc16b80eb65169535e293c",
       "bytes": 16139
     },
     {
@@ -22371,7 +22371,7 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
-      "sha256": "55cb915a7032bb1a66d4ee60785d8c75e1e2d1e1cee040a7f7713ff28c08ea96",
+      "sha256": "7e94e8225709b422aef6cc94bf59837ef279c53bf935cfeb13cb6f5634fe0400",
       "bytes": 17667
     },
     {
@@ -22451,7 +22451,7 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/ayurveda-training-programme.html.gz",
-      "sha256": "3a5fb6eea4b93b98d155d8b035194bda5ad565dce42885a0ace3aafe98c27487",
+      "sha256": "65195791591c397dc7db4845f48d2846bfdff4b4c8708868c1de5d7a59097544",
       "bytes": 18503
     },
     {
@@ -22731,12 +22731,12 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/index.json",
-      "sha256": "068558e0b475624abdf1e5927cf8c1598c49bb414b3745058967ee9cb83bb833",
+      "sha256": "65b5cd5f9ca297381c5e5588c5dc3af4210338d012817e13d54e4b400cff19d3",
       "bytes": 53462
     },
     {
       "file": "l10n/prerender/zh-Hans/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
-      "sha256": "74b0d8b89c5561fe90e62ab2cd7689df0caa37b0674f34e7f0e064f30158f034",
+      "sha256": "eed8292756b609d44613728725717d1365136c454c6cff196261d9ed38fb7671",
       "bytes": 16936
     },
     {
@@ -22871,7 +22871,7 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
-      "sha256": "53cfca94753af4113e4d2db7839ca2f2ff98e1bc1935c1497660b9f8cf00bfc0",
+      "sha256": "07193261498d9338053464c043228d96e755c2adee79756b392367063c45483f",
       "bytes": 17292
     },
     {
@@ -22951,7 +22951,7 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/one-day-ayurveda-workshop-program-kerala.html.gz",
-      "sha256": "c3c8beef32bd2ca834ee7f81d7c95439b0ea490f83c8d04aa3249e2fc9fdcff3",
+      "sha256": "e67e76de72c0de676355e35a48fdb6c8e0ab6a943134022918541121a254d737",
       "bytes": 16671
     },
     {
@@ -23176,12 +23176,12 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
-      "sha256": "17cb634ec578db332d499718c36e790598d046191aea62646fa5baa247f9c636",
+      "sha256": "19554571a3aaf46eec4cf034f023e0790566c0782a41102f144584f136212ef6",
       "bytes": 16704
     },
     {
       "file": "l10n/prerender/zh-Hans/training-course-fees.html.gz",
-      "sha256": "ea2d77736032827e174cde45f232c724f02adf0a667ad17639b0fd986c5fc61a",
+      "sha256": "3e875be5a5a20e55cabaeb822701729b606ffdb04653644b771a5b42eae0bf25",
       "bytes": 16002
     },
     {
@@ -23456,7 +23456,7 @@
     },
     {
       "file": "l10n/prerender/ja/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
-      "sha256": "ebf1b39a47b85948df6f438b3c69ca39beae8c5a07b97edd071f7d349d84de66",
+      "sha256": "2512a9c5fabd0b6857f84736159a94e151b47d309efec9c575643c2b93dfb8d5",
       "bytes": 18191
     },
     {
@@ -23536,7 +23536,7 @@
     },
     {
       "file": "l10n/prerender/ja/ayurveda-training-programme.html.gz",
-      "sha256": "b8ab826cfe2a41bd5e391cca1eafab8b07acf0c79658566570983aecf069ebdb",
+      "sha256": "4a0dd1c2337479d64a16ed5fc94a4a316d6e357b59a47fab39e959db50484a70",
       "bytes": 19141
     },
     {
@@ -23816,12 +23816,12 @@
     },
     {
       "file": "l10n/prerender/ja/index.json",
-      "sha256": "5fe926017ad3e0e9ccb6874a5ad53aed172d2f299256da19c6539e441fff479f",
+      "sha256": "af4f04020a2c4b5064de22cdef75a613523a204830b3eb09610b93b9859daba8",
       "bytes": 53474
     },
     {
       "file": "l10n/prerender/ja/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
-      "sha256": "5743f49717a9c792895b1a7601081733ddb8b6ef65c3e2052266ed74c3431a0d",
+      "sha256": "ce85d79f07e47dfdf63a951debd18e8b3aadb987d969aa4fc55b2538e76b07c7",
       "bytes": 17386
     },
     {
@@ -23956,7 +23956,7 @@
     },
     {
       "file": "l10n/prerender/ja/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
-      "sha256": "cdea1e10ffecb7ca3b3d20e628e6667f21efe41c3054f73771576100c560a8b6",
+      "sha256": "131e47be7ac7c0e867bc2411bb4b7055033553e64856b67abfb8fb79695fc4a2",
       "bytes": 18085
     },
     {
@@ -24036,7 +24036,7 @@
     },
     {
       "file": "l10n/prerender/ja/one-day-ayurveda-workshop-program-kerala.html.gz",
-      "sha256": "d6bde73b056b9687105f9c732d5b29a66e8e3565e766b599510c2b91edbc7a4d",
+      "sha256": "ea02c6fd71659feab9e9214b4656e82b109220a75a4d7ccff21e482567352c09",
       "bytes": 17119
     },
     {
@@ -24261,12 +24261,12 @@
     },
     {
       "file": "l10n/prerender/ja/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
-      "sha256": "a31645c94802b507a7ee749790805c32a8c82ef3c91d010fdd1e54e9df73d773",
+      "sha256": "e0189da9393ff1156377110c928b9447d118893f56c949c4bc2a3eff12a5acb3",
       "bytes": 17245
     },
     {
       "file": "l10n/prerender/ja/training-course-fees.html.gz",
-      "sha256": "2f5029ecbef7a7a8e2001ce0c0181f4ee21d138a8334e77b07c333eb58b9a818",
+      "sha256": "bcc7bcd830a4838791be231bd9544d7b459ec98bda8d5121816c02d382edaafa",
       "bytes": 16589
     },
     {
@@ -24541,7 +24541,7 @@
     },
     {
       "file": "l10n/prerender/ko/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
-      "sha256": "23f2666b1dbe033c74b64a7b3cbf58107765ded9e04601be74cecbf2349494b9",
+      "sha256": "86e71177b985c2a7ecedbd5ff5b9dc9ac73d5c6bf8c8afd58abb4b39b01edda4",
       "bytes": 17662
     },
     {
@@ -24621,7 +24621,7 @@
     },
     {
       "file": "l10n/prerender/ko/ayurveda-training-programme.html.gz",
-      "sha256": "c57d14368ec1b30fc7ff24d4c2a22f30238e3ef3cbce38749cda9cbdd72a5f40",
+      "sha256": "22cd17311a3d5960e860a917b021770d647b17bbc019825da067a967b9ebca4b",
       "bytes": 18534
     },
     {
@@ -24901,12 +24901,12 @@
     },
     {
       "file": "l10n/prerender/ko/index.json",
-      "sha256": "011fa0896e75b68680fb61161664d37671b923138d3cd345050d2c286e2591aa",
+      "sha256": "e3cf8d8d2498b88e201f435ba4f2f4e185eb88cf2689c5e7af7158ac0ed024c7",
       "bytes": 53474
     },
     {
       "file": "l10n/prerender/ko/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
-      "sha256": "5a2c59c4db4432d2ad2553cdae7f902fc7a02401dcc00f25b23e69f57e9fbc8c",
+      "sha256": "9048ffe1652f85246af74525182cc6a7a6beb9f9cd3f24703b2d3ec7de2dd68f",
       "bytes": 16809
     },
     {
@@ -25041,7 +25041,7 @@
     },
     {
       "file": "l10n/prerender/ko/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
-      "sha256": "97a4ca7fc189b04081e4e88441aa9c207176e618241982b51d98a338c4bd10f1",
+      "sha256": "3abec99998d0154fde6b7a7729d5317ba3cef32fdb149a548397fe65cf6cbd10",
       "bytes": 17334
     },
     {
@@ -25121,7 +25121,7 @@
     },
     {
       "file": "l10n/prerender/ko/one-day-ayurveda-workshop-program-kerala.html.gz",
-      "sha256": "132afb24b56a6a3841d2388a9e5bee0a8e5d76a956cc0dbab38804ab0cbd620a",
+      "sha256": "e828e919429abb2f87ae8379182e1e52c30c05c4680aac7c3f17ed8027a49651",
       "bytes": 16691
     },
     {
@@ -25346,12 +25346,12 @@
     },
     {
       "file": "l10n/prerender/ko/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
-      "sha256": "7f593303604d4402038af416b4d4205abd576cf72aea8a311ad277882bb9cc35",
+      "sha256": "9b474c757b00a6344165f850dd246fcd4cf95907e65268474bf3607d306a9eb5",
       "bytes": 16814
     },
     {
       "file": "l10n/prerender/ko/training-course-fees.html.gz",
-      "sha256": "ecbc0601b7076569fb19adbc09913e5b2c9873663718d4965c1e813e11ee2714",
+      "sha256": "faab6898ed0d0303cd43244279bc309f2596aad14d0e5c296d2a058c19cff2fd",
       "bytes": 16001
     },
     {
