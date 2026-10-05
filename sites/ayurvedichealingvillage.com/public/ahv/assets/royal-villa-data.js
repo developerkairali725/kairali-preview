@@ -1,4 +1,4 @@
-// /royal-villa/ — verbatim from family-05/ROYAL-VILLA-BUILD.json (WOPS-AHV-CLAUDE-CONTINUATION-002; source record sha256 26d5ece9…). 5 about ¶ with embedded 4-item list (source order: p,p,p,ul,p,p) / quote (source closes with an OPENING curly quote “ — preserved) / 4 facts (incl. source spacing "284- 441 Sqft") / 14 amenities / 30 gallery originals (15 Interior + 8+7=15 Exterior) / 9 room rows (31 photos + 9 symbols, packet alts, source table order 301,302,303,304,305,108,109,110,208) / 3 related cards (labels verbatim "Classic Villas", "Deluxe Villas", "Maharaja Suites"; Deluxe card image is source file Royal-Villa-image-1.jpg — source label governs). Tariff panels OMITTED: INR panel dated 2025-10-01→2026-09-30 (not expired at build), USD/EUR panels 2024-10-01→2025-09-30 (expired) — unreconciled, no rates emitted, enquiry CTAs instead. Hero = source og:image 14-8.jpg.
+// Room category and bed mapping updated from Front Office attachment, 2 October 2026 (message 1a0fc049e9c21663).
 window.AHV_ROYAL = {
  "h1": "Royal Villa",
  "eyebrow": "Our Villas",
@@ -339,7 +339,7 @@ window.AHV_ROYAL = {
  "rooms": [
   {
    "name": "Chothi",
-   "bed": "Twin",
+   "bed": "King",
    "room": "301",
    "zodiac": "chothi",
    "zodiacImage": {
@@ -686,6 +686,42 @@ window.AHV_ROYAL = {
      "height": 1000,
      "alt": "Makam room 208, photo 3",
      "legacyUrl": "https://ayurvedichealingvillage.com/wp-content/uploads/2025/07/208-makam-2.webp"
+    }
+   ]
+  },
+  {
+   "name": "Atham",
+   "bed": "Twin",
+   "room": "212",
+   "zodiac": "attam",
+   "zodiacImage": {
+    "image": "/ahv/assets/img/AHV-Classic-Z-attam.webp",
+    "width": 120,
+    "height": 120,
+    "alt": "Attam symbol",
+    "legacyUrl": "https://ayurvedichealingvillage.com/wp-content/uploads/2025/07/attam.webp"
+   },
+   "images": [
+    {
+     "image": "/ahv/assets/img/AHV-Classic-R212-1.webp",
+     "width": 1400,
+     "height": 933,
+     "alt": "Room 212 exterior",
+     "legacyUrl": "https://ayurvedichealingvillage.com/wp-content/uploads/2025/07/212-attam-1.webp"
+    },
+    {
+     "image": "/ahv/assets/img/AHV-Classic-R212-2.webp",
+     "width": 1400,
+     "height": 933,
+     "alt": "Twin beds in room 212",
+     "legacyUrl": "https://ayurvedichealingvillage.com/wp-content/uploads/2025/07/212-attam-2.webp"
+    },
+    {
+     "image": "/ahv/assets/img/AHV-Classic-R212-3.webp",
+     "width": 1400,
+     "height": 2047,
+     "alt": "Room 212 bathroom",
+     "legacyUrl": "https://ayurvedichealingvillage.com/wp-content/uploads/2025/07/212-attam-3.webp"
     }
    ]
   }

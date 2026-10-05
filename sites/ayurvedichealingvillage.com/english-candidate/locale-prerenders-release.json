@@ -1,12 +1,12 @@
 {
   "repository": "kairali-digital/kairali-web-factory",
   "tag": "ahv-english-staging-20260915",
-  "asset": "ahv-locale-prerenders-training-content-20261005.tar.gz",
-  "archive": "ahv-locale-prerenders-training-content-20261005.tar.gz",
-  "sha256": "36971aed2e864328c9eac6be6847b06aae55bfafeebdc6fc039976444de68aa4",
-  "bytes": 46469035,
-  "capturedSource": "e32903b13 + reviewed search focus handling; 12 translated homepages recaptured; all other 2592 snapshot members unchanged",
-  "captured": "2026-10-05",
+  "asset": "ahv-locale-prerenders-room-categories-20261006.tar.gz",
+  "archive": "ahv-locale-prerenders-room-categories-20261006.tar.gz",
+  "sha256": "3b1fcfa1ac3bbb5154dc0ebfd72af6d36154c6775be83131bc6224014a63843c",
+  "bytes": 46469337,
+  "capturedSource": "bbda2725f plus verified Front Office room-category correction: room 212 Royal/Twin and room 301 King; 24 localized villa snapshots and 12 indexes updated; other 2568 archive members unchanged",
+  "captured": "2026-10-06",
   "sources": [
     {
       "file": "english-candidate/route-manifest.json",
@@ -14,99 +14,99 @@
     },
     {
       "file": "l10n/generated/ar.catalog.json",
-      "sha256": "520b73b80184f79312569d3d882cb3cadff331de5247ad5f8d932e52a84d4d63"
+      "sha256": "64b01f66b72c697620d5f3b58fe5b459a3b37a68368dfc0b32e742b0c9bac15b"
     },
     {
       "file": "l10n/generated/ar.json",
-      "sha256": "ae40d6ee1fe5262fff79dd111062903433a797bb3ebf72ffb3a7c1b8ca46aa29"
+      "sha256": "3bfe6fd1a52bbf57fdf8c4ba52e753c0450c054bdf306c31e8ab3aa4c0d84ecf"
     },
     {
       "file": "l10n/generated/de.catalog.json",
-      "sha256": "5f0f68418bcc4472fe6334a9ca73219644d3a5feb279ce5965a690ca6a1a2b7d"
+      "sha256": "8040378077ec29857cc026ce0c96f72101a84a583c947bded953c23114a31006"
     },
     {
       "file": "l10n/generated/de.json",
-      "sha256": "e9c1ca0432f2743e2e50fb9dac4e97644a8ee62cd5149b06cc86d4c3446c10e5"
+      "sha256": "eeb76d3e71a80b557350b58417d3009fbea26bd439926112d1ccfb4108d649e9"
     },
     {
       "file": "l10n/generated/es.catalog.json",
-      "sha256": "28bdd3d0fc825234fb3e3170b3788cc476a51cd15c6591ebc817a2ca50f5e0d4"
+      "sha256": "6052e217475a95715230e4c9553a1f7eb73a4e9bd5da254cfbf87f82fd1e6cd2"
     },
     {
       "file": "l10n/generated/es.json",
-      "sha256": "d1f16c7b38f89ae07087ec5ef8d6708ec6280e62e76da1e1cf605fe220bc58e4"
+      "sha256": "99400eb553bb610d4aafe33cc546fa031727ee663165fd72706be39cd9a5711d"
     },
     {
       "file": "l10n/generated/fr.catalog.json",
-      "sha256": "04eb293838e8b0b4dffc2c26031b428afcc117d18d5d1e10dd7a8b34d7b0f3f1"
+      "sha256": "8235078a385addedb6b147e5660fe9de273c1c3cf2e2b31e774cb2bead337de2"
     },
     {
       "file": "l10n/generated/fr.json",
-      "sha256": "902beef4fe65852780c811d52347ba3d112444daeaafc85daed8e1d10e9b783f"
+      "sha256": "6181af7a6224e487ab64fb14824219c3759b177e6376e0618c0fc581fa337fa4"
     },
     {
       "file": "l10n/generated/hi.catalog.json",
-      "sha256": "d4cbedc748d43a718ec7a330eb87faa3147d7d820f1b31dd3a2600696431e402"
+      "sha256": "bcf6ed1230f9e4d0a98da5e55023f94ec53018a4206c6bfb801ae896fbd5e169"
     },
     {
       "file": "l10n/generated/hi.json",
-      "sha256": "504c809eb900e6c9cd26304264c9549ce9b6714f65d4f1b41fa5f5a5a7f3d7de"
+      "sha256": "da890caf85d3de2521ab32435676427df8d231922d0052a0e42b08934e737cac"
     },
     {
       "file": "l10n/generated/it.catalog.json",
-      "sha256": "03cbd86b4fb670067aa2f33dbd61c818dc00e839e2465fb90b40f162e7a56f0e"
+      "sha256": "60dd89b86a33e79c23921092a4aee159c77c87c84a8af0944b733c928533f282"
     },
     {
       "file": "l10n/generated/it.json",
-      "sha256": "7e22ce801642a31164075c6907590e39002825758797ab99e7bfc5528ee76a99"
+      "sha256": "2659802f7163751308a05bdb99f5017b5d04f06e3ed77e89b4785fd1b1bb5f8a"
     },
     {
       "file": "l10n/generated/ja.catalog.json",
-      "sha256": "055a02bb17935018692fade313cd113819f54d8ecb3d00303f8dbad01901293c"
+      "sha256": "60d03ad153230e422e64c2f1962b85933027320952757e66a61145636621da33"
     },
     {
       "file": "l10n/generated/ja.json",
-      "sha256": "03bf099e565c12b9e0405603022e6d04ddf2b97f0b89a24113f04088a4a2fde3"
+      "sha256": "717fa677e502c1b2fe0f3a4a966c3ba1273e6ede3e225267cce94b444aedabe1"
     },
     {
       "file": "l10n/generated/ko.catalog.json",
-      "sha256": "ebaf0d96517bd3e0e50d8921793b73b69fd1cf239424c3f552bcda9f0eae422d"
+      "sha256": "1068733dde0dd078fa15e1d956a9eba216ddd216786476a5f9d24b969e14f71c"
     },
     {
       "file": "l10n/generated/ko.json",
-      "sha256": "3c8527d19c96405ebf84768fbc51f2898521fb9b3628395f8e28001f31a890e6"
+      "sha256": "e65cb350db5a8635cae3cf32272092b5886b7538661cee06163ca6fb60d8f07f"
     },
     {
       "file": "l10n/generated/nl.catalog.json",
-      "sha256": "4fdc34adee5a27ff347dc7d3e151e9ee4cc601ee0f4d141b120fdf088d773889"
+      "sha256": "35b878f64d0b856910afc20a534662b93743219f21763d398a35854238eb5e59"
     },
     {
       "file": "l10n/generated/nl.json",
-      "sha256": "733417f715d083ec04bcc6512b9573c759d776e41bb3018adccfe8230a439b23"
+      "sha256": "89013a1abadf4ba349cedde7a0e86c1c37aa314d487298356df0260a080bb6d2"
     },
     {
       "file": "l10n/generated/pt.catalog.json",
-      "sha256": "714a8290e5f14bfa0670d056e8c0d3355e7e37cea7f6f1bfa396d62f6f75e652"
+      "sha256": "e6268f1e0e64d37804c6e2b365b247f45b40c05ba222fe7ea095086ee3c98b56"
     },
     {
       "file": "l10n/generated/pt.json",
-      "sha256": "f20c2a00f38272d333a615e0b6585880040f26430d9bd5d7bf10f1d522bd505d"
+      "sha256": "8d4f0b712b28d9ff578425108ee5409014f78ddd8af651a6100d254052fb515f"
     },
     {
       "file": "l10n/generated/ru.catalog.json",
-      "sha256": "56f3d9e3a23a010f61166432b87ee31b55007f5046dee74ca8a3f6a3d0af1062"
+      "sha256": "2524fb8571c003efc126a2d501cc680bcc5a0839ff380fc7711e2bc1e512fc29"
     },
     {
       "file": "l10n/generated/ru.json",
-      "sha256": "68dadc42ed0a2b06783cd691fe0a13175d8841d3a5c81548dafafc27f76b6a6c"
+      "sha256": "7c54e0a7c12e403b8ca5726726c0d65fe0cd6457d83095f4374bc0c6bcb70901"
     },
     {
       "file": "l10n/generated/zh-Hans.catalog.json",
-      "sha256": "733abfde01045280f4672191fe2b2c58769311b04625ef2148efee147879f8bb"
+      "sha256": "507ed774728b29a71276fc8e7787114f77e308f0ced10b2b057e4dbcb64762b5"
     },
     {
       "file": "l10n/generated/zh-Hans.json",
-      "sha256": "0bf6cf0e77f46ef8043b81fe809800292194abec987e128ec7e2c6de221162fb"
+      "sha256": "0892a886d03802d3a17243e2f9e4879caefde514000041bf9b80c7d843d4124f"
     },
     {
       "file": "l10n/routes.json",
@@ -174,7 +174,7 @@
     },
     {
       "file": "public/ahv/l10n/ar/assets/classic-villa-data.js",
-      "sha256": "7a3a9d3d1464977f2a44f7b14a418b7c7023e21aa1fa98a6340393278bfb3f9e"
+      "sha256": "e8fb6afe771559ab58329ad15ede0147e682f116d81177881ceb566935e68b9a"
     },
     {
       "file": "public/ahv/l10n/ar/assets/collection-family-data.js",
@@ -342,7 +342,7 @@
     },
     {
       "file": "public/ahv/l10n/ar/assets/royal-villa-data.js",
-      "sha256": "eb35c730112e1471e1bd5f69214af499c7f0c01afdbcfd1ca580150eea579fe9"
+      "sha256": "3760ef3997b1e43c808faf197e3aea2c2f3212c71c4668b9b78e1d15eb559892"
     },
     {
       "file": "public/ahv/l10n/ar/assets/seven-informational-data.js",
@@ -1214,7 +1214,7 @@
     },
     {
       "file": "public/ahv/l10n/de/assets/classic-villa-data.js",
-      "sha256": "2a3ca4bec268547401cef7c14eb4306562615abc5bea6e1063fde9c80ed24203"
+      "sha256": "fe4ade95689aa1485ad0d0219a39f711a401f57ccb5276acacc3b37f5550643e"
     },
     {
       "file": "public/ahv/l10n/de/assets/collection-family-data.js",
@@ -1382,7 +1382,7 @@
     },
     {
       "file": "public/ahv/l10n/de/assets/royal-villa-data.js",
-      "sha256": "4beb10c5870635fcec63dd8c5978f01d54db3a97d4647752a3605af1ed156cd0"
+      "sha256": "a7ebbb8e28a7a4dac0efeea33cd4a1f113f6c0bb44eb4d5adad98a7fd13ec682"
     },
     {
       "file": "public/ahv/l10n/de/assets/seven-informational-data.js",
@@ -2254,7 +2254,7 @@
     },
     {
       "file": "public/ahv/l10n/es/assets/classic-villa-data.js",
-      "sha256": "7151bb0c1a3dcfbb94d7be5146d19f1a4f89f3f7b03fe570d49259cce93a6b52"
+      "sha256": "ee270a60c41266426e0e95537c2c7e67aea52c49c4c9a3d471ad27b6467e8d80"
     },
     {
       "file": "public/ahv/l10n/es/assets/collection-family-data.js",
@@ -2422,7 +2422,7 @@
     },
     {
       "file": "public/ahv/l10n/es/assets/royal-villa-data.js",
-      "sha256": "c0d77c458032000af572c62ba27f57dd944b3f0599880b4b3e673cb48f9267f9"
+      "sha256": "b3d761deb46f2a9b0b0fea0ebd2739f232af55f566a4fcc71403eb7a0d0bc5c4"
     },
     {
       "file": "public/ahv/l10n/es/assets/seven-informational-data.js",
@@ -3294,7 +3294,7 @@
     },
     {
       "file": "public/ahv/l10n/fr/assets/classic-villa-data.js",
-      "sha256": "b16e18c22e915945f8d1107500a70db23795f8319ab7d5bfad350fc71501050e"
+      "sha256": "b0fa6c41ea491d9cc0f569765a3b82fe9b6b68626510e96315bd85f42cd3df47"
     },
     {
       "file": "public/ahv/l10n/fr/assets/collection-family-data.js",
@@ -3462,7 +3462,7 @@
     },
     {
       "file": "public/ahv/l10n/fr/assets/royal-villa-data.js",
-      "sha256": "3b7434e2a1554b1fa093324dbe5058d42b4defe29da8251f9ecde7059653b8ee"
+      "sha256": "fb0044d79e2e4ad877c96dc94718874a4ce309b42cc21399ce2c0b9f9372c477"
     },
     {
       "file": "public/ahv/l10n/fr/assets/seven-informational-data.js",
@@ -4334,7 +4334,7 @@
     },
     {
       "file": "public/ahv/l10n/hi/assets/classic-villa-data.js",
-      "sha256": "9e27ba1b2fdd87fca4c98a18537f514c07af18ff7e350166631ec521721577f3"
+      "sha256": "718dacdde61fcc1e3f690c7a1a323c6264ace4a9d2fa3cff5b863a56b2144310"
     },
     {
       "file": "public/ahv/l10n/hi/assets/collection-family-data.js",
@@ -4502,7 +4502,7 @@
     },
     {
       "file": "public/ahv/l10n/hi/assets/royal-villa-data.js",
-      "sha256": "bcf4cc8c271dc4d4d9883d4556101f26197c711615535f39ea80561dac237b0f"
+      "sha256": "600f915c9be1502dc3fa430e3d1ccd99b67216c5dc5760fecd08cf7b935f3972"
     },
     {
       "file": "public/ahv/l10n/hi/assets/seven-informational-data.js",
@@ -5374,7 +5374,7 @@
     },
     {
       "file": "public/ahv/l10n/it/assets/classic-villa-data.js",
-      "sha256": "91fd91b5b98d7ec41e6486759902ef232c1f7a1ba461a0936a5b0475ad06a728"
+      "sha256": "347b69bbeb7ee1e1efc7500b12abe0ea5bc53aa7b87f208efb445f1b51e5d1fa"
     },
     {
       "file": "public/ahv/l10n/it/assets/collection-family-data.js",
@@ -5542,7 +5542,7 @@
     },
     {
       "file": "public/ahv/l10n/it/assets/royal-villa-data.js",
-      "sha256": "1bcaaf03f83296b9aef3e7c73146efc697da1ee76bcd0898c9aae46dbae4c0e2"
+      "sha256": "3bed99e47bd8117f805cd9aeafbbb9b91935377feb4d5720042c63f8395f91e3"
     },
     {
       "file": "public/ahv/l10n/it/assets/seven-informational-data.js",
@@ -6414,7 +6414,7 @@
     },
     {
       "file": "public/ahv/l10n/ja/assets/classic-villa-data.js",
-      "sha256": "f3a4e0f95241441a326cca5c217bc51521ae6763dcd5838998662e86bda2186d"
+      "sha256": "43f4fa51b59cd1711c5033b132bba0b5bdab1b815e53c9e3d372115d77cf38ce"
     },
     {
       "file": "public/ahv/l10n/ja/assets/collection-family-data.js",
@@ -6582,7 +6582,7 @@
     },
     {
       "file": "public/ahv/l10n/ja/assets/royal-villa-data.js",
-      "sha256": "b1dab1dc566ef200f60904201110aace93892d978205a57d804f3a5eef6d58c1"
+      "sha256": "892b2eb6adec7887e901ad22ea44274cdc26a2fff427512aab5ed6e68a8d85d7"
     },
     {
       "file": "public/ahv/l10n/ja/assets/seven-informational-data.js",
@@ -7454,7 +7454,7 @@
     },
     {
       "file": "public/ahv/l10n/ko/assets/classic-villa-data.js",
-      "sha256": "8e36fcc431264727ae0c12ae28b094947a24d70dc9d594a5785fdbe2f6a848cf"
+      "sha256": "75c980e25348375d5651aa2f5a81424e75615c396a346934e6bbf94a6eaff644"
     },
     {
       "file": "public/ahv/l10n/ko/assets/collection-family-data.js",
@@ -7622,7 +7622,7 @@
     },
     {
       "file": "public/ahv/l10n/ko/assets/royal-villa-data.js",
-      "sha256": "cf0a586121b61005aac80b1879805d9beefd57c49ce7869467761089eb885534"
+      "sha256": "3bb73eebb9ac44a5d21f5f82d36469a6ac2c48a4525051dd522468d1ba1604d6"
     },
     {
       "file": "public/ahv/l10n/ko/assets/seven-informational-data.js",
@@ -8494,7 +8494,7 @@
     },
     {
       "file": "public/ahv/l10n/nl/assets/classic-villa-data.js",
-      "sha256": "73b45d859f1b78c0ba300fdafe733d0dafeb8217dac941152a3530433377c201"
+      "sha256": "630e93fec2c7df592ee82e516e9941740cf34a50502c83ddbbefc0973324873c"
     },
     {
       "file": "public/ahv/l10n/nl/assets/collection-family-data.js",
@@ -8662,7 +8662,7 @@
     },
     {
       "file": "public/ahv/l10n/nl/assets/royal-villa-data.js",
-      "sha256": "07256337162ba0236aa9d7e36d169fc1ea94c61f3d74ddd48ed73613e3877f08"
+      "sha256": "73c154bd4094a3ffb1b6f6c93981c689a4d00d951dcf057f32c8d768b9244163"
     },
     {
       "file": "public/ahv/l10n/nl/assets/seven-informational-data.js",
@@ -9534,7 +9534,7 @@
     },
     {
       "file": "public/ahv/l10n/pt/assets/classic-villa-data.js",
-      "sha256": "1966b7309b9a6dfa4eba71e0789bd6082e95551543e8cd5fadf87868fe4230cb"
+      "sha256": "4f74c94553bb90c3d47cfac309530674fc52ecb95d4f560dfc4245278dd6f2de"
     },
     {
       "file": "public/ahv/l10n/pt/assets/collection-family-data.js",
@@ -9702,7 +9702,7 @@
     },
     {
       "file": "public/ahv/l10n/pt/assets/royal-villa-data.js",
-      "sha256": "265ee682546be18bf1ce3cf2673e8cd35abf2261be9292fdcbcb494f2a52b97b"
+      "sha256": "97296ea2561f5deaf52d63dcf88795ac000d1c60f5e72cef7784c90841dae08c"
     },
     {
       "file": "public/ahv/l10n/pt/assets/seven-informational-data.js",
@@ -10574,7 +10574,7 @@
     },
     {
       "file": "public/ahv/l10n/ru/assets/classic-villa-data.js",
-      "sha256": "c56172b0bf9e6a22f4c3c6117dad256d50048980fe5682f904f95f03963aa53f"
+      "sha256": "9bfd22d2498bf2400dd8696030a93bde03c7f2716ddfbc605256cf1193d7e3f1"
     },
     {
       "file": "public/ahv/l10n/ru/assets/collection-family-data.js",
@@ -10742,7 +10742,7 @@
     },
     {
       "file": "public/ahv/l10n/ru/assets/royal-villa-data.js",
-      "sha256": "b6103146e644862112045c61967497eede5815c6b7c457c354a63586c5bde4d9"
+      "sha256": "30720288e1a1d1b7650060e37f4dbad635fcf6800227962080dfd06e65a93492"
     },
     {
       "file": "public/ahv/l10n/ru/assets/seven-informational-data.js",
@@ -11614,7 +11614,7 @@
     },
     {
       "file": "public/ahv/l10n/zh/assets/classic-villa-data.js",
-      "sha256": "8533753b16d8c52f45b1a7883a6a46197230ff1d393ee960744458aa33f34254"
+      "sha256": "515be6c33addce223f186f81ddb84dae3989dc9d92a069b4a72c3439734be0be"
     },
     {
       "file": "public/ahv/l10n/zh/assets/collection-family-data.js",
@@ -11782,7 +11782,7 @@
     },
     {
       "file": "public/ahv/l10n/zh/assets/royal-villa-data.js",
-      "sha256": "94147682dbba9c56b0099973241bb82646107ee8b10ef4b5c142c2b15adc5150"
+      "sha256": "ddf011f94131d2d559cee1fb39f0b340bac5354c8e5fc0645409ec583ffb5831"
     },
     {
       "file": "public/ahv/l10n/zh/assets/seven-informational-data.js",
@@ -12826,7 +12826,7 @@
     },
     {
       "file": "l10n/prerender/hi/classic-villa.html.gz",
-      "sha256": "48207a3eb91a1ec46c8e24f75029e675235285effafefb060b9d0cc8936cce92",
+      "sha256": "81a404515df9ea69290ddf2e74892bc605ec40f1439746cdd442d3f390284edc",
       "bytes": 16162
     },
     {
@@ -12966,7 +12966,7 @@
     },
     {
       "file": "l10n/prerender/hi/index.json",
-      "sha256": "9dec729d952390a2e41852dc91456929c0d2b97550bef91421e19d7b3d87ce71",
+      "sha256": "a310ee83ba9d102714c30ab5fe72044c64e60674b9348d93be9b4b3a28248db6",
       "bytes": 53526
     },
     {
@@ -13331,7 +13331,7 @@
     },
     {
       "file": "l10n/prerender/hi/royal-villa.html.gz",
-      "sha256": "e18b51cfdf672dba05342d9ef5f54ee20bee3ea1e2f8623a20884aebe00ab2c6",
+      "sha256": "859cc70f63c97d9170f635a961d4e043bdb2ea9c10514ea2921a98abbab584f4",
       "bytes": 16429
     },
     {
@@ -13911,7 +13911,7 @@
     },
     {
       "file": "l10n/prerender/de/classic-villa.html.gz",
-      "sha256": "efa8b3c7822501310eac2284917263cae616cb5fba94b855f8a5f7e9b8811a17",
+      "sha256": "be685dd2ea68e384e466b87a50c860d42781a1bd8e50d90fbea1a38b298348aa",
       "bytes": 15384
     },
     {
@@ -14051,7 +14051,7 @@
     },
     {
       "file": "l10n/prerender/de/index.json",
-      "sha256": "c9870056395838df69c471d673037b1eadeed2552874c4a517897be858a8eae8",
+      "sha256": "00ec2be7f067d0ec55baad526889277678223576e0630267634fa415d9f512a4",
       "bytes": 53532
     },
     {
@@ -14416,7 +14416,7 @@
     },
     {
       "file": "l10n/prerender/de/royal-villa.html.gz",
-      "sha256": "cda7aef3bc26ff682e5c8895491b078d76b789530a42c24e579ff8fdd84df9b5",
+      "sha256": "3a315aa9d923741029375932e5e751d5fdc1aeb6325bae74ac58bdbc7448cd27",
       "bytes": 15449
     },
     {
@@ -14996,7 +14996,7 @@
     },
     {
       "file": "l10n/prerender/fr/classic-villa.html.gz",
-      "sha256": "dbfb8ea89cfe854a8ec9d6a5cb760991dd9c452e24baa7f532064b7c5ef58aae",
+      "sha256": "1eb33bbd56ce24a641653d0862e6f09381a144986578f5201636f3f2788babe2",
       "bytes": 15320
     },
     {
@@ -15136,7 +15136,7 @@
     },
     {
       "file": "l10n/prerender/fr/index.json",
-      "sha256": "65f19bdb48a416086d0b78db48471aa0db982bb9b8ea876737bdc8c03fd6e276",
+      "sha256": "689d544544af82c6ca9b0bf11de1a4f9c63e45d46f3597b9b058af4575eee4ba",
       "bytes": 53536
     },
     {
@@ -15501,7 +15501,7 @@
     },
     {
       "file": "l10n/prerender/fr/royal-villa.html.gz",
-      "sha256": "3fdcf1aec6d370f4ccd660e8d3cd5bd52e08e4077ba897d9799efda6e15cd9e2",
+      "sha256": "0f8105d88b65cacad4dee8db477979ac0b553e44b38bee8ce722b6412661cd84",
       "bytes": 15393
     },
     {
@@ -16081,7 +16081,7 @@
     },
     {
       "file": "l10n/prerender/es/classic-villa.html.gz",
-      "sha256": "faee3ed60e455455c2141dc5f9def8f0dd30d2d080dbb2aa66b4afa3cb3be639",
+      "sha256": "c82238124b749e613130db29be9361e2f32393da832798f6bd7c1b67002ab3b9",
       "bytes": 15119
     },
     {
@@ -16221,7 +16221,7 @@
     },
     {
       "file": "l10n/prerender/es/index.json",
-      "sha256": "2ae4bd1dd352ea05b11d69f6e33306bf8f7099d12708143a4afd8ff64c72b649",
+      "sha256": "0d1d0b1e68245f8d0d3f7114e859e53b11c4e67f9a72056836ea59cd30a055f5",
       "bytes": 53532
     },
     {
@@ -16586,7 +16586,7 @@
     },
     {
       "file": "l10n/prerender/es/royal-villa.html.gz",
-      "sha256": "40de044d787537bcfb29256691f830cd67c09ac46c39ec93bff9799f0f0f73d4",
+      "sha256": "bf22c152abce594037ace64363007b7403e64f07c007acbcd47fe4664c9669e5",
       "bytes": 15304
     },
     {
@@ -17166,7 +17166,7 @@
     },
     {
       "file": "l10n/prerender/it/classic-villa.html.gz",
-      "sha256": "f1d6f94cf05eaac1eef9a5868587b1e37cef9436e46ed9882a1f3eca29a90144",
+      "sha256": "124d70f8427a1e916f704f4a98538d639f6e02907226a547de8cfdd52fd6e15d",
       "bytes": 15177
     },
     {
@@ -17306,7 +17306,7 @@
     },
     {
       "file": "l10n/prerender/it/index.json",
-      "sha256": "f82290c105a240c52c5a4cea3dd1a74f614d684ce8a5e72a96b916ca23343a5f",
+      "sha256": "3efb737e450a7e292efda9e32d234fb12b1e51245f2de5bf91eb49639d3588ba",
       "bytes": 53532
     },
     {
@@ -17671,7 +17671,7 @@
     },
     {
       "file": "l10n/prerender/it/royal-villa.html.gz",
-      "sha256": "44222d9ed10364227c42da06d2378d5fa38d44c445dc231ea241484ea73d9c98",
+      "sha256": "a46b512937109d31b6fc06eecae4245b4aa4fb5ced7aa42245008266ca3f3aab",
       "bytes": 15331
     },
     {
@@ -18251,7 +18251,7 @@
     },
     {
       "file": "l10n/prerender/pt/classic-villa.html.gz",
-      "sha256": "fb4b020b913d9197f157e59a930f4a7c64c6b4ab13e6d43726668b7af9f37fa9",
+      "sha256": "734df616e9477e6403a97fef767d86ab670890866f2dcaf476fb4cec5931ec2b",
       "bytes": 15224
     },
     {
@@ -18391,7 +18391,7 @@
     },
     {
       "file": "l10n/prerender/pt/index.json",
-      "sha256": "049197710403ec9d60c974d74e469c0ad38c6724e96aed14dc5271559e711f2c",
+      "sha256": "8488e6f8c67e874fa5d1f4a7af0bc59ec42055a72ba0221d73d01f78e8796cb7",
       "bytes": 53531
     },
     {
@@ -18756,7 +18756,7 @@
     },
     {
       "file": "l10n/prerender/pt/royal-villa.html.gz",
-      "sha256": "f62680633eda032f5f1971a87ded5e7042f015bd293a6ebf5bcab029d55f32a1",
+      "sha256": "14c21a99ca27aae49cb5ba21662b3fbec87cd9e5dad81f711b13ea1bb79a0813",
       "bytes": 15380
     },
     {
@@ -19336,7 +19336,7 @@
     },
     {
       "file": "l10n/prerender/nl/classic-villa.html.gz",
-      "sha256": "f4b0c1df9c7c38e26d5316e3f2aaf0a16f230e241be3c734f04c0f308ceedf3f",
+      "sha256": "10807d434babc733fd75a0deb5b0c20b0ea1e82c46d04da582fac7a4600f4631",
       "bytes": 15171
     },
     {
@@ -19476,7 +19476,7 @@
     },
     {
       "file": "l10n/prerender/nl/index.json",
-      "sha256": "f487662ac5cdd65839de40fea602f76596934725c85ad967077617c65e22e7ad",
+      "sha256": "63705abb8796222835255ef5b0bef30b8db0b9d9757cbf35f2e3a7a891c7a842",
       "bytes": 53531
     },
     {
@@ -19841,7 +19841,7 @@
     },
     {
       "file": "l10n/prerender/nl/royal-villa.html.gz",
-      "sha256": "d1634c89c9fad76a6bee90666ef11df7177ba25bab27d5e5d868b1ed3b2fa59c",
+      "sha256": "9237550378c91af5b6fbc3e9ca2d23f2971eabb993951d3a87521d8d84e36640",
       "bytes": 15293
     },
     {
@@ -20421,7 +20421,7 @@
     },
     {
       "file": "l10n/prerender/ru/classic-villa.html.gz",
-      "sha256": "0624618e8ec5edff2f5ba65d44746978bfbba8a7e8c6675c41087e38b5255536",
+      "sha256": "f30053dcd48c42fe07cbecd4b2e926c1c5b072d103f309e36df101857a8efd34",
       "bytes": 16526
     },
     {
@@ -20561,7 +20561,7 @@
     },
     {
       "file": "l10n/prerender/ru/index.json",
-      "sha256": "335d3c83d7971791312473ee782f33d7594cb977460f9c3ce9b0990b5e360319",
+      "sha256": "a061709aa4ee47f7920e28bf337768647136f46a326dc7bf02b9d3425063e6a0",
       "bytes": 53532
     },
     {
@@ -20926,7 +20926,7 @@
     },
     {
       "file": "l10n/prerender/ru/royal-villa.html.gz",
-      "sha256": "5cffed881d7589d57cef2f1ad3675a03d740f85344579439884d9590854d4d4b",
+      "sha256": "b72e735ba4f87b20f8d4f9a1676db8bd9d096e118c48fb1db46a6743286a9177",
       "bytes": 16730
     },
     {
@@ -21506,7 +21506,7 @@
     },
     {
       "file": "l10n/prerender/ar/classic-villa.html.gz",
-      "sha256": "0e39936a64e3292b12f1c1d767f60df7f7a11e61ed0d26372bc3bd46e2bcb1d3",
+      "sha256": "e79356e5ee26842b0d774e78fee3e402bec44c350968f9d9b380e11120201c19",
       "bytes": 15895
     },
     {
@@ -21646,7 +21646,7 @@
     },
     {
       "file": "l10n/prerender/ar/index.json",
-      "sha256": "8ac1b51351b2dbf46dcb375028fc8ab4e8c9ebce91f1bfc05af232cce7bb3268",
+      "sha256": "f013fa93612f558a38651a8ff75bb793c911ba5975c7a47553dfff5e9bfea15f",
       "bytes": 53522
     },
     {
@@ -22011,7 +22011,7 @@
     },
     {
       "file": "l10n/prerender/ar/royal-villa.html.gz",
-      "sha256": "225cd2de6f4a188e1e461f01193e47342c31977de4fd6472d96604db17f061d8",
+      "sha256": "4a7d74eccd332521983c7bc24b6bda9c067be5c083d03af366283fda6c69725c",
       "bytes": 15965
     },
     {
@@ -22591,7 +22591,7 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/classic-villa.html.gz",
-      "sha256": "c0d1d049f5844e4fdeda7be54ac69aace364ab43ef66abf8b16bf6e12ac29989",
+      "sha256": "903fbd38d855c3849856d20aa28a8f00a83a5f41af591fc7cfc53994f0cff574",
       "bytes": 15553
     },
     {
@@ -22731,7 +22731,7 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/index.json",
-      "sha256": "65b5cd5f9ca297381c5e5588c5dc3af4210338d012817e13d54e4b400cff19d3",
+      "sha256": "a3a8be92fcc02debdfcf0bc0edc478da4585f3e4ffdc4848a515597e440aab30",
       "bytes": 53462
     },
     {
@@ -23096,7 +23096,7 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/royal-villa.html.gz",
-      "sha256": "508bbaa4865d191af8fa39145b1da97b471d17db5b1b06368b98c54cc63e50d4",
+      "sha256": "0ba218e625c2fe3a2143be9a5dcf3fe3865813afc6ce5f2fe19168527483bab3",
       "bytes": 15680
     },
     {
@@ -23676,7 +23676,7 @@
     },
     {
       "file": "l10n/prerender/ja/classic-villa.html.gz",
-      "sha256": "a1c9d0b720f980e9aac4a342eaeb7a491086c8ebb3a10b403402b3defbf07c8b",
+      "sha256": "6a1650623360c365e8b8ce4a9f42e0a4128f7efaf6b1fc05ddcc2d646211ed8b",
       "bytes": 16178
     },
     {
@@ -23816,7 +23816,7 @@
     },
     {
       "file": "l10n/prerender/ja/index.json",
-      "sha256": "af4f04020a2c4b5064de22cdef75a613523a204830b3eb09610b93b9859daba8",
+      "sha256": "ade45d7c743fe8818391192fcb0410d87d2e0defcc0bc8eaf823c141f322a6c9",
       "bytes": 53474
     },
     {
@@ -24181,7 +24181,7 @@
     },
     {
       "file": "l10n/prerender/ja/royal-villa.html.gz",
-      "sha256": "c9efe79aff0ef07bc9cf065ec5431c7d4d162cd1a4368d9b37010d0eacb16826",
+      "sha256": "ab44f552f975d35eb455b2239bae59be71466f38503db86958f7e8fc86a418b8",
       "bytes": 16300
     },
     {
@@ -24761,7 +24761,7 @@
     },
     {
       "file": "l10n/prerender/ko/classic-villa.html.gz",
-      "sha256": "40e09b40d285d064aaa3697ea8e60b74636a119893d1500068bda750486fd0b5",
+      "sha256": "9edbfb9f66c4b6b6983c647f4b467df9c00d3d87f4e6eb109bdaf0435298312d",
       "bytes": 15683
     },
     {
@@ -24901,7 +24901,7 @@
     },
     {
       "file": "l10n/prerender/ko/index.json",
-      "sha256": "e3cf8d8d2498b88e201f435ba4f2f4e185eb88cf2689c5e7af7158ac0ed024c7",
+      "sha256": "b8c8e1427e0f6a557cd17042e90b7b63efd870066c67be4b06e2901758238e52",
       "bytes": 53474
     },
     {
@@ -25266,7 +25266,7 @@
     },
     {
       "file": "l10n/prerender/ko/royal-villa.html.gz",
-      "sha256": "733b27a3a877cb56da192c5cef52dc0e0ff5ecff9a63b307c0a15e65f52a506a",
+      "sha256": "313d91e8b7eee5445b39c9a654423a2612e36b05ab725f5951df92539829f94e",
       "bytes": 15828
     },
     {
