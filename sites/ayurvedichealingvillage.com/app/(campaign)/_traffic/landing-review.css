@@ -315,3 +315,37 @@
 
 /* The shared mobile action bar already provides the enquiry action. */
 .r10-revision.r10-revision .mobile-cta{display:none!important}
+
+/* Patient stories retain comfortable insets and reveal only their continuation. */
+.r10-revision.r10-revision .doctor-testimonial{width:100%;margin:32px 0 0;padding:32px;border:1px solid var(--ahv-release-color-5);border-left:3px solid var(--ahv-release-color-4);background:var(--ahv-release-color-21)}
+.r10-revision.r10-revision .doctor-testimonial>p{max-width:85ch;margin:20px 0 0}
+.r10-revision.r10-revision .patient-quote-heading{gap:20px;align-items:center}
+.r10-revision.r10-revision .family-story-grid,.r10-revision.r10-revision .testimonial-grid{align-items:start}
+.r10-revision.r10-revision .family-guest{min-width:0;padding:28px;margin:0;border:1px solid var(--ahv-release-color-5);border-top:2px solid var(--ahv-release-color-4);background:var(--ahv-release-color-21)}
+.r10-revision.r10-revision .family-guest h3,.r10-revision.r10-revision .guest-quote h3{margin:0 0 14px;font-size:25px;line-height:1.35}
+.r10-revision.r10-revision .family-guest .guest-byline{margin:0 0 20px!important;color:var(--ahv-release-color-3);font-size:16px!important;font-weight:700}
+.r10-revision.r10-revision .guest-quote .guest-portrait{margin:0 0 20px}
+.r10-revision.r10-revision .guest-quote .guest-name{margin:0 0 10px}
+.r10-revision.r10-revision .story-excerpt{margin:0!important;font-size:18px!important;line-height:1.7!important}
+.r10-revision.r10-revision details.testimonial-story{margin:20px 0 0;padding:0;border:0;border-top:1px solid var(--ahv-release-color-5);background:transparent}
+.r10-revision.r10-revision .testimonial-story>summary{display:flex;align-items:center;justify-content:space-between;gap:14px;min-height:48px;padding:12px 0!important;margin:0;font:700 17px/1.5 Mulish,Arial,sans-serif!important;cursor:pointer;list-style:none;text-decoration:none;color:var(--ahv-release-color-3)}
+.r10-revision.r10-revision .testimonial-story>summary::-webkit-details-marker{display:none}
+.r10-revision.r10-revision .testimonial-story>summary::after{content:none!important;display:none!important}
+.r10-revision.r10-revision .testimonial-story .story-collapse-label{display:none}
+.r10-revision.r10-revision .testimonial-story[open] .story-expand-label{display:none}
+.r10-revision.r10-revision .testimonial-story[open] .story-collapse-label{display:inline}
+.r10-revision.r10-revision .story-toggle-icon::before{content:"+";font-size:24px;font-weight:400}
+.r10-revision.r10-revision .testimonial-story[open] .story-toggle-icon::before{content:"−"}
+.r10-revision.r10-revision .testimonial-story .story-continuation{margin:6px 0 0;font-family:Mulish,Arial,sans-serif!important;font-size:18px!important;line-height:1.7!important;font-style:normal}
+.r10-revision.r10-revision .testimonial-story>summary:focus-visible{outline:2px solid var(--ahv-release-color-4);outline-offset:4px}
+.r10-revision.r10-revision .dated-recognitions .recognition-grid{align-items:start;gap:24px;margin-top:24px}
+.r10-revision.r10-revision .recognition-year{display:block;margin:0 0 6px;font:700 17px/1.5 Mulish,Arial,sans-serif;color:var(--ahv-release-color-3)}
+.r10-revision.r10-revision .dated-recognitions figcaption{padding:14px 8px 0;line-height:1.5}
+.r10-revision.r10-revision .dated-recognitions figcaption a{text-decoration:underline;text-underline-offset:4px}
+@media(max-width:700px){
+ .r10-revision.r10-revision .doctor-testimonial{padding:24px 20px;margin-top:26px}
+ .r10-revision.r10-revision .family-guest{padding:24px 20px}
+ .r10-revision.r10-revision .patient-quote-heading{align-items:start;gap:14px}
+ .r10-revision.r10-revision .patient-quote-heading .guest-initials{width:48px;height:48px;flex:0 0 48px;font-size:24px}
+ .r10-revision.r10-revision .dated-recognitions .recognition-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}
+}
