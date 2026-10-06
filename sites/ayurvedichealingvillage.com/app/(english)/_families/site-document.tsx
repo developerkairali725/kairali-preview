@@ -86,7 +86,7 @@ export function SiteDocument({
             phone (chrome.js). Not scoped by data-ahv-consistency on purpose —
             the header and footer are one component on every family. */}
 
-        <script defer src={`${designBase}chrome.min.js`} />
+        <script defer src={`${designBase}review-chrome.js`} />
 
 
         <script src={`${designBase}film-player.js`} defer />

@@ -62,7 +62,7 @@ window.AHV_AYURVEDA_TRAINING = {
     "Day 10 — Prakriti basics and the analysis questionnaire; review of all therapies and closing Q&A."
   ],
   "features": [
-    "Format: forty hours — two hours of theory and two hours of practical daily over ten days — with group yoga and meditation sessions.",
+    "Format: 40 hours over 10 instructional days, with 2 hours of theory and 2 hours of practical learning each day. Scheduled review and assessments are included in the 40 hours.",
     "Who it suits: therapists, wellness counsellors and the wider wellness fraternity; yoga instructors and holistic practitioners.",
     "Included: villa stay with ensuite amenities, all vegetarian meals, daily herbal water, group yoga and meditation, lectures and demonstrations, a village walk, lifestyle and fitness evaluations, and use of the pool, gym and library. Additional food, individual sessions, factory visits and internal medicines are charged separately.",
     "Stay: ten nights in the hospital's villas, charged per night under the training tariff — Deluxe Villa ₹18,410 single / ₹30,530 double ($263 / $436; €230 / €382)."

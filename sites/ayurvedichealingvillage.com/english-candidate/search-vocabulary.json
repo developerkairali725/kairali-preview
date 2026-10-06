@@ -1894,17 +1894,27 @@
       "words": [
         "nabh",
         "accreditation",
+        "accreditations",
         "accredited",
-        "certified"
+        "certified",
+        "certification",
+        "certifications",
+        "ayur diamond"
       ],
-      "target": "/accreditations/"
+      "target": "/awards-and-accreditations/"
     },
     {
       "words": [
         "award",
-        "awards"
+        "awards",
+        "accolades",
+        "recognition",
+        "recognitions",
+        "tripadvisor",
+        "trip advisor",
+        "hall of fame"
       ],
-      "target": "/awards-and-accolades/"
+      "target": "/awards-and-accreditations/"
     },
     {
       "words": [
@@ -2410,7 +2420,8 @@
         "discounts",
         "deals",
         "special offers"
-      ]
+      ],
+      "label": "Offers"
     },
     "/offers/senior-citizen-offer/": {
       "keywords": [
@@ -2689,6 +2700,26 @@
     },
     "/jobs/business-development-manager/": {
       "label": "Business Development Manager — Vacancy Closed"
+    },
+    "/awards-and-accreditations/": {
+      "label": "Awards & Accreditations",
+      "keywords": [
+        "award",
+        "awards",
+        "accolades",
+        "recognition",
+        "recognitions",
+        "accreditation",
+        "accreditations",
+        "accredited",
+        "certification",
+        "certifications",
+        "NABH",
+        "AYUR Diamond",
+        "Tripadvisor",
+        "Trip Advisor",
+        "Hall of Fame"
+      ]
     }
   },
   "faqKeywords": {

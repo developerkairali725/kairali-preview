@@ -19,7 +19,9 @@ test('supplier form mount uses the existing endpoint and no duplicate consent or
 test('all three supplied offers retain approved bands and binding confirmed quotes',()=>{
  for(const slug of ['defence-and-paramilitary','olympics-and-paralympics-offer','senior-citizen-offer']){
   const s=read(`campaign-v110/pages/offers/${slug}/staging.html`);
-  for(const t of ['10% for 3–13 nights','15% for 14–20 nights','20% for 21 nights or more','Stays of 1–2 nights','before tax','discounts are not added together','agreed offer is honoured'])assert.ok(s.includes(t),slug+' '+t);
+  for(const t of ['10% for 3–13 nights','15% for 14–20 nights','20% for 21 nights or more','Stays of 1–2 nights','before tax'])assert.ok(s.includes(t),slug+' '+t);
+  assert.match(s, /discounts are not added together|Benefits do not stack/, slug+' retains the approved non-stacking rule');
+  assert.match(s, /agreed (?:offer|benefit) is honoured/, slug+' retains the binding confirmed quote');
   assert.doesNotMatch(s,/Rates and inclusions are subject to change|first-time guests only|priority check-in/);
  }
 });

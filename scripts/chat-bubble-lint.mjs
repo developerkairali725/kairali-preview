@@ -45,12 +45,13 @@
  *
  * Exit codes: 0 = clean · 2 = violations OR broken probe (CI blocks) · 1 = harness error.
  *
- * Usage: node scripts/chat-bubble-lint.mjs [--sites <path>]
+ * Usage: node scripts/chat-bubble-lint.mjs [--sites <path>] [--only <site-name>]...
  */
 
 import { readFileSync, readdirSync, existsSync } from "node:fs";
 import { join, resolve, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
+import { selectSites } from "./lib/selected-sites.mjs";
 import { EXEMPT } from "./factory-matrix-lint.mjs";
 import { stripCodeComments } from "./banned-string-lint.mjs";
 import { resolveSiteAppRoot } from "./lib/site-app-root.mjs";
@@ -211,13 +212,14 @@ export function main(argv = []) {
     return 2;
   }
 
-  const sites = fleetSites(sitesDir);
+  const fleet = fleetSites(sitesDir);
+  const sites = selectSites(fleet, argv);
   const violations = [];
   console.log(`\nchat-bubble-lint — ${sites.length} fleet sites (D-20260718-05: chat bubble mandatory)`);
 
   // exemptions rot too (factory-matrix-lint law): a CHAT_EXEMPT entry naming a
   // site that no longer exists is stale and must be deleted, loudly.
-  for (const [key, reason] of CHAT_EXEMPT) {
+  for (const [key, reason] of argv.includes("--only") ? [] : CHAT_EXEMPT) {
     if (!sites.includes(key.replace(/^sites\//, ""))) {
       violations.push(`stale CHAT_EXEMPT entry: ${key} ("${reason.slice(0, 60)}…") names no fleet site on disk — delete the exemption`);
     }

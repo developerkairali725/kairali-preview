@@ -1,3 +1,4 @@
+import {offersFlow} from './offers-flow.mjs';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import path from 'node:path';
@@ -34,6 +35,7 @@ const norm = s => decode(s).replace(/\s+/g, ' ').trim();
 const escape = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 export function applyReviewSnapshot(html, route, locale = 'en') {
   if (!html || route === '/villa-raag/') return html;
+  html=offersFlow(html,route,locale);
   const booking = bookingLabelsFor(locale);
   html = html.replace(/<a\b[^>]*\bhref=["']https:\/\/bookings\.ayurvedichealingvillage\.com\/["'][^>]*>[\s\S]*?<\/a>/gi, anchor => anchor.replace(/[^<>]+/g, token => norm(token) === booking.old ? (token.match(/^\s*/)?.[0] || '') + escape(booking.new) + (token.match(/\s*$/)?.[0] || '') : token));
   const edits = reviewCopyFor(route, locale);

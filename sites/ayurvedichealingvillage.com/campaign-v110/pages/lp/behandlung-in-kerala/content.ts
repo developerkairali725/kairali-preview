@@ -47,8 +47,8 @@ const content: LpContent = {
     {
       id: "belege-statt-adjektive",
       variant: "proof",
-      overline: "Belege statt Adjektive",
-      title: "Aktenkundig",
+      overline: "Warum Kairali",
+      title: "Qualität und ärztliche Betreuung",
       blocks: [
         { type: "proof", items: [{"title": "NABH-Akkreditierung", "text": "Zertifikat AH-2024-0250 · Panchakarma im Leistungsumfang"}, {"title": "Clinical Establishment", "text": "Dauerhaftes Zertifikat nach dem Kerala Act"}, {"title": "Ärztlich geführt", "text": "Konsultation vor Aufnahme, Visiten während des Aufenthalts"}, {"title": "Internationale Patienten", "text": "Programme für Patienten aus aller Welt"}] },
       ],

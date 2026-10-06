@@ -57,7 +57,7 @@ window.AHV_AYURVEDA_TRAINING = {
     "Day 20 — Examinations: an objective theory paper and a practical examination, then the concluding session and certification."
   ],
   "features": [
-    "Format: eighty hours over twenty days — theory and practical every day — with examinations at the end.",
+    "Format: 80 hours over 20 instructional days, with 2 hours of theory and 2 hours of practical learning each day. Scheduled review and examinations are included in the 80 hours.",
     "Who it suits: people from the healthcare and wellness sector, lifestyle consultants and therapists who want a recognised practitioner certificate.",
     "After the course: successful candidates may take part in projects and hands-on work at Kairali's domestic and international centres; outstanding candidates may be considered for Ayurvedic Wellness Consultant roles.",
     "Stay: twenty nights in the hospital's villas, charged per night under the training tariff — Deluxe Villa ₹18,410 single / ₹30,530 double ($263 / $436; €230 / €382)."

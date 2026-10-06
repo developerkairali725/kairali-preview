@@ -1,3 +1,4 @@
+import {offersFlow} from './offers-flow.mjs';
 import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes } from "./critical-media.mjs";
 import { formPostSafety } from "./form-post-safety.mjs";
 import {
@@ -287,17 +288,10 @@ export const BOOT_SCRIPT = `
         if (snapshotNodes[i].parentNode) snapshotNodes[i].parentNode.removeChild(snapshotNodes[i]);
       }
       snapshotNodes = [];
-      // The snapshot's served copies of the view's helmet styles (snapshot-styles.mjs) leave with it, each
-      // only once the runtime has written the identical block (or font link) into <head> — so nothing on
-      // screen changes; a copy whose twin has not arrived yet simply stays.
-      var headCss = {}, headLinks = {};
-      document.head.querySelectorAll("style").forEach(function (el) { headCss[(el.textContent || "").trim()] = 1; });
-      document.head.querySelectorAll("link[rel=stylesheet]").forEach(function (el) { headLinks[el.getAttribute("href")] = 1; });
-      document.querySelectorAll("[data-ahv-snapshot-style]").forEach(function (el) {
-        var twin = el.tagName === "LINK" ? headLinks[el.getAttribute("href")] : headCss[(el.textContent || "").trim()];
-        if (twin && el.parentNode) el.parentNode.removeChild(el);
-      });
+      // SnapshotStyles owns these React siblings. It removes matched duplicates only after its
+      // hydration effect runs; boot must never remove nodes React is still about to claim.
       host.setAttribute("data-ahv-snapshot-state", "retired");
+      document.dispatchEvent(new Event("ahv:snapshot-retired"));
       host.removeAttribute("data-ahv-live-pending");
       if (focusTarget) focusTarget.focus({ preventScroll: true });
       return;
@@ -1288,7 +1282,7 @@ export const BOOT_SCRIPT = `
       if (snapshotNodes.length) host.setAttribute("data-ahv-live-pending", "");
       host.insertBefore(document.createElement("x-dc"), host.firstChild);
       // lazyImgFirst: loading="lazy" ahead of src in every template <img> (media-loading.mjs, P1a).
-      pendingTemplate = (${lazyImgFirst.toString()})((${formPostSafety.toString()})((${descriptiveAwardLinks.toString()})(narrow ? (${phoneCriticalMedia.toString()})(view.template) : view.template, cfg.path)));
+      pendingTemplate = (${lazyImgFirst.toString()})((${formPostSafety.toString()})((${descriptiveAwardLinks.toString()})(narrow ? (${phoneCriticalMedia.toString()})((${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en")) : (${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path)));
       host.setAttribute("data-ahv-view", view.id);
       host.setAttribute("data-ahv-variant", view.variant);
       host.setAttribute("data-ahv-view-file", view.file || "");

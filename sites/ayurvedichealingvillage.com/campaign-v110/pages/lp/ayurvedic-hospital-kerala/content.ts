@@ -29,7 +29,7 @@ const content: LpContent = {
       title: "What a hospital brings that a hotel does not",
       blocks: [
         { type: "lead", runs: ["Many places in Kerala offer Ayurvedic therapies. The difference here is who decides your treatment, and on what grounds."] },
-        { type: "steps", cards: [{"k": "Difference 1", "title": "A physician decides", "text": "Your programme is prescribed at consultation from your history and examination — not chosen from a brochure page."}, {"k": "Difference 2", "title": "Accredited protocols", "text": "NABH accreditation means audited clinical processes: records, hygiene, qualified therapists, physician oversight."}, {"k": "Difference 3", "title": "Admission to discharge", "text": "You are a patient here, with a plan that is reviewed through your stay and closed out properly at discharge."}] },
+        { type: "steps", cards: [{"k": "Difference 1", "title": "A physician decides", "text": "Your physician plans your programme after reviewing your medical history and examining you at consultation."}, {"k": "Difference 2", "title": "Accredited protocols", "text": "NABH accreditation means audited clinical processes: records, hygiene, qualified therapists, physician oversight."}, {"k": "Difference 3", "title": "Admission to discharge", "text": "You are a patient here, with a plan that is reviewed through your stay and closed out properly at discharge."}] },
       ],
     },
     {
@@ -48,7 +48,7 @@ const content: LpContent = {
       overline: "Why choose Kairali",
       title: "Care you can plan around",
       blocks: [
-        { type: "proof", items: [{"title": "NABH accreditation", "text": "Certificate AH-2024-0250 · Panchakarma within accredited scope"}, {"title": "Clinical Establishment", "text": "Permanent certificate under the Kerala Act"}, {"title": "TripAdvisor Hall of Fame", "text": "Patient reviews on the public record"}, {"title": "International patients", "text": "Programmes run for patients from around the world"}] },
+        { type: "proof", items: [{"title": "NABH accreditation", "text": "Certificate AH-2024-0250 · Panchakarma within accredited scope"}, {"title": "Clinical Establishment", "text": "Permanent certificate under the Kerala Act"}, {"title": "TripAdvisor Hall of Fame", "text": "Reviews from guests on Tripadvisor"}, {"title": "International patients", "text": "Programmes run for patients from around the world"}] },
       ],
     },
     {

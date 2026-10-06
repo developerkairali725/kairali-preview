@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run assets:restore && node tools/build-style-bundles.mjs && node tools/check-selected-gallery-assets.mjs && node tools/build-search-index.mjs --allow-expired && node tools/sync-finder-search-data.mjs && node tools/l10n/routes.mjs && node tools/l10n/build.mjs && node tools/build-runtime-bundles.mjs && node tools/restore-locale-prerenders.mjs && next build",
+    "build": "npm run assets:restore && node tools/build-specialist-styles.mjs && node tools/build-style-bundles.mjs && node tools/check-selected-gallery-assets.mjs && node tools/build-search-index.mjs --allow-expired && node tools/sync-finder-search-data.mjs && node tools/l10n/routes.mjs && node tools/l10n/build.mjs && node tools/build-runtime-bundles.mjs && node tools/build-review-chrome.mjs && node tools/restore-locale-prerenders.mjs && next build",
     "start": "next start",
     "assets:restore": "node tools/restore-runtime-assets.mjs && node tools/restore-runtime-assets.mjs --gallery && node tools/restore-runtime-assets.mjs --documents && node tools/build-treatment-derivative.mjs && node tools/build-critical-media.mjs",
     "test": "node --test test/*.test.mjs",

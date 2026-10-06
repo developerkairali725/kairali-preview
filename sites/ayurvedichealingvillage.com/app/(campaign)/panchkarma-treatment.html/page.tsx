@@ -1,1 +1,23 @@
-export { default, metadata } from "../../../campaign-v110/pages/panchkarma-treatment.html/page";
+import {HeroMedia} from '../_traffic/HeroMedia';
+import type { Metadata } from 'next';
+import Image from 'next/image';
+import {StayGallery} from './StayGallery';
+import {HeritageYears} from './HeritageYears';
+import {heritageYears} from '../../../lib/heritage-age.mjs';
+export const revalidate = 3600;
+import parse, { Element, type HTMLReactParserOptions } from 'html-react-parser';
+import { panchakarmaContent } from './content';
+import { R10EnquiryForm } from '../ayurvedic-treatment-packages.html/EnquiryForm';
+import { GuestSupport } from '../ayurvedic-treatment-packages.html/GuestSupport';
+import '@kairali/ui/brand-tokens.css';
+import '../ayurvedic-treatment-packages.html/r10.css';
+import './panchakarma.css';
+import '../_traffic/refinements.css';
+import '../_traffic/landing-review.css';
+const canonical='https://ayurvedichealingvillage.com/panchkarma-treatment.html';
+const title='Panchakarma Treatment in Kerala | Kairali Ayurvedic Healing Village';
+const description='Explore the 14–21 night Panchakarma programme at Kairali in Palakkad, Kerala, with Ayurvedic doctors, villa accommodation, vegetarian meals, yoga and meditation.';
+export const metadata:Metadata={title,description,alternates:{canonical},robots:{index:process.env.AHV_STAGING==='0',follow:true},openGraph:{type:'website',locale:'en_IN',url:canonical,title,description,siteName:'Kairali Ayurvedic Healing Village',images:[{url:'https://ayurvedichealingvillage.com/landing/r10/og.jpg',width:1200,height:630,alt:'Kairali Ayurvedic Healing Village, Palakkad'}]},twitter:{card:'summary_large_image',title,description,images:['https://ayurvedichealingvillage.com/landing/r10/og.jpg']}};
+const options:HTMLReactParserOptions={replace(node){if(!(node instanceof Element))return;if(node.name==='stay-gallery')return <StayGallery/>;if(node.name==='heritage-years')return <HeritageYears initial={heritageYears()}/>;if(node.name==='panchakarma-enquiry')return <R10EnquiryForm formType="panchakarma" submitLabel="Enquire about Panchakarma" downloadGuide={false}/>;if(node.name==='img'){const a=node.attribs;const hero=a.class?.includes('hero-photograph');if(hero)return <HeroMedia src={a.src} alt={a.alt||''} width={Number(a.width)||1600} height={Number(a.height)||1000}/>;return <Image src={a.src} alt={a.alt||''} width={Number(a.width)||1200} height={Number(a.height)||800} className={a.class} priority={hero} fetchPriority={hero?'high':undefined} quality={hero?60:75} sizes={hero?'100vw':'(max-width: 700px) 100vw, 50vw'}/>;}}};
+const schema={'@context':'https://schema.org','@type':'WebPage','@id':canonical+'#webpage',url:canonical,name:title,description,inLanguage:'en',isPartOf:{'@type':'WebSite',url:'https://ayurvedichealingvillage.com/',name:'Kairali Ayurvedic Healing Village'}};
+export default function Page(){return <div className="r10-revision p26-page"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}}/>{parse(panchakarmaContent,options)}<GuestSupport/></div>;}

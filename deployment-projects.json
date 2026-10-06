@@ -1,0 +1,150 @@
+{
+  "teamId": "team_PcAcLkSAnWxQBKCjStgYNp4I",
+  "repository": "kairali-digital/kairali-web-factory",
+  "projects": [
+    {
+      "id": "prj_KhlUXMDS4WFMOWVcPajxA4E8c5fQ",
+      "name": "kairali-web-factory-kairali-ai",
+      "rootDirectory": "sites/kairali.ai",
+      "mode": "git",
+      "branch": "main",
+      "gitConnected": true,
+      "affectedProjects": true
+    },
+    {
+      "id": "prj_6fD2BkvrieK5dQPBnOD18sICPJjh",
+      "name": "kairali-web-factory-abhilashkr",
+      "rootDirectory": "sites/abhilashkr",
+      "mode": "git",
+      "branch": "main",
+      "gitConnected": true,
+      "affectedProjects": true
+    },
+    {
+      "id": "prj_HLanNJ65KE55KFreYJ3x3pX6pZdW",
+      "name": "kairali-web-factory-kairalicenters-com",
+      "rootDirectory": "sites/kairalicenters.com",
+      "mode": "git",
+      "branch": "main",
+      "gitConnected": true,
+      "affectedProjects": true
+    },
+    {
+      "id": "prj_h0fJTScjTPZGPJuBJjmJNABYVQ4e",
+      "name": "kairali-web-factory-kairali-com",
+      "rootDirectory": "sites/kairali.com",
+      "mode": "git",
+      "branch": "main",
+      "gitConnected": true,
+      "affectedProjects": true
+    },
+    {
+      "id": "prj_VHYbS7u0lZwfdnravySouiziFjTj",
+      "name": "kairali-web-factory-arogyakendra-com",
+      "rootDirectory": "sites/arogyakendra.com",
+      "mode": "git",
+      "branch": "main",
+      "gitConnected": true,
+      "affectedProjects": true
+    },
+    {
+      "id": "prj_oDi6A1zad9PvpQ0lRitX5ikZy8Qh",
+      "name": "kairali-web-factory-arogyashala-in",
+      "rootDirectory": "sites/arogyashala.in",
+      "mode": "git",
+      "branch": "main",
+      "gitConnected": true,
+      "affectedProjects": true
+    },
+    {
+      "id": "prj_35O9A52SPqWuce1UiXjXnE09QqC4",
+      "name": "kairali-web-factory-kairalihospitality-com",
+      "rootDirectory": "sites/kairalihospitality.com",
+      "mode": "git",
+      "branch": "main",
+      "gitConnected": true,
+      "affectedProjects": true
+    },
+    {
+      "id": "prj_eyEq9n2uyd1f9gp6xx7r3oYHh3I3",
+      "name": "kairali-web-factory-healing-recipes",
+      "rootDirectory": "sites/healing.recipes",
+      "mode": "git",
+      "branch": "main",
+      "gitConnected": true,
+      "affectedProjects": true
+    },
+    {
+      "id": "prj_OR3p2WUyhQ0OgBVcbeoxLvAIEN6S",
+      "name": "kairali-web-factory-whatisayurveda-com",
+      "rootDirectory": "sites/whatisayurveda.com",
+      "mode": "git",
+      "branch": "main",
+      "gitConnected": true,
+      "affectedProjects": true
+    },
+    {
+      "id": "prj_eGnNcoAwngZc3ScXihMkS0llIc78",
+      "name": "kairali-web-factory-kairaliyoga-com",
+      "rootDirectory": "sites/kairaliyoga.com",
+      "mode": "git",
+      "branch": "main",
+      "gitConnected": true,
+      "affectedProjects": true
+    },
+    {
+      "id": "prj_1Uf5Mt3XTn3fbFgpf62v5IkJlRHM",
+      "name": "kairali-web-factory-bulkayurvedaproducts",
+      "rootDirectory": "sites/bulkayurvedaproducts.com",
+      "mode": "git",
+      "branch": "main",
+      "gitConnected": true,
+      "affectedProjects": null
+    },
+    {
+      "id": "prj_tx7gKtQrvXcGTvLzzhJ8UJNSVZZ6",
+      "name": "kairali-web-factory-bulkayurvedaoils",
+      "rootDirectory": "sites/bulkayurvedaoils.com",
+      "mode": "git",
+      "branch": "main",
+      "gitConnected": true,
+      "affectedProjects": null
+    },
+    {
+      "id": "prj_WYYEVzYjfJGUAzKeblGIpIAzVgOu",
+      "name": "kairali-web-factory-kairaliequipment",
+      "rootDirectory": "sites/kairaliequipment.com",
+      "mode": "git",
+      "branch": "main",
+      "gitConnected": true,
+      "affectedProjects": true
+    },
+    {
+      "id": "prj_Hi0TzfUr6Cydrj76qWOt52u7gx0B",
+      "name": "kairali-web-factory",
+      "rootDirectory": "sites/kairali-com-rebuild/site",
+      "mode": "hold",
+      "branch": "main",
+      "gitConnected": false,
+      "reason": "Corporate publication is separate from technical CI registration; restore Git only on its release approval."
+    },
+    {
+      "id": "prj_CIAWXc94CBZXbTMi6DsSX4ZTjKxJ",
+      "name": "kairali-web-factory-kairaliherbals-com",
+      "rootDirectory": "sites/kairaliherbals.com",
+      "mode": "hold",
+      "branch": "main",
+      "gitConnected": false,
+      "reason": "Configured source root is absent from main; restore Git only after source/root verification."
+    },
+    {
+      "id": "prj_2QoBh1gFktT87HOliXP7XCYUtChY",
+      "name": "kairali-web-factory-ayurvedichealingvillage-com",
+      "rootDirectory": "sites/ayurvedichealingvillage.com",
+      "mode": "manual-staging",
+      "branch": "main",
+      "gitConnected": false,
+      "reason": "Release the verified merged main revision to the two existing AHV staging aliases."
+    }
+  ]
+}

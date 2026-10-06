@@ -1,0 +1,80 @@
+/* Scoped to the digestive landing page; shared landing layouts are unchanged. */
+.r10-revision.tl-specialist.tl-digestive .digestive-benefits h2 {
+  max-width: 40ch;
+  margin-bottom: 28px;
+  text-wrap: balance;
+}
+.r10-revision.tl-specialist.tl-digestive .benefits-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.6fr);
+  gap: 24px 36px;
+  align-items: start;
+}
+.r10-revision.tl-specialist.tl-digestive .benefits-photo {
+  margin: 0;
+  min-width: 0;
+}
+.r10-revision.tl-specialist.tl-digestive .benefits-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1200 / 857;
+  object-fit: contain;
+}
+.r10-revision.tl-specialist.tl-digestive .benefits-photo figcaption {
+  margin-top: 12px;
+  font: inherit;
+  display: block !important;
+  font-size: 15px !important;
+  line-height: 1.5;
+  color: var(--ahv-release-color-3);
+}
+.r10-revision.tl-specialist.tl-digestive .benefits-themes {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px 30px;
+  min-width: 0;
+}
+.r10-revision.tl-specialist.tl-digestive .benefit-theme {
+  border-top: 1px solid var(--ahv-release-color-5);
+  padding-top: 16px;
+  min-width: 0;
+}
+.r10-revision.tl-specialist.tl-digestive .benefit-theme h3 {
+  font-size: 22px !important;
+  line-height: 1.3;
+  margin: 0 0 12px;
+  text-wrap: balance;
+}
+.r10-revision.tl-specialist.tl-digestive .benefit-theme ul {
+  margin: 0;
+  padding-left: 18px;
+}
+.r10-revision.tl-specialist.tl-digestive .benefit-theme li {
+  font-size: 17px !important;
+  line-height: 1.65 !important;
+  padding: 0 0 10px 3px;
+}
+.r10-revision.tl-specialist.tl-digestive .benefit-theme li:last-child { padding-bottom: 0; }
+.r10-revision.tl-specialist.tl-digestive .digestive-benefits .section-cta {
+  margin: 24px 0 0;
+}
+@media (max-width: 1050px) {
+  .r10-revision.tl-specialist.tl-digestive .benefits-layout {
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.5fr);
+    gap: 24px;
+  }
+  .r10-revision.tl-specialist.tl-digestive .benefits-themes { gap: 24px 20px; }
+}
+@media (max-width: 900px) {
+  .r10-revision.tl-specialist.tl-digestive .benefits-layout { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .r10-revision.tl-specialist.tl-digestive .benefits-photo { max-width: 520px; }
+  .r10-revision.tl-specialist.tl-digestive .benefits-visual { display: contents; }
+  .r10-revision.tl-specialist.tl-digestive .benefits-themes { order: 1; }
+  .r10-revision.tl-specialist.tl-digestive .digestive-benefits .section-cta { order: 2; justify-self: start; margin: 0; }
+}
+@media (max-width: 600px) {
+  .r10-revision.tl-specialist.tl-digestive .benefits-themes { grid-template-columns: 1fr; }
+  .r10-revision.tl-specialist.tl-digestive .digestive-benefits h2 { margin-bottom: 22px; }
+  .r10-revision.tl-specialist.tl-digestive .benefit-theme h3 { font-size: 21px !important; }
+}
