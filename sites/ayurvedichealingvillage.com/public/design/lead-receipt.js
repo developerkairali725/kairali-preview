@@ -82,6 +82,17 @@
     if (match) return match[1];
     return location.pathname === '/lp/behandlung-in-kerala/' ? 'de' : 'en';
   }
+  function attribution() {
+    var bridge = window.AHV_MEASUREMENT;
+    if (bridge && typeof bridge.attribution === 'function') return bridge.attribution();
+    var incoming = new URLSearchParams(location.search), result = {};
+    ['gclid', 'gbraid', 'wbraid', 'fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'].forEach(function (name) {
+      var pattern = name.indexOf('utm_') === 0 ? /^[a-zA-Z0-9_.~ &-]{1,120}$/ : /^[a-zA-Z0-9_.~-]{1,120}$/;
+      var value = incoming.getAll(name).find(function (candidate) { return pattern.test(candidate); });
+      if (value) result[name] = value;
+    });
+    return result;
+  }
   function targetFor(form, lang) {
     var base = targets[form];
     if (!base) return null;
@@ -136,6 +147,7 @@
     });
   }
   window.AHV_LEAD_RECEIPT = {
+    attribution: attribution,
     consume: consume,
     current: function () { return active && active.path === location.pathname ? active : null; },
     personalize: personalize,

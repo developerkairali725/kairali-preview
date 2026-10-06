@@ -104,3 +104,13 @@ test('the Contact required-fields note remains truthful in a translated route', 
   assert.match(route.form.sub, /E-Mail-Adresse/);
   assert.match(route.form.sub, /Telefonnummer/);
 });
+
+
+test('legacy forms retain the first safe nonempty paid parameter and use consent-aware session attribution', () => {
+  const view = page('/pain-management.html');
+  view.context.location.search = '?utm_campaign=&utm_campaign=Brand+%26+Competition&gclid=&gclid=paid123&email=private%40example.com';
+  const attribution = view.context.window.AHV_LEAD_RECEIPT.attribution();
+  assert.deepEqual(JSON.parse(JSON.stringify(attribution)), {gclid:'paid123',utm_campaign:'Brand & Competition'});
+  view.context.window.AHV_MEASUREMENT = {attribution: () => ({utm_campaign:'Prior consented campaign'})};
+  assert.equal(view.context.window.AHV_LEAD_RECEIPT.attribution().utm_campaign, 'Prior consented campaign');
+});

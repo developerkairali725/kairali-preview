@@ -469,18 +469,20 @@ const STATIC_BOOT = `
       if (select && window.AHV_LEAD_RECEIPT) {
         programme = window.AHV_LEAD_RECEIPT.canonicalOption("programme", select.selectedIndex, programme);
       }
+      var campaign = window.AHV_LEAD_RECEIPT.attribution();
       var response = await fetch("/api/lead/", {
         method: "POST", credentials: "same-origin", cache: "no-store",
         body: new Blob([JSON.stringify({
           form: "contact", submissionToken: token,
           site_language: window.AHV_LEAD_RECEIPT.siteLanguage(),
-          utm_source: (new URLSearchParams(location.search).get("utm_source") || "").slice(0, 190),
-          utm_medium: (new URLSearchParams(location.search).get("utm_medium") || "").slice(0, 190),
-          utm_campaign: (new URLSearchParams(location.search).get("utm_campaign") || "").slice(0, 190),
-          utm_term: (new URLSearchParams(location.search).get("utm_term") || "").slice(0, 190),
-          utm_content: (new URLSearchParams(location.search).get("utm_content") || "").slice(0, 190),
-          gclid: (new URLSearchParams(location.search).get("gclid") || "").slice(0, 190),
-          fbclid: (new URLSearchParams(location.search).get("fbclid") || "").slice(0, 190),
+          utm_source: campaign.utm_source || "",
+          utm_medium: campaign.utm_medium || "",
+          utm_campaign: campaign.utm_campaign || "",
+          utm_term: campaign.utm_term || "",
+          utm_content: campaign.utm_content || "",
+          gclid: campaign.gclid || "",
+          fbclid: campaign.fbclid || "",
+          gbraid: campaign.gbraid || "", wbraid: campaign.wbraid || "",
           lead_source_url: location.href.slice(0, 500),
           referrer: (document.referrer || "").slice(0, 500),
           fields: { full_name: name, countrycode: countryCode, phone: phone,
@@ -526,13 +528,14 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
   const family = (route.desktopView ?? route.mobileView ?? "").replace(/^ahv-page-/, "").replace(/-(desktop|mobile)$/, "").replace(/--[a-z0-9-]+$/, "");
   const consistency = Object.hasOwn(consistencyLock.families, family.replace(/^ahv-template-/, "")) ? undefined : "1";
   const staticDesktopPath = `/ahv/static/${route.path === "/" ? "index" : route.path.replace(/^\/+|\/+$/g, "").replace(/[^a-z0-9._-]+/gi, "_")}.html`;
+  const deferFonts = route.path === "/" || route.path === "/panchakarma-therapy/";
   const staticConfig = {
     breakpoint: cfg.breakpoint,
     locale: cfg.locale,
     contentReviewCopy: cfg.contentReviewCopy,
     measurement: cfg.measurement,
     staticDesktopPath,
-    deferFonts: route.path === "/",
+    deferFonts,
     staticHome: route.path === "/" ? homeStaticData(route.mobileView ?? null) : undefined,
     staticTariffs: route.path === "/panchakarma-therapy/" ? tariffRows(route.mobileView) : undefined,
   };
@@ -555,12 +558,12 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
       {firstCriticalImage(desktop) ? <link rel="preload" as="image" fetchPriority="high" media={wide} href={firstCriticalImage(desktop)!} /> : null}
       {routeStyleHref(route.path) ? <link data-ahv-route-styles="" rel="stylesheet" href={routeStyleHref(route.path)!} /> : <style data-ahv-route-styles="" dangerouslySetInnerHTML={{ __html: routeStylesFor(route.path) }} />}
       {phonePaint?.preloadFonts.map((href) => (
-        <link key={href} rel="preload" as="font" type={href.endsWith(".woff2") ? "font/woff2" : "font/ttf"} crossOrigin="anonymous" href={href} media={route.path === "/" ? "print" : narrow} data-ahv-deferred-font={route.path === "/" ? "" : undefined} data-ahv-font-media={route.path === "/" ? narrow : undefined} />
+        <link key={href} rel="preload" as="font" type={href.endsWith(".woff2") ? "font/woff2" : "font/ttf"} crossOrigin="anonymous" href={href} media={deferFonts ? "print" : narrow} data-ahv-deferred-font={deferFonts ? "" : undefined} data-ahv-font-media={deferFonts ? narrow : undefined} />
       ))}
       <link rel="preload" as="fetch" crossOrigin="anonymous" media={wide} href={staticDesktopPath} />
       {fontCss.map(({ href, css }) => css
-        ? <style key={href} media={route.path === "/" ? "print" : undefined} data-ahv-deferred-font={route.path === "/" ? "" : undefined} data-ahv-font-media={route.path === "/" ? "all" : undefined} dangerouslySetInnerHTML={{ __html: css }} />
-        : <link key={href} rel="stylesheet" href={href} media={route.path === "/" ? "print" : undefined} data-ahv-deferred-font={route.path === "/" ? "" : undefined} data-ahv-font-media={route.path === "/" ? "all" : undefined} />)}
+        ? <style key={href} media={deferFonts ? "print" : undefined} data-ahv-deferred-font={deferFonts ? "" : undefined} data-ahv-font-media={deferFonts ? "all" : undefined} dangerouslySetInnerHTML={{ __html: css }} />
+        : <link key={href} rel="stylesheet" href={href} media={deferFonts ? "print" : undefined} data-ahv-deferred-font={deferFonts ? "" : undefined} data-ahv-font-media={deferFonts ? "all" : undefined} />)}
       {phonePaint?.styles.map((css, index) => <style key={`phone-${index}`} media={narrow} dangerouslySetInnerHTML={{ __html: css }} />)}
       {widePaint?.styles.map((css, index) => <style key={`wide-${index}`} media={wide} dangerouslySetInnerHTML={{ __html: css }} />)}
       <style dangerouslySetInnerHTML={{ __html: `#ahv-design-root .kReveal{opacity:1!important;transform:none!important}@media ${wide}{#ahv-design-root[data-ahv-static-pending]{visibility:hidden;min-height:100vh}}` }} />

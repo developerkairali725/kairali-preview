@@ -33,10 +33,17 @@ export function CampaignEnquiryForm({formType='consultation',heading='Request a 
   setSending(true);setError('');
   const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),10000);
   try{
-   const url=new URL(window.location.href);
-   const campaign=Object.fromEntries(['utm_source','utm_medium','utm_campaign','utm_content','utm_term','gclid'].map(k=>[k,url.searchParams.get(k)||'']));
+   const bridge=(window as Window & {AHV_MEASUREMENT?:{attribution?:()=>Record<string,string>}}).AHV_MEASUREMENT;
+   const incoming=new URLSearchParams(window.location.search);
+   const campaign=bridge?.attribution?.()||Object.fromEntries(['gclid','gbraid','wbraid','fbclid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'].flatMap(k=>{
+    const pattern=k.startsWith('utm_')?/^[a-zA-Z0-9_.~ &-]{1,120}$/:/^[a-zA-Z0-9_.~-]{1,120}$/;
+    const value=incoming.getAll(k).find(value=>pattern.test(value));return value?[[k,value]]:[];
+   }));
+   const query=new URLSearchParams(campaign);
+   const sourceUrl=window.location.origin+window.location.pathname+(query.toString()?'?'+query.toString():'');
+   let referrer='';try{referrer=new URL(document.referrer).origin+'/';}catch{}
    if(!submissionToken.current)submissionToken.current=crypto.randomUUID();
-   const response=await fetch('/api/lead/',{method:'POST',credentials:'same-origin',cache:'no-store',signal:controller.signal,headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({form:'landing-page',submissionToken:submissionToken.current,site_language:lang,lead_source_url:window.location.href,referrer:document.referrer,...campaign,fields:{landing_page_path:window.location.pathname,form_variant:formType,fname:String(data.get('fullName')).trim(),email:String(data.get('email')).trim(),phone:String(data.get('phone')||'').trim(),message:String(data.get('message')||'').trim(),consent:data.get('consent')==='on'}})});
+   const response=await fetch('/api/lead/',{method:'POST',credentials:'same-origin',cache:'no-store',signal:controller.signal,headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({form:'landing-page',submissionToken:submissionToken.current,site_language:lang,lead_source_url:sourceUrl,referrer,...campaign,fields:{landing_page_path:window.location.pathname,form_variant:formType,fname:String(data.get('fullName')).trim(),email:String(data.get('email')).trim(),phone:String(data.get('phone')||'').trim(),message:String(data.get('message')||'').trim(),consent:data.get('consent')==='on'}})});
    const result=await response.json().catch(()=>({}));
    if(response.status===503&&/_NOT_CONFIGURED$/.test(String(result.code||'')))throw new Error(copy.notConnected);
    if(!response.ok||result.ok!==true)throw new Error(response.status===429?copy.retry:copy.unconfirmed);

@@ -42,10 +42,11 @@ export function R10EnquiryForm({formType='consultation',heading='Request a consu
    const bridge=(window as Window & {AHV_MEASUREMENT?:{attribution?:()=>Record<string,string>}}).AHV_MEASUREMENT;
    const incoming=new URLSearchParams(window.location.search);
    const campaign=bridge?.attribution?.()||Object.fromEntries(['gclid','gbraid','wbraid','fbclid','utm_source','utm_medium','utm_campaign','utm_content','utm_term'].flatMap(k=>{
-    const value=incoming.get(k)||'';return (k.startsWith('utm_')?/^[a-zA-Z0-9_.~ -]{1,120}$/:/^[a-zA-Z0-9_.~-]{1,120}$/).test(value)?[[k,value]]:[];
+    const pattern=k.startsWith('utm_')?/^[a-zA-Z0-9_.~ &-]{1,120}$/:/^[a-zA-Z0-9_.~-]{1,120}$/;
+    const value=incoming.getAll(k).find(value=>pattern.test(value));return value?[[k,value]]:[];
    }));
    const query=new URLSearchParams(campaign);
-   const sourceUrl=window.location.origin+window.location.pathname+(query.size?'?'+query.toString():'');
+   const sourceUrl=window.location.origin+window.location.pathname+(query.toString()?'?'+query.toString():'');
    let referrer='';try{referrer=new URL(document.referrer).origin+'/';}catch{}
    if(!submissionToken.current)submissionToken.current=crypto.randomUUID();
    const response=await fetch('/api/lead/',{method:'POST',credentials:'same-origin',cache:'no-store',signal:controller.signal,headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify({form:'landing-page',company:String(data.get('company')||''),submissionToken:submissionToken.current,site_language:lang,lead_source_url:sourceUrl,referrer,...campaign,fields:{landing_page_path:window.location.pathname,form_variant:`r10-${formType}`,campaign_name:campaign.utm_campaign||'',utm_keyword:campaign.utm_term||'',fname:String(data.get('fullName')).trim(),rdogender:String(data.get('rdogender')||''),email:String(data.get('email')).trim(),phone:fullPhone,message:(familyFields?`Country: ${String(data.get('country')||'').trim()}\nPreferred duration: ${String(data.get('duration')||'').trim()}\n`: '')+String(data.get('message')||'').trim(),consent:data.get('consent')==='on'}})});

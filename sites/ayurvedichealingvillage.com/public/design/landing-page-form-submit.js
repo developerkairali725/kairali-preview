@@ -128,7 +128,8 @@
     }
 
     var button = form.querySelector('button[type="submit"], input[type="submit"]');
-    var query = new URLSearchParams(window.location.search);
+    var campaign = window.AHV_LEAD_RECEIPT.attribution();
+    var keyword = new URLSearchParams(window.location.search).getAll('utm_keyword').find(function (v) { return /^[a-zA-Z0-9_.~ &-]{1,120}$/.test(v); }) || '';
     var controller = new AbortController();
     var timeout = setTimeout(function () { controller.abort(); }, 10000);
     var token = record.token || crypto.randomUUID();
@@ -145,11 +146,13 @@
           site_language: window.AHV_LEAD_RECEIPT.siteLanguage(),
           lead_source_url: window.location.href,
           referrer: document.referrer,
-          utm_source: value(fd, 'utm_source') || query.get('utm_source') || '',
-          utm_medium: value(fd, 'utm_medium') || query.get('utm_medium') || '',
-          utm_campaign: value(fd, 'utm_campaign') || query.get('utm_campaign') || '',
-          utm_content: value(fd, 'utm_content') || query.get('utm_content') || '',
-          utm_term: query.get('utm_term') || query.get('utm_keyword') || '',
+          utm_source: campaign.utm_source || value(fd, 'utm_source') || '',
+          utm_medium: campaign.utm_medium || value(fd, 'utm_medium') || '',
+          utm_campaign: campaign.utm_campaign || value(fd, 'utm_campaign') || '',
+          utm_content: campaign.utm_content || value(fd, 'utm_content') || '',
+          utm_term: campaign.utm_term || keyword,
+          gclid: campaign.gclid || '', fbclid: campaign.fbclid || '',
+          gbraid: campaign.gbraid || '', wbraid: campaign.wbraid || '',
           fields: {
             landing_page_path: window.location.pathname,
             form_variant: form.getAttribute('data-recorded-id') || form.id || 'campaign',
@@ -161,7 +164,7 @@
               : value(fd, 'message'),
             consent: !!fd.get('chkAgree') || !!fd.get('consent'),
             track_id: value(fd, 'hdntrackid'), campaign_name: value(fd, 'hdncampionname'),
-            utm_keyword: value(fd, 'utm_keyword') || query.get('utm_keyword') || '',
+            utm_keyword: value(fd, 'utm_keyword') || keyword,
           },
         }),
         signal: controller.signal,

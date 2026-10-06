@@ -47,6 +47,7 @@ const LEGACY_SITEMAPS = [
   "/sitemap_index.xml", "/sitemap.xml.gz", "/wp-sitemap.xml",
   "/wp-sitemap-posts-page-1.xml", "/de/wp-sitemap-posts-page-1.xml", "/fr/wp-sitemap-posts-page-1.xml",
   "/wp-sitemap-posts-offers-1.xml", "/fr/wp-sitemap-posts-offers-1.xml",
+  "/wp-sitemap-posts-faqs-1.xml",
   "/wp-sitemap-posts-villas-1.xml", "/de/wp-sitemap-posts-villas-1.xml", "/fr/wp-sitemap-posts-villas-1.xml",
   "/wp-sitemap-posts-programs-1.xml", "/de/wp-sitemap-posts-programs-1.xml", "/fr/wp-sitemap-posts-programs-1.xml",
   "/wp-sitemap-posts-awsm_job_openings-1.xml",

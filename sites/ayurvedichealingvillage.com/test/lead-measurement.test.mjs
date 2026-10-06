@@ -57,6 +57,39 @@ test("paid arrival starts only consented measurement; unsafe query suppresses th
   assert.equal(declined.dataLayer, undefined);
 });
 
+test('active campaign URLs retain consented measurement and the first nonempty attribution value', async () => {
+  const cases = [
+    ['?utm_source=googleads&utm_source=google-ads&utm_medium=cpc&utm_campaign=disease_specific_neo_india&utm_campaign=&utm_term=pain_mgmt&utm_term', 'utm_campaign', 'disease_specific_neo_india'],
+    ['?utm_source=ppc&utm_medium=search&utm_campaign=Kairali+Brand+%26+Competition&utm_content=kairali+ahv', 'utm_campaign', 'Kairali Brand & Competition'],
+    ['?utm_campaign=&utm_campaign=Campaign&gad_source=1&gad_campaignid=12345678901234567890&gclid=paid123', 'utm_campaign', 'Campaign'],
+  ];
+  for (const [query, key, expected] of cases) {
+    const ctx = browser('accepted', 200, {ok:true,status:'received'}, query);
+    assert.equal(ctx.__ahvMeasurementStarted, true, query);
+    assert.equal(ctx.AHV_MEASUREMENT.attribution()[key], expected);
+    await ctx.fetch('/api/lead/', {method:'POST',body:JSON.stringify({form:'landing-page',submissionToken:token})});
+    const events = ctx.dataLayer.filter(entry => entry[1] === 'conversion');
+    assert.equal(events.length, 1);
+    const url = new URL(events[0][2].page_location);
+    assert.equal(url.searchParams.get(key), expected);
+    assert.equal(url.searchParams.getAll(key).length, 1);
+    assert.equal(url.searchParams.has('gad_source'), false);
+    assert.equal(url.searchParams.has('gad_campaignid'), false);
+  }
+});
+
+test('Google click metadata and empty UTM slots never bypass private-data and length guards', () => {
+  for (const query of ['?gad_source=1&gad_campaignid=123&gclid=paid123','?utm_term=&utm_content']) {
+    assert.equal(browser('accepted',200,{ok:true,status:'received'},query).__ahvMeasurementStarted,true);
+    assert.equal(browser('declined',200,{ok:true,status:'received'},query).__ahvMeasurementStarted,undefined);
+  }
+  for (const query of [
+    '?gad_source=private%40example.com', '?gad_campaignid=123%26email', '?gad_campaignid='+ '1'.repeat(21),
+    '?utm_campaign=Campaign&utm_campaign=private%40example.com', '?utm_term=&email=private%40example.com',
+    '?utm_content=Campaign%0ASecret', '?gclid=', '?utm_campaign='+ 'a'.repeat(121),
+  ]) assert.equal(browser('accepted',200,{ok:true,status:'received'},query).__ahvMeasurementStarted,undefined,query);
+});
+
 test("accepted API receipt emits one lead per token; retry, error and direct thanks do not", async () => {
   const ctx = browser();
   const post = () => ctx.fetch("/api/lead/", { method: "POST", body: JSON.stringify({ form: "contact", submissionToken: token }) });
@@ -164,4 +197,15 @@ test('cookie preferences revoke current tags and leave no stored choice for the 
   assert.equal(signals.analytics_storage, 'denied');
   assert.equal(signals.ad_storage, 'denied');
   assert.equal(signals.security_storage, 'granted');
+});
+
+
+test('paid page location retains attribution in Safari without URLSearchParams.size', () => {
+  const descriptor = Object.getOwnPropertyDescriptor(URLSearchParams.prototype, 'size');
+  try {
+    delete URLSearchParams.prototype.size;
+    const ctx = browser('accepted',200,{ok:true,status:'received'},'?utm_campaign=Brand+%26+Competition&gclid=paid123');
+    const config = ctx.dataLayer.find(entry => entry[0] === 'config' && entry[1] === 'G-test');
+    assert.equal(new URL(config[2].page_location).searchParams.get('utm_campaign'),'Brand & Competition');
+  } finally { if(descriptor) Object.defineProperty(URLSearchParams.prototype,'size',descriptor); }
 });

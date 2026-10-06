@@ -56,7 +56,7 @@
       return;
     }
     var button = form.querySelector('button[type="submit"], input[type="submit"]');
-    var query = new URLSearchParams(window.location.search);
+    var campaign = window.AHV_LEAD_RECEIPT.attribution();
     var controller = new AbortController();
     var timeout = setTimeout(function () { controller.abort(); }, 10000);
     form.setAttribute('aria-busy', 'true');
@@ -73,12 +73,13 @@
           site_language: locale,
           lead_source_url: window.location.href,
           referrer: document.referrer,
-          utm_source: fd.get('utm_source') || query.get('utm_source') || '',
-          utm_medium: fd.get('utm_medium') || query.get('utm_medium') || '',
-          utm_campaign: fd.get('utm_campaign') || query.get('utm_campaign') || '',
-          utm_content: fd.get('utm_content') || query.get('utm_content') || '',
-          utm_term: query.get('utm_term') || '',
-          gclid: query.get('gclid') || '', fbclid: query.get('fbclid') || '',
+          utm_source: campaign.utm_source || fd.get('utm_source') || '',
+          utm_medium: campaign.utm_medium || fd.get('utm_medium') || '',
+          utm_campaign: campaign.utm_campaign || fd.get('utm_campaign') || '',
+          utm_content: campaign.utm_content || fd.get('utm_content') || '',
+          utm_term: campaign.utm_term || '',
+          gclid: campaign.gclid || '', fbclid: campaign.fbclid || '',
+          gbraid: campaign.gbraid || '', wbraid: campaign.wbraid || '',
           fields: {
             full_name: (fd.get('fname') || '').toString().trim(),
             age: (fd.get('age') || '').toString().trim(),

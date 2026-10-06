@@ -110,7 +110,8 @@ test('OPD creates visible status feedback, preserves failures and resets only af
   assert.match(script, /Your details are still here/);
   assert.match(script, /form\.reset\(\)/);
   assert.match(script, /submissionToken = null/);
-  assert.match(script, /query\.get\('utm_source'\)/);
+  assert.match(script, /AHV_LEAD_RECEIPT\.attribution\(\)/);
+  assert.match(script, /utm_source: campaign\.utm_source/);
 });
 
 test('application files use the approved Drive folder with strict size and type limits', () => {

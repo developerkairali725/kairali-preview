@@ -195,7 +195,17 @@ export const CONSENT_RUNTIME = `
   // Staging events carry environment markers; staging leads never fire live Ads goals.
   var measurementStarted = !!window.__ahvMeasurementStarted;
   function attributionValueSafe(name, value) {
-    return name.indexOf("utm_") === 0 ? /^[a-zA-Z0-9_.~ -]{1,120}$/.test(value) : /^[a-zA-Z0-9_.~-]{1,120}$/.test(value);
+    // An encoded ampersand is part of the existing Brand & Competition name.
+    return name.indexOf("utm_") === 0 ? /^[a-zA-Z0-9_.~ &-]{1,120}$/.test(value) : /^[a-zA-Z0-9_.~-]{1,120}$/.test(value);
+  }
+  function firstAttributionValue(incoming, name) {
+    // Existing Ads URLs repeat UTM keys, sometimes with an empty placeholder.
+    // Preserve the first nonempty valid value, consistently in events and forms.
+    var values = incoming.getAll(name);
+    for (var i = 0; i < values.length; i++) {
+      if (values[i] && attributionValueSafe(name, values[i])) return values[i];
+    }
+    return "";
   }
   function measurementUrlSafe() {
     // Meta and Clarity can inspect document.location themselves. Only start
@@ -203,6 +213,13 @@ export const CONSENT_RUNTIME = `
     var allowed = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "gbraid", "wbraid", "fbclid"];
     var safe = !window.location.hash || /^#(?:enquiry|main|contact|section-[0-8]|written-testimonials|press)$/.test(window.location.hash);
     new URLSearchParams(window.location.search).forEach(function (value, name) {
+      // Google appends these numeric click metadata fields. They may remain in
+      // the landing URL but are not copied into our attribution/session payload.
+      if (name === "gad_source" || name === "gad_campaignid") {
+        if (!/^[0-9]{1,20}$/.test(value)) safe = false;
+        return;
+      }
+      if (allowed.indexOf(name) !== -1 && name.indexOf("utm_") === 0 && value === "") return;
       if (allowed.indexOf(name) === -1 || !attributionValueSafe(name, value)) safe = false;
     });
     return safe;
@@ -214,10 +231,10 @@ export const CONSENT_RUNTIME = `
     var query = new URLSearchParams();
     var incoming = new URLSearchParams(window.location.search);
     allowed.forEach(function (name) {
-      var value = incoming.get(name);
-      if (value && attributionValueSafe(name, value)) query.set(name, value);
+      var value = firstAttributionValue(incoming, name);
+      if (value) query.set(name, value);
     });
-    return window.location.origin + window.location.pathname + (query.size ? "?" + query.toString() : "");
+    return window.location.origin + window.location.pathname + (query.toString() ? "?" + query.toString() : "");
   }
   function safeReferrer() {
     // Retain the referring site for acquisition reports without forwarding
@@ -263,8 +280,8 @@ export const CONSENT_RUNTIME = `
     var allowed = ["gclid", "gbraid", "wbraid", "fbclid", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"];
     var current = {}, incoming = new URLSearchParams(window.location.search);
     allowed.forEach(function (name) {
-      var value = incoming.get(name);
-      if (value && attributionValueSafe(name, value)) current[name] = value;
+      var value = firstAttributionValue(incoming, name);
+      if (value) current[name] = value;
     });
     // Retain the paid visit across programme navigation only after consent,
     // for this tab/session and for at most 30 minutes. Never persist private URLs.

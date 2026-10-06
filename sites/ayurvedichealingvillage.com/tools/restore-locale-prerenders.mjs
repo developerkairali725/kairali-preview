@@ -6,6 +6,7 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { execFileSync } from 'node:child_process';
 import { downloadReleaseAsset } from './download-release-asset.mjs';
+import { verifyInteractionOnlySource } from './verify-interaction-only-source.mjs';
 const site=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const spec=JSON.parse(fs.readFileSync(path.join(site,'english-candidate/locale-prerenders-release.json'),'utf8'));
 const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex');
@@ -14,6 +15,12 @@ const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(p)).digest('hex
 for (const f of spec.sources) {
  if (!/^(public\/ahv\/l10n\/|l10n\/generated\/|english-candidate\/route-manifest\.json$|l10n\/routes\.json$)/.test(f.file) || f.file.split('/').includes('..')) throw Error('Invalid snapshot source path');
  if (!fs.existsSync(path.join(site,f.file)) || hash(path.join(site,f.file)) !== f.sha256) throw Error('Locale snapshot source changed; recapture required: '+f.file);
+}
+// Form listeners are validated as inert before interaction instead of treating
+// a changed submit payload as changed translated crawlable content.
+for(const file of spec.interactionOnlySources || []) {
+ if(!/^public\/ahv\/l10n\/(hi|de|fr|es|it|pt|nl|ru|ar|zh|ja|ko)\/design\/(landing-page|opd)-form-submit\.js$/.test(file)) throw Error('Invalid interaction-only source path');
+ verifyInteractionOnlySource(fs.readFileSync(path.join(site,file),'utf8'),file);
 }
 if(!/^[a-z0-9-]+\.tar\.gz$/.test(spec.archive) || spec.asset !== spec.archive) throw Error('Invalid locale snapshot archive name');
 const temporary=fs.mkdtempSync(path.join(os.tmpdir(),'ahv-locale-release-'));

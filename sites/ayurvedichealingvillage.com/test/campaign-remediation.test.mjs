@@ -34,7 +34,9 @@ test('LP staging exposure retains explicit analytics activation and short form v
  assert.match(form,/if\(!response.ok\|\|result.ok!==true\)/);
  assert.match(form,/form:'landing-page'/);
  assert.match(form,/landing_page_path:window.location.pathname/);
- assert.match(form,/lead_source_url:window.location.href/);
+ assert.match(form,/lead_source_url:sourceUrl/);
+ assert.match(form,/window.location.origin\+window.location.pathname/);
+ assert.doesNotMatch(form,/lead_source_url:window.location.href/);
 });
 test('confirmed broken ad sitelinks map directly to existing, language-appropriate routes',()=>{
  const rules=JSON.parse(read('english-candidate/ad-sitelink-redirects.json'));

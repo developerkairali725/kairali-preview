@@ -5,6 +5,7 @@ import os from 'node:os';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import {execFileSync,spawnSync} from 'node:child_process';
+import {verifyInteractionOnlySource} from '../tools/verify-interaction-only-source.mjs';
 const site=process.cwd();
 const spec=JSON.parse(fs.readFileSync('english-candidate/locale-prerenders-release.json'));
 const hash=b=>crypto.createHash('sha256').update(b).digest('hex');
@@ -21,7 +22,7 @@ test('empty-checkout restoration is exact and refuses a changed body without ove
  const tmp=fs.mkdtempSync(path.join(os.tmpdir(),'ahv-snapshot-restore-test-'));
  try{
   const script='tools/restore-locale-prerenders.mjs';
-  for(const file of [script,'tools/download-release-asset.mjs']){const dest=path.join(tmp,file);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.copyFileSync(path.join(site,file),dest);}
+  for(const file of [script,'tools/download-release-asset.mjs','tools/verify-interaction-only-source.mjs']){const dest=path.join(tmp,file);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.copyFileSync(path.join(site,file),dest);}
   fs.mkdirSync(path.join(tmp,'english-candidate'),{recursive:true});
   const member='l10n/prerender/hi/index.html.gz';const fixture=path.join(tmp,member);
   fs.mkdirSync(path.dirname(fixture),{recursive:true});fs.writeFileSync(fixture,'verified fixture');
@@ -34,4 +35,18 @@ test('empty-checkout restoration is exact and refuses a changed body without ove
   const affected=path.join(tmp,'l10n/prerender/hi/index.html.gz');fs.writeFileSync(affected,'user change');
   const result=spawnSync(process.execPath,[script],{cwd:tmp,encoding:'utf8'});assert.notEqual(result.status,0);assert.match(result.stderr,/Refusing to overwrite/);assert.equal(fs.readFileSync(affected,'utf8'),'user change');
  }finally{fs.rmSync(tmp,{recursive:true,force:true});}
+});
+test('form interaction scripts cannot change the crawlable body at initialization or mount',()=>{
+ for(const file of ['public/design/landing-page-form-submit.js','public/design/opd-form-submit.js']){
+  const source=fs.readFileSync(file,'utf8');
+  assert.ok(verifyInteractionOnlySource(source,file)>0);
+  assert.throws(()=>verifyInteractionOnlySource(source+'\ndocument.body.innerHTML="changed";',file));
+  assert.throws(()=>verifyInteractionOnlySource(source+'\ndocument.title="changed";',file));
+  assert.throws(()=>verifyInteractionOnlySource(source+'\nwindow.location.href="changed";',file));
+  assert.throws(()=>verifyInteractionOnlySource(source+'\ndocument.addEventListener("DOMContentLoaded",()=>{});',file));
+  assert.throws(()=>verifyInteractionOnlySource(source+'\nsetTimeout(()=>{},1);',file));
+ }
+ assert.equal(spec.interactionOnlySources.length,24);
+ assert.ok(spec.sources.length>100);
+ assert.ok(spec.sources.every(x=>!spec.interactionOnlySources.includes(x.file)));
 });
