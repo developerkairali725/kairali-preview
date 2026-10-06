@@ -39,6 +39,11 @@ import { join } from "node:path";
 // "index, follow"): a response header is the one directive page JavaScript
 // cannot overwrite. robots.txt Disallow backs it up. Set AHV_STAGING=0 only
 // when the owner takes this to production.
+// Production builds must never silently consume a redacted `vercel pull`
+// placeholder or an absent staging flag. Preview remains closed by default.
+if (process.env.VERCEL_ENV === "production" && process.env.AHV_STAGING !== "0") {
+  throw new Error("AHV production build requires explicit AHV_STAGING=0; verify the non-secret flag before building.");
+}
 const IS_STAGING = process.env.AHV_STAGING !== "0";
 // Submitted WordPress sitemap URLs, read from the current public WP index on
 // 30 Sep 2026. Keep the old submissions alive through one 301 to the new

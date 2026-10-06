@@ -9,8 +9,7 @@ import siteConfig from "../site.config.json";
 // runtime head writer.
 //
 // Set AHV_STAGING=0 to restore the production robots policy, which is the
-// allow-all the LP lane needs (its /lp/ noindex is per-page meta-robots, and a
-// robots.txt block would hide that noindex from crawlers).
+// allow-all policy, including active campaigns and /lp/ (owner, 7 Oct 2026).
 const IS_STAGING = process.env.AHV_STAGING !== "0";
 
 export default function robots(): MetadataRoute.Robots {
