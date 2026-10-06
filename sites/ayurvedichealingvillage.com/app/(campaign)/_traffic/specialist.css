@@ -1,0 +1,38 @@
+/* Five specialist pages share the owner-approved AHV design and reading scale. */
+.r10-revision.tl-specialist .content-section{padding:46px 0!important;overflow-wrap:anywhere}
+.r10-revision.tl-specialist .specialist-intro{max-width:88ch}
+.r10-revision.tl-specialist .programme-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
+.r10-revision.tl-specialist .programme-card{padding:28px;background:var(--paper);border:1px solid var(--rule);min-width:0}
+.r10-revision.tl-specialist .programme-card p{margin-top:12px}
+.r10-revision.tl-specialist .specialist-split{display:grid!important;grid-template-columns:minmax(0,1.2fr) minmax(0,.85fr);column-gap:44px;align-items:start}
+.r10-revision.tl-specialist .specialist-split>*{grid-column:1}
+.r10-revision.tl-specialist .specialist-split>.specialist-photo{grid-column:2;grid-row:1/12;margin:0;position:sticky;top:28px}
+.r10-revision.tl-specialist .specialist-photo img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.r10-revision.tl-specialist .benefit-panel,.r10-revision.tl-specialist .package-panel,.r10-revision.tl-specialist .guest-story,.r10-revision.tl-specialist .closing-consultation{padding:34px!important;background:var(--ahv-release-color-21);margin:26px 0}
+.r10-revision.tl-specialist .benefit-panel:before,.r10-revision.tl-specialist .package-panel:before,.r10-revision.tl-specialist .guest-story:before,.r10-revision.tl-specialist .closing-consultation:before{position:static;margin-bottom:22px}
+.r10-revision.tl-specialist .care-stage{padding:28px!important;border-top:1px solid var(--rule);margin-top:16px;background:var(--paper)}
+.r10-revision.tl-specialist .care-stage h2{font-size:25px!important}.r10-revision.tl-specialist .stat-note{padding:22px!important;display:inline-block;vertical-align:top;margin-right:22px}
+.r10-revision.tl-specialist .routine-section h3,.r10-revision.tl-specialist .care-process h3{padding-top:22px;border-top:1px solid var(--rule)}
+.r10-revision.tl-specialist .season-note,.r10-revision.tl-specialist .tariff-note{padding:28px;background:var(--ahv-release-color-20);border-left:2px solid var(--bronze);margin:28px 0}
+.r10-revision.tl-specialist .season-note h2{font-size:25px!important}
+.r10-revision.tl-specialist .currency-rates{padding:14px 0}.r10-revision.tl-specialist .table-wrap{margin:22px 0;overflow:auto;max-width:100%}
+.r10-revision.tl-specialist table{min-width:540px}.r10-revision.tl-specialist td a{min-height:44px;display:inline-flex;align-items:center}
+.r10-revision.tl-specialist .doctor-pair{grid-template-columns:1fr 1fr;max-width:640px}.r10-revision.tl-specialist .doctor-pair img{width:100%;height:300px;object-fit:contain}
+.r10-revision.tl-specialist .guest-video-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:28px 0}
+.r10-revision.tl-specialist .guest-video-grid img{width:100%;aspect-ratio:16/9;object-fit:cover}.r10-revision.tl-specialist .guest-video-grid a{display:block;text-decoration:none;font-size:18px;line-height:1.6}.r10-revision.tl-specialist .guest-video-grid span{display:block;padding:12px 0}
+.r10-revision.tl-specialist .recognition-featured{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}.r10-revision.tl-specialist .recognition-featured article{padding:26px;border:1px solid var(--rule);background:var(--paper)}.r10-revision.tl-specialist .recognition-featured img{height:110px;width:100%;object-fit:contain;margin-bottom:22px}
+.r10-revision.tl-specialist li{padding:10px 0 10px 6px}.r10-revision.tl-specialist ul{padding-left:26px}.r10-revision.tl-specialist .text-link{display:inline-flex;align-items:center;min-height:44px;font-size:18px!important}.r10-revision.tl-specialist .faq-section details{padding:8px 0}.r10-revision.tl-specialist .faq-section .programme-grid{display:block}
+@media(max-width:900px){.r10-revision.tl-specialist .specialist-split{display:block!important}.r10-revision.tl-specialist .specialist-split>.specialist-photo{position:static;margin:26px 0}.r10-revision.tl-specialist .guest-video-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.r10-revision.tl-specialist .content-section{padding:32px 0!important}.r10-revision.tl-specialist .programme-grid,.r10-revision.tl-specialist .recognition-featured,.r10-revision.tl-specialist .guest-video-grid{grid-template-columns:1fr}.r10-revision.tl-specialist .programme-card{padding:24px 22px}.r10-revision.tl-specialist .benefit-panel,.r10-revision.tl-specialist .package-panel,.r10-revision.tl-specialist .guest-story,.r10-revision.tl-specialist .closing-consultation{padding:26px 22px!important}.r10-revision.tl-specialist .season-note,.r10-revision.tl-specialist .tariff-note{padding:24px 22px}.r10-revision.tl-specialist .doctor-pair img{height:220px}.r10-revision.tl-specialist .care-stage{padding:24px 22px!important}.r10-revision.tl-specialist .table-wrap{overflow-x:auto}}
+.r10-revision.tl-specialist .primary{margin-top:14px;margin-bottom:18px}.r10-revision.tl-specialist .tariff-media{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:18px 32px;align-items:start}.r10-revision.tl-specialist .tariff-media>*{grid-column:1}.r10-revision.tl-specialist .tariff-media>figure{grid-column:2;grid-row:1/6;margin:0}.r10-revision.tl-specialist .tariff-media img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}.r10-revision.tl-specialist .care-stage-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.r10-revision.tl-specialist .care-stage-grid .care-stage{margin:0}.r10-revision.tl-specialist .award-archive{padding:18px 0!important}
+@media(max-width:900px){.r10-revision.tl-specialist .tariff-media{display:block}.r10-revision.tl-specialist .tariff-media>figure{margin-top:24px}}
+@media(max-width:700px){.r10-revision.tl-specialist .care-stage-grid{grid-template-columns:1fr}.r10-revision.tl-specialist .hero-copy .primary{margin-top:20px}}
+
+.r10-revision.tl-specialist .guest-story cite{font-size:16px!important}
+.r10-revision.tl-specialist mark{background:transparent;color:inherit}.r10-revision.tl-specialist h2 strong,.r10-revision.tl-specialist h3 strong,.r10-revision.tl-specialist h2 mark,.r10-revision.tl-specialist h3 mark{font:inherit;color:inherit}.r10-revision.tl-specialist p strong,.r10-revision.tl-specialist li strong{font-family:inherit;font-size:inherit}
+
+.r10-revision.tl-specialist p strong,.r10-revision.tl-specialist li strong{font-family:inherit!important;font-size:inherit!important}
+.r10-revision.tl-specialist blockquote footer{font-size:16px!important}
+.r10-revision.tl-specialist{font-family:Mulish,Arial,sans-serif}.r10-revision.tl-specialist strong{font-family:inherit!important}
+
+.r10-revision.tl-specialist blockquote,.r10-revision.tl-specialist blockquote p{font-family:Mulish,Arial,sans-serif!important}

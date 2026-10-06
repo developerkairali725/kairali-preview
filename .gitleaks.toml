@@ -148,6 +148,31 @@ id = "generic-api-key"
     regexes = ['^3f2b8c4e-1d2a-4b6c-9e8f-0a1b2c3d4e5f$']
     paths = ['^sites/ayurvedichealingvillage\.com/test/form-relay(-php)?\.test\.mjs$']
 
+    # Inspected 2026-10-06, gitleaks 8.30.1 full-history scan: five findings,
+    # all public identifiers or synthetic mocked-test IDs, not credentials.
+    # e8066190/ec5a8a75 consent-runtime.ts:271 names a sessionStorage slot.
+    # This is the public key NAME, never the stored attribution values.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexes = ['''^ahv-paid-attribution-v1$''']
+    paths = ['''^sites/ayurvedichealingvillage\.com/app/\(english\)/_families/consent-runtime\.ts$''']
+
+    # fab06fa8 campaign-validation.test.mjs:33 and d4e9ec5c
+    # lead-receipt.test.mjs:9 use this fixed request ID with mocked transports.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexes = ['''^545404ff-a177-4f93-b5ab-10b90ee90d58$''']
+    paths = ['''^sites/ayurvedichealingvillage\.com/test/(campaign-validation|lead-receipt)\.test\.mjs$''']
+
+    # bc5ed425 lead-measurement.test.mjs:9 uses a fixed synthetic event ID
+    # in a VM browser with mocked storage and vendor functions.
+    # Each exception targets the extracted secret exactly, not a whole line.
+    # Same-line and same-file synthetic secret canaries remain detectable.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexes = ['''^c3da5d5e-95ca-4a0a-a730-e4ab31c7f65a$''']
+    paths = ['''^sites/ayurvedichealingvillage\.com/test/lead-measurement\.test\.mjs$''']
+
 # Mined raw-sources layer (immutable, PUBLIC live-page snapshots — CLAUDE.md doctrine (a)).
 # Live WordPress pages embed public per-session tokens (WPForms nonces, site keys) that
 # trip generic-api-key. These are third-party public-page artifacts, not repo secrets;

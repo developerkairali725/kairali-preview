@@ -195,7 +195,7 @@ export default function TreatmentPackagesPage() {
           items={[
             { title: "NABH accreditation", text: "Certificate AH-2024-0250 · Panchakarma within accredited scope" },
             { title: "Clinical Establishment", text: "Permanent certificate under the Kerala Act" },
-            { title: "TripAdvisor Hall of Fame", text: "Patient reviews, on the public record" },
+            { title: "TripAdvisor Hall of Fame", text: "Reviews from guests on Tripadvisor" },
             { title: "Physician-led", text: "Doctors plan and review every programme" },
           ]}
         />
@@ -228,8 +228,7 @@ export default function TreatmentPackagesPage() {
             // Staging: "Your request reaches our patient-services team with your
             // consent recorded." — not true while the form hands off to WhatsApp.
             <>
-              Submit the form to request a consultation. A receipt is shown only after the system confirms your enquiry. We reply with consultation options and what your physician
-              will need to know before admission.
+              Request a consultation and our patient care team will contact you about consultation options and the information your doctor may need before admission.
             </>,
             <>
               Prefer to talk now? Call <a href={contact.phone.href}>{contact.phone.display}</a>

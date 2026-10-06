@@ -41,12 +41,13 @@
  *
  * Exit codes: 0 = clean · 2 = violations OR broken probe (CI blocks) · 1 = harness error.
  *
- * Usage: node scripts/footer-socials-lint.mjs [--sites <path>]
+ * Usage: node scripts/footer-socials-lint.mjs [--sites <path>] [--only <site-name>]...
  */
 
 import { readFileSync, readdirSync, existsSync, statSync } from "node:fs";
 import { join, resolve, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
+import { selectSites } from "./lib/selected-sites.mjs";
 import { EXEMPT } from "./factory-matrix-lint.mjs";
 
 export const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -218,7 +219,8 @@ export function main(argv = []) {
   }
 
   const hrefs = canonicalHrefs();
-  const sites = fleetSites(sitesDir);
+  const fleet = fleetSites(sitesDir);
+  const sites = selectSites(fleet, argv);
   const violations = [];
   console.log(`\nfooter-socials-lint — ${sites.length} fleet sites (D-20260718-04: footer social parity; ${hrefs.length} canonical profiles)`);
 

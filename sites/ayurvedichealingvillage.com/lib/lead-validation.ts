@@ -1,3 +1,4 @@
+import {validCampaignPhone,normaliseCampaignPhone} from './campaign-phone.ts';
 import type { LeadTable } from './lead-store.ts';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -45,11 +46,12 @@ export function validationProblem(table: LeadTable, values: Record<string, strin
 
   if (table === 'landing-page') {
     const campaignPath = typeof values.landing_page_path === 'string' ? values.landing_page_path.replace(/\/+$/, '') : '';
-    if (campaignPath === '/ayurvedic-treatment-packages.html' || (typeof values.form_variant === 'string' && values.form_variant.startsWith('r10-'))) {
+    if (['/ayurvedic-treatment-packages.html','/panchkarma-treatment.html','/pain-management.html','/family-ayurvedic-retreat-kerala.html','/preventive-rejuvenation-detoxification.html','/ayurveda-retreat-kerala.html','/weight-loss-programme','/digestive-wellness-gut-health-yoga-therapy','/karkidaka-chikitsha-or-monsoon-wellness.html'].includes(campaignPath) || (typeof values.form_variant === 'string' && values.form_variant.startsWith('r10-'))) {
       if (!['landing_page_path','fname','phone','email'].every((key)=>present(values,key)) || values.consent !== true) return 'MISSING_REQUIRED_FIELDS';
-      const phone = String(values.phone).trim();
-      const digits = phone.replace(/[^0-9]/g, '');
-      if (!/^\+?[0-9() .-]+$/.test(phone) || digits.length < 8 || digits.length > 15 || /^(\d)\1+$/.test(digits)) return 'INVALID_PHONE';
+      const phone = normaliseCampaignPhone(String(values.phone));
+      values.phone = phone;
+      if (!validCampaignPhone(phone)) return 'INVALID_PHONE';
+      if (String(values.fname).length > 120 || email.length > 254 || String(values.message || '').length > 3000) return 'INVALID_FIELD_LENGTH';
       return null;
     }
     const required = ['landing_page_path', 'email'];

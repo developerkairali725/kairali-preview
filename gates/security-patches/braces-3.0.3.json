@@ -1,0 +1,24 @@
+{
+  "advisory": "GHSA-vfj7-8cjw-p6xm",
+  "version": "3.0.3",
+  "upstream": "https://github.com/micromatch/braces/issues/70",
+  "patch": "patches/braces@3.0.3.patch",
+  "files": {
+    "index.js": "332ea07c7b006361aad12aa994ca75dc1db8e8382b884909e2f38f10b85c88a4",
+    "lib/compile.js": "8dcbbef669a27a50f36e416495f6b4391682f52fab068b1d081c89b6113f9fc8",
+    "lib/constants.js": "c18ac5adb57308f1ce42a28552da3a31f5d83709743ebd9a636336813a744d4b",
+    "lib/depth.js": "ecd0608a6179f737059fef19e27680819e809d6acda513631cd2e9591e634b3d",
+    "lib/expand.js": "6a202d4f2cb1c23a67a3cb77e31895705dcb2d94929abecf5d9b2dda1374fbea",
+    "lib/parse.js": "ee3ff1bfe54bc5fd17ffdab9d97e2fc1c938112142802dd3fa5a5634f17a4367",
+    "lib/stringify.js": "6723c01dd5fda29702b257758c6145f213d4cda0ab41d87eebfc3ab7782a1443",
+    "lib/utils.js": "b5a7596aa67730412b3c029ef09e84e6b67b8e445cffd35d1d295549c89066c7",
+    "package.json": "56f08b888a4f30dc7cf8a7dbb36ffe92b737912ba36abe9d069d32167c957ac7"
+  },
+  "advisory_details": {
+    "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+    "cwe": "CWE-674",
+    "vulnerable_versions": "<=3.0.3",
+    "patched_versions": ">=3.0.4",
+    "severity": "high"
+  }
+}

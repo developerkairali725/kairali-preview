@@ -50,6 +50,10 @@ export async function POST(request: Request): Promise<Response> {
   const table = text(body.form, 40) as LeadTable;
   if (!LEAD_TABLES.includes(table)) return Response.json({ ok: false, code: 'UNKNOWN_FORM' }, { status: 400, headers });
 
+  // Honeypot is checked on the server and never stored or mirrored.
+  if (table === 'landing-page' && typeof body.company === 'string' && body.company.trim()) {
+    return Response.json({ ok: false, code: 'INVALID_SUBMISSION' }, { status: 400, headers });
+  }
   const submissionToken = validToken(body.submissionToken);
   if (!submissionToken) return Response.json({ ok: false, code: 'INVALID_SUBMISSION' }, { status: 400, headers });
 

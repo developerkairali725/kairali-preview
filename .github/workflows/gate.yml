@@ -1,3 +1,5 @@
+# Owner-directed maintenance policy, 6 October 2026.
+# Build/browser QA lives in the affected-site factory job, once per site.
 name: gate
 
 on:
@@ -24,33 +26,54 @@ jobs:
           node-version: 24
           cache: pnpm
 
+      - name: Plan affected sites
+        env:
+          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: node scripts/ci-site-plan.mjs --base "$BASE" --out "$RUNNER_TEMP/site-plan.json"
+
+      - name: CI regression tests
+        run: node --test scripts/test/*.test.mjs scripts/test/site-app-root.test.js scripts/test/lighthouse-gate.test.js scripts/test/content-lint.test.js
+
       - name: Install
         run: pnpm install --frozen-lockfile
 
-      - name: Build (turbo)
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: pnpm build
+      - name: Compliance lint (merge-blocking, Checklist A3)
+        run: node scripts/ci-scoped-checks.mjs compliance "$RUNNER_TEMP/site-plan.json"
 
       - name: Package tests
-        run: node --test packages/compliance/test/*.test.js
-
-      - name: Compliance lint (merge-blocking, Checklist A3)
-        run: node packages/compliance/bin/lint.js
+        run: node --test packages/*/test/*.test.js
 
       - name: Dependency audit
-        run: pnpm audit --audit-level=high
+        run: node scripts/lib/security-audit.mjs
 
       # gitleaks CLI directly (not gitleaks/gitleaks-action@v2): the Action now
       # requires a paid GITLEAKS_LICENSE for organization-owned repos, which broke
       # this gate when the repo moved to kairali-digital. Same scanner, same rules,
       # full-history scan — gate strength unchanged (CLAUDE.md rule g).
       - name: Secret scan (gitleaks)
+        id: secret-scan
         run: |
           # ≥8.25 required: .gitleaks.toml uses rule-scoped AND allowlists
           GITLEAKS_VERSION=8.30.1
           curl -sSfL "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" | tar -xz gitleaks
-          ./gitleaks git . --redact --no-banner --exit-code 1
+          ./gitleaks git . --redact --no-banner --exit-code 1 --report-format json --report-path "$RUNNER_TEMP/gitleaks-redacted.json"
+
+      - name: Report secret scan locations
+        if: ${{ failure() && steps.secret-scan.outcome == 'failure' }}
+        run: |
+          # Print only location metadata, never Match/Secret or source excerpts.
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import path from 'node:path';
+          const report = path.join(process.env.RUNNER_TEMP, 'gitleaks-redacted.json');
+          if (!fs.existsSync(report)) {
+            throw new Error('Secret scan failed without a report; inspect the scanner error above.');
+          }
+          const findings = JSON.parse(fs.readFileSync(report, 'utf8'));
+          if (!Array.isArray(findings)) throw new Error('Invalid secret scan report');
+          if (findings.length === 0) throw new Error('Secret scan failed with zero findings; inspect the scanner error above.');
+          console.log(JSON.stringify(findings.map(({ RuleID, File, StartLine, Commit }) => ({ RuleID, File, StartLine, Commit })), null, 2));
+          NODE
 
   # Ship Gate A-13: Claude security review on every PR diff (ANTHROPIC_API_KEY
   # landed 14 Jul 2026). Action pinned to a commit SHA (supply-chain hygiene).
@@ -82,7 +105,3 @@ jobs:
             echo "A-13 requires zero high/critical findings — see the PR comments for evidence."
             exit 1
           fi
-
-  # TODO (QUESTIONS.md): Lighthouse CI against the Vercel preview URL
-  # (perf ≥90 / a11y ≥95 / SEO =100) once the preview-URL wiring is added.
-  # Gates are added, never weakened (CLAUDE.md rule g).

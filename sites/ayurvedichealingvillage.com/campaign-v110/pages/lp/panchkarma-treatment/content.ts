@@ -28,18 +28,18 @@ const content: LpContent = {
       overline: "How admission works",
       title: "Consultation first. Always.",
       blocks: [
-        { type: "lead", runs: ["No programme here is bought off a page. It is prescribed — and that order of events is the whole difference between a hospital and a brochure."] },
+        { type: "lead", runs: ["Your programme begins with a medical consultation. Your physician assesses your needs and prescribes suitable therapies before you begin treatment."] },
         { type: "steps", cards: [{"k": "Step 1", "title": "In-person consultation", "text": "Your physician takes your history, examines you, and decides whether — and which — Panchakarma programme is appropriate."}, {"k": "Step 2", "title": "Five-fold therapy", "text": "The prescribed procedures and their preparatory therapies, carried out by the hospital's treatment team on the physician's schedule."}, {"k": "Step 3", "title": "Diet & follow-up", "text": "A supporting diet during your admission, and follow-up guidance at discharge so the programme's routine survives the trip home."}] },
       ],
     },
     {
       id: "the-five-folds",
       variant: "alt",
-      overline: "The five folds",
+      overline: "The five procedures",
       title: "What Panchakarma actually is",
       blocks: [
         { type: "lead", runs: ["Five classical procedure families — each one prescribed selectively, never as a package deal. Your programme may use some, not all; that is clinical judgement doing its job."] },
-        { type: "steps", cards: [{"k": "Fold 1", "title": "Vamana", "text": "Therapeutic emesis, prepared for and administered only under physician supervision as part of a planned programme."}, {"k": "Fold 2", "title": "Virechana", "text": "Medicated purgation, scheduled by your physician after preparatory therapies and diet."}, {"k": "Fold 3", "title": "Basti", "text": "Medicated enema therapies — the classical core of many Panchakarma programmes, always physician-prescribed."}, {"k": "Fold 4", "title": "Nasya", "text": "Nasal administration of medicated preparations, where your assessment indicates it."}, {"k": "Fold 5", "title": "Raktamokshana", "text": "Classical blood-letting procedures, used selectively and only on clinical judgement."}] },
+        { type: "steps", cards: [{"k": "Procedure 1", "title": "Vamana", "text": "Therapeutic emesis, prepared for and administered only under physician supervision as part of a planned programme."}, {"k": "Procedure 2", "title": "Virechana", "text": "Medicated purgation, scheduled by your physician after preparatory therapies and diet."}, {"k": "Procedure 3", "title": "Basti", "text": "Medicated enema therapies — the classical core of many Panchakarma programmes, always physician-prescribed."}, {"k": "Procedure 4", "title": "Nasya", "text": "Nasal administration of medicated preparations, where your assessment indicates it."}, {"k": "Procedure 5", "title": "Raktamokshana", "text": "Classical blood-letting procedures, used selectively and only on clinical judgement."}] },
         { type: "photos", images: [{ src: imgTherapyPanchakarma, alt: "Panchakarma therapy in progress at the Healing Village" }, { src: imgTherapyAbhyanga, alt: "Two therapists performing synchronised Abhyanga massage" }, { src: imgWxPathway, alt: "Treatment buildings and gardens at the Healing Village, Palakkad" }] },
       ],
     },
@@ -47,7 +47,7 @@ const content: LpContent = {
       id: "why-choose-kairali",
       variant: "proof",
       overline: "Why choose Kairali",
-      title: "An accredited hospital, on the record",
+      title: "Accredited care at Kairali",
       blocks: [
         { type: "proof", items: [{"title": "NABH accreditation", "text": "Certificate AH-2024-0250 · Panchakarma within accredited scope"}, {"title": "Clinical Establishment", "text": "Permanent certificate under the Kerala Act"}, {"title": "Physician-led", "text": "Ayurvedic doctors plan and review every programme"}, {"title": "Four generations", "text": "A family practice of Ayurveda behind the hospital"}] },
       ],
@@ -76,11 +76,11 @@ const content: LpContent = {
       overline: "Questions patients ask",
       title: "Panchakarma, plainly answered",
       blocks: [
-        { type: "faq", items: [{"q": "What is Panchakarma?", "a": [["Panchakarma is classical Ayurveda's five-fold set of cleansing procedures. At the Healing Village it is practised as a physician-planned programme: preparatory therapies, the indicated procedures, a supporting diet, and rest — in NABH-accredited scope."]]}, {"q": "How long does a programme take?", "a": [["That is a clinical decision, not a menu choice. Your physician sets the schedule at consultation based on your health status and history; programmes are typically measured in weeks, and the plan is reviewed through your stay."]]}, {"q": "Who plans and supervises the treatment?", "a": [["Our Ayurvedic physicians. Every admission starts with an in-person consultation, and therapy is carried out by the hospital's treatment team under physician supervision."]]}, {"q": "Will Panchakarma treat my medical condition?", "a": [["We do not promise outcomes for any condition. Your physician will tell you honestly, at consultation, what a programme can and cannot be expected to do in your case — and continue any conversation with your own doctors that your situation needs."]]}] },
+        { type: "faq", items: [{"q": "What is Panchakarma?", "a": [["Panchakarma is classical Ayurveda's five-fold set of cleansing procedures. At the Healing Village it is practised as a physician-planned programme: preparatory therapies, the indicated procedures, a supporting diet, and rest — in NABH-accredited scope."]]}, {"q": "How long does a programme take?", "a": [["Your physician sets the schedule at consultation based on your health status and history. Programmes are typically measured in weeks, and your plan is reviewed throughout your stay."]]}, {"q": "Who plans and supervises the treatment?", "a": [["Our Ayurvedic physicians. Every admission starts with an in-person consultation, and therapy is carried out by the hospital's treatment team under physician supervision."]]}, {"q": "Will Panchakarma treat my medical condition?", "a": [["We do not promise outcomes for any condition. Your physician will tell you honestly, at consultation, what a programme can and cannot be expected to do in your case — and continue any conversation with your own doctors that your situation needs."]]}] },
       ],
     },
   ],
-  enquiry: {"overline": "Begin with a consultation", "title": "Request a consultation", "lead": ["Tell us where you are and what you are dealing with. Our patient-services team replies with consultation options — the physician takes it from there."], "form": {"heading": "Request a consultation", "intro": "Tell us how to reach you. Our patient care team can help you plan your visit."}, "aside": {"k": "What happens next", "paragraphs": [["Submit the form to request a consultation. A receipt is shown only after the system confirms your enquiry. We reply with consultation options and what your physician will need to know before admission."], ["Prefer to talk now? Call ", {"a": "+91 9555 156 156", "href": "tel:+919555156156"}, {"br": true}, "International patients: ", {"a": "info@kairali.com", "href": "mailto:info@kairali.com"}]]}},
+  enquiry: {"overline": "Begin with a consultation", "title": "Request a consultation", "lead": ["Tell us where you are and what you are dealing with. Our patient-services team replies with consultation options — the physician takes it from there."], "form": {"heading": "Request a consultation", "intro": "Tell us how to reach you. Our patient care team can help you plan your visit."}, "aside": {"k": "What happens next", "paragraphs": [["Request a consultation and our patient care team will contact you about consultation options and the information your doctor may need before admission."], ["Prefer to talk now? Call ", {"a": "+91 9555 156 156", "href": "tel:+919555156156"}, {"br": true}, "International patients: ", {"a": "info@kairali.com", "href": "mailto:info@kairali.com"}]]}},
   whatsappText: "Hello, I would like to enquire about Panchakarma Treatment in Kerala | Kairali Healing Village (/lp/panchkarma-treatment/).",
 };
 

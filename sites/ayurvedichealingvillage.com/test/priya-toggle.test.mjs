@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import vm from 'node:vm';
-const source=readFileSync(new URL('../public/design/chrome.js',import.meta.url),'utf8');
+for (const chromeFile of ['chrome.js', 'review-chrome.js']) {
+const source=readFileSync(new URL('../public/design/'+chromeFile,import.meta.url),'utf8');
 function fixture(ready=true){
  const code=source.slice(source.indexOf('  var chatPending ='),source.indexOf('  function chatLinks(f)'));
  const label={textContent:'Chat with Priya'};
@@ -24,3 +25,5 @@ test('deferred widget opens once after readiness and offline fallback remains av
  const f=fixture(false);f.click();f.ready();f.tick();assert.equal(f.clicks,1);assert.equal(f.timers.size,0);
  const offline=fixture(false);offline.click();while(offline.timers.size)offline.tick();assert.equal(offline.context.window.location.href,'https://wa.me/919289838797');
 });
+
+}
