@@ -1,11 +1,11 @@
 {
   "repository": "kairali-digital/kairali-web-factory",
   "tag": "ahv-english-staging-20260915",
-  "asset": "ahv-locale-prerenders-award-count-r2-20261006.tar.gz",
-  "archive": "ahv-locale-prerenders-award-count-r2-20261006.tar.gz",
-  "sha256": "c73ac7d39ae8ccff1a612d1a652ae19556dbb5c2c16e178e58b3c1296e825bd7",
-  "bytes": 46465771,
-  "capturedSource": "a6011e4c4 plus owner-approved 117+ awards total: 24 translated Panchakarma/treatment-packages snapshots and 12 indexes updated; other 2568 archive members unchanged",
+  "asset": "ahv-locale-prerenders-yoga-layout-20261006.tar.gz",
+  "archive": "ahv-locale-prerenders-yoga-layout-20261006.tar.gz",
+  "sha256": "8373e7b8f3dbc83dd67a8d96c0a0dfae57d02572b7d13d043344d6e3e549cde3",
+  "bytes": 46462288,
+  "capturedSource": "PR346 yoga layout: 12 yoga snapshots browser-recaptured from each translated runtime using candidate commercial dataset and route-scoped CSS; 12 merged indexes updated. All other archive members and source hashes preserved. Existing header controls are stripped by the standard capture tool.",
   "captured": "2026-10-06",
   "sources": [
     {
@@ -186,7 +186,7 @@
     },
     {
       "file": "public/ahv/l10n/ar/assets/commercial-family-data.js",
-      "sha256": "c40ad1c6266893e007cda054f51a3fe3d61a50cc0c5e100aed4ca45c576806e0"
+      "sha256": "523b508f9afd67f162fda8273287f97ef3edd10c84b8dbb43766e34d5e66becb"
     },
     {
       "file": "public/ahv/l10n/ar/assets/commercial-family-render.js",
@@ -1218,7 +1218,7 @@
     },
     {
       "file": "public/ahv/l10n/de/assets/commercial-family-data.js",
-      "sha256": "dc62bf1871cf4aa9c2e4adfdf2260d79b9c248df270252b1c43473424fa6a21d"
+      "sha256": "4366c9308cac49c8764d370439d77506c02bfc9652f070156e02c3dba58ca667"
     },
     {
       "file": "public/ahv/l10n/de/assets/commercial-family-render.js",
@@ -2250,7 +2250,7 @@
     },
     {
       "file": "public/ahv/l10n/es/assets/commercial-family-data.js",
-      "sha256": "29f83b0969faa0d9a472362f159851de96f7bb425ca1d8f503bc3df84abc2963"
+      "sha256": "f99a1d9793c676c430d4c6cf09b23e8a5e26dd5b8f36072068c715ca205b0021"
     },
     {
       "file": "public/ahv/l10n/es/assets/commercial-family-render.js",
@@ -3282,7 +3282,7 @@
     },
     {
       "file": "public/ahv/l10n/fr/assets/commercial-family-data.js",
-      "sha256": "98f4c18d3050e8f8beacbfb3e737981c71d75c4bae794fd3b3b6d381a3e37cdb"
+      "sha256": "6c1d302512f3e8661ae323b11d53c0fdd8bda70693ba8f92d4974f15024de1b7"
     },
     {
       "file": "public/ahv/l10n/fr/assets/commercial-family-render.js",
@@ -4314,7 +4314,7 @@
     },
     {
       "file": "public/ahv/l10n/hi/assets/commercial-family-data.js",
-      "sha256": "5380f631953fe149376aa47531fbeb15bcf88c891a021df9c89b24e29b58eea4"
+      "sha256": "13aed83a4033ef7ae7e593f872f3f690a2be72c2a5246a942a5340a84b47d96d"
     },
     {
       "file": "public/ahv/l10n/hi/assets/commercial-family-render.js",
@@ -5346,7 +5346,7 @@
     },
     {
       "file": "public/ahv/l10n/it/assets/commercial-family-data.js",
-      "sha256": "a768187b70dbab866a682c3aefa097df6a89b6d0a1618415a75c7654bbd414fe"
+      "sha256": "0fd2d7d913050ac38c58386b226ae47db81a0f75299f12e45ab6d850bb7d4a4c"
     },
     {
       "file": "public/ahv/l10n/it/assets/commercial-family-render.js",
@@ -6378,7 +6378,7 @@
     },
     {
       "file": "public/ahv/l10n/ja/assets/commercial-family-data.js",
-      "sha256": "80319a35fe433bb441cb6ce85901565dabfdceb0a340b7fb3fa32e8e49257f20"
+      "sha256": "164e194c34e3b6c0a1c0e2969416b2fbb95036398fbb1c96e11b0f68b4ee3ce4"
     },
     {
       "file": "public/ahv/l10n/ja/assets/commercial-family-render.js",
@@ -7410,7 +7410,7 @@
     },
     {
       "file": "public/ahv/l10n/ko/assets/commercial-family-data.js",
-      "sha256": "dffabbe01eb226440e6c6b5f308940c06ba8f4d81dd03420f28cf2870a681548"
+      "sha256": "dd8806c50267dc46c8bd3c93fb1369086138c3b745d6e70d9e431ae1fa058c42"
     },
     {
       "file": "public/ahv/l10n/ko/assets/commercial-family-render.js",
@@ -8442,7 +8442,7 @@
     },
     {
       "file": "public/ahv/l10n/nl/assets/commercial-family-data.js",
-      "sha256": "8f9b72b0646fd3762454486816bc917c0adb7e8f39d8411066ae397e04ef43a3"
+      "sha256": "512c0fe796b2114dc1228bbe2c155931c3928cb3f77adfb0901e0349ffa8ff71"
     },
     {
       "file": "public/ahv/l10n/nl/assets/commercial-family-render.js",
@@ -9474,7 +9474,7 @@
     },
     {
       "file": "public/ahv/l10n/pt/assets/commercial-family-data.js",
-      "sha256": "72c197aaa88bdb1eeedbe6f2eb379fedae66f139f01771d5548f729c96747f41"
+      "sha256": "466ab9c1d9129764c57075b52b87b535522a9e552028df4ee635e152cda6bc84"
     },
     {
       "file": "public/ahv/l10n/pt/assets/commercial-family-render.js",
@@ -10506,7 +10506,7 @@
     },
     {
       "file": "public/ahv/l10n/ru/assets/commercial-family-data.js",
-      "sha256": "3f12c79c22c44f71b00143c4cf6afbf3ad6ca4b53940c34477309c3ef02f9fcf"
+      "sha256": "91c0e3a29925e48546b958262e1bae8c873b5bb85ff32838029b97ffb21a6a1d"
     },
     {
       "file": "public/ahv/l10n/ru/assets/commercial-family-render.js",
@@ -11538,7 +11538,7 @@
     },
     {
       "file": "public/ahv/l10n/zh/assets/commercial-family-data.js",
-      "sha256": "2fff49d09a4849ee49bc0e77b30bfa63400116e2e8d4c1bd6aa73389be3f437c"
+      "sha256": "028a9c5d28f9cfa7bf7839547d4eee53eabbc2e3874de2646dc9c314ecec76e0"
     },
     {
       "file": "public/ahv/l10n/zh/assets/commercial-family-render.js",
@@ -12511,7 +12511,7 @@
     {
       "file": "l10n/prerender/hi/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
       "sha256": "1c4ffab7779df23d6aa4a01499a5f7a2e5ef71761f6c9c68b278e0cf54a5dfd1",
-      "bytes": 18731
+      "bytes": 18655
     },
     {
       "file": "l10n/prerender/hi/alcohol-free.html.gz",
@@ -12591,7 +12591,7 @@
     {
       "file": "l10n/prerender/hi/ayurveda-training-programme.html.gz",
       "sha256": "580a0387b369747c011befbc780fa7c9fe95a6fc96028439f394b0a6def0e2b8",
-      "bytes": 19424
+      "bytes": 19308
     },
     {
       "file": "l10n/prerender/hi/ayurveda-training.html.gz",
@@ -12731,7 +12731,7 @@
     {
       "file": "l10n/prerender/hi/classic-villa.html.gz",
       "sha256": "81a404515df9ea69290ddf2e74892bc605ec40f1439746cdd442d3f390284edc",
-      "bytes": 16162
+      "bytes": 16119
     },
     {
       "file": "l10n/prerender/hi/consultancy.html.gz",
@@ -12870,13 +12870,13 @@
     },
     {
       "file": "l10n/prerender/hi/index.json",
-      "sha256": "f1336483563100c72dc3f0c84977e46e43d7e44d1d4e1007065d07c87b6113bc",
-      "bytes": 54290
+      "sha256": "bb43bfa87b79f02f2483932ebb358d6acc5adc63bae3b5a29113a6ff9848589f",
+      "bytes": 54303
     },
     {
       "file": "l10n/prerender/hi/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
       "sha256": "f7c78992933f91966343a47a67c56e39c632d7e7a6425063d7580b5942815d99",
-      "bytes": 17562
+      "bytes": 17467
     },
     {
       "file": "l10n/prerender/hi/internships-at-kairali.html.gz",
@@ -13011,7 +13011,7 @@
     {
       "file": "l10n/prerender/hi/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
       "sha256": "bcf1daf109232b2be5f3c545fca7727923aced7d67de7583062a42115b227bbe",
-      "bytes": 18215
+      "bytes": 18143
     },
     {
       "file": "l10n/prerender/hi/live-to-100-with-panchkarma.html.gz",
@@ -13091,7 +13091,7 @@
     {
       "file": "l10n/prerender/hi/one-day-ayurveda-workshop-program-kerala.html.gz",
       "sha256": "fcef824bd85a1acf864cab128078f5d3dea4b2493c868de8558c569cffc5ae7b",
-      "bytes": 17302
+      "bytes": 17200
     },
     {
       "file": "l10n/prerender/hi/online-consultation.html.gz",
@@ -13236,7 +13236,7 @@
     {
       "file": "l10n/prerender/hi/royal-villa.html.gz",
       "sha256": "859cc70f63c97d9170f635a961d4e043bdb2ea9c10514ea2921a98abbab584f4",
-      "bytes": 16429
+      "bytes": 16485
     },
     {
       "file": "l10n/prerender/hi/search-results.html.gz",
@@ -13316,12 +13316,12 @@
     {
       "file": "l10n/prerender/hi/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
       "sha256": "cd398ab1e5d4e2b59c2f79e512440334670b484ec1f932a7176b997be3a6050d",
-      "bytes": 17362
+      "bytes": 17299
     },
     {
       "file": "l10n/prerender/hi/training-course-fees.html.gz",
       "sha256": "518ec67d0b9e047991bcd455b2f50850c11ef84bfdbd6ace11e75468a865c006",
-      "bytes": 16313
+      "bytes": 16234
     },
     {
       "file": "l10n/prerender/hi/training-programs.html.gz",
@@ -13530,8 +13530,8 @@
     },
     {
       "file": "l10n/prerender/hi/yoga-and-meditation-package.html.gz",
-      "sha256": "95b8a090677b7b6047833ec3f9b89f236083320b785409bfbc6663bcfe6fe610",
-      "bytes": 15001
+      "sha256": "86001ba248a7e214f4cf4538744e57382c42f7ea53bf520496e65faad39a262e",
+      "bytes": 15285
     },
     {
       "file": "l10n/prerender/hi/yoga-based-stress-energy-reset-program.html.gz",
@@ -13596,7 +13596,7 @@
     {
       "file": "l10n/prerender/de/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
       "sha256": "9cddf0cf172605d98ce1b78a56a4eab6f5a94892bace0eb3a1b7c049436f8a82",
-      "bytes": 17098
+      "bytes": 17030
     },
     {
       "file": "l10n/prerender/de/alcohol-free.html.gz",
@@ -13676,7 +13676,7 @@
     {
       "file": "l10n/prerender/de/ayurveda-training-programme.html.gz",
       "sha256": "7b3cb05c0a8b53a2395845c0defde256b3942ec2ff97794e80efa32dfa3b7f2a",
-      "bytes": 18151
+      "bytes": 18061
     },
     {
       "file": "l10n/prerender/de/ayurveda-training.html.gz",
@@ -13816,7 +13816,7 @@
     {
       "file": "l10n/prerender/de/classic-villa.html.gz",
       "sha256": "be685dd2ea68e384e466b87a50c860d42781a1bd8e50d90fbea1a38b298348aa",
-      "bytes": 15384
+      "bytes": 15348
     },
     {
       "file": "l10n/prerender/de/consultancy.html.gz",
@@ -13955,13 +13955,13 @@
     },
     {
       "file": "l10n/prerender/de/index.json",
-      "sha256": "a85cbe07d2202d45da4c419056f35e212e543ac8435950ef6f0cc5c0c9033aed",
-      "bytes": 54296
+      "sha256": "75bf0311343a0a958dfd137bdd5b2bcbefc79c3c0e00fe08a93f7b193a7253e7",
+      "bytes": 54309
     },
     {
       "file": "l10n/prerender/de/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
       "sha256": "b40384c5da7be0744f7e6504407d265757c59a140d678b106d0caa200fe15b44",
-      "bytes": 16470
+      "bytes": 16384
     },
     {
       "file": "l10n/prerender/de/internships-at-kairali.html.gz",
@@ -14096,7 +14096,7 @@
     {
       "file": "l10n/prerender/de/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
       "sha256": "c8971192b6ed972ff8b536fde7cc391eec908b303a640d0067a1ee17edea4e28",
-      "bytes": 16739
+      "bytes": 16681
     },
     {
       "file": "l10n/prerender/de/live-to-100-with-panchkarma.html.gz",
@@ -14176,7 +14176,7 @@
     {
       "file": "l10n/prerender/de/one-day-ayurveda-workshop-program-kerala.html.gz",
       "sha256": "3377a2f314571c303e1dece830710ef723d43edae28478925356b87cd29f1c06",
-      "bytes": 16228
+      "bytes": 16146
     },
     {
       "file": "l10n/prerender/de/online-consultation.html.gz",
@@ -14321,7 +14321,7 @@
     {
       "file": "l10n/prerender/de/royal-villa.html.gz",
       "sha256": "3a315aa9d923741029375932e5e751d5fdc1aeb6325bae74ac58bdbc7448cd27",
-      "bytes": 15449
+      "bytes": 15500
     },
     {
       "file": "l10n/prerender/de/search-results.html.gz",
@@ -14401,12 +14401,12 @@
     {
       "file": "l10n/prerender/de/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
       "sha256": "74423fa8393b9c0a360ecd5b058c2f1f754c498f73d3ddaa14ee4d73e8f100f6",
-      "bytes": 16225
+      "bytes": 16137
     },
     {
       "file": "l10n/prerender/de/training-course-fees.html.gz",
       "sha256": "8fed2c63cd7d6a3e4d0967043c9a2c7cc3edb4929990435b95dea2010112f4d7",
-      "bytes": 15485
+      "bytes": 15429
     },
     {
       "file": "l10n/prerender/de/training-programs.html.gz",
@@ -14615,8 +14615,8 @@
     },
     {
       "file": "l10n/prerender/de/yoga-and-meditation-package.html.gz",
-      "sha256": "47208c5383a00297b95a79610694b53655ac5013f786c3ec4d75a8099c7471a0",
-      "bytes": 14272
+      "sha256": "95330c02e7324b769291987b5c66a6372c62c2638124152fd7856ae6be9c887d",
+      "bytes": 14494
     },
     {
       "file": "l10n/prerender/de/yoga-based-stress-energy-reset-program.html.gz",
@@ -14681,7 +14681,7 @@
     {
       "file": "l10n/prerender/fr/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
       "sha256": "e3474f33676575b71cf83b09cb9801c85b447cb1aa4ad8f33dd1c7a7aa7492b5",
-      "bytes": 17094
+      "bytes": 17051
     },
     {
       "file": "l10n/prerender/fr/alcohol-free.html.gz",
@@ -14761,7 +14761,7 @@
     {
       "file": "l10n/prerender/fr/ayurveda-training-programme.html.gz",
       "sha256": "382d8302cad95a33fc40dfe296fbe6f64742e8edeace16edb1232877fec15bcb",
-      "bytes": 18061
+      "bytes": 18009
     },
     {
       "file": "l10n/prerender/fr/ayurveda-training.html.gz",
@@ -14901,7 +14901,7 @@
     {
       "file": "l10n/prerender/fr/classic-villa.html.gz",
       "sha256": "1eb33bbd56ce24a641653d0862e6f09381a144986578f5201636f3f2788babe2",
-      "bytes": 15320
+      "bytes": 15283
     },
     {
       "file": "l10n/prerender/fr/consultancy.html.gz",
@@ -15040,13 +15040,13 @@
     },
     {
       "file": "l10n/prerender/fr/index.json",
-      "sha256": "1c3545ddc932e9eac734902cd19ba907d6c6c7277b045906d740ddcccf5f922c",
-      "bytes": 54300
+      "sha256": "156bfe8a595e8f5aee41e418ce5fd8e60f01becb8c9148e76ed14d56f4a75c79",
+      "bytes": 54313
     },
     {
       "file": "l10n/prerender/fr/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
       "sha256": "0fcb32fb558d79f3f51639df4fb5f9079ac235818038b0711d185c81c037a110",
-      "bytes": 16363
+      "bytes": 16302
     },
     {
       "file": "l10n/prerender/fr/internships-at-kairali.html.gz",
@@ -15181,7 +15181,7 @@
     {
       "file": "l10n/prerender/fr/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
       "sha256": "09282672e4d98ee07438e1db33da4b22076e06edda9e1917a8483f6bab5704e2",
-      "bytes": 16851
+      "bytes": 16788
     },
     {
       "file": "l10n/prerender/fr/live-to-100-with-panchkarma.html.gz",
@@ -15261,7 +15261,7 @@
     {
       "file": "l10n/prerender/fr/one-day-ayurveda-workshop-program-kerala.html.gz",
       "sha256": "b8eef15c1cfc10aa20047fb613dd06fdb98070853f84b18141c5af3c715e8a6a",
-      "bytes": 16125
+      "bytes": 16075
     },
     {
       "file": "l10n/prerender/fr/online-consultation.html.gz",
@@ -15406,7 +15406,7 @@
     {
       "file": "l10n/prerender/fr/royal-villa.html.gz",
       "sha256": "0f8105d88b65cacad4dee8db477979ac0b553e44b38bee8ce722b6412661cd84",
-      "bytes": 15393
+      "bytes": 15446
     },
     {
       "file": "l10n/prerender/fr/search-results.html.gz",
@@ -15486,12 +15486,12 @@
     {
       "file": "l10n/prerender/fr/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
       "sha256": "13bf283088dc61d330214a45fc8f8b63c08268f74c04c2d7a25e229c0700816e",
-      "bytes": 16232
+      "bytes": 16184
     },
     {
       "file": "l10n/prerender/fr/training-course-fees.html.gz",
       "sha256": "f42251362bf6c8cfdfc7d94df9759f4f3f877944c4a23687be7e5f77ee75068a",
-      "bytes": 15503
+      "bytes": 15437
     },
     {
       "file": "l10n/prerender/fr/training-programs.html.gz",
@@ -15700,8 +15700,8 @@
     },
     {
       "file": "l10n/prerender/fr/yoga-and-meditation-package.html.gz",
-      "sha256": "34095a0da467930bade1017ecd4e32c5d3dcba837ac3e1920a655797163bdc6f",
-      "bytes": 14258
+      "sha256": "0554051e6dbd23a2da225bb5a947999204e16cc40f1b1d199dca94c35fcbc2e5",
+      "bytes": 14465
     },
     {
       "file": "l10n/prerender/fr/yoga-based-stress-energy-reset-program.html.gz",
@@ -15766,7 +15766,7 @@
     {
       "file": "l10n/prerender/es/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
       "sha256": "20e9f0c4bdf2a5feb62bd0479bedd0fd58a9c30008d6d7813ac874bb41a87b45",
-      "bytes": 16995
+      "bytes": 16976
     },
     {
       "file": "l10n/prerender/es/alcohol-free.html.gz",
@@ -15846,7 +15846,7 @@
     {
       "file": "l10n/prerender/es/ayurveda-training-programme.html.gz",
       "sha256": "3837b4989fe17ee1d931ffc28926d5f9fa15ad952a9b7c78e918d319c676b42d",
-      "bytes": 17765
+      "bytes": 17739
     },
     {
       "file": "l10n/prerender/es/ayurveda-training.html.gz",
@@ -15986,7 +15986,7 @@
     {
       "file": "l10n/prerender/es/classic-villa.html.gz",
       "sha256": "c82238124b749e613130db29be9361e2f32393da832798f6bd7c1b67002ab3b9",
-      "bytes": 15119
+      "bytes": 15083
     },
     {
       "file": "l10n/prerender/es/consultancy.html.gz",
@@ -16125,13 +16125,13 @@
     },
     {
       "file": "l10n/prerender/es/index.json",
-      "sha256": "252f117094589d9f1f25ee650e13336f6a54dabaced028f7a62274a03a43d929",
-      "bytes": 54296
+      "sha256": "6a16abdc8c0b4601d7553a7bcf9f2bc1117aa0a4d19effea90cd1767fa1b6c75",
+      "bytes": 54309
     },
     {
       "file": "l10n/prerender/es/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
       "sha256": "8bcbf97c6d4532df69cdb125c2e4af354d6aa895d9a152236b71d9cbf0528fde",
-      "bytes": 16181
+      "bytes": 16144
     },
     {
       "file": "l10n/prerender/es/internships-at-kairali.html.gz",
@@ -16266,7 +16266,7 @@
     {
       "file": "l10n/prerender/es/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
       "sha256": "db320125ac65b2255737f73c6b1ef47f43ec1a7fbaf64720aa02927e88139964",
-      "bytes": 16569
+      "bytes": 16549
     },
     {
       "file": "l10n/prerender/es/live-to-100-with-panchkarma.html.gz",
@@ -16346,7 +16346,7 @@
     {
       "file": "l10n/prerender/es/one-day-ayurveda-workshop-program-kerala.html.gz",
       "sha256": "1a4a4aafa46cabcf2636bb93340043c271c7ddceadf0403b2f22e6b9e622ea78",
-      "bytes": 15995
+      "bytes": 15956
     },
     {
       "file": "l10n/prerender/es/online-consultation.html.gz",
@@ -16491,7 +16491,7 @@
     {
       "file": "l10n/prerender/es/royal-villa.html.gz",
       "sha256": "bf22c152abce594037ace64363007b7403e64f07c007acbcd47fe4664c9669e5",
-      "bytes": 15304
+      "bytes": 15355
     },
     {
       "file": "l10n/prerender/es/search-results.html.gz",
@@ -16571,12 +16571,12 @@
     {
       "file": "l10n/prerender/es/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
       "sha256": "ed7bcab370ca0c4c04f244c61994dc8ec0010351b5fad0f57fda94d2352726f1",
-      "bytes": 16015
+      "bytes": 15971
     },
     {
       "file": "l10n/prerender/es/training-course-fees.html.gz",
       "sha256": "ba4e2b61b8913949d43ca64025c63b77155f26f369b17765e3b5dc455fb2261b",
-      "bytes": 15446
+      "bytes": 15394
     },
     {
       "file": "l10n/prerender/es/training-programs.html.gz",
@@ -16785,8 +16785,8 @@
     },
     {
       "file": "l10n/prerender/es/yoga-and-meditation-package.html.gz",
-      "sha256": "55655caa7b76974cf5f4e4a0a7143589b7aee87d1d97c9c9dfd70901aea8ce1d",
-      "bytes": 14108
+      "sha256": "424a907ecf2dbfe69c6d963842cdda9fa383d796b3fca3c77117bb88655de8c2",
+      "bytes": 14305
     },
     {
       "file": "l10n/prerender/es/yoga-based-stress-energy-reset-program.html.gz",
@@ -16851,7 +16851,7 @@
     {
       "file": "l10n/prerender/it/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
       "sha256": "7721737c8be8ba05356b9ffd4e167448d6a77b9221a32a3d53a2405ac9cf499d",
-      "bytes": 16886
+      "bytes": 16897
     },
     {
       "file": "l10n/prerender/it/alcohol-free.html.gz",
@@ -16931,7 +16931,7 @@
     {
       "file": "l10n/prerender/it/ayurveda-training-programme.html.gz",
       "sha256": "15e4aea74b43ea9c689ed5ae707b5de92b33bffd82fba640f5c86d6501db723b",
-      "bytes": 17802
+      "bytes": 17770
     },
     {
       "file": "l10n/prerender/it/ayurveda-training.html.gz",
@@ -17071,7 +17071,7 @@
     {
       "file": "l10n/prerender/it/classic-villa.html.gz",
       "sha256": "124d70f8427a1e916f704f4a98538d639f6e02907226a547de8cfdd52fd6e15d",
-      "bytes": 15177
+      "bytes": 15145
     },
     {
       "file": "l10n/prerender/it/consultancy.html.gz",
@@ -17210,13 +17210,13 @@
     },
     {
       "file": "l10n/prerender/it/index.json",
-      "sha256": "5454c0a94105a1d3e0c95c9aac8408a24132ca35798653d0e0277b7035ddb5e4",
-      "bytes": 54296
+      "sha256": "bb312cd122106fce90753b8dbf81704bf582fb0a218d9a375757913c6587de3d",
+      "bytes": 54309
     },
     {
       "file": "l10n/prerender/it/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
       "sha256": "1fc3c6139a9cd2a9ce4448974d49c8ee0eeb86fcdc48b42b2f421652db95c683",
-      "bytes": 16204
+      "bytes": 16174
     },
     {
       "file": "l10n/prerender/it/internships-at-kairali.html.gz",
@@ -17351,7 +17351,7 @@
     {
       "file": "l10n/prerender/it/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
       "sha256": "c10a3c5cc2e5c132e8e01a59a0fafb755dd349bac9bbd5c87edc9cda1a612a9e",
-      "bytes": 16561
+      "bytes": 16541
     },
     {
       "file": "l10n/prerender/it/live-to-100-with-panchkarma.html.gz",
@@ -17431,7 +17431,7 @@
     {
       "file": "l10n/prerender/it/one-day-ayurveda-workshop-program-kerala.html.gz",
       "sha256": "ba068532d87b57cdce8e3dca29078d4e79b9d1c5800b821b5ce5e24ac3f341e5",
-      "bytes": 16038
+      "bytes": 16021
     },
     {
       "file": "l10n/prerender/it/online-consultation.html.gz",
@@ -17576,7 +17576,7 @@
     {
       "file": "l10n/prerender/it/royal-villa.html.gz",
       "sha256": "a46b512937109d31b6fc06eecae4245b4aa4fb5ced7aa42245008266ca3f3aab",
-      "bytes": 15331
+      "bytes": 15383
     },
     {
       "file": "l10n/prerender/it/search-results.html.gz",
@@ -17656,12 +17656,12 @@
     {
       "file": "l10n/prerender/it/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
       "sha256": "fe4e85f657ff605abb75889555ebdbccdc44662020dd98090c9f4d944ddf5ce7",
-      "bytes": 16055
+      "bytes": 16027
     },
     {
       "file": "l10n/prerender/it/training-course-fees.html.gz",
       "sha256": "9aea17ae3d3108662cac56c1818e94de0dab7d5d8d6fe65c28141c9ba8db1133",
-      "bytes": 15380
+      "bytes": 15328
     },
     {
       "file": "l10n/prerender/it/training-programs.html.gz",
@@ -17870,8 +17870,8 @@
     },
     {
       "file": "l10n/prerender/it/yoga-and-meditation-package.html.gz",
-      "sha256": "401631c35500f91cfe60199ee0cad9b18a381db404c350c235de1fea44bcc320",
-      "bytes": 14070
+      "sha256": "045fbbb79847cc42821b8a4a1fa6421730b4754dd76a4b7797bc466505766e73",
+      "bytes": 14282
     },
     {
       "file": "l10n/prerender/it/yoga-based-stress-energy-reset-program.html.gz",
@@ -17936,7 +17936,7 @@
     {
       "file": "l10n/prerender/pt/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
       "sha256": "fdbef6ed1e65f23887ea43b8767418031b8267a17519c518650d7df6bdf0bfeb",
-      "bytes": 16951
+      "bytes": 16933
     },
     {
       "file": "l10n/prerender/pt/alcohol-free.html.gz",
@@ -18016,7 +18016,7 @@
     {
       "file": "l10n/prerender/pt/ayurveda-training-programme.html.gz",
       "sha256": "395e5e315ed541a19e21473f9c4ab178732d75611a91013def0e7f1d93220c73",
-      "bytes": 17847
+      "bytes": 17818
     },
     {
       "file": "l10n/prerender/pt/ayurveda-training.html.gz",
@@ -18156,7 +18156,7 @@
     {
       "file": "l10n/prerender/pt/classic-villa.html.gz",
       "sha256": "734df616e9477e6403a97fef767d86ab670890866f2dcaf476fb4cec5931ec2b",
-      "bytes": 15224
+      "bytes": 15190
     },
     {
       "file": "l10n/prerender/pt/consultancy.html.gz",
@@ -18295,13 +18295,13 @@
     },
     {
       "file": "l10n/prerender/pt/index.json",
-      "sha256": "76575c521ae1bf1c3ce815b0d544d29a23a139f6bf07a46d42ace3431a397b8e",
-      "bytes": 54295
+      "sha256": "fa87baae489933934391595c40af59a39dff2c5a18721cb09a40060fd8c78ace",
+      "bytes": 54308
     },
     {
       "file": "l10n/prerender/pt/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
       "sha256": "a6afef1dec619cef8d44e31ff0d2464f313e45cf2f1b97d575ff9e93fd94f7c0",
-      "bytes": 16251
+      "bytes": 16213
     },
     {
       "file": "l10n/prerender/pt/internships-at-kairali.html.gz",
@@ -18436,7 +18436,7 @@
     {
       "file": "l10n/prerender/pt/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
       "sha256": "60054d5399e5031633f7bb82f2ca5c11b5dc6b3c0df2e6aedad00733cd0ea586",
-      "bytes": 16628
+      "bytes": 16618
     },
     {
       "file": "l10n/prerender/pt/live-to-100-with-panchkarma.html.gz",
@@ -18516,7 +18516,7 @@
     {
       "file": "l10n/prerender/pt/one-day-ayurveda-workshop-program-kerala.html.gz",
       "sha256": "a52439db5b70a168b021b8d6d3ec1e8a56e531c2ad2e91fa34a71856f6341cf0",
-      "bytes": 16077
+      "bytes": 16028
     },
     {
       "file": "l10n/prerender/pt/online-consultation.html.gz",
@@ -18661,7 +18661,7 @@
     {
       "file": "l10n/prerender/pt/royal-villa.html.gz",
       "sha256": "14c21a99ca27aae49cb5ba21662b3fbec87cd9e5dad81f711b13ea1bb79a0813",
-      "bytes": 15380
+      "bytes": 15431
     },
     {
       "file": "l10n/prerender/pt/search-results.html.gz",
@@ -18741,12 +18741,12 @@
     {
       "file": "l10n/prerender/pt/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
       "sha256": "bb5009481cfb50304284370f334c641ff5006e49465c772fa2ce85664b2d043b",
-      "bytes": 16065
+      "bytes": 16033
     },
     {
       "file": "l10n/prerender/pt/training-course-fees.html.gz",
       "sha256": "b33e4fffd6eb8492e9a0dc466261d917f3bba4853808e30e5660db2d1d2fcd14",
-      "bytes": 15474
+      "bytes": 15424
     },
     {
       "file": "l10n/prerender/pt/training-programs.html.gz",
@@ -18955,8 +18955,8 @@
     },
     {
       "file": "l10n/prerender/pt/yoga-and-meditation-package.html.gz",
-      "sha256": "2264e6180c8661ef11ee294389e4b0a3af57ee256dc25f6a4a2b2951345481d3",
-      "bytes": 14151
+      "sha256": "1d475e5a046ce531a08247cc38a75fd7d8c1b0cad76f270337cb1f5c0ed0c471",
+      "bytes": 14366
     },
     {
       "file": "l10n/prerender/pt/yoga-based-stress-energy-reset-program.html.gz",
@@ -19021,7 +19021,7 @@
     {
       "file": "l10n/prerender/nl/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
       "sha256": "adc1c6fdf88f494828d8389fd8ca1b887233944ec754deb62a51ab3324f96546",
-      "bytes": 16859
+      "bytes": 16824
     },
     {
       "file": "l10n/prerender/nl/alcohol-free.html.gz",
@@ -19101,7 +19101,7 @@
     {
       "file": "l10n/prerender/nl/ayurveda-training-programme.html.gz",
       "sha256": "144664b7a5af5752622d8be2ef9eaa73e93f9f1e105e186b973a2f710e20f444",
-      "bytes": 17734
+      "bytes": 17678
     },
     {
       "file": "l10n/prerender/nl/ayurveda-training.html.gz",
@@ -19241,7 +19241,7 @@
     {
       "file": "l10n/prerender/nl/classic-villa.html.gz",
       "sha256": "10807d434babc733fd75a0deb5b0c20b0ea1e82c46d04da582fac7a4600f4631",
-      "bytes": 15171
+      "bytes": 15137
     },
     {
       "file": "l10n/prerender/nl/consultancy.html.gz",
@@ -19380,13 +19380,13 @@
     },
     {
       "file": "l10n/prerender/nl/index.json",
-      "sha256": "182f37e4fde314665a68628a8423839798da797a52a86a2769da3bd07f8f4b16",
-      "bytes": 54295
+      "sha256": "95cac38d0d7c21652af41afdfeecf03991ce39aab7e59d608b77a613a34b3644",
+      "bytes": 54308
     },
     {
       "file": "l10n/prerender/nl/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
       "sha256": "45d45596988d5cdbaf2858eff4261e421f477e4e116f4071c2e610c625258e2c",
-      "bytes": 16151
+      "bytes": 16115
     },
     {
       "file": "l10n/prerender/nl/internships-at-kairali.html.gz",
@@ -19521,7 +19521,7 @@
     {
       "file": "l10n/prerender/nl/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
       "sha256": "5a9643c2f3a9644b13d4332e191b6e50baf854266ed9a72fede978562654ec2f",
-      "bytes": 16532
+      "bytes": 16499
     },
     {
       "file": "l10n/prerender/nl/live-to-100-with-panchkarma.html.gz",
@@ -19601,7 +19601,7 @@
     {
       "file": "l10n/prerender/nl/one-day-ayurveda-workshop-program-kerala.html.gz",
       "sha256": "73f8401e8914a20cb4a5279fe1e67667b24167421e26da3932b508b2debd83cf",
-      "bytes": 15953
+      "bytes": 15907
     },
     {
       "file": "l10n/prerender/nl/online-consultation.html.gz",
@@ -19746,7 +19746,7 @@
     {
       "file": "l10n/prerender/nl/royal-villa.html.gz",
       "sha256": "9237550378c91af5b6fbc3e9ca2d23f2971eabb993951d3a87521d8d84e36640",
-      "bytes": 15293
+      "bytes": 15345
     },
     {
       "file": "l10n/prerender/nl/search-results.html.gz",
@@ -19826,12 +19826,12 @@
     {
       "file": "l10n/prerender/nl/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
       "sha256": "7cf3ef7b79ebe64e4fe9736f25af85c264ef856b5c5356f5980ba052b967c305",
-      "bytes": 16006
+      "bytes": 15953
     },
     {
       "file": "l10n/prerender/nl/training-course-fees.html.gz",
       "sha256": "1d4a76077dcfdece85ff5ebed917afd5ae44784178c60d860e0390a5964ce5d1",
-      "bytes": 15335
+      "bytes": 15276
     },
     {
       "file": "l10n/prerender/nl/training-programs.html.gz",
@@ -20040,8 +20040,8 @@
     },
     {
       "file": "l10n/prerender/nl/yoga-and-meditation-package.html.gz",
-      "sha256": "1bff99da96fd76e45c0db146436739839d67c961fc2324d5017571a8272073a9",
-      "bytes": 14082
+      "sha256": "6681e81e6fd5af6854d1f0a2f0fcffe4f61361c5c27ac9486fdd75eca45adc21",
+      "bytes": 14299
     },
     {
       "file": "l10n/prerender/nl/yoga-based-stress-energy-reset-program.html.gz",
@@ -20106,7 +20106,7 @@
     {
       "file": "l10n/prerender/ru/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
       "sha256": "a4ee57310c5b3a5e8b542af034ca6bc19ee26482c30a6572b82351deddcbd6a3",
-      "bytes": 18931
+      "bytes": 18799
     },
     {
       "file": "l10n/prerender/ru/alcohol-free.html.gz",
@@ -20186,7 +20186,7 @@
     {
       "file": "l10n/prerender/ru/ayurveda-training-programme.html.gz",
       "sha256": "84fb0e9df148e0958dd95512150baa62d4f6520a3b6c2f7792bb67176b9a4b5a",
-      "bytes": 19811
+      "bytes": 19676
     },
     {
       "file": "l10n/prerender/ru/ayurveda-training.html.gz",
@@ -20326,7 +20326,7 @@
     {
       "file": "l10n/prerender/ru/classic-villa.html.gz",
       "sha256": "f30053dcd48c42fe07cbecd4b2e926c1c5b072d103f309e36df101857a8efd34",
-      "bytes": 16526
+      "bytes": 16482
     },
     {
       "file": "l10n/prerender/ru/consultancy.html.gz",
@@ -20465,13 +20465,13 @@
     },
     {
       "file": "l10n/prerender/ru/index.json",
-      "sha256": "968b4dcc43d15722418ff23cb47c458a4557ae0796e5e0be6d811ba86bc33086",
-      "bytes": 54296
+      "sha256": "bef71379ab7d286a127cb80e5536cafce6a737d79d283caf31b46ebbc1df9c24",
+      "bytes": 54309
     },
     {
       "file": "l10n/prerender/ru/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
       "sha256": "bbf2fec7a4e67ba2b22ccb9661ff797419b60aec536aff8193a89a931e447590",
-      "bytes": 18085
+      "bytes": 17946
     },
     {
       "file": "l10n/prerender/ru/internships-at-kairali.html.gz",
@@ -20606,7 +20606,7 @@
     {
       "file": "l10n/prerender/ru/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
       "sha256": "cfd4fe60cefc0ca0b31181e9a625b82a9ae3cfa822624576d078c3d736699eb8",
-      "bytes": 18572
+      "bytes": 18463
     },
     {
       "file": "l10n/prerender/ru/live-to-100-with-panchkarma.html.gz",
@@ -20686,7 +20686,7 @@
     {
       "file": "l10n/prerender/ru/one-day-ayurveda-workshop-program-kerala.html.gz",
       "sha256": "10d4bcfea5c9b83b1a4785c00c2fd2834549a10d0a45587761174b8fbf7e5eac",
-      "bytes": 17739
+      "bytes": 17612
     },
     {
       "file": "l10n/prerender/ru/online-consultation.html.gz",
@@ -20831,7 +20831,7 @@
     {
       "file": "l10n/prerender/ru/royal-villa.html.gz",
       "sha256": "b72e735ba4f87b20f8d4f9a1676db8bd9d096e118c48fb1db46a6743286a9177",
-      "bytes": 16730
+      "bytes": 16793
     },
     {
       "file": "l10n/prerender/ru/search-results.html.gz",
@@ -20911,12 +20911,12 @@
     {
       "file": "l10n/prerender/ru/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
       "sha256": "5c4f0d540397f8ef9aaabf9fd359d7d3d42f88505c5a09b7411495e79a1cdb5f",
-      "bytes": 17747
+      "bytes": 17605
     },
     {
       "file": "l10n/prerender/ru/training-course-fees.html.gz",
       "sha256": "06323cb3212d367bcc1c38d055d84ddba10c37aca622f2a31a471b17ceee45a3",
-      "bytes": 16822
+      "bytes": 16698
     },
     {
       "file": "l10n/prerender/ru/training-programs.html.gz",
@@ -21125,8 +21125,8 @@
     },
     {
       "file": "l10n/prerender/ru/yoga-and-meditation-package.html.gz",
-      "sha256": "1bceb6afe23969592866fcc0fe22ee0f8e21f1e2471b628e99c4fc493c0d2f93",
-      "bytes": 15404
+      "sha256": "8ceac256a3f426ee62b133f796cf081745a0813cb7a82d245e69ba18a41d9019",
+      "bytes": 15617
     },
     {
       "file": "l10n/prerender/ru/yoga-based-stress-energy-reset-program.html.gz",
@@ -21191,7 +21191,7 @@
     {
       "file": "l10n/prerender/ar/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
       "sha256": "987744600597e701dfd30f5b32fe54e7cd9973db89fe9e5ff68517404b18307d",
-      "bytes": 17830
+      "bytes": 17723
     },
     {
       "file": "l10n/prerender/ar/alcohol-free.html.gz",
@@ -21271,7 +21271,7 @@
     {
       "file": "l10n/prerender/ar/ayurveda-training-programme.html.gz",
       "sha256": "c5add9e99a457a592a8a08a945216aed2dbd2fcb7d599545728a083cc02bc32c",
-      "bytes": 18705
+      "bytes": 18556
     },
     {
       "file": "l10n/prerender/ar/ayurveda-training.html.gz",
@@ -21411,7 +21411,7 @@
     {
       "file": "l10n/prerender/ar/classic-villa.html.gz",
       "sha256": "e79356e5ee26842b0d774e78fee3e402bec44c350968f9d9b380e11120201c19",
-      "bytes": 15895
+      "bytes": 15860
     },
     {
       "file": "l10n/prerender/ar/consultancy.html.gz",
@@ -21550,13 +21550,13 @@
     },
     {
       "file": "l10n/prerender/ar/index.json",
-      "sha256": "c3bb4c26a9ee627468efce9a0a0d554147f74c36054ac6b237c5fadfcd6231d4",
-      "bytes": 54286
+      "sha256": "d9a0bf5caf39662974370dd6cf610bf922be417a0fef0dc578353a5293976646",
+      "bytes": 54299
     },
     {
       "file": "l10n/prerender/ar/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
       "sha256": "0d55751428bdaf23485cf920a6577acb7694171169ae0d8ceb8bc408a0d98f56",
-      "bytes": 17135
+      "bytes": 16996
     },
     {
       "file": "l10n/prerender/ar/internships-at-kairali.html.gz",
@@ -21691,7 +21691,7 @@
     {
       "file": "l10n/prerender/ar/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
       "sha256": "b84488586f2dd649b51e0302c4de92d6082084d5cbc23d06a8e12b3bf5d8d589",
-      "bytes": 17677
+      "bytes": 17540
     },
     {
       "file": "l10n/prerender/ar/live-to-100-with-panchkarma.html.gz",
@@ -21771,7 +21771,7 @@
     {
       "file": "l10n/prerender/ar/one-day-ayurveda-workshop-program-kerala.html.gz",
       "sha256": "ab5f8c0df403fdacc0434dcc33423eddcbcc837488d9d15b3f4d56e3e80e34a0",
-      "bytes": 16869
+      "bytes": 16727
     },
     {
       "file": "l10n/prerender/ar/online-consultation.html.gz",
@@ -21916,7 +21916,7 @@
     {
       "file": "l10n/prerender/ar/royal-villa.html.gz",
       "sha256": "4a7d74eccd332521983c7bc24b6bda9c067be5c083d03af366283fda6c69725c",
-      "bytes": 15965
+      "bytes": 16025
     },
     {
       "file": "l10n/prerender/ar/search-results.html.gz",
@@ -21996,12 +21996,12 @@
     {
       "file": "l10n/prerender/ar/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
       "sha256": "423eccc2c215e236116f872dc33c13de22e6898aacc29ed04ee33037dfdc5f03",
-      "bytes": 16959
+      "bytes": 16809
     },
     {
       "file": "l10n/prerender/ar/training-course-fees.html.gz",
       "sha256": "8c4e1a3a3e65802abe266ae25778e2e3fd4fa7af06cc16b80eb65169535e293c",
-      "bytes": 16139
+      "bytes": 15990
     },
     {
       "file": "l10n/prerender/ar/training-programs.html.gz",
@@ -22210,8 +22210,8 @@
     },
     {
       "file": "l10n/prerender/ar/yoga-and-meditation-package.html.gz",
-      "sha256": "ef5d05aa4273972d3322e8acbdc6d62fd68600e60342185b3e9456d6329527b9",
-      "bytes": 14785
+      "sha256": "b17d5badac262760c08edcf57886f8d81a31cf56aac995b3062350fbfd0f7749",
+      "bytes": 15020
     },
     {
       "file": "l10n/prerender/ar/yoga-based-stress-energy-reset-program.html.gz",
@@ -22276,7 +22276,7 @@
     {
       "file": "l10n/prerender/zh-Hans/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
       "sha256": "7e94e8225709b422aef6cc94bf59837ef279c53bf935cfeb13cb6f5634fe0400",
-      "bytes": 17667
+      "bytes": 17406
     },
     {
       "file": "l10n/prerender/zh-Hans/alcohol-free.html.gz",
@@ -22356,7 +22356,7 @@
     {
       "file": "l10n/prerender/zh-Hans/ayurveda-training-programme.html.gz",
       "sha256": "65195791591c397dc7db4845f48d2846bfdff4b4c8708868c1de5d7a59097544",
-      "bytes": 18503
+      "bytes": 18194
     },
     {
       "file": "l10n/prerender/zh-Hans/ayurveda-training.html.gz",
@@ -22496,7 +22496,7 @@
     {
       "file": "l10n/prerender/zh-Hans/classic-villa.html.gz",
       "sha256": "903fbd38d855c3849856d20aa28a8f00a83a5f41af591fc7cfc53994f0cff574",
-      "bytes": 15553
+      "bytes": 15519
     },
     {
       "file": "l10n/prerender/zh-Hans/consultancy.html.gz",
@@ -22635,13 +22635,13 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/index.json",
-      "sha256": "7b533253ca72a71d7a4bb603e8e20915660565fe1cd938e569867ff00b821b62",
-      "bytes": 54228
+      "sha256": "e27e11d1d2b4d6606958883b8f641db05eeb0facf4a88521f7593227984a540d",
+      "bytes": 54241
     },
     {
       "file": "l10n/prerender/zh-Hans/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
       "sha256": "eed8292756b609d44613728725717d1365136c454c6cff196261d9ed38fb7671",
-      "bytes": 16936
+      "bytes": 16648
     },
     {
       "file": "l10n/prerender/zh-Hans/internships-at-kairali.html.gz",
@@ -22776,7 +22776,7 @@
     {
       "file": "l10n/prerender/zh-Hans/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
       "sha256": "07193261498d9338053464c043228d96e755c2adee79756b392367063c45483f",
-      "bytes": 17292
+      "bytes": 17043
     },
     {
       "file": "l10n/prerender/zh-Hans/live-to-100-with-panchkarma.html.gz",
@@ -22856,7 +22856,7 @@
     {
       "file": "l10n/prerender/zh-Hans/one-day-ayurveda-workshop-program-kerala.html.gz",
       "sha256": "e67e76de72c0de676355e35a48fdb6c8e0ab6a943134022918541121a254d737",
-      "bytes": 16671
+      "bytes": 16416
     },
     {
       "file": "l10n/prerender/zh-Hans/online-consultation.html.gz",
@@ -23001,7 +23001,7 @@
     {
       "file": "l10n/prerender/zh-Hans/royal-villa.html.gz",
       "sha256": "0ba218e625c2fe3a2143be9a5dcf3fe3865813afc6ce5f2fe19168527483bab3",
-      "bytes": 15680
+      "bytes": 15722
     },
     {
       "file": "l10n/prerender/zh-Hans/search-results.html.gz",
@@ -23081,12 +23081,12 @@
     {
       "file": "l10n/prerender/zh-Hans/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
       "sha256": "19554571a3aaf46eec4cf034f023e0790566c0782a41102f144584f136212ef6",
-      "bytes": 16704
+      "bytes": 16417
     },
     {
       "file": "l10n/prerender/zh-Hans/training-course-fees.html.gz",
       "sha256": "3e875be5a5a20e55cabaeb822701729b606ffdb04653644b771a5b42eae0bf25",
-      "bytes": 16002
+      "bytes": 15779
     },
     {
       "file": "l10n/prerender/zh-Hans/training-programs.html.gz",
@@ -23295,8 +23295,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/yoga-and-meditation-package.html.gz",
-      "sha256": "106e3ffd4b2c9e9da711039586459db18e41b34b66dd0b6a3d7a38a78eec4c6d",
-      "bytes": 14665
+      "sha256": "465e05bbf3cd4f25f4521be987c0b6fbc2415f4919ead26440e86080778cd8d5",
+      "bytes": 14913
     },
     {
       "file": "l10n/prerender/zh-Hans/yoga-based-stress-energy-reset-program.html.gz",
@@ -23361,7 +23361,7 @@
     {
       "file": "l10n/prerender/ja/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
       "sha256": "2512a9c5fabd0b6857f84736159a94e151b47d309efec9c575643c2b93dfb8d5",
-      "bytes": 18191
+      "bytes": 17977
     },
     {
       "file": "l10n/prerender/ja/alcohol-free.html.gz",
@@ -23441,7 +23441,7 @@
     {
       "file": "l10n/prerender/ja/ayurveda-training-programme.html.gz",
       "sha256": "4a0dd1c2337479d64a16ed5fc94a4a316d6e357b59a47fab39e959db50484a70",
-      "bytes": 19141
+      "bytes": 18865
     },
     {
       "file": "l10n/prerender/ja/ayurveda-training.html.gz",
@@ -23581,7 +23581,7 @@
     {
       "file": "l10n/prerender/ja/classic-villa.html.gz",
       "sha256": "6a1650623360c365e8b8ce4a9f42e0a4128f7efaf6b1fc05ddcc2d646211ed8b",
-      "bytes": 16178
+      "bytes": 16137
     },
     {
       "file": "l10n/prerender/ja/consultancy.html.gz",
@@ -23720,13 +23720,13 @@
     },
     {
       "file": "l10n/prerender/ja/index.json",
-      "sha256": "ca1da932470cacf863d9fed162df4b4e8e6463fe77ac6db1fb68c4b609fbbcbc",
-      "bytes": 54240
+      "sha256": "08ab42d04c8a9aba38b849b19080605c16215939b21291331421f40672a4ada3",
+      "bytes": 54253
     },
     {
       "file": "l10n/prerender/ja/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
       "sha256": "ce85d79f07e47dfdf63a951debd18e8b3aadb987d969aa4fc55b2538e76b07c7",
-      "bytes": 17386
+      "bytes": 17143
     },
     {
       "file": "l10n/prerender/ja/internships-at-kairali.html.gz",
@@ -23861,7 +23861,7 @@
     {
       "file": "l10n/prerender/ja/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
       "sha256": "131e47be7ac7c0e867bc2411bb4b7055033553e64856b67abfb8fb79695fc4a2",
-      "bytes": 18085
+      "bytes": 17875
     },
     {
       "file": "l10n/prerender/ja/live-to-100-with-panchkarma.html.gz",
@@ -23941,7 +23941,7 @@
     {
       "file": "l10n/prerender/ja/one-day-ayurveda-workshop-program-kerala.html.gz",
       "sha256": "ea02c6fd71659feab9e9214b4656e82b109220a75a4d7ccff21e482567352c09",
-      "bytes": 17119
+      "bytes": 16891
     },
     {
       "file": "l10n/prerender/ja/online-consultation.html.gz",
@@ -24086,7 +24086,7 @@
     {
       "file": "l10n/prerender/ja/royal-villa.html.gz",
       "sha256": "ab44f552f975d35eb455b2239bae59be71466f38503db86958f7e8fc86a418b8",
-      "bytes": 16300
+      "bytes": 16355
     },
     {
       "file": "l10n/prerender/ja/search-results.html.gz",
@@ -24166,12 +24166,12 @@
     {
       "file": "l10n/prerender/ja/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
       "sha256": "e0189da9393ff1156377110c928b9447d118893f56c949c4bc2a3eff12a5acb3",
-      "bytes": 17245
+      "bytes": 17006
     },
     {
       "file": "l10n/prerender/ja/training-course-fees.html.gz",
       "sha256": "bcc7bcd830a4838791be231bd9544d7b459ec98bda8d5121816c02d382edaafa",
-      "bytes": 16589
+      "bytes": 16388
     },
     {
       "file": "l10n/prerender/ja/training-programs.html.gz",
@@ -24380,8 +24380,8 @@
     },
     {
       "file": "l10n/prerender/ja/yoga-and-meditation-package.html.gz",
-      "sha256": "b21328f71aae97e0441f8cf44be77bbdd5615a9633677d84f952143dd2a2906b",
-      "bytes": 15030
+      "sha256": "23dc37e83d419487f927c0d240274c61d4d04230014276c3fbb6e716acc9b9b6",
+      "bytes": 15277
     },
     {
       "file": "l10n/prerender/ja/yoga-based-stress-energy-reset-program.html.gz",
@@ -24446,7 +24446,7 @@
     {
       "file": "l10n/prerender/ko/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv.html.gz",
       "sha256": "86e71177b985c2a7ecedbd5ff5b9dc9ac73d5c6bf8c8afd58abb4b39b01edda4",
-      "bytes": 17662
+      "bytes": 17401
     },
     {
       "file": "l10n/prerender/ko/alcohol-free.html.gz",
@@ -24526,7 +24526,7 @@
     {
       "file": "l10n/prerender/ko/ayurveda-training-programme.html.gz",
       "sha256": "22cd17311a3d5960e860a917b021770d647b17bbc019825da067a967b9ebca4b",
-      "bytes": 18534
+      "bytes": 18288
     },
     {
       "file": "l10n/prerender/ko/ayurveda-training.html.gz",
@@ -24666,7 +24666,7 @@
     {
       "file": "l10n/prerender/ko/classic-villa.html.gz",
       "sha256": "9edbfb9f66c4b6b6983c647f4b467df9c00d3d87f4e6eb109bdaf0435298312d",
-      "bytes": 15683
+      "bytes": 15649
     },
     {
       "file": "l10n/prerender/ko/consultancy.html.gz",
@@ -24805,13 +24805,13 @@
     },
     {
       "file": "l10n/prerender/ko/index.json",
-      "sha256": "f1b127ce2ba79903e3edb87c4b33e9c2af2855a8a54a615741a391311135da04",
-      "bytes": 54239
+      "sha256": "3027a742e3e27d7d18cbbcaff3a5d8d214c8b750c58996b14fb52f66c5aef1d2",
+      "bytes": 54252
     },
     {
       "file": "l10n/prerender/ko/intensive-ayurveda-training-program-learn-practice-ayurveda.html.gz",
       "sha256": "9048ffe1652f85246af74525182cc6a7a6beb9f9cd3f24703b2d3ec7de2dd68f",
-      "bytes": 16809
+      "bytes": 16567
     },
     {
       "file": "l10n/prerender/ko/internships-at-kairali.html.gz",
@@ -24946,7 +24946,7 @@
     {
       "file": "l10n/prerender/ko/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv.html.gz",
       "sha256": "3abec99998d0154fde6b7a7729d5317ba3cef32fdb149a548397fe65cf6cbd10",
-      "bytes": 17334
+      "bytes": 17126
     },
     {
       "file": "l10n/prerender/ko/live-to-100-with-panchkarma.html.gz",
@@ -25026,7 +25026,7 @@
     {
       "file": "l10n/prerender/ko/one-day-ayurveda-workshop-program-kerala.html.gz",
       "sha256": "e828e919429abb2f87ae8379182e1e52c30c05c4680aac7c3f17ed8027a49651",
-      "bytes": 16691
+      "bytes": 16456
     },
     {
       "file": "l10n/prerender/ko/online-consultation.html.gz",
@@ -25171,7 +25171,7 @@
     {
       "file": "l10n/prerender/ko/royal-villa.html.gz",
       "sha256": "313d91e8b7eee5445b39c9a654423a2612e36b05ab725f5951df92539829f94e",
-      "bytes": 15828
+      "bytes": 15873
     },
     {
       "file": "l10n/prerender/ko/search-results.html.gz",
@@ -25251,12 +25251,12 @@
     {
       "file": "l10n/prerender/ko/three-day-short-term-ayurveda-certificate-program-tap-hv.html.gz",
       "sha256": "9b474c757b00a6344165f850dd246fcd4cf95907e65268474bf3607d306a9eb5",
-      "bytes": 16814
+      "bytes": 16581
     },
     {
       "file": "l10n/prerender/ko/training-course-fees.html.gz",
       "sha256": "faab6898ed0d0303cd43244279bc309f2596aad14d0e5c296d2a058c19cff2fd",
-      "bytes": 16001
+      "bytes": 15846
     },
     {
       "file": "l10n/prerender/ko/training-programs.html.gz",
@@ -25465,8 +25465,8 @@
     },
     {
       "file": "l10n/prerender/ko/yoga-and-meditation-package.html.gz",
-      "sha256": "bc3da20b3e182ec37c090ea9488aaf62bfde37233bebeb16b3e8908138f88866",
-      "bytes": 14606
+      "sha256": "5002a4e78df5f909b2a9cb666c498c0f1055b3d81390867db18849a4f57d0baf",
+      "bytes": 14808
     },
     {
       "file": "l10n/prerender/ko/yoga-based-stress-energy-reset-program.html.gz",
