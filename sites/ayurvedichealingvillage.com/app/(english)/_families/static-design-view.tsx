@@ -462,7 +462,8 @@ const STATIC_BOOT = `
     form.setAttribute("aria-busy", "true");
     if (status) status.textContent = "Sending…";
     var controller = new AbortController();
-    var timeout = setTimeout(function () { controller.abort(); }, 10000);
+    // Allow both the signed relay and Sheet acknowledgement (15 seconds each) to finish.
+    var timeout = setTimeout(function () { controller.abort(); }, 45000);
     try {
       var programme = String(data.get("programme") || "");
       var select = form.elements.namedItem("programme");
