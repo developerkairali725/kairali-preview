@@ -1,3 +1,4 @@
+import { repairFaqTopicTargets } from './faq-topic-targets.mjs';
 import { removeHomeVillaRates } from './home-villa-rates.mjs';
 import {offersFlow} from './offers-flow.mjs';
 import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes } from "./critical-media.mjs";
@@ -1298,7 +1299,7 @@ export const BOOT_SCRIPT = `
       logic.setAttribute("data-dc-script", "");
       logic.setAttribute("data-props", JSON.stringify(props));
       // deferHeroFilm: the homepage film starts after load + idle on wide screens (media-loading.mjs, P3).
-      logic.text = (${deferHeroFilm.toString()})(view.logic || "");
+      logic.text = (${deferHeroFilm.toString()})((${repairFaqTopicTargets.toString()})(view.logic || "", view.id));
       host.appendChild(logic);
 
       // Step 5 — the accepted preview layer self-attaches from its own tag,
