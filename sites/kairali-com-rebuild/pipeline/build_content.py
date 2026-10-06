@@ -101,7 +101,8 @@ def optimise_image(src_path):
         im = im.convert("RGBA") if im.mode in ("P", "LA", "RGBA") else im.convert("RGB")
         if (nw, nh) != (w, h):
             im = im.resize((nw, nh), Image.LANCZOS)
-        im.save(out_abs, "WEBP", quality=80, method=5)
+        quality = 58 if out_rel == "/media/pic/kairali-entry-gate.webp" else 80
+        im.save(out_abs, "WEBP", quality=quality, method=6)
     src_url = ("https://admin.kairali.com/" + quote(key[7:])) if key.startswith("admin:/") else HOST + quote(key)
     rec = {"src": out_rel, "w": nw, "h": nh, "source": src_url,
            "sha256": hashlib.sha256(open(local, "rb").read()).hexdigest()}

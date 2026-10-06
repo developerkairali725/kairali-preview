@@ -46,11 +46,15 @@ for key, (rel, alt, credit, bw) in PHOTOS.items():
     im = ImageOps.exif_transpose(Image.open(src)).convert("RGB")
     if bw: im = ImageOps.grayscale(im).convert("RGB")
     w, h = im.size; sizes = []
-    for tw in (640, 1024, 1600, 2200):
-        if tw > w and tw != 640: continue
+    widths = (480, 640, 1024, 1600, 2200) if key in {
+        "ahv-grounds-pond", "ahv-footbridge", "ahv-founders-wall"
+    } else (640, 1024, 1600, 2200)
+    for tw in widths:
+        if tw > w and tw not in (480, 640): continue
         out = os.path.join(OUT, f"{key}-{tw}.webp")
         if not os.path.exists(out):
-            im.resize((tw, round(h * tw / w)), Image.LANCZOS).save(out, "WEBP", quality=78, method=5)
+            quality = 58 if tw <= 480 else 78
+            im.resize((tw, round(h * tw / w)), Image.LANCZOS).save(out, "WEBP", quality=quality, method=6)
         sizes.append(tw)
     og = os.path.join(REPO, "site", "public", "og", f"{key}.jpg")
     if not os.path.exists(og):
