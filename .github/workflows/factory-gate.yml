@@ -1,663 +1,100 @@
-# Factory gate — Ship Gate A4 (brand lint) + A2 (factory spec suite).
-# Separate workflow from gate.yml ON PURPOSE: gate.yml is being amended by
-# PR #2 (docs-sync-v2-shopify); a second file avoids a merge conflict and
-# keeps the fast lint path independent of the build cache.
-# Gates are added, never weakened (CLAUDE.md rule g).
+# Owner-directed maintenance policy, 6 October 2026.
+# One site edit selects that site; shared inputs select actual consumers.
+# Historical design/signature/process ledgers are not software merge gates.
 name: factory-gate
-
 on:
   push:
     branches: [main]
   pull_request:
-
-# ACTIONS-BURN FIX (18 Jul 2026, evening-session queue #4; DECISIONS/handover:
-# July hit 11,444 Linux minutes vs 3,000 included — $50 net overage — because
-# all 16 matrix jobs ran on EVERY push of EVERY PR, docs-only included, and the
-# old budget cap then killed a main run mid-flight).
-# A superseded PR push cancels its still-running predecessor; main pushes are
-# never cancelled (merged evidence always completes).
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
-
 permissions:
   contents: read
-
 jobs:
-  # CHANGE DETECTION for the two 8-site matrices below. NOT a weakening of any
-  # gate (rule g): the matrices validate SITE code, and this job only lets them
-  # skip when the diff PROVABLY touches no site-affecting path — the exact code
-  # they would test is already green on main. brand-lint, front-gate and the
-  # gate workflow still run on every push, so docs/content lints never skip.
-  # Required-checks safety — CORRECTED 18 Jul (learned empirically on PR #118):
-  # a matrix job skipped with a JOB-level `if` never expands its matrix, so the
-  # 16 required per-site contexts ("factory-spec (sites/…)") are never created
-  # and branch protection waits on them forever — the same freeze a workflow
-  # `paths:` filter causes. The correct pattern is STEP-level conditions: the
-  # matrix always expands, all 16 jobs spawn and report SUCCESS, but on a
-  # docs-only diff every step is skipped, so each job finishes in seconds
-  # (~1 billed minute each vs ~5-6 real minutes — an honest ~80% cut, not a
-  # fake 100%). Any ambiguity (missing/unknown base SHA, force-push) defaults
-  # to site_affecting=true — the full matrices run.
-  # sites/kairali.ai is excluded from the trigger paths: it is matrix-EXEMPT by
-  # standing ruling (D-RULE-MATRIX-EXEMPT), so no matrix job ever tests it —
-  # its own build is verified by the gate workflow + its Vercel deploy. Without
-  # this exclusion every session-end STATUS.yaml dashboard regen would burn the
-  # full ~85-minute matrix for jobs that cannot observe the change.
   changes:
     runs-on: ubuntu-latest
     outputs:
-      site_affecting: ${{ steps.diff.outputs.site_affecting }}
-      # emit_affecting gates the emit-verdicts job below (D-EMITTER-WIRING):
-      # true when the diff touches anything the verdict emitters JUDGE.
-      emit_affecting: ${{ steps.diff.outputs.emit_affecting }}
+      affected_sites: ${{ steps.plan.outputs.affected_sites }}
+      browser_sites: ${{ steps.plan.outputs.browser_sites }}
+      site_count: ${{ steps.plan.outputs.site_count }}
+      has_sites: ${{ steps.plan.outputs.has_sites }}
     steps:
       - uses: actions/checkout@v7
         with:
-          fetch-depth: 0 # diffs against the PR base / previous main tip
-
-      # BASE via env, never interpolated into the shell line (same injection
-      # doctrine as front-gate).
-      - name: Detect site-affecting changes
-        id: diff
+          fetch-depth: 0
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: Plan affected sites and shared dependencies
+        id: plan
         env:
           BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
-        run: |
-          if [ -z "$BASE" ] || ! git cat-file -e "$BASE" 2>/dev/null; then
-            echo "::notice::No usable base SHA — defaulting to site_affecting=true (full matrices) and emit_affecting=true."
-            echo "site_affecting=true" >> "$GITHUB_OUTPUT"
-            echo "emit_affecting=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          changed=$(git diff --name-only "$BASE"...HEAD)
-          echo "changed files vs merge-base:"; echo "$changed" | sed 's/^/  · /'
-          pattern='^(sites/|packages/|tests/|scripts/|\.github/workflows/|package\.json|pnpm-lock\.yaml|pnpm-workspace\.yaml|turbo\.json)'
-          exempt='^sites/kairali\.ai/'
-          if echo "$changed" | grep -E "$pattern" | grep -Ev "$exempt" | grep -q .; then
-            echo "site_affecting=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "site_affecting=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::No site-affecting paths in this diff — every factory-spec + lighthouse matrix job runs with ZERO steps and reports success in seconds. They arm automatically on any sites/, packages/, tests/, scripts/, workflow or lockfile change."
-          fi
-          # EMIT-affecting = what the verdict emitters JUDGE (D-EMITTER-WIRING).
-          # Differences from the site pattern, each a decision: tests/ is OUT
-          # (no emitter judges the spec suite's own files); docs/keywords/ is IN
-          # (G3-PRE judges the S3 artifacts, invisible to the site pattern);
-          # audits/ is deliberately OUT — the bot's own verdict commit must
-          # never re-arm the emit job (second recursion guard beside [skip ci]).
-          # Skipping on a non-judged diff weakens nothing: an unchanged artifact
-          # keeps its committed verdict's hash-binding valid (§S9(d)2), and a
-          # re-run would only rewrite identical evidence with newer timestamps.
-          emit_pattern='^(sites/|packages/|scripts/|docs/keywords/|\.github/workflows/|package\.json|pnpm-lock\.yaml|pnpm-workspace\.yaml|turbo\.json)'
-          if echo "$changed" | grep -E "$emit_pattern" | grep -Ev "$exempt" | grep -q .; then
-            echo "emit_affecting=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "emit_affecting=false" >> "$GITHUB_OUTPUT"
-            echo "::notice::No emitter-judged paths in this diff — emit-verdicts skips; every committed verdict keeps its validity (nothing it binds changed, §S9(d)2)."
-          fi
+        run: node scripts/ci-site-plan.mjs --base "$BASE"
   brand-lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-        with:
-          fetch-depth: 0 # the M2 diff-based lints below (evidence-manifest ci, evolution-lint SE-6, change-gates-resolve) diff against the PR base; a shallow clone has no base
-
-      - uses: pnpm/action-setup@v4
-
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 24
-          cache: pnpm
-
-      - name: Install
-        run: pnpm install --frozen-lockfile
-
-      - name: Brand lint (merge-blocking, Ship Gate A4 static layer)
-        run: node packages/ui/bin/brand-lint.js
-
-      # ANTI-FABRICATION LINTS — free greps, no API, no cost. They exist because
-      # every string they ban was ACTUALLY SHIPPED by us and found later:
-      #  · "Every health page is medically reviewed by Dr. Deepu John (BAMS)"
-      #    survived in app/llms.txt/route.ts — the file whose entire job is
-      #    telling ChatGPT and Perplexity what this site is — a full day after I
-      #    swept the content files and reported "0 false claims remaining".
-      #  · "Ask a doctor on WhatsApp" pointed at the Priya AI chatbot.
-      # A rule that is not executed is a comment. These execute.
-      - name: Banned-string lint (fabricated claims, locked facts)
-        run: node scripts/banned-string-lint.mjs
-
-      - name: CTA-label lint (no human/clinical claim on a bot channel)
-        run: node scripts/cta-label-lint.mjs
-
-      # D-EQ-CATALOG preview-only lock: every PR prints the live placeholder
-      # debt on armed sites (report mode, informational). The GO-LIVE half runs
-      # the same script with --golive from the launch checklist and FAILS while
-      # any placeholder remains — DNS cannot flip over placeholder data.
-      - name: Placeholder lint (D-EQ-CATALOG preview-only lock — report mode)
-        run: node scripts/placeholder-lint.mjs
-
-      # The honest-YMYL content gate (BUILD_PLAN §2.7, 35 rules). Existed since
-      # 15 Jul with passing unit tests — but the gate itself never ran against
-      # the real content in CI, so 84 real content errors sat invisible behind
-      # a green checkmark. A gate that only lints its fixtures is a comment.
-      # Its own self-test (r23) refuses to report a pass if the scanner breaks.
-      - name: Content lint (whatisayurveda honest-YMYL gate, §2.7 — merge-blocking)
-        run: node scripts/content-lint.mjs --quiet
-
-      # S3 keyword gates arm themselves the moment S3 produces artifacts. While
-      # none exist the step says so LOUDLY (no silent skip — CLAUDE.md launch
-      # evidence rules); once docs/keywords/ lands, these become merge-blocking
-      # with no workflow edit.
-      - name: S3 keyword gates (seed-lint + keyword-validate — armed when artifacts exist)
-        run: |
-          armed=0
-          for seeds in docs/keywords/*/seeds.json; do
-            [ -e "$seeds" ] || continue
-            armed=1
-            dir=$(dirname "$seeds")
-            echo "── seed-lint: $dir"
-            node scripts/seed-lint.mjs --seeds "$seeds" --ontology "$dir/ontology.json"
-            if [ -e "$dir/demand.json" ]; then
-              echo "── keyword-validate: $dir"
-              node scripts/keyword-validate.mjs --artifact "$dir/demand.json" --ontology "$dir/ontology.json" --seeds "$seeds"
-            fi
-          done
-          if [ "$armed" = 0 ]; then
-            echo "::notice::S3 keyword gates NOT ARMED — no docs/keywords/*/seeds.json artifacts exist yet. The gates arm automatically when S3 produces them."
-          fi
-
-      # SELF-REGISTRATION GATE (retro-audit 17 Jul, process fix #1). The matrix
-      # below once promised "every Factory site adds itself here at scaffold
-      # time" in a comment — and four sites then shipped without ever entering
-      # it, so the browser gate never ran on them. This step makes the promise
-      # mechanical: a sites/<domain> with a site.config.json that is absent
-      # from ANY site matrix in this file fails the PR that introduces it.
-      - name: Factory matrix self-registration lint (site on disk ⇒ site in matrix)
-        run: node scripts/factory-matrix-lint.mjs
-
-      # LAUNCH EVIDENCE GATE (retro-audit 17 Jul, process fix #2). The 16-Jul
-      # wave shipped with design-qa/seo reports but NO filled checklists, NO
-      # wiki/log.md entries, NO LEARNINGS retros — the evidence layer was
-      # remembered, and memory failed. Now it is checked: audit reports in
-      # launches/<domain>/ without the rest of the evidence set block the PR.
-      - name: Launch evidence gate (reports ⇒ checklists + wiki/log + LEARNINGS)
-        run: node scripts/launch-evidence-gate.mjs
-
-      # UNIFIED GATE REGISTRY (roadmap §7 / PROMPT 5, 18 Jul). One registry,
-      # three site classes: every gate in gates/registry.yaml must carry an
-      # explicit entry for commerce, organic AND landing — required, adapted
-      # ("how"), or n_a ("reason"). A missing class entry fails the PR: a check
-      # that exists for one class and is simply absent for another is how the
-      # "19-gate check" orphan and the one-site content-lint scope happened.
-      # Per-site ship checklists are GENERATED from the registry, never
-      # hand-written (CLAUDE.md §GATE REGISTRY).
-      - name: Gate-registry lint (every gate × every class — no missing entries)
-        run: node scripts/gate-registry-lint.mjs
-
-      # MERGE CONTINUITY PROOF (OS v2 M0(b), plan §10; external review pass 1
-      # blocking finding #1: the §4 continuity table was a manual assertion).
-      # Every normative CLAUDE.md unit, every registry gate, and every adopted
-      # package obligation is a row in merge-continuity.yaml; this lint proves
-      # hash integrity, verbatim presence, registry coverage, and one-home-per-
-      # obligation — and FAILS on source drift, so a CLAUDE.md or registry edit
-      # that nobody re-verified against the rows cannot merge. --strict ARMED
-      # at M1 (19 Jul 2026, plan §10): pending standards block, and every
-      # file-like new_home must exist — except the residues explicitly
-      # allowlisted in docs/process/os-2026/merge/strict-residues.yaml (M2/M3
-      # scheduled builds), which print LOUDLY as ALLOWED and fail the moment
-      # they go stale. Not a weakening (rule g): pre-M1 mode checked less.
-      - name: Merge-continuity lint (OS v2 — nothing lost, machine-proven, strict)
-        run: node scripts/merge-continuity-lint.mjs --strict
-
-      # SHARED-STANDARDS ACCEPTANCE (OS v2 M0(c), plan §3.6 / D-20260719-11).
-      # The seven 00_SHARED_STANDARDS files the package dangles are accepted
-      # only when they declare + carry their mapped obligations VERBATIM (v1
-      # supreme) and contain no rule-9-class self-modification language.
-      # --strict ARMED at M1 (all seven standards are authored): a missing or
-      # wrong standard now FAILS instead of printing PENDING_AUTHOR.
-      - name: Standards acceptance (seven shared standards — carried, not paraphrased, strict)
-        run: node scripts/standards-acceptance.mjs --strict
-
-      # CLASS-MAP POLICY COMPOSITION (OS v2 M1, plan §2.2 / §7.1 decision 2).
-      # gates/class-map.yaml is the applicability overlay over the registry's
-      # three supreme classes: 32 fleet properties × 5 declared dimensions,
-      # overlay rows that may only ADD/ADAPT (never remove/soften — rule g),
-      # and a scope_map declaring every registry gate change_relevant or
-      # project_only exactly once. The lint proves every property and all 24
-      # workflow test vectors resolve to ONE unambiguous gate set.
-      - name: Class-map lint (policy composition — no ambiguity, nothing weakened)
-        run: node scripts/class-map-lint.mjs
-
-      # PKG-043 RULE-9 NEUTRALIZATION (OS v2 M1, plan §9). The adopted copies
-      # under docs/process/os-2026/workflows/ carry the package workflows with
-      # the self-modification directive (rule 9) replaced by the owner-approved
-      # proposal path; --check fails on byte drift, a reintroduced original
-      # sentence, a missing/stray file, or any touched package source (the
-      # immutable source layer must still carry the original exactly once).
-      - name: Neutralized-workflows check (PKG-043 — adopted copies byte-faithful, sources untouched)
-        run: node scripts/neutralize-workflows.mjs --check
-
-      # EVIDENCE-MANIFEST APPEND-ONLY LAW (OS v2 M2, EVIDENCE LAW v2 §2.5 /
-      # EV-4; clears strict residues PKG-020/PKG-077). A PR that MODIFIES or
-      # DELETES a file matched by a committed evidence manifest, or rewrites a
-      # manifest's history without a strictly greater run-id, FAILS — evidence
-      # cannot be silently edited after the fact. Corrections = a NEW run-id,
-      # never overwrite. BASE via env, never interpolated into the shell line
-      # (front-gate injection doctrine); the script itself falls back to
-      # origin/main when BASE is empty/zeros and refuses to guess beyond that.
-      - name: Evidence-manifest append-only check (EV-4 — merge-blocking)
-        env:
-          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
-        run: node scripts/evidence-manifest.mjs ci
-
-      # DECISIONS PROVENANCE STORE (OS v2 M2, plan §3.2 / owner requirement R2;
-      # cleared strict residues CM-073/CM-076). Validates every decisions/D-*.md
-      # and launches/*/decisions/D-*.md record, proves the committed
-      # decisions/index.json is up to date, and FAILS on any mutation of an
-      # accepted record (immutability law, decisions/README.md) — history that
-      # can be edited is not history. BASE-TRUST (external pass blocker): the
-      # prior ledger is read from the MERGE BASE (`git show <merge-base>:
-      # decisions/index.json`), never the PR's working tree — a PR that edits
-      # an accepted record and re-hashes index.json in the same commit is
-      # judged against the ledger it could not rewrite. BASE via env, never
-      # shell-interpolated (front-gate injection doctrine); if the store is
-      # new in this PR the script bootstraps LOUDLY instead of bricking the
-      # minting PR (authenticated-approval bootstrap posture).
-      - name: Decisions-index check (records valid, index fresh, accepted records immutable vs BASE ledger)
-        env:
-          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
-        run: node scripts/decisions-index.mjs --check
-
-      # DIRECTIVE-ID UNIQUENESS (records-hygiene consult, 21 Jul 2026 —
-      # docs/research/records-hygiene-consult-2026-07-21.md, all-three-agree).
-      # Every live DIRECTIVES.md row keys a unique id: ENTRY_RE consumers
-      # (capture script, boot-contract, status-build) parse by id, and a prose
-      # ID-COLLISION NOTE is an HTML comment no parser sees. Three collisions
-      # reached the register before this gate existed; the allocation bug is
-      # fixed (MAX+1, PR #237) but nothing REJECTED a duplicate until now.
-      # Grandfathered pairs are a pinned row-count ceiling in the script,
-      # never failed retroactively (report-store-lint posture: history is
-      # counted, not failed).
-      - name: Directive-id uniqueness (duplicate live ids are dropped directives — merge-blocking)
-        run: node scripts/directive-capture.mjs check
-
-      # REPORT-STORE FRONTMATTER + DISPOSITIONS LAW (OS v2 M2, plan §3.3 R3).
-      # Every report created from the M2 cutover carries complete frontmatter;
-      # finding-type reports carry the IMPLEMENT|REJECT|MONITOR dispositions
-      # triad — a finding without a recorded disposition silently becomes
-      # forgotten work or unowned scope creep. Legacy reports are counted,
-      # never failed (retro-editing history would falsify it).
-      - name: Report-store lint (frontmatter + dispositions triad — merge-blocking)
-        run: node scripts/report-store-lint.mjs --check
-
-      # EVOLUTION REGISTERS + SE-6 CONTINUITY GUARD (OS v2 M2, plan §3.1 R1 +
-      # §5; cleared strict residue PKG-059). Validates radar/channels/
-      # anti-patterns/scout-schema, and — the SE-6 guard — FAILS any PR that
-      # touches evolution/** in the same breath as the HARD GATES section,
-      # gates/registry.yaml, the beauty/go-science doctrine, or front-gate.mjs:
-      # the agent never modifies its own evaluation criteria alongside its
-      # evolution layer. BASE via env, same injection doctrine as above; the
-      # shell guard mirrors the `changes` job — an unusable BASE falls back to
-      # origin/main so the SE-6 guard never silently skips in CI.
-      - name: Evolution lint + SE-6 continuity guard (registers honest, no evolution/gate bundling)
-        env:
-          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
-        run: |
-          if [ -z "$BASE" ] || ! git cat-file -e "$BASE" 2>/dev/null; then
-            echo "::notice::No usable base SHA — SE-6 guard diffs against origin/main instead."
-            BASE=origin/main
-          fi
-          node scripts/evolution-lint.mjs --base "$BASE"
-
-      # PER-CHANGE GATE RESOLUTION (OS v2 M2, D-20260719-09 right-tool-right-
-      # time; external pass 3 finding B5). INFORMATIONAL, deliberately: the
-      # resolver posts WHICH gates this diff obligates (the auditable
-      # evidence trail) — it does not yet execute or block on them; it becomes
-      # BLOCKING when the job-spec envelope consumes it at the M4 pilot
-      # (ACTIVATION SEMANTICS, CLAUDE.md OS v2 §10). Exit 1 = broken resolver
-      # (unparseable class-map/registry, unresolvable base) and DOES fail the
-      # build — a broken resolver must never silently pass. Rule g: nothing
-      # weakened; this only makes the per-change obligation set visible.
-      - name: Change-gates resolution (INFORMATIONAL — evidence of which gates the diff obligates)
-        env:
-          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
-        run: node scripts/change-gates-resolve.mjs
-
-      # CHAT BUBBLE PRESENCE (D-20260718-05, 18 Jul). The chat bubble is
-      # mandatory on every Factory site; before this gate four preview-stage
-      # sites silently lacked it — an absence nobody decided. Every non-exempt
-      # site's root layout must render the shared @kairali/chat loader, with
-      # ConsentScripts (default-denied) BEFORE it — the denied-before-loaders
-      # order from the pilot's security audit, asserted, not remembered.
-      # Registry row: chat-bubble-present (gates/registry.yaml).
-      - name: Chat-bubble presence lint (every fleet site, consent-first)
-        run: node scripts/chat-bubble-lint.mjs
-
-      # FOOTER SOCIAL LINKS (D-20260718-04, 18 Jul). Footer social parity is
-      # mandatory fleet-wide; before this gate no fleet footer carried the
-      # group profiles — an absence PR #127 surfaced but could not close
-      # (no verified handle set existed). D-SOCIALS-INTERIM supplied the
-      # verified interim set; every non-exempt site's footer must render the
-      # shared @kairali/social nav, with the handles living in ONE config
-      # file so the Astha/Anupam true-up stays a one-file change.
-      # Registry row: footer-socials-present (gates/registry.yaml).
-      - name: Footer-socials lint (every fleet site, one handle source)
-        run: node scripts/footer-socials-lint.mjs
-
-      # Discovered by find, NOT a fixed glob. The old glob was
-      # `packages/*/test/*.test.js`, so sites/whatisayurveda.com/test/
-      # medical-review.test.js — the ONLY test guarding our anti-fabrication
-      # gate (no physician review may be asserted without a real sign-off) —
-      # never ran. That is the second time a test was dead on arrival because it
-      # sat outside the glob (see tests/ktahv-critical-flows.spec.ts). A test
-      # that does not run is not a gate; it is a comment.
-      - name: All tests (packages/* AND sites/*) — discovered, not globbed
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          files=$(find packages sites scripts -path '*/test/*.test.js' -not -path '*/node_modules/*' | sort | tr '\n' ' ')
-          if [ -z "$files" ]; then echo "::error::no test files discovered — the discovery is broken"; exit 1; fi
-          echo "running $(echo $files | wc -w) test files:"; for f in $files; do echo "  · $f"; done
-          node --test $files
-
-  # THE FRONT GATE (session 2D). Everything else in this file guards the BACK of
-  # the pipeline — it checks work that already happened. This one checks whether
-  # the work was allowed to happen at all: a PR that adds or changes pages under
-  # sites/<domain> while launches/<domain>/approvals.yaml lacks a signed row
-  # FAILS. CI never judges the brief, the strategy or the design — that judgment
-  # is Abilash's and stays his. CI only makes an UNAPPROVED build un-mergeable,
-  # which is the one thing prose could never do: session 2C's gates could all go
-  # green on a site he had never agreed to build.
-  #
-  # Own job (not a step in brand-lint) so it is its own required-check context,
-  # and because it needs the full history brand-lint does not.
-  front-gate:
-    permissions:
-      contents: read
-      pull-requests: read # the authenticated-approval step reads PR reviews (M1); job-scoped like emit-verdicts' write grant — the workflow default stays contents: read. Without it the reviews API 403s and the gate fails closed on the error path (post-merge demo PR #169 finding) instead of the review-demand message.
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v7
-        with:
-          fetch-depth: 0 # the gate diffs against the PR base; a shallow clone has no base
-
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 24
-
-      # No pnpm install: the gate is dependency-free by design (a front gate that
-      # can be broken by a bad lockfile is a front gate that gets bypassed).
-      # BASE via env, never interpolated into the shell line: these are SHAs
-      # today, but the safe pattern costs nothing and the unsafe one is how
-      # workflow injection starts (CLAUDE.md (r): external input is DATA).
-      - name: Front gate (no page ships ahead of its signed approval)
-        env:
-          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
-        run: node scripts/front-gate.mjs --base "$BASE"
-
-      # AUTHENTICATED APPROVAL (OS v2 M1, plan §10 / external-review pass 1
-      # blocking finding #2, scope per D-20260719-10). A diff touching a
-      # GUARDED path (front-gate ledgers, CLAUDE.md, gates/, standards,
-      # workflows, doctrine scripts, evolution/, decisions/, .github/workflows)
-      # requires a GitHub PR review in state APPROVED at the CURRENT head SHA
-      # by a login registered in gates/owners.yaml — an agent-written
-      # approvals.yaml row alone no longer satisfies a gate, and every
-      # approved ledger row added/modified in the diff must be hash-bound to
-      # its committed artifact. Out-of-scope diffs pass untouched: routine
-      # green technical PRs keep their D-AUTOMERGE-TIERS auto-merge lane.
-      # PR number + head SHA come from GITHUB_EVENT_PATH (pull_request events
-      # carry the payload, so the merge-ref rev-parse fallback never decides a
-      # PR); BASE via env, never interpolated — same injection doctrine as the
-      # front-gate step above.
-      - name: Authenticated approval (guarded paths need an owner-identity review)
-        env:
-          BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
-          GITHUB_TOKEN: ${{ github.token }}
-          PR_NUMBER: ${{ github.event.pull_request.number }}
-        run: node scripts/authenticated-approval.mjs --base "$BASE"
-
-  factory-spec:
-    # Docs-only diffs: the job still spawns (its required context must report)
-    # but every step below is skipped — see the `changes` job's contract.
     needs: changes
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false # one red site must not cancel the evidence for the others
-      matrix:
-        # Every Factory site adds itself here at scaffold time (Ship Gate A2) —
-        # and since 17 Jul that sentence is ENFORCED by factory-matrix-lint.mjs
-        # in the brand-lint job (the 16-Jul wave shipped with this comment
-        # promising self-registration and no mechanism doing it). abhilashkr +
-        # kairali.ai are exempt (imported/internal) — STANDING RULING, Abilash
-        # 17 Jul 2026 (D-RULE-MATRIX-EXEMPT); the exemption lives in the lint, loudly.
-        site: ["sites/arogyakendra.com", "sites/ayurvedichealingvillage.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com", "sites/kairaliorganic.com", "sites/bulkayurvedaoils.com", "sites/bulkayurvedaproducts.com", "sites/kairaliequipment.com", "sites/theblushlounge.com"]
     steps:
       - uses: actions/checkout@v7
-        if: needs.changes.outputs.site_affecting == 'true'
-
       - uses: pnpm/action-setup@v4
-        if: needs.changes.outputs.site_affecting == 'true'
-
       - uses: actions/setup-node@v7
-        if: needs.changes.outputs.site_affecting == 'true'
         with:
           node-version: 24
           cache: pnpm
-
-      - name: Install
-        if: needs.changes.outputs.site_affecting == 'true'
-        run: pnpm install --frozen-lockfile
-
-      - name: Build (turbo)
-        if: needs.changes.outputs.site_affecting == 'true'
+      - run: pnpm install --frozen-lockfile
+      - name: Brand and customer-facing claims for affected sites
+        env:
+          AFFECTED: ${{ needs.changes.outputs.affected_sites }}
+        run: |
+          node -e 'require("fs").writeFileSync(process.env.RUNNER_TEMP + "/site-plan.json", JSON.stringify({sites:JSON.parse(process.env.AFFECTED)}))'
+          node scripts/ci-scoped-checks.mjs brand "$RUNNER_TEMP/site-plan.json"
+  site-check:
+    needs: changes
+    if: needs.changes.outputs.has_sites == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        site: ${{ fromJSON(needs.changes.outputs.affected_sites) }}
+    env:
+      SITE: ${{ matrix.site }}
+      AHV_STAGING: "0"
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Build this site and its workspace dependencies
         env:
           GH_TOKEN: ${{ github.token }}
-        run: pnpm build
-
-      - name: Install Playwright chromium
-        if: needs.changes.outputs.site_affecting == 'true'
+        run: node scripts/ci-build-site.mjs
+      - name: Site unit tests
+        run: |
+          node -e 'require("fs").writeFileSync(process.env.RUNNER_TEMP + "/site-plan.json", JSON.stringify({sites:[process.env.SITE]}))'
+          node scripts/ci-scoped-checks.mjs unit "$RUNNER_TEMP/site-plan.json"
+      - name: Install browser
+        if: contains(fromJSON(needs.changes.outputs.browser_sites), matrix.site)
         run: pnpm exec playwright install --with-deps chromium
-
-      - name: Factory spec suite (Ship Gate A2 + A4 browser layer)
-        if: needs.changes.outputs.site_affecting == 'true'
+      - name: Desktop and mobile functional checks
+        if: contains(fromJSON(needs.changes.outputs.browser_sites), matrix.site)
         run: pnpm exec playwright test tests/factory
-        env:
-          SITE: ${{ matrix.site }}
-
-  # Ship Gate A5 in CI (retro-audit 17 Jul: "Lighthouse (A5) still not in CI" —
-  # the budget lived only in SITE_LAUNCH_CHECKLIST_v1.0.md item 5 and the TODO
-  # comment at the bottom of gate.yml; no wave site ever ran it). Budgets are
-  # the checklist's own: Performance ≥90 · Accessibility ≥95 · SEO = 100,
-  # mobile emulation, against the local production build (`next start`) — the
-  # same transport the factory spec suite gates on. Preview-URL runs stay a
-  # launch-time step; this catches regressions at merge time.
-  lighthouse:
-    # Docs-only diffs: the job still spawns (its required context must report)
-    # but every step below is skipped — see the `changes` job's contract.
-    needs: changes
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false # one red site must not cancel the evidence for the others
-      matrix:
-        # Kept in lockstep with the factory-spec matrix by factory-matrix-lint.mjs
-        # (it validates EVERY site matrix in this file).
-        site: ["sites/arogyakendra.com", "sites/ayurvedichealingvillage.com", "sites/kairali.com", "sites/whatisayurveda.com", "sites/kairalicenters.com", "sites/arogyashala.in", "sites/healing.recipes", "sites/kairaliyoga.com", "sites/kairalihospitality.com", "sites/kairaliorganic.com", "sites/bulkayurvedaoils.com", "sites/bulkayurvedaproducts.com", "sites/kairaliequipment.com", "sites/theblushlounge.com"]
-    steps:
-      - uses: actions/checkout@v7
-        if: needs.changes.outputs.site_affecting == 'true'
-
-      - uses: pnpm/action-setup@v4
-        if: needs.changes.outputs.site_affecting == 'true'
-
-      - uses: actions/setup-node@v7
-        if: needs.changes.outputs.site_affecting == 'true'
-        with:
-          node-version: 24
-          cache: pnpm
-
-      - name: Install
-        if: needs.changes.outputs.site_affecting == 'true'
-        run: pnpm install --frozen-lockfile
-
-      - name: Build (turbo)
-        if: needs.changes.outputs.site_affecting == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          AHV_STAGING: "0"
-        run: pnpm build
-
-      - name: Lighthouse gate (Ship Gate A5 — perf ≥90 / a11y ≥95 / SEO = 100)
-        if: needs.changes.outputs.site_affecting == 'true'
+      - name: Lighthouse performance, accessibility and SEO
+        if: contains(fromJSON(needs.changes.outputs.browser_sites), matrix.site)
         run: node scripts/lighthouse-gate.mjs
-        env:
-          SITE: ${{ matrix.site }}
-          AHV_STAGING: "0"
-
-  # VERDICT EMITTERS → CI (D-EMITTER-WIRING, Abilash's ratification 18 Jul 2026:
-  # "wire the #126 emitters into CI as its own PR"). PR #126 built the emitters
-  # and shipped them DELIBERATELY un-wired per the O6 precedent; this job is the
-  # wiring. It re-runs the REAL enforcing commands through scripts/gate-emit.mjs
-  # (via scripts/ci-emit-verdicts.mjs) at the merged commit and commits the §0.2
-  # verdicts their real exit codes produced — the change that lets matrix-walk's
-  # unproven count start dropping on REAL evidence, never on a hand-written file.
-  #
-  # WHY MAIN-PUSH ONLY, NEVER PR-TIME. A verdict is ship evidence only when its
-  # file was COMMITTED BY A CI JOB (§0.2 provenance). This repo squash-merges:
-  # the squash commit is authored by the human who merges (see d27e6bf, #126's
-  # own merge commit), so a verdict committed onto a PR branch loses its CI
-  # authorship at the exact moment it reaches main — PR-time emission can never
-  # become ship evidence. Post-merge emission also binds each verdict to the
-  # tree that is actually ON main, not to a pre-merge tree that may never exist
-  # again after the squash.
-  #
-  # NOT a required-check context, so a JOB-level `if` is safe here — the
-  # step-level dance above exists only because required matrix contexts must
-  # always report (CORRECTED 18 Jul lesson, PR #118/#120). Recursion guards,
-  # both loud: the bot commit carries [skip ci], and audits/ is outside
-  # emit_pattern, so the verdict commit can never re-arm the job that wrote it.
-  #
-  # RULE g: nothing is weakened. Every enforcing step above is byte-identical;
-  # this job only RECORDS what those same commands' real exit codes were at the
-  # merged commit — FAIL included (a FAIL verdict is committed exactly like a
-  # PASS; refusing to record a failure would be falsification by omission).
-  emit-verdicts:
-    needs: changes
-    if: github.event_name == 'push' && needs.changes.outputs.emit_affecting == 'true'
+  factory-complete:
+    if: always()
+    needs: [changes, brand-lint, site-check]
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # push rights for the verdict commit — scoped to THIS job; the workflow default stays contents: read
     steps:
-      # Push credential = the kairali-verdict-writer GitHub App (id 4352058), ruleset
-      # 19322788's bypass actor — D-20260721-01 (owner word RULESET) executed as option D
-      # of the all-three-agree external consult (docs/research/
-      # emitter-lane-external-consult-2026-07-21.md). Token is short-lived, minted per
-      # run; the commit AUTHOR stays github-actions[bot], so verdict.mjs's §0.2
-      # provenance patterns are untouched.
-      - name: Mint verdict-writer app token
-        id: verdict-token
-        uses: actions/create-github-app-token@v3
-        with:
-          app-id: 4352058 # kairali-verdict-writer (org app, Contents: write only)
-          private-key: ${{ secrets.VERDICT_APP_KEY }}
-
       - uses: actions/checkout@v7
-        with:
-          fetch-depth: 0 # the push step rebases onto wherever main moved meanwhile
-          token: ${{ steps.verdict-token.outputs.token }}
-
-      - uses: pnpm/action-setup@v4
-
       - uses: actions/setup-node@v7
         with:
           node-version: 24
-          cache: pnpm
-
-      - name: Install
-        run: pnpm install --frozen-lockfile
-
-      # Exit 2 = at least one FAIL verdict (surfaced red BELOW, after the
-      # commit step — evidence first). Exit 1 = harness error (§0.6 probe
-      # misfire): nothing from that run is evidence, and the script aborts
-      # before writing. continue-on-error lets the commit step run either way.
-      - name: Emit verdicts (real enforcing commands, real exit codes — §0.2)
-        id: emit
-        continue-on-error: true
-        run: node scripts/ci-emit-verdicts.mjs
-
-      - name: Preserve run evidence (verdicts survive even if the push lane is blocked)
-        uses: actions/upload-artifact@v4
-        with:
-          name: verdicts-${{ github.sha }}-${{ github.run_attempt }} # run_attempt: v4 artifacts are immutable per name — a re-run attempt would 409 on the first attempt's upload and die before the guard/push loop ever runs
-          path: audits/
-          if-no-files-found: ignore
-
-      # All values interpolated below are runner-controlled (sha/run id/repo),
-      # never event text — same injection doctrine as front-gate's BASE.
-      - name: Commit verdicts as github-actions[bot] (§0.2 provenance)
+      - name: Require every affected-site check
         env:
-          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-        run: |
-          if [ -z "$(git status --porcelain -- audits/)" ]; then
-            echo "no new verdicts — nothing to commit (not-armed absence stays absence)"; exit 0
-          fi
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- audits/
-          git commit -m "CI verdicts @ ${GITHUB_SHA:0:9} [skip ci]" \
-            -m "Emitted by the emit-verdicts job from the real exit codes of the enforcing commands (§0.2). Run: ${RUN_URL}"
-          for i in 1 2 3; do
-            if out=$(git push origin HEAD:main 2>&1); then
-              echo "$out"; echo "verdicts committed to main with CI provenance."; exit 0
-            fi
-            echo "$out"
-            if echo "$out" | grep -Eqi "protected branch|GH006|pull request"; then
-              echo "::error::main's protection rejected the verdict push DESPITE the app lane (ruleset 19322788 · bypass Integration:4352058, live 21 Jul 2026, D-20260721-01). This is NOT the old pre-allowance expected-red: check that kairali-verdict-writer is still installed on the repo, that secret VERDICT_APP_KEY exists, and that the ruleset bypass list still carries the app. Verdicts are preserved in this run's artifact but are NOT ship evidence until a CI job commits them (§0.2)."
-              exit 1
-            fi
-            # Racing emitters land verdict commits touching the same audits/
-            # files — a plain rebase dies on those content conflicts (main @
-            # 3e0b2d7, run 29810242967: wave C's verdicts conflicted with wave
-            # A's landed commit and the job exited 1, leaving main's verdicts
-            # stale). The concurrency group serializes push runs (verdict-
-            # landing skew, not parallel execution, caused the incident), but
-            # a MANUAL RE-RUN of an old run replays a stale trigger — so the
-            # guard below ENFORCES the newest-wins invariant instead of
-            # assuming scheduling order: if any verdict commit landed upstream
-            # judged a commit that is NOT an ancestor of this run's trigger,
-            # THIS run is the stale one, and it aborts loudly rather than
-            # overwrite newer verdicts (a stale PASS over a fresh FAIL is
-            # evidence falsification — §0.2, rule g). The guard keys on the
-            # subject pattern alone, deliberately not authorship: a spoofed
-            # subject can only ADD a loud fail-closed abort, while an
-            # authorship filter gone stale would silently skip real verdict
-            # commits — over-triggering is the safe direction.
-            git fetch origin main
-            for judged in $(git log --format='%s' HEAD..origin/main | sed -n 's/^CI verdicts @ \([0-9a-f]\{9,\}\).*/\1/p'); do
-              if ! git merge-base --is-ancestor "$judged" "$GITHUB_SHA"; then
-                echo "::error::superseded run — upstream verdicts @ ${judged} are newer than this run's trigger ${GITHUB_SHA:0:9}; refusing to overwrite them (this run's output stays in the artifact)"
-                exit 1
-              fi
-            done
-            # Guard passed: every landed verdict commit judged an ancestor of
-            # this trigger, so this run's verdicts are the newest — on conflict
-            # the replayed side wins (-X theirs = the replayed side during a
-            # rebase; its diff is confined to audits/, the only staged path —
-            # see the commit step above).
-            # Rebase against the SAME origin/main snapshot the guard just
-            # checked (a pull would re-fetch and reopen the guard-to-rebase
-            # TOCTOU window; anything landing after our fetch makes the push
-            # non-fast-forward and the next iteration re-guards it).
-            git rebase -X theirs origin/main || {
-              git rebase --abort 2>/dev/null || true # abort exits 128 when the failure left no rebase in progress — without '|| true', bash -e would kill the block before the loud error below
-              echo "::error::rebase onto moved main failed even with -X theirs — verdicts preserved in this run's artifact; see the log above"
-              exit 1
-            }
-          done
-          echo "::error::push failed 3 times for a non-protection reason — see the log above"
-          exit 1
-
-      - name: Surface FAIL verdicts / harness errors (after the evidence is committed)
-        if: steps.emit.outcome == 'failure'
-        run: |
-          echo "::error::the emit step exited non-zero — either an enforcing command FAILED (its FAIL verdict was still committed: a FAIL is evidence too) or the §0.6 harness refused to emit. See the emit step log."
-          exit 2
+          RESULTS: ${{ toJSON(needs) }}
+          SITE_COUNT: ${{ needs.changes.outputs.site_count }}
+        run: node scripts/ci-completion.mjs
