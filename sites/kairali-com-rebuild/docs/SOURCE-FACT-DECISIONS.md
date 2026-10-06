@@ -54,3 +54,11 @@ Checked 29 September 2026. Every consequential fact on the site is listed here w
 - Column-split paragraphs are rejoined; decorative spacer images and duplicate `-mobile` images are dropped.
 - Every deliberate change is logged in `pipeline/out/deliberate-changes.csv` (34 rows).
 - Claims, rates, dates and testimonials are verbatim. Historical rates are labelled with the period printed on the file, or "Date not stated on file".
+
+## Owner resolution — 2026-10-06 12:27:24 IST
+
+The 6 October reply in the MID-15049 email thread approves shared workspace/factory integration, Brief, Strategy, Premium v3 design source, the current homepage as golden page and final preview visual/design. Evidence is recorded at `launches/kairali-com-rebuild/owner-approvals/2026-10-06-mid15049-email.md` and in `launches/kairali.com/approvals.yaml`.
+
+It also directs the implementation to use a general careers-interest state with vacancy status pending HR confirmation; preserve conflicting privacy-policy/certificate wording while using **Kairali Ayurvedic Health Resorts Private Limited** in factual contexts; link the current centre roster at `kairalicenters.com`; preserve `kairaliproducts.com` and `kairaliproducts.in` as distinct markets; retain the document hub as implemented; and keep forms inactive.
+
+Still required: real-device iPhone Safari screenshots, authenticated hosted route/PDF/OG evidence, sysadmin-issued least-privilege GA4/GSC property IDs/roles/proof, final green CI and protected review/merge. Production deployment, DNS cutover, promotion, analytics activation and form activation remain unapproved.

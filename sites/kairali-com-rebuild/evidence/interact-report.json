@@ -37,7 +37,7 @@
  {
   "name": "home LCP ≤ 2500 ms (lab, local, unthrottled)",
   "ok": true,
-  "detail": "480 ms"
+  "detail": "284 ms"
  },
  {
   "name": "first Tab reaches skip link",
@@ -110,16 +110,6 @@
   "detail": ""
  },
  {
-  "name": "/apply-now.aspx?id=7: all form controls inactive",
-  "ok": true,
-  "detail": ""
- },
- {
-  "name": "/apply-now.aspx?id=7: explicit preview notice",
-  "ok": true,
-  "detail": ""
- },
- {
   "name": "/svata-katerina-prague-czech-republic.aspx: all form controls inactive",
   "ok": true,
   "detail": ""
@@ -150,12 +140,17 @@
   "detail": ""
  },
  {
-  "name": "apply ?id=7 pre-selects Ayurveda Therapist",
+  "name": "career route shows general interest and HR-pending status",
   "ok": true,
   "detail": ""
  },
  {
-  "name": "apply ?id=7 pre-fills job reference Ayu819814",
+  "name": "career route exposes no role-specific application form",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "career route does not present legacy role/reference as open",
   "ok": true,
   "detail": ""
  },

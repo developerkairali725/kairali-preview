@@ -35,8 +35,14 @@ await check('Legacy visible brochure actions use maintained hub', async () => {
     if (route !== '/download-centre.aspx') assert.doesNotMatch(text,/href="\/download\//);
   }
 });
-await check('Vacancy pages disclose HR confirmation pending', async () => {
-  for (const route of ['/careers.aspx','/current-openings.aspx','/apply-now.aspx?id=7']) assert.match(await get(route),/awaiting HR confirmation/);
+await check('Career routes use general interest and HR-pending status', async () => {
+  for (const route of ['/careers.aspx','/current-openings.aspx','/apply-now.aspx?id=7']) {
+    const text = await get(route);
+    assert.match(text,/general expressions of interest/i);
+    assert.match(text,/Vacancy status is pending HR confirmation/i);
+    const visible = text.match(/<main[^>]*>(.*?)<\/main>/s)?.[1] ?? text;
+    assert.doesNotMatch(visible,/Sales Manager|ASP\.Net Developer|Business Development Manager|Ayurveda Therapist|Ayurveda Doctor|Sal971967|ASP586225|Bus476258|Ayu819814|Ayu207815/);
+  }
 });
 for (const id of ['contact','enquiry','svata','consultation','application','newsletter']) {
   await check(`${id}: API rejects before parsing body`, async () => {

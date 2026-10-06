@@ -71,3 +71,11 @@ No production analytics firing, live-domain/DNS change, form delivery or credent
 ## Later CI follow-up
 
 See [MID-15049-CI-FOLLOWUP.md](MID-15049-CI-FOLLOWUP.md) for the later Windows archive repair, notice contrast fix, actual Linux root build PASS, protected candidate and mobile lab results. Earlier local gate findings above are retained as dated evidence.
+
+## Owner resolution — 2026-10-06 12:27:24 IST
+
+The 6 October reply in the MID-15049 email thread approves shared workspace/factory integration, Brief, Strategy, Premium v3 design source, the current homepage as golden page and final preview visual/design. Evidence is recorded at `launches/kairali-com-rebuild/owner-approvals/2026-10-06-mid15049-email.md` and in `launches/kairali.com/approvals.yaml`.
+
+It also directs the implementation to use a general careers-interest state with vacancy status pending HR confirmation; preserve conflicting privacy-policy/certificate wording while using **Kairali Ayurvedic Health Resorts Private Limited** in factual contexts; link the current centre roster at `kairalicenters.com`; preserve `kairaliproducts.com` and `kairaliproducts.in` as distinct markets; retain the document hub as implemented; and keep forms inactive.
+
+Still required: real-device iPhone Safari screenshots, authenticated hosted route/PDF/OG evidence, sysadmin-issued least-privilege GA4/GSC property IDs/roles/proof, final green CI and protected review/merge. Production deployment, DNS cutover, promotion, analytics activation and form activation remain unapproved.

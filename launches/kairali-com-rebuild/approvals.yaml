@@ -1,0 +1,37 @@
+# launches/kairali-com-rebuild/approvals.yaml — signed MID-15049 front-gate ledger.
+# Owner evidence: launches/kairali-com-rebuild/owner-approvals/2026-10-06-mid15049-email.md
+# This pre-gate rebuild is armed retroactively because the 6 October owner email
+# explicitly ordered the approvals to be recorded. MODE A binds the owner-approved
+# Premium v3 design source; no agent-proposed design_direction row is required.
+
+domain: kairali-com-rebuild
+mode: A
+
+approvals:
+  - gate: brief
+    status: approved
+    owner: Abhilash — MID-15049 email reply, delivered on his behalf
+    date: 2026-10-06 12:27:24 IST
+    artifact: sites/kairali-com-rebuild/DEEPU-HANDOFF.md
+    artifact_sha256: 4e0ecdf0a34de532a016828a42041f899303f4fc7fd87e130988ecd412457947
+
+  - gate: strategy
+    status: approved
+    owner: Abhilash — MID-15049 email reply, delivered on his behalf
+    date: 2026-10-06 12:27:24 IST
+    artifact: sites/kairali-com-rebuild/docs/SEO-ROUTING-DEPLOYMENT.md
+    artifact_sha256: 284971b722f8b3111574cb67e1e1195b50c10c7254b7cdb452e80b5f656da9af
+
+  - gate: design_source
+    status: approved
+    owner: Abhilash — MID-15049 email reply, delivered on his behalf
+    date: 2026-10-06 12:27:24 IST
+    artifact: sites/kairali-com-rebuild/site.config.json
+    artifact_sha256: 2bf165b0ee72cd8122adf0b48179e6ade47a1f1c0f5a83712a516b7175002c7c
+
+  - gate: golden_page
+    status: approved
+    owner: Abhilash — MID-15049 email reply, delivered on his behalf
+    date: 2026-10-06 12:27:24 IST
+    artifact: sites/kairali-com-rebuild/site/app/page.tsx
+    artifact_sha256: 3477a2d8b7203933e9010477d5f9f22c1555e2ec451a115396df7289faa8d75a

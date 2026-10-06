@@ -48,7 +48,7 @@ export default function LegacyPage({ page, applyId }: { page: Page; applyId?: st
     .filter((s) => !(isProfile && (s.cls.includes("ourbrands") || s.cls.includes("awardaccreditation"))))
     .map((s) => withAnchors(s.html, used));
   const heads = secs.flatMap((s) => s.heads).filter((h) => h.level === 2);
-  const isForm = ["/contact-us.aspx", "/enquiry-form.aspx", "/onlineconsultation.aspx", "/apply-now.aspx", "/svata-katerina-prague-czech-republic.aspx", "/ayurveda-newsletter.aspx"].includes(base);
+  const isForm = ["/contact-us.aspx", "/enquiry-form.aspx", "/onlineconsultation.aspx", "/svata-katerina-prague-czech-republic.aspx", "/ayurveda-newsletter.aspx"].includes(base);
   if (isProfile) { heads.unshift({ id: "pillars", text: "Our brands", level: 2 }); heads.push({ id: "profile-awards", text: "Awards & accreditations", level: 2 }); }
   const withRail = RAIL_FAMILIES.has(fam) && !isForm && heads.length >= 2 && base !== "/kairali-group-awards.aspx" && !base.startsWith("/detail.aspx");
   const sub = SUBBRAND_FOR[base] ? SUB_BRANDS.find((b) => b.key === SUBBRAND_FOR[base]) : undefined;
@@ -113,7 +113,7 @@ export default function LegacyPage({ page, applyId }: { page: Page; applyId?: st
           {base === "/kairali-group-awards.aspx" && <Certifications />}
           {base === "/villa-raag.aspx" && <p className="badge" style={{ marginBottom: 24 }}>Kairali-owned and operated</p>}
           {base === "/svata-katerina-prague-czech-republic.aspx" && <p className="notice" style={{ marginBottom: 32 }}>Svata Katerina is a current partner resort of Kairali. Contact the resort directly to confirm current programmes and availability.</p>}
-          {["/careers.aspx", "/current-openings.aspx", "/apply-now.aspx"].includes(base) && <p className="notice" style={{ marginBottom: 32 }}>These are previously published vacancy records. Current availability is awaiting HR confirmation; applications are inactive in this preview.</p>}
+          {["/careers.aspx", "/current-openings.aspx", "/apply-now.aspx"].includes(base) && <p className="notice" style={{ marginBottom: 32 }}>We welcome general expressions of interest. Vacancy status is pending HR confirmation; no individual legacy role is presented as currently open, and career applications are inactive.</p>}
           {base === "/virtual-tour.aspx" && <ComingSoon />}
           {base === "/kairali-group-awards.aspx" ? <AwardsBrowser /> : base === "/kairali-news.aspx" ? <><article className="stack prose-cap" style={{ gap: 0, maxWidth: 880, marginBottom: 40 }}>{body}</article><NewsBrowser /></> : isForm ? <FormLayout page={page} body={body} applyId={applyId} /> :
             withRail ? (

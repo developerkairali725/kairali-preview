@@ -61,4 +61,28 @@ def owner_rulings(pages):
     svata = pages.get("/svata-katerina-prague-czech-republic.aspx", {})
     for section in svata.get("sections", []):
         section["html"] = re.sub(r"<table\b[^>]*>.*?</table>", "", section["html"], flags=re.S)
+    # MID-15049: Abhilash's 6 October email — careers remain general until HR verifies roles.
+    career_html = (
+        "<h2>Careers at Kairali</h2>"
+        "<p>We welcome general expressions of interest from people who would like to work with Kairali.</p>"
+        "<p><strong>Vacancy status is pending HR confirmation.</strong> No individual legacy role is presented as currently open until HR verifies it.</p>"
+        "<p>Career applications and CV uploads are inactive while recipient, privacy, retention, storage, scanning and anti-spam controls are reviewed.</p>"
+    )
+    career_routes = [route for route in pages if route in ("/careers.aspx", "/current-openings.aspx") or route.startswith("/apply-now.aspx")]
+    for route in career_routes:
+        page = pages[route]
+        if route == "/careers.aspx":
+            page["title"] = "Careers at Kairali | Kairali Ayurvedic Group"
+        elif route == "/current-openings.aspx":
+            page["title"] = "Vacancy status | Kairali Ayurvedic Group"
+        else:
+            page["title"] = "Careers interest | Kairali Ayurvedic Group"
+        page["description"] = "Learn about careers at Kairali Ayurvedic Group. Vacancy status is pending HR confirmation; no individual legacy role is presented as currently open."
+        page["keywords"] = "Kairali Ayurvedic Group careers, careers interest"
+        if page.get("banner"):
+            page["banner"]["tagline"] = "Careers at Kairali"
+            page["banner"]["h1"] = "Careers and expressions of interest"
+            page["banner"]["subtitle"] = ["Vacancy status is pending HR confirmation."]
+            page["banner"]["sublinks"] = [{"label": "Careers", "href": None, "current": True}]
+        page["sections"] = [{"cls": "generalrepeat", "id": "", "html": career_html, "hidden": False, "form": False}]
     return pages

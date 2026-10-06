@@ -77,7 +77,7 @@ export function breadcrumbs(route: string, current: string): Crumb[] {
   const base = route.split("?")[0];
   if (g && g.href !== base) out.push({ name: g.label, href: g.href });
   if (base.startsWith("/detail.aspx")) out.push({ name: "Awards & Accreditations", href: "/kairali-group-awards.aspx" });
-  if (base.startsWith("/apply-now.aspx") && route !== "/apply-now.aspx") out.push({ name: "Current Openings", href: "/current-openings.aspx" });
+  if (base.startsWith("/apply-now.aspx") && route !== "/apply-now.aspx") out.push({ name: "Careers", href: "/careers.aspx" });
   if (base.includes("-library.aspx") && !["/photo-library.aspx", "/video-library.aspx"].includes(base))
     out.push({ name: base.includes("photo") ? "Photo Library" : "Video Library", href: base.includes("photo") ? "/photo-library.aspx" : "/video-library.aspx" });
   if (route.startsWith("/kairali-blog.aspx?page=")) out.push({ name: "Kairali Blog", href: "/kairali-blog.aspx" });

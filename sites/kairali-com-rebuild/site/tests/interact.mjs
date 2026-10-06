@@ -78,13 +78,13 @@ const browser = await chromium.launch();
   await ctx.close();
 }
 
-// 4. Q8-C supersedes editable mock validation: all six preview forms are inactive.
+// 4. Q8-C keeps all delivery inactive; the 6 October ruling replaces the legacy role-specific career form with a general HR-pending state.
 {
   const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
   const page = await ctx.newPage();
   const posts = [];
   page.on("request", (r) => { if (r.method() !== "GET") posts.push(r.url()); });
-  const routes = ["/contact-us.aspx", "/enquiry-form.aspx", "/onlineconsultation.aspx", "/apply-now.aspx?id=7", "/svata-katerina-prague-czech-republic.aspx", "/ayurveda-newsletter.aspx"];
+  const routes = ["/contact-us.aspx", "/enquiry-form.aspx", "/onlineconsultation.aspx", "/svata-katerina-prague-czech-republic.aspx", "/ayurveda-newsletter.aspx"];
   for (const route of routes) {
     await page.goto(BASE + route, { waitUntil: "networkidle" });
     const form = page.locator("main form[data-form]");
@@ -96,8 +96,10 @@ const browser = await chromium.launch();
   await page.goto(BASE + "/enquiry-form.aspx", { waitUntil: "networkidle" });
   check("general enquiry has no gender/age/address fields (Q7)", (await page.locator('main form[data-form="enquiry"] [name="gender"], main form[data-form="enquiry"] [name="age"], main form[data-form="enquiry"] [name="address"]').count()) === 0);
   await page.goto(BASE + "/apply-now.aspx?id=7", { waitUntil: "networkidle" });
-  check("apply ?id=7 pre-selects Ayurveda Therapist", (await page.inputValue('main [name="post"]')) === "Ayurveda Therapist");
-  check("apply ?id=7 pre-fills job reference Ayu819814", (await page.inputValue('main [name="jobRef"]')) === "Ayu819814");
+  const careerText = await page.locator("main").innerText();
+  check("career route shows general interest and HR-pending status", /general expressions of interest/i.test(careerText) && /Vacancy status is pending HR confirmation/i.test(careerText));
+  check("career route exposes no role-specific application form", (await page.locator('main form[data-form="application"]').count()) === 0);
+  check("career route does not present legacy role/reference as open", !/Ayurveda Therapist|Ayu819814/.test(careerText));
   await page.goto(BASE + "/onlineconsultation.aspx", { waitUntil: "networkidle" });
   const cfields = await page.locator('main form[data-form="consultation"] [name]').evaluateAll((els) => new Set(els.map((e) => e.getAttribute("name")).filter((n) => n !== "website")).size);
   check("medical consultation form keeps its separate full field set", cfields >= 30, `${cfields} named fields`);
