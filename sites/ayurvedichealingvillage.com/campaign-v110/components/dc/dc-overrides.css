@@ -941,6 +941,11 @@ html:has(#ahv-design-root), body:has(#ahv-design-root) { overflow-x:clip; }
   }
 }
 
+/* Separate the final care section's photo panel from the shared footer. */
+#ahv-design-root:is([data-ahv-route="/offers/senior-citizen-offer/"], [data-ahv-route="/offers/olympics-and-paralympics-offer/"], [data-ahv-route="/offers/defence-and-paramilitary/"]) {
+  padding-bottom: clamp(32px, 4vw, 56px);
+}
+
 /* Shared care campaigns: identical room inside the dark hero banner so the text and
    photo do not touch its edges; "Offer eligibility and terms" beside the
    enquiry form (under it on phones), on a card like the form's */
