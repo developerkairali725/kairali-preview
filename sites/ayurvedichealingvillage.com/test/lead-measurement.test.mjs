@@ -30,7 +30,11 @@ function browser(choice = "accepted", status = 200, result = { ok: true, status:
       referrer: "https://search.example/result?email=private%40example.com",
       addEventListener() {},
       createElement: () => ({}),
-      head: { appendChild() {} },
+      head: { appendChild(script) {
+        if (script.src?.includes("googletagmanager.com")) {
+          ctx.googleCommandsAtLoad = Array.from(ctx.dataLayer || [], entry => Array.from(entry));
+        }
+      } },
       getElementById: () => null,
     },
     setTimeout() {},
@@ -208,4 +212,29 @@ test('paid page location retains attribution in Safari without URLSearchParams.s
     const config = ctx.dataLayer.find(entry => entry[0] === 'config' && entry[1] === 'G-test');
     assert.equal(new URL(config[2].page_location).searchParams.get('utm_campaign'),'Brand & Competition');
   } finally { if(descriptor) Object.defineProperty(URLSearchParams.prototype,'size',descriptor); }
+});
+
+
+test("automatic Google customer-data collection is disabled before SDK load and for every enquiry event", async () => {
+  for (const environment of ["production", "staging"]) {
+    const ctx = browser("accepted", 200, {ok:true,status:"received"}, "?gclid=paid123", environment);
+    const commands = ctx.googleCommandsAtLoad;
+    assert.equal(commands[0][0], "set");
+    assert.equal(Object.hasOwn(commands[0][1], "user_data"), true);
+    assert.equal(commands[0][1].user_data, null);
+    assert.ok(commands.some(entry => entry[0] === "config"));
+    for (const entry of commands.filter(entry => entry[0] === "config")) {
+      assert.equal(Object.hasOwn(entry[2], "user_data"), true);
+      assert.equal(entry[2].user_data, null);
+    }
+    await ctx.fetch("/api/lead/", {method:"POST",body:JSON.stringify({form:"contact",submissionToken:token,email:"synthetic@example.com"})});
+    ctx.location.pathname = "/ayurvedic-treatment-packages.html";
+    assert.equal(ctx.AHV_MEASUREMENT.recordInteraction("contact_click", "whatsapp"), true);
+    for (const entry of ctx.dataLayer.filter(entry => entry[0] === "event")) {
+      assert.equal(Object.hasOwn(entry[2], "user_data"), true);
+      assert.equal(entry[2].user_data, null);
+      assert.equal(JSON.stringify(entry).includes("synthetic@example.com"), false);
+    }
+    assert.equal(ctx.dataLayer.filter(entry => entry[1] === (environment === "staging" ? "ahv_staging_lead" : "generate_lead")).length, 1);
+  }
 });

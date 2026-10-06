@@ -257,8 +257,8 @@ export const CONSENT_RUNTIME = `
     var sent = false;
     var m = cfg.measurement;
     if (m.ga4 && typeof window.gtag === "function") {
-      window.gtag("event", m.environment === "staging" ? "ahv_staging_lead" : "generate_lead", { event_id: token, page_location: safePageLocation(), ahv_environment: m.environment || "production", debug_mode: m.environment === "staging" });
-      if (m.adsSendTo && m.environment !== "staging") window.gtag("event", "conversion", { send_to: m.adsSendTo, transaction_id: token, page_location: safePageLocation() });
+      window.gtag("event", m.environment === "staging" ? "ahv_staging_lead" : "generate_lead", { user_data: null, event_id: token, page_location: safePageLocation(), ahv_environment: m.environment || "production", debug_mode: m.environment === "staging" });
+      if (m.adsSendTo && m.environment !== "staging") window.gtag("event", "conversion", { user_data: null, send_to: m.adsSendTo, transaction_id: token, page_location: safePageLocation() });
       sent = true;
     }
     if (m.metaPixel && typeof window.fbq === "function") {
@@ -302,7 +302,7 @@ export const CONSENT_RUNTIME = `
     var m=cfg.measurement;
     if(!m.ga4 || typeof window.gtag !== "function") return false;
     // Interaction diagnostics are never Ads or Meta lead conversions.
-    window.gtag("event", m.environment === "staging" ? "ahv_staging_"+name : name, { interaction_target:target, page_location:safePageLocation(), ahv_environment:m.environment || "production", debug_mode:m.environment === "staging" });
+    window.gtag("event", m.environment === "staging" ? "ahv_staging_"+name : name, { user_data: null, interaction_target:target, page_location:safePageLocation(), ahv_environment:m.environment || "production", debug_mode:m.environment === "staging" });
     return true;
   }
   window.AHV_MEASUREMENT = { recordLead: recordAcceptedLead, recordInteraction:recordInteraction, attribution:attribution };
@@ -315,10 +315,6 @@ export const CONSENT_RUNTIME = `
     measurementStarted = true;
     window.__ahvMeasurementStarted = true;
     if (m.ga4) {
-      var g = document.createElement("script");
-      g.async = true;
-      g.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(m.ga4);
-      document.head.appendChild(g);
       window.dataLayer = window.dataLayer || [];
       // Do NOT clobber: <ConsentScripts/> installed this shim in <head> and the
       // consent defaults were pushed through it. Replacing it here would be
@@ -326,9 +322,18 @@ export const CONSENT_RUNTIME = `
       if (typeof window.gtag !== "function") {
         window.gtag = function () { window.dataLayer.push(arguments); };
       }
+      // Explicitly opt out of automatic customer-data collection, including
+      // remotely enabled enhanced conversions. Cookie consent permits counts,
+      // not reading enquiry fields. Queue this before loading Google's SDK.
+      // https://support.google.com/google-ads/answer/13438771
+      window.gtag("set", { user_data: null });
       window.gtag("js", new Date());
-      window.gtag("config", m.ga4, { page_location: safePageLocation(), page_referrer: safeReferrer(), ahv_environment: m.environment || "production", debug_mode: m.environment === "staging" });
-      if (m.adsSendTo) window.gtag("config", m.adsSendTo.split("/")[0], { send_page_view: false });
+      window.gtag("config", m.ga4, { user_data: null, page_location: safePageLocation(), page_referrer: safeReferrer(), ahv_environment: m.environment || "production", debug_mode: m.environment === "staging" });
+      if (m.adsSendTo) window.gtag("config", m.adsSendTo.split("/")[0], { user_data: null, send_page_view: false });
+      var g = document.createElement("script");
+      g.async = true;
+      g.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(m.ga4);
+      document.head.appendChild(g);
     }
     if (m.clarity) {
       window.clarity = window.clarity || function () { (window.clarity.q = window.clarity.q || []).push(arguments); };
