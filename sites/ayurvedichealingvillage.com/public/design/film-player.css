@@ -13,3 +13,20 @@
   #ahv-design-root[data-ahv-family="home-hi-fi-v4"] a[href*="youtube.com/watch"]:has(> div > img):hover > div > img {transform:scale(1.025);}
   #ahv-design-root[data-ahv-family="home-hi-fi-v4"] a[href*="youtube.com/watch"]:has(> div > img):hover > div > span > span:has(> svg) {transform:scale(1.06);}
 }
+
+/* Keep homepage hero CTA labels centred when the adjacent buttons stretch or wrap. */
+#ahv-design-root[data-ahv-route="/"] section:has(video) a:has(+ a[data-ahv-film]),
+#ahv-design-root[data-ahv-route="/"] section:has(video) a[data-ahv-film] {
+  display:inline-flex !important;
+  align-items:center;
+  justify-content:center;
+  text-align:center !important;
+  box-sizing:border-box;
+}
+#ahv-design-root[data-ahv-route="/"] section:has(video) a[data-ahv-film] > span {
+  justify-content:center;
+  text-align:center;
+}
+#ahv-design-root[data-ahv-route="/"] section:has(video) a[data-ahv-film] svg {
+  flex-shrink:0;
+}

@@ -1,3 +1,4 @@
+import { removeHomeVillaRates } from './home-villa-rates.mjs';
 import { routeStylesFor, routeStyleHref } from "./route-styles.mjs";
 import { applyReviewSnapshot } from "./content-review.mjs";
 import { readFileSync } from "node:fs";
@@ -110,7 +111,7 @@ const STATIC_BOOT = `
     try {
       var response = await fetch(cfg.staticDesktopPath, { credentials: "same-origin" });
       if (!response.ok) throw new Error("desktop view " + response.status);
-      host.innerHTML = await response.text();
+      host.innerHTML = (${removeHomeVillaRates.toString()})(await response.text(), cfg.staticHome ? "/" : "");
       host.setAttribute("data-ahv-variant", "desktop");
     } catch (error) {
       host.setAttribute("data-ahv-variant", "mobile-fallback");
