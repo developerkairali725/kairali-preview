@@ -499,6 +499,15 @@ importers:
 
   sites/kairali-com-rebuild/site:
     dependencies:
+      '@kairali/chat':
+        specifier: workspace:*
+        version: link:../../../packages/chat
+      '@kairali/consent':
+        specifier: workspace:*
+        version: link:../../../packages/consent
+      '@kairali/social':
+        specifier: workspace:*
+        version: link:../../../packages/social
       '@kairali/ui':
         specifier: workspace:*
         version: link:../../../packages/ui

@@ -5,6 +5,8 @@ import Footer from "@/components/Footer";
 import Enhance from "@/components/Enhance";
 import { JsonLd } from "@/components/Bits";
 import Analytics from "@/components/Analytics";
+import { ConsentBanner, ConsentScripts } from "@kairali/consent";
+import { ChatbaseLoader } from "@kairali/chat";
 import { ASSET_ORIGIN, IS_PRODUCTION, MEASUREMENT, PHONE, SITE_NAME, SITE_URL, SOCIAL } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -22,6 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
+        <ConsentScripts />
         <link rel="preload" href="/fonts/kurale-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/fonts/asap-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
@@ -32,6 +35,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <Enhance />
         <Analytics enabled={IS_PRODUCTION} ga4={MEASUREMENT.ga4} gtm={MEASUREMENT.gtm} clarity={MEASUREMENT.clarity} />
+        <ChatbaseLoader consentGated />
+        <ConsentBanner privacyHref="/privacy-policy.aspx" />
         <JsonLd data={{
           "@context": "https://schema.org",
           "@graph": [

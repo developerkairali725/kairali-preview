@@ -49,6 +49,7 @@ import { join, resolve, dirname, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { selectSites } from "./lib/selected-sites.mjs";
 import { EXEMPT } from "./factory-matrix-lint.mjs";
+import { resolveSiteAppRoot } from "./lib/site-app-root.mjs";
 
 export const REPO_ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 export const PKG = "@kairali/social";
@@ -132,7 +133,7 @@ export function fleetSites(sitesDir) {
     .sort();
 }
 
-/** Collect .tsx/.ts sources under a site's app/ dir (recursive). */
+/** Collect .tsx/.ts sources under a site's app/ and shared components dirs. */
 export function collectAppSources(siteDir) {
   const out = [];
   const walk = (dir) => {
@@ -142,8 +143,10 @@ export function collectAppSources(siteDir) {
       else if (/\.(tsx|ts)$/.test(e.name)) out.push({ path: relative(siteDir, p), src: readFileSync(p, "utf8") });
     }
   };
-  const appDir = join(siteDir, "app");
-  if (existsSync(appDir) && statSync(appDir).isDirectory()) walk(appDir);
+  for (const sourceDir of ["app", "components"]) {
+    const dir = join(siteDir, sourceDir);
+    if (existsSync(dir) && statSync(dir).isDirectory()) walk(dir);
+  }
   return out;
 }
 
@@ -246,7 +249,8 @@ export function main(argv = []) {
       continue;
     }
     const siteDir = join(sitesDir, name);
-    const files = collectAppSources(siteDir);
+    const appDir = resolveSiteAppRoot(key);
+    const files = collectAppSources(appDir);
     if (files.length === 0) {
       violations.push(`${key}: no app/ sources and not in the EXEMPT ledger — a page-bearing site without an app dir (or an exemption) cannot carry the mandatory footer socials`);
       continue;
@@ -264,11 +268,11 @@ export function main(argv = []) {
     }
     violations.push(...checkSiteSources(files, key, hrefs, nativeFooter));
 
-    const pkgPath = join(siteDir, "package.json");
+    const pkgPath = join(appDir, "package.json");
     if (existsSync(pkgPath) && !readFileSync(pkgPath, "utf8").includes(`"${PKG}"`)) {
       violations.push(`${key}: package.json does not declare "${PKG}"`);
     }
-    const nextCfg = join(siteDir, "next.config.ts");
+    const nextCfg = join(appDir, "next.config.ts");
     if (existsSync(nextCfg) && !readFileSync(nextCfg, "utf8").includes(`"${PKG}"`)) {
       violations.push(`${key}: next.config.ts does not transpile "${PKG}" (it ships TSX source, like consent/analytics)`);
     }
