@@ -251,8 +251,9 @@
     if (!document.getElementById("ahv-contact-controls")) {
       var controls = document.createElement("dialog");
       controls.id = "ahv-contact-controls";
+      controls.className = "ahv-contact-choices";
       controls.setAttribute("aria-labelledby", "ahv-contact-title");
-      controls.innerHTML = '<button type="button" data-ahv-close aria-label="Close chat choices">Close</button><h2 id="ahv-contact-title">How would you like to chat?</h2><a class="ahv-contact-wa" href="https://wa.me/919289838797" target="_blank" rel="noopener noreferrer">WhatsApp us</a><button type="button" class="ahv-contact-chat"><span class="ahv-contact-label">Chat with Priya</span></button>';
+      controls.innerHTML = '<button type="button" data-ahv-close aria-label="Close chat choices">Close</button><h2 id="ahv-contact-title">How would you like to chat?</h2><div class="ahv-contact-channels"><a class="ahv-contact-wa" href="https://wa.me/919289838797" target="_blank" rel="noopener noreferrer">WhatsApp us</a><button type="button" class="ahv-contact-chat"><span class="ahv-contact-label">Chat with Priya</span></button><a class="ahv-contact-social" href="https://ig.me/m/kairaliayurvedichealingvillage" target="_blank" rel="noopener noreferrer">Instagram</a><a class="ahv-contact-social" href="https://m.me/KairaliTheAyurvedicHealingVillage" target="_blank" rel="noopener noreferrer">Facebook Messenger</a></div>';
       controls.querySelector("[data-ahv-close]").addEventListener("click", function () { controls.close(); });
       controls.querySelector(".ahv-contact-chat").addEventListener("click", function (ev) { controls.close(); openChat(ev); });
       document.body.appendChild(controls);

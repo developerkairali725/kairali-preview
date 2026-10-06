@@ -644,6 +644,21 @@ html[lang="pt"] #ahv-consent * { font-family: Arial, sans-serif !important; }
   margin-inline:auto;background-size:contain!important;background-position:center!important;background-repeat:no-repeat;
 }
 
+/* All four chat channels remain readable in phone and short landscape dialogs. */
+#ahv-contact-controls.ahv-contact-choices {
+  max-height:calc(100vh - 32px);
+  max-height:calc(100dvh - 32px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+}
+#ahv-contact-controls.ahv-contact-choices .ahv-contact-channels { display:grid;gap:12px; }
+#ahv-contact-controls.ahv-contact-choices .ahv-contact-channels > :is(a,button) {
+  width:100%;min-width:0;height:auto;min-height:48px;margin:0;padding:12px 16px;
+  border-radius:4px;background:#5A4420;color:#F7F4EA;text-align:center;
+}
+#ahv-contact-controls.ahv-contact-choices .ahv-contact-label { display:inline; }
+#ahv-contact-controls.ahv-contact-choices [data-ahv-close] { width:auto;height:auto;min-width:48px; }
+
 /* source: /design/newsletter.css */
 /* Shared by desktop/mobile footers, including native English pages.
    Space the input itself: password-manager helper nodes must not add flex gaps. */
