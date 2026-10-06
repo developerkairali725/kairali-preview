@@ -51,11 +51,17 @@
     for (var i = 0; i < nodes.length; i++) {
       var n = nodes[i], here = onPath(n), cur = n.path === route, kids = n.children && n.children.length, id = "ahv-fh-b" + (++bid);
       h += '<li><div class="ahv-fh-row">';
-      if (n.link) h += '<a href="' + esc(lp(n.path)) + '"' + (cur ? ' aria-current="page"' : "") + ">" + esc(n.label) + "</a>";
+      if (kids) {
+        h += '<button type="button" class="ahv-fh-toggle" aria-controls="' + id + '" aria-expanded="' + (here ? "true" : "false") + '"><span class="ahv-fh-branch-label">' + esc(n.label) + '</span><span class="ahv-fh-branch-icon" aria-hidden="true">' + (here ? "−" : "+") + '</span></button>';
+      } else if (n.link) h += '<a href="' + esc(lp(n.path)) + '"' + (cur ? ' aria-current="page"' : "") + ">" + esc(n.label) + "</a>";
       else h += '<span class="ahv-fh-plain">' + esc(n.label) + "</span>";
-      if (kids) h += '<button type="button" class="ahv-fh-toggle" aria-controls="' + id + '" aria-expanded="' + (here ? "true" : "false") + '" aria-label="' + esc(n.label) + '"><span aria-hidden="true">' + (here ? "−" : "+") + "</span></button>";
       h += "</div>";
-      if (kids) h += '<div id="' + id + '" class="ahv-fh-kids"' + (here ? "" : " hidden") + ">" + list(n.children) + "</div>";
+      if (kids) {
+        h += '<div id="' + id + '" class="ahv-fh-kids"' + (here ? "" : " hidden") + ">";
+        // The whole parent row expands. Keep its original page reachable inside the branch.
+        if (n.link) h += '<a class="ahv-fh-overview" href="' + esc(lp(n.path)) + '"' + (cur ? ' aria-current="page"' : "") + ">" + esc(T("Overview")) + " — " + esc(n.label) + "</a>";
+        h += list(n.children) + "</div>";
+      }
       h += "</li>";
     }
     return h + "</ul>";
@@ -115,7 +121,7 @@
       if (t.classList.contains("ahv-fh-toggle")) {
         var kids = panel.querySelector("#" + t.getAttribute("aria-controls"));
         var ex = t.getAttribute("aria-expanded") !== "true";
-        t.setAttribute("aria-expanded", String(ex)); t.firstElementChild.textContent = ex ? "−" : "+";
+        t.setAttribute("aria-expanded", String(ex)); t.querySelector(".ahv-fh-branch-icon").textContent = ex ? "−" : "+";
         if (kids) kids.hidden = !ex;
       }
     });

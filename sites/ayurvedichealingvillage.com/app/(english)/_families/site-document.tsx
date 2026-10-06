@@ -116,7 +116,7 @@ export function SiteDocument({
             the same header row; labels via window.__AHV_T, hrefs via AHV_LOCAL_PATHS, so one file
             serves every locale. */}
 
-        <script defer src="/design/family-header.js" />
+        <script defer src="/design/family-header.js?v=20261006-row" />
         <meta name="google-site-verification" content={verification.googleSiteVerification} />
         <meta name="msvalidate.01" content={verification.msvalidate01} />
         <meta name="facebook-domain-verification" content={verification.facebookDomainVerification} />
