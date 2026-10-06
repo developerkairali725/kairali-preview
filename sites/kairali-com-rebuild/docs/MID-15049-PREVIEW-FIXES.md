@@ -74,7 +74,7 @@ See [MID-15049-CI-FOLLOWUP.md](MID-15049-CI-FOLLOWUP.md) for the later Windows a
 
 ## Owner resolution — 2026-10-06 12:27:24 IST
 
-The 6 October reply in the MID-15049 email thread approves shared workspace/factory integration, Brief, Strategy, Premium v3 design source, the current homepage as golden page and final preview visual/design. Evidence is recorded at `launches/kairali-com-rebuild/owner-approvals/2026-10-06-mid15049-email.md` and in `launches/kairali.com/approvals.yaml`.
+The 6 October reply in the MID-15049 email thread approves shared workspace/factory integration, Brief, Strategy, Premium v3 design source, the current homepage as golden page and final preview visual/design. Evidence is recorded at `launches/kairali-com-rebuild/owner-approvals/2026-10-06-mid15049-email.md` and in `launches/kairali-com-rebuild/approvals.yaml`.
 
 It also directs the implementation to use a general careers-interest state with vacancy status pending HR confirmation; preserve conflicting privacy-policy/certificate wording while using **Kairali Ayurvedic Health Resorts Private Limited** in factual contexts; link the current centre roster at `kairalicenters.com`; preserve `kairaliproducts.com` and `kairaliproducts.in` as distinct markets; retain the document hub as implemented; and keep forms inactive.
 
