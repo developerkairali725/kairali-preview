@@ -14,9 +14,13 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "next": "16.3.7",
+    "next": "16.3.6",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "@kairali/chat": "workspace:*",
+    "@kairali/consent": "workspace:*",
+    "@kairali/social": "workspace:*",
+    "@kairali/ui": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",

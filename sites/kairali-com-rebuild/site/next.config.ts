@@ -5,6 +5,7 @@ import type { NextConfig } from "next";
 const isProduction = process.env.SITE_ENV === "production";
 
 const nextConfig: NextConfig = {
+  transpilePackages: ["@kairali/consent", "@kairali/chat", "@kairali/social"],
   poweredByHeader: false,
   reactStrictMode: true,
   images: { unoptimized: true }, // images are pre-optimised to WebP by pipeline/

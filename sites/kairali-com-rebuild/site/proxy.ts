@@ -92,5 +92,5 @@ function encodeLegacy(v: string) {
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|media/|fonts/|brand/|og/|favicon|apple-touch-icon|icon-512|search-index.json|sitemap.xml|robots.txt).*)"],
+  matcher: ["/((?!api/|_next/static|_next/image|media/|fonts/|brand/|og/|favicon|apple-touch-icon|icon-512|search-index.json|sitemap.xml|robots.txt).*)"],
 };

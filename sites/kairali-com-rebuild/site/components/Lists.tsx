@@ -125,7 +125,7 @@ export function BrandPillars() {
           const b = p.brand ? SUB_BRANDS.find((s) => s.key === p.brand) : undefined;
           return (
             <article key={p.title} className="pillar" aria-labelledby={`pl-${p.photo}`}>
-              <div className="pillar-photo"><Photograph k={p.photo} p={ph[p.photo]} sizes="(min-width: 900px) 25vw, 100vw" /></div>
+              <div className="pillar-photo"><Photograph k={p.photo} p={ph[p.photo]} sizes="(min-width: 900px) 25vw, 50vw" /></div>
               <div className="stack" style={{ gap: 10, padding: 20 }}>
                 <h3 id={`pl-${p.photo}`}>{p.title}</h3>
                 <ul className="pillar-items">{p.items.map((i) => <li key={i}>{i}</li>)}</ul>

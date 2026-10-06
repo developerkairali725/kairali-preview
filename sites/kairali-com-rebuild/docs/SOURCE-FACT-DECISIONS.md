@@ -41,7 +41,7 @@ Checked 29 September 2026. Every consequential fact on the site is listed here w
 ## Photography and brand assets (owner-authorised company bank)
 
 - **Logo, icon and sub-brand marks:** `Kairali-Image-Library/brand-assets/svg`, the 2026 artwork. They are never redrawn. Leaf motifs use the leaf paths of the official icon only, at low opacity and decorative.
-- **Curated openers:** 16 photographs. The Healing Village set is Prachi Khasgiwala's Palakkad shoot; Villa Raag uses its professional shoot; the Kairali 2025 shoot supplies the rest. All are `register_ok` yes/True in `IMAGE_CATALOG.csv`. Provenance: `pipeline/out/curated-photo-provenance.csv`.
+- **Selected openers:** 16 photographs. The Healing Village set is Prachi Khasgiwala's Palakkad shoot; Villa Raag uses its professional shoot; the Kairali 2025 shoot supplies the rest. All are `register_ok` yes/True in `IMAGE_CATALOG.csv`. Provenance: `pipeline/out/curated-photo-provenance.csv <!-- compliance-allow: curated (file name) -->`.
 - **Page imagery:** 357 images from the kairali.com capture (company site assets), with SHA-256 per file in `pipeline/out/media-log.csv`.
 - **Not found in any company source:** heritage engraving artwork, paper/weave texture files, and a horizontal logo lockup.
   - Textures use the approved Premium v3 CSS/SVG treatments at 3.5%.

@@ -186,6 +186,17 @@ function walk(dir, out = []) {
   return out;
 }
 
+/**
+ * True when `file` is `root` itself or lies beneath it. Separator-agnostic:
+ * path.join yields backslashes on Windows, so a literal "/" prefix test never
+ * matched there and every vendored file was reported at error severity.
+ */
+export function isUnderRoot(file, root) {
+  const f = file.replace(/\\/g, "/");
+  const r = root.replace(/\\/g, "/");
+  return f === r || f.startsWith(r + "/");
+}
+
 /** Vendored trees declared by the site, as paths relative to the site dir. */
 function siteVendored(siteDir) {
   const cfg = join(siteDir, "site.config.json");
@@ -232,8 +243,7 @@ export function lintDir(dir, { entity } = {}) {
     eff = "ktahv"; // fail safe: strictest lock until configured
   }
   const vendoredRoots = siteVendored(dir).map((rel) => join(dir, rel));
-  const isVendored = (file) =>
-    vendoredRoots.some((root) => file === root || file.startsWith(root + "/"));
+  const isVendored = (file) => vendoredRoots.some((root) => isUnderRoot(file, root));
   for (const file of walk(dir)) {
     const ext = extname(file).toLowerCase();
     const asCode = CODE_EXTENSIONS.has(ext);

@@ -15,6 +15,7 @@ export default function DownloadCentre({ page }: { page: Page }) {
     <section className="section" style={{ paddingTop: 40 }}>
       <div className="container stack" style={{ gap: 40 }}>
         {intro.length > 0 && <details className="card"><summary style={{ cursor: "pointer", fontWeight: 500, minHeight: 44, display: "flex", alignItems: "center" }}>Downloads list as previously published on kairali.com</summary>{intro.map((s, i) => <Prose key={i} html={s.html} className="wide" />)}</details>}
+        <p className="notice">Current documents are maintained in the <a href={d.portal}>Kairali document library</a>. Select a collection to open its current PDF. Earlier files below remain available for reference.</p>
         <DownloadFilters collections={all} portal={d.portal} checked={d.checked} />
       </div>
     </section>

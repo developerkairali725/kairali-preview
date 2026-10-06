@@ -1,4 +1,6 @@
 """Remove stale fixed network counts from published copy; raw audits remain unchanged."""
+import re
+
 REPLACEMENTS = {"nine countries": "countries worldwide", "25 centers": "treatment centres", "25 Ayurvedic centres": "Ayurvedic centres"}
 def release_copy(value):
     if isinstance(value, str):
@@ -10,3 +12,53 @@ def release_copy(value):
     if isinstance(value, dict):
         return {key: release_copy(item) for key, item in value.items()}
     return value
+
+
+# MID-15049: Abhilash's 30 September email, Q1-Q13. No replacement clinical claims.
+def owner_rulings(pages):
+    pages = release_copy(pages)
+    claim_sentences = [
+        "A full range of traditional treatments is provided to the guests at the resort, and nothing pleases us more than seeing guests solve chronic health problems after a few weeks guidance and dedication from our world-class Ayurveda team.",
+        "A full range of traditional treatments is available at the resort, and nothing pleases us more than seeing guests solve chronic health problems after just a few weeks guidance from our world-class Ayurvedic team.",
+        "Ayurvedic Medicines are absolutely free from side-effects",
+        "The benefits of these ingredients helps one to heal the ailment without any side-effects and give a permanent solution.",
+        "Cure your ailments through Ayurveda with No side effects",
+        "It has worldwide acceptance for its natural and chemical-free products that gives long-lasting and permanent results.",
+        "Kairali is not only a perfect haven to relax, recuperate and detoxify but also is a treatment centre that treats all health-related issues in a natural way.",
+        "They help in curing numerous ailments including diabetes, arthritis, respiratory disorders and depression.",
+        "Ayurvedic products without any side-effects and chemicals are something that everyone in this present world are searching for.",
+        "Ayurveda is a life science dedicated to the importance of food cure, with the cause of disease highly attributed to incorrect diet.",
+        "Purely on the basis of Ayurvedic nutrition and ayurvedic cure, one can cleanse and detoxify oneself without causing any ill-effects on the body.",
+        "Ayurveda does not aim only towards curing your ailment but an Ayurvedic practitioner’s main aim is to restore the harmony in the body through complete purification.",
+        "This Ayurvedic hospital helps patients all over the world to cure their health-related issues with the help of Ayurvedic treatments and therapies.",
+        "It is known for its innovative creations and natural solutions to provide products and medicines to cure health issues.",
+        "Doctors and physicians from all around the world recommend these Ayurvedic products for their natural ingredients as it helps to cure the diseases in a natural way with permanent results.",
+        "Only herbal medicated oils and herbs are used in treatments and massages that have no side effects.",
+        "However, as we have already mentioned about the fact that they are chemical-free and also free from side-effects, it can be consumed by anyone, without giving a second thought.",
+        "Only medicated oils and herbs are used in treatments and massages that have no side effects.",
+        "An epitome of health and wellness, this institution has not only paved the way for a formal Ayurvedic structure to cure illness but has also made it possible for people to realize that the best form of living is to live amidst nature and adapting to natural means of living.",
+        "When properly conducted, Ayurveda is a fantastic and proven way to treat one’s body and mind for recovery, cure and a preventative state of health.",
+    ]
+    def remove_claims(value):
+        if isinstance(value, str):
+            for sentence in claim_sentences:
+                # Preserve surrounding prose; remove a whole promise even when it contains inline links.
+                pattern = re.escape(sentence).replace(r"\ ", r"(?:\s|<[^>]+>)+")
+                value = re.sub(pattern, "", value)
+            return value
+        if isinstance(value, list):
+            return [remove_claims(item) for item in value]
+        if isinstance(value, dict):
+            return {key: (item if key in ("sourceUrl", "sourceSha256") else remove_claims(item)) for key, item in value.items()}
+        return value
+    pages = remove_claims(pages)
+    home = pages.get("/", {})
+    for section in home.get("sections", []):
+        section["html"] = re.sub(r'<p><a href="/ayurveda-treatment-centres.aspx">The demand for Ayurveda has led to further 24 more centres\.\s*</a></p>', "", section["html"])
+    partner = pages.get("/partnerships-and-investment.aspx", {})
+    for section in partner.get("sections", []):
+        section["html"] = section["html"].replace("established in the year 1997", "established in the year 1999")
+    svata = pages.get("/svata-katerina-prague-czech-republic.aspx", {})
+    for section in svata.get("sections", []):
+        section["html"] = re.sub(r"<table\b[^>]*>.*?</table>", "", section["html"], flags=re.S)
+    return pages

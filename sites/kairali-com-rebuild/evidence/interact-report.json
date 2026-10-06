@@ -1,0 +1,237 @@
+[
+ {
+  "name": "no Google Fonts requests",
+  "ok": true,
+  "detail": "no external hosts"
+ },
+ {
+  "name": "no third-party requests on load (key pages)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no console errors (key pages)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Kurale, Asap and Lato faces loaded",
+  "ok": true,
+  "detail": "Kurale 400, Asap 400 600, Lato 400, Asap Fallback normal"
+ },
+ {
+  "name": "H1 uses Kurale",
+  "ok": true,
+  "detail": "Kurale, \"Kurale Fallback\", Georgia, serif"
+ },
+ {
+  "name": "no synthetic bold on display face",
+  "ok": true,
+  "detail": "none"
+ },
+ {
+  "name": "home CLS ≤ 0.1 (lab)",
+  "ok": true,
+  "detail": "0.0000"
+ },
+ {
+  "name": "home LCP ≤ 2500 ms (lab, local, unthrottled)",
+  "ok": true,
+  "detail": "480 ms"
+ },
+ {
+  "name": "first Tab reaches skip link",
+  "ok": true,
+  "detail": "Skip to content"
+ },
+ {
+  "name": "skip link moves focus to main",
+  "ok": true,
+  "detail": "main"
+ },
+ {
+  "name": "mega menu opens with keyboard",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "Escape closes menu and returns focus",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "visible focus outline on links",
+  "ok": true,
+  "detail": "solid 3px"
+ },
+ {
+  "name": "mobile menu opens",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "mobile menu closes with Escape",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "touch targets ≥ 44px (buttons)",
+  "ok": true,
+  "detail": "min 48px"
+ },
+ {
+  "name": "/contact-us.aspx: all form controls inactive",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "/contact-us.aspx: explicit preview notice",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "/enquiry-form.aspx: all form controls inactive",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "/enquiry-form.aspx: explicit preview notice",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "/onlineconsultation.aspx: all form controls inactive",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "/onlineconsultation.aspx: explicit preview notice",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "/apply-now.aspx?id=7: all form controls inactive",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "/apply-now.aspx?id=7: explicit preview notice",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "/svata-katerina-prague-czech-republic.aspx: all form controls inactive",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "/svata-katerina-prague-czech-republic.aspx: explicit preview notice",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "/ayurveda-newsletter.aspx: all form controls inactive",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "/ayurveda-newsletter.aspx: explicit preview notice",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no form data transmitted (no POST requests)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "general enquiry has no gender/age/address fields (Q7)",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "apply ?id=7 pre-selects Ayurveda Therapist",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "apply ?id=7 pre-fills job reference Ayu819814",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "medical consultation form keeps its separate full field set",
+  "ok": true,
+  "detail": "33 named fields"
+ },
+ {
+  "name": "search returns indexed results for 'panchakarma'",
+  "ok": true,
+  "detail": "10 results"
+ },
+ {
+  "name": "multi-word search ranks Villa Raag first",
+  "ok": true,
+  "detail": "Villa Raag"
+ },
+ {
+  "name": "ArrowDown moves focus into results",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no-results state",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "section facet filters results",
+  "ok": true,
+  "detail": "6 results in Group & awards"
+ },
+ {
+  "name": "download library shows 12 current + earlier collections",
+  "ok": true,
+  "detail": "21 cards"
+ },
+ {
+  "name": "product catalogues link to public portal PDFs",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "no pending/review labels remain",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "language + currency filters narrow editions",
+  "ok": true,
+  "detail": "5 document editions shown · Clear filters"
+ },
+ {
+  "name": "download no-results state",
+  "ok": true,
+  "detail": ""
+ },
+ {
+  "name": "reduced motion: all reveal content visible",
+  "ok": true,
+  "detail": "0 hidden"
+ },
+ {
+  "name": "reduced motion: transitions disabled",
+  "ok": true,
+  "detail": "0s"
+ },
+ {
+  "name": "content renders without JavaScript (SSR/SSG)",
+  "ok": true,
+  "detail": "4848 chars"
+ },
+ {
+  "name": "reflow at 320px: no horizontal page scroll",
+  "ok": true,
+  "detail": ""
+ }
+]

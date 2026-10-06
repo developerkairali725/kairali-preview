@@ -93,8 +93,8 @@ sites:
     entity: "Kairali Group"
     stage: "preview"
     owner: "Abilash"
-    blocker: null
-    updated: "2026-07-18"
+    blocker: "MID-15049: fixes verified; Windows asset restore and preview-notice contrast repaired. Linux CI root build/package tests pass at 74ff099b, compliance/brand/AHV Lighthouse remain red. Automatic candidate Ready but protected; Kairali Vercel team access required. Local mobile performance remains below target. Real iPhone/final visual evidence pending by 3 Oct EOD IST. Follow-up: sites/kairali-com-rebuild/docs/MID-15049-CI-FOLLOWUP.md. Existing preview_url remains historical."
+    updated: "2026-09-30"
     preview_url: "https://kairali-web-factory-kairali-com.vercel.app"
     live_url: null
   - name: "ayurvedichealingvillage.com (KTAHV)"

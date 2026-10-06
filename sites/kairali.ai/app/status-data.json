@@ -1,7 +1,7 @@
 {
   "schema": 2,
-  "generated": "2026-09-28 23:10:42 IST",
-  "generated_utc": "2026-09-28T17:40:42Z",
+  "generated": "2026-09-30 15:58:26 IST",
+  "generated_utc": "2026-09-30T10:28:26Z",
   "os": {
     "milestone": "M0 done · M1 merged · M2 MERGED (a220f82) · M3 next · M4 pilot done",
     "milestones": [
@@ -33,7 +33,7 @@
     ],
     "strict_residues": 0,
     "unacked_directives": 64,
-    "open_questions": 171,
+    "open_questions": 173,
     "decisions": 15,
     "tests": null
   },
@@ -44,8 +44,8 @@
       "stage": "preview",
       "phase": 5,
       "owner": "Abilash",
-      "blocker": null,
-      "updated": "2026-07-18",
+      "blocker": "MID-15049: fixes verified; Windows asset restore and preview-notice contrast repaired. Linux CI root build/package tests pass at 74ff099b, compliance/brand/AHV Lighthouse remain red. Automatic candidate Ready but protected; Kairali Vercel team access required. Local mobile performance remains below target. Real iPhone/final visual evidence pending by 3 Oct EOD IST. Follow-up: sites/kairali-com-rebuild/docs/MID-15049-CI-FOLLOWUP.md. Existing preview_url remains historical.",
+      "updated": "2026-09-30",
       "preview_url": "https://kairali-web-factory-kairali-com.vercel.app",
       "live_url": null,
       "vector": {

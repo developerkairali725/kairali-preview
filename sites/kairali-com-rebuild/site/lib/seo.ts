@@ -3,7 +3,7 @@ import { ASSET_ORIGIN, IS_PRODUCTION, SITE_NAME, SITE_URL } from "./site";
 import { absolute, excerpt, pageHeading, pages, photos, familyPhotoKey, type Page } from "./content";
 
 // Title/description policy (docs/SEO-METADATA-DECISIONS.md):
-//  - live title/description kept verbatim where unique across the site (search continuity);
+//  - live title/description kept verbatim where distinct across the site (search continuity);
 //  - where the live value is shared by several URLs (e.g. 78 award pages), a descriptive
 //    replacement is built from the page's own H1 and opening copy. No keywords are invented.
 let dupT: Set<string> | null = null;

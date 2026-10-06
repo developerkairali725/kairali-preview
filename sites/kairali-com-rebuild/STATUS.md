@@ -1,34 +1,23 @@
-# STATUS — Kairali.com local build (29 Sep 2026)
+# STATUS — Kairali.com preview fixes
 
-**State:** LOCAL BUILD COMPLETE + OWNER ROUND 2 DONE — handoff ready (DEEPU-HANDOFF.md); NOT launch-ready (forms mocked, integrations/owner answers open)
-**Previous state line:** LOCAL BUILD COMPLETE — running at **http://127.0.0.1:8774** (Next.js production server, bound to 127.0.0.1)
-**Current action:** none running except the preview. Awaiting owner answers (`OWNER-QUESTIONS.md`) and visual approval.
+Updated 2026-09-30 15:29:41 IST. Runtime source commit `c3b7679d`, based on current main `973ce108`.
 
-## Guardrails honoured
-- Local only: no push, no deployment, no DNS, no live form delivery, and no new or duplicate workers. The one Git repository here is `local-build/`, with no remote.
-- Other website projects and company sources were read-only.
+**State:** OWNER COPY FIXES IMPLEMENTED AND VERIFIED LOCALLY; Q8-C INACTIVE PREVIEW; NOT LIVE-LAUNCH READY.
 
-## Headline results (details in BUILD-REPORT.md)
-- 179/179 route dispositions correct (the 215 mapping plus observations and probes). Legacy query routes, case variants and real 404s all behave as specified.
-- 72/72 legacy documents are byte-identical at their exact URLs. 12 current collections with 100 editions are live on the portal, including all five product catalogues as public current editions per the owner update.
-- Content parity is 99.4% of source words as contiguous text, and every one of the 62 unmatched blocks is classified as deliberate.
-- 0 SEO failures and 39/39 browser interaction checks passed. 56 screenshots at desktop and mobile widths show no overflow. No Google Fonts or other third-party requests are made on load.
+Local preview: http://127.0.0.1:8774. Current public alias remains the previous build until the normal release path passes.
 
-## Log
-- 13:52 BUILD-TASK.md read; STATUS.md created.
-- 14:40 Sources read: owner decisions, the Premium v3 bundle (tokens and OFL fonts), the audit REPORT/HANDOFF and the 215-route mapping.
-- 14:55 Real 2026 brand artwork located in `Kairali-Image-Library/brand-assets/svg`.
-- 15:05 Portal, sub-brand URL and whyayurveda.org event facts verified.
-- 15:20 Content pipeline complete (150 pages, 357 images, 72 documents). 88 company CMS images fetched politely.
-- 15:45 Next.js app, chrome, families, proxy routing and forms built. First production build passed.
-- Owner update applied: the five product catalogues are public current editions, and the pending/401 labels were removed.
-- 16:30 Verification suite and interaction suite: 0 failures.
-- Certificates read from the scans themselves: NABH current to 24 Apr 2027; Kerala clinical registration current to 2 May 2028; Ayur Diamond lapsed 23 Jul 2026 (not shown).
-- Final: docs, registers and evidence written. The worktree was merged to `main` in `local-build/` and the preview now serves from there.
+- Owner corrections: stale count caption removed, explicit clinical promises removed, opening year 1999, Svata prices removed, HR warning, maintained hub brochure entry points.
+- Forms: all six disabled, no personal/medical/CV input or upload, API rejects before parsing. Existing backend retained inactive.
+- Local checks: route/docs/images/links/SEO verifier 0 failures; parity 0 REVIEW; browser 47/47, owner styling 150/150, Chromium/WebKit 76/76; focused fixes 15/15; document hub 12/12.
+- Legacy documents: 72/72 SHA-256 verified. Separate replacement review due 5 October.
+- Site audit: zero vulnerabilities. Root audit: eight moderate findings, no high/critical.
+- Root package tests: 76/76. Root build/compliance/brand gates fail; see report for owners and exact next evidence. No gate was weakened and the owner's deliberate unapproved-integration separation was preserved.
+- Fresh-clone build: passed.
 
-- Owner feedback round implemented (square edges, compact products band, natural casing, mobile section navigation): 150/150 owner-feedback checks, full regression green. See BUILD-REPORT.md → Owner feedback round.
+Acceptance matrix, actual document entry URLs and remaining owner/access/release dependencies: [MID-15049-PREVIEW-FIXES.md](docs/MID-15049-PREVIEW-FIXES.md).
 
-- Owner round 2 complete (rounded native controls, nav, news hub, Group Profile template, awards/certifications browsing); portable handoff with bundled reference data and a GA4 measurement audit. Codex publishes to kairali-web-factory/sites/kairali-com-rebuild with SITE_ENV=preview.
+3 October EOD IST handback: reviewed candidate URL, final commit, checks and blocker owner/date. Real iPhone Safari, final visual approval, hosted verifier/OG/Rich Results/Lighthouse, legal/privacy/HR/analytics access remain open. No live-domain or DNS cutover approval.
 
-## Open (owner / release)
-See BUILD-REPORT.md → Publication dependencies, OWNER-QUESTIONS.md, and docs/SEO-ROUTING-DEPLOYMENT.md.
+## CI follow-up
+
+2026-09-30 15:58:16 IST — Windows archive repair and footer notice contrast fix verified. Linux root build/package tests pass at 74ff099b; compliance, brand and AHV Lighthouse remain red. Automatic candidate Ready but protected; connected account gets 403 for Kairali team. Final local mobile lab scores: {'performance': 53, 'accessibility': 100, 'best-practices': 100, 'seo': 69}. Full evidence and dependencies: [MID-15049-CI-FOLLOWUP.md](docs/MID-15049-CI-FOLLOWUP.md).

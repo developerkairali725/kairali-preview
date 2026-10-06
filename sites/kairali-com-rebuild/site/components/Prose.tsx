@@ -4,6 +4,7 @@
 
 const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
 
+import { documentLinkHtml } from "@/lib/document-links";
 import fs from "node:fs";
 import path from "node:path";
 let VS: Record<string, { ok: boolean; title?: string }> | null = null;
@@ -13,7 +14,7 @@ function videoStatus() {
 }
 
 export function transformHtml(html: string): string {
-  return html
+  return documentLinkHtml(html)
     .replace(/<table>/g, '<div class="table-scroll"><table>').replace(/<\/table>/g, "</table></div>")
     .replace(/<div data-yt="([A-Za-z0-9_-]{11})" data-title="([^"]*)"><\/div>/g, (_m, id: string, title: string) => {
       const v = videoStatus()[id];

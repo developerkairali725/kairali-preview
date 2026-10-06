@@ -1,0 +1,38 @@
+{
+  "timestamp_ist": "2026-09-30 15:29:41 IST",
+  "base_main": "973ce108",
+  "runtime_commit": "c3b7679d",
+  "site_build": "passed",
+  "typecheck": "passed",
+  "root_package_tests": {
+    "passed": 76,
+    "failed": 0
+  },
+  "root_build": {
+    "status": "failed",
+    "error": "AHV tools/restore-runtime-assets.mjs: Unexpected archive member"
+  },
+  "root_compliance": {
+    "status": "failed",
+    "errors": 6786,
+    "warnings": 1513,
+    "targets": 18
+  },
+  "root_brand": {
+    "status": "failed",
+    "errors": 1,
+    "error": "Rebuild site.config.json was removed in owner commit 434bf952"
+  },
+  "root_audit": {
+    "moderate": 8,
+    "high": 0,
+    "critical": 0
+  },
+  "site_audit": {
+    "vulnerabilities": 0
+  },
+  "fresh_clone_build": "passed",
+  "no_gate_weakened": true,
+  "fresh_clone_commit": "c3b7679d",
+  "fresh_clone_install": "passed"
+}

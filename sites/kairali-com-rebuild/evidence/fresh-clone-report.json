@@ -1,0 +1,72 @@
+{
+  "commit": "c3b7679d",
+  "clone": "new shallow file:// clone, no reused node_modules",
+  "install_command": "pnpm install --frozen-lockfile",
+  "install_exit_code": 0,
+  "build_command": "SITE_ENV=preview pnpm build",
+  "build_exit_code": 0,
+  "logs": {
+    "fresh-install.log": {
+      "sha256": "98d8e9795b59622247c40c795800b9809a961be94303e5f6382ea9cab704677d",
+      "bytes": 1620,
+      "tail": [
+        "Progress: resolved 29, reused 14, downloaded 5, added 1",
+        "Progress: resolved 29, reused 14, downloaded 9, added 6",
+        "Progress: resolved 29, reused 14, downloaded 9, added 12",
+        "Progress: resolved 29, reused 15, downloaded 10, added 23",
+        "Progress: resolved 29, reused 15, downloaded 10, added 24",
+        "Progress: resolved 29, reused 15, downloaded 10, added 25",
+        "Progress: resolved 29, reused 15, downloaded 13, added 27",
+        "Progress: resolved 29, reused 15, downloaded 13, added 28",
+        "Progress: resolved 29, reused 15, downloaded 14, added 28",
+        "Progress: resolved 29, reused 15, downloaded 14, added 29",
+        "Progress: resolved 29, reused 15, downloaded 14, added 29, done",
+        "",
+        "dependencies:",
+        "+ next 16.3.7",
+        "+ react 19.3.0",
+        "+ react-dom 19.3.0",
+        "",
+        "devDependencies:",
+        "+ @types/node 24.19.0",
+        "+ @types/react 19.3.0",
+        "+ @types/react-dom 19.3.0",
+        "+ playwright 1.62.1",
+        "+ typescript 5.9.3",
+        "",
+        "Done in 3m 3.7s using pnpm v11.19.0"
+      ]
+    },
+    "fresh-build.log": {
+      "sha256": "b566a340d7794ebac8c917934b67b1dad1b6254a72036fac389a406d66cdbfe8",
+      "bytes": 1727,
+      "tail": [
+        "\u251c \u0192 /api/forms/[id]",
+        "\u251c \u25cb /robots.txt",
+        "\u251c \u25cb /search-index.json",
+        "\u251c \u25cb /sitemap.xml",
+        "\u251c   /x/apply/[id]",
+        "\u2502 \u251c \u25cf /x/apply/17",
+        "\u2502 \u251c \u25cf /x/apply/23",
+        "\u2502 \u251c \u25cf /x/apply/26",
+        "\u2502 \u2514 \u25cf [+2 more paths]",
+        "\u251c   /x/award/[key]",
+        "\u2502 \u251c \u25cf /x/award/NS10aW1lcy1pbi1yb3ctY2VydGlmaWNhdGUtb2YtZXhjZWxsZW5jZS1ieS10cmlwLWFkdmlzb3I",
+        "\u2502 \u251c \u25cf /x/award/YWJoaWxhc2gtay1yYW1lc2gtZGlyZWN0b3Ita2FpcmFsaS13aW5zLWVudHJlcHJlbmV1cmlhbC1leGNlbGxlbmNlLWF3YXJkLWZvci1heXVzaC1sZWFkZXJzaGlw",
+        "\u2502 \u251c \u25cf /x/award/YXNpYS1wYWNpZmljLWVudHJlcHJlbmV1cnNoaXAtYXdhcmQyMDE2LWdvZXMtdG8tYWJoaWxhc2gtay1yYW1lc2gtZm9yLW1vc3QtcHJvbWlzaW5nLWNhdGVnb3J5",
+        "\u2502 \u2514 \u25cf [+74 more paths]",
+        "\u2514   /x/blog/[n]",
+        "  \u251c \u25cf /x/blog/2",
+        "  \u2514 \u25cf /x/blog/1",
+        "",
+        "",
+        "\u0192 Proxy (Middleware)",
+        "",
+        "\u25cb  (Static)   prerendered as static content",
+        "\u25cf  (SSG)      prerendered as static HTML (uses generateStaticParams)",
+        "\u0192  (Dynamic)  server-rendered on demand",
+        ""
+      ]
+    }
+  }
+}

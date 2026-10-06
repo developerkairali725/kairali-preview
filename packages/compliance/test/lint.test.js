@@ -1,6 +1,9 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { lintText } from "../src/lint.js";
+import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+import { lintText, lintDir, isUnderRoot } from "../src/lint.js";
 
 const errs = (f) => f.filter((x) => x.severity === "error");
 const rules = (f) => new Set(f.map((x) => x.rule));
@@ -177,4 +180,47 @@ test("permitted departmental mailbox passes; other local parts still fail", () =
   // The doubled-letter legacy typo must still be caught.
   const typo = lintText("Write to infoo@kairali.com", { entity: "ktahv" });
   assert.ok(errs(typo).some((x) => x.rule === "locked-facts"));
+});
+
+// Vendored-root matching must not depend on the OS path separator. On Windows
+// path.join yields backslashes; the old "/"-only prefix test never matched, so
+// vendored trees were reported at error severity there (CI on Linux was fine).
+
+test("isUnderRoot matches POSIX paths", () => {
+  assert.ok(isUnderRoot("/s/site/public/ahv/a.html", "/s/site/public/ahv"));
+  assert.ok(isUnderRoot("/s/site/public/ahv", "/s/site/public/ahv"));
+  assert.ok(!isUnderRoot("/s/site/public/ahv-other/a.html", "/s/site/public/ahv"));
+  assert.ok(!isUnderRoot("/s/site/public/a.html", "/s/site/public/ahv"));
+});
+
+test("isUnderRoot matches Windows-style paths and mixed separators", () => {
+  const root = "C:\\s\\site\\english-candidate\\package-overlay";
+  assert.ok(isUnderRoot(root + "\\Page.dc.html", root));
+  assert.ok(isUnderRoot(root, root));
+  assert.ok(isUnderRoot(root + "\\sub\\Page.dc.html", "C:/s/site/english-candidate/package-overlay"));
+  assert.ok(!isUnderRoot(root + "-other\\Page.html", root));
+  assert.ok(!isUnderRoot("C:\\s\\site\\app\\page.html", root));
+});
+
+test("lintDir: vendored tree is warning-only, authored file in same site stays error", () => {
+  const dir = mkdtempSync(join(tmpdir(), "compliance-vendored-"));
+  try {
+    mkdirSync(join(dir, "public", "ahv"), { recursive: true });
+    mkdirSync(join(dir, "content"), { recursive: true });
+    writeFileSync(
+      join(dir, "site.config.json"),
+      JSON.stringify({ entity: "ktahv", compliance: { vendored: ["public/ahv"] } })
+    );
+    const copy = "Enjoy a luxury spa holiday at our resort.";
+    writeFileSync(join(dir, "public", "ahv", "page.html"), copy);
+    writeFileSync(join(dir, "content", "page.md"), copy);
+    const f = lintDir(dir);
+    const vend = f.filter((x) => x.file.includes("ahv"));
+    const auth = f.filter((x) => x.file.endsWith("page.md"));
+    assert.ok(vend.length >= 4);
+    assert.equal(errs(vend).length, 0, "vendored findings must be warnings");
+    assert.ok(errs(auth).some((x) => x.rule === "clinical-lock"), "authored copy must stay an error");
+  } finally {
+    rmSync(dir, { recursive: true, force: true });
+  }
 });
