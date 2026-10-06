@@ -638,6 +638,12 @@ html[lang="pt"] #ahv-consent * { font-family: Arial, sans-serif !important; }
  #ahv-design-root [data-ahv-home-finder] > div > a { padding-inline:12px!important; }
 }
 
+/* Keep the treatments closing photograph whole instead of a shallow crop. */
+#ahv-design-root[data-ahv-route="/ayurvedic-treatments/"] div[style*="background-image"][style*="neck-upper-back-pain.webp"] {
+  width:100%;max-width:1440px;height:auto!important;aspect-ratio:48/25;
+  margin-inline:auto;background-size:contain!important;background-position:center!important;background-repeat:no-repeat;
+}
+
 /* source: /design/newsletter.css */
 /* Shared by desktop/mobile footers, including native English pages.
    Space the input itself: password-manager helper nodes must not add flex gaps. */
