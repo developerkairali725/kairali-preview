@@ -78,11 +78,13 @@ export const CONSENT_RUNTIME = `
       var target = event.target && event.target.closest && event.target.closest("[data-ahv-cookie-choices]");
       if (!target) return;
       event.preventDefault();
+      // Deny existing tags first; then clear both records so the next page
+      // can show choices rather than restoring the fleet's declined record.
+      applyConsentMode("declined");
       try {
         localStorage.removeItem(CONSENT_KEY);
         localStorage.removeItem(FLEET_CONSENT_KEY);
       } catch (e) {}
-      applyConsentMode("declined");
       window.location.reload();
     });
   }

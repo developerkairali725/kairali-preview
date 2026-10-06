@@ -31,7 +31,7 @@ test('server validation follows the real required fields and permits optional OP
   assert.equal(validationProblem('opd', { full_name: 'Test', age: '35', gender: 'Female', phone: '9999999999', email: '', symptoms: 'Test', consent: true }), null);
   assert.equal(validationProblem('opd', { full_name: 'Test', age: '35', gender: 'Female', phone: '9999999999', symptoms: 'Test', consent: false }), 'MISSING_REQUIRED_FIELDS');
   assert.equal(validationProblem('apply-now', { application_type: 'job-detail', full_name: 'Test', phone: '9999999999', email: 'test@example.com', cover_letter: 'Test', privacy_consent: true }), 'MISSING_REQUIRED_FIELDS');
-  assert.equal(validationProblem('landing-page', { landing_page_path: '/panchkarma-treatment.html', email: 'test@example.com' }), null);
+  assert.equal(validationProblem('landing-page', { landing_page_path: '/legacy-campaign.html', email: 'test@example.com' }), null);
   assert.equal(validationProblem('landing-page', { landing_page_path: '', email: 'test@example.com' }), 'MISSING_REQUIRED_FIELDS');
 });
 
@@ -199,7 +199,7 @@ test('successful non-newsletter forms receive the final language-matched Healing
 });
 
 test('R10 lead cannot bypass name, phone or contact consent on the server',()=>{
- const valid={landing_page_path:'/ayurvedic-treatment-packages.html',fname:'QA',phone:'+919999999999',email:'qa@example.com',consent:true};
+ const valid={landing_page_path:'/ayurvedic-treatment-packages.html',fname:'QA',phone:'+919876543219',email:'qa@example.com',consent:true};
  assert.equal(validationProblem('landing-page',valid),null);
  for(const override of [{fname:''},{phone:''},{consent:false},{consent:'true'}])assert.equal(validationProblem('landing-page',{...valid,...override}),'MISSING_REQUIRED_FIELDS');
 });

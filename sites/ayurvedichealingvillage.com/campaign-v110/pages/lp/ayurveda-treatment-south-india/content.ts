@@ -48,7 +48,7 @@ const content: LpContent = {
       ],
     },
   ],
-  enquiry: {"overline": "Fastest way: WhatsApp", "title": "Ask us anything, today", "lead": ["WhatsApp is the quickest route — dates, programmes, tariffs, travel. Prefer a form? Same team, same answers."], "form": {"heading": "Send an enquiry", "intro": "Tell us how to reach you. Our patient care team can help you plan your visit."}, "aside": {"k": "What happens next", "paragraphs": [["Submit the form to request a consultation. A receipt is shown only after the system confirms your enquiry. We reply with consultation options and what your physician will need to know before admission."], ["Prefer to talk now? Call ", {"a": "+91 9555 156 156", "href": "tel:+919555156156"}, {"br": true}, "International patients: ", {"a": "info@kairali.com", "href": "mailto:info@kairali.com"}]]}},
+  enquiry: {"overline": "Fastest way: WhatsApp", "title": "Ask us anything, today", "lead": ["WhatsApp is the quickest route — dates, programmes, tariffs, travel. Prefer a form? Same team, same answers."], "form": {"heading": "Send an enquiry", "intro": "Tell us how to reach you. Our patient care team can help you plan your visit."}, "aside": {"k": "What happens next", "paragraphs": [["Request a consultation and our patient care team will contact you about consultation options and the information your doctor may need before admission."], ["Prefer to talk now? Call ", {"a": "+91 9555 156 156", "href": "tel:+919555156156"}, {"br": true}, "International patients: ", {"a": "info@kairali.com", "href": "mailto:info@kairali.com"}]]}},
   whatsappText: "Hello, I would like to enquire about Ayurvedic Treatment in South India | Kairali, Palakkad (/lp/ayurveda-treatment-south-india/).",
 };
 

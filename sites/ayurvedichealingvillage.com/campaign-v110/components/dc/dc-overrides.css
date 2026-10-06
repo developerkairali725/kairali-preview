@@ -941,22 +941,27 @@ html:has(#ahv-design-root), body:has(#ahv-design-root) { overflow-x:clip; }
   }
 }
 
-/* Senior citizen offer: room inside the dark hero banner so the text and
+/* Separate the final care section's photo panel from the shared footer. */
+#ahv-design-root:is([data-ahv-route="/offers/senior-citizen-offer/"], [data-ahv-route="/offers/olympics-and-paralympics-offer/"], [data-ahv-route="/offers/defence-and-paramilitary/"]) {
+  padding-bottom: clamp(32px, 4vw, 56px);
+}
+
+/* Shared care campaigns: identical room inside the dark hero banner so the text and
    photo do not touch its edges; "Offer eligibility and terms" beside the
    enquiry form (under it on phones), on a card like the form's */
-#ahv-design-root[data-ahv-route="/offers/senior-citizen-offer/"] section[data-dc-tpl="501"] {
+#ahv-design-root:is([data-ahv-route="/offers/senior-citizen-offer/"], [data-ahv-route="/offers/olympics-and-paralympics-offer/"], [data-ahv-route="/offers/defence-and-paramilitary/"]) section[data-dc-tpl="501"] {
   padding: 40px clamp(20px, 4vw, 48px) !important;
 }
-#ahv-design-root[data-ahv-route="/offers/senior-citizen-offer/"] #consult {
+#ahv-design-root:is([data-ahv-route="/offers/senior-citizen-offer/"], [data-ahv-route="/offers/olympics-and-paralympics-offer/"], [data-ahv-route="/offers/defence-and-paramilitary/"]) #consult {
   flex-wrap: wrap;
   gap: 32px;
   align-items: flex-start;
 }
-#ahv-design-root[data-ahv-route="/offers/senior-citizen-offer/"] #consult > [class*="formSlot"] {
+#ahv-design-root:is([data-ahv-route="/offers/senior-citizen-offer/"], [data-ahv-route="/offers/olympics-and-paralympics-offer/"], [data-ahv-route="/offers/defence-and-paramilitary/"]) #consult > [class*="formSlot"] {
   flex: 1 1 480px;
   max-width: 640px;
 }
-#ahv-design-root[data-ahv-route="/offers/senior-citizen-offer/"] #consult > #offer-terms {
+#ahv-design-root:is([data-ahv-route="/offers/senior-citizen-offer/"], [data-ahv-route="/offers/olympics-and-paralympics-offer/"], [data-ahv-route="/offers/defence-and-paramilitary/"]) #consult > #offer-terms {
   flex: 1 1 340px;
   max-width: 520px;
   width: auto;
@@ -966,11 +971,11 @@ html:has(#ahv-design-root), body:has(#ahv-design-root) { overflow-x:clip; }
   border-radius: 12px !important;
   color: var(--ink) !important;
 }
-#ahv-design-root[data-ahv-route="/offers/senior-citizen-offer/"] #consult > #offer-terms h2 {
+#ahv-design-root:is([data-ahv-route="/offers/senior-citizen-offer/"], [data-ahv-route="/offers/olympics-and-paralympics-offer/"], [data-ahv-route="/offers/defence-and-paramilitary/"]) #consult > #offer-terms h2 {
   margin-top: 0;
   color: var(--green) !important;
 }
-#ahv-design-root[data-ahv-route="/offers/senior-citizen-offer/"] #consult > #offer-terms li {
+#ahv-design-root:is([data-ahv-route="/offers/senior-citizen-offer/"], [data-ahv-route="/offers/olympics-and-paralympics-offer/"], [data-ahv-route="/offers/defence-and-paramilitary/"]) #consult > #offer-terms :is(p, li) {
   color: var(--ink) !important;
 }
 

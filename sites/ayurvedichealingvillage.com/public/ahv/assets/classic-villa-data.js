@@ -1,4 +1,4 @@
-// /classic-villa/ — verbatim from family-05/CLASSIC-VILLA-BUILD.json (WOPS-AHV-CLAUDE-CONTINUATION-002; source record sha256 2726cba1…; room script sha256 ddb8e913…). 3 about ¶ / quote / 4 facts / 13 amenities / 30 gallery originals (15 Interior + 15 Exterior) / 11 room rows (32 photos + 11 symbols, packet alts) / original hero 1440×731 / 3 related cards. Commercial section OMITTED pending reconciliation (INR/EUR dates in range, USD expired — not labelled uniformly expired; no rates shown). Headings "The Villa" / "Villa Features" / "Villa and Numbers" are packet strings.
+// Room category and bed mapping updated from Front Office attachment, 2 October 2026 (message 1a0fc049e9c21663).
 window.AHV_CLASSIC = {
  "h1": "Classic Villa",
  "eyebrow": "Our Villas",
@@ -624,42 +624,6 @@ window.AHV_CLASSIC = {
      "height": 933,
      "alt": "Classic Villa bathroom basin and mirror",
      "legacyUrl": "https://ayurvedichealingvillage.com/wp-content/uploads/2025/07/207-punartham-3.webp"
-    }
-   ]
-  },
-  {
-   "name": "Atham",
-   "bed": "Twin",
-   "room": "212",
-   "zodiac": "attam",
-   "zodiacImage": {
-    "image": "/ahv/assets/img/AHV-Classic-Z-attam.webp",
-    "width": 120,
-    "height": 120,
-    "alt": "Attam symbol",
-    "legacyUrl": "https://ayurvedichealingvillage.com/wp-content/uploads/2025/07/attam.webp"
-   },
-   "images": [
-    {
-     "image": "/ahv/assets/img/AHV-Classic-R212-1.webp",
-     "width": 1400,
-     "height": 933,
-     "alt": "Brick Classic Villa exterior with green trim",
-     "legacyUrl": "https://ayurvedichealingvillage.com/wp-content/uploads/2025/07/212-attam-1.webp"
-    },
-    {
-     "image": "/ahv/assets/img/AHV-Classic-R212-2.webp",
-     "width": 1400,
-     "height": 933,
-     "alt": "Twin beds in a yellow Classic Villa bedroom",
-     "legacyUrl": "https://ayurvedichealingvillage.com/wp-content/uploads/2025/07/212-attam-2.webp"
-    },
-    {
-     "image": "/ahv/assets/img/AHV-Classic-R212-3.webp",
-     "width": 1400,
-     "height": 2047,
-     "alt": "Classic Villa bathroom and basin",
-     "legacyUrl": "https://ayurvedichealingvillage.com/wp-content/uploads/2025/07/212-attam-3.webp"
     }
    ]
   },

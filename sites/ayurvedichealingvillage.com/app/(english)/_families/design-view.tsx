@@ -1,3 +1,4 @@
+import { SnapshotStyles, type SnapshotStyleAsset } from './SnapshotStyles';
 import { routeStylesFor, routeStyleHref } from "./route-styles.mjs";
 import { reviewCopyFor, applyReviewSnapshot, bookingLabelsFor } from "./content-review.mjs";
 import { measurementForEnvironment } from "../../../lib/measurement-config.mjs";
@@ -162,6 +163,12 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
   // element, not text, and the snapshot's font stylesheet and faces only competed with it — measured +0.8-0.9 s
   // simulated / +1.2 s throttled LCP. There the faces keep arriving with the runtime, as before.
   const snapshotFaces = firstPaint && !firstScreenPoster(snapshot) ? firstPaint : null;
+  const snapshotAssets: SnapshotStyleAsset[] = [
+    ...(snapshotFaces?.fontCss.map(({ href, css }) => css
+      ? { key: `font:${href}`, kind: 'style' as const, css }
+      : { key: `font:${href}`, kind: 'link' as const, href }) ?? []),
+    ...(firstPaint?.styles.map((css, i) => ({ key: `view:${i}`, kind: 'style' as const, css, media: narrowMedia })) ?? []),
+  ];
 
   return (
     <>
@@ -205,7 +212,7 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
 
       {/* The snapshot's first-paint styles (snapshot-styles.mjs): the view's local font stylesheet and its
           helmet <style> blocks, copied from the served payload at build time. The runtime still writes
-          its own copies into <head>; boot removes these when the snapshot is retired.
+          its own copies into <head>; React retires these after hydration when boot marks the snapshot retired.
           The body-text face (the paragraphs' face: the LCP element on the text-LCP routes) is preloaded (React
           hoists a preload <link> into <head>) so the first paint can already be in it: a first paint in the
           fallback face broke lines differently and the live copy of the LCP paragraph came out larger — a
@@ -216,16 +223,7 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
             <link key={href} rel="preload" as="font" type={href.endsWith(".woff2") ? "font/woff2" : "font/ttf"} crossOrigin="anonymous" href={href} media={narrowMedia} />
           ))
         : null}
-      {snapshotFaces
-        ? snapshotFaces.fontCss.map(({ href, css }) => css
-            ? <style key={href} data-ahv-snapshot-style="" dangerouslySetInnerHTML={{ __html: css }} />
-            : <link key={href} rel="stylesheet" href={href} data-ahv-snapshot-style="" />)
-        : null}
-      {firstPaint
-        ? firstPaint.styles.map((css, i) => (
-            <style key={i} media={narrowMedia} data-ahv-snapshot-style="" dangerouslySetInnerHTML={{ __html: css }} />
-          ))
-        : null}
+      <SnapshotStyles key={`${locale}:${route.path}`} assets={snapshotAssets} />
 
       {/* dangerouslySetInnerHTML with an empty string is load-bearing, not
           decoration: it tells React this subtree is not its own, so React

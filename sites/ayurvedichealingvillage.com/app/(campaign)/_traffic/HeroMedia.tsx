@@ -1,0 +1,4 @@
+import Image from 'next/image';
+export function HeroMedia({src,alt,width=1600,height=1000,quality=75}:{src:string;alt:string;width?:number;height?:number;quality?:number}){
+ return <div className="campaign-hero-media"><Image src={src} alt={alt} width={width} height={height} className="hero-photograph" priority fetchPriority="high" quality={quality} sizes="100vw"/><div className="campaign-authority" aria-label="Kairali credentials"><a href="/awards-and-accreditations/"><Image src="/ahv/assets/img/nabh.webp" alt="" width={64} height={48}/><span>NABH<span>Accredited hospital</span></span></a><a href="https://whyayurveda.org/5-times-in-row-certificate-of-excellence-by-trip-advisor/" target="_blank" rel="noopener noreferrer"><Image src="/ahv/assets/img/v1/awards2025/halloffame.webp" alt="" width={64} height={48}/><span>Tripadvisor<span>Hall of Fame</span></span></a></div></div>;
+}

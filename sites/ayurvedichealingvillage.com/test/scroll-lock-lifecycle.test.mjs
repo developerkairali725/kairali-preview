@@ -29,7 +29,7 @@ function styleDecl(init = {}) {
 }
 
 // ── chrome.js chat lifecycle ────────────────────────────────────────────────
-const chrome = readFileSync(new URL('../public/design/chrome.js', import.meta.url), 'utf8');
+const chrome = readFileSync(new URL('../public/design/review-chrome.js', import.meta.url), 'utf8');
 function chat({body = {}, html = {}, scrollY = 2400, providerLock = true, providerRestores = false, classPin = false} = {}) {
   const code = chrome.slice(chrome.indexOf('  var chatPending ='), chrome.indexOf('  function chatLinks(f)'));
   const el = (extra = {}) => ({attrs: {}, getAttribute(k) { return this.attrs[k] ?? null; }, setAttribute(k, v) { this.attrs[k] = v; }, querySelector() { return null; }, ...extra});
