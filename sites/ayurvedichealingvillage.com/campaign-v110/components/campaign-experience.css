@@ -131,3 +131,9 @@ body[data-ahv-campaign] #ahv-campaign-page form.enquiry small { font-size:12px!i
 body[data-ahv-campaign] #ahv-campaign-page :is(.ahv-hero-copy h1,.campaign-form h3,form.enquiry h2) { font-family:Marcellus,Georgia,serif!important; }
 body[data-ahv-campaign] #ahv-campaign-page form.enquiry { width:100%!important; max-width:none!important; margin:0!important; }
 body[data-ahv-campaign] #ahv-campaign-page form.enquiry .form-grid { gap:8px!important; }
+/* Opt-in native campaign intros keep the same first-paint and settled geometry. */
+body[data-ahv-campaign] #ahv-campaign-page .campaign-responsive-intro > .campaign-desktop-intro { display:none; }
+@media(min-width:761px) {
+ body[data-ahv-campaign] #ahv-campaign-page .campaign-responsive-intro > .campaign-desktop-intro { display:block; }
+ body[data-ahv-campaign] #ahv-campaign-page .campaign-responsive-intro > .campaign-mobile-detail { display:none; }
+}

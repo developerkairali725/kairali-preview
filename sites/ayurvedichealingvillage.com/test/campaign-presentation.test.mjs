@@ -41,6 +41,37 @@ test('native hero hides campaign rates while retaining the original tariff data'
  assert.equal(find(nodes,n=>n.name==='a'&&n.attribs.href==='#campaign-consultation').length,1);
  assert.ok(nodes.map(textContent).join('').includes('Programme content retained.'));
 });
+test('opt-in native intro has stable closed mobile disclosure and identical expanded desktop content',()=>{
+ const intro='<p class="hero-intro">A carefully planned programme with <strong>individual attention</strong> and <a href="/contact-us/">patient care support</a>, preserving every word and the original link.</p>';
+ const fixture='<main><div class="tl-hero"><div class="hero-copy"><h1>Treatment</h1>'+intro+'</div><traffic-enquiry></traffic-enquiry></div></main>';
+ const original=htmlToDOM(intro)[0];
+ const stable=campaignPresentation(htmlToDOM(fixture),false,true);
+ const desktop=find(stable,n=>n.attribs.class==='campaign-desktop-intro');
+ const mobile=find(stable,n=>n.name==='details'&&n.attribs.class==='campaign-mobile-detail');
+ assert.equal(desktop.length,1);assert.equal(mobile.length,1);
+ assert.equal('open' in mobile[0].attribs,false,'mobile starts closed before hydration');
+ assert.equal(find(mobile,n=>n.name==='summary').length,1,'native keyboard/no-JS disclosure');
+ const paragraphs=[find(desktop,n=>n.name==='p')[0],find(mobile,n=>n.name==='p')[0]];
+ for(const paragraph of paragraphs){
+  assert.equal(textContent(paragraph),textContent(original));
+  assert.equal(paragraph.attribs.class,'hero-intro');
+  assert.equal(find([paragraph],n=>n.name==='strong').length,1);
+  assert.equal(find([paragraph],n=>n.name==='a')[0].attribs.href,'/contact-us/');
+ }
+ assert.notEqual(paragraphs[0],paragraphs[1]);
+ assert.equal(find(stable,n=>n.name==='traffic-enquiry').length,1,'form is never duplicated');
+ const defaults=campaignPresentation(htmlToDOM(fixture));
+ const explicitDefault=campaignPresentation(htmlToDOM(fixture),false,false);
+ for(const nodes of [defaults,explicitDefault]){
+  assert.equal(find(nodes,n=>n.attribs.class==='campaign-responsive-intro').length,0);
+  assert.equal(find(nodes,n=>n.name==='p').length,1,'other campaigns retain one unchanged intro');
+  assert.equal('open' in find(nodes,n=>n.name==='details')[0].attribs,true);
+ }
+ const css=read('campaign-v110/components/campaign-experience.css');
+ assert.match(css,/\.campaign-responsive-intro > \.campaign-desktop-intro \{ display:none; \}/);
+ assert.match(css,/@media\(min-width:761px\)\s*\{\s*body\[data-ahv-campaign\][^}]*\.campaign-desktop-intro \{ display:block; \}/);
+ assert.match(css,/\.campaign-responsive-intro > \.campaign-mobile-detail \{ display:none; \}/);
+});
 test('M050 has 29 distinct programme destinations and five readable steps instead of bitmap text',()=>{
  const source=read('campaign-v110/pages/treatment-in-kerala.html/staging.html'),nodes=htmlToDOM(source);
  const list=find(nodes,n=>'data-ahv-programs' in n.attribs)[0];

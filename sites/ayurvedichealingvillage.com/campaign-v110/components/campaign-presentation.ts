@@ -24,8 +24,20 @@ function wrap(name: string, attrs: Record<string, string>, items: DOMNode[]) {
   const node = new Element(name, attrs, []); children(node, items); return node;
 }
 
+function programmeIntro(paragraph: Element, stable: boolean): Element {
+  const summary = wrap('summary', {}, [new Text('About this programme')]);
+  if (!stable) return wrap('details', {class:'campaign-mobile-detail',open:''}, [summary, paragraph]);
+  // CSS selects one native presentation before first paint. The mobile disclosure
+  // starts closed without waiting for hydration; desktop keeps the full paragraph.
+  const mobileParagraph = paragraph.cloneNode(true) as Element;
+  return wrap('div', {class:'campaign-responsive-intro'}, [
+    wrap('div', {class:'campaign-desktop-intro'}, [paragraph]),
+    wrap('details', {class:'campaign-mobile-detail'}, [summary, mobileParagraph]),
+  ]);
+}
+
 /** Presentation only: preserve source, programme bodies and form contracts. */
-export function campaignPresentation(nodes: DOMNode[], legacy = false): DOMNode[] {
+export function campaignPresentation(nodes: DOMNode[], legacy = false, stableIntro = false): DOMNode[] {
   for (const node of elements(nodes, n => n.name === 'a')) {
     const href = node.attribs.href || '';
     if (href === '#consult' || href === '#enquiry') {
@@ -56,7 +68,7 @@ export function campaignPresentation(nodes: DOMNode[], legacy = false): DOMNode[
           const parent = longIntro.parent;
           if (parent instanceof Element) {
             const index = parent.children.indexOf(longIntro);
-            const detail = wrap('details', {class:'campaign-mobile-detail',open:''}, [wrap('summary', {}, [new Text('About this programme')]), longIntro]);
+            const detail = programmeIntro(longIntro, stableIntro);
             const updated = [...parent.children] as DOMNode[]; updated[index] = detail; children(parent, updated);
           }
         }

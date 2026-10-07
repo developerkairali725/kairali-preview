@@ -29,7 +29,7 @@ const options: HTMLReactParserOptions = { replace(node) {
  if (node.name === 'img') {
   const a=node.attribs;
   const hero=a.class?.includes('hero-photograph');
-  if(hero)return <HeroMedia src={a.src} alt={a.alt||''} width={Number(a.width)||1600} height={Number(a.height)||1000}/>;return <Image src={a.src} alt={a.alt || ''} className={a.class} width={Number(a.width)||1200} height={Number(a.height)||800} priority={hero} fetchPriority={hero?'high':undefined} quality={hero?60:75} sizes={hero?'100vw':'(max-width: 700px) 100vw, 50vw'}/>;
+  if(hero)return <HeroMedia quality={60} src={a.src} alt={a.alt||''} width={Number(a.width)||1600} height={Number(a.height)||1000}/>;return <Image src={a.src} alt={a.alt || ''} className={a.class} width={Number(a.width)||1200} height={Number(a.height)||800} priority={hero} fetchPriority={hero?'high':undefined} quality={hero?60:75} sizes={hero?'100vw':'(max-width: 700px) 100vw, 50vw'}/>;
  }
 }};
 const schema = {
@@ -38,5 +38,5 @@ const schema = {
  breadcrumb:{'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:'https://ayurvedichealingvillage.com/'},{'@type':'ListItem',position:2,name:'Ayurvedic treatment packages',item:canonical}]}
 };
 export default function Page() {
- return <div id="ahv-campaign-page" className="r10-revision ahv-campaign-page"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}}/>{domToReact(campaignPresentation(htmlToDOM(approvedContent) as DOMNode[]),options)}<GuestSupport/><CampaignExperience/></div>;
+ return <div id="ahv-campaign-page" className="r10-revision ahv-campaign-page"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}}/>{domToReact(campaignPresentation(htmlToDOM(approvedContent) as DOMNode[], false, true),options)}<GuestSupport/><CampaignExperience/></div>;
 }

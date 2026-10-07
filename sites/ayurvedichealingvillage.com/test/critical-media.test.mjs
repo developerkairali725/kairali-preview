@@ -9,6 +9,18 @@ test('Panchakarma phone image and priority preload use the same smaller address'
   assert.equal(phoneCriticalMedia(mapped), mapped);
   assert.ok(!mapped.includes('-768.webp'));
 });
+test('main programme phone heroes use the same derivative for background and priority preload', () => {
+  for (const name of ['weightloss', 'digestive']) {
+    const original = `/ahv/assets/img/${name}.webp`, derivative = `/ahv/assets/img/${name}-768-hero.avif`;
+    const source = `<div role="img" aria-label="Approved image" style="height:250px;background-image:url(${original})"></div>`;
+    const mapped = phoneCriticalMedia(source);
+    assert.equal(firstCriticalImage(mapped), derivative);
+    assert.equal(mapped.replace(derivative, original), source, 'no non-image attribute changes');
+    assert.equal(phoneCriticalMedia(mapped), mapped);
+    assert.equal(firstCriticalImage(source), null, 'desktop/original template is untouched');
+  }
+  assert.equal(phoneCriticalMedia('<img src="/ahv/assets/img/weight-loss.webp">'), '<img src="/ahv/assets/img/weight-loss.webp">');
+});
 test('only named first-screen images gain the same-image phone variant', () => {
   const input = '<video poster="/ahv/assets/img/wx-hero.webp"></video><img src="/ahv/assets/img/other.webp">';
   const result = phoneCriticalMedia(input);
