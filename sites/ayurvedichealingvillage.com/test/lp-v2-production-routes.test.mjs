@@ -1,5 +1,5 @@
-// Live ad routes, batch 1: which files serve the two URLs, what the production document loads (and what it must
-// never load), that the kit design stays confined to these pages, and the merge of the kit with main.
+// Live ad routes (batch 1 + batch 2): which files serve the URLs, what the production document loads (and what it
+// must never load), that the kit design stays confined to these pages, and the merge of the kit with main.
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const P = (...p) => path.join(SITE, ...p);
 const read = (p) => fs.readFileSync(P(p), "utf8");
-const ROUTES = ["ayurvedic-treatment-packages.html", "panchkarma-treatment.html"];
+const ROUTES = ["ayurvedic-treatment-packages.html", "panchkarma-treatment.html", "pain-management.html", "family-ayurvedic-retreat-kerala.html"];
 
 function walk(dir, out = []) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -49,6 +49,13 @@ test("routing: exactly one page serves each URL, from app/(ppc-v2); the old page
   assert.match(read("app/(campaign)/_traffic/TrafficLanding.tsx"), /ayurvedic-treatment-packages\.html\/EnquiryForm/);
   assert.match(read("app/(ppc-v2)/ayurvedic-treatment-packages.html/page.tsx"), /const SLUG = "treatment-packages" as const;/);
   assert.match(read("app/(ppc-v2)/panchkarma-treatment.html/page.tsx"), /const SLUG = "panchakarma" as const;/);
+  // Batch 2: the old pages are retired; their content.ts stays (the physician-roster test reads it).
+  for (const r of ["pain-management.html", "family-ayurvedic-retreat-kerala.html"]) {
+    assert.ok(!fs.existsSync(P(`app/(campaign)/${r}/page.tsx`)), r);
+    assert.ok(fs.existsSync(P(`app/(campaign)/${r}/content.ts`)), r);
+  }
+  assert.match(read("app/(ppc-v2)/pain-management.html/page.tsx"), /const SLUG = "pain-management" as const;/);
+  assert.match(read("app/(ppc-v2)/family-ayurvedic-retreat-kerala.html/page.tsx"), /const SLUG = "family-ayurvedic-retreat" as const;/);
 });
 
 test("routing: no redirect, rewrite or middleware moves the two URLs; pages stay static", () => {
@@ -105,7 +112,10 @@ test("document: none of the /lp-v2 preview machinery reaches the live routes (no
 
 test("isolation: the kit design and the production document are loaded only by app/(ppc-v2) (and the staging-only /lp-v2 preview)", () => {
   const importers = (needle) => APP_FILES.filter((f) => /\.(tsx?|css)$/.test(f) && read(f).includes(needle));
-  assert.deepEqual(importers("campaign-v2/production"), ["app/(ppc-v2)/ayurvedic-treatment-packages.html/page.tsx", "app/(ppc-v2)/layout.tsx", "app/(ppc-v2)/panchkarma-treatment.html/page.tsx"]);
+  assert.deepEqual(importers("campaign-v2/production").sort(), [
+    "app/(ppc-v2)/ayurvedic-treatment-packages.html/page.tsx", "app/(ppc-v2)/family-ayurvedic-retreat-kerala.html/page.tsx",
+    "app/(ppc-v2)/layout.tsx", "app/(ppc-v2)/pain-management.html/page.tsx", "app/(ppc-v2)/panchkarma-treatment.html/page.tsx",
+  ]);
   assert.deepEqual(importers("sections/sections.css"), []);
   const cssImporters = walk(P("campaign-v2")).map((f) => path.relative(SITE, f).split(path.sep).join("/"))
     .filter((f) => /\.tsx?$/.test(f) && /import "[^"]*(sections\.css|production\.css|base\.css)"/.test(read(f)));

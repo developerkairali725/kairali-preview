@@ -39,6 +39,8 @@ export type EnquiryFormProps = {
   privacyHref: string;
   /** Option labels for ConsultBar answers that have no field in this schema (written into the message textarea). */
   prefillLabels?: PrefillLabels;
+  /** Disabled when this route has no ConsultBar; query strings and events must not add answers. */
+  prefillEnabled?: boolean;
   /** Live ad routes only: the route's existing form identity (forms/adapter.ts). */
   production?: ProductionFormContext;
 };
@@ -68,7 +70,7 @@ function uuid(): string {
   return `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`;
 }
 
-export default function EnquiryForm({ schema, adapterId, campaign, variant, locale, country, privacyHref, prefillLabels, production }: EnquiryFormProps) {
+export default function EnquiryForm({ schema, adapterId, campaign, variant, locale, country, privacyHref, prefillLabels, prefillEnabled = true, production }: EnquiryFormProps) {
   const uid = useId();
   const id = (k: string) => `${uid}-${k}`;
   const formId = schema.id;
@@ -98,6 +100,7 @@ export default function EnquiryForm({ schema, adapterId, campaign, variant, loca
 
   /** Prefill values must match an option of the field they target; anything else is ignored. */
   const applyPrefill = useCallback((p: Prefill) => {
+    if (!prefillEnabled) return;
     setValues((prev) => {
       const next = { ...prev };
       const unmapped: Prefill = {};
@@ -115,7 +118,7 @@ export default function EnquiryForm({ schema, adapterId, campaign, variant, loca
       }
       return next;
     });
-  }, [noteField, prefillLabels]);
+  }, [noteField, prefillLabels, prefillEnabled]);
 
   const startOnce = useCallback(() => {
     if (claimFormStart()) track("form_start", { form_id: formId, variant });
@@ -124,6 +127,7 @@ export default function EnquiryForm({ schema, adapterId, campaign, variant, loca
   // Mount: progressive enhancement on, ConsultBar answers from the query string (no-JS bar or a fallback).
   useEffect(() => {
     setHydrated(true);
+    if (!prefillEnabled) return;
     try {
       const q = new URLSearchParams(window.location.search);
       const p = pickPrefill((k) => q.get(k));
@@ -133,10 +137,11 @@ export default function EnquiryForm({ schema, adapterId, campaign, variant, loca
         if (clean !== null) window.history.replaceState(window.history.state, "", clean);
       }
     } catch { /* no URL access */ }
-  }, [applyPrefill, production]);
+  }, [applyPrefill, production, prefillEnabled]);
 
   // Same-page ConsultBar submit (consult-prefill.ts).
   useEffect(() => {
+    if (!prefillEnabled) return;
     const onPrefill = (e: Event) => {
       e.preventDefault(); // "handled" — the ConsultBar does not fall back to a navigation
       const detail = (e as CustomEvent<Prefill>).detail ?? {};
@@ -151,7 +156,7 @@ export default function EnquiryForm({ schema, adapterId, campaign, variant, loca
     };
     window.addEventListener(PREFILL_EVENT, onPrefill);
     return () => window.removeEventListener(PREFILL_EVENT, onPrefill);
-  }, [applyPrefill, status.kind]);
+  }, [applyPrefill, status.kind, prefillEnabled]);
 
   // Move focus after the DOM reflects the new step / errors / message.
   useEffect(() => {
@@ -402,7 +407,8 @@ export default function EnquiryForm({ schema, adapterId, campaign, variant, loca
                 </button>
               )}
             </div>
-            {i === 0 ? <p className="lp-enq__note">No medical details needed. Your doctor asks for those privately at consultation.</p> : null}
+            {/* A form with an optional health question (family route) carries its own note as that field's hint instead. */}
+            {i === 0 && schema.genericNote !== false ? <p className="lp-enq__note">No medical details needed. Your doctor asks for those privately at consultation.</p> : null}
           </fieldset>
         ))}
 
