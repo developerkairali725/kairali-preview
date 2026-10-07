@@ -290,7 +290,7 @@ const run = async () => {
       );
       await page.waitForTimeout(1200);
       captureStage = 'content-extraction';
-      const { liveContentProof, contentProof, got } = await page.evaluate(createCaptureEvaluation(EXTRACT), captureContentRequirements(route.path, enquiryRecords.find(row => row.path === route.path)));
+      const { liveContentProof, contentProof, got } = await page.evaluate(createCaptureEvaluation(EXTRACT), captureContentRequirements(route.path, enquiryRecords.find(row => row.path === route.path), LOCALE));
       captureStage = 'content-validation';
       assertCapturePage(liveContentProof, route.path);
       assertCapturePage(contentProof, route.path);
