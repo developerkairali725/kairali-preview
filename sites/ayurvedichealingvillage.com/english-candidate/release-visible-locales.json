@@ -18,8 +18,8 @@
       "ja",
       "ko"
     ],
-    "units": 32,
-    "translations": 384,
+    "units": 36,
+    "translations": 432,
     "sourceIndexes": [
       0,
       1,
@@ -55,13 +55,13 @@
     ],
     "batches": [
       25,
-      7
+      11
     ],
     "validation": {
       "result": "PASS",
-      "sourceUnits": 32,
+      "sourceUnits": 36,
       "locales": 12,
-      "translations": 384,
+      "translations": 432,
       "emptyTranslations": 0,
       "sourceMismatches": 0,
       "placeholderMismatches": 0,
@@ -83,7 +83,16 @@
     "scopeNotes": "Original 30 selected units, sitemap total index 11, and final approved human metadata title Ayurvedic Hospital in Kerala. The final title supersedes the lowercase hospital alias. Original alias sources remain for audit coverage and may be omitted from import.",
     "additionalApprovedSources": [
       "Ayurvedic Hospital in Kerala"
-    ]
+    ],
+    "finalStrictGapMappings": {
+      "artifact": "deliverables/WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001/locales-preparation/packages-row19-short-locales.json",
+      "unitsAdded": 2,
+      "acceptedTranslationsReused": 24,
+      "existingUnitsPreserved": 34,
+      "backupPath": "deliverables/WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001/locales-preparation/release-visible-before-final-two-gaps.json",
+      "backupSha256": "44bc60c2418ec6ef3ad09ceca072f2a12ca8a9bbc0a2416cb3c028d40ac7869d",
+      "restorationProof": "Backup bytes exactly equal the pre-edit supplement; first 34 source/translation entries remain unchanged after append."
+    }
   },
   "units": [
     {
@@ -662,6 +671,40 @@
         "zh-Hans": "阿育吠陀疗法和按摩已帮助许多人应对日常的作息安排。",
         "ja": "アーユルヴェーダの療法とマッサージは、多くの人々が日々のスケジュールに対処するうえで大いに役立ってきました。",
         "ko": "아유르베다 요법과 마사지는 많은 분들이 일상적인 일정에 대처하는 데 큰 도움이 되어 왔습니다."
+      }
+    },
+    {
+      "source": "Ayurvedic treatments and massages have helped many people cope with their regular schedule.",
+      "translations": {
+        "de": "Ayurvedische Therapien und Massagen haben vielen Menschen geholfen, ihren Alltag besser zu bewältigen.",
+        "fr": "Les thérapies et massages ayurvédiques ont aidé de nombreuses personnes à faire face à leur emploi du temps quotidien.",
+        "es": "Las terapias y los masajes ayurvédicos han ayudado a muchas personas a sobrellevar su rutina habitual.",
+        "it": "Le terapie e i massaggi ayurvedici hanno aiutato molte persone a far fronte ai propri impegni quotidiani.",
+        "pt": "As terapias e massagens ayurvédicas têm ajudado muitas pessoas a lidar com a sua rotina habitual.",
+        "nl": "Ayurvedische therapieën en massages hebben veel mensen geholpen om met hun dagelijkse routine om te gaan.",
+        "ru": "Аюрведические терапии и массажи помогли многим людям справляться с привычным распорядком дня.",
+        "hi": "आयुर्वेदिक चिकित्साओं और मालिशों ने बहुत से लोगों को अपनी नियमित दिनचर्या से निपटने में मदद की है।",
+        "ar": "ساعدت العلاجات والتدليكات الأيورفيدية كثيراً من الناس على التكيّف مع جداولهم اليومية المعتادة.",
+        "zh-Hans": "阿育吠陀疗法和按摩已帮助许多人应对日常的作息安排。",
+        "ja": "アーユルヴェーダの療法とマッサージは、多くの人々が日々のスケジュールに対処するうえで大いに役立ってきました。",
+        "ko": "아유르베다 요법과 마사지는 많은 분들이 일상적인 일정에 대처하는 데 큰 도움이 되어 왔습니다."
+      }
+    },
+    {
+      "source": "Walk In Ayurveda Treatment",
+      "translations": {
+        "de": "Ayurveda-Behandlung ohne Termin",
+        "fr": "Soin ayurvédique sans rendez-vous",
+        "es": "Tratamiento ayurvédico sin cita",
+        "it": "Trattamento ayurvedico senza appuntamento",
+        "pt": "Tratamento ayurvédico sem marcação",
+        "nl": "Ayurvedische behandeling zonder afspraak",
+        "ru": "Аюрведическое лечение без записи",
+        "hi": "वॉक-इन आयुर्वेद उपचार",
+        "ar": "علاج أيورفيدا دون موعد",
+        "zh-Hans": "免预约阿育吠陀治疗项目",
+        "ja": "予約不要のアーユルヴェーダ治療",
+        "ko": "예약 없이 받는 아유르베다 치료"
       }
     }
   ]

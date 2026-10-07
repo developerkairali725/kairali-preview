@@ -1,5 +1,5 @@
 {
- "sourceSetHash": "d6402f35b8aeaaf920f5d52f2688faef51b4398340cdc0943ab6e78e6e30b81f",
+ "sourceSetHash": "55d883df657587f913269853674a57e5c89a0f0c56dbf63354cd9f6e57481f46",
  "files": [
   {
    "file": "public/ahv/components/AHV Chrome Footer.dc.html",
@@ -11,6 +11,12 @@
    "file": "public/ahv/components/AHV Chrome Header.dc.html",
    "sha256": "ddc572d8e7317b3ac38b9495689267d20ee05a4fee4f02925efb0ea4c2a623a0",
    "units": 29,
+   "status": "covered"
+  },
+  {
+   "file": "public/ahv/components/AHV Programme Enquiry.dc.html",
+   "sha256": "ed236328a8fea870b0a18ad664d68a5d6339db1ee6b4b2b23aebe60430a4d90c",
+   "units": 16,
    "status": "covered"
   },
   {
@@ -147,13 +153,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-ayurvedic-treatment-packages-desktop.json",
-   "sha256": "28b1be09666aba1bfcdfc53032e6f032c8e5175b10a2c68dad3ec7ba8738ad19",
+   "sha256": "3d6a802dbb74375ee3716de21837d4394c89219459dfbbc53efbd31354085b0c",
    "units": 242,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-ayurvedic-treatment-packages-mobile.json",
-   "sha256": "1b7e520504561935f48e2a95c8adcd284f3493bd62da55fdaad6cb707cd25d7c",
+   "sha256": "3c7b0c4c773a3627bd592bbf304a3516ad6b243e0902b86b05e3403e0e202979",
    "units": 242,
    "status": "covered"
   },
@@ -375,13 +381,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-   "sha256": "9a3395ae22c6c85c60147702805b64962bb46bb0c90b839fc87349d40684f338",
+   "sha256": "d28ba7e44334aadb68841c1b463bec7f2940307121a0b512794d33da8c83e0e1",
    "units": 478,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-   "sha256": "30c9c21fb02a12459d5feeeba83d19916b2deadfb942ce35ec8fa8ac0e598b2e",
+   "sha256": "ab8ba8ab4b4ea13b3e828a2e9ea3d703d618661638bca18289c33af6a25434e9",
    "units": 477,
    "status": "covered"
   },
@@ -867,13 +873,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-weight-loss-programme-desktop.json",
-   "sha256": "fe71761f58ecaac9832329cec90cb0f69d717d2253485a3422bc8177f43b11e4",
+   "sha256": "5c653bf1d6e1ebfa150cecdc53500c16375f72bd64dbb630f6e1fcf13f344181",
    "units": 523,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-weight-loss-programme-mobile.json",
-   "sha256": "d45c6eb664138573512c0904d61962244b4f1174ee478d3d22a69fded7e195b2",
+   "sha256": "c16b1fff4f6b9bbf0665c36067d3a805de8722ef1f063418ec6bb48ef16cfd40",
    "units": 523,
    "status": "covered"
   },
@@ -1569,7 +1575,7 @@
   },
   {
    "file": "public/ahv/search-index.json",
-   "sha256": "22cdf363ef81bf434b520f0b7e27f0d1e493683a591cbbaeed966561ffcb96a4",
+   "sha256": "c8fe3cb4015075a8d12808a3df024f54d9df199d27f400dc2358080472718cf4",
    "units": 705,
    "status": "covered (key whitelist)"
   },
