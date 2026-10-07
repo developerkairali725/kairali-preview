@@ -27,7 +27,7 @@ await new Promise(ok=>server.listen(0,'127.0.0.1',ok));
 const origin=`http://127.0.0.1:${server.address().port}`;
 const browser=await chromium.launch({channel:'chrome',headless:true});
 async function context(options={}){
- const ctx=await browser.newContext({viewport:{width:390,height:844}});
+ const ctx=await browser.newContext({viewport:{width:options.width||390,height:844}});
  const fixtureOrigin=options.publicCountry?'https://ayurvedichealingvillage.com':origin;
  if(options.gpc)await ctx.addInitScript(()=>Object.defineProperty(navigator,'globalPrivacyControl',{value:true,configurable:true}));
  if(options.storageBlocked)await ctx.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw Error('blocked')}})});
@@ -57,7 +57,7 @@ async function context(options={}){
   return route.abort();
  });
  await page.goto(fixtureOrigin+(options.sdk?'/sdk/':options.path||''));await page.waitForFunction(()=>typeof window.AHV_COOKIE_SETTINGS==='function');
- if(!options.gpc && options.prompt!=='passive')await page.locator('.cm').waitFor({state:'visible'});
+ if(!options.gpc)await page.locator(options.prompt==='passive'?'.ahv-consent-compact':'.cm').waitFor({state:'visible'});
  return {ctx,page,requests,errors};
 }
 try {
@@ -155,19 +155,36 @@ try {
  for(const path of ['/','/de/','/fr/','/es/','/it/','/pt/','/nl/','/ru/','/ar/','/hi/','/zh/','/ja/','/ko/','/ayurvedic-treatment-packages.html','/lp/panchakarma/']) {
   const d=await context({prompt:'passive',path});await d.page.waitForTimeout(150);
   assert.equal(await d.page.locator('.cm').isVisible(),false);assert.equal(d.requests.length,0);
+  const notice=d.page.locator('.ahv-consent-compact');assert.equal(await notice.isVisible(),true);
+  const box=await notice.boundingBox();assert.ok(box.x>=0&&box.x+box.width<=391&&box.y>=0,path);
+  const style=await notice.locator('button').evaluateAll(buttons=>buttons.map(button=>({width:button.getBoundingClientRect().width,height:button.getBoundingClientRect().height,color:getComputedStyle(button).color,background:getComputedStyle(button).backgroundColor})));
+  assert.equal(style.length,3);assert.ok(style.every(button=>button.height>=44&&Math.abs(button.width-style[0].width)<1&&button.color===style[0].color&&button.background===style[0].background),path);
+  assert.equal(await notice.getAttribute('aria-modal'),null);
   assert.equal(await d.page.evaluate(()=>localStorage.getItem('ahv-consent-v2')),null);
-  await d.page.locator('[data-ahv-cookie-choices]').first().click();await d.page.locator('.pm').waitFor({state:'visible'});
+  await notice.locator('button').nth(2).click();await d.page.locator('.pm').waitFor({state:'visible'});assert.equal(await notice.isVisible(),false);
   assert.equal(await d.page.locator('input[value="analytics"]').isChecked(),false);assert.equal(await d.page.locator('input[value="advertising"]').isChecked(),false);
+  await d.page.keyboard.press('Escape');await d.page.locator('.pm').waitFor({state:'hidden'});await notice.waitFor({state:'visible'});
+  await notice.locator('button').first().focus();await d.page.keyboard.press('Shift+Tab');assert.equal(await notice.evaluate(element=>element.contains(document.activeElement)),false,'compact notice must not trap Tab');
+  if(process.env.CONSENT_QA_SCREENSHOTS&&['/','/de/','/ar/'].includes(path))await d.page.screenshot({path:join(process.env.CONSENT_QA_SCREENSHOTS,'compact-'+(path.split('/')[1]||'en')+'-mobile.png')});
+  await notice.locator('button').nth(2).click();await d.page.locator('.pm').waitFor({state:'visible'});
   await d.page.locator('.pm button[data-role="necessary"]').click();await d.page.reload();await d.page.waitForFunction(()=>typeof window.AHV_COOKIE_SETTINGS==='function');
-  assert.equal(d.requests.length,0);assert.deepEqual(d.errors,[]);report.push({case:path+' passive presentation retains manual translated choices and no tracking',pass:true});await d.ctx.close();
+  assert.equal(await d.page.locator('.ahv-consent-compact').count(),0);assert.equal(d.requests.length,0);assert.deepEqual(d.errors,[]);report.push({case:path+' compact translated notice: equal actions, no overflow/trap, settings reopen, refusal persists, no tracking',pass:true});await d.ctx.close();
+ }
+ for(const [width,path] of [[1440,'/'],[320,'/de/']]) {
+  const d=await context({prompt:'passive',width,path}),notice=d.page.locator('.ahv-consent-compact');
+  const box=await notice.boundingBox();assert.ok(box.x>=0&&box.x+box.width<=width+1&&box.y>=0);if(width===1440)assert.ok(box.height<200);
+  await d.page.evaluate(()=>{const button=document.createElement('button');button.id='page-action';button.textContent='Page action';button.addEventListener('click',()=>window.pageAction=true);document.querySelector('main').prepend(button);});await d.page.locator('#page-action').click();assert.equal(await d.page.evaluate(()=>window.pageAction),true);
+  assert.equal(d.requests.length,0);if(process.env.CONSENT_QA_SCREENSHOTS)await d.page.screenshot({path:join(process.env.CONSENT_QA_SCREENSHOTS,'compact-'+width+'.png')});
+  await notice.locator('button').nth(1).click();assert.equal(await notice.count(),0);assert.equal(d.requests.length,0);
+  report.push({case:width+' compact notice leaves page interactive; direct Reject works without tracking',pass:true});await d.ctx.close();
  }
  for(const prompt of ['automatic','error','unexpected']) {
   const d=await context({prompt});assert.equal(d.requests.length,0);assert.equal(await d.page.locator('.cm').isVisible(),true);
   report.push({case:prompt+' geo shows strict prompt without vendor requests',pass:true});await d.ctx.close();
  }
- const regional=await context({prompt:'passive'});await regional.page.locator('[data-ahv-cookie-choices]').click();await regional.page.getByRole('button',{name:'Accept all',exact:true}).click();await regional.page.waitForFunction(()=>window.__ahvMeasurementStarted===true);
+ const regional=await context({prompt:'passive'});await regional.page.locator('.ahv-consent-compact').getByRole('button',{name:'Accept all',exact:true}).click();await regional.page.waitForFunction(()=>window.__ahvMeasurementStarted===true);assert.equal(await regional.page.locator('.ahv-consent-compact').count(),0);
  await regional.ctx.route('**/api/consent-region/',route=>route.fulfill({json:{version:1,prompt:'automatic'}}));await regional.page.reload();await regional.page.waitForFunction(()=>window.__ahvMeasurementStarted===true);assert.equal(await regional.page.locator('.cm').isVisible(),false);
- report.push({case:'explicit saved choice survives region change without another prompt',pass:true});await regional.ctx.close();
+ assert.equal(await regional.page.locator('.ahv-consent-compact').count(),0);report.push({case:'explicit saved choice survives region change without another prompt',pass:true});await regional.ctx.close();
  const renewal=await context();await renewal.page.getByRole('button',{name:'Choose settings',exact:true}).click();await renewal.page.locator('input[value="analytics"]').check();await renewal.page.getByRole('button',{name:'Save my choices',exact:true}).click();await renewal.page.waitForFunction(()=>window.__ahvMeasurementStarted===true);
  await renewal.page.evaluate(()=>{
   const at=Date.now()-183*86400000,value=JSON.parse(localStorage.getItem('ahv-consent-v2'));
@@ -186,13 +203,14 @@ try {
  assert.equal(oldMixed.requests.length,mixedRequests);assert.equal(await oldMixed.page.locator('.cm').isVisible(),false);
  await oldMixed.page.locator('[data-ahv-cookie-choices]').click();assert.equal(await oldMixed.page.locator('input[value="analytics"]').isChecked(),false);assert.equal(await oldMixed.page.locator('input[value="advertising"]').isChecked(),false);
  report.push({case:'old-revision mixed choice preserves refusal without restoring its former grant',pass:true});await oldMixed.ctx.close();
- const gpcFresh=await context({gpc:true,prompt:'passive'});assert.equal(gpcFresh.requests.length,0);assert.equal(await gpcFresh.page.locator('.cm').isVisible(),false);
+ const gpcFresh=await context({gpc:true,prompt:'passive'});assert.equal(await gpcFresh.page.locator('.ahv-consent-compact').count(),0);assert.equal(gpcFresh.requests.length,0);assert.equal(await gpcFresh.page.locator('.cm').isVisible(),false);
  await gpcFresh.ctx.addInitScript(()=>Object.defineProperty(navigator,'globalPrivacyControl',{value:false,configurable:true}));await gpcFresh.page.reload();await gpcFresh.page.waitForFunction(()=>typeof window.AHV_COOKIE_SETTINGS==='function');assert.equal(await gpcFresh.page.evaluate(()=>navigator.globalPrivacyControl),false);assert.equal(gpcFresh.requests.length,0);assert.equal(await gpcFresh.page.locator('.cm').isVisible(),false);
  report.push({case:'fresh GPC suppresses advertising and survives signal removal as a refusal',pass:true});await gpcFresh.ctx.close();
  // Real-browser Cloudflare adapter, all fixtures and telemetry remain local.
  for(const country of ['IN','US','CA','BR','DE','GB','CH','XX']) {
   const strict=['DE','GB','CH','XX'].includes(country),d=await context({publicCountry:country,prompt:strict?'automatic':'passive'});await d.page.waitForTimeout(150);
   assert.equal(await d.page.locator('.cm').isVisible(),strict);assert.equal(d.requests.length,0);
+  assert.equal(await d.page.locator('.ahv-consent-compact').isVisible(),!strict);
   assert.equal(await d.page.evaluate(()=>localStorage.getItem('ahv-consent-v2')),null);
   assert.deepEqual(d.errors,[]);report.push({case:country+' public-hostname Cloudflare fixture has expected presentation and no optional vendors',pass:true});await d.ctx.close();
  }

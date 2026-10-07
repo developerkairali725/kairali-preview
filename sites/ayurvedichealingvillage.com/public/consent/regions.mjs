@@ -1,6 +1,6 @@
 // Presentation policy, never an authorization to load optional vendors.
 // Automatic presentation in EEA/UK/CH is a product policy. Other recognized
-// countries get persistent settings; every country still requires explicit opt-in.
+// countries get a compact visible notice; every country still requires opt-in.
 // Unknown locations prompt. This is not an exhaustive legal applicability map.
 export const EUROPE_PROMPT_COUNTRIES = 'AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE IS LI NO GB CH'.split(' ');
 const promptCountries = new Set(EUROPE_PROMPT_COUNTRIES);

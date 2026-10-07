@@ -28,7 +28,9 @@ const policy=(prefix ? '/'+prefix : '')+'/new-privacy-policy/';
 
 let last;
 let opened = false;
+let compactNotice;
 function apply({cookie}) {
+  compactNotice?.remove();
   const current = preferences(cookie.categories, gpc);
   const signature = JSON.stringify(current);
   if (signature === last) return;
@@ -57,8 +59,8 @@ await CC.run({
     ...(gpc ? {} : {advertising:{autoClear:{cookies:[{name:/^_gcl_/},{name:/^_fb(c|p)$/}]}}})
   },
   onFirstConsent:rememberChoice, onConsent:apply, onChange:event=>{rememberChoice(event);apply(event);},
-  onModalShow:()=>{opened=true;document.documentElement.setAttribute('data-consent-open','');},
-  onModalHide:()=>document.documentElement.removeAttribute('data-consent-open'),
+  onModalShow:()=>{opened=true;if(compactNotice)compactNotice.hidden=true;document.documentElement.setAttribute('data-consent-open','');},
+  onModalHide:()=>{document.documentElement.removeAttribute('data-consent-open');if(compactNotice&&!CC.validConsent())compactNotice.hidden=false;},
   language:{default:'current',rtl:lang.startsWith('ar') ? 'current' : undefined,translations:{current:copy}}
 });
 if (gpc && CC.acceptedCategory('advertising')) CC.acceptCategory(CC.getCookie().categories.filter(c=>c!=='advertising'));
@@ -81,9 +83,32 @@ document.addEventListener('click',event=>{
 });
 // Reconcile withdrawal in another tab by starting a fresh, default-denied page.
 window.addEventListener('storage',event=>{if(event.key===STORAGE_KEY || event.key===REFUSAL_KEY || event.key===null)location.reload();});
-// Geography controls presentation only. A passive response never saves consent
-// or starts a vendor. Saved choices win; recent refusals suppress renewed asks.
+// Use the same reviewed copy and CMP actions in a genuinely nonmodal notice:
+// no overlay, focus capture, Tab trap, or default choice. The pinned vendor's
+// full consent dialog remains unchanged, including its modal semantics.
+function showCompactNotice() {
+  compactNotice=document.createElement('section');
+  compactNotice.className='ahv-consent-compact';
+  compactNotice.setAttribute('role','region');
+  compactNotice.setAttribute('aria-labelledby','ahv-compact-consent-title');
+  compactNotice.dir=lang.startsWith('ar')?'rtl':'ltr';
+  const text=document.createElement('div');
+  const title=document.createElement('h2');title.id='ahv-compact-consent-title';title.textContent=copy.consentModal.title;
+  const description=document.createElement('p');description.textContent=copy.consentModal.description;
+  text.append(title,description);
+  const actions=document.createElement('div');actions.className='ahv-consent-compact-actions';
+  for(const [label,action] of [[copy.consentModal.acceptAllBtn,()=>CC.acceptCategory('all')],[copy.consentModal.acceptNecessaryBtn,()=>CC.acceptCategory([])],[copy.consentModal.showPreferencesBtn,()=>CC.showPreferences()]]) {
+    const button=document.createElement('button');button.type='button';button.textContent=label;button.addEventListener('click',action);actions.append(button);
+  }
+  const footer=document.createElement('div');footer.className='ahv-consent-compact-footer';
+  // Locally authored translation HTML; href is derived from the known locale.
+  footer.innerHTML=copy.consentModal.footer;
+  compactNotice.append(text,actions,footer);document.body.append(compactNotice);
+}
+// Geography controls presentation only. The legacy "passive" region response
+// selects the compact visible choice notice; it never saves consent or starts
+// a vendor. Saved choices win; recent refusals suppress renewed asks.
 if (!CC.validConsent() && !gpc && !hasRefusal(readRefusals(storage))) {
-  const show = await automaticPrompt();
-  if (show && !opened && !CC.validConsent()) CC.show();
+  const full = await automaticPrompt();
+  if (!opened && !CC.validConsent()) {if(full)CC.show();else showCompactNotice();}
 }
