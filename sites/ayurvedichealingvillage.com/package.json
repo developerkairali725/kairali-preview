@@ -9,7 +9,9 @@
     "assets:restore": "node tools/restore-runtime-assets.mjs && node tools/restore-runtime-assets.mjs --gallery && node tools/restore-runtime-assets.mjs --documents && node tools/build-treatment-derivative.mjs && node tools/build-critical-media.mjs",
     "test": "node --test test/*.test.mjs",
     "search:check": "node tools/build-search-index.mjs --check --allow-expired && node tools/sync-finder-search-data.mjs --check && node tests/search-acceptance.mjs",
-    "l10n:build": "node tools/l10n/routes.mjs && node tools/l10n/build.mjs"
+    "l10n:build": "node tools/l10n/routes.mjs && node tools/l10n/build.mjs",
+    "lp:check": "node tools/lp-check.mjs",
+    "lp:perf": "node tools/lp-perf.mjs"
   },
   "dependencies": {
     "@kairali/analytics": "workspace:*",

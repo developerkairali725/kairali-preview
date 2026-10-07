@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Tokens and components</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Mulish:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Mulish',system-ui,sans-serif;color:#2A2118}
+a{color:#2A2118}a:hover{color:#121A15}
+h1,h2{font-family:'Marcellus',Georgia,serif;font-weight:400;margin:0}
+p{margin:0}
+</style>
+</helmet>
+<div style="width: 860px; height: 1500px; background: #F7F4EA; box-sizing: border-box; padding: 56px; display: flex; flex-direction: column; gap: 44px">
+  <div style="display: flex; flex-direction: column; gap: 8px">
+    <p style="font-size: 12px; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; color: #7A5A22">v2 tokens · replaces the brown stack, marigold pills and 7 font families</p>
+    <h1 style="font-size: 44px">Tokens &amp; components</h1>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <h2 style="font-size: 24px">Colour</h2>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px">
+      <div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 84px; background: #121A15"></div><p style="font-size: 14px; font-weight: 700">Night #121A15</p><p style="font-size: 13px; color: #5C5448">Hero, deep band, primary button. Ivory on it 16.1:1</p></div>
+      <div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 84px; background: #F7F4EA; border: 1px solid rgba(42,33,24,.18)"></div><p style="font-size: 14px; font-weight: 700">Ivory #F7F4EA</p><p style="font-size: 13px; color: #5C5448">Page ground (kept)</p></div>
+      <div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 84px; background: #FFFDF7; border: 1px solid rgba(42,33,24,.18)"></div><p style="font-size: 14px; font-weight: 700">Paper #FFFDF7</p><p style="font-size: 13px; color: #5C5448">Cards, form surface</p></div>
+      <div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 84px; background: #2A2118"></div><p style="font-size: 14px; font-weight: 700">Ink #2A2118</p><p style="font-size: 13px; color: #5C5448">Text. 14.4:1 on ivory (kept)</p></div>
+      <div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 84px; background: #5C5448"></div><p style="font-size: 14px; font-weight: 700">Muted #5C5448</p><p style="font-size: 13px; color: #5C5448">Secondary text. 6.8:1</p></div>
+      <div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 84px; background: #7A5A22"></div><p style="font-size: 14px; font-weight: 700">Bronze text #7A5A22</p><p style="font-size: 13px; color: #5C5448">Overlines on ivory. 5.8:1</p></div>
+      <div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 84px; background: #B8955A"></div><p style="font-size: 14px; font-weight: 700">Bronze line #B8955A</p><p style="font-size: 13px; color: #5C5448">Hairlines and numerals only — never body text (2.6:1)</p></div>
+      <div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 84px; background: #D8C3A0"></div><p style="font-size: 14px; font-weight: 700">Champagne #D8C3A0</p><p style="font-size: 13px; color: #5C5448">Overlines on Night. 10.3:1</p></div>
+      <div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 84px; background: #1F5E43"></div><p style="font-size: 14px; font-weight: 700">WhatsApp #1F5E43</p><p style="font-size: 13px; color: #5C5448">WhatsApp actions only. White on it 7.7:1</p></div>
+      <div style="display: flex; flex-direction: column; gap: 8px"><div style="height: 84px; background: #A3212C"></div><p style="font-size: 14px; font-weight: 700">Error #A3212C</p><p style="font-size: 13px; color: #5C5448">Validation text. 6.8:1</p></div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <h2 style="font-size: 24px">Type — two families</h2>
+    <div style="display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 12px 24px; align-items: baseline">
+      <p style="font-size: 13px; color: #5C5448">H1 · Marcellus 64 / 36 mobile</p><p style="font-family: 'Marcellus', serif; font-size: 44px; line-height: 1.1">Panchakarma, practiced.</p>
+      <p style="font-size: 13px; color: #5C5448">H2 · Marcellus 48 / 32</p><p style="font-family: 'Marcellus', serif; font-size: 32px">One physician. One plan.</p>
+      <p style="font-size: 13px; color: #5C5448">Overline · Mulish 600 13, .22em</p><p style="font-size: 13px; letter-spacing: .22em; text-transform: uppercase; font-weight: 600; color: #7A5A22">The admission</p>
+      <p style="font-size: 13px; color: #5C5448">Body · Mulish 18 / 17, lh 1.65</p><p style="font-size: 18px; line-height: 1.65">Body text never below 17px. Line length 60–75 characters.</p>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <h2 style="font-size: 24px">Actions — sentence case, 2px radius, ≥ 50px tall</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center">
+      <a href="#" style="min-height: 54px; padding: 0 28px; display: inline-flex; align-items: center; background: #121A15; color: #F7F4EA; text-decoration: none; font-weight: 600; border-radius: 2px">Plan my admission</a>
+      <a href="#" style="min-height: 54px; padding: 0 28px; display: inline-flex; align-items: center; background: #1F5E43; color: #FFFFFF; text-decoration: none; font-weight: 600; border-radius: 2px">Speak to Priya on WhatsApp</a>
+      <a href="#" style="min-height: 54px; padding: 0 28px; display: inline-flex; align-items: center; border: 1px solid #121A15; color: #121A15; text-decoration: none; font-weight: 600; border-radius: 2px">Call</a>
+      <div style="background: #121A15; padding: 12px"><a href="#" style="min-height: 54px; padding: 0 28px; display: inline-flex; align-items: center; background: #F7F4EA; color: #121A15; text-decoration: none; font-weight: 600; border-radius: 2px">On Night: ivory</a></div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 14px">
+    <h2 style="font-size: 24px">Form field states</h2>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px">
+      <div style="display: flex; flex-direction: column; gap: 6px"><label for="t1" style="font-size: 14px; font-weight: 600">Default</label><input id="t1" type="text" value="Asha Menon" style="min-height: 52px; font-family: 'Mulish', sans-serif; font-size: 17px; border: 1px solid rgba(42,33,24,.3); padding: 0 12px; background: #FFFFFF"></div>
+      <div style="display: flex; flex-direction: column; gap: 6px"><label for="t2" style="font-size: 14px; font-weight: 600">Focus</label><input id="t2" type="text" style="min-height: 52px; font-family: 'Mulish', sans-serif; font-size: 17px; border: 1px solid #121A15; outline: 3px solid #6B7726; outline-offset: 2px; padding: 0 12px; background: #FFFFFF"></div>
+      <div style="display: flex; flex-direction: column; gap: 6px"><label for="t3" style="font-size: 14px; font-weight: 600">Error</label><input id="t3" type="email" value="asha@" aria-invalid="true" aria-describedby="t3e" style="min-height: 52px; font-family: 'Mulish', sans-serif; font-size: 17px; border: 2px solid #A3212C; padding: 0 12px; background: #FFFFFF"><p id="t3e" style="font-size: 14px; color: #A3212C; font-weight: 600">Enter an email like name@example.com</p></div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 10px">
+    <h2 style="font-size: 24px">Rules the builder must keep</h2>
+    <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 1.5; color: #2A2118">
+      <li>One accent moment per screen; photography carries the colour.</li>
+      <li>No marigold, no pills, no uppercase buttons, no motifs, no gradient washes (one functional scrim on mobile hero only).</li>
+      <li>Mobile: everything stacks vertically — no side-scrolling rows, carousels or swipe-only content (most visitors are 40+).</li>
+      <li>Sticky bar appears only after the cookie choice — never overlaps the banner or a focused field.</li>
+      <li>Imagery: draped bodies, hands, oil, light. No before/after, no tape measures, ages 40–65 represented.</li>
+    </ul>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":860,"height":1500}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

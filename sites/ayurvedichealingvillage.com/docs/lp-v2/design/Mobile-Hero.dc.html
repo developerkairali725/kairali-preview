@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mobile first screen</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Mulish:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Mulish',system-ui,sans-serif;color:#2A2118}
+a{color:#F7F4EA}a:hover{color:#FFFFFF}
+h1{font-family:'Marcellus',Georgia,serif;font-weight:400;margin:0}
+p{margin:0}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #121A15">
+  <img src="/_blob/da29021d40dbe1095a76c17019b81e2d" alt="A therapist preparing a patient for Shiro Abhyangam head therapy" style="position: absolute; inset: 0; width: 100%; height: 560px; object-fit: cover; object-position: 50% 25%">
+  <div style="position: absolute; left: 0; right: 0; top: 380px; height: 200px; background: linear-gradient(180deg, rgba(18,26,21,0) 0%, #121A15 85%)"></div>
+
+  <header style="position: absolute; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; padding: 18px 16px">
+    <img src="/_blob/e9529bf524f274036e888bd5c9953aad" alt="Kairali — The Ayurvedic Healing Village" style="height: 54px; width: auto; display: block; filter: drop-shadow(0 1px 6px rgba(0,0,0,.45))">
+    <span style="display: flex; gap: 8px; align-items: center"><a href="Locale-Switcher.dc.html" aria-label="Language and currency: English, INR" style="min-height: 44px; display: inline-flex; align-items: center; gap: 6px; padding: 0 12px; border: 1px solid rgba(247,244,234,.6); background: rgba(18,26,21,.4); color: #F7F4EA; text-decoration: none; font-weight: 600; font-size: 13px; border-radius: 999px"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg>EN · INR</a><a href="tel:+919555156156" aria-label="Call Kairali" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(247,244,234,.6); background: rgba(18,26,21,.4)">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F7F4EA" stroke-width="1.6" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>
+    </a></span>
+  </header>
+
+  <div style="position: absolute; left: 16px; right: 16px; top: 452px; display: flex; flex-direction: column; gap: 14px; color: #F7F4EA">
+    <p style="font-size: 12px; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; color: #D8C3A0">NABH-accredited · Palakkad, Kerala</p>
+    <h1 style="font-size: 36px; line-height: 1.1">Panchakarma, practiced the way it was meant to be.</h1>
+    <p style="font-size: 17px; line-height: 1.55; color: rgba(247,244,234,.88)">A physician-led admission in a quiet Kerala village — therapy, prescribed diet and deep rest.</p>
+    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 4px">
+      <a href="Form-Flow.dc.html" style="min-height: 54px; display: flex; align-items: center; justify-content: center; background: #F7F4EA; color: #121A15; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 2px">Get free doctor consultation</a>
+      <a href="https://wa.me/919289838797" style="min-height: 54px; display: flex; align-items: center; justify-content: center; gap: 10px; background: #1F5E43; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 2px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.2A8.5 8.5 0 1 1 20.5 11.6Z"/></svg>
+        WhatsApp Priya
+      </a>
+    </div>
+  </div>
+
+  <sc-if value="{{ showBanner }}" hint-placeholder-val="{{ true }}">
+    <section aria-label="Cookie choices" style="position: absolute; left: 12px; right: 12px; bottom: 96px; background: #FFFDF7; padding: 18px; box-shadow: 0 -8px 40px rgba(0,0,0,.35); display: flex; flex-direction: column; gap: 12px; border-radius: 2px">
+      <p style="font-family: 'Marcellus', serif; font-size: 19px">Your privacy <span style="font-family: 'Mulish', sans-serif; font-size: 12px; color: #5C5448">· shown in EU / UK only</span></p>
+      <p style="font-size: 14px; line-height: 1.5; color: #5C5448">We use essential cookies to run this page. With your permission we also use analytics and advertising cookies. <a href="/privacy" style="color: #2A2118">Privacy notice</a></p>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+        <button type="button" onClick="{{ choose }}" style="min-height: 46px; border: 1px solid #121A15; background: #FFFDF7; color: #121A15; font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 14px; border-radius: 2px">Reject all</button>
+        <button type="button" onClick="{{ choose }}" style="min-height: 46px; border: 1px solid #121A15; background: #FFFDF7; color: #121A15; font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 14px; border-radius: 2px">Manage</button>
+        <button type="button" onClick="{{ choose }}" style="min-height: 46px; border: 1px solid #121A15; background: #FFFDF7; color: #121A15; font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 14px; border-radius: 2px">Accept all</button>
+      </div>
+    </section>
+  </sc-if>
+
+  <sc-if value="{{ showBar }}" hint-placeholder-val="{{ true }}">
+    <nav aria-label="Quick actions" style="position: absolute; left: 0; right: 0; bottom: 0; display: grid; grid-template-columns: 72px minmax(0, 1fr) 72px; gap: 8px; align-items: center; background: #FFFDF7; border-top: 1px solid rgba(42,33,24,.12); box-shadow: 0 -8px 24px rgba(0,0,0,.08); padding: 8px 10px calc(8px + env(safe-area-inset-bottom)); box-sizing: border-box">
+      <a href="https://wa.me/919289838797" aria-label="WhatsApp us" style="height: 56px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; text-decoration: none; font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 12px; line-height: 1; border-radius: 2px; box-sizing: border-box; background: #1F5E43; color: #FFFFFF"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.2A8.5 8.5 0 1 1 20.5 11.6Z"/></svg>WhatsApp</a>
+      <a href="Form-Flow.dc.html" style="height: 56px; display: flex; align-items: center; justify-content: center; padding: 0 8px; text-decoration: none; font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 15px; white-space: nowrap; border-radius: 2px; background: #121A15; color: #F7F4EA">Free doctor consultation</a>
+      <button type="button" onClick="{{ openSheet }}" aria-haspopup="dialog" aria-label="Ask anything" style="height: 56px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; text-decoration: none; font-family: 'Mulish', sans-serif; font-weight: 700; font-size: 12px; line-height: 1; border-radius: 2px; box-sizing: border-box; background: transparent; color: #121A15; border: 1px solid #121A15; cursor: pointer"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg>Ask</button>
+    </nav>
+  </sc-if>
+  <sc-if value="{{ sheetOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position: absolute; inset: 0; background: rgba(12,17,14,.55)"></div>
+    <section role="dialog" aria-modal="true" aria-label="Ask anything — choose how to talk to us" style="position: absolute; left: 0; right: 0; bottom: 0; background: #FFFDF7; padding: 20px 16px 24px; display: flex; flex-direction: column; gap: 10px; border-radius: 2px 2px 0 0">
+      <div style="display: flex; justify-content: space-between; align-items: center">
+        <p style="font-family: 'Marcellus', serif; font-size: 24px">Ask anything</p>
+        <button type="button" onClick="{{ closeSheet }}" aria-label="Close" style="width: 44px; height: 44px; border: 1px solid rgba(42,33,24,.3); background: transparent; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#121A15" stroke-width="1.8" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+      </div>
+      <p style="font-size: 14px; color: #5C5448; line-height: 1.45">Pick the app you already use. Our AI assistant answers instantly; the patient team follows up.</p>
+      <a href="#chat" style="min-height: 54px; display: flex; align-items: center; justify-content: center; background: #121A15; color: #F7F4EA; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 2px">Chat here now</a>
+      <a href="https://wa.me/919289838797" style="min-height: 54px; display: flex; align-items: center; justify-content: center; background: #1F5E43; color: #FFFFFF; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 2px">WhatsApp</a>
+      <a href="https://ig.me/m/kairaliayurvedichealingvillage" style="min-height: 54px; display: flex; align-items: center; justify-content: center; border: 1px solid #121A15; color: #121A15; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 2px">Instagram message</a>
+      <a href="https://m.me/[PAGE]" style="min-height: 54px; display: flex; align-items: center; justify-content: center; border: 1px solid #121A15; color: #121A15; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 2px">Facebook Messenger</a>
+      <a href="tel:+919555156156" style="min-height: 54px; display: flex; align-items: center; justify-content: center; border: 1px solid #121A15; color: #121A15; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 2px">Call +91 95551 56156</a>
+    </section>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"region":{"editor":"enum","options":["EU / UK","Rest of world"],"default":"EU / UK"},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { chosen: false, sheet: false };
+  }
+  renderVals() {
+    const banner = (this.props.region ?? 'EU / UK') === 'EU / UK' && !this.state.chosen;
+    return {
+      showBanner: banner,
+      showBar: true,
+      choose: () => this.setState({ chosen: true }),
+      sheetOpen: this.state.sheet,
+      openSheet: () => this.setState({ sheet: true }),
+      closeSheet: () => this.setState({ sheet: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

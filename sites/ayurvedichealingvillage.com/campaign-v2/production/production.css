@@ -1,0 +1,80 @@
+/* campaign-v2/production/production.css — the live ad routes only (loaded by production/Document.tsx, which only
+   app/(ppc-v2) uses). Everything is scoped to the page wrapper (.lp-prod) or to the site's own consent notice;
+   colours and type come from the kit skin vars (--lp-*), never new values. */
+
+html[data-lp-surface="production"] body { margin: 0; }
+
+/* The site's consent notice reads the brand tokens, which the main site sets on :root (app/globals.css →
+   @kairali/ui/brand-tokens.css). They are set here only where the notice renders, with the same values, so the
+   notice matches the rest of the site and the tokens never reach the kit design. */
+html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
+  --line: currentColor;
+  --font-body: "Asap", "Trebuchet MS", sans-serif;
+}
+
+/* Header: the site's shared "Chat" control (review-chrome.js) joins the kit's actions. */
+.lp-prod .lp-header__actions .ahv-contact-trigger { flex: none; }
+
+/* Enquiry: country code beside the number, as on the form it replaces. */
+.lp-prod .lp-enq__fields--enquiry { display: grid; grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr); gap: 18px 12px; }
+.lp-prod .lp-enq__fields--enquiry > * { grid-column: 1 / -1; }
+.lp-prod .lp-enq__fields--enquiry > .lp-enq__field--name-dialCode { grid-column: 1; }
+.lp-prod .lp-enq__fields--enquiry > .lp-enq__field--name-phone { grid-column: 2; }
+
+/* Enquiry-only quotation (FeePlan): replaces the fee table; no amounts. */
+.lp-prod .lp-feeplan__main { display: flex; flex-wrap: wrap; align-items: center; gap: 24px 40px; margin-top: 20px; }
+.lp-prod .lp-feeplan__body { max-width: 62ch; color: var(--lp-muted); }
+
+/* Preserved source body (Body.tsx). */
+.lp-prod .lp-body { display: flex; flex-direction: column; gap: 64px; }
+.lp-prod .lp-body__sec { max-width: 1120px; scroll-margin-top: 24px; }
+.lp-prod .lp-body__sec > * + * { margin-top: 14px; }
+.lp-prod .lp-body__h2, .lp-prod .lp-body__md__h2 { font-family: var(--lp-font-display); font-weight: 400; font-size: 38px; line-height: 1.15; margin: 0 0 6px; }
+.lp-prod .lp-body__h3, .lp-prod .lp-body__md__h3 { font-family: var(--lp-font-display); font-weight: 400; font-size: 24px; line-height: 1.25; margin: 30px 0 0; }
+.lp-prod .lp-body__p, .lp-prod .lp-body__md__p { max-width: 72ch; }
+.lp-prod .lp-body a { color: var(--lp-ink); text-decoration: underline; text-decoration-color: var(--lp-accent-line); text-underline-offset: 3px; }
+.lp-prod .lp-body a:hover { text-decoration-color: currentColor; }
+.lp-prod .lp-body__p--quoted { font-style: italic; border-inline-start: 3px solid var(--lp-accent-line); padding-inline-start: 16px; }
+.lp-prod .lp-body__h3--attribution { font-family: var(--lp-font-body); font-size: 16px; font-weight: 600; color: var(--lp-muted); margin-top: 8px; padding-inline-start: 19px; }
+.lp-prod .lp-body__ul { padding-inline-start: 1.2em; max-width: 72ch; }
+.lp-prod .lp-body__ul li + li { margin-top: 6px; }
+
+.lp-prod .lp-body__programmes { list-style: none; margin: 18px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.lp-prod .lp-body__programme { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px; background: var(--lp-surface); border: 1px solid color-mix(in srgb, var(--lp-ink) 12%, transparent); border-radius: var(--lp-radius); }
+.lp-prod .lp-body__programme a { font-weight: 600; }
+.lp-prod .lp-body__sanskrit { font-size: 15px; font-style: italic; color: var(--lp-muted); }
+
+.lp-prod .lp-body__table { overflow-x: auto; max-width: 100%; }
+.lp-prod .lp-body__table:focus-visible { outline: 3px solid var(--ahv-lp-focus); outline-offset: 2px; }
+.lp-prod .lp-body__table table { border-collapse: collapse; width: 100%; min-width: 520px; background: var(--lp-surface); }
+.lp-prod .lp-body__table :is(th, td) { padding: 10px 14px; text-align: start; vertical-align: top; border-bottom: 1px solid color-mix(in srgb, var(--lp-ink) 14%, transparent); }
+.lp-prod .lp-body__table thead th { font-weight: 700; }
+.lp-prod .lp-body__table tbody th { font-weight: 600; }
+
+.lp-prod .lp-body__video { display: inline-flex; flex-direction: column; gap: 10px; max-width: 420px; text-decoration: none; }
+.lp-prod .lp-body__video-img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: var(--lp-radius); }
+.lp-prod .lp-body__video-label { font-weight: 600; text-decoration: underline; text-decoration-color: var(--lp-accent-line); text-underline-offset: 3px; }
+
+.lp-prod .lp-body__gallery { list-style: none; margin: 18px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+.lp-prod .lp-body__figure { margin: 0; }
+.lp-prod .lp-body__img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; border-radius: var(--lp-radius); }
+.lp-prod .lp-body__figure figcaption { margin-top: 6px; font-size: 15px; color: var(--lp-muted); }
+
+.lp-prod .lp-body__quote { margin: 24px 0 0; padding: 20px 24px; max-width: 72ch; background: var(--lp-surface); border-inline-start: 3px solid var(--lp-accent-line); }
+.lp-prod .lp-body__quote blockquote { margin: 0; font-style: italic; }
+.lp-prod .lp-body__quote figcaption { margin-top: 10px; font-weight: 600; color: var(--lp-muted); }
+
+@media (max-width: 767px) {
+  .lp-prod .lp-enq__fields--enquiry { grid-template-columns: minmax(0, 6.5rem) minmax(0, 1fr); }
+  .lp-prod .lp-body { gap: 44px; }
+  .lp-prod .lp-body__h2, .lp-prod .lp-body__md__h2 { font-size: 30px; }
+  .lp-prod .lp-body__h3, .lp-prod .lp-body__md__h3 { font-size: 21px; }
+  .lp-prod .lp-body__programmes, .lp-prod .lp-body__gallery { grid-template-columns: minmax(0, 1fr); }
+  .lp-prod .lp-body__video { max-width: 100%; }
+}
+
+/* The consultation CTA is a fragment link so it also works without JavaScript. */
+.lp-prod a.lp-consult__submit{color:var(--lp-on-primary);text-decoration:none}
+
+/* Keep the enquiry-only pricing section CTA readable despite the general anchor colour. */
+.lp-prod a.lp-feeplan__cta{color:var(--lp-on-primary);text-decoration:none}

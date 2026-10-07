@@ -95,6 +95,8 @@ const REDIRECT_MAP = JSON.parse(
 const nextConfig: NextConfig = {
   // This app has multiple root layouts; unmatched URLs need their own document.
   experimental: { globalNotFound: true },
+  // `pnpm lp:perf` builds into its own directory (LP_DIST_DIR) so it never collides with a running dev server's .next.
+  ...(process.env.LP_DIST_DIR ? { distDir: process.env.LP_DIST_DIR } : {}),
   // Keep dependency tracing inside this monorepo on Windows and macOS.
   outputFileTracingRoot: join(process.cwd(), "../.."),
   // Static media is served from Vercel's static output, not read by page functions.
@@ -134,9 +136,17 @@ const nextConfig: NextConfig = {
       source: "/ahv/static/:path*.html",
       headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" }],
     };
-    if (!IS_STAGING) return [assets, documents, staticFragments];
+    // Campaign v2 preview variants are per-visitor (geo + language): never cache shared, never index.
+    const lpV2 = {
+      source: "/lp-v2/:path*",
+      headers: [
+        { key: "Cache-Control", value: "private, no-store" },
+        { key: "X-Robots-Tag", value: "noindex, nofollow" },
+      ],
+    };
+    if (!IS_STAGING) return [assets, documents, staticFragments, lpV2];
     return [
-      assets, documents, staticFragments,
+      assets, documents, staticFragments, lpV2,
       {
         source: "/:path*",
         headers: [

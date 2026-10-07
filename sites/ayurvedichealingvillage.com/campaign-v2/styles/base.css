@@ -1,0 +1,21 @@
+@import "@kairali/ui/ahv-campaign-tokens.css";
+
+/* campaign-v2/styles/base.css — section primitives; every colour comes from --lp-* vars */
+.lp{background:var(--lp-ground);color:var(--lp-ink);font-family:var(--lp-font-body);font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased}
+.lp *{box-sizing:border-box}
+.lp h1,.lp h2,.lp h3{font-family:var(--lp-font-display);font-weight:400;margin:0;letter-spacing:-.01em}
+.lp p{margin:0}
+.lp a{color:inherit}
+.lp :focus-visible{outline:3px solid var(--ahv-lp-focus);outline-offset:2px}
+.lp-wrap{max-width:1360px;margin-inline:auto;padding-inline:clamp(16px,4vw,56px)}
+.lp-section{padding-block:clamp(44px,6vw,80px)}
+.lp-over{font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;color:var(--lp-accent-text)}
+.lp-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding-inline:26px;border-radius:var(--lp-radius);font-weight:600;font-size:16px;text-decoration:none;border:1px solid transparent;cursor:pointer}
+.lp-btn--primary{background:var(--lp-primary);color:var(--lp-on-primary)}
+.lp-btn--wa{background:var(--lp-wa);color:var(--lp-on-wa)}
+.lp-btn--line{background:transparent;color:inherit;border-color:currentColor}
+.lp-muted{color:var(--lp-muted)}
+@media (max-width:767px){.lp{font-size:17px}.lp-hide-mobile{display:none!important}}
+@media (min-width:768px){.lp-hide-desktop{display:none!important}}
+@media (prefers-reduced-motion:reduce){.lp *{transition:none!important;animation:none!important}}
+html[dir="rtl"] .lp-mirror{transform:scaleX(-1)}

@@ -34,6 +34,8 @@ export const SERVED_UNTRACKED_ROOTS = ["public/ahv/l10n", "l10n/generated", "l10
 /** Ignored directories that are never deployed content, each with the reason. */
 export const NOT_SERVED = {
   "l10n/prerender-tmp": "scratch output of tools/prerender-english.mjs --locale; promoted into l10n/prerender before use",
+  ".next-lp-perf": "production build output of tools/lp-perf.mjs (LP_DIST_DIR); local Lighthouse runs only, never deployed",
+  "docs/lp-v2/screens": "local verification screenshots for the lp-v2 kit; kept out of git, archived outside the repo",
 };
 
 export function run(argv = [], { site = SITE } = {}) {

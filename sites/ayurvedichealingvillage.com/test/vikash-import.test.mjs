@@ -5,7 +5,7 @@ const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const routes=JSON.parse(read('campaign-v110/routes.json'));
 test('supplier route inventory remains complete and German page has a German document',()=>{
  assert.equal(routes.length,28);assert.equal(new Set(routes).size,28);
- for(const r of routes.filter(r=>!JSON.parse(read("campaign-v110/retained-original-routes.json")).includes(r))){const group=r==='/lp/behandlung-in-kerala/'?'(campaign-de)':r.startsWith('/lp/')?'(lp)':'(campaign)';assert.ok(fs.existsSync(new URL('../app/'+group+r.replace(/\/$/,'')+'/page.tsx',import.meta.url)),r);}
+ for(const r of routes.filter(r=>!JSON.parse(read("campaign-v110/retained-original-routes.json")).includes(r))){const group=['/ayurvedic-treatment-packages.html','/panchkarma-treatment.html'].includes(r)?'(ppc-v2)':r==='/lp/behandlung-in-kerala/'?'(campaign-de)':r.startsWith('/lp/')?'(lp)':'(campaign)';assert.ok(fs.existsSync(new URL('../app/'+group+r.replace(/\/$/,'')+'/page.tsx',import.meta.url)),r);}
  assert.match(read('app/(campaign-de)/layout.tsx'),/lang="de"/);
 });
 test('supplier form mount uses the existing endpoint and no duplicate consent or chat',()=>{

@@ -1,0 +1,160 @@
+{
+  "v": 3,
+  "attachments": {},
+  "boards": {
+    "Form-Flow.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Mobile — 3-step enquiry (interactive)",
+      "w": 390,
+      "x": 1990,
+      "y": 0
+    },
+    "Main.dc.html": {
+      "expand": "fill",
+      "h": 7900,
+      "title": "Desktop — full page (demo: Panchakarma)",
+      "w": 1440,
+      "x": 0,
+      "y": 0
+    },
+    "Mobile-Full.dc.html": {
+      "h": 6800,
+      "title": "Mobile — full page",
+      "w": 390,
+      "x": 2460,
+      "y": 0
+    },
+    "Mobile-Hero.dc.html": {
+      "h": 844,
+      "is_interactive": true,
+      "title": "Mobile — first screen + bar + consent (EU/UK only; Tweaks: region)",
+      "w": 390,
+      "x": 1520,
+      "y": 0
+    },
+    "Tokens.dc.html": {
+      "h": 1500,
+      "title": "Tokens & components",
+      "w": 860,
+      "x": 1520,
+      "y": 1000
+    },
+    "Gallery.dc.html": {
+      "x": 1520,
+      "y": 2620,
+      "w": 1440,
+      "h": 900,
+      "title": "Gallery — filter + lightbox (interactive)",
+      "is_interactive": true
+    },
+    "B-Desktop.dc.html": {
+      "x": 3480,
+      "y": 0,
+      "w": 1440,
+      "h": 1620,
+      "title": "B · Garden Bento — desktop (v2, modern)"
+    },
+    "B-Mobile.dc.html": {
+      "x": 5000,
+      "y": 0,
+      "w": 390,
+      "h": 844,
+      "title": "B · Garden Bento — mobile first screen"
+    },
+    "C-Desktop.dc.html": {
+      "x": 3480,
+      "y": 2140,
+      "w": 1440,
+      "h": 1900,
+      "title": "C · Editorial — desktop (hero + first sections)"
+    },
+    "C-Mobile.dc.html": {
+      "x": 5000,
+      "y": 2140,
+      "w": 390,
+      "h": 844,
+      "title": "C · Editorial — mobile first screen"
+    },
+    "D-Desktop.dc.html": {
+      "x": 3480,
+      "y": 4280,
+      "w": 1440,
+      "h": 1200,
+      "title": "D · Direct — desktop (v2, modern)"
+    },
+    "D-Mobile.dc.html": {
+      "x": 5000,
+      "y": 4280,
+      "w": 390,
+      "h": 844,
+      "title": "D · Direct — mobile first screen"
+    },
+    "Locale-Switcher.dc.html": {
+      "x": 1990,
+      "y": 3640,
+      "w": 390,
+      "h": 844,
+      "title": "Language & currency switcher (interactive) — auto-set from location",
+      "is_interactive": true
+    }
+  },
+  "createdOnFiles": {
+    "at": "2026-10-07T12:00:00Z",
+    "v": 1
+  },
+  "designSystems": [],
+  "launch": {
+    "view": "canvas"
+  },
+  "notes": {
+    "t1": {
+      "kind": "title1",
+      "maxW": 2850,
+      "text": "The Quiet Admission — campaign landing template v2",
+      "w": 240,
+      "x": 0,
+      "y": -300
+    },
+    "n2": {
+      "x": 2960,
+      "y": 1000,
+      "w": 420,
+      "maxH": 760,
+      "fill": "orange",
+      "text": "v2 changes (7 Oct)\n• Real Kairali logo + award logos\n• CTA → 'Get free doctor consultation' (Gaurav) — must be a real doctor consult\n• Step-1 form now inside first screen (ends at 773px on desktop)\n• 'Ask anything' chat: bottom-right desktop, sticky bar on mobile\n• Films section: property film + patient stories, click-to-play only\n• Offer band + price block are Tweaks toggles (Gaurav: hide price; research: show — A/B test)\n• Gallery: filter + lightbox\n• Full footer; pages fit the 8,000px artboard limit\n• 'Since 1908' removed pending 1908 vs 1989 decision\n• Mobile: no side-scrolling anywhere — doctors and films stack vertically (40+ audience)"
+    },
+    "t2": {
+      "x": 3480,
+      "y": -300,
+      "text": "Variants B · C · D — same content file, different design",
+      "kind": "title1",
+      "maxW": 1910
+    },
+    "n3": {
+      "x": 5470,
+      "y": 0,
+      "w": 440,
+      "maxH": 900,
+      "fill": "blue",
+      "text": "Variant recipes (all share one campaign content file)\n\nA · Quiet Admission — Night + ivory + bronze. Split hero, sensual. Flow: hero → bar → proof → offer → admission → stillness → films → doctors → village → fees → form → FAQ.\n\nB · Garden Bento — warm cream + sage + terracotta, Instrument Serif + Plus Jakarta Sans. Floating pill nav, bento hero (photo tile + form card + rating/doctor tiles), double-bezel cards, pill CTAs. Flow: hero+form → proof → village FIRST → admission → doctors → films → fees → form → FAQ.\n\nC · Editorial — cream + oxblood, magazine type, large portrait. Flow: hero → story → stillness → method → doctors → films → fees → form → FAQ.\n\nD · Direct — soft white structure, bold Plus Jakarta Sans 800, dark form card as hero, proof bento, short (~5 sections). Flow: hero with step-1 form → proof → 3 reasons → fees → doctors strip → FAQ → footer. For brand, competitor and retargeting ads.\n\nTest at ad level: /campaign/a|b|c|d (noindex)."
+    }
+  },
+  "order": [
+    "Main.dc.html",
+    "Mobile-Hero.dc.html",
+    "Form-Flow.dc.html",
+    "Mobile-Full.dc.html",
+    "Tokens.dc.html",
+    "Gallery.dc.html",
+    "B-Desktop.dc.html",
+    "B-Mobile.dc.html",
+    "C-Desktop.dc.html",
+    "C-Mobile.dc.html",
+    "D-Desktop.dc.html",
+    "D-Mobile.dc.html",
+    "Locale-Switcher.dc.html"
+  ],
+  "pages": [],
+  "title": "AHV Campaign LP Template v2 — The Quiet Admission"
+}
