@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Script from "next/script";
 import { ChatbaseLoader } from "@kairali/chat";
-import { consentDefaultSnippet } from "@kairali/consent/core";
+import { ConsentScripts } from "../../../components/ConsentScripts";
 import analyticsConfig from "../../../analytics.config.json";
 
 /**
@@ -33,7 +33,7 @@ export function SiteDocument({
     <html lang={lang} dir={dir} suppressHydrationWarning>
       <head>
         {/* Default denied before loaders; only the current AHV consent revision may grant. */}
-        <script id="kairali-consent-default" dangerouslySetInnerHTML={{__html: consentDefaultSnippet()}} />
+        <ConsentScripts />
         {/* Keep one-use thank-you navigation tied to a confirmed lead receipt. */}
         <Script src="/design/lead-receipt.js" strategy="beforeInteractive" />
         {/* ALWAYS emitted, deliberately NOT behind the analytics flag.

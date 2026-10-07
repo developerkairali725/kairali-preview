@@ -1,9 +1,20 @@
 import * as CC from './vendor/cookieconsent.esm.js';
 import { REVISION, EXPIRY_DAYS, STORAGE_KEY, preferences, legacyRejection } from './policy.mjs';
-import { translation } from './copy.mjs';
+import { translation, gpcNotice } from './copy.mjs';
 let storage; try { storage = localStorage; } catch {}
 const rejectedBefore = legacyRejection(storage);
 const gpc = navigator.globalPrivacyControl === true;
+// Remove only advertising before hydration so GPC cannot show a stale grant.
+// This never extends expiry, upgrades revision, or grants any category.
+if (gpc) {
+ try {
+  const saved=JSON.parse(storage.getItem(STORAGE_KEY));
+  if(Array.isArray(saved?.categories) && saved.categories.includes('advertising')) {
+   saved.categories=saved.categories.filter(category=>category!=='advertising');
+   storage.setItem(STORAGE_KEY,JSON.stringify(saved));
+  }
+ } catch {}
+}
 // Derive a trusted local URL from the current locale, not arbitrary markup.
 const lang=document.documentElement.lang;
 const prefix=/^\/(de|fr|es|it|pt|nl|ru|ar|hi|zh|ja|ko)(?:\/|$)/.exec(location.pathname)?.[1];
@@ -25,6 +36,7 @@ function apply({cookie}) {
   } catch {}
 }
 const copy=translation(lang,policy);
+if(gpc){const section=copy.preferencesModal.sections.find(s=>s.linkedCategory==='advertising');delete section.linkedCategory;section.description=gpcNotice(lang);CC.eraseCookies([/^_gcl_/,/^_fb(c|p)$/]);}
 await CC.run({
   mode:'opt-in', revision:REVISION, hideFromBots:false, manageScriptTags:false,
   cookie:{name:STORAGE_KEY, useLocalStorage:true, expiresAfterDays:EXPIRY_DAYS},
@@ -32,7 +44,7 @@ await CC.run({
   categories:{
     necessary:{enabled:true,readOnly:true},
     analytics:{autoClear:{cookies:[{name:/^_ga/},{name:/^_gid$/},{name:/^_cl(ck|sk)$/}]}},
-    advertising:{readOnly:gpc,autoClear:{cookies:[{name:/^_gcl_/},{name:/^_fb(c|p)$/}]}}
+    ...(gpc ? {} : {advertising:{autoClear:{cookies:[{name:/^_gcl_/},{name:/^_fb(c|p)$/}]}}})
   },
   onConsent:apply, onChange:apply,
   onModalShow:()=>document.documentElement.setAttribute('data-consent-open',''),

@@ -23,3 +23,8 @@ export function translation(lang, policyHref) {
  return {consentModal:{title,description,acceptAllBtn,acceptNecessaryBtn,showPreferencesBtn,footer:`<a href="${policyHref}">${privacy}</a>`},preferencesModal:{title,acceptAllBtn,acceptNecessaryBtn,savePreferencesBtn,closeIconLabel,sections:[{title:necessary,description:nd,linkedCategory:'necessary'},{title:analytics,description:an,linkedCategory:'analytics'},{title:advertising,description:ad,linkedCategory:'advertising'}]}};
 }
 export const languages=Object.keys(rows);
+
+export function gpcNotice(lang) {
+ const key=(lang||'en').toLowerCase().split('-')[0];
+ return ({en:'Advertising is off because your browser sends Global Privacy Control (GPC).',de:'Werbung ist deaktiviert, da Ihr Browser Global Privacy Control (GPC) sendet.',fr:'La publicité est désactivée car votre navigateur envoie Global Privacy Control (GPC).',es:'La publicidad está desactivada porque su navegador envía Global Privacy Control (GPC).',it:'La pubblicità è disattivata perché il browser invia Global Privacy Control (GPC).',pt:'A publicidade está desativada porque o navegador envia Global Privacy Control (GPC).',nl:'Advertenties staan uit omdat uw browser Global Privacy Control (GPC) verstuurt.',ru:'Реклама отключена, поскольку браузер передаёт Global Privacy Control (GPC).',ar:'الإعلانات معطلة لأن متصفحك يرسل Global Privacy Control (GPC).',hi:'विज्ञापन बंद हैं क्योंकि आपका ब्राउज़र Global Privacy Control (GPC) भेजता है।',zh:'您的浏览器发送 Global Privacy Control (GPC)，因此广告已关闭。',ja:'ブラウザーが Global Privacy Control (GPC) を送信しているため、広告はオフです。',ko:'브라우저가 Global Privacy Control(GPC)을 보내므로 광고가 꺼져 있습니다.'})[key]||'Advertising is off because your browser sends Global Privacy Control (GPC).';
+}

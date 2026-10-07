@@ -36,6 +36,8 @@ Reproducible checks:
 - `AHV_STAGING=1 AHV_ANALYTICS=0 npm run build` (locked AHV Next 15.5.24; 2,875 prerendered routes).
 - `node tools/consent-browser-qa.mjs`: real pinned UI on localhost, remote requests blocked. Set `CONSENT_QA_VENDOR_SCRIPTS=1` to download only public vendor scripts; collection remains blocked. No lead events are generated. Optional report/screenshot paths must be on the external SSD.
 - Start the built site on `127.0.0.1:3139`, then run `CONSENT_QA_SCREENSHOTS=<external-dir> CONSENT_BUILT_QA_REPORT=<external-json> node tools/consent-built-page-qa.mjs` for six actual page/layout/privacy-link/reopen cases with all external requests blocked.
-- Scoped brand/compliance lint and normal required PR gates remain mandatory.
+- Scoped brand/compliance/chat-presence lint and normal required PR gates remain mandatory. The first CI run found a missing ConsentScripts component contract; the AHV server component now renders the shared denied-only snippet while deliberately omitting the unchecked historical restore. No gate was relaxed.
+
+PR341 (homepage draft, observed head cbe13b352) also changes site-document.tsx. Reconcile that document when combining candidates; its checkout and unpublished source were not modified.
 
 Before any separately authorized release, compare current main and active AHV work, rebuild the accepted combined source, back up the exact live deployment and prove rollback, obtain protected hosted preview approval, then verify public apex/www and released locales. No merge, production deployment, cache purge or settings change is authorized by this draft. Rollback is a source revert plus the previous verified deployment; it would restore historical binary consent semantics, so prefer a reviewed forward fix when privacy behavior is involved. User preferences are not erased during source rollback preparation.
