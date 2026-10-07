@@ -1,8 +1,8 @@
 /** Inspect rendered content, including errors caught internally by DC runtime.
  * This function is serialized into the capture browser; keep it self-contained.
  */
-export function inspectCapturePage({ formSelector = null, requiredSelector = null, forbiddenSelector = null } = {}) {
-  const root = document.getElementById('ahv-design-root');
+export function inspectCapturePage({ formSelector = null, requiredSelector = null, forbiddenSelector = null, rootElement = null } = {}) {
+  const root = rootElement || document.getElementById('ahv-design-root');
   if (!root) return { errors: ['Missing design root'], heading: '', bodyChars: 0, requiredForm: false };
   const errors = [...root.querySelectorAll('.sc-logic-error,.sc-has-error,.sc-placeholder-error,[data-ahv-error]')]
     .map(node => (node.querySelector('.sc-logic-error') || node).textContent.trim().slice(0, 250));
@@ -22,9 +22,13 @@ export function inspectCapturePage({ formSelector = null, requiredSelector = nul
 /** Proof and extraction run synchronously in one browser task, against one DOM. */
 export function createCaptureEvaluation(extract) {
   return new Function('requirements', `
-    const contentProof = (${inspectCapturePage.toString()})(requirements);
+    const inspect = (${inspectCapturePage.toString()});
+    const liveContentProof = inspect(requirements);
     const got = (${extract.toString()})();
-    return { contentProof, got };
+    const inert = document.createElement('template');
+    inert.innerHTML = '<div>' + (got?.html || '') + '</div>';
+    const contentProof = inspect({ ...requirements, rootElement: inert.content.firstElementChild });
+    return { liveContentProof, contentProof, got };
   `);
 }
 

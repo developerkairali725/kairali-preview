@@ -278,7 +278,8 @@ const run = async () => {
         { timeout: 45000 },
       );
       await page.waitForTimeout(1200);
-      const { contentProof, got } = await page.evaluate(createCaptureEvaluation(EXTRACT), captureContentRequirements(route.path, enquiryRecords.find(row => row.path === route.path)));
+      const { liveContentProof, contentProof, got } = await page.evaluate(createCaptureEvaluation(EXTRACT), captureContentRequirements(route.path, enquiryRecords.find(row => row.path === route.path)));
+      assertCapturePage(liveContentProof, route.path);
       assertCapturePage(contentProof, route.path);
       if (!got || !got.html) throw new Error("empty extraction");
       const file = snapshotName(route.path);
@@ -311,6 +312,7 @@ const run = async () => {
         leftovers: got.leftovers,
         liveRuntimeVerified: process.argv.includes("--require-live-runtime"),
         contentProof,
+        liveContentProof,
       };
     } catch (e) {
       failures++;

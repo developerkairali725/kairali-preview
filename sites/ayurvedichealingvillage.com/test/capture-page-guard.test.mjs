@@ -31,7 +31,7 @@ test('proof and extraction finish before a queued DOM mutation can run', async (
     queueMicrotask(() => { root.textContent = 'Late error'; });
     return get(selector);
   };
-  globalThis.document = { getElementById: () => root };
+  globalThis.document = { getElementById: () => root, createElement: () => ({ content: { firstElementChild: fixtureRoot() } }) };
   try {
     const evaluate = createCaptureEvaluation(() => ({ html: document.getElementById('ahv-design-root').textContent }));
     const { contentProof, got } = evaluate({});
@@ -39,6 +39,18 @@ test('proof and extraction finish before a queued DOM mutation can run', async (
     assert.equal(got.html, 'Substantive page content. '.repeat(12));
     await Promise.resolve();
     assert.equal(root.textContent, 'Late error');
+  } finally { delete globalThis.document; }
+});
+
+test('extracted body is independently checked after rendering transforms', () => {
+  const live = fixtureRoot(), saved = fixtureRoot();
+  saved.textContent = '';
+  saved.querySelectorAll = () => [];
+  globalThis.document = { getElementById: () => live, createElement: () => ({ content: { firstElementChild: saved } }) };
+  try {
+    const { liveContentProof, contentProof } = createCaptureEvaluation(() => ({ html: '<header>Shell only</header>' }))({});
+    assert.doesNotThrow(() => assertCapturePage(liveContentProof, '/about-us/'));
+    assert.throws(() => assertCapturePage(contentProof, '/about-us/'), /H1/);
   } finally { delete globalThis.document; }
 });
 
