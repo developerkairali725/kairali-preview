@@ -42,6 +42,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
+import { inspectCapturePage, captureFormSelector, assertCapturePage } from './capture-page-guard.mjs';
 
 const require_ = createRequire(import.meta.url);
 const loadPlaywright = () => {
@@ -275,6 +276,8 @@ const run = async () => {
         { timeout: 45000 },
       );
       await page.waitForTimeout(1200);
+      const contentProof = await page.evaluate(inspectCapturePage, { formSelector: captureFormSelector(route.path) });
+      assertCapturePage(contentProof, route.path);
       const got = await page.evaluate(EXTRACT);
       if (!got || !got.html) throw new Error("empty extraction");
       const file = snapshotName(route.path);
@@ -306,6 +309,7 @@ const run = async () => {
         flattened: got.flattened,
         leftovers: got.leftovers,
         liveRuntimeVerified: process.argv.includes("--require-live-runtime"),
+        contentProof,
       };
     } catch (e) {
       failures++;

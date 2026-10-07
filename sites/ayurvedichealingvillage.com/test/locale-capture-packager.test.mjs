@@ -1,14 +1,13 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 
 const site=fileURLToPath(new URL('../',import.meta.url));
 function fixture(){
- const root=fs.mkdtempSync(path.join(os.tmpdir(),'ahv-locale-capture-test-'));
+ const root=fs.mkdtempSync(path.join(site,'.ahv-locale-capture-test-'));
  const put=(file,value)=>{const dest=path.join(root,file);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.writeFileSync(dest,typeof value==='string'?value:JSON.stringify(value));};
  for(const file of ['tools/package-locale-prerenders.mjs','tools/restore-locale-prerenders.mjs','tools/download-release-asset.mjs','tools/verify-interaction-only-source.mjs','tools/l10n/prerender-manifest.mjs','tools/l10n/sources-lite.mjs']){const dest=path.join(root,file);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.copyFileSync(path.join(site,file),dest);}
  put('english-candidate/locale-prerenders-release.json',{archive:'ahv-locale-prerenders-before.tar.gz',asset:'ahv-locale-prerenders-before.tar.gz',repository:'fixture',tag:'fixture',sources:[],files:[],interactionOnlySources:[]});
@@ -51,4 +50,21 @@ test('packager requires exact-source complete live capture, enforces25-route bat
 });
 test('new untranslated source blocks capture before any snapshot mutation',()=>{
  const x=fixture();try{x.put('l10n/generated/de.json',{missingUnits:1,missingSample:['New source']});const r=x.run('--capture','--base','http://127.0.0.1:3218');assert.notEqual(r.status,0);assert.match(r.stderr,/Untranslated\/new source units remain/);assert.equal(fs.existsSync(path.join(x.root,'l10n/prerender')),false);}finally{x.cleanup();}
+});
+
+test('only live-runtime timeouts retry sequentially once and retain both attempts',()=>{
+ const x=fixture();try{
+  const file=path.join(x.root,'tools/prerender-english.mjs');
+  let mock=fs.readFileSync(file,'utf8');
+  mock=mock.replace('fs.writeFileSync(ip,JSON.stringify(index));',`if(paths.includes('/route-2/')&&!fs.existsSync('.first-timeout')){fs.writeFileSync('.first-timeout','1');Object.assign(index.routes.find(r=>r.path==='/route-2/'),{ok:false,error:'TimeoutError: page.waitForFunction: Timeout 45000ms exceeded.'});process.exitCode=1;}fs.writeFileSync(ip,JSON.stringify(index));`);
+  fs.writeFileSync(file,mock);
+  let r=x.run('--capture','--base','http://127.0.0.1:3218','--concurrency','3');assert.equal(r.status,0,r.stderr);
+  const receipt=JSON.parse(fs.readFileSync(path.join(x.root,'evidence/capture-receipt.json')));
+  assert.equal(receipt.complete,true);const attempts=receipt.locales.de.attempts;
+  assert.equal(attempts[0].failed[0].path,'/route-2/');assert.equal(attempts[0].status,1);
+  assert.deepEqual(attempts[1].routes,['/route-2/']);assert.equal(attempts[1].concurrency,1);assert.equal(attempts[1].retry,true);assert.equal(attempts[1].status,0);
+  fs.rmSync(path.join(x.root,'.first-timeout'));
+  fs.writeFileSync(file,mock.replace("&&!fs.existsSync('.first-timeout')",''));
+  r=x.run('--capture','--base','http://127.0.0.1:3218');assert.notEqual(r.status,0);assert.match(r.stderr,/Sequential strict capture retry failed/);
+ }finally{x.cleanup();}
 });

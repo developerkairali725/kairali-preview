@@ -39,8 +39,8 @@ function sourceRows(){
 function renderInputRows(){
  const roots=['app','english-candidate','public/design','public/ahv/views','public/ahv/assets','tools/l10n','l10n/source','l10n/overrides','l10n/output'];
  const names=new Set(roots.flatMap(dir=>fs.existsSync(path.join(SITE,dir))?walk(dir):[]));
- for(const file of ['tools/prerender-english.mjs','tools/build-review-chrome.mjs','tools/build-runtime-bundles.mjs'])if(fs.existsSync(path.join(SITE,file)))names.add(file);
- return [...names].filter(file=>/\.(?:json|js|mjs|ts|tsx|css)$/.test(file)).sort().map(file=>({file,sha256:fileHash(file)}));
+ for(const file of ['tools/prerender-english.mjs','tools/capture-page-guard.mjs','tools/package-locale-prerenders.mjs','tools/build-review-chrome.mjs','tools/build-runtime-bundles.mjs'])if(fs.existsSync(path.join(SITE,file)))names.add(file);
+ return [...names].filter(file=>!file.startsWith('app/api/')&&/\.(?:json|js|mjs|ts|tsx|css)$/.test(file)).sort().map(file=>({file,sha256:fileHash(file)}));
 }
 function signature(){return sha(JSON.stringify({sources:sourceRows(),renderInputs:renderInputRows()}));}
 function verifyTranslations(){
@@ -73,7 +73,30 @@ if(process.argv.includes('--capture')){
    if(signature()!==sourceSignature)throw Error('Source changed during capture; retain evidence and restart after source freeze');
    const args=['tools/prerender-english.mjs','--base',base,'--locale',loc,'--only',routes.join(','),'--concurrency',arg('concurrency','3'),'--block-external','--require-live-runtime'];
    const channel=arg('channel',null);if(channel)args.push('--channel',channel);
-   command(args);
+   // A busy local renderer can exhaust its snapshot handoff while the same
+   // page passes in a fresh sequential context. Retry only this diagnosed
+   // timeout once, with the identical response/path/live-runtime checks.
+   // Neither stale bodies nor non-timeout failures qualify for a retry.
+   state.attempts ||= [];
+   const attempt = (selected, concurrency, retry) => {
+    if(signature()!==sourceSignature)throw Error('Source changed before capture attempt');
+    const next=[...args];next[next.indexOf('--only')+1]=selected.join(',');next[next.indexOf('--concurrency')+1]=String(concurrency);
+    const result=spawnSync(process.execPath,next,{cwd:SITE,stdio:'inherit',env:process.env});
+    if(signature()!==sourceSignature)throw Error('Source changed after capture attempt');
+    const current=read(`l10n/prerender/${loc}/index.json`);
+    const failed=selected.map(route=>current.routes.find(r=>r.path===route)||{path:route,ok:false,error:'No capture result'}).filter(row=>!row.ok);
+    state.attempts.push({at:new Date().toISOString(),routes:selected,concurrency:Number(concurrency),retry,status:result.status,failed});persist();
+    return {result,failed};
+   };
+   const first=attempt(routes,arg('concurrency','3'),false);
+   if(first.result.status!==0){
+    if(!first.failed.length||first.failed.some(row=>!/^TimeoutError: page\.waitForFunction: Timeout 45000ms exceeded\./.test(row.error||'')))throw Error('Capture failed outside the permitted one-time live-runtime retry');
+    for(const failure of first.failed){
+     console.log(`STRICT RETRY ${loc} ${failure.path}: sequential attempt, unchanged guard`);
+     const retry=attempt([failure.path],1,true);
+     if(retry.result.status!==0||retry.failed.length)throw Error('Sequential strict capture retry failed: '+loc+' '+failure.path);
+    }
+   }
    const index=read(`l10n/prerender/${loc}/index.json`);
    const snapshots=routes.map(route=>{
     const found=index.routes.find(r=>r.path===route);

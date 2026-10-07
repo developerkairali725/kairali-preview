@@ -1,4 +1,5 @@
 import { repairFaqTopicTargets } from './faq-topic-targets.mjs';
+import { orderedRuntimeScripts } from './runtime-script-order.mjs';
 import { removeHomeVillaRates } from './home-villa-rates.mjs';
 import {offersFlow} from './offers-flow.mjs';
 import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes } from "./critical-media.mjs";
@@ -1306,9 +1307,7 @@ export const BOOT_SCRIPT = `
 
       // Step 5 — the accepted preview layer self-attaches from its own tag,
       // using the exact view filename the package's marker list keys on.
-      var srcs = [{ src: cfg.previewSrc, view: view.file || "" }];
-      (view.scripts || []).forEach(function (s) { srcs.push({ src: s }); });
-      srcs.push({ src: cfg.supportSrc });
+      var srcs = (${orderedRuntimeScripts.toString()})(view, cfg, !!window.AHV_LEAD_RECEIPT);
 
       srcs.forEach(function (entry) {
         var s = document.createElement("script");
