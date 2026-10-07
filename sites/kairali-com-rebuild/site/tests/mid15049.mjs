@@ -15,6 +15,12 @@ for (const route of ['/', '/ayurvedic-healing-village.aspx', '/ayurvedic-medicin
     if (route === '/') assert.doesNotMatch(text,/24 more centres|history-of-kairali.webp/);
   });
 }
+for (const route of ['/', '/ayurvedic-medicine.aspx', '/ayurvedic-products.aspx', '/patented-ayurvedic-remedies.aspx']) {
+  await check(`${route}: unsupported product efficacy claims removed`, async () => {
+    const text = await get(route);
+    assert.doesNotMatch(text, /most effective and genuine therapeutic medicine|stand the test of time in healing|proven success and a wide application|2-4 kg per month|repair and maintenance of normal functioning of the liver|effective remedy for jaundice|boost the libido|proven aphrodisiac|solves sexual disorders|treat gastric problems|significantly reduce cholesterol levels/i);
+  });
+}
 await check('Partnerships: official opening year 1999', async () => {
   const text=await get('/partnerships-and-investment.aspx');
   assert.match(text,/established in the year 1999/); assert.doesNotMatch(text,/established in the year 1997/);

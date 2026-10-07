@@ -30,6 +30,18 @@ omissions = {
 def reason(t, route=""):
     if (route, t) in omissions: return omissions[(route, t)]
     t = t.lower()
+    if route in ("/careers.aspx", "/current-openings.aspx") or route.startswith("/apply-now.aspx"):
+        return "Owner 6 Oct: legacy vacancy/application content replaced by general careers interest pending HR confirmation"
+    medical_hold_routes = {"/", "/ayurvedic-medicine.aspx", "/ayurvedic-products.aspx", "/patented-ayurvedic-remedies.aspx"}
+    medical_hold = re.search(
+        r"curative remedies|four generations of expertise|most effective and genuine therapeutic|effective therapeutic medicine|"
+        r"stand the test of time in healing|proven success and a wide application|2-4 kg per month|"
+        r"repair and maintenance of normal functioning of the liver|effective remedy for jaundice|boost the libido|"
+        r"proven aphrodisiac|solves sexual disorders|treat gastric problems|significantly reduce cholesterol levels",
+        t,
+    )
+    if route in medical_hold_routes and medical_hold:
+        return "Owner 6 Oct medical/legal hold: unsupported product efficacy or quantified outcome claim removed"
     if "security code" in t: return "CAPTCHA replaced (anti-spam integration pending)"
     if re.search(r"please (enter|select|provide|present)|enter only numbers|valid email|mandatory", t): return "captured validation text retained in schema; Q8-C disables preview interaction"
     if t.strip().startswith(("gender", "address")) or "enter age" in t: return "field removed from general enquiry (owner Q7)"

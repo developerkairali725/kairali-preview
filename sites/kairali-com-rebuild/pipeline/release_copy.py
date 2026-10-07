@@ -38,6 +38,23 @@ def owner_rulings(pages):
         "Only medicated oils and herbs are used in treatments and massages that have no side effects.",
         "An epitome of health and wellness, this institution has not only paved the way for a formal Ayurvedic structure to cure illness but has also made it possible for people to realize that the best form of living is to live amidst nature and adapting to natural means of living.",
         "When properly conducted, Ayurveda is a fantastic and proven way to treat one’s body and mind for recovery, cure and a preventative state of health.",
+        # MID-15049 medical/legal hold: product efficacy and quantified outcome
+        # claims require substantiation just like the explicit cure/no-side-effect
+        # promises above. Remove them without inventing replacement claims.
+        "Kairali believes in curative remedies by the usage of authentic and natural ingredients.",
+        "State- of –art modern equipment’s, professional and up-to-date manufacturing units and the highest standards of quality control allow us to give our retail customers, partners and distributors the most effective and genuine therapeutic medicine.",
+        "Best used under the guidance of an Ayurvedic doctor or health professional, these traditional remedies stand the test of time in healing a range of common and everyday health complaints.",
+        "Best used under the guidance of an Ayurvedic doctor or health professional, these traditional remedies stand the test of time in healing a range of common health complaints.",
+        "Best used under the guidance of an Ayurvedic doctor or health professional, these traditional remedies stand the test of time in healing a range of common and everyday health",
+        "Of the vast range of Ayurvedic supplements mentioned in ancient scripture, Kairali offers a selection of seventy-seven, with proven success and a wide application, including curative formulas, immunity boosters and health tonics.",
+        "Lipidex enables a gradual weight reduction of 2-4 kg per month, and provides benefits to cardiac health and cholesterol levels.",
+        "An effective Ayurvedic liver tonic, ensuring the repair and maintenance of normal functioning of the liver.",
+        "Spaliv has proven to be an effective remedy for jaundice, hepatitis, alcoholism and anorexia.",
+        "An Ayurvedic product formulated to boost the libido and prevent sexual impotency.",
+        "Duravin Forte is a proven aphrodisiac that helps to restore vigour without altering the body’s hormone balance for both male and female.",
+        "Durance solves sexual disorders and helps prevent premature ejaculation by acting as a sexual sedative.",
+        "An all-natural combination of garlic, herbs and minerals to treat gastric problems and stimulate better digestive functioning, Spazyme boosts digestive enzymes and improves bowel function.",
+        "An Ayurvedic treatment shown to significantly reduce cholesterol levels, Spacol also controls and regulates metabolism for healthy blood circulation.",
     ]
     def remove_claims(value):
         if isinstance(value, str):

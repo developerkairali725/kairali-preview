@@ -2087,13 +2087,25 @@
   {
    "route": "/",
    "blocks": 20,
-   "missing_blocks": 2,
+   "missing_blocks": 4,
    "missing": [
     {
      "words": 65,
      "hidden_in_source": false,
      "section": "Healing Village",
      "text_base64": "VGhlIEF5dXJ2ZWRpYyBIZWFsaW5nIFZpbGxhZ2UgcHJvdmlkZXMgYSByZWZ1Z2Ugb2YgY29tcGxldGUgc2VyZW5pdHksIGluIHdoaWNoIG9uZSBjYW4gZm9jdXMgZW50aXJlbHkgb24gdGhlIHdlbGxiZWluZyBhbmQgZXhwZXJpZW5jZSB0aGUgY2FsbW5lc3Mgb2YgYSByZXRyZWF0LiBBIGZ1bGwgcmFuZ2Ugb2YgdHJhZGl0aW9uYWwgdHJlYXRtZW50cyA="
+    },
+    {
+     "words": 48,
+     "hidden_in_source": false,
+     "section": "Ayurvedic Products",
+     "text_base64": "V2l0aCBmb3VyIGdlbmVyYXRpb25zIG9mIGV4cGVydGlzZSB0byBndWlkZSBLYWlyYWxpLCB0aGUgbW9zdCBhdXRoZW50aWMgYW5kIGhlcmJhbCB0cmVhdG1lbnRzIGFuZCBBeXVydmVkaWMgbWVkaWNpbmVzIGNhbiBiZSBleHBlY3RlZCBmcm9tIHRoZSByZW5vd25lZCBlbnRpdHkgdGhhdCBhcmUgY3JlYXRlZCB1c2luZyBjb21wbGV0ZSBuYXR1cmFsIGE="
+    },
+    {
+     "words": 50,
+     "hidden_in_source": false,
+     "section": "Ayurvedic Products",
+     "text_base64": "c3RhbmRhcmRzIG9mIHF1YWxpdHkgY29udHJvbCBhbGxvdyB1cyB0byBnaXZlIG91ciByZXRhaWwgY3VzdG9tZXJzLCBwYXJ0bmVycyBhbmQgZGlzdHJpYnV0b3JzIHRoZSBtb3N0IGVmZmVjdGl2ZSBhbmQgZ2VudWluZSB0aGVyYXBldXRpYyBtZWRpY2luZS4gQmVzdCB1c2VkIHVuZGVyIHRoZSBndWlkYW5jZSBvZiBhbiBBeXVydmVkaWMgZG9jdG9yIG8="
     },
     {
      "words": 11,
@@ -7825,13 +7837,31 @@
   {
    "route": "/ayurvedic-medicine.aspx",
    "blocks": 20,
-   "missing_blocks": 3,
+   "missing_blocks": 6,
    "missing": [
     {
      "words": 8,
      "hidden_in_source": false,
      "section": "Ayurvedic Medicine",
      "text_base64": "QXl1cnZlZGljIE1lZGljaW5lcyBhcmUgYWJzb2x1dGVseSBmcmVlIGZyb20gc2lkZS1lZmZlY3Rz"
+    },
+    {
+     "words": 13,
+     "hidden_in_source": false,
+     "section": "Ayurvedic Medicine",
+     "text_base64": "S2FpcmFsaSBiZWxpZXZlcyBpbiBjdXJhdGl2ZSByZW1lZGllcyBieSB0aGUgdXNhZ2Ugb2YgYXV0aGVudGljIGFuZCBuYXR1cmFsIGluZ3JlZGllbnRzLg=="
+    },
+    {
+     "words": 99,
+     "hidden_in_source": false,
+     "section": "",
+     "text_base64": "V2l0aCBmb3VyIGdlbmVyYXRpb25zIG9mIGV4cGVydGlzZSB0byBndWlkZSBhbmQgYmFuayBvbiBLYWlyYWxpIEdyb3VwLCBpdCBvZmZlcnMgdGhlIHdvcmxkIHRoZSBtb3N0IGF1dGhlbnRpYyBoZXJiYWwgdHJlYXRtZW50cyBhbmQgQXl1cnZlZGljIG1lZGljaW5lcyB0aGF0IGFyZSBjcmVhdGVkIHVzaW5nIGNvbXBsZXRlIG5hdHVyYWwgYW5kIG9yZ2E="
+    },
+    {
+     "words": 33,
+     "hidden_in_source": false,
+     "section": "Ayurvedic Herbal Medicine",
+     "text_base64": "T2YgdGhlIHZhc3QgcmFuZ2Ugb2YgQXl1cnZlZGljIHN1cHBsZW1lbnRzIG1lbnRpb25lZCBpbiBhbmNpZW50IHNjcmlwdHVyZSwgS2FpcmFsaSBvZmZlcnMgYSBzZWxlY3Rpb24gb2Ygc2V2ZW50eS1zZXZlbiwgd2l0aCBwcm92ZW4gc3VjY2VzcyBhbmQgYSB3aWRlIGFwcGxpY2F0aW9uLCBpbmNsdWRpbmcgY3VyYXRpdmUgZm9ybXVsYXMsIGltbXVuaXQ="
     },
     {
      "words": 46,
@@ -7868,13 +7898,19 @@
   {
    "route": "/ayurvedic-products.aspx",
    "blocks": 16,
-   "missing_blocks": 2,
+   "missing_blocks": 3,
    "missing": [
     {
      "words": 4,
      "hidden_in_source": false,
      "section": "Ayurvedic Products",
      "text_base64": "RG93bmxvYWQgQnJvY2h1cmUgVmlzaXQgV2Vic2l0ZQ=="
+    },
+    {
+     "words": 50,
+     "hidden_in_source": false,
+     "section": "Ayurvedic Medicine",
+     "text_base64": "TW9kZXJuIGVxdWlwbWVudCBhbmQgdGhlIGhpZ2hlc3Qgc3RhbmRhcmRzIG9mIHF1YWxpdHkgY29udHJvbCBhbGxvdyB1cyB0byBnaXZlIG91ciByZXRhaWwgY3VzdG9tZXJzLCBwYXJ0bmVycyBhbmQgZGlzdHJpYnV0b3JzIGVmZmVjdGl2ZSB0aGVyYXBldXRpYyBtZWRpY2luZS4gQmVzdCB1c2VkIHVuZGVyIHRoZSBndWlkYW5jZSBvZiBhbiBBeXVydmU="
     },
     {
      "words": 25,
@@ -10568,8 +10604,45 @@
   {
    "route": "/patented-ayurvedic-remedies.aspx",
    "blocks": 22,
-   "missing_blocks": 0,
-   "missing": []
+   "missing_blocks": 6,
+   "missing": [
+    {
+     "words": 37,
+     "hidden_in_source": false,
+     "section": "Ayurvedic Herbal Remedies",
+     "text_base64": "QW4gQXl1cnZlZGljIHdlaWdodC1sb3NzIHByb2R1Y3QgZm9yIGNvcnJlY3Rpbmcgb2Jlc2l0eSwgcG9zdC1wcmVnbmFuY3kgd2VpZ2h0IGFuZCBvdGhlciB3ZWlnaHQtcmVsYXRlZCBwcm9ibGVtcy4gTGlwaWRleCBlbmFibGVzIGEgZ3JhZHVhbCB3ZWlnaHQgcmVkdWN0aW9uIG9mIDItNCBrZyBwZXIgbW9udGgsIGFuZCBwcm92aWRlcyBiZW5lZml0cyA="
+    },
+    {
+     "words": 30,
+     "hidden_in_source": false,
+     "section": "Ayurvedic Herbal Remedies",
+     "text_base64": "QW4gZWZmZWN0aXZlIEF5dXJ2ZWRpYyBsaXZlciB0b25pYywgZW5zdXJpbmcgdGhlIHJlcGFpciBhbmQgbWFpbnRlbmFuY2Ugb2Ygbm9ybWFsIGZ1bmN0aW9uaW5nIG9mIHRoZSBsaXZlci4gU3BhbGl2IGhhcyBwcm92ZW4gdG8gYmUgYW4gZWZmZWN0aXZlIHJlbWVkeSBmb3IgamF1bmRpY2UsIGhlcGF0aXRpcywgYWxjb2hvbGlzbSBhbmQgYW5vcmV4aWE="
+    },
+    {
+     "words": 34,
+     "hidden_in_source": false,
+     "section": "Ayurvedic Herbal Remedies",
+     "text_base64": "QW4gQXl1cnZlZGljIHByb2R1Y3QgZm9ybXVsYXRlZCB0byBib29zdCB0aGUgbGliaWRvIGFuZCBwcmV2ZW50IHNleHVhbCBpbXBvdGVuY3kuIER1cmF2aW4gRm9ydGUgaXMgYSBwcm92ZW4gYXBocm9kaXNpYWMgdGhhdCBoZWxwcyB0byByZXN0b3JlIHZpZ291ciB3aXRob3V0IGFsdGVyaW5nIHRoZSBib2R5J3MgaG9ybW9uZSBiYWxhbmNlIGZvciBib3Q="
+    },
+    {
+     "words": 35,
+     "hidden_in_source": false,
+     "section": "Durance Capsules",
+     "text_base64": "RHVyYW5jZSBzb2x2ZXMgc2V4dWFsIGRpc29yZGVycyBhbmQgaGVscHMgcHJldmVudCBwcmVtYXR1cmUgZWphY3VsYXRpb24gYnkgYWN0aW5nIGFzIGEgc2V4dWFsIHNlZGF0aXZlLiBJdCBoYXMgdGhlIGFkZGl0aW9uYWwgYmVuZWZpdCBvZiBpbmNyZWFzaW5nIGJsb29kIGZsb3cgdG8gdGhlIHByb3N0YXRlLCBmb3J0aWZ5aW5nIHRoZSBoZWFsdGggb2Y="
+    },
+    {
+     "words": 26,
+     "hidden_in_source": false,
+     "section": "Durance Capsules",
+     "text_base64": "QW4gYWxsLW5hdHVyYWwgY29tYmluYXRpb24gb2YgZ2FybGljLCBoZXJicyBhbmQgbWluZXJhbHMgdG8gdHJlYXQgZ2FzdHJpYyBwcm9ibGVtcyBhbmQgc3RpbXVsYXRlIGJldHRlciBkaWdlc3RpdmUgZnVuY3Rpb25pbmcsIFNwYXp5bWUgYm9vc3RzIGRpZ2VzdGl2ZSBlbnp5bWVzIGFuZCBpbXByb3ZlcyBib3dlbCBmdW5jdGlvbi4="
+    },
+    {
+     "words": 19,
+     "hidden_in_source": false,
+     "section": "Durance Capsules",
+     "text_base64": "QW4gQXl1cnZlZGljIHRyZWF0bWVudCBzaG93biB0byBzaWduaWZpY2FudGx5IHJlZHVjZSBjaG9sZXN0ZXJvbCBsZXZlbHMsIFNwYWNvbCBhbHNvIGNvbnRyb2xzIGFuZCByZWd1bGF0ZXMgbWV0YWJvbGlzbSBmb3IgaGVhbHRoeSBibG9vZCBjaXJjdWxhdGlvbi4="
+    }
+   ]
   },
   {
    "route": "/photo-library.aspx",
