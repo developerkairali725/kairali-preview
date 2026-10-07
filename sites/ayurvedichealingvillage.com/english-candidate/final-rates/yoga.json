@@ -119,15 +119,16 @@
         },
         {
           "id": "coimbatore",
-          "km": 75,
+          "km": 66,
           "mpv": 85,
           "sedan": 296
         },
         {
           "id": "cochin-calicut",
-          "km": 125,
+          "km": 114,
           "mpv": 99,
-          "sedan": 348
+          "sedan": 348,
+          "calicutKm": 116
         }
       ],
       "worked_example": {
@@ -207,15 +208,16 @@
         },
         {
           "id": "coimbatore",
-          "km": 75,
+          "km": 66,
           "mpv": 6775,
           "sedan": 23711
         },
         {
           "id": "cochin-calicut",
-          "km": 125,
+          "km": 114,
           "mpv": 7950,
-          "sedan": 27824
+          "sedan": 27824,
+          "calicutKm": 116
         }
       ],
       "worked_example": {
@@ -295,15 +297,16 @@
         },
         {
           "id": "coimbatore",
-          "km": 75,
+          "km": 66,
           "mpv": 97,
           "sedan": 339
         },
         {
           "id": "cochin-calicut",
-          "km": 125,
+          "km": 114,
           "mpv": 114,
-          "sedan": 397
+          "sedan": 397,
+          "calicutKm": 116
         }
       ],
       "worked_example": {

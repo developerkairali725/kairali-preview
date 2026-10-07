@@ -1,6 +1,6 @@
 {
  "sourceSetHash": "3b6a97a98e64ec48bf1552a1b522a749e664723d046c0610c102d964e1affef8",
- "count": 14736,
+ "count": 14773,
  "units": [
   {
    "id": "t_a118c84bbeecaf94e3da",
@@ -221524,6 +221524,569 @@
    ],
    "fileCount": 1,
    "occurrences": 1
+  },
+  {
+   "id": "t_a01147c2417441ecc913",
+   "order": 14737,
+   "source": "Airports: Coimbatore International Airport (CJB): approximately 66 km by road Cochin International Airport (COK): approximately 114 km by road Calicut International Airport (CCJ): approximately 116 km by road Railway Stations: Palakkad Junction Railway Station: 25 km (approximately 45 minutes) Coimbatore Railway Station: 51.2 km (approximately 1 and a half hours)",
+   "sourceHash": "a01147c2417441ecc913d2b89db0e7e180ee83bf14f2e8ad59090dc368963b26",
+   "roles": [
+    "json:a"
+   ],
+   "files": [
+    "public/ahv/search-index.json"
+   ],
+   "fileCount": 1,
+   "occurrences": 1
+  },
+  {
+   "id": "t_7c3172d152813d15ca0e",
+   "order": 14738,
+   "source": "Approximately 114 km by road.",
+   "sourceHash": "7c3172d152813d15ca0efb2a6799570ee6fed0e0bd8cbf678ff9bbff30f6b9ff",
+   "roles": [
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js"
+   ],
+   "fileCount": 1,
+   "occurrences": 1
+  },
+  {
+   "id": "t_08a7c2ffc5948a4b171c",
+   "order": 14739,
+   "source": "Approximately 66 km by road.",
+   "sourceHash": "08a7c2ffc5948a4b171c751ed1d6560b67991a0d1880eaf4afcca66523f0391d",
+   "roles": [
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js"
+   ],
+   "fileCount": 1,
+   "occurrences": 1
+  },
+  {
+   "id": "t_d7b6df84d17ab7eac5ac",
+   "order": 14740,
+   "source": "By road · ~114 km",
+   "sourceHash": "d7b6df84d17ab7eac5ac45389a9122b6c8dd0e834631955c9d943e894986f84a",
+   "roles": [
+    "html-text"
+   ],
+   "files": [
+    "public/ahv/views/ahv-page-how-to-reach-mobile.json"
+   ],
+   "fileCount": 1,
+   "occurrences": 1
+  },
+  {
+   "id": "t_8b8a9f86762a7ee7c7d1",
+   "order": 14741,
+   "source": "By road · ~66 km",
+   "sourceHash": "8b8a9f86762a7ee7c7d11c95fbf060f66e4a9d64a975a0c5ed22b2c0b58aeb8f",
+   "roles": [
+    "html-text"
+   ],
+   "files": [
+    "public/ahv/views/ahv-page-how-to-reach-mobile.json"
+   ],
+   "fileCount": 1,
+   "occurrences": 1
+  },
+  {
+   "roles": [
+    "html-text",
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js",
+    "public/ahv/views/ahv-page-how-to-reach-desktop.json",
+    "public/ahv/views/ahv-page-how-to-reach-mobile.json"
+   ],
+   "fileCount": 3,
+   "occurrences": 3,
+   "id": "t_1cc5c0a23f63ad051acb",
+   "source": "Calicut (CCJ)",
+   "sourceHash": "1cc5c0a23f63ad051acb5487a9d8074dbca955365e7112a221f707f91048a83f",
+   "order": 14742
+  },
+  {
+   "roles": [
+    "html-text",
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js",
+    "public/ahv/views/ahv-page-how-to-reach-desktop.json",
+    "public/ahv/views/ahv-page-how-to-reach-mobile.json"
+   ],
+   "fileCount": 3,
+   "occurrences": 3,
+   "id": "t_b05b5c89ebdaa27936c8",
+   "source": "Calicut (CCJ): approximately 116 km by road via NH966 / Calicut–Malappuram–Palakkad Highway.",
+   "sourceHash": "b05b5c89ebdaa27936c8737cca072a85523690b25278afbb867a861209dbd599",
+   "order": 14743
+  },
+  {
+   "roles": [
+    "html-text",
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js",
+    "public/ahv/views/ahv-page-how-to-reach-desktop.json",
+    "public/ahv/views/ahv-page-how-to-reach-mobile.json"
+   ],
+   "fileCount": 3,
+   "occurrences": 3,
+   "id": "t_4e61c5971af95df016a5",
+   "source": "Calicut (CCJ): approximately 116 km by road via NH966 / Calicut–Malappuram–Palakkad Highway. Calicut Airport driving directions",
+   "sourceHash": "4e61c5971af95df016a51f890a2a1f4b53218a73658251499e3df09100b453da",
+   "order": 14744
+  },
+  {
+   "roles": [
+    "html-text",
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js",
+    "public/ahv/views/ahv-page-how-to-reach-desktop.json",
+    "public/ahv/views/ahv-page-how-to-reach-mobile.json"
+   ],
+   "fileCount": 3,
+   "occurrences": 3,
+   "id": "t_c6a6d28f18115ce1e142",
+   "source": "Calicut Airport driving directions",
+   "sourceHash": "c6a6d28f18115ce1e142fd01e5d1a8887eb7e703fec183baf199ec66dd007cab",
+   "order": 14745
+  },
+  {
+   "id": "t_29461517e51746fd9382",
+   "order": 14746,
+   "source": "Calicut International Airport (CCJ): approximately 116 km by road",
+   "sourceHash": "29461517e51746fd93828a738b38b47e45f1696a7006a3d0f42118c38316270a",
+   "roles": [
+    "html-text",
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/article-family-data.js",
+    "public/ahv/views/ahv-page-faqs-and-downloads-desktop.json",
+    "public/ahv/views/ahv-page-faqs-and-downloads-mobile.json"
+   ],
+   "fileCount": 3,
+   "occurrences": 4
+  },
+  {
+   "id": "t_30d727ebc34633a6a22d",
+   "order": 14747,
+   "source": "Check current driving conditions",
+   "sourceHash": "30d727ebc34633a6a22d36a23dfdbd9e376173c1b10b7eb052f7ce88d24d44a4",
+   "roles": [
+    "html-text",
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js",
+    "public/ahv/views/ahv-page-how-to-reach-desktop.json"
+   ],
+   "fileCount": 2,
+   "occurrences": 3
+  },
+  {
+   "id": "t_acb57a0b562e9e842cca",
+   "order": 14748,
+   "source": "Cochin Airport (approximately 114 km by road) / Calicut Airport (approximately 116 km by road) — ₹7,950 / ₹27,824",
+   "sourceHash": "acb57a0b562e9e842cca20902aafdddf0664bc78943d9f304a7a522869c28872",
+   "roles": [
+    "html-text"
+   ],
+   "files": [
+    "public/ahv/views/ahv-page-faqs-and-downloads-desktop.json",
+    "public/ahv/views/ahv-page-faqs-and-downloads-mobile.json"
+   ],
+   "fileCount": 2,
+   "occurrences": 2
+  },
+  {
+   "id": "t_f445dfdf2ecc5786951c",
+   "order": 14749,
+   "source": "Cochin Airport (approximately 114 km by road) or Calicut Airport (approximately 116 km by road)",
+   "sourceHash": "f445dfdf2ecc5786951c5916d8f8387ff904f02fc26ba65a86bd27942f792e2d",
+   "roles": [
+    "html-text"
+   ],
+   "files": [
+    "public/ahv/views/ahv-template-course-and-fees-desktop.json",
+    "public/ahv/views/ahv-template-course-and-fees-mobile.json"
+   ],
+   "fileCount": 2,
+   "occurrences": 2
+  },
+  {
+   "id": "t_087d0c95b639d67c3f6f",
+   "order": 14750,
+   "source": "Cochin International Airport (COK): approximately 114 km by road",
+   "sourceHash": "087d0c95b639d67c3f6f03e1b8d5fd45e37e6a50b1929af1496a3bb864fc3109",
+   "roles": [
+    "html-text",
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/article-family-data.js",
+    "public/ahv/views/ahv-page-faqs-and-downloads-desktop.json",
+    "public/ahv/views/ahv-page-faqs-and-downloads-mobile.json"
+   ],
+   "fileCount": 3,
+   "occurrences": 4
+  },
+  {
+   "id": "t_e1d731a4fe9c81728c4b",
+   "order": 14751,
+   "source": "Cochin International Airport: Approximately 114 km by road.",
+   "sourceHash": "e1d731a4fe9c81728c4bb278415fb535a4a1e749c144202101c05983c2dbdb75",
+   "roles": [
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js"
+   ],
+   "fileCount": 1,
+   "occurrences": 1
+  },
+  {
+   "id": "t_f4f9af60eb90bb14156c",
+   "order": 14752,
+   "source": "Coimbatore (CJB) — nearest~66 km by road",
+   "sourceHash": "f4f9af60eb90bb14156c50d60adb5664f301101329167e0f214da8943fd195b5",
+   "roles": [
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js"
+   ],
+   "fileCount": 1,
+   "occurrences": 1
+  },
+  {
+   "id": "t_fbe93de5d0c57248369d",
+   "order": 14753,
+   "source": "Coimbatore (CJB): approximately 66 km by road. Kochi / Cochin (COK): approximately 114 km by road. Calicut (CCJ): approximately 116 km by road.",
+   "sourceHash": "fbe93de5d0c57248369d3d6b4d3881bcff07acb6537e0d25451f5a1f29ba5f4d",
+   "roles": [
+    "html-text",
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js",
+    "public/ahv/views/ahv-page-how-to-reach-desktop.json",
+    "public/ahv/views/ahv-page-how-to-reach-mobile.json"
+   ],
+   "fileCount": 3,
+   "occurrences": 4
+  },
+  {
+   "id": "t_1743a69f4d1fd7ae93e1",
+   "order": 14754,
+   "source": "Coimbatore Airport (approximately 66 km by road)",
+   "sourceHash": "1743a69f4d1fd7ae93e1eb2c7dc27527f0ab014627147334563034c736f2df91",
+   "roles": [
+    "html-text"
+   ],
+   "files": [
+    "public/ahv/views/ahv-template-course-and-fees-desktop.json",
+    "public/ahv/views/ahv-template-course-and-fees-mobile.json"
+   ],
+   "fileCount": 2,
+   "occurrences": 2
+  },
+  {
+   "id": "t_c345fb170cbc1369aae1",
+   "order": 14755,
+   "source": "Coimbatore Airport (approximately 66 km by road) — ₹6,775 / ₹23,711",
+   "sourceHash": "c345fb170cbc1369aae1a6c89f5dc559e985efb5ed034d81bdae4fe737da73f4",
+   "roles": [
+    "html-text"
+   ],
+   "files": [
+    "public/ahv/views/ahv-page-faqs-and-downloads-desktop.json",
+    "public/ahv/views/ahv-page-faqs-and-downloads-mobile.json"
+   ],
+   "fileCount": 2,
+   "occurrences": 2
+  },
+  {
+   "id": "t_c983b1edcdcc1e3cfd45",
+   "order": 14756,
+   "source": "Coimbatore International Airport (CJB): approximately 66 km by road",
+   "sourceHash": "c983b1edcdcc1e3cfd45105d88d72a2f462c38ea7180e5aac8d52896bb4d3b9e",
+   "roles": [
+    "html-text",
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/article-family-data.js",
+    "public/ahv/views/ahv-page-faqs-and-downloads-desktop.json",
+    "public/ahv/views/ahv-page-faqs-and-downloads-mobile.json"
+   ],
+   "fileCount": 3,
+   "occurrences": 4
+  },
+  {
+   "id": "t_228bb5ed3ecc472bf198",
+   "order": 14757,
+   "source": "Coimbatore International Airport: Approximately 66 km by road.",
+   "sourceHash": "228bb5ed3ecc472bf1980eab732d332694fb0a67fab5e5bc39142d0cc74ac041",
+   "roles": [
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js"
+   ],
+   "fileCount": 1,
+   "occurrences": 1
+  },
+  {
+   "id": "t_ce062f2a469df8a650bf",
+   "order": 14758,
+   "source": "Distance: approximately 114 km by road",
+   "sourceHash": "ce062f2a469df8a650bf30cdddc969488bacaddda530a96e0c48434c08afc2c8",
+   "roles": [
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js"
+   ],
+   "fileCount": 1,
+   "occurrences": 4
+  },
+  {
+   "id": "t_ad30b4add3944ff11117",
+   "order": 14759,
+   "source": "Distance: approximately 66 km by road",
+   "sourceHash": "ad30b4add3944ff11117a60dddfe9d5e1a2ed38c4fb40e3453d26cf37ad79910",
+   "roles": [
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js"
+   ],
+   "fileCount": 1,
+   "occurrences": 4
+  },
+  {
+   "id": "t_92f1f02dfcdf288181ba",
+   "order": 14760,
+   "source": "How far is the nearest airport?Coimbatore (CJB): approximately 66 km by road. Kochi / Cochin (COK): approximately 114 km by road. Calicut (CCJ): approximately 116 km by road.",
+   "sourceHash": "92f1f02dfcdf288181bab74ae86ca5b943a4a02f6a58c7ab4879e7323ccce30f",
+   "roles": [
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js"
+   ],
+   "fileCount": 1,
+   "occurrences": 1
+  },
+  {
+   "id": "t_6aed4aa23b5136574df2",
+   "order": 14761,
+   "source": "Kerala lies on India’s south-west coast. Palakkad District sits inland, on the border between Kerala and Tamil Nadu, at the foot of the Western Ghats. Coimbatore (CJB): approximately 66 km by road. Kochi / Cochin (COK): approximately 114 km by road. Calicut (CCJ): approximately 116 km by road.",
+   "sourceHash": "6aed4aa23b5136574df2d9878b22844d5377cef218c8b0af5a72e5d18ea39e77",
+   "roles": [
+    "html-text",
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js",
+    "public/ahv/views/ahv-page-how-to-reach-desktop.json"
+   ],
+   "fileCount": 2,
+   "occurrences": 3
+  },
+  {
+   "id": "t_2f2a90238376a7aa1fed",
+   "order": 14762,
+   "source": "Kochi / Cochin (COK) — alternative~114 km by road",
+   "sourceHash": "2f2a90238376a7aa1fed90fbc1fa2208a31229e60bedf9e1ad0e476c957701c1",
+   "roles": [
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js"
+   ],
+   "fileCount": 1,
+   "occurrences": 1
+  },
+  {
+   "id": "t_3c832ce4e082992a7f31",
+   "order": 14763,
+   "source": "Should I fly to Coimbatore or Kochi?Coimbatore (CJB): approximately 66 km by road. Kochi / Cochin (COK): approximately 114 km by road. Calicut (CCJ): approximately 116 km by road.",
+   "sourceHash": "3c832ce4e082992a7f3134f133e99be5d56146522b95488b3c678e30f024ec63",
+   "roles": [
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js"
+   ],
+   "fileCount": 1,
+   "occurrences": 1
+  },
+  {
+   "id": "t_a83bc2128f4ad0f8fb58",
+   "order": 14764,
+   "source": "We’re at III/73 Palayamkadu, P.O. Olassery, Kodumbu, Palakkad District 678551, Kerala. The nearest airport is Coimbatore (approximately 66 km by road) and Palakkad Junction is the nearest major railway station. Our",
+   "sourceHash": "a83bc2128f4ad0f8fb585279556508bf6cd9f239c2c6aefccbfe3031c8884515",
+   "roles": [
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/enquiry-family-data.js"
+   ],
+   "fileCount": 1,
+   "occurrences": 2
+  },
+  {
+   "id": "t_c4466022a78a1975630c",
+   "order": 14765,
+   "source": "Yes. Pick-up and drop-off is available from nearby airports and railway stations by AC vehicle (MPV or Sedan (premium)), one way, valid 1 Oct 2026 – 30 Sep 2027, inclusive of 5% GST: Palakkad Railway Station (25 km) — ₹3,900 / ₹13,649 Coimbatore Airport (approximately 66 km by road) — ₹6,775 / ₹23,711 Cochin Airport (approximately 114 km by road) / Calicut Airport (approximately 116 km by road) — ₹7,950 / ₹27,824 Please book at least 48 hours in advance with the patient care team.",
+   "sourceHash": "c4466022a78a1975630cac973b91deccd66e8344a4611266564cd1c2ad23aee4",
+   "roles": [
+    "json:a"
+   ],
+   "files": [
+    "public/ahv/search-index.json"
+   ],
+   "fileCount": 1,
+   "occurrences": 1
+  },
+  {
+   "id": "t_af80b6a16d4c9985c3f5",
+   "order": 14766,
+   "source": "~114 km",
+   "sourceHash": "af80b6a16d4c9985c3f5a750d5513f546b7e6c687118dc1cd5e82e9ee674f5c9",
+   "roles": [
+    "html-text",
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js",
+    "public/ahv/views/ahv-page-how-to-reach-desktop.json"
+   ],
+   "fileCount": 2,
+   "occurrences": 3
+  },
+  {
+   "id": "t_4601af59794d30be3454",
+   "order": 14767,
+   "source": "~114 km by road",
+   "sourceHash": "4601af59794d30be3454e93fbb25a38dc3bd0aef206f48a1d8f85f5d09b750ab",
+   "roles": [
+    "html-text",
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js",
+    "public/ahv/views/ahv-page-how-to-reach-desktop.json",
+    "public/ahv/views/ahv-page-how-to-reach-mobile.json"
+   ],
+   "fileCount": 3,
+   "occurrences": 4
+  },
+  {
+   "id": "t_99e2b1e821bff9074198",
+   "order": 14768,
+   "source": "~66 km",
+   "sourceHash": "99e2b1e821bff9074198b2234249f98de6a6fbaf877ab917634ecd340171e2ff",
+   "roles": [
+    "html-text",
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js",
+    "public/ahv/views/ahv-page-how-to-reach-desktop.json"
+   ],
+   "fileCount": 2,
+   "occurrences": 3
+  },
+  {
+   "id": "t_a5c0bd713c2eba385b3a",
+   "order": 14769,
+   "source": "~66 km by road",
+   "sourceHash": "a5c0bd713c2eba385b3a5bd46d6f22d511c5307321368a2bb1700f875b34d099",
+   "roles": [
+    "html-text",
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js",
+    "public/ahv/views/ahv-page-how-to-reach-desktop.json",
+    "public/ahv/views/ahv-page-how-to-reach-mobile.json"
+   ],
+   "fileCount": 3,
+   "occurrences": 4
+  },
+  {
+   "id": "t_029bc13f9e03a84eabaf",
+   "order": 14770,
+   "source": "~66 km by road, NH544",
+   "sourceHash": "029bc13f9e03a84eabaf1e58df92dec2f5371562ba439c2095358458c10ff465",
+   "roles": [
+    "html-text"
+   ],
+   "files": [
+    "public/ahv/views/ahv-page-how-to-reach-mobile.json"
+   ],
+   "fileCount": 1,
+   "occurrences": 1
+  },
+  {
+   "id": "t_ce8abd82f9f7036e0e4d",
+   "order": 14771,
+   "source": "≈ 114 km by road",
+   "sourceHash": "ce8abd82f9f7036e0e4db31b1190f61aad04e4776f18ad189a4d0eca348873ac",
+   "roles": [
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/enquiry-family-data.js"
+   ],
+   "fileCount": 1,
+   "occurrences": 2
+  },
+  {
+   "roles": [
+    "html-text",
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/travel-family-data.js",
+    "public/ahv/views/ahv-page-how-to-reach-desktop.json",
+    "public/ahv/views/ahv-page-how-to-reach-mobile.json"
+   ],
+   "fileCount": 3,
+   "occurrences": 3,
+   "id": "t_aa76d183d342bd097b7d",
+   "source": "≈ 116 km by road",
+   "sourceHash": "aa76d183d342bd097b7d1f85991d4e1606ff0ce6404ab3ad896a991e0cbaeac5",
+   "order": 14772
+  },
+  {
+   "id": "t_aff90d85bdd540940919",
+   "order": 14773,
+   "source": "≈ 66 km by road",
+   "sourceHash": "aff90d85bdd5409409190e4d850c0711096819d47b10916108d4ac244cb287c7",
+   "roles": [
+    "js:display"
+   ],
+   "files": [
+    "public/ahv/assets/enquiry-family-data.js"
+   ],
+   "fileCount": 1,
+   "occurrences": 2
   }
  ]
 }
