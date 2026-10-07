@@ -4850,30 +4850,31 @@
       "metadata": {
         "title": "Vaiyaktika Yoga Sādhanā — Personalized Yoga | Kairali",
         "description": "Explore Kairali’s personalised yoga programme in Kerala. Practice, pranayama and meditation customised to your goals after a doctor’s assessment.",
-        "canonical": "https://ayurvedichealingvillage.com/yoga-retreats/",
+        "canonical": "https://ayurvedichealingvillage.com/yoga-therapy-individual/",
         "ogTitle": "Personalized Yoga Program in Kerala | Kairali",
         "ogDescription": "Explore Kairali’s personalised yoga programme in Kerala. Practice, pranayama and meditation customised to your goals after a doctor’s assessment.",
         "ogImage": null,
         "ogType": "website"
-      }
+      },
+      "sitemapExclude": true
     },
     {
       "path": "/yoga-therapy-individual/",
       "segments": [
         "yoga-therapy-individual"
       ],
-      "desktopView": "ahv-page-article-reader-desktop",
-      "mobileView": "ahv-page-article-reader-mobile",
-      "dataset": "assets/seven-informational-data.js",
-      "metadataSource": "dataset",
+      "desktopView": "ahv-page-yoga-retreats-desktop",
+      "mobileView": "ahv-page-yoga-retreats-mobile",
+      "dataset": null,
+      "metadataSource": "view-helmet",
       "metadata": {
-        "title": "Personalized Yoga Therapy for Holistic Healing in Kerala",
-        "description": "Experience tailored yoga therapy at Kairali’s Yoga Retreat Kerala. Restore balance with asanas, pranayama, Ayurveda & meditation in a serene setting.",
+        "title": "Vaiyaktika Yoga Sādhanā — Personalized Yoga | Kairali",
+        "description": "Explore Kairali’s personalised yoga programme in Kerala. Practice, pranayama and meditation customised to your goals after a doctor’s assessment.",
         "canonical": "https://ayurvedichealingvillage.com/yoga-therapy-individual/",
-        "ogTitle": "Yoga Therapy Individual",
-        "ogDescription": "Experience tailored yoga therapy at Kairali’s Yoga Retreat Kerala. Restore balance with asanas, pranayama, Ayurveda & meditation in a serene setting.",
+        "ogTitle": "Personalized Yoga Program in Kerala | Kairali",
+        "ogDescription": "Explore Kairali’s personalised yoga programme in Kerala. Practice, pranayama and meditation customised to your goals after a doctor’s assessment.",
         "ogImage": null,
-        "ogType": "article"
+        "ogType": "website"
       }
     }
   ]

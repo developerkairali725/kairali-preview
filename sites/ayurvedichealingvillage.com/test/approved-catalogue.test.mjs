@@ -50,9 +50,11 @@ test('all twelve translated catalogues retain explicit Coming Soon and the exact
  const copy=read('english-candidate/catalogue-locales.json');const codes=['hi','de','fr','es','it','pt','nl','ru','ar','zh-Hans','ja','ko'];
  for(const unit of copy.units){assert.deepEqual(Object.keys(unit.translations).sort(),[...codes].sort());for(const loc of codes)assert.ok(unit.translations[loc].trim(),loc+' '+unit.source);if(unit.source.startsWith('A physician-guided'))for(const text of Object.values(unit.translations))assert.match(text,/14/);}
 });
-test('conditional survivor mergers stay unresolved and personal practice is never redirected',()=>{
+test('approved survivors and personal practice stay live while merged sources redirect',()=>{
  const map=read('english-candidate/redirect-map.json').redirects;
- for(const path of [...future,'/revitalizing-and-strengthening-treatment-for-cancer-patients/','/yoga-retreats/','/yoga-therapy-individual/'])assert.ok(!map[path],path);
+ for(const path of [...future,'/revitalizing-and-strengthening/','/yoga-therapy-individual/'])assert.ok(!map[path],path);
+ assert.equal(map['/revitalizing-and-strengthening-treatment-for-cancer-patients/'].to,'/revitalizing-and-strengthening/');
+ assert.equal(map['/yoga-retreats/'].to,'/yoga-therapy-individual/');
 });
 test('training overview links to the five approved courses without becoming a sixth product',()=>{
  const ctx={window:{}};vm.runInNewContext(fs.readFileSync('public/ahv/assets/collection-family-data.js','utf8'),ctx);

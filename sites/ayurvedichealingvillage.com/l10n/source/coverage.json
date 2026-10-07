@@ -1,5 +1,5 @@
 {
- "sourceSetHash": "55d883df657587f913269853674a57e5c89a0f0c56dbf63354cd9f6e57481f46",
+ "sourceSetHash": "0cc35cebbaf45c970dd91568601db6253bef68a1cdbe81821e20d1250662c1ec",
  "files": [
   {
    "file": "public/ahv/components/AHV Chrome Footer.dc.html",
@@ -45,13 +45,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-all-programs-desktop.json",
-   "sha256": "e281c84ebc2b8e810f04e56c2dc082cda8cb95a424a3a85213e1c6ab0acd6ddb",
+   "sha256": "36ef21e6a23d7b67fcf05b55383cb37387bd799f632931817af4bd687228a4d9",
    "units": 316,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-all-programs-mobile.json",
-   "sha256": "5b152524c7826e0e5afefcfa5807106072b659a6f06f8c000ddb87b10c90e6c6",
+   "sha256": "cd6d0bea540e712a3eee6a486fa7be768e77e552cc8cf7a5022b894586343853",
    "units": 310,
    "status": "covered"
   },
@@ -753,14 +753,14 @@
   },
   {
    "file": "public/ahv/views/ahv-page-sitemap-desktop.json",
-   "sha256": "2385a58ac4d82e270c96b85d0579855a5f462d2888e08be83bb5d3e655dbf8d8",
-   "units": 526,
+   "sha256": "c8c50567e7c144fd74bff7249aa9080a93b398b8fff2403c2e4266e8d5391ecf",
+   "units": 524,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-sitemap-mobile.json",
-   "sha256": "684dcbb6718f08977adee5ee225838df4d61eeffc69ac68c129d732e86c92b16",
-   "units": 526,
+   "sha256": "9ad1685f13e733932877ec1fe665a08bea802e8e941e2493e43d582e7cae1c5f",
+   "units": 524,
    "status": "covered"
   },
   {
@@ -825,25 +825,25 @@
   },
   {
    "file": "public/ahv/views/ahv-page-supportive-care-cancer-desktop.json",
-   "sha256": "4b22ab86b1d4c84ee87ad95a615697c23b9104e13b79a59fd0e3559dcb996b17",
-   "units": 465,
+   "sha256": "e42ec157cf3174cffe8cdc28d2676607db178f5649906375ce537b6c1b26aedd",
+   "units": 470,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-supportive-care-cancer-mobile.json",
-   "sha256": "6cfbf9c38b742c9766dd2f53da4c2ebea6d7293a9b724346e492c9ebb7158e7e",
-   "units": 464,
+   "sha256": "37f5b6743b2518c3c2bf6cdaa63bb52feda356dc9b8bb8118950a919c732b135",
+   "units": 469,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-training-programs-desktop.json",
-   "sha256": "72e2b29a51dc8aa840553af8f0dc4a2bc556471759e11eae5536ae1ba40e82af",
+   "sha256": "1e2b16111043bab0ce23cfdd455b6c24ec323500c5f4a2e0722a6eda78826323",
    "units": 316,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-training-programs-mobile.json",
-   "sha256": "7ec0d65e6e4492c5efc810c12777b165d34496d08fe6653f915f2fa9a274635a",
+   "sha256": "94bf16e773689630a178f6dec242f8b99107f124e30c6b6049011b679cdd381b",
    "units": 310,
    "status": "covered"
   },
@@ -885,13 +885,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-wellness-programs-desktop.json",
-   "sha256": "d8a767d638bb2436dd3e84f6d2799b340f202b6e51455bd673243adc922d12a6",
+   "sha256": "87647f896268053428ad01524f41183598f204664dd331947aa6f3cbf62dff47",
    "units": 316,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-wellness-programs-mobile.json",
-   "sha256": "487f36aa547eb56e6e1981190ddf1cd6a49663afdfe1b2bd29c17745deb5ad37",
+   "sha256": "ef99e580efd30791af41222e73aca5119650f12d33781dde7a73b13f3b3b8aee",
    "units": 310,
    "status": "covered"
   },
@@ -945,38 +945,38 @@
   },
   {
    "file": "public/ahv/views/ahv-page-yoga-meditation-programs-desktop.json",
-   "sha256": "ce4342112c877e33e4028fe4b0ddf7bb6f37314e4ec37fd3847fd479fd590ecc",
+   "sha256": "e74e0e2ef65ce0dcb58126ef4a3827a7439ec980d6839ef713f8d132e38110ed",
    "units": 323,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-yoga-meditation-programs-mobile.json",
-   "sha256": "d9fe90970fcfaad479a5a71e271cbf9b8a7be972ebe39a8fe89e8ecfc8b71c2d",
+   "sha256": "fbb7487785cf26753abb1719dff1d07a5963287f496fd76436d9df1926758819",
    "units": 317,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-yoga-meditation-training-desktop.json",
-   "sha256": "9fe4e41374367ff71e26a2490fddf93d16edf5f8dbde024a0834ffd19d03a695",
+   "sha256": "a034d334dbe3cb9d1a9a0b4cfb3a759756822b9354a85fa9b216050322d2bc92",
    "units": 22,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-yoga-meditation-training-mobile.json",
-   "sha256": "44b346490d4a70e677814683085b40592177b9a96a379ace8b3a383aa2982fe0",
+   "sha256": "c6646b6fd691ee007683cf0b32d631ec6b8bd1a477b458c6a2d3e68173d1dfaa",
    "units": 22,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-yoga-retreats-desktop.json",
-   "sha256": "131bc35db0c9b9fc0c89ae123df8062547c9c82845b1cc7955e81ec27e852ea8",
-   "units": 80,
+   "sha256": "968430381e98c39ca66b595b57655d43159f6238d361d1c4397c3dd9aab7578b",
+   "units": 84,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-yoga-retreats-mobile.json",
-   "sha256": "00473d911a4d1da4a91d48ab811e8001eddbbcad66c7dc89dbe762ff82a5d962",
-   "units": 81,
+   "sha256": "7f69cd97ad545edfc8efd10fca23933905c408ec78ce981dc135c0cc416fec33",
+   "units": 85,
    "status": "covered"
   },
   {
@@ -1077,13 +1077,13 @@
   },
   {
    "file": "public/ahv/views/home-hi-fi-v4.json",
-   "sha256": "4f9ef0596f0f58988d1e4a53eab387905e76422c5d7850dcfee8b0c2605b3d8b",
+   "sha256": "9dcee678a00e4aa472c1ed8ef75a688e626c1a44d4a9c670996a3d29013d4201",
    "units": 684,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/home-mobile.json",
-   "sha256": "7352076ec6932b49f3bdcc1a14ee71c9c42db65f02c4ee495579be01c7b19a6a",
+   "sha256": "39e98d5d6b358849b491d9062e8a3c15419b92596ef4e6e81313d0754e4da95e",
    "units": 618,
    "status": "covered"
   },
@@ -1437,7 +1437,7 @@
   },
   {
    "file": "public/ahv/assets/seven-informational-data.js",
-   "sha256": "1c100ed876953e78d2a8f89bc953d7aa8ee1472e442cb6932ea9c6dae49d8fd0",
+   "sha256": "16c7e60099e07fa296322ab1c2a1738643f134db76469fc663899a0880301cdd",
    "units": 717,
    "status": "covered"
   },
@@ -1503,7 +1503,7 @@
   },
   {
    "file": "public/ahv/assets/yoga-retreats-data.js",
-   "sha256": "52744e6d114bf3373652912a1e047b86e1666e841164c25ef8f11d9941a716d4",
+   "sha256": "b03fa5c42f91349f32a4a40574e757e9a88ae0d631217437b69442d4a659b723",
    "units": 35,
    "status": "covered"
   },
@@ -1563,8 +1563,8 @@
   },
   {
    "file": "public/design/section-nav.data.js",
-   "sha256": "2a0769c01c87bcd25c7f37e79b0b24ac2b9f60b79e38f279ab383068b50645be",
-   "units": 201,
+   "sha256": "bd522a65eb998a30bde62e743c38bb9dd69d1d4c9d392eafd03f3f7f4379de46",
+   "units": 200,
    "status": "covered"
   },
   {
@@ -1575,14 +1575,14 @@
   },
   {
    "file": "public/ahv/search-index.json",
-   "sha256": "c8fe3cb4015075a8d12808a3df024f54d9df199d27f400dc2358080472718cf4",
-   "units": 705,
+   "sha256": "6a22b31f4c9a2be7f5bf25542d086eca754f22e134ea76c31228b2c6fd9a78c9",
+   "units": 703,
    "status": "covered (key whitelist)"
   },
   {
    "file": "english-candidate/site-tree.json",
-   "sha256": "de340ed405e7d187d41847b0c19cbfc0b1d13085ec8dd3e0d1a70bd1988e727f",
-   "units": 225,
+   "sha256": "35c87d62cc31414a4893a71ac5362eb8efdddd6617e885de263a5c6e71e7cbfc",
+   "units": 224,
    "status": "covered (key whitelist)"
   },
   {

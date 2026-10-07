@@ -239,6 +239,27 @@
         "title": "Past Retreats & Events | Kairali Healing Village",
         "ogTitle": "Past Retreats & Events"
       }
+    },
+    "/yoga-retreats/": {
+      "sitemapExclude": true,
+      "metadata": {
+        "canonical": "https://ayurvedichealingvillage.com/yoga-therapy-individual/"
+      }
+    },
+    "/yoga-therapy-individual/": {
+      "desktopView": "ahv-page-yoga-retreats-desktop",
+      "mobileView": "ahv-page-yoga-retreats-mobile",
+      "dataset": null,
+      "metadataSource": "view-helmet",
+      "metadata": {
+        "title": "Vaiyaktika Yoga Sādhanā — Personalized Yoga | Kairali",
+        "description": "Explore Kairali’s personalised yoga programme in Kerala. Practice, pranayama and meditation customised to your goals after a doctor’s assessment.",
+        "canonical": "https://ayurvedichealingvillage.com/yoga-therapy-individual/",
+        "ogTitle": "Personalized Yoga Program in Kerala | Kairali",
+        "ogDescription": "Explore Kairali’s personalised yoga programme in Kerala. Practice, pranayama and meditation customised to your goals after a doctor’s assessment.",
+        "ogImage": null,
+        "ogType": "website"
+      }
     }
   },
   "addRoutes": {

@@ -314,12 +314,6 @@
       "why": "Owner-approved M004 placement; consolidated release 7 October 2026."
     },
     {
-      "path": "/revitalizing-and-strengthening-treatment-for-cancer-patients/",
-      "section": "programmes",
-      "parent": "/all-programs/",
-      "why": "Owner-approved M005 placement; consolidated release 7 October 2026."
-    },
-    {
       "path": "/yoga-meditation-program/",
       "section": "training",
       "parent": "/yoga-meditation-training/",
@@ -332,12 +326,6 @@
       "parent": "/yoga-meditation-training/",
       "why": "Owner-approved M008 placement; consolidated release 7 October 2026.",
       "label": "Yoga & Training"
-    },
-    {
-      "path": "/yoga-retreats/",
-      "section": "programmes",
-      "parent": "/yoga-meditation-programs/",
-      "why": "Owner-approved M009 placement; consolidated release 7 October 2026."
     },
     {
       "path": "/yoga-therapy-individual/",
@@ -1228,6 +1216,11 @@
       "path": "/new-privacy-policy/",
       "label": "Privacy policy",
       "why": "The governing privacy document since 28 Sep 2026 (AHV-DUP-001/002/003); its page title repeats the site name, so the rail and sitemap use the plain name the footer uses."
+    },
+    {
+      "path": "/yoga-therapy-individual/",
+      "label": "Vaiyaktika Yoga Sādhanā — Personalized Yoga",
+      "why": "2026-10-07 owner: approved as per search data; M005/M009/M010; cb41d2e2d2c48191a3ead4fe5c267451; one bespoke enquiry-only service alongside the 35 priced entries."
     }
   ],
   "drops": [
@@ -1314,6 +1307,14 @@
     {
       "path": "/things-to-do-in-property/",
       "why": "Owner-approved 301 consolidation into /things-to-do/ on 28 September 2026 (AHV-DUP-011)."
+    },
+    {
+      "path": "/revitalizing-and-strengthening-treatment-for-cancer-patients/",
+      "why": "2026-10-07 owner: approved as per search data; M005/M009/M010; cb41d2e2d2c48191a3ead4fe5c267451; 301 to /revitalizing-and-strengthening/"
+    },
+    {
+      "path": "/yoga-retreats/",
+      "why": "2026-10-07 owner: approved as per search data; M005/M009/M010; cb41d2e2d2c48191a3ead4fe5c267451; 301 to /yoga-therapy-individual/"
     }
   ],
   "sectionTitles": [
@@ -1601,7 +1602,6 @@
       "/ayurvedic-treatment-packages.html"
     ],
     "/yoga-meditation-programs/": [
-      "/yoga-retreats/",
       "/yoga-therapy-individual/",
       "/yoga-meditation-program/",
       "/yoga-meditation-training/",

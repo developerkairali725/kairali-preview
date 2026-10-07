@@ -14,22 +14,22 @@
         "reason": "KTAHV clinical lock (holiday/getaway/Urlaub/Kur) — dropped from the search vocabulary"
       },
       {
-        "route": "/yoga-retreats/",
+        "route": "/yoga-therapy-individual/",
         "term": "yoga holiday",
         "reason": "KTAHV clinical lock (holiday/getaway/Urlaub/Kur) — dropped from the search vocabulary"
       },
       {
-        "route": "/yoga-retreats/",
+        "route": "/yoga-therapy-individual/",
         "term": "getaway",
         "reason": "KTAHV clinical lock (holiday/getaway/Urlaub/Kur) — dropped from the search vocabulary"
       },
       {
-        "route": "/yoga-retreats/",
+        "route": "/yoga-therapy-individual/",
         "term": "yoga urlaub",
         "reason": "KTAHV clinical lock (holiday/getaway/Urlaub/Kur) — dropped from the search vocabulary"
       },
       {
-        "route": "/yoga-retreats/",
+        "route": "/yoga-therapy-individual/",
         "term": "kurzreise",
         "reason": "KTAHV clinical lock (holiday/getaway/Urlaub/Kur) — dropped from the search vocabulary"
       }
@@ -687,7 +687,7 @@
       "term": "yoga",
       "routes": [
         "/yoga-and-meditation-package/",
-        "/yoga-retreats/"
+        "/yoga-therapy-individual/"
       ]
     },
     {
@@ -776,7 +776,7 @@
     {
       "term": "yoga retreat",
       "routes": [
-        "/yoga-retreats/"
+        "/yoga-therapy-individual/"
       ]
     }
   ],
@@ -1034,7 +1034,7 @@
       "blood sugar problem",
       "diabetes treatment"
     ],
-    "/yoga-retreats/": [
+    "/yoga-therapy-individual/": [
       "yoga retreat",
       "short break",
       "time out",
@@ -1494,7 +1494,7 @@
     "/womens-hormonal-balance-endocrine-therapy/": "thyroid, hormonal balance, menopause",
     "/preventive-and-regenerative-treatment/": "preventive treatment, staying healthy",
     "/treatment-for-diabetes/": "diabetes, blood sugar",
-    "/yoga-retreats/": "yoga retreat",
+    "/yoga-therapy-individual/": "yoga retreat",
     "/yoga-and-meditation-package/": "yoga and meditation, pranayama",
     "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/": "addiction, withdrawal",
     "/treatment-for-sinusitis-and-migraine/": "sinusitis, migraine",

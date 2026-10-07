@@ -42,7 +42,7 @@ const legacySources = sources.filter(isLegacy);
 test("both rulings are carried in full — historical rulings, ten approved catalogue/offer/archive moves and two legacy destinations", () => {
   // 18 from the 19 Sep / 24 Sep rulings + /ayurveda-gallery/ (EF-21) + the six content-duplication merges, owner
   // rulings 28 Sep 2026. /prav-simona-yoga-retreat/ is NOT here: the owner kept both retreats (AHV-DUP-012).
-  assert.equal(manifestSources.length, 25 + Object.keys(CONSOLIDATED_MERGES).length, `expected historical plus approved manifest redirects, found ${manifestSources.length}`);
+  assert.equal(manifestSources.length, 27 + Object.keys(CONSOLIDATED_MERGES).length, `expected historical plus approved manifest redirects, found ${manifestSources.length}`);
   assert.equal(legacySources.length, 2, `expected 2 legacy redirects, found ${legacySources.length}`);
 });
 
@@ -111,6 +111,13 @@ test("the enquiry-form merge leaves no chain — the old duplicate goes straight
 
 test("original zero-click rulings and explicit owner consolidations are distinguished", () => {
   for (const [s, rule] of Object.entries(map.redirects)) {
+    if (s === "/yoga-retreats/" || s === "/revitalizing-and-strengthening-treatment-for-cancer-patients/") {
+      assert.equal(rule.to, s === "/yoga-retreats/" ? "/yoga-therapy-individual/" : "/revitalizing-and-strengthening/");
+      assert.match(rule.ownerApproval, /approved as per search data; M005\/M009\/M010/);
+      assert.match(rule.gsc.basis, /5 July–4 October 2026/);
+      assert.equal(rule.gsc.clicks, s === "/yoga-retreats/" ? 0 : 6);
+      continue;
+    }
     if (CONSOLIDATED_MERGES[s]) {
       assert.equal(rule.to, CONSOLIDATED_MERGES[s]);
       assert.equal(rule.ownerApproval, "2026-10-07 consolidated release: MOVE-REVIEW-INVENTORY.json");

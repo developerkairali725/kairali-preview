@@ -252,14 +252,8 @@
      "link": true,
      "children": [
       {
-       "path": "/yoga-retreats/",
-       "label": "Vaiyaktika Yoga Sādhanā — Personalized Yoga",
-       "link": true,
-       "children": []
-      },
-      {
        "path": "/yoga-therapy-individual/",
-       "label": "Individual Yoga Therapy",
+       "label": "Vaiyaktika Yoga Sādhanā — Personalized Yoga",
        "link": true,
        "children": []
       },
@@ -2337,14 +2331,6 @@
    ],
    "remove": null
   },
-  "/yoga-therapy-individual/": {
-   "section": "programmes",
-   "crumbs": [
-    "/yoga-meditation-programs/",
-    "/yoga-therapy-individual/"
-   ],
-   "remove": null
-  },
   "/ayurvedic-links/": {
    "section": "knowledge",
    "crumbs": [
@@ -3619,13 +3605,6 @@
     "/yoga-retreats-for-everyone/"
    ]
   },
-  "/yoga-retreats/": {
-   "section": "programmes",
-   "crumbs": [
-    "/yoga-meditation-programs/",
-    "/yoga-retreats/"
-   ]
-  },
   "/yoga-therapy-individual/": {
    "section": "programmes",
    "crumbs": [
@@ -3741,6 +3720,6 @@
   "/yoga-meditation-program/",
   "/yoga-meditation-programs/",
   "/yoga-meditation-training/",
-  "/yoga-retreats/"
+  "/yoga-therapy-individual/"
  ]
 }
