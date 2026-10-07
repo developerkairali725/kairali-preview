@@ -115,13 +115,15 @@ export const ROUTES: Record<ProductionSlug, RouteBinding> = {
   // Hero: a cottage among the palms and gardens, for a shared stay (no single patient in frame), on desktop and
   // phone. The gallery therefore has no kt-314 and takes both therapy photographs; kt-199 is the fifth mosaic
   // photograph, so the steps take kt-202.
+  // kt-314 is the phone LCP image: at q55 its 750w WebP was 69,492 bytes and the median mobile LCP 2,562 ms. q40 is
+  // 56,072 bytes for the same rendition, with no visible loss at phone size. Desktop and sizes are unchanged.
   "family-ayurvedic-retreat": {
     slug: "family-ayurvedic-retreat",
     route: "/family-ayurvedic-retreat-kerala.html",
     canonical: `${SITE_ORIGIN}/family-ayurvedic-retreat-kerala.html`,
     heroImage: img("kt-314"),
     mobileImage: img("kt-314"),
-    mobileHeroQuality: 55,
+    mobileHeroQuality: 40,
     stillnessImage: img("gal-post-therapy-stillness-wakem"),
     pathwayImage: img("kt-202"),
     gallery: [
