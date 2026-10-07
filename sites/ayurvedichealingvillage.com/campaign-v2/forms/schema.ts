@@ -3,7 +3,8 @@
 // honeypot, consent and the measurement events stay in the shell (sections/interactive/EnquiryForm).
 //
 // Rules for any schema:
-//   - NEVER ask for health data (conditions, medication, history). The doctor asks privately later.
+//   - New schemas do not ask for health data. The existing family route retains its optional health field
+//     and existing lead handling through its explicit production profile; do not extend that exception.
 //   - `mapsTo` decides where a value lands in the existing lead row (see kit/lead.ts). Anything that is
 //     not an existing column goes into `message` (packed as "Label: value" lines).
 //   - The last step always gets the consent checkbox, the optional marketing box and the honeypot.
@@ -77,6 +78,11 @@ export type FormSchema = {
   marketingOptIn: boolean;
   /** Send the whole trimmed name in `fname` and `lname` empty (the live campaign form). Default: split first / rest. */
   fullNameInFname?: boolean;
+  /**
+   * false = no generic "No medical details needed" line under the first step. Only for a form that asks an optional
+   * health question (the family route); its own note is then that field's `hint`. Default: the line is shown.
+   */
+  genericNote?: false;
 };
 
 // ── Channels ────────────────────────────────────────────────────────────────
@@ -255,6 +261,66 @@ export const PRODUCTION_CAMPAIGN_FORM: FormSchema = {
   ],
 };
 
+// ── The family route's existing enquiry form (production surface, opt-in per route) ───────────────────────
+// The R10 form with familyFields (app/(campaign)/ayurvedic-treatment-packages.html/EnquiryForm.tsx, as rendered on
+// /family-ayurvedic-retreat-kerala.html): the production form above plus its own fields, constraints and labels —
+// gender (optional radio), country (required, max 100), preferred duration (optional, empty default; form choices,
+// not clinical minimums) and the optional "Any existing health conditions?" text (max 2700, so the packed message
+// stays within the API's 3000). The "ahv-production" adapter packs them as that form did (forms/adapter.ts). The
+// copy's own note on the optional health field is its hint; the generic "No medical details" lede and line are not
+// shown, because this form asks that question. Selected only by a route's productionForm.profile "family-retreat".
+
+export const FAMILY_GENDERS: readonly Option[] = [{ value: "Male", label: "Male" }, { value: "Female", label: "Female" }];
+export const FAMILY_DURATIONS: readonly Option[] = [
+  { value: "", label: "Select duration" }, { value: "7 days", label: "7 days" },
+  { value: "14 days", label: "14 days" }, { value: "21 days", label: "21 days" },
+];
+export const FAMILY_COUNTRY_MAX = 100;
+export const FAMILY_HEALTH_MAX = 2700;
+
+/** Preserve the pain route's existing optional, initially unanswered gender radios. */
+export const PRODUCTION_PAIN_FORM: FormSchema = {
+  ...PRODUCTION_CAMPAIGN_FORM,
+  id: "lp-v2-production-pain",
+  steps: PRODUCTION_CAMPAIGN_FORM.steps.map((step, i) => i === 0 ? {
+    ...step,
+    fields: step.fields.flatMap((field): Field[] => field.name === "fullName" ? [
+      field,
+      { name: "rdogender", type: "radio", label: "Gender", required: false, options: FAMILY_GENDERS, mapsTo: "none" },
+    ] : [field]),
+  } : step),
+};
+
+/** The family enquiry form; `healthNote` is the copy's note shown under the optional health-conditions field. */
+export function productionFamilyForm(healthNote: string): FormSchema {
+  const { lede: _lede, ...base } = PRODUCTION_CAMPAIGN_FORM;
+  const field = (name: string): Field => {
+    const f = PRODUCTION_CAMPAIGN_FORM.steps[0].fields.find((x) => x.name === name);
+    if (!f) throw new Error(`productionFamilyForm: no ${name} field in the production form`);
+    return f;
+  };
+  return {
+    ...base,
+    id: "lp-v2-production-family",
+    genericNote: false,
+    steps: [
+      {
+        ...PRODUCTION_CAMPAIGN_FORM.steps[0],
+        fields: [
+          field("fullName"),
+          { name: "rdogender", type: "radio", label: "Gender", required: false, options: FAMILY_GENDERS, mapsTo: "none" },
+          field("email"),
+          field("dialCode"),
+          field("phone"),
+          { name: "country", type: "text", label: "Country", required: true, autocomplete: "country-name", maxLength: FAMILY_COUNTRY_MAX, mapsTo: "country" },
+          { name: "duration", type: "select", label: "Preferred duration", required: false, options: FAMILY_DURATIONS, defaultValue: "", mapsTo: "duration" },
+          { name: "message", type: "textarea", label: "Any existing health conditions?", required: false, rows: 3, maxLength: FAMILY_HEALTH_MAX, hint: healthNote, mapsTo: "message" },
+        ],
+      },
+    ],
+  };
+}
+
 /** The number the lead API receives: the visitor's own "+…" number, else dial code + number, normalised. Pure. */
 export function fullCampaignPhone(values: FormValues): string {
   const phone = typeof values.phone === "string" ? values.phone.trim() : "";
@@ -288,6 +354,7 @@ export type ResolvedSchema = {
   lede?: string;
   successText?: string;
   fullNameInFname?: boolean;
+  genericNote?: false;
 };
 
 export function resolveSchema(schema: FormSchema, ctx: OptionContext): ResolvedSchema {
@@ -302,6 +369,7 @@ export function resolveSchema(schema: FormSchema, ctx: OptionContext): ResolvedS
     ...(schema.lede ? { lede: schema.lede } : {}),
     ...(schema.successText ? { successText: schema.successText } : {}),
     ...(schema.fullNameInFname ? { fullNameInFname: true } : {}),
+    ...(schema.genericNote === false ? { genericNote: false as const } : {}),
     steps: schema.steps.map((s) => ({
       id: s.id,
       title: s.title,
@@ -334,6 +402,8 @@ export const MESSAGES = {
   phone: "Please enter your WhatsApp or phone number with the country code, like +44 7700 900000.",
   name: "Please enter your name.",
   choose: "Please choose an option.",
+  /** The family form's required country (its R10 original relied on the browser's own required message). */
+  country: "Please enter your country.",
 } as const;
 
 export const tooLongMessage = (n: number) => `Please keep this to ${n.toLocaleString("en")} characters or fewer.`;
@@ -355,6 +425,7 @@ export function isRequired(f: Pick<Field, "required">, channel: Channel): boolea
 
 function requiredMessage(f: FieldLike): string {
   if (f.name === "program") return MESSAGES.program;
+  if (f.name === "country" && f.type === "text") return MESSAGES.country;
   if (f.type === "email") return MESSAGES.email;
   if (f.type === "tel") return MESSAGES.phone;
   if (f.type === "text") return MESSAGES.name;

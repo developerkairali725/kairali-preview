@@ -1,7 +1,7 @@
 // campaign-v2/kit/lint/language.ts
 import type { CampaignConfig } from "../types.ts";
 import type { Issue } from "./lengths.ts";
-import { allText, bodyText } from "./claims.ts";
+import { allText } from "./claims.ts";
 import { altTexts } from "./assets.ts";
 import { AWARD_PROPER_NOUNS } from "../../data/awards.ts";
 
@@ -37,28 +37,23 @@ export function lintLanguage(c: CampaignConfig): Issue[] {
   const out: Issue[] = [];
   const allowed = new Set((c.wordingOverrides ?? []).map((o) => o.term.toLowerCase()));
   // House spelling: American by default (guide §8.1). "en-GB" only with a recorded reason (e.g. a production page
-  // whose preserved source and approved copy are British); the reason is required, never assumed.
+  // whose reviewed copy is British); the reason is required, never assumed.
   const spelling = c.spelling;
   const british = spelling?.locale === "en-GB";
   if (spelling?.locale === "en-GB" && !(typeof spelling.reason === "string" && spelling.reason.trim())) out.push({ level: "error", rule: "spelling.locale", path: "spelling.reason", message: "en-GB needs a recorded reason" });
-  const check = (items: { path: string; text: string }[], source: boolean) => {
-    for (const { path, text } of items) {
-      const registerText = withoutAwardNames(text);
-      for (const w of BANNED) {
-        const m = registerText.match(new RegExp(`\\b${w}\\b`, "i"));
-        if (m && !allowed.has(m[0].toLowerCase()) && !allowed.has(m[0].toLowerCase().replace(/s$/, ""))) {
-          out.push({ level: "warning", rule: source ? "register.preservedSource" : "register", path, message: `banned register word "${m[0]}" (owner override needed)` });
-        }
+  for (const { path, text } of allText(c)) {
+    const registerText = withoutAwardNames(text);
+    for (const w of BANNED) {
+      const m = registerText.match(new RegExp(`\\b${w}\\b`, "i"));
+      if (m && !allowed.has(m[0].toLowerCase()) && !allowed.has(m[0].toLowerCase().replace(/s$/, ""))) {
+        out.push({ level: "warning", rule: "register", path, message: `banned register word "${m[0]}" (owner override needed)` });
       }
-      const spellText = registerText.replace(/Travell?ers['’]?\s+Choice/gi, "");
-      if (!british) for (const [re, us] of BRITISH) if (re.test(spellText)) out.push({ level: source ? "warning" : "error", rule: "spelling.us", path, message: `use American spelling: ${us}` });
-      for (const [re, good] of THERAPY) if (re.test(text)) out.push({ level: "warning", rule: "therapy-names", path, message: `use ${good}` });
-      if (replyTime(text)) out.push({ level: source ? "warning" : "error", rule: source ? "reply-time.preservedSource" : "reply-time", path, message: "no reply-time promises" });
     }
-  };
-  check(allText(c), false);
-  // The preserved source body: the same checks, reported as warnings for the review of the inherited copy.
-  check(bodyText(c), true);
+    const spellText = registerText.replace(/Travell?ers['’]?\s+Choice/gi, "");
+    if (!british) for (const [re, us] of BRITISH) if (re.test(spellText)) out.push({ level: "error", rule: "spelling.us", path, message: `use American spelling: ${us}` });
+    for (const [re, good] of THERAPY) if (re.test(text)) out.push({ level: "warning", rule: "therapy-names", path, message: `use ${good}` });
+    if (replyTime(text)) out.push({ level: "error", rule: "reply-time", path, message: "no reply-time promises" });
+  }
   // Alt text (guide §9: "never write … in alt text"): the register words, with award proper nouns exempt as above.
   for (const { path, text } of altTexts(c)) {
     const registerText = withoutAwardNames(text);

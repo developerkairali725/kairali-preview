@@ -4,6 +4,7 @@ import assert from "node:assert/strict";
 import { validConfig } from "./fixtures/lp-v2-valid.ts";
 import { pending } from "../campaign-v2/kit/pending.ts";
 import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
+import { diseaseClaim } from "../campaign-v2/kit/lint/claims.ts";
 
 const NOW = new Date("2026-10-08T00:00:00Z");
 const errs = (c) => lintCampaign(c, NOW).errors.map((i) => i.rule);
@@ -111,6 +112,55 @@ test("spelling: award names stripped, rest still checked", () => {
   assert.ok(!errs(body("Tripadvisor Travelers\u2019 Choice 2025.")).includes("spelling.us"));
   assert.ok(!errs(body("Tripadvisor Travellers\u2019 Choice 2025.")).includes("spelling.us"));
   assert.ok(errs(body("Our favourite specialised program.")).includes("spelling.us"));
+});
+
+test("disease names: a treatment or effect claim is an error anywhere in its sentence (negations included); a diagnosis named for discussion warns for clinical review", () => {
+  for (const claim of [
+    "Relief from obesity and diabetes.",
+    "Ayurveda for diabetes, in the gardens.",
+    "Our arthritis programme runs all year.",
+    "Panchakarma helps control thyroid levels.",
+    "This is not a treatment for blood pressure.",
+    "Manage diabetes the natural way.",
+    "Lower your cholesterol with diet.",
+    "Arthritis relief in Kerala.",
+    "We treat diabetes.",
+    // Long sentences: the claim word is far from the disease name (a fixed word window missed both).
+    "We treat persistent and longstanding cases of complex type 2 diabetes.",
+    "Our treatment can permanently normalize high fasting glucose levels associated with diabetes.",
+    "Our specialised treatment for the most persistent and longstanding forms of rheumatoid arthritis.",
+    // "Previous" describing someone else, or a qualifier before a comma, does not make a claim the reader's history.
+    "Previous patients reversed their arthritis here.",
+    "Unlike your previous treatment, Ayurveda normalizes blood sugar in diabetes.",
+    "Discuss how Ayurveda can reverse your diabetes.",
+    // A qualifier with no your/their/any is the provider's own service, not the reader's history.
+    "Our current treatment for diabetes.",
+    "Our existing diabetes programme.",
+    "We offer other treatments for diabetes.",
+    // "any" + qualifier is the reader's history only when the copy asks them to disclose it, never in an offer.
+    "We offer any current treatment for diabetes.",
+  ]) {
+    assert.notEqual(diseaseClaim(claim), null, claim);
+    assert.ok(errs(body(claim)).includes("claims"), claim);
+  }
+  for (const mention of [
+    // The reviewed copy's neutral topics, and the visitor's own history.
+    "Discuss osteoarthritis, rheumatoid arthritis or other joint concerns with the doctor.",
+    "Our programme range includes skin conditions, diabetes and women’s health, among other areas.",
+    "Share your diagnosis, blood-pressure history and prescriptions.",
+    "The doctor can discuss back pain, joint pain, arthritis, sciatica or related concerns in the context of your medical history.",
+    "Bring details of your current diabetes treatment and medicines.",
+    "Tell the doctor how you currently manage your blood pressure.",
+    "Share any previous treatment for arthritis with the doctor.",
+    "Bring your reports for your diabetes history to the consultation.",
+    "Tell us about your current treatment for diabetes.",
+    "Tell us about any previous treatment for arthritis.",
+  ]) {
+    assert.equal(diseaseClaim(mention), null, mention);
+    const c = body(mention);
+    assert.ok(!errs(c).includes("claims"), mention);
+    assert.ok(warns(c).includes("disease.mention"), mention);
+  }
 });
 
 test("cure is reported once, as a claim, not as register", () => {

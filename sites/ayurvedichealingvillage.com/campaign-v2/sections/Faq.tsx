@@ -11,7 +11,7 @@ export default function Faq({ c, v }: SectionProps) {
   if (!c.faq.length) return null;
   return (
     <section className="lp-sec lp-faq" aria-labelledby="lp-faq-h">
-      <SectionHead v={v} kicker="Before you decide" title="Questions patients ask." id="lp-faq-h" />
+      <SectionHead v={v} kicker="Before you decide" title={c.page?.faqHeading ?? "Questions patients ask."} id="lp-faq-h" />
       <div className="lp-faq__list">
         {c.faq.map((f, i) => (
           <details key={f.q} className="lp-faq__item" open={i === 0}>
