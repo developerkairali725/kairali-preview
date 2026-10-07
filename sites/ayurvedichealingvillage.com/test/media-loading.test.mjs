@@ -12,6 +12,7 @@ import {
 } from "../app/(english)/_families/media-loading.mjs";
 import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes } from "../app/(english)/_families/critical-media.mjs";
 import { formPostSafety } from "../app/(english)/_families/form-post-safety.mjs";
+import { orderedRuntimeScripts } from "../app/(english)/_families/runtime-script-order.mjs";
 import { CONSENT_RUNTIME } from "../app/(english)/_families/consent-runtime.ts";
 // lane PERF2: two more helpers injected into BOOT_SCRIPT (snapshot-paint.mjs); the parse test needs them in scope
 import { deferFarSnapshotContent, whenSnapshotPainted, snapshotFocusTarget, preserveSnapshotInputs } from "../app/(english)/_families/snapshot-paint.mjs";
@@ -200,7 +201,7 @@ test("BOOT_SCRIPT with the media-loading layer is valid JavaScript", async () =>
   const end = src.lastIndexOf("`.trim();");
   const body = src.slice(start, end);
   const env = { IS_STAGING: true, ROUTE_CONFIG_ID: "ahv-route-config", DESIGN_ROOT_ID: "ahv-design-root", LINK_ALIASES: {}, IMAGE_ALIASES: {},
-    repairFaqTopicTargets, removeHomeVillaRates, offersFlow, phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, EAGER_SLOTS, createBackgroundDeferral, installLazyImgOrder, installSlotLoading, lazyImgFirst, deferHeroFilm, formPostSafety, CONSENT_RUNTIME,
+    orderedRuntimeScripts, repairFaqTopicTargets, removeHomeVillaRates, offersFlow, phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, EAGER_SLOTS, createBackgroundDeferral, installLazyImgOrder, installSlotLoading, lazyImgFirst, deferHeroFilm, formPostSafety, CONSENT_RUNTIME,
     deferFarSnapshotContent, whenSnapshotPainted, snapshotFocusTarget, preserveSnapshotInputs };
   const script = new Function(...Object.keys(env), "return `" + body + "`;")(...Object.values(env));
   assert.doesNotThrow(() => new Function(script), "BOOT_SCRIPT parses");

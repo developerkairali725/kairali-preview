@@ -4,7 +4,7 @@
 export function inspectCapturePage({ formSelector = null, requiredSelector = null, forbiddenSelector = null } = {}) {
   const root = document.getElementById('ahv-design-root');
   if (!root) return { errors: ['Missing design root'], heading: '', bodyChars: 0, requiredForm: false };
-  const errors = [...root.querySelectorAll('.sc-logic-error,.sc-has-error,[data-ahv-error]')]
+  const errors = [...root.querySelectorAll('.sc-logic-error,.sc-has-error,.sc-placeholder-error,[data-ahv-error]')]
     .map(node => (node.querySelector('.sc-logic-error') || node).textContent.trim().slice(0, 250));
   if (root.hasAttribute('data-ahv-error')) errors.push(root.getAttribute('data-ahv-error'));
   const copy = root.cloneNode(true);
@@ -17,6 +17,15 @@ export function inspectCapturePage({ formSelector = null, requiredSelector = nul
   const requiredContent = !requiredSelector || !!root.querySelector(requiredSelector);
   const forbiddenContent = !!(forbiddenSelector && root.querySelector(forbiddenSelector));
   return { errors: [...new Set(errors)], heading, bodyChars, requiredForm, requiredContent, forbiddenContent };
+}
+
+/** Proof and extraction run synchronously in one browser task, against one DOM. */
+export function createCaptureEvaluation(extract) {
+  return new Function('requirements', `
+    const contentProof = (${inspectCapturePage.toString()})(requirements);
+    const got = (${extract.toString()})();
+    return { contentProof, got };
+  `);
 }
 
 export function captureFormSelector(route) {

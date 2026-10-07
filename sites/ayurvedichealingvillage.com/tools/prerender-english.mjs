@@ -42,7 +42,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
-import { inspectCapturePage, captureContentRequirements, assertCapturePage } from './capture-page-guard.mjs';
+import { createCaptureEvaluation, captureContentRequirements, assertCapturePage } from './capture-page-guard.mjs';
 
 const require_ = createRequire(import.meta.url);
 const loadPlaywright = () => {
@@ -278,9 +278,8 @@ const run = async () => {
         { timeout: 45000 },
       );
       await page.waitForTimeout(1200);
-      const contentProof = await page.evaluate(inspectCapturePage, captureContentRequirements(route.path, enquiryRecords.find(row => row.path === route.path)));
+      const { contentProof, got } = await page.evaluate(createCaptureEvaluation(EXTRACT), captureContentRequirements(route.path, enquiryRecords.find(row => row.path === route.path)));
       assertCapturePage(contentProof, route.path);
-      const got = await page.evaluate(EXTRACT);
       if (!got || !got.html) throw new Error("empty extraction");
       const file = snapshotName(route.path);
       // The snapshot strips every script (see EXTRACT). A view that carries a
