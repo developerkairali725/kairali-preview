@@ -9,17 +9,16 @@ const NUMERALS = ["I", "II", "III", "IV", "V", "VI"];
 // C's chapter is text only, so its image is not rendered at all (hidden lazy images are still fetched).
 const SHOW: Record<Variant, { image: boolean }> = { A: { image: true }, B: { image: true }, C: { image: false }, D: { image: false } };
 
-// The copy's own headings when it has them (family route: quotation-confirmation labels), else the kit's.
 function Lists({ c }: { c: CampaignConfig }) {
   return (
     <>
       <div className="lp-adm__list">
-        <p className="lp-over">{c.inclusionHeadings?.included ?? "Included"}</p>
+        <p className="lp-over">Included</p>
         <ul>{c.included.map((x) => <li key={x}>{x}</li>)}</ul>
       </div>
       {c.chargedSeparately.length ? (
         <div className="lp-adm__list lp-adm__list--sep">
-          <p className="lp-over">{c.inclusionHeadings?.chargedSeparately ?? "Charged separately"}</p>
+          <p className="lp-over">Charged separately</p>
           <ul>{c.chargedSeparately.map((x) => <li key={x}>{x}</li>)}</ul>
         </div>
       ) : null}

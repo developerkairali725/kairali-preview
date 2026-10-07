@@ -2,9 +2,15 @@
 // node --test. Erasable TypeScript only.
 
 /**
+ * Where the programme links sit (production/sections/Offering.tsx): the links the old page's programme sections,
+ * #section-1 and #section-6, held.
+ */
+export const PROGRAMME_LINKS = "[data-programme-links]";
+
+/**
  * The live page's interaction diagnostics, unchanged: the same link → (name, target) mapping as
- * app/(campaign)/ayurvedic-treatment-packages.html/GuestSupport.tsx. `inProgrammeSection` = the link sits in
- * #section-1 or #section-6. Pure.
+ * app/(campaign)/ayurvedic-treatment-packages.html/GuestSupport.tsx. `inProgrammeSection` = the link sits inside
+ * PROGRAMME_LINKS. Pure.
  */
 export type Interaction = readonly [name: string, target: string];
 export function interactionForLink(href: string, inProgrammeSection: boolean): Interaction | null {

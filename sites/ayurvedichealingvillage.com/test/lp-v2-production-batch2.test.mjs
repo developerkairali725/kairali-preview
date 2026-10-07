@@ -1,83 +1,62 @@
 // Live ad routes, batch 2 (/pain-management.html, /family-ayurvedic-retreat-kerala.html) on the campaign-v2 kit: the
-// content worker's final frozen copy and the contracts of the pages they replace. Provenance; unchanged URLs,
-// canonicals, robots and lead identity; the family form exactly as the R10 familyFields form (fields, limits, request
-// body, compared byte for byte with a port of that form); the family-only copy bindings (inclusion headings, the
-// health-field note); the site's own contact links (exact values only); media, doctors, villas, table and topics as
-// independently reviewed; the quarantined written testimonials; batch 1 unchanged.
+// reviewed copy of 8 Oct 2026 designed into the production template, and the contracts of the pages they replace.
+// Unchanged URLs, canonicals, robots and lead identity; the family form exactly as the R10 familyFields form (fields,
+// limits, request body, compared byte for byte with a port of that form); the pain form's optional gender; the
+// site's own contact links (exact values only); films, doctors, villas and topics as the reviewed copy gives them;
+// the quarantined written testimonials; batch 1 unchanged.
 // A failing content assertion is a finding for the copy owner, never a reason to edit the copy here.
 // Every request is intercepted: no network, no real lead.
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
-import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
-import { productionCampaign, PRODUCTION_SLUGS, archivalLongFormWords } from "../campaign-v2/production/load.ts";
+import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/load.ts";
 import { ROUTES } from "../campaign-v2/production/bindings.ts";
+import { COPY } from "../campaign-v2/production/pages/index.ts";
 import { productionMetadata, productionJsonLd } from "../campaign-v2/production/metadata.ts";
 import { PRODUCTION_CAMPAIGN_FORM, PRODUCTION_PAIN_FORM, resolveSchema, validateStep, CONSENT_FIELD, MESSAGES } from "../campaign-v2/forms/schema.ts";
 import { buildProductionLead, productionLeadAdapter, familyMessage, familyGender } from "../campaign-v2/forms/adapter.ts";
 import { validationProblem } from "../lib/lead-validation.ts";
 import { normaliseCampaignPhone } from "../lib/campaign-phone.ts";
-import { safeHref, isKnownContactHref, isKnownContactLink, KNOWN_CONTACT_LINKS, bodyLinks } from "../campaign-v2/kit/lint/body.ts";
+import { safeHref, isKnownContactHref, isKnownContactLink, KNOWN_CONTACT_LINKS } from "../campaign-v2/kit/lint/body.ts";
+import { pageLinks, pageText } from "../campaign-v2/kit/lint/page-text.ts";
 import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
 import { PRICE, RATE_LINK } from "../campaign-v2/kit/lint/pricing.ts";
-import { inlineText, renderedTexts, isQuotedParagraph, isExternal } from "../campaign-v2/production/body-model.ts";
 import { interactionForLink } from "../campaign-v2/production/interaction-map.ts";
-import { parseMarkdown } from "../campaign-v2/sections/markdown.ts";
+import { CURRENT_ROSTER } from "../campaign-v2/data/doctors.ts";
 import { contact } from "../campaign-v110/lib/site.ts";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const P = (...p) => path.join(SITE, ...p);
 const read = (p) => fs.readFileSync(P(p), "utf8");
-const sha256 = (p) => crypto.createHash("sha256").update(fs.readFileSync(p)).digest("hex");
-const NOW = new Date(Date.UTC(2026, 9, 7, 12));
+const NOW = new Date(Date.UTC(2026, 9, 8, 12));
 const TOKEN = "00000000-0000-4000-8000-000000000000";
 const PAIN = "pain-management";
 const FAMILY = "family-ayurvedic-retreat";
 const B2 = [PAIN, FAMILY];
 const C = Object.fromEntries(B2.map((s) => [s, productionCampaign(s)]));
-const RAW = Object.fromEntries(B2.map((s) => [s, JSON.parse(read(`campaign-v2/production/content/${s}.json`)).copy]));
-const blocksOf = (c) => [...c.body.sections.flatMap((s) => s.blocks), ...c.body.closing];
 const FAMILY_NOTE = "Share any health concerns you would like to discuss with the doctor. This field is optional.";
 
-/** Every visible string of a production page (authored copy, doctor cards, the source body as rendered). */
+/** Every visible string of a production page: hero, CTAs, the designed sections, the FAQ, the doctor cards, alt text. */
 function pageStrings(c) {
-  const t = [
-    c.hero.overline, c.hero.h1, c.hero.standfirst, c.admission.heading, ...c.admission.steps.flatMap((s) => [s.title, s.body]),
-    ...c.included, ...c.chargedSeparately, c.stillness.heading, c.stillness.body, c.village.heading, c.village.body,
-    ...c.faq.flatMap((f) => [f.q, f.a]), c.feePresentation.heading, c.feePresentation.body, c.feePresentation.cta,
-    c.cta.primary, c.cta.primarySupport, c.cta.secondary,
-    ...(c.inclusionHeadings ? [c.inclusionHeadings.included, c.inclusionHeadings.chargedSeparately] : []),
+  return [
+    c.hero.overline, c.hero.h1, c.hero.standfirst, c.cta.primary, c.cta.primarySupport, c.cta.secondary,
+    ...c.faq.flatMap((f) => [f.q, f.a]),
+    ...pageText(c).map((x) => x.text),
     ...c.doctors.flatMap((d) => [d.name, d.role, d.qualification, d.tenure ?? "", d.focus ?? "", ...(Array.isArray(d.languages) ? d.languages : [])]),
     ...c.gallery.map((g) => g.image.alt), c.hero.mobileImage.alt,
-  ];
-  for (const b of parseMarkdown(c.body.intro.join("\n\n"))) t.push(...(b.type === "ul" ? b.items : [b.text]));
-  for (const b of blocksOf(c)) {
-    t.push(...renderedTexts(b));
-    if (b.type === "image") t.push(b.alt);
-  }
-  return t.filter((x) => typeof x === "string" && x);
+  ].filter((x) => typeof x === "string" && x);
 }
 
-// ── provenance and registration ───────────────────────────────────────────────────────────────────────────
-test("provenance: the batch-2 copy is the final frozen packet of FINAL-REVIEW-REVISION (SHA-256), recorded in SOURCES.json", () => {
-  const FROZEN = {
-    "pain-management.json": "9e25e2be878ce6d5978564b2eaed8bbe43d598e8a8847cbd1269adee92c3371b",
-    "family-ayurvedic-retreat.json": "adaf23cedfc6d2f9e10d5c99a6574bce60942d2e381d3a65eecd7790db0a1d4a",
-  };
-  const manifest = JSON.parse(read("campaign-v2/production/content/SOURCES.json"));
-  for (const [file, sha] of Object.entries(FROZEN)) {
-    assert.equal(sha256(P("campaign-v2/production/content", file)), sha, file);
-    assert.equal(manifest.files[file].sha256, sha, `SOURCES.json ${file}`);
-  }
+// ── registration and routes ───────────────────────────────────────────────────────────────────────────────
+test("registration: both batch-2 routes are production slugs with their own reviewed copy and the designed page", () => {
   for (const slug of B2) {
     assert.ok(PRODUCTION_SLUGS.includes(slug), slug);
-    assert.equal(RAW[slug].slug, slug);
-    assert.equal(RAW[slug].longForm, "", `${slug}: no archival long form in the batch-2 packet`);
-    assert.equal(archivalLongFormWords(slug), 0);
+    assert.equal(COPY[slug].slug, slug);
+    assert.equal(COPY[slug].route, ROUTES[slug].route);
     assert.equal(C[slug].longForm, "");
-    assert.ok(C[slug].body.sections.length >= 10, `${slug}: the source body renders`);
+    assert.ok(C[slug].page, slug);
   }
 });
 
@@ -127,7 +106,7 @@ const fam = (over = {}) => ({
   country: "India", duration: "", message: "", [CONSENT_FIELD]: true, marketing: false, honeypot: "", channel: "whatsapp", ...over,
 });
 
-test("family form: the R10 familyFields contract — fields, order, required, limits, options, labels; the copy's note on the health field", () => {
+test("family form: the R10 familyFields contract — fields, order, required, limits, options, labels; the note on the health field", () => {
   const fields = FS.steps[0].fields;
   assert.deepEqual(fields.map((f) => f.name), ["fullName", "rdogender", "email", "dialCode", "phone", "country", "duration", "message"]);
   const f = Object.fromEntries(fields.map((x) => [x.name, x]));
@@ -140,7 +119,8 @@ test("family form: the R10 familyFields contract — fields, order, required, li
   ]);
   assert.deepEqual([f.message.type, f.message.label, f.message.required, f.message.maxLength], ["textarea", "Any existing health conditions?", false, 2700]);
   assert.equal(f.message.hint, FAMILY_NOTE);
-  assert.equal(RAW[FAMILY].familyFormNote, FAMILY_NOTE);
+  assert.equal(COPY[FAMILY].familyFormNote, FAMILY_NOTE);
+  assert.equal(COPY[PAIN].familyFormNote, undefined);
   // name, email and the phone pair are the default production form's, unchanged
   for (const n of ["fullName", "email", "dialCode", "phone"]) {
     assert.deepEqual(C[FAMILY].form.schema.steps[0].fields.find((x) => x.name === n), PRODUCTION_CAMPAIGN_FORM.steps[0].fields.find((x) => x.name === n), n);
@@ -260,27 +240,26 @@ test("family adapter: one same-origin POST of exactly that body; the route never
   assert.equal(last.init.body, JSON.stringify(buildProductionLead(values, { token: TOKEN, locale: "en", production: C[FAMILY].productionForm, env })));
 });
 
-// ── family-only copy bindings ─────────────────────────────────────────────────────────────────────────────
-test("family copy bindings: the quotation-confirmation inclusion headings and lists; pain keeps the kit headings", () => {
-  assert.deepEqual(C[FAMILY].inclusionHeadings, { included: "Confirm each person’s programme", chargedSeparately: "Ask about additional charges" });
-  assert.deepEqual(C[FAMILY].inclusionHeadings, RAW[FAMILY].inclusionHeadings);
-  assert.deepEqual(C[FAMILY].included, RAW[FAMILY].included);
-  assert.deepEqual(C[FAMILY].chargedSeparately, RAW[FAMILY].chargedSeparately);
-  // INCLUSION-FACTS: the yoga tariff includes private sessions, so the family page never lists them as uniformly extra
+// ── the quotation (owner facts) ───────────────────────────────────────────────────────────────────────────
+test("quotation: what each stay includes and what to ask about, from the reviewed copy; family never lists private sessions as uniformly extra", () => {
+  assert.deepEqual(C[FAMILY].page.stay.lists.map((l) => l.heading), ["Confirm each person’s programme", "Ask about additional charges"]);
+  assert.deepEqual(C[PAIN].page.stay.lists.map((l) => l.heading), ["Confirm what your stay includes", "Ask about additional charges"]);
+  for (const slug of B2) {
+    const [included, extra] = C[slug].page.stay.lists;
+    assert.equal(included.extra, undefined, slug);
+    assert.equal(extra.extra, true, slug);
+    assert.deepEqual(C[slug].included, included.items, slug);
+    assert.deepEqual(C[slug].chargedSeparately, extra.items, slug);
+  }
+  // INCLUSION-FACTS: the yoga tariff includes private sessions, so the family page never lists them as uniformly extra.
   assert.ok(!C[FAMILY].chargedSeparately.some((x) => /private/i.test(x)), C[FAMILY].chargedSeparately.join(" | "));
-  assert.equal(C[PAIN].inclusionHeadings, undefined);
-  assert.equal(RAW[PAIN].inclusionHeadings, undefined);
-  assert.equal(RAW[PAIN].familyFormNote, undefined);
-  const adm = read("campaign-v2/sections/Admission.tsx");
-  assert.match(adm, /\{c\.inclusionHeadings\?\.included \?\? "Included"\}/);
-  assert.match(adm, /\{c\.inclusionHeadings\?\.chargedSeparately \?\? "Charged separately"\}/);
 });
 
-test("no Step-1 ConsultBar on batch 2: the replaced forms asked no program, month or length; copy.programDefault stays editorial", () => {
+test("no Step-1 ConsultBar on batch 2: the replaced forms asked no program, month or length; the copy's programme name stays editorial", () => {
   for (const slug of B2) {
     assert.equal(C[slug].consultBar, false, slug);
     assert.equal(C[slug].programDefault, "", slug);
-    assert.ok(RAW[slug].programDefault, `${slug}: the packet still names the programme (editorial context)`);
+    assert.ok(COPY[slug].programDefault, `${slug}: the copy still names the programme (editorial context)`);
   }
   assert.doesNotMatch(read("app/(campaign)/ayurvedic-treatment-packages.html/EnquiryForm.tsx"), /name="(program|month|length)"/);
   assert.match(read("campaign-v2/production/ProductionPage.tsx"), /\{c\.consultBar === false \? null : <ConsultBar \{\.\.\.p\} \/>\}/);
@@ -305,68 +284,49 @@ test("contact links: only the site's own phone and email, exact strings with the
   assert.equal(isKnownContactLink("tel:+919555156156", "+91 9555 156 156"), true);
   assert.equal(isKnownContactLink("tel:+919555156156", "+91 92898 38797"), false);
   assert.equal(isKnownContactLink("mailto:info@kairali.com", "Email us"), false);
-  // rendered as a plain same-tab link and measured by the replaced page's own mapping
-  assert.equal(isExternal("tel:+919555156156"), false);
   assert.deepEqual(interactionForLink("tel:+919555156156", false), ["contact_click", "phone"]);
   assert.deepEqual(interactionForLink("mailto:info@kairali.com", false), ["contact_click", "email"]);
 });
 
-test("family body keeps its source contact line with the locked values; no other tel:/mailto: on either page; lint clean", () => {
-  const b = C[FAMILY].body.sections[0].blocks[2];
-  assert.equal(b.type, "p");
-  assert.equal(b.text, "Call +91 9555 156 156 or email info@kairali.com");
-  assert.equal(inlineText(b.inline), b.text);
-  assert.deepEqual(b.inline.filter((r) => r.type === "link").map((r) => [r.href, r.text]), [["tel:+919555156156", "+91 9555 156 156"], ["mailto:info@kairali.com", "info@kairali.com"]]);
-  const contacts = B2.flatMap((s) => bodyLinks(C[s]).filter((l) => /^(tel|mailto):/i.test(l.href)).map((l) => `${s} ${l.href}`));
-  assert.deepEqual(contacts, [`${FAMILY} tel:+919555156156`, `${FAMILY} mailto:info@kairali.com`]);
+test("contact details: rendered from site.ts by the kit (enquiry and footer), never typed into the copy; link lint clean", () => {
+  const enquiry = read("campaign-v2/sections/interactive/Enquiry.tsx");
+  assert.match(enquiry, /href=\{contact\.phone\.href\}/);
+  assert.match(enquiry, /href=\{`mailto:\$\{contact\.email\}`\}/);
   for (const slug of B2) {
-    const errors = lintCampaign(C[slug], NOW).errors.filter((e) => e.rule === "body.href" || e.rule === "body.contact");
+    assert.deepEqual(pageLinks(C[slug]).filter((l) => /^(tel|mailto|sms):/i.test(l.href)), [], slug);
+    const errors = lintCampaign(C[slug], NOW).errors.filter((e) => e.rule.startsWith("page."));
     assert.deepEqual(errors, [], slug);
   }
 });
 
-// ── media, doctors, villas, table, topics (INDEPENDENT-REVIEW.json) ───────────────────────────────────────
-test("structure as independently reviewed: 3 films, 7 captioned photographs, 5 doctor bios, 4 villas; family 16 topics and a 7-row routine table", () => {
+// ── films, doctors, villas, topics (the reviewed copy) ────────────────────────────────────────────────────
+test("structure from the reviewed copy: 3 patient films as links, the 5 current doctors, 4 villas; pain 4 plan topics; family 16 care topics", () => {
   const VIDEOS = ["https://www.youtube.com/watch?v=3vWviQfW1Ug", "https://www.youtube.com/watch?v=4x01PtWfNnk", "https://www.youtube.com/watch?v=DcTMckQD3rc"];
-  const PHOTOS = [
-    "/ahv/assets/img/gallery-2026/yoga/practice-yoga-instructor-guiding-female-07.webp",
-    "/ahv/assets/img/gallery-2026/property/block-facility-physician-consultation-room-01.webp",
-    "/ahv/assets/img/gallery-2026/photo/villas-villa-exterior-stone-cottage-bay-09.webp",
-    "/ahv/assets/img/gallery-2026/treatments/rooms-therapy-prep-therapist-hands-kneading-08.webp",
-    "/ahv/assets/img/gallery-2026/retreats/welcome-people-woman-cream-handloom-01.webp",
-    "/ahv/assets/img/gallery-2026/treatments/rooms-treatment-therapy-room-corner-09.webp",
-    "/landing/r10/home-wx-hero.webp",
-  ];
-  const DOCTORS = ["Dr. Deepu John", "Dr. Rahul R", "Dr. Akhila Oommen", "Dr. Adhina U.B.", "Dr. Aashitha P.S."];
-  const VILLAS = ["/classic-villa/", "/deluxe-villa/", "/maharaja-suite/", "/royal-villa/"];
+  const VILLAS = ["/deluxe-villa/", "/classic-villa/", "/royal-villa/", "/maharaja-suite/"];
   for (const slug of B2) {
-    const blocks = blocksOf(C[slug]);
-    assert.deepEqual(blocks.filter((b) => b.type === "videoLink").map((b) => b.href).sort(), VIDEOS, slug);
-    assert.ok(blocks.filter((b) => b.type === "videoLink").every((b) => b.label && b.thumbnail), slug);
-    const photos = blocks.filter((b) => b.type === "image");
-    assert.deepEqual(photos.map((b) => b.src).sort(), [...PHOTOS].sort(), slug);
-    assert.ok(photos.every((b) => b.alt && b.caption), slug);
-    assert.deepEqual(blocks.filter((b) => b.type === "h3" && /^Dr\. /.test(b.text)).map((b) => b.text), DOCTORS, slug);
-    assert.deepEqual([...new Set(bodyLinks(C[slug]).map((l) => l.href).filter((h) => /-(villa|suite)\/$/.test(h)))].sort(), VILLAS, slug);
+    const p = C[slug].page;
+    assert.deepEqual(p.stories.films.map((f) => f.href), VIDEOS, slug);
+    assert.ok(p.stories.films.every((f) => f.title.startsWith("Watch ") && fs.existsSync(P("public", f.thumb.src))), slug);
+    assert.match(p.stories.body, /Individual experiences vary\./);
+    assert.deepEqual(C[slug].doctors.map((d) => d.id), [...CURRENT_ROSTER], slug);
+    assert.deepEqual(p.place.villas.map((v) => v.link.href), VILLAS, slug);
+    assert.deepEqual(p.place.villas.map((v) => v.name), ["Deluxe Villa", "Classic Villa", "Royal Villa", "Maharaja Suite"], slug);
   }
-  const tables = blocksOf(C[FAMILY]).filter((b) => b.type === "table");
-  assert.equal(tables.length, 1);
-  assert.deepEqual(tables[0].headers, ["Time", "Activity", "What to expect"]);
-  assert.equal(tables[0].rows.length, 7);
-  assert.ok(tables[0].rows.every((r) => r.length === 3));
-  assert.equal(blocksOf(C[PAIN]).filter((b) => b.type === "table").length, 0);
-  const TOPICS = [
-    "Panchakarma Detox", "Addiction Recovery", "Skin Vitality", "Respiratory Health", "Cardiovascular Health", "Chronic Back Pain",
-    "Stress & Mental Wellness", "Diabetes & Metabolism", "Digestive & Gut Health", "Immunity & Executive Health", "Joint Rehabilitation",
-    "Neurological Wellness", "Women's Hormonal Balance", "Weight Management", "Yoga & Meditation", "Wholesome Family Dining",
-  ];
-  const programmes = C[FAMILY].body.sections.find((s) => s.sourceSection === "section-3");
-  const h3 = programmes.blocks.filter((b) => b.type === "h3").map((b) => b.text);
-  assert.deepEqual(TOPICS.filter((t) => !h3.includes(t)), []);
-  assert.equal(TOPICS.length, 16);
+  const pain = C[PAIN].page.offering;
+  assert.equal(pain.kind, "cards");
+  assert.deepEqual(pain.cards.map((c) => c.title), ["Ayurvedic therapies", "Medicines considered alongside your current care", "Food, movement and rest", "Reviews during the stay and guidance for home"]);
+  const family = C[FAMILY].page.offering;
+  assert.equal(family.kind, "index");
+  assert.deepEqual(family.topics.map((t) => t.title), [
+    "Panchakarma", "Addiction recovery", "Skin concerns", "Respiratory health", "Cardiovascular health and blood pressure", "Back pain and sciatica",
+    "Stress and mental wellbeing", "Diabetes and metabolism", "Digestive and gut health", "Immunity and executive health assessment", "Joint care and arthritis",
+    "Neurological care needs", "Women’s hormonal health", "Weight management", "Yoga and meditation", "Meals for the family",
+  ]);
+  // The day's routine, as prose in the quiet band (the old page's routine table is not carried over).
+  assert.equal(C[FAMILY].page.rest.heading, "A day with time for care and time together");
 });
 
-test("written family testimonials stay quarantined: no byline, title or excerpt of the source's written stories renders; no quote blocks", () => {
+test("written family testimonials stay quarantined: no byline, title or excerpt of the source's written stories renders", () => {
   const raw = read("app/(campaign)/family-ayurvedic-retreat-kerala.html/content.ts");
   const html = JSON.parse(raw.match(/export const \w+ = (".*");/s)[1]);
   const decode = (s) => s.replace(/&amp;/g, "&").replace(/&#39;|&apos;/g, "'").replace(/&quot;/g, '"').trim();
@@ -377,11 +337,11 @@ test("written family testimonials stay quarantined: no byline, title or excerpt 
     ...pick(/class="story-excerpt">([^<]+)</g),
   ];
   assert.equal(quarantined.length, 12, quarantined.join(" | "));
-  const page = ` ${pageStrings(C[FAMILY]).join(" | ")} `;
-  for (const q of quarantined) assert.ok(!page.includes(q), `rendered: ${q}`);
-  assert.equal(blocksOf(C[FAMILY]).filter((b) => b.type === "quote").length, 0);
-  assert.ok(!blocksOf(C[FAMILY]).some((b) => isQuotedParagraph(b)));
-  assert.match(page, /filmed accounts\. Individual experiences vary\./); // the video-only introduction
+  for (const slug of B2) {
+    const page = ` ${pageStrings(C[slug]).join(" | ")} `;
+    for (const q of quarantined) assert.ok(!page.includes(q), `${slug} rendered: ${q}`);
+    assert.doesNotMatch(page, /[“"][^”"]{40,}[”"]/, `${slug}: no quoted testimonial`);
+  }
 });
 
 // ── owner rules ───────────────────────────────────────────────────────────────────────────────────────────
@@ -389,27 +349,26 @@ test("owner rules: Get Free Doctor Consultation; 'free' only for the initial con
   for (const slug of B2) {
     const c = C[slug];
     assert.equal(c.cta.primary, "Get Free Doctor Consultation");
-    assert.equal(c.feePresentation.cta, "Get Free Doctor Consultation");
     assert.equal(c.cta.primarySupport, "Your initial consultation is free. Ask for a quotation covering treatment and any later services.");
     const strings = [...pageStrings(c), c.seo.title, c.seo.description];
     assert.deepEqual(strings.filter((s) => PRICE.test(s)), [], slug);
-    assert.deepEqual(bodyLinks(c).filter((l) => RATE_LINK.test(l.href) || RATE_LINK.test(l.text)).map((l) => l.href), [], slug);
+    assert.deepEqual(pageLinks(c).filter((l) => RATE_LINK.test(l.href) || RATE_LINK.test(l.text)).map((l) => l.href), [], slug);
+    // "free" names the initial consultation, or says what is not free ("treatment, tests, medicines … are not").
     for (const s of strings) for (const sentence of s.split(/(?<=[.?!])\s+/)) {
-      if (/\bfree\b/i.test(sentence)) assert.match(sentence, /consultation/i, `${slug}: "${sentence}"`);
+      if (/\bfree\b/i.test(sentence)) assert.match(sentence, /consultation|treatment, tests, medicines/i, `${slug}: "${sentence}"`);
     }
   }
 });
 
 // ── batch 1 unchanged ─────────────────────────────────────────────────────────────────────────────────────
-test("batch 1 unchanged: default form and body, no batch-2 keys, the generic note and kit headings still render there", () => {
+test("batch 1 unchanged: default form and body, no batch-2 keys, the generic note still renders there", () => {
   for (const slug of ["treatment-packages", "panchakarma"]) {
     const c = productionCampaign(slug);
     assert.equal(c.form.schema, PRODUCTION_CAMPAIGN_FORM);
-    assert.equal("inclusionHeadings" in c, false, slug);
     assert.equal("consultBar" in c, false, slug);
     assert.deepEqual(Object.keys(ROUTES[slug].productionForm).sort(), ["downloadGuide", "formVariant"], slug);
-    assert.equal(ROUTES[slug].inclusionHeadings, undefined);
     assert.equal(ROUTES[slug].consultBar, undefined);
+    assert.equal(COPY[slug].familyFormNote, undefined, slug);
     // family-shaped answers never change a batch-1 body
     const values = { ...fam({ rdogender: "Female", duration: "14 days", message: "Hello" }) };
     const body = buildProductionLead(values, { token: TOKEN, locale: "en", production: ROUTES[slug].productionForm, env: envFor(ROUTES[slug].route) });
@@ -425,11 +384,11 @@ test("batch 1 unchanged: default form and body, no batch-2 keys, the generic not
     /\{i === 0 && schema\.genericNote !== false \? <p className="lp-enq__note">No medical details needed\. Your doctor asks for those privately at consultation\.<\/p> : null\}/);
 });
 
- test("pain gender stays optional and unanswered by default; valid selections preserve original payload", () => {
+test("pain gender stays optional and unanswered by default; valid selections preserve original payload", () => {
   const schema = resolveSchema(C[PAIN].form.schema, { campaign: C[PAIN], locale: "en", now: NOW });
   const fields = schema.steps[0].fields;
-  assert.deepEqual(fields.map(f => f.name), ["fullName", "rdogender", "email", "dialCode", "phone", "message"]);
-  const gender = fields.find(f => f.name === "rdogender");
+  assert.deepEqual(fields.map((f) => f.name), ["fullName", "rdogender", "email", "dialCode", "phone", "message"]);
+  const gender = fields.find((f) => f.name === "rdogender");
   assert.equal(gender.required, false);
   assert.equal(gender.defaultValue, "");
   for (const value of ["", "Male", "Female"]) {

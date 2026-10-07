@@ -1,148 +1,81 @@
-// The live ad routes' CampaignConfig: the content worker's frozen copy (content/*.json, verbatim) bound to the
-// route facts in bindings.ts. Validation is strict and runs at build: a missing field, an unknown block type, a
-// price where pricing is hidden, or an unknown doctor throws, so an incomplete page can never be built quietly.
+// The live ad routes' CampaignConfig: the reviewed copy (pages/*.ts) bound to the route facts in bindings.ts.
+// Validation runs at build: copy bound to the wrong route, a doctor who is not on the current consented roster, an
+// unsafe link, an in-page link the consent runtime does not measure, a price, or an unanswered question throws, so an
+// incomplete page can never be built quietly.
 //
-// Not rendered: copy.longForm (superseded archival text; the structured body replaces it), and the internal
-// metadata (source, implementationContract, wordCounts, verdict, claimDispositions, …).
-//
-// Batch 2 adds two route-bound copy fields, read only where the binding says so (family): copy.inclusionHeadings
-// (the Admission list headings) and copy.familyFormNote (the note on the family form's optional health field).
-// Present anywhere else, they throw: copy is never silently dropped. Every body link must be safe (kit/lint/body.ts
-// safeHref); a tel:/mailto: link must be one of the site's own contact links with its own locked text.
+// The kit fields the designed page supersedes (admission, included, chargedSeparately, stillness copy, village) are
+// mirrors of `page`, kept so the shared kit code and types stay whole; the production template renders `page`.
 //
 // Erasable TypeScript only (node --test imports this file).
 
-import packagesJson from "./content/treatment-packages.json" with { type: "json" };
-import panchakarmaJson from "./content/panchakarma.json" with { type: "json" };
-import painJson from "./content/pain-management.json" with { type: "json" };
-import familyJson from "./content/family-ayurvedic-retreat.json" with { type: "json" };
-import type { BodyBlock, BodyInline, BodySection, CampaignConfig, DoctorRef, FeePresentation, InclusionHeadings, SourceBody } from "../kit/types.ts";
-import { DOCTORS } from "../data/doctors.ts";
+import type { CampaignConfig, DoctorRef } from "../kit/types.ts";
+import { CURRENT_ROSTER, DOCTORS } from "../data/doctors.ts";
 import { PRODUCTION_CAMPAIGN_FORM, PRODUCTION_PAIN_FORM, productionFamilyForm, type FormSchema } from "../forms/schema.ts";
-import { bodyLinks, isKnownContactHref, isKnownContactLink, safeHref } from "../kit/lint/body.ts";
-import { PRICING_HIDDEN, ROUTES, SOURCE_PRESERVATION, SPELLING, type ProductionSlug, type RouteBinding } from "./bindings.ts";
+import { richText } from "../kit/rich.ts";
+import { isKnownContactHref, isKnownContactLink, MEASURED_HASHES, safeHref } from "../kit/lint/body.ts";
+import { pageLinks, pageText } from "../kit/lint/page-text.ts";
+import { PRICE, RATE_LINK } from "../kit/lint/pricing.ts";
+import { PRICING_HIDDEN, ROUTES, SPELLING, type ProductionSlug, type RouteBinding } from "./bindings.ts";
+import type { ProductionCopy } from "./copy.ts";
+import { COPY } from "./pages/index.ts";
 
 export const PRODUCTION_SLUGS: readonly ProductionSlug[] = ["treatment-packages", "panchakarma", "pain-management", "family-ayurvedic-retreat"];
-const RAW: Record<ProductionSlug, unknown> = {
-  "treatment-packages": packagesJson, panchakarma: panchakarmaJson,
-  "pain-management": painJson, "family-ayurvedic-retreat": familyJson,
-};
 
 class ContentError extends Error {}
-const fail = (path: string, why: string): never => { throw new ContentError(`production content ${path}: ${why}`); };
-type Obj = Record<string, unknown>;
-const obj = (v: unknown, path: string): Obj => (v && typeof v === "object" && !Array.isArray(v) ? (v as Obj) : fail(path, "expected an object"));
-const arr = (v: unknown, path: string): unknown[] => (Array.isArray(v) ? v : fail(path, "expected an array"));
-const str = (v: unknown, path: string, { empty = false } = {}): string =>
-  typeof v === "string" && (empty || v.trim()) ? v : fail(path, empty ? "expected a string" : "expected a non-empty string");
-const strs = (v: unknown, path: string): string[] => arr(v, path).map((x, i) => str(x, `${path}[${i}]`));
-const opt = (v: unknown, path: string): string | undefined => (v === undefined ? undefined : str(v, path, { empty: true }));
+function fail(path: string, why: string): never {
+  throw new ContentError(`production content ${path}: ${why}`);
+}
 
-function inline(v: unknown, path: string): BodyInline[] {
-  return arr(v, path).map((x, i) => {
-    const r = obj(x, `${path}[${i}]`);
-    if (r.type === "text") return { type: "text", text: str(r.text, `${path}[${i}].text`, { empty: true }) };
-    if (r.type === "link") return { type: "link", text: str(r.text, `${path}[${i}].text`), href: str(r.href, `${path}[${i}].href`) };
-    return fail(`${path}[${i}].type`, `unknown inline type ${String(r.type)}`);
+/** Registry doctors, current consented roster only (never a departed or pending doctor). */
+function toDoctors(ids: readonly string[]): DoctorRef[] {
+  if (!ids.length) fail("doctors", "no doctors");
+  return ids.map((id, i) => {
+    if (!CURRENT_ROSTER.includes(id)) fail(`doctors[${i}]`, `${id} is not on the current consented roster`);
+    return DOCTORS[id] ?? fail(`doctors[${i}]`, `no registry entry for ${id}`);
   });
 }
 
-/** One typed block. Only the documented fields are kept (CONTENT-READY.json schema.blockTypes). */
-export function toBlock(v: unknown, path: string): BodyBlock {
-  const b = obj(v, path);
-  switch (b.type) {
-    case "h2": case "h3": case "p": {
-      const block: BodyBlock = { type: b.type as "h2" | "h3" | "p", text: str(b.text, `${path}.text`) };
-      return b.inline === undefined ? block : { ...block, inline: inline(b.inline, `${path}.inline`) };
-    }
-    case "quote": return { type: "quote", text: str(b.text, `${path}.text`), attribution: str(b.attribution, `${path}.attribution`) };
-    case "list": return { type: "list", items: strs(b.items, `${path}.items`) };
-    case "table": return { type: "table", headers: strs(b.headers, `${path}.headers`), rows: arr(b.rows, `${path}.rows`).map((r, i) => strs(r, `${path}.rows[${i}]`)) };
-    case "programme": {
-      const sanskrit = opt(b.sanskrit, `${path}.sanskrit`);
-      return { type: "programme", label: str(b.label, `${path}.label`), href: str(b.href, `${path}.href`), ...(sanskrit ? { sanskrit } : {}) };
-    }
-    case "videoLink": {
-      const thumbnail = opt(b.thumbnail, `${path}.thumbnail`);
-      return { type: "videoLink", href: str(b.href, `${path}.href`), label: str(b.label, `${path}.label`), ...(thumbnail ? { thumbnail } : {}) };
-    }
-    case "image": {
-      const caption = opt(b.caption, `${path}.caption`);
-      const w = typeof b.sourceWidth === "number" ? b.sourceWidth : undefined;
-      const h = typeof b.sourceHeight === "number" ? b.sourceHeight : undefined;
-      return { type: "image", src: str(b.src, `${path}.src`), alt: str(b.alt, `${path}.alt`), ...(caption ? { caption } : {}), ...(w && h ? { sourceWidth: w, sourceHeight: h } : {}) };
-    }
-    case "link": return { type: "link", text: str(b.text, `${path}.text`), href: str(b.href, `${path}.href`) };
-    default: return fail(`${path}.type`, `unknown block type ${String(b.type)}`);
+/** The route's enquiry form: the default production form, or its own (family: with the copy's health-field note). */
+function toForm(binding: RouteBinding, copy: ProductionCopy): FormSchema {
+  if (binding.productionForm.profile === "family-retreat") {
+    const note = copy.familyFormNote?.trim() ? copy.familyFormNote : fail("familyFormNote", "the family form needs its health-field note");
+    return productionFamilyForm(note);
   }
-}
-
-function toBody(copy: Obj): SourceBody {
-  const sections: BodySection[] = arr(copy.sourceBody, "sourceBody").map((s, i) => {
-    const sec = obj(s, `sourceBody[${i}]`);
-    return { sourceSection: str(sec.sourceSection, `sourceBody[${i}].sourceSection`), blocks: arr(sec.blocks, `sourceBody[${i}].blocks`).map((b, j) => toBlock(b, `sourceBody[${i}].blocks[${j}]`)) };
-  });
-  return {
-    intro: strs(copy.sourceBodyIntro, "sourceBodyIntro"),
-    sections,
-    closing: arr(copy.sourceBodyClosing, "sourceBodyClosing").map((b, j) => toBlock(b, `sourceBodyClosing[${j}]`)),
-  };
-}
-
-function toFeePresentation(v: unknown): FeePresentation {
-  const f = obj(v, "feePresentation");
-  if (f.mode !== "enquiry-only") fail("feePresentation.mode", "expected enquiry-only");
-  return { mode: "enquiry-only", heading: str(f.heading, "feePresentation.heading"), body: str(f.body, "feePresentation.body"), cta: str(f.cta, "feePresentation.cta") };
-}
-
-function toDoctors(v: unknown): DoctorRef[] {
-  return strs(v, "doctorRegistryIds").map((id, i) => DOCTORS[id] ?? fail(`doctorRegistryIds[${i}]`, `no registry entry for ${id}`));
-}
-
-/** copy.inclusionHeadings: exactly { included, chargedSeparately }, both non-empty; any other key is unbound copy. */
-function toInclusionHeadings(v: unknown): InclusionHeadings {
-  const h = obj(v, "inclusionHeadings");
-  for (const k of Object.keys(h)) if (k !== "included" && k !== "chargedSeparately") fail(`inclusionHeadings.${k}`, "no binding for this heading");
-  return { included: str(h.included, "inclusionHeadings.included"), chargedSeparately: str(h.chargedSeparately, "inclusionHeadings.chargedSeparately") };
-}
-
-/** The route's enquiry form: the default production form, or its own (family: with copy.familyFormNote on the health field). */
-function toForm(binding: RouteBinding, copy: Obj): FormSchema {
-  if (binding.productionForm.profile === "family-retreat") return productionFamilyForm(str(copy.familyFormNote, "familyFormNote"));
   if (copy.familyFormNote !== undefined) fail("familyFormNote", `not bound on ${binding.route} (family form only)`);
   return binding.productionForm.profile === "pain-management" ? PRODUCTION_PAIN_FORM : PRODUCTION_CAMPAIGN_FORM;
 }
 
-/** Every body link is safe; a tel:/mailto: link is one of the site's own contact links, showing its own text. */
+/**
+ * Every link is safe; a tel:/mailto: link is one of the site's own contact links, showing its own text; an in-page
+ * link is one the consent runtime measures (any other fragment stops measurement and the lead conversion); no link
+ * leads to a tariff or rate document.
+ */
 function checkLinks(c: CampaignConfig): void {
-  for (const { path, href, text } of bodyLinks(c)) {
+  for (const { path, href, text } of pageLinks(c)) {
     if (!safeHref(href)) fail(path, `unsafe or malformed link: ${href}`);
     if (isKnownContactHref(href) && !isKnownContactLink(href, text)) fail(path, `contact link ${href} must show its own locked text, not "${text}"`);
+    if (href.startsWith("#") && !MEASURED_HASHES.test(href)) fail(path, `in-page link ${href} is not measured by the consent runtime; use #enquiry`);
+    if (RATE_LINK.test(href) || RATE_LINK.test(text)) fail(path, `rate/tariff link "${text}" → ${href} (owner: no rate downloads)`);
+  }
+}
+
+/** Owner rule (hidden pricing): no amount anywhere in the page's copy or its FAQ. */
+function checkPrices(c: CampaignConfig): void {
+  const texts = [...pageText(c), ...c.faq.map((f, i) => ({ path: `faq[${i}]`, text: `${f.q} ${String(f.a)}` }))];
+  for (const { path, text } of texts) {
+    const m = text.match(PRICE);
+    if (m) fail(path, `numeric price "${m[0]}" (owner: no prices on these pages)`);
   }
 }
 
 /** The production CampaignConfig of one live ad route. Throws on any content problem. */
 export function productionCampaign(slug: ProductionSlug): CampaignConfig {
   const binding: RouteBinding = ROUTES[slug] ?? fail("slug", `unknown production route ${slug}`);
-  const file = obj(RAW[slug], slug);
-  const copy = obj(file.copy, "copy");
-  if (copy.route !== binding.route) fail("copy.route", `${String(copy.route)} is not ${binding.route}`);
-  if (copy.slug !== binding.slug) fail("copy.slug", `${String(copy.slug)} is not ${binding.slug}`);
-  // Route-bound headings (family only): required where bound, and never silently ignored elsewhere.
-  if (!binding.inclusionHeadings && copy.inclusionHeadings !== undefined) fail("inclusionHeadings", `not bound on ${binding.route}`);
-  const inclusionHeadings = binding.inclusionHeadings ? toInclusionHeadings(copy.inclusionHeadings) : undefined;
-  // Owner rule: hidden pricing. The copy must carry no fee data and no offer block at all.
-  if (copy.fees !== null) fail("copy.fees", "must be null (owner-approved hidden pricing)");
-  if (copy.offer !== null) fail("copy.offer", "must be null on these routes");
-  const seo = obj(copy.seo, "seo");
-  const hero = obj(copy.hero, "hero");
-  const admission = obj(copy.admission, "admission");
-  const stillness = obj(copy.stillness, "stillness");
-  const village = obj(copy.village, "village");
-  const adMatch = obj(copy.adMatch, "adMatch");
-  const h1Accent = opt(hero.h1Accent, "hero.h1Accent");
+  const copy: ProductionCopy = COPY[slug] ?? fail("slug", `no copy for ${slug}`);
+  if (copy.slug !== binding.slug) fail("copy.slug", `${copy.slug} is not ${binding.slug}`);
+  if (copy.route !== binding.route) fail("copy.route", `${copy.route} is not ${binding.route}`);
+  const p = copy.page;
   const heroImage = binding.heroImage;
-  const programDefault = str(copy.programDefault, "programDefault", { empty: true });
   const c: CampaignConfig = {
     slug: binding.slug,
     route: binding.route,
@@ -155,54 +88,39 @@ export function productionCampaign(slug: ProductionSlug): CampaignConfig {
     modesty: "standard",
     wordingOverrides: [],
     production: true,
-    seo: { title: str(seo.title, "seo.title"), description: str(seo.description, "seo.description") },
-    adMatch: { keywords: strs(adMatch.keywords, "adMatch.keywords"), adHeadlines: strs(adMatch.adHeadlines, "adMatch.adHeadlines") },
+    seo: { title: copy.seo.title, description: copy.seo.description },
+    adMatch: { keywords: [...copy.adMatch.keywords], adHeadlines: [...copy.adMatch.adHeadlines] },
     hero: {
-      overline: str(hero.overline, "hero.overline"), h1: str(hero.h1, "hero.h1"), ...(h1Accent ? { h1Accent } : {}),
-      standfirst: str(hero.standfirst, "hero.standfirst"),
+      overline: copy.hero.overline, h1: copy.hero.h1, standfirst: copy.hero.standfirst,
       image: { A: heroImage, B: heroImage, C: heroImage, D: heroImage }, mobileImage: binding.mobileImage,
+      ...(binding.mobileHeroQuality === undefined ? {} : { mobileQuality: binding.mobileHeroQuality }),
     },
     // Without a ConsultBar (batch 2) the copy's program name is editorial context only: no form or lead value.
-    programDefault: binding.consultBar === false ? "" : programDefault,
+    programDefault: binding.consultBar === false ? "" : copy.programDefault,
     tracking: { campaignName: binding.slug, trackId: "" },
-    admission: {
-      heading: str(admission.heading, "admission.heading"),
-      steps: arr(admission.steps, "admission.steps").map((s, i) => {
-        const st = obj(s, `admission.steps[${i}]`);
-        return { title: str(st.title, `admission.steps[${i}].title`), body: str(st.body, `admission.steps[${i}].body`) };
-      }),
-    },
-    included: strs(copy.included, "included"),
-    chargedSeparately: strs(copy.chargedSeparately, "chargedSeparately"),
-    stillness: { heading: str(stillness.heading, "stillness.heading"), body: str(stillness.body, "stillness.body"), image: binding.stillnessImage },
-    doctors: toDoctors(copy.doctorRegistryIds),
-    village: { heading: str(village.heading, "village.heading"), body: str(village.body, "village.body") },
+    admission: { heading: p.pathway.heading, steps: p.pathway.steps.map((s) => ({ title: s.title, body: richText(s.body) })) },
+    included: p.stay.lists.filter((l) => !l.extra).flatMap((l) => l.items),
+    chargedSeparately: p.stay.lists.filter((l) => l.extra).flatMap((l) => l.items),
+    stillness: { heading: p.rest.heading, body: p.rest.paragraphs.join(" "), image: binding.stillnessImage },
+    doctors: toDoctors(copy.doctors),
+    village: { heading: p.place.heading, body: p.place.paragraphs.map(richText).join(" ") },
     gallery: binding.gallery,
     fees: null,
     offer: null,
-    faq: arr(copy.faq, "faq").map((f, i) => {
-      const q = obj(f, `faq[${i}]`);
-      return { q: str(q.q, `faq[${i}].q`), a: str(q.a, `faq[${i}].a`) };
-    }),
+    faq: copy.faq.map((f, i) => ({
+      q: f.q.trim() ? f.q : fail(`faq[${i}].q`, "empty question"),
+      a: f.a.trim() ? f.a : fail(`faq[${i}].a`, "unanswered question"),
+    })),
     longForm: "",
     pricing: PRICING_HIDDEN,
-    feePresentation: toFeePresentation(copy.feePresentation),
-    cta: { primary: str(copy.primaryCta, "primaryCta"), primarySupport: str(copy.primaryCtaSupport, "primaryCtaSupport"), secondary: str(copy.secondaryCta, "secondaryCta") },
+    cta: { primary: copy.cta.primary, primarySupport: copy.cta.primarySupport, secondary: copy.cta.secondary },
     productionForm: binding.productionForm,
-    body: toBody(copy),
-    sourcePreservation: SOURCE_PRESERVATION,
     spelling: SPELLING,
     form: { schema: toForm(binding, copy), adapterId: "ahv-production" },
-    ...(inclusionHeadings ? { inclusionHeadings } : {}),
+    page: { ...p, pathway: { ...p.pathway, image: binding.pathwayImage } },
     ...(binding.consultBar === false ? { consultBar: false as const } : {}),
   };
   checkLinks(c);
+  checkPrices(c);
   return c;
-}
-
-/** The archival longForm word count of a route's copy (audit only; never rendered). */
-export function archivalLongFormWords(slug: ProductionSlug): number {
-  const copy = obj(obj(RAW[slug], slug).copy, "copy");
-  const t = typeof copy.longForm === "string" ? copy.longForm.trim() : "";
-  return t ? t.split(/\s+/).length : 0;
 }

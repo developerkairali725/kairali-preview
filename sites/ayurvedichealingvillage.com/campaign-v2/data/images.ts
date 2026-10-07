@@ -5,6 +5,10 @@ const photo = (id: string, file: string, width: number, height: number, alt: str
   id, src: P + file, width, height, alt, decorative: false, gccSafe: true,
   location: "palakkad", consent: "confirmed", ...o,
 });
+/** A photograph from the site's own asset folder (public/ahv/assets/img), used as published. */
+const staff = (id: string, file: string, width: number, height: number, alt: string): ImageRef => ({
+  ...photo(id, file, width, height, alt), src: `/ahv/assets/img/${file}`,
+});
 
 export const IMAGES: Record<string, ImageRef> = {
   "kt-199": photo("kt-199", "kt-199.jpg", 1600, 1067, "Two therapists performing four-hand Abhyangam with warm medicated oil", { gccSafe: false }),
@@ -25,4 +29,10 @@ export const IMAGES: Record<string, ImageRef> = {
   "team-deepu-john-portrait": photo("team-deepu-john-portrait", "team-deepu-john-portrait.jpg", 717, 896, "Dr. Deepu John, Chief Physician at the Healing Village"),
   "team-akhila-oommen-portrait": photo("team-akhila-oommen-portrait", "team-akhila-oommen-portrait.jpg", 716, 895, "Dr. Akhila Oommen, Ayurvedic physician at the Healing Village"),
   "team-ashikha-raj-portrait": photo("team-ashikha-raj-portrait", "team-ashikha-raj-portrait.jpg", 664, 830, "Dr. Ashikha Raj, Ayurvedic physician at the Healing Village"),
+  // The current consented physician roster's own portraits (consent-backed staff facts published 28 Sep 2026): the
+  // files the physician section of the live ad routes shows (test/landing-current-physicians.test.mjs checks they
+  // exist). Served from the site's own assets, unchanged.
+  "team-rahul-r": staff("team-rahul-r", "team-rahul-r-c.webp", 943, 1421, "Dr. Rahul R, Ayurvedic physician at the Healing Village"),
+  "team-adhina-ub": staff("team-adhina-ub", "team-adhina-ub.webp", 600, 900, "Dr. Adhina U.B., Resident Medical Officer at the Healing Village"),
+  "team-aashitha-ps": staff("team-aashitha-ps", "team-aashitha-ps.webp", 600, 900, "Dr. Aashitha P.S., Ayurvedic physician at the Healing Village"),
 };

@@ -321,6 +321,9 @@ Gulf-targeted campaigns use the registry's `gccSafe: true` images only: covered 
 **Never write, including in FAQs, the long form, alt text, film titles or translations:**
 - Cure or curative language, "heals", "reverses", "eliminates". <!-- compliance-allow: cure, cure-claims -->
 - Disease-treatment claims. This covers the DMR Act Schedule: obesity, diabetes, blood pressure, cholesterol, thyroid, cancer, arthritis, infertility and so on. Use symptom and well-being language ("support", "relief from everyday stiffness"), and keep even that cautious.
+  - Naming a diagnosis a visitor may already have, as something to discuss with the doctor, is not a claim ("Discuss osteoarthritis, rheumatoid arthritis or other joint concerns"). `lp:check` lists each such mention as a `disease.mention` warning for clinical review.
+  - It becomes a claim, and an error, when its sentence asserts treating, relieving, controlling or otherwise changing a condition, however far apart the words are ("We treat persistent and longstanding cases of complex type 2 diabetes"), ties a service to it ("treatment for …", "our arthritis programme") or offers something for it ("Ayurveda for diabetes"). Negations stay claims ("not a treatment for blood pressure").
+  - The visitor's own history stays neutral: "how you currently manage your blood pressure", "your current diabetes treatment", "any previous treatment for arthritis".
 - Numeric outcomes:
   - kilograms lost, "% of patients", "in N days"
   - "87% improvement", "94% sustain results"
@@ -424,6 +427,7 @@ The default variant is a starting hypothesis. All four variants are generated fo
 | Length budgets (§3, including film titles, fee rows and the offer), visible-word range, reading level > grade 8 | error |
 | Gallery category with fewer than 2 images | warning |
 | Claims patterns (§9), numeric outcomes, superlatives | error |
+| A disease named as a diagnosis to discuss, with no treatment claim (§9) | warning (`disease.mention`, for clinical review) |
 | Banned register words without an override | warning; the PR reviewer blocks |
 | British spellings (programme, centre, colour, practise as a verb, traveller) | error |
 | Non-Ref-Sheet program names / therapy spellings | warning |

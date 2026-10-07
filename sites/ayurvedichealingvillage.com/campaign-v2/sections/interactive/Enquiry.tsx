@@ -4,6 +4,7 @@ import { CHANNELS, LENGTHS, formSchemaFor, monthOptions, programOptions, resolve
 import type { PrefillLabels } from "./consult-prefill.ts";
 import { contact, site } from "../../../campaign-v110/lib/site.ts";
 import { WaIcon, PhoneIcon } from "../icons";
+import { Rich } from "../rich";
 import EnquiryForm from "./EnquiryForm";
 
 /**
@@ -24,10 +25,14 @@ export default function Enquiry({ c, v, req }: SectionProps) {
     program: programOptions(octx), month: monthOptions(octx), length: LENGTHS,
     channel: CHANNELS.map((x) => ({ value: x.id, label: x.label })),
   };
+  // A designed production page closes with its own invitation, and says what "free" covers beside the form.
+  const closing = production ? c.page?.closing : undefined;
   return (
     <section id="enquiry" className="lp-sec lp-enq" aria-labelledby="lp-enq-h">
       <div className="lp-enq__intro">
-        <SectionHead v={v} kicker="Free doctor consultation" title="Tell us when. Your doctor’s team will plan the rest." id="lp-enq-h" />
+        <SectionHead v={v} kicker="Free doctor consultation" title={closing?.heading ?? "Tell us when. Your doctor’s team will plan the rest."} id="lp-enq-h" />
+        {closing?.paragraphs.map((p, i) => <p key={i} className="lp-enq__lede"><Rich text={p} /></p>)}
+        {closing && c.cta?.primarySupport ? <p className="lp-enq__lede lp-enq__support">{c.cta.primarySupport}</p> : null}
         {schema.lede ? <p className="lp-enq__lede">{schema.lede}</p> : null}
         <ul className="lp-enq__contact">
           <li>

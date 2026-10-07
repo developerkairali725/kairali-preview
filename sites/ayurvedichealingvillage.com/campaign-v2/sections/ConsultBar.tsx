@@ -50,7 +50,7 @@ export function ConsultForm({ c, v, req, position, carry }: SectionProps & { pos
       <div className="lp-consult__fields">
         {c.programDefault ? (
           <div className="lp-consult__field">
-            <label htmlFor={id("program")}>Program</label>
+            <label htmlFor={id("program")}>{c.spelling?.locale === "en-GB" ? "Programme" : "Program"}</label>
             <select id={id("program")} name="program" defaultValue={c.programDefault}>
               <option value={c.programDefault}>{c.programDefault}</option>
               <option value="advise">Not sure — advise me</option>

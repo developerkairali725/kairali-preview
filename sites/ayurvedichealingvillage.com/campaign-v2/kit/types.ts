@@ -24,6 +24,12 @@ export type DoctorRef = {
   /** Verbatim focus line from the approved source. */
   focus?: string;
   languages: Maybe<string[]>; photo: ImageRef;
+  /**
+   * How `photo` sits in a 4:5 card (production doctor cards): `position` = CSS object-position, then the photo is
+   * enlarged `zoom` times about `origin`. Lets portraits framed differently (full-length vs head-and-shoulders) show
+   * faces at a similar size and height. Absent = centred, top-weighted, not enlarged.
+   */
+  frame?: { position: string; origin: string; zoom: number };
 };
 export type Money = Partial<Record<Currency, number>>;
 export type FeeRow = { name: string; note: string; single: Money; twinEach: Money };
@@ -35,32 +41,52 @@ export type Translation = { locale: Locale; review: "approved" | "pending" };
 
 /** Owner-approved hidden pricing (owner, 7 Oct 2026: campaign pages show no numeric prices or rate downloads). */
 export type PricingPolicy = { display: "hidden"; approvedBy: "owner"; date: string; rule: string };
-/** What replaces the fee table when pricing is hidden: an enquiry-only quotation block. */
-export type FeePresentation = { mode: "enquiry-only"; heading: string; body: string; cta: string };
-/** Admission list headings from the copy (family route): quotation-confirmation labels instead of the kit's "Included" / "Charged separately". */
-export type InclusionHeadings = { included: string; chargedSeparately: string };
 /**
  * A live ad route's existing enquiry form, when it differs from the default production form. "family-retreat" = the
  * R10 form with familyFields (gender, country, preferred duration, "Any existing health conditions?").
  */
 export type ProductionFormProfile = "family-retreat" | "pain-management";
 
-// Preserved source body (content contract of 7 Oct 2026, CONTENT-READY.json). `sourceSection` is an audit key
-// (also the old page's anchor id), never public copy. Inline runs, when present, replace `text`.
-export type BodyInline = { type: "text"; text: string } | { type: "link"; text: string; href: string };
-export type BodyBlock =
-  | { type: "h2" | "h3" | "p"; text: string; inline?: BodyInline[] }
-  | { type: "quote"; text: string; attribution: string }
-  | { type: "list"; items: string[] }
-  | { type: "table"; headers: string[]; rows: string[][] }
-  | { type: "programme"; label: string; href: string; sanskrit?: string }
-  | { type: "videoLink"; href: string; label: string; thumbnail?: string; sourceSection?: string }
-  | { type: "image"; src: string; alt: string; caption?: string; sourceWidth?: number; sourceHeight?: number }
-  | { type: "link"; text: string; href: string };
-export type BodySection = { sourceSection: string; blocks: BodyBlock[] };
-export type SourceBody = { intro: string[]; sections: BodySection[]; closing: BodyBlock[] };
-/** Owner rule: >=95% of the useful source copy survives. Replaces the generic long-form caps, measured by a test. */
-export type SourcePreservation = { approvedBy: "owner"; date: string; rule: string; minRetention: number };
+// ── The designed production page (the live ad routes) ─────────────────────────────────────────────────────
+// The reviewed copy of a live ad route, arranged by the production template (production/ProductionPage.tsx).
+// Content only: which section shows it, in what order and how, is the template's decision.
+
+/**
+ * Copy with inline links: plain text in which "[label](href)" marks a link (kit/rich.ts). No other syntax and
+ * no HTML; every href must pass kit/lint/body.ts safeHref.
+ */
+export type RichText = string;
+export type PageLink = { label: string; href: string };
+/** The opening argument: why this page, in the reader's terms. `points` = the concerns or situations it covers. */
+export type PageLead = { heading: string; paragraphs: RichText[]; points?: string[] };
+/** What the page offers, in one of three forms chosen for the content's shape. `kicker` = the section's overline. */
+export type PageOffering = { kicker?: string } & (
+  /** A few families of programmes or topics as cards; `programmeLinks` = the links are programme pages (diagnostics). */
+  | { kind: "cards"; heading: string; intro?: RichText[]; cards: { title: string; links?: PageLink[]; paragraphs: RichText[] }[]; programmeLinks?: true }
+  /** Named items completing a sentence, set as one numbered row (the five Panchakarma procedures). */
+  | { kind: "row"; heading: string; lead: string; items: string[]; paragraphs: RichText[] }
+  /** Many short topics as a numbered index of disclosures (family: each person's concern). */
+  | { kind: "index"; heading: string; intro?: RichText[]; topics: { title: string; body: RichText }[] }
+);
+/** From the first conversation to the stay: two or three numbered steps. `image` is bound per route (bindings.ts). */
+export type PagePathway = { heading: string; intro?: RichText[]; steps: { title: string; body: RichText }[]; image?: ImageRef };
+/** The quiet band over the decorative stillness photograph. */
+export type PageRest = { heading: string; paragraphs: string[] };
+/** The village and its villas: copy, optional villa cards, then the photo mosaic and the full gallery. */
+export type PagePlace = { heading: string; paragraphs: RichText[]; villas?: { name: string; body: string; link: PageLink }[] };
+/** What a stay covers and how it is quoted (owner: no numeric prices; enquiry-only quotation). `extra` = charged separately. */
+export type PageStay = { heading: string; paragraphs: RichText[]; lists: { heading?: string; items: string[]; extra?: true }[]; after?: RichText[] };
+/** Patient films, as on the page this replaces: outbound YouTube links (no embedded player), with local thumbnails. */
+export type PageStory = { title: string; href: string; thumb: { src: string; width: number; height: number } };
+export type PageStories = { heading: string; body: string; films: PageStory[] };
+/** The doctors section's own words; the roster and every fact on the cards come from data/doctors.ts. */
+export type PageDoctors = { heading: string; intro: string };
+/** The enquiry section's heading and invitation. */
+export type PageClosing = { heading: string; paragraphs: RichText[] };
+export type ProductionPage = {
+  lead: PageLead; offering: PageOffering; pathway: PagePathway; rest: PageRest; place: PagePlace;
+  stories?: PageStories; stay: PageStay; doctors: PageDoctors; faqHeading: string; closing: PageClosing;
+};
 
 export type CampaignConfig = {
   slug: string;
@@ -79,6 +105,8 @@ export type CampaignConfig = {
   hero: {
     overline: string; h1: string; h1Accent?: string; standfirst: string;
     image: Record<Variant, ImageRef>; mobileImage: ImageRef;
+    /** Optional responsive-image encoding quality; original media and desktop delivery stay unchanged. */
+    mobileQuality?: number;
   };
   programDefault: string;
   tracking: { campaignName: string; trackId: string };
@@ -86,7 +114,7 @@ export type CampaignConfig = {
   included: string[];
   chargedSeparately: string[];
   stillness: { heading: string; body: string; image: ImageRef };
-  /** Optional: a production page with a preserved source body carries its films there instead. */
+  /** Optional: a designed production page (`page`) carries its patient films as `page.stories` instead. */
   films?: { featured: FilmRef; more: FilmRef[] };
   doctors: DoctorRef[];
   village: { heading: string; body: string };
@@ -98,17 +126,16 @@ export type CampaignConfig = {
   longForm: string;
   /** Production surface only (the live ad routes). Absent on /lp-v2 previews. */
   pricing?: PricingPolicy;
-  feePresentation?: FeePresentation;
   cta?: { primary: string; primarySupport?: string; secondary?: string };
   /** The route's existing lead identity (fields.form_variant, guide download, form profile), for the "ahv-production" adapter. */
   productionForm?: { formVariant: string; downloadGuide: boolean; profile?: ProductionFormProfile };
-  /** Production surface only: the copy's own Admission list headings. Absent = the kit's "Included" / "Charged separately". */
-  inclusionHeadings?: InclusionHeadings;
   /** Production surface only: false = no Step-1 ConsultBar (its program / month / 14–28-night questions are not this route's form). */
   consultBar?: false;
-  /** Preserved source body; when present, `longForm` is not rendered and must be empty. */
-  body?: SourceBody;
-  sourcePreservation?: SourcePreservation;
+  /**
+   * Production surface only: the designed page (production/ProductionPage.tsx). When present, `longForm` is empty and
+   * the kit fields it supersedes (admission, included, chargedSeparately, village) mirror it for the shared kit code.
+   */
+  page?: ProductionPage;
   /** House spelling for the lint. Default "en-US" (guide §8.1); "en-GB" only with a recorded reason. */
   spelling?: { locale: "en-US" } | { locale: "en-GB"; reason: string };
   /** Optional extra schema.org objects (SEO / AI-search), appended after the generated JSON-LD. See integrations/README.md. */

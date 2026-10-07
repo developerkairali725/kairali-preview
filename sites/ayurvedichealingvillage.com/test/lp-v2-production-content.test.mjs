@@ -1,67 +1,46 @@
-// Live ad routes: the content worker's frozen copy, rendered faithfully. Provenance (SHA-256), the
-// owner rules (hidden pricing; >=95% of the useful source copy, measured), the structured body (links, tables,
-// videos, photographs, attributed quotes), doctors, links, media, metadata. Nothing here edits copy: a failing
-// assertion is a content finding for the copy owner. Invariants run on every route; batch-1 facts (counts,
-// archival long form, the retain/replace/omit disposition) on BATCH1 only. Batch 2: lp-v2-production-batch2.test.mjs.
+// Live ad routes: the reviewed copy of 8 Oct 2026 (production/pages/*.ts), designed into one template
+// (production/ProductionPage.tsx). Owner rules (hidden pricing; one FAQ; the doctors two sections further down and
+// shown once; the KTAHV register), doctors, links, media, metadata. Nothing here edits copy: a failing assertion is
+// a content finding for the copy owner. Batch-2 form and lead contracts: lp-v2-production-batch2.test.mjs.
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
-import crypto from "node:crypto";
 import { fileURLToPath } from "node:url";
-import { productionCampaign, PRODUCTION_SLUGS, archivalLongFormWords } from "../campaign-v2/production/load.ts";
-import { ROUTES, OG_IMAGE, PRICING_HIDDEN, SOURCE_PRESERVATION } from "../campaign-v2/production/bindings.ts";
+import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/load.ts";
+import { ROUTES, OG_IMAGE, PRICING_HIDDEN, SITE_ORIGIN } from "../campaign-v2/production/bindings.ts";
+import { COPY } from "../campaign-v2/production/pages/index.ts";
 import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
-import { allText, bodyText } from "../campaign-v2/kit/lint/claims.ts";
-import { bodyLinks, MEASURED_HASHES, isKnownContactHref, isKnownContactLink } from "../campaign-v2/kit/lint/body.ts";
+import { allText } from "../campaign-v2/kit/lint/claims.ts";
+import { pageLinks, pageText } from "../campaign-v2/kit/lint/page-text.ts";
+import { MEASURED_HASHES, isKnownContactHref, isKnownContactLink } from "../campaign-v2/kit/lint/body.ts";
 import { PRICE, RATE_LINK } from "../campaign-v2/kit/lint/pricing.ts";
-import { inlineText, renderedTexts } from "../campaign-v2/production/body-model.ts";
 import { productionMetadata, productionJsonLd } from "../campaign-v2/production/metadata.ts";
-import { parseMarkdown } from "../campaign-v2/sections/markdown.ts";
+import { interactionForLink, PROGRAMME_LINKS } from "../campaign-v2/production/interaction-map.ts";
+import { CURRENT_ROSTER, DOCTORS } from "../campaign-v2/data/doctors.ts";
+import { richLinks, richRuns, richText } from "../campaign-v2/kit/rich.ts";
 import { contact } from "../campaign-v110/lib/site.ts";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const P = (...p) => path.join(SITE, ...p);
 const read = (p) => fs.readFileSync(P(p), "utf8");
-const NOW = new Date(Date.UTC(2026, 9, 7, 12));
+const NOW = new Date(Date.UTC(2026, 9, 8, 12));
 const C = Object.fromEntries(PRODUCTION_SLUGS.map((s) => [s, productionCampaign(s)]));
 const BATCH1 = ["treatment-packages", "panchakarma"];
-const blocksOf = (c) => [...c.body.sections.flatMap((s) => s.blocks), ...c.body.closing];
 
-/** Every visible string of a production page (authored copy, doctor cards, the source body as rendered). */
+/** Every visible string of a production page: hero, CTAs, the designed sections, the FAQ, the doctor cards, alt text. */
 function pageStrings(c) {
-  const t = [
-    c.hero.overline, c.hero.h1, c.hero.standfirst, c.admission.heading, ...c.admission.steps.flatMap((s) => [s.title, s.body]),
-    ...c.included, ...c.chargedSeparately, c.stillness.heading, c.stillness.body, c.village.heading, c.village.body,
-    ...c.faq.flatMap((f) => [f.q, f.a]), c.feePresentation.heading, c.feePresentation.body, c.feePresentation.cta,
-    c.cta.primary, c.cta.primarySupport, c.cta.secondary,
+  return [
+    c.seo.title, c.seo.description, c.hero.overline, c.hero.h1, c.hero.standfirst, c.cta.primary, c.cta.primarySupport, c.cta.secondary,
+    ...c.faq.flatMap((f) => [f.q, f.a]),
+    ...pageText(c).map((x) => x.text),
     ...c.doctors.flatMap((d) => [d.name, d.role, d.qualification, d.tenure ?? "", d.focus ?? "", ...(Array.isArray(d.languages) ? d.languages : [])]),
-    ...c.gallery.map((g) => g.image.alt), c.hero.mobileImage.alt,
-  ];
-  for (const b of parseMarkdown(c.body.intro.join("\n\n"))) t.push(...(b.type === "ul" ? b.items : [b.text]));
-  for (const b of blocksOf(c)) {
-    t.push(...renderedTexts(b));
-    if (b.type === "programme" && b.sanskrit) t.push(`${b.label} ${b.sanskrit}`); // one list item on the page
-    if (b.type === "image") t.push(b.alt);
-  }
-  return t.filter((x) => typeof x === "string" && x);
+    ...c.gallery.map((g) => g.image.alt), c.hero.mobileImage.alt, c.page.pathway.image?.alt ?? "",
+  ].filter((x) => typeof x === "string" && x);
 }
-const norm = (s) => s.toLowerCase().replace(/[‘’]/g, "'").replace(/[“”]/g, '"').replace(/[–—]/g, "-").replace(/[^\p{L}\p{N}'%₹ -]+/gu, " ").replace(/\s+/g, " ").trim();
 
-// ── provenance ────────────────────────────────────────────────────────────────────────────────────────
-test("provenance: the copy and the disposition records are the content worker's frozen files (SHA-256)", () => {
-  const manifest = JSON.parse(read("campaign-v2/production/content/SOURCES.json"));
-  for (const [file, rec] of Object.entries(manifest.files)) {
-    const sha = crypto.createHash("sha256").update(fs.readFileSync(P("campaign-v2/production/content", file))).digest("hex");
-    assert.equal(sha, rec.sha256, file);
-  }
-  assert.deepEqual(Object.keys(manifest.files).sort(), [
-    "family-ayurvedic-retreat.json", "pain-management.json",
-    "panchakarma.disposition.json", "panchakarma.json", "treatment-packages.disposition.json", "treatment-packages.json",
-  ]);
-});
-
-test("loader: every route, unchanged URLs, Variant A, production, hidden pricing, no archival longForm", () => {
+// ── loader and copy ───────────────────────────────────────────────────────────────────────────────────
+test("loader: every route, unchanged URLs, Variant A, production, hidden pricing, the designed page", () => {
   for (const slug of PRODUCTION_SLUGS) {
     const c = C[slug];
     assert.equal(c.route, ROUTES[slug].route);
@@ -71,117 +50,167 @@ test("loader: every route, unchanged URLs, Variant A, production, hidden pricing
     assert.equal(c.fees, null);
     assert.equal(c.offer, null);
     assert.deepEqual(c.pricing, PRICING_HIDDEN);
-    assert.equal(c.feePresentation.mode, "enquiry-only");
-    assert.equal(c.longForm, "", "the superseded longForm is never rendered");
-    assert.deepEqual(c.sourcePreservation, SOURCE_PRESERVATION);
+    assert.equal(c.longForm, "", "the designed page carries the long copy in its sections");
+    assert.equal(c.films, undefined, "patient films are page.stories links, never an embedded player");
+    assert.ok(c.page, `${slug}: designed page`);
+    assert.equal(c.page.pathway.image, ROUTES[slug].pathwayImage);
     assert.equal(c.spelling.locale, "en-GB");
     assert.ok(c.spelling.reason.length > 20);
-    assert.equal(c.films, undefined, "films live in the source body");
   }
   assert.deepEqual([C["treatment-packages"].route, C.panchakarma.route], ["/ayurvedic-treatment-packages.html", "/panchkarma-treatment.html"]);
   assert.equal(C["treatment-packages"].programDefault, "");
   assert.equal(C.panchakarma.programDefault, "Panchakarma");
 });
 
-test("no truncation: the archival long form exceeds the kit's 1200-word cap, and the preserved body renders in full", () => {
-  for (const slug of BATCH1) {
-    assert.ok(archivalLongFormWords(slug) > 1200, `${slug}: ${archivalLongFormWords(slug)}`);
-    const words = bodyText(C[slug]).reduce((n, x) => n + x.text.trim().split(/\s+/).length, 0);
-    assert.ok(words > 1200, `${slug}: body renders ${words} words`);
+test("copy: each route's copy is its own, adapted from its reviewed brief (file and review hash recorded)", () => {
+  // CLEAN-COPY-REVIEW.json (independent factual/editorial/SEO review PASS, 8 Oct 2026).
+  const REVIEWED = {
+    "treatment-packages": "5f75d53cedd7a551adb9024636b13c2b81d8c5c58ad218e6cd67b0eb72b3772d",
+    panchakarma: "cce75640a02253b4d3c66206c91ecbb67236d23e326f052fff08f849ef5e240e",
+    "pain-management": "89cf5e4c3a21e7d3995e1aaef18980fbf3741e744343a6ea5a0942ce17200c57",
+    "family-ayurvedic-retreat": "f3b0d2d2f3703f2f4dd83acd4938746135bb272646bd7e8586d6e0f678101524",
+  };
+  assert.deepEqual(Object.keys(COPY).sort(), [...PRODUCTION_SLUGS].sort());
+  for (const slug of PRODUCTION_SLUGS) {
+    const copy = COPY[slug];
+    assert.equal(copy.slug, slug);
+    assert.equal(copy.route, ROUTES[slug].route);
+    assert.equal(copy.source.file, `${slug}.md`);
+    assert.equal(copy.source.sha256, REVIEWED[slug], slug);
   }
-  assert.deepEqual(BATCH1.map(archivalLongFormWords), [1354, 1676]);
+});
+
+test("copy: rich text is plain text with [label](href) links only; no HTML, no other markup", () => {
+  assert.deepEqual(richRuns("Choose [Deluxe](/deluxe-villa/) or [Royal](https://ayurvedichealingvillage.com/royal-villa/)."), [
+    { type: "text", text: "Choose " }, { type: "link", text: "Deluxe", href: "/deluxe-villa/" }, { type: "text", text: " or " },
+    { type: "link", text: "Royal", href: "https://ayurvedichealingvillage.com/royal-villa/" }, { type: "text", text: "." },
+  ]);
+  assert.equal(richText("Choose [Deluxe](/deluxe-villa/) villas."), "Choose Deluxe villas.");
+  assert.deepEqual(richLinks("No links here."), []);
+  for (const slug of PRODUCTION_SLUGS) for (const { path: at, text } of pageText(C[slug])) {
+    assert.doesNotMatch(text, /<[a-z/!]|\]\(|\*\*|__/i, `${slug} ${at}: markup in visible text`);
+  }
 });
 
 // ── lint ──────────────────────────────────────────────────────────────────────────────────────────────
-test("lint: no errors on either page apart from hidden-pricing findings (asserted separately below)", () => {
-  for (const slug of PRODUCTION_SLUGS) {
-    const { errors } = lintCampaign(C[slug], NOW);
-    assert.deepEqual(errors.filter((e) => !e.rule.startsWith("price.")), [], slug);
-  }
+test("lint: no errors on any page (lengths, claims, links, hidden pricing, assets)", () => {
+  for (const slug of PRODUCTION_SLUGS) assert.deepEqual(lintCampaign(C[slug], NOW).errors, [], slug);
 });
 
-test("lint: authored copy keeps the KTAHV register (no banned word, no claim); preserved-source findings are listed, not hidden", (t) => {
+test("lint: every visible string keeps the KTAHV register (no banned word, no claim, no reply-time promise)", () => {
   for (const slug of PRODUCTION_SLUGS) {
     const { warnings } = lintCampaign(C[slug], NOW);
     assert.deepEqual(warnings.filter((w) => w.rule === "register" || w.rule === "reply-time" || w.rule === "claims"), [], slug);
-    for (const w of warnings.filter((w) => w.rule.endsWith(".preservedSource"))) t.diagnostic(`${slug} ${w.rule} ${w.path}: ${w.message}`);
-    for (const { path, text } of allText(C[slug])) assert.doesNotMatch(text, /\b(spa|resort|holiday|luxury|cure[sd]?|journey|guests?)\b/i, `${slug} ${path}`);
+    for (const text of pageStrings(C[slug])) assert.doesNotMatch(text, /\b(spa|resort|holiday|luxury|cure[sd]?|journey|guests?)\b/i, `${slug}: ${text}`);
+  }
+});
+
+test("reviewed diagnosis topics stay, named neutrally: none dropped or broadened to clear a checker", () => {
+  // ADAPTED-FIRST4-COPY-FINDINGS.json TOPIC-01…06: the reviewed briefs' own wording.
+  const REVIEWED = [
+    ["treatment-packages", "skin conditions, diabetes, women’s health and postpartum care"],
+    ["pain-management", "Joint pain, osteoarthritis and rheumatoid arthritis"],
+    ["pain-management", "The doctor can discuss back pain, joint pain, arthritis, sciatica or related concerns"],
+    ["family-ayurvedic-retreat", "Cardiovascular health and blood pressure"],
+    ["family-ayurvedic-retreat", "Discuss your diagnosis, blood-pressure history and prescriptions."],
+    ["family-ayurvedic-retreat", "Diabetes and metabolism"],
+    ["family-ayurvedic-retreat", "Joint care and arthritis"],
+    ["family-ayurvedic-retreat", "Discuss osteoarthritis, rheumatoid arthritis or other joint concerns"],
+  ];
+  for (const [slug, s] of REVIEWED) assert.ok(pageStrings(C[slug]).some((x) => x.includes(s)), `${slug}: "${s}"`);
+  for (const slug of PRODUCTION_SLUGS) {
+    const { errors, warnings } = lintCampaign(C[slug], NOW);
+    assert.deepEqual(errors.filter((e) => /disease-treatment/.test(e.message)), [], slug);
+    // Every diagnosis a page names is listed for clinical review; the Panchakarma page names none.
+    assert.equal(warnings.some((w) => w.rule === "disease.mention"), slug !== "panchakarma", slug);
   }
 });
 
 // ── owner rule: hidden pricing ────────────────────────────────────────────────────────────────────────
-test("hidden pricing: no numeric price anywhere on either page", () => {
+test("hidden pricing: no numeric price anywhere on any page, and no rate or tariff link", () => {
   for (const slug of PRODUCTION_SLUGS) {
-    const leaks = pageStrings(C[slug]).filter((s) => PRICE.test(s));
-    assert.deepEqual(leaks, [], slug);
-    assert.deepEqual(lintCampaign(C[slug], NOW).errors.filter((e) => e.rule === "price.leak"), [], slug);
+    assert.deepEqual(pageStrings(C[slug]).filter((s) => PRICE.test(s)), [], slug);
+    assert.deepEqual(pageLinks(C[slug]).filter((l) => RATE_LINK.test(l.href) || RATE_LINK.test(l.text)), [], slug);
+    assert.ok(C[slug].page.stay.lists.length >= 1, `${slug}: the enquiry-only quotation section`);
   }
 });
 
-test("hidden pricing: no rate or tariff link on either page (content finding: needs the copy owner's decision)", () => {
-  const found = PRODUCTION_SLUGS.flatMap((slug) => bodyLinks(C[slug])
-    .filter((l) => RATE_LINK.test(l.href) || RATE_LINK.test(l.text))
-    .map((l) => `${slug} ${l.path}: "${l.text}" -> ${l.href}`));
-  assert.deepEqual(found, []);
-});
-
-// ── owner rule: >=95% of the useful source copy ───────────────────────────────────────────────────────
-// Batch 1's retain/replace/omit dispositions. Batch 2's ledgers use the richer action set of
-// SOURCE-PRESERVATION-METHOD.json and must not be fed into this loop (pending: per-page rendered-DOM check).
-test("source preservation: >=95% of the useful words of the live page render (baseline: the content worker's line disposition)", (t) => {
-  for (const slug of BATCH1) {
-    const corpus = ` ${pageStrings(C[slug]).map(norm).join(" | ")} `;
-    const d = JSON.parse(read(`campaign-v2/production/content/${slug}.disposition.json`));
-    let useful = 0, rendered = 0;
-    const missing = [];
-    const omitted = {};
-    for (const m of d.mapping) {
-      if (m.action === "omit") { omitted[m.reason] = (omitted[m.reason] ?? 0) + 1; continue; }
-      const text = m.action === "replace" ? m.output : m.source;
-      const n = norm(text);
-      if (!n) continue;
-      const w = n.split(" ").length;
-      useful += w;
-      if (corpus.includes(` ${n} `) || corpus.includes(n)) rendered += w;
-      else missing.push(`line ${m.line} (${m.action}): ${text}`);
+test("owner rule: 'free' is only ever the initial doctor consultation", () => {
+  for (const slug of PRODUCTION_SLUGS) {
+    const c = C[slug];
+    assert.equal(c.cta.primary, "Get Free Doctor Consultation");
+    assert.equal(c.cta.primarySupport, "Your initial consultation is free. Ask for a quotation covering treatment and any later services.");
+    for (const s of pageStrings(c)) for (const sentence of s.split(/(?<=[.;?!])\s+/)) {
+      if (/\bfree\b/i.test(sentence)) assert.match(sentence, /consultation|treatment, tests, medicines/i, `${slug}: "${sentence}"`);
     }
-    const ratio = rendered / useful;
-    t.diagnostic(`${slug}: ${rendered}/${useful} useful words rendered = ${(ratio * 100).toFixed(2)}% (floor ${SOURCE_PRESERVATION.minRetention * 100}%)`);
-    for (const [reason, n] of Object.entries(omitted)) t.diagnostic(`${slug}: omitted by the content worker, ${n} line(s): ${reason}`);
-    for (const m of missing) t.diagnostic(`${slug}: not rendered: ${m}`);
-    assert.ok(ratio >= SOURCE_PRESERVATION.minRetention, `${slug}: ${(ratio * 100).toFixed(2)}%`);
-    // omissions are only the recorded owner/UI categories
-    for (const reason of Object.keys(omitted)) assert.match(reason, /owner PPC06|repeated UI|numerical proof-strip/, reason);
   }
 });
 
-test("structured body: inline runs render exactly their text (adjacent tokens joined by one space)", () => {
-  for (const slug of PRODUCTION_SLUGS) for (const b of blocksOf(C[slug])) {
-    if ((b.type === "h2" || b.type === "h3" || b.type === "p") && b.inline) assert.equal(inlineText(b.inline), b.text, `${slug}: ${b.text}`);
+// ── the owner's corrections: composition ──────────────────────────────────────────────────────────────
+test("composition: one template in decision order; the doctors two sections further down, directly before the enquiry; one FAQ", () => {
+  const src = read("campaign-v2/production/ProductionPage.tsx");
+  const main = src.slice(src.indexOf("<main"), src.indexOf("</main>"));
+  const ORDER = ["Hero", "ConsultBar", "ProofStrip", "Lead", "Offering", "Pathway", "Rest", "Place", "Stories", "Stay", "Physicians", "Enquiry", "Faq"];
+  const at = ORDER.map((name) => {
+    const hits = [...main.matchAll(new RegExp(`<${name}\\b`, "g"))];
+    assert.equal(hits.length, 1, `<${name}> renders exactly once`);
+    return hits[0].index;
+  });
+  assert.deepEqual([...at].sort((a, b) => a - b), at, "sections in decision order");
+  // The rejected composition rendered Doctors straight after the stillness band, ahead of the village and the fee
+  // section, and the old page's source body (with its own physician section and FAQ) before the enquiry.
+  const idx = (name) => at[ORDER.indexOf(name)];
+  assert.ok(idx("Place") < idx("Physicians") && idx("Stay") < idx("Physicians"), "doctors follow the village and the quotation section");
+  assert.equal(ORDER[ORDER.indexOf("Physicians") + 1], "Enquiry", "doctors lead straight into the enquiry");
+  for (const gone of ["Doctors", "Body", "FeePlan", "Stillness", "Admission", "Village", "Films", "LongForm", "OfferBand", "Fees"]) {
+    assert.doesNotMatch(main, new RegExp(`<${gone}\\b`), `${gone} is not part of the designed page`);
   }
-  const nabh = blocksOf(C.panchakarma).find((b) => b.type === "p" && b.inline?.length === 2 && b.inline[0].text === "NABH accredited");
-  assert.equal(inlineText(nabh.inline), "NABH accredited Ayurvedic hospital");
+  assert.match(main, /\{c\.consultBar === false \? null : <ConsultBar \{\.\.\.p\} \/>\}/);
 });
 
-test("structured body: programmes, tables, rooms, videos, photographs, doctors and quotes as reviewed", () => {
-  const count = (slug, type) => blocksOf(C[slug]).filter((b) => b.type === type).length;
-  assert.equal(count("treatment-packages", "programme"), 31);
-  assert.equal(C["treatment-packages"].body.sections.find((s) => s.sourceSection === "section-1").blocks.filter((b) => b.type === "programme").length, 27);
-  assert.equal(C["treatment-packages"].body.sections.find((s) => s.sourceSection === "section-6").blocks.filter((b) => b.type === "programme").length, 4);
-  assert.ok(blocksOf(C["treatment-packages"]).filter((b) => b.type === "programme").every((b) => b.href.startsWith("/") && b.sanskrit));
-  assert.equal(count("treatment-packages", "table"), 2);
-  for (const tb of blocksOf(C["treatment-packages"]).filter((b) => b.type === "table")) assert.ok(tb.rows.every((r) => r.length === tb.headers.length));
-  const rooms = bodyLinks(C["treatment-packages"]).filter((l) => /villa|suite/i.test(l.href)).map((l) => l.href);
-  assert.deepEqual(rooms, ["/deluxe-villa/", "/classic-villa/", "/royal-villa/", "/maharaja-suite/"]);
-  assert.equal(count("treatment-packages", "videoLink") + count("panchakarma", "videoLink"), 10);
-  assert.equal(count("panchakarma", "image"), 7);
+test("one FAQ: the page's questions in one list, nowhere else, and FAQPage JSON-LD carries exactly those", () => {
   for (const slug of PRODUCTION_SLUGS) {
-    const names = blocksOf(C[slug]).filter((b) => b.type === "h3" && /^Dr\. /.test(b.text)).map((b) => b.text);
-    assert.deepEqual(names, ["Dr. Deepu John", "Dr. Rahul R", "Dr. Akhila Oommen", "Dr. Adhina U.B.", "Dr. Aashitha P.S."], slug);
+    const c = C[slug];
+    const qs = c.faq.map((f) => f.q);
+    assert.ok(qs.length >= 4 && qs.length <= 10, slug);
+    assert.equal(new Set(qs).size, qs.length, `${slug}: duplicate question`);
+    const sections = pageText(c).map((x) => x.text);
+    for (const q of qs) assert.ok(!sections.includes(q), `${slug}: "${q}" repeated outside the FAQ`);
+    const faq = productionJsonLd(slug, c).find((o) => o["@type"] === "FAQPage");
+    assert.deepEqual(faq.mainEntity.map((e) => e.name), qs, slug);
+    assert.deepEqual(faq.mainEntity.map((e) => e.acceptedAnswer.text), c.faq.map((f) => f.a), slug);
   }
-  const quote = blocksOf(C.panchakarma).find((b) => b.type === "quote");
-  assert.equal(quote.attribution, "Ashish Saini · Panchakarma guest");
-  assert.deepEqual(C["treatment-packages"].body.sections.map((s) => s.sourceSection), ["section-0", "section-1", "section-2", "section-3", "section-4", "section-5", "doctors", "section-6", "section-7", "section-8"]);
+});
+
+// ── doctors ───────────────────────────────────────────────────────────────────────────────────────────
+test("doctors: the current consented roster, once per page, every fact from the registry; no invented years; no Ashikha Raj", () => {
+  // The reviewed copy's own wording (owner-correction/*.md, "Meet your Ayurvedic doctors"), field by field.
+  const EXPECTED = {
+    "deepu-john": ["Dr. Deepu John", "Chief Physician & Head of Department", "BAMS", "Practising Ayurveda since 2010 · At Kairali since 2019", "Panchakarma and lifestyle management", ["Malayalam", "English", "Hindi", "Tamil"]],
+    "rahul-r": ["Dr. Rahul R", "Ayurvedic Physician", "BAMS", "At Kairali since 2023", undefined, ["English", "Malayalam", "Tamil"]],
+    "akhila-oommen": ["Dr. Akhila Oommen", "Ayurvedic Physician", "BAMS", "At Kairali since 2024", undefined, ["Malayalam", "Hindi", "English"]],
+    "adhina-ub": ["Dr. Adhina U.B.", "Resident Medical Officer", "BAMS", "At Kairali since 2026", undefined, ["English", "Malayalam"]],
+    "aashitha-ps": ["Dr. Aashitha P.S.", "Ayurvedic Physician", "BAMS", "At Kairali since 2026", undefined, ["Malayalam", "English", "Hindi", "Tamil"]],
+  };
+  assert.deepEqual([...CURRENT_ROSTER], Object.keys(EXPECTED));
+  for (const [id, [name, role, qualification, tenure, focus, languages]] of Object.entries(EXPECTED)) {
+    const d = DOCTORS[id];
+    assert.deepEqual([d.name, d.role, d.qualification, d.tenure, d.focus, d.languages], [name, role, qualification, tenure, focus, languages], id);
+    assert.equal(d.yearsInPractice, undefined, `${id}: years are omitted, never derived`);
+    assert.ok(fs.existsSync(P("public", d.photo.src)), d.photo.src);
+    assert.equal(d.photo.consent, "confirmed", id);
+    assert.ok(d.frame && d.frame.zoom >= 1, `${id}: portrait framing`);
+  }
+  for (const slug of PRODUCTION_SLUGS) {
+    const c = C[slug];
+    assert.deepEqual(c.doctors.map((d) => d.id), [...CURRENT_ROSTER], slug);
+    // The designed sections never repeat a biography: names appear only on the doctor cards.
+    for (const { path: at, text } of pageText(c)) assert.doesNotMatch(text, /\bDr\. /, `${slug} ${at}`);
+    assert.doesNotMatch(pageStrings(c).join(" | "), /Ashikh?a/);
+  }
+  // The landing pages' own physician section (production/sections/Physicians.tsx) is the only doctor list.
+  const sections = fs.readdirSync(P("campaign-v2/production/sections")).map((f) => read(`campaign-v2/production/sections/${f}`)).join("\n");
+  assert.equal((sections.match(/c\.doctors\.map/g) ?? []).length, 1);
 });
 
 // ── links and media ───────────────────────────────────────────────────────────────────────────────────
@@ -191,25 +220,50 @@ test("links: every same-site link resolves to a live route; anchors are measured
   const fixed = ["/", "/new-privacy-policy/", "/terms-and-conditions/", "/cookie-policy/", "/ppc-thanks/"];
   for (const p of fixed) assert.ok(ROUTE_SET.has(p), p);
   for (const slug of PRODUCTION_SLUGS) {
-    for (const { path: at, href, text } of bodyLinks(C[slug])) {
+    for (const { path: at, href, text } of pageLinks(C[slug])) {
+      const sameSite = href.startsWith(`${SITE_ORIGIN}/`) ? href.slice(SITE_ORIGIN.length) : href.startsWith("/") ? href : null;
       if (href.startsWith("#")) assert.match(href, MEASURED_HASHES, `${slug} ${at}`);
-      else if (href.startsWith("/")) assert.ok(ROUTE_SET.has(href.split(/[?#]/)[0]), `${slug} ${at}: ${href} not in english-candidate/routes.json`);
+      else if (sameSite) assert.ok(ROUTE_SET.has(sameSite.split(/[?#]/)[0]), `${slug} ${at}: ${href} not in english-candidate/routes.json`);
       else if (isKnownContactHref(href)) assert.ok(isKnownContactLink(href, text), `${slug} ${at}: ${href} shows "${text}"`);
-      else assert.match(href, /^https:\/\//, `${slug} ${at}`);
+      else assert.match(href, /^https:\/\/(www\.)?youtube\.com\/watch\?v=[\w-]{11}$/, `${slug} ${at}: the only off-site links are the patient films`);
     }
+  }
+  // The section CTAs and every in-page link point at the measured #enquiry fragment only.
+  const files = fs.readdirSync(P("campaign-v2/production/sections")).map((f) => `campaign-v2/production/sections/${f}`);
+  for (const f of files) for (const [, h] of read(f).matchAll(/href="(#[^"]*)"/g)) assert.match(h, MEASURED_HASHES, `${f}: ${h}`);
+});
+
+test("programme diagnostics: the treatment-packages programme links sit inside [data-programme-links] and report programme_open", () => {
+  assert.equal(PROGRAMME_LINKS, "[data-programme-links]");
+  assert.match(read("campaign-v2/production/sections/Offering.tsx"), /"data-programme-links": ""/);
+  assert.match(read("campaign-v2/production/Interactions.tsx"), /a\.closest\(PROGRAMME_LINKS\)/);
+  const o = C["treatment-packages"].page.offering;
+  assert.equal(o.kind, "cards");
+  assert.equal(o.programmeLinks, true);
+  const links = o.cards.flatMap((card) => card.links ?? []);
+  assert.equal(links.length, 11);
+  for (const l of links) assert.deepEqual(interactionForLink(l.href, true), ["programme_open", "programme"], l.href);
+  // Villa links stay outside it, as on the old page (its rooms section was not a programme section).
+  assert.ok(C["treatment-packages"].page.place.paragraphs.join(" ").includes("/deluxe-villa/"));
+});
+
+test("media: every page photograph, portrait and film thumbnail is in public/", () => {
+  for (const slug of PRODUCTION_SLUGS) {
+    const c = C[slug];
+    const imgs = [c.hero.image.A, c.hero.mobileImage, c.stillness.image, c.page.pathway.image, ...c.gallery.map((g) => g.image), ...c.doctors.map((d) => d.photo)];
+    for (const im of imgs) assert.ok(fs.existsSync(P("public", im.src)), `${slug}: ${im.src}`);
+    for (const f of c.page.stories?.films ?? []) assert.ok(fs.existsSync(P("public", f.thumb.src)), `${slug}: ${f.thumb.src}`);
   }
 });
 
-test("media: every body photograph and video thumbnail is in public/ or restored at build (npm run assets:restore)", () => {
-  const restored = new Set([
-    ...JSON.parse(read("english-candidate/gallery-assets-release.json")).files.map((f) => f.file),
-    ...JSON.parse(read("english-candidate/runtime-assets-release.json")).files.map((f) => f.file),
-  ]);
+test("media: the steps photograph is one of the route's gallery photographs, never the hero or a mosaic photograph", () => {
   for (const slug of PRODUCTION_SLUGS) {
-    const srcs = blocksOf(C[slug]).flatMap((b) => (b.type === "image" ? [b.src] : b.type === "videoLink" && b.thumbnail ? [b.thumbnail] : []));
-    for (const src of srcs) assert.ok(fs.existsSync(P("public", src)) || restored.has(`public${src}`), `${slug}: ${src}`);
-    const pageImgs = [C[slug].hero.image.A, C[slug].hero.mobileImage, C[slug].stillness.image, ...C[slug].gallery.map((g) => g.image), ...C[slug].doctors.map((d) => d.photo)];
-    for (const im of pageImgs) assert.ok(fs.existsSync(P("public", im.src)), im.src);
+    const c = C[slug];
+    const im = c.page.pathway.image;
+    assert.ok(c.gallery.some((g) => g.image.id === im.id), `${slug}: in the gallery`);
+    assert.ok(!c.gallery.slice(0, 5).some((g) => g.image.id === im.id), `${slug}: not one of the five mosaic tiles`);
+    assert.notEqual(im.id, c.hero.image.A.id, slug);
+    assert.notEqual(im.id, c.hero.mobileImage.id, slug);
   }
 });
 
@@ -218,24 +272,6 @@ test("media: the two oversized kit images are real JPEGs now, at their registry 
     const buf = fs.readFileSync(P("public/lp-v2/img", f));
     assert.deepEqual([...buf.subarray(0, 3)], [0xff, 0xd8, 0xff], `${f} is not a JPEG`);
     assert.ok(buf.length < 600_000, `${f}: ${buf.length} bytes`);
-  }
-});
-
-// ── doctors ───────────────────────────────────────────────────────────────────────────────────────────
-test("doctors: cards only from the approved registry ids; source wording; no invented years; no Ashikha Raj", () => {
-  for (const slug of PRODUCTION_SLUGS) {
-    const c = C[slug];
-    assert.deepEqual(c.doctors.map((d) => d.id), ["deepu-john", "akhila-oommen"]);
-    const body = ` ${pageStrings(c).join(" | ")} `;
-    for (const d of c.doctors) {
-      assert.equal(d.yearsInPractice, undefined, `${d.id}: years are omitted, never derived`);
-      assert.ok(body.includes(d.tenure), `${slug} ${d.id}: tenure "${d.tenure}" is the source's wording`);
-      if (d.focus) assert.ok(body.includes(d.focus), `${slug} ${d.id}: focus`);
-      assert.ok(body.includes(`${d.role} · ${d.qualification}`), `${slug} ${d.id}: role line`);
-      assert.ok(body.includes(`Speaks ${d.languages.join(", ")}`), `${slug} ${d.id}: languages`);
-      assert.doesNotMatch(`${d.role} ${d.qualification} ${d.tenure} ${d.focus ?? ""}`, /\b\d+\+?\s*years?\b/i);
-    }
-    assert.doesNotMatch(body, /Ashikha/);
   }
 });
 
@@ -259,6 +295,11 @@ test("metadata: canonical, robots and the Open Graph image are the replaced page
     assert.equal(live.openGraph.locale, "en_IN");
     assert.deepEqual(live.twitter.images, [OG_IMAGE.url]);
   }
+  // The reviewed briefs' search titles and descriptions (the first two are the original captured ones).
+  assert.deepEqual(PRODUCTION_SLUGS.map((s) => C[s].seo.title), [
+    "Ayurvedic Treatment Packages in Kerala | Kairali", "Panchakarma Treatment in Kerala | Kairali Ayurvedic Healing Village",
+    "Ayurvedic Pain Management in Kerala | Kairali", "Family Ayurveda Retreat in Kerala | Kairali",
+  ]);
 });
 
 test("JSON-LD: the replaced pages' WebPage (and breadcrumb), plus FAQPage for the FAQ on the page", () => {
@@ -270,7 +311,7 @@ test("JSON-LD: the replaced pages' WebPage (and breadcrumb), plus FAQPage for th
   const [pc] = productionJsonLd("panchakarma", C.panchakarma);
   assert.equal(pc["@id"], "https://ayurvedichealingvillage.com/panchkarma-treatment.html#webpage");
   assert.equal(pc.breadcrumb, undefined);
-  assert.ok(!JSON.stringify(productionJsonLd("panchakarma", C.panchakarma)).match(/"@type":"(Offer|Product|MedicalClinic|VideoObject)"/));
+  for (const slug of PRODUCTION_SLUGS) assert.ok(!JSON.stringify(productionJsonLd(slug, C[slug])).match(/"@type":"(Offer|Product|MedicalClinic|VideoObject)"/), slug);
 });
 
 // ── locked facts and owner facts ──────────────────────────────────────────────────────────────────────
@@ -278,14 +319,17 @@ test("locked facts: WhatsApp +91 92898 38797 and info@kairali.com; the wrong …
   assert.equal(contact.whatsapp.number, "919289838797");
   assert.equal(contact.whatsapp.display, "+91 92898 38797");
   assert.equal(contact.email, "info@kairali.com");
-  for (const f of ["campaign-v2/production/Body.tsx", "campaign-v2/sections/Footer.tsx", "campaign-v2/sections/Header.tsx", "campaign-v2/production/content/treatment-packages.json", "campaign-v2/production/content/panchakarma.json", "campaign-v2/production/content/pain-management.json", "campaign-v2/production/content/family-ayurvedic-retreat.json"]) {
-    assert.doesNotMatch(read(f), /38777/, f);
-  }
+  const dir = (d) => fs.readdirSync(P(d)).map((f) => `${d}/${f}`);
+  const files = ["campaign-v2/sections/Footer.tsx", "campaign-v2/sections/Header.tsx", "campaign-v2/data/doctors.ts",
+    ...dir("campaign-v2/production/pages"), ...dir("campaign-v2/production/sections")];
+  for (const f of files) assert.doesNotMatch(read(f), /38777/, f);
+  for (const slug of PRODUCTION_SLUGS) assert.doesNotMatch(pageStrings(C[slug]).join(" "), /\+?\s?91[\s-]?\d{4,5}[\s-]?\d{3,6}|@[a-z]+\.[a-z]+/i, `${slug}: contact details render from site.ts only`);
 });
 
-test("owner facts: the 14–21 night Panchakarma stay matches its source line; no year or opening date in the authored copy", () => {
+test("owner facts: the 14–21 night Panchakarma programme as published; no year or opening date in the authored copy", () => {
   assert.match(C.panchakarma.seo.description, /14–21 night/);
-  assert.ok(blocksOf(C.panchakarma).some((b) => b.type === "h3" && b.text === "A 14–21 night stay at Kairali, Kerala"));
+  assert.ok(C.panchakarma.page.lead.paragraphs.some((p) => p.includes("The published programme is a 14–21 night stay")));
+  assert.ok(C.panchakarma.faq.some((f) => f.a.startsWith("The published Panchakarma programme is a 14–21 night stay.")));
   for (const slug of PRODUCTION_SLUGS) for (const { path: at, text } of allText(C[slug])) assert.doesNotMatch(text, /\b(18|19|20)\d{2}\b/, `${slug} ${at}`);
-  assert.equal(C.panchakarma.cta.primarySupport, "Your initial consultation is free. Ask for a quotation covering treatment and any later services.");
+  for (const slug of BATCH1.concat(["pain-management", "family-ayurvedic-retreat"])) assert.equal(C[slug].hero.overline, "Doctor-guided Ayurveda · Palakkad, Kerala");
 });

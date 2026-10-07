@@ -1,8 +1,9 @@
 import Image from "next/image";
+import type { CampaignConfig } from "../kit/types.ts";
 import type { SectionProps } from "./LandingPage";
 import { SectionHead } from "./head";
 
-const GridIcon = () => (
+export const GridIcon = () => (
   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /></svg>
 );
 
@@ -21,29 +22,43 @@ const SIZES = [
  * All five photos show at every breakpoint (mobile: one wide + a 2×2 grid), so nothing hidden is fetched.
  */
 export default function Village({ c, v }: SectionProps) {
-  const pool = c.modesty === "gcc" ? c.gallery.filter((g) => g.image.gccSafe) : c.gallery;
-  const tiles = pool.slice(0, 5);
-  const more = pool.length - tiles.length;
   return (
     <section className="lp-sec lp-vil" aria-labelledby="lp-vil-h">
       <div className="lp-vil__top">
         <SectionHead v={v} section="village" kicker="The village" title={c.village.heading} id="lp-vil-h">
           <p className="lp-vil__body">{c.village.body}</p>
         </SectionHead>
-        <button type="button" className="lp-vil__all" data-gallery-open aria-haspopup="dialog"
-          data-track="gallery_open" data-track-category="all">
-          <GridIcon />View all photos
-        </button>
+        <AllPhotosButton />
       </div>
-      <ul className="lp-vil__mosaic">
-        {tiles.map((g, i) => (
-          <li key={g.image.id} className="lp-vil__tile">
-            <Image className="lp-vil__img" src={g.image.src} alt={g.image.alt} width={g.image.width} height={g.image.height}
-              sizes={SIZES[i]} loading="lazy" />
-            {i === tiles.length - 1 && more > 0 ? <span className="lp-vil__more lp-panel" aria-hidden="true">+ {more} more</span> : null}
-          </li>
-        ))}
-      </ul>
+      <Mosaic c={c} />
     </section>
+  );
+}
+
+/** "View all photos": opens the Gallery dialog (sections/interactive/Gallery.tsx listens for data-gallery-open). */
+export function AllPhotosButton() {
+  return (
+    <button type="button" className="lp-vil__all" data-gallery-open aria-haspopup="dialog"
+      data-track="gallery_open" data-track-category="all">
+      <GridIcon />View all photos
+    </button>
+  );
+}
+
+/** The first five gallery photographs as the village mosaic, with a "+ n more" chip when the gallery holds more. */
+export function Mosaic({ c }: { c: CampaignConfig }) {
+  const pool = c.modesty === "gcc" ? c.gallery.filter((g) => g.image.gccSafe) : c.gallery;
+  const tiles = pool.slice(0, 5);
+  const more = pool.length - tiles.length;
+  return (
+    <ul className="lp-vil__mosaic">
+      {tiles.map((g, i) => (
+        <li key={g.image.id} className="lp-vil__tile">
+          <Image className="lp-vil__img" src={g.image.src} alt={g.image.alt} width={g.image.width} height={g.image.height}
+            sizes={SIZES[i]} loading="lazy" />
+          {i === tiles.length - 1 && more > 0 ? <span className="lp-vil__more lp-panel" aria-hidden="true">+ {more} more</span> : null}
+        </li>
+      ))}
+    </ul>
   );
 }

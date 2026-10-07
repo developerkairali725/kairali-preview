@@ -266,7 +266,11 @@ test("measurement: the lead event carries only the form type and the token (no h
 
 test("measurement: every in-page anchor on the live routes is one the consent runtime measures", () => {
   const MEASURED = /^#(?:enquiry|main|contact|section-[0-8]|written-testimonials|press)$/;
-  const files = ["campaign-v2/sections/Hero.tsx", "campaign-v2/sections/Doctors.tsx", "campaign-v2/production/FeePlan.tsx", "campaign-v2/sections/interactive/ConsultIntercept.tsx", "campaign-v2/sections/Header.tsx"];
+  // The kit sections the live routes render, plus the designed page's own sections (production/sections/*).
+  const designed = fs.readdirSync(path.join(SITE, "campaign-v2/production/sections")).map((f) => `campaign-v2/production/sections/${f}`);
+  const files = ["campaign-v2/sections/Hero.tsx", "campaign-v2/sections/interactive/ConsultIntercept.tsx", "campaign-v2/sections/Header.tsx",
+    "campaign-v2/sections/Village.tsx", "campaign-v2/sections/rich.tsx", "campaign-v2/sections/interactive/Enquiry.tsx", "campaign-v2/sections/Faq.tsx", ...designed];
+  assert.ok(designed.length >= 8, designed.join(", "));
   for (const f of files) {
     for (const m of read(f).matchAll(/href=(?:"|\{")(#[^"]*)"/g)) assert.match(m[1], MEASURED, `${f}: ${m[1]}`);
   }

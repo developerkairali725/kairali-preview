@@ -47,7 +47,7 @@ export default function Hero({ c, v, req, carry }: SectionProps) {
   // Art direction: one <picture>, so each viewport downloads exactly one hero image. The <img> is the mobile
   // photo, so its alt describes that photo.
   const { props: { srcSet: deskSrcSet } } = getImageProps({ src: desk.src, width: desk.width, height: desk.height, alt: "", sizes: layout.sizes });
-  const { props: mobProps } = getImageProps({ src: mob.src, width: mob.width, height: mob.height, alt: mob.alt, sizes: layout.mobileSizes, priority: true });
+  const { props: mobProps } = getImageProps({ src: mob.src, width: mob.width, height: mob.height, alt: mob.alt, sizes: layout.mobileSizes, quality: c.hero.mobileQuality, priority: true });
 
   // The LCP image. React does not auto-preload an <img> inside <picture>, so preload each art-directed source for
   // its own media query; React puts these in <head> (and the Link header), so the phone fetches only its image,
@@ -85,6 +85,8 @@ export default function Hero({ c, v, req, carry }: SectionProps) {
               <a className="lp-btn lp-btn--wa lp-hero__wa" href={`https://wa.me/${contact.whatsapp.number}`} data-track="cta_click" data-track-cta="whatsapp" data-track-position="hero"><WaIcon size={20} />WhatsApp</a>
             )}
           </div>
+          {/* Live ad routes: what "free" covers, right under the button that offers it (the initial consultation only). */}
+          {production && c.cta?.primarySupport ? <p className="lp-hero__note">{c.cta.primarySupport}</p> : null}
           <p className="lp-hero__trust"><b>NABH</b> accredited · {NABH_NO} · {LATEST_TRAVELERS_CHOICE.alt}</p>
         </div>
       </div>
