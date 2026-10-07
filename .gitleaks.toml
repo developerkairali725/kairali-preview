@@ -189,8 +189,9 @@ id = "generic-api-key"
     # in mocked lp-v2 tests and the PLAN's copied test example, not a credential.
     # f995725a live-form:17; 2212b176 form:100; f9ed6faa lead:9;
     # b1e24edf PLAN:1429. The UUID is a payload/idempotency ID; no auth use.
-    # All four paths are absent at this release HEAD. Preserve history and
-    # full-history scanning. Exempt only this exact extracted value AND one
+    # Current files have already refactored these fixed literals; the four
+    # findings are historical. Preserve history and full-history scanning.
+    # Exempt only this exact extracted value AND one
     # of these exact paths; other values and same-line secrets still fail.
     [[rules.allowlists]]
     condition = "AND"

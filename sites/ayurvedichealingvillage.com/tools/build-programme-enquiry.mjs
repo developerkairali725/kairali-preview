@@ -1,4 +1,4 @@
-/** Form-only reuse of the accepted enquiry family for two main programmes.
+/** Form-only reuse of the accepted enquiry family for active main programmes.
  * Keeps its translated copy, required fields and contact payload. No page head,
  * campaign classification or programme content is taken from the enquiry page.
  */
@@ -8,7 +8,8 @@ import { fileURLToPath } from 'node:url';
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const componentName = 'AHV Programme Enquiry';
-export const programmeViews = ['weight-loss-programme', 'digestive-wellness-gut-health']
+// Digestive is held at its production baseline, with an external contact journey.
+export const programmeViews = ['weight-loss-programme']
   .flatMap(name => ['desktop', 'mobile'].map(variant => `ahv-page-${name}-${variant}`));
 
 export function programmeEnquiryComponent(enquiry) {
@@ -68,6 +69,9 @@ ${handlers}
 }
 
 export function integrateProgrammeView(view) {
+  if (['ahv-page-digestive-wellness-gut-health-desktop', 'ahv-page-digestive-wellness-gut-health-mobile'].includes(view.id)) {
+    throw new Error('Digestive page is held at its production baseline');
+  }
   const output = structuredClone(view);
   const marker = `<dc-import name="${componentName}"></dc-import>`;
   if (!output.template.includes(marker)) {
@@ -92,5 +96,5 @@ if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.me
   const map = read('english-candidate/component-map.json');
   map.resources['./AHV%20Programme%20Enquiry.dc.html'] = '/ahv/components/AHV%20Programme%20Enquiry.dc.html';
   write('english-candidate/component-map.json', map);
-  console.log('Programme enquiry component and four programme views updated.');
+  console.log(`Programme enquiry component and ${programmeViews.length} active programme views updated.`);
 }

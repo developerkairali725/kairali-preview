@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Panchakarma admission — desktop</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Mulish:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#121A15;color:#2A2118;font-family:'Mulish',system-ui,sans-serif;font-size:18px;line-height:1.65}
+a{color:#2A2118}a:hover{color:#121A15}
+h1,h2,h3{font-family:'Marcellus',Georgia,serif;font-weight:400;margin:0}
+p{margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;border-radius:2px;font-family:'Mulish',sans-serif;font-weight:600;font-size:16px;letter-spacing:.02em;text-decoration:none;border:1px solid transparent;cursor:pointer;box-sizing:border-box}
+.btn-ivory{background:#F7F4EA;color:#121A15}
+.btn-night{background:#121A15;color:#F7F4EA}
+.btn-wa{background:#1F5E43;color:#FFFFFF}
+.btn-line{background:transparent;color:#F7F4EA;border-color:rgba(247,244,234,.5)}
+.over{font-size:13px;letter-spacing:.22em;text-transform:uppercase;font-weight:600}
+summary{cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+label{font-size:13px;font-weight:700;letter-spacing:.04em}
+select,input{font-family:'Mulish',sans-serif;font-size:16px;color:#2A2118;background:#FFFFFF;border:1px solid rgba(42,33,24,.28);border-radius:2px;min-height:50px;padding:0 14px;box-sizing:border-box;width:100%}
+</style>
+</helmet>
+
+<div style="width: 100%; min-width: 0; min-height: 7900px; display: flex; flex-direction: column; background: #F7F4EA">
+
+  <!-- 1 · Minimal header — real logo, no nav, no ribbon -->
+  <header style="position: absolute; top: 0; left: 0; right: 0; z-index: 5; display: flex; align-items: center; justify-content: space-between; padding: 20px 56px; box-sizing: border-box">
+    <a href="#top" aria-label="Kairali — The Ayurvedic Healing Village" style="display: block">
+      <img src="/_blob/e9529bf524f274036e888bd5c9953aad" alt="Kairali — The Ayurvedic Healing Village" style="height: 76px; width: auto; display: block">
+    </a>
+    <div style="display: flex; align-items: center; gap: 28px">
+      <a href="Locale-Switcher.dc.html" aria-label="Language and currency: English, INR" style="min-height: 44px; display: inline-flex; align-items: center; gap: 8px; padding: 0 14px; border: 1px solid rgba(247,244,234,.45); color: #F7F4EA; text-decoration: none; font-weight: 600; font-size: 14px; border-radius: 999px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg>EN · INR</a>
+      <a href="tel:+919555156156" style="color: #F7F4EA; text-decoration: none; font-size: 15px; letter-spacing: .04em">+91 95551 56156</a>
+      <a class="btn btn-line" href="https://wa.me/919289838797" style="min-height: 46px; padding: 0 20px; font-size: 15px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.2A8.5 8.5 0 1 1 20.5 11.6Z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- 2 · Hero — shorter so the enquiry bar sits inside the first screen -->
+  <section id="top" style="display: grid; grid-template-columns: minmax(0, 46fr) minmax(0, 54fr); min-height: 700px; background: #121A15">
+    <div style="padding: 104px 64px 96px 56px; display: flex; flex-direction: column; gap: 16px; color: #F7F4EA">
+      <p class="over" style="color: #D8C3A0">NABH-accredited Ayurvedic hospital · Palakkad, Kerala</p>
+      <h1 style="font-size: 50px; line-height: 1.08; color: #F7F4EA">Panchakarma, practiced the way it was meant to be.</h1>
+      <p style="font-size: 18px; line-height: 1.6; color: rgba(247,244,234,.86); max-width: 520px">A physician-led admission in a quiet Kerala village. Fourteen to twenty-eight nights of therapy, prescribed diet and deep rest — planned around you.</p>
+      <sc-if value="{{ showPrice }}" hint-placeholder-val="{{ true }}">
+        <div style="border-top: 1px solid rgba(216,195,160,.35); padding-top: 16px; display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap">
+          <p style="font-size: 15px; color: #D8C3A0">14 nights, all-inclusive, from</p>
+          <p style="font-family: 'Marcellus', serif; font-size: 34px; line-height: 1.1">[₹ PRICE]</p>
+          <p style="font-size: 14px; color: rgba(247,244,234,.7)">Medicines and tests charged separately.</p>
+        </div>
+      </sc-if>
+      <div style="display: flex; gap: 14px; flex-wrap: wrap">
+        <a class="btn btn-ivory" href="#enquire">Get free doctor consultation</a>
+        <a class="btn btn-wa" href="https://wa.me/919289838797">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20.5 11.6a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.6-4.2A8.5 8.5 0 1 1 20.5 11.6Z"/></svg>
+          WhatsApp Priya
+        </a>
+      </div>
+      <p style="font-size: 13px; letter-spacing: .04em; color: rgba(247,244,234,.75)"><b style="color: #D8C3A0">NABH</b> accredited · AH-2024-0250 &#160;·&#160; Tripadvisor Travelers’ Choice 2025</p>
+    </div>
+    <figure style="margin: 0; position: relative; overflow: hidden">
+      <img src="/_blob/ea414e7121c7ad0d7ef07e5392c57720" alt="Two therapists performing a four-hand Abhyangam oil therapy in a brick-walled treatment room" style="width: 100%; height: 100%; object-fit: cover; object-position: 60% 50%; display: block">
+      <figcaption style="position: absolute; right: 32px; top: 120px; background: rgba(18,26,21,.72); color: #F7F4EA; padding: 12px 16px; font-size: 14px; max-width: 320px; line-height: 1.5">
+        <b style="font-weight: 600">Abhyangam</b> — warm medicated oil, applied by two therapists in unison.
+      </figcaption>
+    </figure>
+  </section>
+
+  <!-- Step-1 consultation bar — compact, inside the first screen -->
+  <section style="padding: 0 56px; margin-top: -96px; position: relative; z-index: 3">
+    <form style="background: #FFFDF7; box-shadow: 0 24px 60px rgba(18,26,21,.18); padding: 16px 22px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr) auto; gap: 14px; align-items: end" action="#enquire">
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <label for="d-prog">Program</label>
+        <select id="d-prog"><option>Panchakarma</option><option>Weight management</option><option>Rejuvenation</option><option>Not sure — advise me</option></select>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <label for="d-month">Preferred month</label>
+        <select id="d-month"><option>November 2026</option><option>December 2026</option><option>January 2027</option><option>Flexible</option></select>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <label for="d-nights">Length of stay</label>
+        <select id="d-nights"><option>14 nights</option><option>21 nights</option><option>28 nights</option><option>Doctor to advise</option></select>
+      </div>
+      <button class="btn btn-night" type="submit" style="min-height: 50px; min-width: 250px">Get free doctor consultation</button>
+    </form>
+  </section>
+
+  <!-- 3 · Proof — real logos, shown once -->
+  <section style="padding: 56px 56px 44px; display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; border-bottom: 1px solid rgba(42,33,24,.12); margin: 0 56px">
+    <div style="display: flex; align-items: center; gap: 14px">
+      <img src="/_blob/1ec2bc785fd59b7f84d9c1603abc9d7d" alt="Tripadvisor" style="height: 56px; width: auto">
+      <div><p style="font-family: 'Marcellus', serif; font-size: 26px; line-height: 1.1">[4.x] / 5</p><p style="font-size: 13px; color: #5C5448">[N] Tripadvisor reviews</p></div>
+    </div>
+    <div><p style="font-family: 'Marcellus', serif; font-size: 26px; line-height: 1.1">[4.x] / 5</p><p style="font-size: 13px; color: #5C5448">[N] Google reviews</p></div>
+    <div style="display: flex; align-items: center; gap: 28px">
+      <img src="/_blob/98379d7406255f36a4039be41c2ca1e2" alt="Tripadvisor Travelers’ Choice 2025" style="height: 64px; width: auto">
+      <img src="/_blob/908619bf47366e06d960c60df6d9f7be" alt="World Luxury Spa Awards" style="height: 60px; width: auto"> <!-- compliance-allow: luxury, spa -->
+      <img src="/_blob/8d4faeac6defe1b4653efe7a33e1ffef" alt="World Luxury Hotel Awards" style="height: 60px; width: auto"> <!-- compliance-allow: luxury -->
+      <img src="/_blob/7bcf740fda3e70b953a164a80a97f2a0" alt="PATWA International Travel Award" style="height: 60px; width: auto">
+      <img src="/_blob/2c051252780e7d0cbf3edd525e45cb1d" alt="Award" style="height: 44px; width: auto">
+    </div>
+  </section>
+
+  <!-- Offer band (per-campaign toggle) -->
+  <sc-if value="{{ showOffer }}" hint-placeholder-val="{{ true }}">
+    <section style="padding: 48px 56px 0">
+      <div style="border: 1px solid #B8955A; background: #FFFDF7; padding: 32px 40px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 32px; align-items: center">
+        <div style="display: flex; flex-direction: column; gap: 8px">
+          <p class="over" style="color: #7A5A22">[Offer name — e.g. Winter admissions]</p>
+          <p style="font-family: 'Marcellus', serif; font-size: 30px; line-height: 1.2">[Offer headline — e.g. 10% on program fees for admissions before 15 December]</p>
+          <p style="font-size: 14px; color: #5C5448">Eligible programs only; minimum stay applies. Valid [dates]. <a href="/terms">Offer terms</a></p>
+        </div>
+        <a class="btn btn-night" href="#enquire">Claim with a free consultation</a>
+      </div>
+    </section>
+  </sc-if>
+
+  <!-- 4 · The admission -->
+  <section style="padding: 80px 56px; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 80px">
+    <div style="display: flex; flex-direction: column; gap: 22px">
+      <p class="over" style="color: #7A5A22">The admission</p>
+      <h2 style="font-size: 46px; line-height: 1.12">One doctor. One plan. Written for you.</h2>
+      <p style="color: #5C5448">Panchakarma is not a menu of treatments. Your doctor assesses you before arrival, prescribes the therapies, diet and rest, and reviews your progress daily until discharge.</p>
+      <img src="/_blob/9f4c034e4aa7095d47366b04d4865928" alt="Medicated oil poured from a brass vessel for Shirodhara" style="width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; margin-top: 12px">
+    </div>
+    <div style="display: flex; flex-direction: column">
+      <div style="display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 24px; padding: 22px 0; border-top: 1px solid rgba(42,33,24,.14)">
+        <p style="font-family: 'Marcellus', serif; font-size: 36px; color: #B8955A">I</p>
+        <div><h3 style="font-size: 26px; margin-bottom: 8px">Before you arrive</h3><p style="color: #5C5448">A free video consultation with your doctor. Share your medical records; we confirm whether admission is right for you and how long it should be.</p></div>
+      </div>
+      <div style="display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 24px; padding: 22px 0; border-top: 1px solid rgba(42,33,24,.14)">
+        <p style="font-family: 'Marcellus', serif; font-size: 36px; color: #B8955A">II</p>
+        <div><h3 style="font-size: 26px; margin-bottom: 8px">During admission</h3><p style="color: #5C5448">Therapies through the morning, a prescribed diet from the hospital kitchen, gentle yoga and long, unhurried rest. Your doctor reviews your progress throughout your admission.</p></div>
+      </div>
+      <div style="display: grid; grid-template-columns: 72px minmax(0, 1fr); gap: 24px; padding: 22px 0; border-top: 1px solid rgba(42,33,24,.14)">
+        <p style="font-family: 'Marcellus', serif; font-size: 36px; color: #B8955A">III</p>
+        <div><h3 style="font-size: 26px; margin-bottom: 8px">After discharge</h3><p style="color: #5C5448">A written home regimen and a follow-up consultation, so the routine travels home with you.</p></div>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; padding: 32px; background: #FFFDF7; margin-top: 12px">
+        <div>
+          <p class="over" style="color: #7A5A22; margin-bottom: 12px">Included</p>
+          <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px"><li>Doctor consultations, daily</li><li>Prescribed therapies</li><li>All meals, prescribed diet</li><li>Private villa</li><li>Yoga and meditation</li><li>[Airport transfer — confirm]</li></ul>
+        </div>
+        <div>
+          <p class="over" style="color: #7A5A22; margin-bottom: 12px">Charged separately</p>
+          <ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 6px; color: #5C5448"><li>Medicines</li><li>Laboratory tests</li><li>[Other — confirm]</li></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 · Sensual band -->
+  <section style="position: relative; height: 520px; overflow: hidden; background: #121A15">
+    <img src="/_blob/0cdcd2085f384edc5cc30c565d70b793" alt="" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 30% 40%; opacity: .92">
+    <div style="position: absolute; right: 56px; top: 50%; transform: translateY(-50%); max-width: 520px; background: rgba(18,26,21,.8); padding: 48px; color: #F7F4EA; display: flex; flex-direction: column; gap: 18px">
+      <p class="over" style="color: #D8C3A0">After therapy</p>
+      <h2 style="font-size: 42px; line-height: 1.15">Stillness is part of the prescription.</h2>
+      <p style="color: rgba(247,244,234,.85)">No schedule to keep beyond your own. Warm oil, quiet rooms, monsoon light through tall windows — the body does its work when nothing is asked of it.</p>
+    </div>
+  </section>
+
+  <!-- 6 · Films — click-to-play facades (no autoplay, no YouTube request until play) -->
+  <section style="padding: 80px 56px; background: #121A15; color: #F7F4EA; display: flex; flex-direction: column; gap: 40px">
+    <div style="display: flex; justify-content: space-between; align-items: end; gap: 32px; flex-wrap: wrap">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 640px">
+        <p class="over" style="color: #D8C3A0">See it, hear it</p>
+        <h2 style="font-size: 46px; line-height: 1.12">A day at the village, and the patients who came.</h2>
+      </div>
+      <p style="font-size: 14px; color: rgba(247,244,234,.7); max-width: 340px">Films play only when you press play. Individual experiences vary.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 24px">
+      <button type="button" aria-label="Play film: A day at Kairali — The Ayurvedic Healing Village" style="position: relative; padding: 0; border: 0; background: #000; cursor: pointer; aspect-ratio: 16 / 9; overflow: hidden; display: block; width: 100%">
+        <img src="/_blob/5ad61b2949d3d17c7a0ef8814655b9a5" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: .85">
+        <span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 88px; height: 88px; border-radius: 50%; background: rgba(247,244,234,.92); display: flex; align-items: center; justify-content: center"><svg width="30" height="30" viewBox="0 0 24 24" fill="#121A15" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span>
+        <span style="position: absolute; left: 24px; bottom: 20px; color: #F7F4EA; font-family: 'Marcellus', serif; font-size: 24px; text-align: left">A day at the village <span style="font-family: 'Mulish', sans-serif; font-size: 14px; opacity: .8">· property film</span></span>
+      </button>
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <button type="button" aria-label="Play film: Michaela and Jan’s experience" style="display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 16px; align-items: center; padding: 0; border: 0; background: transparent; color: #F7F4EA; cursor: pointer; text-align: left">
+          <span style="position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden"><img src="/_blob/2f77ebdb8d1d3433a1719cf94f9c52dc" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"><span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(247,244,234,.92); display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="#121A15" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
+          <span style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Marcellus', serif; font-size: 20px">Michaela &amp; Jan</span><span style="font-size: 14px; color: rgba(247,244,234,.7)">Patient story · [Country]</span></span>
+        </button>
+        <button type="button" aria-label="Play film: Supriya Agarwal’s experience" style="display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 16px; align-items: center; padding: 0; border: 0; background: transparent; color: #F7F4EA; cursor: pointer; text-align: left">
+          <span style="position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden"><img src="/_blob/689552c3bb9fe400ccb6a6682f3840c2" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"><span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(247,244,234,.92); display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="#121A15" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
+          <span style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Marcellus', serif; font-size: 20px">Supriya Agarwal</span><span style="font-size: 14px; color: rgba(247,244,234,.7)">Patient story · India</span></span>
+        </button>
+        <button type="button" aria-label="Play film: a patient on Panchakarma at Kairali" style="display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 16px; align-items: center; padding: 0; border: 0; background: transparent; color: #F7F4EA; cursor: pointer; text-align: left">
+          <span style="position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden"><img src="/_blob/321e89ce16eb1f21ddc3a5dbb460d654" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block"><span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%; background: rgba(247,244,234,.92); display: flex; align-items: center; justify-content: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="#121A15" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></span></span>
+          <span style="display: flex; flex-direction: column; gap: 4px"><span style="font-family: 'Marcellus', serif; font-size: 20px">On Panchakarma</span><span style="font-size: 14px; color: rgba(247,244,234,.7)">Patient review · treatment film</span></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · Doctors -->
+  <section style="padding: 80px 56px; display: flex; flex-direction: column; gap: 52px">
+    <div style="display: flex; justify-content: space-between; align-items: end; gap: 40px; flex-wrap: wrap">
+      <div style="max-width: 640px; display: flex; flex-direction: column; gap: 16px">
+        <p class="over" style="color: #7A5A22">Your doctors</p>
+        <h2 style="font-size: 46px; line-height: 1.12">Qualified Ayurvedic doctors lead every admission.</h2>
+      </div>
+      <a class="btn btn-night" href="#enquire">Get free doctor consultation</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px">
+      <article style="display: flex; flex-direction: column; gap: 16px">
+        <img src="/_blob/33b40e035a3d5f5fca74927d56686b70" alt="Dr. Deepu John" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 18%; display: block">
+        <div><h3 style="font-size: 26px">Dr. Deepu John</h3><p style="font-size: 15px; color: #5C5448">Chief Physician · [BAMS, MD] · [N] years in practice</p><p style="font-size: 14px; color: #5C5448; margin-top: 4px">English, Malayalam, [—]</p></div>
+      </article>
+      <article style="display: flex; flex-direction: column; gap: 16px">
+        <img src="/_blob/63ca7de8d64aadd19a3f2845144a989e" alt="Dr. Akhila Oommen" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 18%; display: block">
+        <div><h3 style="font-size: 26px">Dr. Akhila Oommen</h3><p style="font-size: 15px; color: #5C5448">[Role] · [Qualification] · [N] years in practice</p><p style="font-size: 14px; color: #5C5448; margin-top: 4px">[Languages]</p></div>
+      </article>
+      <article style="display: flex; flex-direction: column; gap: 16px">
+        <img src="/_blob/0c55b28b7e6a4a0421541ea7234f0297" alt="Dr. Ashikha Raj" style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 18%; display: block">
+        <div><h3 style="font-size: 26px">Dr. Ashikha Raj</h3><p style="font-size: 15px; color: #5C5448">[Role] · [Qualification] · [N] years in practice</p><p style="font-size: 14px; color: #5C5448; margin-top: 4px">[Languages]</p></div>
+      </article>
+    </div>
+    <p style="font-size: 14px; color: #5C5448">Doctor availability is confirmed when you enquire.</p>
+  </section>
+
+  <!-- 8 · The village — mosaic + full gallery -->
+  <section style="padding: 0 56px 80px; display: flex; flex-direction: column; gap: 40px">
+    <div style="display: flex; justify-content: space-between; align-items: end; gap: 40px; flex-wrap: wrap">
+      <div style="max-width: 720px; display: flex; flex-direction: column; gap: 16px">
+        <p class="over" style="color: #7A5A22">The village</p>
+        <h2 style="font-size: 46px; line-height: 1.12">Private villas among palms and paddy fields.</h2>
+        <p style="color: #5C5448">Laterite, teak and terracotta. A hospital kitchen that cooks to your prescription. Therapy rooms a short walk through the gardens from your door.</p>
+      </div>
+      <a href="Gallery.dc.html" style="min-height: 54px; display: inline-flex; align-items: center; gap: 10px; padding: 0 24px; border: 1px solid #121A15; color: #121A15; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 2px">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        View all photos
+      </a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-rows: 200px; gap: 14px">
+      <a href="Gallery.dc.html" style="grid-column: span 7; grid-row: span 2; display: block"><img src="/_blob/14d78610173d95e5e42b25c991288960" alt="Octagonal villa interior under a terracotta dome" style="width: 100%; height: 100%; object-fit: cover; display: block"></a>
+      <a href="Gallery.dc.html" style="grid-column: span 5; display: block"><img src="/_blob/bd7ea66bd9f58c21bcb0eb5ff73e0ea7" alt="Brick cottage among palms and gardens" style="width: 100%; height: 100%; object-fit: cover; display: block"></a>
+      <a href="Gallery.dc.html" style="grid-column: span 5; display: block"><img src="/_blob/151b1c41e5f0b08aed0a2f86732b4e02" alt="Resting by the pool in the gardens" style="width: 100%; height: 100%; object-fit: cover; display: block"></a>
+      <a href="Gallery.dc.html" style="grid-column: span 6; display: block"><img src="/_blob/8db7c6524f5bd1a6b01f3fd14d575d8d" alt="Misty morning over the cottages and garden paths" style="width: 100%; height: 100%; object-fit: cover; display: block"></a>
+      <a href="Gallery.dc.html" style="grid-column: span 6; display: block; position: relative"><img src="/_blob/ee4a3aa9c2f8c85d3f56cd755681d972" alt="The dining hall with garden views" style="width: 100%; height: 100%; object-fit: cover; display: block"><span style="position: absolute; right: 16px; bottom: 16px; background: rgba(18,26,21,.8); color: #F7F4EA; padding: 8px 14px; font-size: 14px; font-weight: 600">+ [N] more</span></a>
+    </div>
+  </section>
+
+  <!-- 10 · Fees (toggle) — or a personalised-fee CTA when prices are hidden -->
+  <sc-if value="{{ showPrice }}" hint-placeholder-val="{{ true }}">
+    <section style="padding: 80px 56px; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 80px">
+      <div style="display: flex; flex-direction: column; gap: 16px">
+        <p class="over" style="color: #7A5A22">Program fees</p>
+        <h2 style="font-size: 46px; line-height: 1.12">Clear fees, all-inclusive.</h2>
+        <p style="color: #5C5448">Per person for a 14-night admission. Your doctor confirms the length at consultation.</p>
+        <div role="group" aria-label="Currency" style="display: flex; margin-top: 8px; border: 1px solid rgba(42,33,24,.28); width: fit-content">
+          <button type="button" aria-pressed="true" style="min-height: 46px; padding: 0 18px; border: 0; background: #121A15; color: #F7F4EA; font-family: 'Mulish', sans-serif; font-size: 15px; font-weight: 600">INR</button>
+          <button type="button" aria-pressed="false" style="min-height: 46px; padding: 0 18px; border: 0; background: transparent; color: #2A2118; font-family: 'Mulish', sans-serif; font-size: 15px">USD</button>
+          <button type="button" aria-pressed="false" style="min-height: 46px; padding: 0 18px; border: 0; background: transparent; color: #2A2118; font-family: 'Mulish', sans-serif; font-size: 15px">EUR</button>
+          <button type="button" aria-pressed="false" style="min-height: 46px; padding: 0 18px; border: 0; background: transparent; color: #2A2118; font-family: 'Mulish', sans-serif; font-size: 15px">AED</button>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column">
+        <div style="display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr) auto; gap: 24px; align-items: center; padding: 26px 0; border-top: 1px solid rgba(42,33,24,.14)">
+          <div><h3 style="font-size: 25px">Deluxe villa</h3><p style="font-size: 15px; color: #5C5448">[Villa description, one line]</p></div>
+          <div><p style="font-size: 13px; color: #5C5448">Single</p><p style="font-family: 'Marcellus', serif; font-size: 25px">[₹ total]</p></div>
+          <div><p style="font-size: 13px; color: #5C5448">Twin sharing, each</p><p style="font-family: 'Marcellus', serif; font-size: 25px">[₹ total]</p></div>
+          <a href="#enquire" style="font-size: 15px; font-weight: 600">Enquire</a>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr) auto; gap: 24px; align-items: center; padding: 26px 0; border-top: 1px solid rgba(42,33,24,.14)">
+          <div><h3 style="font-size: 25px">[Villa category 2]</h3><p style="font-size: 15px; color: #5C5448">[Villa description, one line]</p></div>
+          <div><p style="font-size: 13px; color: #5C5448">Single</p><p style="font-family: 'Marcellus', serif; font-size: 25px">[₹ total]</p></div>
+          <div><p style="font-size: 13px; color: #5C5448">Twin sharing, each</p><p style="font-family: 'Marcellus', serif; font-size: 25px">[₹ total]</p></div>
+          <a href="#enquire" style="font-size: 15px; font-weight: 600">Enquire</a>
+        </div>
+        <div style="display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 1fr) auto; gap: 24px; align-items: center; padding: 26px 0; border-top: 1px solid rgba(42,33,24,.14); border-bottom: 1px solid rgba(42,33,24,.14)">
+          <div><h3 style="font-size: 25px">[Villa category 3]</h3><p style="font-size: 15px; color: #5C5448">[Villa description, one line]</p></div>
+          <div><p style="font-size: 13px; color: #5C5448">Single</p><p style="font-family: 'Marcellus', serif; font-size: 25px">[₹ total]</p></div>
+          <div><p style="font-size: 13px; color: #5C5448">Twin sharing, each</p><p style="font-family: 'Marcellus', serif; font-size: 25px">[₹ total]</p></div>
+          <a href="#enquire" style="font-size: 15px; font-weight: 600">Enquire</a>
+        </div>
+        <p style="font-size: 14px; color: #5C5448; margin-top: 18px">Fees valid to [date]. Taxes as applicable. Medicines and laboratory tests charged separately.</p>
+      </div>
+    </section>
+  </sc-if>
+  <sc-if value="{{ hidePrice }}" hint-placeholder-val="{{ false }}">
+    <section style="padding: 72px 56px">
+      <div style="background: #FFFDF7; padding: 48px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: center">
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <p class="over" style="color: #7A5A22">Program fees</p>
+          <h2 style="font-size: 40px; line-height: 1.15">Your fee plan, written after your consultation.</h2>
+          <p style="color: #5C5448">Fees depend on the length your doctor recommends and the villa you choose. All-inclusive of consultations, therapies, meals and stay.</p>
+        </div>
+        <a class="btn btn-night" href="#enquire">Get free doctor consultation</a>
+      </div>
+    </section>
+  </sc-if>
+
+  <!-- 11 · Enquiry -->
+  <section id="enquire" style="background: #121A15; padding: 80px 56px; display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 80px; color: #F7F4EA">
+    <div style="display: flex; flex-direction: column; gap: 20px">
+      <p class="over" style="color: #D8C3A0">Free doctor consultation</p>
+      <h2 style="font-size: 46px; line-height: 1.12; color: #F7F4EA">Tell us when. Your doctor’s team will plan the rest.</h2>
+      <p style="color: rgba(247,244,234,.85)">Three short steps. No medical details needed here — your doctor asks for those privately at consultation.</p>
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 10px; font-size: 16px">
+        <a href="https://wa.me/919289838797" style="color: #F7F4EA">Prefer to talk? WhatsApp Priya · +91 92898 38797</a>
+        <a href="tel:+919555156156" style="color: #F7F4EA">Call · +91 95551 56156</a>
+        <a href="mailto:info@kairali.com" style="color: #F7F4EA">info@kairali.com</a>
+      </div>
+    </div>
+    <form style="background: #FFFDF7; color: #2A2118; padding: 40px; display: flex; flex-direction: column; gap: 20px" action="/api/lead/" method="post">
+      <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; font-size: 13px; letter-spacing: .06em">
+        <li style="border-top: 3px solid #121A15; padding-top: 10px; font-weight: 700">1 · Program &amp; dates</li>
+        <li style="border-top: 3px solid rgba(42,33,24,.18); padding-top: 10px; color: #5C5448">2 · Your stay</li>
+        <li style="border-top: 3px solid rgba(42,33,24,.18); padding-top: 10px; color: #5C5448">3 · Contact</li>
+      </ol>
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <label for="f-prog">Which program interests you?</label>
+        <select id="f-prog"><option>Panchakarma</option><option>Weight management</option><option>Rejuvenation</option><option>Not sure — advise me</option></select>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px">
+        <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-month">Preferred month</label><select id="f-month"><option>November 2026</option><option>Flexible</option></select></div>
+        <div style="display: flex; flex-direction: column; gap: 6px"><label for="f-nights">Length</label><select id="f-nights"><option>14 nights</option><option>21 nights</option><option>28 nights</option><option>Doctor to advise</option></select></div>
+      </div>
+      <button class="btn btn-night" type="submit">Continue</button>
+      <p style="font-size: 13px; color: #5C5448">Step 3 asks for your name, email and WhatsApp number, with your consent to be contacted. <a href="/privacy">Privacy notice</a></p>
+    </form>
+  </section>
+
+  <!-- 12 · FAQ -->
+  <section style="padding: 80px 56px; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 8fr); gap: 80px">
+    <div style="display: flex; flex-direction: column; gap: 16px">
+      <p class="over" style="color: #7A5A22">Before you decide</p>
+      <h2 style="font-size: 46px; line-height: 1.12">Questions patients ask.</h2>
+    </div>
+    <div>
+      <details open style="border-top: 1px solid rgba(42,33,24,.14); padding: 16px 0">
+        <summary style="font-family: 'Marcellus', serif; font-size: 24px; min-height: 44px">Is the doctor consultation really free?</summary>
+        <p style="color: #5C5448; margin-top: 12px; max-width: 680px">[Confirm exactly what the free consultation is — by a qualified doctor, by video, length — so the CTA is accurate.]</p>
+      </details>
+      <details style="border-top: 1px solid rgba(42,33,24,.14); padding: 16px 0"><summary style="font-family: 'Marcellus', serif; font-size: 24px; min-height: 44px">How long should my admission be?</summary></details>
+      <details style="border-top: 1px solid rgba(42,33,24,.14); padding: 16px 0"><summary style="font-family: 'Marcellus', serif; font-size: 24px; min-height: 44px">Can a companion stay with me?</summary></details>
+      <details style="border-top: 1px solid rgba(42,33,24,.14); padding: 16px 0"><summary style="font-family: 'Marcellus', serif; font-size: 24px; min-height: 44px">How do I reach Palakkad?</summary></details>
+      <details style="border-top: 1px solid rgba(42,33,24,.14); border-bottom: 1px solid rgba(42,33,24,.14); padding: 16px 0"><summary style="font-family: 'Marcellus', serif; font-size: 24px; min-height: 44px">What are the deposit and cancellation terms?</summary></details>
+    </div>
+  </section>
+
+  <!-- 13 · Collapsed long-form (hybrid SEO) -->
+  <section style="padding: 0 56px 72px">
+    <details style="background: #FFFDF7; padding: 28px 36px">
+      <summary style="display: flex; justify-content: space-between; align-items: center; min-height: 44px; font-family: 'Marcellus', serif; font-size: 24px">About Panchakarma at Kairali — the full guide <span style="font-family: 'Mulish', sans-serif; font-size: 15px; color: #5C5448">Read more +</span></summary>
+      <p style="color: #5C5448; margin-top: 16px">[Long-form program content for search — compliance-checked; collapsed by default.]</p>
+    </details>
+  </section>
+
+  <!-- 14 · Footer — complete, grows to the page end -->
+  <footer style="flex: 1 0 auto; background: #121A15; color: rgba(247,244,234,.82); padding: 56px 56px 48px; display: flex; flex-direction: column; gap: 36px; font-size: 15px">
+    <div style="display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr); gap: 48px">
+      <div style="display: flex; flex-direction: column; gap: 18px">
+        <img src="/_blob/e9529bf524f274036e888bd5c9953aad" alt="Kairali — The Ayurvedic Healing Village" style="height: 96px; width: auto; align-self: flex-start">
+        <p style="max-width: 340px; line-height: 1.6">A NABH-accredited Ayurvedic hospital of the Kairali Ayurvedic Group, in Palakkad, Kerala.</p>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <p class="over" style="color: #D8C3A0; font-size: 12px">Visit</p>
+        <p style="line-height: 1.6">[Full postal address — from LOCKED_FACTS]</p>
+        <a href="[Google Maps link]" style="color: #F7F4EA">Directions</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <p class="over" style="color: #D8C3A0; font-size: 12px">Speak to us</p>
+        <a href="tel:+919555156156" style="color: #F7F4EA">+91 95551 56156</a>
+        <a href="https://wa.me/919289838797" style="color: #F7F4EA">WhatsApp +91 92898 38797</a>
+        <a href="mailto:info@kairali.com" style="color: #F7F4EA">info@kairali.com</a>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <p class="over" style="color: #D8C3A0; font-size: 12px">Accreditation</p>
+        <p><b style="color: #F7F4EA">NABH</b> · AH-2024-0250</p>
+        <p>Clinical Establishment · Kerala Act</p>
+      </div>
+    </div>
+    <p style="max-width: 920px; font-size: 14px; line-height: 1.6; color: rgba(247,244,234,.7)">Ayurvedic programs at Kairali are supervised by qualified doctors and complement, not replace, the medical care you already receive. Individual experiences vary.</p>
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; border-top: 1px solid rgba(216,195,160,.25); padding-top: 24px; font-size: 14px">
+      <span>© 2026 Kairali Ayurvedic Group</span>
+      <nav aria-label="Legal" style="display: flex; gap: 24px; flex-wrap: wrap">
+        <a href="/privacy" style="color: #F7F4EA">Privacy</a>
+        <a href="/terms" style="color: #F7F4EA">Terms</a>
+        <a href="#cookies" style="color: #F7F4EA">Cookie preferences</a>
+        <a href="/" style="color: #F7F4EA">Main website</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Floating chat — bottom right, "Ask anything" (Gaurav, 7 Oct) -->
+  <a href="#chat" style="position: fixed; right: 28px; bottom: 28px; z-index: 20; min-height: 52px; display: inline-flex; align-items: center; gap: 10px; padding: 0 22px; background: #F7F4EA; color: #121A15; text-decoration: none; font-weight: 600; font-size: 15px; border-radius: 26px; box-shadow: 0 10px 30px rgba(18,26,21,.3); border: 1px solid rgba(18,26,21,.15)">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 5h16v11H8l-4 4z"/></svg>
+    Ask anything
+  </a>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"showPrice":{"editor":"boolean","default":true,"section":"Campaign"},"showOffer":{"editor":"boolean","default":true,"section":"Campaign"},"$preview":{"width":1440,"height":7900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const showPrice = this.props.showPrice ?? true;
+    return {
+      showPrice: showPrice,
+      hidePrice: !showPrice,
+      showOffer: this.props.showOffer ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>

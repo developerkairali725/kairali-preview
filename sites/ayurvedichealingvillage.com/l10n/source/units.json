@@ -1,6 +1,6 @@
 {
- "sourceSetHash": "0cc35cebbaf45c970dd91568601db6253bef68a1cdbe81821e20d1250662c1ec",
- "count": 14744,
+ "sourceSetHash": "39d1b84808142ab8faa088192c68e60dff7985bc50e30a5c3f67f6001d4efffa",
+ "count": 14743,
  "units": [
   {
    "id": "t_a118c84bbeecaf94e3da",
@@ -3943,12 +3943,12 @@
     "public/ahv/search-index.json",
     "public/ahv/views/ahv-page-all-programs-desktop.json",
     "public/ahv/views/ahv-page-all-programs-mobile.json",
-    "public/ahv/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-    "public/ahv/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-    "public/ahv/views/ahv-page-training-programs-desktop.json"
+    "public/ahv/views/ahv-page-training-programs-desktop.json",
+    "public/ahv/views/ahv-page-training-programs-mobile.json",
+    "public/ahv/views/ahv-page-wellness-programs-desktop.json"
    ],
-   "fileCount": 13,
-   "occurrences": 13
+   "fileCount": 11,
+   "occurrences": 11
   },
   {
    "id": "t_18f5384d58bcb1bba0bc",
@@ -27667,10 +27667,10 @@
    "occurrences": 2
   },
   {
-   "id": "t_1ecf28db172955f967b3",
+   "id": "t_bd20e04b217fd68bd36c",
    "order": 1562,
-   "source": "A physician-guided yoga, Ayurveda and dietary programme for digestive wellbeing. Minimum admission: 14 nights. Discuss your symptoms, medical history and suitable care during a free initial consultation.",
-   "sourceHash": "1ecf28db172955f967b3fcf2285277de6df2c0b68b721d855d8813129a6b64cb",
+   "source": "Agni Dipanam Yoga Chikitsa",
+   "sourceHash": "bd20e04b217fd68bd36c22415a16e922d7c1f6bfe0c2d293b38b468bc1753e4a",
    "roles": [
     "html-text"
    ],
@@ -27682,8 +27682,28 @@
    "occurrences": 2
   },
   {
-   "id": "t_814e40325383372885fb",
+   "id": "t_fc480635ee81ad8b4754",
    "order": 1563,
+   "source": "Physician-guided yoga, Ayurveda and diet for digestive health. Support for IBS, acidity, bloating & more at Kairali’s gut wellness retreat in Kerala.",
+   "sourceHash": "fc480635ee81ad8b475464c1dd00cb1df56cf66090e8b086726c5a4bec2357e2",
+   "roles": [
+    "html-text",
+    "jsonld:description",
+    "meta",
+    "seo.description",
+    "seo.ogDescription"
+   ],
+   "files": [
+    "english-candidate/route-manifest.json",
+    "public/ahv/views/ahv-page-digestive-wellness-gut-health-desktop.json",
+    "public/ahv/views/ahv-page-digestive-wellness-gut-health-mobile.json"
+   ],
+   "fileCount": 3,
+   "occurrences": 10
+  },
+  {
+   "id": "t_814e40325383372885fb",
+   "order": 1564,
    "source": "Your gut is the key to well-being. The digestive wellness yoga program at Kairali – The Ayurvedic Healing Village is a dedicated retreat aimed at improving gut health, harmonizing digestive fire (Agni), and fostering overall wellness through a holistic blend of yoga therapy, Ayurvedic treatments, and sattvic nutrition. This ayurvedic gut health therapy integrates carefully selected asanas, pranayama, and pranavmukthasna kriya to stimulate the digestive organs, and basic dietary recommendations to stimulate Agni (digestive fire), alleviate bloating, and promote gut harmony. Every session is guided by knowledgeable instructors who concentrate on posture, breathing, and intentional movement. Perfect for individuals facing issues like acidity, constipation, IBS, or slow digestion, the holistic Ayurvedic program for Gut issues encourages natural recovery, enhanced metabolism, and general wellness. Appropriate for every level, it’s a soothing yet impactful path to digestive balance.",
    "sourceHash": "814e40325383372885fbff21d29e3b5f16ac7c2b64e0b8256281224821988a5a",
    "roles": [
@@ -27698,7 +27718,7 @@
   },
   {
    "id": "t_107ab7b31e6ce2cacc3c",
-   "order": 1564,
+   "order": 1565,
    "source": "Our approach to",
    "sourceHash": "107ab7b31e6ce2cacc3c2b8d7ea8879c3da5e17bf5301a61c001a1c345e4282b",
    "roles": [
@@ -27717,7 +27737,7 @@
   },
   {
    "id": "t_69907581b9bdea0eaa39",
-   "order": 1565,
+   "order": 1566,
    "source": "Digestive Wellness & [[OPEN_1]]Gut Health Yoga Therapy[[CLOSE_1]]",
    "sourceHash": "69907581b9bdea0eaa39d3415cd0795e02352f2756f2adf7d4d7f692e0e6fc04",
    "roles": [
@@ -27731,10 +27751,10 @@
    "occurrences": 2
   },
   {
-   "id": "t_ebf60d0a4d9e53ad3f72",
-   "order": 1566,
-   "source": "Kairali’s Yoga and Ayurveda for gut cleansing program combines traditional Ayurvedic knowledge with therapeutic yoga to stimulate and harmonize Agni (digestive fire) for ideal gut health. Led by knowledgeable wellness professionals, the program features targeted asanas, pranayama, and kriyas that enhance digestion, remove toxins, and alleviate issues such as indigestion, bloating, and constipation. Herbal infusions, sattvic dishes, and lifestyle tips promote inner balance. Located in a tranquil, natural setting, the experience is profoundly restorative, reestablishing gut harmony via movement, breath, and conscious living.",
-   "sourceHash": "ebf60d0a4d9e53ad3f72a2e9bebc38fba67e6c4b652880463d5934f1920842fa",
+   "id": "t_14da1fc571dc92c4222e",
+   "order": 1567,
+   "source": "Kairali’s Yoga and Ayurveda for gut cleansing program combines traditional Ayurvedic knowledge with therapeutic yoga to stimulate and harmonize Agni (digestive fire) for ideal gut health. Led by knowledgeable wellness professionals, the program features targeted asanas, pranayama, and kriyas that enhance digestion, remove toxins, and alleviate issues such as indigestion, bloating, and constipation. Herbal infusions, sattvic dishes, and lifestyle tips promote inner balance. Located in a tranquil, natural setting, the experience is profoundly restorative, reestablishing gut harmony via movement, breath, and conscious living. Kairali’s natural treatment for digestive disorders guarantees enduring digestive health, grounded in nature, supported by tradition, and in harmony with the body’s innate healing system.",
+   "sourceHash": "14da1fc571dc92c4222e3e3c9970ab81dc18b52d2c0ec09a978c493133c3bff8",
    "roles": [
     "html-text"
    ],
@@ -27747,7 +27767,7 @@
   },
   {
    "id": "t_ffba6c7c9f3a3eb9d9f0",
-   "order": 1567,
+   "order": 1568,
    "source": "Process Involved in [[OPEN_1]]Digestive Wellness & Gut Health Yoga Therapy[[CLOSE_1]]",
    "sourceHash": "ffba6c7c9f3a3eb9d9f06e55e52808b6509077876a739a28773a6e894c154783",
    "roles": [
@@ -27762,7 +27782,7 @@
   },
   {
    "id": "t_ad8389624916b4c65096",
-   "order": 1568,
+   "order": 1569,
    "source": "Digestive Wellness & Gut Health Yoga Therapy at Kairali – The Ayurvedic Healing Village includes the following steps:",
    "sourceHash": "ad8389624916b4c6509690324154adb5b9b36e42f95669e49f568086c4bd6a77",
    "roles": [
@@ -27777,7 +27797,7 @@
   },
   {
    "id": "t_d64a5e970096e744822d",
-   "order": 1569,
+   "order": 1570,
    "source": "[[OPEN_1]]Why[[CLOSE_1]] should one go with this treatment?",
    "sourceHash": "d64a5e970096e744822d146982c6d24081f2ea61ce253b6be5b4fa3a71e1ed00",
    "roles": [
@@ -27796,7 +27816,7 @@
   },
   {
    "id": "t_b8fd47be3aaa449a16a8",
-   "order": 1570,
+   "order": 1571,
    "source": "[[OPEN_1]]◆[[CLOSE_1]][[OPEN_2]]Leverage [[VAR_1]]+ years of expertise with an experienced team of Ayurvedic doctors. Our holistic approach prioritizes well-being, going beyond symptom management.[[CLOSE_2]]",
    "sourceHash": "b8fd47be3aaa449a16a8d9b788e815056c6418e6534999b9408d4dc1a47254e3",
    "roles": [
@@ -27815,7 +27835,7 @@
   },
   {
    "id": "t_b7d4eb17c42bf54a1b23",
-   "order": 1571,
+   "order": 1572,
    "source": "[[OPEN_1]]◆[[CLOSE_1]]Experience personalized treatments for your constitution and dosha imbalance. We follow Ayurvedic principles, and your physician monitors how you respond to each therapy and medicine.",
    "sourceHash": "b7d4eb17c42bf54a1b23332d8bd586df68e9740b24096087f56b1e8d13815f22",
    "roles": [
@@ -27834,7 +27854,7 @@
   },
   {
    "id": "t_18b95c0a89c16c001865",
-   "order": 1572,
+   "order": 1573,
    "source": "[[OPEN_1]]◆[[CLOSE_1]]Deepen your understanding of Ayurvedic principles, your condition’s causes, and our treatment mechanisms. This empowers active participation in your treatment and informed health decisions.",
    "sourceHash": "18b95c0a89c16c0018652f666ce89e390ffcd486b03d869cb252b23405c9d9a7",
    "roles": [
@@ -27853,7 +27873,7 @@
   },
   {
    "id": "t_bd3615bd548a56e884ab",
-   "order": 1573,
+   "order": 1574,
    "source": "[[OPEN_1]]◆[[CLOSE_1]]Escape daily stress in our serene retreat. Get full support from our team with follow-ups, progress monitoring, and treatment plan adjustments as required.",
    "sourceHash": "bd3615bd548a56e884abcb8f4d0f81acc36831a29f50aec5ce4bed0df8cda94c",
    "roles": [
@@ -27872,7 +27892,7 @@
   },
   {
    "id": "t_5a43da253432cbae28dd",
-   "order": 1574,
+   "order": 1575,
    "source": "[[OPEN_1]]Benefits of[[CLOSE_1]] the Digestive Wellness & Gut Health Yoga Therapy",
    "sourceHash": "5a43da253432cbae28ddd206933aed19c215c1f670bc1b50e99d14a1fa2b76a9",
    "roles": [
@@ -27887,7 +27907,7 @@
   },
   {
    "id": "t_c43bf201a437e5c7242a",
-   "order": 1575,
+   "order": 1576,
    "source": "[[OPEN_1]]◆[[CLOSE_1]]Stimulates and balances Agni (digestive fire)",
    "sourceHash": "c43bf201a437e5c7242a1c3ecb63ec8e469ce97f2f629cbbc897234ee6689606",
    "roles": [
@@ -27902,7 +27922,7 @@
   },
   {
    "id": "t_c29dec9b971aa7584168",
-   "order": 1576,
+   "order": 1577,
    "source": "[[OPEN_1]]◆[[CLOSE_1]]Enhances nutrient absorption and metabolism",
    "sourceHash": "c29dec9b971aa758416881a49bdc6133efca348e72ea6144de9d4477b30d2d3f",
    "roles": [
@@ -27917,7 +27937,7 @@
   },
   {
    "id": "t_1c6aee9c62b1f730a9a3",
-   "order": 1577,
+   "order": 1578,
    "source": "[[OPEN_1]]◆[[CLOSE_1]]Relieves bloating, gas, and abdominal discomfort",
    "sourceHash": "1c6aee9c62b1f730a9a33562ea1ac85141fd14333a5f1b33bc9664520ddd247b",
    "roles": [
@@ -27932,7 +27952,7 @@
   },
   {
    "id": "t_91e4f03268b936be65e9",
-   "order": 1578,
+   "order": 1579,
    "source": "[[OPEN_1]]◆[[CLOSE_1]]Improves bowel regularity and relieves constipation",
    "sourceHash": "91e4f03268b936be65e90e58ba08a397ab0b2daa9f076f4ce47fd4ecd05c2e06",
    "roles": [
@@ -27947,7 +27967,7 @@
   },
   {
    "id": "t_402b7b45db288df08c50",
-   "order": 1579,
+   "order": 1580,
    "source": "[[OPEN_1]]◆[[CLOSE_1]]Reduces acidity, heartburn, and indigestion",
    "sourceHash": "402b7b45db288df08c509b7e8204d2c3fbecba22f8acd291c345103cd4099e89",
    "roles": [
@@ -27962,7 +27982,7 @@
   },
   {
    "id": "t_99e6bce0821b9184c37a",
-   "order": 1580,
+   "order": 1581,
    "source": "[[OPEN_1]]◆[[CLOSE_1]]Detoxifies the digestive tract naturally",
    "sourceHash": "99e6bce0821b9184c37a5cdb1898dc8e6f4a06b35c2c059cfc2dd090dd86ed0a",
    "roles": [
@@ -27977,7 +27997,7 @@
   },
   {
    "id": "t_0a810fd7ecbfed93bbcc",
-   "order": 1581,
+   "order": 1582,
    "source": "[[OPEN_1]]◆[[CLOSE_1]]Promotes gut flora balance and immune health",
    "sourceHash": "0a810fd7ecbfed93bbcc249f9f3f806100ccd6607a8cb11a9989f42cc98f485f",
    "roles": [
@@ -27992,7 +28012,7 @@
   },
   {
    "id": "t_3ec73f84f7c5abfd6b5a",
-   "order": 1582,
+   "order": 1583,
    "source": "[[OPEN_1]]◆[[CLOSE_1]]Calms the nervous system, reducing stress-related digestive issues",
    "sourceHash": "3ec73f84f7c5abfd6b5adbe028830602736c94c0926d15643959829171302d15",
    "roles": [
@@ -28007,7 +28027,7 @@
   },
   {
    "id": "t_49a41686026344fff2a2",
-   "order": 1583,
+   "order": 1584,
    "source": "[[OPEN_1]]◆[[CLOSE_1]]Supports weight management through improved digestion",
    "sourceHash": "49a41686026344fff2a2342c763695d20847fa07d26ee031886d67dfb4fb0473",
    "roles": [
@@ -28022,7 +28042,7 @@
   },
   {
    "id": "t_7b9083c04276b96ba0a9",
-   "order": 1584,
+   "order": 1585,
    "source": "[[OPEN_1]]◆[[CLOSE_1]]Cultivates mindful eating and healthy lifestyle habits",
    "sourceHash": "7b9083c04276b96ba0a95e75bf310df3d5ff25369f4b88089266b1419239a111",
    "roles": [
@@ -28037,7 +28057,7 @@
   },
   {
    "id": "t_f421ad790672b9b25065",
-   "order": 1585,
+   "order": 1586,
    "source": "[[OPEN_1]]◆[[CLOSE_1]]Encourages emotional balance linked to gut-brain connection",
    "sourceHash": "f421ad790672b9b25065c16dd0983e553cfcaaea0a1887e528ce150d87a4c675",
    "roles": [
@@ -28052,7 +28072,7 @@
   },
   {
    "id": "t_1732e43dc219518628d8",
-   "order": 1586,
+   "order": 1587,
    "source": "[[OPEN_1]]◆[[CLOSE_1]]Restores overall gut harmony for long-term wellness",
    "sourceHash": "1732e43dc219518628d85c1659efcaadb2113b627a9cbf8df1a1007307a4eb87",
    "roles": [
@@ -28067,7 +28087,7 @@
   },
   {
    "id": "t_e078bf9ed43c8d3c5eba",
-   "order": 1587,
+   "order": 1588,
    "source": "Watch the film",
    "sourceHash": "e078bf9ed43c8d3c5eba696cff91477809492aa8ca91546aba252c1b48a8582e",
    "roles": [
@@ -28086,7 +28106,7 @@
   },
   {
    "id": "t_46ba1c36d4a8442608a8",
-   "order": 1588,
+   "order": 1589,
    "source": "Take a closer look at the setting and experience of a yoga retreat at Kairali.",
    "sourceHash": "46ba1c36d4a8442608a873e600c4b72569e0869da205b34e62cd3edbba1a7ac9",
    "roles": [
@@ -28105,7 +28125,7 @@
   },
   {
    "id": "t_e66187c2de02f4d3616e",
-   "order": 1589,
+   "order": 1590,
    "source": "Watch yoga film [[OPEN_1]]↗[[CLOSE_1]]",
    "sourceHash": "e66187c2de02f4d3616eb280ecfaea590aec60db30c008d325b853068ac49552",
    "roles": [
@@ -28124,7 +28144,7 @@
   },
   {
    "id": "t_d8829011e8bd81cc729a",
-   "order": 1590,
+   "order": 1591,
    "source": "Opens on YouTube in a new tab.",
    "sourceHash": "d8829011e8bd81cc729a70a64c0c813eeec0e1f5a533a81f5f2768f90dae9dca",
    "roles": [
@@ -28143,7 +28163,7 @@
   },
   {
    "id": "t_97224e3b88861a1972c5",
-   "order": 1591,
+   "order": 1592,
    "source": "A patient’s stay at Kairali",
    "sourceHash": "97224e3b88861a1972c5e70248c4c4c10edcf640fe1910bd71b4d1a9cf3b5de1",
    "roles": [
@@ -28162,7 +28182,7 @@
   },
   {
    "id": "t_58fc6de7b021ec9cb781",
-   "order": 1592,
+   "order": 1593,
    "source": "I came to Kairali for Panchakarma to reset my health, and I’m thrilled with the results. The therapists were skilled and compassionate, guiding me through each step with care. I left Kairali feeling rejuvenated, with a clear mind and a lighter body. I feel like I’ve rediscovered my natural vitality.",
    "sourceHash": "58fc6de7b021ec9cb781ad60e185b3a92e37a31bc8383a227d28d1a0185a3ceb",
    "roles": [
@@ -28181,7 +28201,7 @@
   },
   {
    "id": "t_a14604227e1767cfb1cf",
-   "order": 1593,
+   "order": 1594,
    "source": "[[OPEN_1]]Mr. Thierry Beaudeau[[CLOSE_1]][[OPEN_2]]★★★★★[[CLOSE_2]][[OPEN_3]]5.0[[CLOSE_3]]",
    "sourceHash": "a14604227e1767cfb1cf31fcb98917f528e7cc4aa77ab204afbc31bcc2d575d1",
    "roles": [
@@ -28200,7 +28220,7 @@
   },
   {
    "id": "t_a79bd397617a840a8757",
-   "order": 1594,
+   "order": 1595,
    "source": "A patient’s Panchakarma experience at Kairali",
    "sourceHash": "a79bd397617a840a8757f96c0ce5bed79b17c77c683ee761083daa5257d2f181",
    "roles": [
@@ -28219,7 +28239,7 @@
   },
   {
    "id": "t_d37055249a98daad9d78",
-   "order": 1595,
+   "order": 1596,
    "source": "Panchakarma at Kairali was an unforgettable experience. The cleansing therapies were gentle yet effective, leaving me with improved digestion, better sleep, and renewed energy. The serene surroundings and expert care made the journey incredibly soothing. I now understand why Ayurveda is known for such deep healing.",
    "sourceHash": "d37055249a98daad9d78ad22f7786e6b76037e1f30dd2da3118dc394eca4ed78",
    "roles": [
@@ -28238,7 +28258,7 @@
   },
   {
    "id": "t_058962fc73f14437cd9f",
-   "order": 1596,
+   "order": 1597,
    "source": "Rates effective 1 October 2026 to 30 September 2027. Single: one person; double: two people sharing the villa. Minimum 14 nights. [[OPEN_1]]View the published tariff[[CLOSE_1]].",
    "sourceHash": "058962fc73f14437cd9f172ac324a4dc51dd4cad35f9d811baad25fceeb0e5ee",
    "roles": [
@@ -28253,7 +28273,7 @@
   },
   {
    "id": "t_bea9920db04efbb3e9a6",
-   "order": 1597,
+   "order": 1598,
    "source": "One Ayurvedic therapy a day, including herbal steam where indicated",
    "sourceHash": "bea9920db04efbb3e9a6f153865544303a9f76e67487de6e3a13e72be2d3a4ee",
    "roles": [
@@ -28272,7 +28292,7 @@
   },
   {
    "id": "t_4550f480791696d7bf3b",
-   "order": 1598,
+   "order": 1599,
    "source": "A private sunrise yoga session and a private guided meditation session each day",
    "sourceHash": "4550f480791696d7bf3ba4b2fb38358c72f34bb987e2ca472727d496e51df90c",
    "roles": [
@@ -28291,7 +28311,7 @@
   },
   {
    "id": "t_2881bd9199222e7ebb1e",
-   "order": 1599,
+   "order": 1600,
    "source": "Weekly workshop, cooking demonstration and farm or village walk",
    "sourceHash": "2881bd9199222e7ebb1e7473ec0fbcc61a7a3a14d603a99ab9bf604b6ad6113f",
    "roles": [
@@ -28310,7 +28330,7 @@
   },
   {
    "id": "t_d48254f88053b37709ca",
-   "order": 1600,
+   "order": 1601,
    "source": "See the [[OPEN_1]]published tariff[[CLOSE_1]] for full inclusions, exclusions and terms. KTAHV/YMT/EN-INR/20260925-R1.",
    "sourceHash": "d48254f88053b37709ca8c1f3e1b0ba6627c1a8d7d463037ab2427429c9dca3e",
    "roles": [
@@ -28327,7 +28347,7 @@
   },
   {
    "id": "t_3367342e04b256c84511",
-   "order": 1601,
+   "order": 1602,
    "source": "Is this programme suitable for IBS or other digestive problems?",
    "sourceHash": "3367342e04b256c84511f1aad933f6ec155c84480b9d81de05d00f4aaeaebd4e",
    "roles": [
@@ -28344,7 +28364,7 @@
   },
   {
    "id": "t_766b7c7a3b5a1324e40f",
-   "order": 1602,
+   "order": 1603,
    "source": "Share your diagnosis, symptoms and current treatment with the physician so suitability can be assessed. New, persistent or worsening digestive symptoms should be medically assessed before choosing the programme.",
    "sourceHash": "766b7c7a3b5a1324e40fd605e9cb11a5fb87fd4b6a1bd1b2714b0bf6cffd6e49",
    "roles": [
@@ -28361,7 +28381,7 @@
   },
   {
    "id": "t_6ae02271cd6cfa985f0b",
-   "order": 1603,
+   "order": 1604,
    "source": "What information should I share before admission?",
    "sourceHash": "6ae02271cd6cfa985f0bb78d025476d5d68f1b3d4bd26345d6712e41d8c24a8a",
    "roles": [
@@ -28380,7 +28400,7 @@
   },
   {
    "id": "t_9de5768924fb2feaa381",
-   "order": 1604,
+   "order": 1605,
    "source": "Share your medical history, current symptoms and goals, including any diagnosis of IBS or inflammatory bowel disease, recent abdominal surgery and unexplained digestive symptoms. This will help the physician assess whether the programme is appropriate for you.",
    "sourceHash": "9de5768924fb2feaa38186b6b0914ef6267067cd540dfbf2687da5ed17c679fb",
    "roles": [
@@ -28396,15 +28416,13 @@
    "occurrences": 6
   },
   {
-   "id": "t_fc480635ee81ad8b4754",
-   "order": 1605,
-   "source": "Physician-guided yoga, Ayurveda and diet for digestive health. Support for IBS, acidity, bloating & more at Kairali’s gut wellness retreat in Kerala.",
-   "sourceHash": "fc480635ee81ad8b475464c1dd00cb1df56cf66090e8b086726c5a4bec2357e2",
+   "id": "t_6968c02e6c32a352aefb",
+   "order": 1606,
+   "source": "Digestive Wellness & Gut Health Yoga Therapy Agni Dipanam Yoga Chikitsa",
+   "sourceHash": "6968c02e6c32a352aefb9f531afe45814306bb7e7a20be8713c47079efe861ff",
    "roles": [
-    "jsonld:description",
     "meta",
-    "seo.description",
-    "seo.ogDescription"
+    "seo.ogTitle"
    ],
    "files": [
     "english-candidate/route-manifest.json",
@@ -28412,22 +28430,7 @@
     "public/ahv/views/ahv-page-digestive-wellness-gut-health-mobile.json"
    ],
    "fileCount": 3,
-   "occurrences": 8
-  },
-  {
-   "id": "t_5732e3089cfa69b39c3e",
-   "order": 1606,
-   "source": "Digestive Wellness & Gut Health Yoga Therapy Agni Dīpanam Yoga Chikitsa",
-   "sourceHash": "5732e3089cfa69b39c3eabe98f1b5a711097633e7f561ec19780ed9d1c7ff78c",
-   "roles": [
-    "meta"
-   ],
-   "files": [
-    "public/ahv/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-    "public/ahv/views/ahv-page-digestive-wellness-gut-health-mobile.json"
-   ],
-   "fileCount": 2,
-   "occurrences": 2
+   "occurrences": 3
   },
   {
    "id": "t_484ac11a6de2b35cc2b0",
@@ -221564,22 +221567,8 @@
    "occurrences": 1
   },
   {
-   "id": "t_6968c02e6c32a352aefb",
-   "order": 14732,
-   "source": "Digestive Wellness & Gut Health Yoga Therapy Agni Dipanam Yoga Chikitsa",
-   "sourceHash": "6968c02e6c32a352aefb9f531afe45814306bb7e7a20be8713c47079efe861ff",
-   "roles": [
-    "seo.ogTitle"
-   ],
-   "files": [
-    "english-candidate/route-manifest.json"
-   ],
-   "fileCount": 1,
-   "occurrences": 1
-  },
-  {
    "id": "t_82e5851d1f090fd68402",
-   "order": 14733,
+   "order": 14732,
    "source": "Professional Yoga Teacher Training — Coming Soon | Kairali",
    "sourceHash": "82e5851d1f090fd68402a21bda1b31ed5537ca834e0685045ebd8368caffd54a",
    "roles": [
@@ -221593,7 +221582,7 @@
   },
   {
    "id": "t_ca0b6cc9cd9d30008fe0",
-   "order": 14734,
+   "order": 14733,
    "source": "Kairali – The Ayurvedic Healing Village: a National Geographic Traveler 'Top Ten Wellness Destination in Asia' and recipient of international recognition for Ayurvedic wellness.",
    "sourceHash": "ca0b6cc9cd9d30008fe03b2072fe0b10bd30b220ae38cce24f4f218dcb7b1c0a",
    "roles": [
@@ -221608,7 +221597,7 @@
   },
   {
    "id": "t_499c1d733519a7a31e4f",
-   "order": 14735,
+   "order": 14734,
    "source": "Panchakarma Therapy | Ayurvedic Detox & Rejuvenation",
    "sourceHash": "499c1d733519a7a31e4f36b0f50ff04bed687ac44a49fa6061d1f04892ae31ca",
    "roles": [
@@ -221622,7 +221611,7 @@
   },
   {
    "id": "t_aea455696a703bb528bc",
-   "order": 14736,
+   "order": 14735,
    "source": "Physician-guided Panchakarma at Kairali – The Ayurvedic Healing Village, Kerala: classical Ayurvedic detoxification with herbal and oil therapies.",
    "sourceHash": "aea455696a703bb528bcca9bd5b0d826daf082083386f4a3e53b0d24853bc1f6",
    "roles": [
@@ -221637,7 +221626,7 @@
   },
   {
    "id": "t_87f092638d1b0a49e6da",
-   "order": 14737,
+   "order": 14736,
    "source": "Site Map | Kairali - The Ayurvedic Healing Village",
    "sourceHash": "87f092638d1b0a49e6da8c6fcc5b78fec50e8adc855b6c0c5c8ba2c75280d1e7",
    "roles": [
@@ -221651,7 +221640,7 @@
   },
   {
    "id": "t_2e1c06e994de720c21dd",
-   "order": 14738,
+   "order": 14737,
    "source": "test-page",
    "sourceHash": "2e1c06e994de720c21dd3851e0147d7255464b2051926d5c65336792a8c1b44f",
    "roles": [
@@ -221665,7 +221654,7 @@
   },
   {
    "id": "t_63329d885f498a1905fb",
-   "order": 14739,
+   "order": 14738,
    "source": "OPD",
    "sourceHash": "63329d885f498a1905fb753cf2c9d9b6220d3032b9120a28c3a46ebb4178479a",
    "roles": [
@@ -221679,7 +221668,7 @@
   },
   {
    "id": "t_858d0a9c6fd133707727",
-   "order": 14740,
+   "order": 14739,
    "source": "Yoga Training for Personal Practice — Coming Soon | Kairali",
    "sourceHash": "858d0a9c6fd1337077275e1e53bd16a570e198d9ad61cfe5cfcd2871a585748a",
    "roles": [
@@ -221693,7 +221682,7 @@
   },
   {
    "id": "t_78ccb5e9d0d7d3cd8955",
-   "order": 14741,
+   "order": 14740,
    "source": "Yoga and Meditation Program for Holistic Wellness in Kerala",
    "sourceHash": "78ccb5e9d0d7d3cd8955ea0490b693dd60652bd589047b1f2edadc04d583268f",
    "roles": [
@@ -221707,7 +221696,7 @@
   },
   {
    "id": "t_30db74f3e9100a1cfcc5",
-   "order": 14742,
+   "order": 14741,
    "source": "Yoga & Training | Kairali",
    "sourceHash": "30db74f3e9100a1cfcc5a21b70a5318e4851f277b8eea968f7ced2cdf56cf33a",
    "roles": [
@@ -221721,7 +221710,7 @@
   },
   {
    "id": "t_8b87cd2bbc85a3e582d5",
-   "order": 14743,
+   "order": 14742,
    "source": "Vaiyaktika Yoga Sādhanā — Personalized Yoga | Kairali",
    "sourceHash": "8b87cd2bbc85a3e582d5dded9d7364b11f8ad1ac3c6be1203b32af735f779d76",
    "roles": [

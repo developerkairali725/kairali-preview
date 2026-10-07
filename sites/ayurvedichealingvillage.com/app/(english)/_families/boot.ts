@@ -219,7 +219,7 @@ export const BOOT_SCRIPT = `
   // two hooks that decide loading ahead of the first src write.
   var EAGER_SLOTS = ${JSON.stringify(EAGER_SLOTS)};
   var deferBackgrounds = (${createBackgroundDeferral.toString()})(window, 800);
-  (${installLazyImgOrder.toString()})(window, (${villaImageAttributes.toString()}), (${phoneCriticalMedia.toString()}));
+  (${installLazyImgOrder.toString()})(window, (${villaImageAttributes.toString()}), function (src) { return (${phoneCriticalMedia.toString()})(src, cfg.path); });
   (${installSlotLoading.toString()})(window, EAGER_SLOTS);
 
   // The server response carries the prerendered snapshot (phone width, for
@@ -1288,7 +1288,7 @@ export const BOOT_SCRIPT = `
       host.insertBefore(document.createElement("x-dc"), host.firstChild);
       // lazyImgFirst: loading="lazy" ahead of src in every template <img> (media-loading.mjs, P1a).
       view.template = (${removeHomeVillaRates.toString()})(view.template, cfg.path);
-      pendingTemplate = (${lazyImgFirst.toString()})((${formPostSafety.toString()})((${descriptiveAwardLinks.toString()})(narrow ? (${phoneCriticalMedia.toString()})((${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en")) : (${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path)));
+      pendingTemplate = (${lazyImgFirst.toString()})((${formPostSafety.toString()})((${descriptiveAwardLinks.toString()})(narrow ? (${phoneCriticalMedia.toString()})((${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path) : (${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path)));
       host.setAttribute("data-ahv-view", view.id);
       host.setAttribute("data-ahv-variant", view.variant);
       host.setAttribute("data-ahv-view-file", view.file || "");

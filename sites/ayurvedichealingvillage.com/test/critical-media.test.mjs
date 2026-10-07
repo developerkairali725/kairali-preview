@@ -2,6 +2,42 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage } from '../app/(english)/_families/critical-media.mjs';
+import { installLazyImgOrder } from '../app/(english)/_families/media-loading.mjs';
+
+test('held Digestive retains production image and no new preload without changing other routes', () => {
+  const route = '/digestive-wellness-gut-health-yoga-therapy/';
+  const original = '/ahv/assets/img/digestive.webp', derivative = '/ahv/assets/img/digestive-768-hero.avif';
+  const html = `<div style="background-image:url(${original})"></div><img loading="lazy" src="${original}">`;
+  const serializable = new Function(`return (${phoneCriticalMedia.toString()})`)();
+  assert.equal(serializable(html, route), html);
+  assert.equal(firstCriticalImage(html, route), null);
+  assert.equal(firstCriticalImage(`<img src="${derivative}">`, route), null, 'old seed snapshots cannot introduce a new held-route preload');
+  assert.equal(phoneCriticalMedia(html, '/other/'), phoneCriticalMedia(html));
+  const weight = '<img src="/ahv/assets/img/weightloss.webp"><img src="/ahv/assets/img/weight-loss.webp">';
+  assert.equal(phoneCriticalMedia(weight, '/weight-loss-programme/'), phoneCriticalMedia(weight));
+  assert.equal(firstCriticalImage(phoneCriticalMedia(weight), '/weight-loss-programme/'), '/ahv/assets/img/weightloss-768-hero.avif');
+  for (const variant of ['mobile', 'desktop']) {
+    const view = JSON.parse(fs.readFileSync(`public/ahv/views/ahv-page-digestive-wellness-gut-health-${variant}.json`, 'utf8'));
+    assert.ok(view.template.includes(original));
+    assert.ok(!phoneCriticalMedia(view.template, route).includes(derivative));
+  }
+});
+
+test('runtime IMG src interception respects canonical held route while retaining other mappings', () => {
+  const held = '/digestive-wellness-gut-health-yoga-therapy/';
+  for (const route of [held, '/other/']) {
+    class Element {
+      constructor() { this.tagName = 'IMG'; this.isConnected = true; this.attrs = {}; }
+      setAttribute(name, value) { this.attrs[name] = value; }
+      hasAttribute(name) { return Object.hasOwn(this.attrs, name); }
+    }
+    const win = { Element, matchMedia: () => ({ matches: true }), queueMicrotask };
+    installLazyImgOrder(win, null, src => phoneCriticalMedia(src, route));
+    const img = new Element();
+    img.setAttribute('src', '/ahv/assets/img/digestive.webp');
+    assert.equal(img.attrs.src, route === held ? '/ahv/assets/img/digestive.webp' : '/ahv/assets/img/digestive-768-hero.avif');
+  }
+});
 test('Panchakarma phone image and priority preload use the same smaller address', () => {
   const source = '<div style="background-image:url(/ahv/assets/img/ktahv-abhyanga-oil-therapy-2025.webp)"></div>';
   const mapped = phoneCriticalMedia(source);

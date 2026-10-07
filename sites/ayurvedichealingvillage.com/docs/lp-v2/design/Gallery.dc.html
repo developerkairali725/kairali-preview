@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Photo gallery with lightbox</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Mulish:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Mulish',system-ui,sans-serif;color:#2A2118}
+a{color:#2A2118}a:hover{color:#121A15}
+h2{font-family:'Marcellus',Georgia,serif;font-weight:400;margin:0}
+p{margin:0}
+</style>
+</helmet>
+<div style="width: 1440px; height: 900px; position: relative; overflow: hidden; background: #F7F4EA; box-sizing: border-box; padding: 40px 56px; display: flex; flex-direction: column; gap: 24px">
+  <div style="display: flex; justify-content: space-between; align-items: end; gap: 24px">
+    <div style="display: flex; flex-direction: column; gap: 8px">
+      <p style="font-size: 13px; letter-spacing: .22em; text-transform: uppercase; font-weight: 600; color: #7A5A22">The village · {{ count }} photos</p>
+      <h2 style="font-size: 40px">Gallery</h2>
+    </div>
+    <div role="group" aria-label="Filter photos" style="display: flex; gap: 8px; flex-wrap: wrap">
+      <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+        <button type="button" aria-pressed="{{ t.pressed }}" onClick="{{ t.pick }}" style="{{ t.style }}">{{ t.label }}</button>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 220px; gap: 12px; flex: 1; min-height: 0; overflow-y: auto">
+    <sc-for list="{{ shown }}" as="p" hint-placeholder-count="8">
+      <button type="button" onClick="{{ p.open }}" aria-label="Open photo: {{ p.alt }}" style="padding: 0; border: 0; background: #121A15; cursor: zoom-in; overflow: hidden; display: block; width: 100%; height: 100%">
+        <img src="{{ p.src }}" alt="" style="width: 100%; height: 100%; object-fit: cover; display: block">
+      </button>
+    </sc-for>
+  </div>
+
+  <sc-if value="{{ isOpen }}" hint-placeholder-val="{{ false }}">
+    <div role="dialog" aria-modal="true" aria-label="Photo viewer" style="position: absolute; inset: 0; background: rgba(12,17,14,.96); display: flex; flex-direction: column; padding: 28px 40px; box-sizing: border-box; gap: 16px">
+      <div style="display: flex; justify-content: space-between; align-items: center; color: #F7F4EA">
+        <p style="font-size: 15px; letter-spacing: .06em">{{ pos }} / {{ count }} · {{ current.cat }}</p>
+        <button type="button" onClick="{{ close }}" aria-label="Close photo viewer" style="width: 48px; height: 48px; border: 1px solid rgba(247,244,234,.5); background: transparent; color: #F7F4EA; cursor: pointer; display: flex; align-items: center; justify-content: center">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+        </button>
+      </div>
+      <div style="flex: 1; min-height: 0; display: grid; grid-template-columns: 64px minmax(0, 1fr) 64px; gap: 16px; align-items: center">
+        <button type="button" onClick="{{ prev }}" aria-label="Previous photo" style="width: 56px; height: 56px; border: 1px solid rgba(247,244,234,.5); background: transparent; color: #F7F4EA; cursor: pointer; display: flex; align-items: center; justify-content: center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+        </button>
+        <img src="{{ current.src }}" alt="{{ current.alt }}" style="width: 100%; height: 100%; object-fit: contain; display: block">
+        <button type="button" onClick="{{ next }}" aria-label="Next photo" style="width: 56px; height: 56px; border: 1px solid rgba(247,244,234,.5); background: transparent; color: #F7F4EA; cursor: pointer; display: flex; align-items: center; justify-content: center">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 24px; color: #F7F4EA">
+        <p style="font-family: 'Marcellus', serif; font-size: 22px">{{ current.alt }}</p>
+        <a href="Main.dc.html" style="min-height: 50px; display: inline-flex; align-items: center; padding: 0 22px; background: #F7F4EA; color: #121A15; text-decoration: none; font-weight: 600; border-radius: 2px">Get free doctor consultation</a>
+      </div>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { cat: 'All', open: -1 };
+  }
+  photos() {
+    return [
+      { src: '/_blob/14d78610173d95e5e42b25c991288960', alt: 'Octagonal villa under a terracotta dome', cat: 'Villas' },
+      { src: '/_blob/bd7ea66bd9f58c21bcb0eb5ff73e0ea7', alt: 'Brick cottage among palms', cat: 'Villas' },
+      { src: '/_blob/ea414e7121c7ad0d7ef07e5392c57720', alt: 'Four-hand Abhyangam', cat: 'Therapies' },
+      { src: '/_blob/9f4c034e4aa7095d47366b04d4865928', alt: 'Oil prepared for Shirodhara', cat: 'Therapies' },
+      { src: '/_blob/da29021d40dbe1095a76c17019b81e2d', alt: 'Shiro Abhyangam, head therapy', cat: 'Therapies' },
+      { src: '/_blob/0cdcd2085f384edc5cc30c565d70b793', alt: 'Stillness after therapy', cat: 'Therapies' },
+      { src: '/_blob/8db7c6524f5bd1a6b01f3fd14d575d8d', alt: 'Morning mist over the cottages', cat: 'Grounds' },
+      { src: '/_blob/151b1c41e5f0b08aed0a2f86732b4e02', alt: 'Rest by the pool', cat: 'Grounds' },
+      { src: '/_blob/ee4a3aa9c2f8c85d3f56cd755681d972', alt: 'The dining hall', cat: 'Dining' }
+    ];
+  }
+  renderVals() {
+    const all = this.photos();
+    const cat = this.state.cat;
+    const list = cat === 'All' ? all : all.filter((p) => p.cat === cat);
+    const on = 'min-height: 44px; padding: 0 18px; border: 1px solid #121A15; background: #121A15; color: #F7F4EA; font-family: Mulish, sans-serif; font-size: 15px; font-weight: 600; cursor: pointer; border-radius: 2px';
+    const off = 'min-height: 44px; padding: 0 18px; border: 1px solid rgba(42,33,24,.3); background: transparent; color: #2A2118; font-family: Mulish, sans-serif; font-size: 15px; cursor: pointer; border-radius: 2px';
+    const tabs = ['All', 'Villas', 'Therapies', 'Grounds', 'Dining'].map((label) => ({
+      label: label,
+      pressed: label === cat ? 'true' : 'false',
+      style: label === cat ? on : off,
+      pick: () => this.setState({ cat: label, open: -1 })
+    }));
+    const i = this.state.open;
+    const n = list.length;
+    return {
+      tabs: tabs,
+      count: n,
+      shown: list.map((p, idx) => ({ ...p, open: () => this.setState({ open: idx }) })),
+      isOpen: i >= 0 && i < n,
+      current: i >= 0 && i < n ? list[i] : { src: '', alt: '', cat: '' },
+      pos: i + 1,
+      close: () => this.setState({ open: -1 }),
+      prev: () => this.setState({ open: (i - 1 + n) % n }),
+      next: () => this.setState({ open: (i + 1) % n })
+    };
+  }
+}
+</script>
+</body>
+</html>

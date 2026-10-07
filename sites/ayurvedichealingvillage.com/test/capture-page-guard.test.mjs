@@ -10,8 +10,8 @@ test('serialized proof cannot omit metrics or content-state booleans', () => {
   }
 });
 
-test('main programmes require exactly one existing contact form', () => {
-  for (const route of ['/weight-loss-programme/', '/digestive-wellness-gut-health-yoga-therapy/']) {
+test('active Weight Loss programme requires exactly one existing contact form', () => {
+  for (const route of ['/weight-loss-programme/']) {
     const requirements = captureContentRequirements(route);
     assert.deepEqual(requirements, { formSelector: '#programme-enquiry form[data-form="contact"]', formCount: 1 });
     const root = fixtureRoot(), query = root.querySelectorAll.bind(root);
@@ -22,6 +22,66 @@ test('main programmes require exactly one existing contact form', () => {
     try { assert.throws(() => assertCapturePage(inspectCapturePage(requirements), route), /page form/); }
     finally { delete globalThis.document; }
   }
+});
+
+const digestiveRoute = '/digestive-wellness-gut-health-yoga-therapy/';
+const contactPaths = {
+  en: '/contact-us/', hi: '/hi/contact-us/', de: '/de/kontakt/', fr: '/fr/contactez-nous/',
+  es: '/es/contact-us/', it: '/it/contact-us/', pt: '/pt/contact-us/', nl: '/nl/contact-us/',
+  ru: '/ru/contact-us/', ar: '/ar/contact-us/', 'zh-Hans': '/zh/contact-us/', ja: '/ja/contact-us/', ko: '/ko/contact-us/',
+};
+function digestiveProof(locale = 'en', { hrefs = [contactPaths[locale]], chromeHrefs = [], actions = ['/api/newsletter'], bodyActions = [], sections = 0, empty = false, noHeading = false, error = false } = {}) {
+  const root = fixtureRoot(error), content = fixtureRoot();
+  const originalQuery = root.querySelectorAll.bind(root), contentQuery = content.querySelectorAll.bind(content);
+  const anchors = list => list.map(href => ({ getAttribute: name => name === 'href' ? href : null }));
+  root.querySelectorAll = selector => {
+    if (selector === 'a[href]') return anchors([...hrefs, ...chromeHrefs]);
+    if (selector === 'form') return actions.map(action => ({ getAttribute: name => name === 'action' ? action : null }));
+    if (selector === '#programme-enquiry') return Array.from({ length: sections }, () => ({}));
+    if (selector === 'h1' && noHeading) return [];
+    return originalQuery(selector);
+  };
+  content.querySelectorAll = selector => selector === 'a[href]' ? anchors(hrefs) : selector === 'form' ? bodyActions.map(action => ({ getAttribute: () => action })) : contentQuery(selector);
+  if (empty) content.textContent = '';
+  root.cloneNode = () => content;
+  return inspectCapturePage({ ...captureContentRequirements(digestiveRoute, {}, locale), rootElement: root });
+}
+
+test('held Digestive requires its own localized contact CTA and zero inline forms in all13 locales', () => {
+  for (const [locale, path] of Object.entries(contactPaths)) {
+    assert.equal(captureContentRequirements(digestiveRoute, {}, locale).retainedDigestiveContact.path, path);
+    for (const href of [path, `https://ayurvedichealingvillage.com${path}`, `${path}?programme=treatment`]) {
+      assert.doesNotThrow(() => assertCapturePage(digestiveProof(locale, { hrefs: [href] }), digestiveRoute));
+    }
+  }
+  assert.equal(captureFormSelector(digestiveRoute), null);
+  assert.throws(() => captureContentRequirements(digestiveRoute, {}, 'unknown'), /Unknown held Digestive locale/);
+});
+
+test('held Digestive rejects missing, chrome-only, wrong-locale and foreign-origin contact journeys', () => {
+  for (const hrefs of [[], ['/enquiry-form/'], ['/de/kontakt/'], ['https://foreign.test/contact-us/'], ['//foreign.test/contact-us/'], ['https://user@ayurvedichealingvillage.com/contact-us/'], ['javascript:void(0)'], ['/contact-us/#missing']]) {
+    assert.throws(() => assertCapturePage(digestiveProof('en', { hrefs, chromeHrefs: ['/contact-us/'] }), digestiveRoute), /external contact journey/);
+  }
+  assert.throws(() => assertCapturePage(digestiveProof('de', { hrefs: ['/contact-us/'] }), digestiveRoute), /external contact journey/);
+});
+
+test('held Digestive rejects reintroduced forms, programme sections, dead anchors and incomplete content', () => {
+  for (const options of [{ actions: ['/api/lead/'] }, { actions: [''] }, { actions: ['https://foreign.test/api/newsletter'] }, { bodyActions: ['/api/newsletter'] }, { sections: 1 }, { hrefs: ['/contact-us/', '#programme-enquiry'] }, { hrefs: ['/contact-us/', 'https://ayurvedichealingvillage.com/digestive-wellness-gut-health-yoga-therapy/#programme-enquiry'] }]) {
+    assert.throws(() => assertCapturePage(digestiveProof('en', options), digestiveRoute), /external contact journey/);
+  }
+  assert.throws(() => assertCapturePage(digestiveProof('en', { empty: true }), digestiveRoute), /page body/);
+  assert.throws(() => assertCapturePage(digestiveProof('en', { noHeading: true }), digestiveRoute), /H1/);
+  assert.throws(() => assertCapturePage(digestiveProof('en', { error: true }), digestiveRoute), /Component import failed/);
+  assert.throws(() => assertCapturePage({ ...complete, requiredForm: false }, '/weight-loss-programme/'), /page form/);
+});
+
+test('held Digestive proof is mandatory, typed and cannot weaken another route', () => {
+  const proof = digestiveProof();
+  assert.throws(() => assertCapturePage(complete, digestiveRoute), /Missing held Digestive contact proof/);
+  for (const change of [{ id: 'forged' }, { path: '/elsewhere/' }, { contactLinks: -1 }, { inlineForms: false }, { deadProgrammeLinks: undefined }]) {
+    assert.throws(() => assertCapturePage({ ...proof, retainedDigestiveContact: { ...proof.retainedDigestiveContact, ...change } }, digestiveRoute), /Malformed/);
+  }
+  assert.throws(() => assertCapturePage(proof, '/weight-loss-programme/'), /Unexpected held Digestive/);
 });
 
 function fixtureRoot(importFailure = false) {

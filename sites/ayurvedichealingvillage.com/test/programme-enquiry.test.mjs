@@ -19,7 +19,8 @@ test('programme form is generated from the accepted enquiry form without page me
   for (const unit of htmlUnits(component)) assert.ok(existing.has(unit.source), 'new copy: ' + unit.source);
 });
 
-test('only the two main programmes import one form; their logic and tariff data stay intact', () => {
+test('only the active Weight Loss programme imports one form; its logic and tariff data stay intact', () => {
+  assert.deepEqual(programmeViews, ['ahv-page-weight-loss-programme-desktop', 'ahv-page-weight-loss-programme-mobile']);
   for (const id of programmeViews) {
     const view = JSON.parse(read(`public/ahv/views/${id}.json`));
     assert.equal(view.template.match(/name="AHV Programme Enquiry"/g)?.length, 1, id);
@@ -31,6 +32,17 @@ test('only the two main programmes import one form; their logic and tariff data 
     const scripts = orderedRuntimeScripts(view, { previewSrc: '/preview.js', supportSrc: '/support.js' }, false).map(x => x.src);
     assert.ok(scripts.indexOf('/design/lead-receipt.js') < scripts.indexOf('/ahv/assets/enquiry-family-data.js'));
     assert.equal(scripts.at(-1), '/support.js');
+  }
+});
+
+test('held Digestive views retain external enquiry links and cannot be reintegrated by the builder', () => {
+  for (const variant of ['desktop', 'mobile']) {
+    const view = JSON.parse(read(`public/ahv/views/ahv-page-digestive-wellness-gut-health-${variant}.json`));
+    assert.deepEqual(view.scripts, []);
+    assert.doesNotMatch(view.template, /AHV Programme Enquiry|#programme-enquiry/);
+    assert.match(view.template, /href="https:\/\/ayurvedichealingvillage\.com\/enquiry-form\/"/);
+    assert.throws(() => integrateProgrammeView(view), /held at its production baseline/);
+    assert.deepEqual(orderedRuntimeScripts(view, { previewSrc: '/preview.js', supportSrc: '/support.js' }, false).map(x => x.src), ['/preview.js', '/support.js']);
   }
 });
 
