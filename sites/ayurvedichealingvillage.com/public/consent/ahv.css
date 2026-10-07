@@ -1,0 +1,9 @@
+/* Brand-token overrides; pinned upstream styles stay byte-identical. */
+#cc-main { --cc-font-family:var(--font-body, sans-serif); --cc-bg:var(--card-bg, white); --cc-primary-color:var(--ink, black); --cc-btn-primary-bg:var(--forest-500, #5A4420); --cc-btn-primary-border-color:var(--forest-500, #5A4420); --cc-btn-primary-color:var(--ivory, white); --cc-toggle-on-bg:var(--forest-500, #5A4420); --cc-modal-border-radius:4px; --cc-btn-border-radius:4px; } /* brand-allow: rogue-hex — existing AHV palette fallback */
+#cc-main .cm__btn, #cc-main .pm__btn { min-height:44px; }
+#cc-main :focus-visible { outline:3px solid var(--forest-500, currentColor); outline-offset:3px; }
+html[data-ahv-cta-bar-on] #cc-main .cm { bottom:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 12px); }
+@media (max-width:700px) { #cc-main .cm { max-height:calc(100dvh - 100px); overflow:auto; } }
+
+.ahv-cookie-preferences { display:block;min-height:44px;margin:12px auto;padding:8px 16px;font:inherit;color:inherit;background:transparent;border:1px solid currentColor;border-radius:4px;cursor:pointer; }
+.ahv-cookie-preferences:focus-visible { outline:3px solid currentColor;outline-offset:3px; }

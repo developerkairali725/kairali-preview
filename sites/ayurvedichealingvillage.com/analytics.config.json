@@ -9,9 +9,8 @@
     "env": "AHV_ANALYTICS",
     "enabledWhen": "1",
     "default": "off",
-    "consentKey": "ktahv-consent",
-    "consentAcceptedValue": "accepted",
-    "note": "consentKey and its values are the APPROVED DESIGN's own contract (home view logic writes localStorage['ktahv-consent'] = accepted|declined). The site-wide notice reuses the same key so one choice covers every page.",
+    "consentKey": "ahv-consent-v2",
+    "note": "AHV-only CookieConsent revision2 validates preferences before the runtime starts optional SDKs. Analytics gates GA4/Clarity; advertising gates Ads/Meta. Legacy ktahv-consent remains presentation compatibility only and never grants measurement.",
     "stagingEnv": "AHV_ANALYTICS_STAGING"
   },
   "measurement": {

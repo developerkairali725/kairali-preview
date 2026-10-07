@@ -41,7 +41,7 @@ function browser(choice = "accepted", status = 200, result = { ok: true, status:
   };
   ctx.window = ctx;
   ctx.window.fetch = async () => ({ status, clone: () => ({ json: async () => result }) });
-  runInNewContext(`var cfg={measurement:{ga4:"G-test",clarity:"c-test",metaPixel:"p-test",adsSendTo:"AW-test/action",environment:${JSON.stringify(environment)}}};var host=document.body;${consentRuntime}\nif(consentChoice()==="accepted")startMeasurement();`, ctx);
+  runInNewContext(`var cfg={measurement:{ga4:"G-test",clarity:"c-test",metaPixel:"p-test",adsSendTo:"AW-test/action",environment:${JSON.stringify(environment)}}};var host=document.body;${consentRuntime}\nwindow.AHV_SET_CONSENT({analytics:${choice === "accepted" || choice === "analytics"},advertising:${choice === "accepted" || choice === "advertising"}});`, ctx);
   runInNewContext(receiptRuntime, ctx);
   return ctx;
 }
@@ -58,7 +58,7 @@ test("paid arrival starts only consented measurement; unsafe query suppresses th
   assert.equal(fragment.AHV_MEASUREMENT.recordLead("contact", token), false);
   const declined = browser("declined");
   assert.equal(declined.__ahvMeasurementStarted, undefined);
-  assert.equal(declined.dataLayer, undefined);
+  assert.equal(declined.dataLayer.at(-1)[2].analytics_storage, "denied");
 });
 
 test('active campaign URLs retain consented measurement and the first nonempty attribution value', async () => {
@@ -181,28 +181,15 @@ test('consented attribution survives programme navigation, expires, and excludes
  assert.equal(declined.sessionStorage.getItem('ahv-paid-attribution-v1'),null);
 });
 
-test('cookie preferences revoke current tags and leave no stored choice for the reopened notice', () => {
-  const stored = new Map([['ktahv-consent', 'accepted'], ['kairali-consent-v1', 'accepted']]);
-  let click, reloads = 0;
-  const ctx = {
-    JSON, Date,
-    localStorage: {getItem: k => stored.get(k) ?? null, setItem: (k,v) => stored.set(k,v), removeItem: k => stored.delete(k)},
-    document: {addEventListener: (type, handler) => {if(type === 'click') click = handler;}},
-    location: {reload: () => {assert.equal(stored.size, 0); reloads++;}},
-  };
-  ctx.window = ctx;
-  runInNewContext(`var cfg={}; ${consentRuntime}`, ctx);
-  let prevented = false;
-  click({target: {closest: selector => selector === '[data-ahv-cookie-choices]' ? {} : null}, preventDefault: () => {prevented = true;}});
-  assert.equal(prevented, true);
-  assert.equal(reloads, 1);
-  assert.equal(stored.size, 0);
-  const signals = ctx.dataLayer.find(entry => entry[0] === 'consent' && entry[1] === 'update')[2];
-  assert.equal(signals.analytics_storage, 'denied');
-  assert.equal(signals.ad_storage, 'denied');
-  assert.equal(signals.security_storage, 'granted');
+test('saved withdrawal denies loaded tags before a reload', () => {
+ const ctx=browser(); let reloads=0;
+ ctx.location.reload=()=>{reloads++;assert.equal(ctx.dataLayer.at(-1)[2].analytics_storage,'denied');};
+ ctx.AHV_SET_CONSENT({analytics:false,advertising:false});
+ assert.equal(reloads,1);
+ assert.equal(ctx.fbq.queue.at(-1)[1],'revoke');
+ assert.equal(ctx.clarity.q.at(-1)[1].analytics_Storage,'denied');
+ assert.equal(ctx.AHV_MEASUREMENT.recordLead('contact',token),false);
 });
-
 
 test('paid page location retains attribution in Safari without URLSearchParams.size', () => {
   const descriptor = Object.getOwnPropertyDescriptor(URLSearchParams.prototype, 'size');
@@ -219,9 +206,10 @@ test("automatic Google customer-data collection is disabled before SDK load and 
   for (const environment of ["production", "staging"]) {
     const ctx = browser("accepted", 200, {ok:true,status:"received"}, "?gclid=paid123", environment);
     const commands = ctx.googleCommandsAtLoad;
-    assert.equal(commands[0][0], "set");
-    assert.equal(Object.hasOwn(commands[0][1], "user_data"), true);
-    assert.equal(commands[0][1].user_data, null);
+    assert.equal(commands[0][0], "consent");
+    const privacy = commands.find(entry => entry[0] === "set");
+    assert.equal(Object.hasOwn(privacy[1], "user_data"), true);
+    assert.equal(privacy[1].user_data, null);
     assert.ok(commands.some(entry => entry[0] === "config"));
     for (const entry of commands.filter(entry => entry[0] === "config")) {
       assert.equal(Object.hasOwn(entry[2], "user_data"), true);
@@ -237,4 +225,17 @@ test("automatic Google customer-data collection is disabled before SDK load and 
     }
     assert.equal(ctx.dataLayer.filter(entry => entry[1] === (environment === "staging" ? "ahv_staging_lead" : "generate_lead")).length, 1);
   }
+});
+
+// VM-only commands: no network or conversion receipts reach vendors.
+test('category choices keep lead destinations separate', () => {
+ for (const category of ['analytics','advertising']) {
+  const ctx=browser(category);
+  assert.equal(ctx.AHV_MEASUREMENT.recordLead('contact',token),true);
+  const events=ctx.dataLayer.filter(c=>c[0]==='event').map(c=>c[1]);
+  assert.equal(events.includes('generate_lead'),category==='analytics');
+  assert.equal(events.includes('conversion'),category==='advertising');
+  assert.equal(!!ctx.fbq,category==='advertising');
+  assert.equal(!!ctx.clarity,category==='analytics');
+ }
 });

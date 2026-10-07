@@ -11,7 +11,8 @@ test('supplier route inventory remains complete and German page has a German doc
 test('supplier form mount uses the existing endpoint and no duplicate consent or chat',()=>{
  assert.match(read('campaign-v110/components/EnquiryForm.tsx'),/CampaignEnquiryForm/);
  assert.doesNotMatch(read('campaign-v110/components/PageShell.tsx'),/<CookieConsent|<ChatWidgetSlot/);
- assert.match(read('campaign-v110/CampaignDocument.tsx'),/<ConsentScripts \/>/);
+ assert.match(read('campaign-v110/CampaignDocument.tsx'),/consentDefaultSnippet\(\)/);
+ assert.doesNotMatch(read('campaign-v110/CampaignDocument.tsx'),/ConsentScripts|restoreConsent/);
  assert.match(read('campaign-v110/CampaignDocument.tsx'),/<ChatbaseLoader \/>/);
  assert.match(read('app/(lp)/_components/campaign-enquiry-form.tsx'),/'gclid'/);
  assert.match(read('campaign-v110/SharedConsent.tsx'),/CONSENT_RUNTIME/);
