@@ -6,7 +6,7 @@ import {useRef,useState,type FormEvent} from 'react';
  * route is not configured it answers 503 *_NOT_CONFIGURED and this form says
  * so truthfully — nothing is sent, nothing is claimed. Without JavaScript the
  * form posts to /api/forms-unavailable, which never reads the body. */
-export function CampaignEnquiryForm({formType='consultation',heading='Request a consultation',submitLabel='Request consultation',lang='en'}:{formType?:string;heading?:string;submitLabel?:string;lang?:string}) {
+export function CampaignEnquiryForm({formType='consultation',heading='Request a consultation',submitLabel='Request consultation',localizedSubmitLabel,lang='en'}:{formType?:string;heading?:string;submitLabel?:string;localizedSubmitLabel?:string;lang?:string}) {
  const [sending,setSending]=useState(false),[error,setError]=useState(''),[sent,setSent]=useState(false);
  const submissionToken=useRef<string|null>(null);
  const de=lang==='de';
@@ -17,7 +17,7 @@ export function CampaignEnquiryForm({formType='consultation',heading='Request a 
   network:'Wir konnten den Eingang Ihrer Anfrage nicht bestätigen. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.',
   sent:'Vielen Dank. Ihre Anfrage ist eingegangen.', intro:'Teilen Sie uns mit, wie wir Sie erreichen können. Unser Patientenservice hilft Ihnen bei der Planung Ihres Aufenthalts.',
   name:'Ihr Name',email:'E-Mail',phone:'Telefon / WhatsApp',optional:'optional, mit Ländervorwahl',message:'Wie können wir helfen?',
-  messageOptional:'optional',consent:'Ich stimme zu, zu meiner Anfrage kontaktiert zu werden.',privacy:'Datenschutzerklärung (EN)',sending:'Wird gesendet…',submit:'Programm anfragen'
+  messageOptional:'optional',consent:'Ich stimme zu, zu meiner Anfrage kontaktiert zu werden.',privacy:'Datenschutzerklärung (EN)',sending:'Wird gesendet…',submit:localizedSubmitLabel||'Programm anfragen'
  }:{
   notConnected:'This form is not connected yet. Nothing has been sent. Please use WhatsApp or email info@kairali.com.',
   retry:'Please wait before trying again. Your details are still here.',

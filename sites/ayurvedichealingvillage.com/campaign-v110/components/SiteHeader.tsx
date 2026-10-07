@@ -5,7 +5,7 @@ import styles from "./SiteHeader.module.css";
 
 // CTA placement 1: sticky header — phone number as quiet text + one Enquire
 // button. Carries the staging hero's brand logo (lp-brand-link).
-export default function SiteHeader({ enquireLabel = "Enquire" }: { enquireLabel?: string }) {
+export default function SiteHeader({ enquireLabel = "Enquire", campaign = false }: { enquireLabel?: string; campaign?: boolean }) {
   return (
     <header className={styles.header}>
       <div className={styles.inner}>
@@ -16,8 +16,8 @@ export default function SiteHeader({ enquireLabel = "Enquire" }: { enquireLabel?
           <a className={styles.phone} href={contact.phone.href}>
             {contact.phone.display}
           </a>
-          <a className={`btn btn-primary ${styles.enquire}`} href={ENQUIRY_HREF}>
-            {enquireLabel}
+          <a className={`btn btn-primary ${styles.enquire}`} href={campaign ? "#campaign-consultation" : ENQUIRY_HREF}>
+            {campaign ? "Get Free Doctor Consultation" : enquireLabel}
           </a>
         </div>
       </div>

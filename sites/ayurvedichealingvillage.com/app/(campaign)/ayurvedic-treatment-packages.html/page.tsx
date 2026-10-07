@@ -1,3 +1,6 @@
+import {campaignPresentation} from "../../../campaign-v110/components/campaign-presentation";
+import CampaignExperience from "../../../campaign-v110/components/CampaignExperience";
+import {domToReact, htmlToDOM, type DOMNode} from "html-react-parser";
 import {HeroMedia} from '../_traffic/HeroMedia';
 import type { Metadata } from 'next';
 import Image from 'next/image';
@@ -22,7 +25,7 @@ export const metadata: Metadata = {
 };
 const options: HTMLReactParserOptions = { replace(node) {
  if (!(node instanceof Element)) return;
- if (node.name === 'r10-enquiry') return <R10EnquiryForm formType="ayurvedic-treatment-packages" submitLabel="Submit enquiry"/>;
+ if (node.name === 'r10-enquiry') return <R10EnquiryForm campaign formType="ayurvedic-treatment-packages" submitLabel="Submit enquiry"/>;
  if (node.name === 'img') {
   const a=node.attribs;
   const hero=a.class?.includes('hero-photograph');
@@ -35,5 +38,5 @@ const schema = {
  breadcrumb:{'@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:'https://ayurvedichealingvillage.com/'},{'@type':'ListItem',position:2,name:'Ayurvedic treatment packages',item:canonical}]}
 };
 export default function Page() {
- return <div className="r10-revision"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}}/>{parse(approvedContent,options)}<GuestSupport/></div>;
+ return <div id="ahv-campaign-page" className="r10-revision ahv-campaign-page"><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}}/>{domToReact(campaignPresentation(htmlToDOM(approvedContent) as DOMNode[]),options)}<GuestSupport/><CampaignExperience/></div>;
 }

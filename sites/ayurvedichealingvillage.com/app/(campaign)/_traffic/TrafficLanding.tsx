@@ -1,3 +1,6 @@
+import {campaignPresentation} from "../../../campaign-v110/components/campaign-presentation";
+import CampaignExperience from "../../../campaign-v110/components/CampaignExperience";
+import {domToReact, htmlToDOM, type DOMNode} from "html-react-parser";
 import {HeroMedia} from './HeroMedia';
 import type {Metadata} from 'next';
 import Image from 'next/image';
@@ -22,12 +25,12 @@ export function trafficMetadata(route:string,title:string,description:string):Me
 export function TrafficLanding({content,kind}:{content:string;kind:'pain'|'family'}){
  const options:HTMLReactParserOptions={replace(node){
   if(!(node instanceof Element))return;
-  if(node.name==='traffic-enquiry')return <R10EnquiryForm formType={kind==='pain'?'pain-management':'family-retreat'} familyFields={kind==='family'} submitLabel={kind==='pain'?'Enquire about pain care':'Plan my family retreat'} downloadGuide={false}/>;
+  if(node.name==='traffic-enquiry')return <R10EnquiryForm campaign formType={kind==='pain'?'pain-management':'family-retreat'} familyFields={kind==='family'} submitLabel={kind==='pain'?'Enquire about pain care':'Plan my family retreat'} downloadGuide={false}/>;
   if(node.name==='heritage-years')return <HeritageYears initial={heritageYears()}/>;
   if(node.name==='stay-gallery')return <StayGallery/>;
   if(node.name==='img'){const a=node.attribs,hero=a.class?.includes('hero-photograph');if(hero)return <HeroMedia src={a.src} alt={a.alt||''} width={Number(a.width)||1600} height={Number(a.height)||1000}/>;return <Image src={a.src} alt={a.alt||''} className={a.class} width={Number(a.width)||1200} height={Number(a.height)||800} priority={hero} fetchPriority={hero?'high':undefined} quality={hero?60:75} sizes={hero?'100vw':'(max-width:700px) 100vw, 50vw'}/>;}
  }};
  const url='https://ayurvedichealingvillage.com/'+(kind==='pain'?'pain-management.html':'family-ayurvedic-retreat-kerala.html');
  const schema={'@context':'https://schema.org','@type':'WebPage',url,name:kind==='pain'?'Ayurvedic Pain Management in Kerala':'Family Ayurveda Retreat in Kerala',inLanguage:'en',isPartOf:{'@type':'WebSite',url:'https://ayurvedichealingvillage.com/',name:'Kairali Ayurvedic Healing Village'}};
- return <div className={`r10-revision tl-page tl-${kind}`}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}}/>{kind==='family'&&<ProgrammeNavigation/>}{parse(content,options)}<GuestSupport/></div>;
+ return <div id="ahv-campaign-page" className={`r10-revision ahv-campaign-page tl-page tl-${kind}`}><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(schema).replace(/</g,'\\u003c')}}/>{kind==='family'&&<ProgrammeNavigation/>}{domToReact(campaignPresentation(htmlToDOM(content) as DOMNode[]),options)}<GuestSupport/><CampaignExperience/></div>;
 }

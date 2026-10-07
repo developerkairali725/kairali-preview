@@ -1,6 +1,7 @@
 // Renders an /lp/ page from its content model, in staging's section order,
 // using the same components as the approved /lp/treatment-packages/.
 
+import EnquiryForm from "../EnquiryForm";
 import PageShell from "../PageShell";
 import {
   Faq,
@@ -47,11 +48,12 @@ function BlockView({ b }: { b: Block }) {
 
 export default function LpPage({ content: c }: { content: LpContent }) {
   return (
-    <PageShell lang={c.lang} legalLabels={c.legalLabels}>
+    <PageShell lang={c.lang} legalLabels={c.legalLabels} campaign>
       {c.jsonLd && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(c.jsonLd) }} />
       )}
       <LpHero
+        form={<EnquiryForm pagePath={c.path} heading={c.enquiry.form.heading} whatsappText={c.whatsappText} lang={c.lang} />}
         overline={c.hero.overline}
         title={<Runs runs={c.hero.h1} />}
         sub={c.hero.sub}

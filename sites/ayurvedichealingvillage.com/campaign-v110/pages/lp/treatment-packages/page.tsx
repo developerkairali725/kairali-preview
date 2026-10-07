@@ -6,6 +6,7 @@
 // Every change from staging is recorded in docs/changes/lp-treatment-packages.md.
 
 import type { Metadata } from "next";
+import EnquiryForm from "../../../components/EnquiryForm";
 import PageShell from "../../../components/PageShell";
 import {
   Lead,
@@ -103,11 +104,12 @@ const jsonLd = {
 
 export default function TreatmentPackagesPage() {
   return (
-    <PageShell>
+    <PageShell campaign>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
       {/* 1 · Hero (.lp-hero) */}
       <LpHero
+        form={<EnquiryForm pagePath={PATH} whatsappText="I would like to enquire about an Ayurvedic treatment programme." />}
         overline="NABH-accredited Ayurvedic hospital, Palakkad"
         title={
           <>
