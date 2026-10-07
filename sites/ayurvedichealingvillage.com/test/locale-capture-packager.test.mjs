@@ -10,7 +10,7 @@ const site=fileURLToPath(new URL('../',import.meta.url));
 function fixture(){
  const root=fs.mkdtempSync(path.join(site,'.ahv-locale-capture-test-'));
  const put=(file,value)=>{const dest=path.join(root,file);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.writeFileSync(dest,typeof value==='string'?value:JSON.stringify(value));};
- for(const file of ['tools/package-locale-prerenders.mjs','tools/locale-capture-coordination.mjs','tools/capture-page-guard.mjs','tools/capture-failure-diagnostics.mjs','tools/capture-locales-parallel.mjs','tools/restore-locale-prerenders.mjs','tools/download-release-asset.mjs','tools/verify-interaction-only-source.mjs','tools/l10n/prerender-manifest.mjs','tools/l10n/sources-lite.mjs']){const dest=path.join(root,file);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.copyFileSync(path.join(site,file),dest);}
+ for(const file of ['tools/package-locale-prerenders.mjs','tools/capture-validator-transition.mjs','tools/locale-capture-coordination.mjs','tools/capture-page-guard.mjs','tools/capture-failure-diagnostics.mjs','tools/capture-locales-parallel.mjs','tools/restore-locale-prerenders.mjs','tools/download-release-asset.mjs','tools/verify-interaction-only-source.mjs','tools/l10n/prerender-manifest.mjs','tools/l10n/sources-lite.mjs']){const dest=path.join(root,file);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.copyFileSync(path.join(site,file),dest);}
  put('english-candidate/locale-prerenders-release.json',{archive:'ahv-locale-prerenders-before.tar.gz',asset:'ahv-locale-prerenders-before.tar.gz',repository:'fixture',tag:'fixture',sources:[],files:[],interactionOnlySources:[]});
  put('app/(english)/_families/native-pages.tsx','const NATIVE = new Set(["/search/"]);');
  put('english-candidate/route-manifest.json',{routes:Array.from({length:26},(_,i)=>({path:i?`/route-${i}/`:'/'})).concat([{path:'/search/'}])});
@@ -116,10 +116,19 @@ test('disjoint parallel workers merge only complete exact-source nonduplicated c
   let r=x.run('--merge-captures',dirs.join(','));assert.equal(r.status,0,r.stderr);
   const merged=JSON.parse(fs.readFileSync(path.join(x.root,'evidence/capture-receipt.json')));
   assert.equal(merged.complete,true);assert.deepEqual(Object.keys(merged.locales).sort(),['de','fr']);
+  const mergedFile=path.join(x.root,'evidence/capture-receipt.json'),mergedBytes=fs.readFileSync(mergedFile);
+  for(const workers of [[],[merged.workers[0]],[merged.workers[0],merged.workers[0]]]){
+   fs.writeFileSync(mergedFile,JSON.stringify({...merged,workers}));
+   const rejected=x.run('--package','--archive','ahv-locale-prerenders-forged.tar.gz');assert.notEqual(rejected.status,0);assert.match(rejected.stderr,/worker lineage|worker locale|locale coverage/i);
+  }
+  fs.writeFileSync(mergedFile,mergedBytes);
   r=x.run('--merge-captures',[dirs[0],dirs[0]].join(','));assert.notEqual(r.status,0);assert.match(r.stderr,/duplicate worker locale/);
   const file=path.join(dirs[0],'capture-receipt.json'),original=fs.readFileSync(file),receipt=JSON.parse(original);
   fs.writeFileSync(file,JSON.stringify({...receipt,base:''}));
   r=x.run('--merge-captures',dirs.join(','));assert.notEqual(r.status,0);assert.match(r.stderr,/Invalid capture base/);
+  fs.writeFileSync(file,original);
+  fs.writeFileSync(file,JSON.stringify({...receipt,workers:[{file:'nonexistent',sha256:'forged'}]}));
+  r=x.run('--merge-captures',dirs.join(','));assert.notEqual(r.status,0);assert.match(r.stderr,/Nested worker lineage/);
   fs.writeFileSync(file,original);
   receipt.locales.de.completed.push(receipt.locales.de.completed[0]);fs.writeFileSync(file,JSON.stringify(receipt));
   r=x.run('--merge-captures',dirs.join(','));assert.notEqual(r.status,0);assert.match(r.stderr,/coverage/);
@@ -171,5 +180,16 @@ test('parallel setup failures drain started workers before releasing evidence ow
   x.put('l10n/locales.json','{malformed');
   r=spawnSync(process.execPath,args,{cwd:x.root,encoding:'utf8'});assert.notEqual(r.status,0);
   assert.equal(fs.existsSync(path.join(evidence,'.capture-evidence-writer-lock.json')),false);
+ }finally{x.cleanup();}
+});
+
+test('bounded priority routes are captured first without changing authoritative route inventory or recapturing completed bodies',()=>{
+ const x=fixture();try{
+  const evidence=path.join(x.root,'evidence');
+  const r=spawnSync(process.execPath,['tools/package-locale-prerenders.mjs','--capture','--evidence',evidence,'--base','http://127.0.0.1:3218'],{cwd:x.root,encoding:'utf8',env:{...process.env,AHV_CAPTURE_PRIORITY_LOCALE:'de',AHV_CAPTURE_PRIORITY_ROUTES:'/route-25/'}});
+  assert.equal(r.status,0,r.stderr);const receipt=JSON.parse(fs.readFileSync(path.join(evidence,'capture-receipt.json')));
+  assert.deepEqual(receipt.locales.de.batches.map(batch=>batch.snapshots.length),[1,25]);
+  assert.equal(receipt.locales.de.batches[0].snapshots[0].route,'/route-25/');assert.equal(receipt.locales.de.routes[0],'/');
+  assert.equal(new Set(receipt.locales.de.completed).size,26);
  }finally{x.cleanup();}
 });

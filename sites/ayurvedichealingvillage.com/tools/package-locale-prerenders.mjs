@@ -9,6 +9,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {spawnSync} from 'node:child_process';
+import {loadValidatorTransition} from './capture-validator-transition.mjs';
 import {selectCaptureLocales,takeLocaleLocks,takeEvidenceLock,verifyLocaleCaptureState,validateCaptureBase} from './locale-capture-coordination.mjs';
 
 const SITE=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
@@ -42,7 +43,7 @@ function sourceRows(){
 function renderInputRows(){
  const roots=['app','components','lib','public/consent','../../packages/consent','english-candidate','public/design','public/ahv/views','public/ahv/assets','public/ahv/components','public/ahv/preview','public/ahv/runtime','tools/l10n','l10n/source','l10n/overrides','l10n/output'];
  const names=new Set(roots.flatMap(dir=>fs.existsSync(path.join(SITE,dir))?walk(dir):[]));
- for(const file of ['tools/prerender-english.mjs','tools/repair-snapshot-links.mjs','tools/capture-page-guard.mjs','tools/capture-failure-diagnostics.mjs','tools/locale-capture-coordination.mjs','tools/capture-locales-parallel.mjs','tools/package-locale-prerenders.mjs','tools/build-review-chrome.mjs','tools/build-runtime-bundles.mjs','analytics.config.json','site.config.json','next.config.ts','public/ahv/support.js','public/ahv/image-slot.js','public/ahv/ahv-image-slots.state.json','l10n/locales.json'])if(fs.existsSync(path.join(SITE,file)))names.add(file);
+ for(const file of ['tools/prerender-english.mjs','tools/repair-snapshot-links.mjs','tools/capture-page-guard.mjs','tools/capture-failure-diagnostics.mjs','tools/capture-validator-transition.mjs','tools/locale-capture-coordination.mjs','tools/capture-locales-parallel.mjs','tools/package-locale-prerenders.mjs','tools/build-review-chrome.mjs','tools/build-runtime-bundles.mjs','analytics.config.json','site.config.json','next.config.ts','public/ahv/support.js','public/ahv/image-slot.js','public/ahv/ahv-image-slots.state.json','l10n/locales.json'])if(fs.existsSync(path.join(SITE,file)))names.add(file);
  return [...names].filter(file=>!file.startsWith('app/api/')&&/\.(?:json|js|mjs|ts|tsx|css|html)$/.test(file)).sort().map(file=>({file,sha256:fileHash(file)}));
 }
 function signature(){return sha(JSON.stringify({sources:sourceRows(),renderInputs:renderInputRows()}));}
@@ -53,6 +54,41 @@ function verifyTranslations(){
 }
 function command(args){const r=spawnSync(process.execPath,args,{cwd:SITE,stdio:'inherit',env:process.env});if(r.status!==0)throw Error(`Command failed (${r.status}): ${args.join(' ')}`);}
 const sources=sourceRows();
+const transitionPath=arg('validator-transition',process.env.AHV_CAPTURE_VALIDATOR_TRANSITION);
+const transitionSha256=arg('validator-transition-sha256',process.env.AHV_CAPTURE_VALIDATOR_TRANSITION_SHA256);
+let validatorTransition;
+const transition=()=>{
+ if(!validatorTransition)validatorTransition=loadValidatorTransition({site:SITE,file:transitionPath,sha256:transitionSha256,current:{sources:sourceRows(),renderInputs:renderInputRows(),sourceSignature:signature()}});
+ return validatorTransition;
+};
+function validateReceiptSource(receipt,currentSignature){
+ if(receipt.invalidatedAt)throw Error('Complete capture proof for exact current source is required');
+ if(receipt.validatorTransition){transition().validateReceipt(receipt);return receipt.currentValidationSourceSignature===currentSignature;}
+ if(receipt.sourceSignature!==currentSignature||JSON.stringify(receipt.renderInputs)!==JSON.stringify(renderInputRows()))return false;
+ if(Object.hasOwn(receipt,'workers')&&(!Array.isArray(receipt.workers)||!receipt.workers.length))throw Error('Merged capture requires nonempty worker lineage');
+ if(!Object.hasOwn(receipt,'workers'))for(const state of Object.values(receipt.locales||{}))for(const batch of state.batches)if(batch.captureSourceSignature!==currentSignature)throw Error('Fresh receipt lacks exact capture epoch');
+ return true;
+}
+function verifyWorkerLineage(receipt,currentSignature){
+ if(!Object.hasOwn(receipt,'workers'))return;
+ if(!Array.isArray(receipt.workers)||!receipt.workers.length)throw Error('Merged capture requires nonempty worker lineage');
+ const ownedLocales=new Set(),workerFiles=new Set();
+ for(const worker of receipt.workers){
+  if(workerFiles.has(worker.file))throw Error('Duplicate merged worker lineage');
+  workerFiles.add(worker.file);
+  if(sha(fs.readFileSync(worker.file))!==worker.sha256)throw Error('Merged worker evidence changed');
+  const original=JSON.parse(fs.readFileSync(worker.file));
+  if(Object.hasOwn(original,'workers'))throw Error('Nested worker lineage is not supported');
+  if(!original.complete||!validateReceiptSource(original,currentSignature))throw Error('Merged worker source lineage changed');
+  for(const [loc,state]of Object.entries(original.locales)){
+   if(ownedLocales.has(loc))throw Error('Duplicate merged worker locale');
+   ownedLocales.add(loc);
+   if(JSON.stringify(state)!==JSON.stringify(receipt.locales[loc]))throw Error('Merged worker capture lineage changed');
+  }
+ }
+ if(JSON.stringify([...ownedLocales].sort())!==JSON.stringify(Object.keys(receipt.locales).sort()))throw Error('Merged worker locale coverage changed');
+}
+if(arg('transition-inputs',null))fs.writeFileSync(path.resolve(arg('transition-inputs')),JSON.stringify({sources,renderInputs:renderInputRows(),sourceSignature:signature()},null,2)+'\n');
 const changes=sources.filter(row=>old.sources.find(s=>s.file===row.file)?.sha256!==row.sha256);
 fs.writeFileSync(path.join(evidence,'source-drift.json'),JSON.stringify({at:new Date().toISOString(),sources:sources.length,changed:changes,routes:Object.fromEntries(Object.entries(expected).map(([loc,rs])=>[loc,rs.length]))},null,2)+'\n');
 if(process.argv.includes('--capture')){
@@ -67,7 +103,8 @@ if(process.argv.includes('--capture')){
  let receipt={startedAt:new Date().toISOString(),sourceSignature,renderInputs:renderInputRows(),base,batchSize:25,targetLocales:selectedLocales,locales:{},complete:false};
  if(process.argv.includes('--resume')&&fs.existsSync(receiptFile)){
   receipt=JSON.parse(fs.readFileSync(receiptFile,'utf8'));
-  if(receipt.invalidatedAt||receipt.sourceSignature!==sourceSignature||receipt.base!==base)throw Error('Cannot resume capture after source/base changed or invalidation');
+  if(!receipt.validatorTransition&&receipt.sourceSignature!==sourceSignature&&transitionPath)receipt=transition().attach(receipt);
+  if(!validateReceiptSource(receipt,sourceSignature)||receipt.base!==base)throw Error('Cannot resume capture after source/base changed or invalidation');
   if(JSON.stringify(receipt.targetLocales)!==JSON.stringify(selectedLocales))throw Error('Cannot resume after assigned locales changed');
  }
  const persist=()=>fs.writeFileSync(receiptFile,JSON.stringify(receipt,null,2)+'\n');
@@ -78,9 +115,13 @@ if(process.argv.includes('--capture')){
   if(JSON.stringify(state.routes)!==JSON.stringify(expected[loc]))throw Error('Route set changed: '+loc);
   receipt.locales[loc]=state;
   for(const batch of state.batches)for(const row of batch.snapshots)if(row.sha256!==fileHash(row.file))throw Error('Recorded snapshot changed before resume: '+row.file);
-  for(let start=0;start<state.routes.length;start+=25){
-   const routes=state.routes.slice(start,start+25);
-   if(routes.every(route=>state.completed.includes(route)))continue;
+  const priority=loc===process.env.AHV_CAPTURE_PRIORITY_LOCALE?(process.env.AHV_CAPTURE_PRIORITY_ROUTES||'').split(',').filter(Boolean):[];
+  if(priority.length>25||new Set(priority).size!==priority.length||priority.some(route=>!state.routes.includes(route)))throw Error('Invalid bounded priority capture routes');
+  const priorityPending=priority.filter(route=>!state.completed.includes(route));
+  const pending=state.routes.filter(route=>!state.completed.includes(route)&&!priority.includes(route));
+  const batches=priorityPending.length?[priorityPending]:[];
+  for(let start=0;start<pending.length;start+=25)batches.push(pending.slice(start,start+25));
+  for(const routes of batches){
    if(arg('stop-after-batch-file',null)&&fs.existsSync(arg('stop-after-batch-file')))break captureLoop;
    if(signature()!==sourceSignature)throw Error('Source changed during capture; retain evidence and restart after source freeze');
    const args=['tools/prerender-english.mjs','--base',base,'--locale',loc,'--only',routes.join(','),'--concurrency',arg('concurrency','3'),'--block-external','--require-live-runtime'];
@@ -97,7 +138,7 @@ if(process.argv.includes('--capture')){
     if(signature()!==sourceSignature)throw Error('Source changed after capture attempt');
     const current=read(`l10n/prerender/${loc}/index.json`);
     const failed=selected.map(route=>current.routes.find(r=>r.path===route)||{path:route,ok:false,error:'No capture result'}).filter(row=>!row.ok);
-    state.attempts.push({at:new Date().toISOString(),routes:selected,concurrency:Number(concurrency),retry,status:result.status,failed});persist();
+    state.attempts.push({captureSourceSignature:sourceSignature,at:new Date().toISOString(),routes:selected,concurrency:Number(concurrency),retry,status:result.status,failed});persist();
     return {result,failed};
    };
    const first=attempt(routes,arg('concurrency','3'),false);
@@ -117,7 +158,7 @@ if(process.argv.includes('--capture')){
     return {route,file,sha256:fileHash(file)};
    });
    state.completed.push(...routes.filter(route=>!state.completed.includes(route)));
-   state.batches.push({completedAt:new Date().toISOString(),snapshots});persist();
+   state.batches.push({captureSourceSignature:sourceSignature,completedAt:new Date().toISOString(),snapshots});persist();
    console.log(`LOCALE CAPTURE ${loc}: ${state.completed.length}/${state.routes.length}`);
    completedBatches++;
    if(maxBatches&&completedBatches>=maxBatches)break captureLoop;
@@ -137,7 +178,8 @@ if(process.argv.includes('--merge-captures')){
   const merged={startedAt:null,finishedAt:new Date().toISOString(),sourceSignature,renderInputs,base:null,batchSize:25,targetLocales:locales,locales:{},workers:[],complete:false};
   for(const directory of directories){
    const file=path.resolve(directory,'capture-receipt.json'),receipt=JSON.parse(fs.readFileSync(file));
-   if(!receipt.complete||receipt.invalidatedAt||receipt.sourceSignature!==sourceSignature||JSON.stringify(receipt.renderInputs)!==JSON.stringify(renderInputs))throw Error('Worker lacks complete capture proof for exact current source');
+   if(Object.hasOwn(receipt,'workers'))throw Error('Nested worker lineage is not supported');
+   if(!receipt.complete||!validateReceiptSource(receipt,sourceSignature))throw Error('Worker lacks complete capture proof for exact current source');
    validateCaptureBase(receipt.base);
    if(merged.base!==null&&merged.base!==receipt.base)throw Error('Worker capture bases differ');
    merged.base=receipt.base;merged.startedAt=merged.startedAt&&merged.startedAt<receipt.startedAt?merged.startedAt:receipt.startedAt;
@@ -147,7 +189,7 @@ if(process.argv.includes('--merge-captures')){
     verifyLocaleCaptureState({site:SITE,locale:loc,state,expected:expected[loc],fileHash,snapshotName});
     merged.locales[loc]=state;
    }
-   merged.workers.push({file,sha256:sha(fs.readFileSync(file))});
+   merged.workers.push({file,sha256:sha(fs.readFileSync(file)),captureSourceSignature:receipt.sourceSignature,currentValidationSourceSignature:receipt.currentValidationSourceSignature||receipt.sourceSignature,...(receipt.validatorTransition?{validatorTransition:receipt.validatorTransition}:{})});
   }
   if(locales.some(loc=>!merged.locales[loc]))throw Error('Combined capture does not cover every locale');
   if(signature()!==sourceSignature)throw Error('Source changed during receipt merge');
@@ -160,7 +202,8 @@ if(process.argv.includes('--package')){
  try{
  verifyTranslations();
  const receipt=JSON.parse(fs.readFileSync(receiptFile,'utf8'));
- if(!receipt.complete||receipt.invalidatedAt||receipt.sourceSignature!==signature())throw Error('Complete capture proof for exact current source is required');
+ if(!receipt.complete||!validateReceiptSource(receipt,signature()))throw Error('Complete capture proof for exact current source is required');
+ verifyWorkerLineage(receipt,signature());
  validateCaptureBase(receipt.base);
  const files=[];
  for(const loc of locales){
@@ -186,7 +229,7 @@ if(process.argv.includes('--package')){
  if(fs.existsSync(destination))throw Error('Refusing to overwrite existing release archive');
  const members=path.join(evidence,'archive-members.txt');fs.writeFileSync(members,files.map(r=>r.file).join('\n')+'\n');
  const tar=spawnSync('tar',['-czf',destination,'-T',members],{cwd:SITE,stdio:'inherit',env:{...process.env,COPYFILE_DISABLE:'1'}});if(tar.status!==0)throw Error('Archive packaging failed');
- const spec={...old,asset:archive,archive,sha256:sha(fs.readFileSync(destination)),bytes:fs.statSync(destination).size,capturedSource:'All included locale bodies recaptured from exact current translated runtime in <=25-route batches; capture receipts bind each gzip to serving source hashes. No remote upload/publication performed by this tool.',captured:new Date().toISOString(),sources:sourceRows(),files};
+ const spec={...old,asset:archive,archive,sha256:sha(fs.readFileSync(destination)),bytes:fs.statSync(destination).size,capturedSource:validatorTransition?'Retained bodies preserve immutable original capture signatures, body hashes and live-runtime proofs; the SHA-pinned validator-only transition revalidates them under the reviewed guard against byte-identical rendering inputs. Fresh batches record their actual current tool/source signature. Every gzip remains bound to current serving source hashes.':'All included locale bodies recaptured from exact current translated runtime in <=25-route batches; capture receipts bind each gzip to serving source hashes. No remote upload/publication performed by this tool.',...(validatorTransition?{captureValidatorTransition:validatorTransition.reference}:{}),captured:new Date().toISOString(),sources:sourceRows(),files};
  fs.writeFileSync(path.join(evidence,'previous-release-spec.json'),JSON.stringify(old,null,2)+'\n');
  fs.writeFileSync(path.join(SITE,specPath),JSON.stringify(spec,null,2)+'\n');
  command(['tools/l10n/prerender-manifest.mjs','--release-spec']);
