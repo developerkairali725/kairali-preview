@@ -47,6 +47,21 @@ function digestiveProof(locale = 'en', { hrefs = [contactPaths[locale]], chromeH
   return inspectCapturePage({ ...captureContentRequirements(digestiveRoute, {}, locale), rootElement: root });
 }
 
+test('held Digestive accepts the prerender English null locale without weakening its contact contract', () => {
+  // English prerender sets LOCALE to null when --locale is absent.
+  const expected = captureContentRequirements(digestiveRoute, {}, 'en');
+  for (const locale of [null, undefined]) {
+    assert.deepEqual(captureContentRequirements(digestiveRoute, undefined, locale), expected);
+    const proof = digestiveProof(locale, { hrefs: ['/contact-us/'] });
+    assert.equal(proof.retainedDigestiveContact.locale, 'en');
+    assert.doesNotThrow(() => assertCapturePage(proof, digestiveRoute));
+    assert.throws(() => assertCapturePage(digestiveProof(locale, { hrefs: ['/de/kontakt/'] }), digestiveRoute), /external contact journey/);
+  }
+  for (const locale of ['', 'unknown', 'EN', false, 0]) {
+    assert.throws(() => captureContentRequirements(digestiveRoute, {}, locale), /Unknown held Digestive locale/);
+  }
+});
+
 test('held Digestive requires its own localized contact CTA and zero inline forms in all13 locales', () => {
   for (const [locale, path] of Object.entries(contactPaths)) {
     assert.equal(captureContentRequirements(digestiveRoute, {}, locale).retainedDigestiveContact.path, path);

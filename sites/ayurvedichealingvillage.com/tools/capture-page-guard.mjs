@@ -140,7 +140,7 @@ function neutralConfirmationContract(route, locale) {
 }
 
 export function captureContentRequirements(route, sourceRecord = {}, locale = 'en') {
-  if (route === '/digestive-wellness-gut-health-yoga-therapy/') return { formSelector: null, retainedDigestiveContact: digestiveContactContract(locale) };
+  if (route === '/digestive-wellness-gut-health-yoga-therapy/') return { formSelector: null, retainedDigestiveContact: digestiveContactContract(locale ?? 'en') };
   if (route === '/weight-loss-programme/') return { formSelector: captureFormSelector(route), formCount: 1 };
   if (route === '/jobs/business-development-manager/' && sourceRecord.closed === true && sourceRecord.applicationsOpen === false) {
     return { formSelector: null, requiredSelector: '[data-job-closed="true"]', forbiddenSelector: 'form[data-form="job"]' };
