@@ -9,9 +9,8 @@
     "env": "AHV_ANALYTICS",
     "enabledWhen": "1",
     "default": "off",
-    "consentKey": "ktahv-consent",
-    "consentAcceptedValue": "accepted",
-    "note": "consentKey and its values are the APPROVED DESIGN's own contract (home view logic writes localStorage['ktahv-consent'] = accepted|declined). The site-wide notice reuses the same key so one choice covers every page.",
+    "consentKey": "ahv-consent-v2",
+    "note": "AHV-only CookieConsent revision2 validates preferences before the runtime starts optional SDKs. Analytics gates GA4/Clarity; advertising gates Ads/Meta. Legacy ktahv-consent remains presentation compatibility only and never grants measurement.",
     "stagingEnv": "AHV_ANALYTICS_STAGING"
   },
   "measurement": {
@@ -52,6 +51,8 @@
     "cancelledAccountNotToUse": "KTAHV 214-403-0919 (cancelled, separate)",
     "conversionAction": "EnquirySubmission",
     "conversionTypeId": "15644955",
+    "tagId": "GT-K8D5DQJT",
+    "tagSource": "Owner-authenticated Google tag KTAGV, 2026-10-07: sole destination AHV-NEO AW-972059125. Use this tag for bootstrap/config; the AW-972059125 loader alias currently resolves to the separate Villa Raag tag.",
     "sendTo": "AW-972059125/fqrBCJvyugcQ9ePBzwM",
     "firedFrom": "live WordPress /ppc-thanks/ via the HFCM plugin, on PAGE LOAD",
     "countingRule": "Every conversion",

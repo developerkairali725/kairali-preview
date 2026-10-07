@@ -10,6 +10,19 @@ test("measurement stays off unless explicitly activated for the selected environ
   assert.equal(staging.environment,"staging");
   assert.equal(staging.ga4,config.measurement.ga4.id);
   assert.equal(staging.metaPixel,config.measurement.metaPixel.id);
+  assert.equal(staging.adsTagId,"GT-K8D5DQJT");
+  assert.equal(staging.adsSendTo,"AW-972059125/fqrBCJvyugcQ9ePBzwM");
+});
+
+test("missing or invalid Ads tag fails closed without disabling other measurement", () => {
+  for (const tagId of [undefined, "", "AW-972059125", "GT-bad", "GT-K8D5DQJT/extra"]) {
+    const measurement=measurementForEnvironment({AHV_ANALYTICS:"1",AHV_STAGING:"0"},{...config,googleAds:{...config.googleAds,tagId}});
+    assert.equal(measurement.adsTagId,undefined);
+    assert.equal(measurement.ga4,config.measurement.ga4.id);
+    assert.equal(measurement.clarity,config.measurement.clarity.id);
+    assert.equal(measurement.metaPixel,config.measurement.metaPixel.id);
+    assert.equal(measurement.adsSendTo,config.googleAds.sendTo);
+  }
 });
 
 // Evaluate the production config guard so malformed pulled mode values cannot ship.
