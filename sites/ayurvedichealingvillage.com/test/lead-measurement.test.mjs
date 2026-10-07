@@ -8,7 +8,7 @@ const consentRuntime = consentSource.slice(consentSource.indexOf("`") + 1, conse
 const receiptRuntime = readFileSync(new URL("../public/design/lead-receipt.js", import.meta.url), "utf8");
 const token = "c3da5d5e-95ca-4a0a-a730-e4ab31c7f65a";
 
-function browser(choice = "accepted", status = 200, result = { ok: true, status: "received" }, search = "?gclid=paid123", environment = "production") {
+function browser(choice = "accepted", status = 200, result = { ok: true, status: "received" }, search = "?gclid=paid123", environment = "production", adsTagId = "GT-TEST") {
   const items = new Map([["ktahv-consent", choice]]);
   const storage = {
     getItem: (key) => items.get(key) ?? null,
@@ -32,6 +32,7 @@ function browser(choice = "accepted", status = 200, result = { ok: true, status:
       createElement: () => ({}),
       head: { appendChild(script) {
         if (script.src?.includes("googletagmanager.com")) {
+          ctx.googleLoader = script.src;
           ctx.googleCommandsAtLoad = Array.from(ctx.dataLayer || [], entry => Array.from(entry));
         }
       } },
@@ -41,7 +42,7 @@ function browser(choice = "accepted", status = 200, result = { ok: true, status:
   };
   ctx.window = ctx;
   ctx.window.fetch = async () => ({ status, clone: () => ({ json: async () => result }) });
-  runInNewContext(`var cfg={measurement:{ga4:"G-test",clarity:"c-test",metaPixel:"p-test",adsSendTo:"AW-test/action",environment:${JSON.stringify(environment)}}};var host=document.body;${consentRuntime}\nwindow.AHV_SET_CONSENT({analytics:${choice === "accepted" || choice === "analytics"},advertising:${choice === "accepted" || choice === "advertising"}});`, ctx);
+  runInNewContext(`var cfg={measurement:{ga4:"G-test",clarity:"c-test",metaPixel:"p-test",adsTagId:${JSON.stringify(adsTagId)},adsSendTo:"AW-test/action",environment:${JSON.stringify(environment)}}};var host=document.body;${consentRuntime}\nwindow.AHV_SET_CONSENT({analytics:${choice === "accepted" || choice === "analytics"},advertising:${choice === "accepted" || choice === "advertising"}});`, ctx);
   runInNewContext(receiptRuntime, ctx);
   return ctx;
 }
@@ -238,4 +239,34 @@ test('category choices keep lead destinations separate', () => {
   assert.equal(!!ctx.fbq,category==='advertising');
   assert.equal(!!ctx.clarity,category==='analytics');
  }
+});
+
+test('Ads boots its verified GT tag and retains the separate accepted-lead AW destination', () => {
+  for (const choice of ['accepted','advertising','analytics','declined']) {
+    const ctx=browser(choice),advertising=['accepted','advertising'].includes(choice),analytics=['accepted','analytics'].includes(choice);
+    const configs=ctx.dataLayer.filter(entry=>entry[0]==='config').map(entry=>entry[1]);
+    assert.equal(configs.includes('GT-TEST'),advertising);
+    assert.equal(configs.includes('AW-test'),false);
+    assert.equal(configs.includes('G-test'),analytics);
+    assert.equal(ctx.googleLoader,analytics?'https://www.googletagmanager.com/gtag/js?id=G-test':advertising?'https://www.googletagmanager.com/gtag/js?id=GT-TEST':undefined);
+    ctx.AHV_MEASUREMENT.recordLead('contact',token);
+    const conversions=ctx.dataLayer.filter(entry=>entry[1]==='conversion');
+    assert.equal(conversions.length,advertising?1:0);
+    if(advertising)assert.equal(conversions[0][2].send_to,'AW-test/action');
+  }
+});
+
+test('missing Ads tag cannot fall back through a GA loader or emit an Ads conversion', () => {
+  for (const choice of ['accepted','advertising']) {
+    const ctx=browser(choice,200,{ok:true,status:'received'},'?gclid=paid123','production',null);
+    const configs=ctx.dataLayer.filter(entry=>entry[0]==='config').map(entry=>entry[1]);
+    assert.equal(configs.length,choice==='accepted'?1:0);
+    assert.equal(configs.includes('AW-test'),false);
+    assert.equal(ctx.googleLoader,choice==='accepted'?'https://www.googletagmanager.com/gtag/js?id=G-test':undefined);
+    ctx.AHV_MEASUREMENT.recordLead('contact',token);
+    assert.equal(ctx.dataLayer.filter(entry=>entry[1]==='conversion').length,0);
+    assert.equal(ctx.dataLayer.filter(entry=>entry[1]==='generate_lead').length,choice==='accepted'?1:0);
+    assert.ok(ctx.fbq);
+    assert.equal(!!ctx.clarity,choice==='accepted');
+  }
 });

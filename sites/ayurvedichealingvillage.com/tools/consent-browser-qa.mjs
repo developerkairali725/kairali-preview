@@ -11,7 +11,7 @@ const source=readFileSync(join(root,'app/(english)/_families/consent-runtime.ts'
 const runtime=source.slice(source.indexOf('`')+1,source.lastIndexOf('`'));
 const report=[];
 const identities=JSON.parse(readFileSync(join(root,'analytics.config.json'),'utf8'));
-const liveIds={ga4:identities.measurement.ga4.id,adsSendTo:identities.googleAds.sendTo,clarity:identities.measurement.clarity.id,metaPixel:identities.measurement.metaPixel.id};
+const liveIds={ga4:identities.measurement.ga4.id,adsTagId:identities.googleAds.tagId,adsSendTo:identities.googleAds.sendTo,clarity:identities.measurement.clarity.id,metaPixel:identities.measurement.metaPixel.id};
 const server=createServer((req,res)=>{
  const url=new URL(req.url,'http://localhost');
  if(url.pathname.startsWith('/consent/')) {
@@ -20,7 +20,7 @@ const server=createServer((req,res)=>{
   try {res.setHeader('Content-Type',file.endsWith('.css')?'text/css':'text/javascript');res.end(readFileSync(file));}catch{res.writeHead(404).end();}return;
  }
  const lang=url.pathname.split('/')[1]||'en';
- const measurement=url.pathname==='/sdk/'?liveIds:{ga4:'G-test',adsSendTo:'AW-test/action',clarity:'c-test',metaPixel:'p-test'};
+ const measurement=url.pathname==='/sdk/'?liveIds:{ga4:'G-test',adsTagId:'GT-TEST',adsSendTo:'AW-test/action',clarity:'c-test',metaPixel:'p-test'};
  res.setHeader('Content-Type','text/html');res.end(`<!doctype html><html lang="${/^[a-z]{2}$/.test(lang)?lang:'en'}"><head><script>window.dataLayer=[];window.gtag=function(){dataLayer.push(arguments)};gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script></head><body><main><h1>AHV consent integration fixture</h1><button data-ahv-cookie-choices>Cookie choices</button></main><script>(function(){var cfg={breakpoint:700,measurement:${JSON.stringify(measurement)}};var host=document.body;${runtime}\nensureConsentNotice();})();</script></body></html>`);
 });
 await new Promise(ok=>server.listen(0,'127.0.0.1',ok));
@@ -76,7 +76,7 @@ try {
  await page.getByRole('button',{name:'Save my choices',exact:true}).click();
  await page.waitForFunction(()=>window.__ahvMeasurementStarted===true);
  assert.ok(requests.some(r=>r.host==='www.googletagmanager.com'));assert.ok(requests.some(r=>r.host==='www.clarity.ms'));assert.ok(!requests.some(r=>r.host==='connect.facebook.net'));
- assert.equal(await page.evaluate(()=>dataLayer.filter(c=>c[0]==='config'&&c[1].startsWith('AW-')).length),0);
+ assert.equal(await page.evaluate(()=>dataLayer.filter(c=>c[0]==='config'&&/^(?:AW|GT)-/.test(c[1])).length),0);
  report.push({case:'analytics-only loads Google/Clarity, no Ads config or Meta',pass:true});
  await page.locator('[data-ahv-cookie-choices]').click();
  const prior=requests.length;
@@ -87,7 +87,7 @@ try {
  const b=await context();await b.page.getByRole('button',{name:'Accept all',exact:true}).click();
  await b.page.waitForFunction(()=>window.__ahvMeasurementStarted===true);
  assert.equal(new Set(b.requests.map(r=>r.host)).size,3);
- assert.ok(await b.page.evaluate(()=>dataLayer.some(c=>c[0]==='config'&&c[1]==='AW-test')));
+ assert.ok(await b.page.evaluate(()=>dataLayer.some(c=>c[0]==='config'&&c[1]==='GT-TEST')));
  report.push({case:'accept all configures GA/Ads and loads Meta/Clarity',pass:true});
  await b.page.reload();await b.page.waitForFunction(()=>window.__ahvMeasurementStarted===true);
  assert.equal(await b.page.locator('.cm').isVisible(),false);
@@ -95,7 +95,7 @@ try {
  await b.ctx.close();
  const c=await context({gpc:true});await c.page.locator('[data-ahv-cookie-choices]').click();await c.page.getByRole('button',{name:'Accept all',exact:true}).click();
  await c.page.waitForFunction(()=>window.__ahvMeasurementStarted===true);
- assert.ok(!c.requests.some(r=>r.host==='connect.facebook.net'));assert.equal(await c.page.evaluate(()=>dataLayer.some(x=>x[0]==='config'&&x[1]==='AW-test')),false);
+ assert.ok(!c.requests.some(r=>r.host==='connect.facebook.net'));assert.equal(await c.page.evaluate(()=>dataLayer.some(x=>x[0]==='config'&&x[1]==='GT-TEST')),false);
  report.push({case:'GPC keeps advertising denied even on Accept all',pass:true});await c.ctx.close();
  for(const lang of ['en','de','fr','es','it','pt','nl','ru','ar','hi','zh','ja','ko']) {
   const d=await context();await d.page.goto(origin+'/'+lang+'/');await d.page.locator('.cm').waitFor({state:'visible'});

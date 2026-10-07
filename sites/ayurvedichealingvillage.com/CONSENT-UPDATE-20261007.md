@@ -1,6 +1,6 @@
 # AHV consent candidate — 7 October 2026
 
-Status: isolated review candidate for the separately owned combined release. No production publication or account-setting changes from this lane. The authenticated Google destination mismatch remains a consent release blocker.
+Status: isolated review candidate for the separately owned combined release. No production publication or account-setting changes from this lane. The Google loader now selects the authenticated standalone AHV tag; combined-source release checks and actual account receipt remain separate checkpoints.
 Task: WOPS-AHV-CONSENT-UPDATE-20261007-001. Scope: this AHV site only.
 
 ## Why this change
@@ -11,7 +11,7 @@ The head starts denied. Only CookieConsent's validated current revision can star
 
 Old explicit rejection migrates once. Old blanket acceptance re-prompts instead of silently authorizing new categories. The old key remains only for captured-view presentation compatibility. GPC keeps advertising off, including when a previously accepted record exists. Geography changes only prompt presentation, as described below. Optional vendors still require explicit, validated permission in every country.
 
-Existing public measurement IDs, build-time analytics switch, safe URL guards, customer-data suppression, successful-enquiry requirement, lead deduplication and staging conversion safeguards are preserved. No synthetic conversions or real visitor data were transmitted during QA. Account-side Google Ads/Meta receipt reconciliation remains a separate checkpoint.
+Existing GA, Meta, Clarity and Ads conversion destination IDs, build-time analytics switch, safe URL guards, customer-data suppression, successful-enquiry requirement, lead deduplication and staging conversion safeguards are preserved. The Ads bootstrap tag is corrected separately below. No synthetic conversions or real visitor data were transmitted during QA. Account-side Google Ads/Meta receipt reconciliation remains a separate checkpoint.
 
 ## Research and approval decisions
 
@@ -42,7 +42,13 @@ Valid existing explicit choices remain valid regardless of geography. Grants exp
 
 The 13 locales and campaign layouts use the same bridge. Existing translations say vendors are off until chosen and remain accurate in both presentation modes. The existing wire enum `passive` now selects the compact visible notice; it never represents accepted consent. No policy copy or medical content was silently rewritten. Clarity remains off before analytics permission: its [cookie-less capability](https://learn.microsoft.com/en-us/clarity/setup-and-installation/consent-mode) is not itself a legal basis. The CNIL's [February 2026 session replay consultation](https://www.cnil.fr/en/session-replay-cnil-launches-public-consultation-its-draft-recommendation) is a draft, not a final rule. Functional first-party enquiry persistence and operational receipt counts remain separate from ad conversion tracking; this candidate neither adds a counter nor changes lead routing.
 
-The configured Ads alias still fans out to the separately identified destinations in the existing authenticated evidence. This candidate does not alter IDs, Google routing or remote account settings. No test telemetry or conversion is sent; optional SDK tests intercept every collection request. Do not publish this consent candidate as though the destination mismatch were resolved, and do not block unrelated authorized website changes on that account dependency.
+## Verified AHV Google tag routing
+
+Authenticated owner readback on 7 October identifies the standalone Google tag KTAGV, `GT-K8D5DQJT`, with only the AHV-NEO destination `AW-972059125`. AHV Ads customer `712-961-0573` still identifies EnquirySubmission action `15644955` with destination `AW-972059125/fqrBCJvyugcQ9ePBzwM`. The existing `AW-972059125` loader alias resolves to a different combined tag associated with Villa Raag. No account destination, alias, user or permission was changed.
+
+The candidate uses an explicit `googleAds.tagId` for Ads bootstrap and `config`, while keeping `googleAds.sendTo` exclusively as the accepted-lead conversion destination. A missing or invalid GT tag disables Ads bootstrap and conversion without disabling consented GA, Clarity or Meta; there is no AW-alias fallback. Google's [tag configuration documentation](https://developers.google.com/tag-platform/gtagjs/configure) supports a GT tag ID for loading and configuration. This separates the tag that supplies routing configuration from its destination identifier.
+
+An isolated real-SDK comparison, with every collection request aborted and no lead/conversion events generated, found only AHV `AW-972059125` for advertising-only and AHV GA plus that Ads destination for all-consent. Analytics-only used only AHV GA; rejection loaded no vendors. The original alias reproduced the Villa Raag Ads and Analytics destinations in the same fixture. This is routing evidence for the observed public tag configuration, not proof of vendor receipt or future immutable account settings. The corrected source must pass the normal combined release checks, and natural accepted-lead receipts remain a separate account-side checkpoint.
 
 ## Verification and release boundary
 
@@ -56,4 +62,4 @@ Reproducible checks:
 
 PR341 (homepage draft, observed head cbe13b352) also changes site-document.tsx. Reconcile that document when combining candidates; its checkout and unpublished source were not modified.
 
-Before any separately authorized release, compare current main and active AHV work, rebuild the accepted combined source, back up the exact live deployment and prove rollback, obtain protected hosted preview approval, then verify public apex/www and released locales. The combined release has separate owner authority and a designated integration owner; this lane does not merge, deploy, purge caches or change provider settings. Google account reassignment still requires verified AHV binding and exact authorization. Rollback is a source revert plus the previous verified deployment; it would restore historical binary consent semantics, so prefer a reviewed forward fix when privacy behavior is involved. User preferences are not erased during source rollback preparation.
+Before any separately authorized release, compare current main and active AHV work, rebuild the accepted combined source, back up the exact live deployment and prove rollback, obtain protected hosted preview approval, then verify public apex/www and released locales. The combined release has separate owner authority and a designated integration owner; this lane does not merge, deploy, purge caches or change provider settings. The source routing correction needs no Google account reassignment; any future account mutation requires its own exact authorization. Rollback is a source revert plus the previous verified deployment; it would restore historical binary consent semantics and the previously observed Ads loader mismatch, so prefer a reviewed forward fix when privacy behavior is involved. User preferences are not erased during source rollback preparation.

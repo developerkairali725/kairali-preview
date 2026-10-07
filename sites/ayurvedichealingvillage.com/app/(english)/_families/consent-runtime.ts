@@ -71,7 +71,8 @@ export const CONSENT_RUNTIME = `
   }
 
   // Measurement. Every id comes from analytics.config.json, which records what
-  // the LIVE site already runs; nothing is invented. Two independent locks:
+  // the live site and authenticated AHV account verify; nothing is invented.
+  // Two independent locks:
   // the build must set AHV_ANALYTICS=1, AND the visitor must have accepted.
   // Owner 1 October authorises staging behind a separate explicit build switch.
   // Staging events carry environment markers; staging leads never fire live Ads goals.
@@ -142,7 +143,7 @@ export const CONSENT_RUNTIME = `
       window.gtag("event", m.environment === "staging" ? "ahv_staging_lead" : "generate_lead", { user_data: null, event_id: token, page_location: safePageLocation(), ahv_environment: m.environment || "production", debug_mode: m.environment === "staging" });
       sent = true;
     }
-    if (consentPreferences.advertising && m.adsSendTo && m.environment !== "staging" && typeof window.gtag === "function") {
+    if (consentPreferences.advertising && m.adsTagId && m.adsSendTo && m.environment !== "staging" && typeof window.gtag === "function") {
       window.gtag("event", "conversion", { user_data: null, send_to: m.adsSendTo, transaction_id: token, page_location: safePageLocation() });
       sent = true;
     }
@@ -199,7 +200,7 @@ export const CONSENT_RUNTIME = `
     attribution();
     measurementStarted = true;
     window.__ahvMeasurementStarted = true;
-    if ((consentPreferences.analytics && m.ga4) || (consentPreferences.advertising && m.adsSendTo)) {
+    if ((consentPreferences.analytics && m.ga4) || (consentPreferences.advertising && m.adsTagId)) {
       window.dataLayer = window.dataLayer || [];
       // Do NOT clobber: <ConsentScripts/> installed this shim in <head> and the
       // consent defaults were pushed through it. Replacing it here would be
@@ -214,10 +215,12 @@ export const CONSENT_RUNTIME = `
       window.gtag("set", { user_data: null });
       window.gtag("js", new Date());
       if (consentPreferences.analytics && m.ga4) window.gtag("config", m.ga4, { user_data: null, page_location: safePageLocation(), page_referrer: safeReferrer(), ahv_environment: m.environment || "production", debug_mode: m.environment === "staging" });
-      if (consentPreferences.advertising && m.adsSendTo) window.gtag("config", m.adsSendTo.split("/")[0], { user_data: null, send_page_view: false });
+      // Bootstrap the verified AHV tag; the conversion destination's AW alias
+      // currently belongs to a different tag. Never derive a loader from sendTo.
+      if (consentPreferences.advertising && m.adsTagId) window.gtag("config", m.adsTagId, { user_data: null, send_page_view: false });
       var g = document.createElement("script");
       g.async = true;
-      g.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(consentPreferences.analytics && m.ga4 ? m.ga4 : m.adsSendTo.split("/")[0]);
+      g.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(consentPreferences.analytics && m.ga4 ? m.ga4 : m.adsTagId);
       document.head.appendChild(g);
     }
     if (consentPreferences.analytics && m.clarity) {

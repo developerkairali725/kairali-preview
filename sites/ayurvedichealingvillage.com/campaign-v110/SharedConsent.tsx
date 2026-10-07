@@ -1,7 +1,7 @@
 "use client";
 import { useEffect } from "react";
 import { CONSENT_RUNTIME } from "../app/(english)/_families/consent-runtime";
-type Measurement = {ga4:string;clarity:string;metaPixel:string;adsSendTo:string};
+type Measurement = {ga4:string;clarity:string;metaPixel:string;adsTagId?:string;adsSendTo:string};
 export default function SharedConsent({measurement}:{measurement?:Measurement}){
  useEffect(()=>{
   const script=document.createElement("script");
