@@ -4,8 +4,9 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
+import {fileURLToPath} from 'node:url';
 
-const site=process.cwd();
+const site=fileURLToPath(new URL('../',import.meta.url));
 function fixture(){
  const root=fs.mkdtempSync(path.join(os.tmpdir(),'ahv-locale-capture-test-'));
  const put=(file,value)=>{const dest=path.join(root,file);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.writeFileSync(dest,typeof value==='string'?value:JSON.stringify(value));};
