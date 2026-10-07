@@ -1,6 +1,6 @@
 {
-  "generated": "2026-10-02T03:50:37.507Z",
-  "base": "http://localhost:4481",
+  "generated": "2026-10-07T07:38:50.544Z",
+  "base": "http://127.0.0.1:4317",
   "count": 229,
   "failures": 0,
   "routes": [
@@ -2188,9 +2188,9 @@
       "path": "/yoga-and-meditation-package/",
       "ok": true,
       "file": "yoga-and-meditation-package.html",
-      "bytes": 85147,
-      "textChars": 4052,
-      "imgs": 13,
+      "bytes": 202956,
+      "textChars": 11016,
+      "imgs": 53,
       "flattened": 0,
       "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
     },

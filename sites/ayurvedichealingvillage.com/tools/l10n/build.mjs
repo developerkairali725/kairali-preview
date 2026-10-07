@@ -59,6 +59,9 @@ export function catalog(loc) {
   }
   const ovr = rel(`l10n/overrides/${loc}.json`); // coordinator QA corrections (same id/hash contract)
   if (fs.existsSync(ovr)) for (const [id, v] of Object.entries(JSON.parse(fs.readFileSync(ovr, "utf8")))) if (SOURCE_BY_ID.get(id)?.sourceHash === v.sourceHash) cat.set(id, v.text);
+  // Explicit catalogue identities and availability copy shipped with the consolidated release.
+  const catalogueCopy = readJson("english-candidate/catalogue-locales.json");
+  for (const unit of catalogueCopy.units) if (unit.translations[loc]) cat.set(unitId(unit.source), unit.translations[loc]);
   return cat;
 }
 

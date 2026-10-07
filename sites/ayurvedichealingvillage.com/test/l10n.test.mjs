@@ -44,7 +44,7 @@ test("route table: unique paths, English unchanged, legacy DE/FR served in place
   }
   assert.ok(t.legacyServed >= 300, "verified legacy DE/FR URLs are served in place");
   for (const [src, r] of Object.entries(t.redirects)) {
-    assert.ok(seen.has(r.to), `redirect target ${r.to} is a served page`);
+    assert.ok(seen.has(r.to) || JSON.parse(fs.readFileSync(rel("campaign-v110/routes.json"), "utf8")).includes(r.to), `redirect target ${r.to} is a served page`);
     assert.ok(!t.redirects[r.to], `no chain from ${src}`);
     assert.ok(!seen.has(src) || src.toLowerCase() !== src, `redirect source ${src} shadows a served page`);
   }

@@ -2,13 +2,13 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 const rows = JSON.parse(fs.readFileSync('english-candidate/approved-programme-faqs-20260925.json')).routes;
-const routes = JSON.parse(fs.readFileSync('english-candidate/routes.json')).routes;
-const views = Object.fromEntries(fs.readdirSync('public/ahv/views').filter(f=>f.endsWith('.json')).map(f=>{const v=JSON.parse(fs.readFileSync('public/ahv/views/'+f));return [v.file,v];}));
+const routes = JSON.parse(fs.readFileSync('english-candidate/route-manifest.json')).routes;
+const views = Object.fromEntries(fs.readdirSync('public/ahv/views').filter(f=>f.endsWith('.json')).map(f=>{const v=JSON.parse(fs.readFileSync('public/ahv/views/'+f));return [v.id,v];}));
 const decode = s => s.replace(/&amp;/g,'&').replace(/&#x27;/g,"'").replace(/&quot;/g,'"').replace(/&lt;/g,'<').replace(/&gt;/g,'>');
 for (let offset=0;offset<rows.length;offset+=25) test(`approved FAQ visible copy and schema agree, routes ${offset+1}–${Math.min(offset+25,rows.length)}`,()=>{
  for (const row of rows.slice(offset,offset+25)) {
   const route=routes.find(r=>r.path===row.route);
-  const surfaces=[...route.views.map(f=>views[f].template),fs.readFileSync('english-candidate/prerender/'+row.route.slice(1,-1)+'.html','utf8')];
+  const surfaces=[...[route.desktopView,route.mobileView].map(f=>views[f].template),fs.readFileSync('english-candidate/prerender/'+row.route.slice(1,-1)+'.html','utf8')];
   for (const html of surfaces) {
    const sections=[...html.matchAll(/<section\b[^>]*id="faqs"[^>]*>([\s\S]*?)<\/section>/g)];
    assert.equal(sections.length,1,row.route);

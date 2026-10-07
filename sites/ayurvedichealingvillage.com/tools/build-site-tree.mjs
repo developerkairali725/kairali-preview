@@ -37,6 +37,9 @@ import { routeCrumbs, loadDataset } from "./lib/route-crumbs.mjs";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const manifest = JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/route-manifest.json"), "utf8"));
+const campaignRoutes = JSON.parse(fs.readFileSync(path.join(SITE, "campaign-v110/routes.json"), "utf8"));
+for (const p of campaignRoutes) if (!manifest.routes.some(r => r.path === p)) manifest.routes.push({ path:p, desktopView:'ahv-page-campaign-nine-desktop', metadata:{title:p.replace(/^\/lp\/|^\/offers\/|\/$/g,'').replaceAll('-',' ')} });
+const redirected = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/redirect-map.json"), "utf8")).redirects));
 const byPath = new Map(manifest.routes.map((r) => [r.path, r]));
 const { crumbs } = routeCrumbs(SITE, manifest);
 const register = new Map(loadDataset(path.join(SITE, "public/ahv/assets/all-programs-data.js")).programmes.map((p) => [p.route, p]));
@@ -49,15 +52,15 @@ const OVR_FILE = path.join(SITE, "english-candidate/site-tree-overrides.json");
 const OVR = fs.existsSync(OVR_FILE) ? JSON.parse(fs.readFileSync(OVR_FILE, "utf8")) : { moves: [], relabels: [], drops: [], sectionTitles: [] };
 const DROPPED = new Set((OVR.drops || []).map((d) => d.path));
 const MOVED = new Map((OVR.moves || []).map((m) => [m.path, m]));
-const indexable = manifest.routes.filter((r) => r.path !== "/" && !r.sitemapExclude && !manifest.deferred.includes(r.path) && !JUNK.test(r.path) && !DROPPED.has(r.path));
+const indexable = manifest.routes.filter((r) => r.path !== "/" && !r.sitemapExclude && !manifest.deferred.includes(r.path) && !JUNK.test(r.path) && !DROPPED.has(r.path) && !redirected.has(r.path));
 /** Unlisted (dropped) pages are still served: the rail still draws on them (else their old WordPress sidebar returns). */
-const unlistedRoutes = manifest.routes.filter((r) => DROPPED.has(r.path));
+const unlistedRoutes = manifest.routes.filter((r) => DROPPED.has(r.path) && !redirected.has(r.path));
 
 /** Sections, in the order a visitor meets them (the header first). hub = the section's own page. */
 const SECTIONS = [
   { id: "programmes", hub: "/all-programs/", title: "Treatments & programmes" },
   { id: "villas", hub: "/our-villas/", title: "Villas" },
-  { id: "training", hub: "/training-programs/", title: "Ayurveda & yoga training" },
+  { id: "training", hub: "/yoga-meditation-training/", title: "Yoga & Training" },
   { id: "offers", hub: "/offers/", title: "Offers" },
   { id: "about", hub: "/about-us/", title: "About Kairali" },
   { id: "visit", hub: "/contact-us/", title: "Plan your visit & contact" },   // reviewers: booking, payment, FAQs must not sit 11th of 15
@@ -131,28 +134,29 @@ const placement = new Map();
 const unplaced = [];
 for (const r of indexable) {
   const p = r.path;
+  if (MOVED.has(p)) { placement.set(p, { section: MOVED.get(p).section, chain: [], group: concernOf.get(p) || null }); continue; }
   let chain = null, section = null, group = null;
   if (PLACE[p]) {
     if (PLACE[p][0] === "@site") section = "site";
     else chain = [...PLACE[p]];
   } else if (register.has(p) && !sectionByHub.has(p) && !/^\/(ayurvedic-treatments|wellness-programs|treatment-programs|yoga-meditation-programs|training-programs|all-programs)\/$/.test(p)) {
     const cats = register.get(p).categories || [];
-    if (cats.includes("Training")) chain = ["/training-programs/"];
+    if (cats.includes("Training")) chain = ["/yoga-meditation-training/"];
     else if (cats[0] === "Treatment") { chain = ["/all-programs/", "/ayurvedic-treatments/"]; group = concernOf.get(p) || null; }
     else if (cats.includes("Yoga & Meditation")) chain = ["/all-programs/", "/yoga-meditation-programs/"];
   }
   if (!chain && !section) {
     const c = crumbs.get(p);
     if (c && c.length >= 2 && c[0].path === "/") {
-      chain = c.slice(1).map((x) => x.path).filter((x) => x !== p && byPath.has(x));
+      chain = c.slice(1).map((x) => x.path === "/training-programs/" ? "/yoga-meditation-training/" : x.path).filter((x) => x !== p && byPath.has(x));
       if (!chain.length && c.length === 2 && !sectionByHub.has(p)) { section = CAMPAIGN_FAMILIES.test(familyOf(r)) ? "campaigns" : "site"; chain = null; }
     } else section = CAMPAIGN_FAMILIES.test(familyOf(r)) || /\.html$/.test(p) ? "campaigns" : null;
   }
   if (chain) {
-    const t = chain.indexOf("/training-programs/");
+    const t = chain.indexOf("/yoga-meditation-training/");
     if (t >= 0) chain = chain.slice(t);
     if (sectionByHub.has(p) && !chain.length) section = sectionByHub.get(p).id;
-    else if (p === "/training-programs/") { section = "training"; chain = []; }
+    else if (p === "/yoga-meditation-training/") { section = "training"; chain = []; }
     else {
       const hub = chain.find((x) => sectionByHub.has(x));
       if (!hub) { unplaced.push(p + " (chain " + chain.join(" > ") + ")"); continue; }
@@ -164,7 +168,7 @@ for (const r of indexable) {
   placement.set(p, { section, chain: chain || [], group });
 }
 for (const [p, mv] of MOVED) {
-  if (!placement.has(p)) { console.error("override for a route not in the tree: " + p); process.exit(1); }
+  if (!placement.has(p)) { if (redirected.has(p) || byPath.get(p)?.sitemapExclude) continue; console.error("override for a route not in the tree: " + p); process.exit(1); }
   const sec = SECTIONS.find((x) => x.id === mv.section);
   if (!sec) { console.error("override: unknown section " + mv.section + " for " + p); process.exit(1); }
   const keepGroup = mv.parent === "/ayurvedic-treatments/" ? placement.get(p).group : null;

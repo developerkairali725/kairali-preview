@@ -77,7 +77,7 @@
       }
     },
     "/cart/": {
-      "to": "/packages/",
+      "to": "/ayurvedic-treatments/",
       "reason": "WooCommerce cart on a site with no commerce. A visitor who reached a cart was choosing something to book; /packages/ is the content-rich equivalent (733 words, 27 cards, 118 clicks).",
       "gsc": {
         "clicks": 0,
@@ -85,7 +85,7 @@
       }
     },
     "/checkout/": {
-      "to": "/packages/",
+      "to": "/ayurvedic-treatments/",
       "reason": "WooCommerce checkout on a site with no commerce. Same target and same reason as /cart/.",
       "gsc": {
         "clicks": 0,
@@ -244,6 +244,96 @@
         "basis": "July 2026 baseline; re-pull before relying (Search Console property note)"
       },
       "ownerApproval": "2026-09-28 owner content-duplication decisions (IMPLEMENTATION-QUEUE.json, WOPS-AHV-CONTENT-DUPLICATION-AUDIT-20260928-001) AHV-DUP-011"
+    },
+    "/ayurveda-package/": {
+      "to": "/ayurvedic-treatments/",
+      "reason": "Owner-approved consolidated catalogue/offer destination, WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001. Existing programme/course/offer details retained at destination.",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      },
+      "ownerApproval": "2026-10-07 consolidated release: MOVE-REVIEW-INVENTORY.json"
+    },
+    "/packages/": {
+      "to": "/ayurvedic-treatments/",
+      "reason": "Owner-approved consolidated catalogue/offer destination, WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001. Existing programme/course/offer details retained at destination.",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      },
+      "ownerApproval": "2026-10-07 consolidated release: MOVE-REVIEW-INVENTORY.json"
+    },
+    "/treatment-programs/": {
+      "to": "/ayurvedic-treatments/",
+      "reason": "Owner-approved consolidated catalogue/offer destination, WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001. Existing programme/course/offer details retained at destination.",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      },
+      "ownerApproval": "2026-10-07 consolidated release: MOVE-REVIEW-INVENTORY.json"
+    },
+    "/ayurveda-training/": {
+      "to": "/ayurveda-training-programme/",
+      "reason": "Owner-approved consolidated catalogue/offer destination, WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001. Existing programme/course/offer details retained at destination.",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      },
+      "ownerApproval": "2026-10-07 consolidated release: MOVE-REVIEW-INVENTORY.json"
+    },
+    "/training-programs/": {
+      "to": "/ayurveda-training-programme/",
+      "reason": "Owner-approved consolidated catalogue/offer destination, WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001. Existing programme/course/offer details retained at destination.",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      },
+      "ownerApproval": "2026-10-07 consolidated release: MOVE-REVIEW-INVENTORY.json"
+    },
+    "/ayurveda-offers/": {
+      "to": "/offers/",
+      "reason": "Owner-approved consolidated catalogue/offer destination, WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001. Existing programme/course/offer details retained at destination.",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      },
+      "ownerApproval": "2026-10-07 consolidated release: MOVE-REVIEW-INVENTORY.json"
+    },
+    "/special-offers/": {
+      "to": "/offers/",
+      "reason": "Owner-approved consolidated catalogue/offer destination, WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001. Existing programme/course/offer details retained at destination.",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      },
+      "ownerApproval": "2026-10-07 consolidated release: MOVE-REVIEW-INVENTORY.json"
+    },
+    "/defence-and-paramilitary-forces/": {
+      "to": "/offers/defence-and-paramilitary/",
+      "reason": "Owner-approved consolidated catalogue/offer destination, WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001. Existing programme/course/offer details retained at destination.",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      },
+      "ownerApproval": "2026-10-07 consolidated release: MOVE-REVIEW-INVENTORY.json"
+    },
+    "/offers/defence-paramilitary-personnel-get-upto-30-off/": {
+      "to": "/offers/defence-and-paramilitary/",
+      "reason": "Owner-approved consolidated catalogue/offer destination, WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001. Existing programme/course/offer details retained at destination.",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      },
+      "ownerApproval": "2026-10-07 consolidated release: MOVE-REVIEW-INVENTORY.json"
+    },
+    "/yoga-and-ayurveda/": {
+      "to": "/archive-yoga-retreat/",
+      "reason": "M093 approved consolidation: four useful retreat teasers preserved in the complete 18-record archive by the information lane; all individual retreat destinations retained.",
+      "ownerApproval": "2026-10-07 consolidated release: MOVE-REVIEW-INVENTORY.json",
+      "gsc": {
+        "clicks": null,
+        "impressions": null
+      }
     }
   },
   "legacyNote": "Owner ruling, Abilash in chat, 2026-09-20: 'Build monsoon, 301 the rest'. Two entries below are marked legacy: true. They differ from the twelve of 2026-09-19 in one way that matters to the tests - they are NOT in route-manifest.json, because they were never in the rebuild to begin with. They are ad-landing destinations: absent from the live XML sitemap, linked from no page on the live site (five hubs crawled, zero internal .html links), and so invisible to both inputs the manifest was built from. Each carries the live status and the Search Console numbers that evidence it existed, so 'do not redirect a path that never existed' is still enforced - just against measurement instead of against the manifest. Working: docs/reports/2026-09-20-ahv-legacy-url-fates-what-is-left.md."
