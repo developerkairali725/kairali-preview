@@ -12,6 +12,8 @@ for (const expected of manifest.projects) {
  catch { failures.push(`${expected.name}: project read failed; verify Vercel login, team access and project ID`); continue; }
  if (!actual || typeof actual !== 'object') { failures.push(`${expected.name}: invalid project response`); continue; }
  const differences=[];
+ // Git-connected fleet projects must not silently omit the deployment selector.
+ if(expected.gitConnected && expected.affectedProjects!==true) differences.push('manifest must require unaffected-project skipping');
  if(actual.id!==expected.id || actual.name!==expected.name) differences.push('project identity');
  if(actual.rootDirectory!==expected.rootDirectory) differences.push('source root');
  if(Boolean(actual.link)!==expected.gitConnected) differences.push('Git connection');
