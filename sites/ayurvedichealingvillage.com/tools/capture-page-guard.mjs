@@ -1,7 +1,7 @@
 /** Inspect rendered content, including errors caught internally by DC runtime.
  * This function is serialized into the capture browser; keep it self-contained.
  */
-export function inspectCapturePage({ formSelector = null } = {}) {
+export function inspectCapturePage({ formSelector = null, requiredSelector = null, forbiddenSelector = null } = {}) {
   const root = document.getElementById('ahv-design-root');
   if (!root) return { errors: ['Missing design root'], heading: '', bodyChars: 0, requiredForm: false };
   const errors = [...root.querySelectorAll('.sc-logic-error,.sc-has-error,[data-ahv-error]')]
@@ -14,7 +14,9 @@ export function inspectCapturePage({ formSelector = null } = {}) {
   const bodyChars = (copy.textContent || '').replace(/\s+/g, ' ').trim().length;
   const form = formSelector ? root.querySelector(formSelector) : null;
   const requiredForm = !formSelector || !!(form && form.querySelector('input:not([type="hidden"]),textarea,select'));
-  return { errors: [...new Set(errors)], heading, bodyChars, requiredForm };
+  const requiredContent = !requiredSelector || !!root.querySelector(requiredSelector);
+  const forbiddenContent = !!(forbiddenSelector && root.querySelector(forbiddenSelector));
+  return { errors: [...new Set(errors)], heading, bodyChars, requiredForm, requiredContent, forbiddenContent };
 }
 
 export function captureFormSelector(route) {
@@ -27,9 +29,18 @@ export function captureFormSelector(route) {
   return null;
 }
 
+export function captureContentRequirements(route, sourceRecord = {}) {
+  if (route === '/jobs/business-development-manager/' && sourceRecord.closed === true && sourceRecord.applicationsOpen === false) {
+    return { formSelector: null, requiredSelector: '[data-job-closed="true"]', forbiddenSelector: 'form[data-form="job"]' };
+  }
+  return { formSelector: captureFormSelector(route) };
+}
+
 export function assertCapturePage(state, route) {
   if (state.errors.length) throw new Error('Rendered component error on ' + route + ': ' + state.errors.join('; '));
   if (!state.heading) throw new Error('Missing meaningful page H1 on ' + route);
   if (state.bodyChars < 100) throw new Error('Missing page body outside navigation on ' + route + ': ' + state.bodyChars + ' characters');
   if (!state.requiredForm) throw new Error('Missing expected page form on ' + route);
+  if (state.requiredContent === false) throw new Error('Missing required page state on ' + route);
+  if (state.forbiddenContent) throw new Error('Unexpected page state on ' + route);
 }

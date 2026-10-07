@@ -42,7 +42,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
-import { inspectCapturePage, captureFormSelector, assertCapturePage } from './capture-page-guard.mjs';
+import { inspectCapturePage, captureContentRequirements, assertCapturePage } from './capture-page-guard.mjs';
 
 const require_ = createRequire(import.meta.url);
 const loadPlaywright = () => {
@@ -85,6 +85,8 @@ const HEIGHT = Number(arg("height", "900")) || 900;
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SITE = path.resolve(HERE, "..");
+const enquirySource = fs.readFileSync(path.join(SITE, 'public/ahv/assets/enquiry-family-data.js'), 'utf8');
+const enquiryRecords = JSON.parse(enquirySource.slice(enquirySource.indexOf('{'), enquirySource.lastIndexOf('}') + 1)).routes;
 const L10N_ROUTES = LOCALE ? JSON.parse(fs.readFileSync(path.join(SITE, "l10n/routes.json"), "utf8")).routes : null;
 const routes = JSON.parse(
   fs.readFileSync(path.join(SITE, "english-candidate/route-manifest.json"), "utf8"),
@@ -276,7 +278,7 @@ const run = async () => {
         { timeout: 45000 },
       );
       await page.waitForTimeout(1200);
-      const contentProof = await page.evaluate(inspectCapturePage, { formSelector: captureFormSelector(route.path) });
+      const contentProof = await page.evaluate(inspectCapturePage, captureContentRequirements(route.path, enquiryRecords.find(row => row.path === route.path)));
       assertCapturePage(contentProof, route.path);
       const got = await page.evaluate(EXTRACT);
       if (!got || !got.html) throw new Error("empty extraction");
