@@ -227,3 +227,31 @@ test('one schema: website tables/columns, relay schema and the Sheet receiver ag
   for (const table of LEAD_TABLES) assert.match(receiver, new RegExp(`'${table}': \\{`), `Sheet receiver handles ${table}`);
   for (const [table, columns] of Object.entries(schema.tables)) for (const column of columns) assert.match(column, /^[a-z][a-z0-9_]*$/, `${table}.${column} is a plain identifier`);
 });
+
+
+test('failure diagnostics expose only fixed stage/reason and preserve API receipts', withEnv(ENV, async () => {
+  const logs = [];
+  const originalError = console.error;
+  console.error = (...args) => logs.push(args);
+  try {
+    installStubs({ mode: 'unsigned' });
+    const storeFailure = await leadPost(post(contactBody({message: 'SYNTHETIC_PRIVATE_MESSAGE'})));
+    assert.equal(storeFailure.status, 502);
+    assert.equal((await storeFailure.json()).code, 'STORE_FAILED');
+    assert.deepEqual(logs.splice(0), [[{event:'ahv_lead_failure',stage:'store',reason:'STORE_UNCONFIRMED'}]]);
+
+    const calls = installStubs({sheet:'error'});
+    const sheetFailure = await leadPost(post(contactBody({message:'SYNTHETIC_PRIVATE_MESSAGE'})));
+    assert.equal(sheetFailure.status,502);
+    assert.deepEqual(await sheetFailure.json(), {ok:false,code:'SHEET_SYNC_FAILED',error:'Your details were saved, but final confirmation failed. Please retry once.'});
+    assert.equal(calls.relay.length,1);
+    assert.equal(calls.sheet.length,1);
+    assert.deepEqual(logs.splice(0), [[{event:'ahv_lead_failure',stage:'sheet',reason:'RECEIVER_REJECTED'}]]);
+
+    installStubs({mode:'rate'});
+    assert.equal((await leadPost(post(contactBody()))).status,429);
+    installStubs();
+    assert.equal((await leadPost(post(contactBody()))).status,200);
+    assert.deepEqual(logs,[], 'success/rate limit do not produce failure diagnostics');
+  } finally {console.error=originalError;}
+}));

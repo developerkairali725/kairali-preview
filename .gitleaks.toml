@@ -173,6 +173,17 @@ id = "generic-api-key"
     regexes = ['''^c3da5d5e-95ca-4a0a-a730-e4ab31c7f65a$''']
     paths = ['''^sites/ayurvedichealingvillage\.com/test/lead-measurement\.test\.mjs$''']
 
+    # Inspected 2026-10-07 with pinned gitleaks 8.30.1: commit 29729becb,
+    # public/consent/policy.mjs:8 declares a public localStorage key NAME,
+    # not a credential or the saved refusal values. Match only the exact
+    # extracted secret AND exact file; never a line/path-only exception.
+    # Same-line/file secret canaries and this value elsewhere still fail.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexTarget = "secret"
+    regexes = ['''^ahv-consent-refusals-v1$''']
+    paths = ['''^sites/ayurvedichealingvillage\.com/public/consent/policy\.mjs$''']
+
 # Mined raw-sources layer (immutable, PUBLIC live-page snapshots — CLAUDE.md doctrine (a)).
 # Live WordPress pages embed public per-session tokens (WPForms nonces, site keys) that
 # trip generic-api-key. These are third-party public-page artifacts, not repo secrets;
