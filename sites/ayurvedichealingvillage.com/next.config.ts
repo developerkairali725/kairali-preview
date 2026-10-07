@@ -45,6 +45,11 @@ if (process.env.VERCEL_ENV === "production" && process.env.AHV_STAGING !== "0") 
   throw new Error("AHV production build requires explicit AHV_STAGING=0; verify the non-secret flag before building.");
 }
 const IS_STAGING = process.env.AHV_STAGING !== "0";
+// Redacted local mode flags must not silently disable approved measurement.
+if (process.env.VERCEL_ENV === "production" && !["0", "1"].includes(process.env.AHV_ANALYTICS || "")) {
+  throw new Error("AHV production build requires explicit AHV_ANALYTICS=0 or 1; verify the approved non-secret mode before building.");
+}
+
 // Submitted WordPress sitemap URLs, read from the current public WP index on
 // 30 Sep 2026. Keep the old submissions alive through one 301 to the new
 // canonical sitemap; GSC/Bing can then be resubmitted and monitored.

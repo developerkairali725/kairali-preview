@@ -11,3 +11,15 @@ test("measurement stays off unless explicitly activated for the selected environ
   assert.equal(staging.ga4,config.measurement.ga4.id);
   assert.equal(staging.metaPixel,config.measurement.metaPixel.id);
 });
+
+// Evaluate the production config guard so malformed pulled mode values cannot ship.
+test("production rejects redacted analytics modes while preserving explicit off and preview", async () => {
+  const vm = await import("node:vm");
+  const source = readFileSync(new URL("../next.config.ts", import.meta.url), "utf8");
+  const guard = source.match(/if \(process\.env\.VERCEL_ENV === "production" && !\["0", "1"\]\.includes[\s\S]*?\n\}/)[0];
+  for (const mode of [undefined, "[SENSITIVE]", "true", ""]) {
+    assert.throws(() => vm.runInNewContext(guard, {process:{env:{VERCEL_ENV:"production",AHV_ANALYTICS:mode}}}), /requires explicit AHV_ANALYTICS/);
+  }
+  for (const mode of ["0", "1"]) assert.doesNotThrow(() => vm.runInNewContext(guard,{process:{env:{VERCEL_ENV:"production",AHV_ANALYTICS:mode}}}));
+  assert.doesNotThrow(() => vm.runInNewContext(guard,{process:{env:{VERCEL_ENV:"preview"}}}));
+});
