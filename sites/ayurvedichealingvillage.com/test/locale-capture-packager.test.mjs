@@ -12,10 +12,11 @@ function fixture(){
  const put=(file,value)=>{const dest=path.join(root,file);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.writeFileSync(dest,typeof value==='string'?value:JSON.stringify(value));};
  for(const file of ['tools/package-locale-prerenders.mjs','tools/restore-locale-prerenders.mjs','tools/download-release-asset.mjs','tools/verify-interaction-only-source.mjs','tools/l10n/prerender-manifest.mjs','tools/l10n/sources-lite.mjs']){const dest=path.join(root,file);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.copyFileSync(path.join(site,file),dest);}
  put('english-candidate/locale-prerenders-release.json',{archive:'ahv-locale-prerenders-before.tar.gz',asset:'ahv-locale-prerenders-before.tar.gz',repository:'fixture',tag:'fixture',sources:[],files:[],interactionOnlySources:[]});
- put('english-candidate/route-manifest.json',{routes:Array.from({length:26},(_,i)=>({path:i?`/route-${i}/`:'/'}))});
+ put('app/(english)/_families/native-pages.tsx','const NATIVE = new Set(["/search/"]);');
+ put('english-candidate/route-manifest.json',{routes:Array.from({length:26},(_,i)=>({path:i?`/route-${i}/`:'/'})).concat([{path:'/search/'}])});
  put('english-candidate/redirect-map.json',{redirects:{}});
  put('l10n/locales.json',{en:{prefix:''},de:{prefix:'de'}});
- put('l10n/routes.json',{routes:Object.fromEntries(Array.from({length:26},(_,i)=>[i?`/route-${i}/`:'/',{de:i?`/de/route-${i}/`:'/de/'}]))});
+ put('l10n/routes.json',{routes:{'/search/':{de:'/de/search/'},...Object.fromEntries(Array.from({length:26},(_,i)=>[i?`/route-${i}/`:'/',{de:i?`/de/route-${i}/`:'/de/'}]))}});
  put('l10n/generated/de.json',{missingUnits:0,missingSample:[]});
  put('l10n/source/units.json',{sourceSetHash:'fixture'});
  put('public/ahv/l10n/de/views/view.json',{template:'current translated body'});

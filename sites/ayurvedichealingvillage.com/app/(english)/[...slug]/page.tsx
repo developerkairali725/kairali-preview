@@ -1,3 +1,4 @@
+import { captureRuntimeEnabled } from "../_families/capture-runtime.mjs";
 import retainedOriginalRoutes from "../../../campaign-v110/retained-original-routes.json";
 import campaignRoutes from "../../../campaign-v110/routes.json";
 import type { Metadata } from "next";
@@ -47,6 +48,6 @@ export default async function Page({
   const { slug } = await params;
   const route = findRoute(slug);
   if (!route) notFound();
-  if (route.path === "/contact-us/" || route.path === "/panchakarma-therapy/") return <StaticDesignView route={route} />;
+  if (!captureRuntimeEnabled() && (route.path === "/contact-us/" || route.path === "/panchakarma-therapy/")) return <StaticDesignView route={route} />;
   return <DesignView route={route} />;
 }

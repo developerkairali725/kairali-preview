@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { DesignView } from "./_families/design-view";
+import { captureRuntimeEnabled } from "./_families/capture-runtime.mjs";
 import { StaticDesignView } from "./_families/static-design-view";
 import { routeMetadata } from "./_families/metadata";
 import { homeRoute } from "./_families/registry";
@@ -16,5 +18,5 @@ export function generateMetadata(): Metadata {
 }
 
 export default function Page() {
-  return <StaticDesignView route={homeRoute()} />;
+  return captureRuntimeEnabled() ? <DesignView route={homeRoute()} /> : <StaticDesignView route={homeRoute()} />;
 }

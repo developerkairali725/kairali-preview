@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import { captureRuntimeEnabled } from "./app/(english)/_families/capture-runtime.mjs";
+// Reject capture mode before any production build can generate an artifact.
+captureRuntimeEnabled();
 import documentRedirects from "./english-candidate/document-redirects.json";
 import legacyEnglishRedirects from "./english-candidate/legacy-english-redirects.json";
 import adSitelinks from "./english-candidate/ad-sitelink-redirects.json";

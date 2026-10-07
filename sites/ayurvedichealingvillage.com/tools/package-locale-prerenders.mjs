@@ -21,11 +21,15 @@ const locales=Object.keys(read('l10n/locales.json')).filter(loc=>loc!=='en');
 const localePaths=read('l10n/routes.json').routes;
 const redirects=read('english-candidate/redirect-map.json').redirects;
 const manifest=read('english-candidate/route-manifest.json').routes;
+const nativeSource=fs.readFileSync(path.join(SITE,'app/(english)/_families/native-pages.tsx'),'utf8');
+const nativeMatch=nativeSource.match(/const NATIVE = new Set\((\[[^\]]+\])\);/);
+if(!nativeMatch)throw Error('Cannot derive authoritative native route inventory');
+const nativeRoutes=new Set(JSON.parse(nativeMatch[1]));
 const evidence=path.resolve(arg('evidence',path.join(SITE,'l10n/release-evidence')));
 fs.mkdirSync(evidence,{recursive:true});
 const receiptFile=path.join(evidence,'capture-receipt.json');
 const snapshotName=route=>(route==='/'?'index':route.replace(/^\/+|\/+$/g,'').replace(/[^a-z0-9._-]+/gi,'_'))+'.html.gz';
-const expected=Object.fromEntries(locales.map(loc=>[loc,manifest.filter(r=>localePaths[r.path]?.[loc]&&!Object.hasOwn(redirects,r.path)).map(r=>r.path)]));
+const expected=Object.fromEntries(locales.map(loc=>[loc,manifest.filter(r=>localePaths[r.path]?.[loc]&&!Object.hasOwn(redirects,r.path)&&!nativeRoutes.has(r.path)).map(r=>r.path)]));
 function walk(dir){return fs.readdirSync(path.join(SITE,dir),{withFileTypes:true}).flatMap(e=>e.isDirectory()?walk(dir+'/'+e.name):[dir+'/'+e.name]);}
 function sourceRows(){
  const excluded=new Set(old.interactionOnlySources||[]);
@@ -115,7 +119,7 @@ if(process.argv.includes('--package')){
  const spec={...old,asset:archive,archive,sha256:sha(fs.readFileSync(destination)),bytes:fs.statSync(destination).size,capturedSource:'All included locale bodies recaptured from exact current translated runtime in <=25-route batches; capture receipts bind each gzip to serving source hashes. No remote upload/publication performed by this tool.',captured:new Date().toISOString(),sources:sourceRows(),files};
  fs.writeFileSync(path.join(evidence,'previous-release-spec.json'),JSON.stringify(old,null,2)+'\n');
  fs.writeFileSync(path.join(SITE,specPath),JSON.stringify(spec,null,2)+'\n');
- command(['tools/l10n/prerender-manifest.mjs']);
+ command(['tools/l10n/prerender-manifest.mjs','--release-spec']);
  command(['tools/restore-locale-prerenders.mjs']);
  fs.writeFileSync(path.join(evidence,'packaging-result.json'),JSON.stringify({archive:destination,sha256:spec.sha256,bytes:spec.bytes,files:files.length,sources:spec.sources.length,remoteUpload:false},null,2)+'\n');
  console.log(JSON.stringify({archive,sha256:spec.sha256,files:files.length,remoteUpload:false}));
