@@ -60,6 +60,8 @@ test('approved Dhoompanam object illustration replaces the heading-only placehol
  const card=route.components.flatMap(c=>c.blocks||[]).find(b=>b.ptr==='/owner-approved-illustration/dhoompanam');
  assert.equal(card.kind,'card');assert.equal(card.assetReview,undefined);
  const img=card.blocks.find(b=>b.kind==='image');assert.equal(img.width,720);assert.equal(img.height,720);
+ assert.equal(img.src,'/ahv/assets/img/therapy-illustrations/dhoompanam-65d1de03c6c2.webp');
+ assert.equal(crypto.createHash('sha256').update(fs.readFileSync('public/ahv/assets/img/therapy-illustrations/dhoompanam.webp')).digest('hex'),'4baa332680c5ea2a724d693d2e83637f8bbef474bdfa39a423324bf33678d11d');
  assert.equal(crypto.createHash('sha256').update(fs.readFileSync('public'+img.src)).digest('hex'),'65d1de03c6c20241e877ce4245d3bfeeca0fb17783dec7c2208aa40998e7e6fc');
  assert.match(img.alt,/three brown cloth-wrapped Dhumavati sticks/);
  assert.equal(card.blocks.find(b=>b.kind==='caption').tree[0].v,'Dhoompanam — Illustration');
@@ -85,6 +87,8 @@ test('all twelve localized source payloads carry the translated merge copy, cano
   const yoga=read(`public/ahv/l10n/${prefix}/views/ahv-page-yoga-retreats-mobile.json`).template;
   const cancer=read(`public/ahv/l10n/${prefix}/views/ahv-page-supportive-care-cancer-mobile.json`).template;
   const data=fs.readFileSync(`public/ahv/l10n/${prefix}/assets/seven-informational-data.js`,'utf8');
+  assert.ok(data.includes('/ahv/assets/img/therapy-illustrations/dhoompanam-65d1de03c6c2.webp'),loc+' fingerprinted artwork URL');
+  assert.ok(!data.includes('/ahv/assets/img/therapy-illustrations/dhoompanam.webp'),loc+' stale artwork URL');
   for(const u of prose) {
    assert.ok(u.translations[loc]&&u.translations[loc]!==u.source);
    const payload=u.source.startsWith('Ask reception')?cancer:u.source.startsWith('Illustration')?data:yoga;
