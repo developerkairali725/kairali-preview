@@ -30,6 +30,7 @@ import { applyUnits, unitId, sha256, jsUnits } from "./lib.mjs";
 import * as X from "./extras.mjs";
 import { rel, readJson, sourceFiles, parseFile, includedRoutes } from "./sources.mjs";
 import { LOCALES, CODES } from "./locales.mjs";
+import { composeSitemapCatalog } from "./derived-sitemap.mjs";
 import { currencyViews, applyCurrencyTables, applyCurrencyToDataset, COMMERCIAL_DATASET } from "./currency-tables.mjs";
 
 const argv = process.argv;
@@ -60,8 +61,13 @@ export function catalog(loc) {
   const ovr = rel(`l10n/overrides/${loc}.json`); // coordinator QA corrections (same id/hash contract)
   if (fs.existsSync(ovr)) for (const [id, v] of Object.entries(JSON.parse(fs.readFileSync(ovr, "utf8")))) if (SOURCE_BY_ID.get(id)?.sourceHash === v.sourceHash) cat.set(id, v.text);
   // Explicit catalogue identities and availability copy shipped with the consolidated release.
-  const catalogueCopy = readJson("english-candidate/catalogue-locales.json");
-  for (const unit of catalogueCopy.units) if (unit.translations[loc]) cat.set(unitId(unit.source), unit.translations[loc]);
+  for (const file of ["catalogue-locales.json", "information-locales.json", "release-visible-locales.json"]) {
+    const supplement = readJson("english-candidate/" + file);
+    for (const unit of supplement.units) if (unit.translations[loc]) cat.set(unitId(unit.source), unit.translations[loc]);
+  }
+  const derived = composeSitemapCatalog(cat, SRC.units, readJson("english-candidate/site-tree.json"), loc);
+  fs.mkdirSync(rel('l10n/generated'), { recursive: true });
+  fs.writeFileSync(rel(`l10n/generated/${loc}.derived-sitemap.json`), JSON.stringify(derived, null, 2) + '\n');
   return cat;
 }
 
@@ -149,6 +155,7 @@ function technicalRuntime(s, loc) {
     .replace(/(["'])\/enquiry-form\/(["'#])/g, (m, a, b) => `${a}${lpath("/enquiry-form/")}${b}`);
 }
 
+const missingReports = [];
 function buildLocale(loc) {
   const lp = LOCALES[loc];
   const cat = catalog(loc);
@@ -247,6 +254,7 @@ function buildLocale(loc) {
     const tr = (v) => (v ? cat.get(unitId(v.replace(/\s+/g, " ").trim())) ?? null : null);
     meta[r.path] = { path: localPath(r.path, loc), title: tr(m.title), description: tr(m.description), ogTitle: tr(m.ogTitle), ogDescription: tr(m.ogDescription) };
   }
+  missingReports.push({ locale: loc, units: [...missing].map(([id, source]) => ({ id, source, sourceHash: sha256(source), origins: SOURCE_BY_ID.get(id)?.files ?? [], roles: SOURCE_BY_ID.get(id)?.roles ?? [] })) });
   const report = { locale: loc, files: written, catalogue: cat.size, missingUnits: missing.size, missingSample: [...missing.values()].slice(0, 20), sourceSetHash: SRC.sourceSetHash, currencyTables: currencyLog.length };
   fs.mkdirSync(rel("l10n/generated"), { recursive: true });
   fs.writeFileSync(rel(`l10n/generated/${loc}.json`), JSON.stringify({ ...report, meta, ui, native: nativeStrings, data }, null, 1) + "\n");
@@ -256,5 +264,6 @@ function buildLocale(loc) {
 
 const reports = only.map(buildLocale);
 for (const r of reports) console.log(`${r.locale}: files=${r.files} catalogue=${r.catalogue} missingUnits=${r.missingUnits} currencyTables=${r.currencyTables}`);
+if (arg("missing-report", null)) fs.writeFileSync(arg("missing-report"), JSON.stringify(missingReports, null, 2) + "\n");
 if (STRICT && reports.some((r) => r.missingUnits)) { console.error("STRICT: untranslated units remain"); process.exit(1); }
 void sha256;

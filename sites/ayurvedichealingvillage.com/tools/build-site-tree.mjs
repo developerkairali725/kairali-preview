@@ -38,7 +38,25 @@ import { routeCrumbs, loadDataset } from "./lib/route-crumbs.mjs";
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const manifest = JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/route-manifest.json"), "utf8"));
 const campaignRoutes = JSON.parse(fs.readFileSync(path.join(SITE, "campaign-v110/routes.json"), "utf8"));
-for (const p of campaignRoutes) if (!manifest.routes.some(r => r.path === p)) manifest.routes.push({ path:p, desktopView:'ahv-page-campaign-nine-desktop', metadata:{title:p.replace(/^\/lp\/|^\/offers\/|\/$/g,'').replaceAll('-',' ')} });
+// Concise labels from the existing campaign headings/metadata and established
+// sibling campaign navigation. Never expose a route slug as visitor copy.
+const CAMPAIGN_NAV_LABELS = {
+  '/lp/behandlung-in-kerala/': 'Ayurvedic treatment in Kerala',
+  '/lp/panchkarma-treatment/': 'Panchakarma treatment in Kerala',
+  '/lp/pain-management/': 'Ayurvedic pain management',
+  '/lp/kairali-brand/': 'Kairali — The Ayurvedic Healing Village',
+  '/lp/ayurveda-treatment-south-india/': 'Ayurvedic treatment in South India',
+  '/lp/treatment-packages/': 'Ayurvedic treatment packages',
+  '/lp/treatment-in-kerala/': 'Ayurvedic treatment in Kerala',
+  '/lp/weight-loss/': 'Ayurvedic weight loss',
+  '/lp/ayurvedic-hospital-kerala/': 'Ayurvedic Hospital in Kerala',
+  '/lp/kairali-cleansing-centre/': 'Kairali Cleansing Centre',
+  '/offers/defence-and-paramilitary/': 'Defence & Paramilitary Forces',
+};
+for (const p of campaignRoutes) if (!manifest.routes.some(r => r.path === p)) {
+  if (!CAMPAIGN_NAV_LABELS[p]) throw new Error('Campaign navigation label missing: ' + p);
+  manifest.routes.push({ path:p, desktopView:'ahv-page-campaign-nine-desktop', metadata:{title:CAMPAIGN_NAV_LABELS[p]} });
+}
 const redirected = new Set(Object.keys(JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/redirect-map.json"), "utf8")).redirects));
 const byPath = new Map(manifest.routes.map((r) => [r.path, r]));
 const { crumbs } = routeCrumbs(SITE, manifest);
@@ -106,6 +124,7 @@ const CAMPAIGN_FAMILIES = /^(campaign-nine|campaign-retreat|panchkarma-treatment
 const familyOf = (r) => (r.desktopView ?? "").replace(/^ahv-(page|template)-/, "").replace(/-(desktop|mobile)$/, "");
 /** Labels that carry a KTAHV-locked word, or read badly out of context. */
 const LABEL = {
+  ...CAMPAIGN_NAV_LABELS,
   "/read-feedback/": "Patient reviews", "/givefeedback/": "Share your feedback",
   "/kairali-air-india-maharaja-club.html": "Air India Maharaja Club (partnership)",
   "/karkidaka-chikitsha-or-monsoon-wellness.html": "Monsoon treatment — Karkidaka Chikitsa",

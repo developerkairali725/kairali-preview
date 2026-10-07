@@ -300,7 +300,7 @@ const run = async () => {
         if (faq) html += `<script type="application/ld+json">${faq}</script>`;
       }
       // Browser serialization may leave indentation on otherwise blank lines.
-      fs.writeFileSync(path.join(outDir, file), html.replace(/[ \t]+$/gm, ""));
+      fs.writeFileSync(path.join(outDir, file), html.replace(/[ \t]+$/gm, "").trimEnd() + "\n");
       rec = {
         path: route.path,
         ok: true,

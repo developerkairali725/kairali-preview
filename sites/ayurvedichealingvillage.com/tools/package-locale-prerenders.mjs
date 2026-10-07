@@ -37,9 +37,9 @@ function sourceRows(){
  return [...names].filter(file=>!excluded.has(file)&&(/\.json$|\.js$|\.dc\.html$/.test(file))).sort().map(file=>({file,sha256:fileHash(file)}));
 }
 function renderInputRows(){
- const roots=['app','english-candidate','public/design','public/ahv/views','public/ahv/assets','tools/l10n','l10n/source','l10n/overrides','l10n/output'];
+ const roots=['app','components','lib','public/consent','../../packages/consent','english-candidate','public/design','public/ahv/views','public/ahv/assets','tools/l10n','l10n/source','l10n/overrides','l10n/output'];
  const names=new Set(roots.flatMap(dir=>fs.existsSync(path.join(SITE,dir))?walk(dir):[]));
- for(const file of ['tools/prerender-english.mjs','tools/capture-page-guard.mjs','tools/package-locale-prerenders.mjs','tools/build-review-chrome.mjs','tools/build-runtime-bundles.mjs'])if(fs.existsSync(path.join(SITE,file)))names.add(file);
+ for(const file of ['tools/prerender-english.mjs','tools/capture-page-guard.mjs','tools/package-locale-prerenders.mjs','tools/build-review-chrome.mjs','tools/build-runtime-bundles.mjs','analytics.config.json','site.config.json','next.config.ts'])if(fs.existsSync(path.join(SITE,file)))names.add(file);
  return [...names].filter(file=>!file.startsWith('app/api/')&&/\.(?:json|js|mjs|ts|tsx|css)$/.test(file)).sort().map(file=>({file,sha256:fileHash(file)}));
 }
 function signature(){return sha(JSON.stringify({sources:sourceRows(),renderInputs:renderInputRows()}));}

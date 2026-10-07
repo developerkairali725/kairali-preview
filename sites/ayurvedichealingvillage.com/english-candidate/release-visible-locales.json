@@ -1,0 +1,634 @@
+{
+  "taskId": "WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001",
+  "provenance": "Selected visible source units from missing-units-baseline-comparison.json, processed in batches of 25 and 7. Exact sources and Sanskrit programme names retained; catalogue wording reused for capitalization-only matches. Integration source and tooling untouched. Sitemap total index11 added at the integration/home agent’s request to preserve locale plural forms. Final human metadata hospital title appended at integration and release owner request.",
+  "review": {
+    "status": "SOURCE-AND-STRUCTURE-CHECKED",
+    "method": "AI translations checked against the approved source. Independent native-language editorial review is not claimed.",
+    "languages": [
+      "de",
+      "fr",
+      "es",
+      "it",
+      "pt",
+      "nl",
+      "ru",
+      "hi",
+      "ar",
+      "zh-Hans",
+      "ja",
+      "ko"
+    ],
+    "units": 32,
+    "translations": 384,
+    "sourceIndexes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      36,
+      63,
+      75,
+      77,
+      79,
+      81,
+      83,
+      85,
+      87,
+      89,
+      91,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      101,
+      102,
+      103,
+      11
+    ],
+    "batches": [
+      25,
+      7
+    ],
+    "validation": {
+      "result": "PASS",
+      "sourceUnits": 32,
+      "locales": 12,
+      "translations": 384,
+      "emptyTranslations": 0,
+      "sourceMismatches": 0,
+      "placeholderMismatches": 0,
+      "ellipsisMismatches": 0,
+      "programmeNameMismatches": 0,
+      "unexpectedSourceFallbacks": 0,
+      "intentionalUnchangedSourceIndexes": [
+        99
+      ],
+      "casefoldCatalogueReuses": 24,
+      "numberChecks": "All unit numerals preserved, with natural word-order changes for the sitemap total. Asian tariff dates use numeric months 10/9; Japanese/Korean numerals 1/2/7 express existing per-night/per-villa, occupancy and minimum-seven-night facts.",
+      "dateSemantics": {
+        "zh-Hans": "PASS: 2026-10-01 through 2027-09-30. Numerals 1/2/7 express source per-unit, occupancy and minimum facts where applicable.",
+        "ja": "PASS: 2026-10-01 through 2027-09-30. Numerals 1/2/7 express source per-unit, occupancy and minimum facts where applicable.",
+        "ko": "PASS: 2026-10-01 through 2027-09-30. Numerals 1/2/7 express source per-unit, occupancy and minimum facts where applicable."
+      },
+      "tariffFacts": "AI source comparison confirms 1 October 2026–30 September 2027, per night/per villa, single/double occupancy, included taxes and minimum seven nights in all 12 locales."
+    },
+    "scopeNotes": "Original 30 selected units, sitemap total index 11, and final approved human metadata title Ayurvedic Hospital in Kerala. The final title supersedes the lowercase hospital alias. Original alias sources remain for audit coverage and may be omitted from import.",
+    "additionalApprovedSources": [
+      "Ayurvedic Hospital in Kerala"
+    ]
+  },
+  "units": [
+    {
+      "source": "Filter by availability",
+      "translations": {
+        "de": "Nach Verfügbarkeit filtern",
+        "fr": "Filtrer par disponibilité",
+        "es": "Filtrar por disponibilidad",
+        "it": "Filtra per disponibilità",
+        "pt": "Filtrar por disponibilidade",
+        "nl": "Filteren op beschikbaarheid",
+        "ru": "Фильтр по доступности",
+        "hi": "उपलब्धता के अनुसार फ़िल्टर करें",
+        "ar": "التصفية حسب التوفر",
+        "zh-Hans": "按可用状态筛选",
+        "ja": "提供状況で絞り込む",
+        "ko": "이용 가능 여부로 필터링"
+      }
+    },
+    {
+      "source": "Ask on WhatsApp ›",
+      "translations": {
+        "de": "Auf WhatsApp fragen ›",
+        "fr": "Poser une question sur WhatsApp ›",
+        "es": "Consultar por WhatsApp ›",
+        "it": "Chiedi su WhatsApp ›",
+        "pt": "Perguntar pelo WhatsApp ›",
+        "nl": "Stel een vraag via WhatsApp ›",
+        "ru": "Спросить в WhatsApp ›",
+        "hi": "WhatsApp पर पूछें ›",
+        "ar": "اسأل عبر WhatsApp ›",
+        "zh-Hans": "通过WhatsApp咨询 ›",
+        "ja": "WhatsAppで問い合わせる ›",
+        "ko": "WhatsApp으로 문의하기 ›"
+      }
+    },
+    {
+      "source": "yoga training",
+      "translations": {
+        "de": "Yogaausbildung",
+        "fr": "formation de yoga",
+        "es": "formación de yoga",
+        "it": "formazione yoga",
+        "pt": "formação em yoga",
+        "nl": "yogaopleiding",
+        "ru": "обучение йоге",
+        "hi": "योग प्रशिक्षण",
+        "ar": "تدريب اليوغا",
+        "zh-Hans": "瑜伽培训",
+        "ja": "ヨガトレーニング",
+        "ko": "요가 교육"
+      }
+    },
+    {
+      "source": "personal practice",
+      "translations": {
+        "de": "Persönliche Praxis",
+        "fr": "Pratique personnelle",
+        "es": "Práctica personal",
+        "it": "Pratica personale",
+        "pt": "Prática pessoal",
+        "nl": "Persoonlijke beoefening",
+        "ru": "Личная практика",
+        "hi": "व्यक्तिगत अभ्यास",
+        "ar": "الممارسة الشخصية",
+        "zh-Hans": "个人练习",
+        "ja": "個人の実践",
+        "ko": "개인 수련"
+      }
+    },
+    {
+      "source": "learn yoga",
+      "translations": {
+        "de": "Yoga lernen",
+        "fr": "apprendre le yoga",
+        "es": "aprender yoga",
+        "it": "imparare lo yoga",
+        "pt": "aprender yoga",
+        "nl": "yoga leren",
+        "ru": "освоить йогу",
+        "hi": "योग सीखें",
+        "ar": "تعلّم اليوغا",
+        "zh-Hans": "学习瑜伽",
+        "ja": "ヨガを学ぶ",
+        "ko": "요가 배우기"
+      }
+    },
+    {
+      "source": "coming soon",
+      "translations": {
+        "de": "Demnächst",
+        "fr": "Bientôt disponible",
+        "es": "Próximamente",
+        "it": "Prossimamente",
+        "pt": "Em breve",
+        "nl": "Binnenkort",
+        "ru": "Скоро",
+        "hi": "जल्द आ रहा है",
+        "ar": "قريبًا",
+        "zh-Hans": "即将推出",
+        "ja": "近日公開",
+        "ko": "출시 예정"
+      }
+    },
+    {
+      "source": "yoga teacher training",
+      "translations": {
+        "de": "Yogalehrerausbildung",
+        "fr": "formation de professeurs de yoga",
+        "es": "formación de profesores de yoga",
+        "it": "formazione per insegnanti di yoga",
+        "pt": "formação de professores de yoga",
+        "nl": "yogadocentenopleiding",
+        "ru": "подготовка преподавателей йоги",
+        "hi": "योग शिक्षक प्रशिक्षण",
+        "ar": "تدريب معلّمي اليوغا",
+        "zh-Hans": "瑜伽教师培训",
+        "ja": "ヨガ指導者養成",
+        "ko": "요가 지도자 양성"
+      }
+    },
+    {
+      "source": "professional yoga training",
+      "translations": {
+        "de": "professionelle Yogaausbildung",
+        "fr": "formation professionnelle de yoga",
+        "es": "formación profesional de yoga",
+        "it": "formazione professionale di yoga",
+        "pt": "formação profissional em yoga",
+        "nl": "professionele yogaopleiding",
+        "ru": "профессиональное обучение йоге",
+        "hi": "पेशेवर योग प्रशिक्षण",
+        "ar": "تدريب اليوغا المهني",
+        "zh-Hans": "专业瑜伽培训",
+        "ja": "プロフェッショナル・ヨガトレーニング",
+        "ko": "전문 요가 교육"
+      }
+    },
+    {
+      "source": "Digestive Wellness & Gut Health Yoga Therapy Agni Dīpanam Yoga Chikitsa",
+      "translations": {
+        "de": "Yogatherapie für eine gesunde Verdauung und Darmgesundheit Agni Dīpanam Yoga Chikitsa",
+        "fr": "Yogathérapie pour le bien-être digestif et la santé intestinale Agni Dīpanam Yoga Chikitsa",
+        "es": "Yogaterapia para el bienestar digestivo y la salud intestinal Agni Dīpanam Yoga Chikitsa",
+        "it": "Yogaterapia per il benessere digestivo e la salute intestinale Agni Dīpanam Yoga Chikitsa",
+        "pt": "Yogaterapia para o bem-estar digestivo e a saúde intestinal Agni Dīpanam Yoga Chikitsa",
+        "nl": "Yogatherapie voor een goede spijsvertering en darmgezondheid Agni Dīpanam Yoga Chikitsa",
+        "ru": "Йогатерапия для здоровья пищеварительной системы и кишечника Agni Dīpanam Yoga Chikitsa",
+        "hi": "पाचन स्वास्थ्य और आंतों के स्वास्थ्य के लिए योग चिकित्सा Agni Dīpanam Yoga Chikitsa",
+        "ar": "العلاج باليوغا لصحة الهضم والأمعاء Agni Dīpanam Yoga Chikitsa",
+        "zh-Hans": "消化与肠道健康瑜伽疗法 Agni Dīpanam Yoga Chikitsa",
+        "ja": "消化機能と腸の健康のためのヨガセラピー Agni Dīpanam Yoga Chikitsa",
+        "ko": "소화기 및 장 건강을 위한 요가 테라피 Agni Dīpanam Yoga Chikitsa"
+      }
+    },
+    {
+      "source": "defence and paramilitary",
+      "translations": {
+        "de": "Verteidigung und paramilitärische Kräfte",
+        "fr": "défense et forces paramilitaires",
+        "es": "defensa y fuerzas paramilitares",
+        "it": "difesa e forze paramilitari",
+        "pt": "defesa e forças paramilitares",
+        "nl": "defensie en paramilitaire eenheden",
+        "ru": "оборона и военизированные формирования",
+        "hi": "रक्षा और अर्धसैनिक बल",
+        "ar": "الدفاع والقوات شبه العسكرية",
+        "zh-Hans": "国防与准军事部队",
+        "ja": "国防・準軍事組織",
+        "ko": "국방 및 준군사 조직"
+      }
+    },
+    {
+      "source": "Ayurvedic treatment packages",
+      "translations": {
+        "de": "Ayurvedische Behandlungspakete",
+        "fr": "Forfaits de soins ayurvédiques",
+        "es": "Paquetes de tratamientos ayurvédicos",
+        "it": "Pacchetti di trattamenti ayurvedici",
+        "pt": "Pacotes de tratamentos ayurvédicos",
+        "nl": "Ayurvedische behandelarrangementen",
+        "ru": "Пакеты аюрведического лечения",
+        "hi": "आयुर्वेदिक उपचार पैकेज",
+        "ar": "باقات العلاج بالأيورفيدا",
+        "zh-Hans": "阿育吠陀疗法套餐",
+        "ja": "アーユルヴェーダ治療パッケージ",
+        "ko": "아유르베다 치료 패키지"
+      }
+    },
+    {
+      "source": "behandlung in kerala",
+      "translations": {
+        "de": "Behandlung in Kerala",
+        "fr": "traitement au Kerala",
+        "es": "tratamiento en Kerala",
+        "it": "trattamento in Kerala",
+        "pt": "tratamento em Kerala",
+        "nl": "behandeling in Kerala",
+        "ru": "лечение в Керале",
+        "hi": "केरल में उपचार",
+        "ar": "العلاج في كيرالا",
+        "zh-Hans": "喀拉拉邦治疗",
+        "ja": "ケララでの治療",
+        "ko": "케랄라에서의 치료"
+      }
+    },
+    {
+      "source": "panchkarma treatment",
+      "translations": {
+        "de": "Panchkarma-Behandlung",
+        "fr": "traitement Panchkarma",
+        "es": "tratamiento Panchkarma",
+        "it": "trattamento Panchkarma",
+        "pt": "tratamento Panchkarma",
+        "nl": "Panchkarma-behandeling",
+        "ru": "лечение Panchkarma",
+        "hi": "panchkarma उपचार",
+        "ar": "علاج panchkarma",
+        "zh-Hans": "panchkarma疗法",
+        "ja": "panchkarma治療",
+        "ko": "panchkarma 치료"
+      }
+    },
+    {
+      "source": "pain management",
+      "translations": {
+        "de": "Schmerzbehandlung",
+        "fr": "prise en charge de la douleur",
+        "es": "manejo del dolor",
+        "it": "gestione del dolore",
+        "pt": "gestão da dor",
+        "nl": "pijnbehandeling",
+        "ru": "контроль боли",
+        "hi": "दर्द प्रबंधन",
+        "ar": "إدارة الألم",
+        "zh-Hans": "疼痛管理",
+        "ja": "疼痛管理",
+        "ko": "통증 관리"
+      }
+    },
+    {
+      "source": "kairali brand",
+      "translations": {
+        "de": "Marke Kairali",
+        "fr": "marque Kairali",
+        "es": "marca Kairali",
+        "it": "marchio Kairali",
+        "pt": "marca Kairali",
+        "nl": "merk Kairali",
+        "ru": "бренд Kairali",
+        "hi": "Kairali ब्रांड",
+        "ar": "علامة Kairali التجارية",
+        "zh-Hans": "Kairali品牌",
+        "ja": "Kairaliブランド",
+        "ko": "Kairali 브랜드"
+      }
+    },
+    {
+      "source": "ayurveda treatment south india",
+      "translations": {
+        "de": "Ayurveda-Behandlung in Südindien",
+        "fr": "traitement ayurvédique en Inde du Sud",
+        "es": "tratamiento ayurvédico en el sur de la India",
+        "it": "trattamento ayurvedico nell’India meridionale",
+        "pt": "tratamento ayurvédico no sul da Índia",
+        "nl": "ayurvedische behandeling in Zuid-India",
+        "ru": "аюрведическое лечение в Южной Индии",
+        "hi": "दक्षिण भारत में आयुर्वेदिक उपचार",
+        "ar": "العلاج بالأيورفيدا في جنوب الهند",
+        "zh-Hans": "南印度阿育吠陀治疗",
+        "ja": "南インドでのアーユルヴェーダ治療",
+        "ko": "남인도 아유르베다 치료"
+      }
+    },
+    {
+      "source": "treatment packages",
+      "translations": {
+        "de": "Behandlungspakete",
+        "fr": "forfaits de soins",
+        "es": "paquetes de tratamientos",
+        "it": "pacchetti di trattamenti",
+        "pt": "pacotes de tratamentos",
+        "nl": "behandelarrangementen",
+        "ru": "пакеты лечения",
+        "hi": "उपचार पैकेज",
+        "ar": "باقات العلاج",
+        "zh-Hans": "治疗套餐",
+        "ja": "治療パッケージ",
+        "ko": "치료 패키지"
+      }
+    },
+    {
+      "source": "treatment in kerala",
+      "translations": {
+        "de": "Behandlung in Kerala",
+        "fr": "traitement au Kerala",
+        "es": "tratamiento en Kerala",
+        "it": "trattamento in Kerala",
+        "pt": "tratamento em Kerala",
+        "nl": "behandeling in Kerala",
+        "ru": "лечение в Керале",
+        "hi": "केरल में उपचार",
+        "ar": "العلاج في كيرالا",
+        "zh-Hans": "喀拉拉邦治疗",
+        "ja": "ケララでの治療",
+        "ko": "케랄라에서의 치료"
+      }
+    },
+    {
+      "source": "weight loss",
+      "translations": {
+        "de": "Gewichtsabnahme",
+        "fr": "perte de poids",
+        "es": "pérdida de peso",
+        "it": "perdita di peso",
+        "pt": "perda de peso",
+        "nl": "gewichtsverlies",
+        "ru": "снижение веса",
+        "hi": "वज़न घटाना",
+        "ar": "إنقاص الوزن",
+        "zh-Hans": "减重",
+        "ja": "減量",
+        "ko": "체중 감량"
+      }
+    },
+    {
+      "source": "ayurvedic hospital kerala",
+      "translations": {
+        "de": "ayurvedisches Krankenhaus in Kerala",
+        "fr": "hôpital ayurvédique au Kerala",
+        "es": "hospital ayurvédico en Kerala",
+        "it": "ospedale ayurvedico in Kerala",
+        "pt": "hospital ayurvédico em Kerala",
+        "nl": "ayurvedisch ziekenhuis in Kerala",
+        "ru": "аюрведическая больница в Керале",
+        "hi": "केरल का आयुर्वेदिक अस्पताल",
+        "ar": "مستشفى الأيورفيدا في كيرالا",
+        "zh-Hans": "喀拉拉邦阿育吠陀医院",
+        "ja": "ケララのアーユルヴェーダ病院",
+        "ko": "케랄라 아유르베다 병원"
+      }
+    },
+    {
+      "source": "kairali cleansing centre",
+      "translations": {
+        "de": "Kairali-Reinigungszentrum",
+        "fr": "centre de purification Kairali",
+        "es": "centro de depuración Kairali",
+        "it": "centro di purificazione Kairali",
+        "pt": "centro de purificação Kairali",
+        "nl": "Kairali-reinigingscentrum",
+        "ru": "центр очищения Kairali",
+        "hi": "Kairali शुद्धिकरण केंद्र",
+        "ar": "مركز Kairali للتنقية",
+        "zh-Hans": "Kairali净化中心",
+        "ja": "Kairali浄化センター",
+        "ko": "Kairali 정화 센터"
+      }
+    },
+    {
+      "source": "Dhyāna-Yoga Shibiram · Minimum Duration is 7 Nights",
+      "translations": {
+        "de": "Dhyāna-Yoga Shibiram · Mindestdauer: 7 Nächte",
+        "fr": "Dhyāna-Yoga Shibiram · Durée minimale de 7 nuits",
+        "es": "Dhyāna-Yoga Shibiram · Duración mínima de 7 noches",
+        "it": "Dhyāna-Yoga Shibiram · Durata minima di 7 notti",
+        "pt": "Dhyāna-Yoga Shibiram · Duração mínima de 7 noites",
+        "nl": "Dhyāna-Yoga Shibiram · Minimale duur: 7 nachten",
+        "ru": "Dhyāna-Yoga Shibiram · Минимальная продолжительность — 7 ночей",
+        "hi": "Dhyāna-Yoga Shibiram · न्यूनतम अवधि 7 रातें है",
+        "ar": "Dhyāna-Yoga Shibiram · الحد الأدنى للمدة 7 ليالٍ",
+        "zh-Hans": "Dhyāna-Yoga Shibiram · 最短入住时长为7晚",
+        "ja": "Dhyāna-Yoga Shibiram · 最短滞在期間は7泊です",
+        "ko": "Dhyāna-Yoga Shibiram · 최소 숙박 기간은 7박입니다"
+      }
+    },
+    {
+      "source": "Dhyāna-Yoga Shibiram — Programme tariff",
+      "translations": {
+        "de": "Dhyāna-Yoga Shibiram — Programmtarif",
+        "fr": "Dhyāna-Yoga Shibiram — Tarif du programme",
+        "es": "Dhyāna-Yoga Shibiram — Tarifa del programa",
+        "it": "Dhyāna-Yoga Shibiram — Tariffa del programma",
+        "pt": "Dhyāna-Yoga Shibiram — Tarifa do programa",
+        "nl": "Dhyāna-Yoga Shibiram — Programmatarief",
+        "ru": "Dhyāna-Yoga Shibiram — Тариф программы",
+        "hi": "Dhyāna-Yoga Shibiram — कार्यक्रम की दर-सूची",
+        "ar": "Dhyāna-Yoga Shibiram — تعرفة البرنامج",
+        "zh-Hans": "Dhyāna-Yoga Shibiram — 项目价目表",
+        "ja": "Dhyāna-Yoga Shibiram — プログラム料金表",
+        "ko": "Dhyāna-Yoga Shibiram — 프로그램 요금표"
+      }
+    },
+    {
+      "source": "Rates effective 1 October 2026 to 30 September 2027. Per night, per villa, single or double occupancy; taxes included. Minimum seven nights.",
+      "translations": {
+        "de": "Die Preise gelten vom 1. Oktober 2026 bis zum 30. September 2027. Pro Nacht und Villa, bei Einzel- oder Doppelbelegung; Steuern inbegriffen. Mindestaufenthalt: sieben Nächte.",
+        "fr": "Tarifs applicables du 1 octobre 2026 au 30 septembre 2027. Par nuit et par villa, en occupation simple ou double ; taxes incluses. Minimum de sept nuits.",
+        "es": "Tarifas vigentes del 1 de octubre de 2026 al 30 de septiembre de 2027. Por noche y por villa, en ocupación individual o doble; impuestos incluidos. Mínimo de siete noches.",
+        "it": "Tariffe valide dal 1 ottobre 2026 al 30 settembre 2027. Per notte e per villa, con occupazione singola o doppia; imposte incluse. Minimo sette notti.",
+        "pt": "Tarifas em vigor de 1 de outubro de 2026 a 30 de setembro de 2027. Por noite e por villa, em ocupação individual ou dupla; impostos incluídos. Mínimo de sete noites.",
+        "nl": "Tarieven geldig van 1 oktober 2026 tot en met 30 september 2027. Per nacht, per villa, voor één of twee personen; inclusief belastingen. Minimaal zeven nachten.",
+        "ru": "Тарифы действуют с 1 октября 2026 года по 30 сентября 2027 года. За ночь, за виллу, при одноместном или двухместном размещении; налоги включены. Минимум семь ночей.",
+        "hi": "दरें 1 अक्टूबर 2026 से 30 सितंबर 2027 तक लागू हैं। प्रति रात, प्रति विला, एक या दो व्यक्तियों के ठहरने के लिए; कर शामिल हैं। न्यूनतम ठहराव सात रातें।",
+        "ar": "الأسعار سارية من 1 أكتوبر 2026 إلى 30 سبتمبر 2027. لكل ليلة ولكل فيلا، لإقامة شخص واحد أو شخصين؛ شاملة الضرائب. الحد الأدنى للإقامة سبع ليالٍ.",
+        "zh-Hans": "价格适用于2026年10月1日至2027年9月30日。按每晚、每栋别墅计价，供单人或双人入住；已含税。最少入住七晚。",
+        "ja": "料金の適用期間は2026年10月1日から2027年9月30日までです。1泊・1ヴィラあたり、1名または2名でご利用の場合の料金で、税込みです。最低宿泊数は7泊です。",
+        "ko": "요금 적용 기간은 2026년 10월 1일부터 2027년 9월 30일까지입니다. 빌라 1채당 1박 기준이며, 1인 또는 2인 투숙에 적용됩니다. 세금이 포함되어 있으며, 최소 숙박 기간은 7박입니다."
+      }
+    },
+    {
+      "source": "View the published programme tariffs",
+      "translations": {
+        "de": "Veröffentlichte Programmtarife ansehen",
+        "fr": "Consulter les tarifs publiés des programmes",
+        "es": "Ver las tarifas publicadas de los programas",
+        "it": "Consulta le tariffe pubblicate dei programmi",
+        "pt": "Consultar as tarifas publicadas dos programas",
+        "nl": "Bekijk de gepubliceerde programmatarieven",
+        "ru": "Посмотреть опубликованные тарифы программ",
+        "hi": "प्रकाशित कार्यक्रम दर-सूची देखें",
+        "ar": "اطّلع على تعرفات البرامج المنشورة",
+        "zh-Hans": "查看已公布的项目价目表",
+        "ja": "公開されているプログラム料金表を見る",
+        "ko": "공개된 프로그램 요금표 보기"
+      }
+    },
+    {
+      "source": "Tell the team about your yoga experience, mobility and any health restrictions. Discuss which sessions can be adapted to your needs before choosing the programme. This is yoga and meditation practice; Professional Yoga Teacher Training is a separate course marked Coming Soon.",
+      "translations": {
+        "de": "Informieren Sie das Team über Ihre Yogaerfahrung, Ihre Beweglichkeit und etwaige gesundheitliche Einschränkungen. Besprechen Sie vor der Programmwahl, welche Einheiten an Ihre Bedürfnisse angepasst werden können. Hier geht es um Yoga- und Meditationspraxis; die professionelle Yogalehrerausbildung ist ein separater Kurs, der als „Demnächst“ gekennzeichnet ist.",
+        "fr": "Informez l’équipe de votre expérience du yoga, de votre mobilité et de vos éventuelles restrictions de santé. Avant de choisir le programme, discutez des séances qui peuvent être adaptées à vos besoins. Il s’agit d’une pratique du yoga et de la méditation ; la formation professionnelle de professeurs de yoga est un cours distinct indiqué comme « Bientôt disponible ».",
+        "es": "Informe al equipo sobre su experiencia con el yoga, su movilidad y cualquier restricción de salud. Antes de elegir el programa, consulte qué sesiones pueden adaptarse a sus necesidades. Se trata de práctica de yoga y meditación; la formación profesional de profesores de yoga es un curso independiente marcado como «Próximamente».",
+        "it": "Informa il team della tua esperienza nello yoga, della tua mobilità e di eventuali limitazioni legate alla salute. Prima di scegliere il programma, parla con il team delle sessioni che possono essere adattate alle tue esigenze. Si tratta di pratica di yoga e meditazione; la formazione professionale per insegnanti di yoga è un corso separato indicato come «Prossimamente».",
+        "pt": "Informe a equipa sobre a sua experiência em yoga, a sua mobilidade e quaisquer restrições de saúde. Antes de escolher o programa, converse sobre as sessões que podem ser adaptadas às suas necessidades. Trata-se de prática de yoga e meditação; a formação profissional de professores de yoga é um curso separado, assinalado como «Em breve».",
+        "nl": "Vertel het team over uw yoga-ervaring, mobiliteit en eventuele gezondheidsbeperkingen. Bespreek welke sessies aan uw behoeften kunnen worden aangepast voordat u het programma kiest. Dit is yoga- en meditatiebeoefening; de professionele yogadocentenopleiding is een afzonderlijke cursus met de aanduiding ‘Binnenkort’.",
+        "ru": "Расскажите команде о своём опыте занятий йогой, подвижности и любых ограничениях по здоровью. Прежде чем выбрать программу, обсудите, какие занятия можно адаптировать к вашим потребностям. Это практика йоги и медитации; профессиональная подготовка преподавателей йоги — отдельный курс с пометкой «Скоро».",
+        "hi": "टीम को अपने योगाभ्यास के अनुभव, चलने-फिरने की क्षमता और स्वास्थ्य संबंधी किसी भी सीमा के बारे में बताएँ। कार्यक्रम चुनने से पहले चर्चा करें कि किन सत्रों को आपकी ज़रूरतों के अनुसार ढाला जा सकता है। यह योग और ध्यान का अभ्यास है; पेशेवर योग शिक्षक प्रशिक्षण एक अलग पाठ्यक्रम है, जिस पर ‘जल्द आ रहा है’ लिखा है।",
+        "ar": "أخبر الفريق عن خبرتك في اليوغا وقدرتك على الحركة وأي قيود صحية لديك. ناقش الجلسات التي يمكن تكييفها مع احتياجاتك قبل اختيار البرنامج. هذا البرنامج لممارسة اليوغا والتأمل؛ أما التدريب المهني لمعلّمي اليوغا فهو دورة منفصلة تحمل عبارة «قريبًا».",
+        "zh-Hans": "请向团队说明您的瑜伽练习经验、活动能力以及任何健康方面的限制。选择项目前，请讨论哪些课程可以根据您的需求作出调整。本项目为瑜伽和冥想练习；专业瑜伽教师培训是另一门独立课程，目前标注为“即将推出”。",
+        "ja": "ヨガの経験、身体の動かしやすさ、健康上の制限についてスタッフにお知らせください。プログラムを選ぶ前に、どのセッションをご自身のニーズに合わせて調整できるかご相談ください。このプログラムはヨガと瞑想の実践を目的としています。プロフェッショナル・ヨガ指導者養成は別のコースで、「近日公開」と表示されています。",
+        "ko": "요가 경험, 신체 활동 능력, 건강상의 제한 사항을 담당 팀에 알려 주세요. 프로그램을 선택하기 전에 어떤 세션을 본인의 필요에 맞게 조정할 수 있는지 상담하세요. 이 프로그램은 요가와 명상 수련을 위한 것입니다. 전문 요가 지도자 양성은 별도의 과정이며 ‘출시 예정’으로 표시되어 있습니다."
+      }
+    },
+    {
+      "source": "Prāna Sāmya Yoga Chikitsa",
+      "translations": {
+        "de": "Prāna Sāmya Yoga Chikitsa",
+        "fr": "Prāna Sāmya Yoga Chikitsa",
+        "es": "Prāna Sāmya Yoga Chikitsa",
+        "it": "Prāna Sāmya Yoga Chikitsa",
+        "pt": "Prāna Sāmya Yoga Chikitsa",
+        "nl": "Prāna Sāmya Yoga Chikitsa",
+        "ru": "Prāna Sāmya Yoga Chikitsa",
+        "hi": "Prāna Sāmya Yoga Chikitsa",
+        "ar": "Prāna Sāmya Yoga Chikitsa",
+        "zh-Hans": "Prāna Sāmya Yoga Chikitsa",
+        "ja": "Prāna Sāmya Yoga Chikitsa",
+        "ko": "Prāna Sāmya Yoga Chikitsa"
+      }
+    },
+    {
+      "source": "Explore Ayurveda training courses and workshops at Kairali in Kerala. Compare course…",
+      "translations": {
+        "de": "Entdecken Sie Ayurveda-Ausbildungskurse und Workshops bei Kairali in Kerala. Vergleichen Sie Kurse…",
+        "fr": "Découvrez les formations et ateliers d’Ayurveda chez Kairali au Kerala. Comparez les cours…",
+        "es": "Explore los cursos de formación y talleres de Ayurveda en Kairali, Kerala. Compare cursos…",
+        "it": "Scopri i corsi di formazione e i workshop di Ayurveda presso Kairali, in Kerala. Confronta i corsi…",
+        "pt": "Explore os cursos de formação e workshops de Ayurveda no Kairali, em Kerala. Compare cursos…",
+        "nl": "Ontdek Ayurveda-opleidingen en workshops bij Kairali in Kerala. Vergelijk cursussen…",
+        "ru": "Ознакомьтесь с учебными курсами и семинарами по Аюрведе в Kairali, Керала. Сравните курсы…",
+        "hi": "केरल में Kairali के आयुर्वेद प्रशिक्षण पाठ्यक्रमों और कार्यशालाओं के बारे में जानें। पाठ्यक्रमों की तुलना…",
+        "ar": "استكشف دورات التدريب على الأيورفيدا وورش العمل لدى Kairali في كيرالا. قارن الدورات…",
+        "zh-Hans": "探索喀拉拉邦Kairali的阿育吠陀培训课程与工作坊。比较课程…",
+        "ja": "ケララ州のKairaliで開催されるアーユルヴェーダの研修コースやワークショップをご覧ください。コースを比較…",
+        "ko": "케랄라의 Kairali에서 제공하는 아유르베다 교육 과정과 워크숍을 살펴보세요. 과정 비교…"
+      }
+    },
+    {
+      "source": "AHV gift vouchers are coming soon: a thoughtful way to support the health of family and…",
+      "translations": {
+        "de": "AHV-Geschenkgutscheine sind bald erhältlich: eine aufmerksame Möglichkeit, die Gesundheit der Familie und…",
+        "fr": "Les chèques-cadeaux AHV seront bientôt disponibles : une délicate attention pour soutenir la santé de la famille et…",
+        "es": "Los vales de regalo de AHV estarán disponibles próximamente: una forma considerada de apoyar la salud de la familia y…",
+        "it": "I buoni regalo AHV saranno presto disponibili: un gesto premuroso per sostenere la salute della famiglia e…",
+        "pt": "Os vales-presente AHV estarão disponíveis em breve: uma forma atenciosa de apoiar a saúde da família e…",
+        "nl": "AHV-cadeaubonnen zijn binnenkort beschikbaar: een attent gebaar om de gezondheid van familie en…",
+        "ru": "Подарочные сертификаты AHV скоро появятся: заботливый способ поддержать здоровье семьи и…",
+        "hi": "AHV के उपहार वाउचर जल्द आ रहे हैं: सेहत का ध्यान रखने का एक विचारशील तरीका, परिवार और…",
+        "ar": "قسائم هدايا AHV قريبًا: وسيلة تنمّ عن الاهتمام لدعم صحة أفراد العائلة و…",
+        "zh-Hans": "AHV礼品券即将推出：以贴心的方式支持健康，关爱家人及…",
+        "ja": "AHVのギフト券は近日登場予定です。健康を気遣う心のこもった贈り物として、ご家族や…",
+        "ko": "AHV 기프트 바우처가 곧 출시됩니다. 건강을 응원하는 따뜻한 마음을 담아 가족과…"
+      }
+    },
+    {
+      "source": "Physician-guided Panchakarma at Kairali – The Ayurvedic Healing Village, Kerala:…",
+      "translations": {
+        "de": "Ärztlich begleitete Panchakarma bei Kairali – The Ayurvedic Healing Village, Kerala:…",
+        "fr": "Panchakarma encadré par un médecin chez Kairali – The Ayurvedic Healing Village, Kerala :…",
+        "es": "Panchakarma guiado por médicos en Kairali – The Ayurvedic Healing Village, Kerala:…",
+        "it": "Panchakarma sotto guida medica presso Kairali – The Ayurvedic Healing Village, Kerala:…",
+        "pt": "Panchakarma com orientação médica no Kairali – The Ayurvedic Healing Village, Kerala:…",
+        "nl": "Panchakarma onder begeleiding van een arts bij Kairali – The Ayurvedic Healing Village, Kerala:…",
+        "ru": "Panchakarma под руководством врача в Kairali – The Ayurvedic Healing Village, Керала:…",
+        "hi": "केरल के Kairali – The Ayurvedic Healing Village में चिकित्सक के मार्गदर्शन में Panchakarma:…",
+        "ar": "Panchakarma بإشراف طبي في Kairali – The Ayurvedic Healing Village، كيرالا:…",
+        "zh-Hans": "喀拉拉邦Kairali – The Ayurvedic Healing Village的医师指导Panchakarma疗法：…",
+        "ja": "ケララ州のKairali – The Ayurvedic Healing Villageで、医師の指導によるPanchakarma：…",
+        "ko": "케랄라의 Kairali – The Ayurvedic Healing Village에서 의사의 지도 아래 진행하는 Panchakarma:…"
+      }
+    },
+    {
+      "source": "214 pages across 15 sections",
+      "translations": {
+        "de": "214 Seiten in 15 Bereichen",
+        "fr": "214 pages réparties en 15 rubriques",
+        "es": "214 páginas en 15 secciones",
+        "it": "214 pagine in 15 sezioni",
+        "pt": "214 páginas em 15 secções",
+        "nl": "214 pagina’s in 15 secties",
+        "ru": "214 страниц в 15 разделах",
+        "hi": "15 अनुभागों में 214 पृष्ठ",
+        "ar": "214 صفحة موزعة على 15 قسمًا",
+        "zh-Hans": "15个版块，共214个页面",
+        "ja": "15のセクション、全214ページ",
+        "ko": "15개 섹션에 걸친 214개 페이지"
+      }
+    },
+    {
+      "source": "Ayurvedic Hospital in Kerala",
+      "translations": {
+        "de": "Ayurvedisches Krankenhaus in Kerala",
+        "fr": "Hôpital ayurvédique au Kerala",
+        "es": "Hospital ayurvédico en Kerala",
+        "it": "Ospedale ayurvedico in Kerala",
+        "pt": "Hospital ayurvédico em Kerala",
+        "nl": "Ayurvedisch ziekenhuis in Kerala",
+        "ru": "Аюрведическая больница в Керале",
+        "hi": "केरल का आयुर्वेदिक अस्पताल",
+        "ar": "مستشفى الأيورفيدا في كيرالا",
+        "zh-Hans": "喀拉拉邦阿育吠陀医院",
+        "ja": "ケララのアーユルヴェーダ病院",
+        "ko": "케랄라 아유르베다 병원"
+      }
+    }
+  ]
+}
