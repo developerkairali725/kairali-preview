@@ -1,7 +1,28 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { assertCapturePage, captureFormSelector, captureContentRequirements, inspectCapturePage, createCaptureEvaluation } from '../tools/capture-page-guard.mjs';
-const complete = { errors: [], heading: 'Contact us', bodyChars: 1200, requiredForm: true };
+const complete = { errors: [], heading: 'Contact us', bodyChars: 1200, requiredForm: true, requiredContent: true, forbiddenContent: false };
+
+test('serialized proof cannot omit metrics or content-state booleans', () => {
+  for (const key of ['bodyChars', 'requiredContent', 'forbiddenContent']) {
+    const partial = { ...complete }; delete partial[key];
+    assert.throws(() => assertCapturePage(partial, '/about-us/'), /Malformed/);
+  }
+});
+
+test('main programmes require exactly one existing contact form', () => {
+  for (const route of ['/weight-loss-programme/', '/digestive-wellness-gut-health-yoga-therapy/']) {
+    const requirements = captureContentRequirements(route);
+    assert.deepEqual(requirements, { formSelector: '#programme-enquiry form[data-form="contact"]', formCount: 1 });
+    const root = fixtureRoot(), query = root.querySelectorAll.bind(root);
+    const form = { querySelector: () => ({ tagName: 'INPUT' }) };
+    root.querySelector = () => form;
+    root.querySelectorAll = selector => selector === requirements.formSelector ? [form, form] : query(selector);
+    globalThis.document = { getElementById: () => root };
+    try { assert.throws(() => assertCapturePage(inspectCapturePage(requirements), route), /page form/); }
+    finally { delete globalThis.document; }
+  }
+});
 
 function fixtureRoot(importFailure = false) {
   const failure = { textContent: 'Component import failed', querySelector: () => null };
