@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
-import { captureRuntimeEnabled } from "./app/(english)/_families/capture-runtime.mjs";
-// Reject capture mode before any production build can generate an artifact.
-captureRuntimeEnabled();
+import { captureConfigEnabled } from "./app/(english)/_families/capture-runtime.mjs";
 import documentRedirects from "./english-candidate/document-redirects.json";
 import legacyEnglishRedirects from "./english-candidate/legacy-english-redirects.json";
 import adSitelinks from "./english-candidate/ad-sitelink-redirects.json";
@@ -178,4 +176,9 @@ const nextConfig: NextConfig = {
   // cutover map above stays commented; nothing about the live Ads URLs changes.
 };
 
-export default nextConfig;
+export default function config(phase: string): NextConfig {
+  // Reject capture before build/start/export, even if NODE_ENV was inherited
+  // as development. Next supplies this phase independently of NODE_ENV.
+  captureConfigEnabled(phase);
+  return nextConfig;
+}

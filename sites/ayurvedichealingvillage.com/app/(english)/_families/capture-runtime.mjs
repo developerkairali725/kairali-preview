@@ -11,6 +11,15 @@ export function captureRuntimeEnabled(env = process.env) {
   }
   return true;
 }
+// Next's explicit phase is authoritative: NODE_ENV can be inherited as
+// development even when the CLI is running `next build` or `next start`.
+export function captureConfigEnabled(phase, env = process.env) {
+  const enabled = captureRuntimeEnabled(env);
+  if (enabled && phase !== 'phase-development-server') {
+    throw new Error('AHV_CAPTURE_RUNTIME requires the Next development-server phase; never build, start production, or export with it enabled.');
+  }
+  return enabled;
+}
 export function isLocalCaptureHost(host) {
   if (typeof host !== 'string' || !/^(?:127\.0\.0\.1|localhost)(?::[0-9]{1,5})?$/.test(host)) return false;
   try { return ['127.0.0.1', 'localhost'].includes(new URL('http://' + host).hostname); } catch { return false; }
