@@ -4,7 +4,9 @@
  */
 export function orderedRuntimeScripts(view, cfg, hasLeadReceipt) {
   const entries = [{ src: cfg.previewSrc, view: view.file || '' }];
-  if ((view.logic || '').includes('window.AHV_LEAD_RECEIPT') && !hasLeadReceipt) {
+  const needsLeadReceipt = (view.logic || '').includes('window.AHV_LEAD_RECEIPT')
+    || (view.template || '').includes('name="AHV Programme Enquiry"');
+  if (needsLeadReceipt && !hasLeadReceipt) {
     entries.push({ src: '/design/lead-receipt.js' });
   }
   for (const src of view.scripts || []) entries.push({ src });
