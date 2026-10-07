@@ -12,6 +12,8 @@ test('supplier form mount uses the existing endpoint and no duplicate consent or
  assert.match(read('campaign-v110/components/EnquiryForm.tsx'),/CampaignEnquiryForm/);
  assert.doesNotMatch(read('campaign-v110/components/PageShell.tsx'),/<CookieConsent|<ChatWidgetSlot/);
  assert.match(read('campaign-v110/CampaignDocument.tsx'),/<ConsentScripts \/>/);
+ assert.match(read('components/ConsentScripts.tsx'),/consentDefaultSnippet\(\)/);
+ assert.doesNotMatch(read('components/ConsentScripts.tsx'),/storedConsentSnippet|restoreConsent/);
  assert.match(read('campaign-v110/CampaignDocument.tsx'),/<ChatbaseLoader \/>/);
  assert.match(read('app/(lp)/_components/campaign-enquiry-form.tsx'),/'gclid'/);
  assert.match(read('campaign-v110/SharedConsent.tsx'),/CONSENT_RUNTIME/);

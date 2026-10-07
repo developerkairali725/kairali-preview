@@ -2,7 +2,7 @@ import { measurementForEnvironment } from "../lib/measurement-config.mjs";
 import type { ReactNode } from "react";
 import Script from "next/script";
 import localFont from "next/font/local";
-import { ConsentScripts } from "@kairali/consent";
+import { ConsentScripts } from "../components/ConsentScripts";
 import { ChatbaseLoader } from "@kairali/chat";
 import analyticsConfig from "../analytics.config.json";
 import SharedConsent from "./SharedConsent";
