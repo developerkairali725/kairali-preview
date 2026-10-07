@@ -147,7 +147,42 @@ const STATIC_BOOT = `
   }
   host.setAttribute("data-ahv-snapshot-state", "retired");
   host.removeAttribute("data-ahv-static-pending");
-  (${createBackgroundDeferral.toString()})(window, 800)(host);
+  // Measure each section boundary, not its skipped background descendants.
+  // Probing descendants defeats the homepage's content-visibility containment.
+  function deferStaticHomeBackgrounds() {
+    var groups = new Map();
+    host.querySelectorAll("[style*='url(']").forEach(function (element) {
+      if (element.hasAttribute("data-ahv-bg")) return;
+      var section = element.closest('.sc-host > div[data-dc-tpl="31"] > section[data-dc-tpl]') || element.closest("section") || element;
+      if (!groups.has(section)) groups.set(section, []);
+      groups.get(section).push(element);
+    });
+    if (!groups.size) return;
+    var pending = new Set(groups.keys());
+    var observer = null;
+    function reveal(section) {
+      if (!pending.has(section)) return;
+      groups.get(section).forEach(function (element) { element.setAttribute("data-ahv-bg", ""); });
+      pending.delete(section);
+      if (observer) {
+        observer.unobserve(section);
+        if (!pending.size) observer.disconnect();
+      }
+    }
+    if (!("IntersectionObserver" in window)) { groups.forEach(function (_, section) { reveal(section); }); return; }
+    observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) reveal(entry.target); });
+    }, { rootMargin: "800px 0px" });
+    var sections = Array.from(groups.keys());
+    // Read all boundary boxes before revealing any background.
+    var near = sections.map(function (section) {
+      var rect = section.getBoundingClientRect();
+      return (rect.width || rect.height) && rect.bottom > -800 && rect.top < window.innerHeight + 800;
+    });
+    sections.forEach(function (section, index) { if (near[index]) reveal(section); else observer.observe(section); });
+  }
+  if (cfg.staticHome) deferStaticHomeBackgrounds();
+  else (${createBackgroundDeferral.toString()})(window, 800)(host);
   ${CONSENT_RUNTIME}
   ensureConsentNotice();
   if (consentChoice() === "accepted") startMeasurement();
