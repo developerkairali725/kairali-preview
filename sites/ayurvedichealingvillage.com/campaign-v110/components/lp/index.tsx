@@ -38,7 +38,10 @@ export function LpHero({
   photo,
   ctaLang,
   form,
+  stableIntro = false,
 }: {
+  /** Opt in only when the route has verified first-paint intro stability. */
+  stableIntro?: boolean;
   /** Set to "en" on a non-English page: the CTA and phone line are English. */
   ctaLang?: string;
   form?: React.ReactNode;
@@ -55,11 +58,14 @@ export function LpHero({
   return (
     <>
     <header className={`${s.hero} ahv-campaign-hero`} aria-labelledby="hero-title">
-      <Image className="ahv-hero-photo" src={photo.src} alt={photo.alt} sizes="100vw" priority />
+      <Image className="ahv-hero-photo" src={photo.src} alt={photo.alt} sizes="100vw" priority fetchPriority={stableIntro ? "high" : undefined} />
       <div className={`${s.heroCopy} ahv-hero-copy`}>
         <p className={s.heroOverline}>{overline}</p>
         <h1 id="hero-title">{title}</h1>
-        <details className="campaign-mobile-detail" open><summary>{ctaLang ? "Über dieses Programm" : "About this programme"}</summary><p className={s.heroSub}>{sub}</p></details>
+        {stableIntro ? <div className="campaign-responsive-intro">
+          <div className="campaign-desktop-intro"><p className={s.heroSub}>{sub}</p></div>
+          <details className="campaign-mobile-detail"><summary>{ctaLang ? "Über dieses Programm" : "About this programme"}</summary><p className={s.heroSub}>{sub}</p></details>
+        </div> : <details className="campaign-mobile-detail" open><summary>{ctaLang ? "Über dieses Programm" : "About this programme"}</summary><p className={s.heroSub}>{sub}</p></details>}
         {/* CTA placement 2: one primary button, phone as plain text beneath */}
         <div className={`${s.ctaCol} campaign-hero-cta`} lang={ctaLang}>
           <a id="hero-cta" className="btn btn-primary" href="#campaign-consultation">

@@ -1,5 +1,8 @@
 /** Selected image variants; only phone templates/snapshots use these. */
 export function phoneCriticalMedia(html) {
+  for (var name of ['weight-loss', 'weight-history']) {
+    html = html.split('/ahv/assets/img/' + name + '.webp').join('/ahv/assets/img/' + name + '-768.avif');
+  }
   for (var name of ['weightloss', 'digestive']) {
     html = html.split('/ahv/assets/img/' + name + '.webp').join('/ahv/assets/img/' + name + '-768-hero.avif');
   }

@@ -19,7 +19,17 @@ test('main programme phone heroes use the same derivative for background and pri
     assert.equal(phoneCriticalMedia(mapped), mapped);
     assert.equal(firstCriticalImage(source), null, 'desktop/original template is untouched');
   }
-  assert.equal(phoneCriticalMedia('<img src="/ahv/assets/img/weight-loss.webp">'), '<img src="/ahv/assets/img/weight-loss.webp">');
+  assert.equal(phoneCriticalMedia('<img src="/ahv/assets/img/weight-loss-extra.webp">'), '<img src="/ahv/assets/img/weight-loss-extra.webp">');
+});
+test('Weight Loss body images retain layout and lazy attributes without priority preload', () => {
+  for (const name of ['weight-loss', 'weight-history']) {
+    const original = `/ahv/assets/img/${name}.webp`, derivative = `/ahv/assets/img/${name}-768.avif`;
+    const source = `<img src="${original}" width="580" height="387" loading="lazy" fetchpriority="low" alt="Approved description" style="width:100%;height:auto">`;
+    const mapped = phoneCriticalMedia(source);
+    assert.equal(mapped.replace(derivative, original), source);
+    assert.equal(firstCriticalImage(mapped), null, 'body image never becomes a critical preload');
+    assert.equal(phoneCriticalMedia(mapped), mapped);
+  }
 });
 test('only named first-screen images gain the same-image phone variant', () => {
   const input = '<video poster="/ahv/assets/img/wx-hero.webp"></video><img src="/ahv/assets/img/other.webp">';

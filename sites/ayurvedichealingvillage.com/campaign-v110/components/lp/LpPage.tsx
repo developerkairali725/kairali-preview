@@ -46,13 +46,14 @@ function BlockView({ b }: { b: Block }) {
   }
 }
 
-export default function LpPage({ content: c }: { content: LpContent }) {
+export default function LpPage({ content: c, stableIntro = false }: { content: LpContent; stableIntro?: boolean }) {
   return (
     <PageShell lang={c.lang} legalLabels={c.legalLabels} campaign>
       {c.jsonLd && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(c.jsonLd) }} />
       )}
       <LpHero
+        stableIntro={stableIntro}
         form={<EnquiryForm pagePath={c.path} heading={c.enquiry.form.heading} whatsappText={c.whatsappText} lang={c.lang} />}
         overline={c.hero.overline}
         title={<Runs runs={c.hero.h1} />}
