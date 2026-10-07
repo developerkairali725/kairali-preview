@@ -8,9 +8,8 @@ import { fileURLToPath } from 'node:url';
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const componentName = 'AHV Programme Enquiry';
-// Digestive is held at its production baseline, with an external contact journey.
-export const programmeViews = ['weight-loss-programme']
-  .flatMap(name => ['desktop', 'mobile'].map(variant => `ahv-page-${name}-${variant}`));
+// Weight and Digestive are held at their production baselines, with external contact journeys.
+export const programmeViews = [];
 
 export function programmeEnquiryComponent(enquiry) {
   const form = enquiry.template.match(/<form data-form="contact"[\s\S]*?<\/form>/)?.[0];
@@ -69,8 +68,8 @@ ${handlers}
 }
 
 export function integrateProgrammeView(view) {
-  if (['ahv-page-digestive-wellness-gut-health-desktop', 'ahv-page-digestive-wellness-gut-health-mobile'].includes(view.id)) {
-    throw new Error('Digestive page is held at its production baseline');
+  if (['ahv-page-digestive-wellness-gut-health-desktop', 'ahv-page-digestive-wellness-gut-health-mobile', 'ahv-page-weight-loss-programme-desktop', 'ahv-page-weight-loss-programme-mobile'].includes(view.id)) {
+    throw new Error('Programme page is held at its production baseline');
   }
   const output = structuredClone(view);
   const marker = `<dc-import name="${componentName}"></dc-import>`;

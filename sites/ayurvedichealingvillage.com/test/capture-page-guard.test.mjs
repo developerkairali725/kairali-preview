@@ -10,27 +10,13 @@ test('serialized proof cannot omit metrics or content-state booleans', () => {
   }
 });
 
-test('active Weight Loss programme requires exactly one existing contact form', () => {
-  for (const route of ['/weight-loss-programme/']) {
-    const requirements = captureContentRequirements(route);
-    assert.deepEqual(requirements, { formSelector: '#programme-enquiry form[data-form="contact"]', formCount: 1 });
-    const root = fixtureRoot(), query = root.querySelectorAll.bind(root);
-    const form = { querySelector: () => ({ tagName: 'INPUT' }) };
-    root.querySelector = () => form;
-    root.querySelectorAll = selector => selector === requirements.formSelector ? [form, form] : query(selector);
-    globalThis.document = { getElementById: () => root };
-    try { assert.throws(() => assertCapturePage(inspectCapturePage(requirements), route), /page form/); }
-    finally { delete globalThis.document; }
-  }
-});
-
 const digestiveRoute = '/digestive-wellness-gut-health-yoga-therapy/';
 const contactPaths = {
   en: '/contact-us/', hi: '/hi/contact-us/', de: '/de/kontakt/', fr: '/fr/contactez-nous/',
   es: '/es/contact-us/', it: '/it/contact-us/', pt: '/pt/contact-us/', nl: '/nl/contact-us/',
   ru: '/ru/contact-us/', ar: '/ar/contact-us/', 'zh-Hans': '/zh/contact-us/', ja: '/ja/contact-us/', ko: '/ko/contact-us/',
 };
-function digestiveProof(locale = 'en', { hrefs = [contactPaths[locale]], chromeHrefs = [], actions = ['/api/newsletter'], bodyActions = [], sections = 0, empty = false, noHeading = false, error = false } = {}) {
+function digestiveProof(locale = 'en', { hrefs = [contactPaths[locale]], chromeHrefs = [], actions = ['/api/newsletter'], bodyActions = [], sections = 0, empty = false, noHeading = false, error = false } = {}, route = digestiveRoute) {
   const root = fixtureRoot(error), content = fixtureRoot();
   const originalQuery = root.querySelectorAll.bind(root), contentQuery = content.querySelectorAll.bind(content);
   const anchors = list => list.map(href => ({ getAttribute: name => name === 'href' ? href : null }));
@@ -44,7 +30,7 @@ function digestiveProof(locale = 'en', { hrefs = [contactPaths[locale]], chromeH
   content.querySelectorAll = selector => selector === 'a[href]' ? anchors(hrefs) : selector === 'form' ? bodyActions.map(action => ({ getAttribute: () => action })) : contentQuery(selector);
   if (empty) content.textContent = '';
   root.cloneNode = () => content;
-  return inspectCapturePage({ ...captureContentRequirements(digestiveRoute, {}, locale), rootElement: root });
+  return inspectCapturePage({ ...captureContentRequirements(route, {}, locale), rootElement: root });
 }
 
 test('held Digestive accepts the prerender English null locale without weakening its contact contract', () => {
@@ -87,16 +73,16 @@ test('held Digestive rejects reintroduced forms, programme sections, dead anchor
   assert.throws(() => assertCapturePage(digestiveProof('en', { empty: true }), digestiveRoute), /page body/);
   assert.throws(() => assertCapturePage(digestiveProof('en', { noHeading: true }), digestiveRoute), /H1/);
   assert.throws(() => assertCapturePage(digestiveProof('en', { error: true }), digestiveRoute), /Component import failed/);
-  assert.throws(() => assertCapturePage({ ...complete, requiredForm: false }, '/weight-loss-programme/'), /page form/);
+  assert.throws(() => assertCapturePage({ ...complete, requiredForm: false }, '/contact-us/'), /page form/);
 });
 
 test('held Digestive proof is mandatory, typed and cannot weaken another route', () => {
   const proof = digestiveProof();
-  assert.throws(() => assertCapturePage(complete, digestiveRoute), /Missing held Digestive contact proof/);
+  assert.throws(() => assertCapturePage(complete, digestiveRoute), /Missing held programme contact proof/);
   for (const change of [{ id: 'forged' }, { path: '/elsewhere/' }, { contactLinks: -1 }, { inlineForms: false }, { deadProgrammeLinks: undefined }]) {
     assert.throws(() => assertCapturePage({ ...proof, retainedDigestiveContact: { ...proof.retainedDigestiveContact, ...change } }, digestiveRoute), /Malformed/);
   }
-  assert.throws(() => assertCapturePage(proof, '/weight-loss-programme/'), /Unexpected held Digestive/);
+  assert.throws(() => assertCapturePage(proof, '/weight-loss-programme/'), /(?:Missing|Unexpected) held programme/);
 });
 
 function fixtureRoot(importFailure = false) {
@@ -169,4 +155,33 @@ test('page heading, non-navigation body and required form must each exist', () =
   assert.equal(captureFormSelector('/contact-us/'), 'form[data-form="contact"]');
   assert.equal(captureFormSelector('/online-consultation/'), 'form[data-step="1"]');
   assert.equal(captureFormSelector('/about-us/'), null);
+});
+
+const weightRoute = '/weight-loss-programme/';
+test('held Weight preserves its external contact contract in all13 locales', () => {
+  for (const [locale, path] of Object.entries(contactPaths)) {
+    const requirements = captureContentRequirements(weightRoute, {}, locale);
+    assert.equal(requirements.formSelector, null);
+    assert.equal(requirements.retainedWeightContact.id, 'ahv-weight-production-contact-v1');
+    assert.equal(requirements.retainedWeightContact.path, path);
+    for (const href of [path, `https://ayurvedichealingvillage.com${path}`, `${path}?programme=treatment`]) {
+      assert.doesNotThrow(() => assertCapturePage(digestiveProof(locale, { hrefs: [href] }, weightRoute), weightRoute));
+    }
+  }
+  assert.equal(captureFormSelector(weightRoute), null);
+});
+test('held Weight rejects inline form, dead anchor, wrong destination and bodyless page', () => {
+  for (const options of [{ actions: ['/api/lead/'] }, { bodyActions: ['/api/newsletter'] }, { sections: 1 }, { hrefs: ['#programme-enquiry'] }, { hrefs: ['/de/kontakt/'] }, { hrefs: ['https://foreign.test/contact-us/'] }, { hrefs: [] }, { empty: true }, { noHeading: true }]) {
+    assert.throws(() => assertCapturePage(digestiveProof('en', options, weightRoute), weightRoute));
+  }
+  const weight = digestiveProof('en', {}, weightRoute);
+  assert.throws(() => assertCapturePage(weight, digestiveRoute), /held programme/);
+  assert.throws(() => assertCapturePage(weight, '/about-us/'), /Unexpected/);
+  const both = { ...weight, retainedDigestiveContact: digestiveProof().retainedDigestiveContact };
+  assert.throws(() => assertCapturePage(both, weightRoute), /Unexpected/);
+});
+
+test('held Weight accepts the English prerender null locale with the full contact guard', () => {
+  assert.deepEqual(captureContentRequirements(weightRoute, {}, null),captureContentRequirements(weightRoute, {}, 'en'));
+  assert.equal(captureContentRequirements(weightRoute, {}, null).retainedWeightContact.path,'/contact-us/');
 });

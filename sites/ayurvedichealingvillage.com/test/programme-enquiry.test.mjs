@@ -19,20 +19,32 @@ test('programme form is generated from the accepted enquiry form without page me
   for (const unit of htmlUnits(component)) assert.ok(existing.has(unit.source), 'new copy: ' + unit.source);
 });
 
-test('only the active Weight Loss programme imports one form; its logic and tariff data stay intact', () => {
-  assert.deepEqual(programmeViews, ['ahv-page-weight-loss-programme-desktop', 'ahv-page-weight-loss-programme-mobile']);
-  for (const id of programmeViews) {
-    const view = JSON.parse(read(`public/ahv/views/${id}.json`));
-    assert.equal(view.template.match(/name="AHV Programme Enquiry"/g)?.length, 1, id);
-    assert.ok(view.template.includes('href="#programme-enquiry"'), id);
-    assert.ok(view.template.indexOf('name="AHV Programme Enquiry"') < view.template.indexOf('<nav aria-label="On this page"'), id);
-    assert.deepEqual(integrateProgrammeView(view), view, 'integration is idempotent');
+test('held Weight views retain production contact links and cannot be reintegrated by the builder', () => {
+  assert.deepEqual(programmeViews, []);
+  for (const variant of ['desktop', 'mobile']) {
+    const view = JSON.parse(read(`public/ahv/views/ahv-page-weight-loss-programme-${variant}.json`));
+    const before = structuredClone(view);
+    assert.deepEqual(view.scripts, []);
+    assert.doesNotMatch(view.template, /AHV Programme Enquiry|#programme-enquiry/);
+    assert.match(view.template, /href="https:\/\/ayurvedichealingvillage\.com\/enquiry-form\/"/);
+    assert.throws(() => integrateProgrammeView(view), /held at its production baseline/);
+    assert.deepEqual(view, before, 'rejected generation cannot mutate the retained view');
     assert.match(view.logic, /villaData/);
     assert.match(view.logic, /₹[0-9]/);
-    const scripts = orderedRuntimeScripts(view, { previewSrc: '/preview.js', supportSrc: '/support.js' }, false).map(x => x.src);
-    assert.ok(scripts.indexOf('/design/lead-receipt.js') < scripts.indexOf('/ahv/assets/enquiry-family-data.js'));
-    assert.equal(scripts.at(-1), '/support.js');
+    assert.deepEqual(orderedRuntimeScripts(view, { previewSrc: '/preview.js', supportSrc: '/support.js' }, false).map(x => x.src), ['/preview.js', '/support.js']);
   }
+});
+
+test('programme integration behavior stays available for an explicitly unheld fixture', () => {
+  const view = { id: 'fixture-unheld-programme', scripts: [], template: '<nav aria-label="On this page"></nav><a href="https://ayurvedichealingvillage.com/enquiry-form/">Enquire</a>', logic: 'unchanged fixture logic' };
+  const before = structuredClone(view), integrated = integrateProgrammeView(view);
+  assert.deepEqual(view, before, 'integration keeps its input immutable');
+  assert.equal(integrated.template.match(/name="AHV Programme Enquiry"/g)?.length, 1);
+  assert.ok(integrated.template.indexOf('name="AHV Programme Enquiry"') < integrated.template.indexOf('<nav aria-label="On this page"'));
+  assert.ok(integrated.template.includes('href="#programme-enquiry"'));
+  assert.equal(integrated.logic, view.logic);
+  assert.deepEqual(integrated.scripts, ['/ahv/assets/enquiry-family-data.js', '/ahv/assets/enquiry-family-render.js']);
+  assert.deepEqual(integrateProgrammeView(integrated), integrated, 'idempotence for unheld inputs');
 });
 
 test('held Digestive views retain external enquiry links and cannot be reintegrated by the builder', () => {

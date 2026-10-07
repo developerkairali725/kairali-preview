@@ -1,7 +1,7 @@
 /** Inspect rendered content, including errors caught internally by DC runtime.
  * This function is serialized into the capture browser; keep it self-contained.
  */
-export function inspectCapturePage({ formSelector = null, formCount = null, requiredSelector = null, forbiddenSelector = null, rootElement = null, neutralConfirmation = null, retainedDigestiveContact = null } = {}) {
+export function inspectCapturePage({ formSelector = null, formCount = null, requiredSelector = null, forbiddenSelector = null, rootElement = null, neutralConfirmation = null, retainedDigestiveContact = null, retainedWeightContact = null } = {}) {
   const root = rootElement || document.getElementById('ahv-design-root');
   if (!root) return { errors: ['Missing design root'], heading: '', bodyChars: 0, requiredForm: false };
   const errors = [...root.querySelectorAll('.sc-logic-error,.sc-has-error,.sc-placeholder-error,[data-ahv-error]')]
@@ -18,7 +18,8 @@ export function inspectCapturePage({ formSelector = null, formCount = null, requ
   const requiredContent = !requiredSelector || !!root.querySelector(requiredSelector);
   const forbiddenContent = !!(forbiddenSelector && root.querySelector(forbiddenSelector));
   const proof = { errors: [...new Set(errors)], heading, bodyChars, requiredForm, requiredContent, forbiddenContent };
-  if (retainedDigestiveContact) {
+  if (retainedDigestiveContact || retainedWeightContact) {
+    const retained = retainedWeightContact || retainedDigestiveContact;
     const production = 'https://ayurvedichealingvillage.com';
     const localOrigin = typeof location === 'object' ? location.origin : null;
     const permittedUrl = raw => {
@@ -31,7 +32,7 @@ export function inspectCapturePage({ formSelector = null, formCount = null, requ
     // A header/footer contact link cannot stand in for the programme's own CTA.
     const contactLinks = [...copy.querySelectorAll('a[href]')].filter(anchor => {
       const url = permittedUrl(anchor.getAttribute('href') || '');
-      return url && url.pathname === retainedDigestiveContact.path && !url.hash;
+      return url && url.pathname === retained.path && !url.hash;
     }).length;
     const inlineForms = [...root.querySelectorAll('form')].filter(form => {
       const url = permittedUrl(form.getAttribute('action') || '');
@@ -41,8 +42,8 @@ export function inspectCapturePage({ formSelector = null, formCount = null, requ
       try { return new URL(anchor.getAttribute('href') || '', production).hash === '#programme-enquiry'; }
       catch { return false; }
     }).length;
-    proof.retainedDigestiveContact = {
-      id: retainedDigestiveContact.id, locale: retainedDigestiveContact.locale, path: retainedDigestiveContact.path,
+    proof[retainedWeightContact ? 'retainedWeightContact' : 'retainedDigestiveContact'] = {
+      id: retained.id, locale: retained.locale, path: retained.path,
       contactLinks, inlineForms, deadProgrammeLinks,
       bodyForms: copy.querySelectorAll('form').length,
       programmeSections: root.querySelectorAll('#programme-enquiry').length,
@@ -97,7 +98,6 @@ export function createCaptureEvaluation(extract) {
 }
 
 export function captureFormSelector(route) {
-  if (route === '/weight-loss-programme/') return '#programme-enquiry form[data-form="contact"]';
   if (['/contact-us/', '/enquiry-form/'].includes(route)) return 'form[data-form="contact"]';
   if (route === '/apply-now/') return 'form[data-form="apply"]';
   if (route === '/jobs/business-development-manager/') return 'form[data-form="job"]';
@@ -141,7 +141,7 @@ function neutralConfirmationContract(route, locale) {
 
 export function captureContentRequirements(route, sourceRecord = {}, locale = 'en') {
   if (route === '/digestive-wellness-gut-health-yoga-therapy/') return { formSelector: null, retainedDigestiveContact: digestiveContactContract(locale ?? 'en') };
-  if (route === '/weight-loss-programme/') return { formSelector: captureFormSelector(route), formCount: 1 };
+  if (route === '/weight-loss-programme/') return { formSelector: null, retainedWeightContact: { ...digestiveContactContract(locale ?? 'en'), id: 'ahv-weight-production-contact-v1' } };
   if (route === '/jobs/business-development-manager/' && sourceRecord.closed === true && sourceRecord.applicationsOpen === false) {
     return { formSelector: null, requiredSelector: '[data-job-closed="true"]', forbiddenSelector: 'form[data-form="job"]' };
   }
@@ -156,19 +156,21 @@ export function assertCapturePage(state, route) {
   }
   if (state.errors.length) throw new Error('Rendered component error on ' + route + ': ' + state.errors.join('; '));
   if (!state.heading) throw new Error('Missing meaningful page H1 on ' + route);
-  if (route === '/digestive-wellness-gut-health-yoga-therapy/') {
-    const retained = state.retainedDigestiveContact;
-    if (!retained || typeof retained.locale !== 'string') throw new Error('Missing held Digestive contact proof');
-    const expected = digestiveContactContract(retained.locale);
+  const heldKey = route === '/digestive-wellness-gut-health-yoga-therapy/' ? 'retainedDigestiveContact' : route === '/weight-loss-programme/' ? 'retainedWeightContact' : null;
+  if (heldKey) {
+    const retained = state[heldKey];
+    if (!retained || typeof retained.locale !== 'string') throw new Error('Missing held programme contact proof');
+    const expected = { ...digestiveContactContract(retained.locale), ...(heldKey === 'retainedWeightContact' ? { id: 'ahv-weight-production-contact-v1' } : {}) };
     if (retained.id !== expected.id || retained.path !== expected.path ||
         !['contactLinks', 'inlineForms', 'bodyForms', 'deadProgrammeLinks', 'programmeSections'].every(key => Number.isInteger(retained[key]) && retained[key] >= 0)) {
-      throw new Error('Malformed held Digestive contact proof');
+      throw new Error('Malformed held programme contact proof');
     }
     if (!retained.contactLinks || retained.inlineForms || retained.bodyForms || retained.deadProgrammeLinks || retained.programmeSections) {
-      throw new Error('Incomplete held Digestive external contact journey');
+      throw new Error('Incomplete held programme external contact journey');
     }
-  } else if (Object.hasOwn(state, 'retainedDigestiveContact')) {
-    throw new Error('Unexpected held Digestive contact proof on ' + route);
+  }
+  for (const key of ['retainedDigestiveContact', 'retainedWeightContact']) if (key !== heldKey && Object.hasOwn(state, key)) {
+    throw new Error('Unexpected held programme contact proof on ' + route);
   }
   let requiredBodyChars = 100;
   if (Object.hasOwn(state, 'neutralConfirmation')) {
