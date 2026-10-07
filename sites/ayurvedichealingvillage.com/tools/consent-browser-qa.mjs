@@ -28,12 +28,24 @@ const origin=`http://127.0.0.1:${server.address().port}`;
 const browser=await chromium.launch({channel:'chrome',headless:true});
 async function context(options={}){
  const ctx=await browser.newContext({viewport:{width:390,height:844}});
- if(options.gpc)await ctx.addInitScript(()=>Object.defineProperty(navigator,'globalPrivacyControl',{value:true}));
+ const fixtureOrigin=options.publicCountry?'https://ayurvedichealingvillage.com':origin;
+ if(options.gpc)await ctx.addInitScript(()=>Object.defineProperty(navigator,'globalPrivacyControl',{value:true,configurable:true}));
  if(options.storageBlocked)await ctx.addInitScript(()=>{Object.defineProperty(window,'localStorage',{get(){throw Error('blocked')}})});
  const page=await ctx.newPage(),requests=[],errors=[];
  page.on('pageerror',e=>errors.push(e.message));
  await ctx.route('**/*',async route=>{
   const url=new URL(route.request().url());
+  // A local response fixture under the public hostname exercises the real
+  // browser adapter. No request reaches the public website or Cloudflare.
+  if(fixtureOrigin!==origin && url.origin===fixtureOrigin) {
+   if(url.pathname==='/cdn-cgi/trace')return route.fulfill({contentType:'text/plain',body:`h=ayurvedichealingvillage.com\nloc=${options.publicCountry}\nts=${Date.now()/1000}\n`});
+   const response=await fetch(origin+url.pathname+url.search);
+   return route.fulfill({status:response.status,headers:Object.fromEntries(response.headers),body:Buffer.from(await response.arrayBuffer())});
+  }
+  if(url.origin===origin && url.pathname==='/api/consent-region/' && options.prompt) {
+   if(options.prompt==='error')return route.abort();
+   return route.fulfill({json:{version:1,prompt:options.prompt},headers:{'Cache-Control':'no-store'}});
+  }
   if(url.origin===origin)return route.continue();
   requests.push({host:url.hostname,path:url.pathname,resource:route.request().resourceType()});
   const sdk=route.request().resourceType()==='script' && (
@@ -44,7 +56,8 @@ async function context(options={}){
   if(options.sdk&&sdk){try {return await route.fulfill({response:await route.fetch()});}catch{return route.abort();}}
   return route.abort();
  });
- await page.goto(origin+(options.sdk?'/sdk/':''));await page.waitForFunction(()=>typeof window.AHV_COOKIE_SETTINGS==='function');
+ await page.goto(fixtureOrigin+(options.sdk?'/sdk/':options.path||''));await page.waitForFunction(()=>typeof window.AHV_COOKIE_SETTINGS==='function');
+ if(!options.gpc && options.prompt!=='passive')await page.locator('.cm').waitFor({state:'visible'});
  return {ctx,page,requests,errors};
 }
 try {
@@ -80,7 +93,7 @@ try {
  assert.equal(await b.page.locator('.cm').isVisible(),false);
  report.push({case:'accepted preference persists',pass:true});
  await b.ctx.close();
- const c=await context({gpc:true});await c.page.getByRole('button',{name:'Accept all',exact:true}).click();
+ const c=await context({gpc:true});await c.page.locator('[data-ahv-cookie-choices]').click();await c.page.getByRole('button',{name:'Accept all',exact:true}).click();
  await c.page.waitForFunction(()=>window.__ahvMeasurementStarted===true);
  assert.ok(!c.requests.some(r=>r.host==='connect.facebook.net'));assert.equal(await c.page.evaluate(()=>dataLayer.some(x=>x[0]==='config'&&x[1]==='AW-test')),false);
  report.push({case:'GPC keeps advertising denied even on Accept all',pass:true});await c.ctx.close();
@@ -132,10 +145,57 @@ try {
  report.push({case:'GPC removes previously saved advertising permission',pass:true});await g.ctx.close();
  const x=await context();await x.page.getByRole('button',{name:'Reject optional',exact:true}).click();
  const other=await x.ctx.newPage();await other.goto(origin);await other.waitForFunction(()=>typeof window.AHV_COOKIE_SETTINGS==='function');
- await Promise.all([x.page.waitForEvent('load'),other.evaluate(()=>localStorage.removeItem('ahv-consent-v2'))]);await x.page.locator('.cm').waitFor({state:'visible'});assert.equal(x.requests.length,0);
- report.push({case:'cross-tab removal defaults denied and re-prompts',pass:true});await x.ctx.close();
+ let tabReloads=0;x.page.on('load',()=>tabReloads++);other.on('load',()=>tabReloads++);
+ await Promise.all([x.page.waitForEvent('load'),other.evaluate(()=>localStorage.removeItem('ahv-consent-v2'))]);await x.page.waitForFunction(()=>typeof window.AHV_COOKIE_SETTINGS==='function');assert.equal(await x.page.locator('.cm').isVisible(),false);assert.equal(x.requests.length,0);
+ await x.page.waitForTimeout(800);assert.equal(tabReloads,1,'refusal writes must settle without a cross-tab reload loop');
+ report.push({case:'cross-tab grant removal preserves recent refusal and defaults denied',pass:true});await x.ctx.close();
  const failed=await context();await failed.ctx.route('**/consent/bridge.mjs',route=>route.abort());await failed.page.reload();await failed.page.getByRole('button',{name:'Cookie choices unavailable. Retry'}).waitFor();assert.equal(failed.requests.length,0);
  report.push({case:'module failure keeps optional tags blocked with retry',pass:true});await failed.ctx.close();
+ // Regional presentation and denial renewal form another bounded batch.
+ for(const path of ['/','/de/','/fr/','/es/','/it/','/pt/','/nl/','/ru/','/ar/','/hi/','/zh/','/ja/','/ko/','/ayurvedic-treatment-packages.html','/lp/panchakarma/']) {
+  const d=await context({prompt:'passive',path});await d.page.waitForTimeout(150);
+  assert.equal(await d.page.locator('.cm').isVisible(),false);assert.equal(d.requests.length,0);
+  assert.equal(await d.page.evaluate(()=>localStorage.getItem('ahv-consent-v2')),null);
+  await d.page.locator('[data-ahv-cookie-choices]').first().click();await d.page.locator('.pm').waitFor({state:'visible'});
+  assert.equal(await d.page.locator('input[value="analytics"]').isChecked(),false);assert.equal(await d.page.locator('input[value="advertising"]').isChecked(),false);
+  await d.page.locator('.pm button[data-role="necessary"]').click();await d.page.reload();await d.page.waitForFunction(()=>typeof window.AHV_COOKIE_SETTINGS==='function');
+  assert.equal(d.requests.length,0);assert.deepEqual(d.errors,[]);report.push({case:path+' passive presentation retains manual translated choices and no tracking',pass:true});await d.ctx.close();
+ }
+ for(const prompt of ['automatic','error','unexpected']) {
+  const d=await context({prompt});assert.equal(d.requests.length,0);assert.equal(await d.page.locator('.cm').isVisible(),true);
+  report.push({case:prompt+' geo shows strict prompt without vendor requests',pass:true});await d.ctx.close();
+ }
+ const regional=await context({prompt:'passive'});await regional.page.locator('[data-ahv-cookie-choices]').click();await regional.page.getByRole('button',{name:'Accept all',exact:true}).click();await regional.page.waitForFunction(()=>window.__ahvMeasurementStarted===true);
+ await regional.ctx.route('**/api/consent-region/',route=>route.fulfill({json:{version:1,prompt:'automatic'}}));await regional.page.reload();await regional.page.waitForFunction(()=>window.__ahvMeasurementStarted===true);assert.equal(await regional.page.locator('.cm').isVisible(),false);
+ report.push({case:'explicit saved choice survives region change without another prompt',pass:true});await regional.ctx.close();
+ const renewal=await context();await renewal.page.getByRole('button',{name:'Choose settings',exact:true}).click();await renewal.page.locator('input[value="analytics"]').check();await renewal.page.getByRole('button',{name:'Save my choices',exact:true}).click();await renewal.page.waitForFunction(()=>window.__ahvMeasurementStarted===true);
+ await renewal.page.evaluate(()=>{
+  const at=Date.now()-183*86400000,value=JSON.parse(localStorage.getItem('ahv-consent-v2'));
+  value.consentTimestamp=value.lastConsentTimestamp=new Date(at).toISOString();value.expirationTime=at+182*86400000;localStorage.setItem('ahv-consent-v2',JSON.stringify(value));localStorage.setItem('ahv-consent-refusals-v1',JSON.stringify({version:1,advertising:at}));
+ });
+ const beforeRenewal=renewal.requests.length;await renewal.page.reload();await renewal.page.waitForFunction(()=>typeof window.AHV_COOKIE_SETTINGS==='function');
+ assert.equal(renewal.requests.length,beforeRenewal);assert.equal(await renewal.page.locator('.cm').isVisible(),false);
+ await renewal.page.locator('[data-ahv-cookie-choices]').click();assert.equal(await renewal.page.locator('input[value="analytics"]').isChecked(),false);assert.equal(await renewal.page.locator('input[value="advertising"]').isChecked(),false);
+ report.push({case:'expired analytics grant stays off; advertising denial suppresses opt-back-in request before twelve months',pass:true});
+ await renewal.page.getByRole('button',{name:'Accept all',exact:true}).click();await renewal.page.waitForFunction(()=>window.__ahvMeasurementStarted===true);
+ assert.deepEqual(await renewal.page.evaluate(()=>JSON.parse(localStorage.getItem('ahv-consent-refusals-v1'))),{version:1});
+ report.push({case:'voluntary settings regrant clears refusal only after explicit choice',pass:true});await renewal.ctx.close();
+ const oldMixed=await context();await oldMixed.page.getByRole('button',{name:'Choose settings',exact:true}).click();await oldMixed.page.locator('input[value="analytics"]').check();await oldMixed.page.getByRole('button',{name:'Save my choices',exact:true}).click();await oldMixed.page.waitForFunction(()=>window.__ahvMeasurementStarted===true);
+ await oldMixed.page.evaluate(()=>{const value=JSON.parse(localStorage.getItem('ahv-consent-v2'));value.revision=1;localStorage.setItem('ahv-consent-v2',JSON.stringify(value));});
+ const mixedRequests=oldMixed.requests.length;await oldMixed.page.reload();await oldMixed.page.waitForFunction(()=>typeof window.AHV_COOKIE_SETTINGS==='function');
+ assert.equal(oldMixed.requests.length,mixedRequests);assert.equal(await oldMixed.page.locator('.cm').isVisible(),false);
+ await oldMixed.page.locator('[data-ahv-cookie-choices]').click();assert.equal(await oldMixed.page.locator('input[value="analytics"]').isChecked(),false);assert.equal(await oldMixed.page.locator('input[value="advertising"]').isChecked(),false);
+ report.push({case:'old-revision mixed choice preserves refusal without restoring its former grant',pass:true});await oldMixed.ctx.close();
+ const gpcFresh=await context({gpc:true,prompt:'passive'});assert.equal(gpcFresh.requests.length,0);assert.equal(await gpcFresh.page.locator('.cm').isVisible(),false);
+ await gpcFresh.ctx.addInitScript(()=>Object.defineProperty(navigator,'globalPrivacyControl',{value:false,configurable:true}));await gpcFresh.page.reload();await gpcFresh.page.waitForFunction(()=>typeof window.AHV_COOKIE_SETTINGS==='function');assert.equal(await gpcFresh.page.evaluate(()=>navigator.globalPrivacyControl),false);assert.equal(gpcFresh.requests.length,0);assert.equal(await gpcFresh.page.locator('.cm').isVisible(),false);
+ report.push({case:'fresh GPC suppresses advertising and survives signal removal as a refusal',pass:true});await gpcFresh.ctx.close();
+ // Real-browser Cloudflare adapter, all fixtures and telemetry remain local.
+ for(const country of ['IN','US','CA','BR','DE','GB','CH','XX']) {
+  const strict=['DE','GB','CH','XX'].includes(country),d=await context({publicCountry:country,prompt:strict?'automatic':'passive'});await d.page.waitForTimeout(150);
+  assert.equal(await d.page.locator('.cm').isVisible(),strict);assert.equal(d.requests.length,0);
+  assert.equal(await d.page.evaluate(()=>localStorage.getItem('ahv-consent-v2')),null);
+  assert.deepEqual(d.errors,[]);report.push({case:country+' public-hostname Cloudflare fixture has expected presentation and no optional vendors',pass:true});await d.ctx.close();
+ }
  if(process.env.CONSENT_QA_VENDOR_SCRIPTS==='1') {
   const v=await context({sdk:true});assert.equal(v.requests.length,0);
   await v.page.getByRole('button',{name:'Accept all',exact:true}).click();
