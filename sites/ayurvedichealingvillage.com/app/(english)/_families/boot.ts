@@ -956,6 +956,8 @@ export const BOOT_SCRIPT = `
       try { url = new URL(raw, window.location.href); } catch (e) { return; }
       if (url.origin !== window.location.origin) return;
       if (url.pathname.replace(/[/]$/, "") !== here) return;
+      // Section and locale links retain their own destination; only a bare self-link can point to the form.
+      if (url.hash || url.search || a.hasAttribute("hreflang")) return;
       a.setAttribute("href", "#" + form.id);
       a.__ahvSelfRetargeted = true;
     });
