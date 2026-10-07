@@ -10,7 +10,7 @@ const site=fileURLToPath(new URL('../',import.meta.url));
 function fixture(){
  const root=fs.mkdtempSync(path.join(site,'.ahv-locale-capture-test-'));
  const put=(file,value)=>{const dest=path.join(root,file);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.writeFileSync(dest,typeof value==='string'?value:JSON.stringify(value));};
- for(const file of ['tools/package-locale-prerenders.mjs','tools/locale-capture-coordination.mjs','tools/capture-page-guard.mjs','tools/capture-locales-parallel.mjs','tools/restore-locale-prerenders.mjs','tools/download-release-asset.mjs','tools/verify-interaction-only-source.mjs','tools/l10n/prerender-manifest.mjs','tools/l10n/sources-lite.mjs']){const dest=path.join(root,file);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.copyFileSync(path.join(site,file),dest);}
+ for(const file of ['tools/package-locale-prerenders.mjs','tools/locale-capture-coordination.mjs','tools/capture-page-guard.mjs','tools/capture-failure-diagnostics.mjs','tools/capture-locales-parallel.mjs','tools/restore-locale-prerenders.mjs','tools/download-release-asset.mjs','tools/verify-interaction-only-source.mjs','tools/l10n/prerender-manifest.mjs','tools/l10n/sources-lite.mjs']){const dest=path.join(root,file);fs.mkdirSync(path.dirname(dest),{recursive:true});fs.copyFileSync(path.join(site,file),dest);}
  put('english-candidate/locale-prerenders-release.json',{archive:'ahv-locale-prerenders-before.tar.gz',asset:'ahv-locale-prerenders-before.tar.gz',repository:'fixture',tag:'fixture',sources:[],files:[],interactionOnlySources:[]});
  put('app/(english)/_families/native-pages.tsx','const NATIVE = new Set(["/search/"]);');
  put('english-candidate/route-manifest.json',{routes:Array.from({length:26},(_,i)=>({path:i?`/route-${i}/`:'/'})).concat([{path:'/search/'}])});
@@ -42,6 +42,10 @@ test('packager requires exact-source complete live capture, enforces25-route bat
   fs.writeFileSync(receiptFile,JSON.stringify({...receipt,invalidatedAt:new Date().toISOString()}));
   r=x.run('--package','--archive','ahv-locale-prerenders-fixture.tar.gz');assert.notEqual(r.status,0);assert.match(r.stderr,/exact current source/);
   fs.writeFileSync(receiptFile,originalReceipt);
+  const diagnosticsFile=path.join(x.root,'tools/capture-failure-diagnostics.mjs'),diagnosticsBytes=fs.readFileSync(diagnosticsFile);
+  fs.appendFileSync(diagnosticsFile,'\n// diagnostic input drift\n');
+  r=x.run('--package','--archive','ahv-locale-prerenders-fixture.tar.gz');assert.notEqual(r.status,0);assert.match(r.stderr,/exact current source/);
+  fs.writeFileSync(diagnosticsFile,diagnosticsBytes);
   x.put('public/ahv/l10n/de/views/view.json',{template:'changed after capture'});
   r=x.run('--package','--archive','ahv-locale-prerenders-fixture.tar.gz');assert.notEqual(r.status,0);assert.match(r.stderr,/exact current source/);
   r=x.run('--capture','--resume','--base','http://127.0.0.1:3218');assert.notEqual(r.status,0);assert.match(r.stderr,/source\/base changed/);
@@ -133,10 +137,11 @@ test('parallel coordinator preserves benchmark work and merges after exact-sourc
   for(const row of Object.values(table.routes))row.fr=row.de.replace('/de/','/fr/');
   x.put('l10n/routes.json',table);x.put('l10n/generated/fr.json',{missingUnits:0,missingSample:[]});
   x.put('public/ahv/l10n/fr/views/view.json',{template:'current translated body'});
-  const evidence=path.join(x.root,'parallel'),args=['tools/capture-locales-parallel.mjs','--evidence',evidence,'--base','http://127.0.0.1:3218','--concurrency','2'];
+  const evidence=path.join(x.root,'parallel'),args=['tools/capture-locales-parallel.mjs','--evidence',evidence,'--base','http://127.0.0.1:3218','--concurrency','4','--priority-locales','fr,de'];
   let r=spawnSync(process.execPath,[...args,'--max-batches','1'],{cwd:x.root,encoding:'utf8'});assert.equal(r.status,0,r.stderr);
   for(const worker of ['worker-1','worker-2']){
    const receipt=JSON.parse(fs.readFileSync(path.join(evidence,worker,'capture-receipt.json')));
+   assert.deepEqual(receipt.targetLocales,worker==='worker-1'?['fr']:['de']);
    assert.equal(receipt.complete,false);assert.equal(Object.values(receipt.locales)[0].completed.length,25);
   }
   r=spawnSync(process.execPath,[...args,'--resume'],{cwd:x.root,encoding:'utf8'});assert.equal(r.status,0,r.stderr);
