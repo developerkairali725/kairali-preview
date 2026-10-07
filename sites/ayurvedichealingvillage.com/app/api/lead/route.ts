@@ -16,7 +16,7 @@
  */
 import { relayConfigured } from '../../../lib/form-relay.ts';
 import { LEAD_TABLES, LeadRateLimitError, saveLead, type LeadTable } from '../../../lib/lead-store.ts';
-import { deliverLeadToSheet, leadSheetConfigured } from '../../../lib/lead-sheet-bridge.ts';
+import { deliverLeadToSheet, leadSheetConfigured, leadFailureDiagnostic } from '../../../lib/lead-sheet-bridge.ts';
 import { validationProblem } from '../../../lib/lead-validation.ts';
 import { guideDownloadUrl } from '../../../lib/guide-download.ts';
 
@@ -91,7 +91,8 @@ export async function POST(request: Request): Promise<Response> {
     }, submissionToken);
     try {
       await deliverLeadToSheet(table, stored.row, submissionToken);
-    } catch {
+    } catch (error) {
+      console.error(leadFailureDiagnostic('sheet', error));
       // The database row is intentionally retained. A retry with the same
       // browser token reads that row back and safely retries only the Sheet.
       return Response.json({ ok: false, code: 'SHEET_SYNC_FAILED', error: 'Your details were saved, but final confirmation failed. Please retry once.' }, { status: 502, headers });
@@ -100,7 +101,8 @@ export async function POST(request: Request): Promise<Response> {
     if (error instanceof LeadRateLimitError) {
       return Response.json({ ok: false, code: 'RATE_LIMITED', error: 'Please wait before trying again.' }, { status: 429, headers });
     }
-    // No relay/driver error, no submitted text, ever surfaces to the browser or a log.
+    // Only a fixed category is logged; no relay error or submitted data.
+    console.error(leadFailureDiagnostic('store', error));
     return Response.json({ ok: false, code: 'STORE_FAILED', error: 'We could not confirm your submission. Please try again, or email info@kairali.com.' }, { status: 502, headers });
   }
 
