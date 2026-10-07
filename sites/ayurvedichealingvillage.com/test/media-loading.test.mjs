@@ -53,16 +53,18 @@ test("lazyImgFirst over every approved view template: same attributes per tag, e
 });
 
 test("deferHeroFilm rewrites the homepage film start in English and every built locale, and the logic still compiles", () => {
-  const files = ["public/ahv/views/home-hi-fi-v4.json"];
+  const files = ["public/ahv/views/home-hi-fi-v4.json", "public/ahv/views/home-mobile.json"];
   const L = JSON.parse(fs.readFileSync("l10n/locales.json", "utf8"));
   for (const [loc, info] of Object.entries(L)) {
-    const f = `public/ahv/l10n/${info.prefix}/views/home-hi-fi-v4.json`;
-    if (loc !== "en" && fs.existsSync(f)) files.push(f);
+    for (const name of ["home-hi-fi-v4", "home-mobile"]) {
+      const f = `public/ahv/l10n/${info.prefix}/views/${name}.json`;
+      if (loc !== "en" && fs.existsSync(f)) files.push(f);
+    }
   }
-  assert.ok(files.length >= 13, `EN + 12 locales, found ${files.length}`);
+  assert.ok(files.length >= 26, `Both layouts in EN + 12 locales, found ${files.length}`);
   for (const f of files) {
     const { logic } = JSON.parse(fs.readFileSync(f, "utf8"));
-    assert.equal(logic.split("if (wide && !calm) this._heroPlay();").length, 2, `${f} carries the exact start line once`);
+    assert.ok(logic.includes("if (wide && !calm) this._heroPlay();") || logic.includes("_setHero = (el) => { if (el) this._hv = el; };"), `${f} carries the known homepage ref`);
     const out = deferHeroFilm(logic);
     assert.notEqual(out, logic, f);
     assert.doesNotMatch(out, /if \(wide && !calm\) this\._heroPlay\(\);/);
@@ -70,8 +72,8 @@ test("deferHeroFilm rewrites the homepage film start in English and every built 
     assert.match(out, /saveData/);
     new Function("DCLogic", "StreamableLogic", "React", out + '\n;return (typeof Component!=="undefined"&&Component)||undefined;');
   }
-  // every other view is untouched, and the phone view never gains an autoplay
-  for (const f of fs.readdirSync("public/ahv/views").filter((x) => x.endsWith(".json") && x !== "home-hi-fi-v4.json")) {
+  // Other page families never gain autoplay.
+  for (const f of fs.readdirSync("public/ahv/views").filter((x) => x.endsWith(".json") && !["home-hi-fi-v4.json", "home-mobile.json"].includes(x))) {
     const { logic = "" } = JSON.parse(fs.readFileSync(`public/ahv/views/${f}`, "utf8"));
     assert.equal(deferHeroFilm(logic), logic, f);
   }

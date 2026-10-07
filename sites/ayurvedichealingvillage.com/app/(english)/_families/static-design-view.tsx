@@ -1,4 +1,5 @@
 import { removeHomeVillaRates } from './home-villa-rates.mjs';
+import { initializeHomeHero } from "./home-hero.mjs";
 import { routeStylesFor, routeStyleHref } from "./route-styles.mjs";
 import { applyReviewSnapshot } from "./content-review.mjs";
 import { readFileSync } from "node:fs";
@@ -398,28 +399,7 @@ const STATIC_BOOT = `
       if (event.key === "ArrowRight") { event.preventDefault(); showPhoto(photoIndex + 1); }
     });
     });
-    var heroSection = host.querySelector('section[data-dc-tpl="53"]');
-    var heroVideo = heroSection && heroSection.querySelector("video");
-    var heroToggle = heroSection && heroSection.querySelector('button[aria-label*="background video"]');
-    var chapterButtons = heroSection ? Array.from(heroSection.querySelectorAll("button")).filter(function (button) { return /^0[1-4] ·/.test(button.textContent.trim()); }) : [];
-    var chapterTimes = [0, 8.067, 15.767, 22.834];
-    function playHero(time) {
-      if (!heroVideo) return;
-      if (!heroVideo.getAttribute("src")) heroVideo.setAttribute("src", "/ahv/assets/homepage-journey.mp4");
-      heroVideo.muted = true;
-      var seek = function () { try { heroVideo.currentTime = time; } catch (error) {} };
-      if (time && heroVideo.readyState < 1) heroVideo.addEventListener("loadedmetadata", seek, { once: true });
-      else if (time) seek();
-      var playing = heroVideo.play();
-      if (playing && playing.catch) playing.catch(function () {});
-      if (heroToggle) { heroToggle.setAttribute("aria-label", "Pause background video"); heroToggle.textContent = "❚❚ Pause background video"; }
-    }
-    chapterButtons.forEach(function (button, index) { button.addEventListener("click", function () { playHero(chapterTimes[index]); }); });
-    if (heroToggle) heroToggle.addEventListener("click", function () {
-      if (!heroVideo) return;
-      if (heroVideo.paused) playHero(0);
-      else { heroVideo.pause(); heroToggle.setAttribute("aria-label", "Play background video"); heroToggle.textContent = "▶ Play background video"; }
-    });
+    (${initializeHomeHero.toString()})(host, window);
   }
   var form = host.querySelector('form[data-form="contact"]');
   if (!form) return;
