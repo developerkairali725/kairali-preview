@@ -1,5 +1,6 @@
-// Live ad routes, batch 1 (/ayurvedic-treatment-packages.html, /panchkarma-treatment.html) on the campaign-v2 kit:
-// the production form, measurement and chat contracts are the ones the pages they replace already used.
+// Live ad routes on the campaign-v2 kit (batch 1: /ayurvedic-treatment-packages.html, /panchkarma-treatment.html;
+// batch 2's routes join the loops, their own form in lp-v2-production-batch2.test.mjs): the production form,
+// measurement and chat contracts are the ones the pages they replace already used.
 // Every request is intercepted: no network, no real lead.
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -110,7 +111,7 @@ test("request: consent-aware attribution from the site runtime wins; a failing r
   assert.deepEqual(urlAttribution("?gclid=bad%20value&gclid=good_one&utm_source=&utm_source=bing"), { gclid: "good_one", utm_source: "bing" });
 });
 
-test("request: the lead API's own validation accepts the built fields (both routes)", () => {
+test("request: the lead API's own validation accepts the built fields (every route)", () => {
   for (const slug of PRODUCTION_SLUGS) {
     const b = ROUTES[slug];
     const body = buildProductionLead(valid({ message: "Preferred month: November 2026\nLength of stay: 14 nights\n" }), {
@@ -183,10 +184,15 @@ test("adapter: registered as ahv-production; without the route's identity nothin
 test("routes keep their existing lead identity and use the production form and adapter", () => {
   assert.deepEqual(ROUTES["treatment-packages"].productionForm, { formVariant: "r10-ayurvedic-treatment-packages", downloadGuide: true });
   assert.deepEqual(ROUTES.panchakarma.productionForm, { formVariant: "r10-panchakarma", downloadGuide: false });
+  assert.deepEqual(ROUTES["pain-management"].productionForm, { formVariant: "r10-pain-management", downloadGuide: false, profile: "pain-management" });
+  assert.deepEqual(ROUTES["family-ayurvedic-retreat"].productionForm, { formVariant: "r10-family-retreat", downloadGuide: false, profile: "family-retreat" });
   for (const slug of PRODUCTION_SLUGS) {
     const c = productionCampaign(slug);
     assert.equal(c.form.adapterId, "ahv-production");
-    assert.equal(c.form.schema, PRODUCTION_CAMPAIGN_FORM);
+    // The family route keeps its own R10 familyFields form (lp-v2-production-batch2.test.mjs); every other route the default.
+    if (slug === "family-ayurvedic-retreat") assert.equal(c.form.schema.id, "lp-v2-production-family");
+    else if (slug === "pain-management") assert.equal(c.form.schema.id, "lp-v2-production-pain");
+    else assert.equal(c.form.schema, PRODUCTION_CAMPAIGN_FORM);
     assert.deepEqual(c.productionForm, ROUTES[slug].productionForm);
   }
 });

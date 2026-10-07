@@ -1,7 +1,8 @@
-// Live ad routes, batch 1: the content worker's frozen copy, rendered faithfully. Provenance (SHA-256), the
+// Live ad routes: the content worker's frozen copy, rendered faithfully. Provenance (SHA-256), the
 // owner rules (hidden pricing; >=95% of the useful source copy, measured), the structured body (links, tables,
 // videos, photographs, attributed quotes), doctors, links, media, metadata. Nothing here edits copy: a failing
-// assertion is a content finding for the copy owner.
+// assertion is a content finding for the copy owner. Invariants run on every route; batch-1 facts (counts,
+// archival long form, the retain/replace/omit disposition) on BATCH1 only. Batch 2: lp-v2-production-batch2.test.mjs.
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -12,7 +13,7 @@ import { productionCampaign, PRODUCTION_SLUGS, archivalLongFormWords } from "../
 import { ROUTES, OG_IMAGE, PRICING_HIDDEN, SOURCE_PRESERVATION } from "../campaign-v2/production/bindings.ts";
 import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
 import { allText, bodyText } from "../campaign-v2/kit/lint/claims.ts";
-import { bodyLinks, MEASURED_HASHES } from "../campaign-v2/kit/lint/body.ts";
+import { bodyLinks, MEASURED_HASHES, isKnownContactHref, isKnownContactLink } from "../campaign-v2/kit/lint/body.ts";
 import { PRICE, RATE_LINK } from "../campaign-v2/kit/lint/pricing.ts";
 import { inlineText, renderedTexts } from "../campaign-v2/production/body-model.ts";
 import { productionMetadata, productionJsonLd } from "../campaign-v2/production/metadata.ts";
@@ -24,6 +25,7 @@ const P = (...p) => path.join(SITE, ...p);
 const read = (p) => fs.readFileSync(P(p), "utf8");
 const NOW = new Date(Date.UTC(2026, 9, 7, 12));
 const C = Object.fromEntries(PRODUCTION_SLUGS.map((s) => [s, productionCampaign(s)]));
+const BATCH1 = ["treatment-packages", "panchakarma"];
 const blocksOf = (c) => [...c.body.sections.flatMap((s) => s.blocks), ...c.body.closing];
 
 /** Every visible string of a production page (authored copy, doctor cards, the source body as rendered). */
@@ -53,10 +55,13 @@ test("provenance: the copy and the disposition records are the content worker's 
     const sha = crypto.createHash("sha256").update(fs.readFileSync(P("campaign-v2/production/content", file))).digest("hex");
     assert.equal(sha, rec.sha256, file);
   }
-  assert.deepEqual(Object.keys(manifest.files).sort(), ["panchakarma.disposition.json", "panchakarma.json", "treatment-packages.disposition.json", "treatment-packages.json"]);
+  assert.deepEqual(Object.keys(manifest.files).sort(), [
+    "family-ayurvedic-retreat.json", "pain-management.json",
+    "panchakarma.disposition.json", "panchakarma.json", "treatment-packages.disposition.json", "treatment-packages.json",
+  ]);
 });
 
-test("loader: both routes, unchanged URLs, Variant A, production, hidden pricing, no archival longForm", () => {
+test("loader: every route, unchanged URLs, Variant A, production, hidden pricing, no archival longForm", () => {
   for (const slug of PRODUCTION_SLUGS) {
     const c = C[slug];
     assert.equal(c.route, ROUTES[slug].route);
@@ -79,12 +84,12 @@ test("loader: both routes, unchanged URLs, Variant A, production, hidden pricing
 });
 
 test("no truncation: the archival long form exceeds the kit's 1200-word cap, and the preserved body renders in full", () => {
-  for (const slug of PRODUCTION_SLUGS) {
+  for (const slug of BATCH1) {
     assert.ok(archivalLongFormWords(slug) > 1200, `${slug}: ${archivalLongFormWords(slug)}`);
     const words = bodyText(C[slug]).reduce((n, x) => n + x.text.trim().split(/\s+/).length, 0);
     assert.ok(words > 1200, `${slug}: body renders ${words} words`);
   }
-  assert.deepEqual(PRODUCTION_SLUGS.map(archivalLongFormWords), [1354, 1676]);
+  assert.deepEqual(BATCH1.map(archivalLongFormWords), [1354, 1676]);
 });
 
 // ── lint ──────────────────────────────────────────────────────────────────────────────────────────────
@@ -121,8 +126,10 @@ test("hidden pricing: no rate or tariff link on either page (content finding: ne
 });
 
 // ── owner rule: >=95% of the useful source copy ───────────────────────────────────────────────────────
+// Batch 1's retain/replace/omit dispositions. Batch 2's ledgers use the richer action set of
+// SOURCE-PRESERVATION-METHOD.json and must not be fed into this loop (pending: per-page rendered-DOM check).
 test("source preservation: >=95% of the useful words of the live page render (baseline: the content worker's line disposition)", (t) => {
-  for (const slug of PRODUCTION_SLUGS) {
+  for (const slug of BATCH1) {
     const corpus = ` ${pageStrings(C[slug]).map(norm).join(" | ")} `;
     const d = JSON.parse(read(`campaign-v2/production/content/${slug}.disposition.json`));
     let useful = 0, rendered = 0;
@@ -180,13 +187,14 @@ test("structured body: programmes, tables, rooms, videos, photographs, doctors a
 // ── links and media ───────────────────────────────────────────────────────────────────────────────────
 const ROUTE_SET = new Set(JSON.parse(read("english-candidate/routes.json")).routes.map((r) => r.path));
 
-test("links: every same-site link resolves to a live route; anchors are measured; external links are https", () => {
+test("links: every same-site link resolves to a live route; anchors are measured; external links are https; contact links are the site's own", () => {
   const fixed = ["/", "/new-privacy-policy/", "/terms-and-conditions/", "/cookie-policy/", "/ppc-thanks/"];
   for (const p of fixed) assert.ok(ROUTE_SET.has(p), p);
   for (const slug of PRODUCTION_SLUGS) {
-    for (const { path: at, href } of bodyLinks(C[slug])) {
+    for (const { path: at, href, text } of bodyLinks(C[slug])) {
       if (href.startsWith("#")) assert.match(href, MEASURED_HASHES, `${slug} ${at}`);
       else if (href.startsWith("/")) assert.ok(ROUTE_SET.has(href.split(/[?#]/)[0]), `${slug} ${at}: ${href} not in english-candidate/routes.json`);
+      else if (isKnownContactHref(href)) assert.ok(isKnownContactLink(href, text), `${slug} ${at}: ${href} shows "${text}"`);
       else assert.match(href, /^https:\/\//, `${slug} ${at}`);
     }
   }
@@ -233,7 +241,9 @@ test("doctors: cards only from the approved registry ids; source wording; no inv
 
 // ── metadata ──────────────────────────────────────────────────────────────────────────────────────────
 test("metadata: canonical, robots and the Open Graph image are the replaced pages'; title and description from the copy", () => {
+  // The batch-2 pages it replaces (app/(campaign)/_traffic/TrafficLanding.tsx trafficMetadata) set no image alt.
   const ALT = { "treatment-packages": "Kairali Ayurvedic Healing Village in Palakkad, Kerala", panchakarma: "Kairali Ayurvedic Healing Village, Palakkad" };
+  const ogImage = (slug) => ({ url: "https://ayurvedichealingvillage.com/landing/r10/og.jpg", width: 1200, height: 630, ...(ALT[slug] ? { alt: ALT[slug] } : {}) });
   for (const slug of PRODUCTION_SLUGS) {
     const c = C[slug];
     const live = productionMetadata(slug, c, { AHV_STAGING: "0" });
@@ -244,7 +254,7 @@ test("metadata: canonical, robots and the Open Graph image are the replaced page
     assert.deepEqual(productionMetadata(slug, c, {}).robots, { index: false, follow: true });
     assert.equal(live.title, c.seo.title);
     assert.equal(live.description, c.seo.description);
-    assert.deepEqual(live.openGraph.images, [{ url: "https://ayurvedichealingvillage.com/landing/r10/og.jpg", width: 1200, height: 630, alt: ALT[slug] }]);
+    assert.deepEqual(live.openGraph.images, [ogImage(slug)]);
     assert.equal(live.openGraph.url, live.alternates.canonical);
     assert.equal(live.openGraph.locale, "en_IN");
     assert.deepEqual(live.twitter.images, [OG_IMAGE.url]);
@@ -268,7 +278,7 @@ test("locked facts: WhatsApp +91 92898 38797 and info@kairali.com; the wrong …
   assert.equal(contact.whatsapp.number, "919289838797");
   assert.equal(contact.whatsapp.display, "+91 92898 38797");
   assert.equal(contact.email, "info@kairali.com");
-  for (const f of ["campaign-v2/production/Body.tsx", "campaign-v2/sections/Footer.tsx", "campaign-v2/sections/Header.tsx", "campaign-v2/production/content/treatment-packages.json", "campaign-v2/production/content/panchakarma.json"]) {
+  for (const f of ["campaign-v2/production/Body.tsx", "campaign-v2/sections/Footer.tsx", "campaign-v2/sections/Header.tsx", "campaign-v2/production/content/treatment-packages.json", "campaign-v2/production/content/panchakarma.json", "campaign-v2/production/content/pain-management.json", "campaign-v2/production/content/family-ayurvedic-retreat.json"]) {
     assert.doesNotMatch(read(f), /38777/, f);
   }
 });

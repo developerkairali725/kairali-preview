@@ -40,7 +40,8 @@ function skinStyle(v: Variant): Record<string, string> {
  * enquiry-only quotation block (FeePlan); the offer band is absent (offer: null); films live in the source body;
  * the preserved source body takes the long-form slot, ahead of the enquiry so the form follows the full content.
  * Not rendered: the kit's mobile bar, "Ask anything" sheet, language switcher, tag loader and consent banner
- * (the site's own CTA bar, chat choices and consent run instead, from the production document).
+ * (the site's own CTA bar, chat choices and consent run instead, from the production document). The Step-1
+ * ConsultBar is left out where the route's existing form asks none of its questions (`consultBar: false`, batch 2).
  */
 export default function ProductionPage({ c }: { c: CampaignConfig }) {
   const v = PRODUCTION_VARIANT;
@@ -51,7 +52,7 @@ export default function ProductionPage({ c }: { c: CampaignConfig }) {
       <Header {...p} />
       <main id="main">
         <Hero {...p} />
-        <ConsultBar {...p} />
+        {c.consultBar === false ? null : <ConsultBar {...p} />}
         <ProofStrip {...p} />
         <Admission {...p} />
         <Stillness {...p} />

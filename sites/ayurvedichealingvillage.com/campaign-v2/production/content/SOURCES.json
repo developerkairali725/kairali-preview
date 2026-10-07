@@ -25,7 +25,23 @@
       "purpose": "Audit record, never rendered: every line of the captured live page (main text, sha256 0798443b…) with the content worker's action and reason. Baseline of the 95% source-preservation measurement.",
       "source": "deliverables/WOPS-AHV-FINAL-DRAFT-20260924-001/ppc-priority-release-20261007/content/panchakarma-source-disposition.json",
       "sha256": "0b8db9fca407015e5c04d16e6c1188cfad2ab3731f846d6e14ecbdbf8d7536eb"
+    },
+    "pain-management.json": {
+      "route": "/pain-management.html",
+      "source": "deliverables/WOPS-AHV-FINAL-DRAFT-20260924-001/ppc-priority-release-20261007/content/batch-2/pain-management-final-copy.json",
+      "sha256": "9e25e2be878ce6d5978564b2eaed8bbe43d598e8a8847cbd1269adee92c3371b"
+    },
+    "family-ayurvedic-retreat.json": {
+      "route": "/family-ayurvedic-retreat-kerala.html",
+      "source": "deliverables/WOPS-AHV-FINAL-DRAFT-20260924-001/ppc-priority-release-20261007/content/batch-2/family-ayurvedic-retreat-final-copy.json",
+      "sha256": "adaf23cedfc6d2f9e10d5c99a6574bce60942d2e381d3a65eecd7790db0a1d4a"
     }
+  },
+  "batch2": {
+    "readinessRecord": "deliverables/WOPS-AHV-FINAL-DRAFT-20260924-001/ppc-priority-release-20261007/content/batch-2/REVIEW-READY.json (with FINAL-REVIEW-REVISION.json, INCLUSION-FACTS.json, INDEPENDENT-REVIEW.json)",
+    "copiedAt": "2026-10-08 IST, byte for byte from the parent's task input (cmp-identical)",
+    "renderedOnlyOnFamily": "copy.inclusionHeadings (Admission list headings) and copy.familyFormNote (hint of the optional health-conditions field)",
+    "sourcePreservation": "Ledgers pain-management-SOURCE-PRESERVATION.json / family-ayurvedic-retreat-SOURCE-PRESERVATION.json use the richer action set of SOURCE-PRESERVATION-METHOD.json and are not in this repo; the batch-1 retain/replace/omit measurement is not applied to them. Rendered >=95% certification per page is pending (parent: assembled-DOM check)."
   },
   "rendered": "copy.{seo,hero,primaryCta,primaryCtaSupport,secondaryCta,admission,included,chargedSeparately,stillness,village,doctorRegistryIds,feePresentation,programDefault,faq,sourceBodyIntro,sourceBody,sourceBodyClosing}",
   "notRendered": "copy.longForm (superseded archival carryover), adMatch (lint input only), source, implementationContract, wordCounts, verdict, task (internal metadata)",

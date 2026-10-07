@@ -4,12 +4,26 @@
 // well formed; the retention itself is measured against the live page by test/lp-v2-production-content.test.mjs.
 import type { BodyBlock, CampaignConfig } from "../types.ts";
 import type { Issue } from "./lengths.ts";
+import { contact } from "../../../campaign-v110/lib/site.ts";
 
 const err = (rule: string, path: string, message: string): Issue => ({ level: "error", rule, path, message });
 
-/** Same-site path or https URL; never javascript:, data:, protocol-relative or bare hosts. */
+/**
+ * The site's own phone and email links (locked facts, campaign-v110/lib/site.ts), each with the visible text the
+ * live pages give it. The only tel: / mailto: values a body may carry: exact strings, no other number or address,
+ * no query (?subject=, ?body=), no case or spacing variant. Not a protocol allowance.
+ */
+export const KNOWN_CONTACT_LINKS: readonly { href: string; text: string }[] = [
+  { href: contact.phone.href, text: contact.phone.display },
+  { href: `mailto:${contact.email}`, text: contact.email },
+];
+export const isKnownContactHref = (href: unknown): boolean => KNOWN_CONTACT_LINKS.some((k) => k.href === href);
+/** A known contact href whose visible text is that contact's own (no "+91 …" text on another number). */
+export const isKnownContactLink = (href: unknown, text: unknown): boolean => KNOWN_CONTACT_LINKS.some((k) => k.href === href && k.text === text);
+
+/** Same-site path, https URL, an in-page anchor or one of the site's known contact links; never javascript:, data:, protocol-relative or bare hosts. */
 export function safeHref(href: unknown): boolean {
-  return typeof href === "string" && (/^\/(?![\/\\])\S*$/.test(href) || /^https:\/\/[^\s/]+(\/\S*)?$/.test(href) || /^#[A-Za-z][\w-]*$/.test(href));
+  return typeof href === "string" && (/^\/(?![\/\\])\S*$/.test(href) || /^https:\/\/[^\s/]+(\/\S*)?$/.test(href) || /^#[A-Za-z][\w-]*$/.test(href) || isKnownContactHref(href));
 }
 /** In-page anchors the site's consent runtime measures (consent-runtime.ts measurementUrlSafe). */
 export const MEASURED_HASHES = /^#(?:enquiry|main|contact|section-[0-8]|written-testimonials|press)$/;
@@ -53,8 +67,9 @@ export function lintBody(c: CampaignConfig): Issue[] {
       if (b.type === "quote" && !b.attribution?.trim()) out.push(err("body.quote", path, "a quote keeps its named attribution"));
     });
   });
-  for (const { path, href } of bodyLinks(c)) {
+  for (const { path, href, text } of bodyLinks(c)) {
     if (!safeHref(href)) out.push(err("body.href", path, `unsafe or malformed link: ${href}`));
+    else if (isKnownContactHref(href) && !isKnownContactLink(href, text)) out.push(err("body.contact", path, `contact link ${href} must show its own locked text, not "${text}"`));
     else if (href.startsWith("#") && !MEASURED_HASHES.test(href)) out.push(err("body.hash", path, `in-page anchor ${href} is not measured by the consent runtime; use #enquiry or a #section-N id`));
   }
   return out;

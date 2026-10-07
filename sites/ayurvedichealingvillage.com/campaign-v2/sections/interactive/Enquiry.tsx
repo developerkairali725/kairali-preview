@@ -54,6 +54,7 @@ export default function Enquiry({ c, v, req }: SectionProps) {
         country={req.country}
         privacyHref={site.legal.privacy}
         prefillLabels={prefillLabels}
+        prefillEnabled={c.consultBar !== false}
         {...(production ? { production } : {})}
       />
     </section>

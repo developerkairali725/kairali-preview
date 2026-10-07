@@ -1,10 +1,12 @@
-// What the two live ad routes add to the copy (content/*.json): their unchanged URLs and SEO identity, the
+// What the live ad routes add to the copy (content/*.json): their unchanged URLs and SEO identity, the
 // existing lead identity of their forms, the photographs, and the owner's recorded decisions. Facts only; no
 // client-facing copy is written here (the copy is the content worker's, in content/*.json).
+// Batch 1: /ayurvedic-treatment-packages.html, /panchkarma-treatment.html. Batch 2: /pain-management.html,
+// /family-ayurvedic-retreat-kerala.html.
 //
 // Erasable TypeScript only (node --test imports this file).
 
-import type { GalleryCategory, ImageRef, PricingPolicy, SourcePreservation } from "../kit/types.ts";
+import type { GalleryCategory, ImageRef, PricingPolicy, ProductionFormProfile, SourcePreservation } from "../kit/types.ts";
 import { IMAGES } from "../data/images.ts";
 
 export const SITE_ORIGIN = "https://ayurvedichealingvillage.com";
@@ -28,23 +30,35 @@ export const SPELLING = {
   reason: "The approved production copy and the preserved live-page source are British English; converting them would rewrite approved and preserved copy.",
 } as const;
 
-export type ProductionSlug = "treatment-packages" | "panchakarma";
+export type ProductionSlug = "treatment-packages" | "panchakarma" | "pain-management" | "family-ayurvedic-retreat";
 
 export type RouteBinding = {
   slug: ProductionSlug;
   /** Unchanged public URL (no redirect, no move). */
   route: string;
   canonical: string;
-  /** Open Graph image alt text of the page this replaces, unchanged. */
-  ogImageAlt: string;
+  /** Open Graph image alt text of the page this replaces, unchanged; absent where that page had none (batch 2). */
+  ogImageAlt?: string;
   /** Second breadcrumb item of the page this replaces (treatment packages only had one). */
   breadcrumbName?: string;
   heroImage: ImageRef;
   mobileImage: ImageRef;
   stillnessImage: ImageRef;
   gallery: { category: GalleryCategory; image: ImageRef }[];
-  /** The route's existing lead identity: fields.form_variant and the guide download, as the page it replaces. */
-  productionForm: { formVariant: string; downloadGuide: boolean };
+  /**
+   * The route's existing lead identity: fields.form_variant and the guide download, as the page it replaces, plus
+   * `profile` when its existing form is not the default production form (family: the R10 familyFields form).
+   */
+  productionForm: { formVariant: string; downloadGuide: boolean; profile?: ProductionFormProfile };
+  /** true = the copy's own inclusionHeadings label the Admission lists (family: quotation-confirmation headings). */
+  inclusionHeadings?: true;
+  /**
+   * false (batch 2) = the replaced page's form asked no program, month or length question. No kit ConsultBar: its
+   * fixed 14/21/28-night lengths are batch 1's (these pages state no fixed duration, and the family form asks its own
+   * preferred duration), and its answers would be written into the message field, which on the family form is the
+   * health-conditions field. copy.programDefault then stays editorial context, never a form or lead value.
+   */
+  consultBar?: false;
 };
 
 const img = (id: string): ImageRef => {
@@ -82,6 +96,41 @@ export const ROUTES: Record<ProductionSlug, RouteBinding> = {
     stillnessImage: img("gal-post-therapy-stillness-wakem"),
     gallery: GALLERY_BASE("kt-202"),
     productionForm: { formVariant: "r10-panchakarma", downloadGuide: false },
+  },
+  // Batch 2. Lead identity: app/(campaign)/_traffic/TrafficLanding.tsx (R10EnquiryForm formType → `r10-${formType}`,
+  // downloadGuide false). The replaced pages set no Open Graph image alt and no breadcrumb, so neither is added.
+  // Hero: the registry's warm-oil therapy by two therapists (the replaced hero, a warm-oil knee therapy, is not in
+  // the image registry); kt-202 stays in the gallery as on /panchkarma-treatment.html.
+  "pain-management": {
+    slug: "pain-management",
+    route: "/pain-management.html",
+    canonical: `${SITE_ORIGIN}/pain-management.html`,
+    heroImage: img("kt-199"),
+    mobileImage: img("kt-190"),
+    stillnessImage: img("gal-post-therapy-stillness-wakem"),
+    gallery: GALLERY_BASE("kt-202"),
+    productionForm: { formVariant: "r10-pain-management", downloadGuide: false, profile: "pain-management" },
+    consultBar: false,
+  },
+  // Hero: a cottage among the palms and gardens, for a shared stay (no single patient in frame), on desktop and
+  // phone; not the village-palms photograph the preserved source gallery already shows. The kit gallery therefore
+  // has no kt-314 and takes both therapy photographs.
+  "family-ayurvedic-retreat": {
+    slug: "family-ayurvedic-retreat",
+    route: "/family-ayurvedic-retreat-kerala.html",
+    canonical: `${SITE_ORIGIN}/family-ayurvedic-retreat-kerala.html`,
+    heroImage: img("kt-314"),
+    mobileImage: img("kt-314"),
+    stillnessImage: img("gal-post-therapy-stillness-wakem"),
+    gallery: [
+      { category: "Villas", image: img("kt-116") },
+      { category: "Grounds", image: img("wx-hero") }, { category: "Grounds", image: img("gal-poolside-rest-palakkad-2026") },
+      { category: "Dining", image: img("wx-dining") },
+      { category: "Therapies", image: img("kt-199") }, { category: "Therapies", image: img("kt-202") },
+    ],
+    productionForm: { formVariant: "r10-family-retreat", downloadGuide: false, profile: "family-retreat" },
+    inclusionHeadings: true,
+    consultBar: false,
   },
 };
 

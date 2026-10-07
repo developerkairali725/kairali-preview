@@ -1,6 +1,7 @@
 // Metadata and JSON-LD of the live ad routes. Unchanged from the pages they replace: canonical (the route's
 // own URL, query never included), robots (indexable only on the production build, AHV_STAGING=0, exactly as
-// before), the Open Graph / Twitter image and alt, the WebPage node and the treatment-packages breadcrumb.
+// before), the Open Graph / Twitter image and its alt (none where the replaced page had none: batch 2), the
+// WebPage node and the treatment-packages breadcrumb.
 // From the copy: title and description. Added: FAQPage for the FAQ the page shows (integrations/seo.ts).
 //
 // Erasable TypeScript only (node --test imports this file).
@@ -24,7 +25,7 @@ export function productionMetadata(slug: ProductionSlug, c: CampaignConfig, env:
     robots: { index: env.AHV_STAGING === "0", follow: true },
     openGraph: {
       type: "website", locale: "en_IN", siteName: SITE_NAME, title, description, url: b.canonical,
-      images: [{ url: OG_IMAGE.url, width: OG_IMAGE.width, height: OG_IMAGE.height, alt: b.ogImageAlt }],
+      images: [{ url: OG_IMAGE.url, width: OG_IMAGE.width, height: OG_IMAGE.height, ...(b.ogImageAlt ? { alt: b.ogImageAlt } : {}) }],
     },
     twitter: { card: "summary_large_image", title, description, images: [OG_IMAGE.url] },
   };

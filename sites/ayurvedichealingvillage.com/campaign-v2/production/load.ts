@@ -3,19 +3,30 @@
 // price where pricing is hidden, or an unknown doctor throws, so an incomplete page can never be built quietly.
 //
 // Not rendered: copy.longForm (superseded archival text; the structured body replaces it), and the internal
-// metadata (source, implementationContract, wordCounts, verdict).
+// metadata (source, implementationContract, wordCounts, verdict, claimDispositions, …).
+//
+// Batch 2 adds two route-bound copy fields, read only where the binding says so (family): copy.inclusionHeadings
+// (the Admission list headings) and copy.familyFormNote (the note on the family form's optional health field).
+// Present anywhere else, they throw: copy is never silently dropped. Every body link must be safe (kit/lint/body.ts
+// safeHref); a tel:/mailto: link must be one of the site's own contact links with its own locked text.
 //
 // Erasable TypeScript only (node --test imports this file).
 
 import packagesJson from "./content/treatment-packages.json" with { type: "json" };
 import panchakarmaJson from "./content/panchakarma.json" with { type: "json" };
-import type { BodyBlock, BodyInline, BodySection, CampaignConfig, DoctorRef, FeePresentation, SourceBody } from "../kit/types.ts";
+import painJson from "./content/pain-management.json" with { type: "json" };
+import familyJson from "./content/family-ayurvedic-retreat.json" with { type: "json" };
+import type { BodyBlock, BodyInline, BodySection, CampaignConfig, DoctorRef, FeePresentation, InclusionHeadings, SourceBody } from "../kit/types.ts";
 import { DOCTORS } from "../data/doctors.ts";
-import { PRODUCTION_CAMPAIGN_FORM } from "../forms/schema.ts";
+import { PRODUCTION_CAMPAIGN_FORM, PRODUCTION_PAIN_FORM, productionFamilyForm, type FormSchema } from "../forms/schema.ts";
+import { bodyLinks, isKnownContactHref, isKnownContactLink, safeHref } from "../kit/lint/body.ts";
 import { PRICING_HIDDEN, ROUTES, SOURCE_PRESERVATION, SPELLING, type ProductionSlug, type RouteBinding } from "./bindings.ts";
 
-export const PRODUCTION_SLUGS: readonly ProductionSlug[] = ["treatment-packages", "panchakarma"];
-const RAW: Record<ProductionSlug, unknown> = { "treatment-packages": packagesJson, panchakarma: panchakarmaJson };
+export const PRODUCTION_SLUGS: readonly ProductionSlug[] = ["treatment-packages", "panchakarma", "pain-management", "family-ayurvedic-retreat"];
+const RAW: Record<ProductionSlug, unknown> = {
+  "treatment-packages": packagesJson, panchakarma: panchakarmaJson,
+  "pain-management": painJson, "family-ayurvedic-retreat": familyJson,
+};
 
 class ContentError extends Error {}
 const fail = (path: string, why: string): never => { throw new ContentError(`production content ${path}: ${why}`); };
@@ -88,12 +99,38 @@ function toDoctors(v: unknown): DoctorRef[] {
   return strs(v, "doctorRegistryIds").map((id, i) => DOCTORS[id] ?? fail(`doctorRegistryIds[${i}]`, `no registry entry for ${id}`));
 }
 
+/** copy.inclusionHeadings: exactly { included, chargedSeparately }, both non-empty; any other key is unbound copy. */
+function toInclusionHeadings(v: unknown): InclusionHeadings {
+  const h = obj(v, "inclusionHeadings");
+  for (const k of Object.keys(h)) if (k !== "included" && k !== "chargedSeparately") fail(`inclusionHeadings.${k}`, "no binding for this heading");
+  return { included: str(h.included, "inclusionHeadings.included"), chargedSeparately: str(h.chargedSeparately, "inclusionHeadings.chargedSeparately") };
+}
+
+/** The route's enquiry form: the default production form, or its own (family: with copy.familyFormNote on the health field). */
+function toForm(binding: RouteBinding, copy: Obj): FormSchema {
+  if (binding.productionForm.profile === "family-retreat") return productionFamilyForm(str(copy.familyFormNote, "familyFormNote"));
+  if (copy.familyFormNote !== undefined) fail("familyFormNote", `not bound on ${binding.route} (family form only)`);
+  return binding.productionForm.profile === "pain-management" ? PRODUCTION_PAIN_FORM : PRODUCTION_CAMPAIGN_FORM;
+}
+
+/** Every body link is safe; a tel:/mailto: link is one of the site's own contact links, showing its own text. */
+function checkLinks(c: CampaignConfig): void {
+  for (const { path, href, text } of bodyLinks(c)) {
+    if (!safeHref(href)) fail(path, `unsafe or malformed link: ${href}`);
+    if (isKnownContactHref(href) && !isKnownContactLink(href, text)) fail(path, `contact link ${href} must show its own locked text, not "${text}"`);
+  }
+}
+
 /** The production CampaignConfig of one live ad route. Throws on any content problem. */
 export function productionCampaign(slug: ProductionSlug): CampaignConfig {
   const binding: RouteBinding = ROUTES[slug] ?? fail("slug", `unknown production route ${slug}`);
   const file = obj(RAW[slug], slug);
   const copy = obj(file.copy, "copy");
   if (copy.route !== binding.route) fail("copy.route", `${String(copy.route)} is not ${binding.route}`);
+  if (copy.slug !== binding.slug) fail("copy.slug", `${String(copy.slug)} is not ${binding.slug}`);
+  // Route-bound headings (family only): required where bound, and never silently ignored elsewhere.
+  if (!binding.inclusionHeadings && copy.inclusionHeadings !== undefined) fail("inclusionHeadings", `not bound on ${binding.route}`);
+  const inclusionHeadings = binding.inclusionHeadings ? toInclusionHeadings(copy.inclusionHeadings) : undefined;
   // Owner rule: hidden pricing. The copy must carry no fee data and no offer block at all.
   if (copy.fees !== null) fail("copy.fees", "must be null (owner-approved hidden pricing)");
   if (copy.offer !== null) fail("copy.offer", "must be null on these routes");
@@ -105,7 +142,8 @@ export function productionCampaign(slug: ProductionSlug): CampaignConfig {
   const adMatch = obj(copy.adMatch, "adMatch");
   const h1Accent = opt(hero.h1Accent, "hero.h1Accent");
   const heroImage = binding.heroImage;
-  return {
+  const programDefault = str(copy.programDefault, "programDefault", { empty: true });
+  const c: CampaignConfig = {
     slug: binding.slug,
     route: binding.route,
     previewRoute: "", // not previewed under /lp-v2: these configs serve the live routes only
@@ -124,7 +162,8 @@ export function productionCampaign(slug: ProductionSlug): CampaignConfig {
       standfirst: str(hero.standfirst, "hero.standfirst"),
       image: { A: heroImage, B: heroImage, C: heroImage, D: heroImage }, mobileImage: binding.mobileImage,
     },
-    programDefault: str(copy.programDefault, "programDefault", { empty: true }),
+    // Without a ConsultBar (batch 2) the copy's program name is editorial context only: no form or lead value.
+    programDefault: binding.consultBar === false ? "" : programDefault,
     tracking: { campaignName: binding.slug, trackId: "" },
     admission: {
       heading: str(admission.heading, "admission.heading"),
@@ -153,8 +192,12 @@ export function productionCampaign(slug: ProductionSlug): CampaignConfig {
     body: toBody(copy),
     sourcePreservation: SOURCE_PRESERVATION,
     spelling: SPELLING,
-    form: { schema: PRODUCTION_CAMPAIGN_FORM, adapterId: "ahv-production" },
+    form: { schema: toForm(binding, copy), adapterId: "ahv-production" },
+    ...(inclusionHeadings ? { inclusionHeadings } : {}),
+    ...(binding.consultBar === false ? { consultBar: false as const } : {}),
   };
+  checkLinks(c);
+  return c;
 }
 
 /** The archival longForm word count of a route's copy (audit only; never rendered). */

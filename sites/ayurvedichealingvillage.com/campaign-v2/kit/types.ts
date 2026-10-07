@@ -37,6 +37,13 @@ export type Translation = { locale: Locale; review: "approved" | "pending" };
 export type PricingPolicy = { display: "hidden"; approvedBy: "owner"; date: string; rule: string };
 /** What replaces the fee table when pricing is hidden: an enquiry-only quotation block. */
 export type FeePresentation = { mode: "enquiry-only"; heading: string; body: string; cta: string };
+/** Admission list headings from the copy (family route): quotation-confirmation labels instead of the kit's "Included" / "Charged separately". */
+export type InclusionHeadings = { included: string; chargedSeparately: string };
+/**
+ * A live ad route's existing enquiry form, when it differs from the default production form. "family-retreat" = the
+ * R10 form with familyFields (gender, country, preferred duration, "Any existing health conditions?").
+ */
+export type ProductionFormProfile = "family-retreat" | "pain-management";
 
 // Preserved source body (content contract of 7 Oct 2026, CONTENT-READY.json). `sourceSection` is an audit key
 // (also the old page's anchor id), never public copy. Inline runs, when present, replace `text`.
@@ -93,8 +100,12 @@ export type CampaignConfig = {
   pricing?: PricingPolicy;
   feePresentation?: FeePresentation;
   cta?: { primary: string; primarySupport?: string; secondary?: string };
-  /** The route's existing lead identity (fields.form_variant, guide download), for the "ahv-production" adapter. */
-  productionForm?: { formVariant: string; downloadGuide: boolean };
+  /** The route's existing lead identity (fields.form_variant, guide download, form profile), for the "ahv-production" adapter. */
+  productionForm?: { formVariant: string; downloadGuide: boolean; profile?: ProductionFormProfile };
+  /** Production surface only: the copy's own Admission list headings. Absent = the kit's "Included" / "Charged separately". */
+  inclusionHeadings?: InclusionHeadings;
+  /** Production surface only: false = no Step-1 ConsultBar (its program / month / 14–28-night questions are not this route's form). */
+  consultBar?: false;
   /** Preserved source body; when present, `longForm` is not rendered and must be empty. */
   body?: SourceBody;
   sourcePreservation?: SourcePreservation;

@@ -5,7 +5,7 @@
 // Contract: an adapter returns "received" ONLY when the backend confirmed the lead is stored. The
 // shell fires generate_lead on that and nothing else, and never shows success otherwise.
 
-import type { CampaignConfig, Channel, Variant } from "../kit/types.ts";
+import type { CampaignConfig, Channel, ProductionFormProfile, Variant } from "../kit/types.ts";
 import { buildLeadPayload, type LeadAnswers, type PackedLine } from "../kit/lead.ts";
 import { isChannel, DEFAULT_CHANNEL, CONSENT_FIELD, fullCampaignPhone, type FormValues, type ResolvedSchema } from "./schema.ts";
 
@@ -37,8 +37,11 @@ export type SubmitContext = {
   env?: ProductionEnv;
 };
 
-/** `formVariant` = the existing fields.form_variant of the route; `downloadGuide` = the route's existing guide download. */
-export type ProductionFormContext = { formVariant: string; downloadGuide: boolean };
+/**
+ * `formVariant` = the existing fields.form_variant of the route; `downloadGuide` = the route's existing guide download;
+ * `profile` = the route's own form when it is not the default production form (absent on every other route).
+ */
+export type ProductionFormContext = { formVariant: string; downloadGuide: boolean; profile?: ProductionFormProfile };
 export type ProductionEnv = {
   location: { origin: string; pathname: string; search: string };
   referrer: string;
@@ -241,8 +244,23 @@ function browserEnv(): ProductionEnv {
   };
 }
 
+/** The family form's gender radio: one of its two values, else empty (an unanswered radio, as the R10 form sent it). */
+export function familyGender(v: FormValues[string]): string {
+  return v === "Male" || v === "Female" ? v : "";
+}
+
+/**
+ * The family form's message, exactly as the R10 form with familyFields built it:
+ * "Country: <country>\nPreferred duration: <duration>\n" followed by the visitor's own (optional) health text. Pure.
+ */
+export function familyMessage(values: FormValues): string {
+  return `Country: ${str(values.country)}\nPreferred duration: ${str(values.duration)}\n${str(values.message)}`;
+}
+
 /** The request body. Exported for tests. `env` = where the visitor is; nothing else from the URL is read. */
 export function buildProductionLead(values: FormValues, ctx: Pick<SubmitContext, "token" | "locale"> & { production: ProductionFormContext; env: ProductionEnv }): Record<string, unknown> {
+  // Preserve the optional gender on both batch-2 routes; only the family profile packs extra message fields.
+  const family = ctx.production.profile === "family-retreat";
   let campaign: Record<string, string> = {};
   try {
     campaign = ctx.env.attribution?.() || urlAttribution(ctx.env.location.search);
@@ -267,10 +285,10 @@ export function buildProductionLead(values: FormValues, ctx: Pick<SubmitContext,
       campaign_name: campaign.utm_campaign || "",
       utm_keyword: campaign.utm_term || "",
       fname: str(values.fullName),
-      rdogender: "",
+      rdogender: family || ctx.production.profile === "pain-management" ? familyGender(values.rdogender) : "",
       email: str(values.email),
       phone: fullCampaignPhone(values),
-      message: str(values.message),
+      message: family ? familyMessage(values) : str(values.message),
       consent: values[CONSENT_FIELD] === true,
     },
   };
