@@ -1,0 +1,876 @@
+{
+  "taskId": "WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001",
+  "provenance": "Exact 49 new information-source-drift.json added units after integrated source 12b07d66b, plus final offers subtitle in f5d84daed. Translation batches 0–24 and 25–49 preserve source meaning, placeholders, years and named programmes.",
+  "review": {
+    "status": "SOURCE-AND-STRUCTURE-CHECKED",
+    "method": "AI translations checked against approved English; no independent native-language editorial review recorded. Voucher availability and assessment conditions retained; no dates, terms or medical claims added.",
+    "languages": [
+      "hi",
+      "de",
+      "fr",
+      "es",
+      "it",
+      "pt",
+      "nl",
+      "ru",
+      "ar",
+      "zh-Hans",
+      "ja",
+      "ko"
+    ],
+    "units": 50,
+    "translations": 600
+  },
+  "units": [
+    {
+      "source": "Related resources",
+      "translations": {
+        "de": "Weiterführende Informationen",
+        "fr": "Ressources connexes",
+        "es": "Recursos relacionados",
+        "it": "Risorse correlate",
+        "pt": "Recursos relacionados",
+        "nl": "Gerelateerde informatie",
+        "ru": "Связанные материалы",
+        "hi": "संबंधित संसाधन",
+        "ar": "موارد ذات صلة",
+        "zh-Hans": "相关资源",
+        "ja": "関連資料",
+        "ko": "관련 자료"
+      }
+    },
+    {
+      "source": "Past Retreats & Events",
+      "translations": {
+        "de": "Vergangene Retreats & Veranstaltungen",
+        "fr": "Retraites et événements passés",
+        "es": "Retiros y eventos anteriores",
+        "it": "Ritiri ed eventi passati",
+        "pt": "Retiros e eventos anteriores",
+        "nl": "Eerdere retraites en evenementen",
+        "ru": "Прошедшие ретриты и мероприятия",
+        "hi": "पिछले रिट्रीट और आयोजन",
+        "ar": "الملتقيات والفعاليات السابقة",
+        "zh-Hans": "往期静修与活动",
+        "ja": "過去のリトリートとイベント",
+        "ko": "지난 리트리트 및 행사"
+      }
+    },
+    {
+      "source": "Stories from the archive",
+      "translations": {
+        "de": "Geschichten aus dem Archiv",
+        "fr": "Récits des archives",
+        "es": "Historias del archivo",
+        "it": "Storie dall’archivio",
+        "pt": "Histórias do arquivo",
+        "nl": "Verhalen uit het archief",
+        "ru": "Истории из архива",
+        "hi": "संग्रह से कहानियाँ",
+        "ar": "قصص من الأرشيف",
+        "zh-Hans": "档案中的故事",
+        "ja": "アーカイブのストーリー",
+        "ko": "지난 기록 속 이야기"
+      }
+    },
+    {
+      "source": "These are historical retreat and event records. Year editions, stories and itineraries remain separate; they do not describe current offers.",
+      "translations": {
+        "de": "Dies sind historische Aufzeichnungen zu Retreats und Veranstaltungen. Jahresausgaben, Geschichten und Reiseprogramme bleiben getrennt; sie beschreiben keine aktuellen Angebote.",
+        "fr": "Il s’agit d’archives de retraites et d’événements passés. Les éditions annuelles, les récits et les itinéraires restent distincts ; ils ne décrivent pas les offres actuelles.",
+        "es": "Estos son registros históricos de retiros y eventos. Las ediciones anuales, las historias y los itinerarios se mantienen por separado; no describen ofertas actuales.",
+        "it": "Questi sono documenti storici relativi a ritiri ed eventi. Le edizioni annuali, le storie e gli itinerari restano separati e non descrivono le offerte attuali.",
+        "pt": "Estes são registos históricos de retiros e eventos. As edições anuais, as histórias e os itinerários mantêm-se separados; não descrevem ofertas atuais.",
+        "nl": "Dit zijn historische verslagen van retraites en evenementen. Jaargangen, verhalen en programma’s blijven afzonderlijk; ze beschrijven geen actuele aanbiedingen.",
+        "ru": "Это исторические материалы о ретритах и мероприятиях. Ежегодные выпуски, истории и программы представлены отдельно; они не описывают действующие предложения.",
+        "hi": "ये पिछले रिट्रीट और आयोजनों के अभिलेख हैं। वार्षिक संस्करण, कहानियाँ और यात्रा कार्यक्रम अलग-अलग रखे गए हैं; ये वर्तमान प्रस्तावों का विवरण नहीं हैं।",
+        "ar": "هذه سجلات لملتقيات وفعاليات سابقة. تظل الإصدارات السنوية والقصص وبرامج الرحلات منفصلة؛ وهي لا تصف العروض الحالية.",
+        "zh-Hans": "这些是以往静修和活动的记录。各年度版本、故事和行程分别保留，并不代表当前优惠。",
+        "ja": "これらは過去のリトリートとイベントの記録です。各年の開催記録、ストーリー、日程はそれぞれ別に掲載しており、現在の特典を案内するものではありません。",
+        "ko": "이 자료는 지난 리트리트와 행사의 기록입니다. 연도별 자료, 이야기, 일정은 각각 별도로 보관되며 현재 제공되는 혜택을 안내하는 내용이 아닙니다."
+      }
+    },
+    {
+      "source": "Offers & Care Initiatives",
+      "translations": {
+        "de": "Angebote & Behandlungsinitiativen",
+        "fr": "Offres et initiatives de soins",
+        "es": "Ofertas e iniciativas de atención",
+        "it": "Offerte e iniziative di cura",
+        "pt": "Ofertas e iniciativas de cuidados",
+        "nl": "Aanbiedingen en zorginitiatieven",
+        "ru": "Предложения и программы заботы",
+        "hi": "प्रस्ताव और देखभाल की पहल",
+        "ar": "العروض ومبادرات الرعاية",
+        "zh-Hans": "优惠与关怀计划",
+        "ja": "特典とケアへの取り組み",
+        "ko": "혜택 및 돌봄 활동"
+      }
+    },
+    {
+      "source": "[[OPEN_1]]Care & Commitment[[CLOSE_1]][[OPEN_2]]Gift Vouchers — Coming Soon[[CLOSE_2]][[OPEN_3]]Partnerships & Tie-ups[[CLOSE_3]]",
+      "translations": {
+        "de": "[[OPEN_1]]Fürsorge & Engagement[[CLOSE_1]][[OPEN_2]]Geschenkgutscheine — demnächst verfügbar[[CLOSE_2]][[OPEN_3]]Partnerschaften & Kooperationen[[CLOSE_3]]",
+        "fr": "[[OPEN_1]]Soins et engagement[[CLOSE_1]][[OPEN_2]]Chèques-cadeaux — bientôt disponibles[[CLOSE_2]][[OPEN_3]]Partenariats et collaborations[[CLOSE_3]]",
+        "es": "[[OPEN_1]]Atención y compromiso[[CLOSE_1]][[OPEN_2]]Vales regalo — próximamente[[CLOSE_2]][[OPEN_3]]Alianzas y colaboraciones[[CLOSE_3]]",
+        "it": "[[OPEN_1]]Cura e impegno[[CLOSE_1]][[OPEN_2]]Buoni regalo — prossimamente[[CLOSE_2]][[OPEN_3]]Partnership e collaborazioni[[CLOSE_3]]",
+        "pt": "[[OPEN_1]]Cuidado e compromisso[[CLOSE_1]][[OPEN_2]]Vales-presente — brevemente[[CLOSE_2]][[OPEN_3]]Parcerias e colaborações[[CLOSE_3]]",
+        "nl": "[[OPEN_1]]Zorg en betrokkenheid[[CLOSE_1]][[OPEN_2]]Cadeaubonnen — binnenkort beschikbaar[[CLOSE_2]][[OPEN_3]]Partnerschappen en samenwerkingen[[CLOSE_3]]",
+        "ru": "[[OPEN_1]]Забота и ответственность[[CLOSE_1]][[OPEN_2]]Подарочные сертификаты — скоро[[CLOSE_2]][[OPEN_3]]Партнёрства и сотрудничество[[CLOSE_3]]",
+        "hi": "[[OPEN_1]]देखभाल और प्रतिबद्धता[[CLOSE_1]][[OPEN_2]]उपहार वाउचर — जल्द आ रहे हैं[[CLOSE_2]][[OPEN_3]]साझेदारियाँ और सहयोग[[CLOSE_3]]",
+        "ar": "[[OPEN_1]]الرعاية والالتزام[[CLOSE_1]][[OPEN_2]]قسائم الهدايا — قريبًا[[CLOSE_2]][[OPEN_3]]الشراكات والتعاون[[CLOSE_3]]",
+        "zh-Hans": "[[OPEN_1]]关怀与承诺[[CLOSE_1]][[OPEN_2]]礼券 — 即将推出[[CLOSE_2]][[OPEN_3]]合作伙伴与合作项目[[CLOSE_3]]",
+        "ja": "[[OPEN_1]]ケアと取り組み[[CLOSE_1]][[OPEN_2]]ギフト券 — 近日公開[[CLOSE_2]][[OPEN_3]]パートナーシップと提携[[CLOSE_3]]",
+        "ko": "[[OPEN_1]]돌봄과 약속[[CLOSE_1]][[OPEN_2]]기프트 바우처 — 곧 출시[[CLOSE_2]][[OPEN_3]]파트너십 및 제휴[[CLOSE_3]]"
+      }
+    },
+    {
+      "source": "View Programme Details",
+      "translations": {
+        "de": "Programmdetails ansehen",
+        "fr": "Voir les détails du programme",
+        "es": "Ver detalles del programa",
+        "it": "Visualizza i dettagli del programma",
+        "pt": "Ver detalhes do programa",
+        "nl": "Programmadetails bekijken",
+        "ru": "Подробнее о программе",
+        "hi": "कार्यक्रम का विवरण देखें",
+        "ar": "عرض تفاصيل البرنامج",
+        "zh-Hans": "查看项目详情",
+        "ja": "プログラムの詳細を見る",
+        "ko": "프로그램 상세 보기"
+      }
+    },
+    {
+      "source": "Offers and partnerships",
+      "translations": {
+        "de": "Angebote und Partnerschaften",
+        "fr": "Offres et partenariats",
+        "es": "Ofertas y alianzas",
+        "it": "Offerte e partnership",
+        "pt": "Ofertas e parcerias",
+        "nl": "Aanbiedingen en partnerschappen",
+        "ru": "Предложения и партнёрства",
+        "hi": "प्रस्ताव और साझेदारियाँ",
+        "ar": "العروض والشراكات",
+        "zh-Hans": "优惠与合作伙伴",
+        "ja": "特典とパートナーシップ",
+        "ko": "혜택 및 파트너십"
+      }
+    },
+    {
+      "source": "Kairali Group & education",
+      "translations": {
+        "de": "Kairali-Gruppe & Ausbildung",
+        "fr": "Groupe Kairali et formation",
+        "es": "Grupo Kairali y formación",
+        "it": "Gruppo Kairali e formazione",
+        "pt": "Grupo Kairali e formação",
+        "nl": "Kairali Group en opleidingen",
+        "ru": "Группа Kairali и обучение",
+        "hi": "Kairali Group और शिक्षा",
+        "ar": "Kairali Group والتعليم",
+        "zh-Hans": "Kairali Group 与教育",
+        "ja": "Kairali Groupと教育",
+        "ko": "Kairali Group 및 교육"
+      }
+    },
+    {
+      "source": "Products & publications",
+      "translations": {
+        "de": "Produkte & Publikationen",
+        "fr": "Produits et publications",
+        "es": "Productos y publicaciones",
+        "it": "Prodotti e pubblicazioni",
+        "pt": "Produtos e publicações",
+        "nl": "Producten en publicaties",
+        "ru": "Продукция и публикации",
+        "hi": "उत्पाद और प्रकाशन",
+        "ar": "المنتجات والمنشورات",
+        "zh-Hans": "产品与出版物",
+        "ja": "製品と出版物",
+        "ko": "제품 및 출판물"
+      }
+    },
+    {
+      "source": "Read historical retreat stories, year editions and event records from Kairali.",
+      "translations": {
+        "de": "Lesen Sie historische Retreat-Geschichten, Jahresausgaben und Veranstaltungsberichte von Kairali.",
+        "fr": "Découvrez les récits de retraites, les éditions annuelles et les comptes rendus d’événements passés de Kairali.",
+        "es": "Lea historias de retiros, ediciones anuales y registros de eventos pasados de Kairali.",
+        "it": "Leggi le storie dei ritiri, le edizioni annuali e i resoconti degli eventi passati di Kairali.",
+        "pt": "Leia histórias de retiros, edições anuais e registos de eventos passados da Kairali.",
+        "nl": "Lees historische retraiteverhalen, jaargangen en evenementverslagen van Kairali.",
+        "ru": "Читайте истории ретритов, ежегодные выпуски и архивные материалы о мероприятиях Kairali.",
+        "hi": "Kairali के पिछले रिट्रीट की कहानियाँ, वार्षिक संस्करण और आयोजनों के अभिलेख पढ़ें।",
+        "ar": "اقرأ قصص الملتقيات السابقة والإصدارات السنوية وسجلات الفعاليات من Kairali.",
+        "zh-Hans": "阅读 Kairali 以往的静修故事、各年度版本和活动记录。",
+        "ja": "Kairaliの過去のリトリートのストーリー、各年の開催記録、イベントの記録をご覧ください。",
+        "ko": "Kairali의 지난 리트리트 이야기, 연도별 자료, 행사 기록을 살펴보세요."
+      }
+    },
+    {
+      "source": "Explore the archive",
+      "translations": {
+        "de": "Archiv erkunden",
+        "fr": "Explorer les archives",
+        "es": "Explorar el archivo",
+        "it": "Esplora l’archivio",
+        "pt": "Explorar o arquivo",
+        "nl": "Het archief bekijken",
+        "ru": "Посмотреть архив",
+        "hi": "संग्रह देखें",
+        "ar": "تصفح الأرشيف",
+        "zh-Hans": "浏览档案",
+        "ja": "アーカイブを見る",
+        "ko": "지난 기록 살펴보기"
+      }
+    },
+    {
+      "source": "AHV gift vouchers are coming soon: a thoughtful way to support the health of family and friends. Gift vouchers are not yet available to purchase.",
+      "translations": {
+        "de": "AHV-Geschenkgutscheine sind bald verfügbar: eine aufmerksame Möglichkeit, die Gesundheit von Familie und Freunden zu unterstützen. Geschenkgutscheine können noch nicht gekauft werden.",
+        "fr": "Les chèques-cadeaux AHV seront bientôt disponibles : une attention pour soutenir la santé de vos proches. Les chèques-cadeaux ne sont pas encore en vente.",
+        "es": "Los vales regalo de AHV estarán disponibles próximamente: una forma atenta de apoyar la salud de familiares y amigos. Los vales regalo aún no están a la venta.",
+        "it": "I buoni regalo AHV saranno presto disponibili: un pensiero per sostenere la salute di familiari e amici. I buoni regalo non sono ancora acquistabili.",
+        "pt": "Os vales-presente AHV estarão disponíveis em breve: uma forma atenciosa de apoiar a saúde da família e dos amigos. Os vales-presente ainda não estão disponíveis para compra.",
+        "nl": "AHV-cadeaubonnen zijn binnenkort beschikbaar: een attent gebaar om de gezondheid van familie en vrienden te ondersteunen. De cadeaubonnen zijn nog niet te koop.",
+        "ru": "Подарочные сертификаты AHV скоро появятся: это заботливый способ поддержать здоровье семьи и друзей. Подарочные сертификаты пока недоступны для покупки.",
+        "hi": "AHV उपहार वाउचर जल्द आ रहे हैं: परिवार और मित्रों के स्वास्थ्य में सहयोग देने का एक विचारपूर्ण तरीका। उपहार वाउचर अभी खरीदने के लिए उपलब्ध नहीं हैं।",
+        "ar": "قسائم هدايا AHV قادمة قريبًا: طريقة مدروسة لدعم صحة العائلة والأصدقاء. قسائم الهدايا ليست متاحة للشراء بعد.",
+        "zh-Hans": "AHV 礼券即将推出，为支持家人和朋友的健康提供一份贴心选择。礼券目前尚未开放购买。",
+        "ja": "AHVのギフト券は近日公開予定です。ご家族やご友人の健康を支える、心のこもった贈り物としてお使いいただけます。ギフト券はまだ購入できません。",
+        "ko": "가족과 친구의 건강을 돕는 마음을 전할 수 있는 AHV 기프트 바우처가 곧 출시됩니다. 기프트 바우처는 아직 구매할 수 없습니다."
+      }
+    },
+    {
+      "source": "Coming Soon",
+      "translations": {
+        "de": "Demnächst verfügbar",
+        "fr": "Bientôt disponible",
+        "es": "Próximamente",
+        "it": "Prossimamente",
+        "pt": "Brevemente",
+        "nl": "Binnenkort beschikbaar",
+        "ru": "Скоро",
+        "hi": "जल्द आ रहा है",
+        "ar": "قريبًا",
+        "zh-Hans": "即将推出",
+        "ja": "近日公開",
+        "ko": "곧 출시"
+      }
+    },
+    {
+      "source": "A thoughtful way to support the health of family and friends. We’re preparing gift vouchers for health assessments and appropriate treatment at AHV. Treatment will depend on the recipient’s assessment and individual needs. Gift vouchers are not yet available to purchase. Details will be shared when the offering launches.",
+      "translations": {
+        "de": "Eine aufmerksame Möglichkeit, die Gesundheit von Familie und Freunden zu unterstützen. Wir bereiten Geschenkgutscheine für gesundheitliche Beurteilungen und eine geeignete Behandlung bei AHV vor. Die Behandlung hängt von der Beurteilung und den individuellen Bedürfnissen der beschenkten Person ab. Geschenkgutscheine können noch nicht gekauft werden. Einzelheiten werden zum Start des Angebots bekannt gegeben.",
+        "fr": "Une attention pour soutenir la santé de vos proches. Nous préparons des chèques-cadeaux pour des bilans de santé et des soins adaptés chez AHV. Le traitement dépendra du bilan et des besoins individuels du bénéficiaire. Les chèques-cadeaux ne sont pas encore en vente. Les détails seront communiqués lors du lancement de l’offre.",
+        "es": "Una forma atenta de apoyar la salud de familiares y amigos. Estamos preparando vales regalo para evaluaciones de salud y tratamientos adecuados en AHV. El tratamiento dependerá de la evaluación y las necesidades individuales de la persona destinataria. Los vales regalo aún no están a la venta. Compartiremos los detalles cuando se lance la oferta.",
+        "it": "Un pensiero per sostenere la salute di familiari e amici. Stiamo preparando buoni regalo per valutazioni della salute e trattamenti appropriati presso AHV. Il trattamento dipenderà dalla valutazione e dalle esigenze individuali del destinatario. I buoni regalo non sono ancora acquistabili. I dettagli saranno comunicati al lancio dell’offerta.",
+        "pt": "Uma forma atenciosa de apoiar a saúde da família e dos amigos. Estamos a preparar vales-presente para avaliações de saúde e tratamentos adequados na AHV. O tratamento dependerá da avaliação e das necessidades individuais do destinatário. Os vales-presente ainda não estão disponíveis para compra. Os detalhes serão partilhados quando a oferta for lançada.",
+        "nl": "Een attent gebaar om de gezondheid van familie en vrienden te ondersteunen. We bereiden cadeaubonnen voor gezondheidsbeoordelingen en passende behandelingen bij AHV voor. De behandeling hangt af van de beoordeling en de individuele behoeften van de ontvanger. De cadeaubonnen zijn nog niet te koop. De details worden gedeeld zodra het aanbod beschikbaar komt.",
+        "ru": "Заботливый способ поддержать здоровье семьи и друзей. Мы готовим подарочные сертификаты на оценку состояния здоровья и подходящее лечение в AHV. Лечение будет зависеть от результатов оценки и индивидуальных потребностей получателя. Подарочные сертификаты пока недоступны для покупки. Подробности будут опубликованы при запуске предложения.",
+        "hi": "परिवार और मित्रों के स्वास्थ्य में सहयोग देने का एक विचारपूर्ण तरीका। हम AHV में स्वास्थ्य मूल्यांकन और उपयुक्त उपचार के लिए उपहार वाउचर तैयार कर रहे हैं। उपचार प्राप्तकर्ता के मूल्यांकन और व्यक्तिगत आवश्यकताओं पर निर्भर करेगा। उपहार वाउचर अभी खरीदने के लिए उपलब्ध नहीं हैं। उपलब्ध होने पर विवरण साझा किए जाएँगे।",
+        "ar": "طريقة مدروسة لدعم صحة العائلة والأصدقاء. نُعدّ قسائم هدايا للتقييمات الصحية والعلاج الملائم في AHV. سيعتمد العلاج على تقييم المستفيد واحتياجاته الفردية. قسائم الهدايا ليست متاحة للشراء بعد. سنشارك التفاصيل عند إطلاقها.",
+        "zh-Hans": "以一份贴心心意支持家人和朋友的健康。我们正在筹备可用于 AHV 健康评估及适当治疗的礼券。治疗将根据受赠者的评估结果和个人需求而定。礼券目前尚未开放购买，推出时将公布详情。",
+        "ja": "ご家族やご友人の健康を支える、心のこもった贈り物です。AHVでの健康評価と適切な治療にご利用いただくギフト券を準備しています。治療内容は、受け取る方の評価結果と個別のニーズに基づいて決まります。ギフト券はまだ購入できません。提供開始時に詳細をお知らせします。",
+        "ko": "가족과 친구의 건강을 돕는 마음을 전하는 방법입니다. AHV에서 건강 상태 평가와 적절한 치료에 사용할 수 있는 기프트 바우처를 준비하고 있습니다. 치료는 받는 분의 평가 결과와 개인별 필요에 따라 결정됩니다. 기프트 바우처는 아직 구매할 수 없습니다. 출시 시 자세한 내용을 안내하겠습니다."
+      }
+    },
+    {
+      "source": "AHV Gift Vouchers",
+      "translations": {
+        "de": "AHV-Geschenkgutscheine",
+        "fr": "Chèques-cadeaux AHV",
+        "es": "Vales regalo de AHV",
+        "it": "Buoni regalo AHV",
+        "pt": "Vales-presente AHV",
+        "nl": "AHV-cadeaubonnen",
+        "ru": "Подарочные сертификаты AHV",
+        "hi": "AHV उपहार वाउचर",
+        "ar": "قسائم هدايا AHV",
+        "zh-Hans": "AHV 礼券",
+        "ja": "AHVギフト券",
+        "ko": "AHV 기프트 바우처"
+      }
+    },
+    {
+      "source": "Ayurveda & yoga knowledge",
+      "translations": {
+        "de": "Wissen über Ayurveda & Yoga",
+        "fr": "Connaissances en Ayurveda et en yoga",
+        "es": "Conocimientos de Ayurveda y yoga",
+        "it": "Conoscenze di Ayurveda e yoga",
+        "pt": "Conhecimentos de Ayurveda e ioga",
+        "nl": "Kennis over Ayurveda en yoga",
+        "ru": "Знания об аюрведе и йоге",
+        "hi": "आयुर्वेद और योग का ज्ञान",
+        "ar": "معارف الأيورفيدا واليوغا",
+        "zh-Hans": "阿育吠陀与瑜伽知识",
+        "ja": "アーユルヴェーダとヨガの知識",
+        "ko": "아유르베다 및 요가 지식"
+      }
+    },
+    {
+      "source": "Food & cooking at Kairali",
+      "translations": {
+        "de": "Essen & Kochen bei Kairali",
+        "fr": "Alimentation et cuisine chez Kairali",
+        "es": "Alimentación y cocina en Kairali",
+        "it": "Alimentazione e cucina a Kairali",
+        "pt": "Alimentação e cozinha na Kairali",
+        "nl": "Voeding en koken bij Kairali",
+        "ru": "Питание и кулинария в Kairali",
+        "hi": "Kairali में भोजन और पाक-कला",
+        "ar": "الطعام والطهي في Kairali",
+        "zh-Hans": "Kairali 的饮食与烹饪",
+        "ja": "Kairaliの食事と料理",
+        "ko": "Kairali의 음식과 요리"
+      }
+    },
+    {
+      "source": "Healing Recipes: Back to Roots — story",
+      "translations": {
+        "de": "Healing Recipes: Back to Roots — Geschichte",
+        "fr": "Healing Recipes: Back to Roots — récit",
+        "es": "Healing Recipes: Back to Roots — historia",
+        "it": "Healing Recipes: Back to Roots — storia",
+        "pt": "Healing Recipes: Back to Roots — história",
+        "nl": "Healing Recipes: Back to Roots — verhaal",
+        "ru": "Healing Recipes: Back to Roots — история",
+        "hi": "Healing Recipes: Back to Roots — कहानी",
+        "ar": "Healing Recipes: Back to Roots — القصة",
+        "zh-Hans": "Healing Recipes: Back to Roots — 故事",
+        "ja": "Healing Recipes: Back to Roots — ストーリー",
+        "ko": "Healing Recipes: Back to Roots — 이야기"
+      }
+    },
+    {
+      "source": "Back to Roots — retreat record",
+      "translations": {
+        "de": "Back to Roots — Retreat-Bericht",
+        "fr": "Back to Roots — compte rendu de la retraite",
+        "es": "Back to Roots — registro del retiro",
+        "it": "Back to Roots — resoconto del ritiro",
+        "pt": "Back to Roots — registo do retiro",
+        "nl": "Back to Roots — retraiteverslag",
+        "ru": "Back to Roots — материалы о ретрите",
+        "hi": "Back to Roots — रिट्रीट का अभिलेख",
+        "ar": "Back to Roots — سجل الملتقى",
+        "zh-Hans": "Back to Roots — 静修记录",
+        "ja": "Back to Roots — リトリートの記録",
+        "ko": "Back to Roots — 리트리트 기록"
+      }
+    },
+    {
+      "source": "Food Sadhana — 2017 highlights",
+      "translations": {
+        "de": "Food Sadhana — Höhepunkte 2017",
+        "fr": "Food Sadhana — temps forts de 2017",
+        "es": "Food Sadhana — momentos destacados de 2017",
+        "it": "Food Sadhana — momenti salienti del 2017",
+        "pt": "Food Sadhana — destaques de 2017",
+        "nl": "Food Sadhana — hoogtepunten van 2017",
+        "ru": "Food Sadhana — основные моменты 2017 года",
+        "hi": "Food Sadhana — 2017 की झलकियाँ",
+        "ar": "Food Sadhana — أبرز محطات 2017",
+        "zh-Hans": "Food Sadhana — 2017 年精彩回顾",
+        "ja": "Food Sadhana — 2017年のハイライト",
+        "ko": "Food Sadhana — 2017년 주요 장면"
+      }
+    },
+    {
+      "source": "Lakshya Yoga Retreat — itinerary",
+      "translations": {
+        "de": "Lakshya Yoga Retreat — Ablauf",
+        "fr": "Lakshya Yoga Retreat — itinéraire",
+        "es": "Lakshya Yoga Retreat — itinerario",
+        "it": "Lakshya Yoga Retreat — itinerario",
+        "pt": "Lakshya Yoga Retreat — itinerário",
+        "nl": "Lakshya Yoga Retreat — programma",
+        "ru": "Lakshya Yoga Retreat — программа",
+        "hi": "Lakshya Yoga Retreat — यात्रा कार्यक्रम",
+        "ar": "Lakshya Yoga Retreat — برنامج الرحلة",
+        "zh-Hans": "Lakshya Yoga Retreat — 行程",
+        "ja": "Lakshya Yoga Retreat — 日程",
+        "ko": "Lakshya Yoga Retreat — 일정"
+      }
+    },
+    {
+      "source": "Read the retreat record",
+      "translations": {
+        "de": "Retreat-Bericht lesen",
+        "fr": "Lire le compte rendu de la retraite",
+        "es": "Leer el registro del retiro",
+        "it": "Leggi il resoconto del ritiro",
+        "pt": "Ler o registo do retiro",
+        "nl": "Het retraiteverslag lezen",
+        "ru": "Читать материалы о ретрите",
+        "hi": "रिट्रीट का अभिलेख पढ़ें",
+        "ar": "اقرأ سجل الملتقى",
+        "zh-Hans": "阅读静修记录",
+        "ja": "リトリートの記録を読む",
+        "ko": "리트리트 기록 읽기"
+      }
+    },
+    {
+      "source": "Yoga and Ayurveda retreat records from Kairali in Palakkad, Kerala.",
+      "translations": {
+        "de": "Berichte über Yoga- und Ayurveda-Retreats von Kairali in Palakkad, Kerala.",
+        "fr": "Comptes rendus des retraites de yoga et d’Ayurveda de Kairali à Palakkad, au Kerala.",
+        "es": "Registros de retiros de yoga y Ayurveda de Kairali en Palakkad, Kerala.",
+        "it": "Resoconti dei ritiri di yoga e Ayurveda di Kairali a Palakkad, in Kerala.",
+        "pt": "Registos de retiros de ioga e Ayurveda da Kairali em Palakkad, Kerala.",
+        "nl": "Verslagen van yoga- en Ayurvedaretraites bij Kairali in Palakkad, Kerala.",
+        "ru": "Материалы о ретритах йоги и аюрведы в Kairali в Палаккаде, Керала.",
+        "hi": "केरल के पालक्काड में Kairali के योग और आयुर्वेद रिट्रीट के अभिलेख।",
+        "ar": "سجلات ملتقيات اليوغا والأيورفيدا من Kairali في بالاكاد، كيرالا.",
+        "zh-Hans": "位于喀拉拉邦帕拉卡德的 Kairali 瑜伽与阿育吠陀静修记录。",
+        "ja": "ケララ州パラッカドのKairaliにおけるヨガとアーユルヴェーダのリトリート記録です。",
+        "ko": "케랄라주 팔라카드에 있는 Kairali의 요가 및 아유르베다 리트리트 기록입니다."
+      }
+    },
+    {
+      "source": "Lakshya Yoga — story",
+      "translations": {
+        "de": "Lakshya Yoga — Geschichte",
+        "fr": "Lakshya Yoga — récit",
+        "es": "Lakshya Yoga — historia",
+        "it": "Lakshya Yoga — storia",
+        "pt": "Lakshya Yoga — história",
+        "nl": "Lakshya Yoga — verhaal",
+        "ru": "Lakshya Yoga — история",
+        "hi": "Lakshya Yoga — कहानी",
+        "ar": "Lakshya Yoga — القصة",
+        "zh-Hans": "Lakshya Yoga — 故事",
+        "ja": "Lakshya Yoga — ストーリー",
+        "ko": "Lakshya Yoga — 이야기"
+      }
+    },
+    {
+      "source": "2017 edition",
+      "translations": {
+        "de": "Ausgabe 2017",
+        "fr": "Édition 2017",
+        "es": "Edición de 2017",
+        "it": "Edizione 2017",
+        "pt": "Edição de 2017",
+        "nl": "Editie 2017",
+        "ru": "Выпуск 2017 года",
+        "hi": "2017 संस्करण",
+        "ar": "إصدار 2017",
+        "zh-Hans": "2017 年版",
+        "ja": "2017年版",
+        "ko": "2017년판"
+      }
+    },
+    {
+      "source": "2018 edition",
+      "translations": {
+        "de": "Ausgabe 2018",
+        "fr": "Édition 2018",
+        "es": "Edición de 2018",
+        "it": "Edizione 2018",
+        "pt": "Edição de 2018",
+        "nl": "Editie 2018",
+        "ru": "Выпуск 2018 года",
+        "hi": "2018 संस्करण",
+        "ar": "إصدار 2018",
+        "zh-Hans": "2018 年版",
+        "ja": "2018年版",
+        "ko": "2018년판"
+      }
+    },
+    {
+      "source": "Chef retreat records from Kairali – The Ayurvedic Healing Village in Palakkad, Kerala.",
+      "translations": {
+        "de": "Berichte über Koch-Retreats von Kairali – The Ayurvedic Healing Village in Palakkad, Kerala.",
+        "fr": "Comptes rendus des retraites de chefs de Kairali – The Ayurvedic Healing Village à Palakkad, au Kerala.",
+        "es": "Registros de retiros de chefs de Kairali – The Ayurvedic Healing Village en Palakkad, Kerala.",
+        "it": "Resoconti dei ritiri con chef di Kairali – The Ayurvedic Healing Village a Palakkad, in Kerala.",
+        "pt": "Registos de retiros de chefs da Kairali – The Ayurvedic Healing Village em Palakkad, Kerala.",
+        "nl": "Verslagen van retraites met chefs bij Kairali – The Ayurvedic Healing Village in Palakkad, Kerala.",
+        "ru": "Материалы о ретритах с шеф-поварами в Kairali – The Ayurvedic Healing Village в Палаккаде, Керала.",
+        "hi": "केरल के पालक्काड में Kairali – The Ayurvedic Healing Village के शेफ़ रिट्रीट के अभिलेख।",
+        "ar": "سجلات ملتقيات الطهاة من Kairali – The Ayurvedic Healing Village في بالاكاد، كيرالا.",
+        "zh-Hans": "位于喀拉拉邦帕拉卡德的 Kairali – The Ayurvedic Healing Village 的厨师静修活动记录。",
+        "ja": "ケララ州パラッカドのKairali – The Ayurvedic Healing Villageにおけるシェフのリトリート記録です。",
+        "ko": "케랄라주 팔라카드에 있는 Kairali – The Ayurvedic Healing Village의 셰프 리트리트 기록입니다."
+      }
+    },
+    {
+      "source": "Chef retreat — story",
+      "translations": {
+        "de": "Koch-Retreat — Geschichte",
+        "fr": "Retraite de chefs — récit",
+        "es": "Retiro de chefs — historia",
+        "it": "Ritiro con chef — storia",
+        "pt": "Retiro de chefs — história",
+        "nl": "Retraite met chefs — verhaal",
+        "ru": "Ретрит с шеф-поварами — история",
+        "hi": "शेफ़ रिट्रीट — कहानी",
+        "ar": "ملتقى الطهاة — القصة",
+        "zh-Hans": "厨师静修活动 — 故事",
+        "ja": "シェフのリトリート — ストーリー",
+        "ko": "셰프 리트리트 — 이야기"
+      }
+    },
+    {
+      "source": "Explore related resources",
+      "translations": {
+        "de": "Weiterführende Informationen entdecken",
+        "fr": "Explorer les ressources connexes",
+        "es": "Explorar recursos relacionados",
+        "it": "Esplora le risorse correlate",
+        "pt": "Explorar recursos relacionados",
+        "nl": "Gerelateerde informatie bekijken",
+        "ru": "Изучить связанные материалы",
+        "hi": "संबंधित संसाधन देखें",
+        "ar": "تصفح الموارد ذات الصلة",
+        "zh-Hans": "浏览相关资源",
+        "ja": "関連資料を見る",
+        "ko": "관련 자료 살펴보기"
+      }
+    },
+    {
+      "source": "Ayurveda training programmes",
+      "translations": {
+        "de": "Ayurveda-Ausbildungsprogramme",
+        "fr": "Programmes de formation en Ayurveda",
+        "es": "Programas de formación en Ayurveda",
+        "it": "Programmi di formazione in Ayurveda",
+        "pt": "Programas de formação em Ayurveda",
+        "nl": "Ayurveda-opleidingen",
+        "ru": "Программы обучения аюрведе",
+        "hi": "आयुर्वेद प्रशिक्षण कार्यक्रम",
+        "ar": "برامج التدريب على الأيورفيدا",
+        "zh-Hans": "阿育吠陀培训项目",
+        "ja": "アーユルヴェーダ研修プログラム",
+        "ko": "아유르베다 교육 프로그램"
+      }
+    },
+    {
+      "source": "Course information and fees",
+      "translations": {
+        "de": "Kursinformationen und Gebühren",
+        "fr": "Informations sur les cours et tarifs",
+        "es": "Información y tarifas de los cursos",
+        "it": "Informazioni sui corsi e tariffe",
+        "pt": "Informações e preços dos cursos",
+        "nl": "Cursusinformatie en tarieven",
+        "ru": "Информация о курсах и стоимость",
+        "hi": "पाठ्यक्रम की जानकारी और शुल्क",
+        "ar": "معلومات الدورات ورسومها",
+        "zh-Hans": "课程信息与费用",
+        "ja": "コースの内容と料金",
+        "ko": "과정 안내 및 수강료"
+      }
+    },
+    {
+      "source": "Yoga theory at Kairali",
+      "translations": {
+        "de": "Yoga-Theorie bei Kairali",
+        "fr": "Théorie du yoga chez Kairali",
+        "es": "Teoría del yoga en Kairali",
+        "it": "Teoria dello yoga a Kairali",
+        "pt": "Teoria do ioga na Kairali",
+        "nl": "Yogatheorie bij Kairali",
+        "ru": "Теория йоги в Kairali",
+        "hi": "Kairali में योग सिद्धांत",
+        "ar": "نظرية اليوغا في Kairali",
+        "zh-Hans": "Kairali 的瑜伽理论",
+        "ja": "Kairaliのヨガ理論",
+        "ko": "Kairali의 요가 이론"
+      }
+    },
+    {
+      "source": "Practical yoga classes",
+      "translations": {
+        "de": "Praktische Yogakurse",
+        "fr": "Cours pratiques de yoga",
+        "es": "Clases prácticas de yoga",
+        "it": "Lezioni pratiche di yoga",
+        "pt": "Aulas práticas de ioga",
+        "nl": "Praktische yogalessen",
+        "ru": "Практические занятия йогой",
+        "hi": "योग अभ्यास की कक्षाएँ",
+        "ar": "دروس اليوغا العملية",
+        "zh-Hans": "瑜伽实践课程",
+        "ja": "ヨガの実践クラス",
+        "ko": "요가 실습 수업"
+      }
+    },
+    {
+      "source": "Yoga and meditation programme",
+      "translations": {
+        "de": "Yoga- und Meditationsprogramm",
+        "fr": "Programme de yoga et de méditation",
+        "es": "Programa de yoga y meditación",
+        "it": "Programma di yoga e meditazione",
+        "pt": "Programa de ioga e meditação",
+        "nl": "Yoga- en meditatieprogramma",
+        "ru": "Программа йоги и медитации",
+        "hi": "योग और ध्यान कार्यक्रम",
+        "ar": "برنامج اليوغا والتأمل",
+        "zh-Hans": "瑜伽与冥想项目",
+        "ja": "ヨガと瞑想のプログラム",
+        "ko": "요가 및 명상 프로그램"
+      }
+    },
+    {
+      "source": "Yoga programmes",
+      "translations": {
+        "de": "Yogaprogramme",
+        "fr": "Programmes de yoga",
+        "es": "Programas de yoga",
+        "it": "Programmi di yoga",
+        "pt": "Programas de ioga",
+        "nl": "Yogaprogramma’s",
+        "ru": "Программы йоги",
+        "hi": "योग कार्यक्रम",
+        "ar": "برامج اليوغا",
+        "zh-Hans": "瑜伽项目",
+        "ja": "ヨガプログラム",
+        "ko": "요가 프로그램"
+      }
+    },
+    {
+      "source": "Speak with an Ayurvedic physician",
+      "translations": {
+        "de": "Mit einem Ayurveda-Arzt sprechen",
+        "fr": "Échanger avec un médecin ayurvédique",
+        "es": "Hablar con un médico ayurvédico",
+        "it": "Parla con un medico ayurvedico",
+        "pt": "Falar com um médico ayurvédico",
+        "nl": "Spreek met een ayurvedische arts",
+        "ru": "Поговорить с врачом аюрведы",
+        "hi": "आयुर्वेदिक चिकित्सक से बात करें",
+        "ar": "تحدث مع طبيب أيورفيدا",
+        "zh-Hans": "与阿育吠陀医师交流",
+        "ja": "アーユルヴェーダ医師に相談する",
+        "ko": "아유르베다 의사와 상담하기"
+      }
+    },
+    {
+      "source": "Explore physician-guided weight management",
+      "translations": {
+        "de": "Ärztlich begleitetes Gewichtsmanagement entdecken",
+        "fr": "Découvrir la gestion du poids encadrée par un médecin",
+        "es": "Explorar el control del peso con supervisión médica",
+        "it": "Scopri la gestione del peso sotto guida medica",
+        "pt": "Explorar a gestão do peso com orientação médica",
+        "nl": "Ontdek gewichtsbeheersing onder begeleiding van een arts",
+        "ru": "Узнать об управлении весом под руководством врача",
+        "hi": "चिकित्सक के मार्गदर्शन में वज़न प्रबंधन के बारे में जानें",
+        "ar": "تعرّف على إدارة الوزن بإرشاد الطبيب",
+        "zh-Hans": "了解医师指导下的体重管理",
+        "ja": "医師の指導による体重管理について知る",
+        "ko": "의사의 지도에 따른 체중 관리 알아보기"
+      }
+    },
+    {
+      "source": "Weight-management programme",
+      "translations": {
+        "de": "Programm zum Gewichtsmanagement",
+        "fr": "Programme de gestion du poids",
+        "es": "Programa de control del peso",
+        "it": "Programma di gestione del peso",
+        "pt": "Programa de gestão do peso",
+        "nl": "Programma voor gewichtsbeheersing",
+        "ru": "Программа управления весом",
+        "hi": "वज़न प्रबंधन कार्यक्रम",
+        "ar": "برنامج إدارة الوزن",
+        "zh-Hans": "体重管理项目",
+        "ja": "体重管理プログラム",
+        "ko": "체중 관리 프로그램"
+      }
+    },
+    {
+      "source": "Ayurvedic food",
+      "translations": {
+        "de": "Ayurvedische Ernährung",
+        "fr": "Alimentation ayurvédique",
+        "es": "Alimentación ayurvédica",
+        "it": "Alimentazione ayurvedica",
+        "pt": "Alimentação ayurvédica",
+        "nl": "Ayurvedische voeding",
+        "ru": "Аюрведическое питание",
+        "hi": "आयुर्वेदिक भोजन",
+        "ar": "الطعام وفق الأيورفيدا",
+        "zh-Hans": "阿育吠陀饮食",
+        "ja": "アーユルヴェーダの食事",
+        "ko": "아유르베다 식단"
+      }
+    },
+    {
+      "source": "Discuss your requirements",
+      "translations": {
+        "de": "Ihre Wünsche besprechen",
+        "fr": "Discuter de vos besoins",
+        "es": "Comentar sus necesidades",
+        "it": "Discuti le tue esigenze",
+        "pt": "Conversar sobre as suas necessidades",
+        "nl": "Bespreek uw wensen",
+        "ru": "Обсудить ваши потребности",
+        "hi": "अपनी आवश्यकताओं पर चर्चा करें",
+        "ar": "ناقش احتياجاتك",
+        "zh-Hans": "讨论您的需求",
+        "ja": "ご希望やご要望を相談する",
+        "ko": "필요 사항 상담하기"
+      }
+    },
+    {
+      "source": "Panchakarma treatment programme",
+      "translations": {
+        "de": "Panchakarma-Behandlungsprogramm",
+        "fr": "Programme de soins Panchakarma",
+        "es": "Programa de tratamiento Panchakarma",
+        "it": "Programma di trattamento Panchakarma",
+        "pt": "Programa de tratamento Panchakarma",
+        "nl": "Panchakarma-behandelprogramma",
+        "ru": "Программа лечения Панчакарма",
+        "hi": "पंचकर्म उपचार कार्यक्रम",
+        "ar": "برنامج علاج Panchakarma",
+        "zh-Hans": "Panchakarma 治疗项目",
+        "ja": "パンチャカルマ治療プログラム",
+        "ko": "판차카르마 치료 프로그램"
+      }
+    },
+    {
+      "source": "Individual Ayurvedic therapies",
+      "translations": {
+        "de": "Einzelne ayurvedische Therapien",
+        "fr": "Thérapies ayurvédiques individuelles",
+        "es": "Terapias ayurvédicas individuales",
+        "it": "Singole terapie ayurvediche",
+        "pt": "Terapias ayurvédicas individuais",
+        "nl": "Afzonderlijke ayurvedische behandelingen",
+        "ru": "Отдельные аюрведические процедуры",
+        "hi": "अलग-अलग आयुर्वेदिक उपचार",
+        "ar": "العلاجات الفردية بالأيورفيدا",
+        "zh-Hans": "单项阿育吠陀疗法",
+        "ja": "個別のアーユルヴェーダ療法",
+        "ko": "개별 아유르베다 요법"
+      }
+    },
+    {
+      "source": "Dhoompanam",
+      "translations": {
+        "de": "Dhoompanam",
+        "fr": "Dhoompanam",
+        "es": "Dhoompanam",
+        "it": "Dhoompanam",
+        "pt": "Dhoompanam",
+        "nl": "Dhoompanam",
+        "ru": "Дхумпанам",
+        "hi": "धूमपानम्",
+        "ar": "Dhoompanam",
+        "zh-Hans": "Dhoompanam",
+        "ja": "ドゥームパナム",
+        "ko": "두움파남"
+      }
+    },
+    {
+      "source": "Explore yoga at Kairali",
+      "translations": {
+        "de": "Yoga bei Kairali entdecken",
+        "fr": "Découvrir le yoga chez Kairali",
+        "es": "Descubrir el yoga en Kairali",
+        "it": "Scopri lo yoga a Kairali",
+        "pt": "Explorar o ioga na Kairali",
+        "nl": "Ontdek yoga bij Kairali",
+        "ru": "Откройте для себя йогу в Kairali",
+        "hi": "Kairali में योग के बारे में जानें",
+        "ar": "تعرّف على اليوغا في Kairali",
+        "zh-Hans": "探索 Kairali 的瑜伽",
+        "ja": "Kairaliのヨガを知る",
+        "ko": "Kairali의 요가 알아보기"
+      }
+    },
+    {
+      "source": "Yoga theory and principles",
+      "translations": {
+        "de": "Yoga-Theorie und -Prinzipien",
+        "fr": "Théorie et principes du yoga",
+        "es": "Teoría y principios del yoga",
+        "it": "Teoria e principi dello yoga",
+        "pt": "Teoria e princípios do ioga",
+        "nl": "Yogatheorie en -principes",
+        "ru": "Теория и принципы йоги",
+        "hi": "योग का सैद्धांतिक ज्ञान और सिद्धांत",
+        "ar": "نظرية اليوغا ومبادئها",
+        "zh-Hans": "瑜伽理论与原理",
+        "ja": "ヨガの理論と原則",
+        "ko": "요가 이론 및 원리"
+      }
+    },
+    {
+      "source": "New to yoga",
+      "translations": {
+        "de": "Neu beim Yoga",
+        "fr": "Débuter le yoga",
+        "es": "Empezar con el yoga",
+        "it": "Primi passi nello yoga",
+        "pt": "Começar no ioga",
+        "nl": "Beginnen met yoga",
+        "ru": "Первые шаги в йоге",
+        "hi": "योग में नए हैं",
+        "ar": "جديد في اليوغا",
+        "zh-Hans": "瑜伽入门",
+        "ja": "ヨガが初めての方へ",
+        "ko": "요가를 처음 시작하는 분께"
+      }
+    },
+    {
+      "source": "Put yoga theory into practice",
+      "translations": {
+        "de": "Yoga-Theorie in die Praxis umsetzen",
+        "fr": "Mettre la théorie du yoga en pratique",
+        "es": "Llevar la teoría del yoga a la práctica",
+        "it": "Metti in pratica la teoria dello yoga",
+        "pt": "Pôr em prática a teoria do ioga",
+        "nl": "Breng yogatheorie in de praktijk",
+        "ru": "Примените теорию йоги на практике",
+        "hi": "योग के सैद्धांतिक ज्ञान को अभ्यास में लाएँ",
+        "ar": "طبّق نظرية اليوغا عمليًا",
+        "zh-Hans": "将瑜伽理论付诸实践",
+        "ja": "ヨガの理論を実践する",
+        "ko": "요가 이론 실천하기"
+      }
+    },
+    {
+      "source": "Yoga theory",
+      "translations": {
+        "de": "Yoga-Theorie",
+        "fr": "Théorie du yoga",
+        "es": "Teoría del yoga",
+        "it": "Teoria dello yoga",
+        "pt": "Teoria do ioga",
+        "nl": "Yogatheorie",
+        "ru": "Теория йоги",
+        "hi": "योग का सैद्धांतिक ज्ञान",
+        "ar": "نظرية اليوغا",
+        "zh-Hans": "瑜伽理论",
+        "ja": "ヨガ理論",
+        "ko": "요가 이론"
+      }
+    },
+    {
+      "source": "Care initiatives at the hospital, with gift vouchers coming soon.",
+      "translations": {
+        "de": "Behandlungsinitiativen im Krankenhaus; Geschenkgutscheine sind bald verfügbar.",
+        "fr": "Initiatives de soins à l’hôpital, avec des chèques-cadeaux bientôt disponibles.",
+        "es": "Iniciativas de atención en el hospital, con vales regalo próximamente disponibles.",
+        "it": "Iniziative di cura presso l’ospedale, con buoni regalo disponibili prossimamente.",
+        "pt": "Iniciativas de cuidados no hospital, com vales-presente disponíveis em breve.",
+        "nl": "Zorginitiatieven in het ziekenhuis, met cadeaubonnen die binnenkort beschikbaar komen.",
+        "ru": "Программы заботы в больнице; подарочные сертификаты скоро появятся.",
+        "hi": "अस्पताल में देखभाल की पहल; उपहार वाउचर जल्द आ रहे हैं।",
+        "ar": "مبادرات الرعاية في المستشفى، مع قسائم هدايا قادمة قريبًا.",
+        "zh-Hans": "医院的关怀计划，礼券即将推出。",
+        "ja": "病院でのケアへの取り組み。ギフト券は近日公開予定です。",
+        "ko": "병원의 돌봄 활동과 함께 기프트 바우처가 곧 출시됩니다."
+      }
+    }
+  ]
+}
