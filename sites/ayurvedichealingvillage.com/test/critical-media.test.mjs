@@ -13,7 +13,7 @@ test('held Digestive retains production image and no new preload without changin
   assert.equal(firstCriticalImage(html, route), null);
   assert.equal(firstCriticalImage(`<img src="${derivative}">`, route), null, 'old seed snapshots cannot introduce a new held-route preload');
   assert.equal(phoneCriticalMedia(html, '/other/'), phoneCriticalMedia(html));
-  const weight = '<img src="/ahv/assets/img/weightloss.webp"><img src="/ahv/assets/img/weight-loss.webp">';
+  const weight = '<img src="/ahv/assets/img/weightloss.webp">';
   assert.equal(phoneCriticalMedia(weight, '/weight-loss-programme/'), phoneCriticalMedia(weight));
   assert.equal(firstCriticalImage(phoneCriticalMedia(weight), '/weight-loss-programme/'), '/ahv/assets/img/weightloss-768-hero.avif');
   for (const variant of ['mobile', 'desktop']) {
@@ -119,4 +119,81 @@ test('home enquiry removes stale campaign context without changing programme or 
  assert.equal(descriptiveAwardLinks(stale,'/karkidaka-chikitsha-or-monsoon-wellness.html'),stale);
  const programme='<a href="/programme/" aria-label="Read more — Karkidaka">Read more</a>';
  assert.ok(descriptiveAwardLinks(programme,'/').includes(' — Karkidaka</span>'));
+});
+
+
+test('Weight ABOUT image normalizes conflicting duplicate priority and loading attributes', () => {
+  const src = '/ahv/assets/img/weight-loss-768.avif';
+  const input = `<img fetchpriority="high" data-dc-tpl="77" fetchpriority="low" loading="eager" LOADING = 'lazy' src="${src}" alt="Approved description" width="580" height="387" style="width:100%;height:auto">`;
+  const expected = `<img loading="lazy" fetchpriority="low" data-dc-tpl="77" src="${src}" alt="Approved description" width="580" height="387" style="width:100%;height:auto">`;
+  assert.equal(phoneCriticalMedia(input, '/weight-loss-programme/'), expected);
+  assert.equal(phoneCriticalMedia(expected, '/weight-loss-programme/'), expected, 'idempotent on corrected markup');
+  assert.equal(firstCriticalImage(expected, '/weight-loss-programme/'), null, 'ABOUT never becomes hero preload');
+});
+
+test('Weight priority correction is exact-route and exact-img-src scoped', () => {
+  const route = '/weight-loss-programme/';
+  const src = '/ahv/assets/img/weight-loss-768.avif';
+  const target = `<img src="${src}" fetchpriority="high">`;
+  for (const other of ['', '/', '/other/', '/digestive-wellness-gut-health-yoga-therapy/', '/weight-loss-programme-extra/', '/hi/weight-loss-programme/']) {
+    assert.equal(phoneCriticalMedia(target, other), target, other || 'default route');
+  }
+  for (const untouched of [
+    `<img data-src="${src}" src="/ahv/assets/img/other.webp" fetchpriority="high">`,
+    `<img src="${src}?other=1" loading="eager" fetchpriority="high">`,
+    `<img src="/ahv/assets/img/weight-history-768.avif" fetchpriority="high">`,
+    `<img src="/ahv/assets/img/kairali-colorful-logo.webp" fetchpriority="high">`,
+    `<img src="/ahv/assets/img/weightloss-768-hero.avif" fetchpriority="high">`,
+    `<div data-src="${src}" fetchpriority="high">Approved text</div>`,
+  ]) assert.equal(phoneCriticalMedia(untouched, route), untouched);
+  const hero = '<div style="background-image:url(/ahv/assets/img/weightloss-768-hero.avif)"></div>';
+  assert.equal(firstCriticalImage(phoneCriticalMedia(hero + target, route), route), '/ahv/assets/img/weightloss-768-hero.avif');
+});
+
+test('Weight priority correction handles existing attribute syntax and preserves data attributes', () => {
+  const input = `<IMG data-fetchpriority="high" data-loading="eager" SRC = '/ahv/assets/img/weight-loss.webp' FETCHPRIORITY = high loading=auto width="580" height="387" />`;
+  const expected = `<img loading="lazy" fetchpriority="low" data-fetchpriority="high" data-loading="eager" SRC = '/ahv/assets/img/weight-loss-768.avif' width="580" height="387" />`;
+  assert.equal(phoneCriticalMedia(input, '/weight-loss-programme/'), expected);
+});
+
+test('Weight loading correction remains self-contained when serialized into the live boot', () => {
+  const serialized = new Function(`return (${phoneCriticalMedia.toString()})`)();
+  const source = '<img fetchpriority="high" fetchpriority="low" src="/ahv/assets/img/weight-loss.webp">';
+  assert.equal(serialized(source, '/weight-loss-programme/'), phoneCriticalMedia(source, '/weight-loss-programme/'));
+  assert.equal(serialized('/ahv/assets/img/weight-loss.webp', '/weight-loss-programme/'), '/ahv/assets/img/weight-loss-768.avif', 'src-only interception still maps the URL');
+});
+
+test('actual Weight phone view retains the authored lazy ABOUT image and content', () => {
+  const view = JSON.parse(fs.readFileSync('public/ahv/views/ahv-page-weight-loss-programme-mobile.json', 'utf8'));
+  const original = view.template.match(/<img\b[^>]*\ssrc="\/ahv\/assets\/img\/weight-loss\.webp"[^>]*>/g);
+  assert.equal(original?.length, 1);
+  assert.match(original[0], /loading="lazy"/);
+  const previous = phoneCriticalMedia(view.template);
+  const mapped = phoneCriticalMedia(view.template, '/weight-loss-programme/');
+  const previousTag = previous.match(/<img\b[^>]*\ssrc="\/ahv\/assets\/img\/weight-loss-768\.avif"[^>]*>/g);
+  const corrected = mapped.match(/<img\b[^>]*\ssrc="\/ahv\/assets\/img\/weight-loss-768\.avif"[^>]*>/g);
+  assert.equal(previousTag?.length, 1);
+  assert.equal(corrected?.length, 1);
+  assert.equal((corrected[0].match(/\sloading=/g) || []).length, 1);
+  assert.equal((corrected[0].match(/\sfetchpriority=/g) || []).length, 1);
+  assert.match(corrected[0], /loading="lazy" fetchpriority="low"/);
+  assert.equal(mapped.replace(corrected[0], previousTag[0]), previous, 'all text, links, design, hero and other image markup unchanged');
+});
+
+test('actual Weight captured body changes only the ABOUT image loading attributes', () => {
+  const body = fs.readFileSync('english-candidate/prerender/weight-loss-programme.html', 'utf8');
+  const previous = phoneCriticalMedia(body);
+  const mapped = phoneCriticalMedia(body, '/weight-loss-programme/');
+  const tags = value => value.match(/<img\b[^>]*\ssrc="\/ahv\/assets\/img\/weight-loss-768\.avif"[^>]*>/g);
+  const before = tags(previous), after = tags(mapped);
+  assert.equal(before?.length, 1);
+  assert.equal(after?.length, 1);
+  assert.equal((after[0].match(/\sloading=/g) || []).length, 1);
+  assert.equal((after[0].match(/\sfetchpriority=/g) || []).length, 1);
+  assert.match(after[0], /loading="lazy" fetchpriority="low"/);
+  const stripLoading = tag => tag.replace(/\s(?:loading|fetchpriority)="[^"]*"/g, '');
+  assert.equal(stripLoading(after[0]), stripLoading(before[0]));
+  assert.equal(mapped.replace(after[0], before[0]), previous, 'only targeted loading attributes changed');
+  assert.equal(firstCriticalImage(mapped, '/weight-loss-programme/'), firstCriticalImage(previous, '/weight-loss-programme/'));
+  assert.equal(phoneCriticalMedia(mapped, '/weight-loss-programme/'), mapped);
 });

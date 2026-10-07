@@ -3,6 +3,13 @@ export function phoneCriticalMedia(html, routePath = '') {
   for (var name of ['weight-loss', 'weight-history']) {
     html = html.split('/ahv/assets/img/' + name + '.webp').join('/ahv/assets/img/' + name + '-768.avif');
   }
+  // Snapshot repair promoted this below-fold body image; retain its authored lazy/low intent.
+  if (routePath === '/weight-loss-programme/') html = html.replace(/<img\b[^>]*>/gi, function (tag) {
+    var src = tag.match(/\ssrc\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/i);
+    if (!src || (src[1] || src[2] || src[3]) !== '/ahv/assets/img/weight-loss-768.avif') return tag;
+    var attrs = tag.slice(4, -1).replace(/\s(?:loading|fetchpriority)\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '');
+    return '<img loading="lazy" fetchpriority="low"' + attrs + '>';
+  });
   for (var name of ['weightloss', 'digestive']) {
     // The held Digestive route keeps its production image in every locale.
     if (name === 'digestive' && routePath === '/digestive-wellness-gut-health-yoga-therapy/') continue;
