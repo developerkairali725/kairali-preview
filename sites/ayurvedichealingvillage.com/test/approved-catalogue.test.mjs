@@ -62,3 +62,27 @@ test('training overview links to the five approved courses without becoming a si
  const courses=route.components.find(c=>c.ptr==='/approved-ayurveda-courses').blocks.find(b=>b.kind==='list').items;
  assert.equal(courses.length,5);assert.deepEqual(Array.from(courses,x=>x.tree[0].attrs.href).sort(),index.programmes.filter(p=>p.course).map(p=>p.route).sort());
 });
+const hubCardLinks=template=>{const main=template.slice(template.indexOf('<main'),template.indexOf('</main>'));
+ return main.split('<section class="catalogue-card">').slice(1).map(card=>Array.from(card.matchAll(/<a[^>]*href="([^"]+)"[^>]*>([^<]*)<\/a>/g),m=>({href:m[1],text:m[2].replaceAll('&amp;','&')})));};
+const hubViolations=template=>{
+ const cards=hubCardLinks(template),problems=[];const byRoute=new Map(index.programmes.map(p=>[p.route,p]));
+ const training=cards.find(c=>c.some(l=>l.href==='/ayurveda-training-programme/'));if(!training)return['training card or its View Ayurveda courses link missing'];
+ const direct=training.filter(l=>l.href!=='/ayurveda-training-programme/');
+ const approved=index.programmes.filter(p=>p.course);
+ if(JSON.stringify(direct.map(l=>l.href))!==JSON.stringify(approved.map(p=>p.route)))problems.push('training links '+direct.map(l=>l.href).join(','));
+ for(const l of direct)if(byRoute.get(l.href)?.name!==l.text)problems.push('label is not the approved identity for '+l.href);
+ const products=cards.flat().map(l=>l.href).filter(h=>byRoute.has(h));
+ const expected=index.programmes.filter(p=>(p.from&&p.cats.includes('Y'))||p.availability==='enquiry_only'||p.availability==='coming_soon'||p.course).map(p=>p.route);
+ if(JSON.stringify([...products].sort())!==JSON.stringify([...expected].sort()))problems.push('hub product links '+products.join(','));
+ for(const h of cards.flat().map(l=>l.href))if(!byRoute.has(h)&&!['/yoga-meditation-programs/','/ayurveda-training-programme/'].includes(h))problems.push('unexpected destination '+h);
+ return problems;
+};
+for(const side of ['desktop','mobile'])test(`${side}: Yoga & Training hub links the five approved courses directly, keeps the course hub and every prior destination`,()=>{
+ const {template}=read(`public/ahv/views/ahv-page-yoga-meditation-training-${side}.json`);
+ assert.deepEqual(hubViolations(template),[]);
+ const approved=index.programmes.filter(p=>p.course);
+ const wrong=template.replace(`href="${approved[2].route}"`,'href="/intensive-ayurveda-training-program/"');
+ assert.notEqual(wrong,template);assert.ok(hubViolations(wrong).length>0,'wrong course route must be rejected');
+ const missing=template.replace(/<li><a href="\/one-day-ayurveda-workshop-program-kerala\/">[^<]*<\/a><\/li>/,'');
+ assert.notEqual(missing,template);assert.ok(hubViolations(missing).length>0,'missing course link must be rejected');
+});
