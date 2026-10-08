@@ -26,7 +26,9 @@ export const SPELLING = {
 export type ProductionSlug =
   | "treatment-packages" | "panchakarma" | "pain-management" | "family-ayurvedic-retreat"
   // Review batch 1
-  | "monsoon-wellness" | "rejuvenation-detox" | "ayurveda-retreat" | "wellness-kerala" | "cleansing-centre";
+  | "monsoon-wellness" | "rejuvenation-detox" | "ayurveda-retreat" | "wellness-kerala" | "cleansing-centre"
+  // Review batch 2
+  | "treatment-kerala" | "south-india-cities" | "brand" | "weight-management" | "lp-south-india";
 
 export type RouteBinding = {
   slug: ProductionSlug;
@@ -197,6 +199,12 @@ const SPECS: Spec[] = [
   { slug: "ayurveda-retreat", route: "/ayurveda-retreat-kerala.html", variant: "B", hero: "wx-hero", pathway: "kt-199", form: r10("retreat") },
   { slug: "wellness-kerala", route: "/wellness-resort-kerala.html", variant: "B", hero: "kt-314", pathway: "kt-202", form: enquiry("/wellness-resort-kerala.html"), og: OG_EN_US("wellness-resort-kerala.html.jpg") },
   { slug: "cleansing-centre", route: "/kairali-cleansing-centre.html", variant: "A", hero: "kt-202", mobile: "kt-190", pathway: "kt-199", form: enquiry("/kairali-cleansing-centre.html"), og: OG_EN_US("kairali-cleansing-centre.html.jpg") },
+  // Review batch 2
+  { slug: "treatment-kerala", route: "/treatment-in-kerala.html", variant: "A", hero: "kt-199", mobile: "kt-190", pathway: "kt-202", form: enquiry("/treatment-in-kerala.html"), og: OG_EN_US("treatment-in-kerala.html.jpg") },
+  { slug: "south-india-cities", route: "/Ayurveda_Treatment_Neo_S.India_Cities.html", variant: "D", hero: "wx-hero", pathway: "kt-199", form: enquiry("/Ayurveda_Treatment_Neo_S.India_Cities.html"), og: OG_EN_US("ayurveda_treatment_neo_s.india_cities.html.jpg") },
+  { slug: "brand", route: "/Kairali_Brand_and_Competition_Neo-original.html", variant: "D", hero: "kt-314", pathway: "kt-202", form: enquiry("/Kairali_Brand_and_Competition_Neo-original.html"), og: OG_EN_US("kairali_brand_and_competition_neo-original.html.jpg") },
+  { slug: "weight-management", route: "/weight-loss.html", variant: "C", hero: "kt-314", pathway: "kt-202", form: enquiry("/weight-loss.html"), og: OG_EN_US("weight-loss.html.jpg") },
+  { slug: "lp-south-india", route: "/lp/ayurveda-treatment-south-india/", variant: "D", hero: "kt-199", pathway: "kt-202", form: enquiry("/lp/ayurveda-treatment-south-india/"), og: OG_LP("ahv/assets/img/wx-welcome.webp") },
 ];
 
 for (const sp of SPECS) {

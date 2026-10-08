@@ -12,6 +12,11 @@ import rejuvenationDetox from "./rejuvenation-detox.ts";
 import ayurvedaRetreat from "./ayurveda-retreat.ts";
 import wellnessKerala from "./wellness-kerala.ts";
 import cleansingCentre from "./cleansing-centre.ts";
+import treatmentKerala from "./treatment-kerala.ts";
+import southIndiaCities from "./south-india-cities.ts";
+import brand from "./brand.ts";
+import weightManagement from "./weight-management.ts";
+import lpSouthIndia from "./lp-south-india.ts";
 
 export const COPY: Record<ProductionSlug, ProductionCopy> = {
   "treatment-packages": treatmentPackages,
@@ -23,4 +28,9 @@ export const COPY: Record<ProductionSlug, ProductionCopy> = {
   "ayurveda-retreat": ayurvedaRetreat,
   "wellness-kerala": wellnessKerala,
   "cleansing-centre": cleansingCentre,
+  "treatment-kerala": treatmentKerala,
+  "south-india-cities": southIndiaCities,
+  brand,
+  "weight-management": weightManagement,
+  "lp-south-india": lpSouthIndia,
 };
