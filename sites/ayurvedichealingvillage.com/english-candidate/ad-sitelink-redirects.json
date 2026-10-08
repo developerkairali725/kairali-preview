@@ -13,5 +13,10 @@
     "source": "/de/behandlung-in-kerala.html",
     "destination": "/lp/behandlung-in-kerala/",
     "evidence": "Vikas 22 September 2026 advertising URL audit; source confirmed404 on24September. German content preserved in German campaign destination."
+  },
+  {
+    "source": "/treatment-in-kerala-russian.html",
+    "destination": "/lp/treatment-in-kerala-russian/",
+    "evidence": "Owner, 8 October 2026: the Russian campaign moves to its /lp/ campaign route (reviewed Russian copy, Russian interface, campaign enquiry form). One 301 hop; the query string (gclid, utm_*) is carried by Next.js redirects, so ad links keep working."
   }
 ]

@@ -208,7 +208,7 @@ test("remaining 20: each keeps the lead identity of the page it replaces", () =>
   for (const slug of PRODUCTION_SLUGS.filter((s) => ROUTES[s].productionForm.profile === "campaign-enquiry")) {
     assert.deepEqual(ROUTES[slug].productionForm, { formVariant: ROUTES[slug].route, downloadGuide: true, profile: "campaign-enquiry" }, slug);
   }
-  assert.equal(PRODUCTION_SLUGS.filter((s) => ROUTES[s].productionForm.profile === "campaign-enquiry").length, 12);
+  assert.equal(PRODUCTION_SLUGS.filter((s) => ROUTES[s].productionForm.profile === "campaign-enquiry").length, 17);
 });
 
 test("no-JS: the production enquiry posts to /api/forms-unavailable (never reads the body); previews keep /api/lead/", () => {
@@ -343,15 +343,15 @@ test("production consent preserves the current legal acknowledgement and documen
 test("campaign enquiry routes: the request body of app/(lp)/_components/campaign-enquiry-form.tsx, in order; nothing is sent for a bot", async () => {
   const { buildCampaignEnquiryLead, productionLeadAdapter } = await import("../campaign-v2/forms/adapter.ts");
   const { campaignEnquiryForm } = await import("../campaign-v2/forms/schema.ts");
-  const production = ROUTES["wellness-kerala"].productionForm;
-  const env = { location: { origin: "https://ayurvedichealingvillage.com", pathname: "/wellness-resort-kerala.html", search: "?gclid=abc&utm_source=google&x=1" }, referrer: "https://www.google.com/search?q=x" };
+  const production = ROUTES["lp-weight-management"].productionForm;
+  const env = { location: { origin: "https://ayurvedichealingvillage.com", pathname: "/lp/weight-loss/", search: "?gclid=abc&utm_source=google&x=1" }, referrer: "https://www.google.com/search?q=x" };
   const values = { fullName: " Asha ", email: "asha@example.com ", phone: " +91 98765 43210 ", message: " Hello ", consent: true, honeypot: "" };
   const body = buildCampaignEnquiryLead(values, { token: "t-1", locale: "en", production, env });
   assert.deepEqual(Object.keys(body), ["form", "submissionToken", "site_language", "lead_source_url", "referrer", "gclid", "utm_source", "fields"]);
-  assert.deepEqual(body.fields, { landing_page_path: "/wellness-resort-kerala.html", form_variant: "/wellness-resort-kerala.html", fname: "Asha", email: "asha@example.com", phone: "+91 98765 43210", message: "Hello", consent: true });
-  assert.equal(body.lead_source_url, "https://ayurvedichealingvillage.com/wellness-resort-kerala.html?gclid=abc&utm_source=google");
+  assert.deepEqual(body.fields, { landing_page_path: "/lp/weight-loss/", form_variant: "/lp/weight-loss/", fname: "Asha", email: "asha@example.com", phone: "+91 98765 43210", message: "Hello", consent: true });
+  assert.equal(body.lead_source_url, "https://ayurvedichealingvillage.com/lp/weight-loss/?gclid=abc&utm_source=google");
   assert.equal(body.referrer, "https://www.google.com/");
-  assert.equal(buildCampaignEnquiryLead(values, { token: "t", locale: "de", production: ROUTES["cleansing-centre"].productionForm, env }).site_language, "de");
+  assert.equal(buildCampaignEnquiryLead(values, { token: "t", locale: "de", production: ROUTES["lp-behandlung-kerala"].productionForm, env }).site_language, "de");
   // The live form's fields: phone optional, no country-code field; German labels are that form's own.
   for (const l of ["en", "de", "ru"]) {
     const s = campaignEnquiryForm(l);
