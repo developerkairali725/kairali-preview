@@ -138,9 +138,22 @@ const STATIC_BOOT = `
   if (cfg.staticHome) {
     var stickyHeader = host.querySelector('header[style*="translateY"]');
     if (stickyHeader && window.matchMedia("(min-width:" + cfg.breakpoint + "px)").matches) {
+      // Keep the header revealed while a keyboard-focused descendant holds focus, so its focus ring is visible at the top of the page.
+      var stickyHeaderKeyboardFocus = false;
       function updateStickyHeader() {
-        stickyHeader.style.transform = window.scrollY > 520 ? "translateY(0)" : "translateY(-110%)";
+        stickyHeader.style.transform = window.scrollY > 520 || stickyHeaderKeyboardFocus ? "translateY(0)" : "translateY(-110%)";
       }
+      stickyHeader.addEventListener("focusin", function (event) {
+        var focusVisible = true;
+        try { focusVisible = event.target.matches(":focus-visible"); } catch (error) {}
+        stickyHeaderKeyboardFocus = focusVisible;
+        updateStickyHeader();
+      });
+      stickyHeader.addEventListener("focusout", function (event) {
+        if (event.relatedTarget && stickyHeader.contains(event.relatedTarget)) return;
+        stickyHeaderKeyboardFocus = false;
+        updateStickyHeader();
+      });
       window.addEventListener("scroll", updateStickyHeader, { passive: true });
       updateStickyHeader();
     }
