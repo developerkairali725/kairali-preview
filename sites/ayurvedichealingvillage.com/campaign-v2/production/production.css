@@ -356,6 +356,12 @@ html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
   /* …and the text card spans two fixed 220px rows, too short for its copy in the narrow tablet column (text ran out
      of the card, "View all photos" was clipped); those rows now grow with it. Where it fits (desktop) they stay 220px. */
   .lp-prod[data-variant="B"] .lp-vil { grid-template-rows: minmax(220px, auto) minmax(220px, auto) 220px; }
+  /* The card is a flex column aligned to the start, so its heading block took its min-content width: the widest
+     unbreakable word of the 44px heading (overflow-wrap: break-word does not lower min-content). Where that word is
+     wider than the tablet card, heading and paragraph ran out under the photo. The block now keeps to the card and
+     the heading hyphenates (break-word stays as the fallback). Same type, same words. */
+  .lp-prod[data-variant="B"] .lp-vil__top .lp-head { min-width: 0; max-width: 100%; }
+  .lp-prod[data-variant="B"] .lp-vil__top .lp-h2 { hyphens: auto; }
   /* B rhythm: 28px between sections read as the 14px tile gap; sections open at 56px, and the night band stands
      clear of the photo tile above it. The village keeps its 80px. */
   .lp-prod[data-variant="B"] .lp-sec:not(.lp-pplace) { padding-top: 56px; }
