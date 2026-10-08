@@ -76,8 +76,39 @@ html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
 }
 .lp-prod :is(.lp-plead, .lp-poffer, .lp-ppath, .lp-pplace, .lp-pstay, .lp-enq__intro) p a:hover { text-decoration-color: currentColor; }
 
-/* Hero: what "free" covers, under the buttons. */
-.lp-prod .lp-hero__note { font-size: 14px; line-height: 1.5; max-width: 470px; color: color-mix(in srgb, var(--lp-on-night) 78%, transparent); }
+/* Hero: what "free" covers, under the buttons, in the colour of the ground it actually sits on. C and D set it on
+   their light ground / white headline card, so it takes the skin's muted text (muted on ground and on surface are
+   tested ≥ 4.5:1 in every skin, test/lp-v2-skins.test.mjs); only A's hero is the night band. B's hero card already
+   says the same sentence beside its CTA (ConsultCard .lp-consult__sub), so B does not repeat it above the card. */
+.lp-prod .lp-hero__note { font-size: 14px; line-height: 1.5; max-width: 470px; color: var(--lp-muted); }
+.lp-prod[data-variant="A"] .lp-hero__note { color: color-mix(in srgb, var(--lp-on-night) 78%, transparent); }
+.lp-prod[data-variant="B"] .lp-hero__note { display: none; }
+
+/* Hero CTA: base.css's `.lp a { color: inherit }` outranks `.lp-btn--primary`, so on C the link took the ink colour
+   over the wine button. A sets its own ivory-on-night CTA; the light-headed variants get the skin's on-primary
+   (onPrimary on primary is tested ≥ 4.5:1 in every skin), as .lp-pcta and the enquiry buttons already do. */
+.lp-prod:not([data-variant="A"]) a.lp-hero__cta { color: var(--lp-on-primary); }
+
+/* Russian (C) headline: the long Russian words ("индивидуальным" ≈ 8em in the system serif) must never be split
+   mid-word by the hero's overflow-wrap guard, which stays. The type is sized so the longest word fits the column it
+   sets in: desktop 7/12 of (100vw − 64·2 padding − 56 gap), phones 100vw − 2·16, each with ~7% room for the
+   platform's Cyrillic fallback face. Wide screens keep the kit's 92px cap; English and German are unchanged. */
+@media (min-width: 768px) {
+  .lp-prod[data-variant="C"]:lang(ru) .lp-hero h1 { font-size: clamp(36px, calc((100vw - 184px) / 14.75), 92px); }
+}
+@media (max-width: 767px) {
+  .lp-prod[data-variant="C"]:lang(ru) .lp-hero h1 { font-size: min(42px, calc((100vw - 32px) / 8.6)); }
+}
+
+/* Russian phone action bar (the site's own review-chrome.js bar: Позвонить · Запрос · Бесплатная консультация ·
+   Chat). Four equal columns leave the consultation tile ~90px of text, less than "КОНСУЛЬТАЦИЯ" (≈ 105px in 12px
+   bold caps), so its overflow guard split the word ("КОНСУЛЬТАЦ / ИЯ"). On the Russian route only, the columns are
+   weighted by their labels so the tile reads "БЕСПЛАТНАЯ / КОНСУЛЬТАЦИЯ" on two whole-word lines: at 320px the
+   tracks are ≈ 84 / 60 / 116 / 60px, every one ≥ 48px wide and still 52px tall. Type, colours, order and the
+   overflow guard itself are unchanged; English and German keep four equal columns. */
+@media (max-width: 699px) {
+  html[data-lp-surface="production"]:lang(ru) #ahv-cta-bar { grid-template-columns: minmax(0, 1.05fr) minmax(0, .75fr) minmax(0, 1.45fr) minmax(0, .75fr); }
+}
 
 /* Enquiry: the closing invitation, then the same note. */
 .lp-prod .lp-enq__support { font-size: 15px; }
