@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 const routes = JSON.parse(fs.readFileSync('l10n/routes.json','utf8')).routes;
 const reviewed = fs.readFileSync('public/design/review-chrome.js','utf8');
+const chatLinks = reviewed.slice(reviewed.indexOf('  function chatLinks(f)'), reviewed.indexOf('  // Owner 5 Oct:'));
 const controls = reviewed.slice(reviewed.indexOf('  // Owner 5 Oct:'), reviewed.indexOf('  // OWNER-REG-02'));
 const actions = reviewed.slice(reviewed.indexOf('  function ctaBar()'), reviewed.indexOf('  window.addEventListener("resize"'));
 const home = reviewed.slice(reviewed.indexOf('  function readableHomeLabels(container)'), reviewed.indexOf('  function pass()'));
@@ -10,6 +11,9 @@ for (const locale of fs.readdirSync('public/ahv/l10n')) {
  const base = `public/ahv/l10n/${locale}/design`;
  if (!fs.existsSync(`${base}/chrome.js`)) continue;
  let source = fs.readFileSync(`${base}/chrome.js`,'utf8');
+ const chatStart = source.indexOf('  function chatLinks(f)'), chatEnd = source.indexOf('  // One shared pair', chatStart);
+ if (chatStart < 0 || chatEnd < 0 || !chatLinks.includes('a.__ahvChatBound')) throw new Error(`Chat link insertion boundary missing: ${locale}`);
+ source = source.slice(0,chatStart) + chatLinks + source.slice(chatEnd);
  const localeKey = locale === 'zh' ? 'zh-Hans' : locale;
  const paths = Object.fromEntries(Object.entries(routes).map(([path, targets]) => [path, targets[localeKey] || path]));
  const localeActions = actions.replace('var lp = window.AHV_LOCAL_PATHS,', `var lp = window.AHV_LOCAL_PATHS || ${JSON.stringify(paths)},`);

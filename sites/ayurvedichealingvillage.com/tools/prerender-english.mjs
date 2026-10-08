@@ -42,6 +42,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
+import { createCaptureEvaluation, captureContentRequirements, assertCapturePage } from './capture-page-guard.mjs';
+import { createCaptureFailureRecorder, inspectCaptureFailureRoot } from './capture-failure-diagnostics.mjs';
 
 const require_ = createRequire(import.meta.url);
 const loadPlaywright = () => {
@@ -84,6 +86,9 @@ const HEIGHT = Number(arg("height", "900")) || 900;
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const SITE = path.resolve(HERE, "..");
+const diagnosticLocalePrefix = LOCALE ? JSON.parse(fs.readFileSync(path.join(SITE, 'l10n/locales.json'), 'utf8'))[LOCALE].prefix : null;
+const enquirySource = fs.readFileSync(path.join(SITE, 'public/ahv/assets/enquiry-family-data.js'), 'utf8');
+const enquiryRecords = JSON.parse(enquirySource.slice(enquirySource.indexOf('{'), enquirySource.lastIndexOf('}') + 1)).routes;
 const L10N_ROUTES = LOCALE ? JSON.parse(fs.readFileSync(path.join(SITE, "l10n/routes.json"), "utf8")).routes : null;
 const routes = JSON.parse(
   fs.readFileSync(path.join(SITE, "english-candidate/route-manifest.json"), "utf8"),
@@ -228,7 +233,7 @@ const run = async () => {
   );
   if (LIMIT) list = list.slice(0, LIMIT);
 
-  const browser = await chromium.launch();
+  const browser = await chromium.launch(arg("channel", null) ? { channel: arg("channel", null) } : {});
   const index = [];
   let failures = 0;
 
@@ -250,9 +255,31 @@ const run = async () => {
     });
     const page = await ctx.newPage();
     let rec = { path: route.path, ok: false };
+    let captureStage = 'navigation';
+    const diagnosticViews = [route.mobileView,route.desktopView].filter(Boolean);
+    const diagnosticViewPaths = diagnosticViews.map(id => (LOCALE ? '/ahv/l10n/'+diagnosticLocalePrefix : '/ahv')+'/views/'+id+'.json');
+    const failureRecorder = createCaptureFailureRecorder(BASE,[urlPath(route),...diagnosticViewPaths,'/api/consent-region/','/icon.svg','/ahv/support.js','/ahv/image-slot.js','/ahv/preview/portable-preview.js','/design/lead-receipt.js']);
+    page.on('pageerror', error => failureRecorder.pageError(error));
+    page.on('requestfailed', request => failureRecorder.requestFailed(request.url()));
     try {
-      await page.goto(BASE + urlPath(route), { waitUntil: "networkidle", timeout: 60000 });
+      const response = await page.goto(BASE + urlPath(route), { waitUntil: "networkidle", timeout: 60000 });
+      if (process.argv.includes("--require-live-runtime")) {
+        captureStage = 'response-validation';
+        if (response?.status() !== 200) throw new Error(`Capture response ${response?.status()}: ${urlPath(route)}`);
+        if (new URL(page.url()).pathname !== new URL(BASE + urlPath(route)).pathname) throw new Error("Capture followed an unexpected redirect");
+        // A substantial old snapshot is not proof of the current translated runtime.
+        // Fail closed if hydration retains a stale fallback or emits a runtime error.
+        captureStage = 'live-runtime-wait';
+        await page.waitForFunction(() => {
+          const root = document.getElementById("ahv-design-root");
+          if (!root || root.hasAttribute("data-ahv-error")) return false;
+          if (root.getAttribute("data-ahv-snapshot-state") === "retired") return true;
+          return root.hasAttribute("data-ahv-view") && !root.hasAttribute("data-ahv-live-pending") &&
+            !root.querySelector("[data-ahv-snapshot]") && (root.innerText || "").trim().length > 200;
+        }, null, { timeout: 45000 });
+      }
       // The runtime mounts, compiles the template and binds the route's dataset.
+      captureStage = 'body-wait';
       await page.waitForFunction(
         () => {
           const r = document.getElementById("ahv-design-root");
@@ -262,9 +289,14 @@ const run = async () => {
         { timeout: 45000 },
       );
       await page.waitForTimeout(1200);
-      const got = await page.evaluate(EXTRACT);
+      captureStage = 'content-extraction';
+      const { liveContentProof, contentProof, got } = await page.evaluate(createCaptureEvaluation(EXTRACT), captureContentRequirements(route.path, enquiryRecords.find(row => row.path === route.path), LOCALE));
+      captureStage = 'content-validation';
+      assertCapturePage(liveContentProof, route.path);
+      assertCapturePage(contentProof, route.path);
       if (!got || !got.html) throw new Error("empty extraction");
       const file = snapshotName(route.path);
+      captureStage = 'snapshot-write';
       // The snapshot strips every script (see EXTRACT). A view that carries a
       // FAQPage JSON-LD block gets THAT block re-appended, taken from the same
       // payload the page rendered (English or the locale copy), so the visible
@@ -282,7 +314,7 @@ const run = async () => {
         if (faq) html += `<script type="application/ld+json">${faq}</script>`;
       }
       // Browser serialization may leave indentation on otherwise blank lines.
-      fs.writeFileSync(path.join(outDir, file), html.replace(/[ \t]+$/gm, ""));
+      fs.writeFileSync(path.join(outDir, file), html.replace(/[ \t]+$/gm, "").trimEnd() + "\n");
       rec = {
         path: route.path,
         ok: true,
@@ -292,10 +324,16 @@ const run = async () => {
         imgs: got.imgs,
         flattened: got.flattened,
         leftovers: got.leftovers,
+        liveRuntimeVerified: process.argv.includes("--require-live-runtime"),
+        contentProof,
+        liveContentProof,
       };
     } catch (e) {
       failures++;
       rec.error = String(e).slice(0, 160);
+      rec.diagnostics = {stage:captureStage,...failureRecorder.snapshot()};
+      try { rec.diagnostics.root = await page.evaluate(inspectCaptureFailureRoot,{allowedViews:diagnosticViews}); }
+      catch { rec.diagnostics.root = {observationUnavailable:true}; }
     }
     await ctx.close();
     index.push(rec);

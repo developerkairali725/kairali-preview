@@ -13,6 +13,23 @@
     return D ? (D.routes.find(r => r.path === want) || null) : null;
   }
   function applyHead(R) { window.AHV_COLLECTION_RENDER.applyHead(R); }
+  function relatedGroups(links) {
+    const groups = new Map();
+    const labelFor = (href) => {
+      const path = new URL(href, A).pathname;
+      if (/\/(?:vision-and-mission|social-cultural-environmental-commitment|awards-and-accreditations|accreditations)\//.test(path)) return 'About Kairali';
+      if (/\/(?:kairali-hospitality|arogya-kendra|arogya-shala|kairali-ayurvedic-centre|ayurvedic-franchise|kairali-institute-of-ayurveda-and-panchakarma-therapy)\//.test(path)) return 'Kairali Group & education';
+      if (/\/(?:new-to-|why-|live-to-|ayurveda-retreats-for-everyone|what-is-)/.test(path)) return 'Ayurveda & yoga knowledge';
+      if (path === '/ayurvedic-resturant-and-cooking-at-healing-village/') return 'Food & cooking at Kairali';
+      return 'Products & publications';
+    };
+    links.forEach((link) => {
+      const label = labelFor(link.href);
+      if (!groups.has(label)) groups.set(label, []);
+      groups.get(label).push({ label: link.label, url: /^https?:/i.test(link.href) ? link.href : A + link.href });
+    });
+    return Array.from(groups, ([label, links]) => ({ label, links }));
+  }
   function histVals(R, guard) {
     const P = window.AHV_COLLECTION_RENDER;
     const byPlacement = (name) => R.images.filter(i => i.placement === name);
@@ -35,6 +52,7 @@
         el: P.sourceBlocks(c.blocks, 'h' + ci, guard)
       })),
       hasRelated: !!(R.relatedLinks && R.relatedLinks.length),
+      relatedGroups: relatedGroups(R.relatedLinks || []),
       relatedLinks: (R.relatedLinks || []).map((l, k) => ({ key: 'rl' + k, label: l.label,
         url: /^https?:/i.test(l.href) ? l.href : (A + l.href) }))
     };

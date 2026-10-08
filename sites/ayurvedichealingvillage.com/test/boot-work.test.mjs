@@ -110,3 +110,14 @@ test('translated review labels stabilize without repeatedly mutating unchanged t
   assert.equal(writes, 1);
   assert.equal(value, '  Ayurvedic dining  ');
 });
+
+const selfLinks = source.slice(source.indexOf('  function retargetSelfLinks(root)'), source.indexOf('  var hpNames'));
+test('form self-link repair preserves section, query and language targets after localization', () => {
+  const path = '/kairali-air-india-maharaja-club.html';
+  const link = (href, hreflang = false) => ({href, getAttribute(){return this.href;},setAttribute(_, value){this.href=value;},hasAttribute(name){return name==='hreflang' && hreflang;}});
+  const links = [link(path+'#v3-about'),link('https://ayurvedichealingvillage.com'+path+'#v3-features'),link(path+'?campaign=partner'),link(path,true),link('#main-content'),link('/another-page/'),link(path)];
+  const root = {nodeType:1,matches:()=>false,querySelectorAll:()=>links};
+  const ctx={URL,host:{querySelector:()=>({id:'v3-form'})},window:{location:new URL('https://ayurvedichealingvillage.com'+path)}};
+  vm.createContext(ctx);vm.runInContext(selfLinks,ctx);ctx.retargetSelfLinks(root);
+  assert.deepEqual(links.map(a=>a.href),[path+'#v3-about','https://ayurvedichealingvillage.com'+path+'#v3-features',path+'?campaign=partner',path,'#main-content','/another-page/','#v3-form']);
+});

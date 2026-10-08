@@ -2,6 +2,31 @@ import fs from 'node:fs';
 import { createRequire } from 'node:module';
 const require = createRequire(process.cwd() + '/package.json');
 const sharp = require(require.resolve('sharp', { paths: [require.resolve('next')] }));
+// Two audited Weight Loss body images use the existing phone AVIF55 preset.
+for (const name of ['weight-loss', 'weight-history']) {
+  const source = `public/ahv/assets/img/${name}.webp`, dest = `public/ahv/assets/img/${name}-768.avif`;
+  const original = fs.readFileSync(source), before = await sharp(original).metadata();
+  const output = await sharp(original).resize({ width: 768, withoutEnlargement: true }).avif({ quality: 55 }).toBuffer();
+  const after = await sharp(output).metadata();
+  if (after.width !== Math.min(768, before.width) || Math.abs(after.width / after.height - before.width / before.height) > 0.005) throw Error('Weight Loss body image dimensions/aspect changed');
+  if (!fs.existsSync(dest) || !fs.readFileSync(dest).equals(output)) fs.writeFileSync(dest, output);
+  if (!fs.readFileSync(source).equals(original)) throw Error('Weight Loss body image original changed');
+  console.log(`${name}: ${original.length} -> ${output.length} bytes; original retained`);
+}
+if (process.argv.includes('--weight-body-only')) process.exit(0);
+// Two main-programme phone heroes use the established 768px / AVIF55 preset.
+// This targeted mode never rewrites unrelated derivatives or original images.
+for (const name of ['weightloss', 'digestive']) {
+  const source = `public/ahv/assets/img/${name}.webp`, dest = `public/ahv/assets/img/${name}-768-hero.avif`;
+  const original = fs.readFileSync(source), before = await sharp(original).metadata();
+  const output = await sharp(original).resize({ width: 768, withoutEnlargement: true }).avif({ quality: 55 }).toBuffer();
+  const after = await sharp(output).metadata();
+  if (after.width !== Math.min(768, before.width) || Math.abs(after.width / after.height - before.width / before.height) > 0.005) throw Error('Programme hero dimensions/aspect changed');
+  if (!fs.existsSync(dest) || !fs.readFileSync(dest).equals(output)) fs.writeFileSync(dest, output);
+  if (!fs.readFileSync(source).equals(original)) throw Error('Programme hero original changed');
+  console.log(`${name}: ${original.length} -> ${output.length} bytes; original retained`);
+}
+if (process.argv.includes('--programme-heroes-only')) process.exit(0);
 for (const { name, width, quality, suffix } of [
   { name: 'wx-hero', width: 544, quality: 74, suffix: '-544' },
   { name: 'ktahv-abhyanga-oil-therapy-2025', width: 544, quality: 82, suffix: '-544' },

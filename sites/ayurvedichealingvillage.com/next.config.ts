@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { captureConfigEnabled } from "./app/(english)/_families/capture-runtime.mjs";
 import documentRedirects from "./english-candidate/document-redirects.json";
 import legacyEnglishRedirects from "./english-candidate/legacy-english-redirects.json";
 import adSitelinks from "./english-candidate/ad-sitelink-redirects.json";
@@ -165,7 +166,7 @@ const nextConfig: NextConfig = {
     // also a single hop, just by the other rule. They are ad-landing URLs that
     // were never in the manifest: unlisted in the sitemap and linked from no
     // page on the live site, which is why nothing surfaced them until now.
-    return [...LEGACY_SITEMAPS.map((source) => ({source,destination:"/sitemap.xml",statusCode:301})), {source:"/offers/defence-paramilitary-personnel-get-upto-30-off/",destination:"/offers/defence-and-paramilitary/",statusCode:301}, ...Object.entries(REDIRECT_MAP.redirects).map(([source, rule]) => ({
+    return [...LEGACY_SITEMAPS.map((source) => ({source,destination:"/sitemap.xml",statusCode:301})), ...Object.entries(REDIRECT_MAP.redirects).map(([source, rule]) => ({
       source,
       destination: rule.to,
       statusCode: REDIRECT_MAP.statusCode,
@@ -185,4 +186,9 @@ const nextConfig: NextConfig = {
   // cutover map above stays commented; nothing about the live Ads URLs changes.
 };
 
-export default nextConfig;
+export default function config(phase: string): NextConfig {
+  // Reject capture before build/start/export, even if NODE_ENV was inherited
+  // as development. Next supplies this phase independently of NODE_ENV.
+  captureConfigEnabled(phase);
+  return nextConfig;
+}

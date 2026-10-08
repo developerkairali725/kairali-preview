@@ -81,10 +81,25 @@ for (const r of includedRoutes()) {
 const out = [...units.values()].sort((a, b) => a.order - b.order).map((u) => ({
   id: u.id, order: u.order, source: u.source, sourceHash: u.sourceHash, roles: [...u.roles].sort(), files: [...u.files].sort().slice(0, 6), fileCount: u.files.size, occurrences: u.n,
 }));
-fs.mkdirSync(rel("l10n/source"), { recursive: true });
 const setHash = sha256(out.map((u) => u.sourceHash).join("\n"));
-fs.writeFileSync(rel("l10n/source/units.json"), JSON.stringify({ sourceSetHash: setHash, count: out.length, units: out }, null, 1) + "\n");
-fs.writeFileSync(rel("l10n/source/coverage.json"), JSON.stringify({ sourceSetHash: setHash, files: coverage, errors }, null, 1) + "\n");
 const chars = out.reduce((a, u) => a + u.source.length, 0);
-console.log(JSON.stringify({ units: out.length, chars, files: coverage.length, errors: errors.length, setHash }, null, 1));
-if (errors.length) console.log(errors.slice(0, 10));
+const summary = { units: out.length, chars, files: coverage.length, errors: errors.length, setHash };
+if (process.argv.includes("--check")) {
+  // Read-only drift audit: new source must be translated by its own id/hash.
+  const frozen = JSON.parse(fs.readFileSync(rel("l10n/source/units.json"), "utf8"));
+  const before = new Map(frozen.units.map((u) => [u.id, u]));
+  const current = new Map(out.map((u) => [u.id, u]));
+  const added = out.filter((u) => before.get(u.id)?.sourceHash !== u.sourceHash);
+  const removed = frozen.units.filter((u) => current.get(u.id)?.sourceHash !== u.sourceHash);
+  const report = { ...summary, matches: frozen.sourceSetHash === setHash, frozenSetHash: frozen.sourceSetHash, added, removed, errors };
+  const reportIndex = process.argv.indexOf("--report");
+  if (reportIndex !== -1) fs.writeFileSync(process.argv[reportIndex + 1], JSON.stringify(report, null, 2) + "\n");
+  console.log(JSON.stringify({ ...summary, matches: report.matches, added: added.length, removed: removed.length }, null, 1));
+  if (errors.length) process.exitCode = 1;
+} else {
+  fs.mkdirSync(rel("l10n/source"), { recursive: true });
+  fs.writeFileSync(rel("l10n/source/units.json"), JSON.stringify({ sourceSetHash: setHash, count: out.length, units: out }, null, 1) + "\n");
+  fs.writeFileSync(rel("l10n/source/coverage.json"), JSON.stringify({ sourceSetHash: setHash, files: coverage, errors }, null, 1) + "\n");
+  console.log(JSON.stringify(summary, null, 1));
+  if (errors.length) console.log(errors.slice(0, 10));
+}

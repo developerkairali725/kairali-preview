@@ -5,7 +5,8 @@
  "note": "window.__resources entries the page installs before support.js loads, so the runtime resolves each <dc-import> sibling from /ahv/components/ instead of the document root.",
  "resources": {
   "./AHV%20Chrome%20Header.dc.html": "/ahv/components/AHV%20Chrome%20Header.dc.html",
-  "./AHV%20Chrome%20Footer.dc.html": "/ahv/components/AHV%20Chrome%20Footer.dc.html"
+  "./AHV%20Chrome%20Footer.dc.html": "/ahv/components/AHV%20Chrome%20Footer.dc.html",
+  "./AHV%20Programme%20Enquiry.dc.html": "/ahv/components/AHV%20Programme%20Enquiry.dc.html"
  },
  "components": {
   "AHV Chrome Header": {

@@ -697,3 +697,32 @@
  #ahv-design-root[data-ahv-route="/yoga-and-meditation-package/"] main > section:is([data-source-component^="yoga-"],[data-source-component="approved-tariff-terms"]) {padding:26px 0 !important;}
  #ahv-design-root[data-ahv-route="/yoga-and-meditation-package/"] main > section[data-source-component^="yoga-"] > ul {grid-template-columns:minmax(0,1fr) !important;gap:20px !important;}
 }
+
+/* WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001: historical related links keep
+   their destinations and dates, grouped by actual subject rather than programmes. */
+[data-ahv-family="article-reader"] .ahv-related-groups {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;align-items:start}
+[data-ahv-family="article-reader"] .ahv-related-group {border:1px solid var(--hair);border-radius:4px;background:var(--raise);min-width:0}
+[data-ahv-family="article-reader"] .ahv-related-group summary {min-height:52px;box-sizing:border-box;padding:14px 18px;font-weight:700;cursor:pointer;line-height:1.5}
+[data-ahv-family="article-reader"] .ahv-related-group ul {list-style:none;margin:0!important;padding:0 18px 14px!important}
+[data-ahv-family="article-reader"] .ahv-related-group li {max-width:none!important;margin:0!important}
+[data-ahv-family="article-reader"] .ahv-related-group a {display:flex;align-items:center;min-height:44px;padding:6px 0;overflow-wrap:anywhere}
+[data-ahv-family="article-reader"] .ahv-related-group summary:focus-visible {outline:3px solid var(--green);outline-offset:3px}
+/* The educational article has one comfortable reading column at desktop,
+   with its authentic illustration kept at its natural aspect ratio. */
+[data-ahv-route="/kairali-ayurvedic-way-of-weight-management/"] main [data-source-component="article"],
+[data-ahv-route="/kairali-ayurvedic-way-of-weight-management/"] main [data-source-component="related-weight-management"] {width:min(820px,calc(100% - 40px))!important;margin-inline:auto!important;padding-block:24px!important}
+[data-ahv-route="/kairali-ayurvedic-way-of-weight-management/"] main [data-source-component="article"] > p {max-width:none!important}
+[data-ahv-route="/kairali-ayurvedic-way-of-weight-management/"] main [data-source-component="article"] img {max-width:100%;height:auto}
+[data-ahv-route="/kairali-ayurvedic-way-of-weight-management/"] main [data-source-component="related-weight-management"] a {display:inline-flex;align-items:center;min-height:44px}
+/* Individual therapies are separate from programme packages: preserve each
+   existing procedure name and source image in a responsive directory. */
+[data-ahv-route="/ayurveda-treatment/"] [data-collection="cards"] {grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))!important;gap:24px!important}
+[data-ahv-route="/ayurveda-treatment/"] [data-source-card] {border:1px solid var(--hair);border-radius:4px;background:var(--raise);overflow:hidden;padding:16px;box-sizing:border-box;align-self:stretch}
+[data-ahv-route="/ayurveda-treatment/"] [data-source-card] > div:has(img) {width:100%;max-width:none!important;margin:0!important}
+[data-ahv-route="/ayurveda-treatment/"] [data-source-card] img {width:100%!important;height:220px!important;object-fit:contain;background:var(--paper)}
+[data-ahv-route="/ayurveda-treatment/"] [data-source-card] h3,
+[data-ahv-route="/ayurveda-treatment/"] [data-source-card] p {margin:12px 0 0!important;padding:0!important;border:0!important;font-size:20px!important;line-height:1.4!important}
+[data-ahv-route="/panchakarma/"] main [data-source-component="article"],
+[data-ahv-route="/panchakarma/"] main [data-source-component="contextual-resources"] {width:min(820px,calc(100% - 40px))!important;margin-inline:auto!important;padding-block:24px!important}
+[data-ahv-route="/panchakarma/"] main [data-source-component="article"] p {max-width:none!important}
+[data-ahv-family="article-reader"] [data-source-component="contextual-resources"] a {display:inline-flex;align-items:center;min-height:44px}

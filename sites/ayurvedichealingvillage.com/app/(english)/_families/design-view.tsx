@@ -133,7 +133,7 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
   const bootScript = await compactBoot;
   // Served once, read once: the snapshot body and the "held" state that keeps
   // a desktop viewport from painting it (see the layout's third style rule).
-  const body = responsiveVillaImages(phoneCriticalMedia(applyReviewSnapshot(prerenderedBody(route.path, locale), route.path, locale)));
+  const body = responsiveVillaImages(phoneCriticalMedia(applyReviewSnapshot(prerenderedBody(route.path, locale), route.path, locale), route.path));
   const snapshot = applyReviewSnapshot(descriptiveAwardLinks(route.path === "/" || route.path === "/photo-gallery/" ? deferHomeSnapshotImages(body) : body, route.path), route.path, locale);
   const cfg = buildBootConfig(route, locale);
   // The view family, as a styling scope. Template-level corrections live in
@@ -185,7 +185,7 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonForScript(routeSchema(route, locale)) }}
       />
-      {firstCriticalImage(snapshot) ? <link rel="preload" as="image" fetchPriority="high" href={firstCriticalImage(snapshot)!} media={narrowMedia} /> : null}
+      {firstCriticalImage(snapshot, route.path) ? <link rel="preload" as="image" fetchPriority="high" href={firstCriticalImage(snapshot, route.path)!} media={narrowMedia} /> : null}
       {/* Get the right family payload in flight before the boot script runs.
           Media-scoped so a phone never downloads the desktop view. */}
       {route.mobileView ? (

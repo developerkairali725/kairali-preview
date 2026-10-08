@@ -13,7 +13,8 @@
  * the audience is India-heavy. JPEG rather than WebP because social scrapers are
  * least fussy about it.
  *
- * WHERE THE PICTURE COMES FROM. No image is invented or fetched from outside:
+ * WHERE THE PICTURE COMES FROM. An owner-selected homepage campaign image
+ * overrides the default image-bank selection (7 October 2026). Other routes use:
  *   1. the route's own declared og:image, mirrored from production, where one exists
  *   2. otherwise the first substantial photograph on that page
  *   3. otherwise the brand hero
@@ -36,6 +37,9 @@ const MAP = path.join(SITE, "english-candidate/og-images.json");
 const PLAN = "/tmp/claude-501/og-plan.json";
 const FALLBACK = path.join(SITE, "public/ahv/assets/img/wx-hero.jpg");
 const W = 1200, H = 630, MAX_KB = 300;
+// Owner-requested AI-generated female Ayurveda share artwork. Keep the original
+// homepage banner/card available; a versioned URL avoids reusing its image cache.
+const SELECTED_CARDS = { "/": "home-ayurveda-woman-20261007.jpg" };
 const only = (() => { const i = process.argv.indexOf("--only"); return i > -1 ? process.argv[i + 1] : null; })();
 
 const routes = JSON.parse(fs.readFileSync(path.join(SITE, "english-candidate/route-manifest.json"), "utf8")).routes;
@@ -52,6 +56,16 @@ const map = fs.existsSync(MAP) ? JSON.parse(fs.readFileSync(MAP, "utf8")) : {};
 let made = 0, reused = 0, failed = 0, over = 0;
 for (const r of routes) {
   if (only && r.path !== only) continue;
+  if (SELECTED_CARDS[r.path]) {
+    const name = SELECTED_CARDS[r.path], selected = path.join(OUT, name);
+    // Never silently replace selected artwork with the old fallback on a rebuild.
+    const bytes = fs.readFileSync(selected), size = dims(selected);
+    if (bytes[0] !== 0xff || bytes[1] !== 0xd8 || bytes.length > MAX_KB * 1024 || size?.w !== W || size?.h !== H) {
+      throw new Error(`Invalid selected share card: ${selected}`);
+    }
+    map[r.path] = "/images/og/" + name;
+    reused++; continue;
+  }
   const logo = logoSource(r.path);
   const src = logo ? path.join(SITE, logo) : plan[r.path] && fs.existsSync(plan[r.path]) ? plan[r.path] : FALLBACK;
   const name = slug(r.path) + ".jpg";

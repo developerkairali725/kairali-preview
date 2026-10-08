@@ -366,6 +366,7 @@
     function priceLine(p, cur, ui) {
       ui = ui || index.ui;
       cur = cur || "INR";
+      if (p.availability === "coming_soon") return ui.comingSoon || "Coming Soon";
       var parts = [];
       if (p.course) parts.push(fmt(ui.days, { n: p.nights }));
       else if (p.nights != null) parts.push(fmt(ui.nights, { n: p.nights }));

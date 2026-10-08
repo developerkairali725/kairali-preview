@@ -19,14 +19,14 @@ const node=(n,depth,trail)=>{
  return `<li data-child><details id="${id}" class="sm-branch sm-depth-${depth}" data-branch data-title="${esc(n.title)}" data-search="${search(trail,n)}"${n.path?' data-self="1"':''}><summary><span class="sm-toggle" aria-hidden="true"></span>${head}<span class="sm-count">${c}<span class="sm-sr"> ${c===1?'page':'pages'}</span></span></summary><ul>${n.children.map(k=>node(k,depth+1,[...trail,n.title])).join('')}</ul></details></li>`;
 };
 // Advertising destinations stay served and in the site tree, but are not visitor-directory entries.
-const sections=tree.sections.filter(sec=>sec.id!=='campaigns');
+const sections=tree.sections;
 const trees=sections.map((sec,i)=>{
  const id='sm-branch-'+(++serial), c=count(sec.children)+(sec.hub?1:0);
  const head=sec.hub?`<a class="sm-parent" data-link="1" href="${esc(sec.hub)}">${esc(sec.title)}</a>`:`<span class="sm-group">${esc(sec.title)}</span>`;
  return `<details id="${id}" class="sm-branch sm-depth-0" data-branch data-title="${esc(sec.title)}" data-search="${esc(sec.title+' '+(sec.hub||''))}"${sec.hub?' data-self="1"':''} ${i===0?'open':''}><summary><span class="sm-toggle" aria-hidden="true"></span>${head}<span class="sm-count">${c}<span class="sm-sr"> ${c===1?'page':'pages'}</span></span></summary><ul>${sec.children.map(k=>node(k,1,[sec.title])).join('')}</ul></details>`;
 });
 const rootIds=trees.map(t=>t.match(/id="([^"]+)"/)[1]);
-const data={roots:sections.map(s=>s.title),links:Object.keys(tree.index).filter(p=>tree.index[p].section!=='campaigns')};
+const data={roots:sections.map(s=>s.title),links:Object.keys(tree.index)};
 const css=`
 .sm-shell{background:#F7F4EA;color:#2A2118;font-family:Mulish,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
 .sm-shell *{box-sizing:border-box}.sm-shell [hidden]{display:none!important}

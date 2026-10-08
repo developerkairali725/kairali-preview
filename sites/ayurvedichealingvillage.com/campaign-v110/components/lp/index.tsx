@@ -37,9 +37,14 @@ export function LpHero({
   creds,
   photo,
   ctaLang,
+  form,
+  stableIntro = false,
 }: {
+  /** Opt in only when the route has verified first-paint intro stability. */
+  stableIntro?: boolean;
   /** Set to "en" on a non-English page: the CTA and phone line are English. */
   ctaLang?: string;
+  form?: React.ReactNode;
   overline: string;
   title: React.ReactNode;
   sub: string;
@@ -51,21 +56,31 @@ export function LpHero({
     "--photo-max-desktop": `${noUpscale(photo.src, 4 / 5)}px`,
   } as React.CSSProperties;
   return (
-    <header className={s.hero} aria-labelledby="hero-title">
-      <div className={s.heroCopy}>
+    <>
+    <header className={`${s.hero} ahv-campaign-hero`} aria-labelledby="hero-title">
+      <Image className="ahv-hero-photo" src={photo.src} alt={photo.alt} sizes="100vw" priority fetchPriority={stableIntro ? "high" : undefined} />
+      <div className={`${s.heroCopy} ahv-hero-copy`}>
         <p className={s.heroOverline}>{overline}</p>
         <h1 id="hero-title">{title}</h1>
-        <p className={s.heroSub}>{sub}</p>
+        {stableIntro ? <div className="campaign-responsive-intro">
+          <div className="campaign-desktop-intro"><p className={s.heroSub}>{sub}</p></div>
+          <details className="campaign-mobile-detail"><summary>{ctaLang ? "Über dieses Programm" : "About this programme"}</summary><p className={s.heroSub}>{sub}</p></details>
+        </div> : <details className="campaign-mobile-detail" open><summary>{ctaLang ? "Über dieses Programm" : "About this programme"}</summary><p className={s.heroSub}>{sub}</p></details>}
         {/* CTA placement 2: one primary button, phone as plain text beneath */}
-        <div className={s.ctaCol} lang={ctaLang}>
-          <a id="hero-cta" className="btn btn-primary" href={ENQUIRY_HREF}>
-            {PRIMARY_CTA}
+        <div className={`${s.ctaCol} campaign-hero-cta`} lang={ctaLang}>
+          <a id="hero-cta" className="btn btn-primary" href="#campaign-consultation">
+            Get Free Doctor Consultation
           </a>
           <p className={s.ctaPhone}>
             Or call <a href={contact.phone.href}>{contact.phone.display}</a>
           </p>
         </div>
-        {doctor && (
+      </div>
+      <div id="campaign-consultation" className="ahv-hero-form" tabIndex={-1}><span id="consult" aria-hidden="true" />{form}</div>
+    </header>
+    <div className="campaign-credentials">
+      <p><strong>{photo.caption}</strong><br />{photo.detail}</p>
+      {doctor && (
           <div className={s.docChip}>
             <Image src={doctor.image.src} alt={doctor.image.alt} width={52} height={52} />
             <div>
@@ -82,23 +97,8 @@ export function LpHero({
             </li>
           ))}
         </ul>
-      </div>
-      <div className={s.heroVisual}>
-        <figure className={s.photo} style={style}>
-          <Image
-            src={photo.src}
-            alt={photo.alt}
-            sizes={coverSizes(photo.src)}
-            unoptimized={original(photo.src)}
-            priority
-          />
-          <figcaption>
-            <b>{photo.caption}</b>
-            <span>{photo.detail}</span>
-          </figcaption>
-        </figure>
-      </div>
-    </header>
+    </div>
+    </>
   );
 }
 
@@ -234,10 +234,10 @@ export function LpEnquiry({
   aside: { k: string; kLang?: string; paragraphs: React.ReactNode[]; paragraphLangs?: (string | undefined)[] };
 }) {
   return (
-    <LpSection id={ENQUIRY_ID} variant="alt" overline={overline} title={title}>
+    <LpSection id="campaign-planning" variant="alt" overline={overline} title={title}>
       <Lead>{lead}</Lead>
       <div className={s.formWrap}>
-        <EnquiryForm {...form} />
+        <a className="btn btn-primary" href="#campaign-consultation">{form.lang === "de" ? "Kostenlose ärztliche Erstberatung" : "Get Free Doctor Consultation"}</a>
         <div className={s.formAside}>
           <span className={s.k} lang={aside.kLang}>
             {aside.k}

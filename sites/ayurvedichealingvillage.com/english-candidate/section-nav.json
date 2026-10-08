@@ -93,12 +93,6 @@
        "group": true,
        "children": [
         {
-         "path": "/digestive-wellness-gut-health-yoga-therapy/",
-         "label": "Digestive Wellness & Gut Health Yoga Therapy",
-         "link": true,
-         "children": []
-        },
-        {
          "path": "/treatment-for-diabetes/",
          "label": "Diabetes & Metabolic Balance Therapy",
          "link": true,
@@ -139,12 +133,6 @@
         {
          "path": "/treatment-to-remove-stress-and-strain/",
          "label": "Comprehensive Stress Relief & Mental Wellness Program",
-         "link": true,
-         "children": []
-        },
-        {
-         "path": "/yoga-based-stress-energy-reset-program/",
-         "label": "Yoga-Based Stress & Energy Reset Program",
          "link": true,
          "children": []
         }
@@ -264,26 +252,8 @@
      "link": true,
      "children": [
       {
-       "path": "/yoga-retreats/",
-       "label": "Vaiyaktika Yoga Sādhanā — Personalized Yoga",
-       "link": true,
-       "children": []
-      },
-      {
        "path": "/yoga-therapy-individual/",
-       "label": "Individual yoga therapy with Ayurveda",
-       "link": true,
-       "children": []
-      },
-      {
-       "path": "/yoga-meditation-program/",
-       "label": "Yoga & meditation, 3-night minimum",
-       "link": true,
-       "children": []
-      },
-      {
-       "path": "/yoga-meditation-training/",
-       "label": "Yoga–Dhyāna Abhyāsa — Yoga & Meditation Training",
+       "label": "Vaiyaktika Yoga Sādhanā — Personalized Yoga",
        "link": true,
        "children": []
       },
@@ -292,36 +262,24 @@
        "label": "Kairali’s Yoga & Meditation Package",
        "link": true,
        "children": []
+      },
+      {
+       "path": "/digestive-wellness-gut-health-yoga-therapy/",
+       "label": "Digestive Wellness & Gut Health Yoga Therapy",
+       "link": true,
+       "children": []
+      },
+      {
+       "path": "/yoga-based-stress-energy-reset-program/",
+       "label": "Yoga-Based Stress & Energy Reset Program",
+       "link": true,
+       "children": []
       }
      ]
     },
     {
-     "path": "/karkidaka-chikitsha-or-monsoon-wellness.html",
-     "label": "Monsoon programme, July–August (Karkidaka)",
-     "link": true,
-     "children": []
-    },
-    {
-     "path": "/treatment-programs/",
-     "label": "Treatment programmes list",
-     "link": true,
-     "children": []
-    },
-    {
      "path": "/wellness-programs/",
      "label": "Preventive & wellness programmes",
-     "link": true,
-     "children": []
-    },
-    {
-     "path": "/packages/",
-     "label": "Programme packages at a glance",
-     "link": true,
-     "children": []
-    },
-    {
-     "path": "/ayurvedic-treatment-packages.html",
-     "label": "Ayurvedic Treatment Packages",
      "link": true,
      "children": []
     }
@@ -358,12 +316,12 @@
    ]
   },
   "training": {
-   "label": "Ayurveda & yoga training",
-   "hub": "/training-programs/",
+   "label": "Yoga & Training",
+   "hub": "/yoga-meditation-training/",
    "items": [
     {
      "path": "/ayurveda-training-programme/",
-     "label": "Ayurveda Training Programmes",
+     "label": "Ayurveda Training Programme",
      "link": true,
      "children": [
       {
@@ -399,12 +357,6 @@
      ]
     },
     {
-     "path": "/training-course-fees/",
-     "label": "Course fees & booking terms",
-     "link": true,
-     "children": []
-    },
-    {
      "path": "/kairali-institute-of-ayurveda-and-panchakarma-therapy/",
      "label": "Kairali Institute of Ayurveda",
      "link": true,
@@ -412,31 +364,19 @@
     },
     {
      "path": "/new-to-yoga-teacher-training/",
-     "label": "Yoga teacher training (coming soon)",
+     "label": "Professional Yoga Teacher Training — Coming Soon",
      "link": true,
      "children": []
     },
     {
-     "path": "/why-get-training-in-ayurveda/",
-     "label": "Why train in Ayurveda?",
+     "path": "/training-course-fees/",
+     "label": "Course fees & booking terms",
      "link": true,
      "children": []
     },
     {
-     "path": "/why-get-training-in-yoga/",
-     "label": "Why train in yoga?",
-     "link": true,
-     "children": []
-    },
-    {
-     "path": "/training/",
-     "label": "About training at Kairali",
-     "link": true,
-     "children": []
-    },
-    {
-     "path": "/ayurveda-training/",
-     "label": "Learn Ayurveda with Kairali",
+     "path": "/yoga-meditation-program/",
+     "label": "Yoga Training for Personal Practice — Coming Soon",
      "link": true,
      "children": []
     }
@@ -453,12 +393,6 @@
      "children": []
     },
     {
-     "path": "/offers/defence-paramilitary-personnel-get-upto-30-off/",
-     "label": "Defence & paramilitary offer",
-     "link": true,
-     "children": []
-    },
-    {
      "path": "/offers/olympics-and-paralympics-offer/",
      "label": "Olympic & Paralympic offer",
      "link": true,
@@ -467,6 +401,12 @@
     {
      "path": "/offers/senior-citizen-offer/",
      "label": "Senior citizen offer (60+)",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/offers/defence-and-paramilitary/",
+     "label": "defence and paramilitary",
      "link": true,
      "children": []
     }
@@ -833,20 +773,14 @@
      "children": []
     },
     {
-     "path": "/meditation/",
-     "label": "Meditation at the village",
-     "link": true,
-     "children": []
-    },
-    {
      "path": "/yoga-classes-theory/",
-     "label": "Yoga classes: theory",
+     "label": "Yoga Classes — Theory",
      "link": true,
      "children": []
     },
     {
      "path": "/yoga-classes-practical/",
-     "label": "Yoga classes: practical",
+     "label": "Practical Yoga Classes",
      "link": true,
      "children": []
     },
@@ -927,92 +861,119 @@
      "path": "/new-to-ayurveda/",
      "label": "New to Ayurveda",
      "link": true,
-     "children": [
-      {
-       "path": "/learn-about-ayurveda/",
-       "label": "Introduction to Ayurveda at Kairali",
-       "link": true,
-       "children": []
-      },
-      {
-       "path": "/what-is-panchkarma/",
-       "label": "What is Panchakarma?",
-       "link": true,
-       "children": []
-      },
-      {
-       "path": "/live-to-100-with-panchkarma/",
-       "label": "How Panchakarma works",
-       "link": true,
-       "children": []
-      },
-      {
-       "path": "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
-       "label": "Why choose Ayurveda?",
-       "link": true,
-       "children": []
-      },
-      {
-       "path": "/ayurveda-retreats-for-everyone/",
-       "label": "Ayurveda retreats for everyone",
-       "link": true,
-       "children": []
-      }
-     ]
+     "children": []
     },
     {
      "path": "/new-to-yoga/",
      "label": "New to Yoga",
      "link": true,
-     "children": [
-      {
-       "path": "/what-is-yoga/",
-       "label": "What is yoga?",
-       "link": true,
-       "children": []
-      },
-      {
-       "path": "/why-pick-a-yoga-or-yoga-retreat/",
-       "label": "Why choose a yoga retreat?",
-       "link": true,
-       "children": []
-      },
-      {
-       "path": "/learn-more-about-yoga/",
-       "label": "How yoga and Ayurveda connect",
-       "link": true,
-       "children": []
-      },
-      {
-       "path": "/retreats-for-everyone/",
-       "label": "Yoga retreats for busy lives",
-       "link": true,
-       "children": []
-      },
-      {
-       "path": "/yoga-retreats-for-everyone/",
-       "label": "Yoga retreats for midlife (40s–50s)",
-       "link": true,
-       "children": []
-      }
-     ]
+     "children": []
     },
     {
      "path": "/ayurveda/",
      "label": "Ayurveda & its main therapies",
      "link": true,
-     "children": [
-      {
-       "path": "/ayurveda-treatment/",
-       "label": "List of Ayurvedic therapies",
-       "link": true,
-       "children": []
-      }
-     ]
+     "children": []
     },
     {
      "path": "/kairali-ayurvedic-way-of-weight-management/",
-     "label": "Ayurvedic weight management & recipes",
+     "label": "Ayurvedic Weight Management",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/ayurveda-retreats-for-everyone/",
+     "label": "Ayurveda Retreats for Everyone",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/ayurveda-treatment/",
+     "label": "Ayurveda Treatment",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/learn-about-ayurveda/",
+     "label": "Learn About Ayurveda",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/learn-more-about-yoga/",
+     "label": "Learn More About Yoga",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/live-to-100-with-panchkarma/",
+     "label": "Panchakarma: Preparation and Procedures",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/meditation/",
+     "label": "Meditation",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/panchakarma/",
+     "label": "Panchakarma",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/retreats-for-everyone/",
+     "label": "Retreats for Everyone",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/training/",
+     "label": "About training at Kairali",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/what-is-panchkarma/",
+     "label": "What Is Panchkarma?",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/what-is-yoga/",
+     "label": "What Is Yoga?",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/why-get-training-in-ayurveda/",
+     "label": "Why train in Ayurveda?",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/why-get-training-in-yoga/",
+     "label": "Why train in yoga?",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/why-pick-a-yoga-or-yoga-retreat/",
+     "label": "Why Choose a Yoga Retreat?",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
+     "label": "Why Choose an Ayurveda Treatment or Retreat?",
+     "link": true,
+     "children": []
+    },
+    {
+     "path": "/yoga-retreats-for-everyone/",
+     "label": "Yoga Retreats for Everyone",
      "link": true,
      "children": []
     }
@@ -1198,7 +1159,7 @@
       },
       {
        "path": "/ayurveda-workshop/",
-       "label": "Nine-day Ayurveda workshop (Japan group)",
+       "label": "Ayurveda Workshop",
        "link": true,
        "children": []
       }
@@ -1365,22 +1326,13 @@
   "/ayurveda-retreats-for-everyone/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-ayurveda/",
     "/ayurveda-retreats-for-everyone/"
-   ],
-   "remove": null
-  },
-  "/ayurveda-training/": {
-   "section": "training",
-   "crumbs": [
-    "/ayurveda-training/"
    ],
    "remove": null
   },
   "/ayurveda-treatment/": {
    "section": "knowledge",
    "crumbs": [
-    "/ayurveda/",
     "/ayurveda-treatment/"
    ],
    "remove": null
@@ -1684,6 +1636,14 @@
     "blockPrefixes": []
    }
   },
+  "/kairali-air-india-maharaja-club.html": {
+   "section": "about",
+   "crumbs": [
+    "/our-partners/",
+    "/kairali-air-india-maharaja-club.html"
+   ],
+   "remove": null
+  },
   "/kairali-ayurvedic-centre/": {
    "section": "about",
    "crumbs": [
@@ -1797,13 +1757,6 @@
     "blockPrefixes": []
    }
   },
-  "/karkidaka-chikitsha-or-monsoon-wellness.html": {
-   "section": "programmes",
-   "crumbs": [
-    "/karkidaka-chikitsha-or-monsoon-wellness.html"
-   ],
-   "remove": null
-  },
   "/karma-being-retreat/": {
    "section": "news",
    "crumbs": [
@@ -1854,7 +1807,6 @@
   "/learn-about-ayurveda/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-ayurveda/",
     "/learn-about-ayurveda/"
    ],
    "remove": null
@@ -1862,7 +1814,6 @@
   "/learn-more-about-yoga/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-yoga/",
     "/learn-more-about-yoga/"
    ],
    "remove": {
@@ -1875,7 +1826,6 @@
   "/live-to-100-with-panchkarma/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-ayurveda/",
     "/live-to-100-with-panchkarma/"
    ],
    "remove": {
@@ -1886,7 +1836,7 @@
    }
   },
   "/meditation/": {
-   "section": "things",
+   "section": "knowledge",
    "crumbs": [
     "/meditation/"
    ],
@@ -2042,12 +1992,17 @@
    ],
    "remove": null
   },
-  "/packages/": {
-   "section": "programmes",
+  "/panchakarma/": {
+   "section": "knowledge",
    "crumbs": [
-    "/packages/"
+    "/panchakarma/"
    ],
-   "remove": null
+   "remove": {
+    "navPrefixes": [
+     "/sections/3/c/1"
+    ],
+    "blockPrefixes": []
+   }
   },
   "/prav-simona-monsoon-yoga-retreat/": {
    "section": "news",
@@ -2088,7 +2043,6 @@
   "/retreats-for-everyone/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-yoga/",
     "/retreats-for-everyone/"
    ],
    "remove": {
@@ -2155,7 +2109,7 @@
    "remove": null
   },
   "/training/": {
-   "section": "training",
+   "section": "knowledge",
    "crumbs": [
     "/training/"
    ],
@@ -2261,7 +2215,6 @@
   "/what-is-panchkarma/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-ayurveda/",
     "/what-is-panchkarma/"
    ],
    "remove": {
@@ -2274,7 +2227,6 @@
   "/what-is-yoga/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-yoga/",
     "/what-is-yoga/"
    ],
    "remove": {
@@ -2285,7 +2237,7 @@
    }
   },
   "/why-get-training-in-ayurveda/": {
-   "section": "training",
+   "section": "knowledge",
    "crumbs": [
     "/why-get-training-in-ayurveda/"
    ],
@@ -2297,7 +2249,7 @@
    }
   },
   "/why-get-training-in-yoga/": {
-   "section": "training",
+   "section": "knowledge",
    "crumbs": [
     "/why-get-training-in-yoga/"
    ],
@@ -2311,7 +2263,6 @@
   "/why-pick-a-yoga-or-yoga-retreat/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-yoga/",
     "/why-pick-a-yoga-or-yoga-retreat/"
    ],
    "remove": {
@@ -2324,7 +2275,6 @@
   "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-ayurveda/",
     "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/"
    ],
    "remove": {
@@ -2377,58 +2327,7 @@
   "/yoga-retreats-for-everyone/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-yoga/",
     "/yoga-retreats-for-everyone/"
-   ],
-   "remove": null
-  },
-  "/yoga-therapy-individual/": {
-   "section": "programmes",
-   "crumbs": [
-    "/yoga-meditation-programs/",
-    "/yoga-therapy-individual/"
-   ],
-   "remove": null
-  },
-  "/attractions-15kms-and-below/": {
-   "section": "things",
-   "crumbs": [
-    "/attractions-15kms-and-below/"
-   ],
-   "remove": null
-  },
-  "/attractions-25kms-to-50kms/": {
-   "section": "things",
-   "crumbs": [
-    "/attractions-25kms-to-50kms/"
-   ],
-   "remove": null
-  },
-  "/attractions-above-50kms/": {
-   "section": "things",
-   "crumbs": [
-    "/attractions-above-50kms/"
-   ],
-   "remove": null
-  },
-  "/attractions-under-10kms/": {
-   "section": "things",
-   "crumbs": [
-    "/attractions-under-10kms/"
-   ],
-   "remove": null
-  },
-  "/ayurveda-offers/": {
-   "section": "offers",
-   "crumbs": [
-    "/ayurveda-offers/"
-   ],
-   "remove": null
-  },
-  "/ayurveda-package/": {
-   "section": "programmes",
-   "crumbs": [
-    "/ayurveda-package/"
    ],
    "remove": null
   },
@@ -2446,37 +2345,6 @@
    ],
    "remove": null
   },
-  "/map/": {
-   "section": "visit",
-   "crumbs": [
-    "/map/"
-   ],
-   "remove": {
-    "navPrefixes": [
-     "/sections/3"
-    ],
-    "blockPrefixes": []
-   }
-  },
-  "/our-story/": {
-   "section": "about",
-   "crumbs": [
-    "/our-story/"
-   ],
-   "remove": null
-  },
-  "/special-offers/": {
-   "section": "offers",
-   "crumbs": [
-    "/special-offers/"
-   ],
-   "remove": {
-    "navPrefixes": [],
-    "blockPrefixes": [
-     "/sections/3/c/1"
-    ]
-   }
-  },
   "/the-baoli-advert-box-deal/": {
    "section": "offers",
    "crumbs": [
@@ -2493,30 +2361,6 @@
    "section": "offers",
    "crumbs": [
     "/the-baoli-special-deal/"
-   ],
-   "remove": {
-    "navPrefixes": [],
-    "blockPrefixes": [
-     "/sections/3/c/1"
-    ]
-   }
-  },
-  "/things-to-do-in-property/": {
-   "section": "things",
-   "crumbs": [
-    "/things-to-do-in-property/"
-   ],
-   "remove": {
-    "navPrefixes": [],
-    "blockPrefixes": [
-     "/sections/3/c/1"
-    ]
-   }
-  },
-  "/yoga-and-ayurveda/": {
-   "section": "news",
-   "crumbs": [
-    "/yoga-and-ayurveda/"
    ],
    "remove": {
     "navPrefixes": [],
@@ -2628,7 +2472,6 @@
   "/ayurveda-retreats-for-everyone/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-ayurveda/",
     "/ayurveda-retreats-for-everyone/"
    ]
   },
@@ -2638,16 +2481,9 @@
     "/ayurveda-training-programme/"
    ]
   },
-  "/ayurveda-training/": {
-   "section": "training",
-   "crumbs": [
-    "/ayurveda-training/"
-   ]
-  },
   "/ayurveda-treatment/": {
    "section": "knowledge",
    "crumbs": [
-    "/ayurveda/",
     "/ayurveda-treatment/"
    ]
   },
@@ -2728,12 +2564,6 @@
    "crumbs": [
     "/ayurvedic-cuisine/",
     "/ayurvedic-resturant-and-cooking-at-healing-village/"
-   ]
-  },
-  "/ayurvedic-treatment-packages.html": {
-   "section": "programmes",
-   "crumbs": [
-    "/ayurvedic-treatment-packages.html"
    ]
   },
   "/ayurvedic-treatments/": {
@@ -2877,7 +2707,7 @@
   "/digestive-wellness-gut-health-yoga-therapy/": {
    "section": "programmes",
    "crumbs": [
-    "/ayurvedic-treatments/",
+    "/yoga-meditation-programs/",
     "/digestive-wellness-gut-health-yoga-therapy/"
    ]
   },
@@ -3065,12 +2895,6 @@
     "/kairali-the-ayurvedic-healing-village/"
    ]
   },
-  "/karkidaka-chikitsha-or-monsoon-wellness.html": {
-   "section": "programmes",
-   "crumbs": [
-    "/karkidaka-chikitsha-or-monsoon-wellness.html"
-   ]
-  },
   "/karma-being-retreat-2019/": {
    "section": "news",
    "crumbs": [
@@ -3129,14 +2953,12 @@
   "/learn-about-ayurveda/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-ayurveda/",
     "/learn-about-ayurveda/"
    ]
   },
   "/learn-more-about-yoga/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-yoga/",
     "/learn-more-about-yoga/"
    ]
   },
@@ -3156,7 +2978,6 @@
   "/live-to-100-with-panchkarma/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-ayurveda/",
     "/live-to-100-with-panchkarma/"
    ]
   },
@@ -3167,7 +2988,7 @@
    ]
   },
   "/meditation/": {
-   "section": "things",
+   "section": "knowledge",
    "crumbs": [
     "/meditation/"
    ]
@@ -3250,12 +3071,6 @@
     "/offers/"
    ]
   },
-  "/offers/defence-paramilitary-personnel-get-upto-30-off/": {
-   "section": "offers",
-   "crumbs": [
-    "/offers/defence-paramilitary-personnel-get-upto-30-off/"
-   ]
-  },
   "/offers/olympics-and-paralympics-offer/": {
    "section": "offers",
    "crumbs": [
@@ -3306,17 +3121,17 @@
     "/our-villas/"
    ]
   },
-  "/packages/": {
-   "section": "programmes",
-   "crumbs": [
-    "/packages/"
-   ]
-  },
   "/panchakarma-therapy/": {
    "section": "programmes",
    "crumbs": [
     "/ayurvedic-treatments/",
     "/panchakarma-therapy/"
+   ]
+  },
+  "/panchakarma/": {
+   "section": "knowledge",
+   "crumbs": [
+    "/panchakarma/"
    ]
   },
   "/payment-policy-compliance/": {
@@ -3395,7 +3210,6 @@
   "/retreats-for-everyone/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-yoga/",
     "/retreats-for-everyone/"
    ]
   },
@@ -3488,14 +3302,8 @@
     "/training-course-fees/"
    ]
   },
-  "/training-programs/": {
-   "section": "training",
-   "crumbs": [
-    "/training-programs/"
-   ]
-  },
   "/training/": {
-   "section": "training",
+   "section": "knowledge",
    "crumbs": [
     "/training/"
    ]
@@ -3598,12 +3406,6 @@
     "/treatment-for-spondylitis/"
    ]
   },
-  "/treatment-programs/": {
-   "section": "programmes",
-   "crumbs": [
-    "/treatment-programs/"
-   ]
-  },
   "/treatment-to-remove-stress-and-strain/": {
    "section": "programmes",
    "crumbs": [
@@ -3699,25 +3501,23 @@
   "/what-is-panchkarma/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-ayurveda/",
     "/what-is-panchkarma/"
    ]
   },
   "/what-is-yoga/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-yoga/",
     "/what-is-yoga/"
    ]
   },
   "/why-get-training-in-ayurveda/": {
-   "section": "training",
+   "section": "knowledge",
    "crumbs": [
     "/why-get-training-in-ayurveda/"
    ]
   },
   "/why-get-training-in-yoga/": {
-   "section": "training",
+   "section": "knowledge",
    "crumbs": [
     "/why-get-training-in-yoga/"
    ]
@@ -3725,14 +3525,12 @@
   "/why-pick-a-yoga-or-yoga-retreat/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-yoga/",
     "/why-pick-a-yoga-or-yoga-retreat/"
    ]
   },
   "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-ayurveda/",
     "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/"
    ]
   },
@@ -3760,7 +3558,7 @@
   "/yoga-based-stress-energy-reset-program/": {
    "section": "programmes",
    "crumbs": [
-    "/ayurvedic-treatments/",
+    "/yoga-meditation-programs/",
     "/yoga-based-stress-energy-reset-program/"
    ]
   },
@@ -3784,9 +3582,8 @@
    ]
   },
   "/yoga-meditation-program/": {
-   "section": "programmes",
+   "section": "training",
    "crumbs": [
-    "/yoga-meditation-programs/",
     "/yoga-meditation-program/"
    ]
   },
@@ -3797,24 +3594,15 @@
    ]
   },
   "/yoga-meditation-training/": {
-   "section": "programmes",
+   "section": "training",
    "crumbs": [
-    "/yoga-meditation-programs/",
     "/yoga-meditation-training/"
    ]
   },
   "/yoga-retreats-for-everyone/": {
    "section": "knowledge",
    "crumbs": [
-    "/new-to-yoga/",
     "/yoga-retreats-for-everyone/"
-   ]
-  },
-  "/yoga-retreats/": {
-   "section": "programmes",
-   "crumbs": [
-    "/yoga-meditation-programs/",
-    "/yoga-retreats/"
    ]
   },
   "/yoga-therapy-individual/": {
@@ -3824,94 +3612,16 @@
     "/yoga-therapy-individual/"
    ]
   },
-  "/attractions-15kms-and-below/": {
-   "section": "things",
-   "crumbs": [
-    "/attractions-15kms-and-below/"
-   ]
-  },
-  "/attractions-25kms-to-50kms/": {
-   "section": "things",
-   "crumbs": [
-    "/attractions-25kms-to-50kms/"
-   ]
-  },
-  "/attractions-above-50kms/": {
-   "section": "things",
-   "crumbs": [
-    "/attractions-above-50kms/"
-   ]
-  },
-  "/attractions-under-10kms/": {
-   "section": "things",
-   "crumbs": [
-    "/attractions-under-10kms/"
-   ]
-  },
-  "/ayurveda-gallery/": {
-   "section": "gallery",
-   "crumbs": [
-    "/ayurveda-gallery/"
-   ]
-  },
-  "/ayurveda-offers/": {
-   "section": "offers",
-   "crumbs": [
-    "/ayurveda-offers/"
-   ]
-  },
-  "/ayurveda-package/": {
-   "section": "programmes",
-   "crumbs": [
-    "/ayurveda-package/"
-   ]
-  },
-  "/ayurveda-training-programs/": {
-   "section": "training",
-   "crumbs": [
-    "/ayurveda-training-programs/"
-   ]
-  },
   "/ayurvedic-links/": {
    "section": "knowledge",
    "crumbs": [
     "/ayurvedic-links/"
    ]
   },
-  "/defence-and-paramilitary-forces/": {
-   "section": "offers",
-   "crumbs": [
-    "/defence-and-paramilitary-forces/"
-   ]
-  },
-  "/enquiry-form/": {
-   "section": "visit",
-   "crumbs": [
-    "/enquiry-form/"
-   ]
-  },
   "/learn-more-about-ayurveda/": {
    "section": "knowledge",
    "crumbs": [
     "/learn-more-about-ayurveda/"
-   ]
-  },
-  "/map/": {
-   "section": "visit",
-   "crumbs": [
-    "/map/"
-   ]
-  },
-  "/our-story/": {
-   "section": "about",
-   "crumbs": [
-    "/our-story/"
-   ]
-  },
-  "/special-offers/": {
-   "section": "offers",
-   "crumbs": [
-    "/special-offers/"
    ]
   },
   "/the-baoli-advert-box-deal/": {
@@ -3925,18 +3635,6 @@
    "crumbs": [
     "/the-baoli-special-deal/"
    ]
-  },
-  "/things-to-do-in-property/": {
-   "section": "things",
-   "crumbs": [
-    "/things-to-do-in-property/"
-   ]
-  },
-  "/yoga-and-ayurveda/": {
-   "section": "news",
-   "crumbs": [
-    "/yoga-and-ayurveda/"
-   ]
   }
  },
  "skipped": [
@@ -3948,7 +3646,6 @@
   "/ashtanga-yoga-and-ayurveda-retreat/",
   "/ayurveda-training-programme/",
   "/ayurvedic-new-year-yala-2018/",
-  "/ayurvedic-treatment-packages.html",
   "/ayurvedic-treatments/",
   "/ayuryoga/",
   "/back-to-roots/",
@@ -3968,7 +3665,6 @@
   "/immunity-enhancement-executive-health-assessment-therapy/",
   "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
   "/jobs/business-development-manager/",
-  "/kairali-air-india-maharaja-club.html",
   "/karma-being-retreat-2019/",
   "/lakshya-yoga/",
   "/legal-notice/",
@@ -3977,7 +3673,6 @@
   "/mindfulness-retreat/",
   "/new-privacy-policy/",
   "/offers/",
-  "/offers/defence-paramilitary-personnel-get-upto-30-off/",
   "/offers/olympics-and-paralympics-offer/",
   "/offers/senior-citizen-offer/",
   "/one-day-ayurveda-workshop-program-kerala/",
@@ -4000,7 +3695,6 @@
   "/terms-and-conditions/",
   "/three-day-short-term-ayurveda-certificate-program-tap-hv/",
   "/training-course-fees/",
-  "/training-programs/",
   "/treatment-for-arthritis-and-spondylitis/",
   "/treatment-for-bronchial-diseases/",
   "/treatment-for-cervical-spondylosis/",
@@ -4015,7 +3709,6 @@
   "/treatment-for-skin-diseases/",
   "/treatment-for-slip-disc/",
   "/treatment-for-spondylitis/",
-  "/treatment-programs/",
   "/treatment-to-remove-stress-and-strain/",
   "/treatments-gallery/",
   "/villas-gallery/",
@@ -4027,10 +3720,6 @@
   "/yoga-meditation-program/",
   "/yoga-meditation-programs/",
   "/yoga-meditation-training/",
-  "/yoga-retreats/",
-  "/ayurveda-gallery/",
-  "/ayurveda-training-programs/",
-  "/defence-and-paramilitary-forces/",
-  "/enquiry-form/"
+  "/yoga-therapy-individual/"
  ]
 }
