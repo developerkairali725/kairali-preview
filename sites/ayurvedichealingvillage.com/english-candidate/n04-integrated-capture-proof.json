@@ -17,7 +17,7 @@
     "sha256": "ecf134b717288fe5e98138fae245d189459c5d228f766139889aacb564443e70",
     "bytes": 43656215
   },
-  "capturedRoutes": [
+  "requestedRoutes": [
     "/yoga-meditation-training/",
     "/all-programs/",
     "/ayurvedic-treatments/",
@@ -26,14 +26,165 @@
     "/training-programs/",
     "/yoga-meditation-programs/"
   ],
+  "actualCapturedRoutes": {
+    "enMobile390": [
+      "/yoga-meditation-training/",
+      "/all-programs/",
+      "/ayurvedic-treatments/",
+      "/wellness-programs/",
+      "/yoga-meditation-programs/"
+    ],
+    "enDesktopStatic1440": [
+      "/"
+    ],
+    "eachOf12Locales390": [
+      "/yoga-meditation-training/",
+      "/all-programs/",
+      "/ayurvedic-treatments/",
+      "/wellness-programs/",
+      "/yoga-meditation-programs/"
+    ]
+  },
+  "excludedRedirects": {
+    "/treatment-programs/": {
+      "to": "/ayurvedic-treatments/",
+      "captured": false,
+      "reason": "redirect source in english-candidate/redirect-map.json; tools/prerender-english.mjs drops redirect sources from --only; committed EN snapshot and locale archive membership unchanged (none exist for these locales)"
+    },
+    "/training-programs/": {
+      "to": "/ayurveda-training-programme/",
+      "captured": false,
+      "reason": "redirect source in english-candidate/redirect-map.json; tools/prerender-english.mjs drops redirect sources from --only; committed EN snapshot and locale archive membership unchanged (none exist for these locales)"
+    }
+  },
+  "captureReceipts": [
+    {
+      "log": "integrated-local/logs/capture-ar.log",
+      "logSha256": "5b5e73ce7497a848297812ca5c347dd2eda32d4565ea3ef6cf156d6905dc71d5",
+      "captured": 5,
+      "selected": 5,
+      "failed": 0,
+      "indexRowsAfter": 201
+    },
+    {
+      "log": "integrated-local/logs/capture-de.log",
+      "logSha256": "164e2d8c32d32f86a10c91cfd82a7cc9423df4321a4dfad7df3564cb531cfe34",
+      "captured": 5,
+      "selected": 5,
+      "failed": 0,
+      "indexRowsAfter": 201
+    },
+    {
+      "log": "integrated-local/logs/capture-en-desktop-home.log",
+      "logSha256": "b266948d4bbe6aa8e3d449066dac9dcbb2f9a0224afcfc8a2d46ef948122b84c",
+      "captured": 1,
+      "selected": 1,
+      "failed": 0,
+      "indexRowsAfter": 3
+    },
+    {
+      "log": "integrated-local/logs/capture-en-mobile.log",
+      "logSha256": "44a2516436dacb802ac48e0a8feca04756e4b98329f0a7848003065f397b056f",
+      "captured": 5,
+      "selected": 5,
+      "failed": 0,
+      "indexRowsAfter": 227
+    },
+    {
+      "log": "integrated-local/logs/capture-es.log",
+      "logSha256": "1f97d1fc1453e94c2f287f06f0d96ed5d28efab43c619866fb2f87a4f3e62d5b",
+      "captured": 5,
+      "selected": 5,
+      "failed": 0,
+      "indexRowsAfter": 201
+    },
+    {
+      "log": "integrated-local/logs/capture-fr.log",
+      "logSha256": "96c2465515700feaa0e7dc5dcb2f12c6a96274f243f38c0e9591aa84249af59a",
+      "captured": 5,
+      "selected": 5,
+      "failed": 0,
+      "indexRowsAfter": 201
+    },
+    {
+      "log": "integrated-local/logs/capture-hi.log",
+      "logSha256": "b5fdbf6b06e557e7d207aabd74807d3776286dd096e0518f1d0d66ae9853cb78",
+      "captured": 5,
+      "selected": 5,
+      "failed": 0,
+      "indexRowsAfter": 201
+    },
+    {
+      "log": "integrated-local/logs/capture-it.log",
+      "logSha256": "04a398fb1befdf34f0b9d2fcb61b52572e608bb76b9bec23663d9a0344c73ee2",
+      "captured": 5,
+      "selected": 5,
+      "failed": 0,
+      "indexRowsAfter": 201
+    },
+    {
+      "log": "integrated-local/logs/capture-ja.log",
+      "logSha256": "00cdef5248362501c57d08333cb0d04634202b2d5e1dbc388e5d85cb55689182",
+      "captured": 5,
+      "selected": 5,
+      "failed": 0,
+      "indexRowsAfter": 201
+    },
+    {
+      "log": "integrated-local/logs/capture-ko.log",
+      "logSha256": "3c6270fc48e7ac92d6abc2e1d612ec74126a0b8106c815becb6c357e096ad4c3",
+      "captured": 5,
+      "selected": 5,
+      "failed": 0,
+      "indexRowsAfter": 201
+    },
+    {
+      "log": "integrated-local/logs/capture-nl.log",
+      "logSha256": "540f2cc8d70b491e317b43320bc1504d13b21b8372f9cd3b2f35b7f2d1acfaba",
+      "captured": 5,
+      "selected": 5,
+      "failed": 0,
+      "indexRowsAfter": 201
+    },
+    {
+      "log": "integrated-local/logs/capture-pt.log",
+      "logSha256": "cd909093681e77bc0eefb03c4649f459e30ad7c7f31dd33e2e791c0937f03a93",
+      "captured": 5,
+      "selected": 5,
+      "failed": 0,
+      "indexRowsAfter": 201
+    },
+    {
+      "log": "integrated-local/logs/capture-ru.log",
+      "logSha256": "029eee4e6c4cb8ea87eba5998fffe1ce1b7f62ae20ce3ef6c08711d4832c4779",
+      "captured": 5,
+      "selected": 5,
+      "failed": 0,
+      "indexRowsAfter": 201
+    },
+    {
+      "log": "integrated-local/logs/capture-zh-Hans.log",
+      "logSha256": "9577285b375bfcc4facb1b8aabffca2c5f0b7e3e04b28d71d5c25f1cb43f3599",
+      "captured": 5,
+      "selected": 5,
+      "failed": 0,
+      "indexRowsAfter": 201
+    }
+  ],
+  "captureTotals": {
+    "groups": 14,
+    "pageCaptures": 66,
+    "failed": 0,
+    "supersededInferredCount": 92
+  },
   "classification": {
     "en": {
       "/yoga-meditation-training/": "semantic",
       "/all-programs/": "semantic",
       "/ayurvedic-treatments/": "raw-identical",
       "/wellness-programs/": "raw-identical",
-      "/treatment-programs/": "raw-identical",
-      "/training-programs/": "raw-identical",
+      "/treatment-programs/": "excluded-redirect-not-captured (committed snapshot unchanged)",
+      "/training-programs/": "excluded-redirect-not-captured (committed snapshot unchanged)",
       "/yoga-meditation-programs/": "raw-identical",
       "/ (desktop static)": "semantic"
     },
@@ -124,7 +275,7 @@
       }
     }
   },
-  "classificationRule": "raw-identical or noise-only (runtime ahv-lang-list-N ids and generated scp* scoped class tokens) captures were reverted to original bytes and original index rows; only semantic captures are kept fresh.",
+  "classificationRule": "raw-identical, noise-only (runtime ahv-lang-list-N ids and generated scp* scoped class tokens) or cookie-entry-timing-only captures were reverted to original bytes and original index rows; only semantic captures are kept fresh. cookie-entry-timing-only = the sole remaining difference is the footer button matched exactly by COOKIE_RE <button type=\"button\" data-ahv-cookie-choices=\"\" class=\"ahv-cookie-preferences\">LABEL</button>, which the unchanged public/consent/bridge.mjs injects at runtime (present in ~96% of original archive bodies; absence is capture timing).",
   "freshBodies": 24,
   "freshIndexes": 12,
   "unchangedMembers": 2388,
@@ -1734,5 +1885,465 @@
   "batchLimit": 25,
   "remoteUploaded": false,
   "remoteAssetId": null,
-  "productionPublished": false
+  "productionPublished": false,
+  "cookieEntryTimingException": {
+    "normalizer": "integrated-local/p4_classify.py COOKIE_RE / norm2 (exact markup match; label must equal the locale label found in the original archive bodies)",
+    "consentSource": {
+      "file": "public/consent/bridge.mjs",
+      "sha256AtCapture": "52ea454f9c765d7a8716fb59dc0fe699d0d9eecc18d5e5d3a79751622e806986",
+      "sha256AtBase_d3d6f3700": "52ea454f9c765d7a8716fb59dc0fe699d0d9eecc18d5e5d3a79751622e806986",
+      "unchanged": true
+    },
+    "revertedAsTimingOnly": [
+      {
+        "locale": "ru",
+        "route": "/yoga-meditation-programs/"
+      }
+    ],
+    "keptFreshWithExistingControl": [
+      {
+        "locale": "hi",
+        "route": "/all-programs/",
+        "cookieButtonInsertedByCapture": [
+          "कुकी विकल्प"
+        ],
+        "cookieLabelsInOriginalLocaleBodies": [
+          "कुकी विकल्प"
+        ],
+        "insertedCookieLabelMatchesOriginalLocaleLabel": true,
+        "reverseMappedEqualsOriginal": true
+      },
+      {
+        "locale": "de",
+        "route": "/all-programs/",
+        "cookieButtonInsertedByCapture": [
+          "Cookie-Einstellungen"
+        ],
+        "cookieLabelsInOriginalLocaleBodies": [
+          "Cookie-Einstellungen"
+        ],
+        "insertedCookieLabelMatchesOriginalLocaleLabel": true,
+        "reverseMappedEqualsOriginal": true
+      }
+    ],
+    "claim": "No consent change or repair was made by N04; the existing approved control appears in two kept-fresh bodies because the fresh capture caught it mounted."
+  },
+  "metadataCorrection": {
+    "at": "2026-10-08T23:12:46.171030+00:00",
+    "atIST": "2026-10-09 04:42:46 IST",
+    "microtask": "N04.04b",
+    "findings": [
+      "N04-META-01",
+      "N04-META-02",
+      "N04-META-03 (worker-found: classification lineage)"
+    ],
+    "previousProofSha256": "bfa5f2d348e3c510b5193033403415dc4224c692a1300e83d17a48d9a06d388d",
+    "supersededMetadata": {
+      "capturedRoutes": [
+        "/yoga-meditation-training/",
+        "/all-programs/",
+        "/ayurvedic-treatments/",
+        "/wellness-programs/",
+        "/treatment-programs/",
+        "/training-programs/",
+        "/yoga-meditation-programs/"
+      ],
+      "classificationRule": "raw-identical or noise-only (runtime ahv-lang-list-N ids and generated scp* scoped class tokens) captures were reverted to original bytes and original index rows; only semantic captures are kept fresh.",
+      "classificationEnForExcludedRedirects": {
+        "/treatment-programs/": "raw-identical",
+        "/training-programs/": "raw-identical"
+      }
+    },
+    "runtimeImpact": "none: this file and the spec metadata are not read by any runtime, next build output or serving path; archive bytes, member hashes and serving pins unchanged",
+    "buildSourceCommit": "1282d435cfbc25f8e2aeb1f55c2cee9c8f0c6d7f",
+    "buildId": "bJOEA4HMShg1lCv4cAQi7"
+  },
+  "classificationLineage": {
+    "meaning": "`classification` records the FINAL verification pass (P4-CLASSIFY.json) after reverts: raw-identical there means the reverted bytes equal the original; it is not the first fresh-vs-original comparison. First comparisons are below; the fresh noise-only bodies themselves were overwritten by the in-place revert and are not retained.",
+    "attemptFiles": {
+      "a1": {
+        "file": "integrated-local/P4-CLASSIFY.attempt1-interrupted.json",
+        "sha256": "5f171256839ffce03d92c8bf56077094a365757293450e8c38a7f2b47b167857",
+        "status": "FAILED"
+      },
+      "a3": {
+        "file": "integrated-local/P4-CLASSIFY.attempt3-redirected-routes.json",
+        "sha256": "14fcd0f4f65b8c220e3cbf9a44054594beb4ac6a617c9b70d5dffe2264b5d89d",
+        "status": "FAILED"
+      },
+      "a4": {
+        "file": "integrated-local/P4-CLASSIFY.attempt4-cookie-timing-review.json",
+        "sha256": "630d7f3d3b7f34ffe6e3fc1261ae1a30d46583058b820c7e1854c174a6d4e659",
+        "status": "REVIEW"
+      },
+      "final": {
+        "file": "integrated-local/P4-CLASSIFY.json",
+        "sha256": "39e2ba9f1519cdb33218a3c08abfc13375bb954de131b4093294f875e75b2a8a",
+        "status": "PASS"
+      }
+    },
+    "firstComparison": {
+      "en": {
+        "/ayurvedic-treatments/": {
+          "firstComparison": "noise-only",
+          "source": "P4-CLASSIFY.attempt1-interrupted.json",
+          "action": "reverted to original bytes + original index row"
+        },
+        "/wellness-programs/": {
+          "firstComparison": "noise-only",
+          "source": "P4-CLASSIFY.attempt1-interrupted.json",
+          "action": "reverted to original bytes + original index row"
+        },
+        "/yoga-meditation-programs/": {
+          "firstComparison": "noise-only",
+          "source": "P4-CLASSIFY.attempt1-interrupted.json",
+          "action": "reverted to original bytes + original index row"
+        },
+        "/yoga-meditation-training/": {
+          "firstComparison": "semantic",
+          "action": "kept fresh"
+        },
+        "/all-programs/": {
+          "firstComparison": "semantic",
+          "action": "kept fresh"
+        },
+        "/ (desktop static)": {
+          "firstComparison": "semantic (exact marker insertion)",
+          "action": "kept fresh"
+        }
+      },
+      "locales": {
+        "hi": {
+          "/yoga-meditation-training/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/all-programs/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/ayurvedic-treatments/": {
+            "firstComparison": "UNRECORDED (non-semantic)",
+            "source": "reverted inside crashed attempt 3 (P4-CLASSIFY.attempt3-redirected-routes.json, KeyError on redirected route) before its locale row was saved; the attempt only reverts raw-identical or noise-only classes",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/wellness-programs/": {
+            "firstComparison": "UNRECORDED (non-semantic)",
+            "source": "reverted inside crashed attempt 3 (P4-CLASSIFY.attempt3-redirected-routes.json, KeyError on redirected route) before its locale row was saved; the attempt only reverts raw-identical or noise-only classes",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/yoga-meditation-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          }
+        },
+        "de": {
+          "/yoga-meditation-training/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/all-programs/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/ayurvedic-treatments/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/wellness-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/yoga-meditation-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          }
+        },
+        "fr": {
+          "/yoga-meditation-training/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/all-programs/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/ayurvedic-treatments/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/wellness-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/yoga-meditation-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          }
+        },
+        "es": {
+          "/yoga-meditation-training/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/all-programs/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/ayurvedic-treatments/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/wellness-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/yoga-meditation-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          }
+        },
+        "it": {
+          "/yoga-meditation-training/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/all-programs/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/ayurvedic-treatments/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/wellness-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/yoga-meditation-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          }
+        },
+        "pt": {
+          "/yoga-meditation-training/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/all-programs/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/ayurvedic-treatments/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/wellness-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/yoga-meditation-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          }
+        },
+        "nl": {
+          "/yoga-meditation-training/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/all-programs/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/ayurvedic-treatments/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/wellness-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/yoga-meditation-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          }
+        },
+        "ru": {
+          "/yoga-meditation-training/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/all-programs/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/ayurvedic-treatments/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/wellness-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/yoga-meditation-programs/": {
+            "firstComparison": "semantic",
+            "refinedClassification": "cookie-entry-timing-only",
+            "source": "attempt 4 -> final",
+            "action": "reverted to original bytes + original index row"
+          }
+        },
+        "ar": {
+          "/yoga-meditation-training/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/all-programs/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/ayurvedic-treatments/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/wellness-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/yoga-meditation-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          }
+        },
+        "zh-Hans": {
+          "/yoga-meditation-training/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/all-programs/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/ayurvedic-treatments/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/wellness-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/yoga-meditation-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          }
+        },
+        "ja": {
+          "/yoga-meditation-training/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/all-programs/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/ayurvedic-treatments/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/wellness-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/yoga-meditation-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          }
+        },
+        "ko": {
+          "/yoga-meditation-training/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/all-programs/": {
+            "firstComparison": "semantic",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "kept fresh"
+          },
+          "/ayurvedic-treatments/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/wellness-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          },
+          "/yoga-meditation-programs/": {
+            "firstComparison": "noise-only",
+            "source": "P4-CLASSIFY.attempt4-cookie-timing-review.json",
+            "action": "reverted to original bytes + original index row"
+          }
+        }
+      }
+    },
+    "counts": {
+      "freshKeptSemantic": 27,
+      "revertedNonSemantic": 39,
+      "revertedFirstLabelUnrecorded": 2
+    }
+  }
 }

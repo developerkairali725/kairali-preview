@@ -5,7 +5,7 @@
  "archive": "ahv-locale-prerenders-n04-integrated-20261009.tar.gz",
  "sha256": "6ba06e038f2e6a4e86eb566155f89e73bf86e80da6e3abc35179081c358cff37",
  "bytes": 43761510,
- "capturedSource": "N04 integrated local candidate at b27a94fec: 24 translated bodies freshly captured from the exact current translated runtime (Yoga & Training hub x12; Coming Soon finder cards where rendered); all other bodies and literal index rows preserved from the prior verified release (noise-only recaptures reverted). Local archive only; not uploaded.",
+ "capturedSource": "N04 integrated local candidate at b27a94fec: 24 translated bodies freshly captured from the exact current translated runtime (Yoga & Training hub x12; Coming Soon finder cards where rendered); all other bodies and literal index rows preserved from the prior verified release (noise-only and existing-consent-control timing-only recaptures reverted; 66 page captures in 14 groups, 2 redirect routes excluded). Local archive only; not uploaded.",
  "sources": [
   {
    "file": "english-candidate/route-manifest.json",
@@ -25604,7 +25604,7 @@
  },
  "incrementalN04Capture": {
   "proof": "english-candidate/n04-integrated-capture-proof.json",
-  "proofSha256": "bfa5f2d348e3c510b5193033403415dc4224c692a1300e83d17a48d9a06d388d",
+  "proofSha256": "9a98d28463528efff04cab2058e14e3bad02209479cfc35c93264c3dbed84367",
   "parentSpecSha256": "2c3e013f294a005b232cb735b7b94139daf5e567349238f1668a65c27d54ef0c",
   "parentArchiveSha256": "ecf134b717288fe5e98138fae245d189459c5d228f766139889aacb564443e70",
   "freshBodies": 24,
