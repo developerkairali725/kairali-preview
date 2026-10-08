@@ -66,10 +66,10 @@ test("loader: every route, unchanged URLs, Variant A, production, hidden pricing
   assert.equal(C.panchakarma.programDefault, "Panchakarma");
   // The first four stay variant A; the remaining 20 are four review batches of five, each on a kit variant.
   for (const slug of FIRST4) assert.equal(C[slug].defaultVariant, "A", slug);
-  assert.equal(LATER.length, 10);
-  // Stage 2 of 4 (release/partition.py): exactly these new routes.
-  assert.deepEqual(LATER, ["monsoon-wellness", "rejuvenation-detox", "ayurveda-retreat", "wellness-kerala", "cleansing-centre", "treatment-kerala", "south-india-cities", "brand", "weight-management", "lp-south-india"]);
-  assert.deepEqual(REVIEW_BATCHES.map((b) => b.length), [5,  5,  0,  0]);
+  assert.equal(LATER.length, 15);
+  // Stage 3 of 4 (release/partition.py): exactly these new routes.
+  assert.deepEqual(LATER, ["monsoon-wellness", "rejuvenation-detox", "ayurveda-retreat", "wellness-kerala", "cleansing-centre", "treatment-kerala", "south-india-cities", "brand", "weight-management", "lp-south-india", "lp-hospital-kerala", "lp-brand", "lp-cleansing-centre", "lp-pain-management", "lp-panchakarma"]);
+  assert.deepEqual(REVIEW_BATCHES.map((b) => b.length), [5,  5,  5,  0]);
   for (const slug of LATER) assert.ok(["A", "B", "C", "D"].includes(ROUTES[slug].variant), slug);
   assert.deepEqual(new Set(LATER.map((s) => ROUTES[s].variant)), new Set(["A",  "B",  "C",  "D"]), "the stage's kit variants are in use");
 });

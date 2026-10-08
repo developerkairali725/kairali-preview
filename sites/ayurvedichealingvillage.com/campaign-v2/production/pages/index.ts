@@ -17,6 +17,11 @@ import southIndiaCities from "./south-india-cities.ts";
 import brand from "./brand.ts";
 import weightManagement from "./weight-management.ts";
 import lpSouthIndia from "./lp-south-india.ts";
+import lpHospitalKerala from "./lp-hospital-kerala.ts";
+import lpBrand from "./lp-brand.ts";
+import lpCleansingCentre from "./lp-cleansing-centre.ts";
+import lpPainManagement from "./lp-pain-management.ts";
+import lpPanchakarma from "./lp-panchakarma.ts";
 
 export const COPY: Record<ProductionSlug, ProductionCopy> = {
   "treatment-packages": treatmentPackages,
@@ -33,4 +38,9 @@ export const COPY: Record<ProductionSlug, ProductionCopy> = {
   brand,
   "weight-management": weightManagement,
   "lp-south-india": lpSouthIndia,
+  "lp-hospital-kerala": lpHospitalKerala,
+  "lp-brand": lpBrand,
+  "lp-cleansing-centre": lpCleansingCentre,
+  "lp-pain-management": lpPainManagement,
+  "lp-panchakarma": lpPanchakarma,
 };
