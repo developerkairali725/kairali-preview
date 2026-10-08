@@ -76,8 +76,42 @@ html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
 }
 .lp-prod :is(.lp-plead, .lp-poffer, .lp-ppath, .lp-pplace, .lp-pstay, .lp-enq__intro) p a:hover { text-decoration-color: currentColor; }
 
-/* Hero: what "free" covers, under the buttons. */
-.lp-prod .lp-hero__note { font-size: 14px; line-height: 1.5; max-width: 470px; color: color-mix(in srgb, var(--lp-on-night) 78%, transparent); }
+/* Hero: what "free" covers, under the buttons, in the colour of the ground it actually sits on. C and D set it on
+   their light ground / white headline card, so it takes the skin's muted text (muted on ground and on surface are
+   tested ≥ 4.5:1 in every skin, test/lp-v2-skins.test.mjs); only A's hero is the night band. B's hero card already
+   says the same sentence beside its CTA (ConsultCard .lp-consult__sub), so B does not repeat it above the card. */
+.lp-prod .lp-hero__note { font-size: 14px; line-height: 1.5; max-width: 470px; color: var(--lp-muted); }
+.lp-prod[data-variant="A"] .lp-hero__note { color: color-mix(in srgb, var(--lp-on-night) 78%, transparent); }
+.lp-prod[data-variant="B"] .lp-hero__note { display: none; }
+
+/* Hero CTA: base.css's `.lp a { color: inherit }` outranks `.lp-btn--primary`, so on C the link took the ink colour
+   over the wine button. A sets its own ivory-on-night CTA; the light-headed variants get the skin's on-primary
+   (onPrimary on primary is tested ≥ 4.5:1 in every skin), as .lp-pcta and the enquiry buttons already do. */
+.lp-prod:not([data-variant="A"]) a.lp-hero__cta { color: var(--lp-on-primary); }
+
+/* Russian (C) headline: the long Russian words ("индивидуальным" ≈ 8em in the system serif) must never be split
+   mid-word by the hero's overflow-wrap guard, which stays. The type is sized so the longest word fits the column it
+   sets in: desktop 7/12 of (100vw − 64·2 padding − 56 gap), phones 100vw − 2·16, each with ~7% room for the
+   platform's Cyrillic fallback face. Wide screens keep the kit's 92px cap; English and German are unchanged. */
+@media (min-width: 768px) {
+  .lp-prod[data-variant="C"]:lang(ru) .lp-hero h1 { font-size: clamp(36px, calc((100vw - 184px) / 14.75), 92px); }
+}
+@media (max-width: 767px) {
+  .lp-prod[data-variant="C"]:lang(ru) .lp-hero h1 { font-size: min(42px, calc((100vw - 32px) / 8.6)); }
+}
+
+/* Russian phone action bar (the site's own review-chrome.js bar: Позвонить · Запрос · Бесплатная консультация ·
+   Chat). Cyrillic caps run ≈ 9px a letter at 12px bold with the bar's .4px tracking, so four equal (or fixed-weight)
+   columns split words at 320px ("КОНСУЛЬТАЦ / ИЯ", "ПОЗВОНИТ / Ь", "ЗАПРО / С"). On the Russian route only:
+   - the one-word labels' columns never go narrower than their word (minmax(max-content, …)), Chat's never under
+     48px, and the consultation tile takes the rest, which always leaves "БЕСПЛАТНАЯ / КОНСУЛЬТАЦИЯ" two whole lines;
+   - tracking 0 (Cyrillic caps need it least) buys ≈ 20px, so at 320px the tracks are ≈ 85 / 60 / 124 / 51px and at
+     390px ≈ 98 / 73 / 156 / 63px — every tile ≥ 48px wide, all still 52px tall.
+   Font, size, colours, order, destinations and the overflow guard are unchanged; English and German keep their bar. */
+@media (max-width: 699px) {
+  html[data-lp-surface="production"]:lang(ru) #ahv-cta-bar { grid-template-columns: minmax(max-content, 1fr) minmax(max-content, .75fr) minmax(0, 1.6fr) minmax(48px, .65fr); }
+  html[data-lp-surface="production"]:lang(ru) #ahv-cta-bar :is(a, button) { letter-spacing: 0; }
+}
 
 /* Enquiry: the closing invitation, then the same note. */
 .lp-prod .lp-enq__support { font-size: 15px; }
@@ -246,4 +280,57 @@ html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
   .lp-prod .lp-pdoc { display: grid; grid-template-columns: 112px minmax(0, 1fr); align-items: start; gap: 16px; padding-block: 16px; border-top: 1px solid var(--lp-hairline); }
   .lp-prod .lp-pdoc:last-child { border-bottom: 1px solid var(--lp-hairline); }
   .lp-prod .lp-pdoc__name { font-size: 20px; }
+}
+
+/* ═════════════ Variants B, C and D on the live routes (remaining 20, 8 Oct 2026) ═════════════
+   The kit variants' own layouts (sections.css [data-variant]) carry these pages; only what the production surface adds
+   is styled here, from the same skin vars. */
+
+/* Heritage line in the proof strip (review finding, 8 Oct 2026): the approved "Ayurvedic family tradition since 1908",
+   shown on every live route. A: an item in the proof row, its year in the display face like the rating. B phones show
+   it too (the kit hid the tile there); D: a plain tile like the others. */
+.lp-prod[data-variant="A"] .lp-proof__item--since { display: flex; align-items: baseline; gap: 10px; }
+.lp-prod[data-variant="A"] .lp-proof__item--since .lp-proof__label { max-width: 15ch; line-height: 1.35; }
+@media (max-width: 767px) {
+  .lp-prod[data-variant="A"] .lp-proof__item--since { flex-direction: column; gap: 2px; }
+  .lp-prod[data-variant="B"] .lp-proof__item--since { display: flex; }
+}
+
+/* Hero card (B and D) on routes without a Step-1 bar: the consultation itself, never a question. */
+.lp-prod .lp-consult--card { gap: 16px; justify-content: center; }
+.lp-prod .lp-consult--card .lp-consult__sub { margin-top: 0; font-size: 15px; line-height: 1.5; }
+.lp-prod a.lp-consult__submit { text-decoration: none; }
+.lp-prod .lp-consult__ask { width: 100%; justify-content: center; }
+.lp-prod[data-variant="D"] .lp-consult--card .lp-consult__sub { color: color-mix(in srgb, var(--lp-on-night) 80%, transparent); }
+.lp-prod[data-variant="D"] .lp-consult--card .lp-consult__submit { background: var(--lp-on-night); color: var(--lp-night); }
+.lp-prod[data-variant="D"] .lp-consult--card .lp-consult__arrow { background: color-mix(in srgb, var(--lp-night) 12%, transparent); }
+.lp-prod[data-variant="D"] .lp-consult__ask { color: var(--lp-on-night); border-color: color-mix(in srgb, var(--lp-on-night) 45%, transparent); background: transparent; }
+@media (max-width: 767px) {
+  /* B phones: the kit drops the hero body and form; here the card (what is free + the CTA) stays under the photograph. */
+  .lp-prod[data-variant="B"] .lp-hero__form { display: block; margin: 12px 12px 0; }
+  .lp-prod[data-variant="B"] .lp-consult--card { padding: 22px 20px; }
+  .lp-prod[data-variant="B"] .lp-consult--card .lp-consult__title,
+  .lp-prod[data-variant="D"] .lp-consult--card .lp-consult__title { font-size: 26px; }
+}
+
+/* Pinned header in the light-headed variants (B, C, D): their own surface and colour logo, the CTA in the primary
+   colours. A keeps its night bar above. */
+@media (min-width: 768px) {
+  .lp-prod:not([data-variant="A"]) .lp-header[data-stuck] {
+    inset-inline: 0; top: 0; padding: 0; background: var(--lp-surface); color: var(--lp-ink);
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--lp-ink) 10%, transparent), 0 14px 32px -24px color-mix(in srgb, var(--lp-ink) 40%, transparent);
+  }
+  .lp-prod:not([data-variant="A"]) .lp-header[data-stuck] .lp-header__bar {
+    max-width: none; margin: 0; border-radius: 0; box-shadow: none; background: transparent; padding-inline: 40px;
+  }
+  .lp-prod:not([data-variant="A"]) .lp-header[data-stuck] .lp-header__consult { background: var(--lp-primary); color: var(--lp-on-primary); }
+}
+
+/* One physician (the German and Russian routes, as their reviewed copy presents him): one wide card. */
+.lp-prod .lp-pdocs--one .lp-pdocs__list { grid-template-columns: minmax(0, 1fr); max-width: 760px; }
+.lp-prod .lp-pdocs--one .lp-pdoc { display: grid; grid-template-columns: 240px minmax(0, 1fr); align-items: center; gap: 32px; }
+.lp-prod .lp-pdocs--one .lp-pdoc__name { font-size: 28px; }
+@media (max-width: 767px) {
+  .lp-prod .lp-pdocs--one .lp-pdoc { grid-template-columns: 112px minmax(0, 1fr); gap: 16px; align-items: start; }
+  .lp-prod .lp-pdocs--one .lp-pdoc__name { font-size: 21px; }
 }

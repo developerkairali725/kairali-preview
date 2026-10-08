@@ -71,11 +71,16 @@ function lintProductionPage(c: CampaignConfig): Issue[] {
   if (p.pathway.steps.length < 2 || p.pathway.steps.length > 3) out.push(err("count.page.steps", "page.pathway.steps", "2-3 steps"));
   p.pathway.steps.forEach((s, i) => len(out, "length.page.stepTitle", `page.pathway.steps[${i}].title`, s.title, 1, 48));
   // The rest band's card sits over a 520px photograph on desktop.
-  len(out, "length.stillness.heading", "page.rest.heading", p.rest.heading, 1, 48);
-  const rest = p.rest.paragraphs.join(" ");
-  if (rest.length < 60 || rest.length > 450) out.push(err("length.stillness.body", "page.rest.paragraphs", `${rest.length} chars; allowed 60-450`));
-  heading("page.place.heading", p.place.heading);
-  if (p.place.villas && (p.place.villas.length < 2 || p.place.villas.length > 4)) out.push(err("count.page.villas", "page.place.villas", "2-4 villas"));
+  // Variant B has no rest band and variant D neither band nor village, so both are optional; checked when present.
+  if (p.rest) {
+    len(out, "length.stillness.heading", "page.rest.heading", p.rest.heading, 1, 48);
+    const rest = p.rest.paragraphs.join(" ");
+    if (rest.length < 60 || rest.length > 450) out.push(err("length.stillness.body", "page.rest.paragraphs", `${rest.length} chars; allowed 60-450`));
+  }
+  if (p.place) {
+    heading("page.place.heading", p.place.heading);
+    if (p.place.villas && (p.place.villas.length < 2 || p.place.villas.length > 4)) out.push(err("count.page.villas", "page.place.villas", "2-4 villas"));
+  }
   if (p.stories && (p.stories.films.length < 1 || p.stories.films.length > 4)) out.push(err("count.page.films", "page.stories.films", "1-4 films"));
   heading("page.stay.heading", p.stay.heading);
   if (p.stay.lists.length < 1 || p.stay.lists.length > 2) out.push(err("count.page.lists", "page.stay.lists", "1-2 lists"));
@@ -86,7 +91,9 @@ function lintProductionPage(c: CampaignConfig): Issue[] {
   heading("page.doctors.heading", p.doctors.heading);
   heading("page.closing.heading", p.closing.heading);
   // Every current physician the reviewed copy introduces (the production roster), never a placeholder.
-  if (c.doctors.length < 2 || c.doctors.length > 6) out.push(err("count.doctors", "doctors", "2-6 doctors"));
+  // The German and Russian routes' reviewed copy presents one physician (Dr. Deepu John); English pages show the roster.
+  const minDoctors = (c.locales[0] ?? "en") === "en" ? 2 : 1;
+  if (c.doctors.length < minDoctors || c.doctors.length > 6) out.push(err("count.doctors", "doctors", `${minDoctors}-6 doctors`));
   // One FAQ for the whole page (owner): the questions the reviewed copy answers, merged, never split.
   if (c.faq.length < 4 || c.faq.length > 10) out.push(err("count.faq", "faq", "4-10 items"));
   c.faq.forEach((f, i) => {
@@ -98,7 +105,7 @@ function lintProductionPage(c: CampaignConfig): Issue[] {
   const vw = visibleWords(c);
   if (vw < 450 || vw > 3600) out.push(err("length.visibleWords", "$", `${vw} visible words; allowed 450-3600 for a designed production page`));
   // Readability is reported, not blocking, on reviewed production copy (clinical register; long proper nouns).
-  const g = gradeLevel([c.hero.standfirst, ...p.lead.paragraphs.map(richText), ...p.pathway.steps.map((s) => richText(s.body)), ...p.rest.paragraphs].map(str).join(" "));
+  const g = gradeLevel([c.hero.standfirst, ...p.lead.paragraphs.map(richText), ...p.pathway.steps.map((s) => richText(s.body)), ...(p.rest?.paragraphs ?? [])].map(str).join(" "));
   if (g > 12) out.push(warn("readability.grade", "$", `grade ${g.toFixed(1)}; aim for 12 or lower on a production page`));
   return out;
 }

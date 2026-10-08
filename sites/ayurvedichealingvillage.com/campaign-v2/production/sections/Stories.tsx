@@ -1,17 +1,18 @@
 import Image from "next/image";
 import type { PageStories } from "../../kit/types.ts";
 import { SectionHead } from "../../sections/head";
+import type { SecProps } from "./parts";
 
 /**
  * Patient films, as the page this replaces offered them: each a link to the film on YouTube, opening in a new tab,
  * with its local thumbnail. No player is embedded and nothing is requested from YouTube until the visitor follows a
  * link, so the page's consent posture is unchanged. A night band, as the kit's Films (variant A).
  */
-export default function Stories({ s }: { s: PageStories }) {
+export default function Stories({ s, v, ui, no }: { s: PageStories } & SecProps) {
   return (
     <section className="lp-sec lp-pstories" aria-labelledby="lp-pstories-h">
       <div className="lp-pstories__top">
-        <SectionHead v="A" kicker="In their words" title={s.heading} id="lp-pstories-h" />
+        <SectionHead v={v} no={no} kicker={ui.kicker.stories} title={s.heading} id="lp-pstories-h" />
         <p className="lp-pstories__body">{s.body}</p>
       </div>
       <ul className="lp-pstories__list">

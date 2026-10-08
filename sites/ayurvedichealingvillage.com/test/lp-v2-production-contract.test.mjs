@@ -190,11 +190,25 @@ test("routes keep their existing lead identity and use the production form and a
     const c = productionCampaign(slug);
     assert.equal(c.form.adapterId, "ahv-production");
     // The family route keeps its own R10 familyFields form (lp-v2-production-batch2.test.mjs); every other route the default.
+    const profile = ROUTES[slug].productionForm.profile;
     if (slug === "family-ayurvedic-retreat") assert.equal(c.form.schema.id, "lp-v2-production-family");
     else if (slug === "pain-management") assert.equal(c.form.schema.id, "lp-v2-production-pain");
+    else if (profile === "r10") assert.equal(c.form.schema.id, "lp-v2-production-r10");
+    else if (profile === "campaign-enquiry") assert.equal(c.form.schema.id, "lp-v2-campaign-enquiry");
     else assert.equal(c.form.schema, PRODUCTION_CAMPAIGN_FORM);
     assert.deepEqual(c.productionForm, ROUTES[slug].productionForm);
   }
+});
+
+test("remaining 20: each keeps the lead identity of the page it replaces", () => {
+  // The specialist routes' R10 form (app/(campaign)/_traffic/SpecialistLanding.tsx: formType → "r10-<kind>").
+  const R10 = { "monsoon-wellness": "r10-monsoon", "rejuvenation-detox": "r10-detox", "ayurveda-retreat": "r10-retreat" };
+  for (const [slug, fv] of Object.entries(R10)) assert.deepEqual(ROUTES[slug].productionForm, { formVariant: fv, downloadGuide: false, profile: "r10" }, slug);
+  // Every other route: campaign-enquiry-form.tsx with form_variant = the route's own path (its formType), guide when offered.
+  for (const slug of PRODUCTION_SLUGS.filter((s) => ROUTES[s].productionForm.profile === "campaign-enquiry")) {
+    assert.deepEqual(ROUTES[slug].productionForm, { formVariant: ROUTES[slug].route, downloadGuide: true, profile: "campaign-enquiry" }, slug);
+  }
+  assert.equal(PRODUCTION_SLUGS.filter((s) => ROUTES[s].productionForm.profile === "campaign-enquiry").length, 17);
 });
 
 test("no-JS: the production enquiry posts to /api/forms-unavailable (never reads the body); previews keep /api/lead/", () => {
@@ -323,4 +337,37 @@ test("production consent preserves the current legal acknowledgement and documen
   const form = read("campaign-v2/sections/interactive/EnquiryForm.tsx");
   assert.match(form, /href=\{production \? "\/new-privacy-policy\/" : privacyHref\}/);
   assert.match(form, /production \? <a[^>]+href="\/terms-and-conditions\/"/);
+});
+
+// ── remaining 20: the campaign enquiry form's request, key for key ────────────────────────────────────────
+test("campaign enquiry routes: the request body of app/(lp)/_components/campaign-enquiry-form.tsx, in order; nothing is sent for a bot", async () => {
+  const { buildCampaignEnquiryLead, productionLeadAdapter } = await import("../campaign-v2/forms/adapter.ts");
+  const { campaignEnquiryForm } = await import("../campaign-v2/forms/schema.ts");
+  const production = ROUTES["lp-weight-management"].productionForm;
+  const env = { location: { origin: "https://ayurvedichealingvillage.com", pathname: "/lp/weight-loss/", search: "?gclid=abc&utm_source=google&x=1" }, referrer: "https://www.google.com/search?q=x" };
+  const values = { fullName: " Asha ", email: "asha@example.com ", phone: " +91 98765 43210 ", message: " Hello ", consent: true, honeypot: "" };
+  const body = buildCampaignEnquiryLead(values, { token: "t-1", locale: "en", production, env });
+  assert.deepEqual(Object.keys(body), ["form", "submissionToken", "site_language", "lead_source_url", "referrer", "gclid", "utm_source", "fields"]);
+  assert.deepEqual(body.fields, { landing_page_path: "/lp/weight-loss/", form_variant: "/lp/weight-loss/", fname: "Asha", email: "asha@example.com", phone: "+91 98765 43210", message: "Hello", consent: true });
+  assert.equal(body.lead_source_url, "https://ayurvedichealingvillage.com/lp/weight-loss/?gclid=abc&utm_source=google");
+  assert.equal(body.referrer, "https://www.google.com/");
+  assert.equal(buildCampaignEnquiryLead(values, { token: "t", locale: "de", production: ROUTES["lp-behandlung-kerala"].productionForm, env }).site_language, "de");
+  // The live form's fields: phone optional, no country-code field; German labels are that form's own.
+  for (const l of ["en", "de", "ru"]) {
+    const s = campaignEnquiryForm(l);
+    assert.deepEqual(s.steps[0].fields.map((f) => [f.name, f.required]), [["fullName", true], ["email", true], ["phone", false], ["message", false]], l);
+  }
+  assert.equal(campaignEnquiryForm("de").steps[0].fields[0].label, "Ihr Name");
+  assert.equal(campaignEnquiryForm("de").consentLabel(), "Ich stimme zu, zu meiner Anfrage kontaktiert zu werden.");
+  // A filled honeypot sends nothing (the live form returns before fetch).
+  let called = false;
+  const r = await productionLeadAdapter.submit({ ...values, honeypot: "bot" }, { production, locale: "en", token: "t", env, fetch: async () => { called = true; return new Response("{}"); } });
+  assert.equal(r.status, "error");
+  assert.equal(called, false);
+  // Success is ok:true, as the live form; a 503 *_NOT_CONFIGURED says so truthfully, in the page language.
+  const ok = await productionLeadAdapter.submit(values, { production, locale: "en", token: "t", env, fetch: async () => new Response(JSON.stringify({ ok: true }), { status: 200 }) });
+  assert.equal(ok.status, "received");
+  const nc = await productionLeadAdapter.submit(values, { production, locale: "ru", token: "t", env, fetch: async () => new Response(JSON.stringify({ ok: false, code: "LEAD_NOT_CONFIGURED" }), { status: 503 }) });
+  assert.equal(nc.code, "not_configured");
+  assert.match(nc.message, /не подключена/);
 });

@@ -5,6 +5,7 @@ import { NABH_NO, FAMILY_TRADITION } from "./facts.ts";
 import { TRIPADVISOR, monthLabel } from "../data/ratings.ts";
 import { LATEST_TRAVELERS_CHOICE, awardRow, type Award } from "../data/awards.ts";
 import { getGoogleRating } from "../data/google-rating.ts";
+import { pageUi } from "../production/ui.ts";
 
 // Every rating, count and award below comes from campaign-v2/data/*.ts. Never type one here.
 const TA_AS_OF = `Tripadvisor, as of ${monthLabel(TRIPADVISOR.asOf)}`;
@@ -53,22 +54,32 @@ function DesktopOnlyAwardLogo({ a }: { a: Award }) {
  * A a logo row, B and D a bento of cards, C an editorial trust line. The Google item exists only when the
  * live Places API answered (data/google-rating.ts); otherwise it is left out, with no placeholder or gap.
  */
-export default async function ProofStrip({ c, v }: SectionProps) {
-  const show = SHOW[v];
+export default async function ProofStrip({ c, v, req }: SectionProps) {
+  const production = req.surface === "production";
+  const ui = pageUi(req);
+  // Live ad routes show the family-tradition line in every variant (review finding, 8 Oct 2026: the heritage line was
+  // missing). The wording is the owner's approved fact (sections/facts.ts), never a derived "100 years".
+  const show = production ? { ...SHOW[v], since: true } : SHOW[v];
+  const en = ui.lang === "en";
+  let asOf = TA_AS_OF;
+  if (!en) {
+    const [y, m] = TRIPADVISOR.asOf.split("-").map(Number);
+    asOf = `${ui.proof.asOf} ${new Intl.DateTimeFormat(ui.lang, { month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(Date.UTC(y, m - 1, 1)))}`;
+  }
   const doctors = c.doctors.slice(0, show.doctors);
   const google = await getGoogleRating();
   const tc = LATEST_TRAVELERS_CHOICE;
   return (
-    <section className="lp-proof" aria-label="Accreditation, reviews and awards">
+    <section className="lp-proof" aria-label={ui.proof.aria}>
       <div className={`lp-proof__grid${google ? "" : " lp-proof__grid--no-google"}`}>
         <div className="lp-proof__item lp-proof__item--ta">
           {show.tcInCard ? <Image className="lp-proof__tc" src={tc.logo.src} alt={tc.alt} width={tc.logo.width} height={tc.logo.height} sizes="56px" /> : null}
           <div>
             <p className="lp-proof__num">{fmtRating(TRIPADVISOR.rating)}<span className="lp-proof__of"> / 5</span></p>
-            <p className="lp-proof__label">{fmtCount(TRIPADVISOR.reviewCount)} Tripadvisor reviews</p>
+            <p className="lp-proof__label">{fmtCount(TRIPADVISOR.reviewCount)} {ui.proof.reviews}</p>
             <p className="lp-proof__src">
               <a className="lp-proof__link" href={TRIPADVISOR.listingUrl} target="_blank" rel="noopener"
-                aria-label={`${TA_AS_OF}: ${fmtRating(TRIPADVISOR.rating)} out of 5 from ${fmtCount(TRIPADVISOR.reviewCount)} reviews (opens Tripadvisor in a new tab)`}>{TA_AS_OF}</a>
+                aria-label={en ? `${TA_AS_OF}: ${fmtRating(TRIPADVISOR.rating)} out of 5 from ${fmtCount(TRIPADVISOR.reviewCount)} reviews (opens Tripadvisor in a new tab)` : `${asOf}: ${fmtRating(TRIPADVISOR.rating)} / 5 · ${fmtCount(TRIPADVISOR.reviewCount)} ${ui.proof.reviews}`}>{asOf}</a>
             </p>
           </div>
         </div>
@@ -86,12 +97,12 @@ export default async function ProofStrip({ c, v }: SectionProps) {
         ) : null}
         <div className="lp-proof__item lp-proof__item--nabh">
           <p className="lp-proof__num">NABH</p>
-          <p className="lp-proof__label">Accredited Ayurvedic hospital · <span className="lp-proof__cert">{NABH_NO}</span></p>
+          <p className="lp-proof__label">{ui.proof.hospital} · <span className="lp-proof__cert">{NABH_NO}</span></p>
         </div>
         {show.since ? (
           <div className="lp-proof__item lp-proof__item--since">
             <p className="lp-proof__num" aria-hidden="true">1908</p>
-            <p className="lp-proof__label">{FAMILY_TRADITION}</p>
+            <p className="lp-proof__label">{en ? FAMILY_TRADITION : ui.proof.tradition}</p>
           </div>
         ) : null}
         {doctors.length ? (
@@ -101,7 +112,7 @@ export default async function ProofStrip({ c, v }: SectionProps) {
                 <Image key={d.id} src={d.photo.src} alt="" width={d.photo.width} height={d.photo.height} sizes="56px" className="lp-proof__face" />
               ))}
             </span>
-            <p className="lp-proof__label"><b>Qualified Ayurvedic doctors</b> <span>{doctors[0].name} and team</span></p>
+            <p className="lp-proof__label"><b>{ui.proof.doctors}</b> <span>{doctors[0].name} {ui.proof.team}</span></p>
           </div>
         ) : null}
         {show.awardsRow ? (

@@ -43,11 +43,13 @@ export function pageText(c: CampaignConfig): PageItem[] {
     add(`page.pathway.steps[${i}].title`, s.title);
     add(`page.pathway.steps[${i}].body`, richText(s.body));
   });
-  add("page.rest.heading", p.rest.heading);
-  p.rest.paragraphs.forEach((t, i) => add(`page.rest.paragraphs[${i}]`, t));
-  add("page.place.heading", p.place.heading);
-  rich("page.place.paragraphs", p.place.paragraphs);
-  p.place.villas?.forEach((v, i) => {
+  if (p.rest) {
+    add("page.rest.heading", p.rest.heading);
+    p.rest.paragraphs.forEach((t, i) => add(`page.rest.paragraphs[${i}]`, t));
+  }
+  add("page.place.heading", p.place?.heading);
+  rich("page.place.paragraphs", p.place?.paragraphs);
+  p.place?.villas?.forEach((v, i) => {
     add(`page.place.villas[${i}].name`, v.name);
     add(`page.place.villas[${i}].body`, v.body);
     add(`page.place.villas[${i}].link`, v.link.label);
@@ -94,8 +96,8 @@ export function pageLinks(c: CampaignConfig): PageLinkItem[] {
   }
   rich("page.pathway.intro", p.pathway.intro);
   p.pathway.steps.forEach((s, i) => rich(`page.pathway.steps[${i}].body`, [s.body]));
-  rich("page.place.paragraphs", p.place.paragraphs);
-  p.place.villas?.forEach((v, i) => out.push({ path: `page.place.villas[${i}].link`, href: v.link.href, text: v.link.label }));
+  rich("page.place.paragraphs", p.place?.paragraphs);
+  p.place?.villas?.forEach((v, i) => out.push({ path: `page.place.villas[${i}].link`, href: v.link.href, text: v.link.label }));
   p.stories?.films.forEach((f, i) => out.push({ path: `page.stories.films[${i}]`, href: f.href, text: f.title }));
   rich("page.stay.paragraphs", p.stay.paragraphs);
   rich("page.stay.after", p.stay.after);

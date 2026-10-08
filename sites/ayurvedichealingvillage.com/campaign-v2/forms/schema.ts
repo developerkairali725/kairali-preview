@@ -291,6 +291,67 @@ export const PRODUCTION_PAIN_FORM: FormSchema = {
   } : step),
 };
 
+/** The R10 form of the specialist routes (monsoon, detox, retreat): the same fields as the pain route's form. */
+export const PRODUCTION_R10_FORM: FormSchema = { ...PRODUCTION_PAIN_FORM, id: "lp-v2-production-r10" };
+
+// ── The campaign enquiry form (app/(lp)/_components/campaign-enquiry-form.tsx), production profile "campaign-enquiry" ──
+// The form of the established DcPage routes and every /lp/ route: name and email required, phone optional (no country
+// code field, the same pattern and +91 placeholder), message optional, consent. Same labels and consent wording per
+// language (German = that form's own German copy; Russian = this page's translation of the same labels).
+
+type EnquiryCopy = {
+  title: string; intro: string; lede: string; name: string; email: string; phone: string; message: string;
+  consent: string; privacy: string; success: string;
+};
+export const CAMPAIGN_ENQUIRY_COPY: Record<"en" | "de" | "ru", EnquiryCopy> = {
+  en: {
+    title: "Request a consultation", intro: "Tell us how to reach you. Our patient care team can help you plan your visit.",
+    lede: LIVE_CAMPAIGN_FORM.lede ?? "", name: "Your name", email: "Email", phone: "Phone / WhatsApp (optional, include country code)",
+    message: "How can we help? (optional)", consent: "I agree to be contacted about my enquiry.", privacy: "Privacy policy",
+    success: "Thank you. Your enquiry has been received.",
+  },
+  de: {
+    title: "Kostenlose ärztliche Erstberatung", intro: "Teilen Sie uns mit, wie wir Sie erreichen können. Unser Patientenservice hilft Ihnen bei der Planung Ihres Aufenthalts.",
+    lede: "Ein kurzes Formular. Medizinische Angaben sind hier nicht nötig – Ihr Arzt fragt diese vertraulich in der Beratung ab.",
+    name: "Ihr Name", email: "E-Mail", phone: "Telefon / WhatsApp (optional, mit Ländervorwahl)", message: "Wie können wir helfen? (optional)",
+    consent: "Ich stimme zu, zu meiner Anfrage kontaktiert zu werden.", privacy: "Datenschutzerklärung (EN)",
+    success: "Vielen Dank. Ihre Anfrage ist eingegangen.",
+  },
+  ru: {
+    title: "Бесплатная консультация врача", intro: "Сообщите, как с вами связаться. Служба сопровождения пациентов поможет спланировать ваш визит.",
+    lede: "Короткая форма. Медицинские сведения здесь не нужны — врач спросит о них конфиденциально во время консультации.",
+    name: "Ваше имя", email: "Эл. почта", phone: "Телефон / WhatsApp (необязательно, с кодом страны)", message: "Чем мы можем помочь? (необязательно)",
+    consent: "Я согласен(на), чтобы со мной связались по поводу моего запроса.", privacy: "Политика конфиденциальности (EN)",
+    success: "Спасибо. Ваш запрос получен.",
+  },
+};
+
+export function campaignEnquiryForm(locale: string): FormSchema {
+  const k = locale === "de" || locale === "ru" ? locale : "en";
+  const t = CAMPAIGN_ENQUIRY_COPY[k];
+  return {
+    id: "lp-v2-campaign-enquiry",
+    marketingOptIn: false,
+    fullNameInFname: true,
+    submitLabel: LIVE_CAMPAIGN_FORM.submitLabel,
+    privacyLabel: t.privacy,
+    lede: t.lede,
+    successText: t.success,
+    consentLabel: () => t.consent,
+    steps: [{
+      id: "enquiry",
+      title: t.title,
+      intro: t.intro,
+      fields: [
+        { name: "fullName", type: "text", label: t.name, required: true, autocomplete: "name", maxLength: 120, mapsTo: "fname" },
+        { name: "email", type: "email", label: t.email, required: true, autocomplete: "email", maxLength: 254, mapsTo: "email" },
+        { name: "phone", type: "tel", label: t.phone, required: false, autocomplete: "tel", placeholder: "+91 …", maxLength: 30, pattern: LIVE_PHONE_PATTERN, mapsTo: "phone" },
+        { name: "message", type: "textarea", label: t.message, required: false, rows: 3, maxLength: 3000, mapsTo: "message" },
+      ],
+    }],
+  };
+}
+
 /** The family enquiry form; `healthNote` is the copy's note shown under the optional health-conditions field. */
 export function productionFamilyForm(healthNote: string): FormSchema {
   const { lede: _lede, ...base } = PRODUCTION_CAMPAIGN_FORM;

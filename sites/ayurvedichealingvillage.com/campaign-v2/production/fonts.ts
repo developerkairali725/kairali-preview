@@ -11,6 +11,19 @@ export const display = localFont({
   adjustFontFallback: "Times New Roman",
 });
 
+// Variant B's display face (kit/skins.ts "instrument"), self-hosted from the site's own copy of packages/ui's OFL file.
+// Not preloaded: only B routes use it, and it swaps in.
+export const instrument = localFont({
+  src: [
+    { path: "../../public/landing/specialist/instrument-serif-400.woff2", weight: "400", style: "normal" },
+    { path: "../../public/landing/specialist/instrument-serif-400-italic.woff2", weight: "400", style: "italic" },
+  ],
+  display: "swap",
+  variable: "--f-instrument",
+  preload: false,
+  adjustFontFallback: "Times New Roman",
+});
+
 export const body = localFont({
   src: [
     { path: "../../public/landing/specialist/mulish-400.woff2", weight: "400", style: "normal" },

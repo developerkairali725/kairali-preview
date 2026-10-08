@@ -45,7 +45,14 @@ export type PricingPolicy = { display: "hidden"; approvedBy: "owner"; date: stri
  * A live ad route's existing enquiry form, when it differs from the default production form. "family-retreat" = the
  * R10 form with familyFields (gender, country, preferred duration, "Any existing health conditions?").
  */
-export type ProductionFormProfile = "family-retreat" | "pain-management";
+export type ProductionFormProfile = "family-retreat" | "pain-management" | "r10" | "campaign-enquiry";
+/**
+ * "r10" = the R10 form of the specialist routes (monsoon, detox, retreat): the pain route's form under its own name
+ * (optional gender radio, required country code + phone). "campaign-enquiry" = app/(lp)/_components/
+ * campaign-enquiry-form.tsx (name, email, optional phone, optional message, consent; form_variant = the route path).
+ */
+/** The production page's language: English, or the German and Russian campaign routes. */
+export type PageLocale = "en" | "de" | "ru";
 
 // ── The designed production page (the live ad routes) ─────────────────────────────────────────────────────
 // The reviewed copy of a live ad route, arranged by the production template (production/ProductionPage.tsx).
@@ -83,8 +90,9 @@ export type PageStories = { heading: string; body: string; films: PageStory[] };
 export type PageDoctors = { heading: string; intro: string };
 /** The enquiry section's heading and invitation. */
 export type PageClosing = { heading: string; paragraphs: RichText[] };
+/** `rest` and `place` are optional: variant B shows no stillness band, variant D neither band nor village. */
 export type ProductionPage = {
-  lead: PageLead; offering: PageOffering; pathway: PagePathway; rest: PageRest; place: PagePlace;
+  lead: PageLead; offering: PageOffering; pathway: PagePathway; rest?: PageRest; place?: PagePlace;
   stories?: PageStories; stay: PageStay; doctors: PageDoctors; faqHeading: string; closing: PageClosing;
 };
 

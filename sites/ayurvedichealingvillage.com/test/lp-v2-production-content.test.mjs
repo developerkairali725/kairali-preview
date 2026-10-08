@@ -8,7 +8,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/load.ts";
-import { ROUTES, OG_IMAGE, PRICING_HIDDEN, SITE_ORIGIN } from "../campaign-v2/production/bindings.ts";
+import { ROUTES, OG_IMAGE, PRICING_HIDDEN, REVIEW_BATCHES, SITE_ORIGIN } from "../campaign-v2/production/bindings.ts";
 import { COPY } from "../campaign-v2/production/pages/index.ts";
 import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
 import { allText } from "../campaign-v2/kit/lint/claims.ts";
@@ -27,6 +27,9 @@ const read = (p) => fs.readFileSync(P(p), "utf8");
 const NOW = new Date(Date.UTC(2026, 9, 8, 12));
 const C = Object.fromEntries(PRODUCTION_SLUGS.map((s) => [s, productionCampaign(s)]));
 const BATCH1 = ["treatment-packages", "panchakarma"];
+const FIRST4 = ["treatment-packages", "panchakarma", "pain-management", "family-ayurvedic-retreat"];
+const LATER = PRODUCTION_SLUGS.filter((s) => !FIRST4.includes(s));
+const EN = (slug) => (ROUTES[slug].locale ?? "en") === "en";
 
 /** Every visible string of a production page: hero, CTAs, the designed sections, the FAQ, the doctor cards, alt text. */
 function pageStrings(c) {
@@ -44,8 +47,9 @@ test("loader: every route, unchanged URLs, Variant A, production, hidden pricing
   for (const slug of PRODUCTION_SLUGS) {
     const c = C[slug];
     assert.equal(c.route, ROUTES[slug].route);
-    assert.equal(c.defaultVariant, "A");
-    assert.deepEqual(c.variants, ["A"]);
+    assert.equal(c.defaultVariant, ROUTES[slug].variant ?? "A");
+    assert.deepEqual(c.variants, [ROUTES[slug].variant ?? "A"]);
+    assert.deepEqual(c.locales, [ROUTES[slug].locale ?? "en"]);
     assert.equal(c.production, true);
     assert.equal(c.fees, null);
     assert.equal(c.offer, null);
@@ -60,6 +64,12 @@ test("loader: every route, unchanged URLs, Variant A, production, hidden pricing
   assert.deepEqual([C["treatment-packages"].route, C.panchakarma.route], ["/ayurvedic-treatment-packages.html", "/panchkarma-treatment.html"]);
   assert.equal(C["treatment-packages"].programDefault, "");
   assert.equal(C.panchakarma.programDefault, "Panchakarma");
+  // The first four stay variant A; the remaining 20 are four review batches of five, each on a kit variant.
+  for (const slug of FIRST4) assert.equal(C[slug].defaultVariant, "A", slug);
+  assert.equal(LATER.length, 20);
+  assert.deepEqual(REVIEW_BATCHES.map((b) => b.length), [5, 5, 5, 5]);
+  for (const slug of LATER) assert.ok(["A", "B", "C", "D"].includes(ROUTES[slug].variant), slug);
+  assert.deepEqual(new Set(LATER.map((s) => ROUTES[s].variant)), new Set(["A", "B", "C", "D"]), "all four kit variants are in use");
 });
 
 test("copy: each route's copy is its own, adapted from its reviewed brief (file and review hash recorded)", () => {
@@ -69,14 +79,21 @@ test("copy: each route's copy is its own, adapted from its reviewed brief (file 
     panchakarma: "cce75640a02253b4d3c66206c91ecbb67236d23e326f052fff08f849ef5e240e",
     "pain-management": "89cf5e4c3a21e7d3995e1aaef18980fbf3741e744343a6ea5a0942ce17200c57",
     "family-ayurvedic-retreat": "f3b0d2d2f3703f2f4dd83acd4938746135bb272646bd7e8586d6e0f678101524",
+    // The remaining 20 record content/native-rewrite/<file> and its sha256 (CONTENT-INDEX.md, all 24 briefs
+    // independently reviewed); the hashes were checked against the brief files on 8 Oct 2026.
   };
   assert.deepEqual(Object.keys(COPY).sort(), [...PRODUCTION_SLUGS].sort());
   for (const slug of PRODUCTION_SLUGS) {
     const copy = COPY[slug];
     assert.equal(copy.slug, slug);
     assert.equal(copy.route, ROUTES[slug].route);
-    assert.equal(copy.source.file, `${slug}.md`);
-    assert.equal(copy.source.sha256, REVIEWED[slug], slug);
+    if (FIRST4.includes(slug)) {
+      assert.equal(copy.source.file, `${slug}.md`);
+      assert.equal(copy.source.sha256, REVIEWED[slug], slug);
+    } else {
+      assert.match(copy.source.file, /^((next-five|lp-batch|final-batch|languages)\/)?[a-z-]+\.md$/, slug);
+      assert.match(copy.source.sha256, /^[0-9a-f]{64}$/, slug);
+    }
   }
 });
 
@@ -102,6 +119,7 @@ test("lint: every visible string keeps the KTAHV register (no banned word, no cl
     const { warnings } = lintCampaign(C[slug], NOW);
     assert.deepEqual(warnings.filter((w) => w.rule === "register" || w.rule === "reply-time" || w.rule === "claims"), [], slug);
     for (const text of pageStrings(C[slug])) assert.doesNotMatch(text, /\b(spa|resort|holiday|luxury|cure[sd]?|journey|guests?)\b/i, `${slug}: ${text}`);
+    for (const text of pageStrings(C[slug])) assert.doesNotMatch(text, /(?<![\p{L}])(Kur|Urlaub|Luxus|Gäste|Gast|курорт|спа|роскош|люкс|гост[ьия])/iu, `${slug}: ${text}`);
   }
 });
 
@@ -122,7 +140,7 @@ test("reviewed diagnosis topics stay, named neutrally: none dropped or broadened
     const { errors, warnings } = lintCampaign(C[slug], NOW);
     assert.deepEqual(errors.filter((e) => /disease-treatment/.test(e.message)), [], slug);
     // Every diagnosis a page names is listed for clinical review; the Panchakarma page names none.
-    assert.equal(warnings.some((w) => w.rule === "disease.mention"), slug !== "panchakarma", slug);
+    if (FIRST4.includes(slug)) assert.equal(warnings.some((w) => w.rule === "disease.mention"), slug !== "panchakarma", slug);
   }
 });
 
@@ -136,7 +154,7 @@ test("hidden pricing: no numeric price anywhere on any page, and no rate or tari
 });
 
 test("owner rule: 'free' is only ever the initial doctor consultation", () => {
-  for (const slug of PRODUCTION_SLUGS) {
+  for (const slug of PRODUCTION_SLUGS.filter(EN)) {
     const c = C[slug];
     assert.equal(c.cta.primary, "Get Free Doctor Consultation");
     assert.equal(c.cta.primarySupport, "Your initial consultation is free. Ask for a quotation covering treatment and any later services.");
@@ -144,28 +162,47 @@ test("owner rule: 'free' is only ever the initial doctor consultation", () => {
       if (/\bfree\b/i.test(sentence)) assert.match(sentence, /consultation|treatment, tests, medicines/i, `${slug}: "${sentence}"`);
     }
   }
+  // German and Russian: "kostenlos" / "бесплатн" only ever for the initial doctor consultation (Erstberatung / консультац).
+  const LOCAL = { "lp-behandlung-kerala": [/kostenlos/i, /(Erst)?[Bb]eratung/], "lp-treatment-kerala-ru": [/бесплатн/i, /консультац/i] };
+  for (const [slug, [free, consult]] of Object.entries(LOCAL)) {
+    assert.match(C[slug].cta.primary, free, slug);
+    for (const s of pageStrings(C[slug])) for (const sentence of s.split(/(?<=[.;?!])\s+/)) if (free.test(sentence)) assert.match(sentence, consult, `${slug}: "${sentence}"`);
+  }
 });
 
 // ── the owner's corrections: composition ──────────────────────────────────────────────────────────────
-test("composition: one template in decision order; the doctors two sections further down, directly before the enquiry; one FAQ", () => {
+test("composition: every variant in decision order; the doctors after the village and the quotation, directly before the enquiry; one FAQ", () => {
   const src = read("campaign-v2/production/ProductionPage.tsx");
   const main = src.slice(src.indexOf("<main"), src.indexOf("</main>"));
-  const ORDER = ["Hero", "ConsultBar", "ProofStrip", "Lead", "Offering", "Pathway", "Rest", "Place", "Stories", "Stay", "Physicians", "Enquiry", "Faq"];
-  const at = ORDER.map((name) => {
-    const hits = [...main.matchAll(new RegExp(`<${name}\\b`, "g"))];
-    assert.equal(hits.length, 1, `<${name}> renders exactly once`);
+  // The frame: hero (+ Step-1 bar), proof, the variant's designed sections, then the enquiry and one FAQ.
+  const at = ["Hero", "ConsultBar", "ProofStrip", "order.map(render)", "Enquiry", "Faq"].map((name) => {
+    const hits = [...main.matchAll(new RegExp(name.includes("(") ? name.replace(/[().]/g, "\\$&") : `<${name}\\b`, "g"))];
+    assert.equal(hits.length, 1, `${name} renders exactly once`);
     return hits[0].index;
   });
-  assert.deepEqual([...at].sort((a, b) => a - b), at, "sections in decision order");
-  // The rejected composition rendered Doctors straight after the stillness band, ahead of the village and the fee
-  // section, and the old page's source body (with its own physician section and FAQ) before the enquiry.
-  const idx = (name) => at[ORDER.indexOf(name)];
-  assert.ok(idx("Place") < idx("Physicians") && idx("Stay") < idx("Physicians"), "doctors follow the village and the quotation section");
-  assert.equal(ORDER[ORDER.indexOf("Physicians") + 1], "Enquiry", "doctors lead straight into the enquiry");
-  for (const gone of ["Doctors", "Body", "FeePlan", "Stillness", "Admission", "Village", "Films", "LongForm", "OfferBand", "Fees"]) {
-    assert.doesNotMatch(main, new RegExp(`<${gone}\\b`), `${gone} is not part of the designed page`);
-  }
+  assert.deepEqual([...at].sort((a, b) => a - b), at, "frame in decision order");
   assert.match(main, /\{c\.consultBar === false \? null : <ConsultBar \{\.\.\.p\} \/>\}/);
+  // Each variant's designed sections (ORDER), parsed from the template.
+  const table = src.slice(src.indexOf("const ORDER"), src.indexOf("};", src.indexOf("const ORDER")));
+  const ORDER = Object.fromEntries([...table.matchAll(/([ABCD]): \[([^\]]+)\]/g)].map(([, v, l]) => [v, [...l.matchAll(/"(\w+)"/g)].map((m) => m[1])]));
+  assert.deepEqual(ORDER.A, ["lead", "offering", "pathway", "rest", "place", "stories", "stay", "physicians"], "A is the approved order of the first four");
+  for (const [v, list] of Object.entries(ORDER)) {
+    assert.equal(list.at(-1), "physicians", `${v}: the doctors lead straight into the enquiry`);
+    assert.equal(new Set(list).size, list.length, `${v}: each section once`);
+    if (list.includes("place")) assert.ok(list.indexOf("place") < list.indexOf("physicians"), `${v}: doctors follow the village`);
+    assert.ok(list.indexOf("stay") < list.indexOf("physicians"), `${v}: doctors follow the quotation section`);
+  }
+  assert.ok(!ORDER.B.includes("rest") && !ORDER.D.includes("rest") && !ORDER.D.includes("place"), "B has no stillness band; D neither band nor village");
+  for (const gone of ["Doctors", "Body", "FeePlan", "Stillness", "Admission", "Village", "Films", "LongForm", "OfferBand", "Fees"]) {
+    assert.doesNotMatch(src, new RegExp(`<${gone}\\b`), `${gone} is not part of the designed page`);
+  }
+  // A page writes only the sections its variant shows.
+  for (const slug of PRODUCTION_SLUGS) {
+    const v = ROUTES[slug].variant ?? "A";
+    if (!ORDER[v].includes("rest")) assert.equal(C[slug].page.rest, undefined, `${slug}: no unused stillness copy`);
+    if (!ORDER[v].includes("place")) assert.equal(C[slug].page.place, undefined, `${slug}: no unused village copy`);
+    if (!ORDER[v].includes("stories")) assert.equal(C[slug].page.stories, undefined, `${slug}: no unused films`);
+  }
 });
 
 test("one FAQ: the page's questions in one list, nowhere else, and FAQPage JSON-LD carries exactly those", () => {
@@ -203,7 +240,8 @@ test("doctors: the current consented roster, once per page, every fact from the 
   }
   for (const slug of PRODUCTION_SLUGS) {
     const c = C[slug];
-    assert.deepEqual(c.doctors.map((d) => d.id), [...CURRENT_ROSTER], slug);
+    // English pages show the roster; the German and Russian reviewed copy presents Dr. Deepu John only.
+    assert.deepEqual(c.doctors.map((d) => d.id), EN(slug) ? [...CURRENT_ROSTER] : ["deepu-john"], slug);
     // The designed sections never repeat a biography: names appear only on the doctor cards.
     for (const { path: at, text } of pageText(c)) assert.doesNotMatch(text, /\bDr\. /, `${slug} ${at}`);
     assert.doesNotMatch(pageStrings(c).join(" | "), /Ashikh?a/);
@@ -264,7 +302,11 @@ test("media: the steps photograph is one of the route's gallery photographs, nev
     assert.ok(!c.gallery.slice(0, 5).some((g) => g.image.id === im.id), `${slug}: not one of the five mosaic tiles`);
     assert.notEqual(im.id, c.hero.image.A.id, slug);
     assert.notEqual(im.id, c.hero.mobileImage.id, slug);
+    assert.ok(!c.gallery.some((g) => g.image.id === c.hero.image.A.id), `${slug}: the hero is not repeated in the gallery`);
   }
+  // Review finding (8 Oct 2026): /pain-management.html and /panchkarma-treatment.html no longer share a hero.
+  assert.notEqual(C["pain-management"].hero.image.A.id, C.panchakarma.hero.image.A.id);
+  assert.notEqual(C["pain-management"].hero.mobileImage.id, C.panchakarma.hero.mobileImage.id);
 });
 
 test("media: the two oversized kit images are real JPEGs now, at their registry size", () => {
@@ -279,7 +321,9 @@ test("media: the two oversized kit images are real JPEGs now, at their registry 
 test("metadata: canonical, robots and the Open Graph image are the replaced pages'; title and description from the copy", () => {
   // The batch-2 pages it replaces (app/(campaign)/_traffic/TrafficLanding.tsx trafficMetadata) set no image alt.
   const ALT = { "treatment-packages": "Kairali Ayurvedic Healing Village in Palakkad, Kerala", panchakarma: "Kairali Ayurvedic Healing Village, Palakkad" };
-  const ogImage = (slug) => ({ url: "https://ayurvedichealingvillage.com/landing/r10/og.jpg", width: 1200, height: 630, ...(ALT[slug] ? { alt: ALT[slug] } : {}) });
+  const ogImage = (slug) => ROUTES[slug].og
+    ? { url: ROUTES[slug].og.url, ...(ROUTES[slug].og.width ? { width: ROUTES[slug].og.width, height: ROUTES[slug].og.height } : {}) }
+    : { url: "https://ayurvedichealingvillage.com/landing/r10/og.jpg", width: 1200, height: 630, ...(ALT[slug] ? { alt: ALT[slug] } : {}) };
   for (const slug of PRODUCTION_SLUGS) {
     const c = C[slug];
     const live = productionMetadata(slug, c, { AHV_STAGING: "0" });
@@ -292,14 +336,23 @@ test("metadata: canonical, robots and the Open Graph image are the replaced page
     assert.equal(live.description, c.seo.description);
     assert.deepEqual(live.openGraph.images, [ogImage(slug)]);
     assert.equal(live.openGraph.url, live.alternates.canonical);
-    assert.equal(live.openGraph.locale, "en_IN");
-    assert.deepEqual(live.twitter.images, [OG_IMAGE.url]);
+    assert.equal(live.openGraph.locale, ROUTES[slug].og?.locale ?? "en_IN");
+    assert.deepEqual(live.twitter.images, [ROUTES[slug].og?.url ?? OG_IMAGE.url]);
   }
   // The reviewed briefs' search titles and descriptions (the first two are the original captured ones).
-  assert.deepEqual(PRODUCTION_SLUGS.map((s) => C[s].seo.title), [
+  assert.deepEqual(FIRST4.map((s) => C[s].seo.title), [
     "Ayurvedic Treatment Packages in Kerala | Kairali", "Panchakarma Treatment in Kerala | Kairali Ayurvedic Healing Village",
     "Ayurvedic Pain Management in Kerala | Kairali", "Family Ayurveda Retreat in Kerala | Kairali",
   ]);
+  // The replaced pages' own canonicals and Open Graph images (the old (campaign), (lp) and (campaign-de) pages).
+  const OLD = {
+    "wellness-kerala": "https://ayurvedichealingvillage.com/images/og/wellness-resort-kerala.html.jpg",
+    "lp-behandlung-kerala": "https://ayurvedichealingvillage.com/campaign-v110/images/patient-villa-maharaja.jpg",
+    "lp-weight-management": "https://ayurvedichealingvillage.com/campaign-v110/images/consultation-pulse.webp",
+  };
+  for (const [slug, url] of Object.entries(OLD)) assert.equal(productionMetadata(slug, C[slug], { AHV_STAGING: "0" }).openGraph.images[0].url, url, slug);
+  assert.equal(productionMetadata("lp-behandlung-kerala", C["lp-behandlung-kerala"], {}).openGraph.locale, "de_DE");
+  assert.equal(productionMetadata("lp-treatment-kerala-ru", C["lp-treatment-kerala-ru"], {}).alternates.canonical, "https://ayurvedichealingvillage.com/lp/treatment-in-kerala-russian/");
 });
 
 test("JSON-LD: the replaced pages' WebPage (and breadcrumb), plus FAQPage for the FAQ on the page", () => {

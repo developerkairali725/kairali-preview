@@ -9,9 +9,9 @@ const CHAPTERS: Partial<Record<Variant, Record<Chaptered, string>>> = {
 };
 
 /** Overline + h2 for the lower sections. In C the overline becomes a numbered chapter label. */
-export function SectionHead({ v, section, kicker, title, id, children }:
-  { v: Variant; section?: Chaptered; kicker: string; title: string; id: string; children?: ReactNode }) {
-  const no = section ? CHAPTERS[v]?.[section] : undefined;
+export function SectionHead({ v, section, no: chapter, kicker, title, id, children }:
+  { v: Variant; section?: Chaptered; /** An explicit chapter number (production pages number C's chapters in render order). */ no?: string; kicker: string; title: string; id: string; children?: ReactNode }) {
+  const no = chapter ?? (section ? CHAPTERS[v]?.[section] : undefined);
   return (
     <div className="lp-head">
       {no ? (

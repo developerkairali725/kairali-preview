@@ -380,8 +380,9 @@ test("batch 1 unchanged: default form and body, no batch-2 keys, the generic not
   assert.equal("genericNote" in S, false);
   assert.equal(S.lede, PRODUCTION_CAMPAIGN_FORM.lede);
   assert.deepEqual(S.steps[0].fields.map((f) => f.name), ["fullName", "email", "dialCode", "phone", "message"]);
+  // The same English line; a German or Russian route passes its own words (production/ui.ts form.note).
   assert.match(read("campaign-v2/sections/interactive/EnquiryForm.tsx"),
-    /\{i === 0 && schema\.genericNote !== false \? <p className="lp-enq__note">No medical details needed\. Your doctor asks for those privately at consultation\.<\/p> : null\}/);
+    /\{i === 0 && schema\.genericNote !== false \? <p className="lp-enq__note">\{ui\?\.note \?\? "No medical details needed\. Your doctor asks for those privately at consultation\."\}<\/p> : null\}/);
 });
 
 test("pain gender stays optional and unanswered by default; valid selections preserve original payload", () => {

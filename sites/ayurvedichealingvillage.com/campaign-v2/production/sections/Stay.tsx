@@ -1,7 +1,7 @@
 import type { CampaignConfig, PageStay } from "../../kit/types.ts";
 import { SectionHead } from "../../sections/head";
 import { Paras } from "../../sections/rich";
-import { ConsultCta } from "./parts";
+import { ConsultCta, type SecProps } from "./parts";
 
 /**
  * What a stay covers and how it is quoted — the enquiry-only quotation of the owner's hidden-pricing rule (no amount,
@@ -9,11 +9,11 @@ import { ConsultCta } from "./parts";
  * includes (a drawn check) and what to ask about (a drawn plus, muted). The list headings carry the meaning; the marks
  * only reinforce it.
  */
-export default function Stay({ c, st }: { c: CampaignConfig; st: PageStay }) {
+export default function Stay({ c, st, v, ui, no }: { c: CampaignConfig; st: PageStay } & SecProps) {
   return (
     <section className="lp-sec lp-pstay" aria-labelledby="lp-pstay-h">
       <div className="lp-pstay__intro">
-        <SectionHead v="A" kicker="Your quotation" title={st.heading} id="lp-pstay-h" />
+        <SectionHead v={v} no={no} kicker={ui.kicker.stay} title={st.heading} id="lp-pstay-h" />
         <Paras list={st.paragraphs} className="lp-pstay__p" />
       </div>
       <div className="lp-pstay__panel">
