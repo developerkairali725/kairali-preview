@@ -91,11 +91,14 @@ export const CONSENT_RUNTIME = `
     return "";
   }
   function measurementUrlSafe() {
+    return urlSafe(window.location.search, window.location.hash) && referrerSafe();
+  }
+  function urlSafe(search, hash) {
     // Meta and Clarity can inspect document.location themselves. Only start
     // them when every URL parameter is a bounded attribution value.
     var allowed = ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "gbraid", "wbraid", "fbclid"];
-    var safe = !window.location.hash || /^#(?:enquiry|main|contact|section-[0-8]|written-testimonials|press)$/.test(window.location.hash);
-    new URLSearchParams(window.location.search).forEach(function (value, name) {
+    var safe = !hash || /^#(?:enquiry|main|contact|section-[0-8]|written-testimonials|press)$/.test(hash);
+    new URLSearchParams(search).forEach(function (value, name) {
       // Google appends these numeric click metadata fields. They may remain in
       // the landing URL but are not copied into our attribution/session payload.
       if (name === "gad_source" || name === "gad_campaignid") {
@@ -106,6 +109,60 @@ export const CONSENT_RUNTIME = `
       if (allowed.indexOf(name) === -1 || !attributionValueSafe(name, value)) safe = false;
     });
     return safe;
+  }
+  function referrerSafe() {
+    // Meta and Clarity also read document.referrer. Our own pages are held to
+    // the same rule (site search puts typed text in ?q=; a page left before its
+    // ad metadata was removed still carries it); other sites' referrers reach
+    // GA4 as an origin only and are otherwise as the browser sent them.
+    try {
+      var referrer = new URL(document.referrer);
+      return referrer.origin !== window.location.origin || urlSafe(referrer.search, referrer.hash);
+    } catch (e) { return true; }
+  }
+  // Google Ads campaign templates add these keys to AHV-NEO click URLs (seen in
+  // the expanded landing-page report, 8 Sep-7 Oct 2026). Nothing on the site
+  // reads them, so they are removed from the address rather than reported. Each
+  // value must fit its documented ValueTrack form; anything else keeps
+  // measurement off. Keys not listed here (targetid included) stay unknown.
+  var AD_METADATA = {
+    campaignid: /^[0-9]{0,20}$/, adgroupid: /^[0-9]{0,20}$/, creative: /^[0-9]{0,20}$/, device: /^[mtc]?$/,
+    placement: /^[a-zA-Z0-9_.~-]{0,120}$/, keyword: /^[a-zA-Z0-9_.~ &-]{0,120}$/,
+    utm_adgroup: /^[a-zA-Z0-9_.~ &-]{0,120}$/, utm_device: /^[a-zA-Z0-9_.~ &-]{0,120}$/
+  };
+  function withoutAdMetadata(search, hash) {
+    // The query without ad metadata and unexpanded {placeholder} UTM values,
+    // keeping every other pair byte-for-byte; null when nothing would be removed
+    // or the remainder would still fail urlSafe().
+    var kept = [], removed = false, parts = (search.charAt(0) === "?" ? search.slice(1) : search).split("&");
+    for (var i = 0; i < parts.length; i++) {
+      if (!parts[i]) continue;
+      var name = null, value = "";
+      // URLSearchParams drops a leading "?" only from the whole query; the "&"
+      // keeps a pair like "?campaignid=1" the unknown key it is there.
+      new URLSearchParams("&" + parts[i]).forEach(function (v, k) { if (name === null) { name = k; value = v; } });
+      var placeholder = /^[{]_?[A-Za-z][A-Za-z0-9_]{0,39}[}]$/.test(value);
+      if (Object.prototype.hasOwnProperty.call(AD_METADATA, name)) {
+        if (!placeholder && !AD_METADATA[name].test(value)) return null;
+        removed = true;
+      } else if (placeholder && /^utm_(?:source|medium|campaign|term|content)$/.test(name)) removed = true;
+      else kept.push(parts[i]);
+    }
+    var cleaned = kept.length ? "?" + kept.join("&") : "";
+    return removed && urlSafe(cleaned, hash) ? cleaned : null;
+  }
+  function removeAdMetadata(tries) {
+    if (!cfg.measurement) return;
+    var search = withoutAdMetadata(window.location.search, window.location.hash);
+    if (search === null) return;
+    // Before hydration Next.js would write the original address back. It adopts
+    // outside history changes once its own history handlers replace the native ones.
+    if (window.next && Function.prototype.toString.call(window.history.replaceState).indexOf("[native code]") !== -1) {
+      if (tries > 0) setTimeout(function () { removeAdMetadata(tries - 1); }, 100);
+      return;
+    }
+    try { window.history.replaceState(null, "", window.location.pathname + search + window.location.hash); } catch (e) { return; }
+    if (consentChoice() === "accepted") startMeasurement();
   }
   function safePageLocation() {
     // Keep paid attribution parameters, but never send arbitrary URL parameters
@@ -252,4 +309,6 @@ export const CONSENT_RUNTIME = `
       document.head.appendChild(f);
     }
   }
+  // Up to 10 s for hydration; after that the address stays and measurement stays off.
+  removeAdMetadata(100);
 `;
