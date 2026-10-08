@@ -75,7 +75,7 @@ test("routing: exactly one page serves each URL, from app/(ppc-v2); the old page
 });
 
 test("routing: the remaining 20 are served once each by their production page; the old route entries are retired", () => {
-  assert.equal(PAGE_FILES.length, 19);
+  assert.equal(PAGE_FILES.length, 24);
   for (const [slug, b] of Object.entries(BINDINGS)) {
     const seg = b.route.replace(/^\/|\/$/g, "");
     const pages = APP_FILES.filter((f) => f.endsWith(`/${seg}/page.tsx`) && /^app\/\([^/]+\)\//.test(f) && f.split("/").slice(2, -1).join("/") === seg);
@@ -83,15 +83,15 @@ test("routing: the remaining 20 are served once each by their production page; t
     assert.match(read(`app/${groupOf(b)}/${seg}/page.tsx`), new RegExp(`const SLUG = "${slug}" as const;`), slug);
     assert.doesNotMatch(code(read(`app/${groupOf(b)}/${seg}/page.tsx`)), /searchParams|headers\(|cookies\(|force-dynamic|revalidate/);
   }
-  // Stage 3 of 4: the German page stays on app/(campaign-de) and the language groups arrive in stage 4.
-  assert.ok(fs.existsSync(P("app/(campaign-de)/lp/behandlung-in-kerala/page.tsx")));
-  assert.ok(!fs.existsSync(P("app/(ppc-v2-de)")) && !fs.existsSync(P("app/(ppc-v2-ru)")));
+  assert.ok(!fs.existsSync(P("app/(campaign-de)")), "the German page moved to app/(ppc-v2-de)");
+  assert.match(read("app/(ppc-v2-de)/layout.tsx"), /<ProductionDocument lang="de">\{children\}<\/ProductionDocument>/);
+  assert.match(read("app/(ppc-v2-ru)/layout.tsx"), /<ProductionDocument lang="ru">\{children\}<\/ProductionDocument>/);
 });
 
-test("routing: no production route is a redirect source; the Russian move (stage 4) is not yet present", () => {
+test("routing: the Russian campaign moves to /lp/treatment-in-kerala-russian/ with one 301 from the old URL; no other route moves", () => {
   const sitelinks = JSON.parse(read("english-candidate/ad-sitelink-redirects.json"));
   const ru = sitelinks.filter((r) => r.source === "/treatment-in-kerala-russian.html");
-  assert.deepEqual(ru, []);
+  assert.deepEqual(ru.map((r) => r.destination), ["/lp/treatment-in-kerala-russian/"]);
   // next.config.ts emits every ad-sitelink rule as a plain 301 (no `has`, no query in the destination, so the query
   // string with gclid / utm_* is carried through by Next.js).
   assert.match(read("next.config.ts"), /\.\.\.\[\.\.\.adSitelinks, \.\.\.legacyEnglishRedirects, \.\.\.documentRedirects\]\.map\(rule => \(\{ source:rule\.source, destination:rule\.destination, statusCode:301 \}\)\)/);
@@ -163,7 +163,7 @@ test("document: none of the /lp-v2 preview machinery reaches the live routes (no
 
 test("isolation: the kit design and the production document are loaded only by app/(ppc-v2) (and the staging-only /lp-v2 preview)", () => {
   const importers = (needle) => APP_FILES.filter((f) => /\.(tsx?|css)$/.test(f) && read(f).includes(needle));
-  assert.deepEqual(importers("campaign-v2/production").sort(), [...PAGE_FILES, "app/(ppc-v2)/layout.tsx"].sort());
+  assert.deepEqual(importers("campaign-v2/production").sort(), [...PAGE_FILES, "app/(ppc-v2)/layout.tsx", "app/(ppc-v2-de)/layout.tsx", "app/(ppc-v2-ru)/layout.tsx"].sort());
   assert.deepEqual(importers("sections/sections.css"), []);
   const cssImporters = walk(P("campaign-v2")).map((f) => path.relative(SITE, f).split(path.sep).join("/"))
     .filter((f) => /\.tsx?$/.test(f) && /import "[^"]*(sections\.css|production\.css|base\.css)"/.test(read(f)));

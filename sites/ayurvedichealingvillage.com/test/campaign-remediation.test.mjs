@@ -40,10 +40,11 @@ test('LP staging exposure retains explicit analytics activation and short form v
 });
 test('confirmed broken ad sitelinks map directly to existing, language-appropriate routes',()=>{
  const rules=JSON.parse(read('english-candidate/ad-sitelink-redirects.json'));
- assert.deepEqual(rules.map(r=>[r.source,r.destination]),[['/contact-us.aspx','/contact-us/'],['/villas.aspx','/our-villas/'],['/de/behandlung-in-kerala.html','/lp/behandlung-in-kerala/']]);
+ assert.deepEqual(rules.map(r=>[r.source,r.destination]),[['/contact-us.aspx','/contact-us/'],['/villas.aspx','/our-villas/'],['/de/behandlung-in-kerala.html','/lp/behandlung-in-kerala/'],['/treatment-in-kerala-russian.html','/lp/treatment-in-kerala-russian/']]);
  const manifest=JSON.parse(read('english-candidate/route-manifest.json'));
- for(const r of rules)assert.ok(manifest.routes.some(x=>x.path===r.destination)||fs.existsSync(new URL('../app/(lp)'+r.destination+'page.tsx',import.meta.url))||fs.existsSync(new URL('../app/(campaign-de)'+r.destination+'page.tsx',import.meta.url)));
- assert.match(read('app/(campaign-de)/layout.tsx'),/lang="de"/);
+ for(const r of rules)assert.ok(manifest.routes.some(x=>x.path===r.destination)||fs.existsSync(new URL('../app/(lp)'+r.destination+'page.tsx',import.meta.url))||['(ppc-v2-de)','(ppc-v2-ru)'].some(g=>fs.existsSync(new URL('../app/'+g+r.destination+'page.tsx',import.meta.url))));
+ assert.match(read('app/(ppc-v2-de)/layout.tsx'),/lang="de"/);
+ assert.match(read('app/(ppc-v2-ru)/layout.tsx'),/lang="ru"/);
 });
 
  test("campaign enquiry targets exist in both breakpoint templates", () => {

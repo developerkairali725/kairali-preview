@@ -22,6 +22,11 @@ import lpBrand from "./lp-brand.ts";
 import lpCleansingCentre from "./lp-cleansing-centre.ts";
 import lpPainManagement from "./lp-pain-management.ts";
 import lpPanchakarma from "./lp-panchakarma.ts";
+import lpTreatmentKerala from "./lp-treatment-kerala.ts";
+import lpTreatmentPackages from "./lp-treatment-packages.ts";
+import lpWeightManagement from "./lp-weight-management.ts";
+import lpBehandlungKerala from "./lp-behandlung-kerala.ts";
+import lpTreatmentKeralaRu from "./lp-treatment-kerala-ru.ts";
 
 export const COPY: Record<ProductionSlug, ProductionCopy> = {
   "treatment-packages": treatmentPackages,
@@ -43,4 +48,9 @@ export const COPY: Record<ProductionSlug, ProductionCopy> = {
   "lp-cleansing-centre": lpCleansingCentre,
   "lp-pain-management": lpPainManagement,
   "lp-panchakarma": lpPanchakarma,
+  "lp-treatment-kerala": lpTreatmentKerala,
+  "lp-treatment-packages": lpTreatmentPackages,
+  "lp-weight-management": lpWeightManagement,
+  "lp-behandlung-kerala": lpBehandlungKerala,
+  "lp-treatment-kerala-ru": lpTreatmentKeralaRu,
 };

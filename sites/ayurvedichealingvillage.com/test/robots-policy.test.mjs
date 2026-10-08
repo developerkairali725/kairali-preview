@@ -21,8 +21,12 @@ test('owner-approved campaign URLs are indexable only in production',()=>{
   assert.equal(c.routeRobots({path},true),'noindex, nofollow',path);
  }
 });
-test('native LP and German campaign layouts respect the production flag',()=>{
- for (const path of ['app/(lp)/layout.tsx','app/(campaign-de)/layout.tsx']) {
+test('native LP layout and the production campaign routes respect the production flag',()=>{
+ // The German campaign page now renders on the production template (app/(ppc-v2-de)); its robots, like every
+ // production route's, come from campaign-v2/production/metadata.ts with the same expression.
+ const meta=fs.readFileSync('campaign-v2/production/metadata.ts','utf8');
+ assert.match(meta,/robots: \{ index: env\.AHV_STAGING === "0", follow: true \}/);
+ for (const path of ['app/(lp)/layout.tsx']) {
   const src=fs.readFileSync(path,'utf8');
   const expr=src.match(/index:([^,}]+)/)[1];
   for(const value of ['0','1',undefined,'[SENSITIVE]']) {

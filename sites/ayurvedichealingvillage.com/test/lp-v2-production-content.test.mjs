@@ -66,12 +66,10 @@ test("loader: every route, unchanged URLs, Variant A, production, hidden pricing
   assert.equal(C.panchakarma.programDefault, "Panchakarma");
   // The first four stay variant A; the remaining 20 are four review batches of five, each on a kit variant.
   for (const slug of FIRST4) assert.equal(C[slug].defaultVariant, "A", slug);
-  assert.equal(LATER.length, 15);
-  // Stage 3 of 4 (release/partition.py): exactly these new routes.
-  assert.deepEqual(LATER, ["monsoon-wellness", "rejuvenation-detox", "ayurveda-retreat", "wellness-kerala", "cleansing-centre", "treatment-kerala", "south-india-cities", "brand", "weight-management", "lp-south-india", "lp-hospital-kerala", "lp-brand", "lp-cleansing-centre", "lp-pain-management", "lp-panchakarma"]);
-  assert.deepEqual(REVIEW_BATCHES.map((b) => b.length), [5,  5,  5,  0]);
+  assert.equal(LATER.length, 20);
+  assert.deepEqual(REVIEW_BATCHES.map((b) => b.length), [5, 5, 5, 5]);
   for (const slug of LATER) assert.ok(["A", "B", "C", "D"].includes(ROUTES[slug].variant), slug);
-  assert.deepEqual(new Set(LATER.map((s) => ROUTES[s].variant)), new Set(["A",  "B",  "C",  "D"]), "the stage's kit variants are in use");
+  assert.deepEqual(new Set(LATER.map((s) => ROUTES[s].variant)), new Set(["A", "B", "C", "D"]), "all four kit variants are in use");
 });
 
 test("copy: each route's copy is its own, adapted from its reviewed brief (file and review hash recorded)", () => {
@@ -165,7 +163,7 @@ test("owner rule: 'free' is only ever the initial doctor consultation", () => {
     }
   }
   // German and Russian: "kostenlos" / "бесплатн" only ever for the initial doctor consultation (Erstberatung / консультац).
-  const LOCAL = {}; // the German and Russian routes land in stage 4
+  const LOCAL = { "lp-behandlung-kerala": [/kostenlos/i, /(Erst)?[Bb]eratung/], "lp-treatment-kerala-ru": [/бесплатн/i, /консультац/i] };
   for (const [slug, [free, consult]] of Object.entries(LOCAL)) {
     assert.match(C[slug].cta.primary, free, slug);
     for (const s of pageStrings(C[slug])) for (const sentence of s.split(/(?<=[.;?!])\s+/)) if (free.test(sentence)) assert.match(sentence, consult, `${slug}: "${sentence}"`);
@@ -349,8 +347,12 @@ test("metadata: canonical, robots and the Open Graph image are the replaced page
   // The replaced pages' own canonicals and Open Graph images (the old (campaign), (lp) and (campaign-de) pages).
   const OLD = {
     "wellness-kerala": "https://ayurvedichealingvillage.com/images/og/wellness-resort-kerala.html.jpg",
+    "lp-behandlung-kerala": "https://ayurvedichealingvillage.com/campaign-v110/images/patient-villa-maharaja.jpg",
+    "lp-weight-management": "https://ayurvedichealingvillage.com/campaign-v110/images/consultation-pulse.webp",
   };
   for (const [slug, url] of Object.entries(OLD)) assert.equal(productionMetadata(slug, C[slug], { AHV_STAGING: "0" }).openGraph.images[0].url, url, slug);
+  assert.equal(productionMetadata("lp-behandlung-kerala", C["lp-behandlung-kerala"], {}).openGraph.locale, "de_DE");
+  assert.equal(productionMetadata("lp-treatment-kerala-ru", C["lp-treatment-kerala-ru"], {}).alternates.canonical, "https://ayurvedichealingvillage.com/lp/treatment-in-kerala-russian/");
 });
 
 test("JSON-LD: the replaced pages' WebPage (and breadcrumb), plus FAQPage for the FAQ on the page", () => {

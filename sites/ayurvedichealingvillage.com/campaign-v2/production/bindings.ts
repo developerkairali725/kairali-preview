@@ -30,7 +30,9 @@ export type ProductionSlug =
   // Review batch 2
   | "treatment-kerala" | "south-india-cities" | "brand" | "weight-management" | "lp-south-india"
   // Review batch 3
-  | "lp-hospital-kerala" | "lp-brand" | "lp-cleansing-centre" | "lp-pain-management" | "lp-panchakarma";
+  | "lp-hospital-kerala" | "lp-brand" | "lp-cleansing-centre" | "lp-pain-management" | "lp-panchakarma"
+  // Review batch 4
+  | "lp-treatment-kerala" | "lp-treatment-packages" | "lp-weight-management" | "lp-behandlung-kerala" | "lp-treatment-kerala-ru";
 
 export type RouteBinding = {
   slug: ProductionSlug;
@@ -214,6 +216,13 @@ const SPECS: Spec[] = [
   // Not kt-199: /pain-management.html and /panchkarma-treatment.html already share that hero (review finding, 8 Oct).
   { slug: "lp-pain-management", route: "/lp/pain-management/", variant: "A", hero: "kt-202", mobile: "kt-190", pathway: "kt-199", form: enquiry("/lp/pain-management/"), og: OG_LP("images/therapy-pain-management.jpg") },
   { slug: "lp-panchakarma", route: "/lp/panchkarma-treatment/", variant: "D", hero: "kt-202", pathway: "kt-199", form: enquiry("/lp/panchkarma-treatment/"), og: OG_LP("images/consultation-pulse.webp") },
+  // Review batch 4
+  { slug: "lp-treatment-kerala", route: "/lp/treatment-in-kerala/", variant: "C", hero: "kt-199", pathway: "kt-202", form: enquiry("/lp/treatment-in-kerala/"), og: OG_LP("ahv/assets/img/wx-pathway.jpg") },
+  { slug: "lp-treatment-packages", route: "/lp/treatment-packages/", variant: "B", hero: "kt-116", pathway: "kt-199", form: enquiry("/lp/treatment-packages/"), og: OG_LP("images/therapy-abhyanga.jpg") },
+  { slug: "lp-weight-management", route: "/lp/weight-loss/", variant: "A", hero: "wx-dining", pathway: "kt-202", form: enquiry("/lp/weight-loss/"), og: OG_LP("images/consultation-pulse.webp") },
+  { slug: "lp-behandlung-kerala", route: "/lp/behandlung-in-kerala/", variant: "C", hero: "kt-190", pathway: "kt-199", locale: "de", form: enquiry("/lp/behandlung-in-kerala/"), og: OG_LP("images/patient-villa-maharaja.jpg", "de_DE") },
+  // New campaign path (owner); /treatment-in-kerala-russian.html redirects here (next.config.ts), query string kept.
+  { slug: "lp-treatment-kerala-ru", route: "/lp/treatment-in-kerala-russian/", variant: "C", hero: "kt-202", pathway: "kt-199", locale: "ru", form: enquiry("/lp/treatment-in-kerala-russian/"), og: { url: `${SITE_ORIGIN}/images/og/treatment-in-kerala-russian.html.jpg`, width: 1200, height: 630, locale: "ru_RU", siteName: "Kairali Ayurvedic Healing Village" } },
 ];
 
 for (const sp of SPECS) {
