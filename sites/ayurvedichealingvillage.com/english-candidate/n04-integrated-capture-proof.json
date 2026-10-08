@@ -1,0 +1,1738 @@
+{
+  "schema": "ahv-n04-integrated-incremental-capture/v1",
+  "at": "2026-10-08T22:39:00.133590+00:00",
+  "atIST": "2026-10-09 04:09:00 IST",
+  "scope": "N04 integrated: Yoga & Training direct course links (hub view template) + Coming Soon finder card purpose/action localization (finder view logic) + homepage header keyboard-focus reveal (home-hi-fi-v4 desktop template/logic + EN static initializer). Only routes consuming changed serving views were captured; locale homepage bodies use the unchanged 390px home-mobile view and were not captured.",
+  "captureHead": "b27a94fec53332324ab57f990cf4cbea8f1bb43e",
+  "sourceCommits": {
+    "focus": "8f9588cf5",
+    "courseLinks": "4c59a317b",
+    "finderLabels": "b27a94fec53332324ab57f990cf4cbea8f1bb43e"
+  },
+  "parentSpecSha256": "2c3e013f294a005b232cb735b7b94139daf5e567349238f1668a65c27d54ef0c",
+  "parentArchive": {
+    "repository": "kairali-digital/kairali-web-factory",
+    "tag": "ahv-english-staging-20260915",
+    "asset": "ahv-locale-prerenders-weight-baseline-source-closed-001.tar.gz",
+    "sha256": "ecf134b717288fe5e98138fae245d189459c5d228f766139889aacb564443e70",
+    "bytes": 43656215
+  },
+  "capturedRoutes": [
+    "/yoga-meditation-training/",
+    "/all-programs/",
+    "/ayurvedic-treatments/",
+    "/wellness-programs/",
+    "/treatment-programs/",
+    "/training-programs/",
+    "/yoga-meditation-programs/"
+  ],
+  "classification": {
+    "en": {
+      "/yoga-meditation-training/": "semantic",
+      "/all-programs/": "semantic",
+      "/ayurvedic-treatments/": "raw-identical",
+      "/wellness-programs/": "raw-identical",
+      "/treatment-programs/": "raw-identical",
+      "/training-programs/": "raw-identical",
+      "/yoga-meditation-programs/": "raw-identical",
+      "/ (desktop static)": "semantic"
+    },
+    "locales": {
+      "hi": {
+        "/yoga-meditation-training/": "semantic",
+        "/all-programs/": "semantic",
+        "/ayurvedic-treatments/": "raw-identical",
+        "/wellness-programs/": "raw-identical",
+        "/yoga-meditation-programs/": "raw-identical"
+      },
+      "de": {
+        "/yoga-meditation-training/": "semantic",
+        "/all-programs/": "semantic",
+        "/ayurvedic-treatments/": "raw-identical",
+        "/wellness-programs/": "raw-identical",
+        "/yoga-meditation-programs/": "raw-identical"
+      },
+      "fr": {
+        "/yoga-meditation-training/": "semantic",
+        "/all-programs/": "semantic",
+        "/ayurvedic-treatments/": "raw-identical",
+        "/wellness-programs/": "raw-identical",
+        "/yoga-meditation-programs/": "raw-identical"
+      },
+      "es": {
+        "/yoga-meditation-training/": "semantic",
+        "/all-programs/": "semantic",
+        "/ayurvedic-treatments/": "raw-identical",
+        "/wellness-programs/": "raw-identical",
+        "/yoga-meditation-programs/": "raw-identical"
+      },
+      "it": {
+        "/yoga-meditation-training/": "semantic",
+        "/all-programs/": "semantic",
+        "/ayurvedic-treatments/": "raw-identical",
+        "/wellness-programs/": "raw-identical",
+        "/yoga-meditation-programs/": "raw-identical"
+      },
+      "pt": {
+        "/yoga-meditation-training/": "semantic",
+        "/all-programs/": "semantic",
+        "/ayurvedic-treatments/": "raw-identical",
+        "/wellness-programs/": "raw-identical",
+        "/yoga-meditation-programs/": "raw-identical"
+      },
+      "nl": {
+        "/yoga-meditation-training/": "semantic",
+        "/all-programs/": "semantic",
+        "/ayurvedic-treatments/": "raw-identical",
+        "/wellness-programs/": "raw-identical",
+        "/yoga-meditation-programs/": "raw-identical"
+      },
+      "ru": {
+        "/yoga-meditation-training/": "semantic",
+        "/all-programs/": "semantic",
+        "/ayurvedic-treatments/": "raw-identical",
+        "/wellness-programs/": "raw-identical",
+        "/yoga-meditation-programs/": "cookie-entry-timing-only"
+      },
+      "ar": {
+        "/yoga-meditation-training/": "semantic",
+        "/all-programs/": "semantic",
+        "/ayurvedic-treatments/": "raw-identical",
+        "/wellness-programs/": "raw-identical",
+        "/yoga-meditation-programs/": "raw-identical"
+      },
+      "zh-Hans": {
+        "/yoga-meditation-training/": "semantic",
+        "/all-programs/": "semantic",
+        "/ayurvedic-treatments/": "raw-identical",
+        "/wellness-programs/": "raw-identical",
+        "/yoga-meditation-programs/": "raw-identical"
+      },
+      "ja": {
+        "/yoga-meditation-training/": "semantic",
+        "/all-programs/": "semantic",
+        "/ayurvedic-treatments/": "raw-identical",
+        "/wellness-programs/": "raw-identical",
+        "/yoga-meditation-programs/": "raw-identical"
+      },
+      "ko": {
+        "/yoga-meditation-training/": "semantic",
+        "/all-programs/": "semantic",
+        "/ayurvedic-treatments/": "raw-identical",
+        "/wellness-programs/": "raw-identical",
+        "/yoga-meditation-programs/": "raw-identical"
+      }
+    }
+  },
+  "classificationRule": "raw-identical or noise-only (runtime ahv-lang-list-N ids and generated scp* scoped class tokens) captures were reverted to original bytes and original index rows; only semantic captures are kept fresh.",
+  "freshBodies": 24,
+  "freshIndexes": 12,
+  "unchangedMembers": 2388,
+  "changedServingSources": [
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-all-programs-desktop.json",
+      "before": "d3cf4a27cb389128b44384dec14aae4812c22bd1c600936cf52ec1949d8ae046",
+      "after": "b66f8345eb52d30ae57656b81ee0555c0e2a9e9bc76c88829611f692b558cb0d"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-all-programs-mobile.json",
+      "before": "9e57b1f816e1f0f25b0815bf49030ee30cb45076569d50af2658cf21895c7b3c",
+      "after": "84d59eb7b405c74c52bc91799b2526fd3d56319881e556c5108c2d7b23a2119f"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-ayurvedic-treatments-desktop.json",
+      "before": "0740f2b52837b961c4eaf0043284634d849f7296e317e11baac06c79e993d3c9",
+      "after": "e9b29ccbf579862d9577a1074cad9afd94bde5e345153d160df2d963b7cb6be6"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-ayurvedic-treatments-mobile.json",
+      "before": "f55c2f29d2fe341cea663a7737ac72a3f3a79b2885d33e83faf82732a56a225a",
+      "after": "9dd58b33d6df3f4233f8ce86690a729a2154e1c22e5c7a53500393dfc05a0cae"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-training-programs-desktop.json",
+      "before": "ba11258fa085398315fdfe34cdd8c9e626a2c31345d4605e5d199735ce477816",
+      "after": "13f7a0820f0127fe2d4b00608586b05137fda1ccf6755633b27b974db6756921"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-training-programs-mobile.json",
+      "before": "a09e7c1bbb463b64cab146a5e670266e3bebe8b32906935148619bc0364a926e",
+      "after": "917158368bb211f66a583bfc84b3ccf2344de8da343a7688cd5a66fd357e4274"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-treatment-programs-desktop.json",
+      "before": "cd109147f7cdca06bace1edeba309456a831b643bd26a2eebe98ca95b285e7d9",
+      "after": "27fe210c6105fd39c1763be0d367b2e423ba1a2d9c4023c19c244449cf2a1dc2"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-treatment-programs-mobile.json",
+      "before": "169a5fd3b9cd4cb9feb60dbdde4a7b8c2029e198acc6e023e1b5cd25ac01b3c8",
+      "after": "641108494b42c100b69a8f6604b9390d703f773eba8f8a459b9fe8406c4c5123"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-wellness-programs-desktop.json",
+      "before": "46282ca5af421934989a8f98fd6c77f869d60404000e6dc935b8662b9739d5fa",
+      "after": "d26fa58ffb3d9361e4b0baf997aa128770231c708680c8684c870d07b74c6643"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-wellness-programs-mobile.json",
+      "before": "e0b3766d5f4d573c62cb84b0773f4f11bfaf0c1b3da1c01e97782b3bb529b9ae",
+      "after": "be4864bb687d829251c457ae5f38abe43c6c4e08a0b5065d675642963f0bacc1"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-yoga-meditation-programs-desktop.json",
+      "before": "0a68f7b3d12eb0638c3e4f67a6b5e4d492586be35cb8922bc535d198883ff4f6",
+      "after": "f949692fb0b02e9b28bb494fef07b5394622943f4e94985837a8722a69718ef3"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-yoga-meditation-programs-mobile.json",
+      "before": "9236ad68c4f8a8f05302b3b5c0110325b7d77ffda085cf95a5a6c65ff2a76c89",
+      "after": "709ef3bab00ffb5d2fb5cf3a422a1e882d1b47998817cd4fef8af202c98cb184"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-yoga-meditation-training-desktop.json",
+      "before": "1936771884d3fd57b54e31c1c8fbae1e1eee8c28f6bdd8f77187ea83daed26e2",
+      "after": "0a6588ea05ee074da52ca5469b073a2bc33162da19a1c8a9d4d4e74dc1e9c710"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-yoga-meditation-training-mobile.json",
+      "before": "105969aaa6a04a4398fe70a5bd400edafbb99d10ff3a7c6db278e068bb724faa",
+      "after": "d714e64a5b827ebb83a9b149b3584efd0a0fc9b3b0599cba2b4861dc4cc8c382"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/home-hi-fi-v4.json",
+      "before": "93b863f9d76fe6d9b46aaa85e74b6001a2e4f7824867995ed0c178de2d01fcc8",
+      "after": "d87b90a9f961e83c6d2f064ae5c86d9fc9bede4a5dfbd293f3cb0554cb8adb2b"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-all-programs-desktop.json",
+      "before": "01061b8d753f57af4c67785d81e586c3227caa1c94028d2b22853c4753092f55",
+      "after": "d95c19806327066c80cb8f8dce18e7f0226620a3dddf11f00c8e1c9b48c3bb0c"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-all-programs-mobile.json",
+      "before": "9081b02a03fc458f50e4bf86394d3e46c44f634d66db09a498fa82a6b30a492b",
+      "after": "4441b88a8eceb7108f1c0cc0fd60b4ca51e34a849501ad2e6b39decbff9f48fe"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-ayurvedic-treatments-desktop.json",
+      "before": "325235869118306b286f4bbba111c92ac0656bf78709b8b3879ef04e11074b2f",
+      "after": "1d0b393be8b6824b3304523f20b3d9adebf548c77729bdacf7bfcfa08dd9cfb7"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-ayurvedic-treatments-mobile.json",
+      "before": "a9741b8800963a131770a24641d4f984623c4ce475a2e7e901756da70edf76ae",
+      "after": "7761a46fbc2a753001154628c5bb4e0745ad2552756551683f2bdbf6b468028a"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-training-programs-desktop.json",
+      "before": "424a9f0d3bce903920dc1b1cec32673cfaf4e2e228d376ee0a4febb9076e7d13",
+      "after": "1dad264218dc0c4504ec2d0b10d42b636ce2114a3045cd6cacee8bbc026e983c"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-training-programs-mobile.json",
+      "before": "100da5504d23bc57c8077156a573b1dbadc958072652b2f12621e1c704cd9af2",
+      "after": "6c87bbb2d155e5d5c1f8526e0400c75a70eeba797ba6a31b51f5afa0511f9533"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-treatment-programs-desktop.json",
+      "before": "5cef651bbe5c34b591bc84987f0487460f594dec23b905f6d4101f117911708a",
+      "after": "5bfcb175b0fb7611ac408ece27755f5bab5e63df94e50d2608ea71e163c673b7"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-treatment-programs-mobile.json",
+      "before": "a8a5944417677a52dc3925aeaa3a159690a98083c4706b11df5be7aa03b551cc",
+      "after": "67894070976aa5381b9e146f1d075507ae9197aab1e0dc72ae9c3443aaa8c9ec"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-wellness-programs-desktop.json",
+      "before": "53a3769aefee26a8254b37def62db5cd50e1eae213acb09923683a984882967c",
+      "after": "14026fa635ab349f6c9fc1543e6ff932aaf8e55d680292e1694c6596fa877bb6"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-wellness-programs-mobile.json",
+      "before": "a88582d90f897d2fac50500bfc2f329ca9bd2173edfcd8944d9956f5d0f109cb",
+      "after": "daef487d9fd38f09550e59bb1f27ad5a5cb5726b9df46c52f68717efa8bacd9f"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-yoga-meditation-programs-desktop.json",
+      "before": "674904d7fc45ac2e40c3b4acd78a95a5ce2640a7714b1ac5a040f9027e613360",
+      "after": "9e1b83568b7f8cd8cb74fbee22af044a2366801a7449bf76b5a40f0fe81d5502"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-yoga-meditation-programs-mobile.json",
+      "before": "a72099143711f81098df647cd7878ec9def59ebe56c3c5c9f71274db8e889680",
+      "after": "d1df2fe1b18b7280ce58ed730933747ae21849643a1909a75019ae98995a5893"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-yoga-meditation-training-desktop.json",
+      "before": "0736989e3daf9fae4e3db5ee95dbf5fd97ee651308886edac238f4713e3fbfce",
+      "after": "b20a87a59b9d634700b638e6e86ecb110100a8775323ddd9211f3101e5adf56e"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-yoga-meditation-training-mobile.json",
+      "before": "d5163bf545b10d0521a80aa76a9a1a91b871ba67be9a4b348fae22eccdcf4abe",
+      "after": "127714c2d632e9928412f82e3aab61afcf244829ef4994b37615e4438007800a"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/home-hi-fi-v4.json",
+      "before": "6d796e3cd6f1387558086f0d9e6165e78a10675e7d63ec75db7d658f486baac8",
+      "after": "261b8d55feef0b61a939d542c8c1e64b511a40d10dd13171735ca36bf4cb1af8"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-all-programs-desktop.json",
+      "before": "58414993e86622cf324fc0e15ed34abf7096475691aa4db7f3f833615589ee03",
+      "after": "f1091dfcae453a31932291fdffe7ccc3ee1fbe76e4fcf6e200037343de0e030c"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-all-programs-mobile.json",
+      "before": "0f880c56dd592d3b4c8ab78720ded2bb623b18cd1f121fb893c98f30ea16d22e",
+      "after": "653f05c200ea79c6ee09b75334938b4a2b15e165a7f177d8b6550b4374160e6f"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-ayurvedic-treatments-desktop.json",
+      "before": "f4dba50987baf8b47ecd4cd28f1d54732be5b23805b066dc08df32296f0ffa8b",
+      "after": "24e90eee8dd68c31db10c35e07ee4a9ba347656d2e98f721ed2d0b2a22b3fd1a"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-ayurvedic-treatments-mobile.json",
+      "before": "154a5d0e63f93bc1e831c2b3873731fa3214a88d6eedaf3bc5c21273f8004f60",
+      "after": "4d88e8e62ec268578e29ed56562952e6635e9a35a80b8b000e4b40e1a41bec72"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-training-programs-desktop.json",
+      "before": "1616db7d0331d956e7f54edea730f205f0b7c8dca3dd8c12dcf68e678a0b040c",
+      "after": "0f830016c47efc87994bc7b52d71fe5b3a39a277ccb6134303de7c416e2a9102"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-training-programs-mobile.json",
+      "before": "8d15e271635a87b64186b6c6bbd386b25fe1d227a1fdca3b1b93ff0bb14fa431",
+      "after": "aec4a02e9524b29d581518bfa6f2059463ad6be86f9191055b1c7177f12816ef"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-treatment-programs-desktop.json",
+      "before": "fdaf3732e31ad320481063a40ec24a29ba4a446c5eaefd32bf1599df670e5e99",
+      "after": "33d6fa7fef7d7744df08a05ce0ebf55551e625d6f7857e56783271c1aae0bb2f"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-treatment-programs-mobile.json",
+      "before": "2fda9dd567c51489ab41321d00241099d038c926ce228c902d6ad22b433638f8",
+      "after": "f2a5a848b869ca88350180e5809b657091e9db5b24d67ca71b143bd04f6617fa"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-wellness-programs-desktop.json",
+      "before": "8a8dee42fe1910acfb20643112b93070e478f80f60a9cfbfc943364257427cfb",
+      "after": "ddab70ca5fa5b1f5308eaef4e965aa8822dfa0ef14a7421a54d53f479f3a85ea"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-wellness-programs-mobile.json",
+      "before": "4702f362e52b06cc54cac609b8e8d7cad91826237fb146fa7a7d2b200a91dde9",
+      "after": "67e35255705f6a75ceb8dc7ea3c53c972c44d46cce3863a328f7ee076ddd05d6"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-yoga-meditation-programs-desktop.json",
+      "before": "dc2199016c7f428db42babe58f8b195df37eba382bbb2d49ee58e5c2e8c28c8c",
+      "after": "fe2f39df9a42a9d5a13600cc3cfc2ff83bcab1f51107d0af0570c612befdf1a7"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-yoga-meditation-programs-mobile.json",
+      "before": "4e76ceb692040c50dfce88a6aa23da12d205cc991a9871eab9d0cd7a10648aef",
+      "after": "f7de6b4856de60bc12f0bc4ddac943dc20a51d244c6605842592e183f34adb5e"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-yoga-meditation-training-desktop.json",
+      "before": "b4ec818b360cf10a4fe97067698fccd419ba6e0cbbbb5de225617a160d3d6a89",
+      "after": "bae4cc4470cc914188af2ba5730e6ab4239ad5b6d891f109680df584ed6ae66c"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-yoga-meditation-training-mobile.json",
+      "before": "4af470e13ea8e02f24b6a3dc88592b0d7c38d037e543eaf9b0e8b46f0c092ecb",
+      "after": "5049c75f286b5592b9699bacc8eae843667352300a6af6d1b197b539b619532a"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/home-hi-fi-v4.json",
+      "before": "175754183a3064b21e7220180407fd8ad64a82555ad5336732585d05ddcb4bae",
+      "after": "31a0fe5f9528e11f2d001af13487e49775896a2c8fc6569f1bb3c1f84dcb2fd7"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-all-programs-desktop.json",
+      "before": "67b9702fa4ff626f3458ccb22bb82443a492a8964d2615abe03c4987311ee90d",
+      "after": "ed5683867438a2f4a1aa2179c24c91e58f2beb7a1d2e16deb6259f060178959f"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-all-programs-mobile.json",
+      "before": "be4b1245849cd3ed67f7acb6ed5df8c93809ddda0d843b5f9ce8d83fb9bdfb4b",
+      "after": "a69f8fc52d8514275e8de0d161ae57b3d1fa43c8087893d0a545d9d363120344"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-ayurvedic-treatments-desktop.json",
+      "before": "f364a97497e89420d821fc0783cdb0bc59ca5c94240ef78016d6214b2e0fdefa",
+      "after": "414e1d12409db6973f96a09ae62f1f83b84d4e5657156e00512d1e2f0507d542"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-ayurvedic-treatments-mobile.json",
+      "before": "2e7c191975b833c7d0503bef28168b070cdf538f8d5966187998a27e441c2084",
+      "after": "9b0d69a766db4381acb351a693e9b4741771dbc0d70a4571506ef71ad32322c0"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-training-programs-desktop.json",
+      "before": "23be007c023394fe85bb21a73b1331b988439aa7460b563abdbb87d64dd3e175",
+      "after": "9783243678d043df87e834ad43b3235b738bcffff6da30b094f8ee79e757ed55"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-training-programs-mobile.json",
+      "before": "a936fb2d9e7d9385698c49058d53564173774750377927927fddfcede9872bc3",
+      "after": "e8d712d93ac62010fa2cf48e284cbd9cf136627fd62a15bc451860e7e7745b13"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-treatment-programs-desktop.json",
+      "before": "6182d332f64662c10291a46b98bde7dd55d96d1dc20d7db2d20e21ca83a84b86",
+      "after": "f042daab1b0d7bfa3cb1b7e763cd0f84abb0fb725f6a41277b6d1bd2cd9ea0d2"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-treatment-programs-mobile.json",
+      "before": "f94c38c77b2c301430f9e1015f338bc029e3b5b0704fb480debf2400dd114bb7",
+      "after": "8dfa0e4ac07ebc7978d42549d605992771ac0f3b08e4ddac514f69077fe7977e"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-wellness-programs-desktop.json",
+      "before": "7d25238d4d85ed2399fa934b4cf77e973b953de5be0014025111911c9f017035",
+      "after": "da46ac755f361a4222301558800719d15fdd86c9ac625ab7c69fa40781186728"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-wellness-programs-mobile.json",
+      "before": "0088dd88627efd3294a0c6c89bdd87d707ed7128b4a6a73a8753368b6972028f",
+      "after": "38fd712b051664e79b5e6e6e4047306886375b26b76d7fbd6b6f08e76cf3952d"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-yoga-meditation-programs-desktop.json",
+      "before": "8c5dcafce7a2ffff8fc83dab4ead27cd09873ca04e25eeca3cb58ecd9c91e3f2",
+      "after": "1151dabd964f9634d6ea7a7ce947dddd061d6da32dbc1a4d8d911dfc7ff711fe"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-yoga-meditation-programs-mobile.json",
+      "before": "1cd2c522363b30d9e322c03e223be5572065a8dea196d58ac2226bc3312085e0",
+      "after": "2528421bd67ab7d7ed1c825b1a603cf1baaf25d822e59597708045c94573059d"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-yoga-meditation-training-desktop.json",
+      "before": "68037eed4fae467d01d6f8e593de96496ff6a4a8ea368fcbd76e3f41a47fd686",
+      "after": "521206258a1b05203e562de1868ade6d4d92f465f2b38b7ce173cd828173dc59"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-yoga-meditation-training-mobile.json",
+      "before": "23ff249dd8d18a1ab1486eb757ced7cf5fb455ac4d7a998115d678eed99df877",
+      "after": "d05a22fa9e89357761a603ebe8e5a55373cfc27eecba3472ffd3a327353b8ced"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/home-hi-fi-v4.json",
+      "before": "6a4ad7d46f52702b60fd209cb5f1024dfe24d487c4ce9e32d3d45301c35d4d79",
+      "after": "9f6ae3a4f25c928d6b5decaf7de552d9286863c457fffead7fae1cbbc8cd4561"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-all-programs-desktop.json",
+      "before": "bac66db1572608753942cce281c808891d36beb48fd9ccbe72474cd58e0def49",
+      "after": "0d3130263521612923dd63f9aaa72b9c5b6d6eef5f68ff2eefef17b6d229cb11"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-all-programs-mobile.json",
+      "before": "db03f7c0cb34121018848c285f53ae5dab73737e085c8b102a04b4aeb7cd6340",
+      "after": "1b8c1210aeb8664485e38a6f01fc7a1ead7fa6fd3abc038b10a61c49fdedd4b3"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-ayurvedic-treatments-desktop.json",
+      "before": "397b9241ae31fde98180be5a4914d6de84cac0f575f9bb2aa73e38404018e661",
+      "after": "a5eee8811645ef8c2cc8ff8e1c095b170396ad97771fe40bec3b2959bc2c732e"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-ayurvedic-treatments-mobile.json",
+      "before": "f98f201aeb6112bc9f8cbd19f9fb0ea8272bdaa201f9ddbad2dc775d9e8833a1",
+      "after": "41f45199f04ec754b433773a45e4af4d0b567b848d3db544553adadd512f4513"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-training-programs-desktop.json",
+      "before": "b3bdf00815c3f14da8a36a3cea09df8aabecca08c75a7b8f7292be33492c5c5a",
+      "after": "fdb8aaed480d248f04d07bcdb2688491f1d54165c0e72eab1a767b330da3d228"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-training-programs-mobile.json",
+      "before": "23eaf48427534f1ec7e2673eb5640d9b53f63d4662ce53774d2ab7ef17897417",
+      "after": "5eaaaf36df1c7bcceb1a22aa0d613edc4bd65a002566ab276a9b6a6d4c024797"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-treatment-programs-desktop.json",
+      "before": "77f93b7a3658ef8d52dbfa2d6ff9e0152bc9d0348ff1d57a89c8bd0e04008bee",
+      "after": "9f64a6014afab60f718c8e4fe855540b6d9b4506127fe8a876cfdfc851f3ef1b"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-treatment-programs-mobile.json",
+      "before": "ac410a61a0dea5549d2f75869197e70183f359a26d0a7ebb969586113fa02b38",
+      "after": "84575afaa11b56216f5f24ca711a8df11225a9fc2a1312bab552754a2cff86af"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-wellness-programs-desktop.json",
+      "before": "779f70f03984372a8446682aa807b15a83f6d0c2998ea8fa7069f931e00abc42",
+      "after": "217fada0333b6acd7c1835b536d78c818d32164c90977f46cea38ea1b9351aa3"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-wellness-programs-mobile.json",
+      "before": "01bc0c96dc20f1fca01ac5a085b4114ccb03ea6dddf122cb2e7eb86d78bb756d",
+      "after": "3fa65003966ebd055182ca40ce9660cfa867dfdd5f5052500b43e7e7c33aa178"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-yoga-meditation-programs-desktop.json",
+      "before": "85ef1ab16270254955cc6f47323a0fd16ee9cedc57ee8f02770d2848138438a8",
+      "after": "346dbb0062bd931eb718382fc7694c2592559fa25289fb86f9994db89734155f"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-yoga-meditation-programs-mobile.json",
+      "before": "e8a0cb8d0b409037212fe50205173c67209af2cbbd6448ce20ab54b0184501f4",
+      "after": "eb7265ab29d9df59f8f7637b12381a865965863f4458c6d2b46e0576764ee0e3"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-yoga-meditation-training-desktop.json",
+      "before": "ee9db1caf3744fab01b1d2ab1b74e5dcfe2072e563ff9dd0949ae59f5709f9b9",
+      "after": "2680dc8e1fc6f3743e04cfadf1558ac624193b1dacb970a94fc38e0c23f688ff"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-yoga-meditation-training-mobile.json",
+      "before": "8ba5f8826152fb636bf7b2a7816dd4d0d15fd4e226aa6641edac8d44c6bac14d",
+      "after": "7dc7922edfeee6624e93d53ea221f30066015d801cad8768c27dd1c24090fd3b"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/home-hi-fi-v4.json",
+      "before": "9f782b49a0458f63e9f63d2699f79197eea80f6588df72eb3dfdf2a81b4dac49",
+      "after": "392d0733e5e06ef0b84c6682b9e2819fac94fe7bf841fd77a47d829d4f647426"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-all-programs-desktop.json",
+      "before": "ed74df87cd5dd7d159ff4f1c5a1521bdb963057e353773d1e71d7b40cc23f20d",
+      "after": "133a5b8ec21e25362a76e0d6a99a3bb4686f859cd27c32daae56457eb9582f41"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-all-programs-mobile.json",
+      "before": "6f16f7d75bc1448aa9d3a1c3cf45b51dceff3d51ba977fa2dc3ac33209abed98",
+      "after": "c324e4389c82526e2a8df10da8e76540ec5460b960a65d4da1cf30589f223a1d"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-ayurvedic-treatments-desktop.json",
+      "before": "6152f850a1021dcc801ebd8970cd38426accb4c1d0254ee754ba1daa24da1d5f",
+      "after": "67621dfa8f85ae56dfc62844c412ded6c2d15f9b54dc722d834dd002fa6b17d5"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-ayurvedic-treatments-mobile.json",
+      "before": "950773387dc38563c89b418a53e275adfa3a250e1d02f6647d57fa088f012290",
+      "after": "8a62a840b647295bc6a74682342108f200849433634e67ce97a4d7bba29c8465"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-training-programs-desktop.json",
+      "before": "85a19cf8cae6f05d48048abb667c2751becc634d3fc151f84c023d902c9fd7b7",
+      "after": "465ce22eb8c0dd839e0763393a3a17625336d00f2edc785b1e7aaad18720d814"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-training-programs-mobile.json",
+      "before": "d00dcb57ba6e070b957b5ead996f9263e26b06b1440cd55c2b03f4a4c17c8725",
+      "after": "b55b7a58f54386267424ae67377c12cc4b75ea73d003aa23a8880d980c8d903d"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-treatment-programs-desktop.json",
+      "before": "b6c9785e96e398366520116071637e8f4f02769ea80c19e862a4ca2cdd5563a7",
+      "after": "e2aa675830017664fa1388bf0cd15b51d24b8d3393c87339ece555b9248c68de"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-treatment-programs-mobile.json",
+      "before": "fafb7f95199dc10c9dd64760ebbfbd5d34356b87ff5ff626bcc4a830adbd09e1",
+      "after": "7bcec2b7079841b3a9d73b38a291a098f8174b0d795e47b7e8fb86790bc48564"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-wellness-programs-desktop.json",
+      "before": "5ad405c596a420618ff0a6f25c8fec0e501ffcea0dd20b1f11426006f5f4347f",
+      "after": "354f31cd9454ad2b15496030e450a4503282ca8f5a40f751407781ad824ff370"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-wellness-programs-mobile.json",
+      "before": "0330c406c327f5adfdbc3f7b2d344c84e220f54003f80532456b8b2fa86164ef",
+      "after": "22078d61af0b7b37930fdc53261ad1511a7b9883f9fbe9ee7022439fff472614"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-yoga-meditation-programs-desktop.json",
+      "before": "ea6618d113948cacb2a1293a6a4411d9fddd7ea130bd1670ec4c177611ba707e",
+      "after": "ef934da8a2cc22ee964c71377e9d5ff84788c0dc829075afbd09b20341b62481"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-yoga-meditation-programs-mobile.json",
+      "before": "f4fde73667fe60d538546e0977b80f8cc1a39fa1f8ee7773026df12e782fb3b2",
+      "after": "bce8f3f4e581ea4919d0e058a0e95a23fe8d2add3f52657a8ce9e6d072ebf4b9"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-yoga-meditation-training-desktop.json",
+      "before": "219fb03a6e76a3561d91da242dc40b1b2a22ab5307d51ca6cdf9572a56c087ae",
+      "after": "cc1928551c1f064c67580d93072397edb543451fd29d5d36bd04e6cc03fc26ea"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-yoga-meditation-training-mobile.json",
+      "before": "1335441a6753445fb6393ffa31ce697cfb5f3ddf4dd0d071eb4c223ceaadaf05",
+      "after": "5cb80e76215cd75065006e2ca1365738fdfc30a39ea8d55e27f23fa58b5c85bc"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/home-hi-fi-v4.json",
+      "before": "096d5340310d0f30a36bfd54134e6dba80bd5ca97b4d23fea30460f8b6e32379",
+      "after": "cd1e6a89872f7312e02630889587324ba0cfe314375a37adb0f1eab73ea17213"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-all-programs-desktop.json",
+      "before": "e1e1db691c89d405a97e94e7f694ed560a69aaa8634e017a83ebf4842d2b7118",
+      "after": "b6642565ae1a615fc14ccd7ed470dc0d5672692e4aff9dd633730b2aa920f908"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-all-programs-mobile.json",
+      "before": "b1f2317fec34d6dd1ac8d610b881973c29a06a5a5c207a320fa948d40a7c8df1",
+      "after": "1a515f220989e46d6f80647fdca3047d6af1e54e180ee08e6ae8d5195d4e24d0"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-ayurvedic-treatments-desktop.json",
+      "before": "0510a884ecea547a51ae4cb831d2cb3c33bea7b5cc8df795d023bf0019840b3d",
+      "after": "ade2f9a84dbb69081b3d63f4bd26de79ea19c529802a0f1af2ae6688da5871cf"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-ayurvedic-treatments-mobile.json",
+      "before": "7af09b9d5f11bf24c042ff2215a3a21c5dfbcfbb7e55eff5276ee991621ed4fd",
+      "after": "9d11f058063d9dc13c7df5b5dc86fd3046c7d568ce1a371fe9d1101e2d59e69b"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-training-programs-desktop.json",
+      "before": "257ec796bebfab7786cae2dacaf945f727ddc152b688b83112a9d8de724ab8da",
+      "after": "6f0a90212012cfb3cd7e5818d924a8c32fc207adcc00bb7d682e525b1e47e2c3"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-training-programs-mobile.json",
+      "before": "a97e334e2ca4abd7f82b8bdbd7cd180978371a65eb4ebf891ab53cb265c151fe",
+      "after": "755d21d425beb027a7c1835f5557b6010dcc76366d6b1135cd992b530735a624"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-treatment-programs-desktop.json",
+      "before": "a4a5167e403747b3681b3a46a96cb5a4c823e1b23837adbc21ad8fdd9496de80",
+      "after": "6920f3def3dc559b7db2d8cfdd51f811e9a17073ac8caf346041046a16c905ce"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-treatment-programs-mobile.json",
+      "before": "d2d573d65b4da3dd9ccbb7759d7dfd79e0838474c2df75d28bd5477650927c22",
+      "after": "b2682c57e1265e406de254887ef702fd2dedc5135b3ae123778bd7e1e43ea145"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-wellness-programs-desktop.json",
+      "before": "b48a87508b3d62c7272bf92fbc33dabcfa9ad3a9dd1f239791d5de924244afab",
+      "after": "18098469723b341a1c5ec90af6edb25a9d788c0e1132741a3c517b6699f2bc62"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-wellness-programs-mobile.json",
+      "before": "acde210fc136e15080ede82ec3cb2ece6f9047097bb2108766fa98e7a45871c6",
+      "after": "fc4a0debe29204e2b30a5d3005851baf1814c99e8db4f06a35a7ec200ecb5efc"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-yoga-meditation-programs-desktop.json",
+      "before": "8869ac22b394fb567f970a2956a26008107e332ff5aa3de1c20c0c6b461f9c15",
+      "after": "6d7138efb2d3f267db193eba0feed48195e7714c21bac539707bf3b16309b68e"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-yoga-meditation-programs-mobile.json",
+      "before": "80f8ad57265239221df49cbc9240d17586aef87884ac955e2411328b3bfce41d",
+      "after": "4318431e72cda3b0791596f48d57201b9f9bd9452884d5520a34534fbf8a0370"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-yoga-meditation-training-desktop.json",
+      "before": "8752dfe13af5b505dd5c89d73d80e504fddd8114d57c9825eabf61cb693eab1d",
+      "after": "05643d7a01c872b725de3c349a2b9949c7e1ca2e6aaeba4b7ccd6094b48350b7"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-yoga-meditation-training-mobile.json",
+      "before": "d68cf32297c05e021d6e9bf95af68afe917c56a7f3f6594a18782ec7bb5511a5",
+      "after": "fdf659c69b720726fcc2f28ba5ce7a10a6ac48dc63e6879088db5c6458e1abdd"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/home-hi-fi-v4.json",
+      "before": "3f9c69ccd3be01f758fc1d1972a5cfa7739694479d53343f8e4a4bf1c02b0ba9",
+      "after": "a203e6923b7f8f4ab0949cf133580cb9e6ae92acde873acf343d1d3a85d353b9"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-all-programs-desktop.json",
+      "before": "11a81b1637030fff808a5b8a7d6192de084b0f3e5d310e62c8f6972041949388",
+      "after": "4f68b18a1f3cd2d2b01b1a3093568967ad596bc3faa0f9509042ca90145d4036"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-all-programs-mobile.json",
+      "before": "82170c67ff49a295829407755cbb5fa3e2615cb59ae3dcc6c593af2d76658728",
+      "after": "79ec03afe78cd4130382caac7db17e3e4f067c6d5c1fd65f91e7269ccb2f70a2"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-ayurvedic-treatments-desktop.json",
+      "before": "e9c682d8850655b2bb390d6a67e1ba2ad91be738defcdb1522826c7cf508016f",
+      "after": "ffb3ec940d8f91f2310a768c39dfc7773fd54e33c4884cd44b33b9d9846566b9"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-ayurvedic-treatments-mobile.json",
+      "before": "25ace65e1db37ee03a6972355cc93b178476180ce68a5bfc0fbc92771b12aad8",
+      "after": "5e5cf19f79edcaa1d1ac007e892bc535b73f9d5dfc9bd8d9854fe03217549282"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-training-programs-desktop.json",
+      "before": "535374f502ed85b61f54d48e7c7b63f5a52810a048b4e54591bfe993b7f92af9",
+      "after": "cabaa4b03b7761636b0c30e28d08fe6defba5e67fd466b034df489128ec83dbf"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-training-programs-mobile.json",
+      "before": "c202286c930a4d5cfa1e81df99f5b4dc00b113e646d7625d5f42fd8eccbb99ca",
+      "after": "b92b3c8b0572a3eb6642bf24e4bd9b95f66c333cad265897267145664f428884"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-treatment-programs-desktop.json",
+      "before": "0886f08bcfaefe586686768ec71d2fb1f1d8560df1deeceb5722ab17bad39178",
+      "after": "24230745f68235e8e1e3f521f91eb5d750001365ab686431a2a0713eb5fbc39b"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-treatment-programs-mobile.json",
+      "before": "00624844426b63b3d6feb44b8cc00f082bbabe1470ca920335be4626f9ef88e8",
+      "after": "a5de6ae766be5f193ddb0dbbfda71cd7c1ccefdbb306cf314c52161a12d433c6"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-wellness-programs-desktop.json",
+      "before": "7853b5832d912c9968115580043a194c52b866ba6c190b577c5426dba6e1da92",
+      "after": "3a13fb25bc7beb3d3c65461a1184d703eb854dc778f1f14c96c9695b66e49a71"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-wellness-programs-mobile.json",
+      "before": "b8bec32c4db3588a4e71ed7a2fed675815b770b82b14298bce436d4b4c398491",
+      "after": "928d2045b5a3a8042e863785cdd80df9265735ab831b1cb82d10517fa89862e5"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-yoga-meditation-programs-desktop.json",
+      "before": "7f794a1257b33bcdea82d7a117db0829ae40c2d6cb4fcc78563bafab3b8b4a6f",
+      "after": "176d82b258f6f8eb99eb4c1ca4b650f16a949e9c09d69643671334138dfc5846"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-yoga-meditation-programs-mobile.json",
+      "before": "7863c10eb901dc636acf17562213ab5be7af7f1854cb901ae5563af6962a1540",
+      "after": "ac77e9ca5da8f6f2f1727a3fd994fea786a5d85650bd49c7114eabb6364e1df2"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-yoga-meditation-training-desktop.json",
+      "before": "6d14491b7c7f4c914344d0e4d1a23cf1c692b3a02bd2efc6ef2e30a17c881ee3",
+      "after": "a23fe07a6ec3b15746ee866f5ed017a36e8b9d4b7abd82beff1ab3489bbde2ce"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-yoga-meditation-training-mobile.json",
+      "before": "45c7a5eac9668e0dcde1e62894d064bfaaa9b01d777e79d5fb42ac027463a46c",
+      "after": "66a3072260635f2be1b6296db93fec206c9b1dd38a63b9130e83460baf561233"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/home-hi-fi-v4.json",
+      "before": "c0a367c2b1fa854980f49929fd64ea8ec12da72d6c3680dbaae018682c270a7b",
+      "after": "8e574d6611b6a31bec44c9d9becffa5bdf8d6d1aef0e68397a674557d740039d"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-all-programs-desktop.json",
+      "before": "f2e59fc191f4caa161bee85878c9d61b63c37963b68e7d4732fac15c265a44d9",
+      "after": "4b7e5748b84fa53916f964b747f1551a0aa60a1e58640234e80b00319852c15a"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-all-programs-mobile.json",
+      "before": "cc29b53b5d0825f99439debe7eb794780fbd7cfef1e2614113a5a9d17aa28071",
+      "after": "fb69ae62b8e7d9c46f24a2674cb7f60fab81cc551600a4365260c92e3a0d0504"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-ayurvedic-treatments-desktop.json",
+      "before": "b919a2978e29a9e48d8e82913fd5f4f0aaf25aa8b3e7bc10cfa36d642f47aa2f",
+      "after": "1f5c0167904c814cbcca1bc30d26f2731c587fecacf8af072fd217f1c1401276"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-ayurvedic-treatments-mobile.json",
+      "before": "a626f39313d840a3ef55b0e31ba38df2e07d3c7af7ba81d5c11ea1cb410f58ef",
+      "after": "35a1793590b9c0f56a37a31b4fe0078e7b434ac9490e85d0906ac9b19ddc4778"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-training-programs-desktop.json",
+      "before": "1e04a1a2197cda46184b06903fc231356cc84e53b77906cfae0720fcc6321b9b",
+      "after": "2c3fc0e72534a45eaa77421ee7cd448c8f09914c4e46f73686b17fca4eba6ca9"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-training-programs-mobile.json",
+      "before": "c612d15af96deaee0b4491b2b2e92ca4a7ce28f710c1463c476d72f839430cba",
+      "after": "1b8bf27da30b396d81c8136b3cfaee260722951ea2963a92484e3dfdce3abee8"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-treatment-programs-desktop.json",
+      "before": "b412992b17cc8deb8c6f21e599562b342e069897aed87731aa9cb6ffb57feba5",
+      "after": "6e1847bc5f7316ee3c46a3531fa63aa2788dda5033bc84c565400fd4843a33a7"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-treatment-programs-mobile.json",
+      "before": "125a0ed6bca66ce63345a924ac98a1aceee02dd87225d31526b640577be3f1b6",
+      "after": "2e811e15a07ba9ab9ed19aebd916883015a346c4a121130c37e0ffbb089d01a7"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-wellness-programs-desktop.json",
+      "before": "083d8251b2be13b17bfbcf84b2893c0a0ae7d496a1cc3329e3f9e3e2cb9a67b0",
+      "after": "896879d2107da48e6e3c9a33b94464ee922ad1a836bbc7cb38e12bb846327579"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-wellness-programs-mobile.json",
+      "before": "21fa54e75445c3fdc8e6b51bca15a37d73fdbc23465f2e0a27e4796cb3dc8b84",
+      "after": "224839d27e32b000e2a8f2572e246a7e97d5d969b6a8df436b1ffbf35f1b28cb"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-yoga-meditation-programs-desktop.json",
+      "before": "5f7e5e67df3774f080db535da46bc4600f9703f02876bad050da98c4926369a7",
+      "after": "2ab86d2530aaa8b5f72d7dde34862eb26b4097df6df8e90835e48640a6771c64"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-yoga-meditation-programs-mobile.json",
+      "before": "e0cc4d8b81af7a59472fdc79d769cb2e4e718185b3ff02da6ffd06494928d3b7",
+      "after": "90dfcd73be391b1813e1031913d86504f49250d102a0827bae169c584adb9523"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-yoga-meditation-training-desktop.json",
+      "before": "9a520816f1c92ed3e9ca9ac319e83c7164837e533959fe625274f84aa5e03e0e",
+      "after": "71f6d1c05e18551348d7e95fa6f62e885c8029a02bf411cba9ddfacaf4ee06ac"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-yoga-meditation-training-mobile.json",
+      "before": "4c282237da19ed1b0ef6211a5d731f048351672b7cb929739a171feabe0c6ed3",
+      "after": "983b06ce895c85e52e5400a1848383735cf7d89e14f00c87dc1d8a1e1aa19673"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/home-hi-fi-v4.json",
+      "before": "d90f052bf0317d181e0830d7fc1ab1a10bb1b6a35a61a7f3ceb510e57dbd2f3b",
+      "after": "154af163202f70e5c476bca59c1bae12f7b612ea318f988513ac9b7824bd817c"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-all-programs-desktop.json",
+      "before": "95391c39ab77cd51a316f08c5636654222b7392bdc4033063acba7c245748797",
+      "after": "da71537b0aa35bf288c340c9a5a44d30089d66227565ea7b0c06b10486b72137"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-all-programs-mobile.json",
+      "before": "7005b538dcf8a6e455a0b3b3a5e6acb36a9253418aac20d83b79215a6bfb4c76",
+      "after": "a11e52282eded7cc96a5da4b00bc2350e1a79febc98b0b1716fb68b6dd1f7623"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-ayurvedic-treatments-desktop.json",
+      "before": "e473f58f66cbcaa0b3fb34d71d536f4c392b4807d8dffc57215e73ce16748247",
+      "after": "454df9d0836263eee9cdfb4f25d72f0ba27acb1af82c0cb470674ef496ed4de8"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-ayurvedic-treatments-mobile.json",
+      "before": "057d2f0d986be26dbb2e7aa8a210c053298f98fba695b68892aa7cdd8181b63d",
+      "after": "46168c76dfcba8de59d60049d107222c3b7265e489ec74d071f1408eae674b2e"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-training-programs-desktop.json",
+      "before": "9c405a02d9cf4b184151df7590995804687e15a9589cc7a1bcd9682ebed127fd",
+      "after": "ac1bd9926d8532f9b5e0c5b327cc4430edfb193e68671c58cb716784688e4264"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-training-programs-mobile.json",
+      "before": "1802246902c3d993d275fe2d4cf9096e68184beb88080d34f760be0c3ba3f0d5",
+      "after": "5c860db04626ba193ab88a61f48f4f25e909bc5cb0e97dab13348afbf105e37e"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-treatment-programs-desktop.json",
+      "before": "8b371382645b07114a84426aef729f2cb1ceca9e4ad1f88c036854f7e956369f",
+      "after": "e8cc5f8cc8c472f8e563c6f5c7586a5610ec8e3e568eeb29cbf56af9dbee6098"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-treatment-programs-mobile.json",
+      "before": "bdd92a0b6708d8cc0ac8ba3639c9763ff9f9d7cafa740723199526e642409d92",
+      "after": "636ade3b7bc620c120fbf23d8a97e2b0e10ab882a45e9272a364c3efa3258090"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-wellness-programs-desktop.json",
+      "before": "9607563e845cd74c5f663a3f2e0bcebe96485e8afbb52549a61617e4f7807843",
+      "after": "6d92f9571e809a6f80d3a79dbca733ae3b793c3dd41d87da72521951c35ca981"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-wellness-programs-mobile.json",
+      "before": "ff3eace54fade38bac92ca9fb0affbfc1c60e7a971d7ca2702f3d8b13a5f6dd4",
+      "after": "fda35e5f6b491d1b6e3e4e076f2273f50c67ba3e33d4c44d09775537cbc3400b"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-yoga-meditation-programs-desktop.json",
+      "before": "b68a7d3c1201f0d369ca9676ef956fe0b0b7e389fce66234dde6ed127ed13022",
+      "after": "b4860b83971d77d850a28e8c23c143b1767dd6e4ecf59e825053802ec27f40f4"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-yoga-meditation-programs-mobile.json",
+      "before": "50ea81465b135bf75c231c4f6eb097cad6c2057b79f8830c6ed363994d1d8ffa",
+      "after": "d86b0acc31f63d230dac68162882b7d62195a45cf4502e4bdce3fe0282d3c3ff"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-yoga-meditation-training-desktop.json",
+      "before": "400c9f6360a84ebe51242bd2813ad0fd9a351edeb4574c0b8c4f28cf824aa493",
+      "after": "e42cd5f055c908b4cfdd80094e99222789375d69c0d06650311668ca28064347"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-yoga-meditation-training-mobile.json",
+      "before": "f3ae77abef788cb2307fbef4d2d8fa03e854ba0fcbb05c6fb8ca017b3f0f05a4",
+      "after": "a38c0d90a46161f2ff5fa36e7172e0c7235962dba28ffbde3896c74576f4c7f4"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/home-hi-fi-v4.json",
+      "before": "de629c4dc87ab8b0f2344a485c0e5c7fb363a0f1412b3257c2fdf95bff77b768",
+      "after": "961a67a80c9de4dd81921e3c69fa3ddaa3a51d04fddd684ac9249234456fd861"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-all-programs-desktop.json",
+      "before": "95676888cd544fa1fae30448ba0809c7974d41d7c23eb73ae513a85ffbf766fd",
+      "after": "137bfdd43d249f09d82bec710cee54a689c8eeea0291eea33fa369917a3ddf36"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-all-programs-mobile.json",
+      "before": "c52213af3546bf9c8abb55594dffae529da257da3ea14311692162149df0a0ce",
+      "after": "abbe695fd1b4a1da1d83973c1b518d4cb7e375ad72bb2a8c25073b28154b3cae"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-ayurvedic-treatments-desktop.json",
+      "before": "9f26cce63aeeb1cccea7edd9bf801195ff5120f0c3f12a3a1d34d54aabbf3aac",
+      "after": "30d4b7f94eaaa48499094b119f2cecc32e8efb655b60e70a0ba69bc1b1de08f6"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-ayurvedic-treatments-mobile.json",
+      "before": "f1ad0dbaa2e2eb579d1178aff9c81ae8890c96d22d6e2c380344dc6a208c64b1",
+      "after": "97a78c4e0831c826f265a7af831b865097008a7f1ea68c4bcea21d9090365e26"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-training-programs-desktop.json",
+      "before": "560a49260c6b9ec1dd0dc673a070a86d5f89ecc5134a6dcefa2b4244953c6991",
+      "after": "d09f1feccaa07a6fbb4ba4f4f8e315b8c44c64b7e45494daa87ab57371b6cc0a"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-training-programs-mobile.json",
+      "before": "6dcf8ace013f9a8e876e94532ef6291393101a73b47849d127bb84c103425380",
+      "after": "668e9024e9d6f7cf8255379caa0de803f26a5c9f996111670c5e7baa5dbc32d4"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-treatment-programs-desktop.json",
+      "before": "625e6066e8a51287ae478ec1afc8709d6a070261531751abc4b0325efbf7e8f1",
+      "after": "401b21469900d3fc380e5d71d32f4824060a87df58fe36e4c1ded111a2352f52"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-treatment-programs-mobile.json",
+      "before": "6db53e217cb8f2ead20c83a38997be835dc6a4f56362ccc8a5bd304c418c8810",
+      "after": "ca403075d4edc938c0388de787522129dc97a9dc1e598ed828d3fd571fed2101"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-wellness-programs-desktop.json",
+      "before": "966e13d7991613ca4e34af3fae48abdd0bfbbdd8fcbd6d0b810220476c3e780c",
+      "after": "d7f4af32e453f08e88c46b8558e75e20ba5e8cea80b0c317a5f85d72558f7a82"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-wellness-programs-mobile.json",
+      "before": "be790838b38776d12ed196b8a4fda788d5039a164fe819807883ea5fb65ae8e5",
+      "after": "bde4885d75e905fea4e3e59087917ec1b2db27d063ee53a7fcfa179e3185f7f6"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-yoga-meditation-programs-desktop.json",
+      "before": "2aecdb21adff4c63e0b1c1e7d31d066d0b5162b0ce907a9628533f9ed4d14202",
+      "after": "4c76d6edb75e4b7a97ee2e71ec9a10d937f9ae971635a6aca6539e78f2a51d48"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-yoga-meditation-programs-mobile.json",
+      "before": "ca614ff736f48a03858d37ed74b88a064f1c17331caa96069f32d9d647fbc9e8",
+      "after": "e2902fafe0fe378f96542e542409f8e77f5097df90d3b008e072d95f4cb24d46"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-yoga-meditation-training-desktop.json",
+      "before": "c66e93440f28fa3fcc7d04bf72c905929b8eca1443d7849222bc216934c1461b",
+      "after": "5a7c7dc0d1192a5e889a9bd4e0d0a22acf6b56b6a17390012d27dc6346e8e21a"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-yoga-meditation-training-mobile.json",
+      "before": "b1a5d8dd1432973a0978b5d29111b4c13ad84c3115d09606b4009a3148899524",
+      "after": "076e57d2d6bf8c6b6a9935d55312b3b5e572ffbdfef1467743015790d834afff"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/home-hi-fi-v4.json",
+      "before": "bbbcbea66c3bd185ab902d2d9e529df20a4f3423a2bbb30cebd465d48e2331fe",
+      "after": "a284318b59d1787bcdfd3175cd879dc16d8bad6481b7425b3168795cb4dbddf0"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-all-programs-desktop.json",
+      "before": "fdf1c27009cda6db560bf086e6a227b03b46af6f4f729f7d98cd3deb7d1f4c58",
+      "after": "e9274b393b72b929049718ae5f3b6e2b4ffd430b5daf72142c80d3166de4b66b"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-all-programs-mobile.json",
+      "before": "3784579d4ac7df13c166b291d84519f007bd91e8c6f2a2adba303ae564fc5267",
+      "after": "dcd2b5d86f5b8539a4a2f3bca6848f8817eaad61e39be9b70bf0d72a378b88a1"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-ayurvedic-treatments-desktop.json",
+      "before": "4e598d2b33c0afe75e65cadcc43e3206fdb54138d21472f920095f5be686bc8f",
+      "after": "03754ff50f4c405bdac0d06f30dc795778a9239018c5d60efa5a1b216f7a4c33"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-ayurvedic-treatments-mobile.json",
+      "before": "8d98787fa6e826f193d0333e2acc7b793899fadc4a77075f1b55c0809edf220c",
+      "after": "81688225c83d2b050d5fe9d45099bd6681722515c5e7268d6f3918f511c96d98"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-training-programs-desktop.json",
+      "before": "0722bc25089aabfd19bf53914f809dac06139185f91f3cca0e833208cd3dbc4a",
+      "after": "87a5d99bbd1e7128826fc73e0d4a91a623757bc7fe6d28a8880e0bee5b251977"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-training-programs-mobile.json",
+      "before": "ebde9abf1ba24b53e431f10149648aeb7539560e12d9141a766b6c2dea3afad7",
+      "after": "1788ff1c6d86d8b020f1eb86395c1e3b296f2cfab10275cb2ace4c42a07f515c"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-treatment-programs-desktop.json",
+      "before": "7a55cb15f7dd1cc515959efe81a9ed2cd2f89fb10564e04157e8fc62123dd30b",
+      "after": "9c19c6ff49b4fe35377e9ad239cce07b54ff4a5d8fcc2293274ae090a254afc6"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-treatment-programs-mobile.json",
+      "before": "22b6e3d8b5b1e91bd272cc28cbf0db0bced4dc2e9a1007faa661a63b2edea57a",
+      "after": "d2925334466cea340c1d15cbf3284cd38d20cf04458a73569721b8c824e48a90"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-wellness-programs-desktop.json",
+      "before": "635c5ce1cf5f181c0aa9a0968acbcb3bcdf3bf1ebdbd73183a5685b1a9bbbc70",
+      "after": "6ffbc90958be6e6346ddbbd60b8d8f9b69bc03a5413c2495cb16877879ce5ac7"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-wellness-programs-mobile.json",
+      "before": "470ea44b55d04b7f1509ae5010a14e5555cb7a54327b2c1b18d2ffa6632322c4",
+      "after": "5236850c2f0dc4dd10c36db1a7978ae2bb4cc507e012b45e28a9f2192de19ed4"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-yoga-meditation-programs-desktop.json",
+      "before": "f0eb6ef85fbe4b186bd75361392041e36179a44fe464d2fa79a9061c716352e7",
+      "after": "faadf92bf4c4e2e575a0eff298eb6e05919143ccc4b7cea144d49b93ab5c76c3"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-yoga-meditation-programs-mobile.json",
+      "before": "4046d32066174b358acf225ccb54247fbd3602fb5fa47493585521cb48a76cfe",
+      "after": "b27376e9a2389e267f162050e106ea296246f8591126f62a16bcb1e27ffa5a0e"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-yoga-meditation-training-desktop.json",
+      "before": "2b6e546a2f2ea859cda35321a51b2610b860eb3ab04258b5b6464b15d5165f36",
+      "after": "691ff08e051522d495df881726ee233de2ef174a2b7b9efbe1fa408463539a3c"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-yoga-meditation-training-mobile.json",
+      "before": "6426b2f9393216e81e98545b12ece8cc7687a3da80c0b65a7e3b89db7c9dab08",
+      "after": "1d9a699ad7f095c9e7aaad06b9a7e50815ec2c336c9a7370c2acf7139bb4c5f2"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/home-hi-fi-v4.json",
+      "before": "7bd17da332b3fd4b0d785266b58cd7ed175930dbe1788e43964f4dc9795c0aad",
+      "after": "6c5d34cc60e0768ab2ad1a57e51753f226625256e059b8ddf31560289bec0645"
+    }
+  ],
+  "unchangedServingSources": 3026,
+  "semanticDeltaProofs": {
+    "enDesktopHome": {
+      "firstDifferenceAt": 148,
+      "lengthDelta": 25,
+      "context": "reen-label=\"KTAHV Home — Hi-Fi v4\"><header data-dc-tpl=\"32\" data-ahv-home-header=\"1\" style=\"position: fixed; top: 0",
+      "exactlyMarker": true,
+      "rule": "old has the header anchor exactly once and new == old with MARK inserted into that anchor (whole-document equality)"
+    },
+    "enDesktopHomeIndex": {
+      "rowsBefore": 3,
+      "rowsAfter": 3,
+      "freshRow": true
+    },
+    "hubCourseLinks": [
+      {
+        "locale": "en",
+        "fiveExactInOrder": true,
+        "immediatelyBeforeViewCourses": true,
+        "otherMainLinksIdenticalToOriginal": true,
+        "mainLinksBefore": 9,
+        "mainLinksAfter": 14,
+        "expected": [
+          [
+            "/one-day-ayurveda-workshop-program-kerala/",
+            "One-Day Ayurveda Workshop"
+          ],
+          [
+            "/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+            "Three-Day Ayurveda Certificate Program"
+          ],
+          [
+            "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+            "Five-Day Intensive Ayurveda Training Program"
+          ],
+          [
+            "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+            "Level One Advanced Ayurveda Training Program"
+          ],
+          [
+            "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+            "Advanced Ayurveda Lifestyle Consultant & Therapist Training"
+          ]
+        ]
+      },
+      {
+        "locale": "hi",
+        "fiveExactInOrder": true,
+        "immediatelyBeforeViewCourses": true,
+        "otherMainLinksIdenticalToOriginal": true,
+        "mainLinksBefore": 9,
+        "mainLinksAfter": 14,
+        "expected": [
+          [
+            "/hi/one-day-ayurveda-workshop-program-kerala/",
+            "एक-दिवसीय आयुर्वेद कार्यशाला"
+          ],
+          [
+            "/hi/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+            "तीन-दिवसीय आयुर्वेद प्रमाणपत्र कार्यक्रम"
+          ],
+          [
+            "/hi/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+            "पाँच-दिवसीय गहन आयुर्वेद प्रशिक्षण कार्यक्रम"
+          ],
+          [
+            "/hi/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+            "लेवल वन उन्नत आयुर्वेद प्रशिक्षण कार्यक्रम"
+          ],
+          [
+            "/hi/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+            "उन्नत आयुर्वेद जीवनशैली परामर्शदाता एवं थेरेपिस्ट प्रशिक्षण"
+          ]
+        ]
+      },
+      {
+        "locale": "de",
+        "fiveExactInOrder": true,
+        "immediatelyBeforeViewCourses": true,
+        "otherMainLinksIdenticalToOriginal": true,
+        "mainLinksBefore": 9,
+        "mainLinksAfter": 14,
+        "expected": [
+          [
+            "/de/eintagiges-ayurveda-workshop-programm-kerala/",
+            "Eintägiger Ayurveda-Workshop"
+          ],
+          [
+            "/de/dreitagiges-kurzzeit-ayurveda-zertifikatsprogramm-ttap-hv/",
+            "Dreitägiges Ayurveda-Zertifikatsprogramm"
+          ],
+          [
+            "/de/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+            "Fünftägiges intensives Ayurveda-Ausbildungsprogramm"
+          ],
+          [
+            "/de/level-one-advanced-ayurveda-trainingsprogramm-fur-wellness-profis-in-kerala-aatp-1-hv/",
+            "Fortgeschrittenes Ayurveda-Ausbildungsprogramm – Stufe 1"
+          ],
+          [
+            "/de/fortgeschrittenes-ayurveda-lifestyle-berater-und-therapeuten-ausbildungsprogramm-kerala-aalct-hv/",
+            "Fortgeschrittene Ausbildung zum Ayurveda-Lebensstilberater & -Therapeuten"
+          ]
+        ]
+      },
+      {
+        "locale": "fr",
+        "fiveExactInOrder": true,
+        "immediatelyBeforeViewCourses": true,
+        "otherMainLinksIdenticalToOriginal": true,
+        "mainLinksBefore": 9,
+        "mainLinksAfter": 14,
+        "expected": [
+          [
+            "/fr/programme-datelier-ayurveda-dun-jour-au-kerala/",
+            "Atelier d'Ayurveda d'une journée"
+          ],
+          [
+            "/fr/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+            "Programme certifiant d'Ayurveda de trois jours"
+          ],
+          [
+            "/fr/programme-de-formation-intensive-ayurveda-wap-hv/",
+            "Programme intensif de formation en Ayurveda de cinq jours"
+          ],
+          [
+            "/fr/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+            "Programme de formation avancée en Ayurveda – Niveau 1"
+          ],
+          [
+            "/fr/programme-de-formation-pour-consultant-et-therapeute-en-mode-de-vie-ayurvedique-avance-kerala-aalct-hv/",
+            "Formation avancée de consultant et thérapeute en mode de vie ayurvédique"
+          ]
+        ]
+      },
+      {
+        "locale": "es",
+        "fiveExactInOrder": true,
+        "immediatelyBeforeViewCourses": true,
+        "otherMainLinksIdenticalToOriginal": true,
+        "mainLinksBefore": 9,
+        "mainLinksAfter": 14,
+        "expected": [
+          [
+            "/es/one-day-ayurveda-workshop-program-kerala/",
+            "Taller de Ayurveda de un día"
+          ],
+          [
+            "/es/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+            "Programa de certificación en Ayurveda de tres días"
+          ],
+          [
+            "/es/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+            "Programa intensivo de formación en Ayurveda de cinco días"
+          ],
+          [
+            "/es/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+            "Programa de formación avanzada en Ayurveda, nivel uno"
+          ],
+          [
+            "/es/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+            "Formación avanzada de consultor y terapeuta en estilo de vida ayurvédico"
+          ]
+        ]
+      },
+      {
+        "locale": "it",
+        "fiveExactInOrder": true,
+        "immediatelyBeforeViewCourses": true,
+        "otherMainLinksIdenticalToOriginal": true,
+        "mainLinksBefore": 9,
+        "mainLinksAfter": 14,
+        "expected": [
+          [
+            "/it/one-day-ayurveda-workshop-program-kerala/",
+            "Workshop di Ayurveda di un giorno"
+          ],
+          [
+            "/it/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+            "Programma certificato di Ayurveda di tre giorni"
+          ],
+          [
+            "/it/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+            "Programma intensivo di formazione in Ayurveda di cinque giorni"
+          ],
+          [
+            "/it/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+            "Programma di formazione avanzata in Ayurveda – Livello uno"
+          ],
+          [
+            "/it/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+            "Formazione avanzata per consulente e terapista di stile di vita ayurvedico"
+          ]
+        ]
+      },
+      {
+        "locale": "pt",
+        "fiveExactInOrder": true,
+        "immediatelyBeforeViewCourses": true,
+        "otherMainLinksIdenticalToOriginal": true,
+        "mainLinksBefore": 9,
+        "mainLinksAfter": 14,
+        "expected": [
+          [
+            "/pt/one-day-ayurveda-workshop-program-kerala/",
+            "Workshop de Ayurveda de Um Dia"
+          ],
+          [
+            "/pt/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+            "Programa de Certificação em Ayurveda de Três Dias"
+          ],
+          [
+            "/pt/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+            "Programa Intensivo de Formação em Ayurveda de Cinco Dias"
+          ],
+          [
+            "/pt/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+            "Programa de Formação Avançada em Ayurveda – Nível Um"
+          ],
+          [
+            "/pt/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+            "Formação Avançada de Consultor e Terapeuta em Estilo de Vida Ayurvédico"
+          ]
+        ]
+      },
+      {
+        "locale": "nl",
+        "fiveExactInOrder": true,
+        "immediatelyBeforeViewCourses": true,
+        "otherMainLinksIdenticalToOriginal": true,
+        "mainLinksBefore": 9,
+        "mainLinksAfter": 14,
+        "expected": [
+          [
+            "/nl/one-day-ayurveda-workshop-program-kerala/",
+            "Eendaagse Ayurveda-workshop"
+          ],
+          [
+            "/nl/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+            "Driedaags Ayurveda-certificaatprogramma"
+          ],
+          [
+            "/nl/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+            "Vijfdaags intensief Ayurveda-trainingsprogramma"
+          ],
+          [
+            "/nl/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+            "Gevorderd Ayurveda-trainingsprogramma niveau 1"
+          ],
+          [
+            "/nl/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+            "Gevorderde opleiding tot Ayurveda-leefstijlconsulent en -therapeut"
+          ]
+        ]
+      },
+      {
+        "locale": "ru",
+        "fiveExactInOrder": true,
+        "immediatelyBeforeViewCourses": true,
+        "otherMainLinksIdenticalToOriginal": true,
+        "mainLinksBefore": 9,
+        "mainLinksAfter": 14,
+        "expected": [
+          [
+            "/ru/one-day-ayurveda-workshop-program-kerala/",
+            "Однодневный семинар по аюрведе"
+          ],
+          [
+            "/ru/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+            "Трёхдневная сертификационная программа по аюрведе"
+          ],
+          [
+            "/ru/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+            "Пятидневная интенсивная программа обучения аюрведе"
+          ],
+          [
+            "/ru/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+            "Программа углублённого обучения аюрведе, уровень 1"
+          ],
+          [
+            "/ru/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+            "Углублённое обучение консультантов по аюрведическому образу жизни и терапевтов"
+          ]
+        ]
+      },
+      {
+        "locale": "ar",
+        "fiveExactInOrder": true,
+        "immediatelyBeforeViewCourses": true,
+        "otherMainLinksIdenticalToOriginal": true,
+        "mainLinksBefore": 9,
+        "mainLinksAfter": 14,
+        "expected": [
+          [
+            "/ar/one-day-ayurveda-workshop-program-kerala/",
+            "ورشة عمل الأيورفيدا ليوم واحد"
+          ],
+          [
+            "/ar/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+            "برنامج شهادة الأيورفيدا لمدة ثلاثة أيام"
+          ],
+          [
+            "/ar/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+            "برنامج تدريب مكثف في الأيورفيدا لمدة خمسة أيام"
+          ],
+          [
+            "/ar/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+            "برنامج التدريب المتقدم في الأيورفيدا – المستوى الأول"
+          ],
+          [
+            "/ar/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+            "التدريب المتقدم لاستشاريي ومعالجي نمط الحياة الأيورفيدي"
+          ]
+        ]
+      },
+      {
+        "locale": "zh-Hans",
+        "fiveExactInOrder": true,
+        "immediatelyBeforeViewCourses": true,
+        "otherMainLinksIdenticalToOriginal": true,
+        "mainLinksBefore": 9,
+        "mainLinksAfter": 14,
+        "expected": [
+          [
+            "/zh/one-day-ayurveda-workshop-program-kerala/",
+            "一日阿育吠陀工作坊"
+          ],
+          [
+            "/zh/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+            "三日阿育吠陀证书课程"
+          ],
+          [
+            "/zh/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+            "五日阿育吠陀强化培训课程"
+          ],
+          [
+            "/zh/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+            "一级阿育吠陀进阶培训课程"
+          ],
+          [
+            "/zh/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+            "阿育吠陀生活方式顾问与理疗师进阶培训"
+          ]
+        ]
+      },
+      {
+        "locale": "ja",
+        "fiveExactInOrder": true,
+        "immediatelyBeforeViewCourses": true,
+        "otherMainLinksIdenticalToOriginal": true,
+        "mainLinksBefore": 9,
+        "mainLinksAfter": 14,
+        "expected": [
+          [
+            "/ja/one-day-ayurveda-workshop-program-kerala/",
+            "1日アーユルヴェーダ・ワークショップ"
+          ],
+          [
+            "/ja/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+            "3日間アーユルヴェーダ修了証プログラム"
+          ],
+          [
+            "/ja/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+            "5日間集中アーユルヴェーダ研修プログラム"
+          ],
+          [
+            "/ja/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+            "レベル1 アドバンスト・アーユルヴェーダ研修プログラム"
+          ],
+          [
+            "/ja/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+            "アドバンスト・アーユルヴェーダ・ライフスタイル・コンサルタント＆セラピスト研修"
+          ]
+        ]
+      },
+      {
+        "locale": "ko",
+        "fiveExactInOrder": true,
+        "immediatelyBeforeViewCourses": true,
+        "otherMainLinksIdenticalToOriginal": true,
+        "mainLinksBefore": 9,
+        "mainLinksAfter": 14,
+        "expected": [
+          [
+            "/ko/one-day-ayurveda-workshop-program-kerala/",
+            "1일 아유르베다 워크숍"
+          ],
+          [
+            "/ko/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+            "3일 아유르베다 수료 과정"
+          ],
+          [
+            "/ko/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+            "5일 집중 아유르베다 교육 과정"
+          ],
+          [
+            "/ko/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+            "레벨 1 고급 아유르베다 교육 프로그램"
+          ],
+          [
+            "/ko/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+            "고급 아유르베다 라이프스타일 컨설턴트 및 테라피스트 교육"
+          ]
+        ]
+      }
+    ],
+    "finderCards": [
+      {
+        "locale": "en",
+        "route": "/all-programs/",
+        "purposeOccurrences": [
+          {
+            "purpose": "Personal practice",
+            "count": 1
+          },
+          {
+            "purpose": "Professional teacher training",
+            "count": 1
+          }
+        ],
+        "actionLocalized": "View details",
+        "actionOccurrences": 2,
+        "cookieButtonInsertedByCapture": [],
+        "cookieLabelsInOriginalLocaleBodies": [],
+        "insertedCookieLabelMatchesOriginalLocaleLabel": true,
+        "reverseMappedEqualsOriginal": true
+      },
+      {
+        "locale": "hi",
+        "route": "/all-programs/",
+        "purposeOccurrences": [
+          {
+            "purpose": "व्यक्तिगत अभ्यास",
+            "count": 1
+          },
+          {
+            "purpose": "पेशेवर योग शिक्षक प्रशिक्षण",
+            "count": 1
+          }
+        ],
+        "actionLocalized": "विवरण देखें",
+        "actionOccurrences": 2,
+        "cookieButtonInsertedByCapture": [
+          "कुकी विकल्प"
+        ],
+        "cookieLabelsInOriginalLocaleBodies": [
+          "कुकी विकल्प"
+        ],
+        "insertedCookieLabelMatchesOriginalLocaleLabel": true,
+        "reverseMappedEqualsOriginal": true
+      },
+      {
+        "locale": "de",
+        "route": "/all-programs/",
+        "purposeOccurrences": [
+          {
+            "purpose": "Persönliche Praxis",
+            "count": 1
+          },
+          {
+            "purpose": "Professionelle Yogalehrerausbildung",
+            "count": 1
+          }
+        ],
+        "actionLocalized": "Details ansehen",
+        "actionOccurrences": 2,
+        "cookieButtonInsertedByCapture": [
+          "Cookie-Einstellungen"
+        ],
+        "cookieLabelsInOriginalLocaleBodies": [
+          "Cookie-Einstellungen"
+        ],
+        "insertedCookieLabelMatchesOriginalLocaleLabel": true,
+        "reverseMappedEqualsOriginal": true
+      },
+      {
+        "locale": "fr",
+        "route": "/all-programs/",
+        "purposeOccurrences": [
+          {
+            "purpose": "Pratique personnelle",
+            "count": 1
+          },
+          {
+            "purpose": "Formation professionnelle de professeurs de yoga",
+            "count": 1
+          }
+        ],
+        "actionLocalized": "Voir les détails",
+        "actionOccurrences": 2,
+        "cookieButtonInsertedByCapture": [],
+        "cookieLabelsInOriginalLocaleBodies": [
+          "Choix des cookies"
+        ],
+        "insertedCookieLabelMatchesOriginalLocaleLabel": true,
+        "reverseMappedEqualsOriginal": true
+      },
+      {
+        "locale": "es",
+        "route": "/all-programs/",
+        "purposeOccurrences": [
+          {
+            "purpose": "Práctica personal",
+            "count": 1
+          },
+          {
+            "purpose": "Formación profesional de profesores de yoga",
+            "count": 1
+          }
+        ],
+        "actionLocalized": "Ver detalles",
+        "actionOccurrences": 2,
+        "cookieButtonInsertedByCapture": [],
+        "cookieLabelsInOriginalLocaleBodies": [
+          "Opciones de cookies"
+        ],
+        "insertedCookieLabelMatchesOriginalLocaleLabel": true,
+        "reverseMappedEqualsOriginal": true
+      },
+      {
+        "locale": "it",
+        "route": "/all-programs/",
+        "purposeOccurrences": [
+          {
+            "purpose": "Pratica personale",
+            "count": 1
+          },
+          {
+            "purpose": "Formazione professionale per insegnanti di yoga",
+            "count": 1
+          }
+        ],
+        "actionLocalized": "Visualizzare i dettagli",
+        "actionOccurrences": 2,
+        "cookieButtonInsertedByCapture": [],
+        "cookieLabelsInOriginalLocaleBodies": [
+          "Scelte sui cookie"
+        ],
+        "insertedCookieLabelMatchesOriginalLocaleLabel": true,
+        "reverseMappedEqualsOriginal": true
+      },
+      {
+        "locale": "pt",
+        "route": "/all-programs/",
+        "purposeOccurrences": [
+          {
+            "purpose": "Prática pessoal",
+            "count": 1
+          },
+          {
+            "purpose": "Formação profissional de professores de yoga",
+            "count": 1
+          }
+        ],
+        "actionLocalized": "Ver detalhes",
+        "actionOccurrences": 2,
+        "cookieButtonInsertedByCapture": [],
+        "cookieLabelsInOriginalLocaleBodies": [
+          "Escolhas de cookies"
+        ],
+        "insertedCookieLabelMatchesOriginalLocaleLabel": true,
+        "reverseMappedEqualsOriginal": true
+      },
+      {
+        "locale": "nl",
+        "route": "/all-programs/",
+        "purposeOccurrences": [
+          {
+            "purpose": "Persoonlijke beoefening",
+            "count": 1
+          },
+          {
+            "purpose": "Professionele yogadocentenopleiding",
+            "count": 1
+          }
+        ],
+        "actionLocalized": "Details bekijken",
+        "actionOccurrences": 2,
+        "cookieButtonInsertedByCapture": [],
+        "cookieLabelsInOriginalLocaleBodies": [
+          "Cookiekeuzes"
+        ],
+        "insertedCookieLabelMatchesOriginalLocaleLabel": true,
+        "reverseMappedEqualsOriginal": true
+      },
+      {
+        "locale": "ru",
+        "route": "/all-programs/",
+        "purposeOccurrences": [
+          {
+            "purpose": "Личная практика",
+            "count": 1
+          },
+          {
+            "purpose": "Профессиональная подготовка преподавателей йоги",
+            "count": 1
+          }
+        ],
+        "actionLocalized": "Подробнее",
+        "actionOccurrences": 2,
+        "cookieButtonInsertedByCapture": [],
+        "cookieLabelsInOriginalLocaleBodies": [
+          "Настройки файлов cookie"
+        ],
+        "insertedCookieLabelMatchesOriginalLocaleLabel": true,
+        "reverseMappedEqualsOriginal": true
+      },
+      {
+        "locale": "ar",
+        "route": "/all-programs/",
+        "purposeOccurrences": [
+          {
+            "purpose": "الممارسة الشخصية",
+            "count": 1
+          },
+          {
+            "purpose": "التدريب المهني لمعلمي اليوغا",
+            "count": 1
+          }
+        ],
+        "actionLocalized": "عرض التفاصيل",
+        "actionOccurrences": 2,
+        "cookieButtonInsertedByCapture": [],
+        "cookieLabelsInOriginalLocaleBodies": [
+          "خيارات ملفات الارتباط"
+        ],
+        "insertedCookieLabelMatchesOriginalLocaleLabel": true,
+        "reverseMappedEqualsOriginal": true
+      },
+      {
+        "locale": "zh-Hans",
+        "route": "/all-programs/",
+        "purposeOccurrences": [
+          {
+            "purpose": "个人练习",
+            "count": 1
+          },
+          {
+            "purpose": "专业瑜伽教师培训",
+            "count": 1
+          }
+        ],
+        "actionLocalized": "查看详情",
+        "actionOccurrences": 2,
+        "cookieButtonInsertedByCapture": [],
+        "cookieLabelsInOriginalLocaleBodies": [
+          "Cookie 选择"
+        ],
+        "insertedCookieLabelMatchesOriginalLocaleLabel": true,
+        "reverseMappedEqualsOriginal": true
+      },
+      {
+        "locale": "ja",
+        "route": "/all-programs/",
+        "purposeOccurrences": [
+          {
+            "purpose": "個人の実践",
+            "count": 1
+          },
+          {
+            "purpose": "専門ヨガ指導者養成",
+            "count": 1
+          }
+        ],
+        "actionLocalized": "詳細を見る",
+        "actionOccurrences": 2,
+        "cookieButtonInsertedByCapture": [],
+        "cookieLabelsInOriginalLocaleBodies": [
+          "Cookie の選択"
+        ],
+        "insertedCookieLabelMatchesOriginalLocaleLabel": true,
+        "reverseMappedEqualsOriginal": true
+      },
+      {
+        "locale": "ko",
+        "route": "/all-programs/",
+        "purposeOccurrences": [
+          {
+            "purpose": "개인 수련",
+            "count": 1
+          },
+          {
+            "purpose": "전문 요가 지도자 교육",
+            "count": 1
+          }
+        ],
+        "actionLocalized": "자세히 보기",
+        "actionOccurrences": 2,
+        "cookieButtonInsertedByCapture": [],
+        "cookieLabelsInOriginalLocaleBodies": [
+          "쿠키 선택"
+        ],
+        "insertedCookieLabelMatchesOriginalLocaleLabel": true,
+        "reverseMappedEqualsOriginal": true
+      }
+    ]
+  },
+  "originalIndexRowsRebound": false,
+  "archiveSha256": "6ba06e038f2e6a4e86eb566155f89e73bf86e80da6e3abc35179081c358cff37",
+  "archiveBytes": 43761510,
+  "archiveMembersVerified": 2424,
+  "batchLimit": 25,
+  "remoteUploaded": false,
+  "remoteAssetId": null,
+  "productionPublished": false
+}
