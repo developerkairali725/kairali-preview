@@ -101,13 +101,16 @@ html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
 }
 
 /* Russian phone action bar (the site's own review-chrome.js bar: Позвонить · Запрос · Бесплатная консультация ·
-   Chat). Four equal columns leave the consultation tile ~90px of text, less than "КОНСУЛЬТАЦИЯ" (≈ 105px in 12px
-   bold caps), so its overflow guard split the word ("КОНСУЛЬТАЦ / ИЯ"). On the Russian route only, the columns are
-   weighted by their labels so the tile reads "БЕСПЛАТНАЯ / КОНСУЛЬТАЦИЯ" on two whole-word lines: at 320px the
-   tracks are ≈ 84 / 60 / 116 / 60px, every one ≥ 48px wide and still 52px tall. Type, colours, order and the
-   overflow guard itself are unchanged; English and German keep four equal columns. */
+   Chat). Cyrillic caps run ≈ 9px a letter at 12px bold with the bar's .4px tracking, so four equal (or fixed-weight)
+   columns split words at 320px ("КОНСУЛЬТАЦ / ИЯ", "ПОЗВОНИТ / Ь", "ЗАПРО / С"). On the Russian route only:
+   - the one-word labels' columns never go narrower than their word (minmax(max-content, …)), Chat's never under
+     48px, and the consultation tile takes the rest, which always leaves "БЕСПЛАТНАЯ / КОНСУЛЬТАЦИЯ" two whole lines;
+   - tracking 0 (Cyrillic caps need it least) buys ≈ 20px, so at 320px the tracks are ≈ 85 / 60 / 124 / 51px and at
+     390px ≈ 98 / 73 / 156 / 63px — every tile ≥ 48px wide, all still 52px tall.
+   Font, size, colours, order, destinations and the overflow guard are unchanged; English and German keep their bar. */
 @media (max-width: 699px) {
-  html[data-lp-surface="production"]:lang(ru) #ahv-cta-bar { grid-template-columns: minmax(0, 1.05fr) minmax(0, .75fr) minmax(0, 1.45fr) minmax(0, .75fr); }
+  html[data-lp-surface="production"]:lang(ru) #ahv-cta-bar { grid-template-columns: minmax(max-content, 1fr) minmax(max-content, .75fr) minmax(0, 1.6fr) minmax(48px, .65fr); }
+  html[data-lp-surface="production"]:lang(ru) #ahv-cta-bar :is(a, button) { letter-spacing: 0; }
 }
 
 /* Enquiry: the closing invitation, then the same note. */
