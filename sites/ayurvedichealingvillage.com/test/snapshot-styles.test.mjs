@@ -110,9 +110,13 @@ test("imageLedFirstScreen: listed hero-background routes only; every other route
   const locales = fs.readdirSync("l10n/prerender").filter((l) => fs.existsSync(`l10n/prerender/${l}/digestive-wellness-gut-health-yoga-therapy.html.gz`));
   assert.equal(locales.length, 12);
   for (const html of [en, ...locales.map((l) => zlib.gunzipSync(fs.readFileSync(`l10n/prerender/${l}/digestive-wellness-gut-health-yoga-therapy.html.gz`)).toString("utf8"))]) {
-    const hero = html.search(/background-image:\s*url\((?:&quot;|")?\/ahv\/assets\/img\/digestive\.webp/);
-    assert.ok(hero > 0 && hero < html.search(/<img\b[^>]*\sloading="lazy"/i));
-    assert.doesNotMatch(html, /<video\b/);
+    // Frozen English is WebP; captures from the current runtime already contain the optimized AVIF.
+    // Check the served media contract after the same normalization used by DesignView.
+    const served = phoneCriticalMedia(html, digestive);
+    assert.equal(firstCriticalImage(served, digestive), "/ahv/assets/img/digestive-768-hero.avif");
+    const hero = served.search(/background-image:\s*url\((?:&quot;|")?\/ahv\/assets\/img\/digestive-768-hero\.avif/);
+    assert.ok(hero > 0 && hero < served.search(/<img\b[^>]*\sloading="lazy"/i));
+    assert.doesNotMatch(served, /<video\b/);
   }
 });
 
