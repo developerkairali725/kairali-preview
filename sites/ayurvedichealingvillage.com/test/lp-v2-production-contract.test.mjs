@@ -273,7 +273,7 @@ test("measurement: the replaced page's interaction mapping, unchanged", () => {
 test("measurement: the lead event carries only the form type and the token (no health data to pixels)", () => {
   const receipt = read("public/design/lead-receipt.js");
   assert.match(receipt, /window\.AHV_MEASUREMENT\.recordLead\(request\.form, request\.token\)/);
-  assert.match(receipt, /'landing-page': '\/ppc-thanks\/'/);
+  assert.match(receipt, /'landing-page': '\/thanks\/'/);
   const runtime = read("app/(english)/_families/consent-runtime.ts");
   assert.match(runtime, /#\(\?:enquiry\|main\|contact\|section-\[0-8\]\|written-testimonials\|press\)/);
 });

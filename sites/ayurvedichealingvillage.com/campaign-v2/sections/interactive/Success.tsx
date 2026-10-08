@@ -42,7 +42,7 @@ export default function Success({ channel, refCode, headingId, successText, plai
   useEffect(() => { heading.current?.focus(); }, []);
 
   // Live ad routes: the existing form's received line only. No ref code or extra channel links; the site's
-  // lead receipt then hands the visitor to /ppc-thanks/.
+  // lead receipt then hands the visitor to /thanks/.
   if (plain && successText) {
     return (
       <div className="lp-enq__done" role="status">

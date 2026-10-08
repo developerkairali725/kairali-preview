@@ -27,7 +27,7 @@ import type { FormUi } from "../../production/ui.ts";
 // /api/forms-unavailable (never reads the body), the "ahv-production" adapter builds the request itself from
 // the consent-aware attribution (so nothing is written to sessionStorage here), ConsultBar answers are removed
 // from the address bar once read (the consent runtime measures only allow-listed URLs), and success is the
-// plain received line: public/design/lead-receipt.js then hands the visitor to /ppc-thanks/.
+// plain received line: public/design/lead-receipt.js then hands the visitor to /thanks/.
 
 export type EnquiryFormProps = {
   schema: ResolvedSchema;

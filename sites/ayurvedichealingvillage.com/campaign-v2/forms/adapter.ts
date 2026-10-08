@@ -210,7 +210,7 @@ export const leadApiAdapter: FormAdapter = {
 // else the same allow-listed URL values), lead_source_url = origin + path + those values only, referrer =
 // origin only, the kit honeypot sent as `company` for the API's own guard, and the same success rule
 // (200 + ok:true + status "received"). public/design/lead-receipt.js observes that response and owns the
-// consented lead event and the /ppc-thanks/ hand-off; the kit fires nothing for a lead here.
+// consented lead event and the /thanks/ hand-off; the kit fires nothing for a lead here.
 
 /** The existing production form's messages, word for word. */
 export const PRODUCTION_MESSAGES = {

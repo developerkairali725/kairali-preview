@@ -255,7 +255,7 @@ test("doctors: the current consented roster, once per page, every fact from the 
 const ROUTE_SET = new Set(JSON.parse(read("english-candidate/routes.json")).routes.map((r) => r.path));
 
 test("links: every same-site link resolves to a live route; anchors are measured; external links are https; contact links are the site's own", () => {
-  const fixed = ["/", "/new-privacy-policy/", "/terms-and-conditions/", "/cookie-policy/", "/ppc-thanks/"];
+  const fixed = ["/", "/new-privacy-policy/", "/terms-and-conditions/", "/cookie-policy/", "/thanks/"];
   for (const p of fixed) assert.ok(ROUTE_SET.has(p), p);
   for (const slug of PRODUCTION_SLUGS) {
     for (const { path: at, href, text } of pageLinks(C[slug])) {

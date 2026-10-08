@@ -109,7 +109,7 @@ test("routing: no redirect, rewrite or middleware moves the two URLs; pages stay
   // Every redirect next.config.ts builds comes from these files (plus the sitemap list and one offers rule).
   const sources = [
     ...Object.keys(JSON.parse(read("english-candidate/redirect-map.json")).redirects),
-    ...["ad-sitelink-redirects", "legacy-english-redirects", "document-redirects"].flatMap((f) => JSON.parse(read(`english-candidate/${f}.json`)).map((r) => r.source)),
+    ...["ad-sitelink-redirects", "legacy-english-redirects", "document-redirects", "ppc-thanks-redirects"].flatMap((f) => JSON.parse(read(`english-candidate/${f}.json`)).map((r) => r.source)),
   ];
   for (const u of urls) assert.ok(!sources.some((s) => s.replace(/\/$/, "") === u), `${u} is a redirect source`);
   const config = code(read("next.config.ts"));
