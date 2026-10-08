@@ -36,17 +36,20 @@ export default function Village({ c, v }: SectionProps) {
 }
 
 /** "View all photos": opens the Gallery dialog (sections/interactive/Gallery.tsx listens for data-gallery-open). */
-export function AllPhotosButton() {
+export function AllPhotosButton({ label = "View all photos" }: { label?: string }) {
   return (
     <button type="button" className="lp-vil__all" data-gallery-open aria-haspopup="dialog"
       data-track="gallery_open" data-track-category="all">
-      <GridIcon />View all photos
+      <GridIcon />{label}
     </button>
   );
 }
 
-/** The first five gallery photographs as the village mosaic, with a "+ n more" chip when the gallery holds more. */
-export function Mosaic({ c }: { c: CampaignConfig }) {
+/**
+ * The first five gallery photographs as the village mosaic, with a "+ n more" chip when the gallery holds more.
+ * `more` / `alt` = the page language's chip word and alt texts (production German and Russian routes).
+ */
+export function Mosaic({ c, more: moreWord = "more", alt = {} }: { c: CampaignConfig; more?: string; alt?: Record<string, string> }) {
   const pool = c.modesty === "gcc" ? c.gallery.filter((g) => g.image.gccSafe) : c.gallery;
   const tiles = pool.slice(0, 5);
   const more = pool.length - tiles.length;
@@ -54,9 +57,9 @@ export function Mosaic({ c }: { c: CampaignConfig }) {
     <ul className="lp-vil__mosaic">
       {tiles.map((g, i) => (
         <li key={g.image.id} className="lp-vil__tile">
-          <Image className="lp-vil__img" src={g.image.src} alt={g.image.alt} width={g.image.width} height={g.image.height}
+          <Image className="lp-vil__img" src={g.image.src} alt={alt[g.image.id] ?? g.image.alt} width={g.image.width} height={g.image.height}
             sizes={SIZES[i]} loading="lazy" />
-          {i === tiles.length - 1 && more > 0 ? <span className="lp-vil__more lp-panel" aria-hidden="true">+ {more} more</span> : null}
+          {i === tiles.length - 1 && more > 0 ? <span className="lp-vil__more lp-panel" aria-hidden="true">+ {more} {moreWord}</span> : null}
         </li>
       ))}
     </ul>

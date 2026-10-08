@@ -17,6 +17,8 @@ const SITE_NAME = "Kairali Ayurvedic Healing Village";
 export function productionMetadata(slug: ProductionSlug, c: CampaignConfig, env: Record<string, string | undefined> = process.env): Metadata {
   const b = ROUTES[slug];
   const title = c.seo.title;
+  // The replaced page's Open Graph image, og:locale and og:site_name (bindings.ts `og`); the R10 pages' by default.
+  const og = { url: b.og?.url ?? OG_IMAGE.url, width: b.og ? b.og.width : OG_IMAGE.width, height: b.og ? b.og.height : OG_IMAGE.height, locale: b.og?.locale ?? "en_IN", siteName: b.og?.siteName ?? SITE_NAME };
   const description = c.seo.description;
   return {
     title,
@@ -24,10 +26,10 @@ export function productionMetadata(slug: ProductionSlug, c: CampaignConfig, env:
     alternates: { canonical: b.canonical },
     robots: { index: env.AHV_STAGING === "0", follow: true },
     openGraph: {
-      type: "website", locale: "en_IN", siteName: SITE_NAME, title, description, url: b.canonical,
-      images: [{ url: OG_IMAGE.url, width: OG_IMAGE.width, height: OG_IMAGE.height, ...(b.ogImageAlt ? { alt: b.ogImageAlt } : {}) }],
+      type: "website", locale: og.locale, siteName: og.siteName, title, description, url: b.canonical,
+      images: [{ url: og.url, ...(og.width ? { width: og.width, height: og.height } : {}), ...(b.ogImageAlt ? { alt: b.ogImageAlt } : {}) }],
     },
-    twitter: { card: "summary_large_image", title, description, images: [OG_IMAGE.url] },
+    twitter: { card: "summary_large_image", title, description, images: [og.url] },
   };
 }
 
@@ -35,7 +37,7 @@ export function productionJsonLd(slug: ProductionSlug, c: CampaignConfig): objec
   const b = ROUTES[slug];
   const page: Record<string, unknown> = {
     "@context": "https://schema.org", "@type": "WebPage", "@id": `${b.canonical}#webpage`, url: b.canonical,
-    name: c.seo.title, description: c.seo.description, inLanguage: "en",
+    name: c.seo.title, description: c.seo.description, inLanguage: b.locale ?? "en",
     isPartOf: { "@type": "WebSite", url: `${SITE_ORIGIN}/`, name: SITE_NAME },
   };
   if (b.breadcrumbName) {
@@ -47,7 +49,7 @@ export function productionJsonLd(slug: ProductionSlug, c: CampaignConfig): objec
       ],
     };
   }
-  const faq = faqPage(c, "en");
+  const faq = faqPage(c, b.locale ?? "en");
   return faq ? [page, faq] : [page];
 }
 

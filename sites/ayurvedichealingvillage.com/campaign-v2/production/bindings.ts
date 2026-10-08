@@ -2,11 +2,11 @@
 // identity of their forms, the photographs, and the owner's recorded decisions. Facts only; no client-facing copy
 // is written here.
 // Batch 1: /ayurvedic-treatment-packages.html, /panchkarma-treatment.html. Batch 2: /pain-management.html,
-// /family-ayurvedic-retreat-kerala.html.
+// /family-ayurvedic-retreat-kerala.html. Remaining 20 (8 Oct 2026): REMAINING below, in four review batches of five.
 //
 // Erasable TypeScript only (node --test imports this file).
 
-import type { GalleryCategory, ImageRef, PricingPolicy, ProductionFormProfile } from "../kit/types.ts";
+import type { GalleryCategory, ImageRef, PageLocale, PricingPolicy, ProductionFormProfile, Variant } from "../kit/types.ts";
 import { IMAGES } from "../data/images.ts";
 
 export const SITE_ORIGIN = "https://ayurvedichealingvillage.com";
@@ -23,7 +23,10 @@ export const SPELLING = {
   reason: "The reviewed production copy of 8 Oct 2026 (owner-correction/*.md, independent review PASS) is British English; converting it would rewrite reviewed copy.",
 } as const;
 
-export type ProductionSlug = "treatment-packages" | "panchakarma" | "pain-management" | "family-ayurvedic-retreat";
+export type ProductionSlug =
+  | "treatment-packages" | "panchakarma" | "pain-management" | "family-ayurvedic-retreat"
+  // Review batch 1
+  | "monsoon-wellness" | "rejuvenation-detox" | "ayurveda-retreat" | "wellness-kerala" | "cleansing-centre";
 
 export type RouteBinding = {
   slug: ProductionSlug;
@@ -56,6 +59,15 @@ export type RouteBinding = {
    * health-conditions field. copy.programDefault then stays editorial context, never a form or lead value.
    */
   consultBar?: false;
+  /** The kit design variant (A Quiet Admission, B Garden Bento, C Editorial, D Direct). Default A (the first four). */
+  variant?: Variant;
+  /** The page language (default English): German and Russian routes render their own copy and interface. */
+  locale?: PageLocale;
+  /**
+   * The Open Graph image of the page this replaces, unchanged (url, its recorded size where known, og:locale and
+   * og:site_name as that page set them). Absent = OG_IMAGE (the R10 pages').
+   */
+  og?: { url: string; width?: number; height?: number; locale: string; siteName?: string };
 };
 
 const img = (id: string): ImageRef => {
@@ -70,7 +82,7 @@ const GALLERY_BASE = (therapy: string): RouteBinding["gallery"] => [
   { category: "Dining", image: img("wx-dining") }, { category: "Therapies", image: img(therapy) },
 ];
 
-export const ROUTES: Record<ProductionSlug, RouteBinding> = {
+export const ROUTES = {
   "treatment-packages": {
     slug: "treatment-packages",
     route: "/ayurvedic-treatment-packages.html",
@@ -104,8 +116,11 @@ export const ROUTES: Record<ProductionSlug, RouteBinding> = {
     slug: "pain-management",
     route: "/pain-management.html",
     canonical: `${SITE_ORIGIN}/pain-management.html`,
-    heroImage: img("kt-199"),
-    mobileImage: img("kt-190"),
+    // Review finding (Gaurav, 8 Oct 2026): this page and /panchkarma-treatment.html showed the same hero. The desktop
+    // hero is now the head-therapy portrait (its centre crop fills the near-square desktop frame) and the phone shows
+    // the four-hand therapy; /panchkarma-treatment.html keeps kt-199 / kt-190. Photographs only; nothing else changed.
+    heroImage: img("kt-190"),
+    mobileImage: img("kt-199"),
     stillnessImage: img("gal-post-therapy-stillness-wakem"),
     pathwayImage: img("kt-202"),
     gallery: GALLERY_BASE("kt-202"),
@@ -135,7 +150,76 @@ export const ROUTES: Record<ProductionSlug, RouteBinding> = {
     productionForm: { formVariant: "r10-family-retreat", downloadGuide: false, profile: "family-retreat" },
     consultBar: false,
   },
-};
+} as Record<ProductionSlug, RouteBinding>;
 
 /** The Open Graph image of the pages this replaces (1200×630), unchanged. */
 export const OG_IMAGE = { url: `${SITE_ORIGIN}/landing/r10/og.jpg`, width: 1200, height: 630 } as const;
+
+// ── Remaining 20 (8 Oct 2026) ──────────────────────────────────────────────────────────────────────────────────
+// Lead identity from the pages they replace (test/lp-v2-production-*): the specialist routes' R10 form
+// (form_variant "r10-<kind>", optional gender, required country code + phone) and, everywhere else, the campaign
+// enquiry form (form_variant = the route path, optional phone, guide download when the server offers one). The
+// Russian route had no campaign form; it gets the campaign enquiry form under its new /lp/ path.
+//
+// Photographs: each page's hero is chosen for its message (therapy pages a therapy, place-led pages the village); the
+// steps photograph and the gallery never repeat the hero, and the five mosaic photographs never repeat either.
+
+const ALL_PHOTOS: { category: GalleryCategory; id: string }[] = [
+  { category: "Villas", id: "kt-116" }, { category: "Villas", id: "kt-314" },
+  { category: "Grounds", id: "wx-hero" }, { category: "Grounds", id: "gal-poolside-rest-palakkad-2026" },
+  { category: "Dining", id: "wx-dining" },
+  { category: "Therapies", id: "kt-199" }, { category: "Therapies", id: "kt-202" }, { category: "Therapies", id: "kt-190" },
+];
+
+/**
+ * Every registry photograph except the hero (desktop and phone), villas first, with the steps photograph last: it is in
+ * the full gallery (as on the first four routes) but never one of the five mosaic tiles.
+ */
+const galleryFor = (hero: string, mobile: string, steps: string): RouteBinding["gallery"] => {
+  const rest = ALL_PHOTOS.filter((p) => p.id !== hero && p.id !== mobile);
+  return [...rest.filter((p) => p.id !== steps), ...rest.filter((p) => p.id === steps)].map((p) => ({ category: p.category, image: img(p.id) }));
+};
+
+const OG_EN_US = (file: string) => ({ url: `${SITE_ORIGIN}/images/og/${file}`, locale: "en_US", siteName: "Kairali Ayurvedic Healing Village" });
+const OG_LP = (path: string, locale = "en_IN") => ({ url: `${SITE_ORIGIN}/campaign-v110/${path}`, locale, siteName: "Kairali — The Ayurvedic Healing Village" });
+
+type Spec = {
+  slug: ProductionSlug; route: string; variant: Variant; hero: string; mobile?: string; pathway: string;
+  form: RouteBinding["productionForm"]; og?: RouteBinding["og"]; locale?: PageLocale;
+};
+const r10 = (kind: string): RouteBinding["productionForm"] => ({ formVariant: `r10-${kind}`, downloadGuide: false, profile: "r10" });
+const enquiry = (path: string): RouteBinding["productionForm"] => ({ formVariant: path, downloadGuide: true, profile: "campaign-enquiry" });
+
+const SPECS: Spec[] = [
+  // Review batch 1
+  { slug: "monsoon-wellness", route: "/karkidaka-chikitsha-or-monsoon-wellness.html", variant: "C", hero: "kt-190", pathway: "kt-202", form: r10("monsoon") },
+  { slug: "rejuvenation-detox", route: "/preventive-rejuvenation-detoxification.html", variant: "C", hero: "kt-202", pathway: "kt-199", form: r10("detox") },
+  { slug: "ayurveda-retreat", route: "/ayurveda-retreat-kerala.html", variant: "B", hero: "wx-hero", pathway: "kt-199", form: r10("retreat") },
+  { slug: "wellness-kerala", route: "/wellness-resort-kerala.html", variant: "B", hero: "kt-314", pathway: "kt-202", form: enquiry("/wellness-resort-kerala.html"), og: OG_EN_US("wellness-resort-kerala.html.jpg") },
+  { slug: "cleansing-centre", route: "/kairali-cleansing-centre.html", variant: "A", hero: "kt-202", mobile: "kt-190", pathway: "kt-199", form: enquiry("/kairali-cleansing-centre.html"), og: OG_EN_US("kairali-cleansing-centre.html.jpg") },
+];
+
+for (const sp of SPECS) {
+  const hero = img(sp.hero);
+  ROUTES[sp.slug] = {
+    slug: sp.slug,
+    route: sp.route,
+    canonical: `${SITE_ORIGIN}${sp.route}`,
+    heroImage: hero,
+    mobileImage: img(sp.mobile ?? sp.hero),
+    stillnessImage: img("gal-post-therapy-stillness-wakem"),
+    pathwayImage: img(sp.pathway),
+    gallery: galleryFor(sp.hero, sp.mobile ?? sp.hero, sp.pathway),
+    productionForm: sp.form,
+    consultBar: false,
+    variant: sp.variant,
+    ...(sp.locale ? { locale: sp.locale } : {}),
+    ...(sp.og ? { og: sp.og } : {}),
+  };
+}
+
+/** The 20 routes added on 8 Oct 2026, in their four review batches of five. */
+export const REVIEW_BATCHES: readonly (readonly ProductionSlug[])[] = [
+  SPECS.slice(0, 5).map((x) => x.slug), SPECS.slice(5, 10).map((x) => x.slug),
+  SPECS.slice(10, 15).map((x) => x.slug), SPECS.slice(15, 20).map((x) => x.slug),
+];

@@ -1,4 +1,5 @@
 "use client";
+import type { GalleryUi } from "../../production/ui.ts";
 
 // The photo gallery (Gallery.dc.html): a modal dialog opened by any [data-gallery-open] button (the Village
 // "View all photos" button, whose data-track already fires gallery_open — not repeated here).
@@ -18,6 +19,12 @@ export type GalleryItem = { category: GalleryCategory; image: ImageRef };
 
 const ORDER: GalleryCategory[] = ["Villas", "Therapies", "Grounds", "Dining", "Yoga"];
 
+/** The kit's English gallery words (production/ui.ts GalleryUi shape). */
+const GALLERY_EN: GalleryUi = {
+  title: "Gallery", count: "The village · {n} photos", filter: "Filter photos", all: "All", close: "Close gallery", closeViewer: "Close photo viewer",
+  prev: "Previous photo", next: "Next photo", photoOf: "Photo {i} of {n}", open: "Open photo:", cta: "Get free doctor consultation", categories: {},
+};
+
 const Svg = ({ d, size = 20 }: { d: string; size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true"><path d={d} /></svg>
 );
@@ -25,7 +32,12 @@ const CLOSE = "M5 5l14 14M19 5L5 19";
 const PREV = "M15 5l-7 7 7 7";
 const NEXT = "M9 5l7 7-7 7";
 
-export default function Gallery({ items }: { items: GalleryItem[] }) {
+/** `ui` / `alt`: the page language's words and alt texts (production German and Russian routes); absent = English. */
+export default function Gallery({ items, ui, alt = {} }: { items: GalleryItem[]; ui?: GalleryUi; alt?: Record<string, string> }) {
+  const w = ui ?? GALLERY_EN;
+  const altOf = (im: GalleryItem["image"]) => alt[im.id] ?? im.alt;
+  const catName = (c: string) => (c === "All" ? w.all : w.categories[c] ?? c);
+  const fill = (s: string, i: number, n: number) => s.replace("{i}", String(i)).replace("{n}", String(n));
   const [open, setOpen] = useState(false);
   const [cat, setCat] = useState<"All" | GalleryCategory>("All");
   const [idx, setIdx] = useState(-1); // lightbox index within the filtered list; -1 = grid view
@@ -98,42 +110,42 @@ export default function Gallery({ items }: { items: GalleryItem[] }) {
         <div className="lp-gal__inner">
           <div className="lp-gal__top" hidden={!!current}>
             <div className="lp-gal__titles">
-              <p className="lp-over lp-gal__count">The village · {n} photos</p>
-              <h2 id="lp-gal-h" className="lp-gal__h">Gallery</h2>
+              <p className="lp-over lp-gal__count">{fill(w.count, 0, n)}</p>
+              <h2 id="lp-gal-h" className="lp-gal__h">{w.title}</h2>
             </div>
-            <div className="lp-gal__filters" role="group" aria-label="Filter photos">
+            <div className="lp-gal__filters" role="group" aria-label={w.filter}>
               {(["All", ...cats] as const).map((c) => (
                 <button key={c} type="button" className="lp-gal__filter" aria-pressed={c === cat}
-                  onClick={() => { setCat(c); setIdx(-1); lastThumb.current = -1; }}>{c}</button>
+                  onClick={() => { setCat(c); setIdx(-1); lastThumb.current = -1; }}>{catName(c)}</button>
               ))}
             </div>
-            <button type="button" className="lp-gal__close" aria-label="Close gallery" onClick={closeAll}><Svg d={CLOSE} /></button>
+            <button type="button" className="lp-gal__close" aria-label={w.close} onClick={closeAll}><Svg d={CLOSE} /></button>
           </div>
           {current ? (
-            <div className="lp-gal__viewer" ref={viewer} role="group" aria-roledescription="photo viewer" aria-label={`Photo ${idx + 1} of ${n}`}>
+            <div className="lp-gal__viewer" ref={viewer} role="group" aria-roledescription="photo viewer" aria-label={fill(w.photoOf, idx + 1, n)}>
               <div className="lp-gal__vbar">
-                <p className="lp-gal__pos" aria-live="polite">{idx + 1} / {n} · {current.category}</p>
-                <button type="button" className="lp-gal__close" aria-label="Close photo viewer" onClick={() => setIdx(-1)}><Svg d={CLOSE} /></button>
+                <p className="lp-gal__pos" aria-live="polite">{idx + 1} / {n} · {catName(current.category)}</p>
+                <button type="button" className="lp-gal__close" aria-label={w.closeViewer} onClick={() => setIdx(-1)}><Svg d={CLOSE} /></button>
               </div>
               <div className="lp-gal__stage">
-                <button type="button" className="lp-gal__nav lp-gal__prev" aria-label="Previous photo" onClick={() => step(-1)}><span className="lp-mirror"><Svg d={PREV} size={22} /></span></button>
+                <button type="button" className="lp-gal__nav lp-gal__prev" aria-label={w.prev} onClick={() => step(-1)}><span className="lp-mirror"><Svg d={PREV} size={22} /></span></button>
                 <div className="lp-gal__photo">
-                  <Image key={current.image.id} src={current.image.src} alt={current.image.alt} width={current.image.width} height={current.image.height}
+                  <Image key={current.image.id} src={current.image.src} alt={altOf(current.image)} width={current.image.width} height={current.image.height}
                     sizes="(max-width: 767px) 100vw, 80vw" className="lp-gal__img" />
                 </div>
-                <button type="button" className="lp-gal__nav lp-gal__next" aria-label="Next photo" onClick={() => step(1)}><span className="lp-mirror"><Svg d={NEXT} size={22} /></span></button>
+                <button type="button" className="lp-gal__nav lp-gal__next" aria-label={w.next} onClick={() => step(1)}><span className="lp-mirror"><Svg d={NEXT} size={22} /></span></button>
               </div>
               <div className="lp-gal__foot">
-                <p className="lp-gal__caption">{current.image.alt}</p>
+                <p className="lp-gal__caption">{altOf(current.image)}</p>
                 <button type="button" className="lp-btn lp-gal__cta" onClick={toEnquire}
-                  data-track="cta_click" data-track-cta="consult" data-track-position="lightbox">Get free doctor consultation</button>
+                  data-track="cta_click" data-track-cta="consult" data-track-position="lightbox">{w.cta}</button>
               </div>
             </div>
           ) : (
             <ul className="lp-gal__grid" ref={grid}>
               {list.map((g, i) => (
                 <li key={g.image.id}>
-                  <button type="button" className="lp-gal__thumb" aria-label={`Open photo: ${g.image.alt}`} onClick={() => show(i)}>
+                  <button type="button" className="lp-gal__thumb" aria-label={`${w.open} ${altOf(g.image)}`} onClick={() => show(i)}>
                     <Image src={g.image.src} alt="" width={g.image.width} height={g.image.height} loading="lazy"
                       sizes="(max-width: 767px) 50vw, 25vw" />
                   </button>

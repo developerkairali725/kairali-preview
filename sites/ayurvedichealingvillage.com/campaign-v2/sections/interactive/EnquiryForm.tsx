@@ -12,6 +12,7 @@ import { readTracking } from "../../../campaign-v110/lib/enquiry/tracking.ts";
 import { contact } from "../../../campaign-v110/lib/site.ts";
 import { PREFILL_EVENT, claimFormStart, mergePrefill, pickPrefill, prefillLines, withoutPrefillParams, type Prefill, type PrefillLabels } from "./consult-prefill.ts";
 import Success from "./Success";
+import type { FormUi } from "../../production/ui.ts";
 
 // The enquiry shell (spec §6, §7, §7b). Fields come from the schema; this shell owns validation display,
 // focus, honeypot, consent, the measurement events and the submit states. A one-step schema (the default
@@ -43,6 +44,8 @@ export type EnquiryFormProps = {
   prefillEnabled?: boolean;
   /** Live ad routes only: the route's existing form identity (forms/adapter.ts). */
   production?: ProductionFormContext;
+  /** Live ad routes only: the page language's interface words (production/ui.ts). Absent = the English below. */
+  ui?: FormUi;
 };
 
 type Status =
@@ -70,7 +73,9 @@ function uuid(): string {
   return `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`;
 }
 
-export default function EnquiryForm({ schema, adapterId, campaign, variant, locale, country, privacyHref, prefillLabels, prefillEnabled = true, production }: EnquiryFormProps) {
+export default function EnquiryForm({ schema, adapterId, campaign, variant, locale, country, privacyHref, prefillLabels, prefillEnabled = true, production, ui }: EnquiryFormProps) {
+  // A page language other than English replaces the validation messages by field, then by code (production/ui.ts).
+  const say = (e: FieldError) => ui?.errors[e.field === "fullName" ? "name" : e.field] ?? ui?.errors[e.code] ?? e.message;
   const uid = useId();
   const id = (k: string) => `${uid}-${k}`;
   const formId = schema.id;
@@ -287,7 +292,7 @@ export default function EnquiryForm({ schema, adapterId, campaign, variant, loca
     const label = !req && f.optionalLabel ? f.optionalLabel : f.label;
     const err = errFor(f.name);
     const val = typeof values[f.name] === "string" ? (values[f.name] as string) : "";
-    const errEl = err ? <p id={id(`${f.name}-err`)} className="lp-enq__err">{err.message}</p> : null;
+    const errEl = err ? <p id={id(`${f.name}-err`)} className="lp-enq__err">{say(err)}</p> : null;
     const hintEl = f.hint ? <p id={id(`${f.name}-hint`)} className="lp-enq__hint">{f.hint}</p> : null;
 
     if (f.type === "channel" || f.type === "radio") {
@@ -346,7 +351,7 @@ export default function EnquiryForm({ schema, adapterId, campaign, variant, loca
     <div className="lp-enq__card">
       <noscript><style>{NOSCRIPT_CSS}</style></noscript>
       <form ref={formRef} className="lp-enq__form" method="post" action={production ? "/api/forms-unavailable" : "/api/lead/"} noValidate={hydrated}
-        onSubmit={onSubmit} onFocus={startOnce} onChange={startOnce} aria-label="Free doctor consultation enquiry">
+        onSubmit={onSubmit} onFocus={startOnce} onChange={startOnce} aria-label={ui?.formAria ?? "Free doctor consultation enquiry"}>
         {single ? null : (
           <ol className="lp-enq__progress" aria-hidden="true">
             {schema.steps.map((s, i) => (
@@ -358,7 +363,7 @@ export default function EnquiryForm({ schema, adapterId, campaign, variant, loca
         {schema.steps.map((s, i) => (
           <fieldset key={s.id} className="lp-enq__step" hidden={i !== step}>
             <legend className="lp-enq__legend">
-              {single ? null : <span className="lp-enq__count">Step {i + 1} of {schema.steps.length}</span>}
+              {single ? null : <span className="lp-enq__count">{(ui?.stepOf ?? "Step {i} of {n}").replace("{i}", String(i + 1)).replace("{n}", String(schema.steps.length))}</span>}
               <h3 className="lp-enq__title" tabIndex={-1} ref={(el) => { headings.current[i] = el; }}>{s.title}</h3>
             </legend>
             {s.intro ? <p className="lp-enq__intro-line">{s.intro}</p> : null}
@@ -375,8 +380,8 @@ export default function EnquiryForm({ schema, adapterId, campaign, variant, loca
                   </label>
                   {/* Outside the label so tapping it never toggles consent; its own 44px row. */}
                   <a className="lp-enq__privacy" href={production ? "/new-privacy-policy/" : privacyHref} target="_blank" rel="noopener">{schema.privacyLabel}</a>
-                  {production ? <a className="lp-enq__privacy" href="/terms-and-conditions/" target="_blank" rel="noopener">Terms</a> : null}
-                  {consentErr ? <p id={id(`${CONSENT_FIELD}-err`)} className="lp-enq__err">{consentErr.message}</p> : null}
+                  {production ? <a className="lp-enq__privacy" href="/terms-and-conditions/" target="_blank" rel="noopener">{ui?.terms ?? "Terms"}</a> : null}
+                  {consentErr ? <p id={id(`${CONSENT_FIELD}-err`)} className="lp-enq__err">{say(consentErr)}</p> : null}
                 </div>
                 {schema.marketingOptIn ? (
                   <label className="lp-enq__check lp-enq__check--optional">
@@ -390,7 +395,7 @@ export default function EnquiryForm({ schema, adapterId, campaign, variant, loca
                     managers from filling it for real visitors. Rejected client-side (kit/lead.ts); a server-side
                     check is a backend follow-up. */}
                 <div className="lp-enq__hp" aria-hidden="true">
-                  <label htmlFor={id("lp_hp_ref")}>Leave this empty</label>
+                  <label htmlFor={id("lp_hp_ref")}>{ui?.honeypot ?? "Leave this empty"}</label>
                   <input id={id("lp_hp_ref")} type="text" name="lp_hp_ref" tabIndex={-1} autoComplete="nope-lp"
                     value={typeof values.honeypot === "string" ? values.honeypot : ""} onChange={(e) => set("honeypot", e.target.value)} />
                 </div>
@@ -398,17 +403,17 @@ export default function EnquiryForm({ schema, adapterId, campaign, variant, loca
             ) : null}
 
             <div className={`lp-enq__nav${i === 0 ? " lp-enq__nav--first" : ""}`}>
-              {i > 0 ? <button type="button" className="lp-btn lp-btn--line lp-enq__back lp-enq__js" onClick={onBack}>Back</button> : null}
+              {i > 0 ? <button type="button" className="lp-btn lp-btn--line lp-enq__back lp-enq__js" onClick={onBack}>{ui?.back ?? "Back"}</button> : null}
               {i < last ? (
-                <button type="button" className="lp-btn lp-btn--primary lp-enq__next lp-enq__js" onClick={onContinue}>Continue</button>
+                <button type="button" className="lp-btn lp-btn--primary lp-enq__next lp-enq__js" onClick={onContinue}>{ui?.next ?? "Continue"}</button>
               ) : (
                 <button type="submit" className="lp-btn lp-btn--primary lp-enq__next" disabled={submitting} aria-disabled={submitting || undefined}>
-                  {submitting ? "Sending…" : schema.submitLabel}
+                  {submitting ? (ui?.sending ?? "Sending…") : schema.submitLabel}
                 </button>
               )}
             </div>
             {/* A form with an optional health question (family route) carries its own note as that field's hint instead. */}
-            {i === 0 && schema.genericNote !== false ? <p className="lp-enq__note">No medical details needed. Your doctor asks for those privately at consultation.</p> : null}
+            {i === 0 && schema.genericNote !== false ? <p className="lp-enq__note">{ui?.note ?? "No medical details needed. Your doctor asks for those privately at consultation."}</p> : null}
           </fieldset>
         ))}
 

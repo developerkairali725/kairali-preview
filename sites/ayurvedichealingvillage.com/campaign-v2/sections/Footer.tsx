@@ -2,10 +2,10 @@ import Image from "next/image";
 import type { SectionProps } from "./LandingPage";
 import { contact, site } from "../../campaign-v110/lib/site.ts";
 import { NABH_NO } from "./facts.ts";
+import { pageUi } from "../production/ui.ts";
 
 // Fixed wording (task brief): never edited per campaign.
-const DISCLAIMER =
-  "Ayurvedic programs at Kairali are supervised by qualified doctors and complement, not replace, the medical care you already receive. Individual experiences vary.";
+// (production/ui.ts holds the same line, and its German and Russian wording for those routes.)
 
 /**
  * Footer, shared by every variant (the A structure, skinned by --lp-* vars). Contact facts come from site.ts.
@@ -18,38 +18,39 @@ const DISCLAIMER =
  */
 export default function Footer({ req }: SectionProps) {
   const production = req.surface === "production";
+  const f = pageUi(req).footer;
   const track = (cta: "call" | "whatsapp" | "email") => ({ "data-track": "cta_click", "data-track-cta": cta, "data-track-position": "footer" });
   return (
     <footer className="lp-foot" {...(production ? { id: "contact" } : {})}>
       <div className="lp-foot__grid">
         <div className="lp-foot__brand">
           <Image className="lp-foot__logo" src="/lp-v2/img/ktahv-logo-white.svg" alt={site.name} width={109} height={76} loading="lazy" />
-          <p>A NABH-accredited Ayurvedic hospital of the Kairali Ayurvedic Group, in Palakkad, Kerala.</p>
+          <p>{f.brand}</p>
         </div>
         <div className="lp-foot__col">
-          <p className="lp-over lp-foot__label">Visit</p>
+          <p className="lp-over lp-foot__label">{f.visit}</p>
           <address className="lp-foot__addr">{contact.address.map((line) => <span key={line}>{line}</span>)}</address>
         </div>
         <div className="lp-foot__col">
-          <p className="lp-over lp-foot__label">Speak to us</p>
+          <p className="lp-over lp-foot__label">{f.speak}</p>
           <a className="lp-foot__link" href={contact.phone.href} {...track("call")}>{contact.phone.display}</a>
           <a className="lp-foot__link" href={`https://wa.me/${contact.whatsapp.number}`} {...track("whatsapp")} {...(production ? { "data-ahv-whatsapp": "1" } : {})}>WhatsApp {contact.whatsapp.display}</a>
           <a className="lp-foot__link" href={`mailto:${contact.email}`} {...track("email")}>{contact.email}</a>
         </div>
         <div className="lp-foot__col">
-          <p className="lp-over lp-foot__label">Accreditation</p>
+          <p className="lp-over lp-foot__label">{f.accreditation}</p>
           <p><b>NABH</b> · {NABH_NO}</p>
         </div>
       </div>
-      <p className="lp-foot__disc">{DISCLAIMER}</p>
+      <p className="lp-foot__disc">{f.disclaimer}</p>
       <div className="lp-foot__base">
-        <p>© {new Date().getFullYear()} Kairali Ayurvedic Group</p>
+        <p>© {new Date().getFullYear()} {f.group}</p>
         <nav className="lp-foot__legal" aria-label="Legal">
-          <a href={site.legal.privacy}>Privacy</a>
-          <a href={site.legal.terms}>Terms</a>
-          <a href={production ? "/cookie-policy/" : site.legal.cookies}>Cookie policy</a>
-          {production || req.consentRequired ? <button type="button" className="lp-foot__cookies" data-ahv-cookie-choices>Cookie preferences</button> : null}
-          <a href="/">Main website</a>
+          <a href={site.legal.privacy}>{f.privacy}</a>
+          <a href={site.legal.terms}>{f.terms}</a>
+          <a href={production ? "/cookie-policy/" : site.legal.cookies}>{f.cookiePolicy}</a>
+          {production || req.consentRequired ? <button type="button" className="lp-foot__cookies" data-ahv-cookie-choices>{f.cookiePrefs}</button> : null}
+          <a href={f.mainHref}>{f.main}</a>
         </nav>
       </div>
     </footer>

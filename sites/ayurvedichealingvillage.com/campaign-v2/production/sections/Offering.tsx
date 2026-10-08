@@ -2,7 +2,7 @@ import type { CampaignConfig, PageOffering } from "../../kit/types.ts";
 import { SectionHead } from "../../sections/head";
 import { ArrowIcon } from "../../sections/icons";
 import { PageA, Paras, Rich } from "../../sections/rich";
-import { ConsultCta, numeral } from "./parts";
+import { ConsultCta, numeral, type SecProps } from "./parts";
 
 type Of<K extends PageOffering["kind"]> = Extract<PageOffering, { kind: K }>;
 
@@ -14,17 +14,17 @@ type Of<K extends PageOffering["kind"]> = Extract<PageOffering, { kind: K }>;
  * Every form ends with the consultation CTA. `data-programme-links` marks programme pages for the treatment-packages
  * diagnostics (production/Interactions.tsx), as the old page's programme sections were.
  */
-export default function Offering({ c, o }: { c: CampaignConfig; o: PageOffering }) {
-  if (o.kind === "cards") return <Cards c={c} o={o} />;
-  if (o.kind === "row") return <Row c={c} o={o} />;
-  return <Index c={c} o={o} />;
+export default function Offering({ c, o, ...p }: { c: CampaignConfig; o: PageOffering } & SecProps) {
+  if (o.kind === "cards") return <Cards c={c} o={o} {...p} />;
+  if (o.kind === "row") return <Row c={c} o={o} {...p} />;
+  return <Index c={c} o={o} {...p} />;
 }
 
-function Cards({ c, o }: { c: CampaignConfig; o: Of<"cards"> }) {
+function Cards({ c, o, v, ui, no }: { c: CampaignConfig; o: Of<"cards"> } & SecProps) {
   return (
     <section className="lp-sec lp-poffer lp-poffer--cards" aria-labelledby="lp-poffer-h">
       <div className="lp-poffer__top">
-        <SectionHead v="A" kicker={o.kicker ?? "Programmes"} title={o.heading} id="lp-poffer-h" />
+        <SectionHead v={v} no={no} kicker={o.kicker ?? ui.kicker.cards} title={o.heading} id="lp-poffer-h" />
         {o.intro?.length ? <div className="lp-poffer__intro"><Paras list={o.intro} className="lp-poffer__p" /></div> : null}
       </div>
       <ol className="lp-poffer__cards" {...(o.programmeLinks ? { "data-programme-links": "" } : {})}>
@@ -50,11 +50,11 @@ function Cards({ c, o }: { c: CampaignConfig; o: Of<"cards"> }) {
   );
 }
 
-function Row({ c, o }: { c: CampaignConfig; o: Of<"row"> }) {
+function Row({ c, o, v, ui, no }: { c: CampaignConfig; o: Of<"row"> } & SecProps) {
   return (
     <section className="lp-sec lp-poffer lp-poffer--row" aria-labelledby="lp-poffer-h">
       <div className="lp-poffer__top">
-        <SectionHead v="A" kicker={o.kicker ?? "In brief"} title={o.heading} id="lp-poffer-h" />
+        <SectionHead v={v} no={no} kicker={o.kicker ?? ui.kicker.row} title={o.heading} id="lp-poffer-h" />
         <p className="lp-poffer__lead">{o.lead}</p>
       </div>
       <ol className="lp-poffer__row">
@@ -71,11 +71,11 @@ function Row({ c, o }: { c: CampaignConfig; o: Of<"row"> }) {
   );
 }
 
-function Index({ c, o }: { c: CampaignConfig; o: Of<"index"> }) {
+function Index({ c, o, v, ui, no }: { c: CampaignConfig; o: Of<"index"> } & SecProps) {
   return (
     <section className="lp-sec lp-poffer lp-poffer--index" aria-labelledby="lp-poffer-h">
       <div className="lp-poffer__aside">
-        <SectionHead v="A" kicker={o.kicker ?? "Care for each person"} title={o.heading} id="lp-poffer-h" />
+        <SectionHead v={v} no={no} kicker={o.kicker ?? ui.kicker.index} title={o.heading} id="lp-poffer-h" />
         <Paras list={o.intro} className="lp-poffer__p" />
         <ConsultCta c={c} />
       </div>

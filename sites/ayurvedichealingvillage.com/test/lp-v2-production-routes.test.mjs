@@ -5,11 +5,15 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { ROUTES as BINDINGS } from "../campaign-v2/production/bindings.ts";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const P = (...p) => path.join(SITE, ...p);
 const read = (p) => fs.readFileSync(P(p), "utf8");
 const ROUTES = ["ayurvedic-treatment-packages.html", "panchkarma-treatment.html", "pain-management.html", "family-ayurvedic-retreat-kerala.html"];
+/** Every production route's page file: app/(ppc-v2)/… (English), app/(ppc-v2-de)/… and app/(ppc-v2-ru)/…. */
+const groupOf = (b) => (b.locale === "de" ? "(ppc-v2-de)" : b.locale === "ru" ? "(ppc-v2-ru)" : "(ppc-v2)");
+const PAGE_FILES = Object.values(BINDINGS).map((b) => `app/${groupOf(b)}/${b.route.replace(/^\/|\/$/g, "")}/page.tsx`);
 
 function walk(dir, out = []) {
   for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -70,6 +74,36 @@ test("routing: exactly one page serves each URL, from app/(ppc-v2); the old page
   assert.match(read("app/(ppc-v2)/family-ayurvedic-retreat-kerala.html/page.tsx"), /const SLUG = "family-ayurvedic-retreat" as const;/);
 });
 
+test("routing: the remaining 20 are served once each by their production page; the old route entries are retired", () => {
+  assert.equal(PAGE_FILES.length, 9);
+  for (const [slug, b] of Object.entries(BINDINGS)) {
+    const seg = b.route.replace(/^\/|\/$/g, "");
+    const pages = APP_FILES.filter((f) => f.endsWith(`/${seg}/page.tsx`) && /^app\/\([^/]+\)\//.test(f) && f.split("/").slice(2, -1).join("/") === seg);
+    assert.deepEqual(pages, [`app/${groupOf(b)}/${seg}/page.tsx`], b.route);
+    assert.match(read(`app/${groupOf(b)}/${seg}/page.tsx`), new RegExp(`const SLUG = "${slug}" as const;`), slug);
+    assert.doesNotMatch(code(read(`app/${groupOf(b)}/${seg}/page.tsx`)), /searchParams|headers\(|cookies\(|force-dynamic|revalidate/);
+  }
+  // Stage 1 of 4: the German page stays on app/(campaign-de) and the language groups arrive in stage 4.
+  assert.ok(fs.existsSync(P("app/(campaign-de)/lp/behandlung-in-kerala/page.tsx")));
+  assert.ok(!fs.existsSync(P("app/(ppc-v2-de)")) && !fs.existsSync(P("app/(ppc-v2-ru)")));
+});
+
+test("routing: no production route is a redirect source; the Russian move (stage 4) is not yet present", () => {
+  const sitelinks = JSON.parse(read("english-candidate/ad-sitelink-redirects.json"));
+  const ru = sitelinks.filter((r) => r.source === "/treatment-in-kerala-russian.html");
+  assert.deepEqual(ru, []);
+  // next.config.ts emits every ad-sitelink rule as a plain 301 (no `has`, no query in the destination, so the query
+  // string with gclid / utm_* is carried through by Next.js).
+  assert.match(read("next.config.ts"), /\.\.\.\[\.\.\.adSitelinks, \.\.\.legacyEnglishRedirects, \.\.\.documentRedirects\]\.map\(rule => \(\{ source:rule\.source, destination:rule\.destination, statusCode:301 \}\)\)/);
+  const sources = [
+    ...Object.keys(JSON.parse(read("english-candidate/redirect-map.json")).redirects),
+    ...["ad-sitelink-redirects", "legacy-english-redirects", "document-redirects"].flatMap((f) => JSON.parse(read(`english-candidate/${f}.json`)).map((r) => r.source)),
+  ];
+  for (const b of Object.values(BINDINGS)) assert.ok(!sources.some((s) => s.replace(/\/$/, "") === b.route.replace(/\/$/, "")), `${b.route} is a redirect source`);
+  // The German ad-sitelink rule still lands on the German campaign page.
+  assert.ok(sitelinks.some((r) => r.source === "/de/behandlung-in-kerala.html" && r.destination === "/lp/behandlung-in-kerala/"));
+});
+
 test("routing: no redirect, rewrite or middleware moves the two URLs; pages stay static", () => {
   const urls = ROUTES.map((r) => `/${r}`);
   // Every redirect next.config.ts builds comes from these files (plus the sitemap list and one offers rule).
@@ -103,7 +137,12 @@ test("document: the current production campaign document's consent, measurement,
     assert.ok(doc.includes(s), `production document lacks ${s}`);
     assert.ok(old.includes(s), `the campaign document no longer has ${s}; re-check parity`);
   }
-  assert.match(doc, /<Script src="\/design\/review-chrome\.js" strategy="afterInteractive" \/>/);
+  // English keeps the same chrome file; German and Russian load the site's own localized copies of it.
+  assert.match(doc, /en: "\/design\/review-chrome\.js"/);
+  assert.match(doc, /de: "\/ahv\/l10n\/de\/design\/review-chrome\.js"/);
+  assert.match(doc, /ru: "\/ahv\/l10n\/ru\/design\/review-chrome\.js"/);
+  assert.match(doc, /<Script src=\{CHROME\[lang\]\} strategy="afterInteractive" \/>/);
+  for (const l of ["de", "ru"]) assert.ok(fs.existsSync(P(`public/ahv/l10n/${l}/design/review-chrome.js`)), l);
   assert.match(doc, /data-lp-surface="production"/);
   assert.match(read("app/(ppc-v2)/layout.tsx"), /<ProductionDocument>\{children\}<\/ProductionDocument>/);
 });
@@ -124,10 +163,7 @@ test("document: none of the /lp-v2 preview machinery reaches the live routes (no
 
 test("isolation: the kit design and the production document are loaded only by app/(ppc-v2) (and the staging-only /lp-v2 preview)", () => {
   const importers = (needle) => APP_FILES.filter((f) => /\.(tsx?|css)$/.test(f) && read(f).includes(needle));
-  assert.deepEqual(importers("campaign-v2/production").sort(), [
-    "app/(ppc-v2)/ayurvedic-treatment-packages.html/page.tsx", "app/(ppc-v2)/family-ayurvedic-retreat-kerala.html/page.tsx",
-    "app/(ppc-v2)/layout.tsx", "app/(ppc-v2)/pain-management.html/page.tsx", "app/(ppc-v2)/panchkarma-treatment.html/page.tsx",
-  ]);
+  assert.deepEqual(importers("campaign-v2/production").sort(), [...PAGE_FILES, "app/(ppc-v2)/layout.tsx"].sort());
   assert.deepEqual(importers("sections/sections.css"), []);
   const cssImporters = walk(P("campaign-v2")).map((f) => path.relative(SITE, f).split(path.sep).join("/"))
     .filter((f) => /\.tsx?$/.test(f) && /import "[^"]*(sections\.css|production\.css|base\.css)"/.test(read(f)));

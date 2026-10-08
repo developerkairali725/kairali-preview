@@ -10,16 +10,17 @@
 
 import type { CampaignConfig, DoctorRef } from "../kit/types.ts";
 import { CURRENT_ROSTER, DOCTORS } from "../data/doctors.ts";
-import { PRODUCTION_CAMPAIGN_FORM, PRODUCTION_PAIN_FORM, productionFamilyForm, type FormSchema } from "../forms/schema.ts";
+import { PRODUCTION_CAMPAIGN_FORM, PRODUCTION_PAIN_FORM, PRODUCTION_R10_FORM, campaignEnquiryForm, productionFamilyForm, type FormSchema } from "../forms/schema.ts";
 import { richText } from "../kit/rich.ts";
 import { isKnownContactHref, isKnownContactLink, MEASURED_HASHES, safeHref } from "../kit/lint/body.ts";
 import { pageLinks, pageText } from "../kit/lint/page-text.ts";
 import { PRICE, RATE_LINK } from "../kit/lint/pricing.ts";
-import { PRICING_HIDDEN, ROUTES, SPELLING, type ProductionSlug, type RouteBinding } from "./bindings.ts";
+import { PRICING_HIDDEN, REVIEW_BATCHES, ROUTES, SPELLING, type ProductionSlug, type RouteBinding } from "./bindings.ts";
 import type { ProductionCopy } from "./copy.ts";
 import { COPY } from "./pages/index.ts";
 
-export const PRODUCTION_SLUGS: readonly ProductionSlug[] = ["treatment-packages", "panchakarma", "pain-management", "family-ayurvedic-retreat"];
+/** The first four live routes, then the remaining 20 in their four review batches (bindings.ts REVIEW_BATCHES). */
+export const PRODUCTION_SLUGS: readonly ProductionSlug[] = ["treatment-packages", "panchakarma", "pain-management", "family-ayurvedic-retreat", ...REVIEW_BATCHES.flat()];
 
 class ContentError extends Error {}
 function fail(path: string, why: string): never {
@@ -42,7 +43,10 @@ function toForm(binding: RouteBinding, copy: ProductionCopy): FormSchema {
     return productionFamilyForm(note);
   }
   if (copy.familyFormNote !== undefined) fail("familyFormNote", `not bound on ${binding.route} (family form only)`);
-  return binding.productionForm.profile === "pain-management" ? PRODUCTION_PAIN_FORM : PRODUCTION_CAMPAIGN_FORM;
+  const profile = binding.productionForm.profile;
+  if (profile === "campaign-enquiry") return campaignEnquiryForm(binding.locale ?? "en");
+  if (profile === "r10") return PRODUCTION_R10_FORM;
+  return profile === "pain-management" ? PRODUCTION_PAIN_FORM : PRODUCTION_CAMPAIGN_FORM;
 }
 
 /**
@@ -76,15 +80,16 @@ export function productionCampaign(slug: ProductionSlug): CampaignConfig {
   if (copy.route !== binding.route) fail("copy.route", `${copy.route} is not ${binding.route}`);
   const p = copy.page;
   const heroImage = binding.heroImage;
+  const locale = binding.locale ?? "en";
   const c: CampaignConfig = {
     slug: binding.slug,
     route: binding.route,
     previewRoute: "", // not previewed under /lp-v2: these configs serve the live routes only
-    defaultVariant: "A",
-    variants: ["A"],
+    defaultVariant: binding.variant ?? "A",
+    variants: [binding.variant ?? "A"],
     index: false, // the kit's preview flag; the live routes keep their own robots (production/metadata.ts)
-    locales: ["en"],
-    translations: [{ locale: "en", review: "approved" }],
+    locales: [locale],
+    translations: [{ locale, review: "approved" }],
     modesty: "standard",
     wordingOverrides: [],
     production: true,
@@ -101,9 +106,10 @@ export function productionCampaign(slug: ProductionSlug): CampaignConfig {
     admission: { heading: p.pathway.heading, steps: p.pathway.steps.map((s) => ({ title: s.title, body: richText(s.body) })) },
     included: p.stay.lists.filter((l) => !l.extra).flatMap((l) => l.items),
     chargedSeparately: p.stay.lists.filter((l) => l.extra).flatMap((l) => l.items),
-    stillness: { heading: p.rest.heading, body: p.rest.paragraphs.join(" "), image: binding.stillnessImage },
+    // Variants B and D show no stillness band (and D no village): the mirrors then fall back to the opening argument.
+    stillness: { heading: p.rest?.heading ?? p.lead.heading, body: (p.rest?.paragraphs ?? []).join(" "), image: binding.stillnessImage },
     doctors: toDoctors(copy.doctors),
-    village: { heading: p.place.heading, body: p.place.paragraphs.map(richText).join(" ") },
+    village: { heading: p.place?.heading ?? p.lead.heading, body: (p.place?.paragraphs ?? []).map(richText).join(" ") },
     gallery: binding.gallery,
     fees: null,
     offer: null,
