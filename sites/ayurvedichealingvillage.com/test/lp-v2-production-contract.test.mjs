@@ -208,7 +208,7 @@ test("remaining 20: each keeps the lead identity of the page it replaces", () =>
   for (const slug of PRODUCTION_SLUGS.filter((s) => ROUTES[s].productionForm.profile === "campaign-enquiry")) {
     assert.deepEqual(ROUTES[slug].productionForm, { formVariant: ROUTES[slug].route, downloadGuide: true, profile: "campaign-enquiry" }, slug);
   }
-  assert.equal(PRODUCTION_SLUGS.filter((s) => ROUTES[s].productionForm.profile === "campaign-enquiry").length, 7);
+  assert.equal(PRODUCTION_SLUGS.filter((s) => ROUTES[s].productionForm.profile === "campaign-enquiry").length, 12);
 });
 
 test("no-JS: the production enquiry posts to /api/forms-unavailable (never reads the body); previews keep /api/lead/", () => {

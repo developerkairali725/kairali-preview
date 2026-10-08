@@ -75,7 +75,7 @@ test("routing: exactly one page serves each URL, from app/(ppc-v2); the old page
 });
 
 test("routing: the remaining 20 are served once each by their production page; the old route entries are retired", () => {
-  assert.equal(PAGE_FILES.length, 14);
+  assert.equal(PAGE_FILES.length, 19);
   for (const [slug, b] of Object.entries(BINDINGS)) {
     const seg = b.route.replace(/^\/|\/$/g, "");
     const pages = APP_FILES.filter((f) => f.endsWith(`/${seg}/page.tsx`) && /^app\/\([^/]+\)\//.test(f) && f.split("/").slice(2, -1).join("/") === seg);
@@ -83,7 +83,7 @@ test("routing: the remaining 20 are served once each by their production page; t
     assert.match(read(`app/${groupOf(b)}/${seg}/page.tsx`), new RegExp(`const SLUG = "${slug}" as const;`), slug);
     assert.doesNotMatch(code(read(`app/${groupOf(b)}/${seg}/page.tsx`)), /searchParams|headers\(|cookies\(|force-dynamic|revalidate/);
   }
-  // Stage 2 of 4: the German page stays on app/(campaign-de) and the language groups arrive in stage 4.
+  // Stage 3 of 4: the German page stays on app/(campaign-de) and the language groups arrive in stage 4.
   assert.ok(fs.existsSync(P("app/(campaign-de)/lp/behandlung-in-kerala/page.tsx")));
   assert.ok(!fs.existsSync(P("app/(ppc-v2-de)")) && !fs.existsSync(P("app/(ppc-v2-ru)")));
 });

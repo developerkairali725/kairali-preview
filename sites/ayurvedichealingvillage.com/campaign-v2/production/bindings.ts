@@ -28,7 +28,9 @@ export type ProductionSlug =
   // Review batch 1
   | "monsoon-wellness" | "rejuvenation-detox" | "ayurveda-retreat" | "wellness-kerala" | "cleansing-centre"
   // Review batch 2
-  | "treatment-kerala" | "south-india-cities" | "brand" | "weight-management" | "lp-south-india";
+  | "treatment-kerala" | "south-india-cities" | "brand" | "weight-management" | "lp-south-india"
+  // Review batch 3
+  | "lp-hospital-kerala" | "lp-brand" | "lp-cleansing-centre" | "lp-pain-management" | "lp-panchakarma";
 
 export type RouteBinding = {
   slug: ProductionSlug;
@@ -205,6 +207,13 @@ const SPECS: Spec[] = [
   { slug: "brand", route: "/Kairali_Brand_and_Competition_Neo-original.html", variant: "D", hero: "kt-314", pathway: "kt-202", form: enquiry("/Kairali_Brand_and_Competition_Neo-original.html"), og: OG_EN_US("kairali_brand_and_competition_neo-original.html.jpg") },
   { slug: "weight-management", route: "/weight-loss.html", variant: "C", hero: "kt-314", pathway: "kt-202", form: enquiry("/weight-loss.html"), og: OG_EN_US("weight-loss.html.jpg") },
   { slug: "lp-south-india", route: "/lp/ayurveda-treatment-south-india/", variant: "D", hero: "kt-199", pathway: "kt-202", form: enquiry("/lp/ayurveda-treatment-south-india/"), og: OG_LP("ahv/assets/img/wx-welcome.webp") },
+  // Review batch 3
+  { slug: "lp-hospital-kerala", route: "/lp/ayurvedic-hospital-kerala/", variant: "A", hero: "wx-hero", pathway: "kt-199", form: enquiry("/lp/ayurvedic-hospital-kerala/"), og: OG_LP("ahv/assets/img/wx-hero.webp") },
+  { slug: "lp-brand", route: "/lp/kairali-brand/", variant: "D", hero: "wx-hero", pathway: "kt-202", form: enquiry("/lp/kairali-brand/"), og: OG_LP("ahv/assets/img/wx-hero.webp") },
+  { slug: "lp-cleansing-centre", route: "/lp/kairali-cleansing-centre/", variant: "A", hero: "kt-190", pathway: "kt-202", form: enquiry("/lp/kairali-cleansing-centre/"), og: OG_LP("images/therapy-panchakarma.jpg") },
+  // Not kt-199: /pain-management.html and /panchkarma-treatment.html already share that hero (review finding, 8 Oct).
+  { slug: "lp-pain-management", route: "/lp/pain-management/", variant: "A", hero: "kt-202", mobile: "kt-190", pathway: "kt-199", form: enquiry("/lp/pain-management/"), og: OG_LP("images/therapy-pain-management.jpg") },
+  { slug: "lp-panchakarma", route: "/lp/panchkarma-treatment/", variant: "D", hero: "kt-202", pathway: "kt-199", form: enquiry("/lp/panchkarma-treatment/"), og: OG_LP("images/consultation-pulse.webp") },
 ];
 
 for (const sp of SPECS) {
