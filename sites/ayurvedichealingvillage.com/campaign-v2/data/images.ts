@@ -21,13 +21,18 @@ export const IMAGES: Record<string, ImageRef> = {
   "wx-dining": photo("wx-dining", "wx-dining.jpg", 1600, 1067, "The dining hall with garden views, where prescribed meals are served"),
   "gal-poolside-rest-palakkad-2026": photo("gal-poolside-rest-palakkad-2026", "gal-poolside-rest-palakkad-2026.jpg", 1600, 1067, "A patient resting on a lounger beside the pool in the village gardens", { gccSafe: false }),
   "team-deepu-john": photo("team-deepu-john", "team-deepu-john.jpg", 1024, 1536, "Dr. Deepu John, Chief Physician at the Healing Village"),
-  "team-akhila-oommen": photo("team-akhila-oommen", "team-akhila-oommen.jpg", 1023, 1537, "Dr. Akhila Oommen, Ayurvedic physician at the Healing Village"),
+  // Dr. Akhila Oommen: her own garden portrait, the site's published file. Owner, 23 Sep 2026 ("homepage akhila
+  // oommen photo is of ashika — change it"; tools/repair-physician-roster.mjs step 4): the kit's former
+  // team-akhila-oommen.jpg / -portrait.jpg showed another person, so BOTH Akhila keys point here and those two
+  // lp-v2 files are no longer referenced. Framing for the production cards is in data/doctors.ts (frame).
+  "team-akhila-oommen": staff("team-akhila-oommen", "team-akhila-oommen-2.webp", 600, 1051, "Dr. Akhila Oommen, Ayurvedic physician at the Healing Village"),
   "team-ashikha-raj": photo("team-ashikha-raj", "team-ashikha-raj.jpg", 948, 1660, "Dr. Ashikha Raj, Ayurvedic physician at the Healing Village"),
-  // 4:5 head-and-torso crops of the three full-length portraits above (Task 19: the doctor must read as a real,
+  // 4:5 head-and-torso crops of the full-length portraits above (Task 19: the doctor must read as a real,
   // recognizable person at card and avatar size). Cropped with sharp at 70% of the source width, face ~20% from
-  // the top; the full-length originals stay in the registry.
+  // the top; the full-length originals stay in the registry. Akhila's key is an alias of her published portrait
+  // (above), not a crop.
   "team-deepu-john-portrait": photo("team-deepu-john-portrait", "team-deepu-john-portrait.jpg", 717, 896, "Dr. Deepu John, Chief Physician at the Healing Village"),
-  "team-akhila-oommen-portrait": photo("team-akhila-oommen-portrait", "team-akhila-oommen-portrait.jpg", 716, 895, "Dr. Akhila Oommen, Ayurvedic physician at the Healing Village"),
+  "team-akhila-oommen-portrait": staff("team-akhila-oommen-portrait", "team-akhila-oommen-2.webp", 600, 1051, "Dr. Akhila Oommen, Ayurvedic physician at the Healing Village"),
   "team-ashikha-raj-portrait": photo("team-ashikha-raj-portrait", "team-ashikha-raj-portrait.jpg", 664, 830, "Dr. Ashikha Raj, Ayurvedic physician at the Healing Village"),
   // The current consented physician roster's own portraits (consent-backed staff facts published 28 Sep 2026): the
   // files the physician section of the live ad routes shows (test/landing-current-physicians.test.mjs checks they

@@ -36,6 +36,18 @@ function selectors(list) {
   if (cur.trim()) out.push(cur.trim());
   return out;
 }
+/**
+ * The style rules' selectors of a stylesheet, and its @keyframes names. A @keyframes block's step selectors
+ * (from / to / 50%) select nothing, so the block is set aside whole; only a step INSIDE one is skipped.
+ */
+function cssRules(src) {
+  const keyframes = [];
+  const css = src.replace(/\/\*[\s\S]*?\*\//g, "")
+    .replace(/@keyframes\s+([\w-]+)\s*\{(?:[^{}]*\{[^{}]*\})*[^{}]*\}/g, (_, name) => { keyframes.push(name); return ""; });
+  const sels = [];
+  for (const m of css.matchAll(/(?:^|[{}])\s*([^{}@]+)\{/g)) sels.push(...selectors(m[1]));
+  return { selectors: sels, keyframes };
+}
 
 test("routing: exactly one page serves each URL, from app/(ppc-v2); the old pages are retired, their shared parts kept", () => {
   for (const r of ROUTES) {
@@ -121,15 +133,14 @@ test("isolation: the kit design and the production document are loaded only by a
     .filter((f) => /\.tsx?$/.test(f) && /import "[^"]*(sections\.css|production\.css|base\.css)"/.test(read(f)));
   assert.deepEqual(cssImporters.sort(), ["campaign-v2/production/Document.tsx", "campaign-v2/sections/LandingPage.tsx"]);
   // Every production rule is scoped to the page wrapper or the consent notice.
-  const css = read("campaign-v2/production/production.css").replace(/\/\*[\s\S]*?\*\//g, "");
-  let rules = 0;
-  for (const m of css.matchAll(/(?:^|[{}])\s*([^{}@]+)\{/g)) {
-    for (const sel of selectors(m[1])) {
-      rules++;
-      assert.match(sel, /^(\.lp-prod\b|html\[data-lp-surface="production"\])/, `unscoped selector: ${sel}`);
-    }
-  }
-  assert.ok(rules > 30, `parsed ${rules} selectors`);
+  // Keyframe steps are not selectors; keyframes names are global, so they carry the page's own prefix.
+  const { selectors: sels, keyframes } = cssRules(read("campaign-v2/production/production.css"));
+  for (const sel of sels) assert.match(sel, /^(\.lp-prod\b|html\[data-lp-surface="production"\])/, `unscoped selector: ${sel}`);
+  for (const name of keyframes) assert.match(name, /^lp-prod-/, `unscoped @keyframes name: ${name}`);
+  assert.ok(sels.length > 30, `parsed ${sels.length} selectors`);
+  // The parser sets aside only steps inside a @keyframes block: the same words as real rules are still checked.
+  const probe = cssRules("@keyframes lp-prod-x { from { opacity: 0; } 50% { opacity: .5; } to { opacity: 1; } } from { color: red; } .lp-header { color: red; }");
+  assert.deepEqual(probe, { selectors: ["from", ".lp-header"], keyframes: ["lp-prod-x"] });
 });
 
 test("previews: the kit's /lp-v2 lane stays staging-only, and the production configs are not previewable", async () => {

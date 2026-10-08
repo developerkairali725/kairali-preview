@@ -18,6 +18,7 @@ import Stories from "./sections/Stories";
 import Stay from "./sections/Stay";
 import Physicians from "./sections/Physicians";
 import Interactions from "./Interactions";
+import StickyHeader from "./StickyHeader";
 
 /** Variant A ("Quiet Admission"), the owner-approved design of the live ad routes. */
 export const PRODUCTION_VARIANT: Variant = "A";
@@ -48,7 +49,8 @@ function skinStyle(v: Variant): Record<string, string> {
  * Owner's corrections, 8 Oct 2026: one FAQ for the whole page (the kit FAQ, with FAQPage JSON-LD from the same items),
  * and the doctor biographies two sections further down than on the rejected composition — there they came straight
  * after the stillness band, ahead of the village and the fee section; here they follow both, directly before the
- * enquiry they lead into — and shown once. The old page's own structure (tables, link lists, galleries, source order)
+ * enquiry they lead into — and shown once. Owner, 8 Oct 2026: on desktop the header stays pinned while the page
+ * scrolls, with the consultation CTA in it (StickyHeader + production.css). The old page's own structure (tables, link lists, galleries, source order)
  * is not carried over: its text and SEO topics are rewritten into these sections.
  *
  * Not rendered: the kit's mobile bar, "Ask anything" sheet, language switcher, tag loader and consent banner (the
@@ -83,6 +85,7 @@ export default function ProductionPage({ c }: { c: CampaignConfig }) {
       <Footer {...p} />
       <Gallery items={c.gallery} />
       <Interactions />
+      <StickyHeader />
     </div>
   );
 }

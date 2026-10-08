@@ -15,6 +15,42 @@ html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
 /* Header: the site's shared "Chat" control (review-chrome.js) joins the kit's actions. */
 .lp-prod .lp-header__actions .ahv-contact-trigger { flex: none; }
 
+/* Header pinned on desktop (owner, 8 Oct 2026: "the header should be sticky in desktop view so when we scroll the
+   CTA is always there"). Over the hero the header is exactly as approved. Once it has scrolled away,
+   production/StickyHeader.tsx marks it [data-stuck] and it slides back in pinned to the top: a compact bar on the
+   hero's own night ground (no scrim needed on a solid ground), the same phone / WhatsApp / Chat actions, and the
+   route's consultation CTA in the hero CTA's colours (ivory on night), going to the same #enquiry form. The bar is
+   72px tall (12 + 48 + 12), so: anchor jumps and the form's own scrollIntoView land below it (scroll-padding-top),
+   Tab focus is already kept 96px clear of the top (campaign-bundle.css), and the family page's sticky topic heading
+   sits under it. Gallery, chat choices and the consent notice are top-layer dialogs or bottom layers, above or away
+   from it. Phones (≤767px) are untouched: their header and the site's bottom bar stay as they are. */
+.lp-prod .lp-header__consult { display: none; }
+@keyframes lp-prod-header-in { from { transform: translateY(-100%); } }
+@media (min-width: 768px) {
+  html[data-lp-surface="production"] { scroll-padding-top: 72px; }
+  .lp-prod .lp-header[data-stuck] {
+    position: fixed; z-index: 30;
+    background: var(--lp-night);
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--lp-on-night) 12%, transparent), 0 14px 32px -22px color-mix(in srgb, var(--lp-night) 85%, transparent);
+    animation: lp-prod-header-in .28s ease-out;
+  }
+  .lp-prod .lp-header[data-stuck]::before { display: none; }
+  .lp-prod .lp-header[data-stuck] .lp-header__bar { padding-block: 12px; gap: 24px; }
+  .lp-prod .lp-header[data-stuck] .lp-header__logo { height: 48px; }
+  .lp-prod .lp-header[data-stuck] .lp-header__actions { margin-inline-start: auto; gap: 24px; }
+  .lp-prod .lp-header[data-stuck] .lp-header__consult {
+    display: inline-flex; flex: none; min-height: 48px; padding-block: 0; padding-inline: 24px;
+    background: var(--lp-on-night); color: var(--lp-night); letter-spacing: .02em; white-space: nowrap;
+  }
+}
+/* Tablet widths: the phone number steps out of the pinned bar (WhatsApp, Chat and the CTA stay; the number is still
+   in the header over the hero and in the footer), so the CTA never wraps or crowds. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .lp-prod .lp-header[data-stuck] .lp-header__bar { padding-inline: 32px; }
+  .lp-prod .lp-header[data-stuck] .lp-header__actions { gap: 16px; }
+  .lp-prod .lp-header[data-stuck] .lp-header__phone { display: none; }
+}
+
 /* Enquiry: country code beside the number, as on the form it replaces. */
 .lp-prod .lp-enq__fields--enquiry { display: grid; grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr); gap: 18px 12px; }
 .lp-prod .lp-enq__fields--enquiry > * { grid-column: 1 / -1; }
@@ -83,9 +119,9 @@ html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
 .lp-prod .lp-poffer__name { font-family: var(--lp-font-display); font-size: clamp(22px, 2vw, 30px); line-height: 1.15; }
 .lp-prod .lp-poffer__text { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 56px; max-width: 1120px; }
 
-/* index: many short topics as numbered disclosures, beside a sticky heading */
+/* index: many short topics as numbered disclosures, beside a sticky heading (24px under the pinned 72px header) */
 .lp-prod .lp-poffer--index { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 80px; align-items: start; }
-.lp-prod .lp-poffer__aside { position: sticky; top: 24px; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.lp-prod .lp-poffer__aside { position: sticky; top: 96px; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
 .lp-prod .lp-poffer__index { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--lp-hairline); }
 .lp-prod .lp-ptopic { border-top: 1px solid var(--lp-hairline); }
 .lp-prod .lp-ptopic__sum { display: grid; grid-template-columns: 44px minmax(0, 1fr) 16px; align-items: center; gap: 16px; min-height: 64px; padding-block: 10px; }
