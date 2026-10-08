@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"></head><body>
+<x-dc>
+<helmet><style>
+#programme-enquiry{width:min(840px,94%);box-sizing:border-box;margin:0 auto;padding:40px 0;scroll-margin-top:120px}
+#programme-enquiry input,#programme-enquiry select,#programme-enquiry textarea,#programme-enquiry button{font-family:'Mulish',sans-serif;font-size:17px;color:#2A2118}
+#programme-enquiry input,#programme-enquiry select,#programme-enquiry textarea{width:100%;box-sizing:border-box;min-height:48px;padding:10px 14px;border:1px solid #75695A;border-radius:4px;background:#fff}
+#programme-enquiry input[name=country_code],#programme-enquiry input[name=phone],#programme-enquiry input[name=email]{direction:ltr;text-align:left}
+#programme-enquiry textarea{min-height:110px;resize:vertical}
+#programme-enquiry [aria-invalid=true]{border-color:#A32D2D;border-width:2px}
+#programme-enquiry form>div{min-width:0}
+@media(max-width:767px){#programme-enquiry{width:100%;padding:32px 20px}#programme-enquiry form[data-form]{padding:24px 18px!important}}
+</style></helmet>
+<section id="programme-enquiry" aria-labelledby="programme-enquiry-heading">
+<h2 id="programme-enquiry-heading" style="font-family:'Marcellus',serif;font-size:clamp(26px,2.4vw,34px);line-height:1.2;margin:0 0 8px">{{ C.form.h2 }}</h2>
+<p style="margin:0 0 24px;font-size:17.5px;color:#514a3f">{{ C.form.sub }}</p>
+<form data-form="contact" noValidate="{{ true }}" onSubmit="{{ contactSubmit }}" style="display:flex;flex-direction:column;gap:18px;background:#fff;border:1px solid #E0D7C4;border-radius:4px;padding:28px 32px">
+      <div>
+        <label for="txtName" style="display:block;font-weight:700;font-size:15.5px;margin-bottom:6px">Your name</label>
+        <input id="txtName" name="fname" type="text" autoComplete="name" placeholder="e.g. Anjali Menon" required="{{ true }}" aria-required="true" aria-invalid="{{ cErr.fname }}" aria-describedby="err-fname" value="{{ cv.fname }}" onChange="{{ cSet }}">
+        <sc-if value="{{ cErr.fname }}" hint-placeholder-val="{{ false }}"><p id="err-fname" role="alert" style="margin:6px 0 0;font-size:15px;color:#A32D2D;font-weight:600">{{ C.form.errors.fname }}</p></sc-if>
+      </div>
+      <div>
+        <label for="txtPhone" style="display:block;font-weight:700;font-size:15.5px;margin-bottom:6px">Phone / WhatsApp number</label>
+        <div style="display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px">
+          <input id="cc" name="country_code" type="text" aria-label="Country code" autoComplete="tel-country-code" required="{{ true }}" aria-required="true" aria-invalid="{{ cErr.country_code }}" aria-describedby="ccError" value="{{ cv.country_code }}" onChange="{{ cSet }}">
+          <input id="txtPhone" name="phone" type="tel" autoComplete="tel" placeholder="98765 43210" required="{{ true }}" aria-required="true" aria-invalid="{{ cErr.phone }}" aria-describedby="mobileError" value="{{ cv.phone }}" onChange="{{ cSet }}">
+        </div>
+        <sc-if value="{{ cErr.country_code }}" hint-placeholder-val="{{ false }}"><p id="ccError" role="alert" style="margin:6px 0 0;font-size:15px;color:#A32D2D;font-weight:600">Enter your country code, for example +91.</p></sc-if>
+        <sc-if value="{{ cErr.phone }}" hint-placeholder-val="{{ false }}"><p id="mobileError" role="alert" style="margin:6px 0 0;font-size:15px;color:#A32D2D;font-weight:600">{{ C.form.errors.phone }}</p></sc-if>
+      </div>
+      <div>
+        <label for="programme" style="display:block;font-weight:700;font-size:15.5px;margin-bottom:6px">What’s it about? <span style="font-weight:400;color:#75695A">Optional</span></label>
+        <select id="programme" name="programme" value="{{ cv.programme }}" onChange="{{ cSet }}"><sc-for list="{{ programmeOptions }}" as="o" hint-placeholder-count="8"><option value="{{ o.value }}">{{ o.label }}</option></sc-for></select>
+      </div>
+      <div>
+        <label for="txtEmail" style="display:block;font-weight:700;font-size:15.5px;margin-bottom:6px">Email</label>
+        <input id="txtEmail" name="email" type="email" autoComplete="email" placeholder="you@example.com" required="{{ true }}" aria-required="true" aria-invalid="{{ cErr.email }}" aria-describedby="emailError" value="{{ cv.email }}" onChange="{{ cSet }}">
+        <sc-if value="{{ cErr.email }}" hint-placeholder-val="{{ false }}"><p id="emailError" role="alert" style="margin:6px 0 0;font-size:15px;color:#A32D2D;font-weight:600">{{ C.form.errors.email }}</p></sc-if>
+      </div>
+      <div>
+        <label for="txtMessage" style="display:block;font-weight:700;font-size:15.5px;margin-bottom:6px">Your message <span style="font-weight:400;color:#75695A">Optional</span></label>
+        <textarea id="txtMessage" name="message" placeholder="A line or two on what you’re looking for, and any health concern you’d like us to consider." value="{{ cv.message }}" onChange="{{ cSet }}"></textarea>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:14px;align-items:center">
+        <button type="submit" style="display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 28px;background:#5A4420;color:#F7F4EA;border:0;border-radius:4px;font-weight:700;font-size:16px;cursor:pointer" style-hover="background:#3E2E14">{{ C.form.submit }}</button>
+        <p role="status" aria-live="polite" style="margin:0;font-size:15px;color:#5A4420;font-weight:600">{{ cNotice }}</p>
+        <sc-if value="{{ cPending }}" hint-placeholder-val="{{ false }}"><p data-local-valid="true" role="status" style="margin:0;font-size:15px;color:#5A4420;font-weight:600">Details look complete. This form is being connected. Until then, please write to info@kairali.com or message us on WhatsApp at +91 92898 38797.</p></sc-if>
+      </div>
+      <p style="margin:0;font-size:14.5px;color:#514a3f;line-height:1.55">{{ C.form.note }}</p>
+    </form>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{}">
+class Component extends DCLogic {
+  state = { cv: { fname: '', country_code: '', phone: '', programme: '', email: '', message: '' }, cErr: {}, cValid: false, cNotice: '', cPending: false };
+  focusFirstInvalid(sel) { setTimeout(() => { const el = document.querySelector(sel + ' [aria-invalid="true"]'); if (el) el.focus(); }, 0); }
+  tracking() { const campaign = window.AHV_LEAD_RECEIPT.attribution(); return Object.assign({}, campaign, { site_language: window.AHV_LEAD_RECEIPT.siteLanguage(), lead_source_url: location.href.slice(0, 500), referrer: (document.referrer || '').slice(0, 500) }); }
+  async postLead(payload) { const controller = new AbortController(); const timeout = setTimeout(() => controller.abort(), 45000); try { const response = await fetch('/api/lead/', { method: 'POST', credentials: 'same-origin', cache: 'no-store', body: new Blob([JSON.stringify(Object.assign({}, this.tracking(), payload))], { type: 'application/json' }), signal: controller.signal }); const data = await response.json().catch(() => ({})); if (response.status === 503 && /_NOT_CONFIGURED$/.test(String(data.code || ''))) throw this.notConnected(); if (!response.ok || data.ok !== true) { const message = response.status === 429 ? 'Please wait before trying again. Your details are still in the form.' : 'We could not confirm your submission. Your details are still here; please try again.'; throw Object.assign(new Error(message), { userFacing: true }); } this.offerGuide(data.guideUrl); return data; } catch (error) { if (error && (error.notConnected || error.userFacing)) throw error; throw new Error('We could not confirm your submission. Check your connection and try again.'); } finally { clearTimeout(timeout); } }
+  notConnected() { const error = new Error(''); error.notConnected = true; return error; }
+  offerGuide(url) { if (typeof url !== 'string' || url.charAt(0) !== '/') return; const link = document.createElement('a'); link.href = url; link.download = ''; link.hidden = true; document.body.appendChild(link); link.click(); link.remove(); }
+  renderVals() {
+    const source = window.AHV_ENQUIRY.routes.find(route => route.path === '/enquiry-form/');
+    const C = Object.assign({}, source, { form: Object.assign({}, source.form, { sub: window.AHV_LEAD_RECEIPT.contactIntro() }) });
+    const V = window.AHV_ENQUIRY_RENDER.V, st = this.state, out = { C };
+    const req = { fname: V.name(st.cv.fname), phone: V.phone(st.cv.phone), email: V.email(st.cv.email) };
+      out.programmeOptions = C.form.fields.find(f => f.name === 'programme').options.map((label, i) => ({ label, value: window.AHV_LEAD_RECEIPT.canonicalOption('programme', i, label) }));
+      out.cv = st.cv; out.cErr = st.cErr; out.cValid = st.cValid; out.cNotice = st.cNotice; out.cPending = st.cPending;
+      out.cSet = (e) => { const n = e.target.name; this._cToken = null; this.setState(s => ({ cv: Object.assign({}, s.cv, { [n]: e.target.value }), cErr: Object.assign({}, s.cErr, { [n]: false }), cValid: false, cNotice: '', cPending: false })); };
+      out.contactSubmit = async (e) => { e.preventDefault(); if (this._cBusy) return; const err = { fname: !req.fname, country_code: !(st.cv.country_code || '').trim(), phone: !req.phone, email: !req.email }; const ok = !Object.values(err).some(Boolean); this.setState({ cErr: err, cValid: false, cNotice: '', cPending: false }); if (!ok) { this.focusFirstInvalid('[data-form="contact"]'); return; } if (!this._cToken) this._cToken = crypto.randomUUID(); this._cBusy = true; this.setState({ cNotice: 'Sending…' }); const cv = st.cv; try { await this.postLead({ form: location.pathname === '/enquiry-form/' ? 'enquiry-form' : 'contact', submissionToken: this._cToken, fields: { full_name: cv.fname, countrycode: cv.country_code, phone: cv.phone, programme: cv.programme, email: cv.email, message: cv.message } }); this.setState({ cValid: true, cNotice: 'Thank you — your details have been received.' }); } catch (error) { this.setState({ cValid: false, cPending: !!error.notConnected, cNotice: error.notConnected ? '' : error.message }); } finally { this._cBusy = false; } };
+    return out;
+  }
+}
+</script>
+</body></html>

@@ -28,21 +28,23 @@ export function lazyImgFirst(html) {
 }
 
 /**
- * P3 — the approved homepage film autoplays on wide screens from the moment its <video> ref attaches,
- * so 2.8 MB of video competed with the LCP. It now starts once the page has loaded and the main thread
- * is idle; the poster (the same wx-hero still) shows meanwhile. Autoplay is kept; phones are untouched
- * (the source never autoplays below 900px). Save-Data is honoured (the film stays click-to-play there).
- * A visitor who already started or seeked the film before idle keeps control: the deferred start only
- * fires while the video has never been given its src.
- * Exact-string rewrite: a re-import that changes this line leaves the source behaviour untouched.
+ * P3 — keep the 2.8 MB homepage film behind poster paint/load and idle time.
+ * Owner requested mobile autoplay on 6 October; both layouts now opt in.
+ * Reduced-motion and Save-Data stay click-to-play. An earlier manual selection
+ * owns playback: a deferred start never overrides a video already given a src.
  */
 export function deferHeroFilm(logic) {
-  var now = "if (wide && !calm) this._heroPlay();";
-  var later = "if (wide && !calm && !(navigator.connection && navigator.connection.saveData)) {" +
+  let result = String(logic || "");
+  const desktop = "if (wide && !calm) this._heroPlay();";
+  const mobile = "_setHero = (el) => { if (el) this._hv = el; };";
+  if (!result.includes("/ahv/assets/homepage-journey.mp4") && !result.includes(desktop)) return result;
+  const later = "if (!calm && !(navigator.connection && navigator.connection.saveData)) {" +
     " const go = () => { const v = this._hv; if (v && !v.getAttribute('src')) this._heroPlay(); };" +
     " const idle = () => (window.requestIdleCallback ? requestIdleCallback(go, {timeout: 3000}) : setTimeout(go, 1500));" +
     " if (document.readyState === 'complete') idle(); else window.addEventListener('load', idle, {once: true}); }";
-  return String(logic || "").split(now).join(later);
+  result = result.split(desktop).join(later);
+  result = result.split(mobile).join("_setHero = (el) => { if (!el) return; this._hv = el; if (this._heroInit) return; this._heroInit = true; el.muted = true; const calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches; " + later + " };");
+  return result.replaceAll("p.catch(() => {});", "p.catch(() => this.setState({heroPlaying: false}));");
 }
 
 /**

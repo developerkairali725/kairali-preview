@@ -3,7 +3,7 @@
 // the online-consultation step machine were translated). Visible text in the same positions must still be extracted.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { jsUnits } from "../tools/l10n/lib.mjs";
+import { jsUnits, applyUnits } from "../tools/l10n/lib.mjs";
 
 const units = (code) => jsUnits(code).units.map((u) => u.source);
 
@@ -23,4 +23,18 @@ test("visible text in the same syntactic positions is still extracted", () => {
 
 test("strings anywhere under an efNN provenance key are not units", () => {
   assert.deepEqual(units("x = { routes: [{ ef12: { structural: { removed: [{ ptr: '/a', why: 'S1 stand-in photo' }], reason: 'text-only cards' } }, label: 'Visible label' }] }"), ["Visible label"]);
+});
+
+test("availability enums and private outline notes stay unchanged while labels translate", () => {
+  assert.deepEqual(units("if (['current','enquiry_only','coming_soon'].includes(value)) show();"), []);
+  assert.deepEqual(units("x = { statuses: [['current', 'Current offerings'], ['enquiry_only', 'Enquiry-only']] }"), ["Current offerings", "Enquiry-only"]);
+  assert.deepEqual(units("x = { headingOutline: { note: 'The consolidated release replaces four generic subject headings with the five approved Ayurveda course links under one educational heading.' }, note: 'Ask us about current offerings' }"), ["Ask us about current offerings"]);
+});
+
+test('currency keys keep the callback/price contract while visible Euro labels translate', () => {
+  const code = "const currencyKeys = ['INR', 'Euro', 'USD']; const display = { label: 'Euro' };";
+  const parsed = jsUnits(code).units;
+  assert.deepEqual(parsed.map(u => u.source), ['Euro']);
+  assert.equal(applyUnits(code, parsed, s => s === 'Euro' ? 'यूरो' : undefined),
+    "const currencyKeys = ['INR', 'Euro', 'USD']; const display = { label: 'यूरो' };");
 });

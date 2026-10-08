@@ -222,14 +222,17 @@
     })();
   }
   function chatLinks(f) {
-    var links = f.querySelectorAll('a[href^="https://chat.kairali.com"]');
+    var links = f.querySelectorAll('a[href^="https://chat.kairali.com"], a[href="#chat"][data-ahv-chat="1"]');
     for (var i = 0; i < links.length; i++) {
       var a = links[i];
-      if (a.getAttribute("data-ahv-chat") === "1") continue;
+      // Snapshots keep attributes, but event handlers must bind again on their
+      // new DOM nodes. This runtime-only flag also makes repeated passes safe.
+      if (a.__ahvChatBound) continue;
       a.setAttribute("data-ahv-chat", "1");
       a.setAttribute("href", "#chat");
       a.removeAttribute("target");
       a.addEventListener("click", openChat);
+      a.__ahvChatBound = true;
     }
   }
   // Owner 5 Oct: one Chat control, with explicit channel choices. Closed controls
@@ -240,11 +243,16 @@
     var dialog = document.getElementById("ahv-contact-controls");
     if (dialog && !dialog.open) { dialog.showModal(); dialog.querySelector("button[data-ahv-close]").focus(); }
   }
+  function bindContactTrigger(button) {
+    if (button.__ahvContactBound) return;
+    button.addEventListener("click", openContactChoices);
+    button.__ahvContactBound = true;
+  }
   function contactTrigger() {
     var b = document.createElement("button");
     b.type = "button"; b.className = "ahv-contact-trigger"; b.textContent = "Chat";
     b.setAttribute("aria-haspopup", "dialog"); b.setAttribute("aria-controls", "ahv-contact-controls");
-    b.addEventListener("click", openContactChoices);
+    bindContactTrigger(b);
     return b;
   }
   function priyaWidget() {
@@ -262,8 +270,9 @@
       var familyMenu = header.querySelector(".ahv-fh-btn");
       var group = (familyMenu && familyMenu.parentElement) || header.querySelector("nav") || header.querySelector("div:last-child") || header;
       var trigger = header.querySelector(".ahv-contact-trigger");
-      if (!trigger) group.appendChild(contactTrigger());
+      if (!trigger) { trigger = contactTrigger(); group.appendChild(trigger); }
       else if (trigger.parentElement !== group) group.appendChild(trigger);
+      bindContactTrigger(trigger);
     });
   }
   // OWNER-REG-02 (owner, 28 Sep 2026: "apply the homepage bottom call/enquire/free-consult contact bar
@@ -415,12 +424,31 @@
       if (input && document.documentElement.lang.indexOf("en") === 0) input.placeholder = "e.g. back pain";
     }
     root.querySelectorAll(".ahv-home-rates .ahv-rate-grid article").forEach(function (card, i) {
-      if (card.querySelector(".ahv-rate-photo")) return;
-      var img = document.createElement("img");
-      img.className = "ahv-rate-photo";
-      img.src = i === 1 ? "/ahv/assets/img/kt-181.webp" : "/ahv/assets/img/kt-199.webp";
-      img.alt = ""; img.loading = "lazy"; img.width = 640; img.height = 400;
-      card.insertBefore(img, card.firstChild);
+      var heading = card.querySelector("h3"), programme = card.querySelector(":scope > a[href]:not(.ahv-package-image-link)");
+      if (heading && programme && !heading.querySelector("a")) {
+        var titleLink = document.createElement("a");
+        titleLink.href = programme.getAttribute("href");
+        titleLink.className = "ahv-package-title-link";
+        titleLink.style.cssText = "display:inline;color:inherit;font:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;margin:0";
+        while (heading.firstChild) titleLink.appendChild(heading.firstChild);
+        heading.appendChild(titleLink);
+      }
+      var img = card.querySelector(".ahv-rate-photo");
+      if (!img) {
+        img = document.createElement("img");
+        img.className = "ahv-rate-photo";
+        img.src = i === 1 ? "/ahv/assets/img/kt-181.webp" : "/ahv/assets/img/kt-199.webp";
+        img.alt = ""; img.loading = "lazy"; img.width = 640; img.height = 400;
+        card.insertBefore(img, card.firstChild);
+      }
+      if (heading && programme && !img.closest("a")) {
+        var imageLink = document.createElement("a");
+        imageLink.href = programme.getAttribute("href");
+        imageLink.className = "ahv-package-image-link";
+        imageLink.setAttribute("aria-label", heading.textContent.trim());
+        img.parentNode.insertBefore(imageLink, img);
+        imageLink.appendChild(img);
+      }
     });
     root.querySelectorAll("section").forEach(function (section) {
       var title = section.querySelector("h2");

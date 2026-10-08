@@ -1,3 +1,5 @@
+import {campaignPresentation, isCampaign, FREE_CONSULTATION} from "../campaign-presentation";
+import CampaignIcon from "../CampaignIcon";
 import contentReviewCopy from "../../../english-candidate/content-review-copy.json";
 // Renders a Batch A page: the staging markup (app/<route>/staging.html,
 // produced by scripts/dc_convert.py) inside the shared page shell. Three
@@ -73,12 +75,12 @@ export function dcMetadata(m: DcMeta): Metadata {
   };
 }
 
-function HeroCta() {
+function HeroCta({campaign = false}: {campaign?: boolean}) {
   // CTA placement 2: one primary button, phone number as plain text beneath.
   return (
     <div className={styles.heroCta} data-dc-hero-cta="">
-      <a id="hero-cta" className="btn btn-primary" href={ENQUIRY_HREF}>
-        {PRIMARY_CTA}
+      <a id="hero-cta" className="btn btn-primary" href={campaign ? "#campaign-consultation" : ENQUIRY_HREF}>
+        {campaign ? FREE_CONSULTATION : PRIMARY_CTA}
       </a>
       <p>
         Or call <a href={contact.phone.href}>{contact.phone.display}</a>
@@ -114,8 +116,13 @@ function render(
         const href = new URL(node.attribs.href);
         node.attribs.href = href.pathname + href.search + href.hash;
       }
+      if (meta.route === "/treatment-in-kerala.html") {
+        if (node.attribs["data-campaign-icon"]) return <CampaignIcon name={node.attribs["data-campaign-icon"]} />;
+        const icon = node.name === "img" && /AHV-Campaign-(nature|modern|trained|local|strict|inhouse|nopr|nore|organic)\.webp$/.exec(node.attribs.src || "");
+        if (icon) return <CampaignIcon name={icon[1]} />;
+      }
       const slot = node.attribs["data-slot"];
-      if (slot === "hero-cta") return <HeroCta />;
+      if (slot === "hero-cta") return <HeroCta campaign={isCampaign(meta.route)} />;
       if (slot === "enquiry-form")
         return (
           <div className={styles.formSlot}>
@@ -132,7 +139,7 @@ function render(
   };
   return (
     <div id="ahv-design-root" className={styles.root} {...rootAttrs} data-phone-layout={phoneLayout}>
-      {domToReact(layoutCampaign(htmlToDOM(html) as DOMNode[]), options)}
+      {domToReact(isCampaign(meta.route) ? campaignPresentation(layoutCampaign(htmlToDOM(html) as DOMNode[]), true) : layoutCampaign(htmlToDOM(html) as DOMNode[]), options)}
     </div>
   );
 }
@@ -152,7 +159,7 @@ export default function DcPage({ meta, dir }: { meta: DcMeta; dir: string }) {
     ? render(fs.readFileSync(mobilePath, "utf8"), meta, meta.formMobile ?? meta.form, meta.rootAttrsMobile!, "staging")
     : null;
   return (
-    <PageShell lang={meta.lang}>
+    <PageShell lang={meta.lang} campaign={isCampaign(meta.route)}>
       {meta.jsonld && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(meta.jsonld) }} />
       )}

@@ -1,0 +1,590 @@
+{
+  "taskId": "WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001",
+  "sourceEvidence": "deliverables/WOPS-AHV-POSTLAUNCH-REVIEW-20261007-001/MOVE-REVIEW-INVENTORY.json",
+  "sourceSha256": "2b03f0d543be10576895774375761685041f4897970cfa7efcecc3255102ce3e",
+  "scope": "All 93 reviewed non-tariff route decisions. Categories do not activate redirects or override canonical/noindex policy. Runtime redirect-map.json remains authoritative; conditional mergers retain their current routes until their named evidence dependency is resolved.",
+  "categories": [
+    "ayurveda",
+    "yoga",
+    "training",
+    "campaigns",
+    "knowledge",
+    "archive",
+    "site"
+  ],
+  "rows": [
+    {
+      "id": "M001",
+      "path": "/ayurveda-package/",
+      "sitemapCategory": "ayurveda",
+      "disposition": "redirect-after-preservation",
+      "target": "/ayurvedic-treatments/"
+    },
+    {
+      "id": "M002",
+      "path": "/ayurveda-training/",
+      "sitemapCategory": "training",
+      "disposition": "redirect-after-preservation",
+      "target": "/ayurveda-training-programme/"
+    },
+    {
+      "id": "M003",
+      "path": "/packages/",
+      "sitemapCategory": "ayurveda",
+      "disposition": "redirect-after-preservation",
+      "target": "/ayurvedic-treatments/"
+    },
+    {
+      "id": "M004",
+      "path": "/panchakarma/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M005",
+      "path": "/revitalizing-and-strengthening-treatment-for-cancer-patients/",
+      "sitemapCategory": "ayurveda",
+      "disposition": "conditional-merge",
+      "dependency": "Current ranking evidence must determine the surviving URL; retain current canonical policy until resolved."
+    },
+    {
+      "id": "M006",
+      "path": "/treatment-programs/",
+      "sitemapCategory": "ayurveda",
+      "disposition": "redirect-after-preservation",
+      "target": "/ayurvedic-treatments/"
+    },
+    {
+      "id": "M007",
+      "path": "/yoga-meditation-program/",
+      "sitemapCategory": "training",
+      "disposition": "retain"
+    },
+    {
+      "id": "M008",
+      "path": "/yoga-meditation-training/",
+      "sitemapCategory": "yoga",
+      "disposition": "retain"
+    },
+    {
+      "id": "M009",
+      "path": "/yoga-retreats/",
+      "sitemapCategory": "yoga",
+      "disposition": "conditional-merge",
+      "dependency": "Current ranking evidence must determine the surviving URL; retain current canonical policy until resolved."
+    },
+    {
+      "id": "M010",
+      "path": "/yoga-therapy-individual/",
+      "sitemapCategory": "yoga",
+      "disposition": "conditional-merge",
+      "dependency": "Current ranking evidence must determine the surviving URL; retain current canonical policy until resolved."
+    },
+    {
+      "id": "M011",
+      "path": "/ayurveda-offers/",
+      "sitemapCategory": "campaigns",
+      "disposition": "redirect-after-preservation",
+      "target": "/offers/"
+    },
+    {
+      "id": "M012",
+      "path": "/defence-and-paramilitary-forces/",
+      "sitemapCategory": "campaigns",
+      "disposition": "redirect-after-preservation",
+      "target": "/offers/defence-and-paramilitary/"
+    },
+    {
+      "id": "M013",
+      "path": "/gift-vouchers/",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M014",
+      "path": "/offers/defence-paramilitary-personnel-get-upto-30-off/",
+      "sitemapCategory": "campaigns",
+      "disposition": "redirect-after-preservation",
+      "target": "/offers/defence-and-paramilitary/"
+    },
+    {
+      "id": "M015",
+      "path": "/special-offers/",
+      "sitemapCategory": "campaigns",
+      "disposition": "redirect-after-preservation",
+      "target": "/offers/"
+    },
+    {
+      "id": "M016",
+      "path": "/the-baoli-advert-box-deal/",
+      "sitemapCategory": "site",
+      "disposition": "conditional-merge",
+      "dependency": "Publishable Baoli terms and justified surviving URL remain unresolved."
+    },
+    {
+      "id": "M017",
+      "path": "/the-baoli-special-deal/",
+      "sitemapCategory": "site",
+      "disposition": "conditional-merge",
+      "dependency": "Publishable Baoli terms and justified surviving URL remain unresolved."
+    },
+    {
+      "id": "M018",
+      "path": "/all-programs/",
+      "sitemapCategory": "site",
+      "disposition": "retain"
+    },
+    {
+      "id": "M019",
+      "path": "/ayurveda-training-programme/",
+      "sitemapCategory": "training",
+      "disposition": "retain"
+    },
+    {
+      "id": "M020",
+      "path": "/ayurvedic-treatments/",
+      "sitemapCategory": "ayurveda",
+      "disposition": "retain"
+    },
+    {
+      "id": "M021",
+      "path": "/training-programs/",
+      "sitemapCategory": "training",
+      "disposition": "redirect-after-preservation",
+      "target": "/ayurveda-training-programme/"
+    },
+    {
+      "id": "M022",
+      "path": "/wellness-programs/",
+      "sitemapCategory": "site",
+      "disposition": "retain"
+    },
+    {
+      "id": "M023",
+      "path": "/yoga-meditation-programs/",
+      "sitemapCategory": "yoga",
+      "disposition": "retain"
+    },
+    {
+      "id": "M024",
+      "path": "/new-to-yoga-teacher-training/",
+      "sitemapCategory": "training",
+      "disposition": "retain"
+    },
+    {
+      "id": "M025",
+      "path": "/Ayurveda_Treatment_Neo_S.India_Cities.html",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M026",
+      "path": "/Kairali_Brand_and_Competition_Neo-original.html",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M027",
+      "path": "/ayurveda-retreat-kerala.html",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M028",
+      "path": "/ayurvedic-treatment-packages.html",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M029",
+      "path": "/family-ayurvedic-retreat-kerala.html",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M030",
+      "path": "/kairali-air-india-maharaja-club.html",
+      "sitemapCategory": "site",
+      "disposition": "retain"
+    },
+    {
+      "id": "M031",
+      "path": "/kairali-cleansing-centre.html",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M032",
+      "path": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M033",
+      "path": "/lp/ayurveda-treatment-south-india/",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M034",
+      "path": "/lp/ayurvedic-hospital-kerala/",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M035",
+      "path": "/lp/behandlung-in-kerala/",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M036",
+      "path": "/lp/kairali-brand/",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M037",
+      "path": "/lp/kairali-cleansing-centre/",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M038",
+      "path": "/lp/pain-management/",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M039",
+      "path": "/lp/panchkarma-treatment/",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M040",
+      "path": "/lp/treatment-in-kerala/",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M041",
+      "path": "/lp/treatment-packages/",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M042",
+      "path": "/lp/weight-loss/",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M043",
+      "path": "/offers/",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M044",
+      "path": "/offers/defence-and-paramilitary/",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M045",
+      "path": "/offers/olympics-and-paralympics-offer/",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M046",
+      "path": "/offers/senior-citizen-offer/",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M047",
+      "path": "/pain-management.html",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M048",
+      "path": "/panchkarma-treatment.html",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M049",
+      "path": "/preventive-rejuvenation-detoxification.html",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M050",
+      "path": "/treatment-in-kerala.html",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M051",
+      "path": "/weight-loss.html",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M052",
+      "path": "/wellness-resort-kerala.html",
+      "sitemapCategory": "campaigns",
+      "disposition": "retain"
+    },
+    {
+      "id": "M053",
+      "path": "/ayurveda-retreats-for-everyone/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M054",
+      "path": "/ayurveda-treatment/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M055",
+      "path": "/kairali-ayurvedic-way-of-weight-management/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M056",
+      "path": "/learn-about-ayurveda/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M057",
+      "path": "/learn-more-about-yoga/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M058",
+      "path": "/live-to-100-with-panchkarma/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M059",
+      "path": "/meditation/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M060",
+      "path": "/new-to-ayurveda/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M061",
+      "path": "/new-to-yoga/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M062",
+      "path": "/retreats-for-everyone/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M063",
+      "path": "/training/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M064",
+      "path": "/what-is-panchkarma/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M065",
+      "path": "/what-is-yoga/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M066",
+      "path": "/why-get-training-in-ayurveda/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M067",
+      "path": "/why-get-training-in-yoga/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M068",
+      "path": "/why-pick-a-yoga-or-yoga-retreat/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M069",
+      "path": "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M070",
+      "path": "/yoga-classes-practical/",
+      "sitemapCategory": "site",
+      "disposition": "retain"
+    },
+    {
+      "id": "M071",
+      "path": "/yoga-classes-theory/",
+      "sitemapCategory": "site",
+      "disposition": "retain"
+    },
+    {
+      "id": "M072",
+      "path": "/yoga-retreats-for-everyone/",
+      "sitemapCategory": "knowledge",
+      "disposition": "retain"
+    },
+    {
+      "id": "M073",
+      "path": "/ananda-lahari-yoga-and-ayurveda-retreat/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M074",
+      "path": "/archive-yoga-retreat/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M075",
+      "path": "/archive/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M076",
+      "path": "/ashtanga-yoga-and-ayurveda-retreat/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M077",
+      "path": "/ayurveda-workshop/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M078",
+      "path": "/ayurvedic-new-year-yala-2018/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M079",
+      "path": "/ayuryoga/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M080",
+      "path": "/back-to-roots/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M081",
+      "path": "/chef-retreat-food-to-wellness/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M082",
+      "path": "/food-sadhana/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M083",
+      "path": "/karma-being-retreat-2019/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M084",
+      "path": "/karma-being-retreat/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M085",
+      "path": "/katha-wellness-retreat-2019/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M086",
+      "path": "/lakshya-yoga-retreat-2017/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M087",
+      "path": "/lakshya-yoga-retreat-2018/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M088",
+      "path": "/lakshya-yoga-retreat/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M089",
+      "path": "/lakshya-yoga/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M090",
+      "path": "/mindfulness-retreat/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M091",
+      "path": "/prav-simona-monsoon-yoga-retreat/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M092",
+      "path": "/prav-simona-yoga-retreat/",
+      "sitemapCategory": "archive",
+      "disposition": "retain"
+    },
+    {
+      "id": "M093",
+      "path": "/yoga-and-ayurveda/",
+      "sitemapCategory": "archive",
+      "disposition": "redirect-after-preservation",
+      "target": "/archive-yoga-retreat/"
+    }
+  ]
+}

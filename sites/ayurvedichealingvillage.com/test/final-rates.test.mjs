@@ -17,7 +17,7 @@ test('programme totals reconcile to the published villa tariff and minimum night
 test('training remains per-night pricing, with the correct course durations and effective dates',()=>{
  const source=json('english-candidate/final-rates/training.json');
  for(const course of source.courses){const p=index.programmes.find(p=>p.route===new URL(course.url).pathname);assert.equal(p.basis,'night');assert.equal(p.nights,course.days);assert.equal(p.validFrom,'2026-10-01');assert.equal(p.validTo,'2027-09-30');assert.equal(p.from.INR,18410);}
- const hub=index.programmes.find(p=>p.route==='/ayurveda-training-programme/');assert.equal(hub.validFrom,'2026-10-01');
+ assert.ok(!index.programmes.some(p=>p.route==='/ayurveda-training-programme/'), 'the five-course hub is not a sixth priced course');
 });
 test('current, future and expired tariffs retain their date boundaries',()=>{
  const engineAt=date=>{const c={Date:class extends Date{constructor(...args){super(...(args.length?args:[date]));}}};vm.runInNewContext(fs.readFileSync('public/design/search.js','utf8'),c);return c.AHVSearch.createEngine(index);};

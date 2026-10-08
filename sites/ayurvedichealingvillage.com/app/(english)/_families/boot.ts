@@ -1,4 +1,5 @@
 import { repairFaqTopicTargets } from './faq-topic-targets.mjs';
+import { orderedRuntimeScripts } from './runtime-script-order.mjs';
 import { removeHomeVillaRates } from './home-villa-rates.mjs';
 import {offersFlow} from './offers-flow.mjs';
 import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes } from "./critical-media.mjs";
@@ -218,7 +219,7 @@ export const BOOT_SCRIPT = `
   // two hooks that decide loading ahead of the first src write.
   var EAGER_SLOTS = ${JSON.stringify(EAGER_SLOTS)};
   var deferBackgrounds = (${createBackgroundDeferral.toString()})(window, 800);
-  (${installLazyImgOrder.toString()})(window, (${villaImageAttributes.toString()}), (${phoneCriticalMedia.toString()}));
+  (${installLazyImgOrder.toString()})(window, (${villaImageAttributes.toString()}), function (src) { return (${phoneCriticalMedia.toString()})(src, cfg.path); });
   (${installSlotLoading.toString()})(window, EAGER_SLOTS);
 
   // The server response carries the prerendered snapshot (phone width, for
@@ -956,6 +957,8 @@ export const BOOT_SCRIPT = `
       try { url = new URL(raw, window.location.href); } catch (e) { return; }
       if (url.origin !== window.location.origin) return;
       if (url.pathname.replace(/[/]$/, "") !== here) return;
+      // Section and locale links retain their own destination; only a bare self-link can point to the form.
+      if (url.hash || url.search || a.hasAttribute("hreflang")) return;
       a.setAttribute("href", "#" + form.id);
       a.__ahvSelfRetargeted = true;
     });
@@ -1285,7 +1288,7 @@ export const BOOT_SCRIPT = `
       host.insertBefore(document.createElement("x-dc"), host.firstChild);
       // lazyImgFirst: loading="lazy" ahead of src in every template <img> (media-loading.mjs, P1a).
       view.template = (${removeHomeVillaRates.toString()})(view.template, cfg.path);
-      pendingTemplate = (${lazyImgFirst.toString()})((${formPostSafety.toString()})((${descriptiveAwardLinks.toString()})(narrow ? (${phoneCriticalMedia.toString()})((${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en")) : (${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path)));
+      pendingTemplate = (${lazyImgFirst.toString()})((${formPostSafety.toString()})((${descriptiveAwardLinks.toString()})(narrow ? (${phoneCriticalMedia.toString()})((${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path) : (${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path)));
       host.setAttribute("data-ahv-view", view.id);
       host.setAttribute("data-ahv-variant", view.variant);
       host.setAttribute("data-ahv-view-file", view.file || "");
@@ -1304,9 +1307,7 @@ export const BOOT_SCRIPT = `
 
       // Step 5 — the accepted preview layer self-attaches from its own tag,
       // using the exact view filename the package's marker list keys on.
-      var srcs = [{ src: cfg.previewSrc, view: view.file || "" }];
-      (view.scripts || []).forEach(function (s) { srcs.push({ src: s }); });
-      srcs.push({ src: cfg.supportSrc });
+      var srcs = (${orderedRuntimeScripts.toString()})(view, cfg, !!window.AHV_LEAD_RECEIPT);
 
       srcs.forEach(function (entry) {
         var s = document.createElement("script");

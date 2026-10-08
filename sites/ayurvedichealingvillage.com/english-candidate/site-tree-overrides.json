@@ -1,1381 +1,1734 @@
 {
- "_why": "Content-based placement of every AHV page (23-24 Sep 2026): 17 readers read all 227 pages, an architect composed the plan, three adversarial reviewers (older international patient, content accuracy, rail usability) attacked it, a reconciler produced this. Applied by tools/build-site-tree.mjs. Package pages keep the programme register's names (owner: 'latest names') — condition-first relabels proposed for them are recorded in keptRegisterNames, not applied.",
- "moves": [
-  {
-   "path": "/kairali-ayurvedic-way-of-weight-management/",
-   "section": "knowledge",
-   "parent": "/knowledge-centre/",
-   "why": "Changed after review (all three reviewers, verified): /weight-loss-programme/ never links this article (only /sitemap/ does) and is a programme page, not a hub. The page is a 500-word older article (a 'natural weight reduction' method, oil massage, and two recipes, one to maintain and one to reduce weight), so it sits at the Knowledge centre root as an article. Nesting it under the clinical programme would also have presented its unsigned claim ('weight reduction without the necessity of exercise or dietary limitations') as part of that programme. Claim flagged for Dr. Deepu John.",
-   "label": "Ayurvedic weight management & recipes"
-  },
-  {
-   "path": "/yoga-meditation-program/",
-   "section": "programmes",
-   "parent": "/yoga-meditation-programs/",
-   "why": "Accepted move under the yoga hub (it hung loose at the programmes root). It is an 84% text twin of /yoga-meditation-training/ with the same nightly rates; the one real difference on the page is 'Minimum Duration is 3 Nights' vs 7, so the label says that. Owner to choose one twin.",
-   "label": "Yoga & meditation, 3-night minimum"
-  },
-  {
-   "path": "/yoga-therapy-individual/",
-   "section": "programmes",
-   "parent": "/yoga-meditation-programs/",
-   "why": "A bookable plan (yoga therapists and doctors build it) that, per its own text, also includes Panchakarma, herbal treatments and a diet plan. That is what separates it from 'Personalised yoga programme' (/yoga-retreats/: practice customised after a doctor's assessment), so the label says 'with Ayurveda'. It belongs with the yoga programmes, not in the Knowledge centre. The yoga hub does not yet link it (content fix).",
-   "label": "Individual yoga therapy with Ayurveda"
-  },
-  {
-   "path": "/ayurveda-retreats-for-everyone/",
-   "section": "knowledge",
-   "parent": "/new-to-ayurveda/",
-   "why": "Adjusted: moved out of the treatment finder as proposed (a 3-paragraph essay, no programme), but under /new-to-ayurveda/ rather than the section root, because New to Ayurveda links to it.",
-   "label": "Ayurveda retreats for everyone"
-  },
-  {
-   "path": "/ayurveda-treatment/",
-   "section": "knowledge",
-   "parent": "/ayurveda/",
-   "why": "A bare list of classical therapy names (37 lines, 34 distinct: 'Kavalagraham' repeats four times) with no programme, price or booking path. /ayurveda/ links it. Relabelled after review so it cannot be confused with its parent 'Ayurveda & its main therapies'.",
-   "label": "List of Ayurvedic therapies"
-  },
-  {
-   "path": "/one-day-ayurveda-workshop-program-kerala/",
-   "section": "training",
-   "parent": "/ayurveda-training-programme/",
-   "why": "Moved under the all-courses overview, which lists all five courses and which every course page links back to as 'all courses'. Duration-first labels make the five read as a ladder (1, 3, 5, 10, 20 days)."
-  },
-  {
-   "path": "/three-day-short-term-ayurveda-certificate-program-tap-hv/",
-   "section": "training",
-   "parent": "/ayurveda-training-programme/",
-   "why": "Moved under the all-courses overview, which lists all five courses and which every course page links back to as 'all courses'. Duration-first labels make the five read as a ladder (1, 3, 5, 10, 20 days)."
-  },
-  {
-   "path": "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
-   "section": "training",
-   "parent": "/ayurveda-training-programme/",
-   "why": "Moved under the all-courses overview, which lists all five courses and which every course page links back to as 'all courses'. Duration-first labels make the five read as a ladder (1, 3, 5, 10, 20 days)."
-  },
-  {
-   "path": "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
-   "section": "training",
-   "parent": "/ayurveda-training-programme/",
-   "why": "Moved under the all-courses overview, which lists all five courses and which every course page links back to as 'all courses'. Duration-first labels make the five read as a ladder (1, 3, 5, 10, 20 days)."
-  },
-  {
-   "path": "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
-   "section": "training",
-   "parent": "/ayurveda-training-programme/",
-   "why": "Moved under the all-courses overview, which lists all five courses and which every course page links back to as 'all courses'. Duration-first labels make the five read as a ladder (1, 3, 5, 10, 20 days)."
-  },
-  {
-   "path": "/ayurveda-workshop/",
-   "section": "news",
-   "parent": "/archive-yoga-retreat/",
-   "why": "Accepted, verified in the page: the day-by-day itinerary of one past group visit (26 Mar–3 Apr, no year) organised by a tour operator, flying from Narita and ending 'Return to Japan via Singapore Airlines', so 'Japan group' is on the page, not inferred. It is not a bookable course, so listing it under Training misled. The organiser's name contains a locked word, so the label leaves it out.",
-   "label": "Nine-day Ayurveda workshop (Japan group)"
-  },
-  {
-   "path": "/yoga-classes-practical/",
-   "section": "things",
-   "parent": "/things-to-do/",
-   "why": "Accepted. Daily classes during a stay, not a training course; the in-village hub lists 'Yoga Classes (Practical)' and its legacy sub-nav files it there. Re-parented 28 Sep 2026: /things-to-do-in-property/ merged into /things-to-do/ (AHV-DUP-011).",
-   "label": "Yoga classes: practical"
-  },
-  {
-   "path": "/yoga-classes-theory/",
-   "section": "things",
-   "parent": "/things-to-do/",
-   "why": "Accepted, paired with the practical classes. Re-parented 28 Sep 2026: /things-to-do-in-property/ merged into /things-to-do/ (AHV-DUP-011).",
-   "label": "Yoga classes: theory"
-  },
-  {
-   "path": "/nature-walk/",
-   "section": "things",
-   "parent": "/things-to-do/",
-   "why": "Not proposed, needed for coherence: the page describes walking the grounds as 'one of the activities offered at the village' (its meta), and both /things-to-do/ and the in-village hub link it as an activity. It joins yoga and meditation as the patient's daily activities. Re-parented 28 Sep 2026: /things-to-do-in-property/ merged into /things-to-do/ (AHV-DUP-011).",
-   "label": "Nature walks"
-  },
-  {
-   "path": "/meditation/",
-   "section": "things",
-   "parent": "/things-to-do/",
-   "why": "Not proposed, needed for coherence: the page describes 'our meditation programs' at the village, and the in-village hub lists Meditation beside the yoga classes. It is an activity page, not a knowledge article. Re-parented 28 Sep 2026: /things-to-do-in-property/ merged into /things-to-do/ (AHV-DUP-011).",
-   "label": "Meditation at the village"
-  },
-  {
-   "path": "/butterfly-booklet/",
-   "section": "things",
-   "parent": "/things-to-do/",
-   "why": "Adjusted: the reader wanted it 'next to Nature walk'; Nature walk now sits under Things to do in the village, so the butterfly guide to the grounds (48 species, downloadable booklet) follows it there. Re-parented 28 Sep 2026: /things-to-do-in-property/ merged into /things-to-do/ (AHV-DUP-011).",
-   "label": "Butterflies at the village"
-  },
-  {
-   "path": "/visit-kerala/",
-   "section": "things",
-   "parent": "/things-to-do-in-kerala/",
-   "why": "Accepted. /things-to-do-in-kerala/ lists it first; the label says how it differs from its parent.",
-   "label": "Why visit Kerala"
-  },
-  {
-   "path": "/wildlife-drive/",
-   "section": "things",
-   "parent": "/things-to-do-in-kerala/",
-   "why": "Accepted. Both hubs list it under 'Things to do in Kerala'.",
-   "label": "Wildlife drive"
-  },
-  {
-   "path": "/elephant-safari/",
-   "section": "things",
-   "parent": "/things-to-do-in-kerala/",
-   "why": "Accepted. A Kerala-wide excursion (Periyar) linked from the Kerala sub-hub.",
-   "label": "Elephant safari"
-  },
-  {
-   "path": "/house-boat-tour/",
-   "section": "things",
-   "parent": "/things-to-do-in-kerala/",
-   "why": "Accepted. Linked from the Kerala sub-hub; the fuller of the two backwater pages.",
-   "label": "Houseboat tour"
-  },
-  {
-   "path": "/back-water-tour/",
-   "section": "things",
-   "parent": "/things-to-do-in-kerala/",
-   "why": "Accepted. Linked from the Kerala sub-hub; flagged as a topical duplicate of the houseboat tour.",
-   "label": "Backwater tour"
-  },
-  {
-   "path": "/mountain-jeep-safari/",
-   "section": "things",
-   "parent": "/things-to-do-in-kerala/",
-   "why": "Accepted. Linked from the Kerala sub-hub.",
-   "label": "Mountain jeep safari"
-  },
-  {
-   "path": "/alcohol-free/",
-   "section": "facilities",
-   "parent": "/experience/",
-   "why": "Accepted. One of the house rules linked from /experience/; the label answers 'is alcohol allowed?'.",
-   "label": "Alcohol-free village"
-  },
-  {
-   "path": "/no-smoking/",
-   "section": "facilities",
-   "parent": "/experience/",
-   "why": "Accepted. A house rule linked from /experience/.",
-   "label": "No smoking"
-  },
-  {
-   "path": "/no-caffeine/",
-   "section": "facilities",
-   "parent": "/experience/",
-   "why": "Accepted. A house rule linked from /experience/.",
-   "label": "No caffeine"
-  },
-  {
-   "path": "/vegetarian/",
-   "section": "facilities",
-   "parent": "/experience/",
-   "why": "Accepted. States the actual rule instead of a bare adjective.",
-   "label": "Vegetarian meals only"
-  },
-  {
-   "path": "/no-preservatives/",
-   "section": "facilities",
-   "parent": "/experience/",
-   "why": "Accepted. Its own house-rules block confirms the group.",
-   "label": "No preservatives"
-  },
-  {
-   "path": "/no-refridgeration/",
-   "section": "facilities",
-   "parent": "/experience/",
-   "why": "Accepted. The page is only about food; 'No Refrigeration' could be read as no cooling in the villas.",
-   "label": "No refrigerated food"
-  },
-  {
-   "path": "/organic-farm/",
-   "section": "facilities",
-   "parent": "/village-facilities/",
-   "why": "Changed after review (reviewers 2 and 3, verified): the page is about the village's own pesticide-free farm that supplies the kitchen, and says visitors 'get to visit the Organic Farm'; the /village-facilities/ hub describes 'Organic Farm and Herbal Gardens' as a facility visitors can tour. A farm is not a house rule, so it sits at the facilities root beside the farm animals. /experience/ keeps its card linking it.",
-   "label": "Organic farm"
-  },
-  {
-   "path": "/ayurvedic-resturant-and-cooking-at-healing-village/",
-   "section": "facilities",
-   "parent": "/ayurvedic-cuisine/",
-   "why": "Accepted move. Its main subject is the dining room and the meals planned with the physicians, so it sits with the food pages as 'The Ayurvedic restaurant' (the cooking classes are now an in-village activity).",
-   "label": "The Ayurvedic restaurant"
-  },
-  {
-   "path": "/cooking-classes/",
-   "section": "things",
-   "parent": "/things-to-do/",
-   "why": "Changed after review (reviewer 1, verified): both activity hubs (/things-to-do/ and /things-to-do-in-property/) list Cooking Classes beside the yoga classes, nature walk and meditation the plan already moved there, and the page describes a class students take ('one of the best ways to ease the mind in this village'). /ayurvedic-cuisine/ does not link it. Same rule as the other in-village activities. Re-parented 28 Sep 2026: /things-to-do-in-property/ merged into /things-to-do/ (AHV-DUP-011).",
-   "label": "Ayurvedic cooking classes"
-  },
-  {
-   "path": "/what-is-ayurvedic-food/",
-   "section": "facilities",
-   "parent": "/ayurvedic-cuisine/",
-   "why": "Accepted. Named on the cuisine page's card grid; partial overlap with the cuisine page flagged.",
-   "label": "What is Ayurvedic food?"
-  },
-  {
-   "path": "/learn-about-ayurveda/",
-   "section": "knowledge",
-   "parent": "/new-to-ayurveda/",
-   "why": "Changed after review (reviewer 2, verified): doshas get one paragraph; the page's headings are 'Training at our Ayurveda College in Kerala', 'The Retreat Environment', 'Yoga and Meditation' and 'Ayurvedic Oil Massage'. It is a general introduction. Parent /new-to-ayurveda/ kept (a beginner article), and that hub does not yet link it (content fix).",
-   "label": "Introduction to Ayurveda at Kairali"
-  },
-  {
-   "path": "/what-is-panchkarma/",
-   "section": "knowledge",
-   "parent": "/new-to-ayurveda/",
-   "why": "New to Ayurveda links it. Uses the locked register spelling 'Panchakarma'.",
-   "label": "What is Panchakarma?"
-  },
-  {
-   "path": "/live-to-100-with-panchkarma/",
-   "section": "knowledge",
-   "parent": "/new-to-ayurveda/",
-   "why": "Relabel accepted: the page explains the five procedures and three stages; the title 'Live to 100' is a longevity promise the page never supports. Sits beside 'What is Panchakarma?'.",
-   "label": "How Panchakarma works"
-  },
-  {
-   "path": "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
-   "section": "knowledge",
-   "parent": "/new-to-ayurveda/",
-   "why": "Relabel accepted (the page argues for Ayurveda in general and never discusses retreats). New to Ayurveda carries a card with this title (its href is wrong, see notes).",
-   "label": "Why choose Ayurveda?"
-  },
-  {
-   "path": "/what-is-yoga/",
-   "section": "knowledge",
-   "parent": "/new-to-yoga/",
-   "why": "Not proposed; New to Yoga links it as its first card, so the yoga beginner articles group under it.",
-   "label": "What is yoga?"
-  },
-  {
-   "path": "/learn-more-about-yoga/",
-   "section": "knowledge",
-   "parent": "/new-to-yoga/",
-   "why": "Relabel accepted; New to Yoga links it.",
-   "label": "How yoga and Ayurveda connect"
-  },
-  {
-   "path": "/why-pick-a-yoga-or-yoga-retreat/",
-   "section": "knowledge",
-   "parent": "/new-to-yoga/",
-   "why": "Not proposed; New to Yoga links it.",
-   "label": "Why choose a yoga retreat?"
-  },
-  {
-   "path": "/retreats-for-everyone/",
-   "section": "knowledge",
-   "parent": "/new-to-yoga/",
-   "why": "Adjusted: out of the yoga programmes hub as proposed (an opinion essay, no programme), but under New to Yoga, which links it, rather than under an article that is not a hub.",
-   "label": "Yoga retreats for busy lives"
-  },
-  {
-   "path": "/yoga-retreats-for-everyone/",
-   "section": "knowledge",
-   "parent": "/new-to-yoga/",
-   "why": "Changed after review (reviewer 2, verified): the article is written for 'people in their 40s and 50s' and 'mid-life years' (joint discomfort, weariness, stress). That is the site's core audience, and the old label hid it.",
-   "label": "Yoga retreats for midlife (40s–50s)"
-  },
-  {
-   "path": "/our-accolades/",
-   "section": "about",
-   "parent": "/awards-and-accreditations/",
-   "why": "Accepted. /awards-and-accolades/ never links it (not a hub); the real hub /awards-and-accreditations/ is its parent. Short summary of the top recognitions.",
-   "label": "Awards at a glance"
-  },
-  {
-   "path": "/brief-on-kairali/",
-   "section": "about",
-   "parent": "/kairali-ayurvedic-group/",
-   "why": "Adjusted: relabel accepted, and nested under the group page it summarises (all five paragraphs reappear there), so About does not show two group entries at its first level.",
-   "label": "Kairali group in brief"
-  },
-  {
-   "path": "/ayurvedic-franchise/",
-   "section": "about",
-   "parent": "/our-partners/",
-   "why": "Accepted. A partnership offer ('Partner with Kairali Ayurvedic Group'), which Our Partners describes as 'Franchise Partnerships'; not a group company.",
-   "label": "Franchise with Kairali"
-  },
-  {
-   "path": "/arogya-kendra/",
-   "section": "about",
-   "parent": "/our-partners/",
-   "why": "Accepted. A scheme for Ayurvedic practitioners to open a Kairali centre; the bare name means nothing to an international reader.",
-   "label": "Arogya Kendra: open a local centre"
-  },
-  {
-   "path": "/arogya-shala/",
-   "section": "about",
-   "parent": "/our-partners/",
-   "why": "Accepted. A scheme for practising doctors to stock and sell Kairali products; belongs with the other partner schemes.",
-   "label": "Arogya Shala: product partnership for doctors"
-  },
-  {
-   "path": "/product-range/",
-   "section": "about",
-   "parent": "/kairali-ayurvedic-products-pvt-ltd/",
-   "why": "Accepted. The products company page links 'Product Range', and Product Range is the real hub for the seven ranges (each card has a 'Read about this range' link). With the company now at the About root, the ladder is About › products company › Product range › each range, three levels instead of four.",
-   "label": "Product range"
-  },
-  {
-   "path": "/ayurvedic-herbal-tea/",
-   "section": "about",
-   "parent": "/product-range/",
-   "why": "Accepted. One of the seven ranges Product Range links.",
-   "label": "Ayurvedic herbal tea"
-  },
-  {
-   "path": "/ayurvedic-proprietary-organics/",
-   "section": "about",
-   "parent": "/product-range/",
-   "why": "Accepted. One of the seven ranges; 'Proprietary Organics' is company jargon.",
-   "label": "Organic Ayurvedic products"
-  },
-  {
-   "path": "/kair-by-kairali/",
-   "section": "about",
-   "parent": "/product-range/",
-   "why": "Accepted. One of the seven ranges; its own range name is kept."
-  },
-  {
-   "path": "/ayurvedic-proprietary-medicines/",
-   "section": "about",
-   "parent": "/product-range/",
-   "why": "Accepted. One of the seven ranges; natural word order.",
-   "label": "Proprietary Ayurvedic medicines"
-  },
-  {
-   "path": "/ayurvedic-classical-medicines/",
-   "section": "about",
-   "parent": "/product-range/",
-   "why": "Accepted. One of the seven ranges; natural word order.",
-   "label": "Classical Ayurvedic medicines"
-  },
-  {
-   "path": "/books/",
-   "section": "about",
-   "parent": "/product-range/",
-   "why": "Accepted. One of the seven ranges; the page is specifically the founder's books.",
-   "label": "Books by Gita Ramesh"
-  },
-  {
-   "path": "/kairali-ayurvedic-equipment/",
-   "section": "about",
-   "parent": "/product-range/",
-   "why": "Accepted. One of the seven ranges; the range name, as the hub card shows it, is kept."
-  },
-  {
-   "path": "/ayurvedic-products/",
-   "section": "about",
-   "parent": "/kairali-ayurvedic-products-pvt-ltd/",
-   "why": "Accepted. A general overview of the product company's categories; under the company page it no longer sits as a third near-identical 'products' entry at group level.",
-   "label": "Kairali products overview"
-  },
-  {
-   "path": "/in-house-products/",
-   "section": "about",
-   "parent": "/kairali-ayurvedic-products-pvt-ltd/",
-   "why": "Adjusted parent: the page is a general product overview (hair and body oils, washes, capsules and syrups), not one of the seven ranges Product Range lists, so it sits beside the other overview under the company page. Label accepted.",
-   "label": "Personal care & in-house medicines"
-  },
-  {
-   "path": "/product-gallery/",
-   "section": "gallery",
-   "parent": "/gallery/",
-   "why": "Accepted. A 17-photo collection; the Gallery hub already has its card, and people look for photos under Gallery.",
-   "label": "Product gallery"
-  },
-  {
-   "path": "/retreats-gallery/",
-   "section": "gallery",
-   "parent": "/gallery/",
-   "why": "Changed after review (reviewers 1 and 2): 'Patient life gallery' is awkward English. The page is 'Programme life at the hospital: the welcome on admission, consultations, walks on the grounds, the kitchen garden and the dining hall' (30 photographs). It moves from Past retreats to Gallery because it documents no past retreat.",
-   "label": "A patient’s stay in photos"
-  },
-  {
-   "path": "/property-gallery/",
-   "section": "gallery",
-   "parent": "/photo-gallery/",
-   "why": "New after review (reviewers 1 and 3, verified): /photo-gallery/ is a real hub; each chapter ends in a working 'See the full property gallery' link. The photos are the hospital campus: reception, treatment block, patient cottages, gardens.",
-   "label": "Campus & grounds gallery"
-  },
-  {
-   "path": "/treatments-gallery/",
-   "section": "gallery",
-   "parent": "/photo-gallery/",
-   "why": "New after review: /photo-gallery/ links it ('See the full treatment gallery'). Label matches the page H1.",
-   "label": "Treatment gallery"
-  },
-  {
-   "path": "/villas-gallery/",
-   "section": "gallery",
-   "parent": "/photo-gallery/",
-   "why": "New after review: /photo-gallery/ links it ('See the full villas gallery').",
-   "label": "Villas gallery"
-  },
-  {
-   "path": "/yoga-gallery/",
-   "section": "gallery",
-   "parent": "/photo-gallery/",
-   "why": "New after review: /photo-gallery/ links it ('See the full yoga gallery').",
-   "label": "Yoga gallery"
-  },
-  {
-   "path": "/sight-seeing-gallery/",
-   "section": "gallery",
-   "parent": "/photo-gallery/",
-   "why": "New after review: /photo-gallery/ links it ('See the full sightseeing gallery'). The 9 photos are countryside aerials and rice transplanting on the campus farm (the page says the attractions themselves are on the attractions pages), hence the label.",
-   "label": "Countryside & farm gallery"
-  },
-  {
-   "path": "/destination-palakkad/",
-   "section": "things",
-   "parent": "/things-to-do-in-kerala/",
-   "why": "New after review (reviewer 3, verified): /things-to-do-in-kerala/ links it as its second card, straight after Visit Kerala; the same evidence moved /visit-kerala/ there. The Things to do first level becomes three real hubs.",
-   "label": "About Palakkad"
-  },
-  {
-   "path": "/ayurvedic-treatment-packages.html",
-   "section": "programmes",
-   "parent": "/all-programs/",
-   "why": "Moved 29 Sep 2026 (OWNER-REG-01, owner 28 Sep 23:31 IST): this is an Ayurvedic treatment-package landing page, not a villa page — the owner asked for the Villas placement, breadcrumb and navigation association to go and the package name to be right. Filed under Treatments & programmes beside the package lists, with the page's own name (its title: Ayurvedic Treatment Packages). Its villa accommodation section stays on the page. Earlier placement (reviewer 1): Villas, \"Villa rates, treatment included\".",
-   "label": "Ayurvedic Treatment Packages"
-  },
-  {
-   "path": "/payment-policy-compliance/",
-   "section": "visit",
-   "parent": "/contact-us/",
-   "why": "New after review (reviewer 1, verified): practical booking information, not legal boilerplate. The page lists accepted methods (cards, UPI, wire transfer, PayPal, Razorpay) and the currency-exchange partner for international patients. A patient planning a stay looks for it next to booking and FAQs.",
-   "label": "Payment methods & currency exchange"
-  },
-  {
-   "path": "/cancellation-and-refund-policy/",
-   "section": "visit",
-   "parent": "/contact-us/",
-   "why": "New after review (reviewer 1, verified): the page sets booking procedure, payment, cancellation terms by days before arrival, no-show and early departure. That is booking information a patient needs before paying, so it sits with booking in Plan your visit. Terms, privacy, cookies, legal notice and disclaimer stay in the policies bucket.",
-   "label": "Cancellation & refund policy"
-  },
-  {
-   "path": "/kairali-ayurvedic-products-pvt-ltd/",
-   "section": "about",
-   "parent": "/about-us/",
-   "why": "New after review (reviewer 3, verified): the Kairali Ayurvedic Group page never mentions products and links only Kairali Hospitality, so it is not a real hub for the products company. Moving the company to the About root makes the ladder About > products company > Product range > each range (one level shallower, so range names stop wrapping in the 300px rail). 'Pvt. Ltd.' is legal wording a patient does not need.",
-   "label": "Kairali Ayurvedic Products company"
-  }
- ],
- "relabels": [
-  {
-   "path": "/ayurvedic-treatments/",
-   "label": "Ayurvedic treatments by condition",
-   "why": "Changed after review (reviewer 1). Keeps the page H1 ('Ayurvedic Treatments') so a visitor recognises where they land, and adds the one thing only this entry has in the rail: its children are the condition groups (Joints, back & spine; Skin & eyes; …). Tells it apart from 'Treatment programmes list'. Its text is 97% the same as /all-programs/ (flagged)."
-  },
-  {
-   "path": "/treatment-programs/",
-   "label": "Treatment programmes list",
-   "why": "Changed after review (reviewer 2, verified): 'All treatment programmes' overclaimed; the page lists 29 treatment programmes and not the monsoon (Karkidaka) programme. Kept at the programmes root: /ayurvedic-treatments/ does not link it, and nesting it would push the condition groups down."
-  },
-  {
-   "path": "/wellness-programs/",
-   "label": "Preventive & wellness programmes",
-   "why": "The page's own meta and intro say 'preventive and regenerative'; the bare 'Wellness Programmes' could not be told apart from 'Treatment Programmes'."
-  },
-  {
-   "path": "/packages/",
-   "label": "Programme packages at a glance",
-   "why": "Changed after review (reviewer 2, verified): all 27 Book Now buttons go to the booking site's home page, exactly like the Book Now links on every programme page, so 'to book online' was a false distinction. What the page is: an older card list of the programmes with a one-line excerpt each."
-  },
-  {
-   "path": "/yoga-meditation-programs/",
-   "label": "Yoga & meditation programmes",
-   "why": "Its H1 says 'Programmes'; the bare 'Yoga & Meditation' read like a knowledge article."
-  },
-  {
-   "path": "/karkidaka-chikitsha-or-monsoon-wellness.html",
-   "label": "Monsoon programme, July–August (Karkidaka)",
-   "why": "Changed after review (reviewer 1, verified): the page says the programme runs in 'the Karkidakam month (July–August)' for 7, 14 or 21 days, so the season goes in the label. Kept at the programmes root: a seasonal programme is not a condition, and it is not in the programme register, so the builder cannot give it a concern group anyway (reviewer 3 showed the earlier 'one-line fix' would not work)."
-  },
-  {
-   "path": "/training-course-fees/",
-   "label": "Course fees & booking terms",
-   "why": "The page says tuition is part of the nightly rate and also sets transport, deposit and cancellation terms. It stays listed (the fees are real) but carries template filler that must go before launch."
-  },
-  {
-   "path": "/ayurveda-training/",
-   "label": "Learn Ayurveda with Kairali",
-   "why": "Legacy intro with an enquiry form and an old course table. Real content, so listed, but flagged: its fixed course prices conflict with the per-night fee sheet."
-  },
-  {
-   "path": "/training/",
-   "label": "About training at Kairali",
-   "why": "Older general article; 'Training' alone said nothing next to the hub. Flagged: its four tracks do not match the five coded courses."
-  },
-  {
-   "path": "/kairali-institute-of-ayurveda-and-panchakarma-therapy/",
-   "label": "Kairali Institute of Ayurveda",
-   "why": "Shortened from seven words. It stays in Training: it tells a prospective student who teaches the courses."
-  },
-  {
-   "path": "/new-to-yoga-teacher-training/",
-   "label": "Yoga teacher training (coming soon)",
-   "why": "The page itself says 'Coming Soon' with no dates or fees; an honest label stops a visitor assuming it can be booked."
-  },
-  {
-   "path": "/why-get-training-in-ayurveda/",
-   "label": "Why train in Ayurveda?",
-   "why": "Plainer wording, same meaning."
-  },
-  {
-   "path": "/why-get-training-in-yoga/",
-   "label": "Why train in yoga?",
-   "why": "Plainer wording, same meaning."
-  },
-  {
-   "path": "/things-to-do-in-property/",
-   "label": "Things to do in the village",
-   "why": "'Property' is hotel jargon; the page H1 and the hub's own link say 'healing village'. Pairs with 'Things to do in Kerala'."
-  },
-  {
-   "path": "/cultural-events/",
-   "label": "Kerala dance, music & martial arts",
-   "why": "The page describes Kathakali, Mohiniyattam, Chenda and Kalaripayattu with no event dates; 'Cultural Events' promised a calendar."
-  },
-  {
-   "path": "/festivals/",
-   "label": "Festivals by month",
-   "why": "Each festival is listed with its month, which is what someone timing a stay needs."
-  },
-  {
-   "path": "/sightseeing/",
-   "label": "Sightseeing near Kairali",
-   "why": "Owner-approved single guide with all 22 destinations and approximate road distances."
-  },
-  {
-   "path": "/experience/",
-   "label": "Experience & house rules",
-   "why": "A real hub linking every rule page; the site already calls the set 'House rules of the property'. 'Experience' told a reader nothing. Amended 28 Sep 2026 (parent BATCH2-VISUAL-REVIEW): the breadcrumb ended \"Village house rules\" under the H1 \"Experience\"; the label now leads with the page name and keeps what the hub holds."
-  },
-  {
-   "path": "/ayurvedic-cuisine/",
-   "label": "Ayurvedic cuisine",
-   "why": "Sentence case to match its new children."
-  },
-  {
-   "path": "/ayurveda/",
-   "label": "Ayurveda & its main therapies",
-   "why": "An explainer of consultation, Prakriti and the main therapies; the one-word 'Ayurveda' did not say how it differs from its siblings."
-  },
-  {
-   "path": "/accreditations/",
-   "label": "Accreditations & certificates",
-   "why": "The page lists accreditations with scanned certificates (NABH, ISO 9001, etc.); the old label was a meta title."
-  },
-  {
-   "path": "/awards-and-accolades/",
-   "label": "Awards history",
-   "why": "Its own heading is 'Awards History' (awards and certificates from different years); separates it from the short summary."
-  },
-  {
-   "path": "/founders-message/",
-   "label": "Founder's message & directors",
-   "why": "Half the page is the directors' profiles; the founder's letter is only here."
-  },
-  {
-   "path": "/kairali-the-ayurvedic-healing-village/",
-   "label": "The Healing Village at a glance",
-   "why": "A short overview; the old label was circular on the Healing Village's own site. Overlap with /about-us/ flagged."
-  },
-  {
-   "path": "/vision-and-mission/",
-   "label": "Vision & mission",
-   "why": "Sentence case, to match its siblings."
-  },
-  {
-   "path": "/social-responsibilities/",
-   "label": "Social responsibility",
-   "why": "Sentence case, to match its siblings."
-  },
-  {
-   "path": "/social-cultural-environmental-commitment/",
-   "label": "Social, cultural & environmental commitment",
-   "why": "Placement kept (it summarises its parent and links back). Sentence case only."
-  },
-  {
-   "path": "/our-partners/",
-   "label": "Our partners",
-   "why": "Sentence case; it becomes the parent of the five partner schemes."
-  },
-  {
-   "path": "/consultancy/",
-   "label": "Consultancy for wellness businesses",
-   "why": "Placement kept. 'Consultancy' alone could be read as a doctor consultation (the site also has /online-consultation/)."
-  },
-  {
-   "path": "/kairali-ayurvedic-centre/",
-   "label": "Kairali centres in India & abroad",
-   "why": "Taken from the page's own words; the fuller of the two centre pages, and clearly about the group's other locations."
-  },
-  {
-   "path": "/kairali-ayurvedic-treatment-center/",
-   "label": "The centres behind the village",
-   "why": "Adjusted label: the page's distinct point is that the group's centres are 'the foundation' the Healing Village was built from. Topical duplicate of the centres page, flagged."
-  },
-  {
-   "path": "/villa-raag/",
-   "label": "Villa Raag, Goa",
-   "why": "A separate group property in Agonda, South Goa, never one of the village's villas; 'Goa' prevents confusion with Classic/Deluxe/Royal Villa."
-  },
-  {
-   "path": "/ayurvedic-new-year-yala-2018/",
-   "label": "Yala New Year Retreat 2018",
-   "why": "States plainly what it was."
-  },
-  {
-   "path": "/ayuryoga/",
-   "label": "AyurYoga Retreat",
-   "why": "Says it is a past retreat; the page's own casing."
-  },
-  {
-   "path": "/back-to-roots/",
-   "label": "Chef Retreat 2017: the story",
-   "why": "Companion of the itinerary page for the same July 2017 Chef Retreat; the pair now read as a pair."
-  },
-  {
-   "path": "/chef-retreat-food-to-wellness/",
-   "label": "Chef Retreat 2017: itinerary",
-   "why": "The day-by-day itinerary of 3-6 July 2017."
-  },
-  {
-   "path": "/food-sadhana/",
-   "label": "Food Sadhana Retreat 2017",
-   "why": "The page dates itself ('The 2017 Food Sadhana Highlights')."
-  },
-  {
-   "path": "/katha-wellness-retreat-2019/",
-   "label": "Katha Wellness Retreat 2019",
-   "why": "Year only, like its siblings; exact dates stay on the page."
-  },
-  {
-   "path": "/prav-simona-monsoon-yoga-retreat/",
-   "label": "Prav-Simona Monsoon Yoga Retreat",
-   "why": "Owner ruling 28 Sep 2026 (AHV-DUP-012, keep both): 'they were two separate back to back retreats'. Each page is listed under its own archive title (past-retreats-data.js), not as a full record / summary of one another. The EF-24 merge and 301 were reverted."
-  },
-  {
-   "path": "/lakshya-yoga-retreat/",
-   "label": "Lakshya Yoga Retreat: introduction",
-   "why": "Drop REJECTED: measured verbatim overlap with the 2017 page is only 26% (near the shared-template baseline), so it is not a subset copy and has real text. Its year is unverified (the page says so); its content is the group background plus the seven-day retreat setting, so it is labelled as the introduction."
-  },
-  {
-   "path": "/faqs-downloads/",
-   "label": "FAQs & downloads",
-   "why": "Kept as it is; the proposed 'FAQs, price lists & downloads' is rejected after review (reviewers 1 and 2, verified). The package price lists on this page are the 2025–26 PDFs ('Last updated April 2025'), and the site itself says the current tariff runs to 30 September 2026 while the page's own FAQ already quotes 2026–27 rates. A navigation label should not advertise price lists that are about to expire. Relabel once the owner confirms or uploads the 2026–27 lists."
-  },
-  {
-   "path": "/online-consultation/",
-   "label": "Our physicians & free online consultation",
-   "why": "Changed after review (reviewer 1, verified): this is the only listed page with the physician panel ('Our panel of Ayurvedic physicians': Dr. Deepu John, Chief Physician; Dr. Akhila Oommen; Dr. Rahul R, all BAMS). A patient looking for the doctors now finds them by label. The consultation is online (WhatsApp video or call) and 'No charge'."
-  },
-  {
-   "path": "/walk-in-ayurveda-treatment/",
-   "label": "Walk-in outpatient treatment",
-   "why": "Changed after review (reviewer 1): 'OPD' is Indian hospital shorthand an international patient will not know. The page offers daily outpatient consultations and therapy without admission (09:00–17:00)."
-  },
-  {
-   "path": "/apply-now/",
-   "label": "Job application form",
-   "why": "Changed after review (reviewer 2, verified): the form asks for 'Post Applied for' and 'Job Reference Code' and never mentions internships, and the internships page does not link here (its Apply Now goes to /new-to-ayurveda/). 'Apply Now' alone could be read as applying for admission."
-  },
-  {
-   "path": "/privacy-policy/",
-   "label": "Privacy policy (website)",
-   "why": "Older, website-scoped policy (effective 2017); overlap with the current statement flagged."
-  },
-  {
-   "path": "/privacy-statement/",
-   "label": "Privacy statement (personal & health data)",
-   "why": "The current, fuller document covering health data and DPDPA rights."
-  },
-  {
-   "path": "/family-ayurvedic-retreat-kerala.html",
-   "label": "Family Ayurveda programmes in Kerala",
-   "why": "The old label 'Kairali' came from a split meta title and said nothing."
-  },
-  {
-   "path": "/Kairali_Brand_and_Competition_Neo-original.html",
-   "label": "Ayurvedic treatment packages in Kerala",
-   "why": "Adjusted: the proposed 'Treatment packages & villa rates' would collide with the programmes page of the same template; this is the ad's meta title without the superlative."
-  },
-  {
-   "path": "/kairali-cleansing-centre.html",
-   "label": "Ayurvedic hospital & detox in Kerala",
-   "why": "'Cleansing Centre' reads like a separate facility; the H1 and body describe the hospital's Panchakarma detox."
-  },
-  {
-   "path": "/pain-management.html",
-   "label": "Ayurvedic pain management",
-   "why": "Ten-word meta title shortened to the subject."
-  },
-  {
-   "path": "/panchkarma-treatment.html",
-   "label": "Panchakarma treatment in Kerala",
-   "why": "Shorter; locked spelling 'Panchakarma'."
-  },
-  {
-   "path": "/preventive-rejuvenation-detoxification.html",
-   "label": "Preventive rejuvenation & detox",
-   "why": "Shorter."
-  },
-  {
-   "path": "/treatment-in-kerala.html",
-   "label": "Ayurvedic treatment in Kerala",
-   "why": "Nine-word meta title shortened."
-  },
-  {
-   "path": "/weight-loss.html",
-   "label": "Ayurvedic weight loss",
-   "why": "Nine-word meta title shortened."
-  },
-  {
-   "path": "/wellness-resort-kerala.html",
-   "label": "Ayurvedic healing in Kerala",
-   "why": "The old label was the meta title with 'Resort' cut out, which read as broken English."
-  },
-  {
-   "path": "/Ayurveda_Treatment_Neo_S.India_Cities.html",
-   "label": "Ayurvedic treatment in South India",
-   "why": "Sentence case, like its siblings; flagged as a same-template near-duplicate of the Neo-original ad."
-  },
-  {
-   "path": "/ayurveda-retreat-kerala.html",
-   "label": "Ayurveda retreat in Kerala",
-   "why": "Sentence case, like its siblings."
-  },
-  {
-   "path": "/lakshya-yoga/",
-   "label": "Lakshya Yoga week: schedule & teacher",
-   "why": "Four Lakshya entries sit together; this undated one is the fuller record (a week's daily schedule, workshops, inclusions, teacher profile), so the label says so."
-  },
-  {
-   "path": "/things-to-do-in-kerala/",
-   "label": "Things to do in Kerala",
-   "why": "Sentence case, so the branch reads as one list beside the relabelled siblings. Pairs with 'Things to do in the village'."
-  },
-  {
-   "path": "/animal-husbandry/",
-   "label": "Farm animals & animal care",
-   "why": "Changed after review (reviewers 1 and 3): 'husbandry' is an obscure word for an international reader. The page describes the village's animal-care programme, which visitors can see through 'interactive seminars and guided tours'. It stays at the facilities root, now beside the organic farm."
-  },
-  {
-   "path": "/how-to-reach/",
-   "label": "How to reach us",
-   "why": "Sentence case, so the branch reads as one list beside the relabelled siblings. It becomes the parent of the route maps."
-  },
-  {
-   "path": "/book-now/",
-   "label": "Book your stay",
-   "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
-  },
-  {
-   "path": "/enquiry-form/",
-   "label": "Enquire now",
-   "why": "Placement kept (reader: keep). It matches the Enquire Now button on 252 pages; flagged as a 94% text twin of the section hub /contact-us/."
-  },
-  {
-   "path": "/gift-vouchers/",
-   "label": "Gift vouchers",
-   "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
-  },
-  {
-   "path": "/offers/defence-paramilitary-personnel-get-upto-30-off/",
-   "label": "Defence & paramilitary offer",
-   "why": "Sentence case, so the branch reads as one list beside the relabelled siblings. No percentage in the label: the URL says 30% and the H1 says 20%."
-  },
-  {
-   "path": "/offers/olympics-and-paralympics-offer/",
-   "label": "Olympic & Paralympic offer",
-   "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
-  },
-  {
-   "path": "/offers/senior-citizen-offer/",
-   "label": "Senior citizen offer (60+)",
-   "why": "Changed after review (reviewer 1, verified): the page states 'For Seniors (60+)'; a 60-plus reader sees at a glance that it applies to them."
-  },
-  {
-   "path": "/photo-gallery/",
-   "label": "Photo gallery",
-   "why": "Sentence case. The combined gallery (59 photographs in chapters); each chapter ends in a working 'See the full … gallery' link, so it is now the parent of the property, treatment, villas, yoga and countryside galleries."
-  },
-  {
-   "path": "/video-gallery/",
-   "label": "Video gallery",
-   "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
-  },
-  {
-   "path": "/virtual-tour/",
-   "label": "Virtual tour",
-   "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
-  },
-  {
-   "path": "/ayurveda-gallery/",
-   "label": "Herbs & therapies gallery",
-   "why": "Adjusted (reader said keep): beside 'Treatment gallery', 'Ayurveda Gallery' cannot be told apart. The 9 photos are therapists giving oil and compress treatments plus herbal boluses, powders, leaves and roots."
-  },
-  {
-   "path": "/archive-yoga-retreat/",
-   "label": "Past retreats",
-   "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
-  },
-  {
-   "path": "/awards-and-accreditations/",
-   "label": "Awards & accreditations",
-   "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
-  },
-  {
-   "path": "/cookie-policy/",
-   "label": "Cookie policy",
-   "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
-  },
-  {
-   "path": "/legal-notice/",
-   "label": "Legal notice",
-   "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
-  },
-  {
-   "path": "/terms-and-conditions/",
-   "label": "Terms & conditions",
-   "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
-  },
-  {
-   "path": "/kairali-air-india-maharaja-club.html",
-   "label": "Air India Maharaja Club members",
-   "why": "New after review (reviewer 2, verified). Placement is the owner's ruling (a tie-up, under Our partners). The page is a booking form 'Exclusively for Air India Maharaja Club Members' ('Earn 15 Maharaja Points per ₹100'); '(partnership)' did not tell a member the page is for them."
-  },
-  {
-   "path": "/prav-simona-yoga-retreat/",
-   "label": "Prav Simona Yoga Retreat",
-   "why": "Owner ruling 28 Sep 2026 (AHV-DUP-012, keep both): 'they were two separate back to back retreats'. Each page is listed under its own archive title (past-retreats-data.js), not as a full record / summary of one another. The EF-24 merge and 301 were reverted."
-  },
-  {
-   "path": "/jobs/business-development-manager/",
-   "label": "Business Development Manager (vacancy closed)",
-   "why": "Owner decision 28 Sep 2026: the vacancy is not open; the page stays accessible with an honest closed status (no redirect assumed)."
-  },
-  {
-   "path": "/new-privacy-policy/",
-   "label": "Privacy policy",
-   "why": "The governing privacy document since 28 Sep 2026 (AHV-DUP-001/002/003); its page title repeats the site name, so the rail and sitemap use the plain name the footer uses."
-  }
- ],
- "drops": [
-  {
-   "path": "/ayurveda-package/",
-   "why": "Superseded index: one intro paragraph plus 24 old programme names as cards that link nowhere (checked in the prerender), including 'Treatment for Rheumatism', which has no page. Only /sitemap/ links it today, so after the drop it stays served but unlisted, and no link breaks."
-  },
-  {
-   "path": "/learn-more-about-ayurveda/",
-   "why": "A stub of one generic paragraph (Ayurveda is complex, try our training) with no course details and no links; everything it says is covered by 'Why train in Ayurveda?' and the all-courses page. Checked after review: only /sitemap/ links it (the Knowledge Centre hub does not), so after the drop it stays served but unlisted, and no link breaks."
-  },
-  {
-   "path": "/ayurvedic-links/",
-   "why": "Old SEO link-exchange instructions for webmasters plus three external links; nothing for a patient. Still served and still in the global footer (separate decision)."
-  },
-  {
-   "path": "/yoga-and-ayurveda/",
-   "why": "A short teaser whose four retreat cards link nowhere; the Past retreats hub lists the same retreats with working links, and its meta wrongly calls it 'the internship section'. Only /sitemap/ links it today."
-  },
-  {
-   "path": "/ayurveda-offers/",
-   "why": "One-sentence placeholder with no offer, amount, terms or validity. Only /sitemap/ links it today."
-  },
-  {
-   "path": "/defence-and-paramilitary-forces/",
-   "why": "Placeholder copy of a listed offer: eligibility, proof, how to claim, validity and its 'Click Here' link are all [TO CONFIRM], and the terms it does state (up to 20% for Army, Navy and Air Force) are carried in full, with the tiered 10/15/20% scale, by /offers/defence-paramilitary-personnel-get-upto-30-off/, which is listed. Draws no rail today (designed family), so dropping it changes nothing on the page. Owner-visible exception: if the owner prefers this design, fill the fields and swap which one is listed."
-  },
-  {
-   "path": "/special-offers/",
-   "why": "OWNER-APPROVAL EXCEPTION to the drop rule, stated openly. The page is not empty, but its only concrete offers are expired ('Step into 2025', book by 15 February, stays March–May), and the rest is generic copy naming offer types with no amount, terms or validity. Listing it would tell a patient that expired offers still apply. If the owner prefers, strip the expired promotions (content fix) and list it under /offers/ as 'Seasonal & group offers'. /offers/ does not link it, so no link breaks."
-  },
-  {
-   "path": "/the-baoli-advert-box-deal/",
-   "why": "Empty placeholder: H1 plus email and phone, meta copied from another page."
-  },
-  {
-   "path": "/the-baoli-special-deal/",
-   "why": "Empty placeholder: H1 plus email and phone, meta copied from another page."
-  },
-  {
-   "path": "/emailsubscriber/",
-   "why": "21-word subscription endpoint that cannot even confirm the subscription; pure utility."
-  },
-  {
-   "path": "/attractions-under-10kms/",
-   "why": "Owner-approved 301 consolidation into /sightseeing/ on 24 September 2026."
-  },
-  {
-   "path": "/attractions-15kms-and-below/",
-   "why": "Owner-approved 301 consolidation into /sightseeing/ on 24 September 2026."
-  },
-  {
-   "path": "/attractions-25kms-to-50kms/",
-   "why": "Owner-approved 301 consolidation into /sightseeing/ on 24 September 2026."
-  },
-  {
-   "path": "/attractions-above-50kms/",
-   "why": "Owner-approved 301 consolidation into /sightseeing/ on 24 September 2026."
-  },
-  {
-   "path": "/map/",
-   "why": "Owner-approved 301 consolidation into /how-to-reach/ on 24 September 2026."
-  },
-  {
-   "path": "/ayurveda-gallery/",
-   "why": "Owner-approved 301 consolidation into /treatments-gallery/ on 28 September 2026 (EF-21)."
-  },
-  {
-   "path": "/privacy-policy/",
-   "why": "Owner-approved 301 consolidation into /new-privacy-policy/ on 28 September 2026 (AHV-DUP-001/002)."
-  },
-  {
-   "path": "/privacy-statement/",
-   "why": "Owner-approved 301 consolidation into /new-privacy-policy/ on 28 September 2026 (AHV-DUP-002/003)."
-  },
-  {
-   "path": "/enquiry-form/",
-   "why": "Owner-approved 301 consolidation into /contact-us/ on 28 September 2026 (AHV-DUP-004)."
-  },
-  {
-   "path": "/ayurveda-training-programs/",
-   "why": "Owner-approved 301 consolidation into /ayurveda-training-programme/ on 28 September 2026 (AHV-DUP-006)."
-  },
-  {
-   "path": "/our-story/",
-   "why": "Owner-approved 301 consolidation into /about-us/ on 28 September 2026 (AHV-DUP-008)."
-  },
-  {
-   "path": "/things-to-do-in-property/",
-   "why": "Owner-approved 301 consolidation into /things-to-do/ on 28 September 2026 (AHV-DUP-011)."
-  }
- ],
- "sectionTitles": [
-  {
-   "id": "news",
-   "title": "Past retreats & events",
-   "why": "The section holds only the Past retreats archive (18 past retreat and group-visit records); there are no news items, so 'News' promised something a visitor would not find."
-  },
-  {
-   "id": "facilities",
-   "title": "Village facilities & house rules",
-   "why": "After the content review the section holds the Ayurvedic cuisine pages, the six house rules, the organic farm and the farm animals (the in-village activities moved to Things to do). Naming the house rules tells a patient where to check alcohol, caffeine, smoking and diet rules before booking."
-  }
- ],
- "duplicates": [
-  {
-   "keep": "/all-programs/",
-   "other": "/ayurvedic-treatments/",
-   "note": "Measured 97% identical text (all 38 programmes; only the H1 and intro differ). Both stay listed: /ayurvedic-treatments/ is the global-nav target ('Ayurveda Treatment') and the parent of the condition groups, now labelled 'Ayurvedic treatments by condition'. Suggested content fix: filter it to the treatment programmes only."
-  },
-  {
-   "keep": "/all-programs/",
-   "other": "/treatment-programs/",
-   "note": "95% of its text is inside the hub (the 29 treatment programmes, same finder UI). Listed as 'Treatment programmes list'; owner to decide whether it and /ayurvedic-treatments/ should become one page."
-  },
-  {
-   "keep": "/ayurvedic-treatments/",
-   "other": "/packages/",
-   "note": "Older card list of the same programmes with one-line excerpts. Its 27 Book Now buttons go to the booking site's home page, as every programme page's do, so it has no unique feature. One card title reads 'Spine Care & Spondylitis Treatmentralysis'."
-  },
-  {
-   "keep": "/ayurvedic-treatments/",
-   "other": "/ayurveda-package/",
-   "note": "Superseded index whose cards link nowhere; dropped from the listing, still served."
-  },
-  {
-   "keep": "/yoga-meditation-training/",
-   "other": "/yoga-meditation-program/",
-   "note": "Measured 84%/82% mutual text overlap, same nightly rates; the only real difference is the minimum stay (7 vs 3 nights). Owner to choose one, or keep both deliberately as two stay lengths."
-  },
-  {
-   "keep": "/yoga-meditation-training/",
-   "other": "/yoga-and-meditation-package/",
-   "note": "New after review: the yoga hub gives both 'Minimum stay: 7 nights · From ₹1,50,430'. The package page is a short older page whose only distinct content is its per-night villa rate table (Deluxe single 17,786, which differs from other pages). Owner to decide whether both stay."
-  },
-  {
-   "keep": "/yoga-retreats/",
-   "other": "/yoga-therapy-individual/",
-   "note": "Related but not the same offer on the pages' own words: /yoga-retreats/ is yoga practice customised after a doctor's assessment; /yoga-therapy-individual/ is a yoga therapy plan that also includes Panchakarma, herbal treatments and a diet plan. No shared text. Owner to decide whether both stay."
-  },
-  {
-   "keep": "/contact-us/",
-   "other": "/enquiry-form/",
-   "note": "Measured 94%/95% identical (same routing cards, channels and form). Both stay: /enquiry-form/ is the Enquire Now target on 252 pages. Consider pointing one at the other."
-  },
-  {
-   "keep": "/how-to-reach/",
-   "other": "/map/",
-   "note": "Older, thinner version of the same routes; its unique content is the embedded route maps (now labelled 'Route maps to the hospital'). Its distances disagree with How to reach us (Palakkad station 17.2 km/30 min vs ~35 min; Ottapalam shown with Palakkad's identical figures; Coimbatore airport 1 h 30 vs 1½–2 h). Correct against How to reach us; do not recompute."
-  },
-  {
-   "keep": "/prav-simona-monsoon-yoga-retreat/",
-   "other": "/prav-simona-yoga-retreat/",
-   "note": "83% of the shorter page appears word for word in the fuller one, which adds the second-week dates, schedule, inclusions and teacher profiles. Both now listed under Past retreats as 'full record' and 'summary' (the drop was reversed: the short page has real content). Merge candidate. SUPERSEDED 28 Sep 2026: owner ruled keep both (AHV-DUP-012, two separate back-to-back retreats); listed under their own archive titles."
-  },
-  {
-   "keep": "/lakshya-yoga-retreat-2017/",
-   "other": "/lakshya-yoga-retreat/",
-   "note": "Reader called it a paraphrase of the 2017 page; measured verbatim overlap is only 26%, so it stays listed. Owner check: merge candidate."
-  },
-  {
-   "keep": "/archive-yoga-retreat/",
-   "other": "/yoga-and-ayurveda/",
-   "note": "Thin teaser of four retreats with dead cards; dropped from the listing."
-  },
-  {
-   "keep": "/chef-retreat-food-to-wellness/",
-   "other": "/back-to-roots/",
-   "note": "Same July 2017 Chef Retreat: one is the itinerary, one the story. Companions, now labelled as a pair; merge candidate."
-  },
-  {
-   "keep": "/live-to-100-with-panchkarma/",
-   "other": "/what-is-panchkarma/",
-   "note": "Same topic (the five procedures); /live-to-100-with-panchkarma/ is the fuller and more factual. Merge candidate."
-  },
-  {
-   "keep": "/house-boat-tour/",
-   "other": "/back-water-tour/",
-   "note": "Same experience (Kerala backwaters by houseboat); the houseboat page is fuller. Merge or redirect candidate."
-  },
-  {
-   "keep": "/kairali-ayurvedic-centre/",
-   "other": "/kairali-ayurvedic-treatment-center/",
-   "note": "Same subject (the group's other centres); the thinner page's distinct angle is the centres as the village's foundation."
-  },
-  {
-   "keep": "/kairali-ayurvedic-group/",
-   "other": "/brief-on-kairali/",
-   "note": "All five paragraphs reappear, reworded, in the group page; now nested under it."
-  },
-  {
-   "keep": "/kairali-ayurvedic-products-pvt-ltd/",
-   "other": "/ayurvedic-products/",
-   "note": "Overlapping category lists with the company page and with /in-house-products/. Its 'Visit Website' button points to healing.recipes while Product Range names kairaliproducts.com."
-  },
-  {
-   "keep": "/ayurvedic-products/",
-   "other": "/in-house-products/",
-   "note": "Two general overviews of the group's own products (the second is also a card on /experience/); now siblings under the products company."
-  },
-  {
-   "keep": "/about-us/",
-   "other": "/kairali-the-ayurvedic-healing-village/",
-   "note": "Both are overviews of the village; merge decision for the owner."
-  },
-  {
-   "keep": "/awards-and-accolades/",
-   "other": "/our-accolades/",
-   "note": "Short summary of the same awards covered in full on the awards history page."
-  },
-  {
-   "keep": "/social-responsibilities/",
-   "other": "/social-cultural-environmental-commitment/",
-   "note": "A thinner restatement of the CSR page's themes."
-  },
-  {
-   "keep": "/ayurveda-training-programme/",
-   "other": "/ayurveda-training/",
-   "note": "Older course overview listing the same five courses. Its table prints fixed prices (e.g. 18,400 INR / 307 USD for the one-day workshop) that conflict with the per-night fee sheet; must not be relied on without an owner ruling."
-  },
-  {
-   "keep": "/training-programs/",
-   "other": "/training/",
-   "note": "Older general article on training; its four tracks do not match the five coded courses."
-  },
-  {
-   "keep": "/why-get-training-in-ayurveda/",
-   "other": "/learn-more-about-ayurveda/",
-   "note": "Stub with one generic paragraph; dropped from the listing."
-  },
-  {
-   "keep": "/offers/defence-paramilitary-personnel-get-upto-30-off/",
-   "other": "/defence-and-paramilitary-forces/",
-   "note": "Same offer; the dropped copy's terms are [TO CONFIRM] placeholders. If the owner prefers its design, fill the fields and swap which one is listed."
-  },
-  {
-   "keep": "/offers/",
-   "other": "/special-offers/",
-   "note": "Generic offer copy with no terms plus expired 2025 promotions; dropped from the listing as an owner-approval exception (see drops)."
-  },
-  {
-   "keep": "/offers/",
-   "other": "/ayurveda-offers/",
-   "note": "One-sentence placeholder; dropped from the listing."
-  },
-  {
-   "keep": "/the-baoli-special-deal/",
-   "other": "/the-baoli-advert-box-deal/",
-   "note": "Twin empty placeholders, both dropped. The Offers hub still shows a 'The Baoli Special Deal' card with no description."
-  },
-  {
-   "keep": "/privacy-statement/",
-   "other": "/privacy-policy/",
-   "note": "Two overlapping privacy documents (2025 vs 2017). Legal to merge or mark one superseded; the 2017 page names CC Avenue while the payment page lists Razorpay and PayPal."
-  },
-  {
-   "keep": "/privacy-statement/",
-   "other": "/new-privacy-policy/",
-   "note": "New after review: a third privacy document, served and set 'index, follow' in route-overrides.json but excluded from the tree by the builder's JUNK list (deliberate, not an omission). Legal to canonicalise it to /privacy-statement/ or list it deliberately under Policies."
-  },
-  {
-   "keep": "/treatments-gallery/",
-   "other": "/ayurveda-gallery/",
-   "note": "Topical overlap (therapy photos), no shared images; the small set is now labelled for its herbs."
-  },
-  {
-   "keep": "/yoga-retreats-for-everyone/",
-   "other": "/retreats-for-everyone/",
-   "note": "Same case for a yoga retreat; the midlife article is fuller. Both also overlap /why-pick-a-yoga-or-yoga-retreat/."
-  },
-  {
-   "keep": "/weight-loss-programme/",
-   "other": "/kairali-ayurvedic-way-of-weight-management/",
-   "note": "Partial topical overlap only: the article is an older marketing piece (oil-massage method plus two recipes) that the programme page does not link. It now sits at the Knowledge centre root, not under the clinical programme; its 'no exercise or dietary limitations' claim goes to Dr. Deepu John."
-  },
-  {
-   "keep": "/ayurvedic-cuisine/",
-   "other": "/what-is-ayurvedic-food/",
-   "note": "Mostly the same ground (dosha balance, six tastes); its unique parts are the pre-arrival consultation, meal times and signature dishes."
-  },
-  {
-   "keep": "/panchakarma-therapy/",
-   "other": "/panchkarma-treatment.html",
-   "note": "Ad landing page for the same treatment; patients should reach the programme page through the tree."
-  },
-  {
-   "keep": "/weight-loss-programme/",
-   "other": "/weight-loss.html",
-   "note": "Ad landing page for the same programme."
-  },
-  {
-   "keep": "/holistic-treatment-for-rejuvenation-and-detoxification/",
-   "other": "/preventive-rejuvenation-detoxification.html",
-   "note": "Ad landing page whose hero names the same programme."
-  },
-  {
-   "keep": "/Ayurveda_Treatment_Neo_S.India_Cities.html",
-   "other": "/Kairali_Brand_and_Competition_Neo-original.html",
-   "note": "Same ad template and sections; the two give conflicting villa rates. Owner to decide whether both ads still need to be listed."
-  },
-  {
-   "keep": "/kairali-cleansing-centre.html",
-   "other": "/wellness-resort-kerala.html",
-   "note": "Same brand-overview ad template (about 66% shared text; about 62% with /treatment-in-kerala.html). Live ad targets, so kept."
-  },
-  {
-   "keep": "/ayurvedic-treatment-packages.html",
-   "other": "/Kairali_Brand_and_Competition_Neo-original.html",
-   "note": "Same template ('Come & Experience The New Look'). The .html packages page is the owner-built site page, listed under Treatments & programmes as 'Ayurvedic Treatment Packages' (29 Sep 2026, OWNER-REG-01); the Neo page is the ad."
-  }
- ],
- "notes": [
-  "RESULT: validated by running a copy of tools/build-site-tree.mjs with these overrides (scratchpad/ia/final/build-sim.mjs → site-tree.sim.json, rendered by render.py): 217 pages in 15 sections, every indexable route exactly once, 0 dead links, every parent a page in the same section, no cycles, no KTAHV-locked word in any label or section title, no label over 6 words (the 11 campaign labels checked without the builder's ' (campaign page)' suffix). First-level rail items, current → final: programmes 11 → 6, villas 4 → 5 (the rates page joins), training 16 → 8, offers 9 → 4, about 8 → 8 (the 19 flat group pages become Group · Products company › Product range · Our partners), facilities 15 → 4, things 14 → 3, knowledge 14 → 4, gallery 9 → 6, past retreats 1 (18 inside), visit 7 → 8 (payment and cancellation join), careers 3, policies 10 → 7. Builder-format file: scratchpad/ia/final/overrides.json (moves, relabels, drops, sectionTitles); the full plan is scratchpad/ia/final/final-plan.json.",
-  "REVIEW DISPOSITION (each objection checked against the prerendered page text before deciding). ACCEPTED: weight article out from under the programme to the Knowledge centre root (all three reviewers); physicians named in the /online-consultation/ label; villa rates page moved to Villas; payment and cancellation pages moved to Plan your visit; cooking classes join the in-village activities; organic farm out of house rules to the facilities root beside the farm animals; five galleries nested under /photo-gallery/; /destination-palakkad/ under Things to do in Kerala; products company to the About root; clinical labels corrected where the page does not name the condition (slipped disc, nervous system, blood pressure, eye) and two look-alike detox labels separated; Karkidaka months in its label; parallel yoga twin labels plus a distinct label for the yoga rate-table page; 'Packages to book online', 'Apply for a job or internship', 'Places within 10 km', the doshas label, 'for all ages', 'OPD' and 'Patient life gallery' corrected; senior offer says 60+; Air India label says members; FAQs label kept without 'price lists'; /prav-simona-yoga-retreat/ drop reversed; count corrected to 29. REJECTED: nesting /treatment-programs/ and /wellness-programs/ under the finder (the finder does not link them, and two list pages would sit above the condition groups in a branch labelled 'by condition'); reviewer 3's Karkidaka builder fix (a seasonal programme is not a condition; kept at root with its months in the label); reviewer 2's claim that /ayurveda-workshop/ never says Japan (it says 'Return to Japan via Singapore Airlines', so the label stands); moving /animal-husbandry/ under the in-village activities (it stays with the organic farm in facilities; the site's own 'House rules of the property' block on /no-preservatives/ even counts Organic Farming and Animal Husbandry among its eight rules, so the owner may prefer them under house rules); treating /new-privacy-policy/ as missing (it is excluded on purpose by the builder's JUNK list; flagged to legal instead).",
-  "BUILDER / RENDER CHANGES REQUIRED BEFORE THIS SHIPS (tools, not overrides). (a) BREADCRUMBS: 15 moved pages still show a visible breadcrumb that names their old section, so the rail and the breadcrumb disagree on the same page (e.g. /meditation/ shows 'Home / Knowledge Centre / Meditation' while its rail says Things to do): /kairali-ayurvedic-way-of-weight-management/, /yoga-therapy-individual/, /ayurveda-retreats-for-everyone/, /ayurveda-treatment/, /ayurveda-workshop/, /yoga-classes-practical/, /yoga-classes-theory/, /nature-walk/, /meditation/, /butterfly-booklet/, /cooking-classes/, /retreats-for-everyone/, /yoga-retreats-for-everyone/, /product-gallery/, /retreats-gallery/ (payment, cancellation and the rates page have section-less crumbs). Render the visible breadcrumb from site-tree.json (section-nav.json already carries routes[path].crumbs), or update the dataset crumbs, in the same change. (b) DROPPED PAGES MUST KEEP A RAIL: build-section-nav.mjs builds routes only from tree.index and section-nav.js returns early when a route has no entry, so on 8 dropped pages that draw the rail today the old WordPress sidebar comes back (an offers page and a programmes page would show the legacy 'Knowledge Center' menu). Add a route for every served-but-unlisted page with its section, crumbs [] and its existing `remove` pointer: offers → /ayurveda-offers/, /special-offers/, /the-baoli-advert-box-deal/, /the-baoli-special-deal/; programmes → /ayurveda-package/; knowledge → /learn-more-about-ayurveda/, /ayurvedic-links/; news → /yoga-and-ayurveda/ (/defence-and-paramilitary-forces/ and /emailsubscriber/ draw no rail today). (c) CONCERN GROUP: remove /personalized-customized-healing-program/ from CONCERN['Rejuvenation & detoxification']; its 'Who is this for' is chronic illnesses (arthritis, diabetes, hypertension, digestive, hormonal) and multiple comorbidities, and its finder line is 'more than one condition'. It then sits ungrouped at the top of 'Ayurvedic treatments by condition', above the groups. A move override cannot do this. (d) campaignLabel(): drop the ' (campaign page)' suffix; the heading already says 'Campaign pages'. (e) Recommended: in SECTIONS put visit then reviews directly after about (header order is kept for the first five). Contact, booking, payment and FAQs are 11th of 15 on /sitemap/ today.",
-  "CHILD ORDER (required; sortTree() sorts by manifest position, so the ladders render scrambled: courses read 20, 5, 10, 1, 3 days, bands read 15, 25–50, 50+, nearest, and the villa rates page lands above the villas). Add an `order` map to site-tree-overrides.json, honour it in sortTree(), and assert it in test/sitemap-navigation.test.mjs. /all-programs/: /ayurvedic-treatments/, /yoga-meditation-programs/, /karkidaka-chikitsha-or-monsoon-wellness.html, /treatment-programs/, /wellness-programs/, /packages/. /yoga-meditation-programs/: /yoga-retreats/, /yoga-therapy-individual/, /yoga-meditation-program/, /yoga-meditation-training/, /yoga-and-meditation-package/. /our-villas/ (the hub's own order): /maharaja-suite/, /royal-villa/, /deluxe-villa/, /classic-villa/, /ayurvedic-treatment-packages.html. /training-programs/: /ayurveda-training-programme/, /training-course-fees/, /kairali-institute-of-ayurveda-and-panchakarma-therapy/, /new-to-yoga-teacher-training/, /why-get-training-in-ayurveda/, /why-get-training-in-yoga/, /training/, /ayurveda-training/. /ayurveda-training-programme/: one-day, three-day, intensive (five-day), level-one (ten-day), advanced (twenty-day). /village-facilities/: /experience/, /ayurvedic-cuisine/, /organic-farm/, /animal-husbandry/. /experience/ (its own card order): alcohol-free, no-smoking, no-caffeine, vegetarian, no-preservatives, no-refridgeration. /things-to-do/: /things-to-do-in-property/, /things-to-do-in-kerala/, /sightseeing/. /things-to-do-in-property/ (hub order): nature-walk, butterfly-booklet, cooking-classes, meditation, yoga-classes-theory, yoga-classes-practical. /things-to-do-in-kerala/ (hub card order): visit-kerala, destination-palakkad, wildlife-drive, elephant-safari, house-boat-tour, back-water-tour, mountain-jeep-safari, cultural-events, festivals. /sightseeing/: attractions-under-10kms, attractions-15kms-and-below, attractions-25kms-to-50kms, attractions-above-50kms. /knowledge-centre/: /new-to-ayurveda/, /new-to-yoga/, /ayurveda/, /kairali-ayurvedic-way-of-weight-management/. /new-to-ayurveda/: learn-about-ayurveda, what-is-panchkarma, live-to-100-with-panchkarma, why-pick-an-ayurveda-treatment-or-ayurvedic-retreat, ayurveda-retreats-for-everyone. /new-to-yoga/ (hub order): what-is-yoga, why-pick-a-yoga-or-yoga-retreat, learn-more-about-yoga, retreats-for-everyone, yoga-retreats-for-everyone. /gallery/: /photo-gallery/, /retreats-gallery/, /ayurveda-gallery/, /product-gallery/, /video-gallery/, /virtual-tour/. /photo-gallery/ (its link order): property, treatments, villas, yoga, sight-seeing. /archive-yoga-retreat/ (same-name records together, stated year newest first, undated last): katha-wellness-retreat-2019, karma-being-retreat-2019, karma-being-retreat, ayurvedic-new-year-yala-2018, lakshya-yoga-retreat-2018, lakshya-yoga-retreat-2017, lakshya-yoga-retreat, lakshya-yoga, chef-retreat-food-to-wellness, back-to-roots, food-sadhana, prav-simona-monsoon-yoga-retreat, prav-simona-yoga-retreat, ananda-lahari-yoga-and-ayurveda-retreat, ashtanga-yoga-and-ayurveda-retreat, ayuryoga, mindfulness-retreat, ayurveda-workshop. /contact-us/: /how-to-reach/, /online-consultation/, /faqs-downloads/, /book-now/, /enquiry-form/, /payment-policy-compliance/, /cancellation-and-refund-policy/, /walk-in-ayurveda-treatment/.",
-  "CLINICAL SIGN-OFF (HARD GATE 7): 29 concern-grouped treatment programmes (not 31; the groups hold 5+5+4+4+4+3+1+2+1) now carry condition-first rail labels. After review, each label was checked against the page's own text ('Who is this for', H1, intro), not only against the finder 'For:' line, whose condition vocabulary is still PENDING clinical sign-off in english-candidate/search-vocabulary.json. Four labels were corrected where the page does not name the condition: slipped disc (no sciatica), nervous system (no neuropathy or numbness), blood pressure (cholesterol is one bullet), eye (no 'eyesight'). Sciatica moved to the back-pain label, whose page lists it. Page H1s keep the register names; this reverses builder rule 6 for the rail only. Exact list for Dr. Deepu John: /panchakarma-therapy/ 'Panchakarma (classical detox)'; /holistic-treatment-for-rejuvenation-and-detoxification/ 'Rejuvenation & detox for chronic stress'; /preventive-and-regenerative-treatment/ 'Preventive care to stay healthy'; /personalized-customized-healing-program/ 'Personalised care for several conditions'; /immunity-enhancement-executive-health-assessment-therapy/ 'Immunity & executive health check'; /treatment-for-arthritis-and-spondylitis/ 'Arthritis & joint pain'; /treatment-for-chronic-back-pain/ 'Chronic back pain & sciatica'; /treatment-for-slip-disc/ 'Slipped or herniated disc'; /treatment-for-cervical-spondylosis/ 'Neck pain & cervical spondylosis'; /treatment-for-spondylitis/ 'Spondylitis & spine stiffness'; /weight-loss-programme/ 'Weight loss & obesity'; /treatment-for-diabetes/ 'Diabetes & blood sugar'; /treatment-for-hypertension/ 'High blood pressure & heart health'; /digestive-wellness-gut-health-yoga-therapy/ 'Digestion & gut health (yoga therapy)'; /treatment-to-remove-stress-and-strain/ 'Stress & anxiety'; /sleep-restoration-therapy/ 'Sleep problems & insomnia'; /treatment-for-sinusitis-and-migraine/ 'Sinusitis & migraine'; /yoga-based-stress-energy-reset-program/ 'Burnout & low energy (yoga therapy)'; /treatment-for-paralysis/ 'Paralysis & stroke rehabilitation'; /treatment-for-facial-paralysis/ 'Facial paralysis & Bell's palsy'; /treatment-for-nervous-disability/ 'Nervous system disorders'; /de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/ 'Alcohol, drug & tobacco addiction'; /treatment-for-psoriasis/ 'Psoriasis & scaly skin'; /treatment-for-skin-diseases/ 'Eczema, dermatitis & skin conditions'; /beauty-care-and-eye-care/ 'Eye strain & vision care'; /treatment-for-bronchial-diseases/ 'Asthma & bronchitis'; /womens-hormonal-balance-endocrine-therapy/ 'Hormones, thyroid, PCOS & menopause'; /post-pregnancy-health-programme/ 'Recovery after childbirth'; /revitalizing-and-strengthening/ 'Supportive care during cancer treatment'. To revert, drop these 29 relabels.",
-  "HUB PAGES THAT DO NOT LINK THEIR CHILDREN (content fixes, not IA; nothing here is a dead link). /our-partners/ has no links (add the five schemes). /sightseeing/ has none to its four bands. /ayurvedic-cuisine/ names its food pages only as plain-text cards. /new-to-ayurveda/ has two wrong hrefs (the 'Why pick an Ayurveda treatment' card goes to the yoga article; the 'Ayurveda Retreats for everyone' text link goes to /retreats-for-everyone/) and does not list /learn-about-ayurveda/ or /live-to-100-with-panchkarma/. /new-to-yoga/ does not list /yoga-retreats-for-everyone/. /yoga-meditation-programs/ does not list /yoga-meditation-program/ or /yoga-therapy-individual/. /awards-and-accreditations/ does not link /our-accolades/. /kairali-ayurvedic-group/ links only Kairali Hospitality (not /brief-on-kairali/, the two centre pages or /villa-raag/). /kairali-ayurvedic-products-pvt-ltd/ does not link /ayurvedic-products/ or /in-house-products/. /knowledge-centre/ does not link /new-to-ayurveda/ or /new-to-yoga/. /archive-yoga-retreat/ does not list /ayurveda-workshop/.",
-  "DEAD OR WRONG LINKS AND LEAKED TEXT TO FIX BEFORE THIS TREE SHIPS (content fixes). /gallery/: the eight hub cards have href '0'–'7' (dead); repoint in card order 0 /photo-gallery/, 1 /property-gallery/, 2 /treatments-gallery/, 3 /villas-gallery/, 4 /retreats-gallery/, 5 /product-gallery/, 6 /sight-seeing-gallery/, 7 /yoga-gallery/ (verified against the card titles). /offers/: 13 visible '[TO CONFIRM]' fields, a leaked internal note ('The record page carries no description') and a 'The Baoli Special Deal' card for a dropped placeholder. Fill the fields from the patient-care team or hide the empty rows (never invent), and remove the Baoli card. /training-course-fees/: 4× 'Body copy is poured verbatim from the site record…', 'List item poured from the record', 12 'TO CONFIRM', and no H1. It stays listed because its 2026–27 fee table is real. /attractions-above-50kms/: opens with '7 places, in the order they appear on the live page.' and has an empty H1. /village-facilities/: the 'Yoga & Meditation' card goes to /yoga-retreats-for-everyone/ (an article) and 'Fine Dining' to /what-is-ayurvedic-food/. Point them at /things-to-do-in-property/ and /ayurvedic-resturant-and-cooking-at-healing-village/. /internships-at-kairali/: 'Apply Now' goes to /new-to-ayurveda/ and 'Careers' to /ayurveda-treatment/. Point them at /apply-now/ and /careers/. /ayurveda-gallery/: its back-link points to the Knowledge Centre. /ayurveda-workshop/: lacks the 'Past retreat' banner its siblings carry.",
-  "FACT CONFLICTS TO FLAG, NOT FIX (HARD GATE 6; ask the owner). TARIFF: the package price lists on /faqs-downloads/, /ayurvedic-treatment-packages.html and the yoga hub are the 2025–26 PDFs ('Last updated April 2025'), and the site says that tariff runs to 30 September 2026. /faqs-downloads/ and /training-course-fees/ already quote 2026–27 figures. The Deluxe single rate per night reads ₹16,264 on the rates page (treatment included), ₹17,786 on /yoga-and-meditation-package/ and ₹18,410 on /training-course-fees/ (the 2026–27 training tariff). These may be different packages or years, so the owner must confirm which are current before 'Villa rates, treatment included' ships. OTHERS: /ayurveda-training/ prints fixed course prices that conflict with the per-night fee sheet, and its meta title is 'Kairali Memberships | Affiliations | Accreditations'. The /training-programs/ card for the all-courses page says '1-day'. /map/ distances conflict with /how-to-reach/. /attractions-under-10kms/ lists Tipu's Fort at 14 km. Thiruvalathoor is 10 km on /sightseeing/ but 5.2 km on the rates page. The defence offer URL says 30% while its H1 and terms say up to 20%. /ayurveda-workshop/ says the retreat was 'founded in Kerala in 1997'. The Neo ads give conflicting villa rates. The prices on /kairali-cleansing-centre.html and the family ad's discounts need checking against the live tariff and /offers/. /payment-policy-compliance/'s meta title says 'Privacy Policy'. The 2017 privacy policy names CC Avenue, while the payment page lists Razorpay and PayPal.",
-  "OWNER QUESTIONS (for QUESTIONS.md; not decided here). (1) Yoga teacher training: the yoga hub card for /yoga-meditation-training/ says 'For: yoga teacher training', and the global header's 'Yoga & Training' link points at that page. But the page itself is a patient practice programme ('No prior experience is required'), and /new-to-yoga-teacher-training/ says 'Coming Soon'. Is any page actually teacher training? If so, it moves to the Training section. (2) Twins to keep or merge: /yoga-meditation-program/ (3-night) vs /yoga-meditation-training/ (7-night); /yoga-and-meditation-package/ vs /yoga-meditation-training/; /enquiry-form/ vs /contact-us/ (94%); /treatment-programs/ and /ayurvedic-treatments/ vs /all-programs/; /map/ vs /how-to-reach/; the Prav & Simona pair. (3) /new-privacy-policy/ is served and 'index, follow' but deliberately unlisted: canonicalise it or list it? (4) /villa-raag/ is written in the hospitality register, which is correct for Villa Raag but served on the KTAHV domain: how does the clinical lock apply? (5) Should Organic Farming and Animal Husbandry sit under the house rules, as the site's own eight-rule block on /no-preservatives/ presents them? This plan places them as facilities, by their page content.",
-  "MEDICAL CLAIMS SEEN WHILE READING (for Dr. Deepu John): the 'Live to 100' title (a longevity promise; the rail label is 'How Panchakarma works'); 'weight reduction without the necessity of exercise or dietary limitations' (/kairali-ayurvedic-way-of-weight-management/); a 'permanent solution' for bronchial disease; 'no side effect' / 'completely eradicate' in /why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/; 'eradicating the root of any disease' in /what-is-panchkarma/; 'Merged with almost no side effects' (/arogya-shala/); the Karkidaka page's patient-outcome claims ('85% of guests leave feeling measurably better', CRP, blood sugar and pain-score figures).",
-  "KTAHV LANGUAGE LOCK: every rail label and both section titles are clean (checked by the builder's own regex and a second pass). Many page BODIES still use locked words (guests, journey, luxury, resort, spa, cure): the house-rule pages, the Kerala excursion pages, most knowledge articles, the programme pages, the villa pages ('journey of wellness and luxury' on /maharaja-suite/), the rates page, /animal-husbandry/ ('wellness resort') and every campaign page. /ayurveda-workshop/ names its organiser 'Oriental Spa Ayus', so the label avoids it. The URL and meta of /wellness-resort-kerala.html carry 'resort'; it is a live ad target, so flag it but do not rename it.",
-  "LOCALES: these labels are EN only. Before DE/FR ship, the same moves and relabels need translations, checked for the DE/FR equivalents of the locked words (Kur, Urlaub, Luxus; cure, vacances, luxe) and, for the 29 clinical labels, the same sign-off.",
-  "DROPS (10, down from 11): each stays served (no status change) and keeps its rail once builder change (b) lands. /ayurvedic-links/ stays linked from the global footer (a separate decision). The rest are linked today only from /sitemap/, so after the drop they are reachable by URL or search but no link breaks. Seven are placeholders, stubs or utility pages: /ayurveda-offers/, /the-baoli-advert-box-deal/, /the-baoli-special-deal/, /emailsubscriber/, /ayurvedic-links/ (link-exchange instructions for webmasters), /learn-more-about-ayurveda/ and /yoga-and-ayurveda/. /ayurveda-package/ is a superseded index whose 24 cards link nowhere. Two are OWNER-APPROVAL EXCEPTIONS to the 'no real content' rule, stated openly: /special-offers/ (its only concrete offers expired in 2025) and /defence-and-paramilitary-forces/ (a placeholder copy of the listed defence offer). If the owner reads the rule strictly, list /special-offers/ under /offers/ once its expired promotions are removed. For the defence page, either fill its fields and swap it with the listed twin, or keep it unlisted. /prav-simona-yoga-retreat/ is no longer dropped: it has real content and is listed as the 'summary' of its fuller twin."
- ],
- "keptRegisterNames": [
-  "/one-day-ayurveda-workshop-program-kerala/ (One-day Ayurveda workshop)",
-  "/three-day-short-term-ayurveda-certificate-program-tap-hv/ (Three-day Ayurveda certificate)",
-  "/intensive-ayurveda-training-program-learn-practice-ayurveda/ (Five-day intensive Ayurveda training)",
-  "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/ (Ten-day advanced training (Level One))",
-  "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/ (Twenty-day consultant & therapist training)",
-  "/panchakarma-therapy/ (Panchakarma (classical detox))",
-  "/holistic-treatment-for-rejuvenation-and-detoxification/ (Rejuvenation & detox for chronic stress)",
-  "/immunity-enhancement-executive-health-assessment-therapy/ (Immunity & executive health check)",
-  "/personalized-customized-healing-program/ (Personalised care for several conditions)",
-  "/preventive-and-regenerative-treatment/ (Preventive care to stay healthy)",
-  "/treatment-for-arthritis-and-spondylitis/ (Arthritis & joint pain)",
-  "/treatment-for-cervical-spondylosis/ (Neck pain & cervical spondylosis)",
-  "/treatment-for-chronic-back-pain/ (Chronic back pain & sciatica)",
-  "/treatment-for-slip-disc/ (Slipped or herniated disc)",
-  "/treatment-for-spondylitis/ (Spondylitis & spine stiffness)",
-  "/digestive-wellness-gut-health-yoga-therapy/ (Digestion & gut health (yoga therapy))",
-  "/treatment-for-diabetes/ (Diabetes & blood sugar)",
-  "/treatment-for-hypertension/ (High blood pressure & heart health)",
-  "/weight-loss-programme/ (Weight loss & obesity)",
-  "/sleep-restoration-therapy/ (Sleep problems & insomnia)",
-  "/treatment-for-sinusitis-and-migraine/ (Sinusitis & migraine)",
-  "/treatment-to-remove-stress-and-strain/ (Stress & anxiety)",
-  "/yoga-based-stress-energy-reset-program/ (Burnout & low energy (yoga therapy))",
-  "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/ (Alcohol, drug & tobacco addiction)",
-  "/treatment-for-facial-paralysis/ (Facial paralysis & Bell's palsy)",
-  "/treatment-for-nervous-disability/ (Nervous system disorders)",
-  "/treatment-for-paralysis/ (Paralysis & stroke rehabilitation)",
-  "/beauty-care-and-eye-care/ (Eye strain & vision care)",
-  "/treatment-for-psoriasis/ (Psoriasis & scaly skin)",
-  "/treatment-for-skin-diseases/ (Eczema, dermatitis & skin conditions)",
-  "/treatment-for-bronchial-diseases/ (Asthma & bronchitis)",
-  "/post-pregnancy-health-programme/ (Recovery after childbirth)",
-  "/womens-hormonal-balance-endocrine-therapy/ (Hormones, thyroid, PCOS & menopause)",
-  "/revitalizing-and-strengthening/ (Supportive care during cancer treatment)",
-  "/yoga-meditation-training/ (Yoga & meditation, 7-night minimum)",
-  "/yoga-and-meditation-package/ (Yoga & meditation villa rates)",
-  "/yoga-retreats/ (Personalised yoga programme)",
-  "/ayurveda-training-programme/ (All Ayurveda training courses)"
- ],
- "order": {
-  "/all-programs/": [
-   "/ayurvedic-treatments/",
-   "/yoga-meditation-programs/",
-   "/karkidaka-chikitsha-or-monsoon-wellness.html",
-   "/treatment-programs/",
-   "/wellness-programs/",
-   "/packages/",
-   "/ayurvedic-treatment-packages.html"
+  "_why": "Content-based placement of every AHV page (23-24 Sep 2026): 17 readers read all 227 pages, an architect composed the plan, three adversarial reviewers (older international patient, content accuracy, rail usability) attacked it, a reconciler produced this. Applied by tools/build-site-tree.mjs. Package pages keep the programme register's names (owner: 'latest names') — condition-first relabels proposed for them are recorded in keptRegisterNames, not applied.",
+  "moves": [
+    {
+      "path": "/nature-walk/",
+      "section": "things",
+      "parent": "/things-to-do/",
+      "why": "Not proposed, needed for coherence: the page describes walking the grounds as 'one of the activities offered at the village' (its meta), and both /things-to-do/ and the in-village hub link it as an activity. It joins yoga and meditation as the patient's daily activities. Re-parented 28 Sep 2026: /things-to-do-in-property/ merged into /things-to-do/ (AHV-DUP-011).",
+      "label": "Nature walks"
+    },
+    {
+      "path": "/butterfly-booklet/",
+      "section": "things",
+      "parent": "/things-to-do/",
+      "why": "Adjusted: the reader wanted it 'next to Nature walk'; Nature walk now sits under Things to do in the village, so the butterfly guide to the grounds (48 species, downloadable booklet) follows it there. Re-parented 28 Sep 2026: /things-to-do-in-property/ merged into /things-to-do/ (AHV-DUP-011).",
+      "label": "Butterflies at the village"
+    },
+    {
+      "path": "/visit-kerala/",
+      "section": "things",
+      "parent": "/things-to-do-in-kerala/",
+      "why": "Accepted. /things-to-do-in-kerala/ lists it first; the label says how it differs from its parent.",
+      "label": "Why visit Kerala"
+    },
+    {
+      "path": "/wildlife-drive/",
+      "section": "things",
+      "parent": "/things-to-do-in-kerala/",
+      "why": "Accepted. Both hubs list it under 'Things to do in Kerala'.",
+      "label": "Wildlife drive"
+    },
+    {
+      "path": "/elephant-safari/",
+      "section": "things",
+      "parent": "/things-to-do-in-kerala/",
+      "why": "Accepted. A Kerala-wide excursion (Periyar) linked from the Kerala sub-hub.",
+      "label": "Elephant safari"
+    },
+    {
+      "path": "/house-boat-tour/",
+      "section": "things",
+      "parent": "/things-to-do-in-kerala/",
+      "why": "Accepted. Linked from the Kerala sub-hub; the fuller of the two backwater pages.",
+      "label": "Houseboat tour"
+    },
+    {
+      "path": "/back-water-tour/",
+      "section": "things",
+      "parent": "/things-to-do-in-kerala/",
+      "why": "Accepted. Linked from the Kerala sub-hub; flagged as a topical duplicate of the houseboat tour.",
+      "label": "Backwater tour"
+    },
+    {
+      "path": "/mountain-jeep-safari/",
+      "section": "things",
+      "parent": "/things-to-do-in-kerala/",
+      "why": "Accepted. Linked from the Kerala sub-hub.",
+      "label": "Mountain jeep safari"
+    },
+    {
+      "path": "/alcohol-free/",
+      "section": "facilities",
+      "parent": "/experience/",
+      "why": "Accepted. One of the house rules linked from /experience/; the label answers 'is alcohol allowed?'.",
+      "label": "Alcohol-free village"
+    },
+    {
+      "path": "/no-smoking/",
+      "section": "facilities",
+      "parent": "/experience/",
+      "why": "Accepted. A house rule linked from /experience/.",
+      "label": "No smoking"
+    },
+    {
+      "path": "/no-caffeine/",
+      "section": "facilities",
+      "parent": "/experience/",
+      "why": "Accepted. A house rule linked from /experience/.",
+      "label": "No caffeine"
+    },
+    {
+      "path": "/vegetarian/",
+      "section": "facilities",
+      "parent": "/experience/",
+      "why": "Accepted. States the actual rule instead of a bare adjective.",
+      "label": "Vegetarian meals only"
+    },
+    {
+      "path": "/no-preservatives/",
+      "section": "facilities",
+      "parent": "/experience/",
+      "why": "Accepted. Its own house-rules block confirms the group.",
+      "label": "No preservatives"
+    },
+    {
+      "path": "/no-refridgeration/",
+      "section": "facilities",
+      "parent": "/experience/",
+      "why": "Accepted. The page is only about food; 'No Refrigeration' could be read as no cooling in the villas.",
+      "label": "No refrigerated food"
+    },
+    {
+      "path": "/organic-farm/",
+      "section": "facilities",
+      "parent": "/village-facilities/",
+      "why": "Changed after review (reviewers 2 and 3, verified): the page is about the village's own pesticide-free farm that supplies the kitchen, and says visitors 'get to visit the Organic Farm'; the /village-facilities/ hub describes 'Organic Farm and Herbal Gardens' as a facility visitors can tour. A farm is not a house rule, so it sits at the facilities root beside the farm animals. /experience/ keeps its card linking it.",
+      "label": "Organic farm"
+    },
+    {
+      "path": "/ayurvedic-resturant-and-cooking-at-healing-village/",
+      "section": "facilities",
+      "parent": "/ayurvedic-cuisine/",
+      "why": "Accepted move. Its main subject is the dining room and the meals planned with the physicians, so it sits with the food pages as 'The Ayurvedic restaurant' (the cooking classes are now an in-village activity).",
+      "label": "The Ayurvedic restaurant"
+    },
+    {
+      "path": "/cooking-classes/",
+      "section": "things",
+      "parent": "/things-to-do/",
+      "why": "Changed after review (reviewer 1, verified): both activity hubs (/things-to-do/ and /things-to-do-in-property/) list Cooking Classes beside the yoga classes, nature walk and meditation the plan already moved there, and the page describes a class students take ('one of the best ways to ease the mind in this village'). /ayurvedic-cuisine/ does not link it. Same rule as the other in-village activities. Re-parented 28 Sep 2026: /things-to-do-in-property/ merged into /things-to-do/ (AHV-DUP-011).",
+      "label": "Ayurvedic cooking classes"
+    },
+    {
+      "path": "/what-is-ayurvedic-food/",
+      "section": "facilities",
+      "parent": "/ayurvedic-cuisine/",
+      "why": "Accepted. Named on the cuisine page's card grid; partial overlap with the cuisine page flagged.",
+      "label": "What is Ayurvedic food?"
+    },
+    {
+      "path": "/our-accolades/",
+      "section": "about",
+      "parent": "/awards-and-accreditations/",
+      "why": "Accepted. /awards-and-accolades/ never links it (not a hub); the real hub /awards-and-accreditations/ is its parent. Short summary of the top recognitions.",
+      "label": "Awards at a glance"
+    },
+    {
+      "path": "/brief-on-kairali/",
+      "section": "about",
+      "parent": "/kairali-ayurvedic-group/",
+      "why": "Adjusted: relabel accepted, and nested under the group page it summarises (all five paragraphs reappear there), so About does not show two group entries at its first level.",
+      "label": "Kairali group in brief"
+    },
+    {
+      "path": "/ayurvedic-franchise/",
+      "section": "about",
+      "parent": "/our-partners/",
+      "why": "Accepted. A partnership offer ('Partner with Kairali Ayurvedic Group'), which Our Partners describes as 'Franchise Partnerships'; not a group company.",
+      "label": "Franchise with Kairali"
+    },
+    {
+      "path": "/arogya-kendra/",
+      "section": "about",
+      "parent": "/our-partners/",
+      "why": "Accepted. A scheme for Ayurvedic practitioners to open a Kairali centre; the bare name means nothing to an international reader.",
+      "label": "Arogya Kendra: open a local centre"
+    },
+    {
+      "path": "/arogya-shala/",
+      "section": "about",
+      "parent": "/our-partners/",
+      "why": "Accepted. A scheme for practising doctors to stock and sell Kairali products; belongs with the other partner schemes.",
+      "label": "Arogya Shala: product partnership for doctors"
+    },
+    {
+      "path": "/product-range/",
+      "section": "about",
+      "parent": "/kairali-ayurvedic-products-pvt-ltd/",
+      "why": "Accepted. The products company page links 'Product Range', and Product Range is the real hub for the seven ranges (each card has a 'Read about this range' link). With the company now at the About root, the ladder is About › products company › Product range › each range, three levels instead of four.",
+      "label": "Product range"
+    },
+    {
+      "path": "/ayurvedic-herbal-tea/",
+      "section": "about",
+      "parent": "/product-range/",
+      "why": "Accepted. One of the seven ranges Product Range links.",
+      "label": "Ayurvedic herbal tea"
+    },
+    {
+      "path": "/ayurvedic-proprietary-organics/",
+      "section": "about",
+      "parent": "/product-range/",
+      "why": "Accepted. One of the seven ranges; 'Proprietary Organics' is company jargon.",
+      "label": "Organic Ayurvedic products"
+    },
+    {
+      "path": "/kair-by-kairali/",
+      "section": "about",
+      "parent": "/product-range/",
+      "why": "Accepted. One of the seven ranges; its own range name is kept."
+    },
+    {
+      "path": "/ayurvedic-proprietary-medicines/",
+      "section": "about",
+      "parent": "/product-range/",
+      "why": "Accepted. One of the seven ranges; natural word order.",
+      "label": "Proprietary Ayurvedic medicines"
+    },
+    {
+      "path": "/ayurvedic-classical-medicines/",
+      "section": "about",
+      "parent": "/product-range/",
+      "why": "Accepted. One of the seven ranges; natural word order.",
+      "label": "Classical Ayurvedic medicines"
+    },
+    {
+      "path": "/books/",
+      "section": "about",
+      "parent": "/product-range/",
+      "why": "Accepted. One of the seven ranges; the page is specifically the founder's books.",
+      "label": "Books by Gita Ramesh"
+    },
+    {
+      "path": "/kairali-ayurvedic-equipment/",
+      "section": "about",
+      "parent": "/product-range/",
+      "why": "Accepted. One of the seven ranges; the range name, as the hub card shows it, is kept."
+    },
+    {
+      "path": "/ayurvedic-products/",
+      "section": "about",
+      "parent": "/kairali-ayurvedic-products-pvt-ltd/",
+      "why": "Accepted. A general overview of the product company's categories; under the company page it no longer sits as a third near-identical 'products' entry at group level.",
+      "label": "Kairali products overview"
+    },
+    {
+      "path": "/in-house-products/",
+      "section": "about",
+      "parent": "/kairali-ayurvedic-products-pvt-ltd/",
+      "why": "Adjusted parent: the page is a general product overview (hair and body oils, washes, capsules and syrups), not one of the seven ranges Product Range lists, so it sits beside the other overview under the company page. Label accepted.",
+      "label": "Personal care & in-house medicines"
+    },
+    {
+      "path": "/product-gallery/",
+      "section": "gallery",
+      "parent": "/gallery/",
+      "why": "Accepted. A 17-photo collection; the Gallery hub already has its card, and people look for photos under Gallery.",
+      "label": "Product gallery"
+    },
+    {
+      "path": "/retreats-gallery/",
+      "section": "gallery",
+      "parent": "/gallery/",
+      "why": "Changed after review (reviewers 1 and 2): 'Patient life gallery' is awkward English. The page is 'Programme life at the hospital: the welcome on admission, consultations, walks on the grounds, the kitchen garden and the dining hall' (30 photographs). It moves from Past retreats to Gallery because it documents no past retreat.",
+      "label": "A patient’s stay in photos"
+    },
+    {
+      "path": "/property-gallery/",
+      "section": "gallery",
+      "parent": "/photo-gallery/",
+      "why": "New after review (reviewers 1 and 3, verified): /photo-gallery/ is a real hub; each chapter ends in a working 'See the full property gallery' link. The photos are the hospital campus: reception, treatment block, patient cottages, gardens.",
+      "label": "Campus & grounds gallery"
+    },
+    {
+      "path": "/treatments-gallery/",
+      "section": "gallery",
+      "parent": "/photo-gallery/",
+      "why": "New after review: /photo-gallery/ links it ('See the full treatment gallery'). Label matches the page H1.",
+      "label": "Treatment gallery"
+    },
+    {
+      "path": "/villas-gallery/",
+      "section": "gallery",
+      "parent": "/photo-gallery/",
+      "why": "New after review: /photo-gallery/ links it ('See the full villas gallery').",
+      "label": "Villas gallery"
+    },
+    {
+      "path": "/yoga-gallery/",
+      "section": "gallery",
+      "parent": "/photo-gallery/",
+      "why": "New after review: /photo-gallery/ links it ('See the full yoga gallery').",
+      "label": "Yoga gallery"
+    },
+    {
+      "path": "/sight-seeing-gallery/",
+      "section": "gallery",
+      "parent": "/photo-gallery/",
+      "why": "New after review: /photo-gallery/ links it ('See the full sightseeing gallery'). The 9 photos are countryside aerials and rice transplanting on the campus farm (the page says the attractions themselves are on the attractions pages), hence the label.",
+      "label": "Countryside & farm gallery"
+    },
+    {
+      "path": "/destination-palakkad/",
+      "section": "things",
+      "parent": "/things-to-do-in-kerala/",
+      "why": "New after review (reviewer 3, verified): /things-to-do-in-kerala/ links it as its second card, straight after Visit Kerala; the same evidence moved /visit-kerala/ there. The Things to do first level becomes three real hubs.",
+      "label": "About Palakkad"
+    },
+    {
+      "path": "/payment-policy-compliance/",
+      "section": "visit",
+      "parent": "/contact-us/",
+      "why": "New after review (reviewer 1, verified): practical booking information, not legal boilerplate. The page lists accepted methods (cards, UPI, wire transfer, PayPal, Razorpay) and the currency-exchange partner for international patients. A patient planning a stay looks for it next to booking and FAQs.",
+      "label": "Payment methods & currency exchange"
+    },
+    {
+      "path": "/cancellation-and-refund-policy/",
+      "section": "visit",
+      "parent": "/contact-us/",
+      "why": "New after review (reviewer 1, verified): the page sets booking procedure, payment, cancellation terms by days before arrival, no-show and early departure. That is booking information a patient needs before paying, so it sits with booking in Plan your visit. Terms, privacy, cookies, legal notice and disclaimer stay in the policies bucket.",
+      "label": "Cancellation & refund policy"
+    },
+    {
+      "path": "/kairali-ayurvedic-products-pvt-ltd/",
+      "section": "about",
+      "parent": "/about-us/",
+      "why": "New after review (reviewer 3, verified): the Kairali Ayurvedic Group page never mentions products and links only Kairali Hospitality, so it is not a real hub for the products company. Moving the company to the About root makes the ladder About > products company > Product range > each range (one level shallower, so range names stop wrapping in the 300px rail). 'Pvt. Ltd.' is legal wording a patient does not need.",
+      "label": "Kairali Ayurvedic Products company"
+    },
+    {
+      "path": "/panchakarma/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M004 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/yoga-meditation-program/",
+      "section": "training",
+      "parent": "/yoga-meditation-training/",
+      "why": "Owner-approved M007 placement; consolidated release 7 October 2026.",
+      "label": "Yoga Training for Personal Practice — Coming Soon"
+    },
+    {
+      "path": "/yoga-meditation-training/",
+      "section": "training",
+      "parent": "/yoga-meditation-training/",
+      "why": "Owner-approved M008 placement; consolidated release 7 October 2026.",
+      "label": "Yoga & Training"
+    },
+    {
+      "path": "/yoga-therapy-individual/",
+      "section": "programmes",
+      "parent": "/yoga-meditation-programs/",
+      "why": "Owner-approved M010 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/gift-vouchers/",
+      "section": "offers",
+      "parent": "/offers/",
+      "why": "Owner-approved M013 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/all-programs/",
+      "section": "programmes",
+      "parent": "/all-programs/",
+      "why": "Owner-approved M018 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/ayurveda-training-programme/",
+      "section": "training",
+      "parent": "/yoga-meditation-training/",
+      "why": "Owner-approved M019 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/ayurvedic-treatments/",
+      "section": "programmes",
+      "parent": "/all-programs/",
+      "why": "Owner-approved M020 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/wellness-programs/",
+      "section": "programmes",
+      "parent": "/all-programs/",
+      "why": "Owner-approved M022 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/yoga-meditation-programs/",
+      "section": "programmes",
+      "parent": "/all-programs/",
+      "why": "Owner-approved M023 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/new-to-yoga-teacher-training/",
+      "section": "training",
+      "parent": "/yoga-meditation-training/",
+      "why": "Owner-approved M024 placement; consolidated release 7 October 2026.",
+      "label": "Professional Yoga Teacher Training — Coming Soon"
+    },
+    {
+      "path": "/Ayurveda_Treatment_Neo_S.India_Cities.html",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M025 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/Kairali_Brand_and_Competition_Neo-original.html",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M026 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/ayurveda-retreat-kerala.html",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M027 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/ayurvedic-treatment-packages.html",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M028 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/family-ayurvedic-retreat-kerala.html",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M029 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/kairali-air-india-maharaja-club.html",
+      "section": "about",
+      "parent": "/our-partners/",
+      "why": "Owner-approved M030 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/kairali-cleansing-centre.html",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M031 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M032 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/lp/ayurveda-treatment-south-india/",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M033 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/lp/ayurvedic-hospital-kerala/",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M034 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/lp/behandlung-in-kerala/",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M035 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/lp/kairali-brand/",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M036 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/lp/kairali-cleansing-centre/",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M037 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/lp/pain-management/",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M038 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/lp/panchkarma-treatment/",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M039 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/lp/treatment-in-kerala/",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M040 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/lp/treatment-packages/",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M041 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/lp/weight-loss/",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M042 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/offers/",
+      "section": "offers",
+      "parent": "/offers/",
+      "why": "Owner-approved M043 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/offers/defence-and-paramilitary/",
+      "section": "offers",
+      "parent": "/offers/",
+      "why": "Owner-approved M044 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/offers/olympics-and-paralympics-offer/",
+      "section": "offers",
+      "parent": "/offers/",
+      "why": "Owner-approved M045 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/offers/senior-citizen-offer/",
+      "section": "offers",
+      "parent": "/offers/",
+      "why": "Owner-approved M046 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/pain-management.html",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M047 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/panchkarma-treatment.html",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M048 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/preventive-rejuvenation-detoxification.html",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M049 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/treatment-in-kerala.html",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M050 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/weight-loss.html",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M051 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/wellness-resort-kerala.html",
+      "section": "campaigns",
+      "parent": null,
+      "why": "Owner-approved M052 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/ayurveda-retreats-for-everyone/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M053 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/ayurveda-treatment/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M054 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/kairali-ayurvedic-way-of-weight-management/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M055 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/learn-about-ayurveda/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M056 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/learn-more-about-yoga/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M057 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/live-to-100-with-panchkarma/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M058 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/meditation/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M059 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/new-to-ayurveda/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M060 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/new-to-yoga/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M061 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/retreats-for-everyone/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M062 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/training/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M063 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/what-is-panchkarma/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M064 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/what-is-yoga/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M065 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/why-get-training-in-ayurveda/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M066 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/why-get-training-in-yoga/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M067 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/why-pick-a-yoga-or-yoga-retreat/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M068 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M069 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/yoga-classes-practical/",
+      "section": "things",
+      "parent": "/things-to-do/",
+      "why": "Owner-approved M070 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/yoga-classes-theory/",
+      "section": "things",
+      "parent": "/things-to-do/",
+      "why": "Owner-approved M071 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/yoga-retreats-for-everyone/",
+      "section": "knowledge",
+      "parent": "/knowledge-centre/",
+      "why": "Owner-approved M072 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/ananda-lahari-yoga-and-ayurveda-retreat/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M073 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/archive-yoga-retreat/",
+      "section": "news",
+      "parent": "/archive/",
+      "why": "Owner-approved M074 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/archive/",
+      "section": "news",
+      "parent": null,
+      "why": "Owner-approved M075 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/ashtanga-yoga-and-ayurveda-retreat/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M076 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/ayurveda-workshop/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M077 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/ayurvedic-new-year-yala-2018/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M078 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/ayuryoga/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M079 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/back-to-roots/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M080 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/chef-retreat-food-to-wellness/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M081 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/food-sadhana/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M082 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/karma-being-retreat-2019/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M083 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/karma-being-retreat/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M084 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/katha-wellness-retreat-2019/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M085 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/lakshya-yoga-retreat-2017/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M086 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/lakshya-yoga-retreat-2018/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M087 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/lakshya-yoga-retreat/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M088 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/lakshya-yoga/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M089 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/mindfulness-retreat/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M090 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/prav-simona-monsoon-yoga-retreat/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M091 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/prav-simona-yoga-retreat/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M092 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/yoga-and-ayurveda/",
+      "section": "news",
+      "parent": "/archive-yoga-retreat/",
+      "why": "Owner-approved M093 placement; consolidated release 7 October 2026."
+    },
+    {
+      "path": "/one-day-ayurveda-workshop-program-kerala/",
+      "section": "training",
+      "parent": "/ayurveda-training-programme/",
+      "why": "One of the five approved Ayurveda courses."
+    },
+    {
+      "path": "/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+      "section": "training",
+      "parent": "/ayurveda-training-programme/",
+      "why": "One of the five approved Ayurveda courses."
+    },
+    {
+      "path": "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+      "section": "training",
+      "parent": "/ayurveda-training-programme/",
+      "why": "One of the five approved Ayurveda courses."
+    },
+    {
+      "path": "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+      "section": "training",
+      "parent": "/ayurveda-training-programme/",
+      "why": "One of the five approved Ayurveda courses."
+    },
+    {
+      "path": "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
+      "section": "training",
+      "parent": "/ayurveda-training-programme/",
+      "why": "One of the five approved Ayurveda courses."
+    }
   ],
-  "/yoga-meditation-programs/": [
-   "/yoga-retreats/",
-   "/yoga-therapy-individual/",
-   "/yoga-meditation-program/",
-   "/yoga-meditation-training/",
-   "/yoga-and-meditation-package/"
+  "relabels": [
+    {
+      "path": "/ayurvedic-treatments/",
+      "label": "Ayurvedic treatments by condition",
+      "why": "Changed after review (reviewer 1). Keeps the page H1 ('Ayurvedic Treatments') so a visitor recognises where they land, and adds the one thing only this entry has in the rail: its children are the condition groups (Joints, back & spine; Skin & eyes; …). Tells it apart from 'Treatment programmes list'. Its text is 97% the same as /all-programs/ (flagged)."
+    },
+    {
+      "path": "/treatment-programs/",
+      "label": "Treatment programmes list",
+      "why": "Changed after review (reviewer 2, verified): 'All treatment programmes' overclaimed; the page lists 29 treatment programmes and not the monsoon (Karkidaka) programme. Kept at the programmes root: /ayurvedic-treatments/ does not link it, and nesting it would push the condition groups down."
+    },
+    {
+      "path": "/wellness-programs/",
+      "label": "Preventive & wellness programmes",
+      "why": "The page's own meta and intro say 'preventive and regenerative'; the bare 'Wellness Programmes' could not be told apart from 'Treatment Programmes'."
+    },
+    {
+      "path": "/packages/",
+      "label": "Programme packages at a glance",
+      "why": "Changed after review (reviewer 2, verified): all 27 Book Now buttons go to the booking site's home page, exactly like the Book Now links on every programme page, so 'to book online' was a false distinction. What the page is: an older card list of the programmes with a one-line excerpt each."
+    },
+    {
+      "path": "/yoga-meditation-programs/",
+      "label": "Yoga & meditation programmes",
+      "why": "Its H1 says 'Programmes'; the bare 'Yoga & Meditation' read like a knowledge article."
+    },
+    {
+      "path": "/karkidaka-chikitsha-or-monsoon-wellness.html",
+      "label": "Monsoon programme, July–August (Karkidaka)",
+      "why": "Changed after review (reviewer 1, verified): the page says the programme runs in 'the Karkidakam month (July–August)' for 7, 14 or 21 days, so the season goes in the label. Kept at the programmes root: a seasonal programme is not a condition, and it is not in the programme register, so the builder cannot give it a concern group anyway (reviewer 3 showed the earlier 'one-line fix' would not work)."
+    },
+    {
+      "path": "/training-course-fees/",
+      "label": "Course fees & booking terms",
+      "why": "The page says tuition is part of the nightly rate and also sets transport, deposit and cancellation terms. It stays listed (the fees are real) but carries template filler that must go before launch."
+    },
+    {
+      "path": "/ayurveda-training/",
+      "label": "Learn Ayurveda with Kairali",
+      "why": "Legacy intro with an enquiry form and an old course table. Real content, so listed, but flagged: its fixed course prices conflict with the per-night fee sheet."
+    },
+    {
+      "path": "/training/",
+      "label": "About training at Kairali",
+      "why": "Older general article; 'Training' alone said nothing next to the hub. Flagged: its four tracks do not match the five coded courses."
+    },
+    {
+      "path": "/kairali-institute-of-ayurveda-and-panchakarma-therapy/",
+      "label": "Kairali Institute of Ayurveda",
+      "why": "Shortened from seven words. It stays in Training: it tells a prospective student who teaches the courses."
+    },
+    {
+      "path": "/why-get-training-in-ayurveda/",
+      "label": "Why train in Ayurveda?",
+      "why": "Plainer wording, same meaning."
+    },
+    {
+      "path": "/why-get-training-in-yoga/",
+      "label": "Why train in yoga?",
+      "why": "Plainer wording, same meaning."
+    },
+    {
+      "path": "/things-to-do-in-property/",
+      "label": "Things to do in the village",
+      "why": "'Property' is hotel jargon; the page H1 and the hub's own link say 'healing village'. Pairs with 'Things to do in Kerala'."
+    },
+    {
+      "path": "/cultural-events/",
+      "label": "Kerala dance, music & martial arts",
+      "why": "The page describes Kathakali, Mohiniyattam, Chenda and Kalaripayattu with no event dates; 'Cultural Events' promised a calendar."
+    },
+    {
+      "path": "/festivals/",
+      "label": "Festivals by month",
+      "why": "Each festival is listed with its month, which is what someone timing a stay needs."
+    },
+    {
+      "path": "/sightseeing/",
+      "label": "Sightseeing near Kairali",
+      "why": "Owner-approved single guide with all 22 destinations and approximate road distances."
+    },
+    {
+      "path": "/experience/",
+      "label": "Experience & house rules",
+      "why": "A real hub linking every rule page; the site already calls the set 'House rules of the property'. 'Experience' told a reader nothing. Amended 28 Sep 2026 (parent BATCH2-VISUAL-REVIEW): the breadcrumb ended \"Village house rules\" under the H1 \"Experience\"; the label now leads with the page name and keeps what the hub holds."
+    },
+    {
+      "path": "/ayurvedic-cuisine/",
+      "label": "Ayurvedic cuisine",
+      "why": "Sentence case to match its new children."
+    },
+    {
+      "path": "/ayurveda/",
+      "label": "Ayurveda & its main therapies",
+      "why": "An explainer of consultation, Prakriti and the main therapies; the one-word 'Ayurveda' did not say how it differs from its siblings."
+    },
+    {
+      "path": "/accreditations/",
+      "label": "Accreditations & certificates",
+      "why": "The page lists accreditations with scanned certificates (NABH, ISO 9001, etc.); the old label was a meta title."
+    },
+    {
+      "path": "/awards-and-accolades/",
+      "label": "Awards history",
+      "why": "Its own heading is 'Awards History' (awards and certificates from different years); separates it from the short summary."
+    },
+    {
+      "path": "/founders-message/",
+      "label": "Founder's message & directors",
+      "why": "Half the page is the directors' profiles; the founder's letter is only here."
+    },
+    {
+      "path": "/kairali-the-ayurvedic-healing-village/",
+      "label": "The Healing Village at a glance",
+      "why": "A short overview; the old label was circular on the Healing Village's own site. Overlap with /about-us/ flagged."
+    },
+    {
+      "path": "/vision-and-mission/",
+      "label": "Vision & mission",
+      "why": "Sentence case, to match its siblings."
+    },
+    {
+      "path": "/social-responsibilities/",
+      "label": "Social responsibility",
+      "why": "Sentence case, to match its siblings."
+    },
+    {
+      "path": "/social-cultural-environmental-commitment/",
+      "label": "Social, cultural & environmental commitment",
+      "why": "Placement kept (it summarises its parent and links back). Sentence case only."
+    },
+    {
+      "path": "/our-partners/",
+      "label": "Our partners",
+      "why": "Sentence case; it becomes the parent of the five partner schemes."
+    },
+    {
+      "path": "/consultancy/",
+      "label": "Consultancy for wellness businesses",
+      "why": "Placement kept. 'Consultancy' alone could be read as a doctor consultation (the site also has /online-consultation/)."
+    },
+    {
+      "path": "/kairali-ayurvedic-centre/",
+      "label": "Kairali centres in India & abroad",
+      "why": "Taken from the page's own words; the fuller of the two centre pages, and clearly about the group's other locations."
+    },
+    {
+      "path": "/kairali-ayurvedic-treatment-center/",
+      "label": "The centres behind the village",
+      "why": "Adjusted label: the page's distinct point is that the group's centres are 'the foundation' the Healing Village was built from. Topical duplicate of the centres page, flagged."
+    },
+    {
+      "path": "/villa-raag/",
+      "label": "Villa Raag, Goa",
+      "why": "A separate group property in Agonda, South Goa, never one of the village's villas; 'Goa' prevents confusion with Classic/Deluxe/Royal Villa."
+    },
+    {
+      "path": "/ayurvedic-new-year-yala-2018/",
+      "label": "Yala New Year Retreat 2018",
+      "why": "States plainly what it was."
+    },
+    {
+      "path": "/ayuryoga/",
+      "label": "AyurYoga Retreat",
+      "why": "Says it is a past retreat; the page's own casing."
+    },
+    {
+      "path": "/back-to-roots/",
+      "label": "Chef Retreat 2017: the story",
+      "why": "Companion of the itinerary page for the same July 2017 Chef Retreat; the pair now read as a pair."
+    },
+    {
+      "path": "/chef-retreat-food-to-wellness/",
+      "label": "Chef Retreat 2017: itinerary",
+      "why": "The day-by-day itinerary of 3-6 July 2017."
+    },
+    {
+      "path": "/food-sadhana/",
+      "label": "Food Sadhana Retreat 2017",
+      "why": "The page dates itself ('The 2017 Food Sadhana Highlights')."
+    },
+    {
+      "path": "/katha-wellness-retreat-2019/",
+      "label": "Katha Wellness Retreat 2019",
+      "why": "Year only, like its siblings; exact dates stay on the page."
+    },
+    {
+      "path": "/prav-simona-monsoon-yoga-retreat/",
+      "label": "Prav-Simona Monsoon Yoga Retreat",
+      "why": "Owner ruling 28 Sep 2026 (AHV-DUP-012, keep both): 'they were two separate back to back retreats'. Each page is listed under its own archive title (past-retreats-data.js), not as a full record / summary of one another. The EF-24 merge and 301 were reverted."
+    },
+    {
+      "path": "/lakshya-yoga-retreat/",
+      "label": "Lakshya Yoga Retreat: introduction",
+      "why": "Drop REJECTED: measured verbatim overlap with the 2017 page is only 26% (near the shared-template baseline), so it is not a subset copy and has real text. Its year is unverified (the page says so); its content is the group background plus the seven-day retreat setting, so it is labelled as the introduction."
+    },
+    {
+      "path": "/faqs-downloads/",
+      "label": "FAQs & downloads",
+      "why": "Kept as it is; the proposed 'FAQs, price lists & downloads' is rejected after review (reviewers 1 and 2, verified). The package price lists on this page are the 2025–26 PDFs ('Last updated April 2025'), and the site itself says the current tariff runs to 30 September 2026 while the page's own FAQ already quotes 2026–27 rates. A navigation label should not advertise price lists that are about to expire. Relabel once the owner confirms or uploads the 2026–27 lists."
+    },
+    {
+      "path": "/online-consultation/",
+      "label": "Our physicians & free online consultation",
+      "why": "Changed after review (reviewer 1, verified): this is the only listed page with the physician panel ('Our panel of Ayurvedic physicians': Dr. Deepu John, Chief Physician; Dr. Akhila Oommen; Dr. Rahul R, all BAMS). A patient looking for the doctors now finds them by label. The consultation is online (WhatsApp video or call) and 'No charge'."
+    },
+    {
+      "path": "/walk-in-ayurveda-treatment/",
+      "label": "Walk-in outpatient treatment",
+      "why": "Changed after review (reviewer 1): 'OPD' is Indian hospital shorthand an international patient will not know. The page offers daily outpatient consultations and therapy without admission (09:00–17:00)."
+    },
+    {
+      "path": "/apply-now/",
+      "label": "Job application form",
+      "why": "Changed after review (reviewer 2, verified): the form asks for 'Post Applied for' and 'Job Reference Code' and never mentions internships, and the internships page does not link here (its Apply Now goes to /new-to-ayurveda/). 'Apply Now' alone could be read as applying for admission."
+    },
+    {
+      "path": "/privacy-policy/",
+      "label": "Privacy policy (website)",
+      "why": "Older, website-scoped policy (effective 2017); overlap with the current statement flagged."
+    },
+    {
+      "path": "/privacy-statement/",
+      "label": "Privacy statement (personal & health data)",
+      "why": "The current, fuller document covering health data and DPDPA rights."
+    },
+    {
+      "path": "/family-ayurvedic-retreat-kerala.html",
+      "label": "Family Ayurveda programmes in Kerala",
+      "why": "The old label 'Kairali' came from a split meta title and said nothing."
+    },
+    {
+      "path": "/Kairali_Brand_and_Competition_Neo-original.html",
+      "label": "Ayurvedic treatment packages in Kerala",
+      "why": "Adjusted: the proposed 'Treatment packages & villa rates' would collide with the programmes page of the same template; this is the ad's meta title without the superlative."
+    },
+    {
+      "path": "/kairali-cleansing-centre.html",
+      "label": "Ayurvedic hospital & detox in Kerala",
+      "why": "'Cleansing Centre' reads like a separate facility; the H1 and body describe the hospital's Panchakarma detox."
+    },
+    {
+      "path": "/pain-management.html",
+      "label": "Ayurvedic pain management",
+      "why": "Ten-word meta title shortened to the subject."
+    },
+    {
+      "path": "/panchkarma-treatment.html",
+      "label": "Panchakarma treatment in Kerala",
+      "why": "Shorter; locked spelling 'Panchakarma'."
+    },
+    {
+      "path": "/preventive-rejuvenation-detoxification.html",
+      "label": "Preventive rejuvenation & detox",
+      "why": "Shorter."
+    },
+    {
+      "path": "/treatment-in-kerala.html",
+      "label": "Ayurvedic treatment in Kerala",
+      "why": "Nine-word meta title shortened."
+    },
+    {
+      "path": "/weight-loss.html",
+      "label": "Ayurvedic weight loss",
+      "why": "Nine-word meta title shortened."
+    },
+    {
+      "path": "/wellness-resort-kerala.html",
+      "label": "Ayurvedic healing in Kerala",
+      "why": "The old label was the meta title with 'Resort' cut out, which read as broken English."
+    },
+    {
+      "path": "/Ayurveda_Treatment_Neo_S.India_Cities.html",
+      "label": "Ayurvedic treatment in South India",
+      "why": "Sentence case, like its siblings; flagged as a same-template near-duplicate of the Neo-original ad."
+    },
+    {
+      "path": "/ayurveda-retreat-kerala.html",
+      "label": "Ayurveda retreat in Kerala",
+      "why": "Sentence case, like its siblings."
+    },
+    {
+      "path": "/lakshya-yoga/",
+      "label": "Lakshya Yoga week: schedule & teacher",
+      "why": "Four Lakshya entries sit together; this undated one is the fuller record (a week's daily schedule, workshops, inclusions, teacher profile), so the label says so."
+    },
+    {
+      "path": "/things-to-do-in-kerala/",
+      "label": "Things to do in Kerala",
+      "why": "Sentence case, so the branch reads as one list beside the relabelled siblings. Pairs with 'Things to do in the village'."
+    },
+    {
+      "path": "/animal-husbandry/",
+      "label": "Farm animals & animal care",
+      "why": "Changed after review (reviewers 1 and 3): 'husbandry' is an obscure word for an international reader. The page describes the village's animal-care programme, which visitors can see through 'interactive seminars and guided tours'. It stays at the facilities root, now beside the organic farm."
+    },
+    {
+      "path": "/how-to-reach/",
+      "label": "How to reach us",
+      "why": "Sentence case, so the branch reads as one list beside the relabelled siblings. It becomes the parent of the route maps."
+    },
+    {
+      "path": "/book-now/",
+      "label": "Book your stay",
+      "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
+    },
+    {
+      "path": "/enquiry-form/",
+      "label": "Enquire now",
+      "why": "Placement kept (reader: keep). It matches the Enquire Now button on 252 pages; flagged as a 94% text twin of the section hub /contact-us/."
+    },
+    {
+      "path": "/gift-vouchers/",
+      "label": "Gift vouchers",
+      "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
+    },
+    {
+      "path": "/offers/defence-paramilitary-personnel-get-upto-30-off/",
+      "label": "Defence & paramilitary offer",
+      "why": "Sentence case, so the branch reads as one list beside the relabelled siblings. No percentage in the label: the URL says 30% and the H1 says 20%."
+    },
+    {
+      "path": "/offers/olympics-and-paralympics-offer/",
+      "label": "Olympic & Paralympic offer",
+      "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
+    },
+    {
+      "path": "/offers/senior-citizen-offer/",
+      "label": "Senior citizen offer (60+)",
+      "why": "Changed after review (reviewer 1, verified): the page states 'For Seniors (60+)'; a 60-plus reader sees at a glance that it applies to them."
+    },
+    {
+      "path": "/photo-gallery/",
+      "label": "Photo gallery",
+      "why": "Sentence case. The combined gallery (59 photographs in chapters); each chapter ends in a working 'See the full … gallery' link, so it is now the parent of the property, treatment, villas, yoga and countryside galleries."
+    },
+    {
+      "path": "/video-gallery/",
+      "label": "Video gallery",
+      "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
+    },
+    {
+      "path": "/virtual-tour/",
+      "label": "Virtual tour",
+      "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
+    },
+    {
+      "path": "/ayurveda-gallery/",
+      "label": "Herbs & therapies gallery",
+      "why": "Adjusted (reader said keep): beside 'Treatment gallery', 'Ayurveda Gallery' cannot be told apart. The 9 photos are therapists giving oil and compress treatments plus herbal boluses, powders, leaves and roots."
+    },
+    {
+      "path": "/archive-yoga-retreat/",
+      "label": "Past retreats",
+      "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
+    },
+    {
+      "path": "/awards-and-accreditations/",
+      "label": "Awards & accreditations",
+      "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
+    },
+    {
+      "path": "/cookie-policy/",
+      "label": "Cookie policy",
+      "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
+    },
+    {
+      "path": "/legal-notice/",
+      "label": "Legal notice",
+      "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
+    },
+    {
+      "path": "/terms-and-conditions/",
+      "label": "Terms & conditions",
+      "why": "Sentence case, so the branch reads as one list beside the relabelled siblings."
+    },
+    {
+      "path": "/kairali-air-india-maharaja-club.html",
+      "label": "Air India Maharaja Club members",
+      "why": "New after review (reviewer 2, verified). Placement is the owner's ruling (a tie-up, under Our partners). The page is a booking form 'Exclusively for Air India Maharaja Club Members' ('Earn 15 Maharaja Points per ₹100'); '(partnership)' did not tell a member the page is for them."
+    },
+    {
+      "path": "/prav-simona-yoga-retreat/",
+      "label": "Prav Simona Yoga Retreat",
+      "why": "Owner ruling 28 Sep 2026 (AHV-DUP-012, keep both): 'they were two separate back to back retreats'. Each page is listed under its own archive title (past-retreats-data.js), not as a full record / summary of one another. The EF-24 merge and 301 were reverted."
+    },
+    {
+      "path": "/jobs/business-development-manager/",
+      "label": "Business Development Manager (vacancy closed)",
+      "why": "Owner decision 28 Sep 2026: the vacancy is not open; the page stays accessible with an honest closed status (no redirect assumed)."
+    },
+    {
+      "path": "/new-privacy-policy/",
+      "label": "Privacy policy",
+      "why": "The governing privacy document since 28 Sep 2026 (AHV-DUP-001/002/003); its page title repeats the site name, so the rail and sitemap use the plain name the footer uses."
+    },
+    {
+      "path": "/yoga-therapy-individual/",
+      "label": "Vaiyaktika Yoga Sādhanā — Personalized Yoga",
+      "why": "2026-10-07 owner: approved as per search data; M005/M009/M010; cb41d2e2d2c48191a3ead4fe5c267451; one bespoke enquiry-only service alongside the 35 priced entries."
+    }
   ],
-  "/our-villas/": [
-   "/maharaja-suite/",
-   "/royal-villa/",
-   "/deluxe-villa/",
-   "/classic-villa/"
+  "drops": [
+    {
+      "path": "/ayurveda-package/",
+      "why": "Superseded index: one intro paragraph plus 24 old programme names as cards that link nowhere (checked in the prerender), including 'Treatment for Rheumatism', which has no page. Only /sitemap/ links it today, so after the drop it stays served but unlisted, and no link breaks."
+    },
+    {
+      "path": "/learn-more-about-ayurveda/",
+      "why": "A stub of one generic paragraph (Ayurveda is complex, try our training) with no course details and no links; everything it says is covered by 'Why train in Ayurveda?' and the all-courses page. Checked after review: only /sitemap/ links it (the Knowledge Centre hub does not), so after the drop it stays served but unlisted, and no link breaks."
+    },
+    {
+      "path": "/ayurvedic-links/",
+      "why": "Old SEO link-exchange instructions for webmasters plus three external links; nothing for a patient. Still served and still in the global footer (separate decision)."
+    },
+    {
+      "path": "/ayurveda-offers/",
+      "why": "One-sentence placeholder with no offer, amount, terms or validity. Only /sitemap/ links it today."
+    },
+    {
+      "path": "/defence-and-paramilitary-forces/",
+      "why": "Placeholder copy of a listed offer: eligibility, proof, how to claim, validity and its 'Click Here' link are all [TO CONFIRM], and the terms it does state (up to 20% for Army, Navy and Air Force) are carried in full, with the tiered 10/15/20% scale, by /offers/defence-paramilitary-personnel-get-upto-30-off/, which is listed. Draws no rail today (designed family), so dropping it changes nothing on the page. Owner-visible exception: if the owner prefers this design, fill the fields and swap which one is listed."
+    },
+    {
+      "path": "/special-offers/",
+      "why": "OWNER-APPROVAL EXCEPTION to the drop rule, stated openly. The page is not empty, but its only concrete offers are expired ('Step into 2025', book by 15 February, stays March–May), and the rest is generic copy naming offer types with no amount, terms or validity. Listing it would tell a patient that expired offers still apply. If the owner prefers, strip the expired promotions (content fix) and list it under /offers/ as 'Seasonal & group offers'. /offers/ does not link it, so no link breaks."
+    },
+    {
+      "path": "/the-baoli-advert-box-deal/",
+      "why": "Empty placeholder: H1 plus email and phone, meta copied from another page."
+    },
+    {
+      "path": "/the-baoli-special-deal/",
+      "why": "Empty placeholder: H1 plus email and phone, meta copied from another page."
+    },
+    {
+      "path": "/emailsubscriber/",
+      "why": "21-word subscription endpoint that cannot even confirm the subscription; pure utility."
+    },
+    {
+      "path": "/attractions-under-10kms/",
+      "why": "Owner-approved 301 consolidation into /sightseeing/ on 24 September 2026."
+    },
+    {
+      "path": "/attractions-15kms-and-below/",
+      "why": "Owner-approved 301 consolidation into /sightseeing/ on 24 September 2026."
+    },
+    {
+      "path": "/attractions-25kms-to-50kms/",
+      "why": "Owner-approved 301 consolidation into /sightseeing/ on 24 September 2026."
+    },
+    {
+      "path": "/attractions-above-50kms/",
+      "why": "Owner-approved 301 consolidation into /sightseeing/ on 24 September 2026."
+    },
+    {
+      "path": "/map/",
+      "why": "Owner-approved 301 consolidation into /how-to-reach/ on 24 September 2026."
+    },
+    {
+      "path": "/ayurveda-gallery/",
+      "why": "Owner-approved 301 consolidation into /treatments-gallery/ on 28 September 2026 (EF-21)."
+    },
+    {
+      "path": "/privacy-policy/",
+      "why": "Owner-approved 301 consolidation into /new-privacy-policy/ on 28 September 2026 (AHV-DUP-001/002)."
+    },
+    {
+      "path": "/privacy-statement/",
+      "why": "Owner-approved 301 consolidation into /new-privacy-policy/ on 28 September 2026 (AHV-DUP-002/003)."
+    },
+    {
+      "path": "/enquiry-form/",
+      "why": "Owner-approved 301 consolidation into /contact-us/ on 28 September 2026 (AHV-DUP-004)."
+    },
+    {
+      "path": "/ayurveda-training-programs/",
+      "why": "Owner-approved 301 consolidation into /ayurveda-training-programme/ on 28 September 2026 (AHV-DUP-006)."
+    },
+    {
+      "path": "/our-story/",
+      "why": "Owner-approved 301 consolidation into /about-us/ on 28 September 2026 (AHV-DUP-008)."
+    },
+    {
+      "path": "/things-to-do-in-property/",
+      "why": "Owner-approved 301 consolidation into /things-to-do/ on 28 September 2026 (AHV-DUP-011)."
+    },
+    {
+      "path": "/revitalizing-and-strengthening-treatment-for-cancer-patients/",
+      "why": "2026-10-07 owner: approved as per search data; M005/M009/M010; cb41d2e2d2c48191a3ead4fe5c267451; 301 to /revitalizing-and-strengthening/"
+    },
+    {
+      "path": "/yoga-retreats/",
+      "why": "2026-10-07 owner: approved as per search data; M005/M009/M010; cb41d2e2d2c48191a3ead4fe5c267451; 301 to /yoga-therapy-individual/"
+    }
   ],
-  "/training-programs/": [
-   "/ayurveda-training-programme/",
-   "/training-course-fees/",
-   "/kairali-institute-of-ayurveda-and-panchakarma-therapy/",
-   "/new-to-yoga-teacher-training/",
-   "/why-get-training-in-ayurveda/",
-   "/why-get-training-in-yoga/",
-   "/training/",
-   "/ayurveda-training/"
+  "sectionTitles": [
+    {
+      "id": "news",
+      "title": "Past retreats & events",
+      "why": "The section holds only the Past retreats archive (18 past retreat and group-visit records); there are no news items, so 'News' promised something a visitor would not find."
+    },
+    {
+      "id": "facilities",
+      "title": "Village facilities & house rules",
+      "why": "After the content review the section holds the Ayurvedic cuisine pages, the six house rules, the organic farm and the farm animals (the in-village activities moved to Things to do). Naming the house rules tells a patient where to check alcohol, caffeine, smoking and diet rules before booking."
+    }
   ],
-  "/ayurveda-training-programme/": [
-   "/one-day-ayurveda-workshop-program-kerala/",
-   "/three-day-short-term-ayurveda-certificate-program-tap-hv/",
-   "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
-   "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
-   "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/"
+  "duplicates": [
+    {
+      "keep": "/all-programs/",
+      "other": "/ayurvedic-treatments/",
+      "note": "Measured 97% identical text (all 38 programmes; only the H1 and intro differ). Both stay listed: /ayurvedic-treatments/ is the global-nav target ('Ayurveda Treatment') and the parent of the condition groups, now labelled 'Ayurvedic treatments by condition'. Suggested content fix: filter it to the treatment programmes only."
+    },
+    {
+      "keep": "/all-programs/",
+      "other": "/treatment-programs/",
+      "note": "95% of its text is inside the hub (the 29 treatment programmes, same finder UI). Listed as 'Treatment programmes list'; owner to decide whether it and /ayurvedic-treatments/ should become one page."
+    },
+    {
+      "keep": "/ayurvedic-treatments/",
+      "other": "/packages/",
+      "note": "Older card list of the same programmes with one-line excerpts. Its 27 Book Now buttons go to the booking site's home page, as every programme page's do, so it has no unique feature. One card title reads 'Spine Care & Spondylitis Treatmentralysis'."
+    },
+    {
+      "keep": "/ayurvedic-treatments/",
+      "other": "/ayurveda-package/",
+      "note": "Superseded index whose cards link nowhere; dropped from the listing, still served."
+    },
+    {
+      "keep": "/yoga-meditation-training/",
+      "other": "/yoga-meditation-program/",
+      "note": "Measured 84%/82% mutual text overlap, same nightly rates; the only real difference is the minimum stay (7 vs 3 nights). Owner to choose one, or keep both deliberately as two stay lengths."
+    },
+    {
+      "keep": "/yoga-meditation-training/",
+      "other": "/yoga-and-meditation-package/",
+      "note": "New after review: the yoga hub gives both 'Minimum stay: 7 nights · From ₹1,50,430'. The package page is a short older page whose only distinct content is its per-night villa rate table (Deluxe single 17,786, which differs from other pages). Owner to decide whether both stay."
+    },
+    {
+      "keep": "/yoga-retreats/",
+      "other": "/yoga-therapy-individual/",
+      "note": "Related but not the same offer on the pages' own words: /yoga-retreats/ is yoga practice customised after a doctor's assessment; /yoga-therapy-individual/ is a yoga therapy plan that also includes Panchakarma, herbal treatments and a diet plan. No shared text. Owner to decide whether both stay."
+    },
+    {
+      "keep": "/contact-us/",
+      "other": "/enquiry-form/",
+      "note": "Measured 94%/95% identical (same routing cards, channels and form). Both stay: /enquiry-form/ is the Enquire Now target on 252 pages. Consider pointing one at the other."
+    },
+    {
+      "keep": "/how-to-reach/",
+      "other": "/map/",
+      "note": "Older, thinner version of the same routes; its unique content is the embedded route maps (now labelled 'Route maps to the hospital'). Its distances disagree with How to reach us (Palakkad station 17.2 km/30 min vs ~35 min; Ottapalam shown with Palakkad's identical figures; Coimbatore airport 1 h 30 vs 1½–2 h). Correct against How to reach us; do not recompute."
+    },
+    {
+      "keep": "/prav-simona-monsoon-yoga-retreat/",
+      "other": "/prav-simona-yoga-retreat/",
+      "note": "83% of the shorter page appears word for word in the fuller one, which adds the second-week dates, schedule, inclusions and teacher profiles. Both now listed under Past retreats as 'full record' and 'summary' (the drop was reversed: the short page has real content). Merge candidate. SUPERSEDED 28 Sep 2026: owner ruled keep both (AHV-DUP-012, two separate back-to-back retreats); listed under their own archive titles."
+    },
+    {
+      "keep": "/lakshya-yoga-retreat-2017/",
+      "other": "/lakshya-yoga-retreat/",
+      "note": "Reader called it a paraphrase of the 2017 page; measured verbatim overlap is only 26%, so it stays listed. Owner check: merge candidate."
+    },
+    {
+      "keep": "/archive-yoga-retreat/",
+      "other": "/yoga-and-ayurveda/",
+      "note": "Thin teaser of four retreats with dead cards; dropped from the listing."
+    },
+    {
+      "keep": "/chef-retreat-food-to-wellness/",
+      "other": "/back-to-roots/",
+      "note": "Same July 2017 Chef Retreat: one is the itinerary, one the story. Companions, now labelled as a pair; merge candidate."
+    },
+    {
+      "keep": "/live-to-100-with-panchkarma/",
+      "other": "/what-is-panchkarma/",
+      "note": "Same topic (the five procedures); /live-to-100-with-panchkarma/ is the fuller and more factual. Merge candidate."
+    },
+    {
+      "keep": "/house-boat-tour/",
+      "other": "/back-water-tour/",
+      "note": "Same experience (Kerala backwaters by houseboat); the houseboat page is fuller. Merge or redirect candidate."
+    },
+    {
+      "keep": "/kairali-ayurvedic-centre/",
+      "other": "/kairali-ayurvedic-treatment-center/",
+      "note": "Same subject (the group's other centres); the thinner page's distinct angle is the centres as the village's foundation."
+    },
+    {
+      "keep": "/kairali-ayurvedic-group/",
+      "other": "/brief-on-kairali/",
+      "note": "All five paragraphs reappear, reworded, in the group page; now nested under it."
+    },
+    {
+      "keep": "/kairali-ayurvedic-products-pvt-ltd/",
+      "other": "/ayurvedic-products/",
+      "note": "Overlapping category lists with the company page and with /in-house-products/. Its 'Visit Website' button points to healing.recipes while Product Range names kairaliproducts.com."
+    },
+    {
+      "keep": "/ayurvedic-products/",
+      "other": "/in-house-products/",
+      "note": "Two general overviews of the group's own products (the second is also a card on /experience/); now siblings under the products company."
+    },
+    {
+      "keep": "/about-us/",
+      "other": "/kairali-the-ayurvedic-healing-village/",
+      "note": "Both are overviews of the village; merge decision for the owner."
+    },
+    {
+      "keep": "/awards-and-accolades/",
+      "other": "/our-accolades/",
+      "note": "Short summary of the same awards covered in full on the awards history page."
+    },
+    {
+      "keep": "/social-responsibilities/",
+      "other": "/social-cultural-environmental-commitment/",
+      "note": "A thinner restatement of the CSR page's themes."
+    },
+    {
+      "keep": "/ayurveda-training-programme/",
+      "other": "/ayurveda-training/",
+      "note": "Older course overview listing the same five courses. Its table prints fixed prices (e.g. 18,400 INR / 307 USD for the one-day workshop) that conflict with the per-night fee sheet; must not be relied on without an owner ruling."
+    },
+    {
+      "keep": "/training-programs/",
+      "other": "/training/",
+      "note": "Older general article on training; its four tracks do not match the five coded courses."
+    },
+    {
+      "keep": "/why-get-training-in-ayurveda/",
+      "other": "/learn-more-about-ayurveda/",
+      "note": "Stub with one generic paragraph; dropped from the listing."
+    },
+    {
+      "keep": "/offers/defence-paramilitary-personnel-get-upto-30-off/",
+      "other": "/defence-and-paramilitary-forces/",
+      "note": "Same offer; the dropped copy's terms are [TO CONFIRM] placeholders. If the owner prefers its design, fill the fields and swap which one is listed."
+    },
+    {
+      "keep": "/offers/",
+      "other": "/special-offers/",
+      "note": "Generic offer copy with no terms plus expired 2025 promotions; dropped from the listing as an owner-approval exception (see drops)."
+    },
+    {
+      "keep": "/offers/",
+      "other": "/ayurveda-offers/",
+      "note": "One-sentence placeholder; dropped from the listing."
+    },
+    {
+      "keep": "/the-baoli-special-deal/",
+      "other": "/the-baoli-advert-box-deal/",
+      "note": "Twin empty placeholders, both dropped. The Offers hub still shows a 'The Baoli Special Deal' card with no description."
+    },
+    {
+      "keep": "/privacy-statement/",
+      "other": "/privacy-policy/",
+      "note": "Two overlapping privacy documents (2025 vs 2017). Legal to merge or mark one superseded; the 2017 page names CC Avenue while the payment page lists Razorpay and PayPal."
+    },
+    {
+      "keep": "/privacy-statement/",
+      "other": "/new-privacy-policy/",
+      "note": "New after review: a third privacy document, served and set 'index, follow' in route-overrides.json but excluded from the tree by the builder's JUNK list (deliberate, not an omission). Legal to canonicalise it to /privacy-statement/ or list it deliberately under Policies."
+    },
+    {
+      "keep": "/treatments-gallery/",
+      "other": "/ayurveda-gallery/",
+      "note": "Topical overlap (therapy photos), no shared images; the small set is now labelled for its herbs."
+    },
+    {
+      "keep": "/yoga-retreats-for-everyone/",
+      "other": "/retreats-for-everyone/",
+      "note": "Same case for a yoga retreat; the midlife article is fuller. Both also overlap /why-pick-a-yoga-or-yoga-retreat/."
+    },
+    {
+      "keep": "/weight-loss-programme/",
+      "other": "/kairali-ayurvedic-way-of-weight-management/",
+      "note": "Partial topical overlap only: the article is an older marketing piece (oil-massage method plus two recipes) that the programme page does not link. It now sits at the Knowledge centre root, not under the clinical programme; its 'no exercise or dietary limitations' claim goes to Dr. Deepu John."
+    },
+    {
+      "keep": "/ayurvedic-cuisine/",
+      "other": "/what-is-ayurvedic-food/",
+      "note": "Mostly the same ground (dosha balance, six tastes); its unique parts are the pre-arrival consultation, meal times and signature dishes."
+    },
+    {
+      "keep": "/panchakarma-therapy/",
+      "other": "/panchkarma-treatment.html",
+      "note": "Ad landing page for the same treatment; patients should reach the programme page through the tree."
+    },
+    {
+      "keep": "/weight-loss-programme/",
+      "other": "/weight-loss.html",
+      "note": "Ad landing page for the same programme."
+    },
+    {
+      "keep": "/holistic-treatment-for-rejuvenation-and-detoxification/",
+      "other": "/preventive-rejuvenation-detoxification.html",
+      "note": "Ad landing page whose hero names the same programme."
+    },
+    {
+      "keep": "/Ayurveda_Treatment_Neo_S.India_Cities.html",
+      "other": "/Kairali_Brand_and_Competition_Neo-original.html",
+      "note": "Same ad template and sections; the two give conflicting villa rates. Owner to decide whether both ads still need to be listed."
+    },
+    {
+      "keep": "/kairali-cleansing-centre.html",
+      "other": "/wellness-resort-kerala.html",
+      "note": "Same brand-overview ad template (about 66% shared text; about 62% with /treatment-in-kerala.html). Live ad targets, so kept."
+    },
+    {
+      "keep": "/ayurvedic-treatment-packages.html",
+      "other": "/Kairali_Brand_and_Competition_Neo-original.html",
+      "note": "Same template ('Come & Experience The New Look'). The .html packages page is the owner-built site page, listed under Treatments & programmes as 'Ayurvedic Treatment Packages' (29 Sep 2026, OWNER-REG-01); the Neo page is the ad."
+    }
   ],
-  "/village-facilities/": [
-   "/experience/",
-   "/ayurvedic-cuisine/",
-   "/organic-farm/",
-   "/animal-husbandry/"
+  "notes": [
+    "RESULT: validated by running a copy of tools/build-site-tree.mjs with these overrides (scratchpad/ia/final/build-sim.mjs → site-tree.sim.json, rendered by render.py): 217 pages in 15 sections, every indexable route exactly once, 0 dead links, every parent a page in the same section, no cycles, no KTAHV-locked word in any label or section title, no label over 6 words (the 11 campaign labels checked without the builder's ' (campaign page)' suffix). First-level rail items, current → final: programmes 11 → 6, villas 4 → 5 (the rates page joins), training 16 → 8, offers 9 → 4, about 8 → 8 (the 19 flat group pages become Group · Products company › Product range · Our partners), facilities 15 → 4, things 14 → 3, knowledge 14 → 4, gallery 9 → 6, past retreats 1 (18 inside), visit 7 → 8 (payment and cancellation join), careers 3, policies 10 → 7. Builder-format file: scratchpad/ia/final/overrides.json (moves, relabels, drops, sectionTitles); the full plan is scratchpad/ia/final/final-plan.json.",
+    "REVIEW DISPOSITION (each objection checked against the prerendered page text before deciding). ACCEPTED: weight article out from under the programme to the Knowledge centre root (all three reviewers); physicians named in the /online-consultation/ label; villa rates page moved to Villas; payment and cancellation pages moved to Plan your visit; cooking classes join the in-village activities; organic farm out of house rules to the facilities root beside the farm animals; five galleries nested under /photo-gallery/; /destination-palakkad/ under Things to do in Kerala; products company to the About root; clinical labels corrected where the page does not name the condition (slipped disc, nervous system, blood pressure, eye) and two look-alike detox labels separated; Karkidaka months in its label; parallel yoga twin labels plus a distinct label for the yoga rate-table page; 'Packages to book online', 'Apply for a job or internship', 'Places within 10 km', the doshas label, 'for all ages', 'OPD' and 'Patient life gallery' corrected; senior offer says 60+; Air India label says members; FAQs label kept without 'price lists'; /prav-simona-yoga-retreat/ drop reversed; count corrected to 29. REJECTED: nesting /treatment-programs/ and /wellness-programs/ under the finder (the finder does not link them, and two list pages would sit above the condition groups in a branch labelled 'by condition'); reviewer 3's Karkidaka builder fix (a seasonal programme is not a condition; kept at root with its months in the label); reviewer 2's claim that /ayurveda-workshop/ never says Japan (it says 'Return to Japan via Singapore Airlines', so the label stands); moving /animal-husbandry/ under the in-village activities (it stays with the organic farm in facilities; the site's own 'House rules of the property' block on /no-preservatives/ even counts Organic Farming and Animal Husbandry among its eight rules, so the owner may prefer them under house rules); treating /new-privacy-policy/ as missing (it is excluded on purpose by the builder's JUNK list; flagged to legal instead).",
+    "BUILDER / RENDER CHANGES REQUIRED BEFORE THIS SHIPS (tools, not overrides). (a) BREADCRUMBS: 15 moved pages still show a visible breadcrumb that names their old section, so the rail and the breadcrumb disagree on the same page (e.g. /meditation/ shows 'Home / Knowledge Centre / Meditation' while its rail says Things to do): /kairali-ayurvedic-way-of-weight-management/, /yoga-therapy-individual/, /ayurveda-retreats-for-everyone/, /ayurveda-treatment/, /ayurveda-workshop/, /yoga-classes-practical/, /yoga-classes-theory/, /nature-walk/, /meditation/, /butterfly-booklet/, /cooking-classes/, /retreats-for-everyone/, /yoga-retreats-for-everyone/, /product-gallery/, /retreats-gallery/ (payment, cancellation and the rates page have section-less crumbs). Render the visible breadcrumb from site-tree.json (section-nav.json already carries routes[path].crumbs), or update the dataset crumbs, in the same change. (b) DROPPED PAGES MUST KEEP A RAIL: build-section-nav.mjs builds routes only from tree.index and section-nav.js returns early when a route has no entry, so on 8 dropped pages that draw the rail today the old WordPress sidebar comes back (an offers page and a programmes page would show the legacy 'Knowledge Center' menu). Add a route for every served-but-unlisted page with its section, crumbs [] and its existing `remove` pointer: offers → /ayurveda-offers/, /special-offers/, /the-baoli-advert-box-deal/, /the-baoli-special-deal/; programmes → /ayurveda-package/; knowledge → /learn-more-about-ayurveda/, /ayurvedic-links/; news → /yoga-and-ayurveda/ (/defence-and-paramilitary-forces/ and /emailsubscriber/ draw no rail today). (c) CONCERN GROUP: remove /personalized-customized-healing-program/ from CONCERN['Rejuvenation & detoxification']; its 'Who is this for' is chronic illnesses (arthritis, diabetes, hypertension, digestive, hormonal) and multiple comorbidities, and its finder line is 'more than one condition'. It then sits ungrouped at the top of 'Ayurvedic treatments by condition', above the groups. A move override cannot do this. (d) campaignLabel(): drop the ' (campaign page)' suffix; the heading already says 'Campaign pages'. (e) Recommended: in SECTIONS put visit then reviews directly after about (header order is kept for the first five). Contact, booking, payment and FAQs are 11th of 15 on /sitemap/ today.",
+    "CHILD ORDER (required; sortTree() sorts by manifest position, so the ladders render scrambled: courses read 20, 5, 10, 1, 3 days, bands read 15, 25–50, 50+, nearest, and the villa rates page lands above the villas). Add an `order` map to site-tree-overrides.json, honour it in sortTree(), and assert it in test/sitemap-navigation.test.mjs. /all-programs/: /ayurvedic-treatments/, /yoga-meditation-programs/, /karkidaka-chikitsha-or-monsoon-wellness.html, /treatment-programs/, /wellness-programs/, /packages/. /yoga-meditation-programs/: /yoga-retreats/, /yoga-therapy-individual/, /yoga-meditation-program/, /yoga-meditation-training/, /yoga-and-meditation-package/. /our-villas/ (the hub's own order): /maharaja-suite/, /royal-villa/, /deluxe-villa/, /classic-villa/, /ayurvedic-treatment-packages.html. /training-programs/: /ayurveda-training-programme/, /training-course-fees/, /kairali-institute-of-ayurveda-and-panchakarma-therapy/, /new-to-yoga-teacher-training/, /why-get-training-in-ayurveda/, /why-get-training-in-yoga/, /training/, /ayurveda-training/. /ayurveda-training-programme/: one-day, three-day, intensive (five-day), level-one (ten-day), advanced (twenty-day). /village-facilities/: /experience/, /ayurvedic-cuisine/, /organic-farm/, /animal-husbandry/. /experience/ (its own card order): alcohol-free, no-smoking, no-caffeine, vegetarian, no-preservatives, no-refridgeration. /things-to-do/: /things-to-do-in-property/, /things-to-do-in-kerala/, /sightseeing/. /things-to-do-in-property/ (hub order): nature-walk, butterfly-booklet, cooking-classes, meditation, yoga-classes-theory, yoga-classes-practical. /things-to-do-in-kerala/ (hub card order): visit-kerala, destination-palakkad, wildlife-drive, elephant-safari, house-boat-tour, back-water-tour, mountain-jeep-safari, cultural-events, festivals. /sightseeing/: attractions-under-10kms, attractions-15kms-and-below, attractions-25kms-to-50kms, attractions-above-50kms. /knowledge-centre/: /new-to-ayurveda/, /new-to-yoga/, /ayurveda/, /kairali-ayurvedic-way-of-weight-management/. /new-to-ayurveda/: learn-about-ayurveda, what-is-panchkarma, live-to-100-with-panchkarma, why-pick-an-ayurveda-treatment-or-ayurvedic-retreat, ayurveda-retreats-for-everyone. /new-to-yoga/ (hub order): what-is-yoga, why-pick-a-yoga-or-yoga-retreat, learn-more-about-yoga, retreats-for-everyone, yoga-retreats-for-everyone. /gallery/: /photo-gallery/, /retreats-gallery/, /ayurveda-gallery/, /product-gallery/, /video-gallery/, /virtual-tour/. /photo-gallery/ (its link order): property, treatments, villas, yoga, sight-seeing. /archive-yoga-retreat/ (same-name records together, stated year newest first, undated last): katha-wellness-retreat-2019, karma-being-retreat-2019, karma-being-retreat, ayurvedic-new-year-yala-2018, lakshya-yoga-retreat-2018, lakshya-yoga-retreat-2017, lakshya-yoga-retreat, lakshya-yoga, chef-retreat-food-to-wellness, back-to-roots, food-sadhana, prav-simona-monsoon-yoga-retreat, prav-simona-yoga-retreat, ananda-lahari-yoga-and-ayurveda-retreat, ashtanga-yoga-and-ayurveda-retreat, ayuryoga, mindfulness-retreat, ayurveda-workshop. /contact-us/: /how-to-reach/, /online-consultation/, /faqs-downloads/, /book-now/, /enquiry-form/, /payment-policy-compliance/, /cancellation-and-refund-policy/, /walk-in-ayurveda-treatment/.",
+    "CLINICAL SIGN-OFF (HARD GATE 7): 29 concern-grouped treatment programmes (not 31; the groups hold 5+5+4+4+4+3+1+2+1) now carry condition-first rail labels. After review, each label was checked against the page's own text ('Who is this for', H1, intro), not only against the finder 'For:' line, whose condition vocabulary is still PENDING clinical sign-off in english-candidate/search-vocabulary.json. Four labels were corrected where the page does not name the condition: slipped disc (no sciatica), nervous system (no neuropathy or numbness), blood pressure (cholesterol is one bullet), eye (no 'eyesight'). Sciatica moved to the back-pain label, whose page lists it. Page H1s keep the register names; this reverses builder rule 6 for the rail only. Exact list for Dr. Deepu John: /panchakarma-therapy/ 'Panchakarma (classical detox)'; /holistic-treatment-for-rejuvenation-and-detoxification/ 'Rejuvenation & detox for chronic stress'; /preventive-and-regenerative-treatment/ 'Preventive care to stay healthy'; /personalized-customized-healing-program/ 'Personalised care for several conditions'; /immunity-enhancement-executive-health-assessment-therapy/ 'Immunity & executive health check'; /treatment-for-arthritis-and-spondylitis/ 'Arthritis & joint pain'; /treatment-for-chronic-back-pain/ 'Chronic back pain & sciatica'; /treatment-for-slip-disc/ 'Slipped or herniated disc'; /treatment-for-cervical-spondylosis/ 'Neck pain & cervical spondylosis'; /treatment-for-spondylitis/ 'Spondylitis & spine stiffness'; /weight-loss-programme/ 'Weight loss & obesity'; /treatment-for-diabetes/ 'Diabetes & blood sugar'; /treatment-for-hypertension/ 'High blood pressure & heart health'; /digestive-wellness-gut-health-yoga-therapy/ 'Digestion & gut health (yoga therapy)'; /treatment-to-remove-stress-and-strain/ 'Stress & anxiety'; /sleep-restoration-therapy/ 'Sleep problems & insomnia'; /treatment-for-sinusitis-and-migraine/ 'Sinusitis & migraine'; /yoga-based-stress-energy-reset-program/ 'Burnout & low energy (yoga therapy)'; /treatment-for-paralysis/ 'Paralysis & stroke rehabilitation'; /treatment-for-facial-paralysis/ 'Facial paralysis & Bell's palsy'; /treatment-for-nervous-disability/ 'Nervous system disorders'; /de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/ 'Alcohol, drug & tobacco addiction'; /treatment-for-psoriasis/ 'Psoriasis & scaly skin'; /treatment-for-skin-diseases/ 'Eczema, dermatitis & skin conditions'; /beauty-care-and-eye-care/ 'Eye strain & vision care'; /treatment-for-bronchial-diseases/ 'Asthma & bronchitis'; /womens-hormonal-balance-endocrine-therapy/ 'Hormones, thyroid, PCOS & menopause'; /post-pregnancy-health-programme/ 'Recovery after childbirth'; /revitalizing-and-strengthening/ 'Supportive care during cancer treatment'. To revert, drop these 29 relabels.",
+    "HUB PAGES THAT DO NOT LINK THEIR CHILDREN (content fixes, not IA; nothing here is a dead link). /our-partners/ has no links (add the five schemes). /sightseeing/ has none to its four bands. /ayurvedic-cuisine/ names its food pages only as plain-text cards. /new-to-ayurveda/ has two wrong hrefs (the 'Why pick an Ayurveda treatment' card goes to the yoga article; the 'Ayurveda Retreats for everyone' text link goes to /retreats-for-everyone/) and does not list /learn-about-ayurveda/ or /live-to-100-with-panchkarma/. /new-to-yoga/ does not list /yoga-retreats-for-everyone/. /yoga-meditation-programs/ does not list /yoga-meditation-program/ or /yoga-therapy-individual/. /awards-and-accreditations/ does not link /our-accolades/. /kairali-ayurvedic-group/ links only Kairali Hospitality (not /brief-on-kairali/, the two centre pages or /villa-raag/). /kairali-ayurvedic-products-pvt-ltd/ does not link /ayurvedic-products/ or /in-house-products/. /knowledge-centre/ does not link /new-to-ayurveda/ or /new-to-yoga/. /archive-yoga-retreat/ does not list /ayurveda-workshop/.",
+    "DEAD OR WRONG LINKS AND LEAKED TEXT TO FIX BEFORE THIS TREE SHIPS (content fixes). /gallery/: the eight hub cards have href '0'–'7' (dead); repoint in card order 0 /photo-gallery/, 1 /property-gallery/, 2 /treatments-gallery/, 3 /villas-gallery/, 4 /retreats-gallery/, 5 /product-gallery/, 6 /sight-seeing-gallery/, 7 /yoga-gallery/ (verified against the card titles). /offers/: 13 visible '[TO CONFIRM]' fields, a leaked internal note ('The record page carries no description') and a 'The Baoli Special Deal' card for a dropped placeholder. Fill the fields from the patient-care team or hide the empty rows (never invent), and remove the Baoli card. /training-course-fees/: 4× 'Body copy is poured verbatim from the site record…', 'List item poured from the record', 12 'TO CONFIRM', and no H1. It stays listed because its 2026–27 fee table is real. /attractions-above-50kms/: opens with '7 places, in the order they appear on the live page.' and has an empty H1. /village-facilities/: the 'Yoga & Meditation' card goes to /yoga-retreats-for-everyone/ (an article) and 'Fine Dining' to /what-is-ayurvedic-food/. Point them at /things-to-do-in-property/ and /ayurvedic-resturant-and-cooking-at-healing-village/. /internships-at-kairali/: 'Apply Now' goes to /new-to-ayurveda/ and 'Careers' to /ayurveda-treatment/. Point them at /apply-now/ and /careers/. /ayurveda-gallery/: its back-link points to the Knowledge Centre. /ayurveda-workshop/: lacks the 'Past retreat' banner its siblings carry.",
+    "FACT CONFLICTS TO FLAG, NOT FIX (HARD GATE 6; ask the owner). TARIFF: the package price lists on /faqs-downloads/, /ayurvedic-treatment-packages.html and the yoga hub are the 2025–26 PDFs ('Last updated April 2025'), and the site says that tariff runs to 30 September 2026. /faqs-downloads/ and /training-course-fees/ already quote 2026–27 figures. The Deluxe single rate per night reads ₹16,264 on the rates page (treatment included), ₹17,786 on /yoga-and-meditation-package/ and ₹18,410 on /training-course-fees/ (the 2026–27 training tariff). These may be different packages or years, so the owner must confirm which are current before 'Villa rates, treatment included' ships. OTHERS: /ayurveda-training/ prints fixed course prices that conflict with the per-night fee sheet, and its meta title is 'Kairali Memberships | Affiliations | Accreditations'. The /training-programs/ card for the all-courses page says '1-day'. /map/ distances conflict with /how-to-reach/. /attractions-under-10kms/ lists Tipu's Fort at 14 km. Thiruvalathoor is 10 km on /sightseeing/ but 5.2 km on the rates page. The defence offer URL says 30% while its H1 and terms say up to 20%. /ayurveda-workshop/ says the retreat was 'founded in Kerala in 1997'. The Neo ads give conflicting villa rates. The prices on /kairali-cleansing-centre.html and the family ad's discounts need checking against the live tariff and /offers/. /payment-policy-compliance/'s meta title says 'Privacy Policy'. The 2017 privacy policy names CC Avenue, while the payment page lists Razorpay and PayPal.",
+    "OWNER QUESTIONS (for QUESTIONS.md; not decided here). (1) Yoga teacher training: the yoga hub card for /yoga-meditation-training/ says 'For: yoga teacher training', and the global header's 'Yoga & Training' link points at that page. But the page itself is a patient practice programme ('No prior experience is required'), and /new-to-yoga-teacher-training/ says 'Coming Soon'. Is any page actually teacher training? If so, it moves to the Training section. (2) Twins to keep or merge: /yoga-meditation-program/ (3-night) vs /yoga-meditation-training/ (7-night); /yoga-and-meditation-package/ vs /yoga-meditation-training/; /enquiry-form/ vs /contact-us/ (94%); /treatment-programs/ and /ayurvedic-treatments/ vs /all-programs/; /map/ vs /how-to-reach/; the Prav & Simona pair. (3) /new-privacy-policy/ is served and 'index, follow' but deliberately unlisted: canonicalise it or list it? (4) /villa-raag/ is written in the hospitality register, which is correct for Villa Raag but served on the KTAHV domain: how does the clinical lock apply? (5) Should Organic Farming and Animal Husbandry sit under the house rules, as the site's own eight-rule block on /no-preservatives/ presents them? This plan places them as facilities, by their page content.",
+    "MEDICAL CLAIMS SEEN WHILE READING (for Dr. Deepu John): the 'Live to 100' title (a longevity promise; the rail label is 'How Panchakarma works'); 'weight reduction without the necessity of exercise or dietary limitations' (/kairali-ayurvedic-way-of-weight-management/); a 'permanent solution' for bronchial disease; 'no side effect' / 'completely eradicate' in /why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/; 'eradicating the root of any disease' in /what-is-panchkarma/; 'Merged with almost no side effects' (/arogya-shala/); the Karkidaka page's patient-outcome claims ('85% of guests leave feeling measurably better', CRP, blood sugar and pain-score figures).",
+    "KTAHV LANGUAGE LOCK: every rail label and both section titles are clean (checked by the builder's own regex and a second pass). Many page BODIES still use locked words (guests, journey, luxury, resort, spa, cure): the house-rule pages, the Kerala excursion pages, most knowledge articles, the programme pages, the villa pages ('journey of wellness and luxury' on /maharaja-suite/), the rates page, /animal-husbandry/ ('wellness resort') and every campaign page. /ayurveda-workshop/ names its organiser 'Oriental Spa Ayus', so the label avoids it. The URL and meta of /wellness-resort-kerala.html carry 'resort'; it is a live ad target, so flag it but do not rename it.",
+    "LOCALES: these labels are EN only. Before DE/FR ship, the same moves and relabels need translations, checked for the DE/FR equivalents of the locked words (Kur, Urlaub, Luxus; cure, vacances, luxe) and, for the 29 clinical labels, the same sign-off.",
+    "DROPS (10, down from 11): each stays served (no status change) and keeps its rail once builder change (b) lands. /ayurvedic-links/ stays linked from the global footer (a separate decision). The rest are linked today only from /sitemap/, so after the drop they are reachable by URL or search but no link breaks. Seven are placeholders, stubs or utility pages: /ayurveda-offers/, /the-baoli-advert-box-deal/, /the-baoli-special-deal/, /emailsubscriber/, /ayurvedic-links/ (link-exchange instructions for webmasters), /learn-more-about-ayurveda/ and /yoga-and-ayurveda/. /ayurveda-package/ is a superseded index whose 24 cards link nowhere. Two are OWNER-APPROVAL EXCEPTIONS to the 'no real content' rule, stated openly: /special-offers/ (its only concrete offers expired in 2025) and /defence-and-paramilitary-forces/ (a placeholder copy of the listed defence offer). If the owner reads the rule strictly, list /special-offers/ under /offers/ once its expired promotions are removed. For the defence page, either fill its fields and swap it with the listed twin, or keep it unlisted. /prav-simona-yoga-retreat/ is no longer dropped: it has real content and is listed as the 'summary' of its fuller twin."
   ],
-  "/experience/": [
-   "/alcohol-free/",
-   "/no-smoking/",
-   "/no-caffeine/",
-   "/vegetarian/",
-   "/no-preservatives/",
-   "/no-refridgeration/"
+  "keptRegisterNames": [
+    "/one-day-ayurveda-workshop-program-kerala/ (One-day Ayurveda workshop)",
+    "/three-day-short-term-ayurveda-certificate-program-tap-hv/ (Three-day Ayurveda certificate)",
+    "/intensive-ayurveda-training-program-learn-practice-ayurveda/ (Five-day intensive Ayurveda training)",
+    "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/ (Ten-day advanced training (Level One))",
+    "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/ (Twenty-day consultant & therapist training)",
+    "/panchakarma-therapy/ (Panchakarma (classical detox))",
+    "/holistic-treatment-for-rejuvenation-and-detoxification/ (Rejuvenation & detox for chronic stress)",
+    "/immunity-enhancement-executive-health-assessment-therapy/ (Immunity & executive health check)",
+    "/personalized-customized-healing-program/ (Personalised care for several conditions)",
+    "/preventive-and-regenerative-treatment/ (Preventive care to stay healthy)",
+    "/treatment-for-arthritis-and-spondylitis/ (Arthritis & joint pain)",
+    "/treatment-for-cervical-spondylosis/ (Neck pain & cervical spondylosis)",
+    "/treatment-for-chronic-back-pain/ (Chronic back pain & sciatica)",
+    "/treatment-for-slip-disc/ (Slipped or herniated disc)",
+    "/treatment-for-spondylitis/ (Spondylitis & spine stiffness)",
+    "/digestive-wellness-gut-health-yoga-therapy/ (Digestion & gut health (yoga therapy))",
+    "/treatment-for-diabetes/ (Diabetes & blood sugar)",
+    "/treatment-for-hypertension/ (High blood pressure & heart health)",
+    "/weight-loss-programme/ (Weight loss & obesity)",
+    "/sleep-restoration-therapy/ (Sleep problems & insomnia)",
+    "/treatment-for-sinusitis-and-migraine/ (Sinusitis & migraine)",
+    "/treatment-to-remove-stress-and-strain/ (Stress & anxiety)",
+    "/yoga-based-stress-energy-reset-program/ (Burnout & low energy (yoga therapy))",
+    "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/ (Alcohol, drug & tobacco addiction)",
+    "/treatment-for-facial-paralysis/ (Facial paralysis & Bell's palsy)",
+    "/treatment-for-nervous-disability/ (Nervous system disorders)",
+    "/treatment-for-paralysis/ (Paralysis & stroke rehabilitation)",
+    "/beauty-care-and-eye-care/ (Eye strain & vision care)",
+    "/treatment-for-psoriasis/ (Psoriasis & scaly skin)",
+    "/treatment-for-skin-diseases/ (Eczema, dermatitis & skin conditions)",
+    "/treatment-for-bronchial-diseases/ (Asthma & bronchitis)",
+    "/post-pregnancy-health-programme/ (Recovery after childbirth)",
+    "/womens-hormonal-balance-endocrine-therapy/ (Hormones, thyroid, PCOS & menopause)",
+    "/revitalizing-and-strengthening/ (Supportive care during cancer treatment)",
+    "/yoga-meditation-training/ (Yoga & meditation, 7-night minimum)",
+    "/yoga-and-meditation-package/ (Yoga & meditation villa rates)",
+    "/yoga-retreats/ (Personalised yoga programme)",
+    "/ayurveda-training-programme/ (All Ayurveda training courses)"
   ],
-  "/things-to-do/": [
-   "/nature-walk/",
-   "/butterfly-booklet/",
-   "/cooking-classes/",
-   "/meditation/",
-   "/yoga-classes-theory/",
-   "/yoga-classes-practical/",
-   "/things-to-do-in-kerala/",
-   "/sightseeing/"
-  ],
-  "/things-to-do-in-kerala/": [
-   "/visit-kerala/",
-   "/destination-palakkad/",
-   "/wildlife-drive/",
-   "/elephant-safari/",
-   "/house-boat-tour/",
-   "/back-water-tour/",
-   "/mountain-jeep-safari/",
-   "/cultural-events/",
-   "/festivals/"
-  ],
-  "/knowledge-centre/": [
-   "/new-to-ayurveda/",
-   "/new-to-yoga/",
-   "/ayurveda/",
-   "/kairali-ayurvedic-way-of-weight-management/"
-  ],
-  "/new-to-ayurveda/": [
-   "/learn-about-ayurveda/",
-   "/what-is-panchkarma/",
-   "/live-to-100-with-panchkarma/",
-   "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
-   "/ayurveda-retreats-for-everyone/"
-  ],
-  "/new-to-yoga/": [
-   "/what-is-yoga/",
-   "/why-pick-a-yoga-or-yoga-retreat/",
-   "/learn-more-about-yoga/",
-   "/retreats-for-everyone/",
-   "/yoga-retreats-for-everyone/"
-  ],
-  "/gallery/": [
-   "/photo-gallery/",
-   "/retreats-gallery/",
-   "/ayurveda-gallery/",
-   "/product-gallery/",
-   "/video-gallery/",
-   "/virtual-tour/"
-  ],
-  "/photo-gallery/": [
-   "/property-gallery/",
-   "/treatments-gallery/",
-   "/villas-gallery/",
-   "/yoga-gallery/",
-   "/sight-seeing-gallery/"
-  ],
-  "/archive-yoga-retreat/": [
-   "/katha-wellness-retreat-2019/",
-   "/karma-being-retreat-2019/",
-   "/karma-being-retreat/",
-   "/ayurvedic-new-year-yala-2018/",
-   "/lakshya-yoga-retreat-2018/",
-   "/lakshya-yoga-retreat-2017/",
-   "/lakshya-yoga-retreat/",
-   "/lakshya-yoga/",
-   "/chef-retreat-food-to-wellness/",
-   "/back-to-roots/",
-   "/food-sadhana/",
-   "/prav-simona-monsoon-yoga-retreat/",
-   "/prav-simona-yoga-retreat/",
-   "/ananda-lahari-yoga-and-ayurveda-retreat/",
-   "/ashtanga-yoga-and-ayurveda-retreat/",
-   "/ayuryoga/",
-   "/mindfulness-retreat/",
-   "/ayurveda-workshop/"
-  ],
-  "/contact-us/": [
-   "/how-to-reach/",
-   "/online-consultation/",
-   "/faqs-downloads/",
-   "/book-now/",
-   "/payment-policy-compliance/",
-   "/cancellation-and-refund-policy/",
-   "/walk-in-ayurveda-treatment/"
-  ]
- },
- "_order_why": "Child order per parent (reviewers' CHILD ORDER note): ladders read in order (courses 1→20 days, distance bands nearest first), hubs follow their own card order; unlisted children keep manifest order after these."
+  "order": {
+    "/all-programs/": [
+      "/ayurvedic-treatments/",
+      "/yoga-meditation-programs/",
+      "/karkidaka-chikitsha-or-monsoon-wellness.html",
+      "/treatment-programs/",
+      "/wellness-programs/",
+      "/packages/",
+      "/ayurvedic-treatment-packages.html"
+    ],
+    "/yoga-meditation-programs/": [
+      "/yoga-therapy-individual/",
+      "/yoga-meditation-program/",
+      "/yoga-meditation-training/",
+      "/yoga-and-meditation-package/"
+    ],
+    "/our-villas/": [
+      "/maharaja-suite/",
+      "/royal-villa/",
+      "/deluxe-villa/",
+      "/classic-villa/"
+    ],
+    "/training-programs/": [
+      "/ayurveda-training-programme/",
+      "/training-course-fees/",
+      "/kairali-institute-of-ayurveda-and-panchakarma-therapy/",
+      "/new-to-yoga-teacher-training/",
+      "/why-get-training-in-ayurveda/",
+      "/why-get-training-in-yoga/",
+      "/training/",
+      "/ayurveda-training/"
+    ],
+    "/ayurveda-training-programme/": [
+      "/one-day-ayurveda-workshop-program-kerala/",
+      "/three-day-short-term-ayurveda-certificate-program-tap-hv/",
+      "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
+      "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
+      "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/"
+    ],
+    "/village-facilities/": [
+      "/experience/",
+      "/ayurvedic-cuisine/",
+      "/organic-farm/",
+      "/animal-husbandry/"
+    ],
+    "/experience/": [
+      "/alcohol-free/",
+      "/no-smoking/",
+      "/no-caffeine/",
+      "/vegetarian/",
+      "/no-preservatives/",
+      "/no-refridgeration/"
+    ],
+    "/things-to-do/": [
+      "/nature-walk/",
+      "/butterfly-booklet/",
+      "/cooking-classes/",
+      "/meditation/",
+      "/yoga-classes-theory/",
+      "/yoga-classes-practical/",
+      "/things-to-do-in-kerala/",
+      "/sightseeing/"
+    ],
+    "/things-to-do-in-kerala/": [
+      "/visit-kerala/",
+      "/destination-palakkad/",
+      "/wildlife-drive/",
+      "/elephant-safari/",
+      "/house-boat-tour/",
+      "/back-water-tour/",
+      "/mountain-jeep-safari/",
+      "/cultural-events/",
+      "/festivals/"
+    ],
+    "/knowledge-centre/": [
+      "/new-to-ayurveda/",
+      "/new-to-yoga/",
+      "/ayurveda/",
+      "/kairali-ayurvedic-way-of-weight-management/"
+    ],
+    "/new-to-ayurveda/": [
+      "/learn-about-ayurveda/",
+      "/what-is-panchkarma/",
+      "/live-to-100-with-panchkarma/",
+      "/why-pick-an-ayurveda-treatment-or-ayurvedic-retreat/",
+      "/ayurveda-retreats-for-everyone/"
+    ],
+    "/new-to-yoga/": [
+      "/what-is-yoga/",
+      "/why-pick-a-yoga-or-yoga-retreat/",
+      "/learn-more-about-yoga/",
+      "/retreats-for-everyone/",
+      "/yoga-retreats-for-everyone/"
+    ],
+    "/gallery/": [
+      "/photo-gallery/",
+      "/retreats-gallery/",
+      "/ayurveda-gallery/",
+      "/product-gallery/",
+      "/video-gallery/",
+      "/virtual-tour/"
+    ],
+    "/photo-gallery/": [
+      "/property-gallery/",
+      "/treatments-gallery/",
+      "/villas-gallery/",
+      "/yoga-gallery/",
+      "/sight-seeing-gallery/"
+    ],
+    "/archive-yoga-retreat/": [
+      "/katha-wellness-retreat-2019/",
+      "/karma-being-retreat-2019/",
+      "/karma-being-retreat/",
+      "/ayurvedic-new-year-yala-2018/",
+      "/lakshya-yoga-retreat-2018/",
+      "/lakshya-yoga-retreat-2017/",
+      "/lakshya-yoga-retreat/",
+      "/lakshya-yoga/",
+      "/chef-retreat-food-to-wellness/",
+      "/back-to-roots/",
+      "/food-sadhana/",
+      "/prav-simona-monsoon-yoga-retreat/",
+      "/prav-simona-yoga-retreat/",
+      "/ananda-lahari-yoga-and-ayurveda-retreat/",
+      "/ashtanga-yoga-and-ayurveda-retreat/",
+      "/ayuryoga/",
+      "/mindfulness-retreat/",
+      "/ayurveda-workshop/"
+    ],
+    "/contact-us/": [
+      "/how-to-reach/",
+      "/online-consultation/",
+      "/faqs-downloads/",
+      "/book-now/",
+      "/payment-policy-compliance/",
+      "/cancellation-and-refund-policy/",
+      "/walk-in-ayurveda-treatment/"
+    ]
+  },
+  "_order_why": "Child order per parent (reviewers' CHILD ORDER note): ladders read in order (courses 1→20 days, distance bands nearest first), hubs follow their own card order; unlisted children keep manifest order after these."
 }

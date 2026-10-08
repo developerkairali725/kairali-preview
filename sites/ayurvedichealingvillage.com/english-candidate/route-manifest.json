@@ -188,10 +188,10 @@
       "dataset": null,
       "metadataSource": "view-helmet",
       "metadata": {
-        "title": "Past Yoga & Ayurveda Retreats | Kairali Healing Village",
+        "title": "Past Retreats & Events | Kairali Healing Village",
         "description": "Explore past yoga, Ayurveda and culinary retreats at Kairali – The Ayurvedic Healing Village. Read retreat stories and discover current programmes.",
         "canonical": "https://ayurvedichealingvillage.com/archive-yoga-retreat/",
-        "ogTitle": "Past Yoga & Ayurveda Retreats | Kairali Healing Village",
+        "ogTitle": "Past Retreats & Events",
         "ogDescription": "Explore past yoga, Ayurveda and culinary retreats at Kairali – The Ayurvedic Healing Village. Read retreat stories and discover current programmes.",
         "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
         "ogType": "website"
@@ -1550,13 +1550,14 @@
       "metadata": {
         "title": "Founder's Message – The Vision Behind Kairali Ayurvedic Healing",
         "description": "Discover the vision behind Kairali Ayurvedic Healing Village. Our founders uphold Ayurveda’s legacy, offering authentic wellness experiences worldwide.",
-        "canonical": "https://ayurvedichealingvillage.com/founders-message/",
+        "canonical": "https://ayurvedichealingvillage.com/about-us/",
         "ogTitle": "Founder Message",
         "ogDescription": "Discover the vision behind Kairali Ayurvedic Healing Village. Our founders uphold Ayurveda’s legacy, offering authentic wellness experiences worldwide.",
         "ogImage": null,
         "ogType": "article"
       },
-      "sitemapExclude": true
+      "sitemapExclude": true,
+      "reason": "Owner-approved 301 consolidation into About Us, 24 September 2026."
     },
     {
       "path": "/gallery/",
@@ -1607,10 +1608,10 @@
       "metadataSource": "dataset",
       "metadata": {
         "title": "Gift Vouchers — Coming Soon | Kairali",
-        "description": "Gift vouchers are coming soon at Kairali – The Ayurvedic Healing Village. Contact our team for enquiries or explore our current offers.",
+        "description": "AHV gift vouchers are coming soon: a thoughtful way to support the health of family and friends. Gift vouchers are not yet available to purchase.",
         "canonical": "https://ayurvedichealingvillage.com/gift-vouchers/",
         "ogTitle": "Gift Vouchers — Coming Soon | Kairali",
-        "ogDescription": "Gift vouchers are coming soon at Kairali – The Ayurvedic Healing Village. Contact our team for enquiries or explore our current offers.",
+        "ogDescription": "AHV gift vouchers are coming soon: a thoughtful way to support the health of family and friends. Gift vouchers are not yet available to purchase.",
         "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
         "ogType": "article"
       }
@@ -2515,19 +2516,20 @@
       "segments": [
         "new-to-yoga-teacher-training"
       ],
-      "desktopView": "ahv-page-article-reader-desktop",
-      "mobileView": "ahv-page-article-reader-mobile",
-      "dataset": "assets/reader25b-family-data.js",
+      "desktopView": "ahv-page-new-to-yoga-teacher-training-desktop",
+      "mobileView": "ahv-page-new-to-yoga-teacher-training-mobile",
+      "dataset": null,
       "metadataSource": "dataset",
       "metadata": {
-        "title": "Certified Yoga Teacher Training — Coming Soon | Kairali",
-        "description": "Certified Yoga Teacher Training is Coming Soon. Enrolment is not currently open. Yoga and meditation practice for patients is available separately.",
+        "title": "Professional Yoga Teacher Training — Coming Soon | Kairali",
+        "description": "A forthcoming professional teacher-training track.",
         "canonical": "https://ayurvedichealingvillage.com/new-to-yoga-teacher-training/",
-        "ogTitle": "Yoga Teacher Training",
-        "ogDescription": "Certified Yoga Teacher Training is Coming Soon. Enrolment is not currently open. Yoga and meditation practice for patients is available separately.",
+        "ogTitle": "Professional Yoga Teacher Training — Coming Soon",
+        "ogDescription": "A forthcoming professional teacher-training track.",
         "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2023/11/our-story.png",
         "ogType": "article"
-      }
+      },
+      "sitemapExclude": false
     },
     {
       "path": "/new-to-yoga/",
@@ -2991,13 +2993,13 @@
       "metadata": {
         "title": "Panchakarma Therapy | Ayurvedic Detox & Rejuvenation",
         "description": "Physician-guided Panchakarma at Kairali – The Ayurvedic Healing Village, Kerala: classical Ayurvedic detoxification with herbal and oil therapies.",
-        "canonical": "https://ayurvedichealingvillage.com/panchakarma-therapy/",
+        "canonical": "https://ayurvedichealingvillage.com/panchakarma/",
         "ogTitle": "Panchkarma",
         "ogDescription": "Physician-guided Panchakarma at Kairali – The Ayurvedic Healing Village, Kerala: classical Ayurvedic detoxification with herbal and oil therapies.",
         "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/panchkarma.webp",
         "ogType": "article"
       },
-      "sitemapExclude": true,
+      "sitemapExclude": false,
       "duplicateOf": "https://ayurvedichealingvillage.com/panchakarma-therapy/",
       "duplicateNote": "thin 5k-char legacy page on the same subject as the 26k programme page"
     },
@@ -4668,9 +4670,9 @@
       "segments": [
         "yoga-and-meditation-package"
       ],
-      "desktopView": "ahv-page-article-reader-desktop",
-      "mobileView": "ahv-page-article-reader-mobile",
-      "dataset": "assets/commercial-family-data.js",
+      "desktopView": "ahv-page-yoga-and-meditation-package-desktop",
+      "mobileView": "ahv-page-yoga-and-meditation-package-mobile",
+      "dataset": null,
       "metadataSource": "dataset",
       "metadata": {
         "title": "Yoga and Meditation Package | Kairali Healing Village",
@@ -4768,14 +4770,15 @@
       "dataset": null,
       "metadataSource": "view-helmet",
       "metadata": {
-        "title": "Yoga & Meditation Programme in Kerala | Kairali",
-        "description": "Explore guided yoga and meditation alongside Ayurveda at Kairali in Kerala, with sessions led by experienced instructors.",
+        "title": "Yoga Training for Personal Practice — Coming Soon | Kairali",
+        "description": "A forthcoming course for personal yoga practice.",
         "canonical": "https://ayurvedichealingvillage.com/yoga-meditation-program/",
-        "ogTitle": "Kairali's Yoga & Meditation Package  Dhyana - Yoga Shibiram",
-        "ogDescription": "Explore guided yoga and meditation alongside Ayurveda at Kairali in Kerala, with sessions led by experienced instructors.",
+        "ogTitle": "Yoga Training for Personal Practice — Coming Soon",
+        "ogDescription": "A forthcoming course for personal yoga practice.",
         "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2024/11/yoga-meditation.webp",
         "ogType": "article"
-      }
+      },
+      "sitemapExclude": false
     },
     {
       "path": "/yoga-meditation-programs/",
@@ -4806,14 +4809,15 @@
       "dataset": null,
       "metadataSource": "view-helmet",
       "metadata": {
-        "title": "Yoga–Dhyāna Abhyāsa — Yoga & Meditation Training | Kairali",
-        "description": "Residential yoga and meditation training is presented alongside Ayurveda at Kairali’s retreat in Kerala, with sessions adjusted to participant experience.",
+        "title": "Yoga & Training | Kairali",
+        "description": "Explore yoga programmes, personalised yoga and Ayurveda courses.",
         "canonical": "https://ayurvedichealingvillage.com/yoga-meditation-training/",
-        "ogTitle": "Yoga & Meditation Training Program",
-        "ogDescription": "Residential yoga and meditation training is presented alongside Ayurveda at Kairali’s retreat in Kerala, with sessions adjusted to participant experience.",
+        "ogTitle": "Yoga & Training",
+        "ogDescription": "Explore yoga programmes, personalised yoga and Ayurveda courses.",
         "ogImage": "https://ayurvedichealingvillage.com/wp-content/uploads/2025/05/y-based.webp",
         "ogType": "article"
-      }
+      },
+      "sitemapExclude": false
     },
     {
       "path": "/yoga-retreats-for-everyone/",
@@ -4846,30 +4850,31 @@
       "metadata": {
         "title": "Vaiyaktika Yoga Sādhanā — Personalized Yoga | Kairali",
         "description": "Explore Kairali’s personalised yoga programme in Kerala. Practice, pranayama and meditation customised to your goals after a doctor’s assessment.",
-        "canonical": "https://ayurvedichealingvillage.com/yoga-retreats/",
+        "canonical": "https://ayurvedichealingvillage.com/yoga-therapy-individual/",
         "ogTitle": "Personalized Yoga Program in Kerala | Kairali",
         "ogDescription": "Explore Kairali’s personalised yoga programme in Kerala. Practice, pranayama and meditation customised to your goals after a doctor’s assessment.",
         "ogImage": null,
         "ogType": "website"
-      }
+      },
+      "sitemapExclude": true
     },
     {
       "path": "/yoga-therapy-individual/",
       "segments": [
         "yoga-therapy-individual"
       ],
-      "desktopView": "ahv-page-article-reader-desktop",
-      "mobileView": "ahv-page-article-reader-mobile",
-      "dataset": "assets/seven-informational-data.js",
-      "metadataSource": "dataset",
+      "desktopView": "ahv-page-yoga-retreats-desktop",
+      "mobileView": "ahv-page-yoga-retreats-mobile",
+      "dataset": null,
+      "metadataSource": "view-helmet",
       "metadata": {
-        "title": "Personalized Yoga Therapy for Holistic Healing in Kerala",
-        "description": "Experience tailored yoga therapy at Kairali’s Yoga Retreat Kerala. Restore balance with asanas, pranayama, Ayurveda & meditation in a serene setting.",
+        "title": "Vaiyaktika Yoga Sādhanā — Personalized Yoga | Kairali",
+        "description": "Explore Kairali’s personalised yoga programme in Kerala. Practice, pranayama and meditation customised to your goals after a doctor’s assessment.",
         "canonical": "https://ayurvedichealingvillage.com/yoga-therapy-individual/",
-        "ogTitle": "Yoga Therapy Individual",
-        "ogDescription": "Experience tailored yoga therapy at Kairali’s Yoga Retreat Kerala. Restore balance with asanas, pranayama, Ayurveda & meditation in a serene setting.",
+        "ogTitle": "Personalized Yoga Program in Kerala | Kairali",
+        "ogDescription": "Explore Kairali’s personalised yoga programme in Kerala. Practice, pranayama and meditation customised to your goals after a doctor’s assessment.",
         "ogImage": null,
-        "ogType": "article"
+        "ogType": "website"
       }
     }
   ]
