@@ -214,6 +214,16 @@ const STATIC_BOOT = `
       if (list) list.hidden = true;
     });
   }
+  host.addEventListener("click", function (event) {
+    var link = event.target && event.target.closest && event.target.closest("a[data-ahv-lang-option]");
+    if (!link || !host.contains(link)) return;
+    var code = link.getAttribute("data-ahv-lang-option");
+    var options = cfg.locale && cfg.locale.options;
+    if (!Array.isArray(options) || !options.some(function (option) {
+      return option.code === code && option.href === link.getAttribute("href");
+    })) return;
+    try { localStorage.setItem("ahv-locale", code); } catch (_) { /* storage blocked: the link still works */ }
+  });
   document.addEventListener("click", function (event) {
     var button = event.target && event.target.closest && event.target.closest(".ahv-lang-btn");
     if (!button || !host.contains(button)) {
