@@ -5,29 +5,40 @@ import { ConsentScripts } from "../../components/ConsentScripts";
 import SharedConsent from "../../campaign-v110/SharedConsent";
 import { measurementForEnvironment } from "../../lib/measurement-config.mjs";
 import analyticsConfig from "../../analytics.config.json";
-import { display, body } from "./fonts";
+import type { PageLocale } from "../kit/types.ts";
+import { display, body, instrument } from "./fonts";
 import "../../campaign-v110/integration.css";
 import "../../public/design/campaign-bundle.css";
 import "../styles/base.css";
 import "../sections/sections.css";
 import "./production.css";
 
+/** The site's shared chrome per page language: the localized copies the site already serves (as the German campaign
+ *  document did for /lp/behandlung-in-kerala/). English is unchanged. */
+const CHROME: Record<PageLocale, string> = {
+  en: "/design/review-chrome.js",
+  de: "/ahv/l10n/de/design/review-chrome.js",
+  ru: "/ahv/l10n/ru/design/review-chrome.js",
+};
+
 /**
- * The <html>/<body> shell of the two live ad routes: the current production campaign document
+ * The <html>/<body> shell of the live ad routes: the current production campaign document
  * (campaign-v110/CampaignDocument.tsx) without the old pages' design CSS and fonts. Unchanged from it:
  * ConsentScripts (consent defaults, granular choices, GPC), lead-receipt.js (consented lead event and the
  * /ppc-thanks/ hand-off), SharedConsent with the environment's measurement IDs, the Chatbase loader (Priya) and
  * review-chrome.js (header Chat control, the WhatsApp / Priya / Instagram / Messenger choices, the phone CTA bar)
  * on body[data-ahv-campaign]. Not loaded: the /lp-v2 kit's tag loader, consent banner and geo default.
  *
- * The kit design is scoped to the page's .lp wrapper (production/ProductionPage.tsx); this document is only
- * used by app/(ppc-v2), so no other page receives these styles. data-lp-surface="production" switches the
- * kit's track() to the site's own measurement runtime (integrations/track.ts).
+ * `lang` (default English) sets <html lang> and picks the site's own localized chrome; consent, measurement and lead
+ * handling are identical in every language. The kit design is scoped to the page's .lp wrapper
+ * (production/ProductionPage.tsx); this document is only used by the app/(ppc-v2*) route groups, so no other page
+ * receives these styles. data-lp-surface="production" switches the kit's track() to the site's own measurement
+ * runtime (integrations/track.ts).
  */
-export default function ProductionDocument({ children }: { children: ReactNode }) {
+export default function ProductionDocument({ children, lang = "en" }: { children: ReactNode; lang?: PageLocale }) {
   const measurement = measurementForEnvironment(process.env, analyticsConfig);
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`} data-lp-surface="production">
+    <html lang={lang} className={`${display.variable} ${body.variable} ${instrument.variable}`} data-lp-surface="production">
       <head>
         <ConsentScripts />
         <Script src="/design/lead-receipt.js" strategy="beforeInteractive" />
@@ -36,7 +47,7 @@ export default function ProductionDocument({ children }: { children: ReactNode }
         {children}
         <SharedConsent measurement={measurement} />
         <ChatbaseLoader />
-        <Script src="/design/review-chrome.js" strategy="afterInteractive" />
+        <Script src={CHROME[lang]} strategy="afterInteractive" />
       </body>
     </html>
   );

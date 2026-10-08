@@ -9,6 +9,8 @@ const money = (x: unknown): boolean => typeof x === "number" && Number.isFinite(
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 /** Locales with a content loader. Until <slug>.<locale>.ts files are loaded, any other locale would serve English copy under another lang. */
 export const SUPPORTED_LOCALES: readonly string[] = ["en"];
+/** Locales a designed production page can ship in: its copy and its interface words (production/ui.ts) are both translated. */
+export const PRODUCTION_LOCALES: readonly string[] = ["en", "de", "ru"];
 export const GALLERY_MIN_PER_CATEGORY = 2;
 const BAD_ALT = /^(image|photo|picture|hero|img)\b|\b(image|photo) of\b|\.(jpe?g|png|webp)$/i;
 
@@ -74,7 +76,9 @@ export function lintAssets(c: CampaignConfig, now: Date): Issue[] {
   const perCat = new Map<string, number>();
   for (const g of c.gallery) perCat.set(g.category, (perCat.get(g.category) ?? 0) + 1);
   for (const [cat, n] of perCat) if (n < GALLERY_MIN_PER_CATEGORY) out.push(warn("gallery.category", "gallery", `${cat}: ${n} image; use at least ${GALLERY_MIN_PER_CATEGORY} per category, or drop the category`));
-  for (const l of c.locales) if (!SUPPORTED_LOCALES.includes(l)) out.push(err("locale.unsupported", "locales", `${l}: translations are not loaded yet (guide §10); only "en" can ship`));
+  // The production surface renders its own German and Russian interface (production/ui.ts), so those two can ship there.
+  const supported = (l: string) => SUPPORTED_LOCALES.includes(l) || (c.production && !!c.page && PRODUCTION_LOCALES.includes(l));
+  for (const l of c.locales) if (!supported(l)) out.push(err("locale.unsupported", "locales", `${l}: translations are not loaded yet (guide §10); only "en" can ship`));
   for (const l of c.locales) {
     const t = c.translations.find((x) => x.locale === l);
     if (!t || t.review !== "approved") out.push(err("locale.unreviewed", "locales", `${l} has no approved review`));

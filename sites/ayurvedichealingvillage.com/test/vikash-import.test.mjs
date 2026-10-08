@@ -3,9 +3,11 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const routes=JSON.parse(read('campaign-v110/routes.json'));
+// The campaign routes now served by the production template (campaign-v2/production/bindings.ts).
+const PRODUCTION_ROUTES=new Set(Object.values((await import('../campaign-v2/production/bindings.ts')).ROUTES).map(b=>b.route));
 test('supplier route inventory remains complete and German page has a German document',()=>{
  assert.equal(routes.length,28);assert.equal(new Set(routes).size,28);
- for(const r of routes.filter(r=>!JSON.parse(read("campaign-v110/retained-original-routes.json")).includes(r))){const group=['/ayurvedic-treatment-packages.html','/panchkarma-treatment.html','/pain-management.html','/family-ayurvedic-retreat-kerala.html'].includes(r)?'(ppc-v2)':r==='/lp/behandlung-in-kerala/'?'(campaign-de)':r.startsWith('/lp/')?'(lp)':'(campaign)';assert.ok(fs.existsSync(new URL('../app/'+group+r.replace(/\/$/,'')+'/page.tsx',import.meta.url)),r);}
+ for(const r of routes.filter(r=>!JSON.parse(read("campaign-v110/retained-original-routes.json")).includes(r))){const group=r==='/lp/behandlung-in-kerala/'?'(campaign-de)':PRODUCTION_ROUTES.has(r)?'(ppc-v2)':r.startsWith('/lp/')?'(lp)':'(campaign)';assert.ok(fs.existsSync(new URL('../app/'+group+r.replace(/\/$/,'')+'/page.tsx',import.meta.url)),r);}
  assert.match(read('app/(campaign-de)/layout.tsx'),/lang="de"/);
 });
 test('supplier form mount uses the existing endpoint and no duplicate consent or chat',()=>{

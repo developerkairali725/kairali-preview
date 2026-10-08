@@ -42,7 +42,8 @@ const CLAIMS: { re: RegExp; near?: RegExp; why: string }[] = [
   { re: /\b\d+(\.\d+)?\s?(kg|kgs|kilos?|lbs?|pounds)\b/i, why: "numeric weight outcome" },
   { re: /\b\d+(\.\d+)?\s?%/i, why: "percentage claim" },
   { re: /\bzero (side[- ]effects?|adverse)/i, why: "safety absolute" },
-  { re: /\b(best|no\.?\s?1|number one|world[- ]class|guaranteed?)\b/i, why: "unsourced superlative/guarantee" },
+  // Letter-aware boundaries, so the German "bestätigen" / "bestimmt" are not read as "best" (\b treats "ä" as a gap).
+  { re: /(?<![\p{L}\p{N}])(best|no\.?\s?1|number one|world[- ]class|guaranteed?)(?![\p{L}\p{N}])/iu, why: "unsourced superlative/guarantee" },
   { re: /\b\d[\d,.]*\s?(k|m)?\+\s*(lives|patients|guests|therapies)/i, why: "unsupported count" },
   { re: /\b(scientifically|clinically) proven\b/i, why: "proof claim" },
   // Durations are written as "14 nights" / "a 14-night program", which stays allowed; "in 21 days" implies an outcome.

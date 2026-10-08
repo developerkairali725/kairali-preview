@@ -3,6 +3,7 @@ import { contact, site } from "../../campaign-v110/lib/site.ts";
 import LocaleSwitcher from "./interactive/LocaleSwitcher";
 import type { SectionProps } from "./LandingPage";
 import { PhoneIcon, WaIcon } from "./icons";
+import { pageUi } from "../production/ui.ts";
 
 // One header for every variant; sections.css shapes it per [data-variant] (A: overlay on the dark hero,
 // B: floating island, C: editorial rule, D: white pill). A sits over the hero photo, so it carries the top scrim
@@ -17,6 +18,7 @@ export default function Header({ c, v, req }: SectionProps) {
   const dark = v === "A";
   const production = req.surface === "production";
   const Actions = production ? "nav" : "div";
+  const ui = pageUi(req);
   return (
     <header className={dark ? "lp-header lp-scrim" : "lp-header"} data-tone={dark ? "dark" : "light"}>
       <div className="lp-header__bar">
@@ -27,14 +29,14 @@ export default function Header({ c, v, req }: SectionProps) {
           />
         </a>
         <span className="lp-header__rule" aria-hidden="true" />
-        <Actions className="lp-header__actions" {...(production ? { "aria-label": "Contact" } : {})}>
+        <Actions className="lp-header__actions" {...(production ? { "aria-label": ui.header.contact } : {})}>
           {production ? null : <LocaleSwitcher locales={c.locales} locale={req.locale} currency={req.currency} />}
           <a className="lp-header__phone" href={contact.phone.href} data-track="cta_click" data-track-cta="call" data-track-position="header">{contact.phone.display}</a>
           <a className="lp-header__wa" href={`https://wa.me/${contact.whatsapp.number}`} data-track="cta_click" data-track-cta="whatsapp" data-track-position="header">
-            <WaIcon />WhatsApp
+            <WaIcon />{ui.header.whatsapp}
           </a>
-          <a className="lp-header__call" href={contact.phone.href} data-track="cta_click" data-track-cta="call" data-track-position="header" aria-label={`Call ${contact.phone.display}`}>
-            <PhoneIcon /><span className="lp-header__call-text">Call</span>
+          <a className="lp-header__call" href={contact.phone.href} data-track="cta_click" data-track-cta="call" data-track-position="header" aria-label={`${ui.header.callAria} ${contact.phone.display}`}>
+            <PhoneIcon /><span className="lp-header__call-text">{ui.header.call}</span>
           </a>
         </Actions>
         {production ? (

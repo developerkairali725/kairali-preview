@@ -257,6 +257,66 @@ export function familyMessage(values: FormValues): string {
   return `Country: ${str(values.country)}\nPreferred duration: ${str(values.duration)}\n${str(values.message)}`;
 }
 
+/**
+ * The campaign enquiry form's messages (app/(lp)/_components/campaign-enquiry-form.tsx), word for word, per page
+ * language. German is that form's own German copy; Russian is this page's translation of the same lines.
+ */
+export const CAMPAIGN_ENQUIRY_MESSAGES: Record<"en" | "de" | "ru", Record<keyof typeof PRODUCTION_MESSAGES, string>> = {
+  en: PRODUCTION_MESSAGES,
+  de: {
+    notConnected: "Dieses Formular ist derzeit nicht verbunden. Es wurde nichts gesendet. Bitte nutzen Sie WhatsApp oder schreiben Sie an info@kairali.com.",
+    retry: "Bitte warten Sie, bevor Sie es erneut versuchen. Ihre Angaben bleiben im Formular.",
+    unconfirmed: "Wir konnten den Eingang Ihrer Anfrage nicht bestätigen. Ihre Angaben bleiben im Formular; bitte versuchen Sie es erneut oder nutzen Sie WhatsApp.",
+    network: "Wir konnten den Eingang Ihrer Anfrage nicht bestätigen. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+  },
+  ru: {
+    notConnected: "Эта форма пока не подключена. Ничего не отправлено. Пожалуйста, напишите нам в WhatsApp или на info@kairali.com.",
+    retry: "Пожалуйста, подождите перед повторной попыткой. Ваши данные сохранены в форме.",
+    unconfirmed: "Нам не удалось подтвердить получение вашего запроса. Ваши данные сохранены в форме; попробуйте ещё раз или напишите в WhatsApp.",
+    network: "Нам не удалось подтвердить получение вашего запроса. Проверьте подключение и попробуйте ещё раз.",
+  },
+};
+const enquiryMessages = (locale: string) => CAMPAIGN_ENQUIRY_MESSAGES[locale === "de" || locale === "ru" ? locale : "en"];
+
+/** The consent-aware attribution, as both live forms read it. */
+function attributionOf(env: ProductionEnv): Record<string, string> {
+  try {
+    return env.attribution?.() || urlAttribution(env.location.search);
+  } catch {
+    return urlAttribution(env.location.search);
+  }
+}
+
+/**
+ * The campaign enquiry form's request body (profile "campaign-enquiry"), key for key as
+ * app/(lp)/_components/campaign-enquiry-form.tsx builds it: no honeypot key, no campaign_name / utm_keyword /
+ * rdogender, the phone as typed (optional), form_variant = the route's own value (its path). Exported for tests.
+ */
+export function buildCampaignEnquiryLead(values: FormValues, ctx: Pick<SubmitContext, "token" | "locale"> & { production: ProductionFormContext; env: ProductionEnv }): Record<string, unknown> {
+  const campaign = attributionOf(ctx.env);
+  const query = new URLSearchParams(campaign).toString();
+  const sourceUrl = ctx.env.location.origin + ctx.env.location.pathname + (query ? `?${query}` : "");
+  let referrer = "";
+  try { referrer = new URL(ctx.env.referrer).origin + "/"; } catch { /* no or opaque referrer */ }
+  return {
+    form: "landing-page",
+    submissionToken: ctx.token,
+    site_language: ctx.locale,
+    lead_source_url: sourceUrl,
+    referrer,
+    ...campaign,
+    fields: {
+      landing_page_path: ctx.env.location.pathname,
+      form_variant: ctx.production.formVariant,
+      fname: str(values.fullName),
+      email: str(values.email),
+      phone: str(values.phone),
+      message: str(values.message),
+      consent: values[CONSENT_FIELD] === true,
+    },
+  };
+}
+
 /** The request body. Exported for tests. `env` = where the visitor is; nothing else from the URL is read. */
 export function buildProductionLead(values: FormValues, ctx: Pick<SubmitContext, "token" | "locale"> & { production: ProductionFormContext; env: ProductionEnv }): Record<string, unknown> {
   // Preserve the optional gender on both batch-2 routes; only the family profile packs extra message fields.
@@ -285,7 +345,7 @@ export function buildProductionLead(values: FormValues, ctx: Pick<SubmitContext,
       campaign_name: campaign.utm_campaign || "",
       utm_keyword: campaign.utm_term || "",
       fname: str(values.fullName),
-      rdogender: family || ctx.production.profile === "pain-management" ? familyGender(values.rdogender) : "",
+      rdogender: family || ctx.production.profile === "pain-management" || ctx.production.profile === "r10" ? familyGender(values.rdogender) : "",
       email: str(values.email),
       phone: fullCampaignPhone(values),
       message: family ? familyMessage(values) : str(values.message),
@@ -298,9 +358,14 @@ export const productionLeadAdapter: FormAdapter = {
   id: "ahv-production",
   async submit(values, ctx) {
     if (!ctx.production) return { status: "error", code: "invalid", message: PRODUCTION_MESSAGES.unconfirmed };
+    const enquiry = ctx.production.profile === "campaign-enquiry";
+    const msg = enquiry ? enquiryMessages(ctx.locale) : PRODUCTION_MESSAGES;
+    // The campaign enquiry form sends nothing when its honeypot is filled (a bot); nor does this.
+    if (enquiry && str(values.honeypot)) return { status: "error", code: "honeypot", message: msg.unconfirmed };
     let body: Record<string, unknown>;
     try {
-      body = buildProductionLead(values, { token: ctx.token, locale: ctx.locale, production: ctx.production, env: ctx.env ?? browserEnv() });
+      const bctx = { token: ctx.token, locale: ctx.locale, production: ctx.production, env: ctx.env ?? browserEnv() };
+      body = enquiry ? buildCampaignEnquiryLead(values, bctx) : buildProductionLead(values, bctx);
     } catch {
       return { status: "error", code: "url", message: MSG_GENERIC };
     }
@@ -328,19 +393,20 @@ export const productionLeadAdapter: FormAdapter = {
       result = await Promise.race([readJson(res), timedOut]);
       if (controller.signal.aborted) throw new Error("timeout");
     } catch {
-      return { status: "error", code: "network", message: PRODUCTION_MESSAGES.network };
+      return { status: "error", code: "network", message: msg.network };
     } finally {
       clearTimeout(timer);
     }
     const serverCode = typeof result.code === "string" ? result.code : undefined;
     if (res.status === 503 && /_NOT_CONFIGURED$/.test(serverCode ?? "")) {
-      return { status: "error", code: "not_configured", message: PRODUCTION_MESSAGES.notConnected, httpStatus: 503, serverCode };
+      return { status: "error", code: "not_configured", message: msg.notConnected, httpStatus: 503, serverCode };
     }
-    if (!res.ok || result.ok !== true || result.status !== "received") {
+    // The campaign enquiry form's success rule is ok === true; the R10 form also requires status "received".
+    if (!res.ok || result.ok !== true || (!enquiry && result.status !== "received")) {
       return {
         status: "error",
         code: res.status === 429 ? "rate_limited" : "invalid",
-        message: res.status === 429 ? PRODUCTION_MESSAGES.retry : PRODUCTION_MESSAGES.unconfirmed,
+        message: res.status === 429 ? msg.retry : msg.unconfirmed,
         httpStatus: res.status,
         ...(serverCode ? { serverCode } : {}),
       };

@@ -11,6 +11,8 @@ import { NABH_NO } from "./facts.ts";
 import { LATEST_TRAVELERS_CHOICE } from "../data/awards.ts";
 import { WaIcon } from "./icons";
 import AskAnythingButton from "../production/AskAnythingButton";
+import ConsultCard from "../production/ConsultCard";
+import { pageUi } from "../production/ui.ts";
 
 // Where each artboard puts the Step-1 form and whether the hero image sits in a three-image strip.
 // Markup is shared; only these two switches differ by variant. Everything visual is in sections.css.
@@ -42,12 +44,13 @@ export default function Hero({ c, v, req, carry }: SectionProps) {
     ? `${[c.chargedSeparately[0], ...c.chargedSeparately.slice(1).map(lowerFirst)].join(" and ")} charged separately.`
     : "";
   const production = req.surface === "production";
+  const ui = pageUi(req);
   const primary = c.cta?.primary ?? "Get free doctor consultation";
 
   // Art direction: one <picture>, so each viewport downloads exactly one hero image. The <img> is the mobile
   // photo, so its alt describes that photo.
   const { props: { srcSet: deskSrcSet } } = getImageProps({ src: desk.src, width: desk.width, height: desk.height, alt: "", sizes: layout.sizes });
-  const { props: mobProps } = getImageProps({ src: mob.src, width: mob.width, height: mob.height, alt: mob.alt, sizes: layout.mobileSizes, quality: c.hero.mobileQuality, priority: true });
+  const { props: mobProps } = getImageProps({ src: mob.src, width: mob.width, height: mob.height, alt: ui.alt[mob.id] ?? mob.alt, sizes: layout.mobileSizes, quality: c.hero.mobileQuality, priority: true });
 
   // The LCP image. React does not auto-preload an <img> inside <picture>, so preload each art-directed source for
   // its own media query; React puts these in <head> (and the Link header), so the phone fetches only its image,
@@ -87,7 +90,7 @@ export default function Hero({ c, v, req, carry }: SectionProps) {
           </div>
           {/* Live ad routes: what "free" covers, right under the button that offers it (the initial consultation only). */}
           {production && c.cta?.primarySupport ? <p className="lp-hero__note">{c.cta.primarySupport}</p> : null}
-          <p className="lp-hero__trust"><b>NABH</b> accredited · {NABH_NO} · {LATEST_TRAVELERS_CHOICE.alt}</p>
+          <p className="lp-hero__trust"><b>NABH</b> {ui.hero.accredited} · {NABH_NO} · {LATEST_TRAVELERS_CHOICE.alt}</p>
         </div>
       </div>
       <figure className="lp-hero__media">
@@ -101,12 +104,13 @@ export default function Hero({ c, v, req, carry }: SectionProps) {
           ) : null}
         </div>
         {extras.map((im) => (
-          <Image key={im.id} src={im.src} alt={im.alt} width={im.width} height={im.height} sizes="15vw" className="lp-hero__extra" />
+          <Image key={im.id} src={im.src} alt={ui.alt[im.id] ?? im.alt} width={im.width} height={im.height} sizes="15vw" className="lp-hero__extra" />
         ))}
       </figure>
       {layout.form ? (
         <div className="lp-hero__form">
-          <ConsultForm c={c} v={v} req={req} carry={carry} position="hero" />
+          {/* A live route without a Step-1 bar keeps its one enquiry form: the card holds the consultation CTA instead. */}
+          {production && c.consultBar === false ? <ConsultCard c={c} ui={ui} /> : <ConsultForm c={c} v={v} req={req} carry={carry} position="hero" />}
         </div>
       ) : null}
     </section>
