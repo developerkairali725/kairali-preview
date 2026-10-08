@@ -1,0 +1,1037 @@
+{
+  "schema": "ahv-home-count-incremental-capture/v1",
+  "at": "2026-10-08T18:37:14.115352+00:00",
+  "scope": "Homepage All29\u2192All27 only in13languages;12 locale home bodies freshly captured from current runtime.",
+  "captureHead": "e14301dad7a5094fcb4be372656bd27c4fc72e16",
+  "parentSpecSha256": "2c3e013f294a005b232cb735b7b94139daf5e567349238f1668a65c27d54ef0c",
+  "parentArchive": {
+    "repository": "kairali-digital/kairali-web-factory",
+    "tag": "ahv-english-staging-20260915",
+    "asset": "ahv-locale-prerenders-weight-baseline-source-closed-001.tar.gz",
+    "sha256": "ecf134b717288fe5e98138fae245d189459c5d228f766139889aacb564443e70",
+    "bytes": 43656215
+  },
+  "freshHomeBodies": 12,
+  "unchangedBodies": 2400,
+  "unchangedIndexRows": 2400,
+  "changedServingSources": [
+    {
+      "file": "l10n/generated/ar.catalog.json",
+      "before": "ee341b4964a0bf63401d94991c6e6cd0d2a6dc7a73f05588f0caa7d5ad81fcf2",
+      "after": "118b58f661b0e679582583214b4184f2ed074180a0d5e061b44d96a0ece758c5"
+    },
+    {
+      "file": "l10n/generated/ar.json",
+      "before": "cd81c3336dbf9098acc4984b3092c19a0460ff8a39c58bf8ab669bf115fd234f",
+      "after": "ba70a9969a0c0a8b79afad4084a195589fc9de8b8c89ade8cb6e0c8b7b7c71f8"
+    },
+    {
+      "file": "l10n/generated/de.catalog.json",
+      "before": "bef158f263f87048c0488ed688614cea6a7afb958f770f917e122a6866f3647d",
+      "after": "7884d9c96b2a1c7ac44dd36343c62503be1418aa0f0a553623c0e74a38d0adff"
+    },
+    {
+      "file": "l10n/generated/de.json",
+      "before": "2bc50e264cc2625fc1e6a135a8922b7cdecbf8ef913b4d273a08ebe5d02cd444",
+      "after": "57022a41b7435fa732926781905e791354e067f9b02df441448eb7386c64a5d1"
+    },
+    {
+      "file": "l10n/generated/es.catalog.json",
+      "before": "9cd137ceb66f56a3ed3dba7f3d5801c4a72089b3ff71aec14d3df5f4eeda8c03",
+      "after": "1bba8d2ef7946e41f47372e77b25dee47b6b44736deb4136bdf8025afe53d98e"
+    },
+    {
+      "file": "l10n/generated/es.json",
+      "before": "c4239b29dbf77880cce9a4e6972d0c00512260cc1d30d757cd998cd0db074781",
+      "after": "b226414784df465d5d7ae6f0b0d853133a0bcba13e06185804b1e2fdb926a9d3"
+    },
+    {
+      "file": "l10n/generated/fr.catalog.json",
+      "before": "fea1963cc78b19ccc7fb2970cbfd0e33c09513ccd9f8bd55e0357185cca8943c",
+      "after": "affb334b3fbb800a58e23cb1755da759968ee38b534ac36c6baa14c7d1769e20"
+    },
+    {
+      "file": "l10n/generated/fr.json",
+      "before": "4199b14a41c1336496f63446379307573b66e2dca5f04caaa4d09cee8f9d71de",
+      "after": "2585a94c1b131c42b33f11fed5ea156004c13335ffc3770048960145291d6376"
+    },
+    {
+      "file": "l10n/generated/hi.catalog.json",
+      "before": "79b62edc1de63451165bc750cdb6040e1d2f18a0fbb8ad7e089655e64873b12d",
+      "after": "88d2c8cb65898cee5154c9145f0681fca8dd1e1ed9611ed02fb7d8b2df743aaf"
+    },
+    {
+      "file": "l10n/generated/hi.json",
+      "before": "da9052e470ac35bf7980e614fd5d33c002a171b91f2dfd19b7fe7286efc0c7a1",
+      "after": "00a7363c5ac1efda9863928765f7853774a5de84d68e142899058efcb5e45500"
+    },
+    {
+      "file": "l10n/generated/it.catalog.json",
+      "before": "edc82ffdc7b738ed19568a7ce5ba73eb7d577bb42bce77088b95aaeadf99e4b8",
+      "after": "cc17dae3ec7575a723dffe9d3a23a4f4062be3b7b9be343dfed36ec781bea3f4"
+    },
+    {
+      "file": "l10n/generated/it.json",
+      "before": "984530188b1691b52203990469be3d5e053860aa152a9b9bb85bf54aac1bbcb8",
+      "after": "143f1d802a754f000a8850a904f7603dade769c54914d8dc19258b8c1d98c95f"
+    },
+    {
+      "file": "l10n/generated/ja.catalog.json",
+      "before": "cafbe136742eb2ab7e1b5ff13631544dbe720472066bb44ddab1abd05b518c7c",
+      "after": "7951597f0c233ee15483b2f4760f8dd348ba6f1935cf7cf8bb5344a679bf04b1"
+    },
+    {
+      "file": "l10n/generated/ja.json",
+      "before": "bc8a1e8903f98344efbb35a94b0f3d1eb012ded3343fd2e78b0b64af8c59ecb9",
+      "after": "36b49f61b5a316fb3606ae54a23dfccf742f7f56f84857b0463838dc79bfbd3c"
+    },
+    {
+      "file": "l10n/generated/ko.catalog.json",
+      "before": "a6f4e0ac771eb00fb21e6c3d7fbd584fe30c97c6773897e4c3d8e51ce7dd61c5",
+      "after": "8e127a970ea6bba5ab2c585e1f127623dc4a51b0e082fdd6aa32b6590422924a"
+    },
+    {
+      "file": "l10n/generated/ko.json",
+      "before": "3d73881fbbf63ebf4043533ba79fb422232d000ca14c7c6c07b0515c3db1f33f",
+      "after": "9dd7166be561c61d2891bb1f9014e7ce8e806d96846d7f2fb9c51b796ab94cff"
+    },
+    {
+      "file": "l10n/generated/nl.catalog.json",
+      "before": "d32ad146130ec23f10f8f0d4b3661fb3ce4cc6490a4bd0892fad0ddde6c6e4f3",
+      "after": "6671d649b68890f8384d3bcd77d5b951886a9464d782587886d266ae03b55710"
+    },
+    {
+      "file": "l10n/generated/nl.json",
+      "before": "09e696d95176b5a610ef91d31d94e120a34762cd1e1b20b12a4496be672ec06d",
+      "after": "8dc7ea805c4c982711d42df1c2a336c862d949fe35528a998a25b94f7ab359be"
+    },
+    {
+      "file": "l10n/generated/pt.catalog.json",
+      "before": "ada76155e370a4720911ba88dd1ecd7e4f9c94ab00852b75bd889b0bcdd67d71",
+      "after": "8c7db96e05bc226c19a7a968f4352152d5ad13d559782ffa21a10e28f03b0a25"
+    },
+    {
+      "file": "l10n/generated/pt.json",
+      "before": "593ee152f31b65808abe3f7315778199d2e80b44354e0613c1c8ef0d4925dd4b",
+      "after": "554b3e6b7a390420a44e38e9733a25c2bf3f69067617a51574726e586731a201"
+    },
+    {
+      "file": "l10n/generated/ru.catalog.json",
+      "before": "9489b47fdba764c687524e07c43a1411f94e5205fd07093b848c6dcc61acad4c",
+      "after": "4c73e05d06f63ab4e3a82492c313dc9f8ae5ad6c5ffc0564f42b39251a7fa663"
+    },
+    {
+      "file": "l10n/generated/ru.json",
+      "before": "7bdfa0da4289a1bc357a1fd735b341794dd867f253f64754e55d38b9d1a88bc8",
+      "after": "f0105034ff94ecf64af301e8f6ca9ffe885646207e9aa723689f867cbc93b05f"
+    },
+    {
+      "file": "l10n/generated/zh-Hans.catalog.json",
+      "before": "e8427dfb99fbb40126b1c2144fef0dbd58d0a39bf4cbff8ac03ae1b9b9284bb7",
+      "after": "85de6706771ccf4e61c6a88930d7deb4272c4ce616a8f8071e3a46877758d4d8"
+    },
+    {
+      "file": "l10n/generated/zh-Hans.json",
+      "before": "dbd5c73dcc905a8e524d8626747e095cea82c1e36003bc600468fab0e1609e18",
+      "after": "0faaeeb3f80daa80395b70d6da018742428df72b53378d1d1125a596d42f2a21"
+    }
+  ],
+  "unchangedServingSources": 3182,
+  "generatedDeltaContract": "Each locale adds exactly two catalogue entries and one homepage-only reviewed-copy entry; the catalogue count increments by2. Removing precisely those additions reproduces each parent JSON object. All other pinned serving bytes are identical.",
+  "consumerScope": "reviewCopyFor selects the exact route key. UI/native/metadata and all non-home route data remain identical; the label occurs in only the two homepage view payloads. No application consumer of the two added literal strings exists outside these homepage inputs.",
+  "homeViewIds": [
+    "home-hi-fi-v4",
+    "home-mobile"
+  ],
+  "originalIndexRowsRebound": false,
+  "freshCaptureProof": [
+    {
+      "locale": "hi",
+      "originalHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 198737,
+        "textChars": 1332,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "\u0915\u0948\u0930\u0932\u0940 \u2013 \u0906\u092f\u0941\u0930\u094d\u0935\u0947\u0926\u093f\u0915 \u0939\u0940\u0932\u093f\u0902\u0917 \u0935\u093f\u0932\u0947\u091c",
+          "bodyChars": 17478,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "\u0915\u0948\u0930\u0932\u0940 \u2013 \u0906\u092f\u0941\u0930\u094d\u0935\u0947\u0926\u093f\u0915 \u0939\u0940\u0932\u093f\u0902\u0917 \u0935\u093f\u0932\u0947\u091c",
+          "bodyChars": 17478,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "freshHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 198737,
+        "textChars": 1332,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "\u0915\u0948\u0930\u0932\u0940 \u2013 \u0906\u092f\u0941\u0930\u094d\u0935\u0947\u0926\u093f\u0915 \u0939\u0940\u0932\u093f\u0902\u0917 \u0935\u093f\u0932\u0947\u091c",
+          "bodyChars": 17478,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "\u0915\u0948\u0930\u0932\u0940 \u2013 \u0906\u092f\u0941\u0930\u094d\u0935\u0947\u0926\u093f\u0915 \u0939\u0940\u0932\u093f\u0902\u0917 \u0935\u093f\u0932\u0947\u091c",
+          "bodyChars": 17478,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "unchangedOtherRows": 200,
+      "snapshotSha256": "47f306b82414b969259018de91fb972d362e3b64a0c4ce83f465924bc04cf876"
+    },
+    {
+      "locale": "de",
+      "originalHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 201305,
+        "textChars": 1475,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19900,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19900,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "freshHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 201305,
+        "textChars": 1475,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19900,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19900,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "unchangedOtherRows": 200,
+      "snapshotSha256": "4461713c7a3e0e032d99ea0e75b9504bcb079405c7b26b2cdb0f3a0c80cf9bda"
+    },
+    {
+      "locale": "fr",
+      "originalHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 202058,
+        "textChars": 1461,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 20412,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 20412,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "freshHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 202058,
+        "textChars": 1461,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 20412,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 20412,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "unchangedOtherRows": 200,
+      "snapshotSha256": "600592c4feac4f5e9ae89cf510305770a1f42387696f96439886415a45091c3c"
+    },
+    {
+      "locale": "es",
+      "originalHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 201599,
+        "textChars": 1439,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19951,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19951,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "freshHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 201599,
+        "textChars": 1439,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19951,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19951,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "unchangedOtherRows": 200,
+      "snapshotSha256": "eb4c65febf5d7a3857c58dcb369c517a262c23ba7fd7bb35d0a05aa6b3b79453"
+    },
+    {
+      "locale": "it",
+      "originalHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 201432,
+        "textChars": 1406,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19796,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19796,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "freshHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 201432,
+        "textChars": 1406,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19796,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19796,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "unchangedOtherRows": 200,
+      "snapshotSha256": "440cda799fb8d3f5ee9a8cb1f7d8ca41bcfaaacbb0b63d9bc0382773baceee12"
+    },
+    {
+      "locale": "pt",
+      "originalHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 201218,
+        "textChars": 1440,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19447,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19447,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "freshHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 201218,
+        "textChars": 1440,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19447,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19447,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "unchangedOtherRows": 200,
+      "snapshotSha256": "7e6e58683954c566a8621d4e80ce936fc5ffe6534e59b06aeb3c32a25773d5ff"
+    },
+    {
+      "locale": "nl",
+      "originalHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 200633,
+        "textChars": 1392,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19095,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19095,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "freshHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 200633,
+        "textChars": 1392,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19095,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 19095,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "unchangedOtherRows": 200,
+      "snapshotSha256": "46210a36061cc9e730c9511f31f0ca6670c100b76e1e5844eb743f345fae0e90"
+    },
+    {
+      "locale": "ru",
+      "originalHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 200895,
+        "textChars": 1428,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 \u0410\u044e\u0440\u0432\u0435\u0434\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043b\u0435\u0447\u0435\u0431\u043d\u0430\u044f \u0434\u0435\u0440\u0435\u0432\u043d\u044f",
+          "bodyChars": 19402,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 \u0410\u044e\u0440\u0432\u0435\u0434\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043b\u0435\u0447\u0435\u0431\u043d\u0430\u044f \u0434\u0435\u0440\u0435\u0432\u043d\u044f",
+          "bodyChars": 19402,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "freshHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 200895,
+        "textChars": 1428,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 \u0410\u044e\u0440\u0432\u0435\u0434\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043b\u0435\u0447\u0435\u0431\u043d\u0430\u044f \u0434\u0435\u0440\u0435\u0432\u043d\u044f",
+          "bodyChars": 19402,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 \u0410\u044e\u0440\u0432\u0435\u0434\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043b\u0435\u0447\u0435\u0431\u043d\u0430\u044f \u0434\u0435\u0440\u0435\u0432\u043d\u044f",
+          "bodyChars": 19402,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "unchangedOtherRows": 200,
+      "snapshotSha256": "b066f9cf29770352f8f92ac7a4e0bec533632fd874dc4020b064951fb8cfcec9"
+    },
+    {
+      "locale": "ar",
+      "originalHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 197185,
+        "textChars": 1191,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "\u0643\u0627\u064a\u0631\u0627\u0644\u064a \u2013 \u0642\u0631\u064a\u0629 \u0627\u0644\u0634\u0641\u0627\u0621 \u0627\u0644\u0623\u064a\u0648\u0631\u0641\u064a\u062f\u064a\u0629",
+          "bodyChars": 15981,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "\u0643\u0627\u064a\u0631\u0627\u0644\u064a \u2013 \u0642\u0631\u064a\u0629 \u0627\u0644\u0634\u0641\u0627\u0621 \u0627\u0644\u0623\u064a\u0648\u0631\u0641\u064a\u062f\u064a\u0629",
+          "bodyChars": 15981,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "freshHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 197185,
+        "textChars": 1191,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "\u0643\u0627\u064a\u0631\u0627\u0644\u064a \u2013 \u0642\u0631\u064a\u0629 \u0627\u0644\u0634\u0641\u0627\u0621 \u0627\u0644\u0623\u064a\u0648\u0631\u0641\u064a\u062f\u064a\u0629",
+          "bodyChars": 15981,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "\u0643\u0627\u064a\u0631\u0627\u0644\u064a \u2013 \u0642\u0631\u064a\u0629 \u0627\u0644\u0634\u0641\u0627\u0621 \u0627\u0644\u0623\u064a\u0648\u0631\u0641\u064a\u062f\u064a\u0629",
+          "bodyChars": 15981,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "unchangedOtherRows": 200,
+      "snapshotSha256": "0684954aa2788812be7604ce88b4f2842c8d360a3bbf5649deacff0b1317e853"
+    },
+    {
+      "locale": "zh-Hans",
+      "originalHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 187747,
+        "textChars": 577,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 \u963f\u80b2\u5420\u9640\u7597\u6108\u6751",
+          "bodyChars": 8015,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 \u963f\u80b2\u5420\u9640\u7597\u6108\u6751",
+          "bodyChars": 8015,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "freshHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 187747,
+        "textChars": 577,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 \u963f\u80b2\u5420\u9640\u7597\u6108\u6751",
+          "bodyChars": 8015,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 \u963f\u80b2\u5420\u9640\u7597\u6108\u6751",
+          "bodyChars": 8015,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "unchangedOtherRows": 200,
+      "snapshotSha256": "b68c66674a36813b6ebffa8cef16d0abdd99f87a333afc3d42b93bf767163db9"
+    },
+    {
+      "locale": "ja",
+      "originalHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 190318,
+        "textChars": 776,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 10287,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 10287,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "freshHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 190318,
+        "textChars": 776,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 10287,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 10287,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "unchangedOtherRows": 200,
+      "snapshotSha256": "4aca76a2ac8aaad9a5a2a953e32a9d6850953f6657c3ddafa3359382576cff85"
+    },
+    {
+      "locale": "ko",
+      "originalHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 190374,
+        "textChars": 806,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 10421,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 10421,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "freshHome": {
+        "path": "/",
+        "ok": true,
+        "file": "index.html",
+        "bytes": 190374,
+        "textChars": 806,
+        "imgs": 75,
+        "flattened": 46,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 10421,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Kairali \u2013 The Ayurvedic Healing Village",
+          "bodyChars": 10421,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      },
+      "unchangedOtherRows": 200,
+      "snapshotSha256": "aec947919306a80976294f7e56939e2c4e04d542b1d56040a5979c3e1faacc34"
+    }
+  ],
+  "contentProof": {
+    "at": "2026-10-08T18:33:16.069Z",
+    "cases": [
+      {
+        "locale": "ar",
+        "label": "\u062c\u0645\u064a\u0639 \u0627\u0644\u0628\u0631\u0627\u0645\u062c \u0627\u0644\u064027:",
+        "bodyTextExact": true,
+        "bodyTextSha256": "818f3a744702ad9a0f08ca84d3b3df24b8f732b07dd84b4ce46c9dba0cd4276a",
+        "has27": true,
+        "oldLabelAbsent": true,
+        "otherNumbersUnchanged": true,
+        "linksEqual": true,
+        "imagesEqual": true,
+        "fullTextExact": true,
+        "chars": 16140,
+        "pass": true
+      },
+      {
+        "locale": "de",
+        "label": "Alle 27 Programme:",
+        "bodyTextExact": true,
+        "bodyTextSha256": "6a956c48cd005a253d3bc9e42c147bcca9ba6cd8a2c6ed714827a9079b212602",
+        "has27": true,
+        "oldLabelAbsent": true,
+        "otherNumbersUnchanged": true,
+        "linksEqual": true,
+        "imagesEqual": true,
+        "fullTextExact": true,
+        "chars": 20057,
+        "pass": true
+      },
+      {
+        "locale": "es",
+        "label": "Los 27 programas:",
+        "bodyTextExact": true,
+        "bodyTextSha256": "682b173634724685f890c2310d5f629140c31831daba3ee1f0ae10da7ebe072e",
+        "has27": true,
+        "oldLabelAbsent": true,
+        "otherNumbersUnchanged": true,
+        "linksEqual": true,
+        "imagesEqual": true,
+        "fullTextExact": true,
+        "chars": 20108,
+        "pass": true
+      },
+      {
+        "locale": "fr",
+        "label": "Les 27 programmes :",
+        "bodyTextExact": true,
+        "bodyTextSha256": "7919b53eabf36911c7b542d549ac2dbc7e85e06dc562d721b750159c78ac1091",
+        "has27": true,
+        "oldLabelAbsent": true,
+        "otherNumbersUnchanged": true,
+        "linksEqual": true,
+        "imagesEqual": true,
+        "fullTextExact": true,
+        "chars": 20570,
+        "pass": true
+      },
+      {
+        "locale": "hi",
+        "label": "\u0938\u092d\u0940 27 \u092a\u094d\u0930\u094b\u0917\u094d\u0930\u093e\u092e:",
+        "bodyTextExact": true,
+        "bodyTextSha256": "c4b566afda1d4549c433b30973443f2176614507e472b9f26b1d59c5041d4ae3",
+        "has27": true,
+        "oldLabelAbsent": true,
+        "otherNumbersUnchanged": true,
+        "linksEqual": true,
+        "imagesEqual": true,
+        "fullTextExact": true,
+        "chars": 17634,
+        "pass": true
+      },
+      {
+        "locale": "it",
+        "label": "Tutti i 27 programmi:",
+        "bodyTextExact": true,
+        "bodyTextSha256": "1d4a601ae75a04c85643de8a86b1340079c431796a9311ccbee350fe6bd6581b",
+        "has27": true,
+        "oldLabelAbsent": true,
+        "otherNumbersUnchanged": true,
+        "linksEqual": true,
+        "imagesEqual": true,
+        "fullTextExact": true,
+        "chars": 19954,
+        "pass": true
+      },
+      {
+        "locale": "ja",
+        "label": "\u516827\u30d7\u30ed\u30b0\u30e9\u30e0\uff1a",
+        "bodyTextExact": true,
+        "bodyTextSha256": "c2cce87bc03c00d88a849012409640b332a03ccb0adcceb06209ff0d7c58be63",
+        "has27": true,
+        "oldLabelAbsent": true,
+        "otherNumbersUnchanged": true,
+        "linksEqual": true,
+        "imagesEqual": true,
+        "fullTextExact": true,
+        "chars": 10454,
+        "pass": true
+      },
+      {
+        "locale": "ko",
+        "label": "\uc804\uccb4 27\uac1c \ud504\ub85c\uadf8\ub7a8:",
+        "bodyTextExact": true,
+        "bodyTextSha256": "1ef21b68dfbac38d87c1f5fd980bb597169fd5638f4ffcf8b21c69de56b8ad6b",
+        "has27": true,
+        "oldLabelAbsent": true,
+        "otherNumbersUnchanged": true,
+        "linksEqual": true,
+        "imagesEqual": true,
+        "fullTextExact": true,
+        "chars": 10580,
+        "pass": true
+      },
+      {
+        "locale": "nl",
+        "label": "Alle 27 programma's:",
+        "bodyTextExact": true,
+        "bodyTextSha256": "3b5413ebb32291f63123281ea24c4a3141738610d9f8193257cc5e4568d0f586",
+        "has27": true,
+        "oldLabelAbsent": true,
+        "otherNumbersUnchanged": true,
+        "linksEqual": true,
+        "imagesEqual": true,
+        "fullTextExact": true,
+        "chars": 19252,
+        "pass": true
+      },
+      {
+        "locale": "pt",
+        "label": "Todos os 27 programas:",
+        "bodyTextExact": true,
+        "bodyTextSha256": "0e2fc48741a91784ab74b69191de6a1c3d4a890e42257dbe1475130b515b8799",
+        "has27": true,
+        "oldLabelAbsent": true,
+        "otherNumbersUnchanged": true,
+        "linksEqual": true,
+        "imagesEqual": true,
+        "fullTextExact": true,
+        "chars": 19604,
+        "pass": true
+      },
+      {
+        "locale": "ru",
+        "label": "\u0412\u0441\u0435 27 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c:",
+        "bodyTextExact": true,
+        "bodyTextSha256": "9f292f4fb086804e62fb89df3275a3f9282247908acaf9798f83b13606c91629",
+        "has27": true,
+        "oldLabelAbsent": true,
+        "otherNumbersUnchanged": true,
+        "linksEqual": true,
+        "imagesEqual": true,
+        "fullTextExact": true,
+        "chars": 19559,
+        "pass": true
+      },
+      {
+        "locale": "zh-Hans",
+        "label": "\u5168\u90e827\u4e2a\u9879\u76ee\uff1a",
+        "bodyTextExact": true,
+        "bodyTextSha256": "851270775e3da2ef4f2a33c5dcf464fed95ba8604b23f7d1038bc99145213710",
+        "has27": true,
+        "oldLabelAbsent": true,
+        "otherNumbersUnchanged": true,
+        "linksEqual": true,
+        "imagesEqual": true,
+        "fullTextExact": true,
+        "chars": 8182,
+        "pass": true
+      }
+    ],
+    "scope": "Fresh current-runtime home captures versus intended reviewed-copy render of the accepted baseline; all unrelated body text/numbers and link/image destinations checked.",
+    "pass": true
+  },
+  "archiveSha256": "846260ff9218a19b884fd4b7ba0dad88bf6b0dc2517a5beedf5ce669eef3a66d",
+  "archiveBytes": 43754289,
+  "archiveMembersVerified": 2424,
+  "batchLimit": 25,
+  "productionPublished": false
+}
