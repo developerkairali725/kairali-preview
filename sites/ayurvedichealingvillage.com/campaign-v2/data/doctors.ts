@@ -30,8 +30,10 @@ export const DOCTORS: Record<string, DoctorRef> = {
   "akhila-oommen": {
     id: "akhila-oommen", name: "Dr. Akhila Oommen", role: "Ayurvedic Physician", qualification: "BAMS",
     tenure: "At Kairali since 2024",
+    // Her own full-length garden portrait (600×1051, data/images.ts): top-aligned, enlarged about her face so it
+    // reads at the size and eye height of the other cards, cropped head to chest above the folded arms.
     languages: ["Malayalam", "Hindi", "English"], photo: IMAGES["team-akhila-oommen-portrait"],
-    frame: { position: "50% 50%", origin: "50% 0%", zoom: 1.4 },
+    frame: { position: "50% 0%", origin: "55% 16.5%", zoom: 1.7 },
   },
   "adhina-ub": {
     id: "adhina-ub", name: "Dr. Adhina U.B.", role: "Resident Medical Officer", qualification: "BAMS",

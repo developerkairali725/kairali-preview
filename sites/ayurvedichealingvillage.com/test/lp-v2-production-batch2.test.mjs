@@ -242,7 +242,7 @@ test("family adapter: one same-origin POST of exactly that body; the route never
 
 // ── the quotation (owner facts) ───────────────────────────────────────────────────────────────────────────
 test("quotation: what each stay includes and what to ask about, from the reviewed copy; family never lists private sessions as uniformly extra", () => {
-  assert.deepEqual(C[FAMILY].page.stay.lists.map((l) => l.heading), ["Confirm each person’s programme", "Ask about additional charges"]);
+  assert.deepEqual(C[FAMILY].page.stay.lists.map((l) => l.heading), ["Your family’s stay", "Services that may cost extra"]);
   assert.deepEqual(C[PAIN].page.stay.lists.map((l) => l.heading), ["Confirm what your stay includes", "Ask about additional charges"]);
   for (const slug of B2) {
     const [included, extra] = C[slug].page.stay.lists;

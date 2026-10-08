@@ -10,7 +10,9 @@ import { PhoneIcon, WaIcon } from "./icons";
 //
 // Production surface (the live ad routes, English only): no language switcher; the logo goes to the main site
 // (an in-page "#top" would leave a hash the consent runtime does not measure); the actions sit in a <nav>, which
-// is where the site's shared chrome (public/design/review-chrome.js) adds its existing "Chat" control.
+// is where the site's shared chrome (public/design/review-chrome.js) adds its existing "Chat" control. After the
+// <nav> comes the route's consultation CTA, shown only once the header is pinned on desktop (owner, 8 Oct 2026:
+// production/StickyHeader.tsx + production.css), so the hero keeps its single CTA and the DOM order is the visual order.
 export default function Header({ c, v, req }: SectionProps) {
   const dark = v === "A";
   const production = req.surface === "production";
@@ -35,6 +37,11 @@ export default function Header({ c, v, req }: SectionProps) {
             <PhoneIcon /><span className="lp-header__call-text">Call</span>
           </a>
         </Actions>
+        {production ? (
+          <a className="lp-btn lp-btn--primary lp-header__consult" href="#enquiry" data-track="cta_click" data-track-cta="consult" data-track-position="header">
+            {c.cta?.primary ?? "Get free doctor consultation"}
+          </a>
+        ) : null}
       </div>
     </header>
   );

@@ -96,12 +96,35 @@ export default defineCopy({
       ],
     },
     stay: {
-      heading: "Plan your stay with a clear quotation",
-      paragraphs: ["Confirm the programme, accommodation and inclusions for each person. Ayurveda, yoga and companion arrangements differ, so your quotation should make clear what applies to everyone travelling."],
-      lists: [
-        { heading: "Confirm each person’s programme", items: ["Villa and taxes in your quotation", "Meals in each person’s plan", "Doctor reviews in your plan", "Therapies confirmed individually", "Yoga and meditation: confirm plan", "Activities: confirm participation", "Leisure access: confirm details"] },
-        { heading: "Ask about additional charges", items: ["Medicines and tests", "Specialist therapies", "Travel and personal extras", "Extras outside your chosen plan"], extra: true },
+      "heading": "A stay planned around your family",
+      "paragraphs": [
+        "Share your preferred dates, the number of people travelling and who would like Ayurvedic care. Our team can help you explore suitable programmes, villa options and companion stays, with a personalised quotation for your family."
       ],
+      "lists": [
+        {
+          "heading": "Your family’s stay",
+          "items": [
+            "Villa choice, room occupancy and taxes",
+            "Meals for each family member",
+            "Doctor reviews and individually prescribed therapies",
+            "Yoga, meditation and activities suited to your programme",
+            "Companion arrangements and leisure access"
+          ]
+        },
+        {
+          "heading": "Services that may cost extra",
+          "items": [
+            "Medicines and diagnostic tests",
+            "Specialist therapies outside your programme",
+            "Travel arrangements and personal expenses",
+            "Any additional services you choose"
+          ],
+          "extra": true
+        }
+      ],
+      "after": [
+        "Treatment, yoga and companion stays have different inclusions. We’ll explain what is included and any additional charges before you confirm your booking."
+      ]
     },
     doctors: {
       heading: "Meet your Ayurvedic doctors",
