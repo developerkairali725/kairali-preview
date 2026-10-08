@@ -334,3 +334,34 @@ html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
   .lp-prod .lp-pdocs--one .lp-pdoc { grid-template-columns: 112px minmax(0, 1fr); gap: 16px; align-items: start; }
   .lp-prod .lp-pdocs--one .lp-pdoc__name { font-size: 21px; }
 }
+
+/* Layout repairs (owner, 8 Oct 2026: preventive / retreat / wellness review). Kit values and skin vars only.
+   Stories: the night band ended on its last film (no bottom padding in B and C, whose .lp-sec drops it), so the
+   "YouTube" line sat on the band's edge; the band now closes with its own top padding. A keeps the kit's 80px. */
+.lp-prod[data-variant="C"] .lp-pstories { padding-bottom: 96px; }
+.lp-prod[data-variant="B"] .lp-pstories { padding-bottom: 56px; }
+/* B's band kicker kept the light chip under the night-accent text (1:1); the kit's night chip, as on its enquiry. */
+.lp-prod[data-variant="B"] .lp-pstories .lp-kicker { background: color-mix(in srgb, var(--lp-on-night) 14%, transparent); color: var(--lp-on-night); }
+@media (min-width: 768px) {
+  /* B header: the site's Chat control as a pill inside the island (WhatsApp's height and inset, the outline of B's
+     "View all photos"), so its square corners no longer cross the island's rounded end. Header Chat only. */
+  .lp-prod[data-variant="B"] .lp-header__actions .ahv-contact-trigger {
+    min-height: 48px; padding-block: 0; padding-inline: 18px; border-radius: 999px;
+    border-color: color-mix(in srgb, var(--lp-ink) 16%, transparent); font-size: 14px; font-weight: 600;
+  }
+  /* B pinned bar: the island is fit-content, so pinned it stopped at its own width with its border; full width. */
+  .lp-prod[data-variant="B"] .lp-header[data-stuck] .lp-header__bar { width: auto; border: 0; }
+  /* B village bento: the villa list had no cell in the 12-column grid and fell into one narrow track; full row. */
+  .lp-prod[data-variant="B"] .lp-pplace__villas { grid-column: 1 / -1; margin-top: 26px; }
+  /* …and the text card spans two fixed 220px rows, too short for its copy in the narrow tablet column (text ran out
+     of the card, "View all photos" was clipped); those rows now grow with it. Where it fits (desktop) they stay 220px. */
+  .lp-prod[data-variant="B"] .lp-vil { grid-template-rows: minmax(220px, auto) minmax(220px, auto) 220px; }
+  /* B rhythm: 28px between sections read as the 14px tile gap; sections open at 56px, and the night band stands
+     clear of the photo tile above it. The village keeps its 80px. */
+  .lp-prod[data-variant="B"] .lp-sec:not(.lp-pplace) { padding-top: 56px; }
+  .lp-prod[data-variant="B"] .lp-pstories { margin-top: 56px; }
+}
+@media (max-width: 767px) {
+  .lp-prod[data-variant="C"] .lp-pstories { padding-bottom: 56px; }
+  .lp-prod[data-variant="B"] .lp-pstories { padding-bottom: 24px; }
+}
