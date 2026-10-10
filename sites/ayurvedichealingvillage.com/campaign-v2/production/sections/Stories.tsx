@@ -2,11 +2,14 @@ import Image from "next/image";
 import type { PageStories } from "../../kit/types.ts";
 import { SectionHead } from "../../sections/head";
 import type { SecProps } from "./parts";
+import GuestVideoDialog from "./GuestVideoDialog";
 
 /**
  * Patient films, as the page this replaces offered them: each a link to the film on YouTube, opening in a new tab,
  * with its local thumbnail. No player is embedded and nothing is requested from YouTube until the visitor follows a
  * link, so the page's consent posture is unchanged. A night band, as the kit's Films (variant A).
+ * GuestVideoDialog (DEC-GUEST-VIDEO-POPUP) adds an on-page popup player on its 13 English routes only, behind current
+ * consent and an explicit press; it renders no markup here, so these links remain the fallback.
  */
 export default function Stories({ s, v, ui, no }: { s: PageStories } & SecProps) {
   return (
@@ -34,6 +37,7 @@ export default function Stories({ s, v, ui, no }: { s: PageStories } & SecProps)
           </li>
         ))}
       </ul>
+      <GuestVideoDialog />
     </section>
   );
 }
