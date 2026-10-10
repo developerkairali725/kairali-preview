@@ -8,7 +8,7 @@
 
 import type { GalleryCategory, ImageRef, PageLocale, PricingPolicy, ProductionFormProfile, Variant } from "../kit/types.ts";
 import { IMAGES } from "../data/images.ts";
-// Owner-approved photographs appended to the first four routes' galleries only (data/gallery-images.ts).
+// Owner-approved photographs appended to the first four routes' galleries and, below, APPROVED_GALLERY_ROUTES'.
 import { APPROVED_GALLERY_ADDITIONS } from "../data/gallery-images.ts";
 
 export const SITE_ORIGIN = "https://ayurvedichealingvillage.com";
@@ -192,6 +192,16 @@ const galleryFor = (hero: string, mobile: string, steps: string): RouteBinding["
 const OG_EN_US = (file: string) => ({ url: `${SITE_ORIGIN}/images/og/${file}`, locale: "en_US", siteName: "Kairali Ayurvedic Healing Village" });
 const OG_LP = (path: string, locale = "en_IN") => ({ url: `${SITE_ORIGIN}/campaign-v110/${path}`, locale, siteName: "Kairali — The Ayurvedic Healing Village" });
 
+/**
+ * The later routes whose full gallery also ends with the approved additions (data/gallery-images.ts), batch 2 of the
+ * gallery work: the twelve English routes that show the village. The others are untouched: variant D shows no gallery,
+ * and lp-weight-management, lp-behandlung-kerala and lp-treatment-kerala-ru are a later batch.
+ */
+const APPROVED_GALLERY_ROUTES: ReadonlySet<ProductionSlug> = new Set<ProductionSlug>([
+  "monsoon-wellness", "rejuvenation-detox", "ayurveda-retreat", "wellness-kerala", "cleansing-centre", "treatment-kerala",
+  "weight-management", "lp-hospital-kerala", "lp-cleansing-centre", "lp-pain-management", "lp-treatment-kerala", "lp-treatment-packages",
+]);
+
 type Spec = {
   slug: ProductionSlug; route: string; variant: Variant; hero: string; mobile?: string; pathway: string;
   form: RouteBinding["productionForm"]; og?: RouteBinding["og"]; locale?: PageLocale; mobileQuality?: number;
@@ -241,7 +251,7 @@ for (const sp of SPECS) {
     ...(sp.mobileQuality === undefined ? {} : { mobileHeroQuality: sp.mobileQuality }),
     stillnessImage: img("gal-post-therapy-stillness-wakem"),
     pathwayImage: img(sp.pathway),
-    gallery: galleryFor(sp.hero, sp.mobile ?? sp.hero, sp.pathway),
+    gallery: [...galleryFor(sp.hero, sp.mobile ?? sp.hero, sp.pathway), ...(APPROVED_GALLERY_ROUTES.has(sp.slug) ? APPROVED_GALLERY_ADDITIONS : [])],
     productionForm: sp.form,
     consultBar: false,
     variant: sp.variant,
