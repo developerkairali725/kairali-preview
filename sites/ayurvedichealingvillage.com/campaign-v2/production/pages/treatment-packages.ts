@@ -51,7 +51,14 @@ export default defineCopy({
             { label: "Rejuvenation", href: `${SITE}/holistic-treatment-for-rejuvenation-and-detoxification/` },
             { label: "Preventive Ayurveda", href: `${SITE}/preventive-and-regenerative-treatment/` },
           ],
-          paragraphs: ["Discuss the differences with your doctor, including the proposed therapies, preparation and length of stay. The programme name alone does not determine what is appropriate for you."],
+          paragraphs: [
+            "Discuss the differences with your doctor, including the proposed therapies, preparation and length of stay. The programme name alone does not determine what is appropriate for you.",
+            // DEC-PACKAGE-COMPARISONS (AHV-WB.007): names + minimumNights from public/ahv/assets/all-programs-data.js
+            // (/panchakarma-therapy/ 14, /holistic-treatment-for-rejuvenation-and-detoxification/ 7, both
+            // KTAHV/AYT/EN-INR/20260925-R1); inclusions are ayurveda.included[1–4] of english-candidate/final-rates/strings.en.json,
+            // with its Preventive Health & Regenerative one-therapy exception. No prices.
+            "Published minimum stays: Ayurvedic Panchakarma Detoxification Therapy, 14 nights; Complete Rejuvenation & Detoxification Therapy, 7 nights. Both include three vegetarian or vegan meals a day, to the dietary prescription; two Ayurvedic therapies a day, including herbal steam; daily consultation and monitoring by the attending physician; and group yoga each morning and guided meditation each evening. The Preventive Health & Regenerative programme has one therapy a day rather than two. Your doctor prescribes the therapies themselves.",
+          ],
         },
         {
           title: "Weight, sleep and daily habits",
@@ -60,7 +67,13 @@ export default defineCopy({
             { label: "Sleep", href: `${SITE}/sleep-restoration-therapy/` },
             { label: "Stress", href: `${SITE}/treatment-to-remove-stress-and-strain/` },
           ],
-          paragraphs: ["Your consultation is a chance to explain how you eat, sleep, work and move, and to discuss realistic goals for your stay."],
+          paragraphs: [
+            "Your consultation is a chance to explain how you eat, sleep, work and move, and to discuss realistic goals for your stay.",
+            // DEC-PACKAGE-COMPARISONS (AHV-WB.007): all-programs-data.js /weight-loss-programme/ 14 and
+            // /treatment-to-remove-stress-and-strain/ 7 (KTAHV/AYT/EN-INR/20260925-R1); inclusions ayurveda.included[1–4]
+            // of final-rates/strings.en.json. Sleep is not named: it is not one of the four approved examples.
+            "Published minimum stays: Weight Management & Metabolism Therapy, 14 nights; Comprehensive Stress Relief & Mental Wellness Program, 7 nights. Both include three vegetarian or vegan meals a day, to the dietary prescription; two Ayurvedic therapies a day, including herbal steam; daily consultation and monitoring by the attending physician; and group yoga each morning and guided meditation each evening. Your doctor prescribes the therapies themselves.",
+          ],
         },
         {
           title: "Care for a specific health concern",

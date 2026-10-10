@@ -56,12 +56,24 @@ export default defineCopy({
         {
           title: "Complete Rejuvenation & Detoxification Therapy",
           links: [{ label: "Rejuvenation", href: `${SITE}/holistic-treatment-for-rejuvenation-and-detoxification/` }],
-          paragraphs: ["This programme has a published minimum stay of seven nights. Ask your doctor about the proposed therapies, the preparation involved and whether your needs call for a longer stay."],
+          paragraphs: [
+            "This programme has a published minimum stay of seven nights. Ask your doctor about the proposed therapies, the preparation involved and whether your needs call for a longer stay.",
+            // DEC-PACKAGE-COMPARISONS (AHV-WB.140): minimum = all-programs-data.js
+            // /holistic-treatment-for-rejuvenation-and-detoxification/ 7 (KTAHV/AYT/EN-INR/20260925-R1); inclusions =
+            // ayurveda.included[1–3] of english-candidate/final-rates/strings.en.json (two therapies a day).
+            "Minimum stay: 7 nights. Included: two Ayurvedic therapies a day, including herbal steam; three vegetarian or vegan meals a day, to the dietary prescription; and daily consultation and monitoring by the attending physician. Your doctor’s plan sets which therapies you receive.",
+          ],
         },
         {
           title: "Preventive Health & Regenerative programme",
           links: [{ label: "Preventive Ayurveda", href: `${SITE}/preventive-and-regenerative-treatment/` }],
-          paragraphs: ["This separately listed programme has a three-night minimum. It has its own therapy schedule and terms, so confirm what it includes before you choose it."],
+          paragraphs: [
+            "This separately listed programme has a three-night minimum. It has its own therapy schedule and terms, so confirm what it includes before you choose it.",
+            // DEC-PACKAGE-COMPARISONS (AHV-WB.140): minimum = all-programs-data.js /preventive-and-regenerative-treatment/ 3
+            // (KTAHV/AYT/EN-INR/20260925-R1); the one-therapy exception = ayurveda.included[2] + notes.one_therapy_note of
+            // final-rates/strings.en.json; meals and physician = ayurveda.included[1], [3]. No herbal-steam claim (not bound).
+            "Minimum stay: 3 nights. Included: one Ayurvedic therapy a day rather than two; three vegetarian or vegan meals a day, to the dietary prescription; and daily consultation and monitoring by the attending physician. Your doctor’s plan sets which therapy you receive.",
+          ],
         },
         {
           title: "Not the same as Panchakarma",
