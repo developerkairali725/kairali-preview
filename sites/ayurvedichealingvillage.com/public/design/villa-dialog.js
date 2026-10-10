@@ -282,7 +282,10 @@
     win.__ahvVillaDialog = true;
     var state = { ready: false };
     ensureCss(doc, state);
-    doc.addEventListener("click", onClick(doc, win.location.origin, function () { return state.ready; }));
+    // re-checked on every click: a client-side navigation away from the 14 English routes must not inherit the dialog
+    doc.addEventListener("click", onClick(doc, win.location.origin, function () {
+      return state.ready && routeAllowed(doc, win.location.pathname);
+    }));
     return true;
   }
 

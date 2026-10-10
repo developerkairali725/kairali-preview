@@ -271,6 +271,31 @@ test("no click is intercepted until the stylesheet loads, and never if it fails"
   assert.deepEqual(run("load"), { prevented: true, dialogs: 1 });
 });
 
+test("after client-side navigation the current route, language and campaign scope are re-checked on every click", () => {
+  const { doc, main, link } = makeDoc();
+  const w = win(doc, "/pain-management.html");
+  assert.equal(vd.init(w), true);
+  doc.querySelector("link[data-ahv-villa-dialog-css]").dispatch("load");
+  const handler = doc.listeners.click[0];
+  const tryClick = () => { const ev = click({ target: link(main, "/royal-villa/", "Explore Royal Villa") }); handler(ev); return ev.defaultPrevented; };
+  const dialog = () => main.parentNode.querySelector("dialog");
+  for (const p of ["/panchkarma-treatment.html", "/lp/weight-loss/", "/de/pain-management.html", "/ru/lp/pain-management/", "/lp/pain-management"]) {
+    w.location.pathname = p;
+    assert.equal(tryClick(), false, `navigated to ${p}: ordinary navigation`);
+  }
+  w.location.pathname = "/pain-management.html";
+  doc.documentElement.setAttribute("lang", "de");
+  assert.equal(tryClick(), false, "document language changed to German");
+  doc.documentElement.setAttribute("lang", "en");
+  delete doc.body.attrs["data-ahv-campaign"];
+  assert.equal(tryClick(), false, "no longer the campaign document");
+  assert.equal(dialog(), null, "no dialog was built off-scope");
+  doc.body.setAttribute("data-ahv-campaign", "true");
+  w.location.pathname = "/lp/ayurvedic-hospital-kerala/";
+  assert.equal(tryClick(), true, "back on an approved route: dialog opens");
+  assert.ok(dialog().open);
+});
+
 test("reopening the same villa from a different link uses that link's exact href and label", () => {
   const { doc, lp, main, link } = makeDoc();
   const handler = vd.onClick(doc, ORIGIN);
