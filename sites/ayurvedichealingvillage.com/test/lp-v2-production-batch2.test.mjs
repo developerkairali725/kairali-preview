@@ -108,7 +108,8 @@ const fam = (over = {}) => ({
 
 test("family form: the R10 familyFields contract — fields, order, required, limits, options, labels; the note on the health field", () => {
   const fields = FS.steps[0].fields;
-  assert.deepEqual(fields.map((f) => f.name), ["fullName", "rdogender", "email", "dialCode", "phone", "country", "duration", "message"]);
+  // "preferredMonth": the one optional month select added by DEC-OPTIONAL-STAY-SELECTORS (optional only); all else is R10.
+  assert.deepEqual(fields.map((f) => f.name), ["fullName", "rdogender", "email", "dialCode", "phone", "country", "duration", "preferredMonth", "message"]);
   const f = Object.fromEntries(fields.map((x) => [x.name, x]));
   assert.deepEqual([f.rdogender.type, f.rdogender.label, f.rdogender.required], ["radio", "Gender", false]);
   assert.deepEqual(f.rdogender.options, [{ value: "Male", label: "Male" }, { value: "Female", label: "Female" }]);
@@ -117,6 +118,10 @@ test("family form: the R10 familyFields contract — fields, order, required, li
   assert.deepEqual(f.duration.options, [
     { value: "", label: "Select duration" }, { value: "7 days", label: "7 days" }, { value: "14 days", label: "14 days" }, { value: "21 days", label: "21 days" },
   ]);
+  // the month is optional and starts unanswered (no preference assumed), then the shared six months + Flexible
+  assert.deepEqual([f.preferredMonth.type, f.preferredMonth.label, f.preferredMonth.required, f.preferredMonth.defaultValue, f.preferredMonth.mapsTo], ["select", "Preferred month", false, "", "message"]);
+  assert.deepEqual(f.preferredMonth.options[0], { value: "", label: "Select month" });
+  assert.deepEqual(f.preferredMonth.options.slice(1).map((o) => o.value), ["2026-11", "2026-12", "2027-01", "2027-02", "2027-03", "2027-04", "flexible"]);
   assert.deepEqual([f.message.type, f.message.label, f.message.required, f.message.maxLength], ["textarea", "Any existing health conditions?", false, 2700]);
   assert.equal(f.message.hint, FAMILY_NOTE);
   assert.equal(COPY[FAMILY].familyFormNote, FAMILY_NOTE);
@@ -147,6 +152,9 @@ test("family form validation: country required with its own message, duration an
   assert.deepEqual(errs({ country: "x".repeat(101) }), [["country", "too_long"]]);
   assert.deepEqual(errs({ rdogender: "Female", duration: "14 days", message: "Knee stiffness" }), []);
   assert.deepEqual(errs({ duration: "28 nights" }), [["duration", "required"]]);
+  assert.deepEqual(errs({ preferredMonth: "" }), []); // the month stays optional
+  assert.deepEqual(errs({ preferredMonth: "2026-11" }), []);
+  assert.deepEqual(errs({ preferredMonth: "2020-01" }), [["preferredMonth", "required"]]); // only its own options
   assert.deepEqual(errs({ rdogender: "Other" }), [["rdogender", "required"]]);
   assert.deepEqual(errs({ message: "x".repeat(2700) }), []);
   assert.deepEqual(errs({ message: "x".repeat(2701) }), [["message", "too_long"]]);
