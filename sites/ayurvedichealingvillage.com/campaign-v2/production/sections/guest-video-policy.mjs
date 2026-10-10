@@ -24,9 +24,10 @@ export const GUEST_VIDEO_ROUTES = Object.freeze([
 export const APPROVED_FILM_IDS = Object.freeze(["iPARaMRASUs", "4x01PtWfNnk", "3vWviQfW1Ug", "07tVC2oXd8g", "DcTMckQD3rc"]);
 
 /**
- * The site's consent UI (public/consent) offers only Analytics and Advertising as optional categories and names
- * neither YouTube nor embedded video. Until a privacy owner maps embedded films to a category, both must be
- * currently accepted; Global Privacy Control removes Advertising, so GPC never plays a film here.
+ * Conservative gating by this popup only. The existing consent configuration (public/consent, unchanged) offers
+ * Analytics and Advertising as its optional categories and names neither YouTube nor embedded video, so this consumer
+ * requires both to be currently accepted. That is not a purpose-specific permission for video. Global Privacy
+ * Control removes Advertising, so with GPC a film never plays here.
  */
 export const REQUIRED_CATEGORIES = Object.freeze(["analytics", "advertising"]);
 
@@ -153,4 +154,210 @@ export function reduce(state, event) {
  */
 export function playerSrc(state) {
   return state?.kind === "playing" ? embedSrc(state.id) : null;
+}
+
+/** Native modal <dialog> support. Without showModal() a card stays its plain link (no non-modal stand-in). */
+export function dialogSupported(win) {
+  try {
+    return typeof win?.HTMLDialogElement === "function" && typeof win.HTMLDialogElement.prototype?.showModal === "function";
+  } catch {
+    return false;
+  }
+}
+
+/** A same-origin thumbnail already on the card; never a remote image. */
+export function localThumb(link, win) {
+  const img = link?.querySelector?.("img");
+  const src = img?.currentSrc || img?.getAttribute?.("src") || "";
+  try {
+    return src && new URL(src, win.location.href).origin === win.location.origin ? src : null;
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * @typedef {{ film: GuestVideoState, thumb: string | null, host: Element | null, gpc: boolean, settingsUnavailable: boolean }} GuestVideoView
+ */
+
+/** @type {GuestVideoView} */
+export const CLOSED_VIEW = Object.freeze({ film: CLOSED, thumb: null, host: null, gpc: false, settingsUnavailable: false });
+
+/**
+ * Everything the popup does outside rendering: the card click, consent reads, route/locale/navigation and consent
+ * rechecks, and teardown. GuestVideoDialog.tsx renders `getSnapshot()` and reports the router's pathname and the native
+ * dialog's lifecycle back. A single document click listener is always installed (no fetch, no other work); each
+ * click checks the CURRENT path and <html lang>, so a component that stays mounted across client navigation works
+ * on an allowed route reached later and does nothing on any other. The consent modules load only on an allowed route.
+ * Any pathname change after a film opens (including to another allowed route) closes it.
+ *
+ * @param {{ win: any, doc: any, loadConsent: () => Promise<{ cc: unknown, policy: unknown }>, now?: () => number, recheckMs?: number }} deps
+ */
+export function createGuestVideoController({ win, doc, loadConsent, now = () => Date.now(), recheckMs = 1000 }) {
+  /** @type {GuestVideoView} */
+  let view = CLOSED_VIEW;
+  /** @type {{ cc: unknown, policy: unknown } | null} */
+  let apis = null;
+  /** @type {Promise<void> | null} */
+  let loading = null;
+  /** @type {string | null} */
+  let openPath = null;
+  /** @type {any} */
+  let trigger = null;
+  let pendingSettings = false;
+  let token = 0;
+  /** @type {(() => void) | null} */
+  let stopWatching = null;
+  const subscribers = new Set();
+
+  const set = (next) => {
+    if (next === view) return;
+    view = next;
+    subscribers.forEach((f) => f());
+  };
+  const gpc = () => win.navigator?.globalPrivacyControl === true;
+  const routeOk = () => routeAllowed(win.location?.pathname, doc.documentElement?.lang);
+  const stillHere = () => openPath !== null && win.location?.pathname === openPath && routeOk();
+  const granted = () => {
+    if (!apis) return false;
+    let storage;
+    try { storage = win.localStorage; } catch { storage = undefined; }
+    return consentGranted({
+      cc: apis.cc, policy: apis.policy, storage, gpc: gpc(),
+      settingsReady: typeof win.AHV_COOKIE_SETTINGS === "function", now: now(),
+    });
+  };
+
+  const preload = () => {
+    if (apis || !routeOk()) return loading ?? Promise.resolve();
+    loading ??= Promise.resolve()
+      .then(loadConsent)
+      .then((m) => { apis = m && m.cc && m.policy ? m : null; }, () => { apis = null; })
+      .finally(() => { if (!apis) loading = null; });
+    return loading;
+  };
+
+  const apply = (event) => {
+    const film = reduce(view.film, event);
+    if (film === view.film) return;
+    if (film.kind === "closed") {
+      const stop = stopWatching;
+      stopWatching = null;
+      stop?.();
+      openPath = null;
+      set(CLOSED_VIEW);
+      return;
+    }
+    set({ ...view, film });
+  };
+
+  const close = () => {
+    token++;
+    apply({ type: "close" });
+  };
+
+  const recheck = () => {
+    apply({ type: "route", routeOk: stillHere() });
+    if (view.film.kind !== "closed") apply({ type: "consent", granted: granted() });
+  };
+
+  const watch = () => {
+    const winEvents = ["cc:onChange", "cc:onConsent", "storage", "focus"];
+    winEvents.forEach((n) => win.addEventListener(n, recheck));
+    doc.addEventListener("visibilitychange", recheck);
+    win.addEventListener("popstate", close);
+    win.addEventListener("pagehide", close);
+    const Observer = win.MutationObserver;
+    const lang = typeof Observer === "function" ? new Observer(recheck) : null;
+    lang?.observe(doc.documentElement, { attributes: true, attributeFilter: ["lang"] });
+    const timer = win.setInterval(recheck, recheckMs);
+    stopWatching = () => {
+      winEvents.forEach((n) => win.removeEventListener(n, recheck));
+      doc.removeEventListener("visibilitychange", recheck);
+      win.removeEventListener("popstate", close);
+      win.removeEventListener("pagehide", close);
+      lang?.disconnect();
+      win.clearInterval(timer);
+    };
+  };
+
+  const onClick = (e) => {
+    if (!interceptsClick(e) || view.film.kind !== "closed" || !dialogSupported(win) || !routeOk()) return;
+    const link = typeof e.target?.closest === "function" ? e.target.closest("a.lp-pstory") : null;
+    if (!link || !link.closest(".lp-pstories")) return;
+    const id = filmIdFromHref(link.getAttribute("href"));
+    if (!id) return;
+    e.preventDefault();
+    const mine = ++token;
+    openPath = win.location.pathname;
+    trigger = link;
+    const title = link.querySelector(".lp-pstory__title")?.textContent ?? "";
+    const thumb = localThumb(link, win);
+    const host = link.closest(".lp-prod") ?? doc.body;
+    const open = () => {
+      if (mine !== token || view.film.kind !== "closed" || !stillHere()) return;
+      const film = reduce(view.film, { type: "open", id, title, granted: granted(), routeOk: true });
+      if (film.kind === "closed") return;
+      set({ film, thumb, host, gpc: gpc(), settingsUnavailable: false });
+      watch();
+    };
+    if (apis) open();
+    else preload().then(open);
+  };
+
+  return {
+    install() {
+      doc.addEventListener("click", onClick);
+      void preload();
+    },
+    destroy() {
+      doc.removeEventListener("click", onClick);
+      close();
+      subscribers.clear();
+    },
+    /** @param {() => void} f */
+    subscribe(f) {
+      subscribers.add(f);
+      return () => { subscribers.delete(f); };
+    },
+    /** @returns {GuestVideoView} */
+    getSnapshot() {
+      return view;
+    },
+    /** The router's current pathname: any change from the opened film's path closes it (and cancels a pending open). */
+    setPathname(pathname) {
+      if (pathname !== openPath) close();
+      void preload();
+    },
+    close,
+    /** Cookie choices: close this modal first (a modal would make them inert); the TSX calls dialogClosed() after. */
+    requestSettings() {
+      if (typeof win.AHV_COOKIE_SETTINGS !== "function") {
+        set({ ...view, settingsUnavailable: true });
+        return false;
+      }
+      pendingSettings = true;
+      close();
+      return true;
+    },
+    /** The native dialog has closed: return focus to the card, then open any requested Cookie choices. */
+    dialogClosed() {
+      const t = trigger;
+      trigger = null;
+      try { if (t?.isConnected) t.focus({ preventScroll: true }); } catch { /* focus is best-effort */ }
+      if (pendingSettings) {
+        pendingSettings = false;
+        openCookieSettings(win);
+      }
+    },
+    /** showModal() threw: close and keep the card's own behaviour (its href, in a new tab). */
+    modalFailed() {
+      const film = view.film;
+      close();
+      trigger = null;
+      if (film.kind !== "closed") {
+        try { win.open(watchHref(film.id), "_blank", "noopener,noreferrer"); } catch { /* nothing else to do */ }
+      }
+    },
+  };
 }
