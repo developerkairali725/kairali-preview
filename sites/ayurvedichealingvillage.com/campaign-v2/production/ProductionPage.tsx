@@ -21,6 +21,7 @@ import Physicians from "./sections/Physicians";
 import Interactions from "./Interactions";
 import StickyHeader from "./StickyHeader";
 import { uiFor } from "./ui.ts";
+import { sectionOrder, type Block } from "./section-order.ts";
 
 /** Variant A ("Quiet Admission"), the owner-approved design of the first four live ad routes, and the default. */
 export const PRODUCTION_VARIANT: Variant = "A";
@@ -57,23 +58,6 @@ function skinStyle(v: Variant, locale: string): Record<string, string> {
   };
 }
 
-type Block = "lead" | "offering" | "pathway" | "rest" | "place" | "stories" | "stay" | "physicians";
-
-/**
- * The designed sections in the order each variant tells its story (kit/variants.ts adapted to the designed page).
- * Every variant ends doctors → enquiry → one FAQ (owner, 8 Oct 2026: the doctor biographies once, directly before the
- * enquiry they lead into; one FAQ for the whole page).
- *   A Quiet Admission — the argument, the care, the quiet band, the village, the stay.
- *   B Garden Bento — the place first (the village right after the argument), no stillness band (as the kit's B).
- *   C Editorial — the method as numbered chapters, the full-bleed quiet band, then the village.
- *   D Direct — the shortest path: argument, what is involved, three steps, what the quotation covers.
- */
-const ORDER: Record<Variant, Block[]> = {
-  A: ["lead", "offering", "pathway", "rest", "place", "stories", "stay", "physicians"],
-  B: ["lead", "place", "offering", "pathway", "stories", "stay", "physicians"],
-  C: ["lead", "offering", "pathway", "rest", "place", "stories", "stay", "physicians"],
-  D: ["lead", "offering", "pathway", "stay", "physicians"],
-};
 /** C numbers its chapters in reading order (the kit's "01 The method → 02 … "); the other variants use kickers. */
 const CHAPTERED: Block[] = ["offering", "pathway", "place", "stay", "physicians"];
 
@@ -82,6 +66,9 @@ const CHAPTERED: Block[] = ["offering", "pathway", "place", "stay", "physicians"
  * `variant`, default A — the four first routes, unchanged), in the order a visitor decides:
  *
  *   hero (+ Step-1 bar on batch 1) → proof → the variant's designed sections → the enquiry → one FAQ → footer.
+ *
+ * The designed sections' order is section-order.ts: the variant's default (doctors last, before the enquiry), except
+ * on the four first routes, where the owner (10 Oct 2026) moved the same doctors section up to follow the lead.
  *
  * The old page's own structure (tables, link lists, galleries, source order) is not carried over: its text and SEO
  * topics are rewritten into these sections. Owner, 8 Oct 2026: on desktop the header stays pinned while the page
@@ -99,7 +86,7 @@ export default function ProductionPage({ c }: { c: CampaignConfig }) {
   const req = productionRequest(c);
   const ui = uiFor(req.locale);
   const p = { c, v, req };
-  const order = ORDER[v].filter((b) => (b === "rest" ? !!page.rest : b === "place" ? !!page.place : b === "stories" ? !!page.stories : true));
+  const order = sectionOrder(c, v);
   let chapter = 0;
   const sec = (b: Block) => ({ v, ui, ...(v === "C" && CHAPTERED.includes(b) ? { no: String(++chapter).padStart(2, "0") } : {}) });
   const render = (b: Block): ReactNode => {
