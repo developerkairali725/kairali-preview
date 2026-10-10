@@ -342,12 +342,7 @@
     var lp = window.AHV_LOCAL_PATHS, form = root.querySelector("form[id]");
     var here = location.pathname.replace(/\/?$/, "/");
     bar.querySelectorAll("a").forEach(function (a) {
-      if (campaignRoot && a.classList.contains("ahv-cta-consult")) {
-        if (a.__ahvConsultHref == null) a.__ahvConsultHref = a.getAttribute("href") || "";
-        var want = freeConsultHref(lp, a.__ahvConsultHref);
-        if (want && a.getAttribute("href") !== want) a.setAttribute("href", want);
-        return;
-      }
+      if (campaignRoot && a.classList.contains("ahv-cta-consult")) { syncFreeConsult(a, lp); return; }
       var h = a.getAttribute("href") || "";
       if (lp && lp[h] && lp[h] !== h) a.setAttribute("href", (h = lp[h]));
       // the enquiry page itself: "Enquire" goes to its form, as boot.ts does for the page's own self-links
@@ -376,6 +371,21 @@
   // own consultation form, #enquiry, the target of every in-page consultation CTA. Any other route, or a page whose
   // #enquiry holds no form, keeps the bar's own consultation link (`own`, as first built; through the locale path map).
   // Decided for the current path on every pass, so client navigation never keeps a stale target; written only on change.
+  // A route change by history alone mutates nothing the observer watches, so the link also re-decides its own
+  // destination when it is activated (click, middle click, context menu), before the browser's default action reads
+  // the href. Installed once per link; never cancels or stops the event, so modified clicks keep their defaults.
+  function syncFreeConsult(a, lp) {
+    if (a.__ahvConsultHref == null) a.__ahvConsultHref = a.getAttribute("href") || "";
+    if (!a.__ahvConsultBound && typeof a.addEventListener === "function") {
+      a.__ahvConsultBound = true;
+      var refresh = function () { syncFreeConsult(a, lp); };
+      a.addEventListener("click", refresh);
+      a.addEventListener("auxclick", refresh);
+      a.addEventListener("contextmenu", refresh);
+    }
+    var want = freeConsultHref(lp, a.__ahvConsultHref);
+    if (want && a.getAttribute("href") !== want) a.setAttribute("href", want);
+  }
   function freeConsultHref(lp, own) {
     var routes = {
       "/ayurvedic-treatment-packages.html": 1, "/panchkarma-treatment.html": 1, "/pain-management.html": 1,

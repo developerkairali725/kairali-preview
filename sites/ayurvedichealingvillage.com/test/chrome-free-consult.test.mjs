@@ -47,8 +47,11 @@ function page({ path: initialPath, campaign = true, enquiry = true, enquiryForm 
   const schedule = () => { scheduled = true; };
   const links = barLinks.map(({ cls, href }) => {
     const attrs = { href };
+    const listeners = {};
     return {
       cls,
+      listeners,
+      addEventListener: (type, fn) => { (listeners[type] = listeners[type] || []).push(fn); },
       classList: { contains: (c) => cls.split(' ').includes(c) },
       getAttribute: (n) => (n in attrs ? attrs[n] : null),
       setAttribute: (n, v) => { if (n === 'href') { writes.push({ cls, from: attrs.href, to: String(v) }); schedule(); } attrs[n] = String(v); },
@@ -87,6 +90,24 @@ function page({ path: initialPath, campaign = true, enquiry = true, enquiryForm 
     call: () => get('ahv-cta-call'),
     // client navigation or a DOM change: the observer schedules a pass
     navigate(p) { here = p; schedule(); },
+    // MOCKED history-only navigation: location.pathname changes and NOTHING else — no DOM/href mutation, no resize, so
+    // the observer schedules no pass (as with history.pushState that leaves the bar's subtree untouched)
+    historyOnly(p) { here = p; },
+    // a form appears or disappears with no pass run (the activation path must not depend on one)
+    domOnly(next) { Object.assign(dom, next); },
+    // MOCKED activation: runs the handlers actually installed on the link for `type` (target phase), then reports the
+    // href the browser's default action would read afterwards. No real browser, navigation or event loop.
+    activate(cls, type = 'click', init = {}) {
+      const a = links.find((l) => l.classList.contains(cls));
+      const ev = { type, button: 0, ctrlKey: false, metaKey: false, shiftKey: false, altKey: false, ...init, defaultPrevented: false, propagationStopped: false };
+      ev.preventDefault = () => { ev.defaultPrevented = true; };
+      ev.stopPropagation = () => { ev.propagationStopped = true; };
+      ev.stopImmediatePropagation = () => { ev.propagationStopped = true; };
+      for (const fn of a.listeners[type] || []) fn.call(a, ev);
+      return { href: a.getAttribute('href'), defaultPrevented: ev.defaultPrevented, propagationStopped: ev.propagationStopped };
+    },
+    listenerCounts: (cls) => Object.fromEntries(Object.entries(links.find((l) => l.classList.contains(cls)).listeners).map(([k, v]) => [k, v.length])),
+    pending: () => scheduled,
     setDom(next) { Object.assign(dom, next); schedule(); },
     settle() {
       const before = writes.length, from = passes;
@@ -235,4 +256,90 @@ test('write budget: unchanged passes write nothing and the page goes quiet', () 
 test('the slice stays self-contained for the locale chrome build', () => {
   assert.ok(slice.includes('var lp = window.AHV_LOCAL_PATHS,'), 'tools/build-review-chrome.mjs anchor kept');
   assert.ok(slice.includes('function freeConsultHref('), 'the Free Consult rule lives inside the copied slice');
+  assert.ok(slice.includes('function syncFreeConsult('), 'the activation refresh lives inside the copied slice');
+});
+
+// ── Activation-time refresh (V2). The observer only runs a pass on DOM/href mutations and resize; a history-only route
+// change touches neither, so the destination is re-decided on the consultation link itself when it is activated.
+test('activation after a history-only change allowed -> excluded uses the fallback, no pass needed', () => {
+  const p = page({ path: '/lp/weight-loss/' });
+  p.settle();
+  assert.equal(p.consult(), '#enquiry');
+  p.historyOnly('/lp-v2/panchakarma/');
+  assert.equal(p.pending(), false, 'mock: no observer pass is scheduled by the path change');
+  const r = p.activate('ahv-cta-consult');
+  assert.equal(r.href, '/online-consultation/', 'no stale #enquiry at activation');
+  assert.equal(r.defaultPrevented, false);
+  assert.equal(r.propagationStopped, false);
+});
+
+test('activation after a history-only change excluded -> allowed opens the form', () => {
+  const p = page({ path: '/lp-v2/panchakarma/' });
+  p.settle();
+  assert.equal(p.consult(), '/online-consultation/');
+  p.historyOnly('/ayurvedic-treatment-packages.html');
+  assert.equal(p.pending(), false);
+  const r = p.activate('ahv-cta-consult');
+  assert.equal(r.href, '#enquiry');
+  assert.equal(r.defaultPrevented, false);
+});
+
+test('activation on an allowed route whose form is gone keeps the fallback; form back -> #enquiry', () => {
+  const p = page({ path: '/lp/weight-loss/' });
+  p.settle();
+  p.domOnly({ enquiryForm: false });
+  assert.equal(p.activate('ahv-cta-consult').href, '/online-consultation/');
+  p.domOnly({ enquiryForm: true });
+  assert.equal(p.activate('ahv-cta-consult').href, '#enquiry');
+});
+
+test('activation on DE chrome follows the locale fallback after leaving the route', () => {
+  const p = page({ path: '/lp/behandlung-in-kerala/', localPaths: { '/online-consultation/': '/de/online-consultation/' } });
+  p.settle();
+  assert.equal(p.consult(), '#enquiry');
+  p.historyOnly('/lp/some-other-campaign/');
+  assert.equal(p.activate('ahv-cta-consult').href, '/de/online-consultation/');
+});
+
+test('modified and non-primary activations refresh too and keep the browser default', () => {
+  const inits = [['click', { ctrlKey: true }], ['click', { metaKey: true }], ['click', { shiftKey: true }], ['auxclick', { button: 1 }], ['contextmenu', { button: 2 }]];
+  for (const [type, init] of inits) {
+    const p = page({ path: '/lp/weight-loss/' });
+    p.settle();
+    p.historyOnly('/contact-us/');
+    const r = p.activate('ahv-cta-consult', type, init);
+    assert.equal(r.href, '/online-consultation/', `${type} ${JSON.stringify(init)}`);
+    assert.equal(r.defaultPrevented, false, type);
+    assert.equal(r.propagationStopped, false, type);
+  }
+});
+
+test('activation with nothing changed writes nothing', () => {
+  const p = page({ path: '/lp/weight-loss/' });
+  p.settle();
+  const before = p.writes.length;
+  for (const t of ['click', 'auxclick', 'contextmenu']) p.activate('ahv-cta-consult', t);
+  assert.equal(p.writes.length, before);
+});
+
+test('listeners: installed once on the consultation link only, never on Enquire or Call, and not off-campaign', () => {
+  const p = page({ path: '/lp/weight-loss/' });
+  for (let i = 0; i < 6; i++) { p.setDom({}); p.settle(); p.navigate(i % 2 ? '/lp/weight-loss/' : '/lp-v2/x/'); p.settle(); }
+  assert.deepEqual(p.listenerCounts('ahv-cta-consult'), { click: 1, auxclick: 1, contextmenu: 1 });
+  assert.deepEqual(p.listenerCounts('ahv-cta-enquire'), {});
+  assert.deepEqual(p.listenerCounts('ahv-cta-call'), {});
+  const off = page({ path: '/', campaign: false });
+  off.settle();
+  assert.deepEqual(off.listenerCounts('ahv-cta-consult'), {});
+});
+
+test('other CTAs are unchanged by activation of Free Consult', () => {
+  const p = page({ path: '/lp/weight-loss/' });
+  p.settle();
+  const enquire = p.enquire(), call = p.call();
+  p.historyOnly('/lp-v2/x/');
+  p.activate('ahv-cta-consult');
+  assert.equal(p.enquire(), enquire);
+  assert.equal(p.call(), call);
+  assert.equal(p.activate('ahv-cta-enquire').href, enquire, 'Enquire has no added handler');
 });
