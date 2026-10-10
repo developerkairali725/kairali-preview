@@ -1,7 +1,7 @@
 // Live ad routes: the reviewed copy of 8 Oct 2026 (production/pages/*.ts), designed into one template
-// (production/ProductionPage.tsx). Owner rules (hidden pricing; one FAQ; the doctors shown once — directly before the
-// enquiry by default, right after the lead on the first four routes (10 Oct 2026); the KTAHV register), doctors, links,
-// media, metadata. Nothing here edits copy: a failing assertion is a content finding for the copy owner.
+// (production/ProductionPage.tsx). Owner rules (hidden pricing; one FAQ; the doctors shown once — right after the lead
+// on every live route (10 Oct 2026; the variant default, directly before the enquiry, otherwise); the KTAHV register),
+// doctors, links, media, metadata. Nothing here edits copy: a failing assertion is a content finding for the copy owner.
 // Batch-2 form and lead contracts: lp-v2-production-batch2.test.mjs.
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -173,7 +173,7 @@ test("owner rule: 'free' is only ever the initial doctor consultation", () => {
 });
 
 // ── the owner's corrections: composition ──────────────────────────────────────────────────────────────
-test("composition: every variant in decision order; by default the doctors after the village and the quotation, directly before the enquiry (first four: right after the lead); one FAQ", () => {
+test("composition: every variant in decision order; the doctors right after the lead on every live route (variant default: directly before the enquiry); one FAQ", () => {
   const src = read("campaign-v2/production/ProductionPage.tsx");
   const main = src.slice(src.indexOf("<main"), src.indexOf("</main>"));
   // The frame: hero (+ Step-1 bar), proof, the variant's designed sections, then the enquiry and one FAQ.
@@ -188,8 +188,8 @@ test("composition: every variant in decision order; by default the doctors after
   assert.match(src, /const order = sectionOrder\(c, v\);/, "the template renders section-order.ts's order");
   assert.doesNotMatch(src, /const ORDER\b/, "no second order table in the template");
   assert.deepEqual(ORDER.A, ["lead", "offering", "pathway", "rest", "place", "stories", "stay", "physicians"], "A is the default order");
-  // Owner, 10 Oct 2026: on the first four routes (variant A) the same doctors section follows the lead; this supersedes
-  // the 8 Oct "doctors directly before the enquiry" placement for these four only. The other routes keep the default.
+  // Owner, 10 Oct 2026: on the first four routes (variant A; batch 1), then the remaining 20 (batch 2), the same doctors
+  // section follows the lead; this supersedes the 8 Oct "doctors directly before the enquiry" placement on these routes.
   const firstFour = {
     "treatment-packages": ["lead", "physicians", "offering", "pathway", "rest", "place", "stay"],
     "panchakarma": ["lead", "physicians", "offering", "pathway", "rest", "place", "stay"],
@@ -203,8 +203,9 @@ test("composition: every variant in decision order; by default the doctors after
   for (const slug of LATER) {
     const v = ROUTES[slug].variant ?? "A";
     const order = sectionOrder(C[slug], v);
-    assert.equal(order.at(-1), "physicians", `${slug}: the doctors lead straight into the enquiry`);
-    assert.deepEqual(order, ORDER[v].filter((b) => order.includes(b)), `${slug}: the variant's default order`);
+    assert.equal(order[1], "physicians", `${slug}: the doctors right after the lead`);
+    assert.equal(order.filter((b) => b === "physicians").length, 1, `${slug}: the doctors once`);
+    assert.deepEqual(order.filter((b) => b !== "physicians"), ORDER[v].filter((b) => b !== "physicians" && order.includes(b)), `${slug}: the variant's order otherwise`);
   }
   for (const [v, list] of Object.entries(ORDER)) {
     assert.equal(list.at(-1), "physicians", `${v}: by default the doctors lead straight into the enquiry`);

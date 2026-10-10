@@ -68,7 +68,7 @@ const CHAPTERED: Block[] = ["offering", "pathway", "place", "stay", "physicians"
  *   hero (+ Step-1 bar on batch 1) → proof → the variant's designed sections → the enquiry → one FAQ → footer.
  *
  * The designed sections' order is section-order.ts: the variant's default (doctors last, before the enquiry), except
- * on the four first routes, where the owner (10 Oct 2026) moved the same doctors section up to follow the lead.
+ * on the routes it lists, where the owner (10 Oct 2026) moved the same doctors section up to follow the lead.
  *
  * The old page's own structure (tables, link lists, galleries, source order) is not carried over: its text and SEO
  * topics are rewritten into these sections. Owner, 8 Oct 2026: on desktop the header stays pinned while the page
