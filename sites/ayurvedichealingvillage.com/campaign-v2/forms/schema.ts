@@ -265,8 +265,8 @@ export const PRODUCTION_CAMPAIGN_FORM: FormSchema = {
 // The R10 form with familyFields (app/(campaign)/ayurvedic-treatment-packages.html/EnquiryForm.tsx, as rendered on
 // /family-ayurvedic-retreat-kerala.html): the production form above plus its own fields, constraints and labels —
 // gender (optional radio), country (required, max 100), preferred duration (optional, empty default; form choices,
-// not clinical minimums) and the optional "Any existing health conditions?" text (max 2700, so the packed message
-// stays within the API's 3000). The "ahv-production" adapter packs them as that form did (forms/adapter.ts). The
+// not clinical minimums), an optional preferred month (empty default; FAMILY_MONTH_FIELD) and the optional "Any
+// existing health conditions?" text (max 2700, so the packed message stays within the API's 3000). The "ahv-production" adapter packs them as that form did (forms/adapter.ts). The
 // copy's own note on the optional health field is its hint; the generic "No medical details" lede and line are not
 // shown, because this form asks that question. Selected only by a route's productionForm.profile "family-retreat".
 
@@ -277,6 +277,15 @@ export const FAMILY_DURATIONS: readonly Option[] = [
 ];
 export const FAMILY_COUNTRY_MAX = 100;
 export const FAMILY_HEALTH_MAX = 2700;
+/**
+ * The family form's optional preferred month (owner decision DEC-OPTIONAL-STAY-SELECTORS: optional only): an empty
+ * default, so no preference is assumed, then the shared next six months + Flexible. A picked month is one extra line in
+ * the packed message (forms/adapter.ts familyMessage); unanswered, the request is unchanged.
+ */
+export const FAMILY_MONTH_FIELD = "preferredMonth";
+export function familyMonthOptions(ctx: Pick<OptionContext, "locale" | "now">): Option[] {
+  return [{ value: "", label: "Select month" }, ...monthOptions(ctx)];
+}
 
 /** Preserve the pain route's existing optional, initially unanswered gender radios. */
 export const PRODUCTION_PAIN_FORM: FormSchema = {
@@ -375,6 +384,7 @@ export function productionFamilyForm(healthNote: string): FormSchema {
           field("phone"),
           { name: "country", type: "text", label: "Country", required: true, autocomplete: "country-name", maxLength: FAMILY_COUNTRY_MAX, mapsTo: "country" },
           { name: "duration", type: "select", label: "Preferred duration", required: false, options: FAMILY_DURATIONS, defaultValue: "", mapsTo: "duration" },
+          { name: FAMILY_MONTH_FIELD, type: "select", label: "Preferred month", required: false, options: familyMonthOptions, defaultValue: "", mapsTo: "message" },
           { name: "message", type: "textarea", label: "Any existing health conditions?", required: false, rows: 3, maxLength: FAMILY_HEALTH_MAX, hint: healthNote, mapsTo: "message" },
         ],
       },
