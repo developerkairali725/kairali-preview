@@ -1,11 +1,13 @@
 /* AHV — villa details in an on-page dialog (DEC-VILLA-POPUP, WOPS-AHV-VILLA-POPUP-20261010-001).
  *
- * On the live ad routes (body[data-ahv-campaign]) an ordinary click on a link to one of the four villa pages opens
- * that villa's details in a native modal <dialog> on the same page, so the visitor keeps the page, its campaign
- * query and any half-filled form. Progressive enhancement only:
+ * On the 14 scoped English ad routes only (ROUTES, on body[data-ahv-campaign] with <html lang="en">) an ordinary
+ * click on a link to one of the four villa pages opens that villa's details in a native modal <dialog> on the same
+ * page, so the visitor keeps the page, its campaign query and any half-filled form. Progressive enhancement only:
  *   - the link keeps its real href; modified clicks (Ctrl/Cmd/Shift/Alt, middle button), target/download links,
  *     links outside the page's <main>, unknown paths and browsers without showModal() navigate exactly as before;
- *   - the dialog's own "Explore …" link is the original href, unchanged.
+ *   - nothing is intercepted until villa-dialog.css has loaded (never, if it fails), so a missing stylesheet leaves
+ *     the original navigation in place;
+ *   - the dialog's own "Explore …" link is the current trigger's href, unchanged, refreshed on every open.
  * Content is the villa pages' approved text and images, copied verbatim from english-candidate/prerender/<slug>.html
  * (facts list, "In your villa/suite" lists, first four images with their alt text) — no prices, no new claims. It is
  * built with createElement/textContent only: nothing is fetched, no page HTML is parsed. No tracking, consent, form
@@ -79,6 +81,14 @@
       ]
     }
   };
+  // The exact 14 English routes of WOPS-AHV-VILLA-POPUP-20261010-001 (SCOPE.json "page"); nowhere else, no locale copies.
+  var ROUTES = [
+    "/pain-management.html", "/family-ayurvedic-retreat-kerala.html", "/ayurveda-retreat-kerala.html",
+    "/kairali-cleansing-centre.html", "/treatment-in-kerala.html", "/Ayurveda_Treatment_Neo_S.India_Cities.html",
+    "/weight-loss.html", "/lp/ayurvedic-hospital-kerala/", "/lp/kairali-cleansing-centre/", "/lp/pain-management/",
+    "/karkidaka-chikitsha-or-monsoon-wellness.html", "/preventive-rejuvenation-detoxification.html",
+    "/wellness-resort-kerala.html", "/Kairali_Brand_and_Competition_Neo-original.html"
+  ];
   var CSS_HREF = "/design/villa-dialog.css";
   var FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
 
@@ -90,6 +100,14 @@
     if (u.origin !== origin) return null;
     var path = u.pathname.charAt(u.pathname.length - 1) === "/" ? u.pathname : u.pathname + "/";
     return Object.prototype.hasOwnProperty.call(VILLAS, path) ? path : null;
+  }
+
+  /** True only on one of the 14 scoped English routes, served as the English campaign document. */
+  function routeAllowed(doc, pathname) {
+    if (ROUTES.indexOf(pathname) === -1) return false;
+    if (!doc.querySelector("body[data-ahv-campaign]")) return false;
+    var lang = (doc.documentElement && doc.documentElement.getAttribute("lang")) || "";
+    return lang.toLowerCase().split("-")[0] === "en";
   }
 
   /** True only for a plain primary click on a same-tab link inside the page's main content. */
@@ -221,6 +239,11 @@
     } else {
       if (d.open) return true;
       d.__ahvTrigger = a;
+      // every open carries the current trigger's exact href (query/hash included) and label
+      var more = d.querySelector(".ahv-villa-dialog__more");
+      if (!more) return false;
+      more.setAttribute("href", a.getAttribute("href"));
+      more.textContent = exploreLabel(a, VILLAS[key]);
     }
     try { d.showModal(); } catch (_) { return false; }
     var c = d.querySelector("[data-ahv-villa-close]");
@@ -228,17 +251,22 @@
     return true;
   }
 
-  function ensureCss(doc) {
-    if (doc.querySelector('link[data-ahv-villa-dialog-css]')) return;
+  /** Adds the dialog stylesheet and reports through `state.ready` whether it has loaded. Until it loads — and for
+   *  good if it fails — clicks are not intercepted, so the links keep navigating to the villa pages. */
+  function ensureCss(doc, state) {
     var l = doc.createElement("link");
     l.rel = "stylesheet";
     l.href = CSS_HREF;
     l.setAttribute("data-ahv-villa-dialog-css", "");
+    l.addEventListener("load", function () { state.ready = true; });
+    l.addEventListener("error", function () { state.ready = false; });
     (doc.head || doc.documentElement).appendChild(l);
   }
 
-  function onClick(doc, origin) {
+  /** `isReady` (optional) must return true for a click to be intercepted. */
+  function onClick(doc, origin, isReady) {
     return function (ev) {
+      if (isReady && !isReady()) return;
       var a = ev.target && ev.target.closest ? ev.target.closest("a[href]") : null;
       if (!a) return;
       var key = villaKey(a.getAttribute("href"), origin);
@@ -249,15 +277,16 @@
 
   function init(win) {
     var doc = win.document;
-    if (win.__ahvVillaDialog || !doc.querySelector("body[data-ahv-campaign]")) return false;
+    if (win.__ahvVillaDialog || !routeAllowed(doc, win.location.pathname)) return false;
     if (typeof win.HTMLDialogElement !== "function") return false;
     win.__ahvVillaDialog = true;
-    ensureCss(doc);
-    doc.addEventListener("click", onClick(doc, win.location.origin));
+    var state = { ready: false };
+    ensureCss(doc, state);
+    doc.addEventListener("click", onClick(doc, win.location.origin, function () { return state.ready; }));
     return true;
   }
 
-  var api = { VILLAS: VILLAS, villaKey: villaKey, shouldIntercept: shouldIntercept, exploreLabel: exploreLabel, buildDialog: buildDialog, trapTab: trapTab, open: open, onClick: onClick, init: init };
+  var api = { ROUTES: ROUTES, VILLAS: VILLAS, routeAllowed: routeAllowed, villaKey: villaKey, shouldIntercept: shouldIntercept, exploreLabel: exploreLabel, buildDialog: buildDialog, trapTab: trapTab, open: open, onClick: onClick, init: init };
   if (typeof module === "object" && module && module.exports) module.exports = api;
   else if (typeof window !== "undefined") init(window);
 })();

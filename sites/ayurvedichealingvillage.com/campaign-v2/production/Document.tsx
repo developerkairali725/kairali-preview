@@ -21,6 +21,11 @@ const CHROME: Record<PageLocale, string> = {
   ru: "/ahv/l10n/ru/design/campaign-review-chrome.js",
 };
 
+/** Villa details dialog (DEC-VILLA-POPUP, WOPS-AHV-VILLA-POPUP-20261010-001): English documents only, and only on the
+ *  14 scoped routes — every other path loads nothing. public/design/villa-dialog.js re-checks the same list. */
+const VILLA_DIALOG_LOADER =
+  '(function(){var r=["/pain-management.html","/family-ayurvedic-retreat-kerala.html","/ayurveda-retreat-kerala.html","/kairali-cleansing-centre.html","/treatment-in-kerala.html","/Ayurveda_Treatment_Neo_S.India_Cities.html","/weight-loss.html","/lp/ayurvedic-hospital-kerala/","/lp/kairali-cleansing-centre/","/lp/pain-management/","/karkidaka-chikitsha-or-monsoon-wellness.html","/preventive-rejuvenation-detoxification.html","/wellness-resort-kerala.html","/Kairali_Brand_and_Competition_Neo-original.html"];if(r.indexOf(location.pathname)<0)return;var s=document.createElement("script");s.src="/design/villa-dialog.js";s.async=true;document.body.appendChild(s)})();';
+
 /**
  * The <html>/<body> shell of the live ad routes: the current production campaign document
  * (campaign-v110/CampaignDocument.tsx) without the old pages' design CSS and fonts. Unchanged from it:
@@ -48,6 +53,7 @@ export default function ProductionDocument({ children, lang = "en" }: { children
         <SharedConsent measurement={measurement} />
         <ChatbaseLoader />
         <Script src={CHROME[lang]} strategy="afterInteractive" />
+        {lang === "en" ? <Script id="ahv-villa-dialog-loader" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: VILLA_DIALOG_LOADER }} /> : null}
       </body>
     </html>
   );

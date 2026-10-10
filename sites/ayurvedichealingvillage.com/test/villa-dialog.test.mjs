@@ -127,6 +127,7 @@ function makeDoc() {
   const doc = { activeElement: null };
   doc.createElement = (t) => (t === "dialog" ? new Dialog(doc) : new Node(doc, t));
   doc.documentElement = new Node(doc, "html");
+  doc.documentElement.setAttribute("lang", "en"); // ProductionDocument default
   doc.head = doc.documentElement.appendChild(new Node(doc, "head"));
   doc.body = doc.documentElement.appendChild(new Node(doc, "body"));
   doc.body.setAttribute("data-ahv-campaign", "true");
@@ -218,14 +219,76 @@ test("unknown links, modified clicks and missing showModal fall back to navigati
   assert.equal(main.parentNode.querySelectorAll("dialog").length, 0);
 });
 
-test("init runs only on the campaign document, once", () => {
-  const { doc } = makeDoc();
-  const win = { document: doc, location: { origin: ORIGIN }, HTMLDialogElement: function () {} };
-  assert.equal(vd.init(win), true);
-  assert.equal(vd.init(win), false);
-  assert.equal(doc.querySelectorAll("link[data-ahv-villa-dialog-css]").length, 1);
-  const other = makeDoc(); delete other.doc.body.attrs["data-ahv-campaign"];
-  assert.equal(vd.init({ document: other.doc, location: { origin: ORIGIN }, HTMLDialogElement: function () {} }), false);
+const SCOPE_PATHS = ROUTES.map((r) => (r.endsWith(".html") ? `/${r}` : `/${r}/`));
+const win = (doc, pathname) => ({ document: doc, location: { origin: ORIGIN, pathname }, HTMLDialogElement: function () {} });
+
+test("the module's route allowlist is exactly the 14 scoped English paths", () => {
+  assert.deepEqual([...vd.ROUTES].sort(), [...SCOPE_PATHS].sort());
+  for (const p of SCOPE_PATHS) {
+    const { doc } = makeDoc();
+    assert.equal(vd.init(win(doc, p)), true, p);
+  }
+});
+
+test("init refuses every other campaign, localized or non-campaign path", () => {
+  const negatives = [
+    "/panchkarma-treatment.html", "/ayurvedic-treatment-packages.html", "/lp/weight-loss/", "/lp/kairali-brand/",
+    "/lp/treatment-in-kerala/", "/lp/ayurveda-treatment-south-india/", "/lp/panchkarma-treatment/", "/lp/treatment-packages/",
+    "/lp/behandlung-in-kerala/", "/lp-v2/pain-management/", "/de/pain-management.html", "/fr/pain-management.html",
+    "/ru/lp/pain-management/", "/lp/pain-management", "/PAIN-MANAGEMENT.html", "/deluxe-villa/", "/",
+  ];
+  for (const p of negatives) {
+    const { doc } = makeDoc();
+    assert.equal(vd.init(win(doc, p)), false, p);
+    assert.equal(doc.querySelectorAll("link[data-ahv-villa-dialog-css]").length, 0, p);
+  }
+  const de = makeDoc(); de.doc.documentElement.setAttribute("lang", "de");
+  assert.equal(vd.init(win(de.doc, "/pain-management.html")), false, "German document on a scoped path");
+  const nolang = makeDoc(); delete nolang.doc.documentElement.attrs.lang;
+  assert.equal(vd.init(win(nolang.doc, "/pain-management.html")), false, "no document language");
+  const noCampaign = makeDoc(); delete noCampaign.doc.body.attrs["data-ahv-campaign"];
+  assert.equal(vd.init(win(noCampaign.doc, "/pain-management.html")), false, "not the campaign document");
+  const once = makeDoc(); const w = win(once.doc, "/weight-loss.html");
+  assert.equal(vd.init(w), true);
+  assert.equal(vd.init(w), false, "second init is a no-op");
+});
+
+test("no click is intercepted until the stylesheet loads, and never if it fails", () => {
+  const run = (outcome) => {
+    const { doc, main, link } = makeDoc();
+    assert.equal(vd.init(win(doc, "/lp/pain-management/")), true);
+    const css = doc.querySelector("link[data-ahv-villa-dialog-css]");
+    const handler = doc.listeners.click[0];
+    let ev = click({ target: link(main, "/deluxe-villa/", "Explore Deluxe Villa") });
+    handler(ev);
+    assert.equal(ev.defaultPrevented, false, "pending stylesheet: link navigates");
+    if (outcome) css.dispatch(outcome);
+    ev = click({ target: link(main, "/deluxe-villa/", "Explore Deluxe Villa") });
+    handler(ev);
+    return { prevented: ev.defaultPrevented, dialogs: main.parentNode.querySelectorAll("dialog").length };
+  };
+  assert.deepEqual(run("error"), { prevented: false, dialogs: 0 });
+  assert.deepEqual(run("load"), { prevented: true, dialogs: 1 });
+});
+
+test("reopening the same villa from a different link uses that link's exact href and label", () => {
+  const { doc, lp, main, link } = makeDoc();
+  const handler = vd.onClick(doc, ORIGIN);
+  const first = link(main, "/deluxe-villa/", "Explore Deluxe Villa");
+  const second = link(main, "/deluxe-villa/?utm_campaign=x&gclid=1#gallery", "Deluxe");
+  handler(click({ target: first }));
+  const d = lp.querySelector("dialog");
+  const more = d.querySelector(".ahv-villa-dialog__more");
+  assert.equal(more.getAttribute("href"), "/deluxe-villa/");
+  d.close();
+  handler(click({ target: second }));
+  assert.equal(lp.querySelectorAll("dialog").length, 1);
+  assert.equal(more.getAttribute("href"), "/deluxe-villa/?utm_campaign=x&gclid=1#gallery");
+  assert.equal(more.textContent, "Explore Deluxe Villa");
+  d.close();
+  assert.equal(doc.activeElement, second, "focus returns to the second trigger");
+  handler(click({ target: first }));
+  assert.equal(more.getAttribute("href"), "/deluxe-villa/");
 });
 
 test("source safety: no HTML parsing, fetching or script injection; CSS scoped to the dialog", () => {
@@ -235,4 +298,37 @@ test("source safety: no HTML parsing, fetching or script injection; CSS scoped t
   const css = read("public/design/villa-dialog.css");
   const selectors = css.replace(/\/\*[\s\S]*?\*\//g, "").replace(/@keyframes[^{]*\{(?:[^{}]*\{[^}]*\})*[^}]*\}/g, "").match(/[^{}]+(?=\{)/g).map((s) => s.trim()).filter((s) => s && !s.startsWith("@"));
   for (const s of selectors) for (const part of s.split(",")) assert.match(part.trim(), /ahv-villa-dialog/, part);
+});
+
+// ---- the reachable loader: campaign-v2/production/Document.tsx ----
+import vm from "node:vm";
+const documentSrc = read("campaign-v2/production/Document.tsx");
+const loader = documentSrc.match(/const VILLA_DIALOG_LOADER =\s*'([^']+)';/)[1];
+function runLoader(pathname) {
+  const added = [];
+  const ctx = { location: { pathname }, document: { createElement: (t) => ({ tagName: t }), body: { appendChild: (n) => added.push(n) } } };
+  vm.runInNewContext(loader, ctx);
+  return added;
+}
+
+test("Document.tsx renders the loader for English documents only, after the existing chrome, nothing else changed", () => {
+  assert.match(documentSrc, /\{lang === "en" \? <Script id="ahv-villa-dialog-loader" strategy="afterInteractive" dangerouslySetInnerHTML=\{\{ __html: VILLA_DIALOG_LOADER \}\} \/> : null\}/);
+  assert.equal(documentSrc.match(/VILLA_DIALOG_LOADER/g).length, 2, "declared once, rendered once");
+  assert.match(documentSrc, /<Script src=\{CHROME\[lang\]\} strategy="afterInteractive" \/>\n\s+\{lang === "en" \? <Script id="ahv-villa-dialog-loader"/);
+  const routes = JSON.parse(loader.match(/var r=(\[[^\]]+\])/)[1]);
+  assert.deepEqual([...routes].sort(), [...SCOPE_PATHS].sort(), "loader allowlist = the 14 scoped paths");
+  assert.deepEqual([...routes].sort(), [...vd.ROUTES].sort(), "loader and module agree");
+});
+
+test("the loader adds villa-dialog.js on each of the 14 paths and on no other path", () => {
+  for (const p of SCOPE_PATHS) {
+    const added = runLoader(p);
+    assert.equal(added.length, 1, p);
+    assert.equal(added[0].tagName, "script");
+    assert.equal(added[0].src, "/design/villa-dialog.js");
+    assert.equal(added[0].async, true);
+  }
+  for (const p of ["/panchkarma-treatment.html", "/ayurvedic-treatment-packages.html", "/lp/weight-loss/", "/lp/kairali-brand/",
+    "/lp/treatment-in-kerala/", "/lp/behandlung-in-kerala/", "/de/pain-management.html", "/ru/lp/pain-management/",
+    "/lp/pain-management", "/pain-management.html/", "/", "/deluxe-villa/"]) assert.equal(runLoader(p).length, 0, p);
 });
