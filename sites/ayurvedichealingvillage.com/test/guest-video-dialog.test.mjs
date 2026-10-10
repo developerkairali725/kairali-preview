@@ -332,6 +332,45 @@ test('wiring: a press made before the consent modules arrive is cancelled by nav
   assert.equal(h.view(), CLOSED_VIEW);
 });
 
+test('race: a press while consent is unknown is denied for that press; a grant landing during the load never plays it', async () => {
+  const h = harness({ rec: record({ categories: ['necessary'] }), deferLoad: true });
+  const ev = h.click(h.cards['4x01PtWfNnk']);
+  assert.equal(ev.defaultPrevented, true);
+  h.storage.put(record());
+  h.release();
+  await flush();
+  assert.equal(h.view().film.kind, 'consent', 'grant after the press is not applied to it');
+  assert.equal(h.src(), null, 'no iframe');
+  h.ctl.close();
+  h.ctl.dialogClosed();
+  h.click(h.cards['4x01PtWfNnk']);
+  await flush();
+  assert.equal(h.view().film.kind, 'playing', 'a new explicit press after the grant plays');
+  assert.equal(h.src(), embedSrc('4x01PtWfNnk'));
+
+  const stored = harness({ deferLoad: true });
+  stored.click(stored.cards['4x01PtWfNnk']);
+  stored.release();
+  await flush();
+  assert.equal(stored.src(), null, 'unknown at the press counts as denied even if the stored record turns out granted');
+});
+
+test('race: a known grant is rechecked when the film opens, so a revocation before the press stays denied', async () => {
+  const h = harness();
+  await flush();
+  h.storage.put(record({ categories: ['necessary', 'analytics'] }));
+  h.click(h.cards['4x01PtWfNnk']);
+  await flush();
+  assert.equal(h.view().film.kind, 'consent');
+  assert.equal(h.src(), null);
+  const v = harness();
+  await flush();
+  v.cmp.valid = false;
+  v.click(v.cards['4x01PtWfNnk']);
+  await flush();
+  assert.equal(v.src(), null);
+});
+
 test('wiring: without current consent only the local facade shows; granting while open never starts the player', async () => {
   const h = harness({ rec: record({ categories: ['necessary'] }) });
   await flush();

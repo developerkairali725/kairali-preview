@@ -294,9 +294,12 @@ export function createGuestVideoController({ win, doc, loadConsent, now = () => 
     const title = link.querySelector(".lp-pstory__title")?.textContent ?? "";
     const thumb = localThumb(link, win);
     const host = link.closest(".lp-prod") ?? doc.body;
+    // Consent is judged at the press: unknown (modules not yet loaded) counts as denied for this press and is never
+    // upgraded by a grant that lands while they load. The current state is still rechecked so a revocation wins.
+    const allowedAtClick = apis ? granted() : false;
     const open = () => {
       if (mine !== token || view.film.kind !== "closed" || !stillHere()) return;
-      const film = reduce(view.film, { type: "open", id, title, granted: granted(), routeOk: true });
+      const film = reduce(view.film, { type: "open", id, title, granted: allowedAtClick && granted(), routeOk: true });
       if (film.kind === "closed") return;
       set({ film, thumb, host, gpc: gpc(), settingsUnavailable: false });
       watch();
