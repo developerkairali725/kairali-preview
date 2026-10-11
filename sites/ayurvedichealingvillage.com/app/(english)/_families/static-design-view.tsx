@@ -49,7 +49,7 @@ function snapshot(routePath: string, desktop = false): string {
     safe = safe.replace(/<footer\b[\s\S]*?<\/footer>/g, (footer: string) => footer.replace(/(<a\b[^>]*href=")[^"]*("[^>]*>\s*Reviews\s*<\/a>)/g, "$1/read-feedback/$2"));
     safe = safe.replace(/aria-label="Choose language — Current language: English"/g, 'aria-label="EN — Choose language — Current language: English"');
   }
-  return applyReviewSnapshot(descriptiveAwardLinks(desktop ? safe : phoneCriticalMedia(safe, routePath), routePath), routePath);
+  return applyReviewSnapshot(descriptiveAwardLinks(desktop ? safe : phoneCriticalMedia(safe), routePath), routePath);
 }
 
 function tariffRows(viewId: string | null): Record<string, string[][]> | undefined {
@@ -135,12 +135,12 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
       {widePaint?.styles.map((css, index) => <style key={`wide-${index}`} media={wide} dangerouslySetInnerHTML={{ __html: css }} />)}
       <style dangerouslySetInnerHTML={{ __html: `#ahv-design-root .kReveal{opacity:1!important;transform:none!important}@media ${wide}{#ahv-design-root[data-ahv-static-pending]{visibility:hidden;min-height:100vh}}` }} />
       {deferredSectionLayout ? <style dangerouslySetInnerHTML={{ __html: deferredSectionLayout }} /> : null}
-      {["/contact-us/", "/offers/"].includes(route.path) ? <SsrOnlyHtml as="div" slot={putSsrOnlyHtml(`static:${route.path}:snapshot`, mobile)} attrs={{ id: "ahv-design-root", "data-ahv-route": route.path, "data-ahv-family": family || undefined, "data-ahv-consistency": consistency, "data-ahv-bg-defer": "", "data-ahv-static-pending": "" }} /> : (
+      {route.path === "/contact-us/" ? <SsrOnlyHtml as="div" slot={putSsrOnlyHtml("static:contact:snapshot", mobile)} attrs={{ id: "ahv-design-root", "data-ahv-route": route.path, "data-ahv-family": family || undefined, "data-ahv-consistency": consistency, "data-ahv-bg-defer": "", "data-ahv-static-pending": "" }} /> : (
       <div id="ahv-design-root" role={route.path === "/" ? "main" : undefined} data-ahv-route={route.path} data-ahv-family={family || undefined} data-ahv-consistency={consistency} data-ahv-bg-defer="" data-ahv-static-pending=""
         suppressHydrationWarning dangerouslySetInnerHTML={{ __html: mobile }} />
       )}
       <script id="ahv-static-design-config" type="application/json" dangerouslySetInnerHTML={{ __html: safeJson(staticConfig) }} />
-      {homeBoot ? <script src={homeBoot} defer /> : ["/contact-us/", "/offers/"].includes(route.path) ? <SsrOnlyHtml as="script" slot={putSsrOnlyHtml(`static:${route.path}:boot`, STATIC_BOOT)} /> : <script dangerouslySetInnerHTML={{ __html: STATIC_BOOT }} />}
+      {homeBoot ? <script src={homeBoot} defer /> : route.path === "/contact-us/" ? <SsrOnlyHtml as="script" slot={putSsrOnlyHtml("static:contact:boot", STATIC_BOOT)} /> : <script dangerouslySetInnerHTML={{ __html: STATIC_BOOT }} />}
     </>
   );
 }
