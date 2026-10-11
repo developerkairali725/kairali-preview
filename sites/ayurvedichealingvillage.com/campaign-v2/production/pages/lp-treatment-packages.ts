@@ -11,7 +11,7 @@ export default defineCopy({
   // sha256 as recorded for this frozen brief in review/CLEAN-COPY-FINAL5-REVIEW.json (not recomputed in this session).
   source: { file: "final-batch/lp-treatment-packages.md", sha256: "bf78e581e066f48cc307077b98e66c75dabf7c45b0ae008bd6675307ecd020f2" },
   seo: {
-    title: "Ayurvedic Treatment Packages in Kerala | Kairali",
+    title: "Compare Ayurvedic Packages & Costs in Kerala | Kairali",
     description: "Compare Ayurvedic treatment options at Kairali in Palakkad. Discuss your programme, duration, accommodation and inclusions in a free initial consultation.",
   },
   adMatch: { keywords: ["ayurvedic treatment packages in kerala", "ayurvedic treatment packages", "ayurvedic treatment cost in kerala"], adHeadlines: [] },
