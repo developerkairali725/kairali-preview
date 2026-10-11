@@ -5,18 +5,18 @@
   width: min(1040px, calc(100% - 32px));
   max-height: calc(100dvh - 32px);
   padding: 0;
-  border: 1px solid var(--lp-accent-line, #806b47);
+  border: 1px solid var(--lp-accent-line);
   border-radius: var(--lp-radius, 6px);
-  background: var(--lp-surface, #f7f4ea);
-  color: var(--lp-ink, #2a2118);
+  background: var(--lp-surface);
+  color: var(--lp-ink);
   font-family: var(--lp-font-body, sans-serif);
   font-size: 16px;
   line-height: 1.5;
-  box-shadow: 0 24px 90px rgb(0 0 0 / 0.45);
+  box-shadow: 0 24px 90px color-mix(in srgb, var(--lp-night) 45%, transparent);
   overflow: auto;
 }
-.dialog::backdrop { background: rgb(22 24 17 / 0.85); }
-.dialog :focus-visible { outline: 3px solid var(--lp-accent-line, #b08216); outline-offset: 3px; }
+.dialog::backdrop { background: color-mix(in srgb, var(--lp-night) 85%, transparent); }
+.dialog :focus-visible { outline: 3px solid var(--lp-accent-line); outline-offset: 3px; }
 
 .dialog .top { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 14px 20px; }
 .dialog .heading { margin: 0; font-family: var(--lp-font-display, serif); font-weight: 400; font-size: clamp(19px, 3vw, 28px); line-height: 1.3; }
@@ -27,24 +27,24 @@
   padding: 8px 16px;
   border: 0;
   border-radius: var(--lp-radius, 3px);
-  background: var(--lp-primary, #4b3b21);
-  color: var(--lp-on-primary, #fff);
+  background: var(--lp-primary);
+  color: var(--lp-on-primary);
   font: inherit;
   font-weight: 700;
   cursor: pointer;
 }
 .dialog .close span { margin-left: 10px; font-size: 24px; line-height: 1; }
 
-.dialog .screen { background: #111; }
+.dialog .screen { background: var(--lp-night); }
 .dialog .frame { display: block; width: 100%; aspect-ratio: 16 / 9; min-height: 200px; max-height: 68dvh; border: 0; }
 
-.dialog .facade { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: var(--lp-surface, #f7f4ea); }
+.dialog .facade { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); background: var(--lp-surface); }
 .dialog .thumb { display: block; width: 100%; height: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
 .dialog .note { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 20px; }
 .dialog .note p { margin: 0; max-width: 46ch; }
 
 .dialog .bottom { display: flex; flex-wrap: wrap; gap: 4px 20px; padding: 10px 20px; }
-.dialog .link { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: var(--lp-accent-text, #37513b); font-weight: 700; text-underline-offset: 4px; }
+.dialog .link { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; color: var(--lp-accent-text); font-weight: 700; text-underline-offset: 4px; }
 
 @media (max-width: 767px) {
   .dialog { width: calc(100% - 20px); max-height: calc(100dvh - 20px); }
