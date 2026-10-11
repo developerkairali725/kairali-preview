@@ -4,7 +4,7 @@
 // converted by scripts/dc_convert.py (staging.html, staging.mobile.html,
 // meta.json), then corrected by scripts/edits/offers-senior-citizen.json. Every change is
 // logged in docs/changes/offers-senior-citizen.md.
-import DcPage, { dcMetadata } from "../../../components/dc/DcPage";
+import DcPage, { dcMetadata } from "../../../components/dc/OfferDcPage";
 import meta from "./meta.json";
 
 const dir = "offers/senior-citizen-offer";

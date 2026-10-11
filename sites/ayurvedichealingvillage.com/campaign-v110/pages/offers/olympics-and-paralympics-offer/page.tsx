@@ -4,7 +4,7 @@
 // converted by scripts/dc_convert.py (staging.html, staging.mobile.html,
 // meta.json), then corrected by scripts/edits/offers-olympics-paralympics.json. Every change is
 // logged in docs/changes/offers-olympics-paralympics.md.
-import DcPage, { dcMetadata } from "../../../components/dc/DcPage";
+import DcPage, { dcMetadata } from "../../../components/dc/OfferDcPage";
 import meta from "./meta.json";
 
 const dir = "offers/olympics-and-paralympics-offer";
