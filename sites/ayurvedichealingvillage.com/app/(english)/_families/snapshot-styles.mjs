@@ -164,7 +164,7 @@ export function firstScreenPoster(snapshotHtml) {
  * Digestive and Weight each retain their saved image-LCP traces and approved font deferral.
  */
 // N12: the saved 2026-10-11 mobile traces identify these two programme background heroes as LCP.
-const IMAGE_LED_FIRST_SCREEN = new Set(["/digestive-wellness-gut-health-yoga-therapy/", "/weight-loss-programme/", "/treatment-for-bronchial-diseases/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/"]);
+const IMAGE_LED_FIRST_SCREEN = new Set(["/digestive-wellness-gut-health-yoga-therapy/", "/weight-loss-programme/", "/offers/", "/treatment-for-bronchial-diseases/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/"]);
 export function imageLedFirstScreen(routePath) {
   return IMAGE_LED_FIRST_SCREEN.has(String(routePath || ""));
 }
