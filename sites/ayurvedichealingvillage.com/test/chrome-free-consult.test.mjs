@@ -40,7 +40,7 @@ function campaignRoutes() {
 }
 const ROUTES = campaignRoutes();
 
-function page({ path: initialPath, campaign = true, enquiry = true, enquiryForm = true, otherForm = null, localPaths = null }) {
+function page({ path: initialPath, campaign = true, enquiry = true, enquiryForm = true, otherForm = null, localPaths = null, askLabel = null }) {
   const writes = [];
   let scheduled = false, passes = 0, here = initialPath;
   const dom = { enquiry, enquiryForm, otherForm };
@@ -57,13 +57,17 @@ function page({ path: initialPath, campaign = true, enquiry = true, enquiryForm 
       setAttribute: (n, v) => { if (n === 'href') { writes.push({ cls, from: attrs.href, to: String(v) }); schedule(); } attrs[n] = String(v); },
     };
   });
-  const bar = { querySelectorAll: () => links, getBoundingClientRect: () => ({ height: 56 }) };
+  let chatText = 'Chat', chatWrites = 0;
+  const chat = {};
+  Object.defineProperty(chat,'textContent',{get:()=>chatText,set:value=>{chatText=value;chatWrites++;schedule();}});
+  const bar = { querySelector: () => chat, querySelectorAll: () => links, getBoundingClientRect: () => ({ height: 56 }) };
   const enquiryEl = () => (dom.enquiry ? { id: 'enquiry' } : null);
   const formEl = () => (dom.enquiry && dom.enquiryForm ? { id: '' } : null);
   const body = {
     classList: { contains: () => false },
     querySelectorAll: () => [],
     querySelector: (sel) => {
+      if (sel === '.lp-prod[data-variant="C"] .lp-hero__ask') return askLabel ? {textContent:askLabel} : null;
       if (sel === '#enquiry form') return formEl();
       if (sel === '#enquiry') return enquiryEl();
       if (sel === '#enquiry, #consult') return enquiryEl() || (dom.otherForm === 'consult' ? { id: 'consult' } : null);
@@ -85,6 +89,7 @@ function page({ path: initialPath, campaign = true, enquiry = true, enquiryForm 
   const get = (c) => links.find((a) => a.classList.contains(c)).getAttribute('href');
   return {
     writes,
+    chat: () => chatText, chatWrites: () => chatWrites,
     consult: () => get('ahv-cta-consult'),
     enquire: () => get('ahv-cta-enquire'),
     call: () => get('ahv-cta-call'),
@@ -342,4 +347,19 @@ test('other CTAs are unchanged by activation of Free Consult', () => {
   assert.equal(p.enquire(), enquire);
   assert.equal(p.call(), call);
   assert.equal(p.activate('ahv-cta-enquire').href, enquire, 'Enquire has no added handler');
+});
+
+
+test('P05: existing variant C mobile action reuses the approved localized label once, with no mutation loop',()=>{
+ for(const askLabel of ['Ask Anything','Fragen Sie uns','Задать вопрос']){
+  const p=page({path:'/lp/treatment-in-kerala/',askLabel});
+  assert(p.settle().quiet);assert.equal(p.chat(),askLabel);assert.equal(p.chatWrites(),1);
+  for(let i=0;i<20;i++){p.setDom({});assert(p.settle().quiet);}
+  assert.equal(p.chatWrites(),1);assert.equal(p.consult(),'#enquiry');assert.equal(p.enquire(),'#enquiry');assert.equal(p.call(),'tel:+91 9555 156 156');
+ }
+});
+test('P05: other campaign variants and non-campaign bars retain their existing Chat label',()=>{
+ for(const props of [{campaign:true,askLabel:null},{campaign:false,askLabel:'Ask Anything'}]){
+  const p=page({path:'/',...props});assert(p.settle().quiet);assert.equal(p.chat(),'Chat');assert.equal(p.chatWrites(),0);
+ }
 });
