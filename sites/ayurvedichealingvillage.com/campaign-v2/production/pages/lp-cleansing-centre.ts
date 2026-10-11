@@ -11,7 +11,7 @@ export default defineCopy({
   route: "/lp/kairali-cleansing-centre/",
   source: { file: "lp-batch/kairali-cleansing-centre.md", sha256: "b1a259a652ef8f0f0f7e69de3e4d3af51f8a0734cebf40154aaa9aeb3134a002" },
   seo: {
-    title: "Kairali Cleansing Centre | Ayurvedic Hospital in Kerala",
+    title: "Ayurvedic Cleansing Programmes in Kerala | Kairali",
     description: "Explore doctor-guided Ayurvedic cleansing care at Kairali in Palakkad, Kerala. Discuss your needs in a free initial doctor consultation.",
   },
   adMatch: { keywords: ["ayurvedic hospital kerala", "ayurvedic cleansing centre", "panchakarma detox kerala", "kairali healing village"], adHeadlines: [] },
