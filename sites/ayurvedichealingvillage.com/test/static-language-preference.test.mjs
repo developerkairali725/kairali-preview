@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
 
 const root = new URL('../', import.meta.url);
-const source = readFileSync(process.env.AHV_STATIC_DESIGN_SOURCE || new URL('app/(english)/_families/static-design-view.tsx', root), 'utf8');
+const source = readFileSync(process.env.AHV_STATIC_DESIGN_SOURCE || new URL('app/(english)/_families/static-design-boot.mjs', root), 'utf8');
 const start = source.indexOf('  function closeLanguages() {');
 const end = source.indexOf('  if (cfg.staticTariffs) {', start);
 assert.ok(start > 0 && end > start, 'exercise the actual static language-menu runtime');

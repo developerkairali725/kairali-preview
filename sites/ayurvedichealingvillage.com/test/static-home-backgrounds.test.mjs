@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
 
-const source = readFileSync(new URL('../app/(english)/_families/static-design-view.tsx', import.meta.url), 'utf8');
+const source = readFileSync(new URL('../app/(english)/_families/static-design-boot.mjs', import.meta.url), 'utf8');
 const start = source.indexOf('  function deferStaticHomeBackgrounds() {');
 const end = source.indexOf('\n  if (cfg.staticHome) deferStaticHomeBackgrounds();', start);
 assert.ok(start >= 0 && end > start, 'production static-home initializer is present');
