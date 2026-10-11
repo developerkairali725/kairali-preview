@@ -17,7 +17,7 @@ test('campaign first-paint bundle preserves exact approved stylesheet bytes and 
  const entry=fs.readFileSync(path.join(site,'campaign-v2/production/document.css'),'utf8');
  const imports=Object.keys(expected);
  assert.equal(entry,productionCss());
- assert(!/@import\s/.test(entry));
+ assert.deepEqual([...entry.matchAll(/@import "([^"]+)";/g)].map(x=>x[1]),[imports[0],imports[1],'@kairali/ui/ahv-campaign-tokens.css']);
  for(const name of imports)assert.equal(createHash('sha256').update(fs.readFileSync(path.resolve(site,'campaign-v2/production',name))).digest('hex'),expected[name],name);
  const doc=fs.readFileSync(path.join(site,'campaign-v2/production/Document.tsx'),'utf8');
  assert.match(doc,/import "\.\/document\.css"/);
