@@ -4,6 +4,7 @@
 // build); the order it renders is production/section-order.ts, exercised with the real configs.
 import { test } from "node:test";
 import assert from "node:assert/strict";
+import crypto from "node:crypto";
 import { execFileSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
@@ -44,10 +45,19 @@ const NEW_ORDER = {
 };
 
 /** Before any move (8 Oct order), and after batch 1 (the first four moved); compared against when present. */
-const BASE = "a831a634828cdbee83fac381f06ea618714fe2cd";
+const BASE = "3db79539137017885880b865b01a0ccf7823880f";
 const BATCH1 = "16a0f478452fa9cd1c1515e009e17c62a39f11f7";
-const git = (...args) => execFileSync("git", args, { cwd: SITE, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] });
-const hasCommit = (sha) => { try { git("cat-file", "-e", `${sha}^{commit}`); return true; } catch { return false; } };
+// Exact pre-integration and batch-one source snapshots; work in shallow CI without weakening preservation checks.
+const fixture = JSON.parse(read("test/fixtures/doctor-position-baseline.json"));
+const git = (...args) => {
+  assert.equal(args[0], "show");
+  const [revision, relative] = args[1].split(":./");
+  const value = fixture.sources[revision]?.[relative];
+  assert.equal(typeof value, "string", args[1]);
+  assert.equal(crypto.createHash("sha256").update(value).digest("hex"), fixture.sha256[revision][relative]);
+  return value;
+};
+const hasCommit = (sha) => Object.hasOwn(fixture.sources, sha);
 const hasBase = hasCommit(BASE);
 const hasBatch1 = hasCommit(BATCH1);
 const bandFilter = (page) => (b) => (b === "rest" ? !!page.rest : b === "place" ? !!page.place : b === "stories" ? !!page.stories : true);
@@ -170,6 +180,6 @@ test("untouched: the doctors component, doctor data, shared locale strings, styl
     ...PRODUCTION_SLUGS.map((s) => `campaign-v2/production/pages/${s}.ts`),
   ];
   for (const f of files) {
-    assert.equal(git("hash-object", f).trim(), git("rev-parse", `${BASE}:./${f}`).trim(), f);
+    assert.equal(read(f), git("show", `${BASE}:./${f}`), f);
   }
 });
