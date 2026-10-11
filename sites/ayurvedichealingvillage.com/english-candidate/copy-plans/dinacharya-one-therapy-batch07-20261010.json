@@ -1,0 +1,89 @@
+{
+  "task": "N12.07",
+  "scope": "Approved indicative Dinacharya for the 8 one-therapy views: Preventive Health & Regenerative, Digestive Wellness, Yoga & Meditation and Yoga based Stress & Energy Reset (desktop/mobile). One 09:30 therapy, 15:30 personal time; 17:00 gentle practice only on the two Yoga programmes. Corrects the conflicting \"Daily 2 Therapies\" icon label on the 6 Digestive/Yoga views. Explicit files only; no auto.",
+  "authority": "deliverables/WOPS-WEBSITE-SEQUENTIAL-20261008-001/N12/DIRECT-OWNER-AUTHORITY.json + RECORDED-DRAFT.md; batch07-20261010/COORDINATOR-SCOPE.json",
+  "entries": [
+    {
+      "id": "n12-07-routine-treatment-block",
+      "files": [
+        "public/ahv/views/ahv-page-digestive-wellness-gut-health-desktop.json",
+        "public/ahv/views/ahv-page-digestive-wellness-gut-health-mobile.json",
+        "public/ahv/views/ahv-page-preventive-regenerative-desktop.json",
+        "public/ahv/views/ahv-page-preventive-regenerative-mobile.json"
+      ],
+      "countPerFile": {
+        "public/ahv/views/ahv-page-digestive-wellness-gut-health-desktop.json": 1,
+        "public/ahv/views/ahv-page-digestive-wellness-gut-health-mobile.json": 1,
+        "public/ahv/views/ahv-page-preventive-regenerative-desktop.json": 1,
+        "public/ahv/views/ahv-page-preventive-regenerative-mobile.json": 1
+      },
+      "old": "const routine = [\n      { time: '06:00', title: 'Wake up to wellness', body: 'Wake up and perform self-care practices (dinacharya) such as tongue scraping, oil pulling, and washing the face.' },\n      { time: '06:30', title: 'Practice Yoga', body: 'Practice yoga asanas (postures) for 30-45 minutes to stimulate the body and promote flexibility.' },\n      { time: '07:15', title: 'Pranayama', body: 'Engage in pranayama (breathing exercises) and meditation for mental clarity and relaxation.' },\n      { time: '08:00', title: 'Detoxifying Drink', body: 'Enjoy a herbal tea or detoxifying drink to kickstart the metabolism.' },\n      { time: '08:30', title: 'Ayurvedic Breakfast', body: 'Ayurvedic breakfast consisting of a light, nourishing meal like cooked oats with fruits or a steamed vegetable dish.' },\n      { time: '10:00', title: 'Wellness Workshop', body: 'Participate in a wellness workshop or educational session on Ayurveda and healthy living.' },\n      { time: '11:00', title: 'Nature Walk', body: 'Go for a nature walk or engage in a light physical activity to enhance circulation and boost energy levels.' },\n      { time: '12:00', title: 'Herbal Infused Water', body: 'Drink herbal-infused water or a digestive tea to stay hydrated.' },\n      { time: '12:30', title: 'Ayurvedic Lunch', body: 'Ayurvedic lunch, focusing on a balanced meal with plenty of fresh vegetables, whole grains, and lean protein sources.' },\n      { time: '13:30', title: 'Rest & Relax', body: 'Rest and relax for a short while to aid digestion and promote overall well-being.' },\n      { time: '14:00', title: 'Activity', body: 'Cooking demonstration / Factory visits / Workshops & Lectures' },\n      { time: '15:00', title: 'Detoxifying Drink', body: 'Enjoy a herbal tea or fresh juice as a mid-afternoon revitalizer.' },\n      { time: '15:30', title: 'Ayurvedic Therapy', body: 'Engage in an Ayurvedic therapy session, such as Abhyanga (Ayurvedic massage) or Udwarthana (herbal powder massage), to promote detoxification and relaxation.' },\n      { time: '17:00', title: 'Yoga Practice', body: 'Practice gentle yoga or pranayama to further enhance the body-mind connection and relieve any accumulated stress or tension.' },\n      { time: '18:00', title: 'Meditation Session', body: 'Participate in a guided meditation or mindfulness session to calm the mind and promote emotional balance.' },\n      { time: '18:30', title: 'Ayurvedic Dinner', body: 'Ayurvedic dinner consisting of a light, easily digestible meal such as vegetable soup or kitchari (a mixture of rice and lentils).' },\n      { time: '19:30', title: 'Leisure Activities', body: 'Engage in leisure activities like reading, journaling, or socializing with fellow retreat participants.' },\n      { time: '21:00', title: 'Relaxing Techniques', body: 'Wind down for the day by practicing relaxation techniques, such as gentle stretches or a warm herbal bath.' },\n      { time: '22:00', title: 'Go to Sleep', body: 'Prepare for a restful night’s sleep by creating a calming environment and retiring for the night.' }\n    ];",
+      "new": "const routine = [\n      { time: '06:00', title: 'Wake up to wellness', body: 'Wake up and perform self-care practices (dinacharya) such as tongue scraping, oil pulling, and washing the face.' },\n      { time: '06:30', title: 'Yoga & Pranayama', body: 'Yoga and pranayama (breathing exercises) from 06:30 to 07:30, as advised by your doctor.' },\n      { time: '08:00', title: 'Ayurvedic Breakfast', body: 'Ayurvedic breakfast from 08:00 to 09:00: a light, nourishing meal like cooked oats with fruits or a steamed vegetable dish.' },\n      { time: '09:30', title: 'Morning Ayurvedic Therapy', body: 'Your Ayurvedic therapy for the day, followed by rest, and a doctor review when scheduled. Appointment times, therapy types and durations follow your doctor’s plan.' },\n      { time: '13:00', title: 'Ayurvedic Lunch', body: 'Ayurvedic lunch, focusing on a balanced meal with plenty of fresh vegetables, whole grains, and lean protein sources.' },\n      { time: '14:00', title: 'Activity', body: 'A cooking demonstration, garden visit, workshop or lecture, when scheduled and suitable for you; the activity rotates.' },\n      { time: '15:30', title: 'Personal Time', body: 'Rest and relax for a short while.' },\n      { time: '18:30', title: 'Meditation Session', body: 'Participate in a guided meditation or mindfulness session to calm the mind and promote emotional balance.' },\n      { time: '19:30', title: 'Ayurvedic Dinner', body: 'Ayurvedic dinner consisting of a light, easily digestible meal such as vegetable soup or kitchari (a mixture of rice and lentils).' },\n      { time: '22:00', title: 'Go to Sleep', body: 'Prepare for a restful night’s sleep by creating a calming environment and retiring for the night.' }\n    ];"
+    },
+    {
+      "id": "n12-07-routine-yoga-block",
+      "files": [
+        "public/ahv/views/ahv-page-yoga-and-meditation-package-desktop.json",
+        "public/ahv/views/ahv-page-yoga-and-meditation-package-mobile.json",
+        "public/ahv/views/ahv-page-yoga-stress-reset-desktop.json",
+        "public/ahv/views/ahv-page-yoga-stress-reset-mobile.json"
+      ],
+      "countPerFile": {
+        "public/ahv/views/ahv-page-yoga-and-meditation-package-desktop.json": 1,
+        "public/ahv/views/ahv-page-yoga-and-meditation-package-mobile.json": 1,
+        "public/ahv/views/ahv-page-yoga-stress-reset-desktop.json": 1,
+        "public/ahv/views/ahv-page-yoga-stress-reset-mobile.json": 1
+      },
+      "old": "const routine = [\n      { time: '06:00', title: 'Wake up to wellness', body: 'Wake up and perform self-care practices (dinacharya) such as tongue scraping, oil pulling, and washing the face.' },\n      { time: '06:30', title: 'Practice Yoga', body: 'Practice yoga asanas (postures) for 30–45 minutes.' },\n      { time: '07:15', title: 'Pranayama', body: 'Engage in pranayama (breathing exercises) and meditation.' },\n      { time: '08:00', title: 'Detoxifying Drink', body: 'Enjoy a herbal tea or other drink.' },\n      { time: '08:30', title: 'Ayurvedic Breakfast', body: 'Ayurvedic breakfast consisting of a light, nourishing meal like cooked oats with fruits or a steamed vegetable dish.' },\n      { time: '10:00', title: 'Wellness Workshop', body: 'Participate in a wellness workshop or educational session on Ayurveda and healthy living.' },\n      { time: '11:00', title: 'Nature Walk', body: 'Go for a nature walk or engage in light physical activity.' },\n      { time: '12:00', title: 'Herbal Infused Water', body: 'Drink herbal-infused water or a digestive tea to stay hydrated.' },\n      { time: '12:30', title: 'Ayurvedic Lunch', body: 'Ayurvedic lunch, focusing on a balanced meal with plenty of fresh vegetables, whole grains, and lean protein sources.' },\n      { time: '13:30', title: 'Rest & Relax', body: 'Rest and relax for a short while.' },\n      { time: '14:00', title: 'Activity', body: 'Cooking demonstration / Factory visits / Workshops & Lectures' },\n      { time: '15:00', title: 'Detoxifying Drink', body: 'Enjoy a herbal tea or fresh juice.' },\n      { time: '15:30', title: 'Ayurvedic Therapy', body: 'Attend an Ayurvedic therapy session, such as Abhyanga or Udwarthana.' },\n      { time: '17:00', title: 'Yoga Practice', body: 'Practice gentle yoga or pranayama.' },\n      { time: '18:00', title: 'Meditation Session', body: 'Participate in a guided meditation or mindfulness session.' },\n      { time: '18:30', title: 'Ayurvedic Dinner', body: 'Ayurvedic dinner consisting of a light, easily digestible meal such as vegetable soup or kitchari (a mixture of rice and lentils).' },\n      { time: '19:30', title: 'Leisure Activities', body: 'Engage in leisure activities like reading, journaling, or socializing with fellow retreat participants.' },\n      { time: '21:00', title: 'Relaxing Techniques', body: 'Wind down for the day with gentle stretches or a warm herbal bath.' },\n      { time: '22:00', title: 'Go to Sleep', body: 'Prepare for the night and retire to sleep.' }\n    ];",
+      "new": "const routine = [\n      { time: '06:00', title: 'Wake up to wellness', body: 'Wake up and perform self-care practices (dinacharya) such as tongue scraping, oil pulling, and washing the face.' },\n      { time: '06:30', title: 'Yoga & Pranayama', body: 'Yoga and pranayama (breathing exercises) from 06:30 to 07:30, as advised by your doctor.' },\n      { time: '08:00', title: 'Ayurvedic Breakfast', body: 'Ayurvedic breakfast from 08:00 to 09:00: a light, nourishing meal like cooked oats with fruits or a steamed vegetable dish.' },\n      { time: '09:30', title: 'Morning Ayurvedic Therapy', body: 'Your Ayurvedic therapy for the day, followed by rest, and a doctor review when scheduled. Appointment times, therapy types and durations follow your doctor’s plan.' },\n      { time: '13:00', title: 'Ayurvedic Lunch', body: 'Ayurvedic lunch, focusing on a balanced meal with plenty of fresh vegetables, whole grains, and lean protein sources.' },\n      { time: '14:00', title: 'Activity', body: 'A cooking demonstration, garden visit, workshop or lecture, when scheduled and suitable for you; the activity rotates.' },\n      { time: '15:30', title: 'Personal Time', body: 'Rest and relax for a short while.' },\n      { time: '17:00', title: 'Yoga Practice', body: 'Gentle yoga or pranayama practice, where suitable and as advised.' },\n      { time: '18:30', title: 'Meditation Session', body: 'Participate in a guided meditation or mindfulness session.' },\n      { time: '19:30', title: 'Ayurvedic Dinner', body: 'Ayurvedic dinner consisting of a light, easily digestible meal such as vegetable soup or kitchari (a mixture of rice and lentils).' },\n      { time: '22:00', title: 'Go to Sleep', body: 'Prepare for the night and retire to sleep.' }\n    ];"
+    },
+    {
+      "id": "n12-07-column-split",
+      "files": [
+        "public/ahv/views/ahv-page-digestive-wellness-gut-health-desktop.json",
+        "public/ahv/views/ahv-page-digestive-wellness-gut-health-mobile.json",
+        "public/ahv/views/ahv-page-preventive-regenerative-desktop.json",
+        "public/ahv/views/ahv-page-preventive-regenerative-mobile.json",
+        "public/ahv/views/ahv-page-yoga-and-meditation-package-desktop.json",
+        "public/ahv/views/ahv-page-yoga-and-meditation-package-mobile.json",
+        "public/ahv/views/ahv-page-yoga-stress-reset-desktop.json",
+        "public/ahv/views/ahv-page-yoga-stress-reset-mobile.json"
+      ],
+      "countPerFile": {
+        "public/ahv/views/ahv-page-digestive-wellness-gut-health-desktop.json": 1,
+        "public/ahv/views/ahv-page-digestive-wellness-gut-health-mobile.json": 1,
+        "public/ahv/views/ahv-page-preventive-regenerative-desktop.json": 1,
+        "public/ahv/views/ahv-page-preventive-regenerative-mobile.json": 1,
+        "public/ahv/views/ahv-page-yoga-and-meditation-package-desktop.json": 1,
+        "public/ahv/views/ahv-page-yoga-and-meditation-package-mobile.json": 1,
+        "public/ahv/views/ahv-page-yoga-stress-reset-desktop.json": 1,
+        "public/ahv/views/ahv-page-yoga-stress-reset-mobile.json": 1
+      },
+      "old": "routineA: routine.slice(0, 10), routineB: routine.slice(10)",
+      "new": "routineA: routine.slice(0, Math.ceil(routine.length / 2)), routineB: routine.slice(Math.ceil(routine.length / 2))",
+      "why": "Same balanced split as accepted N12.06: the fixed slice(0, 10) would leave the second desktop column empty or near-empty."
+    },
+    {
+      "id": "n12-07-icon-one-therapy",
+      "files": [
+        "public/ahv/views/ahv-page-digestive-wellness-gut-health-desktop.json",
+        "public/ahv/views/ahv-page-digestive-wellness-gut-health-mobile.json",
+        "public/ahv/views/ahv-page-yoga-and-meditation-package-desktop.json",
+        "public/ahv/views/ahv-page-yoga-and-meditation-package-mobile.json",
+        "public/ahv/views/ahv-page-yoga-stress-reset-desktop.json",
+        "public/ahv/views/ahv-page-yoga-stress-reset-mobile.json"
+      ],
+      "countPerFile": {
+        "public/ahv/views/ahv-page-digestive-wellness-gut-health-desktop.json": 1,
+        "public/ahv/views/ahv-page-digestive-wellness-gut-health-mobile.json": 1,
+        "public/ahv/views/ahv-page-yoga-and-meditation-package-desktop.json": 1,
+        "public/ahv/views/ahv-page-yoga-and-meditation-package-mobile.json": 1,
+        "public/ahv/views/ahv-page-yoga-stress-reset-desktop.json": 1,
+        "public/ahv/views/ahv-page-yoga-stress-reset-mobile.json": 1
+      },
+      "old": "Daily 2 Therapies Per Person",
+      "new": "Daily 1 Therapy Per Person",
+      "why": "Icon label contradicted the one-therapy inclusion/tariff; Preventive has no such icon."
+    }
+  ]
+}
