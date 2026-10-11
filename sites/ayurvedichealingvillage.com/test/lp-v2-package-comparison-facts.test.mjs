@@ -24,7 +24,8 @@ import ts from "typescript";
 const require = createRequire(import.meta.url);
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const P = (...p) => path.join(SITE, ...p);
-const BASE_COMMIT = "881923a2a95616d4630d160b5e018cdd8cc2d63d";
+// Integration baseline includes the separately released PR377 SEO title; preserve that title as well as all other existing fields.
+const BASE_COMMIT = "e93b98054827cd940bc15aae4c62f80e4baa8a56";
 const SLUGS = ["treatment-packages", "rejuvenation-detox", "treatment-kerala", "lp-treatment-packages"];
 const PAGE = (slug) => P("campaign-v2/production/pages", `${slug}.ts`);
 const NOW = new Date(Date.UTC(2026, 9, 10, 12));
