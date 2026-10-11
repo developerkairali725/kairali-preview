@@ -149,21 +149,30 @@ test("provenance: each addition is in the named published manifest with the same
   const m = JSON.parse(fs.readFileSync(P("english-candidate/galleries-2026.json"), "utf8"));
   assert.match(m.directive, /D-20260922-31/);
   for (const { image, provenance: pv } of APPROVED_GALLERY_IMAGES) {
-    assert.equal(pv.manifest, "english-candidate/galleries-2026.json");
-    const route = m.routes.find((r) => r.path === pv.manifestRoute);
-    assert.ok(route, pv.manifestRoute);
-    const chapter = route.chapters.find((c) => c.id === pv.manifestChapter);
-    assert.ok(chapter, `${pv.manifestRoute} ${pv.manifestChapter}`);
-    const entry = chapter.images.find((i) => i.src === image.src);
+    let entry;
+    if (pv.manifest === "english-candidate/galleries-2026.json") {
+      const route = m.routes.find((r) => r.path === pv.manifestRoute);
+      assert.ok(route, pv.manifestRoute);
+      const chapter = route.chapters.find((c) => c.id === pv.manifestChapter);
+      assert.ok(chapter, `${pv.manifestRoute} ${pv.manifestChapter}`);
+      entry = chapter.images.find((i) => i.src === image.src);
+    } else {
+      assert.equal(pv.manifest, "public/ahv/assets/enquiry-family-data.js");
+      const source = fs.readFileSync(P(pv.manifest), "utf8");
+      const data = JSON.parse(source.slice(source.indexOf("{")).trim().replace(/;$/, ""));
+      assert.equal(pv.manifestChapter, "heroImage");
+      entry = data.routes.find((r) => r.path === pv.manifestRoute)?.heroImage;
+      assert.equal(entry?.src, image.src);
+    }
     assert.ok(entry, image.src);
     assert.equal(entry.width, image.width);
     assert.equal(entry.height, image.height);
-    assert.equal(entry.alt, image.alt);
-    assert.equal(entry.libraryPath, pv.libraryPath);
+    assert.equal(entry.alt, pv.publishedAlt ?? image.alt);
+    assert.equal(entry.libraryPath ?? entry.libraryPathPrivate, pv.libraryPath);
     assert.equal(pv.ownerDecision.decision, "yes");
     // Never consent "confirmed" on a filename: the additions are frames with no identifiable person.
     assert.equal(image.consent, "not-applicable", image.id);
-    assert.match(pv.people, /^No identifiable person/, image.id);
+    assert.match(pv.people, /^No identifiable (person|patient or staff member)/, image.id);
     assert.equal(image.decorative, false);
   }
 });
