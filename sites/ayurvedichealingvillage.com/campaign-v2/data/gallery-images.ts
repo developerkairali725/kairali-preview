@@ -12,7 +12,7 @@ import type { GalleryCategory, ImageRef } from "../kit/types.ts";
 
 export type GalleryProvenance = {
   /** The published gallery manifest and the entry this image is in, verbatim. */
-  manifest: "english-candidate/galleries-2026.json" | "public/ahv/assets/enquiry-family-data.js";
+  manifest: "english-candidate/galleries-2026.json" | "public/ahv/assets/enquiry-family-data.js" | "english-candidate/prerender/deluxe-villa.html";
   /** Full published caption when the gallery uses a concise accessible description. */
   publishedAlt?: string;
   manifestRoute: string;
@@ -20,9 +20,11 @@ export type GalleryProvenance = {
   /** The owner's recorded decision on this image. */
   ownerDecision: { id: string; decision: "yes"; recorded: string; record: string };
   /** The library original the published file was made from, and its SHA-256 (as the owner decision records it). */
-  libraryPath: string;
-  librarySha256: string;
-  /** SHA-256 of the published 1600w file at the time it was added here. */
+  libraryPath?: string;
+  librarySha256?: string;
+  /** HTML display attributes, when the legacy page scales an unchanged source image. */
+  publishedSize?: { width: number; height: number };
+  /** SHA-256 of the exact published file at the time it was added here. */
   publishedSha256: string;
   /** What is in the frame, as checked against the published file (people, if any, and whether identifiable). */
   people: string;
@@ -113,6 +115,37 @@ export const APPROVED_GALLERY_IMAGES: readonly ApprovedGalleryImage[] = [
       "librarySha256": "ff998584faf4ee5c78d562d737775e0fd77429af822b5a38acd61bbf0145c9c3",
       "publishedSha256": "332cc70a887dd0a5ca505be84dbd06fb02544fccbd163eeac5fb9efa36757b96",
       "people": "No identifiable patient or staff member; room and equipment only; existing founder portraits on the wall."
+    }
+  },
+  {
+    "category": "Villas",
+    "image": {
+      "id": "ahv-deluxe-bathroom",
+      "src": "/ahv/assets/img/AHV-Deluxe-G01.webp",
+      "width": 1200,
+      "height": 857,
+      "alt": "Deluxe Villa bathroom with glass shower and basin",
+      "decorative": false,
+      "gccSafe": true,
+      "location": "palakkad",
+      "consent": "not-applicable"
+    },
+    "provenance": {
+      "manifest": "english-candidate/prerender/deluxe-villa.html",
+      "manifestRoute": "/deluxe-villa/",
+      "manifestChapter": "69",
+      "ownerDecision": {
+        "id": "DEC-GALLERY-ASSETS",
+        "decision": "yes",
+        "recorded": "2026-10-10; exact timestamp not supplied",
+        "record": "deliverables/WOPS-AHV-CHANGE-TRACKER-20261010-001/AHV-change-tracker.json#owner_decision_groups/DEC-GALLERY-ASSETS"
+      },
+      "publishedSize": {
+        "width": 1400,
+        "height": 1000
+      },
+      "publishedSha256": "1090f286085171335c5a5b532a0b02f7ed9663aa8c31df36b16332ec33cf7e18",
+      "people": "No identifiable person; empty bathroom with glass shower, basin and mirror."
     }
   },
 ];
