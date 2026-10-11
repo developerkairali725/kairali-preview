@@ -3,6 +3,7 @@ import { captureConfigEnabled } from "./app/(english)/_families/capture-runtime.
 import documentRedirects from "./english-candidate/document-redirects.json";
 import legacyEnglishRedirects from "./english-candidate/legacy-english-redirects.json";
 import adSitelinks from "./english-candidate/ad-sitelink-redirects.json";
+import ppcThanksRedirects from "./english-candidate/ppc-thanks-redirects.json";
 import l10nRoutes from "./l10n/routes.json";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -171,6 +172,11 @@ const nextConfig: NextConfig = {
       destination: rule.to,
       statusCode: REDIRECT_MAP.statusCode,
     })), ...[...adSitelinks, ...legacyEnglishRedirects, ...documentRedirects].map(rule => ({ source:rule.source, destination:rule.destination, statusCode:301 })),
+    // The retired paid-landing confirmation (owner request, 8 Oct 2026): each of the
+    // 13 released /ppc-thanks/ locale paths gets one 301 to the same locale's /thanks/.
+    // Next carries the incoming query string through unchanged. lead-receipt.js
+    // accepts a receipt still addressed to the old path on its new page.
+    ...ppcThanksRedirects.map(rule => ({ source:rule.source, destination:rule.destination, statusCode:301 as const })),
     // Legacy German/French/Russian URLs of the WordPress site that the locale
     // lane does not serve in place (l10n/routes.json, generated from the verified
     // l10n/legacy-map.json): one 301 hop each. Case-only variants are NOT here -

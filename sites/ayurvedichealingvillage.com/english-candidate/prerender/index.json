@@ -1,6 +1,6 @@
 {
- "generated": "2026-10-07T18:57:47.960Z",
- "base": "http://127.0.0.1:3218",
+ "generated": "2026-10-08T22:30:44.508Z",
+ "base": "http://127.0.0.1:4541",
  "count": 227,
  "failures": 0,
  "routes": [
@@ -143,8 +143,8 @@
    "path": "/all-programs/",
    "ok": true,
    "file": "all-programs.html",
-   "bytes": 182669,
-   "textChars": 7845,
+   "bytes": 182636,
+   "textChars": 7812,
    "imgs": 42,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
@@ -152,7 +152,7 @@
    "contentProof": {
     "errors": [],
     "heading": "Find your programme at Kairali",
-    "bodyChars": 7698,
+    "bodyChars": 7665,
     "requiredForm": true,
     "requiredContent": true,
     "forbiddenContent": false
@@ -160,7 +160,7 @@
    "liveContentProof": {
     "errors": [],
     "heading": "Find your programme at Kairali",
-    "bodyChars": 7719,
+    "bodyChars": 7686,
     "requiredForm": true,
     "requiredContent": true,
     "forbiddenContent": false
@@ -5566,8 +5566,8 @@
    "path": "/yoga-meditation-training/",
    "ok": true,
    "file": "yoga-meditation-training.html",
-   "bytes": 61876,
-   "textChars": 1778,
+   "bytes": 62743,
+   "textChars": 1067,
    "imgs": 4,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
@@ -5575,7 +5575,7 @@
    "contentProof": {
     "errors": [],
     "heading": "Yoga & Training",
-    "bodyChars": 788,
+    "bodyChars": 998,
     "requiredForm": true,
     "requiredContent": true,
     "forbiddenContent": false
@@ -5583,7 +5583,7 @@
    "liveContentProof": {
     "errors": [],
     "heading": "Yoga & Training",
-    "bodyChars": 788,
+    "bodyChars": 998,
     "requiredForm": true,
     "requiredContent": true,
     "forbiddenContent": false
@@ -5643,13 +5643,5 @@
     "forbiddenContent": false
    }
   }
- ],
- "baselinePreservation": {
-  "route": "/weight-loss-programme/",
-  "productionCommit": "8e7fa2d230f59b14b760f9e6f21ae41000768da9",
-  "productionBodySha256": "0ebe3e9be6a2ea93d56619c073095e251746edd063fc0986ce190ab027d7ac54",
-  "classification": "Retained published production row; all other original F2 rows unchanged; no fresh-capture claim",
-  "f2IndexSha256": "106afdb130d68a990f5a63254d5fe573da3f3c9e529acce9908b7e122984e9b3",
-  "productionIndexSha256": "5adafb5489a1172e3c49bcfde30f29b151681751b2f59b526243d6597b646214"
- }
+ ]
 }
