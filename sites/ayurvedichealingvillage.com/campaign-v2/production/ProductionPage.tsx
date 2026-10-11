@@ -102,7 +102,7 @@ export default function ProductionPage({ c }: { c: CampaignConfig }) {
     }
   };
   return (
-    <div className="lp lp-prod" data-variant={v} lang={ui.lang} style={skinStyle(v, req.locale)}>
+    <div className="lp lp-prod" data-variant={v} data-mobile-consult={c.slug === "treatment-packages" || c.slug === "panchakarma" ? "" : undefined} lang={ui.lang} style={skinStyle(v, req.locale)}>
       <Header {...p} />
       <main id="main">
         <Hero {...p} />
