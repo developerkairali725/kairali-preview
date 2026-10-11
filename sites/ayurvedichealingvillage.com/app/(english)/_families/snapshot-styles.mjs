@@ -163,7 +163,8 @@ export function firstScreenPoster(snapshotHtml) {
  * text-LCP route needs its body face at first paint (099a5664a).
  * Digestive and Weight each retain their saved image-LCP traces and approved font deferral.
  */
-const IMAGE_LED_FIRST_SCREEN = new Set(["/digestive-wellness-gut-health-yoga-therapy/", "/weight-loss-programme/"]);
+// N12: the saved 2026-10-11 mobile traces identify these two programme background heroes as LCP.
+const IMAGE_LED_FIRST_SCREEN = new Set(["/digestive-wellness-gut-health-yoga-therapy/", "/weight-loss-programme/", "/treatment-for-bronchial-diseases/", "/holistic-treatment-for-rejuvenation-and-detoxification/"]);
 export function imageLedFirstScreen(routePath) {
   return IMAGE_LED_FIRST_SCREEN.has(String(routePath || ""));
 }
