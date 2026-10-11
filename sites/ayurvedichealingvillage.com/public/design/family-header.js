@@ -346,3 +346,26 @@
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", schedule); else schedule();
   window.addEventListener("load", schedule);
 })();
+
+/* Weight programme page only (ADD04 inline enquiry, 8 Oct 2026). The ONE shared bottom bar (#ahv-cta-bar,
+ * OWNER-REG-02) keeps its labels, order and styling; on this page its "Enquire" goes to the page's own inline
+ * enquiry (#programme-enquiry), as the /lp/ lane's goes to its form (chrome.js ctaBar). Call, Free Consult and
+ * every other page keep the homepage destinations. Keyed on the English route the design root carries in every
+ * locale; the current locale URL is kept (in-page anchor). Kept here, not in ctaBar: the locale review-chrome.js
+ * copies are bound sources of the captured locale bodies (tools/restore-locale-prerenders.mjs), which do not
+ * contain the bar. Consent, forms and tracking are untouched. */
+(function () {
+  "use strict";
+  var root = document.getElementById("ahv-design-root");
+  if (!root || root.getAttribute("data-ahv-route") !== "/weight-loss-programme/") return;
+  var target = "#programme-enquiry", observer = null;
+  function retarget() {
+    var bar = document.getElementById("ahv-cta-bar"), a = bar && bar.querySelector("a.ahv-cta-enquire");
+    if (!a || !document.getElementById(target.slice(1))) return;
+    if (a.getAttribute("href") !== target) a.setAttribute("href", target);
+    if (observer) { observer.disconnect(); observer = null; }
+  }
+  if (window.MutationObserver) { observer = new MutationObserver(retarget); observer.observe(document.body || document.documentElement, { childList: true, subtree: true }); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", retarget); else retarget();
+  window.addEventListener("load", retarget);
+})();
