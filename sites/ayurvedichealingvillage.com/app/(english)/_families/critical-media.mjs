@@ -48,6 +48,10 @@ export function descriptiveAwardLinks(html, route = "") {
 }
 
 export function firstCriticalImage(html, routePath = '') {
+  // N12 measured background LCPs: prioritize the existing approved hero only on its own route.
+  var programmeHeroes = {'/treatment-for-bronchial-diseases/':'/ahv/assets/img/bronchial-hero-nasyam.webp','/holistic-treatment-for-rejuvenation-and-detoxification/':'/ahv/assets/img/ho-pizhichil.webp'};
+  var programmeHero = programmeHeroes[routePath];
+  if (programmeHero && html.indexOf(programmeHero) >= 0) return programmeHero;
   var paths = ['/ahv/assets/img/wx-hero-544.avif', '/ahv/assets/img/owner-approved-20260928/ahv-img-002-768.webp', '/ahv/assets/img/wx-hero-544.webp', '/ahv/assets/img/ktahv-abhyanga-oil-therapy-2025-544.webp', '/ahv/assets/img/AHV-Enquiry-Garden-Banner-768.webp', '/ahv/assets/img/weightloss-768-hero.avif', '/ahv/assets/img/digestive-768-hero.avif'];
   return paths.filter(function (path) { return html.indexOf(path) >= 0; }).sort(function (a, b) { return html.indexOf(a) - html.indexOf(b); })[0] || null;
 }

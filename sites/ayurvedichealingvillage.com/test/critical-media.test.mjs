@@ -238,3 +238,12 @@ test('actual Weight captured body changes only the ABOUT image loading attribute
   assert.equal(firstCriticalImage(mapped, '/weight-loss-programme/'), firstCriticalImage(previous, '/weight-loss-programme/'));
   assert.equal(phoneCriticalMedia(mapped, '/weight-loss-programme/'), mapped);
 });
+
+// Trace-backed priority: never preload a programme hero on an unrelated route.
+test('N12 programme background priorities stay route-scoped', () => {
+ for (const [route,hero] of [['/treatment-for-bronchial-diseases/','/ahv/assets/img/bronchial-hero-nasyam.webp'],['/holistic-treatment-for-rejuvenation-and-detoxification/','/ahv/assets/img/ho-pizhichil.webp']]) {
+  assert.equal(firstCriticalImage('<div style="background-image:url('+hero+')"></div>',route),hero);
+  assert.equal(firstCriticalImage('<div style="background-image:url('+hero+')"></div>','/other/'),null);
+  assert.equal(firstCriticalImage('<div></div>',route),null);
+ }
+});
