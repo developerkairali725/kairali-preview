@@ -69,7 +69,8 @@ function baselineSources() {
   const dir = P("test/fixtures/package-comparison-baseline");
   const provenance = JSON.parse(fs.readFileSync(path.join(dir, "PROVENANCE.json"), "utf8"));
   assert.equal(provenance.sourceCommit, BASE_COMMIT);
-  const sources = Object.fromEntries(SLUGS.map((slug) => [PAGE(slug), fs.readFileSync(path.join(dir, `${slug}.ts.txt`), "utf8")]));
+  const fixtureData = JSON.parse(fs.readFileSync(path.join(dir, "sources.json"), "utf8"));
+  const sources = Object.fromEntries(SLUGS.map((slug) => [PAGE(slug), fixtureData[slug]]));
   for (const slug of SLUGS) assert.equal(crypto.createHash("sha256").update(sources[PAGE(slug)]).digest("hex"), provenance.sha256[slug]);
   return sources;
 }
