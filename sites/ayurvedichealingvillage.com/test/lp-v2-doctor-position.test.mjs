@@ -173,13 +173,15 @@ test("the doctors section is moved as-is: its props are the route's existing cop
 });
 
 // Candidate proof against BASE: re-pin (or drop) when one of these files later changes under its own authority.
-test("untouched: the doctors component, doctor data, shared locale strings, styles and every route's copy are byte-identical to the base", { skip: !hasBase && "base commit not in this checkout" }, () => {
+test("untouched: the doctors component, doctor data, shared locale strings, approved styles and every route's copy retain their exact pins", { skip: !hasBase && "base commit not in this checkout" }, () => {
   const files = [
     "campaign-v2/production/sections/Physicians.tsx", "campaign-v2/data/doctors.ts", "campaign-v2/production/production.css",
     "campaign-v2/production/ui.ts", "campaign-v2/sections/head.tsx",
     ...PRODUCTION_SLUGS.map((s) => `campaign-v2/production/pages/${s}.ts`),
   ];
   for (const f of files) {
-    assert.equal(read(f), git("show", `${BASE}:./${f}`), f);
+    // Optional-selector visibility was separately approved; retain an exact CSS pin, not a wildcard.
+    const pin = f === "campaign-v2/production/production.css" ? "0272861b8c9033add121ad9106a63f24b2b99b99" : BASE;
+    assert.equal(read(f), git("show", `${pin}:./${f}`), f);
   }
 });
