@@ -166,7 +166,7 @@ test("isolation: the kit design and the production document are loaded only by a
   assert.deepEqual(importers("campaign-v2/production").sort(), [...PAGE_FILES, "app/(ppc-v2)/layout.tsx", "app/(ppc-v2-de)/layout.tsx", "app/(ppc-v2-ru)/layout.tsx"].sort());
   assert.deepEqual(importers("sections/sections.css"), []);
   const cssImporters = walk(P("campaign-v2")).map((f) => path.relative(SITE, f).split(path.sep).join("/"))
-    .filter((f) => /\.tsx?$/.test(f) && /import "[^"]*(sections\.css|production\.css|base\.css)"/.test(read(f)));
+    .filter((f) => /\.tsx?$/.test(f) && /import "[^"]*(sections\.css|production\.css|base\.css|document\.css)"/.test(read(f)));
   assert.deepEqual(cssImporters.sort(), ["campaign-v2/production/Document.tsx", "campaign-v2/sections/LandingPage.tsx"]);
   // Every production rule is scoped to the page wrapper or the consent notice.
   // Keyframe steps are not selectors; keyframes names are global, so they carry the page's own prefix.

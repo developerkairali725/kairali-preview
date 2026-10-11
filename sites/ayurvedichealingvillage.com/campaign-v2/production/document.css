@@ -1,0 +1,6 @@
+/* Same approved cascade, bundled through one entry to reduce render-blocking requests. */
+@import "../../campaign-v110/integration.css";
+@import "../../public/design/campaign-bundle.css";
+@import "../styles/base.css";
+@import "../sections/sections.css";
+@import "./production.css";
