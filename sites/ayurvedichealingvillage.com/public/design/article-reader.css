@@ -677,7 +677,7 @@
    button, form fields, dialogs and the footer keep their shapes. The id is
    repeated so these outrank the shared button system's corner radius. */
 #ahv-design-root[data-ahv-route="/offers/"] section:has(h1) + div:has(> img:only-child) {padding:0 !important;}
-#ahv-design-root#ahv-design-root[data-ahv-route="/offers/"] :is(main :is(article, section[aria-labelledby], dl, li)[style*="border"][style*="radius"], main :is(div, p)[style*="border"][style*="radius"]:not(:has(img)), main a[style*="radius"], main .ahv-care-cta-row a, nav[aria-label="On this page"] a, a[style*="radius"]:is([href$="/online-consultation/"], [href*="wa.me/"]):not(header a, footer a), header :is(a[href^="https://bookings."], button.ahv-lang-btn, button.ahv-contact-trigger, button.ahv-fh-btn, button[aria-label="Search"])) {border-radius:0 !important;}
+#ahv-design-root#ahv-design-root[data-ahv-route="/offers/"] :is(main :is(article, section[aria-labelledby], dl, li)[style*="border"][style*="radius"], main :is(div, p)[style*="border"][style*="radius"]:not(:has(img)), main a[style*="radius"], main .ahv-care-cta-row a, nav:has(> ul > li > a[href^="#"]) a, a[style*="radius"]:is([href$="/online-consultation/"], [href*="wa.me/"]):not(header a, footer a), header :is(a[href^="https://bookings."], button.ahv-lang-btn, button.ahv-contact-trigger, button.ahv-fh-btn, button[aria-label="Search"])) {border-radius:0 !important;}
 
 /* Preserve the footer contrast while deferred background layers initialise. */
 #ahv-design-root[data-ahv-route="/offers/"] footer{background-color:#2a2014!important}

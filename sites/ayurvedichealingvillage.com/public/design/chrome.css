@@ -273,9 +273,9 @@ body[data-ahv-chat-open="true"] #ahv-contact-controls .ahv-contact-wa{display:no
  #ahv-design-root nav[aria-label="On this page"] > ul > li{flex:0 0 auto;list-style:none}
  #ahv-design-root nav[aria-label="On this page"] > ul > li > a{min-height:44px!important;padding:0 12px;border:1px solid #E9E2D3!important;border-radius:4px;white-space:nowrap;font-size:14px!important}
  /* Owner 10 Oct 2026 (OWNER-20261010-OFFERS): on /offers/ the five links wrap onto further rows, so none is clipped behind a sideways scroller. */
- #ahv-design-root[data-ahv-route="/offers/"] nav[aria-label="On this page"] > ul{flex-wrap:wrap;overflow-x:visible}
- #ahv-design-root[data-ahv-route="/offers/"] nav[aria-label="On this page"] > ul > li{flex:0 1 auto;min-width:0;max-width:100%}
- #ahv-design-root[data-ahv-route="/offers/"] nav[aria-label="On this page"] > ul > li > a{white-space:normal;overflow-wrap:anywhere}
+ #ahv-design-root[data-ahv-route="/offers/"] nav:has(> ul > li > a[href^="#"]) > ul{flex-wrap:wrap!important;overflow-x:visible!important}
+ #ahv-design-root[data-ahv-route="/offers/"] nav:has(> ul > li > a[href^="#"]) > ul > li{flex:0 1 auto;min-width:0;max-width:100%}
+ #ahv-design-root[data-ahv-route="/offers/"] nav:has(> ul > li > a[href^="#"]) > ul > li > a{white-space:normal;overflow-wrap:anywhere}
 }
 /* Owner 10 Oct 2026: the "About Kairali" link in the phone Gita Ramesh card starts on the quote's inset line
    (only the phone card holds the link outside its padded text block). */
