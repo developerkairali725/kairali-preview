@@ -1,6 +1,11 @@
 // One reviewed contact implementation, preserving each frozen locale's other
 // chrome strings and behaviour. No translation catalogue or snapshot mutation.
 import fs from 'node:fs';
+import crypto from 'node:crypto';
+// Captured locale bodies retain their exact reviewed CTA source. Campaign-only
+// routing changes are generated separately for the dedicated DE/RU campaign shell.
+const frozenActions = JSON.parse(fs.readFileSync('tools/frozen-locale-cta-actions.json','utf8'));
+if(crypto.createHash('sha256').update(frozenActions.actions).digest('hex')!==frozenActions.sha256) throw Error('Frozen locale CTA source integrity mismatch');
 const routes = JSON.parse(fs.readFileSync('l10n/routes.json','utf8')).routes;
 const reviewed = fs.readFileSync('public/design/review-chrome.js','utf8');
 const chatLinks = reviewed.slice(reviewed.indexOf('  function chatLinks(f)'), reviewed.indexOf('  // Owner 5 Oct:'));
@@ -16,7 +21,7 @@ for (const locale of fs.readdirSync('public/ahv/l10n')) {
  source = source.slice(0,chatStart) + chatLinks + source.slice(chatEnd);
  const localeKey = locale === 'zh' ? 'zh-Hans' : locale;
  const paths = Object.fromEntries(Object.entries(routes).map(([path, targets]) => [path, targets[localeKey] || path]));
- const localeActions = actions.replace('var lp = window.AHV_LOCAL_PATHS,', `var lp = window.AHV_LOCAL_PATHS || ${JSON.stringify(paths)},`);
+ const localeActions = frozenActions.actions.replace('var lp = window.AHV_LOCAL_PATHS,', `var lp = window.AHV_LOCAL_PATHS || ${JSON.stringify(paths)},`);
  const dictionary = JSON.parse(fs.readFileSync(`l10n/generated/${locale === "zh" ? "zh-Hans" : locale}.json`,'utf8')).ui;
  const oldMarkup = JSON.parse(source.match(/controls\.innerHTML = (".*");/)[1]);
  const priya = oldMarkup.match(/class="ahv-contact-label">([^<]+)/)[1];
@@ -40,5 +45,10 @@ for (const locale of fs.readdirSync('public/ahv/l10n')) {
  source = source.replace('  function pass() {',home + '  function pass() {');
  source = source.replace('      ctaBar();','      ctaBar();\n      homeReviewRefinements();');
  fs.writeFileSync(`${base}/review-chrome.js`, source);
+ if(locale==='de'||locale==='ru'){
+  const campaignActions = actions.replace('var lp = window.AHV_LOCAL_PATHS,', `var lp = window.AHV_LOCAL_PATHS || ${JSON.stringify(paths)},`);
+  if(!source.includes(localeActions)) throw Error('Campaign CTA insertion boundary missing: '+locale);
+  fs.writeFileSync(`${base}/campaign-review-chrome.js`,source.replace(localeActions,campaignActions));
+ }
 }
 console.log('Reviewed chrome generated for all locale layouts; frozen inputs unchanged.');
