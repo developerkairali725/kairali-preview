@@ -1,3 +1,4 @@
+import { PROGRAMME_DESCRIPTIONS } from "../programme-descriptions";
 import type { CampaignConfig, PageOffering } from "../../kit/types.ts";
 import { SectionHead } from "../../sections/head";
 import { ArrowIcon } from "../../sections/icons";
@@ -48,6 +49,11 @@ function Cards({ c, o, v, ui, no }: { c: CampaignConfig; o: Of<"cards"> } & SecP
                 {card.links.map((l) => (
                   <li key={l.href}>
                     <PageA className="lp-poffer__link" href={l.href}><span>{l.label}</span><ArrowIcon /></PageA>
+                    {ask && PROGRAMME_DESCRIPTIONS[l.href] ? (
+                      <div data-programme-description={l.href}>
+                        <Paras list={PROGRAMME_DESCRIPTIONS[l.href]} className="lp-poffer__p" />
+                      </div>
+                    ) : null}
                     {ask ? (
                       <a className="lp-btn lp-btn--line" href="#enquiry" aria-label={`Ask about this programme: ${l.label}`}
                         data-track="cta_click" data-track-cta="consult" data-track-position="section">

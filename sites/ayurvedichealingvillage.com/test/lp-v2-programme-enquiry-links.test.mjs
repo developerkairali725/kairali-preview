@@ -1,7 +1,7 @@
 // DEC-PROGRAMME-DESCRIPTIONS (WOPS-AHV-PROGRAMME-DETAILS-20261010-001): "Ask about this programme" beside each existing
 // programme link on the four English programme routes (production/sections/Offering.tsx). The real component is
 // rendered (TypeScript transpile + react-dom/server) from the routes' real configs (production/load.ts). This is a
-// partial description candidate: the per-programme description clauses of the packages and retreat rows stay open.
+// description completion: existing programme overviews are shown in full beside the existing links and Ask anchors.
 //
 // AHV_OFFERING_SOURCE=<file> renders that source in Offering.tsx's place (mutation controls);
 // AHV_OFFERING_BASELINE=<file> overrides the pre-change baseline (default: Offering.tsx at BASE_COMMIT, when present).
@@ -21,6 +21,7 @@ import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/
 import { uiFor } from "../campaign-v2/production/ui.ts";
 import { interactionForLink } from "../campaign-v2/production/interaction-map.ts";
 import { richText } from "../campaign-v2/kit/rich.ts";
+import { PROGRAMME_DESCRIPTIONS } from "../campaign-v2/production/programme-descriptions.ts";
 
 const require = createRequire(import.meta.url);
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -83,7 +84,7 @@ const cls = (n, name) => (n.attribs.class || "").split(/\s+/).includes(name);
 const kids = (n, tag) => n.children.filter((k) => k instanceof Element && k.name === tag);
 const asks = (nodes) => all(nodes, (n) => n.name === "a" && text(n).trim() === ASK);
 /** The rendered markup without the Ask anchors: what the page rendered before this change. */
-const withoutAsks = (html) => html.replace(/<a class="lp-btn lp-btn--line" href="#enquiry"[^>]*>Ask about this programme<\/a>/g, "");
+const withoutAsks = (html) => html.replace(/<div data-programme-description="[^"]+">[\s\S]*?<\/div>/g, "").replace(/<a class="lp-btn lp-btn--line" href="#enquiry"[^>]*>Ask about this programme<\/a>/g, "");
 
 test("all four English routes render one Ask anchor per existing programme link: 11 + 3 + 5 + 2 = 21", () => {
   let total = 0;
@@ -154,7 +155,7 @@ test("original full-detail links, card order, headings, paragraphs and the gener
     // The same page with the gate closed (any other route) renders exactly the Ask-less markup: nothing else moved.
     const closed = render(Offering, { ...c, route: "/not-a-programme-route.html" });
     assert.equal(asks(dom(closed)).length, 0);
-    assert.equal(withoutAsks(html), closed, `${slug}: only the Ask anchors were added`);
+    assert.equal(withoutAsks(html), closed, `${slug}: only the approved descriptions and Ask anchors were added`);
   }
 });
 
@@ -199,7 +200,7 @@ test("no lead or diagnostics change: no form fields, no prefill, #enquiry stays 
   }
 });
 
-test("against the pre-change Offering.tsx: untargeted routes are byte-identical, targeted routes differ only by the Ask anchors", (t) => {
+test("against the pre-change Offering.tsx: untargeted routes are byte-identical, targeted routes differ only by descriptions and Ask anchors", (t) => {
   const source = baselineSource();
   if (source === null) { t.skip(`baseline ${BASE_COMMIT} not available in this clone; set AHV_OFFERING_BASELINE`); return; }
   const Before = loadOffering(source);
@@ -210,9 +211,53 @@ test("against the pre-change Offering.tsx: untargeted routes are byte-identical,
     assert.ok(!before.includes(ASK), `${slug}: the baseline had no Ask anchor`);
     if (Object.hasOwn(TARGETS, slug)) {
       assert.notEqual(after, before, `${slug}: the candidate adds the Ask anchors`);
-      assert.equal(withoutAsks(after), before, `${slug}: nothing but the Ask anchors changed`);
+      assert.equal(withoutAsks(after), before, `${slug}: nothing but approved descriptions and Ask anchors changed`);
     } else {
       assert.equal(after, before, `${slug}: unchanged`);
     }
+  }
+});
+
+
+test("all 21 programme links show the complete existing overview, without disclosures or truncation", () => {
+  let total = 0;
+  for (const slug of Object.keys(TARGETS)) {
+    const nodes = dom(render(Offering, C[slug]));
+    const descriptions = all(nodes, (n) => "data-programme-description" in n.attribs);
+    assert.equal(descriptions.length, TARGETS[slug][1]);
+    for (const entry of descriptions) {
+      const href = entry.attribs["data-programme-description"];
+      assert.deepEqual(kids(entry, "p").map(text), PROGRAMME_DESCRIPTIONS[href]);
+      assert.equal(all([entry], (n) => ["details", "summary", "button"].includes(n.name)).length, 0);
+      assert.equal(entry.attribs.hidden, undefined);
+      assert.equal(entry.attribs.style, undefined);
+    }
+    total += descriptions.length;
+    const closed = dom(render(Offering, { ...C[slug], locales: ["de"] }));
+    assert.equal(all(closed, (n) => "data-programme-description" in n.attribs).length, 0);
+  }
+  assert.equal(total, 21);
+});
+
+test("every description is copied verbatim from its existing programme source", () => {
+  const refs = JSON.parse(fs.readFileSync(path.join(SITE, "test/fixtures/programme-description-sources.json"), "utf8"));
+  assert.equal(Object.keys(refs).length, 11);
+  for (const [route, ref] of Object.entries(refs)) {
+    const source = fs.readFileSync(path.join(SITE, ref.source), "utf8");
+    let expected;
+    if (ref.paragraphIds) {
+      const about = all(dom(source), (n) => n.name === "section" && n.attribs.id === "about");
+      assert.equal(about.length, 1, route);
+      expected = ref.paragraphIds.map((id) => {
+        const found = all(about, (n) => n.name === "p" && n.attribs["data-dc-tpl"] === id);
+        assert.equal(found.length, 1, `${route}: ${id}`);
+        return text(found[0]);
+      });
+    } else {
+      const sandbox = { window: {} };
+      vm.runInNewContext(source, sandbox);
+      expected = [sandbox.window.AHV_YOGA_RETREATS.faqs.find((f) => f.question === "How is the yoga programme personalised?").answer];
+    }
+    assert.deepEqual(PROGRAMME_DESCRIPTIONS["https://ayurvedichealingvillage.com" + route], expected, route);
   }
 });
