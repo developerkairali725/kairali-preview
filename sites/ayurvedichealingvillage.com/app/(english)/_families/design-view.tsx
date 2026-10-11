@@ -8,6 +8,8 @@ import { snapshotStylesFor, firstScreenPoster, imageLedFirstScreen } from "./sna
 import { newsletterFooters } from "./newsletter-markup.mjs";
 import { computedFooterYear } from "./computed-footer-year";
 import { routeRobots } from "./robots-policy";
+import { SSR_ONLY_HTML_ROUTES, putSsrOnlyHtml } from "./ssr-only-html.mjs";
+import { SsrOnlyHtml } from "./ssr-only-html-slot";
 /**
  * AHV English candidate — the shared route component.
  *
@@ -171,6 +173,24 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
     ...(firstPaint?.styles.map((css, i) => ({ key: `view:${i}`, kind: 'style' as const, css, media: narrowMedia })) ?? []),
   ];
 
+  const rootAttrs = {
+    id: DESIGN_ROOT_ID,
+    role: route.path === "/" ? "main" : undefined,
+    "data-ahv-route": route.path,
+    "data-ahv-locale": locale === "en" ? undefined : locale,
+    "data-ahv-family": family || undefined,
+    "data-ahv-consistency": consistency,
+    "data-ahv-snapshot-state": snapshot ? "held" : undefined,
+    // Pairs the deferred-background rule in site-document.tsx with the boot script below that reveals
+    // them: only a root this boot runs in may hold its inline backgrounds back (native views that
+    // reuse the id carry no boot, so they are never matched).
+    "data-ahv-bg-defer": "",
+  };
+  // Contact performance repair (ssr-only-html.mjs): the snapshot and the boot script ship in the HTML
+  // only, not a second time in the Flight data. Same markup, same attributes, same order.
+  const serverHtmlOnly = SSR_ONLY_HTML_ROUTES.has(route.path);
+  const slot = `${locale}:${route.path}`;
+
   return (
     <>
       {/* Structured data. The live site emits this on every page and the
@@ -232,21 +252,11 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
           Without it, hydration threw 418 and React's recovery render wiped
           the approved design off the page. */}
       {route.path === "/" ? <style dangerouslySetInnerHTML={{ __html: `#ahv-design-root .sc-host > div[data-dc-tpl="31"] > section[data-dc-tpl]:not(:first-of-type){content-visibility:auto;contain-intrinsic-size:auto 1000px}` }} /> : null}
-      <div
-        id={DESIGN_ROOT_ID}
-        role={route.path === "/" ? "main" : undefined}
-        data-ahv-route={route.path}
-        data-ahv-locale={locale === "en" ? undefined : locale}
-        data-ahv-family={family || undefined}
-        data-ahv-consistency={consistency}
-        data-ahv-snapshot-state={snapshot ? "held" : undefined}
-        // Pairs the deferred-background rule in site-document.tsx with the boot script below that reveals
-        // them: only a root this boot runs in may hold its inline backgrounds back (native views that
-        // reuse the id carry no boot, so they are never matched).
-        data-ahv-bg-defer=""
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: snapshot }}
-      />
+      {serverHtmlOnly ? (
+        <SsrOnlyHtml as="div" slot={putSsrOnlyHtml(`${slot}:snapshot`, snapshot)} attrs={rootAttrs} />
+      ) : (
+        <div {...rootAttrs} suppressHydrationWarning dangerouslySetInnerHTML={{ __html: snapshot }} />
+      )}
 
       <noscript>
         <p style={{ font: "17px/1.6 system-ui, sans-serif", margin: "40px auto", maxWidth: "62ch", padding: "0 20px" }}>
@@ -261,7 +271,11 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
         // <script> text node below.
         dangerouslySetInnerHTML={{ __html: jsonForScript(cfg) }}
       />
-      <script dangerouslySetInnerHTML={{ __html: bootScript }} />
+      {serverHtmlOnly ? (
+        <SsrOnlyHtml as="script" slot={putSsrOnlyHtml(`${slot}:boot`, bootScript)} />
+      ) : (
+        <script dangerouslySetInnerHTML={{ __html: bootScript }} />
+      )}
     </>
   );
 }
