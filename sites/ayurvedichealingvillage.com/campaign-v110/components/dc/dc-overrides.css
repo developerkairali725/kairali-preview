@@ -1222,6 +1222,7 @@ html:has(#ahv-design-root), body:has(#ahv-design-root) { overflow-x:clip; }
    award logos, form fields and the consent and chat UI keep their shapes. The
    id is repeated so these outrank the earlier offer-terms and button radii. */
 #ahv-design-root#ahv-design-root:is([data-ahv-route="/offers/senior-citizen-offer/"], [data-ahv-route="/offers/olympics-and-paralympics-offer/"], [data-ahv-route="/offers/defence-and-paramilitary/"]) section[aria-labelledby="v2-h1"] {
+  background-image:linear-gradient(color-mix(in srgb, var(--ink) 74%, transparent),color-mix(in srgb, var(--ink) 80%, transparent)),url(/design/offer-pathway-1200.avif) !important;
   width: 100% !important;
   max-width: none !important;
   margin-inline: 0 !important;
