@@ -1,7 +1,6 @@
 /** Selected image variants; only phone templates/snapshots use these. */
 export function phoneCriticalMedia(html, routePath = '') {
   for (var name of ['weight-loss', 'weight-history']) {
-    if (routePath === '/weight-loss-programme/') continue;
     html = html.split('/ahv/assets/img/' + name + '.webp').join('/ahv/assets/img/' + name + '-768.avif');
   }
   // Snapshot repair promoted this below-fold body image; retain its authored lazy/low intent.
@@ -19,7 +18,6 @@ export function phoneCriticalMedia(html, routePath = '') {
     return '<img loading="lazy" fetchpriority="low"' + attrs + '>';
   });
   for (var name of ['weightloss', 'digestive']) {
-    if (name === 'weightloss' && routePath === '/weight-loss-programme/') continue;
     html = html.split('/ahv/assets/img/' + name + '.webp').join('/ahv/assets/img/' + name + '-768-hero.avif');
   }
   for (var name of ['ktahv-abhyanga-oil-therapy-2025', 'AHV-Enquiry-Garden-Banner', 'wx-welcome', 'kt-317', 'wx-yogahall', 'kt-106']) {
@@ -50,7 +48,6 @@ export function descriptiveAwardLinks(html, route = "") {
 }
 
 export function firstCriticalImage(html, routePath = '') {
-  if (routePath === '/weight-loss-programme/') return null;
   var paths = ['/ahv/assets/img/wx-hero-544.avif', '/ahv/assets/img/owner-approved-20260928/ahv-img-002-768.webp', '/ahv/assets/img/wx-hero-544.webp', '/ahv/assets/img/ktahv-abhyanga-oil-therapy-2025-544.webp', '/ahv/assets/img/AHV-Enquiry-Garden-Banner-768.webp', '/ahv/assets/img/weightloss-768-hero.avif', '/ahv/assets/img/digestive-768-hero.avif'];
   return paths.filter(function (path) { return html.indexOf(path) >= 0; }).sort(function (a, b) { return html.indexOf(a) - html.indexOf(b); })[0] || null;
 }
