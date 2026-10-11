@@ -1,11 +1,11 @@
 {
   "repository": "kairali-digital/kairali-web-factory",
   "tag": "ahv-english-staging-20260915",
-  "asset": "ahv-locale-prerenders-home-count-digestive-20261011.tar.gz",
-  "archive": "ahv-locale-prerenders-home-count-digestive-20261011.tar.gz",
-  "sha256": "7f72441cb06d4e357f4fb28c24cb33b03c6479c60f21f122b7a73f790e1f7f15",
-  "bytes": 43769897,
-  "capturedSource": "Composition of accepted Digestive and homepage-count captures; 12 homepage bodies copied unchanged from 07ee813f7, twelve locale index homepage entries replaced; all other bodies unchanged from 8adcce866. No recapture.",
+  "asset": "ahv-locale-prerenders-staged-combined-20261011.tar.gz",
+  "archive": "ahv-locale-prerenders-staged-combined-20261011.tar.gz",
+  "sha256": "61124e56ab88da9a4a5947c65a75d73cd9eea165f91af29aa97407a548c94154",
+  "bytes": 43773351,
+  "capturedSource": "Composition of accepted Digestive, homepage-count and training-navigation snapshots; 24 training/all-programmes bodies copied unchanged from d9c44d559, twelve locale indexes composed; all other bodies preserved from the preceding composition. No recapture.",
   "sources": [
     {
       "file": "english-candidate/route-manifest.json",
@@ -521,11 +521,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-all-programs-desktop.json",
-      "sha256": "d3cf4a27cb389128b44384dec14aae4812c22bd1c600936cf52ec1949d8ae046"
+      "sha256": "b66f8345eb52d30ae57656b81ee0555c0e2a9e9bc76c88829611f692b558cb0d"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-all-programs-mobile.json",
-      "sha256": "9e57b1f816e1f0f25b0815bf49030ee30cb45076569d50af2658cf21895c7b3c"
+      "sha256": "84d59eb7b405c74c52bc91799b2526fd3d56319881e556c5108c2d7b23a2119f"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-ananda-lahari-retreat-desktop.json",
@@ -601,11 +601,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-ayurvedic-treatments-desktop.json",
-      "sha256": "0740f2b52837b961c4eaf0043284634d849f7296e317e11baac06c79e993d3c9"
+      "sha256": "e9b29ccbf579862d9577a1074cad9afd94bde5e345153d160df2d963b7cb6be6"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-ayurvedic-treatments-mobile.json",
-      "sha256": "f55c2f29d2fe341cea663a7737ac72a3f3a79b2885d33e83faf82732a56a225a"
+      "sha256": "9dd58b33d6df3f4233f8ce86690a729a2154e1c22e5c7a53500393dfc05a0cae"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-ayuryoga-desktop.json",
@@ -873,11 +873,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
-      "sha256": "6330a1e328b587273250946f184896d443b05650e425e1e8841d16b9b490d0e0"
+      "sha256": "4acd9732509ae310aa730447a4dc1a0e2143013a8199e05b54e875168e65ce52"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-new-to-yoga-teacher-training-mobile.json",
-      "sha256": "432684d4bbeca3b38f8cd63757c57cc883862f2bec53f0651da5244f5ef540ab"
+      "sha256": "078bf560b40483c8a259f432de11704df09adc35560b440e58f97b704f7c6133"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-no-preservatives-desktop.json",
@@ -1049,19 +1049,19 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-training-programs-desktop.json",
-      "sha256": "ba11258fa085398315fdfe34cdd8c9e626a2c31345d4605e5d199735ce477816"
+      "sha256": "13f7a0820f0127fe2d4b00608586b05137fda1ccf6755633b27b974db6756921"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-training-programs-mobile.json",
-      "sha256": "a09e7c1bbb463b64cab146a5e670266e3bebe8b32906935148619bc0364a926e"
+      "sha256": "917158368bb211f66a583bfc84b3ccf2344de8da343a7688cd5a66fd357e4274"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-treatment-programs-desktop.json",
-      "sha256": "cd109147f7cdca06bace1edeba309456a831b643bd26a2eebe98ca95b285e7d9"
+      "sha256": "27fe210c6105fd39c1763be0d367b2e423ba1a2d9c4023c19c244449cf2a1dc2"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-treatment-programs-mobile.json",
-      "sha256": "169a5fd3b9cd4cb9feb60dbdde4a7b8c2029e198acc6e023e1b5cd25ac01b3c8"
+      "sha256": "641108494b42c100b69a8f6604b9390d703f773eba8f8a459b9fe8406c4c5123"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-vision-eye-rejuvenation-desktop.json",
@@ -1081,11 +1081,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-wellness-programs-desktop.json",
-      "sha256": "46282ca5af421934989a8f98fd6c77f869d60404000e6dc935b8662b9739d5fa"
+      "sha256": "d26fa58ffb3d9361e4b0baf997aa128770231c708680c8684c870d07b74c6643"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-wellness-programs-mobile.json",
-      "sha256": "e0b3766d5f4d573c62cb84b0773f4f11bfaf0c1b3da1c01e97782b3bb529b9ae"
+      "sha256": "be4864bb687d829251c457ae5f38abe43c6c4e08a0b5065d675642963f0bacc1"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-womens-hormonal-balance-desktop.json",
@@ -1113,27 +1113,27 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-yoga-meditation-program-desktop.json",
-      "sha256": "08b92f559e7325f7871ac1d00bd50b2c892b921b26efc9da63b5b6e4979de7ad"
+      "sha256": "569fde9b98c8e50afb149f5d20034f198e16c23d2f44c47095d7a1700e256870"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-yoga-meditation-program-mobile.json",
-      "sha256": "f450b918d901acd89ddcfb05c16993d1686845620d3f456bcbf55e7b7c6b609e"
+      "sha256": "d880270a0bf57ba97b632eedc5ace4e93054bbe58aeb69812839fe35dd8de763"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-yoga-meditation-programs-desktop.json",
-      "sha256": "0a68f7b3d12eb0638c3e4f67a6b5e4d492586be35cb8922bc535d198883ff4f6"
+      "sha256": "f949692fb0b02e9b28bb494fef07b5394622943f4e94985837a8722a69718ef3"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-yoga-meditation-programs-mobile.json",
-      "sha256": "9236ad68c4f8a8f05302b3b5c0110325b7d77ffda085cf95a5a6c65ff2a76c89"
+      "sha256": "709ef3bab00ffb5d2fb5cf3a422a1e882d1b47998817cd4fef8af202c98cb184"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-yoga-meditation-training-desktop.json",
-      "sha256": "1936771884d3fd57b54e31c1c8fbae1e1eee8c28f6bdd8f77187ea83daed26e2"
+      "sha256": "b98bd1325caf4928c3c54b499b8f00f1926cd5fba242a4546541dc97937b2f25"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-yoga-meditation-training-mobile.json",
-      "sha256": "105969aaa6a04a4398fe70a5bd400edafbb99d10ff3a7c6db278e068bb724faa"
+      "sha256": "c6fa56ae23883b2b63a51b8100deaf85fa192771fc9970737999d8f752b4b970"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-yoga-retreats-desktop.json",
@@ -1209,7 +1209,7 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/home-hi-fi-v4.json",
-      "sha256": "93b863f9d76fe6d9b46aaa85e74b6001a2e4f7824867995ed0c178de2d01fcc8"
+      "sha256": "d87b90a9f961e83c6d2f064ae5c86d9fc9bede4a5dfbd293f3cb0554cb8adb2b"
     },
     {
       "file": "public/ahv/l10n/ar/views/home-mobile.json",
@@ -1577,11 +1577,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-all-programs-desktop.json",
-      "sha256": "01061b8d753f57af4c67785d81e586c3227caa1c94028d2b22853c4753092f55"
+      "sha256": "d95c19806327066c80cb8f8dce18e7f0226620a3dddf11f00c8e1c9b48c3bb0c"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-all-programs-mobile.json",
-      "sha256": "9081b02a03fc458f50e4bf86394d3e46c44f634d66db09a498fa82a6b30a492b"
+      "sha256": "4441b88a8eceb7108f1c0cc0fd60b4ca51e34a849501ad2e6b39decbff9f48fe"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-ananda-lahari-retreat-desktop.json",
@@ -1657,11 +1657,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-ayurvedic-treatments-desktop.json",
-      "sha256": "325235869118306b286f4bbba111c92ac0656bf78709b8b3879ef04e11074b2f"
+      "sha256": "1d0b393be8b6824b3304523f20b3d9adebf548c77729bdacf7bfcfa08dd9cfb7"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-ayurvedic-treatments-mobile.json",
-      "sha256": "a9741b8800963a131770a24641d4f984623c4ce475a2e7e901756da70edf76ae"
+      "sha256": "7761a46fbc2a753001154628c5bb4e0745ad2552756551683f2bdbf6b468028a"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-ayuryoga-desktop.json",
@@ -1929,11 +1929,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
-      "sha256": "893aba2ec0db5a1b11f9f9bd20094efca0b9941db1be62191bd3ee77cd1f3227"
+      "sha256": "2faa5b23b22d6a385b16095134faf9f462ecb70f8cdfa19b61dcef2c780109e6"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-new-to-yoga-teacher-training-mobile.json",
-      "sha256": "8860f055d292cc65c5f0135fef1eb5ba6803dc6a7866bcdfab0471435e5f9620"
+      "sha256": "8a9b8de8936400c1f45aad2f47a78da74735b38ec6bfcee994083667fb19e06c"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-no-preservatives-desktop.json",
@@ -2105,19 +2105,19 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-training-programs-desktop.json",
-      "sha256": "424a9f0d3bce903920dc1b1cec32673cfaf4e2e228d376ee0a4febb9076e7d13"
+      "sha256": "1dad264218dc0c4504ec2d0b10d42b636ce2114a3045cd6cacee8bbc026e983c"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-training-programs-mobile.json",
-      "sha256": "100da5504d23bc57c8077156a573b1dbadc958072652b2f12621e1c704cd9af2"
+      "sha256": "6c87bbb2d155e5d5c1f8526e0400c75a70eeba797ba6a31b51f5afa0511f9533"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-treatment-programs-desktop.json",
-      "sha256": "5cef651bbe5c34b591bc84987f0487460f594dec23b905f6d4101f117911708a"
+      "sha256": "5bfcb175b0fb7611ac408ece27755f5bab5e63df94e50d2608ea71e163c673b7"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-treatment-programs-mobile.json",
-      "sha256": "a8a5944417677a52dc3925aeaa3a159690a98083c4706b11df5be7aa03b551cc"
+      "sha256": "67894070976aa5381b9e146f1d075507ae9197aab1e0dc72ae9c3443aaa8c9ec"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-vision-eye-rejuvenation-desktop.json",
@@ -2137,11 +2137,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-wellness-programs-desktop.json",
-      "sha256": "53a3769aefee26a8254b37def62db5cd50e1eae213acb09923683a984882967c"
+      "sha256": "14026fa635ab349f6c9fc1543e6ff932aaf8e55d680292e1694c6596fa877bb6"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-wellness-programs-mobile.json",
-      "sha256": "a88582d90f897d2fac50500bfc2f329ca9bd2173edfcd8944d9956f5d0f109cb"
+      "sha256": "daef487d9fd38f09550e59bb1f27ad5a5cb5726b9df46c52f68717efa8bacd9f"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-womens-hormonal-balance-desktop.json",
@@ -2169,27 +2169,27 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-yoga-meditation-program-desktop.json",
-      "sha256": "f9e2d9468c7d0d8ea4a4d154ea025668670c9db9ce429461b628a031073c6bad"
+      "sha256": "73cd2210b4f25e6f007ce48884b19444be62b8bd3e259fbd147f83cadfc07ace"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-yoga-meditation-program-mobile.json",
-      "sha256": "cffb2cf6edf75258c0db31477d5a6da0d5f8ad77e37be451bf274c04a9a74c28"
+      "sha256": "efab805f3d63fd9b0dc0c83f875dd13af28edda1e50a9af338e805b4bb57cfd2"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-yoga-meditation-programs-desktop.json",
-      "sha256": "674904d7fc45ac2e40c3b4acd78a95a5ce2640a7714b1ac5a040f9027e613360"
+      "sha256": "9e1b83568b7f8cd8cb74fbee22af044a2366801a7449bf76b5a40f0fe81d5502"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-yoga-meditation-programs-mobile.json",
-      "sha256": "a72099143711f81098df647cd7878ec9def59ebe56c3c5c9f71274db8e889680"
+      "sha256": "d1df2fe1b18b7280ce58ed730933747ae21849643a1909a75019ae98995a5893"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-yoga-meditation-training-desktop.json",
-      "sha256": "0736989e3daf9fae4e3db5ee95dbf5fd97ee651308886edac238f4713e3fbfce"
+      "sha256": "f68e5d597ff5f8d2951f1600cee2112da1bebee870ce47f6b86b71675dc0845b"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-yoga-meditation-training-mobile.json",
-      "sha256": "d5163bf545b10d0521a80aa76a9a1a91b871ba67be9a4b348fae22eccdcf4abe"
+      "sha256": "0004f9a7a3c497d9c73f5a5405e58969311b25b93cd1a3fbd050ca19163ae33f"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-yoga-retreats-desktop.json",
@@ -2265,7 +2265,7 @@
     },
     {
       "file": "public/ahv/l10n/de/views/home-hi-fi-v4.json",
-      "sha256": "6d796e3cd6f1387558086f0d9e6165e78a10675e7d63ec75db7d658f486baac8"
+      "sha256": "261b8d55feef0b61a939d542c8c1e64b511a40d10dd13171735ca36bf4cb1af8"
     },
     {
       "file": "public/ahv/l10n/de/views/home-mobile.json",
@@ -2633,11 +2633,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-all-programs-desktop.json",
-      "sha256": "58414993e86622cf324fc0e15ed34abf7096475691aa4db7f3f833615589ee03"
+      "sha256": "f1091dfcae453a31932291fdffe7ccc3ee1fbe76e4fcf6e200037343de0e030c"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-all-programs-mobile.json",
-      "sha256": "0f880c56dd592d3b4c8ab78720ded2bb623b18cd1f121fb893c98f30ea16d22e"
+      "sha256": "653f05c200ea79c6ee09b75334938b4a2b15e165a7f177d8b6550b4374160e6f"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-ananda-lahari-retreat-desktop.json",
@@ -2713,11 +2713,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-ayurvedic-treatments-desktop.json",
-      "sha256": "f4dba50987baf8b47ecd4cd28f1d54732be5b23805b066dc08df32296f0ffa8b"
+      "sha256": "24e90eee8dd68c31db10c35e07ee4a9ba347656d2e98f721ed2d0b2a22b3fd1a"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-ayurvedic-treatments-mobile.json",
-      "sha256": "154a5d0e63f93bc1e831c2b3873731fa3214a88d6eedaf3bc5c21273f8004f60"
+      "sha256": "4d88e8e62ec268578e29ed56562952e6635e9a35a80b8b000e4b40e1a41bec72"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-ayuryoga-desktop.json",
@@ -2985,11 +2985,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
-      "sha256": "2a200a6b43432ddac81bdf077de0e217c9c3a9f339ee45fd0b42c1c2703863a3"
+      "sha256": "764e175f8fb29dc7a95aad94e20cf71b00219c40295e5509e806e640144e2468"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-new-to-yoga-teacher-training-mobile.json",
-      "sha256": "64779edbc13cf9774dbb86c744f7753c47eed3e032dec2b8b8d37b59814862d0"
+      "sha256": "e05093e4dccab298b0f527d00d220cb660fbed7b68ca07a927c821bc96021105"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-no-preservatives-desktop.json",
@@ -3161,19 +3161,19 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-training-programs-desktop.json",
-      "sha256": "1616db7d0331d956e7f54edea730f205f0b7c8dca3dd8c12dcf68e678a0b040c"
+      "sha256": "0f830016c47efc87994bc7b52d71fe5b3a39a277ccb6134303de7c416e2a9102"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-training-programs-mobile.json",
-      "sha256": "8d15e271635a87b64186b6c6bbd386b25fe1d227a1fdca3b1b93ff0bb14fa431"
+      "sha256": "aec4a02e9524b29d581518bfa6f2059463ad6be86f9191055b1c7177f12816ef"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-treatment-programs-desktop.json",
-      "sha256": "fdaf3732e31ad320481063a40ec24a29ba4a446c5eaefd32bf1599df670e5e99"
+      "sha256": "33d6fa7fef7d7744df08a05ce0ebf55551e625d6f7857e56783271c1aae0bb2f"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-treatment-programs-mobile.json",
-      "sha256": "2fda9dd567c51489ab41321d00241099d038c926ce228c902d6ad22b433638f8"
+      "sha256": "f2a5a848b869ca88350180e5809b657091e9db5b24d67ca71b143bd04f6617fa"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-vision-eye-rejuvenation-desktop.json",
@@ -3193,11 +3193,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-wellness-programs-desktop.json",
-      "sha256": "8a8dee42fe1910acfb20643112b93070e478f80f60a9cfbfc943364257427cfb"
+      "sha256": "ddab70ca5fa5b1f5308eaef4e965aa8822dfa0ef14a7421a54d53f479f3a85ea"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-wellness-programs-mobile.json",
-      "sha256": "4702f362e52b06cc54cac609b8e8d7cad91826237fb146fa7a7d2b200a91dde9"
+      "sha256": "67e35255705f6a75ceb8dc7ea3c53c972c44d46cce3863a328f7ee076ddd05d6"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-womens-hormonal-balance-desktop.json",
@@ -3225,27 +3225,27 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-yoga-meditation-program-desktop.json",
-      "sha256": "708156901745e942a12676eaebdfd445bb4bc837dfd612ab555b7aad08d27f33"
+      "sha256": "e4530f9681a08e797be1c8a50dec876e73fd506893e300a8815286a8ddd39410"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-yoga-meditation-program-mobile.json",
-      "sha256": "7fb107ea5cd4de1bd65082e3aa6580bc36fdaebdbdf960a3aca6ed99904bdbfa"
+      "sha256": "453fae9fc8ebe8e97a30022e00fbbe5511390a791aa1d49d7abe2e84ef2eefb4"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-yoga-meditation-programs-desktop.json",
-      "sha256": "dc2199016c7f428db42babe58f8b195df37eba382bbb2d49ee58e5c2e8c28c8c"
+      "sha256": "fe2f39df9a42a9d5a13600cc3cfc2ff83bcab1f51107d0af0570c612befdf1a7"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-yoga-meditation-programs-mobile.json",
-      "sha256": "4e76ceb692040c50dfce88a6aa23da12d205cc991a9871eab9d0cd7a10648aef"
+      "sha256": "f7de6b4856de60bc12f0bc4ddac943dc20a51d244c6605842592e183f34adb5e"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-yoga-meditation-training-desktop.json",
-      "sha256": "b4ec818b360cf10a4fe97067698fccd419ba6e0cbbbb5de225617a160d3d6a89"
+      "sha256": "669031ac37e06bd32abb4ccd21a0b45237e281423fcac0cb497c2e98c090f0fa"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-yoga-meditation-training-mobile.json",
-      "sha256": "4af470e13ea8e02f24b6a3dc88592b0d7c38d037e543eaf9b0e8b46f0c092ecb"
+      "sha256": "9c38da85e96445818154e1bb6ba73d3d81512afd902032e7b135c1b6fb28a2b1"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-yoga-retreats-desktop.json",
@@ -3321,7 +3321,7 @@
     },
     {
       "file": "public/ahv/l10n/es/views/home-hi-fi-v4.json",
-      "sha256": "175754183a3064b21e7220180407fd8ad64a82555ad5336732585d05ddcb4bae"
+      "sha256": "31a0fe5f9528e11f2d001af13487e49775896a2c8fc6569f1bb3c1f84dcb2fd7"
     },
     {
       "file": "public/ahv/l10n/es/views/home-mobile.json",
@@ -3689,11 +3689,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-all-programs-desktop.json",
-      "sha256": "67b9702fa4ff626f3458ccb22bb82443a492a8964d2615abe03c4987311ee90d"
+      "sha256": "ed5683867438a2f4a1aa2179c24c91e58f2beb7a1d2e16deb6259f060178959f"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-all-programs-mobile.json",
-      "sha256": "be4b1245849cd3ed67f7acb6ed5df8c93809ddda0d843b5f9ce8d83fb9bdfb4b"
+      "sha256": "a69f8fc52d8514275e8de0d161ae57b3d1fa43c8087893d0a545d9d363120344"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-ananda-lahari-retreat-desktop.json",
@@ -3769,11 +3769,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-ayurvedic-treatments-desktop.json",
-      "sha256": "f364a97497e89420d821fc0783cdb0bc59ca5c94240ef78016d6214b2e0fdefa"
+      "sha256": "414e1d12409db6973f96a09ae62f1f83b84d4e5657156e00512d1e2f0507d542"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-ayurvedic-treatments-mobile.json",
-      "sha256": "2e7c191975b833c7d0503bef28168b070cdf538f8d5966187998a27e441c2084"
+      "sha256": "9b0d69a766db4381acb351a693e9b4741771dbc0d70a4571506ef71ad32322c0"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-ayuryoga-desktop.json",
@@ -4041,11 +4041,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
-      "sha256": "a87084611206c42af40a8703631f6a044b9c97d0d21ae9fe7802fdccd9326004"
+      "sha256": "683d3e2281577c1a470ddd6a1d2814b4d797d490233dad7fba1412ce28c07c53"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-new-to-yoga-teacher-training-mobile.json",
-      "sha256": "bf2a033887a2b3d9e0580ed843df4d4c3a6f43a01b733f7d857a1f8cbc042035"
+      "sha256": "4eec7adcc621407969f23bf8dbf7b2fd6487e239345dd8b65116f052d24bdb24"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-no-preservatives-desktop.json",
@@ -4217,19 +4217,19 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-training-programs-desktop.json",
-      "sha256": "23be007c023394fe85bb21a73b1331b988439aa7460b563abdbb87d64dd3e175"
+      "sha256": "9783243678d043df87e834ad43b3235b738bcffff6da30b094f8ee79e757ed55"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-training-programs-mobile.json",
-      "sha256": "a936fb2d9e7d9385698c49058d53564173774750377927927fddfcede9872bc3"
+      "sha256": "e8d712d93ac62010fa2cf48e284cbd9cf136627fd62a15bc451860e7e7745b13"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-treatment-programs-desktop.json",
-      "sha256": "6182d332f64662c10291a46b98bde7dd55d96d1dc20d7db2d20e21ca83a84b86"
+      "sha256": "f042daab1b0d7bfa3cb1b7e763cd0f84abb0fb725f6a41277b6d1bd2cd9ea0d2"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-treatment-programs-mobile.json",
-      "sha256": "f94c38c77b2c301430f9e1015f338bc029e3b5b0704fb480debf2400dd114bb7"
+      "sha256": "8dfa0e4ac07ebc7978d42549d605992771ac0f3b08e4ddac514f69077fe7977e"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-vision-eye-rejuvenation-desktop.json",
@@ -4249,11 +4249,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-wellness-programs-desktop.json",
-      "sha256": "7d25238d4d85ed2399fa934b4cf77e973b953de5be0014025111911c9f017035"
+      "sha256": "da46ac755f361a4222301558800719d15fdd86c9ac625ab7c69fa40781186728"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-wellness-programs-mobile.json",
-      "sha256": "0088dd88627efd3294a0c6c89bdd87d707ed7128b4a6a73a8753368b6972028f"
+      "sha256": "38fd712b051664e79b5e6e6e4047306886375b26b76d7fbd6b6f08e76cf3952d"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-womens-hormonal-balance-desktop.json",
@@ -4281,27 +4281,27 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-yoga-meditation-program-desktop.json",
-      "sha256": "28cc8ba93f1f70b10b7d8ad54dc559b314dcdd3e1f80d2a45f15019c6c54cb2b"
+      "sha256": "6626e34883ee43136297c014f4fa37d2599ac7cd562d755073f12282a308c7f8"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-yoga-meditation-program-mobile.json",
-      "sha256": "e365c35aa4f7324f2f5a0121aa5732aafc03903048ed9be8b79e7b7557ee6a52"
+      "sha256": "a25c6ecb1c8c428e7d59f5c12a28b9093c7e59a278fb08c5cad009d60c3600cb"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-yoga-meditation-programs-desktop.json",
-      "sha256": "8c5dcafce7a2ffff8fc83dab4ead27cd09873ca04e25eeca3cb58ecd9c91e3f2"
+      "sha256": "1151dabd964f9634d6ea7a7ce947dddd061d6da32dbc1a4d8d911dfc7ff711fe"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-yoga-meditation-programs-mobile.json",
-      "sha256": "1cd2c522363b30d9e322c03e223be5572065a8dea196d58ac2226bc3312085e0"
+      "sha256": "2528421bd67ab7d7ed1c825b1a603cf1baaf25d822e59597708045c94573059d"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-yoga-meditation-training-desktop.json",
-      "sha256": "68037eed4fae467d01d6f8e593de96496ff6a4a8ea368fcbd76e3f41a47fd686"
+      "sha256": "b0e1f10f72b15e71c668144f12251967476beccd0b494c9a0882b3e49c2818bb"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-yoga-meditation-training-mobile.json",
-      "sha256": "23ff249dd8d18a1ab1486eb757ced7cf5fb455ac4d7a998115d678eed99df877"
+      "sha256": "811c059fc884d934683664d7e931a2cfe778883b50f154b28448def7656897e7"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-yoga-retreats-desktop.json",
@@ -4377,7 +4377,7 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/home-hi-fi-v4.json",
-      "sha256": "6a4ad7d46f52702b60fd209cb5f1024dfe24d487c4ce9e32d3d45301c35d4d79"
+      "sha256": "9f6ae3a4f25c928d6b5decaf7de552d9286863c457fffead7fae1cbbc8cd4561"
     },
     {
       "file": "public/ahv/l10n/fr/views/home-mobile.json",
@@ -4745,11 +4745,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-all-programs-desktop.json",
-      "sha256": "bac66db1572608753942cce281c808891d36beb48fd9ccbe72474cd58e0def49"
+      "sha256": "0d3130263521612923dd63f9aaa72b9c5b6d6eef5f68ff2eefef17b6d229cb11"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-all-programs-mobile.json",
-      "sha256": "db03f7c0cb34121018848c285f53ae5dab73737e085c8b102a04b4aeb7cd6340"
+      "sha256": "1b8c1210aeb8664485e38a6f01fc7a1ead7fa6fd3abc038b10a61c49fdedd4b3"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-ananda-lahari-retreat-desktop.json",
@@ -4825,11 +4825,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-ayurvedic-treatments-desktop.json",
-      "sha256": "397b9241ae31fde98180be5a4914d6de84cac0f575f9bb2aa73e38404018e661"
+      "sha256": "a5eee8811645ef8c2cc8ff8e1c095b170396ad97771fe40bec3b2959bc2c732e"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-ayurvedic-treatments-mobile.json",
-      "sha256": "f98f201aeb6112bc9f8cbd19f9fb0ea8272bdaa201f9ddbad2dc775d9e8833a1"
+      "sha256": "41f45199f04ec754b433773a45e4af4d0b567b848d3db544553adadd512f4513"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-ayuryoga-desktop.json",
@@ -5097,11 +5097,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
-      "sha256": "25cb1fbbc6d03c521b6effefc912ff68cc406b58e55c8ee57b5af7bd08fa2376"
+      "sha256": "7ce832af7efd844d2e3b71b04a9500a3d0978d475d7617115f3337a7a5462eb6"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-new-to-yoga-teacher-training-mobile.json",
-      "sha256": "f7c757fcc980aa9529c6a03ae89031cfa9c5fb9c1584e9c75a410e120645bd35"
+      "sha256": "2c98f527f242646af476758213edf713f09e2176d09c918c40b5c170983589d7"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-no-preservatives-desktop.json",
@@ -5273,19 +5273,19 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-training-programs-desktop.json",
-      "sha256": "b3bdf00815c3f14da8a36a3cea09df8aabecca08c75a7b8f7292be33492c5c5a"
+      "sha256": "fdb8aaed480d248f04d07bcdb2688491f1d54165c0e72eab1a767b330da3d228"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-training-programs-mobile.json",
-      "sha256": "23eaf48427534f1ec7e2673eb5640d9b53f63d4662ce53774d2ab7ef17897417"
+      "sha256": "5eaaaf36df1c7bcceb1a22aa0d613edc4bd65a002566ab276a9b6a6d4c024797"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-treatment-programs-desktop.json",
-      "sha256": "77f93b7a3658ef8d52dbfa2d6ff9e0152bc9d0348ff1d57a89c8bd0e04008bee"
+      "sha256": "9f64a6014afab60f718c8e4fe855540b6d9b4506127fe8a876cfdfc851f3ef1b"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-treatment-programs-mobile.json",
-      "sha256": "ac410a61a0dea5549d2f75869197e70183f359a26d0a7ebb969586113fa02b38"
+      "sha256": "84575afaa11b56216f5f24ca711a8df11225a9fc2a1312bab552754a2cff86af"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-vision-eye-rejuvenation-desktop.json",
@@ -5305,11 +5305,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-wellness-programs-desktop.json",
-      "sha256": "779f70f03984372a8446682aa807b15a83f6d0c2998ea8fa7069f931e00abc42"
+      "sha256": "217fada0333b6acd7c1835b536d78c818d32164c90977f46cea38ea1b9351aa3"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-wellness-programs-mobile.json",
-      "sha256": "01bc0c96dc20f1fca01ac5a085b4114ccb03ea6dddf122cb2e7eb86d78bb756d"
+      "sha256": "3fa65003966ebd055182ca40ce9660cfa867dfdd5f5052500b43e7e7c33aa178"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-womens-hormonal-balance-desktop.json",
@@ -5337,27 +5337,27 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-yoga-meditation-program-desktop.json",
-      "sha256": "af0df5d223b994bafa97f81cbef559db47c1233a5958b8630af5b0c2ef5a0cb3"
+      "sha256": "d2f8a79537e36240b3006510868fb3b785125034159f753cc2a7f2772561e2e7"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-yoga-meditation-program-mobile.json",
-      "sha256": "2cded31c5bde9355e8677c89af329f00f7fe014e242b1f32bb8c09736fa7899d"
+      "sha256": "ad52e958e5a448193930bddc548815c325b5b8dc8445fdac532fc3f9874bc191"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-yoga-meditation-programs-desktop.json",
-      "sha256": "85ef1ab16270254955cc6f47323a0fd16ee9cedc57ee8f02770d2848138438a8"
+      "sha256": "346dbb0062bd931eb718382fc7694c2592559fa25289fb86f9994db89734155f"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-yoga-meditation-programs-mobile.json",
-      "sha256": "e8a0cb8d0b409037212fe50205173c67209af2cbbd6448ce20ab54b0184501f4"
+      "sha256": "eb7265ab29d9df59f8f7637b12381a865965863f4458c6d2b46e0576764ee0e3"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-yoga-meditation-training-desktop.json",
-      "sha256": "ee9db1caf3744fab01b1d2ab1b74e5dcfe2072e563ff9dd0949ae59f5709f9b9"
+      "sha256": "3662ac7cdfe7b05f26030eca6dd6aebba10ec9a38274954338dd484ce713211b"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-yoga-meditation-training-mobile.json",
-      "sha256": "8ba5f8826152fb636bf7b2a7816dd4d0d15fd4e226aa6641edac8d44c6bac14d"
+      "sha256": "3b5e51bd461b6693bebfa51d513a0486edca81df33753e8c1c52041b9dd41c78"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-yoga-retreats-desktop.json",
@@ -5433,7 +5433,7 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/home-hi-fi-v4.json",
-      "sha256": "9f782b49a0458f63e9f63d2699f79197eea80f6588df72eb3dfdf2a81b4dac49"
+      "sha256": "392d0733e5e06ef0b84c6682b9e2819fac94fe7bf841fd77a47d829d4f647426"
     },
     {
       "file": "public/ahv/l10n/hi/views/home-mobile.json",
@@ -5801,11 +5801,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-all-programs-desktop.json",
-      "sha256": "ed74df87cd5dd7d159ff4f1c5a1521bdb963057e353773d1e71d7b40cc23f20d"
+      "sha256": "133a5b8ec21e25362a76e0d6a99a3bb4686f859cd27c32daae56457eb9582f41"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-all-programs-mobile.json",
-      "sha256": "6f16f7d75bc1448aa9d3a1c3cf45b51dceff3d51ba977fa2dc3ac33209abed98"
+      "sha256": "c324e4389c82526e2a8df10da8e76540ec5460b960a65d4da1cf30589f223a1d"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-ananda-lahari-retreat-desktop.json",
@@ -5881,11 +5881,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-ayurvedic-treatments-desktop.json",
-      "sha256": "6152f850a1021dcc801ebd8970cd38426accb4c1d0254ee754ba1daa24da1d5f"
+      "sha256": "67621dfa8f85ae56dfc62844c412ded6c2d15f9b54dc722d834dd002fa6b17d5"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-ayurvedic-treatments-mobile.json",
-      "sha256": "950773387dc38563c89b418a53e275adfa3a250e1d02f6647d57fa088f012290"
+      "sha256": "8a62a840b647295bc6a74682342108f200849433634e67ce97a4d7bba29c8465"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-ayuryoga-desktop.json",
@@ -6153,11 +6153,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
-      "sha256": "8bb3b61cafc5338f6f33004cc63d24450228d4023fe3b2b278e5a4e77f9b3074"
+      "sha256": "230d65a35258d4747534a1b1b6f32a4f51fe0d672877e47458348c67aecd2243"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-new-to-yoga-teacher-training-mobile.json",
-      "sha256": "309e8b7eebe3576254559b536534bca896d9f8d7728f1c7f13e40335e63a2050"
+      "sha256": "977b61f72ba89e99a8d3b66723c8e1ea66e2fa59f12ec1e1b999261a0cbe4234"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-no-preservatives-desktop.json",
@@ -6329,19 +6329,19 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-training-programs-desktop.json",
-      "sha256": "85a19cf8cae6f05d48048abb667c2751becc634d3fc151f84c023d902c9fd7b7"
+      "sha256": "465ce22eb8c0dd839e0763393a3a17625336d00f2edc785b1e7aaad18720d814"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-training-programs-mobile.json",
-      "sha256": "d00dcb57ba6e070b957b5ead996f9263e26b06b1440cd55c2b03f4a4c17c8725"
+      "sha256": "b55b7a58f54386267424ae67377c12cc4b75ea73d003aa23a8880d980c8d903d"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-treatment-programs-desktop.json",
-      "sha256": "b6c9785e96e398366520116071637e8f4f02769ea80c19e862a4ca2cdd5563a7"
+      "sha256": "e2aa675830017664fa1388bf0cd15b51d24b8d3393c87339ece555b9248c68de"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-treatment-programs-mobile.json",
-      "sha256": "fafb7f95199dc10c9dd64760ebbfbd5d34356b87ff5ff626bcc4a830adbd09e1"
+      "sha256": "7bcec2b7079841b3a9d73b38a291a098f8174b0d795e47b7e8fb86790bc48564"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-vision-eye-rejuvenation-desktop.json",
@@ -6361,11 +6361,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-wellness-programs-desktop.json",
-      "sha256": "5ad405c596a420618ff0a6f25c8fec0e501ffcea0dd20b1f11426006f5f4347f"
+      "sha256": "354f31cd9454ad2b15496030e450a4503282ca8f5a40f751407781ad824ff370"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-wellness-programs-mobile.json",
-      "sha256": "0330c406c327f5adfdbc3f7b2d344c84e220f54003f80532456b8b2fa86164ef"
+      "sha256": "22078d61af0b7b37930fdc53261ad1511a7b9883f9fbe9ee7022439fff472614"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-womens-hormonal-balance-desktop.json",
@@ -6393,27 +6393,27 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-yoga-meditation-program-desktop.json",
-      "sha256": "0dab34d56c8e51f06def7328b6e70c31c7e8808565ae66b69924616d9bfbc988"
+      "sha256": "847a5bea2d57ed3b2873f75e530e66c933f92f7d52d0720197ae0a46d0e0e660"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-yoga-meditation-program-mobile.json",
-      "sha256": "f1c5342ab45133a506906b42971792972b0bd210fe3e565fcc82d59c1eef1258"
+      "sha256": "c68168de73f35a77cc81c557b4eded67cb0e0fab1c5a28fb26b53d34f071ce4f"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-yoga-meditation-programs-desktop.json",
-      "sha256": "ea6618d113948cacb2a1293a6a4411d9fddd7ea130bd1670ec4c177611ba707e"
+      "sha256": "ef934da8a2cc22ee964c71377e9d5ff84788c0dc829075afbd09b20341b62481"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-yoga-meditation-programs-mobile.json",
-      "sha256": "f4fde73667fe60d538546e0977b80f8cc1a39fa1f8ee7773026df12e782fb3b2"
+      "sha256": "bce8f3f4e581ea4919d0e058a0e95a23fe8d2add3f52657a8ce9e6d072ebf4b9"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-yoga-meditation-training-desktop.json",
-      "sha256": "219fb03a6e76a3561d91da242dc40b1b2a22ab5307d51ca6cdf9572a56c087ae"
+      "sha256": "606c575951659fb270b3368c1cdbe650a2a4ad0f6c07426f4637bf35ce2f28d6"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-yoga-meditation-training-mobile.json",
-      "sha256": "1335441a6753445fb6393ffa31ce697cfb5f3ddf4dd0d071eb4c223ceaadaf05"
+      "sha256": "0d3ca1b12f54ec47b763881b2931580bd323f322a06a920b6e6b0db66cada569"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-yoga-retreats-desktop.json",
@@ -6489,7 +6489,7 @@
     },
     {
       "file": "public/ahv/l10n/it/views/home-hi-fi-v4.json",
-      "sha256": "096d5340310d0f30a36bfd54134e6dba80bd5ca97b4d23fea30460f8b6e32379"
+      "sha256": "cd1e6a89872f7312e02630889587324ba0cfe314375a37adb0f1eab73ea17213"
     },
     {
       "file": "public/ahv/l10n/it/views/home-mobile.json",
@@ -6857,11 +6857,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-all-programs-desktop.json",
-      "sha256": "e1e1db691c89d405a97e94e7f694ed560a69aaa8634e017a83ebf4842d2b7118"
+      "sha256": "b6642565ae1a615fc14ccd7ed470dc0d5672692e4aff9dd633730b2aa920f908"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-all-programs-mobile.json",
-      "sha256": "b1f2317fec34d6dd1ac8d610b881973c29a06a5a5c207a320fa948d40a7c8df1"
+      "sha256": "1a515f220989e46d6f80647fdca3047d6af1e54e180ee08e6ae8d5195d4e24d0"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-ananda-lahari-retreat-desktop.json",
@@ -6937,11 +6937,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-ayurvedic-treatments-desktop.json",
-      "sha256": "0510a884ecea547a51ae4cb831d2cb3c33bea7b5cc8df795d023bf0019840b3d"
+      "sha256": "ade2f9a84dbb69081b3d63f4bd26de79ea19c529802a0f1af2ae6688da5871cf"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-ayurvedic-treatments-mobile.json",
-      "sha256": "7af09b9d5f11bf24c042ff2215a3a21c5dfbcfbb7e55eff5276ee991621ed4fd"
+      "sha256": "9d11f058063d9dc13c7df5b5dc86fd3046c7d568ce1a371fe9d1101e2d59e69b"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-ayuryoga-desktop.json",
@@ -7209,11 +7209,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
-      "sha256": "38cd8c2c8432979175241587872b4f85c2b44b44b6b2294a2d848167735e9fe5"
+      "sha256": "d1b289bf231782318935b511eec1f1aa410c6a20992a2a9c1c10d8115b25ae3f"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-new-to-yoga-teacher-training-mobile.json",
-      "sha256": "26deaaec802c0e67dfc936bd698998dfb9aa6e3d53d7d4b90bea669b2e8f72d9"
+      "sha256": "0aa1de72d590e5f83c8254101d1a1be2cac2dedede5bf58a0303f45225db6ac8"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-no-preservatives-desktop.json",
@@ -7385,19 +7385,19 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-training-programs-desktop.json",
-      "sha256": "257ec796bebfab7786cae2dacaf945f727ddc152b688b83112a9d8de724ab8da"
+      "sha256": "6f0a90212012cfb3cd7e5818d924a8c32fc207adcc00bb7d682e525b1e47e2c3"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-training-programs-mobile.json",
-      "sha256": "a97e334e2ca4abd7f82b8bdbd7cd180978371a65eb4ebf891ab53cb265c151fe"
+      "sha256": "755d21d425beb027a7c1835f5557b6010dcc76366d6b1135cd992b530735a624"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-treatment-programs-desktop.json",
-      "sha256": "a4a5167e403747b3681b3a46a96cb5a4c823e1b23837adbc21ad8fdd9496de80"
+      "sha256": "6920f3def3dc559b7db2d8cfdd51f811e9a17073ac8caf346041046a16c905ce"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-treatment-programs-mobile.json",
-      "sha256": "d2d573d65b4da3dd9ccbb7759d7dfd79e0838474c2df75d28bd5477650927c22"
+      "sha256": "b2682c57e1265e406de254887ef702fd2dedc5135b3ae123778bd7e1e43ea145"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-vision-eye-rejuvenation-desktop.json",
@@ -7417,11 +7417,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-wellness-programs-desktop.json",
-      "sha256": "b48a87508b3d62c7272bf92fbc33dabcfa9ad3a9dd1f239791d5de924244afab"
+      "sha256": "18098469723b341a1c5ec90af6edb25a9d788c0e1132741a3c517b6699f2bc62"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-wellness-programs-mobile.json",
-      "sha256": "acde210fc136e15080ede82ec3cb2ece6f9047097bb2108766fa98e7a45871c6"
+      "sha256": "fc4a0debe29204e2b30a5d3005851baf1814c99e8db4f06a35a7ec200ecb5efc"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-womens-hormonal-balance-desktop.json",
@@ -7449,27 +7449,27 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-yoga-meditation-program-desktop.json",
-      "sha256": "21d76c8265c7f08f6c269a5c20dc252e1d032583860951a2ee29c783d5c0ddc3"
+      "sha256": "81cc10e4db1a9c2cb697053521a20ebbce297fcbb20a41383ea591c150ce32b8"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-yoga-meditation-program-mobile.json",
-      "sha256": "94c238555590896199c5098fa8224a54351c8d9092bc10f61a4a13e9d71502d8"
+      "sha256": "ff00e20bde214945051ce83ce21b847e5ed63c27c86597286a4f8ffa60e35264"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-yoga-meditation-programs-desktop.json",
-      "sha256": "8869ac22b394fb567f970a2956a26008107e332ff5aa3de1c20c0c6b461f9c15"
+      "sha256": "6d7138efb2d3f267db193eba0feed48195e7714c21bac539707bf3b16309b68e"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-yoga-meditation-programs-mobile.json",
-      "sha256": "80f8ad57265239221df49cbc9240d17586aef87884ac955e2411328b3bfce41d"
+      "sha256": "4318431e72cda3b0791596f48d57201b9f9bd9452884d5520a34534fbf8a0370"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-yoga-meditation-training-desktop.json",
-      "sha256": "8752dfe13af5b505dd5c89d73d80e504fddd8114d57c9825eabf61cb693eab1d"
+      "sha256": "84bd978bd5ecc42b135e5329764f4ab200536b0c456a559bcba4d14e3aa1d8df"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-yoga-meditation-training-mobile.json",
-      "sha256": "d68cf32297c05e021d6e9bf95af68afe917c56a7f3f6594a18782ec7bb5511a5"
+      "sha256": "7235122f6d2552fa76a6a59bc3fb4e063394164faea58efac72093ec757762f4"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-yoga-retreats-desktop.json",
@@ -7545,7 +7545,7 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/home-hi-fi-v4.json",
-      "sha256": "3f9c69ccd3be01f758fc1d1972a5cfa7739694479d53343f8e4a4bf1c02b0ba9"
+      "sha256": "a203e6923b7f8f4ab0949cf133580cb9e6ae92acde873acf343d1d3a85d353b9"
     },
     {
       "file": "public/ahv/l10n/ja/views/home-mobile.json",
@@ -7913,11 +7913,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-all-programs-desktop.json",
-      "sha256": "11a81b1637030fff808a5b8a7d6192de084b0f3e5d310e62c8f6972041949388"
+      "sha256": "4f68b18a1f3cd2d2b01b1a3093568967ad596bc3faa0f9509042ca90145d4036"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-all-programs-mobile.json",
-      "sha256": "82170c67ff49a295829407755cbb5fa3e2615cb59ae3dcc6c593af2d76658728"
+      "sha256": "79ec03afe78cd4130382caac7db17e3e4f067c6d5c1fd65f91e7269ccb2f70a2"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-ananda-lahari-retreat-desktop.json",
@@ -7993,11 +7993,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-ayurvedic-treatments-desktop.json",
-      "sha256": "e9c682d8850655b2bb390d6a67e1ba2ad91be738defcdb1522826c7cf508016f"
+      "sha256": "ffb3ec940d8f91f2310a768c39dfc7773fd54e33c4884cd44b33b9d9846566b9"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-ayurvedic-treatments-mobile.json",
-      "sha256": "25ace65e1db37ee03a6972355cc93b178476180ce68a5bfc0fbc92771b12aad8"
+      "sha256": "5e5cf19f79edcaa1d1ac007e892bc535b73f9d5dfc9bd8d9854fe03217549282"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-ayuryoga-desktop.json",
@@ -8265,11 +8265,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
-      "sha256": "916a0ed62ef18be4c58b9f336f7fb3b1b1216f295be86a67adeba815a489164e"
+      "sha256": "7ad9e50704397713c114ddfbb253a51b7c731733b48a3d27a6cfe1dcf3705505"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-new-to-yoga-teacher-training-mobile.json",
-      "sha256": "0ef4cc0a6d9cc230c25e6d43fd1292c4406c9420f1aa651b308202f1384d1e9f"
+      "sha256": "776ca30425349ba2208e931c9a900c261855ca918f0436eaa6e4dd447ec5074c"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-no-preservatives-desktop.json",
@@ -8441,19 +8441,19 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-training-programs-desktop.json",
-      "sha256": "535374f502ed85b61f54d48e7c7b63f5a52810a048b4e54591bfe993b7f92af9"
+      "sha256": "cabaa4b03b7761636b0c30e28d08fe6defba5e67fd466b034df489128ec83dbf"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-training-programs-mobile.json",
-      "sha256": "c202286c930a4d5cfa1e81df99f5b4dc00b113e646d7625d5f42fd8eccbb99ca"
+      "sha256": "b92b3c8b0572a3eb6642bf24e4bd9b95f66c333cad265897267145664f428884"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-treatment-programs-desktop.json",
-      "sha256": "0886f08bcfaefe586686768ec71d2fb1f1d8560df1deeceb5722ab17bad39178"
+      "sha256": "24230745f68235e8e1e3f521f91eb5d750001365ab686431a2a0713eb5fbc39b"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-treatment-programs-mobile.json",
-      "sha256": "00624844426b63b3d6feb44b8cc00f082bbabe1470ca920335be4626f9ef88e8"
+      "sha256": "a5de6ae766be5f193ddb0dbbfda71cd7c1ccefdbb306cf314c52161a12d433c6"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-vision-eye-rejuvenation-desktop.json",
@@ -8473,11 +8473,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-wellness-programs-desktop.json",
-      "sha256": "7853b5832d912c9968115580043a194c52b866ba6c190b577c5426dba6e1da92"
+      "sha256": "3a13fb25bc7beb3d3c65461a1184d703eb854dc778f1f14c96c9695b66e49a71"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-wellness-programs-mobile.json",
-      "sha256": "b8bec32c4db3588a4e71ed7a2fed675815b770b82b14298bce436d4b4c398491"
+      "sha256": "928d2045b5a3a8042e863785cdd80df9265735ab831b1cb82d10517fa89862e5"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-womens-hormonal-balance-desktop.json",
@@ -8505,27 +8505,27 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-yoga-meditation-program-desktop.json",
-      "sha256": "7b9b146c96e2e79a8aae5a8bdedd97597f23bc3c2c49d5dbef415b1fe72787b2"
+      "sha256": "62530c83e019dfa36dd800c485c4dc26315a783302362872ee143e4a2eb47ad0"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-yoga-meditation-program-mobile.json",
-      "sha256": "239a2d08bbd288207c02219f55b56f8843a82727d59e64e765afe76d06a84792"
+      "sha256": "a81a6f137b36f8c30c92dcf9102c1aa5f19d1bfaf1ef73f2669aa841a7a4a32a"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-yoga-meditation-programs-desktop.json",
-      "sha256": "7f794a1257b33bcdea82d7a117db0829ae40c2d6cb4fcc78563bafab3b8b4a6f"
+      "sha256": "176d82b258f6f8eb99eb4c1ca4b650f16a949e9c09d69643671334138dfc5846"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-yoga-meditation-programs-mobile.json",
-      "sha256": "7863c10eb901dc636acf17562213ab5be7af7f1854cb901ae5563af6962a1540"
+      "sha256": "ac77e9ca5da8f6f2f1727a3fd994fea786a5d85650bd49c7114eabb6364e1df2"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-yoga-meditation-training-desktop.json",
-      "sha256": "6d14491b7c7f4c914344d0e4d1a23cf1c692b3a02bd2efc6ef2e30a17c881ee3"
+      "sha256": "4eebc6aa81a58dd6e5fdd943f0fad61e65e5df3dc9e6e705b91a03fb82821562"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-yoga-meditation-training-mobile.json",
-      "sha256": "45c7a5eac9668e0dcde1e62894d064bfaaa9b01d777e79d5fb42ac027463a46c"
+      "sha256": "235e45e997e856038ccdcec8611eff35b1ed2ee57ff3b2a1daab182ef7dd92ec"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-yoga-retreats-desktop.json",
@@ -8601,7 +8601,7 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/home-hi-fi-v4.json",
-      "sha256": "c0a367c2b1fa854980f49929fd64ea8ec12da72d6c3680dbaae018682c270a7b"
+      "sha256": "8e574d6611b6a31bec44c9d9becffa5bdf8d6d1aef0e68397a674557d740039d"
     },
     {
       "file": "public/ahv/l10n/ko/views/home-mobile.json",
@@ -8969,11 +8969,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-all-programs-desktop.json",
-      "sha256": "f2e59fc191f4caa161bee85878c9d61b63c37963b68e7d4732fac15c265a44d9"
+      "sha256": "4b7e5748b84fa53916f964b747f1551a0aa60a1e58640234e80b00319852c15a"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-all-programs-mobile.json",
-      "sha256": "cc29b53b5d0825f99439debe7eb794780fbd7cfef1e2614113a5a9d17aa28071"
+      "sha256": "fb69ae62b8e7d9c46f24a2674cb7f60fab81cc551600a4365260c92e3a0d0504"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-ananda-lahari-retreat-desktop.json",
@@ -9049,11 +9049,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-ayurvedic-treatments-desktop.json",
-      "sha256": "b919a2978e29a9e48d8e82913fd5f4f0aaf25aa8b3e7bc10cfa36d642f47aa2f"
+      "sha256": "1f5c0167904c814cbcca1bc30d26f2731c587fecacf8af072fd217f1c1401276"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-ayurvedic-treatments-mobile.json",
-      "sha256": "a626f39313d840a3ef55b0e31ba38df2e07d3c7af7ba81d5c11ea1cb410f58ef"
+      "sha256": "35a1793590b9c0f56a37a31b4fe0078e7b434ac9490e85d0906ac9b19ddc4778"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-ayuryoga-desktop.json",
@@ -9321,11 +9321,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
-      "sha256": "9491ab940dc6e81a7f8194f0a275b9f5d0c35d1f5e59e1b46ad9d47c03c256bc"
+      "sha256": "a312b0dfdbe997896c0835ff0d3ba6832406544279c16a844c9d873361e19a91"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-new-to-yoga-teacher-training-mobile.json",
-      "sha256": "c0353460a4563f7882d2d26024419347c30fb288810db7febef5192d8383f1e7"
+      "sha256": "3a2a37b54dac0bbd7299e98b642fe033695ca9bec1ddea40f70ec65c2c7999d3"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-no-preservatives-desktop.json",
@@ -9497,19 +9497,19 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-training-programs-desktop.json",
-      "sha256": "1e04a1a2197cda46184b06903fc231356cc84e53b77906cfae0720fcc6321b9b"
+      "sha256": "2c3fc0e72534a45eaa77421ee7cd448c8f09914c4e46f73686b17fca4eba6ca9"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-training-programs-mobile.json",
-      "sha256": "c612d15af96deaee0b4491b2b2e92ca4a7ce28f710c1463c476d72f839430cba"
+      "sha256": "1b8bf27da30b396d81c8136b3cfaee260722951ea2963a92484e3dfdce3abee8"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-treatment-programs-desktop.json",
-      "sha256": "b412992b17cc8deb8c6f21e599562b342e069897aed87731aa9cb6ffb57feba5"
+      "sha256": "6e1847bc5f7316ee3c46a3531fa63aa2788dda5033bc84c565400fd4843a33a7"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-treatment-programs-mobile.json",
-      "sha256": "125a0ed6bca66ce63345a924ac98a1aceee02dd87225d31526b640577be3f1b6"
+      "sha256": "2e811e15a07ba9ab9ed19aebd916883015a346c4a121130c37e0ffbb089d01a7"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-vision-eye-rejuvenation-desktop.json",
@@ -9529,11 +9529,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-wellness-programs-desktop.json",
-      "sha256": "083d8251b2be13b17bfbcf84b2893c0a0ae7d496a1cc3329e3f9e3e2cb9a67b0"
+      "sha256": "896879d2107da48e6e3c9a33b94464ee922ad1a836bbc7cb38e12bb846327579"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-wellness-programs-mobile.json",
-      "sha256": "21fa54e75445c3fdc8e6b51bca15a37d73fdbc23465f2e0a27e4796cb3dc8b84"
+      "sha256": "224839d27e32b000e2a8f2572e246a7e97d5d969b6a8df436b1ffbf35f1b28cb"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-womens-hormonal-balance-desktop.json",
@@ -9561,27 +9561,27 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-yoga-meditation-program-desktop.json",
-      "sha256": "70622470337c324a95c318ac9b6f25db1f972e5f2d8aef5d5b64be8c1a75f766"
+      "sha256": "84ab57d4e0bb17852754bba92df3d7dc71da76832d84b95809c50c0d0a4f7626"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-yoga-meditation-program-mobile.json",
-      "sha256": "1b7552f17dffe522cf7df0e21dcf88a11dfa7320ab8d9526a1a26dae683a0732"
+      "sha256": "22a2f32e33fb71dae0ee606c6f2854e54616a858046fba498c37729da744a63a"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-yoga-meditation-programs-desktop.json",
-      "sha256": "5f7e5e67df3774f080db535da46bc4600f9703f02876bad050da98c4926369a7"
+      "sha256": "2ab86d2530aaa8b5f72d7dde34862eb26b4097df6df8e90835e48640a6771c64"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-yoga-meditation-programs-mobile.json",
-      "sha256": "e0cc4d8b81af7a59472fdc79d769cb2e4e718185b3ff02da6ffd06494928d3b7"
+      "sha256": "90dfcd73be391b1813e1031913d86504f49250d102a0827bae169c584adb9523"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-yoga-meditation-training-desktop.json",
-      "sha256": "9a520816f1c92ed3e9ca9ac319e83c7164837e533959fe625274f84aa5e03e0e"
+      "sha256": "6f39859eaf939093ef3240eb23ef968afa058ae7441242cc240f7c69b3270c64"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-yoga-meditation-training-mobile.json",
-      "sha256": "4c282237da19ed1b0ef6211a5d731f048351672b7cb929739a171feabe0c6ed3"
+      "sha256": "e2d56fd4a0c54115b3984f6093f4568ca53091255565b6f21104494b31baa54c"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-yoga-retreats-desktop.json",
@@ -9657,7 +9657,7 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/home-hi-fi-v4.json",
-      "sha256": "d90f052bf0317d181e0830d7fc1ab1a10bb1b6a35a61a7f3ceb510e57dbd2f3b"
+      "sha256": "154af163202f70e5c476bca59c1bae12f7b612ea318f988513ac9b7824bd817c"
     },
     {
       "file": "public/ahv/l10n/nl/views/home-mobile.json",
@@ -10025,11 +10025,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-all-programs-desktop.json",
-      "sha256": "95391c39ab77cd51a316f08c5636654222b7392bdc4033063acba7c245748797"
+      "sha256": "da71537b0aa35bf288c340c9a5a44d30089d66227565ea7b0c06b10486b72137"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-all-programs-mobile.json",
-      "sha256": "7005b538dcf8a6e455a0b3b3a5e6acb36a9253418aac20d83b79215a6bfb4c76"
+      "sha256": "a11e52282eded7cc96a5da4b00bc2350e1a79febc98b0b1716fb68b6dd1f7623"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-ananda-lahari-retreat-desktop.json",
@@ -10105,11 +10105,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-ayurvedic-treatments-desktop.json",
-      "sha256": "e473f58f66cbcaa0b3fb34d71d536f4c392b4807d8dffc57215e73ce16748247"
+      "sha256": "454df9d0836263eee9cdfb4f25d72f0ba27acb1af82c0cb470674ef496ed4de8"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-ayurvedic-treatments-mobile.json",
-      "sha256": "057d2f0d986be26dbb2e7aa8a210c053298f98fba695b68892aa7cdd8181b63d"
+      "sha256": "46168c76dfcba8de59d60049d107222c3b7265e489ec74d071f1408eae674b2e"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-ayuryoga-desktop.json",
@@ -10377,11 +10377,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
-      "sha256": "8d6afb8b30b88a504c95a8756b480f6956bea382916690dfe8c7a69a2b655679"
+      "sha256": "167bdf654bc8e290088b09e5bc5d9512bb448463a1c72d641d106016e7588e3c"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-new-to-yoga-teacher-training-mobile.json",
-      "sha256": "00e23bd7d8a7ad3d19f4a09e68597795d6c3b0e171b62a10deca3fa7a35f95dd"
+      "sha256": "49ce89af3e1d19b87350b3a260587e7492f1e08f9a2b1b268cbf69092daf5ad1"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-no-preservatives-desktop.json",
@@ -10553,19 +10553,19 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-training-programs-desktop.json",
-      "sha256": "9c405a02d9cf4b184151df7590995804687e15a9589cc7a1bcd9682ebed127fd"
+      "sha256": "ac1bd9926d8532f9b5e0c5b327cc4430edfb193e68671c58cb716784688e4264"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-training-programs-mobile.json",
-      "sha256": "1802246902c3d993d275fe2d4cf9096e68184beb88080d34f760be0c3ba3f0d5"
+      "sha256": "5c860db04626ba193ab88a61f48f4f25e909bc5cb0e97dab13348afbf105e37e"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-treatment-programs-desktop.json",
-      "sha256": "8b371382645b07114a84426aef729f2cb1ceca9e4ad1f88c036854f7e956369f"
+      "sha256": "e8cc5f8cc8c472f8e563c6f5c7586a5610ec8e3e568eeb29cbf56af9dbee6098"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-treatment-programs-mobile.json",
-      "sha256": "bdd92a0b6708d8cc0ac8ba3639c9763ff9f9d7cafa740723199526e642409d92"
+      "sha256": "636ade3b7bc620c120fbf23d8a97e2b0e10ab882a45e9272a364c3efa3258090"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-vision-eye-rejuvenation-desktop.json",
@@ -10585,11 +10585,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-wellness-programs-desktop.json",
-      "sha256": "9607563e845cd74c5f663a3f2e0bcebe96485e8afbb52549a61617e4f7807843"
+      "sha256": "6d92f9571e809a6f80d3a79dbca733ae3b793c3dd41d87da72521951c35ca981"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-wellness-programs-mobile.json",
-      "sha256": "ff3eace54fade38bac92ca9fb0affbfc1c60e7a971d7ca2702f3d8b13a5f6dd4"
+      "sha256": "fda35e5f6b491d1b6e3e4e076f2273f50c67ba3e33d4c44d09775537cbc3400b"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-womens-hormonal-balance-desktop.json",
@@ -10617,27 +10617,27 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-yoga-meditation-program-desktop.json",
-      "sha256": "21c161dc2c48d3f07d17681f16c0c530e1e3026222b8527a9780f3d0a20a03fb"
+      "sha256": "3e41cb9dc832aefea49bd5ea9de49c2d01558e79e79ddb7a61a7be4bdbbc78e3"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-yoga-meditation-program-mobile.json",
-      "sha256": "19eb1609584dec386ef3a40ed4f639d613438a038dc466099a73cf5c76ccdf10"
+      "sha256": "38eb46255e9ec627e2d6d23fed9aaf42db397e92e76a0d6f9cb51b5709166dd3"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-yoga-meditation-programs-desktop.json",
-      "sha256": "b68a7d3c1201f0d369ca9676ef956fe0b0b7e389fce66234dde6ed127ed13022"
+      "sha256": "b4860b83971d77d850a28e8c23c143b1767dd6e4ecf59e825053802ec27f40f4"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-yoga-meditation-programs-mobile.json",
-      "sha256": "50ea81465b135bf75c231c4f6eb097cad6c2057b79f8830c6ed363994d1d8ffa"
+      "sha256": "d86b0acc31f63d230dac68162882b7d62195a45cf4502e4bdce3fe0282d3c3ff"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-yoga-meditation-training-desktop.json",
-      "sha256": "400c9f6360a84ebe51242bd2813ad0fd9a351edeb4574c0b8c4f28cf824aa493"
+      "sha256": "e5acc5f98c15500ce22a392336367c5d1e03c2bc2493f5e67ff32b6c7d87119b"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-yoga-meditation-training-mobile.json",
-      "sha256": "f3ae77abef788cb2307fbef4d2d8fa03e854ba0fcbb05c6fb8ca017b3f0f05a4"
+      "sha256": "5150ad96e87cad2e4c747cbbad5857e71777c7d19c6f00115117f7827e35fe89"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-yoga-retreats-desktop.json",
@@ -10713,7 +10713,7 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/home-hi-fi-v4.json",
-      "sha256": "de629c4dc87ab8b0f2344a485c0e5c7fb363a0f1412b3257c2fdf95bff77b768"
+      "sha256": "961a67a80c9de4dd81921e3c69fa3ddaa3a51d04fddd684ac9249234456fd861"
     },
     {
       "file": "public/ahv/l10n/pt/views/home-mobile.json",
@@ -11081,11 +11081,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-all-programs-desktop.json",
-      "sha256": "95676888cd544fa1fae30448ba0809c7974d41d7c23eb73ae513a85ffbf766fd"
+      "sha256": "137bfdd43d249f09d82bec710cee54a689c8eeea0291eea33fa369917a3ddf36"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-all-programs-mobile.json",
-      "sha256": "c52213af3546bf9c8abb55594dffae529da257da3ea14311692162149df0a0ce"
+      "sha256": "abbe695fd1b4a1da1d83973c1b518d4cb7e375ad72bb2a8c25073b28154b3cae"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-ananda-lahari-retreat-desktop.json",
@@ -11161,11 +11161,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-ayurvedic-treatments-desktop.json",
-      "sha256": "9f26cce63aeeb1cccea7edd9bf801195ff5120f0c3f12a3a1d34d54aabbf3aac"
+      "sha256": "30d4b7f94eaaa48499094b119f2cecc32e8efb655b60e70a0ba69bc1b1de08f6"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-ayurvedic-treatments-mobile.json",
-      "sha256": "f1ad0dbaa2e2eb579d1178aff9c81ae8890c96d22d6e2c380344dc6a208c64b1"
+      "sha256": "97a78c4e0831c826f265a7af831b865097008a7f1ea68c4bcea21d9090365e26"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-ayuryoga-desktop.json",
@@ -11433,11 +11433,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
-      "sha256": "92cdb1fc9485b255074c249815ee814adec098d76a8d6d78b6ddf8f4d8222c66"
+      "sha256": "0b75f6dc8594be80ca49d15b4dfcf3c6ae5ff3e69e47e357104fb0db0fe961d5"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-new-to-yoga-teacher-training-mobile.json",
-      "sha256": "b27496fcc738aa472ea77cf3d4bba7373340d56b22401d575bac93482ab02935"
+      "sha256": "b7a171cf45561ae215d22a63cf21b526ef915a4938836867e0b1c0c5a53fbb2a"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-no-preservatives-desktop.json",
@@ -11609,19 +11609,19 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-training-programs-desktop.json",
-      "sha256": "560a49260c6b9ec1dd0dc673a070a86d5f89ecc5134a6dcefa2b4244953c6991"
+      "sha256": "d09f1feccaa07a6fbb4ba4f4f8e315b8c44c64b7e45494daa87ab57371b6cc0a"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-training-programs-mobile.json",
-      "sha256": "6dcf8ace013f9a8e876e94532ef6291393101a73b47849d127bb84c103425380"
+      "sha256": "668e9024e9d6f7cf8255379caa0de803f26a5c9f996111670c5e7baa5dbc32d4"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-treatment-programs-desktop.json",
-      "sha256": "625e6066e8a51287ae478ec1afc8709d6a070261531751abc4b0325efbf7e8f1"
+      "sha256": "401b21469900d3fc380e5d71d32f4824060a87df58fe36e4c1ded111a2352f52"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-treatment-programs-mobile.json",
-      "sha256": "6db53e217cb8f2ead20c83a38997be835dc6a4f56362ccc8a5bd304c418c8810"
+      "sha256": "ca403075d4edc938c0388de787522129dc97a9dc1e598ed828d3fd571fed2101"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-vision-eye-rejuvenation-desktop.json",
@@ -11641,11 +11641,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-wellness-programs-desktop.json",
-      "sha256": "966e13d7991613ca4e34af3fae48abdd0bfbbdd8fcbd6d0b810220476c3e780c"
+      "sha256": "d7f4af32e453f08e88c46b8558e75e20ba5e8cea80b0c317a5f85d72558f7a82"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-wellness-programs-mobile.json",
-      "sha256": "be790838b38776d12ed196b8a4fda788d5039a164fe819807883ea5fb65ae8e5"
+      "sha256": "bde4885d75e905fea4e3e59087917ec1b2db27d063ee53a7fcfa179e3185f7f6"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-womens-hormonal-balance-desktop.json",
@@ -11673,27 +11673,27 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-yoga-meditation-program-desktop.json",
-      "sha256": "312374792e43645bfccd167c73c2145fad768a8825381a7e7c27e87a52d90f23"
+      "sha256": "cc1a4f01d994518b4cbc6b946b793cd0142e541e183799cc26d56b8b02c7e787"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-yoga-meditation-program-mobile.json",
-      "sha256": "66a262c92d5bc39a0d2a05975b77168f3a2ab6210666318d0297f45c1b2e4c22"
+      "sha256": "8c03751428324fb8cdd93b0f3020a0fb5ccfdd3be9da40c9e15833f54b822539"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-yoga-meditation-programs-desktop.json",
-      "sha256": "2aecdb21adff4c63e0b1c1e7d31d066d0b5162b0ce907a9628533f9ed4d14202"
+      "sha256": "4c76d6edb75e4b7a97ee2e71ec9a10d937f9ae971635a6aca6539e78f2a51d48"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-yoga-meditation-programs-mobile.json",
-      "sha256": "ca614ff736f48a03858d37ed74b88a064f1c17331caa96069f32d9d647fbc9e8"
+      "sha256": "e2902fafe0fe378f96542e542409f8e77f5097df90d3b008e072d95f4cb24d46"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-yoga-meditation-training-desktop.json",
-      "sha256": "c66e93440f28fa3fcc7d04bf72c905929b8eca1443d7849222bc216934c1461b"
+      "sha256": "b1fc663b5dc4760cea0e99b72d01aaaf2236d35a06aa991db39864a3900cbf6e"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-yoga-meditation-training-mobile.json",
-      "sha256": "b1a5d8dd1432973a0978b5d29111b4c13ad84c3115d09606b4009a3148899524"
+      "sha256": "1ec5e75cb3ce33c19fc2c2534294b8b83ff56b5e1bb01bf23fd7f44a36d9d413"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-yoga-retreats-desktop.json",
@@ -11769,7 +11769,7 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/home-hi-fi-v4.json",
-      "sha256": "bbbcbea66c3bd185ab902d2d9e529df20a4f3423a2bbb30cebd465d48e2331fe"
+      "sha256": "a284318b59d1787bcdfd3175cd879dc16d8bad6481b7425b3168795cb4dbddf0"
     },
     {
       "file": "public/ahv/l10n/ru/views/home-mobile.json",
@@ -12137,11 +12137,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-all-programs-desktop.json",
-      "sha256": "fdf1c27009cda6db560bf086e6a227b03b46af6f4f729f7d98cd3deb7d1f4c58"
+      "sha256": "e9274b393b72b929049718ae5f3b6e2b4ffd430b5daf72142c80d3166de4b66b"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-all-programs-mobile.json",
-      "sha256": "3784579d4ac7df13c166b291d84519f007bd91e8c6f2a2adba303ae564fc5267"
+      "sha256": "dcd2b5d86f5b8539a4a2f3bca6848f8817eaad61e39be9b70bf0d72a378b88a1"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-ananda-lahari-retreat-desktop.json",
@@ -12217,11 +12217,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-ayurvedic-treatments-desktop.json",
-      "sha256": "4e598d2b33c0afe75e65cadcc43e3206fdb54138d21472f920095f5be686bc8f"
+      "sha256": "03754ff50f4c405bdac0d06f30dc795778a9239018c5d60efa5a1b216f7a4c33"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-ayurvedic-treatments-mobile.json",
-      "sha256": "8d98787fa6e826f193d0333e2acc7b793899fadc4a77075f1b55c0809edf220c"
+      "sha256": "81688225c83d2b050d5fe9d45099bd6681722515c5e7268d6f3918f511c96d98"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-ayuryoga-desktop.json",
@@ -12489,11 +12489,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
-      "sha256": "e1cc85df017e3d26b749bbf256652a344ba880594a3d4afcb45d46fc861f86c4"
+      "sha256": "4faa5cb14301435c4378384f008c8334ac2024b0631c749816eae7b57742428d"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-new-to-yoga-teacher-training-mobile.json",
-      "sha256": "b519e82eb7a1c2827e8437c809e9ba927aabc7570d056c2aef9ef0ec08df01c4"
+      "sha256": "9e86a36603e386f3324ec955d547c3b0bbbcce9069376e414c83172174423b65"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-no-preservatives-desktop.json",
@@ -12665,19 +12665,19 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-training-programs-desktop.json",
-      "sha256": "0722bc25089aabfd19bf53914f809dac06139185f91f3cca0e833208cd3dbc4a"
+      "sha256": "87a5d99bbd1e7128826fc73e0d4a91a623757bc7fe6d28a8880e0bee5b251977"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-training-programs-mobile.json",
-      "sha256": "ebde9abf1ba24b53e431f10149648aeb7539560e12d9141a766b6c2dea3afad7"
+      "sha256": "1788ff1c6d86d8b020f1eb86395c1e3b296f2cfab10275cb2ace4c42a07f515c"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-treatment-programs-desktop.json",
-      "sha256": "7a55cb15f7dd1cc515959efe81a9ed2cd2f89fb10564e04157e8fc62123dd30b"
+      "sha256": "9c19c6ff49b4fe35377e9ad239cce07b54ff4a5d8fcc2293274ae090a254afc6"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-treatment-programs-mobile.json",
-      "sha256": "22b6e3d8b5b1e91bd272cc28cbf0db0bced4dc2e9a1007faa661a63b2edea57a"
+      "sha256": "d2925334466cea340c1d15cbf3284cd38d20cf04458a73569721b8c824e48a90"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-vision-eye-rejuvenation-desktop.json",
@@ -12697,11 +12697,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-wellness-programs-desktop.json",
-      "sha256": "635c5ce1cf5f181c0aa9a0968acbcb3bcdf3bf1ebdbd73183a5685b1a9bbbc70"
+      "sha256": "6ffbc90958be6e6346ddbbd60b8d8f9b69bc03a5413c2495cb16877879ce5ac7"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-wellness-programs-mobile.json",
-      "sha256": "470ea44b55d04b7f1509ae5010a14e5555cb7a54327b2c1b18d2ffa6632322c4"
+      "sha256": "5236850c2f0dc4dd10c36db1a7978ae2bb4cc507e012b45e28a9f2192de19ed4"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-womens-hormonal-balance-desktop.json",
@@ -12729,27 +12729,27 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-yoga-meditation-program-desktop.json",
-      "sha256": "f6f763bede39ddd5eebe029cda27a03dbfd157264613dbec83de5118ea2a2f48"
+      "sha256": "5bb95787422fe7d14e308c2c0843a239c0b0f125ea8b4dae79074485d59b7159"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-yoga-meditation-program-mobile.json",
-      "sha256": "549f8c874209f4a31be205622bd3fa8ee73ae34077c892d7f569901bef8e3e96"
+      "sha256": "9e20fdc4b2024c02a033989bd9d9ff89b3fcc72ece45e30efa0ff942c5cd9db3"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-yoga-meditation-programs-desktop.json",
-      "sha256": "f0eb6ef85fbe4b186bd75361392041e36179a44fe464d2fa79a9061c716352e7"
+      "sha256": "faadf92bf4c4e2e575a0eff298eb6e05919143ccc4b7cea144d49b93ab5c76c3"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-yoga-meditation-programs-mobile.json",
-      "sha256": "4046d32066174b358acf225ccb54247fbd3602fb5fa47493585521cb48a76cfe"
+      "sha256": "b27376e9a2389e267f162050e106ea296246f8591126f62a16bcb1e27ffa5a0e"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-yoga-meditation-training-desktop.json",
-      "sha256": "2b6e546a2f2ea859cda35321a51b2610b860eb3ab04258b5b6464b15d5165f36"
+      "sha256": "72f670f9369e976be6c0cf81552ea139f3eec91c2e3cfc408302fe80ef807ec1"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-yoga-meditation-training-mobile.json",
-      "sha256": "6426b2f9393216e81e98545b12ece8cc7687a3da80c0b65a7e3b89db7c9dab08"
+      "sha256": "ead5e1d3973ca2553cd53f284002185a006b235fbc13287d95a57bef048abd48"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-yoga-retreats-desktop.json",
@@ -12825,7 +12825,7 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/home-hi-fi-v4.json",
-      "sha256": "7bd17da332b3fd4b0d785266b58cd7ed175930dbe1788e43964f4dc9795c0aad"
+      "sha256": "6c5d34cc60e0768ab2ad1a57e51753f226625256e059b8ddf31560289bec0645"
     },
     {
       "file": "public/ahv/l10n/zh/views/home-mobile.json",
@@ -12860,8 +12860,8 @@
     },
     {
       "file": "l10n/prerender/hi/all-programs.html.gz",
-      "sha256": "b0906a7fb2e09d46d50276617ed16be28af4e23e792b209bd1966e3c7b552dfe",
-      "bytes": 21527
+      "sha256": "e6ff18cf779e70008924e7e3498239845e358300c165bc76cc69973d9782bcf2",
+      "bytes": 21551
     },
     {
       "file": "l10n/prerender/hi/ananda-lahari-yoga-and-ayurveda-retreat.html.gz",
@@ -13825,8 +13825,8 @@
     },
     {
       "file": "l10n/prerender/hi/yoga-meditation-training.html.gz",
-      "sha256": "2d3cbecbdbdd0ac5eeffd19d8df2218dded79c2960f91f2a620c012bfde74c6a",
-      "bytes": 10430
+      "sha256": "61a9c9af28a68633c2e7b0aaf43c044aad185750bb916a7cd2896e5e8575a157",
+      "bytes": 10739
     },
     {
       "file": "l10n/prerender/hi/yoga-retreats-for-everyone.html.gz",
@@ -13840,8 +13840,8 @@
     },
     {
       "file": "l10n/prerender/hi/index.json",
-      "sha256": "bfec5b2a25ae54571c08eac4a830e26774f8fd9f62438d4a26cb026a07ebec08",
-      "bytes": 169458
+      "sha256": "33d3523f0b177eb73bb9adde5386cd112bc74c00db6b3559443d924a4bbd7615",
+      "bytes": 169426
     },
     {
       "file": "l10n/prerender/de/index.html.gz",
@@ -13870,8 +13870,8 @@
     },
     {
       "file": "l10n/prerender/de/all-programs.html.gz",
-      "sha256": "daf4a68471aaccae3c56a99ca777a6b7071ebdd864b4df221dea21928916d64b",
-      "bytes": 19459
+      "sha256": "e3d960c93ad24d825bbb2bf460bfa3bbe0a8006f9c6d6efa78b2ef296f7281f6",
+      "bytes": 19486
     },
     {
       "file": "l10n/prerender/de/ananda-lahari-yoga-and-ayurveda-retreat.html.gz",
@@ -14835,8 +14835,8 @@
     },
     {
       "file": "l10n/prerender/de/yoga-meditation-training.html.gz",
-      "sha256": "0b2f4f246d0fb8c58a02fd1a476c6c87b8a47bb60b16b8d694c0ac472c6c12b8",
-      "bytes": 9970
+      "sha256": "5bc9a95f1fa8f9329e3f7b7c2a736a09dcb00d375d14c155ceabe03c97691648",
+      "bytes": 10241
     },
     {
       "file": "l10n/prerender/de/yoga-retreats-for-everyone.html.gz",
@@ -14850,8 +14850,8 @@
     },
     {
       "file": "l10n/prerender/de/index.json",
-      "sha256": "c1d51296a722a8ae3832d9a2efba299f41fe2fe92d28cf1299b228aa2a38576d",
-      "bytes": 156061
+      "sha256": "2a3976617bca600bee1893bc7bb79622cf5b7ccf26bf1b48099cc2b4d856cb9b",
+      "bytes": 156029
     },
     {
       "file": "l10n/prerender/fr/index.html.gz",
@@ -14880,8 +14880,8 @@
     },
     {
       "file": "l10n/prerender/fr/all-programs.html.gz",
-      "sha256": "d497598c9c46f4f5fd4a30d6e5c6942ea00dd276c39445634820d9422350319e",
-      "bytes": 19535
+      "sha256": "37bcfb1b76823dff332427e52e0317e9f45dcc6e153b929055a9fb76561b9a70",
+      "bytes": 19513
     },
     {
       "file": "l10n/prerender/fr/ananda-lahari-yoga-and-ayurveda-retreat.html.gz",
@@ -15845,8 +15845,8 @@
     },
     {
       "file": "l10n/prerender/fr/yoga-meditation-training.html.gz",
-      "sha256": "a3454cf336fbabe172b1e0d509fbd75c63b6b2db5aa3dd950b48b226d0f14fbf",
-      "bytes": 9971
+      "sha256": "3da8c6333a747e765bb7d0827f4c8511384228e20ab152ed5d0a3c7492d3feaf",
+      "bytes": 10246
     },
     {
       "file": "l10n/prerender/fr/yoga-retreats-for-everyone.html.gz",
@@ -15860,8 +15860,8 @@
     },
     {
       "file": "l10n/prerender/fr/index.json",
-      "sha256": "1a70c7349e14621044caec8c994936e7561f70ac46e3e3ea7881aa6b308170af",
-      "bytes": 156898
+      "sha256": "8cf6ad5635c19c96602642a0167bf2ccc106e5b6ce6ea7e3982caa4398834c9a",
+      "bytes": 156866
     },
     {
       "file": "l10n/prerender/es/index.html.gz",
@@ -15890,8 +15890,8 @@
     },
     {
       "file": "l10n/prerender/es/all-programs.html.gz",
-      "sha256": "04fb9767b788d6a6165887bec3a0776a514d55835c547e1de92f22cad0f25e8e",
-      "bytes": 19186
+      "sha256": "74cec1256c5f2d94362a0ebb1b6c13c77e3dc2d05b344d2e724c55748667e08d",
+      "bytes": 19167
     },
     {
       "file": "l10n/prerender/es/ananda-lahari-yoga-and-ayurveda-retreat.html.gz",
@@ -16855,8 +16855,8 @@
     },
     {
       "file": "l10n/prerender/es/yoga-meditation-training.html.gz",
-      "sha256": "98bfb46d1721f2a7cdc0feb2785fbf8c9709f8e33944de15ed4898436d1e49d9",
-      "bytes": 9876
+      "sha256": "54e447065e26acb6dd088a2ef95e6d0af5e144084453563c09df5b1a378ede14",
+      "bytes": 10146
     },
     {
       "file": "l10n/prerender/es/yoga-retreats-for-everyone.html.gz",
@@ -16870,8 +16870,8 @@
     },
     {
       "file": "l10n/prerender/es/index.json",
-      "sha256": "709d4b1d9b5506629779ad280c837f83609cdc2b45b35c538e054d2e3f7dd0ca",
-      "bytes": 156845
+      "sha256": "c9b3ef88a9ffc19aa9dd91dc4646bbdeb6fe42ea2ae7c20e0dfd2be226a35064",
+      "bytes": 156813
     },
     {
       "file": "l10n/prerender/it/index.html.gz",
@@ -16900,8 +16900,8 @@
     },
     {
       "file": "l10n/prerender/it/all-programs.html.gz",
-      "sha256": "11fe6f048dbe1c533f665b3522c37af18ffc30d5809bfad40dc2ad20f8a506b0",
-      "bytes": 19115
+      "sha256": "d1a8697f2ca1d6e5b2c9b588ef37e63c385fdd1477128735e272ffa69441c095",
+      "bytes": 19105
     },
     {
       "file": "l10n/prerender/it/ananda-lahari-yoga-and-ayurveda-retreat.html.gz",
@@ -17865,8 +17865,8 @@
     },
     {
       "file": "l10n/prerender/it/yoga-meditation-training.html.gz",
-      "sha256": "52647d499c2e3035c8198d2b93e3233fae8e1cbb196848dc67cbd468868c0960",
-      "bytes": 9865
+      "sha256": "3372de2c9da937c64b5850decb243d24ce0400b600b8101ba5a7ca5e34ad432f",
+      "bytes": 10133
     },
     {
       "file": "l10n/prerender/it/yoga-retreats-for-everyone.html.gz",
@@ -17880,8 +17880,8 @@
     },
     {
       "file": "l10n/prerender/it/index.json",
-      "sha256": "77fe7cc8d71329121c8d21f9e976d6654f9c650055ee3fc55966e7315306a161",
-      "bytes": 156619
+      "sha256": "d226d665745ff9696009d3775feeb066caffef4b569dd01323c17e6b469ff8b3",
+      "bytes": 156587
     },
     {
       "file": "l10n/prerender/pt/index.html.gz",
@@ -17910,8 +17910,8 @@
     },
     {
       "file": "l10n/prerender/pt/all-programs.html.gz",
-      "sha256": "c8a3a67cc14d933ad7ad14285c31451d9254abc4cc810c1f34bd0710cea876a6",
-      "bytes": 19338
+      "sha256": "4348d3b3cc280cd5eb954e0cc2e8a58f263d668d8324d8bb907f538d451a8eb7",
+      "bytes": 19317
     },
     {
       "file": "l10n/prerender/pt/ananda-lahari-yoga-and-ayurveda-retreat.html.gz",
@@ -18875,8 +18875,8 @@
     },
     {
       "file": "l10n/prerender/pt/yoga-meditation-training.html.gz",
-      "sha256": "88206b2fe88c3190bfd91987ca066a6eb3345b45b9efa59c924da293f9189ce7",
-      "bytes": 9922
+      "sha256": "5e78bfb89b33e89abcd5843f517b14a673376357d4dc9ec71cf11a6885fdaa66",
+      "bytes": 10209
     },
     {
       "file": "l10n/prerender/pt/yoga-retreats-for-everyone.html.gz",
@@ -18890,8 +18890,8 @@
     },
     {
       "file": "l10n/prerender/pt/index.json",
-      "sha256": "7eb7a42db27bdaf29aad0292fec5c84e935c212592c4c0cb6294542acfaf8ff1",
-      "bytes": 156520
+      "sha256": "a1d6cab2434599321cc6d2e853e3ad9e6606166ce7541b2057afe8420e712e55",
+      "bytes": 156488
     },
     {
       "file": "l10n/prerender/nl/index.html.gz",
@@ -18920,8 +18920,8 @@
     },
     {
       "file": "l10n/prerender/nl/all-programs.html.gz",
-      "sha256": "014bd29154c4f29e738da899281b177d397a983c22705f0ee0df0694a581b4bf",
-      "bytes": 18986
+      "sha256": "9f53c313613074aacf7ee44dc24252d8d375dcd86625bcfe2f565aa200243cd5",
+      "bytes": 18966
     },
     {
       "file": "l10n/prerender/nl/ananda-lahari-yoga-and-ayurveda-retreat.html.gz",
@@ -19885,8 +19885,8 @@
     },
     {
       "file": "l10n/prerender/nl/yoga-meditation-training.html.gz",
-      "sha256": "08538cb84b312ffdfcda377f32b2b6df7c4521486e008cb89875c058ef01d086",
-      "bytes": 9865
+      "sha256": "d62adc82a32c0f3aae3db8461a99e7aa3f42fb1b9ac71d47e4d7f973d1ed52f3",
+      "bytes": 10122
     },
     {
       "file": "l10n/prerender/nl/yoga-retreats-for-everyone.html.gz",
@@ -19900,8 +19900,8 @@
     },
     {
       "file": "l10n/prerender/nl/index.json",
-      "sha256": "b9633a7806ec9260e0a81356fd7cea8e028f47a73cdc3686257617519869a65a",
-      "bytes": 155800
+      "sha256": "64df229cef793f73e412ef7afbc80054371d6f3f9e62155171733a24f250239a",
+      "bytes": 155768
     },
     {
       "file": "l10n/prerender/ru/index.html.gz",
@@ -19930,8 +19930,8 @@
     },
     {
       "file": "l10n/prerender/ru/all-programs.html.gz",
-      "sha256": "b69e33cfdb01198879563f0b3eb78392da1d9cb4d3f6ce0900e2ad1cbe5b8b07",
-      "bytes": 22414
+      "sha256": "23e2df82b7fe578016d264f154b872a3eb8cdb63215017cf7e95e51ddc21318f",
+      "bytes": 22395
     },
     {
       "file": "l10n/prerender/ru/ananda-lahari-yoga-and-ayurveda-retreat.html.gz",
@@ -20895,8 +20895,8 @@
     },
     {
       "file": "l10n/prerender/ru/yoga-meditation-training.html.gz",
-      "sha256": "60dee119355c371523acef0a56c61791b1ed97ccf7a4727827911a1c4c7b574f",
-      "bytes": 10666
+      "sha256": "b1ad07e01ec3c181dbff3686432d8eadd331b2c85bf8351213ba5b9e4045783c",
+      "bytes": 11072
     },
     {
       "file": "l10n/prerender/ru/yoga-retreats-for-everyone.html.gz",
@@ -20910,8 +20910,8 @@
     },
     {
       "file": "l10n/prerender/ru/index.json",
-      "sha256": "08ee46fdb6875a601052f2b4c5f4caa0f0f01a595fa621612a810b0c7bec59d8",
-      "bytes": 165559
+      "sha256": "32f9a53090d59f10d507b9200b7d363dbee406acac6760f6e00ed890655ca5b9",
+      "bytes": 165527
     },
     {
       "file": "l10n/prerender/ar/index.html.gz",
@@ -20940,8 +20940,8 @@
     },
     {
       "file": "l10n/prerender/ar/all-programs.html.gz",
-      "sha256": "9fc7315ced53b40f576e6373be0ea05c80f5e0f91c65baac836837df2ff03078",
-      "bytes": 21116
+      "sha256": "b4d5d69588ad9fc5262ad77d1cb2c6b3dc32a28e644c7f69c6cb51ad845ba4d6",
+      "bytes": 21099
     },
     {
       "file": "l10n/prerender/ar/ananda-lahari-yoga-and-ayurveda-retreat.html.gz",
@@ -21905,8 +21905,8 @@
     },
     {
       "file": "l10n/prerender/ar/yoga-meditation-training.html.gz",
-      "sha256": "4f37d663da0cc6a645c944e18319e068ba3df3857c570675d7d33e2872e23ce9",
-      "bytes": 10305
+      "sha256": "fec7b2ae524b3477594704f03c9accb2f8c53bc0943ff47814afc9fb8868f91e",
+      "bytes": 10605
     },
     {
       "file": "l10n/prerender/ar/yoga-retreats-for-everyone.html.gz",
@@ -21920,8 +21920,8 @@
     },
     {
       "file": "l10n/prerender/ar/index.json",
-      "sha256": "6bc57de8adbc7a45e4324fe883d751b98ce89cbf3c6fd8efd86306a839eee280",
-      "bytes": 161638
+      "sha256": "aa46a4bebe7d37cb286c7723ae933ab0bc58bf23bba233d77306a7033b0b91c4",
+      "bytes": 161604
     },
     {
       "file": "l10n/prerender/zh-Hans/index.html.gz",
@@ -21950,8 +21950,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/all-programs.html.gz",
-      "sha256": "42658d475ba513229969f0e6bd7013b18c4a0ec681829075522affdd9bd9009a",
-      "bytes": 20462
+      "sha256": "5095df05a7fe3c438966bd92fec712c75d94bed93820022b5d8a0362f6e6c3b4",
+      "bytes": 20438
     },
     {
       "file": "l10n/prerender/zh-Hans/ananda-lahari-yoga-and-ayurveda-retreat.html.gz",
@@ -22915,8 +22915,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/yoga-meditation-training.html.gz",
-      "sha256": "1f7019c1d63de280d49852a1078ea83380c6278a9efed522ba3108c42c2c4083",
-      "bytes": 10248
+      "sha256": "baf8b59fcc4f060ef8fe6caa55e4dd1df7b75840ccedede873dd2c5c4526236b",
+      "bytes": 10527
     },
     {
       "file": "l10n/prerender/zh-Hans/yoga-retreats-for-everyone.html.gz",
@@ -22930,8 +22930,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/index.json",
-      "sha256": "1c07da965e146058079793ed853a4ff508b1429e5ad470728be524cc01f37410",
-      "bytes": 155994
+      "sha256": "0d3867a51ab0d2bfb34773bcf03b509c326ad55cf2946a239436a5a0b78944c8",
+      "bytes": 155960
     },
     {
       "file": "l10n/prerender/ja/index.html.gz",
@@ -22960,8 +22960,8 @@
     },
     {
       "file": "l10n/prerender/ja/all-programs.html.gz",
-      "sha256": "8ba8b31038dec1940360780ed4c849f6098263571ec8dc90d9c5ed3ca5906d79",
-      "bytes": 21733
+      "sha256": "8d0b3620a71326e58712486ff3106b3a983f028ec7c152c3a02b2079b66de3fa",
+      "bytes": 21712
     },
     {
       "file": "l10n/prerender/ja/ananda-lahari-yoga-and-ayurveda-retreat.html.gz",
@@ -23925,8 +23925,8 @@
     },
     {
       "file": "l10n/prerender/ja/yoga-meditation-training.html.gz",
-      "sha256": "7f18986e2c1ca1893a27f18c8cd67aa5e674c32f226c893cb2aea4ea24482d53",
-      "bytes": 10551
+      "sha256": "2246f9eaf08de621c00190444840a940289816fcacc47d4402addd3d698e8cd5",
+      "bytes": 10877
     },
     {
       "file": "l10n/prerender/ja/yoga-retreats-for-everyone.html.gz",
@@ -23940,8 +23940,8 @@
     },
     {
       "file": "l10n/prerender/ja/index.json",
-      "sha256": "6b02c94d7a48939218724521ca66d3c4d55f0b1f2fdb9a7a405dfcab7c475d87",
-      "bytes": 158468
+      "sha256": "824394b9737f4beef8502a8b7c899574bb187afc4e568a86a5a6fc2a497824c3",
+      "bytes": 158433
     },
     {
       "file": "l10n/prerender/ko/index.html.gz",
@@ -23970,8 +23970,8 @@
     },
     {
       "file": "l10n/prerender/ko/all-programs.html.gz",
-      "sha256": "3b037c87be93d50f8db1b155bc9f23d708ed2bfdfe6d1e0ce7783ba41b43be33",
-      "bytes": 20934
+      "sha256": "cb9ef9c07713a4a4f43108a5871e96b8b5339159fb88c22df3867bd9ced4baac",
+      "bytes": 20911
     },
     {
       "file": "l10n/prerender/ko/ananda-lahari-yoga-and-ayurveda-retreat.html.gz",
@@ -24935,8 +24935,8 @@
     },
     {
       "file": "l10n/prerender/ko/yoga-meditation-training.html.gz",
-      "sha256": "0792eeaa211a0b513bbcee0e1988bc3f54cb29ef3009351fe7264fd712d38752",
-      "bytes": 10315
+      "sha256": "b0989bec7a1366a69b4decf825f7526335eb5c2846113f3088d7d0852831aea0",
+      "bytes": 10610
     },
     {
       "file": "l10n/prerender/ko/yoga-retreats-for-everyone.html.gz",
@@ -24950,8 +24950,8 @@
     },
     {
       "file": "l10n/prerender/ko/index.json",
-      "sha256": "fbacf1888015743fdc0ffd649196208bc73448234e9fa7f0ce4ed5df524cae1b",
-      "bytes": 155941
+      "sha256": "124815a5b830ebc02768d4acee2765e4f413855a98d145cab8294b18aa42a94f",
+      "bytes": 155907
     }
   ],
   "interactionOnlySources": [
@@ -24981,7 +24981,7 @@
     "public/ahv/l10n/zh/design/opd-form-submit.js"
   ],
   "interactionOnlyRationale": "Submission-only scripts are validated at each build to register only user-interaction listeners and perform no DOM writes, network, timers or load-event work before interaction. Crawlable body, translated data, render scripts and archive hashes remain pinned.",
-  "assembledAt": "2026-10-11T12:38:49.360574+00:00",
+  "assembledAt": "2026-10-11T12:41:33.641208+00:00",
   "baselinePreservation": {
     "schema": "ahv-weight-baseline-preservation/v1",
     "classification": "SOURCE-CLOSURE-VERIFIED RELEASE CANDIDATE; NOT PUBLICATION",
@@ -25617,5 +25617,97 @@
     "parentArchiveSha256": "ecf134b717288fe5e98138fae245d189459c5d228f766139889aacb564443e70",
     "freshHomeBodies": 12,
     "preservedOtherBodies": 2400
+  },
+  "incrementalN04Capture": {
+    "proof": "english-candidate/n04-integrated-capture-proof.json",
+    "proofSha256": "9a98d28463528efff04cab2058e14e3bad02209479cfc35c93264c3dbed84367",
+    "parentSpecSha256": "2c3e013f294a005b232cb735b7b94139daf5e567349238f1668a65c27d54ef0c",
+    "parentArchiveSha256": "ecf134b717288fe5e98138fae245d189459c5d228f766139889aacb564443e70",
+    "freshBodies": 24,
+    "preservedOtherBodies": 2388,
+    "remoteUploaded": false
+  },
+  "n01BreadcrumbAlignment": {
+    "scope": "N01.01 breadcrumb vertical alignment: one CSS declaration (align-items:center on .catalogue-page nav) in tools/build-approved-yoga-hubs.mjs, carried by the view helmet <style> of the Yoga & Training hub and the two Coming Soon pages.",
+    "at": "2026-10-08T23:43:56.091683+00:00",
+    "atIST": "2026-10-09 05:13:56 IST",
+    "sourceHead": "80b53634f0d73b6f409102721a90100cb32a7c9c",
+    "parentSpecSha256": "ed313825c5f0a73b3669b71aef30b916ca1ba7bead87429906fd690432b04282",
+    "changedServingSources": 72,
+    "everyChangedSourceDeltaIsExactlyTheDeclaration": true,
+    "recaptured": {
+      "en": {
+        "yoga-meditation-training": "cookie-entry-timing-only",
+        "yoga-meditation-program": "scoped-token-renumbering-only",
+        "new-to-yoga-teacher-training": "scoped-token-renumbering-only"
+      },
+      "locales": {
+        "hi": {
+          "yoga-meditation-training": "scoped-token-renumbering-only",
+          "yoga-meditation-program": "scoped-token-renumbering-only",
+          "new-to-yoga-teacher-training": "noise-only"
+        },
+        "de": {
+          "yoga-meditation-training": "scoped-token-renumbering-only",
+          "yoga-meditation-program": "scoped-token-renumbering-only",
+          "new-to-yoga-teacher-training": "noise-only"
+        },
+        "fr": {
+          "yoga-meditation-training": "noise-only",
+          "yoga-meditation-program": "noise-only",
+          "new-to-yoga-teacher-training": "scoped-token-renumbering-only"
+        },
+        "es": {
+          "yoga-meditation-training": "noise-only",
+          "yoga-meditation-program": "scoped-token-renumbering-only",
+          "new-to-yoga-teacher-training": "noise-only"
+        },
+        "it": {
+          "yoga-meditation-training": "scoped-token-renumbering-only",
+          "yoga-meditation-program": "noise-only",
+          "new-to-yoga-teacher-training": "noise-only"
+        },
+        "pt": {
+          "yoga-meditation-training": "noise-only",
+          "yoga-meditation-program": "noise-only",
+          "new-to-yoga-teacher-training": "noise-only"
+        },
+        "nl": {
+          "yoga-meditation-training": "scoped-token-renumbering-only",
+          "yoga-meditation-program": "scoped-token-renumbering-only",
+          "new-to-yoga-teacher-training": "noise-only"
+        },
+        "ru": {
+          "yoga-meditation-training": "scoped-token-renumbering-only",
+          "yoga-meditation-program": "noise-only",
+          "new-to-yoga-teacher-training": "noise-only"
+        },
+        "ar": {
+          "yoga-meditation-training": "noise-only",
+          "yoga-meditation-program": "noise-only",
+          "new-to-yoga-teacher-training": "noise-only"
+        },
+        "zh-Hans": {
+          "yoga-meditation-training": "noise-only",
+          "yoga-meditation-program": "noise-only",
+          "new-to-yoga-teacher-training": "scoped-token-renumbering-only"
+        },
+        "ja": {
+          "yoga-meditation-training": "noise-only",
+          "yoga-meditation-program": "noise-only",
+          "new-to-yoga-teacher-training": "noise-only"
+        },
+        "ko": {
+          "yoga-meditation-training": "noise-only",
+          "yoga-meditation-program": "scoped-token-renumbering-only",
+          "new-to-yoga-teacher-training": "noise-only"
+        }
+      }
+    },
+    "capturedBodiesRevertedToOriginalBytes": true,
+    "archiveUnchanged": true,
+    "archiveSha256": "6ba06e038f2e6a4e86eb566155f89e73bf86e80da6e3abc35179081c358cff37",
+    "remoteUploaded": false,
+    "productionPublished": false
   }
 }

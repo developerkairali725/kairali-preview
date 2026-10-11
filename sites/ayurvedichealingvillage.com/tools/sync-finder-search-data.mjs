@@ -7,6 +7,11 @@ const site=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const check=process.argv.includes('--check');
 const index=JSON.parse(fs.readFileSync(path.join(site,'public/ahv/search-index.json')));
 const rows=new Map(index.programmes.map(p=>[p.route,p]));
+// Coming Soon card copy: the approved catalogue units (english-candidate/catalogue-locales.json) and the same purpose
+// headings the two forthcoming pages carry. It lives in its own display constant because the l10n extractor treats
+// the `fw` and `action` keys as internal data, so literals written there stayed English in every locale.
+const COMING_SOON_CARD={label:'View details',purposes:{'/yoga-meditation-program/':'Personal practice','/new-to-yoga-teacher-training/':'Professional teacher training'}};
+for(const p of index.programmes) if(p.availability==='coming_soon' && !COMING_SOON_CARD.purposes[p.route]) throw new Error(`No approved Coming Soon purpose for ${p.route}`);
 let changed=0;
 for(const route of ['all-programs','ayurvedic-treatments','wellness-programs','treatment-programs','training-programs','yoga-meditation-programs']) for(const side of ['desktop','mobile']) {
  const file=path.join(site,`public/ahv/views/ahv-page-${route}-${side}.json`);
@@ -32,6 +37,10 @@ for(const route of ['all-programs','ayurvedic-treatments','wellness-programs','t
   logic=logic.replace('chips: chips, durations:', "statuses: [['', 'All availability'], ['current', 'Current offerings'], ['enquiry_only', 'Enquiry-only'], ['coming_soon', 'Coming Soon']].map(pair => Object.assign({ label: pair[1], pick: () => this.setState({ availability: pair[0], dur: '', budget: '' }) }, sel(st.availability === pair[0]))),\n      chips: chips, durations:");
   logic=logic.replace("reset: () => this.setState({ q: '',", "reset: () => this.setState({ q: '', availability: '',");
  }
+ const card=`const COMING_SOON_CARD = ${JSON.stringify(COMING_SOON_CARD)};`;
+ logic=/const COMING_SOON_CARD = .*;/.test(logic) ? logic.replace(/const COMING_SOON_CARD = .*;/,()=>card) : logic.replace('const DATASET = ',()=>card+'\nconst DATASET = ');
+ logic=logic.replace("action: p.av === 'coming_soon' ? 'View details' : 'Read the programme', t: p.t, s: p.s, i: p.i, fw: p.fw,", "action: p.av === 'coming_soon' ? COMING_SOON_CARD.label : 'Read the programme', t: p.t, s: p.s, i: p.i, fw: p.av === 'coming_soon' ? COMING_SOON_CARD.purposes[p.r] : p.fw,");
+ if(!logic.includes("fw: p.av === 'coming_soon' ? COMING_SOON_CARD.purposes[p.r] : p.fw,")) throw new Error(`No Coming Soon card anchor: ${file}`);
  logic=logic.replace("'Explore all ' + DATASET.length + ' programmes.'", "'35 priced programmes, one enquiry-only service and two Coming Soon courses.'");
  let template=view.template;
  if(!template.includes('{{ statuses }}')) {
