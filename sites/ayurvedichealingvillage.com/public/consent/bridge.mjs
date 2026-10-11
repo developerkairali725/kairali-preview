@@ -68,12 +68,21 @@ if (!CC.validConsent() && rejectedBefore) CC.acceptCategory([]);
 window.AHV_COOKIE_SETTINGS = () => CC.showPreferences();
 // Some captured home/footer variants have no preferences button. Ensure an
 // accessible persistent entry point, including after a captured view remounts.
+let fallbackPreferencesButton;
 function ensurePreferencesButton() {
- if(document.querySelector('[data-ahv-cookie-choices]')) return;
- const button=document.createElement('button');
- button.type='button';button.dataset.ahvCookieChoices='';
- button.className='ahv-cookie-preferences';button.textContent=copy.preferencesModal.title;
- (document.querySelector('footer') || document.body).appendChild(button);
+ const footers=[...document.querySelectorAll('footer')].filter(footer=>!footer.closest('blockquote,article,main'));
+ if(footers.length && fallbackPreferencesButton){fallbackPreferencesButton.remove();fallbackPreferencesButton=undefined;}
+ if(!footers.length && document.querySelector('[data-ahv-cookie-choices]')) return;
+ for(const target of footers.length ? footers : [document.body]) {
+  // Responsive templates keep both footers in the DOM. A control in the
+  // hidden variant must not suppress the visible footer's entry point.
+  if(target.querySelector('[data-ahv-cookie-choices]')) continue;
+  const button=document.createElement('button');
+  button.type='button';button.dataset.ahvCookieChoices='';
+  button.className='ahv-cookie-preferences';button.textContent=copy.preferencesModal.title;
+  if(target===document.body){fallbackPreferencesButton=button;target.appendChild(button);}
+  else target.insertBefore(button,target.lastElementChild);
+ }
 }
 ensurePreferencesButton();
 new MutationObserver(ensurePreferencesButton).observe(document.body,{childList:true,subtree:true});

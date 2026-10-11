@@ -21,7 +21,7 @@ const server=createServer((req,res)=>{
  }
  const lang=url.pathname.split('/')[1]||'en';
  const measurement=url.pathname==='/sdk/'?liveIds:{ga4:'G-test',adsTagId:'GT-TEST',adsSendTo:'AW-test/action',clarity:'c-test',metaPixel:'p-test'};
- res.setHeader('Content-Type','text/html');res.end(`<!doctype html><html lang="${/^[a-z]{2}$/.test(lang)?lang:'en'}"><head><script>window.dataLayer=[];window.gtag=function(){dataLayer.push(arguments)};gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script></head><body><main><h1>AHV consent integration fixture</h1><button data-ahv-cookie-choices>Cookie choices</button></main><script>(function(){var cfg={breakpoint:700,measurement:${JSON.stringify(measurement)}};var host=document.body;${runtime}\nensureConsentNotice();})();</script></body></html>`);
+ res.setHeader('Content-Type','text/html');res.end(`<!doctype html><html lang="${/^[a-z]{2}$/.test(lang)?lang:'en'}"><head><script>window.dataLayer=[];window.gtag=function(){dataLayer.push(arguments)};gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});</script></head><body><main><h1>AHV consent integration fixture</h1>${url.pathname==='/footers/' ? '' : '<button data-ahv-cookie-choices>Cookie choices</button>'}</main>${url.pathname==='/footers/' ? '<style>#mobile-footer{display:none}@media(max-width:700px){#desktop-footer{display:none}#mobile-footer{display:block}}</style><footer id="desktop-footer"><div>Desktop footer</div></footer><footer id="mobile-footer"><div>Mobile footer</div></footer>' : ''}<script>(function(){var cfg={breakpoint:700,measurement:${JSON.stringify(measurement)}};var host=document.body;${runtime}\nensureConsentNotice();})();</script></body></html>`);
 });
 await new Promise(ok=>server.listen(0,'127.0.0.1',ok));
 const origin=`http://127.0.0.1:${server.address().port}`;
@@ -214,6 +214,29 @@ try {
   assert.equal(await d.page.evaluate(()=>localStorage.getItem('ahv-consent-v2')),null);
   assert.deepEqual(d.errors,[]);report.push({case:country+' public-hostname Cloudflare fixture has expected presentation and no optional vendors',pass:true});await d.ctx.close();
  }
+ // Responsive footers must each retain settings access after remounts.
+ const footerCase=await context({path:'/footers/'});
+ await footerCase.page.getByRole('button',{name:'Reject optional',exact:true}).click();
+ for(const [width,id] of [[390,'mobile-footer'],[1440,'desktop-footer']]) {
+  await footerCase.page.setViewportSize({width,height:844});
+  assert.equal(await footerCase.page.locator('footer [data-ahv-cookie-choices]').count(),2);
+  const control=footerCase.page.locator('#'+id+' [data-ahv-cookie-choices]');
+  assert.equal(await control.isVisible(),true);await control.click();await footerCase.page.locator('.pm').waitFor({state:'visible'});
+  assert.equal(await footerCase.page.locator('input[value="analytics"]').isChecked(),false);
+  assert.equal(await footerCase.page.locator('input[value="advertising"]').isChecked(),false);
+  await footerCase.page.getByRole('button',{name:'Reject optional',exact:true}).click();
+ }
+ await footerCase.page.locator('#desktop-footer').evaluate(el=>{el.innerHTML='<div>Remounted footer</div>';});
+ await footerCase.page.locator('#desktop-footer [data-ahv-cookie-choices]').waitFor();
+ assert.equal(await footerCase.page.locator('#desktop-footer [data-ahv-cookie-choices]').count(),1);
+ await footerCase.page.evaluate(()=>document.querySelectorAll('footer').forEach(el=>el.remove()));
+ await footerCase.page.locator('body > [data-ahv-cookie-choices]').waitFor();
+ await footerCase.page.evaluate(()=>{const footer=document.createElement('footer');footer.id='later-footer';footer.innerHTML='<div>Later footer</div>';document.body.appendChild(footer);});
+ await footerCase.page.locator('#later-footer [data-ahv-cookie-choices]').waitFor();
+ assert.equal(await footerCase.page.locator('body > [data-ahv-cookie-choices]').count(),0);
+ assert.equal(await footerCase.page.locator('[data-ahv-cookie-choices]').count(),1);
+ assert.equal(footerCase.requests.length,0);assert.deepEqual(footerCase.errors,[]);
+ report.push({case:'responsive footers, remount and fallback replacement preserve settings access without duplicate controls or optional vendors',pass:true});await footerCase.ctx.close();
  if(process.env.CONSENT_QA_VENDOR_SCRIPTS==='1') {
   const v=await context({sdk:true});assert.equal(v.requests.length,0);
   await v.page.getByRole('button',{name:'Accept all',exact:true}).click();

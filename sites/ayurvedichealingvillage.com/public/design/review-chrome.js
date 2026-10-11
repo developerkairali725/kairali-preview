@@ -62,11 +62,26 @@
       if (!/^\s*Ayurvedic Healing Village · Palakkad · 1908/.test(el.innerHTML)) return;
       el.innerHTML = el.innerHTML.replace(/(Ayurvedic Healing Village · Palakkad)\s*·\s*1908\s*[—–-]\s*(?:<span[^>]*>\d{4}<\/span>|\d{4})/, "$1");
     });
-    if (f.querySelector("[data-ahv-copyright]")) return;
+    var existing = f.querySelector("[data-ahv-copyright]");
+    if (existing) {
+      // Older captures put this line inside the preferences control. Keep
+      // copyright text separate from the button's accessible label/border.
+      var control = existing.closest("[data-ahv-cookie-choices]");
+      if (control) {
+        var bottom = control.previousElementSibling;
+        (bottom && bottom.matches("div,section") ? bottom : f).appendChild(existing);
+      }
+      return;
+    }
     if (/©/.test(f.textContent || "")) return;
-    // the bottom bar: the footer's last element block
+    // A preferences control can be appended after the footer's bottom bar.
+    // Never make the copyright a child of an interactive element.
     var bar = f.lastElementChild;
     if (!bar) return;
+    if (bar.matches("button,a,input,select,textarea")) {
+      var previous = bar.previousElementSibling;
+      bar = previous && previous.matches("div,section") ? previous : f;
+    }
     var span = document.createElement("span");
     span.setAttribute("data-ahv-copyright", "1");
     // the year is computed here, so it carries the same marker the footer component's live binding gets
