@@ -25,7 +25,7 @@ const CHROME: Record<PageLocale, string> = {
  * The <html>/<body> shell of the live ad routes: the current production campaign document
  * (campaign-v110/CampaignDocument.tsx) without the old pages' design CSS and fonts. Unchanged from it:
  * ConsentScripts (consent defaults, granular choices, GPC), lead-receipt.js (consented lead event and the
- * /ppc-thanks/ hand-off), SharedConsent with the environment's measurement IDs, the Chatbase loader (Priya) and
+ * /thanks/ hand-off), SharedConsent with the environment's measurement IDs, the Chatbase loader (Priya) and
  * review-chrome.js (header Chat control, the WhatsApp / Priya / Instagram / Messenger choices, the phone CTA bar)
  * on body[data-ahv-campaign]. Not loaded: the /lp-v2 kit's tag loader, consent banner and geo default.
  *
