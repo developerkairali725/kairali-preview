@@ -20,7 +20,18 @@ export default function Offering({ c, o, ...p }: { c: CampaignConfig; o: PageOff
   return <Index c={c} o={o} {...p} />;
 }
 
+/**
+ * DEC-PROGRAMME-DESCRIPTIONS: the English routes whose cards link to full programme pages also offer, beside each
+ * programme link, "Ask about this programme" — the same #enquiry form and consult tracking as ConsultCta, named for
+ * its programme. Exact route and English-only locale: every other route and every locale variant renders unchanged.
+ */
+const PROGRAMME_ASK_ROUTES: readonly string[] = [
+  "/ayurvedic-treatment-packages.html", "/preventive-rejuvenation-detoxification.html",
+  "/ayurveda-retreat-kerala.html", "/kairali-cleansing-centre.html",
+];
+
 function Cards({ c, o, v, ui, no }: { c: CampaignConfig; o: Of<"cards"> } & SecProps) {
+  const ask = PROGRAMME_ASK_ROUTES.includes(c.route) && c.locales.length === 1 && c.locales[0] === "en";
   return (
     <section className="lp-sec lp-poffer lp-poffer--cards" aria-labelledby="lp-poffer-h">
       <div className="lp-poffer__top">
@@ -37,6 +48,12 @@ function Cards({ c, o, v, ui, no }: { c: CampaignConfig; o: Of<"cards"> } & SecP
                 {card.links.map((l) => (
                   <li key={l.href}>
                     <PageA className="lp-poffer__link" href={l.href}><span>{l.label}</span><ArrowIcon /></PageA>
+                    {ask ? (
+                      <a className="lp-btn lp-btn--line" href="#enquiry" aria-label={`Ask about this programme: ${l.label}`}
+                        data-track="cta_click" data-track-cta="consult" data-track-position="section">
+                        Ask about this programme
+                      </a>
+                    ) : null}
                   </li>
                 ))}
               </ul>

@@ -7,7 +7,7 @@
 
 import type { CampaignConfig, Channel, ProductionFormProfile, Variant } from "../kit/types.ts";
 import { buildLeadPayload, type LeadAnswers, type PackedLine } from "../kit/lead.ts";
-import { isChannel, DEFAULT_CHANNEL, CONSENT_FIELD, fullCampaignPhone, type FormValues, type ResolvedSchema } from "./schema.ts";
+import { isChannel, DEFAULT_CHANNEL, CONSENT_FIELD, FAMILY_MONTH_FIELD, fullCampaignPhone, type FormValues, type ResolvedSchema } from "./schema.ts";
 
 export type SubmitErrorCode = "not_configured" | "rate_limited" | "invalid" | "network" | "url" | "consent" | "email" | "honeypot";
 export type SubmitResult =
@@ -252,9 +252,20 @@ export function familyGender(v: FormValues[string]): string {
 /**
  * The family form's message, exactly as the R10 form with familyFields built it:
  * "Country: <country>\nPreferred duration: <duration>\n" followed by the visitor's own (optional) health text. Pure.
+ * A picked preferred month adds "Preferred month: <its label>\n" after the duration line; the label comes from the
+ * resolved schema's own options, and a value that is not one of them throws (the body is never built), so an answer
+ * is never silently dropped nor sent raw. Unanswered, the message is the R10 one, byte for byte.
  */
-export function familyMessage(values: FormValues): string {
-  return `Country: ${str(values.country)}\nPreferred duration: ${str(values.duration)}\n${str(values.message)}`;
+export function familyMessage(values: FormValues, schema?: ResolvedSchema): string {
+  const month = str(values[FAMILY_MONTH_FIELD]);
+  let monthLine = "";
+  if (month) {
+    const options = schema?.steps.flatMap((s) => s.fields).find((f) => f.name === FAMILY_MONTH_FIELD)?.options;
+    const label = options?.find((o) => o.value === month)?.label;
+    if (!label) throw new Error("familyMessage: the preferred month is not one of the form's options");
+    monthLine = `Preferred month: ${label}\n`;
+  }
+  return `Country: ${str(values.country)}\nPreferred duration: ${str(values.duration)}\n${monthLine}${str(values.message)}`;
 }
 
 /**
@@ -317,8 +328,11 @@ export function buildCampaignEnquiryLead(values: FormValues, ctx: Pick<SubmitCon
   };
 }
 
-/** The request body. Exported for tests. `env` = where the visitor is; nothing else from the URL is read. */
-export function buildProductionLead(values: FormValues, ctx: Pick<SubmitContext, "token" | "locale"> & { production: ProductionFormContext; env: ProductionEnv }): Record<string, unknown> {
+/**
+ * The request body. Exported for tests. `env` = where the visitor is; nothing else from the URL is read. `schema` = the
+ * rendered form, read only for the family form's preferred-month label.
+ */
+export function buildProductionLead(values: FormValues, ctx: Pick<SubmitContext, "token" | "locale"> & { production: ProductionFormContext; env: ProductionEnv; schema?: ResolvedSchema }): Record<string, unknown> {
   // Preserve the optional gender on both batch-2 routes; only the family profile packs extra message fields.
   const family = ctx.production.profile === "family-retreat";
   let campaign: Record<string, string> = {};
@@ -348,7 +362,7 @@ export function buildProductionLead(values: FormValues, ctx: Pick<SubmitContext,
       rdogender: family || ctx.production.profile === "pain-management" || ctx.production.profile === "r10" ? familyGender(values.rdogender) : "",
       email: str(values.email),
       phone: fullCampaignPhone(values),
-      message: family ? familyMessage(values) : str(values.message),
+      message: family ? familyMessage(values, ctx.schema) : str(values.message),
       consent: values[CONSENT_FIELD] === true,
     },
   };
@@ -364,7 +378,7 @@ export const productionLeadAdapter: FormAdapter = {
     if (enquiry && str(values.honeypot)) return { status: "error", code: "honeypot", message: msg.unconfirmed };
     let body: Record<string, unknown>;
     try {
-      const bctx = { token: ctx.token, locale: ctx.locale, production: ctx.production, env: ctx.env ?? browserEnv() };
+      const bctx = { token: ctx.token, locale: ctx.locale, production: ctx.production, env: ctx.env ?? browserEnv(), schema: ctx.schema };
       body = enquiry ? buildCampaignEnquiryLead(values, bctx) : buildProductionLead(values, bctx);
     } catch {
       return { status: "error", code: "url", message: MSG_GENERIC };

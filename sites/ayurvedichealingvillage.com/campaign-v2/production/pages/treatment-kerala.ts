@@ -57,11 +57,25 @@ export default defineCopy({
       kicker: "Your care plan",
       heading: "Explore the treatment questions that matter to you",
       intro: ["Programme names are a starting point for the conversation, not a prescription. Your assessment guides the care proposed for you. You can also compare all [Ayurvedic treatment programmes](/ayurvedic-treatment-packages.html)."],
+      // DEC-PACKAGE-COMPARISONS (AHV-WB.230): named examples only, each name + minimumNights from
+      // public/ahv/assets/all-programs-data.js (KTAHV/AYT/EN-INR/20260925-R1): /panchakarma-therapy/ 14,
+      // /holistic-treatment-for-rejuvenation-and-detoxification/ 7, /weight-loss-programme/ 14,
+      // /sleep-restoration-therapy/ 7, /treatment-to-remove-stress-and-strain/ 7. No generic 7/14/21-night stay claim
+      // (not established by the bounded sources); the doctor's recommendation and the FAQ's "no single duration" stand.
       cards: [
-        { title: "Panchakarma and rejuvenation", paragraphs: ["Ask how these programmes differ and what the doctor recommends for your circumstances. Discuss procedures, preparation, dietary guidance and duration, rather than assuming every programme includes the same therapies."] },
+        { title: "Panchakarma and rejuvenation", paragraphs: [
+          "Ask how these programmes differ and what the doctor recommends for your circumstances. Discuss procedures, preparation, dietary guidance and duration, rather than assuming every programme includes the same therapies.",
+          "For example, Ayurvedic Panchakarma Detoxification Therapy has a published minimum stay of 14 nights, and Complete Rejuvenation & Detoxification Therapy 7 nights. Your doctor recommends the length of your own stay.",
+        ] },
         { title: "Pain and mobility", paragraphs: ["Explain where you feel discomfort and how movement, work, sleep or daily tasks are affected. Share any diagnosis and current treatment. Discuss the proposed care together with access, assistance and companion needs."] },
-        { title: "Weight, digestion and daily routine", paragraphs: ["Talk through your health history, medicines, meals and everyday activity. Your consultation helps clarify which programme is relevant and what changes or prescribed care may be proposed, so you don’t choose on a programme name alone."] },
-        { title: "Other health concerns", paragraphs: ["The programmes also cover areas such as sleep, stress, women’s health and ongoing conditions. Tell the doctor what you want to discuss, so the scope of care, and any need for other clinical support, is clear from the start."] },
+        { title: "Weight, digestion and daily routine", paragraphs: [
+          "Talk through your health history, medicines, meals and everyday activity. Your consultation helps clarify which programme is relevant and what changes or prescribed care may be proposed, so you don’t choose on a programme name alone.",
+          "For example, Weight Management & Metabolism Therapy has a published minimum stay of 14 nights.",
+        ] },
+        { title: "Other health concerns", paragraphs: [
+          "The programmes also cover areas such as sleep, stress, women’s health and ongoing conditions. Tell the doctor what you want to discuss, so the scope of care, and any need for other clinical support, is clear from the start.",
+          "For example, Sleep Restoration Therapy and Comprehensive Stress Relief & Mental Wellness Program each have a published minimum stay of 7 nights.",
+        ] },
       ],
     },
     pathway: {

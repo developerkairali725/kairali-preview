@@ -54,10 +54,23 @@ export default defineCopy({
       kicker: "Programmes to discuss",
       heading: "Understand what each programme involves",
       intro: ["Ask what the proposed therapies involve, how your care is reviewed and what is included in your stay."],
+      // DEC-PACKAGE-COMPARISONS (AHV-WB.468): each box's programme name + minimumNights from
+      // public/ahv/assets/all-programs-data.js (KTAHV/AYT/EN-INR/20260925-R1): /panchakarma-therapy/ 14,
+      // /holistic-treatment-for-rejuvenation-and-detoxification/ 7, /treatment-to-remove-stress-and-strain/ 7; inclusions
+      // ayurveda.included[1–4] of english-candidate/final-rates/strings.en.json. No prices; no outbound links (this LP's rule).
       cards: [
-        { title: "Panchakarma", paragraphs: ["Panchakarma programmes combine preparation, doctor-selected procedures, diet and rest. All five classical procedures are not automatically included for every patient."] },
-        { title: "Rejuvenation and detoxification", paragraphs: ["These programmes have their own prescribed care and daily routines. Discuss how the available programme relates to your needs; its name does not determine your individual therapy schedule."] },
-        { title: "Stress management", paragraphs: ["Prescribed therapies, meals, activity and rest are brought into an organised routine. Share what has been affecting your daily life, and ask the doctor to explain suitable care and realistic expectations."] },
+        { title: "Panchakarma", paragraphs: [
+          "Panchakarma programmes combine preparation, doctor-selected procedures, diet and rest. All five classical procedures are not automatically included for every patient.",
+          "Ayurvedic Panchakarma Detoxification Therapy has a published minimum stay of 14 nights. Included: three vegetarian or vegan meals a day, to the dietary prescription; two Ayurvedic therapies a day, including herbal steam; daily consultation and monitoring by the attending physician; and group yoga each morning and guided meditation each evening.",
+        ] },
+        { title: "Rejuvenation and detoxification", paragraphs: [
+          "These programmes have their own prescribed care and daily routines. Discuss how the available programme relates to your needs; its name does not determine your individual therapy schedule.",
+          "Complete Rejuvenation & Detoxification Therapy has a published minimum stay of 7 nights. Included: three vegetarian or vegan meals a day, to the dietary prescription; two Ayurvedic therapies a day, including herbal steam; daily consultation and monitoring by the attending physician; and group yoga each morning and guided meditation each evening.",
+        ] },
+        { title: "Stress management", paragraphs: [
+          "Prescribed therapies, meals, activity and rest are brought into an organised routine. Share what has been affecting your daily life, and ask the doctor to explain suitable care and realistic expectations.",
+          "Comprehensive Stress Relief & Mental Wellness Program has a published minimum stay of 7 nights. Included: three vegetarian or vegan meals a day, to the dietary prescription; two Ayurvedic therapies a day, including herbal steam; daily consultation and monitoring by the attending physician; and group yoga each morning and guided meditation each evening.",
+        ] },
       ],
     },
     pathway: {
