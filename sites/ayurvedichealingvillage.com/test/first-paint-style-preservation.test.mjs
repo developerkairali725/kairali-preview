@@ -1,3 +1,4 @@
+import {productionCss} from "../scripts/build-production-css.mjs";
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -14,8 +15,9 @@ const expected={
 };
 test('campaign first-paint bundle preserves exact approved stylesheet bytes and cascade order',()=>{
  const entry=fs.readFileSync(path.join(site,'campaign-v2/production/document.css'),'utf8');
- const imports=[...entry.matchAll(/@import "([^"]+)";/g)].map(x=>x[1]);
- assert.deepEqual(imports,Object.keys(expected));
+ const imports=Object.keys(expected);
+ assert.equal(entry,productionCss());
+ assert(!/@import\s/.test(entry));
  for(const name of imports)assert.equal(createHash('sha256').update(fs.readFileSync(path.resolve(site,'campaign-v2/production',name))).digest('hex'),expected[name],name);
  const doc=fs.readFileSync(path.join(site,'campaign-v2/production/Document.tsx'),'utf8');
  assert.match(doc,/import "\.\/document\.css"/);
