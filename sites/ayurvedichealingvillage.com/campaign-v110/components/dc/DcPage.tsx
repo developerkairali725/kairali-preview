@@ -160,7 +160,7 @@ export default function DcPage({ meta, dir }: { meta: DcMeta; dir: string }) {
     : null;
   return (
     <PageShell lang={meta.lang} campaign={isCampaign(meta.route)}>
-      {["/offers/senior-citizen-offer/", "/offers/olympics-and-paralympics-offer/", "/offers/defence-and-paramilitary/"].includes(meta.route) ? <link rel="preload" as="image" href="/design/offer-pathway-1200.avif" fetchPriority="high" /> : null}
+      {["/offers/senior-citizen-offer/", "/offers/olympics-and-paralympics-offer/", "/offers/defence-and-paramilitary/"].includes(meta.route) ? <><link rel="preload" as="image" href="/design/offer-pathway-640.avif" media="(max-width:699px)" fetchPriority="high" /><link rel="preload" as="image" href="/design/offer-pathway-1200.avif" media="(min-width:700px)" fetchPriority="high" /></> : null}
       {meta.jsonld && (
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(meta.jsonld) }} />
       )}
