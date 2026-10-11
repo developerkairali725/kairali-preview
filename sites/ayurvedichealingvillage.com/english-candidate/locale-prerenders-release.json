@@ -1,11 +1,11 @@
 {
   "repository": "kairali-digital/kairali-web-factory",
   "tag": "ahv-english-staging-20260915",
-  "asset": "ahv-locale-prerenders-weight-integrated-20261011.tar.gz",
-  "archive": "ahv-locale-prerenders-weight-integrated-20261011.tar.gz",
-  "sha256": "13e4b1fb1be6f3a0c4241e7dfe92a049bb5b09d944978370b5d1245e8f451355",
-  "bytes": 43698957,
-  "capturedSource": "12 Weight bodies and literal capture rows reused from accepted8ba410e with exact24 localized view bytes and unchanged shared serving sources; 2400 current bodies retained unchanged. Composition only, no fresh capture claim.",
+  "asset": "ahv-locale-prerenders-dinacharya06a-20261011.tar.gz",
+  "archive": "ahv-locale-prerenders-dinacharya06a-20261011.tar.gz",
+  "sha256": "121f4de6deb00216450b2334cf41f1bb1f227b7e2c7afb941f18f8f0c5e457d4",
+  "bytes": 43830913,
+  "capturedSource": "Composed from72 fresh live-runtime snapshots for the six approved Dinacharya pages across12 locales and2340 byte-identical parent bodies. Original unmodified index rows retained. Detailed source-delta and capture lineage: english-candidate/dinacharya06a-integration-proof.json.",
   "sources": [
     {
       "file": "english-candidate/route-manifest.json",
@@ -13,7 +13,7 @@
     },
     {
       "file": "l10n/generated/ar.catalog.json",
-      "sha256": "048a25e1907e814f38ede0b54e88a44f80de30a1d8ef6531a9e2b3564d685be9"
+      "sha256": "c3ff88ddda395f502633f29b732f342e682a3323a3e5405fb2f0617bf2bfc2fa"
     },
     {
       "file": "l10n/generated/ar.derived-sitemap.json",
@@ -21,11 +21,11 @@
     },
     {
       "file": "l10n/generated/ar.json",
-      "sha256": "07e296692d4313d09d8cfdf1fc968343970b46b44c1c0813940d0f4bbd19ddf1"
+      "sha256": "9c9c7b973d80dc0dc4878b58f62a6c167f6d619a195f8a8871fbf8d99b61afde"
     },
     {
       "file": "l10n/generated/de.catalog.json",
-      "sha256": "4f18fe5b82cdddee727f50d957806c028efce98cdefbf93498a9d27bdbba8848"
+      "sha256": "813315d4a7685dc99027c7ea30cf49509617b6b89181c67e45aa3e32cebfc49c"
     },
     {
       "file": "l10n/generated/de.derived-sitemap.json",
@@ -33,11 +33,11 @@
     },
     {
       "file": "l10n/generated/de.json",
-      "sha256": "b53bb24bce90357d62a000de8aad09fa674054d833a983d96033e1c254a28246"
+      "sha256": "8e29ff02f494b16b0200bc9e664ac6b81a500c4ec65b56d2d9b81f5675c6bb03"
     },
     {
       "file": "l10n/generated/es.catalog.json",
-      "sha256": "62e6ff39092029fbf1d12014787d6451c2df6e510cb1da0a0c28ac72149978a1"
+      "sha256": "d7d111ad8bd66bd28482c0bf5eeba782e890674cf4f0d194f615aa9a6d60a4aa"
     },
     {
       "file": "l10n/generated/es.derived-sitemap.json",
@@ -45,11 +45,11 @@
     },
     {
       "file": "l10n/generated/es.json",
-      "sha256": "81e6ecf3e2d5fef8fa4c1f0b57f6fd3e4f9f4b8dd14700a3f136b4ed26beaa70"
+      "sha256": "182e2a6701c16d3ad2db8dde74d846c0705cbeaac35c81a14f3c1eb39ffddebe"
     },
     {
       "file": "l10n/generated/fr.catalog.json",
-      "sha256": "a02a571a837154cd3e213031567d1b0a2a4dfd135dd00a63d81dc800c7f2cf65"
+      "sha256": "27105f0aaacaeeb9b4a89c73094603352f3e212b978b1aa153b8b0a37ef2e0a7"
     },
     {
       "file": "l10n/generated/fr.derived-sitemap.json",
@@ -57,11 +57,11 @@
     },
     {
       "file": "l10n/generated/fr.json",
-      "sha256": "d7e9149fb92855a32781fb9ab7e129b4157750442c0514a6d2bd093513a9ea92"
+      "sha256": "3109c34cc400b8c9a1b42b566d8d13ab077f463ab708f3ea6db6032dc70e156b"
     },
     {
       "file": "l10n/generated/hi.catalog.json",
-      "sha256": "f2464b636a4fb3787692ef9582b96ecf13eea5d4501424fc51a30cde6d003445"
+      "sha256": "3f8fe2de2c53a15a5554d138c5bde064a48e7d8423b28dedf7fbbb1e8c62e522"
     },
     {
       "file": "l10n/generated/hi.derived-sitemap.json",
@@ -69,11 +69,11 @@
     },
     {
       "file": "l10n/generated/hi.json",
-      "sha256": "4590b03422d86d3ec774c9fdedd4dd79097a7d70625323c00c96be37be4308f5"
+      "sha256": "dc06dfa8e3c2a9fc42177b8acc0372ebc18aeb2ab097b73ef9905c6d03d085a2"
     },
     {
       "file": "l10n/generated/it.catalog.json",
-      "sha256": "da72138132234dd5128c0b09d227c0ce20669a6a296ab748d11e35550e65374c"
+      "sha256": "3ab2f8372291a5c7341ce1e57cbda4fccb9d7568928348c1cb9c9b4a33c8bfc3"
     },
     {
       "file": "l10n/generated/it.derived-sitemap.json",
@@ -81,11 +81,11 @@
     },
     {
       "file": "l10n/generated/it.json",
-      "sha256": "0f947a4539991884af3a873fb06b137d04d69baf41531031828428e50ec496ac"
+      "sha256": "d64c6bb0b6c0e2bad77483e32e5969dcc7366dda730494689f47be04d0a09578"
     },
     {
       "file": "l10n/generated/ja.catalog.json",
-      "sha256": "3f5d764bb3d1438b2d2f134b65f91847e7f1202c73a7affa19255bfdb455dbef"
+      "sha256": "e0525c9d574011343bf2057353dd043e4a3723548f8bacc3bd93f4bb38ad5958"
     },
     {
       "file": "l10n/generated/ja.derived-sitemap.json",
@@ -93,11 +93,11 @@
     },
     {
       "file": "l10n/generated/ja.json",
-      "sha256": "f4135ee0a21e2090ef7bfbac8a4f0676e1d00ffc2d1f6db7c19f11ac9eb3bdae"
+      "sha256": "3298bd09069fe0afa299cab406dfc220ed6a9d9d428019af72e0a6aace4936ba"
     },
     {
       "file": "l10n/generated/ko.catalog.json",
-      "sha256": "1f935e8b631eb935f387f9e0d6e06e27cb43a449204a7b75b8ecb0b4487b3546"
+      "sha256": "3689ee109f7ea040a4bbfd3822ee32117c500ceaa7f275f2f0e0432a33d62bdd"
     },
     {
       "file": "l10n/generated/ko.derived-sitemap.json",
@@ -105,11 +105,11 @@
     },
     {
       "file": "l10n/generated/ko.json",
-      "sha256": "b0efb478584f73427961456e4a5cc0f6266e79a9cbb48efbf67dd13882c0fa64"
+      "sha256": "691692ae8d95bd50a745ff58d54b1b1d07e54dc617a702f437096227026cbe44"
     },
     {
       "file": "l10n/generated/nl.catalog.json",
-      "sha256": "536d1de429d9e1771f53727577a62685755ad4bb03617b2b39d5bde243b1e836"
+      "sha256": "b2c3a7c469694788aa0d5b64e7d3e5eb1261735d8ef8843893d301294e1e44a4"
     },
     {
       "file": "l10n/generated/nl.derived-sitemap.json",
@@ -117,11 +117,11 @@
     },
     {
       "file": "l10n/generated/nl.json",
-      "sha256": "a107df2726339cc90820c81b0e1f3fb10796c250848e406f75628d3d6e07bb1d"
+      "sha256": "81135324accaf9b73a010fc3708d33f85c4833e0c16fae0df7c573088a12cbab"
     },
     {
       "file": "l10n/generated/pt.catalog.json",
-      "sha256": "664a59c6e2ef34294d2ed58ffb64393fa20aeca9805c25e0eeca2c55419fb484"
+      "sha256": "e05d4792d847bbbdd7f8d2a4a1bd1ed47295c264c0caffb122a802169cb8ec08"
     },
     {
       "file": "l10n/generated/pt.derived-sitemap.json",
@@ -129,11 +129,11 @@
     },
     {
       "file": "l10n/generated/pt.json",
-      "sha256": "3bbd74a20e5f1de9ba1e7103f0628470eec7b881a3d6d6538d29b37d4deb0e27"
+      "sha256": "0115be105b736a4097dabe1d3c7b0fbd861f48a3403016d311b65e52ba59719b"
     },
     {
       "file": "l10n/generated/ru.catalog.json",
-      "sha256": "c2faa6c80115c4f7dd6f7eba883a2ecf6476dcb2d832bff895ea837a8190b920"
+      "sha256": "d25a5b172285121c45619178c5d8b4c3e2c2bb4acc1336bcefad9120ef982c4b"
     },
     {
       "file": "l10n/generated/ru.derived-sitemap.json",
@@ -141,11 +141,11 @@
     },
     {
       "file": "l10n/generated/ru.json",
-      "sha256": "d563acaa5940f1f8a78a6e58eaacc9bdacc3b7b5eb638eab841a7473b249344e"
+      "sha256": "5adc0658a5e1b9bcf04c76dad1e6f40a41724e930223185edeb1df5df24bf7fd"
     },
     {
       "file": "l10n/generated/zh-Hans.catalog.json",
-      "sha256": "4c44337c551227041d01ebb7b86e502eddf1ca10e6fccdcfdb13e23c9ed62ca0"
+      "sha256": "485710d68f4a424e571464181098b3307ec4912b332039f0cd6b2b73b0222c70"
     },
     {
       "file": "l10n/generated/zh-Hans.derived-sitemap.json",
@@ -153,7 +153,7 @@
     },
     {
       "file": "l10n/generated/zh-Hans.json",
-      "sha256": "2591f336cda9d8e476d7054efcf194a8ef156b9df880ba1ce523f20927426f20"
+      "sha256": "19957fabaaf4a2397ba258999c1ebcb91da94b6f9667c652836cd0f8e2aa5487"
     },
     {
       "file": "l10n/routes.json",
@@ -625,11 +625,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-breath-respiratory-desktop.json",
-      "sha256": "a3aef1ceac0b6be7a3688d9612d8741b1459a6d35a070df91361ac1071d14f3b"
+      "sha256": "3ca66c01bc86f21d323cc3fae954202f92cf50adefdd7e0dc0252ab847630af7"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-breath-respiratory-mobile.json",
-      "sha256": "c5f14366c18b21cd976e9074f5257a6235f5c80a8baa5c842ae1064fba851e24"
+      "sha256": "b956315b05098134e132c0b8db7766c052861473e4ecef422fc7d77d46ee1339"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-campaign-retreat--air-india-desktop.json",
@@ -649,11 +649,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-chronic-back-pain-desktop.json",
-      "sha256": "47d47e1f68fa306ed7d966c383a7073955e6ce75c852389ced9bf38bb7c9b0ca"
+      "sha256": "a3a761a60f00b3c686ee4a95522e3a41e277d3f47ea3fed1a88f9c12df7fbda7"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-chronic-back-pain-mobile.json",
-      "sha256": "dfa63e17cef2b68676798ab6905a3441360763050f8afe571aee7ab879684ef3"
+      "sha256": "76fa164acd8c3b2c282e4d08b0941987f1c7fb5fe181b8598131206eb519a82c"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-classic-villa-desktop.json",
@@ -713,11 +713,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-de-addiction-rehabilitation-desktop.json",
-      "sha256": "1a1f0ae781cf9473957ceb7e7b8eb20195a092990930b7ac2e3eac5bc5db9d81"
+      "sha256": "9c0a0caa943e7ebdf299728dd62bd5eae2483cab69fd4965c9865a47c40475c7"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-de-addiction-rehabilitation-mobile.json",
-      "sha256": "9a3c13ac57d320de56219a6201365b2c497fb14edb8faf5d13591458503ec171"
+      "sha256": "92a9890f9b9fc92d22d36a4578c7988698e518c5baa845c543c71e57f0f7b86c"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-defence-and-paramilitary-forces-desktop.json",
@@ -737,11 +737,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-diabetes-metabolic-balance-desktop.json",
-      "sha256": "782207c55e133a9583de50a776a5deabdc3639adb5507f14f19fcc975fdaf8d5"
+      "sha256": "3fea80a62701b326ea34d4416ec7d17af97dec325fa3afd24b5d46d0cd353fb4"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-diabetes-metabolic-balance-mobile.json",
-      "sha256": "db72628408fbb4669527c9ad669c5e877ade2370007d12f1cf80a9c75bf8a755"
+      "sha256": "747620b868a4c5873abc39e06f16159c03a9974bc9274477cbfc3d28d393b32d"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-digestive-wellness-gut-health-desktop.json",
@@ -761,11 +761,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-facial-paralysis-desktop.json",
-      "sha256": "1c247da2a83a4a0f6a4a9815b44abe86520d65630ebed41614f3286406745313"
+      "sha256": "132a784f9bf791ccb41be772f81ce846857df727dca8a658defee58fc4bb68c0"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-facial-paralysis-mobile.json",
-      "sha256": "4276df38a90a6f72f4aa8a33cae2e1739918a1f6260821703ef32fb970b6bc02"
+      "sha256": "2f46ea6b71ceb146d35c0a9695c9a7a2a3a0f9064a71882ec10f251692c0d0de"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-faqs-and-downloads-desktop.json",
@@ -785,11 +785,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
-      "sha256": "79ea44aab379bcc0842c45ef59e19d9ecea4582629448bd811f3c619dcb6b589"
+      "sha256": "ba758b3422add6570ff26be931620f1680ff9bf1767c13dfd649b7832f12263d"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
-      "sha256": "f5dbe840f1be2b4126f398fcda4d87e5789c79e6a2ba7ceef22d1780a14b35bc"
+      "sha256": "e0e6221fc093b5f5633cb7aee19fd36ef2b4b5137d62c4550a1b73edc2a7f242"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-how-to-reach-desktop.json",
@@ -1508,6 +1508,10 @@
       "sha256": "bbb09f5a0e80f6936d2f3d7bb1781449a0b9c7b9c302e07284e04cdc2959e2b0"
     },
     {
+      "file": "public/ahv/l10n/de/design/campaign-review-chrome.js",
+      "sha256": "96338e49b52a078186dd34e62267d232a19ede3fd72fff55517a5ac4a94a37d9"
+    },
+    {
       "file": "public/ahv/l10n/de/design/chrome.js",
       "sha256": "ad2135cdd789361bdf6978b6dafa6a4fd5cc60a2c33f19bd9556fce6a8865624"
     },
@@ -1681,11 +1685,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-breath-respiratory-desktop.json",
-      "sha256": "1c183e8f670729d66fdcbcb20a39dccf2b21c55bf3b068be308f2ae3719acbb3"
+      "sha256": "a8b4892269967b5ea45496dc361c3052fcc0c8379a9ebe8565a27b8239de504c"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-breath-respiratory-mobile.json",
-      "sha256": "3f9c7df9250acac746016e83d39ff504c200e4f4fee3a279c1c9283ccbe36489"
+      "sha256": "6fb89ba1a67ada81c3824628cf85686f216eaae0c6bb00a486b474829d4f2689"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-campaign-retreat--air-india-desktop.json",
@@ -1705,11 +1709,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-chronic-back-pain-desktop.json",
-      "sha256": "098082259eecedf060a0d00647a68bbf4271abfa2a29d4904f0968d8fefee6be"
+      "sha256": "c2db0dcbddf9f42792c7a033808eb1c85521ba879e0f20207db3398de7bab89b"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-chronic-back-pain-mobile.json",
-      "sha256": "59003ae9ac2272e948b76d42905067919e02cc0021951be42d2017497f4896bd"
+      "sha256": "2c0c1e9d3985277306ec48706bcf6fa0f2f2e290a91fcc0d75df787fc69e98ee"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-classic-villa-desktop.json",
@@ -1769,11 +1773,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-de-addiction-rehabilitation-desktop.json",
-      "sha256": "28e5d2e1b3dd75a77206d745cc9587a515d52dbc7228f419c14dfe5e2f5ddd94"
+      "sha256": "34d6b157022aab884c8dbcd8fffdb44a49ed97653fd9601fce65fac39f6c1f56"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-de-addiction-rehabilitation-mobile.json",
-      "sha256": "2309edeb701302089432970aa021e93ce1f002497e796c296538e33c83150183"
+      "sha256": "02e5fa91df6ce19b7f62489e1056fd498fcb420d9bd0c6b883ebc298c85505d8"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-defence-and-paramilitary-forces-desktop.json",
@@ -1793,11 +1797,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-diabetes-metabolic-balance-desktop.json",
-      "sha256": "156bd1522ca118638b97ba5f822fc39f552a0a90ec1592b36960a21a16ede2b6"
+      "sha256": "6ceb65eca4769615a5797866017e5b424041a9b449610362ea4ae78bd7d5e7ae"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-diabetes-metabolic-balance-mobile.json",
-      "sha256": "b77f7d7cdf622c649aae8fa55a28c7079cf57778a9aeacf735d02c8232bd5119"
+      "sha256": "0f6892e31d34014721ff3c520176a2b0655700b5d8ee11f0f71c58275b4ac738"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-digestive-wellness-gut-health-desktop.json",
@@ -1817,11 +1821,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-facial-paralysis-desktop.json",
-      "sha256": "673f10ddead9065ab23906fb7a33bb8a7fa5ee60a8ef4bf2a181bce0225d9ca0"
+      "sha256": "eb49f6fc8688faaf18657a497af93e5cff2c71527510a988606efc8473e0a8e3"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-facial-paralysis-mobile.json",
-      "sha256": "c6ec644bf52cfa7a9bc5fc0b0a2032ab1cebad8066fb8893caf01c499bb6888f"
+      "sha256": "5857bfdfd84fb96edd6350cb9e19c55a97a85fc3d6752bb5ad26903066ca96fe"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-faqs-and-downloads-desktop.json",
@@ -1841,11 +1845,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
-      "sha256": "e73bf895ffe4f0838b9a9908d924c4deb5b930af8e73b64943d8c4b3a944ef75"
+      "sha256": "ceb9ec41c1a0f3d04f8e5389c3ec5a01c94b7050fe3f833974238dbcbb8a09a7"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
-      "sha256": "92beda2af6519f87ae80328583ce5c27031eda784f83da1de30c487e04332298"
+      "sha256": "703ecfaee8375a2ea1595554d63c5774d529451d6eef131e1b4bb212d3c6b321"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-how-to-reach-desktop.json",
@@ -2737,11 +2741,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-breath-respiratory-desktop.json",
-      "sha256": "a1ce1c2a65f629bca880365cd33401e3c9f8da7f946e40ef09f11dd8b0d36f31"
+      "sha256": "ee0877b0606654b5fbf10c3c52894fe0e80d2003c5bd3cff25bba00b5004ad16"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-breath-respiratory-mobile.json",
-      "sha256": "86a713c099b17496db74bac80304fb436c717eb1077da77ed74b249700c022e5"
+      "sha256": "a2e12890d835400b53ff83449e50e79f1d7249e0d8a8da96800835150de48831"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-campaign-retreat--air-india-desktop.json",
@@ -2761,11 +2765,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-chronic-back-pain-desktop.json",
-      "sha256": "a148399ff54833e0cdc4fe0d599f6c0f140ba24c5fa1f9740c6e75921344fb1e"
+      "sha256": "123506d3bbbba0f23b04ebf26bb1b81eb7dc7888aee2d5b7b4076c018a2b98ed"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-chronic-back-pain-mobile.json",
-      "sha256": "1ccc1acbe4b3f695421097fcf2ffd9f84500f4268ed993a9e4b55469c7ce59d1"
+      "sha256": "05d2dfc9598442299fb5b6df71ed9cdeaf76b6130121c106e27361648f122364"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-classic-villa-desktop.json",
@@ -2825,11 +2829,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-de-addiction-rehabilitation-desktop.json",
-      "sha256": "2d32897737d1e3845f9d63d228f31c3c78021a9c6c351d923ee1d3e50b91a8ed"
+      "sha256": "b3cf15abb5ac534ae74e7825feece5137fc70c0fc6f47785d67f1d480317c398"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-de-addiction-rehabilitation-mobile.json",
-      "sha256": "1d1d379929e94287393adadda5eb2e1702eff83e155973420905ff142cd129ec"
+      "sha256": "b787c98b8298564fd918b99f7ba40350b8353dd8a8c028f59a8f7af6fe3c29c3"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-defence-and-paramilitary-forces-desktop.json",
@@ -2849,11 +2853,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-diabetes-metabolic-balance-desktop.json",
-      "sha256": "2919142fa7592975a1f17d22dd94fcec20f5a7fd4d36a0038d1406f779134a97"
+      "sha256": "2a32bc6a933b1f0fa841ec18bf75044d88123552a9f242c596db5de7baf20077"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-diabetes-metabolic-balance-mobile.json",
-      "sha256": "b3d472c7b204285a1a146120a56ebec04de686afcb8d91cbe79753128ebe9832"
+      "sha256": "ecbae00b5ae5ca0db706d13c1ce29b1b314bf7f1f695349ea361061c8be0f040"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-digestive-wellness-gut-health-desktop.json",
@@ -2873,11 +2877,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-facial-paralysis-desktop.json",
-      "sha256": "129ea862b2e2e3007b30f0d4333c2d6a903f0749cc5214208efedba2e93d74fb"
+      "sha256": "9445f52ef9723411517bd71a8a3860791ffbeff74d301136402816c94cf04d57"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-facial-paralysis-mobile.json",
-      "sha256": "2a2e1b25d3bf9a80893d4971b816277037b2f69191cf4a0de93d7c43e2c9e93e"
+      "sha256": "63e47a79b139bdb64053c41eb3c8fa1c9610c0eda0af73322c73d13be22c032c"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-faqs-and-downloads-desktop.json",
@@ -2897,11 +2901,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
-      "sha256": "364ec399ca5ef795e5a46ca8949e93e3402ac36d72ae7058e0fba6c30b3f1a21"
+      "sha256": "37aa0a32a956d7ba99b993097397b3fe7c4cf30654819671001658a36fbac12e"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
-      "sha256": "97ab42a08ed38c7a82133d2aa8dcbe0c8e924cf93a8c58879edc85327dc6e276"
+      "sha256": "cfa1fd4b3aecc61ba3664a8f2b77b6f50dfac8399fa3133d5c13c322641edad2"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-how-to-reach-desktop.json",
@@ -3793,11 +3797,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-breath-respiratory-desktop.json",
-      "sha256": "4e183807bfce602233f57d82029c84ec19910cc0fe168243f24393603e695092"
+      "sha256": "0b3cfa6cdd336eebfd503a148ef72ec65ce87191b4d0c760cb5bca5460ba4bfd"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-breath-respiratory-mobile.json",
-      "sha256": "03a547bc773d00489762d7becc8435039341dcc0c180d864b84a1067decaa698"
+      "sha256": "5ea4be02ce705ae559f7e256621a859be0a453d7466c6e7e70661ca1e8759082"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-campaign-retreat--air-india-desktop.json",
@@ -3817,11 +3821,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-chronic-back-pain-desktop.json",
-      "sha256": "c10b6aeba825b096fa313a4e1ad3cddf21ae9dd9997bddc7d7abe61811238683"
+      "sha256": "ab0337514695a19f0a7f49515b77b476741bf42201f690e0cef27c4811f0cabc"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-chronic-back-pain-mobile.json",
-      "sha256": "e60936a4d09ecc7630b3714e0e2057fe006c48cecf711b798b38a1ddc854a3ba"
+      "sha256": "39b10776b656b00c19fc47ff10e2d4337acd637b140090ae6ff3ca8102b055b2"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-classic-villa-desktop.json",
@@ -3881,11 +3885,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-de-addiction-rehabilitation-desktop.json",
-      "sha256": "de107f6fa89b4d547395b997b6338ccabb43d220f365294b519a62e62cd5d09f"
+      "sha256": "7260ae97886e30aab9c43f1ac031c1339e298522ca78e723b14242e7059f3b99"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-de-addiction-rehabilitation-mobile.json",
-      "sha256": "b1cfd446020c5cef0d5dbc86b691ce234b0dbdffb2597fd7840faf1d485cddde"
+      "sha256": "1c6a11e0bb3a9d762e7eba4c855f7bfa4627572398e97c01d356adb96b849db3"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-defence-and-paramilitary-forces-desktop.json",
@@ -3905,11 +3909,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-diabetes-metabolic-balance-desktop.json",
-      "sha256": "55c0813302675b8bd97815a1b63f626dec26ece673f863a41228dc8d923aee8b"
+      "sha256": "b8c1132018e83c73536f15e75a98cbfa305d636618366c1836dc668a489888f1"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-diabetes-metabolic-balance-mobile.json",
-      "sha256": "364d660305ae4d53aa898c79d3e17252799ac3696f08a6617970e354cc15d238"
+      "sha256": "a94f96135421cedcd587976c965179b44891e0257d3e02e99085aa1a46fbcf4c"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-digestive-wellness-gut-health-desktop.json",
@@ -3929,11 +3933,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-facial-paralysis-desktop.json",
-      "sha256": "22874b30364184b1c92d4e8e5ee43859e6a2cc52f8533aed7ed35704e8b8adfe"
+      "sha256": "1f3d41c46c44586f91e370899a79bdd2de0bbd9f16db621d283308fb1be3d7da"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-facial-paralysis-mobile.json",
-      "sha256": "1b84720fcc30b914138d18aab224017b16b8c0bde8de8b9835213866e06a772c"
+      "sha256": "6bfbc7ee87c83ddb5e7144d16a7cec04581831995262a7d2b404bb069ef25995"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-faqs-and-downloads-desktop.json",
@@ -3953,11 +3957,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
-      "sha256": "83a2ac9c577a096c9ea47d782d94d145d1c54ccc70ae2fe5c3ade457fcecc3fd"
+      "sha256": "9a26471fae3c448a2e3490d96936680277ddded6d2a4a9c5d9c69e6029939716"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
-      "sha256": "1835ef85ffe4e4b0e4a8e5dbbc26636788b2ff87144de3162b3d826624ffa427"
+      "sha256": "f8d79f01158bee5383de7427f7abdf58ba9183bc957fe9a66ddf8454596d8c30"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-how-to-reach-desktop.json",
@@ -4849,11 +4853,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-breath-respiratory-desktop.json",
-      "sha256": "91847ae43c1b1c682b302a05bc75b51fd0524dd1696a33abfe1486e41824be0f"
+      "sha256": "7d941f19c374ea1c7a3676f11143a72707377cacd3026f773831a6b4908fe435"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-breath-respiratory-mobile.json",
-      "sha256": "8766f482a1888eacd9f0ea9827bfc013b8da4e37106c8e89740499cb37767db4"
+      "sha256": "e54662227b616a074893e0cceb33c3a7b54fa16dc55cdfc706c7259f2a8b7bfc"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-campaign-retreat--air-india-desktop.json",
@@ -4873,11 +4877,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-chronic-back-pain-desktop.json",
-      "sha256": "be199961f3cff1c5572b7af1a35f0eef0ede4e5a004edb19e573656e41a555dc"
+      "sha256": "d089da5ef85a11ece866bceb52904dec7c140362998825b58148c4eefe8595a3"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-chronic-back-pain-mobile.json",
-      "sha256": "994c62bbf96d8a3eecec654f246a0e30ba9708a9022f97278c662c72cf5abf46"
+      "sha256": "3663f8d186255ec8382beb7981d2cbab2438137121a8b158f8953fc03f08a909"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-classic-villa-desktop.json",
@@ -4937,11 +4941,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-de-addiction-rehabilitation-desktop.json",
-      "sha256": "0f75c34d4efefb02e1956b0064f7f6e02c7b9b3712febf856ef1ef69ba8b7de7"
+      "sha256": "88fba9ff3626ea6861fe79d03f0ddc9866628a14d964629e6aa7afa5635cef2c"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-de-addiction-rehabilitation-mobile.json",
-      "sha256": "02332bc79dba9dcfb97629f14bdbffbba9556987f7672744e654d46abcc44e9f"
+      "sha256": "2fb6181c96a33fcc7de194466b920e91c0ac51e0b2435c5927a24ee6c210ebf8"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-defence-and-paramilitary-forces-desktop.json",
@@ -4961,11 +4965,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-diabetes-metabolic-balance-desktop.json",
-      "sha256": "3f798900d61db6c3f16fac572fc39f61d0251ab5097dddbec415a3b366ed2743"
+      "sha256": "b06e3a56157173ae1d8916411a7b5dc19d709c9dac1338a94571652707cff25e"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-diabetes-metabolic-balance-mobile.json",
-      "sha256": "20c5f8d28c8dcfdaf628e045a9cb37be17d3001b136c6f1ecfe628c66096c80e"
+      "sha256": "420141a896ca03f57c369bc7a1eb71874b9955ff55034f49adca1dede92643ff"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-digestive-wellness-gut-health-desktop.json",
@@ -4985,11 +4989,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-facial-paralysis-desktop.json",
-      "sha256": "06eadd588e821289498fd4c23287148fe1b3fbb2140012195e63172b6698d04d"
+      "sha256": "72e0a9dd7726ed99b9042f9bcf0fb6a183431370b4dabebd01b75b8cfa5f1ede"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-facial-paralysis-mobile.json",
-      "sha256": "421d7b7bf74d1026e2a3c447ad22c3df988023d5a1e2b3a7aa3082a798d37945"
+      "sha256": "ff22b0d5e19ae67a14a9290c518433ca21fa96965fbb4fbeb23cd86c85429225"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-faqs-and-downloads-desktop.json",
@@ -5009,11 +5013,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
-      "sha256": "f98cdc2abc127539c3499a3a68a4663f17f6277aa3fdb98502254090fe00838a"
+      "sha256": "89baa0b946b3ce64d59733d097c01250bd6818a8a5e5190fd9e7b88bf3c7073c"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
-      "sha256": "4163d7d57fde3721cd7b7643ed22c5a056672de4c28274ddd428da52a3a87992"
+      "sha256": "139a5bad0351ffbd4d7078ed2c52226f4095db106e998a582ab21ac8c6bb478a"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-how-to-reach-desktop.json",
@@ -5905,11 +5909,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-breath-respiratory-desktop.json",
-      "sha256": "147ca6b506d63fef6aa9213118cf45433bc8163a1b7d9e20881045fdd202eb1d"
+      "sha256": "be8051e0ab30b9293cac6161eb97d61a4f9b03da22ddfb5530368326f80e4c80"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-breath-respiratory-mobile.json",
-      "sha256": "25768e544e27166a6fb7a2fd669ea86879d16ca1284a230b77b43563dd926b44"
+      "sha256": "20590d5ea1a91bf7a1d86936fd79e5bdeaf780b578fdd717be0e0adac1614e67"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-campaign-retreat--air-india-desktop.json",
@@ -5929,11 +5933,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-chronic-back-pain-desktop.json",
-      "sha256": "ac1d424323e48449c82da30e60be2ab4e45ede898bdae3342fb12842c835c1e1"
+      "sha256": "1f372b764c3e6dfd4e24bfd050b9680a2b148f400ed916c62b6a8323cc64f9f3"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-chronic-back-pain-mobile.json",
-      "sha256": "a36fe184171a1487ad78b53a33a67f5416d1953f4cf29d1876556f828e98d5a2"
+      "sha256": "249f3941c921d23aba2f8c65d0745b0461161de39cbbc8dcb65f7f6dab1c4047"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-classic-villa-desktop.json",
@@ -5993,11 +5997,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-de-addiction-rehabilitation-desktop.json",
-      "sha256": "c8b7d4bc61fe66c805adec806159071ec3aadcc22307dc54628904c4d1c39dc2"
+      "sha256": "60f063aba4f27e047819b5fe19aaff935eab3b7edb5e2aff9f8fe380ee7ac103"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-de-addiction-rehabilitation-mobile.json",
-      "sha256": "5ec379db4c57ee9bd191c6fd236d40f8bb84df362cf73e782932405e642c2710"
+      "sha256": "defee3c4b25f6271c405c0a6004ea3f8cc4209f8e7ef77cc7fd33baf88a8895b"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-defence-and-paramilitary-forces-desktop.json",
@@ -6017,11 +6021,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-diabetes-metabolic-balance-desktop.json",
-      "sha256": "ceba208aff3c6a50b6926de2cdade0291a0603158ff31b6079d808a1bc6b6fda"
+      "sha256": "ff2d662f035a5eaafa1db8b6432992961f16f414475095745ab9e20116773324"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-diabetes-metabolic-balance-mobile.json",
-      "sha256": "81001c66077cade34d1cde16889be818ca86890a4309dad14a1b3555930726a7"
+      "sha256": "95bd0b36cc315fec3ec65d90698885c8bfc69fd3ab3908751478ea4cbb17a41d"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-digestive-wellness-gut-health-desktop.json",
@@ -6041,11 +6045,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-facial-paralysis-desktop.json",
-      "sha256": "f2027e605d7ed00518975823b12cdc9a447d16dce8c3e0d9b8ae7c914ec1823f"
+      "sha256": "2f444734b51d5b619785fb5a56a7587a7313688160f231b9dffb42fe1c8bee62"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-facial-paralysis-mobile.json",
-      "sha256": "a66f784aea2150ca8797243de1a9cfcc653008c6f80610448a72d9ac7d0d2b05"
+      "sha256": "5a8d9a54d1d585b098af4555cf4b9e256546bbc5daab92e480c31a40cfe8f0b7"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-faqs-and-downloads-desktop.json",
@@ -6065,11 +6069,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
-      "sha256": "b228b766f4444c6796346ad26a95e0a36fdec690e28254ac19a38d6a95c747ce"
+      "sha256": "7e36d0d88dd2ae5f17cf60441d0591ff0af5f942581674028751871d773f87f1"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
-      "sha256": "f461d58091a2dc76942cdd1b10bd60df168b2a2a9fab297c747c19c75d4f1ef4"
+      "sha256": "b9dab09e7f84167aa5b453d7dbed4e917edd6531215694b72874d5b4626e3e30"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-how-to-reach-desktop.json",
@@ -6961,11 +6965,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-breath-respiratory-desktop.json",
-      "sha256": "e3e3aeafe433b66588a517cd091556a5e9a33347ba0ed8631e6297006361f876"
+      "sha256": "5d9f9f8cfb8e75fb910f5b87a54d6e897b86159735ac5b135d20d50984f0916b"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-breath-respiratory-mobile.json",
-      "sha256": "9870d81427e162e93b9ae29e3a34e468307a7cf5d73d5c28c79d9225f965457d"
+      "sha256": "89e7053d51fa43f6b56279d1bf37a6b53a7fe93057fbb81c42fe6ea29549d129"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-campaign-retreat--air-india-desktop.json",
@@ -6985,11 +6989,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-chronic-back-pain-desktop.json",
-      "sha256": "1bc4a08b21f7d69095c3354411f041d74e0f09ed1717bbd80748dbbb0e0ae734"
+      "sha256": "9adb23deb49fc5e258d1ec3328520f8397806029fc029adc5c3fd8a6866971ac"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-chronic-back-pain-mobile.json",
-      "sha256": "8841c11e812edccb7d944dc43e9d8b103539e666063573399afe2641170a5639"
+      "sha256": "0fb7ac8dd77888e4152dbd08eb041f2cb987bd4aba7faaa8ff2c819a8f36f3af"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-classic-villa-desktop.json",
@@ -7049,11 +7053,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-de-addiction-rehabilitation-desktop.json",
-      "sha256": "3b2c09acdf2d48a6f0a34c81c3c2104671cb4841ba415b71fab896c2d9025adc"
+      "sha256": "f36d157989682ceac3a4993b379271c82bcf70c0069ff909f607f3e3f6b86908"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-de-addiction-rehabilitation-mobile.json",
-      "sha256": "d746a6b3fc9af5bfa61da543e899d613ceb57326065076e186622bbae695e546"
+      "sha256": "9cd29d7b0db2bc1cf81b0d3476fc400f3c9a96b6bec44cb541f3e443e8a069ca"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-defence-and-paramilitary-forces-desktop.json",
@@ -7073,11 +7077,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-diabetes-metabolic-balance-desktop.json",
-      "sha256": "5c97e9b49a93b0653a5c0ee1bb877d291455605f4e94dd03d1a67e4ab26c3e7b"
+      "sha256": "9820a48edb05987ba48bafe7b8b19a3377df236337e5d161b95e07903b8f578a"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-diabetes-metabolic-balance-mobile.json",
-      "sha256": "42b6485169f7b97f1521749cc25aae794f2873232a5cd14138e616443df6f89a"
+      "sha256": "9f075be420e9d25cd02a10170e007ad7c5989f15c4ef59b201859e6570d1e9a8"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-digestive-wellness-gut-health-desktop.json",
@@ -7097,11 +7101,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-facial-paralysis-desktop.json",
-      "sha256": "0ad0c9360da0a50db037ad13ec661b808ba45cebc817a43272265b829059eaaf"
+      "sha256": "a5eaec93be0f5b3079b0a4fce38e4ce82798614829c2c447c648e8b4deb5c3eb"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-facial-paralysis-mobile.json",
-      "sha256": "1f5221436b47c9f46b57143768d9cfd2053591d67823de302909635d3edae5e2"
+      "sha256": "915b138d7383bb4cecdb9315113cfb93e6c3d3ba9d374b76f07f62274cfe176b"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-faqs-and-downloads-desktop.json",
@@ -7121,11 +7125,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
-      "sha256": "52a8289d8100cafe48b4b0f8338579b00a7a4ef465002c8029944eb6dbdbac64"
+      "sha256": "496fa542c9aecf597a3a86c0e45b10a0d98408090bb1682f53a08f1f598aca3a"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
-      "sha256": "9ab41f977cd473b12561c69688811ba23cc22ae537efcc2ed33d9d2e38fa05cf"
+      "sha256": "6d194814ff6bccbb660d58e2b72b25cd4ea5cd00fcf6c442141094c28be7d8a8"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-how-to-reach-desktop.json",
@@ -8017,11 +8021,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-breath-respiratory-desktop.json",
-      "sha256": "2cda2478dd4bfc73a596f0e374c5322f846374cf9be3ee22e05d2f1e1ba077d9"
+      "sha256": "1017a9a2b54c4b81752a120afc8e60418a8660ee51b5b666db06ed0a88a090c2"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-breath-respiratory-mobile.json",
-      "sha256": "5ad91cab47c3cfc20bba46d74fb285042e8713671fbee454f30b071e4b0e41bc"
+      "sha256": "f822f80d35edbc78021b73e5973bff9e73f434c62d3f7e362ade6ed5326fe389"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-campaign-retreat--air-india-desktop.json",
@@ -8041,11 +8045,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-chronic-back-pain-desktop.json",
-      "sha256": "952c41639c6903c268f76fad6653c5419067519818c259e661064c47fdf85bd4"
+      "sha256": "9e97914c6f35b0c157adcf287619964fbd149e4984d76fcd6dbbed66e2b82f5a"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-chronic-back-pain-mobile.json",
-      "sha256": "3d495e6e20f01bff06be4148d76199ed0d138fd3e88ee2625bf6f47cd0870e38"
+      "sha256": "3c8d66473d9801cd9300c987c9d15942a8da3b9ea4e3c1ea9bedb6dd6406795e"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-classic-villa-desktop.json",
@@ -8105,11 +8109,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-de-addiction-rehabilitation-desktop.json",
-      "sha256": "af1bbc9323767b39fa6fed26262ade38480088be4fd85502cafb95f006f49c7e"
+      "sha256": "478d350b1d08add5ef8346047d00243a5a759df82f0193d9605338c9dfb99216"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-de-addiction-rehabilitation-mobile.json",
-      "sha256": "8d4b1a6d14f19eb6ded513bc1dff149a109cfec4b3c8a9e74cfa9b7f9f7aa17d"
+      "sha256": "df20fb9aebeb73f7755daa498b8941d881feb1e08ee27ddb955fd4d529a4a44b"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-defence-and-paramilitary-forces-desktop.json",
@@ -8129,11 +8133,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-diabetes-metabolic-balance-desktop.json",
-      "sha256": "f2acd45a29795885209a4585ab4e7ecfa8e8cf137a73f1c83b02a7b56a931bc5"
+      "sha256": "bface431970854be499104fe634095fc908b9880276e1f2b6ef318fc94c7f49d"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-diabetes-metabolic-balance-mobile.json",
-      "sha256": "ad6780bcb5b604b4536904ffb1911ed22e88f0092e502469b4879a345a75d514"
+      "sha256": "723d3f1db6ac02c79eb51b03fe2eba348ae1d1506c76b637b00b4549df372af1"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-digestive-wellness-gut-health-desktop.json",
@@ -8153,11 +8157,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-facial-paralysis-desktop.json",
-      "sha256": "3dd7d069095b4c6a7c097df8bdf247be46227c1a2e531bb8d8b4094811bc79ec"
+      "sha256": "72a6a24336fbabe9b2bf9f298153d1f7b18d0d1a79d63376187989878a0ebb14"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-facial-paralysis-mobile.json",
-      "sha256": "8a703f841ea0f718cdd193e4fae3c90e1147276b9b1d61f71253fca7f851ffa2"
+      "sha256": "dbea5bb401307db5cd278b67ac9b0526ca044bb83ba3edc8897ac81616db7742"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-faqs-and-downloads-desktop.json",
@@ -8177,11 +8181,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
-      "sha256": "98209d5addc88835d471f21e29ba07cb15837704168062f0256464700b947ba0"
+      "sha256": "241433646dce3ede6ffd6c8f0fd1feac3dbe0ca10514be0060f0d1ee2253c908"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
-      "sha256": "a502dc2d7f47bfa7f6953ca9c4262a2b76f6cbc5478c1c90763aef48968ad0c4"
+      "sha256": "861d269436bf3de9abd1fd6b34f9c7b865a82e63a9d30181fc0db6e8618e6ae5"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-how-to-reach-desktop.json",
@@ -9073,11 +9077,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-breath-respiratory-desktop.json",
-      "sha256": "fcf0c97719d305fb51d8aee7fa9dffa935a6a7a229dc894777af18d0bf75e05f"
+      "sha256": "0f1f0ec31ca592a4864f847683c29d0d3678b2c4042e3e982f1a193401ffb1e4"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-breath-respiratory-mobile.json",
-      "sha256": "799e64a29893d49b46a402d9c8cbd85b413151fcc6339760fa518c079b401b9b"
+      "sha256": "41e3184731d7d7d809b7ddd6bf1c790bbf428f8c5af7060a2135b8f789f5e761"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-campaign-retreat--air-india-desktop.json",
@@ -9097,11 +9101,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-chronic-back-pain-desktop.json",
-      "sha256": "5ada51392de8844d415c0388df72ae369fd0a2421ce7e18137efff9f99360e36"
+      "sha256": "7fa941f478b48677034f273241e3a0e2a69fd68ce9b33933b72991dd41733b02"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-chronic-back-pain-mobile.json",
-      "sha256": "711a4465b02b0f2c911b793ae13ccafd6d2b106a648a366c3d128b35f3e7da33"
+      "sha256": "9e170bcc3e317b6a605ae6e565f466b16462e278fc6a0511e4333a0d35fbc137"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-classic-villa-desktop.json",
@@ -9161,11 +9165,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-de-addiction-rehabilitation-desktop.json",
-      "sha256": "e1458fa665bc616775955835d412ce8a76e78adbc1c03718149a07d56972637d"
+      "sha256": "a472cc4c44838fe4e6ae9ea9ac194023138277316600ea098c265d60a81e3059"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-de-addiction-rehabilitation-mobile.json",
-      "sha256": "46b4cdb2d96155517ed8af3f747056ca8812df2c7dfa8b6d1aa52f1ca08dba04"
+      "sha256": "e8dd8e8cb2b642f36da05204a4929633f11c7e84ca20fd1fdad954f8b7370b09"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-defence-and-paramilitary-forces-desktop.json",
@@ -9185,11 +9189,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-diabetes-metabolic-balance-desktop.json",
-      "sha256": "c7b757a1dd2b1f1e8a0d12ec9cbc0edeca319ad804b8e6855333abf74988528f"
+      "sha256": "73abceed8ee0a55c57c2d8d20d1bc1ea38bc82992d83b196b71a40bba1e94fa3"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-diabetes-metabolic-balance-mobile.json",
-      "sha256": "6d98848bf3c508b52f16b5e010c5baf4186d23a574bf93526a89879c74e01dcb"
+      "sha256": "2911297d19ac22a4d908681f7d56dd8ddb1bea346ff84a0b08ff8fece441f118"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-digestive-wellness-gut-health-desktop.json",
@@ -9209,11 +9213,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-facial-paralysis-desktop.json",
-      "sha256": "c547d8af493f8bbd1dfd2a48295220e0ae18ae182dd3da942f1d6bb1beb0346b"
+      "sha256": "17226bc20afbd19a940b03b918a17103a200ea2e6c04b766035d2a645e7bfb03"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-facial-paralysis-mobile.json",
-      "sha256": "0c133ca459a3ad45ec5125ba6d7d2a90511df4b91c29be0e3c43653eea7e0d1f"
+      "sha256": "0131b735d3708455b439a6399718761e79ffacb89734566a1bbdf0125bc0267d"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-faqs-and-downloads-desktop.json",
@@ -9233,11 +9237,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
-      "sha256": "9927982f24a9583f728b99f928476c15a54ce15d96abd4d6f9050e64978d402d"
+      "sha256": "236ef925966bd58b7a7e9e612cab8bda1dc31111f800c1ca538b54acccbf5d25"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
-      "sha256": "64b5fc7cb08b4ec403c31e3b1b3a7ca97d87eb6ad10d3d3253dcd31d2f593887"
+      "sha256": "17c7b29c92db62e453829d6d48cd328130a42ee682fac2bc55644dd1688717a5"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-how-to-reach-desktop.json",
@@ -10129,11 +10133,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-breath-respiratory-desktop.json",
-      "sha256": "e45d5c4652dbded290f42772a1b887de82ed0d2cc5ae98650fb649fb70483636"
+      "sha256": "a580fb27901b4ea4b49500cd4f2a003c4964febececbd9b53990b0dd00dd6a23"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-breath-respiratory-mobile.json",
-      "sha256": "df75b608d52ade4b3d901d6d45a3229107c7d046250fb503356fa449eb57f3c0"
+      "sha256": "a1422154059d656ba971aad2e8cf0a76b589b34d67819f3ae3f2833416d966d3"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-campaign-retreat--air-india-desktop.json",
@@ -10153,11 +10157,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-chronic-back-pain-desktop.json",
-      "sha256": "388fffa6e02a5e18de6bf447e2f37f14f210e2cbb45947d4c81da8c1a3209138"
+      "sha256": "5cb86995c920d2759b738dcb735a26868fd27cabbc4a5b18b9c5f6768b9b224b"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-chronic-back-pain-mobile.json",
-      "sha256": "d549550db694755e6776fd70715185d4afd55accfc925066ce3c1cea03fa69d7"
+      "sha256": "873d1d088b0e2a711604c9f20d93b20feae46b28355745eb0fb89ed166a18098"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-classic-villa-desktop.json",
@@ -10217,11 +10221,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-de-addiction-rehabilitation-desktop.json",
-      "sha256": "46e4d1daef178b98837e1fbf2a586d716a96044d7946522e171e64ece5e04384"
+      "sha256": "e7c9251200c13f5fb7d9e168fa5bb657cb64b04ab43f09aa44af55db4c26d6b1"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-de-addiction-rehabilitation-mobile.json",
-      "sha256": "9554b2753a3aa73cca67feb9de7dcf1be1d68618611f39a5f294328bf841f919"
+      "sha256": "cbd2e03027ecc34e58af890c52689b56fec7941ed991b2155f5d11aa23d14e97"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-defence-and-paramilitary-forces-desktop.json",
@@ -10241,11 +10245,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-diabetes-metabolic-balance-desktop.json",
-      "sha256": "fbb4ab4f58636c79827b655d5ec68001f3a7b852abf7d04b6ef18a2beb927971"
+      "sha256": "7d4d76e8ae1ab9e15c368c5754d6bc543b5d36ccf5e7a9c69895be7c45ea3071"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-diabetes-metabolic-balance-mobile.json",
-      "sha256": "aff12711fc4ea0365587f3f124ffadc5127bcb20f99f126794e7f7fdf2f08fe8"
+      "sha256": "f40ed55ff7ee8175c1abe34aabe80f79b20429782d09024149ebb29241b10563"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-digestive-wellness-gut-health-desktop.json",
@@ -10265,11 +10269,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-facial-paralysis-desktop.json",
-      "sha256": "e405d71c4411494bfc33023b323ed68d5449f224398a929f2f17a937cd94594e"
+      "sha256": "a99ca9421ce21bcfeb80a58cbf0f8cc8a5eefc62925db0efa9baa3587e90acc8"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-facial-paralysis-mobile.json",
-      "sha256": "03cb349e90b96b5702c0f182f9f1d7021cd01c50572083ee90b3016888a1efeb"
+      "sha256": "350c45db1f9cc4c0e09b317d08cd34301a8cfe2196e9066237fc832f8d9528a8"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-faqs-and-downloads-desktop.json",
@@ -10289,11 +10293,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
-      "sha256": "15cad91b54414969308702b48d346951db80924d3470e0c24d8ea21c52a9d5af"
+      "sha256": "79537dd020bc60f02c995ca5aa473fb82712c7a4da9f95b9182619ea41170b82"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
-      "sha256": "65d54fc84ecb4e3b1c5ef7f0077493d3bf45ad17b2714c08f38e7515eb80539d"
+      "sha256": "fb03e87c8250e08116fedfef06ca4d48f7d8c7c23a42bf0affca9ab7a631de6d"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-how-to-reach-desktop.json",
@@ -11012,6 +11016,10 @@
       "sha256": "d479f4ce977f8dd1b5bf938e7d0f7825f36858bc45a2ac6ce33ffd5a2f7952a0"
     },
     {
+      "file": "public/ahv/l10n/ru/design/campaign-review-chrome.js",
+      "sha256": "59bfba25748465ea279364e70a8515ff68eac79955a32e80fb777d51e68880c4"
+    },
+    {
       "file": "public/ahv/l10n/ru/design/chrome.js",
       "sha256": "b235c24fc86707f8200043022f0004ba563b621e8ccd8e684ad4d867cfba51ea"
     },
@@ -11185,11 +11193,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-breath-respiratory-desktop.json",
-      "sha256": "5b3627c58a3100e2391107defe1a7ebc32762e50624d12bdea07db6e63187288"
+      "sha256": "4da5c63b5f4d35caf034945866c017f1195dfc3ad15318fee047af40e0e4c8ec"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-breath-respiratory-mobile.json",
-      "sha256": "99ecfb93b41ed6b7d314c59be2e6da6219d6f86c542670eaf31469d8f2f62386"
+      "sha256": "8bcb18da313aea9e983fcc61b18c03a556ed67addb85c1f389b9beeeeed48081"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-campaign-retreat--air-india-desktop.json",
@@ -11209,11 +11217,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-chronic-back-pain-desktop.json",
-      "sha256": "0804011c3b8052f2f04573943a3eea47fa30532df03c4d0f9605e1598fd446c4"
+      "sha256": "716548888be8bd9071a59d69e40142746802ae38efc37333cad6a62b23b85510"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-chronic-back-pain-mobile.json",
-      "sha256": "686bdfb01c8fa7bf800f7778886f2973898aed8a3a626313195621ea8f6ab307"
+      "sha256": "44aecc454a33940afb1399551d053a7d40943766b1c0ff4ad1023bd4b2157189"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-classic-villa-desktop.json",
@@ -11273,11 +11281,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-de-addiction-rehabilitation-desktop.json",
-      "sha256": "b29ee082873fdc8285fc236e9d689e9692d1083a59b60a7322ddcfc30bc119f9"
+      "sha256": "0c9ddf73f33159f95f2725c30462c54af3e4ce787d7b56b07a61c5e9f218e741"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-de-addiction-rehabilitation-mobile.json",
-      "sha256": "9b4578c4db430817d0ce99f918145f85696e79f2308f1b2db733044837b176f8"
+      "sha256": "27256c894ba27eb3fca2dda92d7b096fd91a29d8a798d38251e3534f276574b3"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-defence-and-paramilitary-forces-desktop.json",
@@ -11297,11 +11305,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-diabetes-metabolic-balance-desktop.json",
-      "sha256": "f8b16669a7530eb0c0a640ed24a2b641035f6b1d5a38932eca015514d09a9b2e"
+      "sha256": "268946a0bdc7d8b4184b37aa9085883be9bd04cb666845c8d73d9e06294af20a"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-diabetes-metabolic-balance-mobile.json",
-      "sha256": "ec3d9a9fae364689029b01e7b17c64ddc36b0a43f9b70c2cc8dcc85cd470ac04"
+      "sha256": "c59e8d9651f5e3d0ea7af2b591723ce18726bdc365be2018977fc98c4f62a8f3"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-digestive-wellness-gut-health-desktop.json",
@@ -11321,11 +11329,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-facial-paralysis-desktop.json",
-      "sha256": "cdeda0e07ef50ae59cae9e1ca5d576f6f1d87cb908a21dedd4bc54837bd062ce"
+      "sha256": "ba3e8d6f8b14535d62dec25e9f09eb71a74a1ac8be147db14a9ca35f95aac3b7"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-facial-paralysis-mobile.json",
-      "sha256": "8fd7e56ac935b078cd703787b9586535db20cc62eb3e47ac2a4a1f3f2e18af26"
+      "sha256": "d0605e657020489fb0b711ae2e95e16e18d431cbae993a02674e785d01615b51"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-faqs-and-downloads-desktop.json",
@@ -11345,11 +11353,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
-      "sha256": "f67b96f9506029a8d4fe960bbeffc7ecb95884ca492cd08ff20e3d4025a5956a"
+      "sha256": "3d04edf2db7acf2d5738b5693a1850bf5fc2889c9279c6a5b904c8e731f414e0"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
-      "sha256": "7d18a4625ed8fd1080bcbe8e2e9f31c15414753b8d0f6e3af0f4dc61f01be2f2"
+      "sha256": "1346b08acf7c5e611b273a88d454cdb48203889c1a81bbd5d30fd2bd4e4e5c79"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-how-to-reach-desktop.json",
@@ -12241,11 +12249,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-breath-respiratory-desktop.json",
-      "sha256": "899625b7a727e15612cb710166b6d161c694cf6e04fb49ceadac1c1a44614faf"
+      "sha256": "962dbddc8efe6f5ecdcf0416e5d27e519c381374a8614406cdab2d15e3a3fa5d"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-breath-respiratory-mobile.json",
-      "sha256": "aa385eeff5930885b8019878cebf5004329f3009a3f00e34955ddb551752fc18"
+      "sha256": "f1995d1d1da07ede4194d66671d10163707cb6d18de836c530dd8e9a6224307e"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-campaign-retreat--air-india-desktop.json",
@@ -12265,11 +12273,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-chronic-back-pain-desktop.json",
-      "sha256": "808f9e46ccd6c7f23769c2be58b6a526a085647e5021da9fa819586fa5696802"
+      "sha256": "37003dd7149fd5c7156b02761fbb66634e3c24069bf25f20bfd63ad6e633a81e"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-chronic-back-pain-mobile.json",
-      "sha256": "0407c56128987fae7d0cd657065e21849aaa0b51303bae2d0490e366d61036a8"
+      "sha256": "ba08e988f79de718e440c82af695f005301b10e80b4b78e90ba517b723ee6f2e"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-classic-villa-desktop.json",
@@ -12329,11 +12337,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-de-addiction-rehabilitation-desktop.json",
-      "sha256": "3752fa4a1a5a1c748f7ab5b34afc0f1baed7854cf462bf0e0f32d38b8f9b4aef"
+      "sha256": "8c22da62cedea59545a75628982bbb6f2d7d1d3238bb86330228abc295b89a0d"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-de-addiction-rehabilitation-mobile.json",
-      "sha256": "a0355746213f78ccf370bfba5797db27a2b968849086c630c0cb9a97ea1cf7ff"
+      "sha256": "f2201910b3aa4d7c27070fc729de458ccb1994e9e8b67e41b1660ec7f1ca0481"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-defence-and-paramilitary-forces-desktop.json",
@@ -12353,11 +12361,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-diabetes-metabolic-balance-desktop.json",
-      "sha256": "4ffc0951914847a2a76f4fa7643e8826aee9c6d21b70479e8c51f7059f30dc0c"
+      "sha256": "ca9cd0634a9cffc4c54e695646663e233bc4add4f234b7c1bf92e0c6903c8804"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-diabetes-metabolic-balance-mobile.json",
-      "sha256": "6d33bf3eb5fe3603084e6a37da006474f1e4735b70f3d544c64275c64c9c2cfd"
+      "sha256": "325dd19038cb3b82e40d660c1c2b4af9ba80b430862b653fe70caebe9112e47e"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-digestive-wellness-gut-health-desktop.json",
@@ -12377,11 +12385,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-facial-paralysis-desktop.json",
-      "sha256": "cb797cfbfc6966c509cbad4916cc8ebf0c688d4073f7594ed47a4d82b87a7dcf"
+      "sha256": "4d1a7796c11dc2aeb071c132de6882a8ee0fed3133065bcdd712e5e8f8b86867"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-facial-paralysis-mobile.json",
-      "sha256": "1139eb9ca6263bd26d97d6ebb7137b03f616fc0ee790065030b50780616c8417"
+      "sha256": "1354961bed8799409a434b5365e3c67489ba34bee5c88bbc5094cdeb805b4d12"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-faqs-and-downloads-desktop.json",
@@ -12401,11 +12409,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
-      "sha256": "87ba2eea28d308bb4d1bc4b0f3ab80fe692b7b67b86a860c84b3df285854db49"
+      "sha256": "015712c978257745032cc96001f6febfeb27c68c37c7dad770dd6ea0a9693b70"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
-      "sha256": "065706983eb3755abb00428404654ac8480c99cb75d95241c6e7553092317236"
+      "sha256": "d2a10df98a85deb275bf9343908de2d29fa60509831e07dbaee031a400a4280e"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-how-to-reach-desktop.json",
@@ -13090,8 +13098,8 @@
     },
     {
       "file": "l10n/prerender/hi/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
-      "sha256": "38f9d140773fd78bad86fd3505c1bc158e0994cf868438e388f6285c5bd53896",
-      "bytes": 39950
+      "sha256": "7aff5c55aa3062dc3b155700180598a59c8073df20bce1703b04ba2190e3193d",
+      "bytes": 39274
     },
     {
       "file": "l10n/prerender/hi/deluxe-villa.html.gz",
@@ -13155,8 +13163,8 @@
     },
     {
       "file": "l10n/prerender/hi/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
-      "sha256": "d73e55c71e6be82d19ad9a48ec1c295f4bf9ec4b6eb5b25455913d2ce9f4483e",
-      "bytes": 39194
+      "sha256": "1aeafda103682c5b2195b87f5035bfacf162afa952050e3fe8ecb324d904f517",
+      "bytes": 38519
     },
     {
       "file": "l10n/prerender/hi/house-boat-tour.html.gz",
@@ -13615,8 +13623,8 @@
     },
     {
       "file": "l10n/prerender/hi/treatment-for-bronchial-diseases.html.gz",
-      "sha256": "c5eee37e9cd1b239bcad52755e4ee447a43cfc679069e1dd1195eac932a2f7c3",
-      "bytes": 39103
+      "sha256": "a6705ebcb9b22697732dd78a1d5396f0f3f038589d2c51413715e581180c4ca9",
+      "bytes": 38395
     },
     {
       "file": "l10n/prerender/hi/treatment-for-cervical-spondylosis.html.gz",
@@ -13625,18 +13633,18 @@
     },
     {
       "file": "l10n/prerender/hi/treatment-for-chronic-back-pain.html.gz",
-      "sha256": "576bdb6eae70cc70e84252db8356d4036b763b0324818dc3d13cc73eefa8c8ce",
-      "bytes": 38326
+      "sha256": "6a4bbe807a1a8c981bd823cdccbd51fa1d3c1c917642234760856ce9f0ef2d5e",
+      "bytes": 37653
     },
     {
       "file": "l10n/prerender/hi/treatment-for-diabetes.html.gz",
-      "sha256": "c582298429e000c6512a92bed3a6f901a4c73dd81b1c2bb47ba0ed2adaac8a55",
-      "bytes": 37812
+      "sha256": "5e5265a8257e546989ccd2300125fcbe10776649b0e95e1514511779b1413373",
+      "bytes": 37159
     },
     {
       "file": "l10n/prerender/hi/treatment-for-facial-paralysis.html.gz",
-      "sha256": "476d541637982ab86d0b6e97605f6e139f801889e9d9975516b050129c59ea82",
-      "bytes": 38024
+      "sha256": "c85207251f3d56f0cc9bb837d78bbe96a403ae65a5e13c0c5c40ea34f2ac8354",
+      "bytes": 37363
     },
     {
       "file": "l10n/prerender/hi/treatment-for-hypertension.html.gz",
@@ -13736,7 +13744,7 @@
     {
       "file": "l10n/prerender/hi/weight-loss-programme.html.gz",
       "sha256": "b6e794b26f8e9829015867aea19946c91f9cbd89e7643ac3732a593fdea63052",
-      "bytes": 39336
+      "bytes": 40830
     },
     {
       "file": "l10n/prerender/hi/wellness-programs.html.gz",
@@ -13840,8 +13848,8 @@
     },
     {
       "file": "l10n/prerender/hi/index.json",
-      "sha256": "1700b8da6614bb5da89e76f729fd2a04a5564e7ae4e8cf12a16d2b3f91ab8402",
-      "bytes": 169426
+      "sha256": "8942bc4ad0923ab41624cfbab708fa526e03b17b267b03fba32f08f75cb6fcc8",
+      "bytes": 151572
     },
     {
       "file": "l10n/prerender/de/index.html.gz",
@@ -14100,8 +14108,8 @@
     },
     {
       "file": "l10n/prerender/de/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
-      "sha256": "4cdf056f42cd28d47fa8bff84ebc56a811d40ada1287776d89db1c67a3960dac",
-      "bytes": 37655
+      "sha256": "3b8c21c7cd288dd78371f3b0f32564abf4436f7535ff3ea893d9b81bbb5d7eaa",
+      "bytes": 36888
     },
     {
       "file": "l10n/prerender/de/deluxe-villa.html.gz",
@@ -14165,8 +14173,8 @@
     },
     {
       "file": "l10n/prerender/de/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
-      "sha256": "83cb9c204db2e19ec39de589880e76c29a85c28721d90e167112ce8bbae02e6b",
-      "bytes": 36989
+      "sha256": "c99c06ae4fef0bd87f107c50c13b636180ed52aea86195b99707932854977e54",
+      "bytes": 36213
     },
     {
       "file": "l10n/prerender/de/house-boat-tour.html.gz",
@@ -14625,8 +14633,8 @@
     },
     {
       "file": "l10n/prerender/de/treatment-for-bronchial-diseases.html.gz",
-      "sha256": "4f462407e5d2c85c1eaf1d8dc63f1b9fe4d017df6e1a777ad629aedc4990756f",
-      "bytes": 36902
+      "sha256": "b8028c28203031ac460a5a9eefd43f4c041341a91daca09bb2174794119373bf",
+      "bytes": 36126
     },
     {
       "file": "l10n/prerender/de/treatment-for-cervical-spondylosis.html.gz",
@@ -14635,18 +14643,18 @@
     },
     {
       "file": "l10n/prerender/de/treatment-for-chronic-back-pain.html.gz",
-      "sha256": "b849fded70c552afbc23d8c463f3ab590205bd651e975a847746d3ebe918a58e",
-      "bytes": 36186
+      "sha256": "acdaa8094809fa749862fbeb5ee23e0c097f1624ed9f649c94f5f728dde066ce",
+      "bytes": 35388
     },
     {
       "file": "l10n/prerender/de/treatment-for-diabetes.html.gz",
-      "sha256": "1f15a76c3f782bd933c4d02e18684c02b74db307c0fdc2c521345823831bb036",
-      "bytes": 35862
+      "sha256": "2eb39fff524a785bf4b7e8ec4e5d7b6521b6908624415f429d47e57ff55244c1",
+      "bytes": 35062
     },
     {
       "file": "l10n/prerender/de/treatment-for-facial-paralysis.html.gz",
-      "sha256": "2bb8d7c6c9a5e11e833960074bba5e953e918857c2d940f854ff6928d674e526",
-      "bytes": 36103
+      "sha256": "20cf29cda8ca4462ee27bb8908eb23227550702f607bc4efeab78e7bd83cf525",
+      "bytes": 35307
     },
     {
       "file": "l10n/prerender/de/treatment-for-hypertension.html.gz",
@@ -14746,7 +14754,7 @@
     {
       "file": "l10n/prerender/de/weight-loss-programme.html.gz",
       "sha256": "3e26704c73e2619bcdadf4b37234d04300f01c8dcb5d6dafbddf8d1f456f1f70",
-      "bytes": 36927
+      "bytes": 38348
     },
     {
       "file": "l10n/prerender/de/wellness-programs.html.gz",
@@ -14850,8 +14858,8 @@
     },
     {
       "file": "l10n/prerender/de/index.json",
-      "sha256": "7ec544221e3e73c53857cdc35a52f9c3f08166c5c4f09dc18559c4b7f22c2de1",
-      "bytes": 156029
+      "sha256": "6383cd166a477a48f4e92357b2c063bf8e5b6c26a06bea2769ca7f6ad7c8d5d3",
+      "bytes": 138069
     },
     {
       "file": "l10n/prerender/fr/index.html.gz",
@@ -15110,8 +15118,8 @@
     },
     {
       "file": "l10n/prerender/fr/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
-      "sha256": "ed19f875d672aca18e2d6092c696dc3477833b7ef675bc40cb642975660524e9",
-      "bytes": 37287
+      "sha256": "9552629bcc27e8840fcdf9f12cdff23c9a4fe7a131f3e9776fd81055ca42ee87",
+      "bytes": 36543
     },
     {
       "file": "l10n/prerender/fr/deluxe-villa.html.gz",
@@ -15175,8 +15183,8 @@
     },
     {
       "file": "l10n/prerender/fr/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
-      "sha256": "b6feb3a3571b7fe66ebf03d1f99a4d5a3bd2285e5ca5314d41b97efb192c769c",
-      "bytes": 36791
+      "sha256": "cbfdc977bfc9b36f5b10a59a4be22456bcf144b0672b1b7e66fa0aec07388dc0",
+      "bytes": 36042
     },
     {
       "file": "l10n/prerender/fr/house-boat-tour.html.gz",
@@ -15635,8 +15643,8 @@
     },
     {
       "file": "l10n/prerender/fr/treatment-for-bronchial-diseases.html.gz",
-      "sha256": "4260f4ee12744c761b87432468c70bb820c9fa599405ebacb8f1112556e1afe6",
-      "bytes": 36554
+      "sha256": "295e20a3b4f35eb13ea461090acd4c8878324768cd7ede206c5b41906a85ee52",
+      "bytes": 35809
     },
     {
       "file": "l10n/prerender/fr/treatment-for-cervical-spondylosis.html.gz",
@@ -15645,18 +15653,18 @@
     },
     {
       "file": "l10n/prerender/fr/treatment-for-chronic-back-pain.html.gz",
-      "sha256": "9444a8d096a4ca3de4136fd06205a6268262ad1a7803a0bf430320157519d951",
-      "bytes": 35867
+      "sha256": "9a84bf4998ba9b9e71353beb95237ff181a9412e81629e7144848cf1bea2cbda",
+      "bytes": 35088
     },
     {
       "file": "l10n/prerender/fr/treatment-for-diabetes.html.gz",
-      "sha256": "43c553c91ffe1619e6568090cbe1a69478a57deebd33f1747dcec50b08c0ccd2",
-      "bytes": 35526
+      "sha256": "d0870af8793cb65941dc12bf23fa5e328528df1c0fff1c19012fe7f69906898c",
+      "bytes": 34754
     },
     {
       "file": "l10n/prerender/fr/treatment-for-facial-paralysis.html.gz",
-      "sha256": "bbbeaa5c7c11c842689a479bf8436d09e26216b2437c58fc8d4c0e97f17e6d4f",
-      "bytes": 35640
+      "sha256": "6def171c684fe9ad5505d3da73deddd3dec54a9b6eb7b30405fb4719a273975c",
+      "bytes": 34858
     },
     {
       "file": "l10n/prerender/fr/treatment-for-hypertension.html.gz",
@@ -15756,7 +15764,7 @@
     {
       "file": "l10n/prerender/fr/weight-loss-programme.html.gz",
       "sha256": "73acac51009b72e5eb21177a985be3a9ad17bb235c1d832368021aaa42cabb7b",
-      "bytes": 36647
+      "bytes": 38031
     },
     {
       "file": "l10n/prerender/fr/wellness-programs.html.gz",
@@ -15860,8 +15868,8 @@
     },
     {
       "file": "l10n/prerender/fr/index.json",
-      "sha256": "c8b0f6dfb5b187f9959de116bfb98b99c838bc5b04391dc1f5a2a6e73188c116",
-      "bytes": 156866
+      "sha256": "91d15154758abeadbc8ad22fd64afa78a05f4ba676e630a2e2998f71fe76147d",
+      "bytes": 138908
     },
     {
       "file": "l10n/prerender/es/index.html.gz",
@@ -16120,8 +16128,8 @@
     },
     {
       "file": "l10n/prerender/es/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
-      "sha256": "9e56ad85d757113d0f9ea62d71c30c116bbe660a94f9f08b5c8ac168a0cdadfe",
-      "bytes": 36627
+      "sha256": "da8e075b705fc2b47aaea9d8ed1221d7565809e4e944a6d78c633c7b8e2631ca",
+      "bytes": 35955
     },
     {
       "file": "l10n/prerender/es/deluxe-villa.html.gz",
@@ -16185,8 +16193,8 @@
     },
     {
       "file": "l10n/prerender/es/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
-      "sha256": "6457e10b96fd22dc4c99a3fc029a71097f325402646ec0fb290b987b1d1464d2",
-      "bytes": 36100
+      "sha256": "93163963bd02029889a04fe1da9adfc85510e472ca7964f266451944725b1314",
+      "bytes": 35431
     },
     {
       "file": "l10n/prerender/es/house-boat-tour.html.gz",
@@ -16645,8 +16653,8 @@
     },
     {
       "file": "l10n/prerender/es/treatment-for-bronchial-diseases.html.gz",
-      "sha256": "9628548c34521adb4f3eb0ba3c9223e85c50f3a54c54c5b2c620e902e9b973cf",
-      "bytes": 35882
+      "sha256": "67c150c0e965f51a9d2d441b8d9e5ff2c0193835b53947e674ca6c9d9f34fe2c",
+      "bytes": 35214
     },
     {
       "file": "l10n/prerender/es/treatment-for-cervical-spondylosis.html.gz",
@@ -16655,18 +16663,18 @@
     },
     {
       "file": "l10n/prerender/es/treatment-for-chronic-back-pain.html.gz",
-      "sha256": "04d63abe598498927b93fd16f0fc82529aa5376af1f528d3d41cb79e5055dfe4",
-      "bytes": 35245
+      "sha256": "d141331048f33eaf401c9f59ab03e196a2480ccea29bd0699f11db5de77c17ad",
+      "bytes": 34612
     },
     {
       "file": "l10n/prerender/es/treatment-for-diabetes.html.gz",
-      "sha256": "fd2879e3fbe9c3e3ed3917729ac7494412baad93a9ce9aa6a289e0738a738cfc",
-      "bytes": 34941
+      "sha256": "645df4d4bd20c71582b17943792473bcbcc2f3d396d10de4afd68d0840403032",
+      "bytes": 34240
     },
     {
       "file": "l10n/prerender/es/treatment-for-facial-paralysis.html.gz",
-      "sha256": "fbe765094470e997f7815264bb6bf5a8d6182c5bb686314affab507da237d612",
-      "bytes": 34991
+      "sha256": "0ba037378ec1eeb4a1c70fdfa786da300901f35dab6d34dfc717fc404a42fea5",
+      "bytes": 34342
     },
     {
       "file": "l10n/prerender/es/treatment-for-hypertension.html.gz",
@@ -16766,7 +16774,7 @@
     {
       "file": "l10n/prerender/es/weight-loss-programme.html.gz",
       "sha256": "8421f900c0d3a864871644b192ca2fc9871325ad3769d6ef3c195ad906e7fac6",
-      "bytes": 36061
+      "bytes": 37426
     },
     {
       "file": "l10n/prerender/es/wellness-programs.html.gz",
@@ -16870,8 +16878,8 @@
     },
     {
       "file": "l10n/prerender/es/index.json",
-      "sha256": "f948073fd988aac1b328f724f5f740f349a264e70ea0ea9e282107d50cb09aa7",
-      "bytes": 156813
+      "sha256": "c7ced063315c73d4fa68f013b847132c1ee3f531dc24e0df05f2ebdbdcde2845",
+      "bytes": 138839
     },
     {
       "file": "l10n/prerender/it/index.html.gz",
@@ -17130,8 +17138,8 @@
     },
     {
       "file": "l10n/prerender/it/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
-      "sha256": "2d016d371bfd2dec20942715f3ffd61367afdb31208be8e886467d932e1d7b82",
-      "bytes": 36423
+      "sha256": "74703ceaa20de959974e3af9e09ff4a820d7314819b93b0943affffe1453d4c7",
+      "bytes": 35695
     },
     {
       "file": "l10n/prerender/it/deluxe-villa.html.gz",
@@ -17195,8 +17203,8 @@
     },
     {
       "file": "l10n/prerender/it/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
-      "sha256": "d76a2de1f0ba2afbfbd2a66c48917e2481a251b73ec59efa118af51ca108bdff",
-      "bytes": 36086
+      "sha256": "df2f9677032e5f2808e0f3c51a8df5985d4d212bced3e80f70d2c97701dc8240",
+      "bytes": 35339
     },
     {
       "file": "l10n/prerender/it/house-boat-tour.html.gz",
@@ -17655,8 +17663,8 @@
     },
     {
       "file": "l10n/prerender/it/treatment-for-bronchial-diseases.html.gz",
-      "sha256": "15898d7876952dc6476b1464df755b1c6137b0c7252634a26c0fa4e46c923631",
-      "bytes": 35772
+      "sha256": "1696abfddd736d80903ba84876c85de7e0e7125f0e2fa6cdfefb8662b35582ac",
+      "bytes": 35064
     },
     {
       "file": "l10n/prerender/it/treatment-for-cervical-spondylosis.html.gz",
@@ -17665,18 +17673,18 @@
     },
     {
       "file": "l10n/prerender/it/treatment-for-chronic-back-pain.html.gz",
-      "sha256": "ac63345c8456f0759e57bd817c3345e1f1dd858e3d0b45e8e04749b07beea0bc",
-      "bytes": 35151
+      "sha256": "c47eec6096dca2bafcdfa54dc57d613e72e289a8c3e3180f551bdc25f53e8a37",
+      "bytes": 34416
     },
     {
       "file": "l10n/prerender/it/treatment-for-diabetes.html.gz",
-      "sha256": "3619772fd8c9f9c8d330112fe5be6daa4a631b89616a874b3653bbab0d457fa6",
-      "bytes": 34757
+      "sha256": "2d8677e251bb50f177d8565b62ddb38b99baf8c28d10a82300d8a888772cdb81",
+      "bytes": 33993
     },
     {
       "file": "l10n/prerender/it/treatment-for-facial-paralysis.html.gz",
-      "sha256": "e68c0673cf9969f118f61af306581b0bd10fb17b39330d73d88022e384500ca7",
-      "bytes": 34849
+      "sha256": "2f867ce851d20df11b6e2f7672d2e474fa0bac329547e79fc58e8988f4fc1a5c",
+      "bytes": 34091
     },
     {
       "file": "l10n/prerender/it/treatment-for-hypertension.html.gz",
@@ -17776,7 +17784,7 @@
     {
       "file": "l10n/prerender/it/weight-loss-programme.html.gz",
       "sha256": "d5fa3b7de8762da36e0d3931dae100666dcff664c2b4239a93e0cb96fd9b8c8f",
-      "bytes": 35983
+      "bytes": 37352
     },
     {
       "file": "l10n/prerender/it/wellness-programs.html.gz",
@@ -17880,8 +17888,8 @@
     },
     {
       "file": "l10n/prerender/it/index.json",
-      "sha256": "8f1fc70f14ad1fe783f901e1bcdf05facaf5d35291ade94639ebc7386bb8d0ed",
-      "bytes": 156587
+      "sha256": "94b72fd1272d7011d77ae368f729bd325162b9232b49028281a1e66cc0f3e98f",
+      "bytes": 138631
     },
     {
       "file": "l10n/prerender/pt/index.html.gz",
@@ -18140,8 +18148,8 @@
     },
     {
       "file": "l10n/prerender/pt/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
-      "sha256": "7e3d65c6b438cf27b7ffcc504a351318990175c4f99441df005e1034b223db3f",
-      "bytes": 36462
+      "sha256": "86b16b6c47d7a717964a2affdc44c79cc63eb53ff85fea7b18fe2c8572c8deb9",
+      "bytes": 35783
     },
     {
       "file": "l10n/prerender/pt/deluxe-villa.html.gz",
@@ -18205,8 +18213,8 @@
     },
     {
       "file": "l10n/prerender/pt/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
-      "sha256": "1fd025baf39b0fc4bfcfc76c2c1bdf127b6b0e62272bdb0ce27d5cc19c88eea8",
-      "bytes": 35994
+      "sha256": "5886bbd2a85d4a4338f0c8b3eee06d39302c1ee9f7c683ab0ec0e0a22ba31f37",
+      "bytes": 35327
     },
     {
       "file": "l10n/prerender/pt/house-boat-tour.html.gz",
@@ -18665,8 +18673,8 @@
     },
     {
       "file": "l10n/prerender/pt/treatment-for-bronchial-diseases.html.gz",
-      "sha256": "ff1ac4a2b6869dd7895745d5cc7fcc6bae5a4efcf1bc7108f75eaf1584ecf681",
-      "bytes": 35827
+      "sha256": "fabbb53246ddc6d093e4f42bb3d6281531481c98a5acde408414b90fcdf51608",
+      "bytes": 35149
     },
     {
       "file": "l10n/prerender/pt/treatment-for-cervical-spondylosis.html.gz",
@@ -18675,18 +18683,18 @@
     },
     {
       "file": "l10n/prerender/pt/treatment-for-chronic-back-pain.html.gz",
-      "sha256": "1e1f3de735b878da0a1a552080d04143242dd33591725d58fecffa10c3a32cf8",
-      "bytes": 35122
+      "sha256": "8782dd5a67a8ecb59fc76a734abd297b4a881386ef8388c0c9cc3d9101e17429",
+      "bytes": 34417
     },
     {
       "file": "l10n/prerender/pt/treatment-for-diabetes.html.gz",
-      "sha256": "4ae08399fc55e54d2f69f3ed1ff9d7047d788aa4a474b74a13a48e8a5185fc39",
-      "bytes": 34693
+      "sha256": "fffb078c367fe359d64635b235b43e60631d3dd4c04bc9c5af5ea6a1ba1e6afa",
+      "bytes": 33989
     },
     {
       "file": "l10n/prerender/pt/treatment-for-facial-paralysis.html.gz",
-      "sha256": "6ea8501492c435117d551b09449c2cb28c890ffe038a8c7e4942cd7f7d34d5c8",
-      "bytes": 34855
+      "sha256": "37595e708a758bc9d4bc03d7b14e9180d1f403c0f49f1beb6ad24e17dfe9bc79",
+      "bytes": 34160
     },
     {
       "file": "l10n/prerender/pt/treatment-for-hypertension.html.gz",
@@ -18786,7 +18794,7 @@
     {
       "file": "l10n/prerender/pt/weight-loss-programme.html.gz",
       "sha256": "b7dbab44271739de60a12daafccc2d483712814bb555bf7d9c6e3d9594d5bcad",
-      "bytes": 35953
+      "bytes": 37353
     },
     {
       "file": "l10n/prerender/pt/wellness-programs.html.gz",
@@ -18890,8 +18898,8 @@
     },
     {
       "file": "l10n/prerender/pt/index.json",
-      "sha256": "bf29719075709d3253ba1869c2029cba5dc97778292b1cadd07dae9ff50048a4",
-      "bytes": 156488
+      "sha256": "93e961b63b60f92f8403b1cf6bdc9082ebb6fcbd0d1d01ac754635d9f98b0995",
+      "bytes": 138522
     },
     {
       "file": "l10n/prerender/nl/index.html.gz",
@@ -19150,8 +19158,8 @@
     },
     {
       "file": "l10n/prerender/nl/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
-      "sha256": "aa0aa35cbe9ddd91ea53b7ff443491cb5b93ae5838690bd39eb30ac91780d266",
-      "bytes": 36472
+      "sha256": "ee852f30bf855d226070d9c7271988183faab1e5760ef28d65b8c59d2d982786",
+      "bytes": 35737
     },
     {
       "file": "l10n/prerender/nl/deluxe-villa.html.gz",
@@ -19215,8 +19223,8 @@
     },
     {
       "file": "l10n/prerender/nl/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
-      "sha256": "42a98a33cb966424a665e42297feb6d6169c4aeca2f2bc9920282649490589a5",
-      "bytes": 35985
+      "sha256": "865f0d05fefd905154a00bed1eb1406109e50410e3587f9142c73c728ca0b79e",
+      "bytes": 35205
     },
     {
       "file": "l10n/prerender/nl/house-boat-tour.html.gz",
@@ -19675,8 +19683,8 @@
     },
     {
       "file": "l10n/prerender/nl/treatment-for-bronchial-diseases.html.gz",
-      "sha256": "6b6dceef910e8ebf275c15f1bcbbf7c9d61755fa9c3fc8823ed1e0a6ada64a35",
-      "bytes": 35814
+      "sha256": "2017ef47e3252a68619e541aaef74ea6c9d8229af1ab6450f19da68cc5d97c43",
+      "bytes": 35078
     },
     {
       "file": "l10n/prerender/nl/treatment-for-cervical-spondylosis.html.gz",
@@ -19685,18 +19693,18 @@
     },
     {
       "file": "l10n/prerender/nl/treatment-for-chronic-back-pain.html.gz",
-      "sha256": "5e224d5d3d7dae1ca011518dfdca38cf0656270672947ca5762b3cdc4b949f2d",
-      "bytes": 35152
+      "sha256": "03706a8fcb09488aa1347d50fd91d1e9480f817a847bfa96f4032dd8b2b55818",
+      "bytes": 34396
     },
     {
       "file": "l10n/prerender/nl/treatment-for-diabetes.html.gz",
-      "sha256": "d1078c4947d3d8896c3fab1537a409b3e75e387f79ebc89f2e5e3dc9b88173df",
-      "bytes": 34744
+      "sha256": "cc5b55d9ba91e26c7008a9385e3dd624893e803f20635faa0e3a38161f8c5eab",
+      "bytes": 33965
     },
     {
       "file": "l10n/prerender/nl/treatment-for-facial-paralysis.html.gz",
-      "sha256": "15740686e86f00da4ba8231f1e24b263f840a36c76e4476f896082dffe975ad3",
-      "bytes": 35067
+      "sha256": "b2e72da214d3d0dc574740a5e758da8b039bb8a76fb55ae08d7bad7ec3620881",
+      "bytes": 34287
     },
     {
       "file": "l10n/prerender/nl/treatment-for-hypertension.html.gz",
@@ -19796,7 +19804,7 @@
     {
       "file": "l10n/prerender/nl/weight-loss-programme.html.gz",
       "sha256": "950c3c7936ecd81bd43d90e24cafe52ef4721b737dff7cf14e865126cd936304",
-      "bytes": 35986
+      "bytes": 37312
     },
     {
       "file": "l10n/prerender/nl/wellness-programs.html.gz",
@@ -19900,8 +19908,8 @@
     },
     {
       "file": "l10n/prerender/nl/index.json",
-      "sha256": "f671c563b34547a111758ecd61b5537c97cc45c900bc1347754eedb194b07393",
-      "bytes": 155768
+      "sha256": "ea3fc0a74b70fe5b3d1ec608e6612a5b00317c0ae43ae4daefc1a919f44b629c",
+      "bytes": 137812
     },
     {
       "file": "l10n/prerender/ru/index.html.gz",
@@ -20160,8 +20168,8 @@
     },
     {
       "file": "l10n/prerender/ru/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
-      "sha256": "62244f571a9f1adadacd263303ddc9c5bac3100bba418a8a60147762757490fd",
-      "bytes": 41640
+      "sha256": "c7bb927dfb4d33d460bb4e56d6a5d8ef0079cb1804dc7b80f7bbfc9e4413010a",
+      "bytes": 40846
     },
     {
       "file": "l10n/prerender/ru/deluxe-villa.html.gz",
@@ -20225,8 +20233,8 @@
     },
     {
       "file": "l10n/prerender/ru/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
-      "sha256": "6df0455c3e9d0e44cc8431beb9885c29f9616505f8edd7cfad0f0e21b0692079",
-      "bytes": 40734
+      "sha256": "997088c50311579ea31309f5229c4da2956a408ffe2dbc603a058d128bd28d75",
+      "bytes": 39876
     },
     {
       "file": "l10n/prerender/ru/house-boat-tour.html.gz",
@@ -20685,8 +20693,8 @@
     },
     {
       "file": "l10n/prerender/ru/treatment-for-bronchial-diseases.html.gz",
-      "sha256": "61fcdc4b6b6428f1fbe44e4f087052a0cb36022af030e85a07ea1c3722cc4695",
-      "bytes": 40616
+      "sha256": "d385734526596c8e49bb9d5baca12db23f8b2402c64de50a5789acf843cccd38",
+      "bytes": 39763
     },
     {
       "file": "l10n/prerender/ru/treatment-for-cervical-spondylosis.html.gz",
@@ -20695,18 +20703,18 @@
     },
     {
       "file": "l10n/prerender/ru/treatment-for-chronic-back-pain.html.gz",
-      "sha256": "5e5839ed702ab21b4c93471b3c94e5058c2470ee2a56dff54634bff131e02fc0",
-      "bytes": 39826
+      "sha256": "8ea25322251a72165feff065bd8d02be95fcfa10d6a8e709113d83c8a844e560",
+      "bytes": 39006
     },
     {
       "file": "l10n/prerender/ru/treatment-for-diabetes.html.gz",
-      "sha256": "c10ea05f14db9dc129695217a6a46694b45a287eec32c89f154b1d5baf45599c",
-      "bytes": 39539
+      "sha256": "6bac0b0c31eb37765ae50838200a4636b232b8e43ce5dab9bce2262ac7ce9551",
+      "bytes": 38680
     },
     {
       "file": "l10n/prerender/ru/treatment-for-facial-paralysis.html.gz",
-      "sha256": "51a3da928b6ee124e31a01418f848d044744e055fdb9e19fa6fb2be5e8a38fcc",
-      "bytes": 39584
+      "sha256": "b7a887993132369b742a44b2ed7f441f7e16878af992680dfe5eaa2aa2b059ef",
+      "bytes": 38702
     },
     {
       "file": "l10n/prerender/ru/treatment-for-hypertension.html.gz",
@@ -20806,7 +20814,7 @@
     {
       "file": "l10n/prerender/ru/weight-loss-programme.html.gz",
       "sha256": "06dc3308c763998f71903ca2be28b8a0e7dced67527864f624f09358d67e5399",
-      "bytes": 40727
+      "bytes": 42231
     },
     {
       "file": "l10n/prerender/ru/wellness-programs.html.gz",
@@ -20910,8 +20918,8 @@
     },
     {
       "file": "l10n/prerender/ru/index.json",
-      "sha256": "2544dff4453aa6ce4310322c7fcd91fa576b6cef6e04f1260d92f224a9a70f74",
-      "bytes": 165527
+      "sha256": "435e1847b6b7c2d10e55a7f46141d47ff080515652965b0ebd6317e575c44161",
+      "bytes": 147629
     },
     {
       "file": "l10n/prerender/ar/index.html.gz",
@@ -21170,8 +21178,8 @@
     },
     {
       "file": "l10n/prerender/ar/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
-      "sha256": "cc5e1251df43317375b53838d6fbccd0bea8d92515e2506222be845a922bb517",
-      "bytes": 38532
+      "sha256": "ba1113d1de0b06e3f050e8326e7bd6ff50225ab00f3df2cfd3a1a83e5560980a",
+      "bytes": 37785
     },
     {
       "file": "l10n/prerender/ar/deluxe-villa.html.gz",
@@ -21235,8 +21243,8 @@
     },
     {
       "file": "l10n/prerender/ar/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
-      "sha256": "b7518a687605e2e915b74b9e707d700b390554183a8018da701ed53ba1009fd6",
-      "bytes": 38023
+      "sha256": "0f8a08da39dc6ec6e6363cc77f4c1b2ac15d6077531ef756a905828f8e14314f",
+      "bytes": 37244
     },
     {
       "file": "l10n/prerender/ar/house-boat-tour.html.gz",
@@ -21695,8 +21703,8 @@
     },
     {
       "file": "l10n/prerender/ar/treatment-for-bronchial-diseases.html.gz",
-      "sha256": "9e4ad03103ade697d9178a0722a859f6f96cba7f7e561ee5dec32a9aa2b7edf9",
-      "bytes": 37754
+      "sha256": "ec1a0ee8619d65487da17f1945c2d763c312a639136a6b65ced3c2296c0142e4",
+      "bytes": 37023
     },
     {
       "file": "l10n/prerender/ar/treatment-for-cervical-spondylosis.html.gz",
@@ -21705,18 +21713,18 @@
     },
     {
       "file": "l10n/prerender/ar/treatment-for-chronic-back-pain.html.gz",
-      "sha256": "792bd7144013e84a8e80b4c5a971edf07a21f760186b8f72f53e417aad8e7a23",
-      "bytes": 36939
+      "sha256": "0ead4c0c8487cfb2582dcb1a48df619fb71b66df1b996f7ae7230c4c0f4f37d9",
+      "bytes": 36213
     },
     {
       "file": "l10n/prerender/ar/treatment-for-diabetes.html.gz",
-      "sha256": "4e25576a7da1d96c93bc8f6b6327add82d6c802783de5629b2e6c490fc3feca8",
-      "bytes": 36700
+      "sha256": "812d5b3078bb4ce40d0b945922e30de9f99ae1aedacda1f88637d4f533927e58",
+      "bytes": 35940
     },
     {
       "file": "l10n/prerender/ar/treatment-for-facial-paralysis.html.gz",
-      "sha256": "267a9358241979b9bd6a869f6d99c1cb8669f100fa0cc2ac2b2e34ee25b90121",
-      "bytes": 36805
+      "sha256": "7e6ad6651ee8849f079715450f14ebf4351728467ae00b77b773c77949e122ca",
+      "bytes": 36063
     },
     {
       "file": "l10n/prerender/ar/treatment-for-hypertension.html.gz",
@@ -21816,7 +21824,7 @@
     {
       "file": "l10n/prerender/ar/weight-loss-programme.html.gz",
       "sha256": "42bb283bc673ee9c74298a95a664b32dea5ae3ba5401b64386f6c92412f9a569",
-      "bytes": 38001
+      "bytes": 39406
     },
     {
       "file": "l10n/prerender/ar/wellness-programs.html.gz",
@@ -21920,8 +21928,8 @@
     },
     {
       "file": "l10n/prerender/ar/index.json",
-      "sha256": "324df0ec4383689d3f5ba16bffc41c8b1b97b8b1d3b5d7c3e1143c4c3f532cb4",
-      "bytes": 161604
+      "sha256": "f443744f84779bc0af0ad7a2f35cd062f0e0d3e74285cecefc73c106e54a6bbc",
+      "bytes": 143674
     },
     {
       "file": "l10n/prerender/zh-Hans/index.html.gz",
@@ -22180,8 +22188,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
-      "sha256": "a8abeac22b011caf2be83f785f1ccd1f216ddf7a91768c1ce55c5f5ebb72cc7c",
-      "bytes": 37429
+      "sha256": "486e02564b4356e45ad6c99d01c6e4b1540f65833a539e1e52147bfdb74c64e5",
+      "bytes": 36712
     },
     {
       "file": "l10n/prerender/zh-Hans/deluxe-villa.html.gz",
@@ -22245,8 +22253,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
-      "sha256": "8496ad2642119f5abd60ea4655e7994c6ec547bed6363feb73c796f1402584de",
-      "bytes": 37136
+      "sha256": "479b7f6b88b012b02602d48f8f62e67e9cf14648bdc564b05f43db8dd24e199b",
+      "bytes": 36424
     },
     {
       "file": "l10n/prerender/zh-Hans/house-boat-tour.html.gz",
@@ -22705,8 +22713,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/treatment-for-bronchial-diseases.html.gz",
-      "sha256": "056274b4518e0fd3ecca898e3d606d031e6a85f4e17040d4b89df568d0df16e8",
-      "bytes": 36629
+      "sha256": "78dc5b5746280526befbf07317f68795b8c549965dba26a4304b585fb325aa19",
+      "bytes": 35957
     },
     {
       "file": "l10n/prerender/zh-Hans/treatment-for-cervical-spondylosis.html.gz",
@@ -22715,18 +22723,18 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/treatment-for-chronic-back-pain.html.gz",
-      "sha256": "8f7fd1d8504f0fb6bdeea03d0dc275cd633896e1ba75739e3e3d8a2182e2c79f",
-      "bytes": 36208
+      "sha256": "a613f4769c2f4c0906b0eb26ab87225670f26bee2919f4b77fde13afcc11aafd",
+      "bytes": 35546
     },
     {
       "file": "l10n/prerender/zh-Hans/treatment-for-diabetes.html.gz",
-      "sha256": "1a1b8e8e96ce9ad6020a27c695d74e36af84fe103c16e5aafefd60a078980d05",
-      "bytes": 35866
+      "sha256": "9845f8888182ac88710bc857ec5965cf6d44fcf85ebdb5cc71779a747dda68c1",
+      "bytes": 35140
     },
     {
       "file": "l10n/prerender/zh-Hans/treatment-for-facial-paralysis.html.gz",
-      "sha256": "def293f0d2f29c4af703d70d3cb0de4eeceb4e2f052b35dac02249c00cc5e5af",
-      "bytes": 36009
+      "sha256": "73048399583cb952c9a86dcc7f42171aee68452c69119507504bd31b889ede3c",
+      "bytes": 35297
     },
     {
       "file": "l10n/prerender/zh-Hans/treatment-for-hypertension.html.gz",
@@ -22826,7 +22834,7 @@
     {
       "file": "l10n/prerender/zh-Hans/weight-loss-programme.html.gz",
       "sha256": "3750a7661809329ebdf5a0d8e9f408019877a36f4346a54f0d2af93be873961c",
-      "bytes": 37045
+      "bytes": 38466
     },
     {
       "file": "l10n/prerender/zh-Hans/wellness-programs.html.gz",
@@ -22930,8 +22938,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/index.json",
-      "sha256": "5dd4f991ed12c2f7569c57c963d38fe87f8b3c99265b174b45494c59a78a58fb",
-      "bytes": 155960
+      "sha256": "a6b2c221f49d71d5a59b912bf44ed0b15f6115a2a0c1b31e327452333c3f1aa0",
+      "bytes": 137638
     },
     {
       "file": "l10n/prerender/ja/index.html.gz",
@@ -23190,8 +23198,8 @@
     },
     {
       "file": "l10n/prerender/ja/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
-      "sha256": "f688c925effee3b7b8cfacc4f27954744d54f3ae3e07e59fd3cfa1c95fe2c78f",
-      "bytes": 39115
+      "sha256": "da5981c74a996a5efcd7c41ebb3a9f58d1b1a76341c7c4a63fb06ac56c8c4029",
+      "bytes": 38343
     },
     {
       "file": "l10n/prerender/ja/deluxe-villa.html.gz",
@@ -23255,8 +23263,8 @@
     },
     {
       "file": "l10n/prerender/ja/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
-      "sha256": "e1c788a53d1de5c5c85a75e4d63fb0655a570caa7b824641605201e8521213f8",
-      "bytes": 38680
+      "sha256": "3dda7dd4d3d6eff7f4927b9b41ad2058a02dabe59f9642648d8060347815c4db",
+      "bytes": 37896
     },
     {
       "file": "l10n/prerender/ja/house-boat-tour.html.gz",
@@ -23715,8 +23723,8 @@
     },
     {
       "file": "l10n/prerender/ja/treatment-for-bronchial-diseases.html.gz",
-      "sha256": "618cd554bef94a2bfda13baff4ab891b9d3ab9193363c88b0cb6a24cb504b6e0",
-      "bytes": 38181
+      "sha256": "165f0c20481bfd328cf52ae0022a2c795203d5f4807afec494b1241db0e0292e",
+      "bytes": 37361
     },
     {
       "file": "l10n/prerender/ja/treatment-for-cervical-spondylosis.html.gz",
@@ -23725,18 +23733,18 @@
     },
     {
       "file": "l10n/prerender/ja/treatment-for-chronic-back-pain.html.gz",
-      "sha256": "b6e31adcc52ce44b2ff6d0c4fa22ab7e26f9f1c704fc9c6d76ad2144ccd19ddc",
-      "bytes": 37676
+      "sha256": "efec632fb6daae59fafd42695bca0c1c68559f498753a6f4f940c9ac32a7af0d",
+      "bytes": 36919
     },
     {
       "file": "l10n/prerender/ja/treatment-for-diabetes.html.gz",
-      "sha256": "fb314742bf94ccecd0fe2aa35364360ec8701b19409ecc152178188b5f37db03",
-      "bytes": 37275
+      "sha256": "1c257571f1835bbe6392f1715980c7e6c7b0c18c95a829ac46f7e700b1f2f512",
+      "bytes": 36466
     },
     {
       "file": "l10n/prerender/ja/treatment-for-facial-paralysis.html.gz",
-      "sha256": "d4d2b86a10cf4c4e0365e754d442a1256d9cf25bfa956ac161d7b068b6147858",
-      "bytes": 37472
+      "sha256": "a12c5176fe6855a0a530368f137d0d94be6188b71e25cb58e5d2979aa952f7c4",
+      "bytes": 36671
     },
     {
       "file": "l10n/prerender/ja/treatment-for-hypertension.html.gz",
@@ -23836,7 +23844,7 @@
     {
       "file": "l10n/prerender/ja/weight-loss-programme.html.gz",
       "sha256": "02e8ab99e941db3326f33e51033216a8e42f81c95a1ae211148978251fde2dfe",
-      "bytes": 38610
+      "bytes": 40063
     },
     {
       "file": "l10n/prerender/ja/wellness-programs.html.gz",
@@ -23940,8 +23948,8 @@
     },
     {
       "file": "l10n/prerender/ja/index.json",
-      "sha256": "962fd4adc3d9e84f2d3fa28cf0499df96b5fe503d1c63dc7e4025ae6d655a830",
-      "bytes": 158433
+      "sha256": "d395a2a56590eaace5dd9b30789f2a0200e67d508b47bb00f897eafd346ba264",
+      "bytes": 140433
     },
     {
       "file": "l10n/prerender/ko/index.html.gz",
@@ -24200,8 +24208,8 @@
     },
     {
       "file": "l10n/prerender/ko/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
-      "sha256": "04a9b06be318cad2e57a2d3ef23e561a2a8ce0b1e778020e1024fd8a527c7f6d",
-      "bytes": 37851
+      "sha256": "a34f4c735b8e08abc406077d34787333da7262630c2290a69537333041aa35ea",
+      "bytes": 37149
     },
     {
       "file": "l10n/prerender/ko/deluxe-villa.html.gz",
@@ -24265,8 +24273,8 @@
     },
     {
       "file": "l10n/prerender/ko/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
-      "sha256": "3f5c10cb8b37b60b0b9363960d41d5953b4d106e06e0b83992dc2e71999b990c",
-      "bytes": 37471
+      "sha256": "9f9a50bcdc5943145f15fd6d27c1603f701313c4a8e60d29c4af5ea2ff11db7a",
+      "bytes": 36745
     },
     {
       "file": "l10n/prerender/ko/house-boat-tour.html.gz",
@@ -24725,8 +24733,8 @@
     },
     {
       "file": "l10n/prerender/ko/treatment-for-bronchial-diseases.html.gz",
-      "sha256": "6af861f6222c2d7ee3a7f7e2b22404a0db9f7a0dcb2d83377ac2b9e7e94ff5f2",
-      "bytes": 37027
+      "sha256": "1dae09463bc3223c94ef11e2fba56daf2f3624894c7074d0d0d37cc2647d6505",
+      "bytes": 36296
     },
     {
       "file": "l10n/prerender/ko/treatment-for-cervical-spondylosis.html.gz",
@@ -24735,18 +24743,18 @@
     },
     {
       "file": "l10n/prerender/ko/treatment-for-chronic-back-pain.html.gz",
-      "sha256": "65a88e639e1bbe00172d26e642af37b41a49b0e26050786855da698664c1bb14",
-      "bytes": 36526
+      "sha256": "18790d9a0096184ee4ba02352b30f9bf5d638ca282edebacde37da0798a6a8b2",
+      "bytes": 35817
     },
     {
       "file": "l10n/prerender/ko/treatment-for-diabetes.html.gz",
-      "sha256": "24a9c70a901baaf0eabfef35d63f0775731aa2ceb3ade4e0bf51e31a8b3cdae3",
-      "bytes": 36237
+      "sha256": "fde52580a73d143148e51af4c6266bbb16f89c809ed4de929408fdc816cb0a45",
+      "bytes": 35500
     },
     {
       "file": "l10n/prerender/ko/treatment-for-facial-paralysis.html.gz",
-      "sha256": "cae0ab6e6d9300d2f3152bc14b6e1f05fe51c22013f6e72a24a6bd851aaa9ae9",
-      "bytes": 36333
+      "sha256": "0e44621a33f75ad07bf6dbbd0e9a12070b226b634c9d909f7401f9f6b419fb30",
+      "bytes": 35589
     },
     {
       "file": "l10n/prerender/ko/treatment-for-hypertension.html.gz",
@@ -24846,7 +24854,7 @@
     {
       "file": "l10n/prerender/ko/weight-loss-programme.html.gz",
       "sha256": "63ca865b2d6e2f4cefaa3658c7cd3c17e25e4b471203384ba8494b23527e7a1d",
-      "bytes": 37368
+      "bytes": 38796
     },
     {
       "file": "l10n/prerender/ko/wellness-programs.html.gz",
@@ -24950,8 +24958,8 @@
     },
     {
       "file": "l10n/prerender/ko/index.json",
-      "sha256": "791f02a39fea0b3015d121b8a1c2ec5172526a03d0f3941d8564416ca7639be5",
-      "bytes": 155907
+      "sha256": "44b4f1b4f6336146cae1003f0c3deac0d3bc3725bf9c17aabd5e9526df5afa07",
+      "bytes": 137915
     }
   ],
   "interactionOnlySources": [
@@ -25713,5 +25721,6 @@
   "incrementalWeightReuse": {
     "proof": "english-candidate/weight-integration-proof.json",
     "sha256": "0b25796e994c0bd72566fc3e442203f9b36256785565771a5f17bbf468fae1e7"
-  }
+  },
+  "captured": "2026-10-11T16:46:38.324331+00:00"
 }
