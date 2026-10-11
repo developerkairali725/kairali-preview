@@ -8,6 +8,8 @@
 
 import type { GalleryCategory, ImageRef, PageLocale, PricingPolicy, ProductionFormProfile, Variant } from "../kit/types.ts";
 import { IMAGES } from "../data/images.ts";
+// Owner-approved photographs appended to the first four routes' galleries only (data/gallery-images.ts).
+import { APPROVED_GALLERY_ADDITIONS } from "../data/gallery-images.ts";
 
 export const SITE_ORIGIN = "https://ayurvedichealingvillage.com";
 
@@ -99,7 +101,7 @@ export const ROUTES = {
     mobileImage: img("kt-190"),
     stillnessImage: img("gal-post-therapy-stillness-wakem"),
     pathwayImage: img("kt-199"),
-    gallery: GALLERY_BASE("kt-199"),
+    gallery: [...GALLERY_BASE("kt-199"), ...APPROVED_GALLERY_ADDITIONS],
     productionForm: { formVariant: "r10-ayurvedic-treatment-packages", downloadGuide: true },
   },
   panchakarma: {
@@ -111,7 +113,7 @@ export const ROUTES = {
     mobileImage: img("kt-190"),
     stillnessImage: img("gal-post-therapy-stillness-wakem"),
     pathwayImage: img("kt-202"),
-    gallery: GALLERY_BASE("kt-202"),
+    gallery: [...GALLERY_BASE("kt-202"), ...APPROVED_GALLERY_ADDITIONS],
     productionForm: { formVariant: "r10-panchakarma", downloadGuide: false },
   },
   // Batch 2. Lead identity: app/(campaign)/_traffic/TrafficLanding.tsx (R10EnquiryForm formType → `r10-${formType}`,
@@ -129,7 +131,7 @@ export const ROUTES = {
     mobileImage: img("kt-199"),
     stillnessImage: img("gal-post-therapy-stillness-wakem"),
     pathwayImage: img("kt-202"),
-    gallery: GALLERY_BASE("kt-202"),
+    gallery: [...GALLERY_BASE("kt-202"), ...APPROVED_GALLERY_ADDITIONS],
     productionForm: { formVariant: "r10-pain-management", downloadGuide: false, profile: "pain-management" },
     consultBar: false,
   },
@@ -152,6 +154,7 @@ export const ROUTES = {
       { category: "Grounds", image: img("wx-hero") }, { category: "Grounds", image: img("gal-poolside-rest-palakkad-2026") },
       { category: "Dining", image: img("wx-dining") },
       { category: "Therapies", image: img("kt-199") }, { category: "Therapies", image: img("kt-202") },
+      ...APPROVED_GALLERY_ADDITIONS,
     ],
     productionForm: { formVariant: "r10-family-retreat", downloadGuide: false, profile: "family-retreat" },
     consultBar: false,
