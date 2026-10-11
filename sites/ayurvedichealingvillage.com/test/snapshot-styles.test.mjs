@@ -142,3 +142,5 @@ test("bodyFontFiles: the local face of the body family, upright 400 only", () =>
     assert.ok(fs.existsSync("public" + out.preloadFonts[0]), v + " body face is served");
   }
 });
+
+test("hypertension image-led loading stays exact-route scoped", () => { assert.equal(imageLedFirstScreen("/treatment-for-hypertension/"), true); assert.equal(imageLedFirstScreen("/treatment-for-hypertension"), false); });
