@@ -7,11 +7,7 @@ import { measurementForEnvironment } from "../../lib/measurement-config.mjs";
 import analyticsConfig from "../../analytics.config.json";
 import type { PageLocale } from "../kit/types.ts";
 import { display, body, instrument } from "./fonts";
-import "../../campaign-v110/integration.css";
-import "../../public/design/campaign-bundle.css";
-import "../styles/base.css";
-import "../sections/sections.css";
-import "./production.css";
+import "./document.css";
 
 /** The site's shared chrome per page language: the localized copies the site already serves (as the German campaign
  *  document did for /lp/behandlung-in-kerala/). Dedicated DE/RU campaign bundles preserve snapshot-bound chrome elsewhere. */

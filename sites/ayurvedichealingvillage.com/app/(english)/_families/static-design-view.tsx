@@ -95,7 +95,7 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
   const family = (route.desktopView ?? route.mobileView ?? "").replace(/^ahv-page-/, "").replace(/-(desktop|mobile)$/, "").replace(/--[a-z0-9-]+$/, "");
   const consistency = Object.hasOwn(consistencyLock.families, family.replace(/^ahv-template-/, "")) ? undefined : "1";
   const staticDesktopPath = `/ahv/static/${route.path === "/" ? "index" : route.path.replace(/^\/+|\/+$/g, "").replace(/[^a-z0-9._-]+/gi, "_")}.html`;
-  const deferFonts = route.path === "/" || route.path === "/panchakarma-therapy/";
+  const deferFonts = route.path === "/" || route.path === "/panchakarma-therapy/" || route.path === "/contact-us/";
   const staticConfig = {
     breakpoint: cfg.breakpoint,
     locale: cfg.locale,
