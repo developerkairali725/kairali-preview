@@ -99,6 +99,7 @@ test("firstScreenPoster: a first-screen <video poster> only, local paths only", 
 test("imageLedFirstScreen: listed hero-background routes only; every other route keeps its faces", () => {
   const digestive = "/digestive-wellness-gut-health-yoga-therapy/";
   assert.equal(imageLedFirstScreen(digestive), true);
+  assert.equal(imageLedFirstScreen("/offers/"), true);
   for (const p of ["/", "/our-villas/", "/kairali-ayurvedic-way-of-weight-management/", "/panchakarma-therapy/", "/digestive-wellness-gut-health-yoga-therapy", "", undefined]) {
     assert.equal(imageLedFirstScreen(p), false, String(p));
   }

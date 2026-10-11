@@ -164,7 +164,7 @@ export function firstScreenPoster(snapshotHtml) {
  * Digestive: gate mobile-NXhKEj, LCP = digestive-768-hero.avif background in 5/5 samples; Lantern
  * re-simulation of those traces without the faces: median 87 -> 93 (adopted-repair-20261008).
  */
-const IMAGE_LED_FIRST_SCREEN = new Set(["/digestive-wellness-gut-health-yoga-therapy/"]);
+const IMAGE_LED_FIRST_SCREEN = new Set(["/digestive-wellness-gut-health-yoga-therapy/", "/offers/"]);
 export function imageLedFirstScreen(routePath) {
   return IMAGE_LED_FIRST_SCREEN.has(String(routePath || ""));
 }
