@@ -33,8 +33,7 @@ function digestiveProof(locale = 'en', { hrefs = [contactPaths[locale]], chromeH
   return inspectCapturePage({ ...captureContentRequirements(route, {}, locale), rootElement: root });
 }
 
-// Restores the approved c35727ec4 inline-form contract for Digestive alone.
-// Weight remains held and keeps the adversarial external-contact tests below.
+// Both accepted programme routes require exactly one populated inline form.
 test('Digestive capture requires exactly one populated programme contact form in every locale', () => {
   for (const locale of [null, undefined, ...Object.keys(contactPaths)]) {
     const requirements = captureContentRequirements(digestiveRoute, {}, locale);
@@ -132,30 +131,24 @@ test('page heading, non-navigation body and required form must each exist', () =
 });
 
 const weightRoute = '/weight-loss-programme/';
-test('held Weight preserves its external contact contract in all13 locales', () => {
-  for (const [locale, path] of Object.entries(contactPaths)) {
+test('Weight capture requires exactly one populated programme contact form in every locale', () => {
+  for (const locale of [null, undefined, ...Object.keys(contactPaths)]) {
     const requirements = captureContentRequirements(weightRoute, {}, locale);
-    assert.equal(requirements.formSelector, null);
-    assert.equal(requirements.retainedWeightContact.id, 'ahv-weight-production-contact-v1');
-    assert.equal(requirements.retainedWeightContact.path, path);
-    for (const href of [path, `https://ayurvedichealingvillage.com${path}`, `${path}?programme=treatment`]) {
-      assert.doesNotThrow(() => assertCapturePage(digestiveProof(locale, { hrefs: [href] }, weightRoute), weightRoute));
+    assert.deepEqual(requirements, { formSelector: '#programme-enquiry form[data-form="contact"]', formCount: 1 });
+    assert.equal(captureFormSelector(weightRoute), requirements.formSelector);
+    for (const [count, populated] of [[0, false], [1, false], [1, true], [2, true]]) {
+      const root = fixtureRoot(), query = root.querySelectorAll.bind(root);
+      const form = { querySelector: () => populated ? { tagName: 'INPUT' } : null };
+      root.querySelector = selector => selector === requirements.formSelector && count ? form : null;
+      root.querySelectorAll = selector => selector === requirements.formSelector ? Array.from({ length: count }, () => form) : query(selector);
+      const proof = inspectCapturePage({ ...requirements, rootElement: root });
+      if (count === 1 && populated) assert.doesNotThrow(() => assertCapturePage(proof, weightRoute));
+      else assert.throws(() => assertCapturePage(proof, weightRoute), /page form/);
     }
   }
-  assert.equal(captureFormSelector(weightRoute), null);
-});
-test('held Weight rejects inline form, dead anchor, wrong destination and bodyless page', () => {
-  for (const options of [{ actions: ['/api/lead/'] }, { bodyActions: ['/api/newsletter'] }, { sections: 1 }, { hrefs: ['#programme-enquiry'] }, { hrefs: ['/de/kontakt/'] }, { hrefs: ['https://foreign.test/contact-us/'] }, { hrefs: [] }, { empty: true }, { noHeading: true }]) {
-    assert.throws(() => assertCapturePage(digestiveProof('en', options, weightRoute), weightRoute));
-  }
-  const weight = digestiveProof('en', {}, weightRoute);
-  assert.throws(() => assertCapturePage(weight, digestiveRoute), /held programme/);
-  assert.throws(() => assertCapturePage(weight, '/about-us/'), /Unexpected/);
-  const both = { ...weight, retainedDigestiveContact: digestiveProof().retainedDigestiveContact };
-  assert.throws(() => assertCapturePage(both, weightRoute), /Unexpected/);
 });
 
-test('held Weight accepts the English prerender null locale with the full contact guard', () => {
-  assert.deepEqual(captureContentRequirements(weightRoute, {}, null),captureContentRequirements(weightRoute, {}, 'en'));
-  assert.equal(captureContentRequirements(weightRoute, {}, null).retainedWeightContact.path,'/contact-us/');
+test('Weight rejects obsolete held proof and incomplete content', () => {
+  assert.throws(() => assertCapturePage({...complete, retainedWeightContact: {id:'ahv-weight-production-contact-v1'}}, weightRoute), /Unexpected/);
+  for (const change of [{requiredForm:false},{heading:''},{bodyChars:0},{errors:['Component import failed']}]) assert.throws(() => assertCapturePage({...complete,...change},weightRoute));
 });

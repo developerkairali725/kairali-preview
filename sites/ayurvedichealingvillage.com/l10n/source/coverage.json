@@ -1,5 +1,5 @@
 {
- "sourceSetHash": "993a4d594a2af498d53db8011c136412d49e0e6932f6e0f69c71eb394ff6a79c",
+ "sourceSetHash": "428fd2da6733f8a762dff738d298aa3853c9da7372505a0294f9390022e68fe7",
  "files": [
   {
    "file": "public/ahv/components/AHV Chrome Footer.dc.html",
@@ -45,14 +45,14 @@
   },
   {
    "file": "public/ahv/views/ahv-page-all-programs-desktop.json",
-   "sha256": "36ef21e6a23d7b67fcf05b55383cb37387bd799f632931817af4bd687228a4d9",
-   "units": 316,
+   "sha256": "de200c82e8833c9127de788a6d4f226cdd0a2dffe8e5e99ef727d3cea7ff6c13",
+   "units": 319,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-all-programs-mobile.json",
-   "sha256": "cd6d0bea540e712a3eee6a486fa7be768e77e552cc8cf7a5022b894586343853",
-   "units": 310,
+   "sha256": "eb43fcf21a6af89329ac0cccd3e5dc8b6708f0d07afd397dd3e2f9fa10e8c2ec",
+   "units": 313,
    "status": "covered"
   },
   {
@@ -165,14 +165,14 @@
   },
   {
    "file": "public/ahv/views/ahv-page-ayurvedic-treatments-desktop.json",
-   "sha256": "199481684247df1ceecc24df3c0f3d5051bae73410032342c5322354627a0e7b",
-   "units": 261,
+   "sha256": "87bd093a06342d7db7356c68c5ea420a9988fa31430575517bb798223c4f7a0c",
+   "units": 264,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-ayurvedic-treatments-mobile.json",
-   "sha256": "855c770cb3cd7d3f13e9e2307a335de4438834fcd98301784452c7e4369f3edc",
-   "units": 256,
+   "sha256": "ef6b44a970ac022632ccfa28ece7803c64e2b618a0cf7fedab14550d2a36b8cf",
+   "units": 259,
    "status": "covered"
   },
   {
@@ -381,13 +381,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-   "sha256": "0e47b14a3ca6996d425e9559cfd80b6b9c307fabf1db3a2bde6d25f6dce5e1c6",
+   "sha256": "d28ba7e44334aadb68841c1b463bec7f2940307121a0b512794d33da8c83e0e1",
    "units": 478,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-   "sha256": "4486d3a76af0ff52566e43864ee933387200e4976e0acf68565bd67eacea60e2",
+   "sha256": "ab8ba8ab4b4ea13b3e828a2e9ea3d703d618661638bca18289c33af6a25434e9",
    "units": 477,
    "status": "covered"
   },
@@ -573,13 +573,13 @@
   },
   {
    "file": "public/ahv/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
-   "sha256": "7f5f74b3147353b27fdf8fc5cdd5b8e5de64a2fce706b12a7b1399617339518a",
+   "sha256": "b52f2204785e1915f6cc97a6977320cd749bd2543b9b6d8d5c044ecc8361506f",
    "units": 16,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-new-to-yoga-teacher-training-mobile.json",
-   "sha256": "e75d77205d90825284f6d2812db8b6712b7dd60da11c498ad44ba9ca6d90aecd",
+   "sha256": "91c6fd2292f45638d273f526f4b0c551d934c99169467a26b954eebf672578e4",
    "units": 16,
    "status": "covered"
   },
@@ -837,26 +837,26 @@
   },
   {
    "file": "public/ahv/views/ahv-page-training-programs-desktop.json",
-   "sha256": "1e2b16111043bab0ce23cfdd455b6c24ec323500c5f4a2e0722a6eda78826323",
-   "units": 316,
+   "sha256": "13eabada448025c0414331393e8f9d4e6ea9c603ae152ef5dac429563014ef2a",
+   "units": 319,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-training-programs-mobile.json",
-   "sha256": "94bf16e773689630a178f6dec242f8b99107f124e30c6b6049011b679cdd381b",
-   "units": 310,
+   "sha256": "dd497282b773aca09298caaeea7b3e6db1cfb416050f9480f91a2daf245ada54",
+   "units": 313,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-treatment-programs-desktop.json",
-   "sha256": "e8cd00bc74acd20ab23effd53a1d742bcdf6e7744ad5e3ac188cc5ad98c6b1d4",
-   "units": 253,
+   "sha256": "2529ecb7bed1c5077f48af78766d83e85d8417450b8071f6c5d6dbb5124f98c5",
+   "units": 256,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-treatment-programs-mobile.json",
-   "sha256": "082979d56db18ef74be82aee13ec532545abfe4dfe9129478e45385c44ef001c",
-   "units": 247,
+   "sha256": "127638a2964be87981eef0ebaed506c44732c43e888a55953adb40aa7dc9db1a",
+   "units": 250,
    "status": "covered"
   },
   {
@@ -873,26 +873,26 @@
   },
   {
    "file": "public/ahv/views/ahv-page-weight-loss-programme-desktop.json",
-   "sha256": "6d7a7fe57727b21560f4bb5ab7f145481bc96900a854cb5712e5798883b945de",
+   "sha256": "2192b2c7be5cee46f283d02cb5ff7a16b8f3773274d13cc5f967d6e737b55192",
    "units": 523,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-weight-loss-programme-mobile.json",
-   "sha256": "a3ddb49f061576c3819410f2b9e484ff3691a00f0f21d5663b99f08e4e85b7ce",
+   "sha256": "9696f2faf6b968d3f8257df6c70c64c47ff28db5a2f765e3705cae2251f5ec91",
    "units": 523,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-wellness-programs-desktop.json",
-   "sha256": "87647f896268053428ad01524f41183598f204664dd331947aa6f3cbf62dff47",
-   "units": 316,
+   "sha256": "79d3382e39056b8781af581b84f6c2819311a0de119ba4da711f26776f8097e0",
+   "units": 319,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-wellness-programs-mobile.json",
-   "sha256": "ef99e580efd30791af41222e73aca5119650f12d33781dde7a73b13f3b3b8aee",
-   "units": 310,
+   "sha256": "22e6f9f3481e1e66556be6ef486ae44905cad8563d219fede55f9cff6b2b318f",
+   "units": 313,
    "status": "covered"
   },
   {
@@ -933,38 +933,38 @@
   },
   {
    "file": "public/ahv/views/ahv-page-yoga-meditation-program-desktop.json",
-   "sha256": "bd76ca9e805a9c52ed29d2c1848cc9cf54448f0ef20b56e16bc7230ba035afd0",
+   "sha256": "0d99e8b3f165416890c229420ab47464897839de5e71f100cdcd1d309c22ce83",
    "units": 16,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-yoga-meditation-program-mobile.json",
-   "sha256": "75b923eeb4c5e55458a00b69b2912165f774bf4fd26d5a6b0fd7b5be887244bc",
+   "sha256": "10409ed1feb66340be96c77c12094ba3432ff63f54400ead5c3f63eaa8c03f45",
    "units": 16,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-yoga-meditation-programs-desktop.json",
-   "sha256": "e74e0e2ef65ce0dcb58126ef4a3827a7439ec980d6839ef713f8d132e38110ed",
-   "units": 323,
+   "sha256": "d6adcfbf4bbe4ba3b1495a8247aec331904fda9ac294ec2426a727712f61037b",
+   "units": 326,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-yoga-meditation-programs-mobile.json",
-   "sha256": "fbb7487785cf26753abb1719dff1d07a5963287f496fd76436d9df1926758819",
-   "units": 317,
+   "sha256": "9e6e5609afb6e24ae990f97aafabbabd605baaa4e2d38bf5315167940c02dedf",
+   "units": 320,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-yoga-meditation-training-desktop.json",
-   "sha256": "a034d334dbe3cb9d1a9a0b4cfb3a759756822b9354a85fa9b216050322d2bc92",
-   "units": 22,
+   "sha256": "b684ffc3e47f13b0fdbfbbd68e87a3d0b2a95215c7e55256cc7b18a35ddcee5d",
+   "units": 27,
    "status": "covered"
   },
   {
    "file": "public/ahv/views/ahv-page-yoga-meditation-training-mobile.json",
-   "sha256": "c6646b6fd691ee007683cf0b32d631ec6b8bd1a477b458c6a2d3e68173d1dfaa",
-   "units": 22,
+   "sha256": "57dbe4e4e739e984b51971793786f6ddc581e4fbd0529e50aa91fecdea90800c",
+   "units": 27,
    "status": "covered"
   },
   {
@@ -1077,7 +1077,7 @@
   },
   {
    "file": "public/ahv/views/home-hi-fi-v4.json",
-   "sha256": "9dcee678a00e4aa472c1ed8ef75a688e626c1a44d4a9c670996a3d29013d4201",
+   "sha256": "1c24818e06a6b4699ce82249841f16ccf9a26733b06fe2302f6e79b93290ddc0",
    "units": 684,
    "status": "covered"
   },
@@ -1569,8 +1569,8 @@
   },
   {
    "file": "english-candidate/content-review-copy.json",
-   "sha256": "799bb2bcc9e3ee55ceed025668b9de64d2e6965b5ec1b7a968e0eee422af6230",
-   "units": 10664,
+   "sha256": "9cb798e5c1e2e5e3a240885aa79b3ee89b078ce14b7132de368dad8c433e427b",
+   "units": 10666,
    "status": "covered (key whitelist)"
   },
   {

@@ -1,0 +1,648 @@
+{
+  "scope": "W02 exact accepted Weight body reuse; current Digestive and other bodies preserved",
+  "acceptedHead": "8ba410e409f5e05536c6b10a0a916b73b9aff1b9",
+  "acceptedArchive": {
+    "archive": "ahv-locale-prerenders-20261007-df4fb05643a1b916c39863d31b1e3f53ae044566-final-f2.tar.gz",
+    "sha256": "afba3609fc78a8bb5c44065c9db5af19b6f997b833598936ed906141494be796",
+    "bytes": 43868482
+  },
+  "parentArchive": {
+    "archive": "ahv-locale-prerenders-staged-combined-20261011.tar.gz",
+    "sha256": "61124e56ab88da9a4a5947c65a75d73cd9eea165f91af29aa97407a548c94154",
+    "bytes": 43773351
+  },
+  "sourceDelta": [
+    {
+      "file": "l10n/generated/ar.catalog.json",
+      "before": "118b58f661b0e679582583214b4184f2ed074180a0d5e061b44d96a0ece758c5",
+      "after": "048a25e1907e814f38ede0b54e88a44f80de30a1d8ef6531a9e2b3564d685be9"
+    },
+    {
+      "file": "l10n/generated/ar.json",
+      "before": "ba70a9969a0c0a8b79afad4084a195589fc9de8b8c89ade8cb6e0c8b7b7c71f8",
+      "after": "07e296692d4313d09d8cfdf1fc968343970b46b44c1c0813940d0f4bbd19ddf1"
+    },
+    {
+      "file": "l10n/generated/de.catalog.json",
+      "before": "7884d9c96b2a1c7ac44dd36343c62503be1418aa0f0a553623c0e74a38d0adff",
+      "after": "4f18fe5b82cdddee727f50d957806c028efce98cdefbf93498a9d27bdbba8848"
+    },
+    {
+      "file": "l10n/generated/de.json",
+      "before": "57022a41b7435fa732926781905e791354e067f9b02df441448eb7386c64a5d1",
+      "after": "b53bb24bce90357d62a000de8aad09fa674054d833a983d96033e1c254a28246"
+    },
+    {
+      "file": "l10n/generated/es.catalog.json",
+      "before": "1bba8d2ef7946e41f47372e77b25dee47b6b44736deb4136bdf8025afe53d98e",
+      "after": "62e6ff39092029fbf1d12014787d6451c2df6e510cb1da0a0c28ac72149978a1"
+    },
+    {
+      "file": "l10n/generated/es.json",
+      "before": "b226414784df465d5d7ae6f0b0d853133a0bcba13e06185804b1e2fdb926a9d3",
+      "after": "81e6ecf3e2d5fef8fa4c1f0b57f6fd3e4f9f4b8dd14700a3f136b4ed26beaa70"
+    },
+    {
+      "file": "l10n/generated/fr.catalog.json",
+      "before": "affb334b3fbb800a58e23cb1755da759968ee38b534ac36c6baa14c7d1769e20",
+      "after": "a02a571a837154cd3e213031567d1b0a2a4dfd135dd00a63d81dc800c7f2cf65"
+    },
+    {
+      "file": "l10n/generated/fr.json",
+      "before": "2585a94c1b131c42b33f11fed5ea156004c13335ffc3770048960145291d6376",
+      "after": "d7e9149fb92855a32781fb9ab7e129b4157750442c0514a6d2bd093513a9ea92"
+    },
+    {
+      "file": "l10n/generated/hi.catalog.json",
+      "before": "88d2c8cb65898cee5154c9145f0681fca8dd1e1ed9611ed02fb7d8b2df743aaf",
+      "after": "f2464b636a4fb3787692ef9582b96ecf13eea5d4501424fc51a30cde6d003445"
+    },
+    {
+      "file": "l10n/generated/hi.json",
+      "before": "00a7363c5ac1efda9863928765f7853774a5de84d68e142899058efcb5e45500",
+      "after": "4590b03422d86d3ec774c9fdedd4dd79097a7d70625323c00c96be37be4308f5"
+    },
+    {
+      "file": "l10n/generated/it.catalog.json",
+      "before": "cc17dae3ec7575a723dffe9d3a23a4f4062be3b7b9be343dfed36ec781bea3f4",
+      "after": "da72138132234dd5128c0b09d227c0ce20669a6a296ab748d11e35550e65374c"
+    },
+    {
+      "file": "l10n/generated/it.json",
+      "before": "143f1d802a754f000a8850a904f7603dade769c54914d8dc19258b8c1d98c95f",
+      "after": "0f947a4539991884af3a873fb06b137d04d69baf41531031828428e50ec496ac"
+    },
+    {
+      "file": "l10n/generated/ja.catalog.json",
+      "before": "7951597f0c233ee15483b2f4760f8dd348ba6f1935cf7cf8bb5344a679bf04b1",
+      "after": "3f5d764bb3d1438b2d2f134b65f91847e7f1202c73a7affa19255bfdb455dbef"
+    },
+    {
+      "file": "l10n/generated/ja.json",
+      "before": "36b49f61b5a316fb3606ae54a23dfccf742f7f56f84857b0463838dc79bfbd3c",
+      "after": "f4135ee0a21e2090ef7bfbac8a4f0676e1d00ffc2d1f6db7c19f11ac9eb3bdae"
+    },
+    {
+      "file": "l10n/generated/ko.catalog.json",
+      "before": "8e127a970ea6bba5ab2c585e1f127623dc4a51b0e082fdd6aa32b6590422924a",
+      "after": "1f935e8b631eb935f387f9e0d6e06e27cb43a449204a7b75b8ecb0b4487b3546"
+    },
+    {
+      "file": "l10n/generated/ko.json",
+      "before": "9dd7166be561c61d2891bb1f9014e7ce8e806d96846d7f2fb9c51b796ab94cff",
+      "after": "b0efb478584f73427961456e4a5cc0f6266e79a9cbb48efbf67dd13882c0fa64"
+    },
+    {
+      "file": "l10n/generated/nl.catalog.json",
+      "before": "6671d649b68890f8384d3bcd77d5b951886a9464d782587886d266ae03b55710",
+      "after": "536d1de429d9e1771f53727577a62685755ad4bb03617b2b39d5bde243b1e836"
+    },
+    {
+      "file": "l10n/generated/nl.json",
+      "before": "8dc7ea805c4c982711d42df1c2a336c862d949fe35528a998a25b94f7ab359be",
+      "after": "a107df2726339cc90820c81b0e1f3fb10796c250848e406f75628d3d6e07bb1d"
+    },
+    {
+      "file": "l10n/generated/pt.catalog.json",
+      "before": "8c7db96e05bc226c19a7a968f4352152d5ad13d559782ffa21a10e28f03b0a25",
+      "after": "664a59c6e2ef34294d2ed58ffb64393fa20aeca9805c25e0eeca2c55419fb484"
+    },
+    {
+      "file": "l10n/generated/pt.json",
+      "before": "554b3e6b7a390420a44e38e9733a25c2bf3f69067617a51574726e586731a201",
+      "after": "3bbd74a20e5f1de9ba1e7103f0628470eec7b881a3d6d6538d29b37d4deb0e27"
+    },
+    {
+      "file": "l10n/generated/ru.catalog.json",
+      "before": "4c73e05d06f63ab4e3a82492c313dc9f8ae5ad6c5ffc0564f42b39251a7fa663",
+      "after": "c2faa6c80115c4f7dd6f7eba883a2ecf6476dcb2d832bff895ea837a8190b920"
+    },
+    {
+      "file": "l10n/generated/ru.json",
+      "before": "f0105034ff94ecf64af301e8f6ca9ffe885646207e9aa723689f867cbc93b05f",
+      "after": "d563acaa5940f1f8a78a6e58eaacc9bdacc3b7b5eb638eab841a7473b249344e"
+    },
+    {
+      "file": "l10n/generated/zh-Hans.catalog.json",
+      "before": "85de6706771ccf4e61c6a88930d7deb4272c4ce616a8f8071e3a46877758d4d8",
+      "after": "4c44337c551227041d01ebb7b86e502eddf1ca10e6fccdcfdb13e23c9ed62ca0"
+    },
+    {
+      "file": "l10n/generated/zh-Hans.json",
+      "before": "0faaeeb3f80daa80395b70d6da018742428df72b53378d1d1125a596d42f2a21",
+      "after": "2591f336cda9d8e476d7054efcf194a8ef156b9df880ba1ce523f20927426f20"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-weight-loss-programme-desktop.json",
+      "before": "4cbd4fdeed259de82e36a310cdf13386095e317a404af68b0cddfbd7a016c541",
+      "after": "1e0d8dbd2b6842c6e71e2ba5f22047e3149804e600f7c877d199986d59824be8"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-weight-loss-programme-mobile.json",
+      "before": "a16e872ee32fb34a66a5cc918a2ff000440cb8b35f5d6d91e2991fe0c2fa885b",
+      "after": "8c2731329c21c216c8ae60220d73351b895c7a5513cb8ce785fdace9a2d2dfdd"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-weight-loss-programme-desktop.json",
+      "before": "e17c415d0d7945c367f7a3d1322a3fadee563057642b97a579a62c99f339434a",
+      "after": "51aef6abaceb3fdadee18b722954a1f53356bf460ce40ec3953fa979fc8810b4"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-weight-loss-programme-mobile.json",
+      "before": "e62032825f397b6ac1f12948528f4de136f26b0637b4c22ea76e502d8335b981",
+      "after": "eac0216f74125889bf06b9d1fabda280c63f002968d1f82d6cf7aef46607d1fc"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-weight-loss-programme-desktop.json",
+      "before": "b519dff80b112982e63945aeb9c3939b706072bb92359fb942341536df6f5a75",
+      "after": "6c02daa8f6a595dbefae1b4872a7ea3c5fced0ece2269f6dbd6af91c4efcdee1"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-weight-loss-programme-mobile.json",
+      "before": "ee699c6a98a9b0c6fe21260dbdc48221009c10a0fd980ef3526914e5525c25de",
+      "after": "b92e7c9baf6775904bd633941a27247b76a118f3a8736c882a4b0d072b60bc55"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-weight-loss-programme-desktop.json",
+      "before": "e88dd8eda55879aed1ba1307d8921c3818177b97629b55f4b12a9ba0519b202a",
+      "after": "d95b1fd2310bc486e50a811f72034fb848afecf86e77d6d90e98d2a105614aab"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-weight-loss-programme-mobile.json",
+      "before": "b50d1776bc12bcffe985273df5921ab0d42191c8128e2dc78efaaab21557e24e",
+      "after": "d896397fb8c9c543547fa0eac4ff9357b9c6dedf5c1c575b8e226fc83b083ec4"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-weight-loss-programme-desktop.json",
+      "before": "ca8281436fd0d4fa51c39241e8cc33d6ad9a12847ee2aca64fa0e3ecb1f5d50b",
+      "after": "1edbc6ef10cf62b178d5e595d38e51a06d5dd43e7044235d80f28e41ab9a49ba"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-weight-loss-programme-mobile.json",
+      "before": "33a114473af9b0fa18b1cf87c5e382b3b659f3c668e1ee73f7cfc55bd855e63f",
+      "after": "2c79fc18d9bd585ff30136e06c5dbe75e4599f9e8524c5a9654a0c437adb15b5"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-weight-loss-programme-desktop.json",
+      "before": "7c1a6bcaab3625363696e87e13bdce3bc474cd596636dc7efd1ccf314462510c",
+      "after": "18021edd21073b51cd4a28a1d977297a62a28405074c467f7f42415aa0b364a9"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-weight-loss-programme-mobile.json",
+      "before": "cbfe95a6eec656c55eccd4c18bbad4e59e6cab98463b936c4f397eda8472dc4d",
+      "after": "f1c817d11712294be3aff14c1917f26709f652feba12448ab8e224a3f7ec29d6"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-weight-loss-programme-desktop.json",
+      "before": "1fcb0110c92333540c9bacca2e24e6caa28da9b70cae089405a951872cf00cdc",
+      "after": "72d060f9aaec98deb9aec8eb4ccd2f615c5b7a678a144ee4c7541e320d7dcd5f"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-weight-loss-programme-mobile.json",
+      "before": "4a61fd0215f0c1e15a167fdf2ebf651ee83fe3f937062a3b5bca991a0e81d3ef",
+      "after": "a792f667c804c44f6ccb584d021daf046ba635e606bc4c03ed3c386bdaafd3f3"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-weight-loss-programme-desktop.json",
+      "before": "4eb97d9dee7440edbb2e941a0f7e9017940025ce812ed4b9ee7b2eaf435c645e",
+      "after": "9be636a58cd1ec8deabb9b5d55978ed810a600b24aa40e664d7ad15690cde94c"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-weight-loss-programme-mobile.json",
+      "before": "a8fce01f31985a5f308baf295ebe01e460d4f5ebc416abe058a5a0fe57b2d83c",
+      "after": "7bbad33ac825466e883b3304aa567660e1d38732835d6a73f02698b640dd029d"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-weight-loss-programme-desktop.json",
+      "before": "5791dbe4497e65fb08af70c5be896016c9eacaa92af58c73caf0eba70a270cf2",
+      "after": "4e5432f0cc82d1b1464bb92bfca935b12c15045ee906c8d797ecda7a42ecded7"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-weight-loss-programme-mobile.json",
+      "before": "59e3dc73c7f3439c43b859967fcb5bba66dda25fe978d4575986c5a95d623e92",
+      "after": "8fb8a56648a0bd2b62887764d8d88097f3cd4151b3374536f71dd76d7ec9243c"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-weight-loss-programme-desktop.json",
+      "before": "b07f8f3ab5b1f89937b78ea5bef944dda6fba65c72b0eade0b591d08b385db2b",
+      "after": "076db0260b9d73cd91fa6ea38b7e74914ac45d0b6d700f72a5928e1e311eb972"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-weight-loss-programme-mobile.json",
+      "before": "9a17ed262a0ad919a7b87a62747b0656338200f176313b148033d13af376ce8d",
+      "after": "17047b47b8e282f51f6bcd18ecd67e481a369447d8f25c5ede59699542486e02"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-weight-loss-programme-desktop.json",
+      "before": "cdb1e7b1d652983dea4e98ebbd09a5a1e5a7276efb61666e1dfbcf9a734fdb0a",
+      "after": "59bee619b582701255739ab8d2e5aba39fc15315e168244e74660440a293019f"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-weight-loss-programme-mobile.json",
+      "before": "cde6eb6f0939e4a92cd182a6f6a217415a1f3c8bf6eb62070ca0b1abdcabcfe4",
+      "after": "5ba47810dbc885d7ffd5c08afa0e27c7bcd1011e4cc475fc5b89806f73ba02cd"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-weight-loss-programme-desktop.json",
+      "before": "0cc385b1b33e45832397217b9fbf458c010c69438ee6694e38213400c2e70910",
+      "after": "9b2828f78a4e3865adcf3df35d7720251dfc4b626ee5c745f0843430aecaaf86"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-weight-loss-programme-mobile.json",
+      "before": "661a30fe24d022259787fe169df318dc0590fb6515a68aa05da56f9db191e91e",
+      "after": "2b12c1cf012e2d522db9e1941fba45198cd9dff5e82c53240efa52522b292f78"
+    }
+  ],
+  "reusedWeightBodies": [
+    {
+      "locale": "hi",
+      "file": "l10n/prerender/hi/weight-loss-programme.html.gz",
+      "sha256": "b6e794b26f8e9829015867aea19946c91f9cbd89e7643ac3732a593fdea63052",
+      "acceptedRow": {
+        "path": "/weight-loss-programme/",
+        "ok": true,
+        "file": "weight-loss-programme.html",
+        "bytes": 241792,
+        "textChars": 15626,
+        "imgs": 58,
+        "flattened": 0,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "\u0935\u091c\u093c\u0928 \u092a\u094d\u0930\u092c\u0902\u0927\u0928 \u090f\u0935\u0902 \u092e\u0947\u091f\u093e\u092c\u0949\u0932\u093f\u091c\u093c\u094d\u092e \u0925\u0947\u0930\u0947\u092a\u0940",
+          "bodyChars": 26283,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "\u0935\u091c\u093c\u0928 \u092a\u094d\u0930\u092c\u0902\u0927\u0928 \u090f\u0935\u0902 \u092e\u0947\u091f\u093e\u092c\u0949\u0932\u093f\u091c\u093c\u094d\u092e \u0925\u0947\u0930\u0947\u092a\u0940",
+          "bodyChars": 26283,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      }
+    },
+    {
+      "locale": "de",
+      "file": "l10n/prerender/de/weight-loss-programme.html.gz",
+      "sha256": "3e26704c73e2619bcdadf4b37234d04300f01c8dcb5d6dafbddf8d1f456f1f70",
+      "acceptedRow": {
+        "path": "/weight-loss-programme/",
+        "ok": true,
+        "file": "weight-loss-programme.html",
+        "bytes": 242670,
+        "textChars": 18040,
+        "imgs": 58,
+        "flattened": 0,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Therapie f\u00fcr Gewichtsmanagement & Stoffwechsel",
+          "bodyChars": 28907,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Therapie f\u00fcr Gewichtsmanagement & Stoffwechsel",
+          "bodyChars": 28907,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      }
+    },
+    {
+      "locale": "fr",
+      "file": "l10n/prerender/fr/weight-loss-programme.html.gz",
+      "sha256": "73acac51009b72e5eb21177a985be3a9ad17bb235c1d832368021aaa42cabb7b",
+      "acceptedRow": {
+        "path": "/weight-loss-programme/",
+        "ok": true,
+        "file": "weight-loss-programme.html",
+        "bytes": 243460,
+        "textChars": 18405,
+        "imgs": 58,
+        "flattened": 0,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Th\u00e9rapie de gestion du poids et du m\u00e9tabolisme",
+          "bodyChars": 29423,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Th\u00e9rapie de gestion du poids et du m\u00e9tabolisme",
+          "bodyChars": 29423,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      }
+    },
+    {
+      "locale": "es",
+      "file": "l10n/prerender/es/weight-loss-programme.html.gz",
+      "sha256": "8421f900c0d3a864871644b192ca2fc9871325ad3769d6ef3c195ad906e7fac6",
+      "acceptedRow": {
+        "path": "/weight-loss-programme/",
+        "ok": true,
+        "file": "weight-loss-programme.html",
+        "bytes": 245593,
+        "textChars": 17742,
+        "imgs": 58,
+        "flattened": 0,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Terapia de control de peso y metabolismo",
+          "bodyChars": 29214,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Terapia de control de peso y metabolismo",
+          "bodyChars": 29214,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      }
+    },
+    {
+      "locale": "it",
+      "file": "l10n/prerender/it/weight-loss-programme.html.gz",
+      "sha256": "d5fa3b7de8762da36e0d3931dae100666dcff664c2b4239a93e0cb96fd9b8c8f",
+      "acceptedRow": {
+        "path": "/weight-loss-programme/",
+        "ok": true,
+        "file": "weight-loss-programme.html",
+        "bytes": 242682,
+        "textChars": 17987,
+        "imgs": 58,
+        "flattened": 0,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Terapia per la gestione del peso e il metabolismo",
+          "bodyChars": 28980,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Terapia per la gestione del peso e il metabolismo",
+          "bodyChars": 28980,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      }
+    },
+    {
+      "locale": "pt",
+      "file": "l10n/prerender/pt/weight-loss-programme.html.gz",
+      "sha256": "b7dbab44271739de60a12daafccc2d483712814bb555bf7d9c6e3d9594d5bcad",
+      "acceptedRow": {
+        "path": "/weight-loss-programme/",
+        "ok": true,
+        "file": "weight-loss-programme.html",
+        "bytes": 241153,
+        "textChars": 17275,
+        "imgs": 58,
+        "flattened": 0,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Terapia de Controlo do Peso e do Metabolismo",
+          "bodyChars": 27727,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Terapia de Controlo do Peso e do Metabolismo",
+          "bodyChars": 27727,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      }
+    },
+    {
+      "locale": "nl",
+      "file": "l10n/prerender/nl/weight-loss-programme.html.gz",
+      "sha256": "950c3c7936ecd81bd43d90e24cafe52ef4721b737dff7cf14e865126cd936304",
+      "acceptedRow": {
+        "path": "/weight-loss-programme/",
+        "ok": true,
+        "file": "weight-loss-programme.html",
+        "bytes": 244715,
+        "textChars": 17291,
+        "imgs": 58,
+        "flattened": 0,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "Therapie voor gewichtsbeheersing en stofwisseling",
+          "bodyChars": 28611,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "Therapie voor gewichtsbeheersing en stofwisseling",
+          "bodyChars": 28611,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      }
+    },
+    {
+      "locale": "ru",
+      "file": "l10n/prerender/ru/weight-loss-programme.html.gz",
+      "sha256": "06dc3308c763998f71903ca2be28b8a0e7dced67527864f624f09358d67e5399",
+      "acceptedRow": {
+        "path": "/weight-loss-programme/",
+        "ok": true,
+        "file": "weight-loss-programme.html",
+        "bytes": 240746,
+        "textChars": 17093,
+        "imgs": 58,
+        "flattened": 0,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "\u0422\u0435\u0440\u0430\u043f\u0438\u044f \u0434\u043b\u044f \u043a\u043e\u043d\u0442\u0440\u043e\u043b\u044f \u0432\u0435\u0441\u0430 \u0438 \u043e\u0431\u043c\u0435\u043d\u0430 \u0432\u0435\u0449\u0435\u0441\u0442\u0432",
+          "bodyChars": 27505,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "\u0422\u0435\u0440\u0430\u043f\u0438\u044f \u0434\u043b\u044f \u043a\u043e\u043d\u0442\u0440\u043e\u043b\u044f \u0432\u0435\u0441\u0430 \u0438 \u043e\u0431\u043c\u0435\u043d\u0430 \u0432\u0435\u0449\u0435\u0441\u0442\u0432",
+          "bodyChars": 27505,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      }
+    },
+    {
+      "locale": "ar",
+      "file": "l10n/prerender/ar/weight-loss-programme.html.gz",
+      "sha256": "42bb283bc673ee9c74298a95a664b32dea5ae3ba5401b64386f6c92412f9a569",
+      "acceptedRow": {
+        "path": "/weight-loss-programme/",
+        "ok": true,
+        "file": "weight-loss-programme.html",
+        "bytes": 238683,
+        "textChars": 13621,
+        "imgs": 58,
+        "flattened": 0,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "\u0639\u0644\u0627\u062c \u0625\u062f\u0627\u0631\u0629 \u0627\u0644\u0648\u0632\u0646 \u0648\u0627\u0644\u062a\u0645\u062b\u064a\u0644 \u0627\u0644\u063a\u0630\u0627\u0626\u064a",
+          "bodyChars": 23229,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "\u0639\u0644\u0627\u062c \u0625\u062f\u0627\u0631\u0629 \u0627\u0644\u0648\u0632\u0646 \u0648\u0627\u0644\u062a\u0645\u062b\u064a\u0644 \u0627\u0644\u063a\u0630\u0627\u0626\u064a",
+          "bodyChars": 23229,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      }
+    },
+    {
+      "locale": "zh-Hans",
+      "file": "l10n/prerender/zh-Hans/weight-loss-programme.html.gz",
+      "sha256": "3750a7661809329ebdf5a0d8e9f408019877a36f4346a54f0d2af93be873961c",
+      "acceptedRow": {
+        "path": "/weight-loss-programme/",
+        "ok": true,
+        "file": "weight-loss-programme.html",
+        "bytes": 220755,
+        "textChars": 5967,
+        "imgs": 58,
+        "flattened": 0,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "\u4f53\u91cd\u7ba1\u7406\u4e0e\u4ee3\u8c22\u7597\u6cd5",
+          "bodyChars": 10709,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "\u4f53\u91cd\u7ba1\u7406\u4e0e\u4ee3\u8c22\u7597\u6cd5",
+          "bodyChars": 10709,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      }
+    },
+    {
+      "locale": "ja",
+      "file": "l10n/prerender/ja/weight-loss-programme.html.gz",
+      "sha256": "02e8ab99e941db3326f33e51033216a8e42f81c95a1ae211148978251fde2dfe",
+      "acceptedRow": {
+        "path": "/weight-loss-programme/",
+        "ok": true,
+        "file": "weight-loss-programme.html",
+        "bytes": 224217,
+        "textChars": 7881,
+        "imgs": 58,
+        "flattened": 0,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "\u4f53\u91cd\u7ba1\u7406\u30fb\u4ee3\u8b1d\u7642\u6cd5",
+          "bodyChars": 13558,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "\u4f53\u91cd\u7ba1\u7406\u30fb\u4ee3\u8b1d\u7642\u6cd5",
+          "bodyChars": 13558,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      }
+    },
+    {
+      "locale": "ko",
+      "file": "l10n/prerender/ko/weight-loss-programme.html.gz",
+      "sha256": "63ca865b2d6e2f4cefaa3658c7cd3c17e25e4b471203384ba8494b23527e7a1d",
+      "acceptedRow": {
+        "path": "/weight-loss-programme/",
+        "ok": true,
+        "file": "weight-loss-programme.html",
+        "bytes": 228705,
+        "textChars": 8384,
+        "imgs": 58,
+        "flattened": 0,
+        "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+        "liveRuntimeVerified": true,
+        "contentProof": {
+          "errors": [],
+          "heading": "\uccb4\uc911 \uad00\ub9ac \ubc0f \ub300\uc0ac \uce58\ub8cc",
+          "bodyChars": 15217,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        },
+        "liveContentProof": {
+          "errors": [],
+          "heading": "\uccb4\uc911 \uad00\ub9ac \ubc0f \ub300\uc0ac \uce58\ub8cc",
+          "bodyChars": 15217,
+          "requiredForm": true,
+          "requiredContent": true,
+          "forbiddenContent": false
+        }
+      }
+    }
+  ],
+  "unchangedBodies": 2400,
+  "newArchive": {
+    "archive": "ahv-locale-prerenders-weight-integrated-20261011.tar.gz",
+    "sha256": "13e4b1fb1be6f3a0c4241e7dfe92a049bb5b09d944978370b5d1245e8f451355",
+    "bytes": 43698957
+  }
+}

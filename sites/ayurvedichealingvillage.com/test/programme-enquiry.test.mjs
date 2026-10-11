@@ -19,19 +19,19 @@ test('programme form is generated from the accepted enquiry form without page me
   for (const unit of htmlUnits(component)) assert.ok(existing.has(unit.source), 'new copy: ' + unit.source);
 });
 
-test('held Weight views retain production contact links and cannot be reintegrated by the builder', () => {
-  assert.deepEqual(programmeViews, []);
-  for (const variant of ['desktop', 'mobile']) {
-    const view = JSON.parse(read(`public/ahv/views/ahv-page-weight-loss-programme-${variant}.json`));
-    const before = structuredClone(view);
-    assert.deepEqual(view.scripts, []);
-    assert.doesNotMatch(view.template, /AHV Programme Enquiry|#programme-enquiry/);
-    assert.match(view.template, /href="https:\/\/ayurvedichealingvillage\.com\/enquiry-form\/"/);
-    assert.throws(() => integrateProgrammeView(view), /held at its production baseline/);
-    assert.deepEqual(view, before, 'rejected generation cannot mutate the retained view');
+test('only the active Weight Loss programme imports one form; its logic and tariff data stay intact', () => {
+  assert.deepEqual(programmeViews, ['ahv-page-weight-loss-programme-desktop', 'ahv-page-weight-loss-programme-mobile']);
+  for (const id of programmeViews) {
+    const view = JSON.parse(read(`public/ahv/views/${id}.json`));
+    assert.equal(view.template.match(/name="AHV Programme Enquiry"/g)?.length, 1, id);
+    assert.ok(view.template.includes('href="#programme-enquiry"'), id);
+    assert.ok(view.template.indexOf('name="AHV Programme Enquiry"') < view.template.indexOf('<nav aria-label="On this page"'), id);
+    assert.deepEqual(integrateProgrammeView(view), view, 'integration is idempotent');
     assert.match(view.logic, /villaData/);
     assert.match(view.logic, /₹[0-9]/);
-    assert.deepEqual(orderedRuntimeScripts(view, { previewSrc: '/preview.js', supportSrc: '/support.js' }, false).map(x => x.src), ['/preview.js', '/support.js']);
+    const scripts = orderedRuntimeScripts(view, { previewSrc: '/preview.js', supportSrc: '/support.js' }, false).map(x => x.src);
+    assert.ok(scripts.indexOf('/design/lead-receipt.js') < scripts.indexOf('/ahv/assets/enquiry-family-data.js'));
+    assert.equal(scripts.at(-1), '/support.js');
   }
 });
 
@@ -50,6 +50,7 @@ test('programme integration behavior stays available for an explicitly unheld fi
 // The Digestive candidate carries the approved inline enquiry form frozen at c35727ec4 (Final-E capture 2190d657).
 // The builder still refuses to regenerate it, so the frozen bytes cannot drift.
 test('Digestive views keep the frozen approved inline enquiry form and cannot be reintegrated by the builder', () => {
+
   for (const variant of ['desktop', 'mobile']) {
     const view = JSON.parse(read(`public/ahv/views/ahv-page-digestive-wellness-gut-health-${variant}.json`));
     const before = structuredClone(view);

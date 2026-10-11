@@ -186,7 +186,7 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
     // reuse the id carry no boot, so they are never matched).
     "data-ahv-bg-defer": "",
   };
-  // Contact performance repair (ssr-only-html.mjs): the snapshot and the boot script ship in the HTML
+  // Contact and Weight performance repair: snapshot and boot markup ship in the HTML
   // only, not a second time in the Flight data. Same markup, same attributes, same order.
   const serverHtmlOnly = SSR_ONLY_HTML_ROUTES.has(route.path);
   const slot = `${locale}:${route.path}`;

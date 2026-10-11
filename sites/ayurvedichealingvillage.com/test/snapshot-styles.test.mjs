@@ -99,8 +99,10 @@ test("firstScreenPoster: a first-screen <video poster> only, local paths only", 
 test("imageLedFirstScreen: listed hero-background routes only; every other route keeps its faces", () => {
   const digestive = "/digestive-wellness-gut-health-yoga-therapy/";
   assert.equal(imageLedFirstScreen(digestive), true);
+  assert.equal(imageLedFirstScreen("/weight-loss-programme/"), true);
   assert.equal(imageLedFirstScreen("/offers/"), true);
   for (const p of ["/", "/our-villas/", "/kairali-ayurvedic-way-of-weight-management/", "/panchakarma-therapy/", "/digestive-wellness-gut-health-yoga-therapy", "", undefined]) {
+
     assert.equal(imageLedFirstScreen(p), false, String(p));
   }
   // the listed route really is image-led in every served locale: no poster, and its first screen is the hero
@@ -118,6 +120,7 @@ test("imageLedFirstScreen: listed hero-background routes only; every other route
     const hero = served.search(/background-image:\s*url\((?:&quot;|")?\/ahv\/assets\/img\/digestive-768-hero\.avif/);
     assert.ok(hero > 0 && hero < served.search(/<img\b[^>]*\sloading="lazy"/i));
     assert.doesNotMatch(served, /<video\b/);
+
   }
 });
 

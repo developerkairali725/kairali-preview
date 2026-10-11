@@ -161,10 +161,9 @@ export function firstScreenPoster(snapshotHtml) {
  * too: they only competed with the hero (they arrive with the runtime, as on the poster-led views).
  * An explicit, per-route list, each entry backed by its own saved trace — never inferred, because a
  * text-LCP route needs its body face at first paint (099a5664a).
- * Digestive: gate mobile-NXhKEj, LCP = digestive-768-hero.avif background in 5/5 samples; Lantern
- * re-simulation of those traces without the faces: median 87 -> 93 (adopted-repair-20261008).
+ * Digestive and Weight each retain their saved image-LCP traces and approved font deferral.
  */
-const IMAGE_LED_FIRST_SCREEN = new Set(["/digestive-wellness-gut-health-yoga-therapy/", "/offers/"]);
+const IMAGE_LED_FIRST_SCREEN = new Set(["/digestive-wellness-gut-health-yoga-therapy/", "/weight-loss-programme/", "/offers/"]);
 export function imageLedFirstScreen(routePath) {
   return IMAGE_LED_FIRST_SCREEN.has(String(routePath || ""));
 }

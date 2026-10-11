@@ -11,7 +11,7 @@ const VIEW = fs.readFileSync("app/(english)/_families/design-view.tsx", "utf8");
 const SLOT = fs.readFileSync("app/(english)/_families/ssr-only-html-slot.tsx", "utf8");
 
 test("server-only markup is scoped to the Contact and offer hub routes", () => {
-  assert.deepEqual([...SSR_ONLY_HTML_ROUTES], ["/contact-us/", "/offers/"]);
+  assert.deepEqual([...SSR_ONLY_HTML_ROUTES], ["/contact-us/", "/offers/", "/weight-loss-programme/"]);
 });
 
 test("slot store returns the stored markup and fails loudly when a slot is missing", () => {
