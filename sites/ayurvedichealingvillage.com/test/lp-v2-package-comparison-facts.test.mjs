@@ -65,9 +65,13 @@ function graph(pageSources = {}) {
 const sourcesFrom = (dir) => Object.fromEntries(SLUGS.map((s) => [PAGE(s), fs.readFileSync(path.join(dir, `${s}.ts`), "utf8")]));
 function baselineSources() {
   if (process.env.AHV_COMPARISON_BASELINE_DIR) return sourcesFrom(process.env.AHV_COMPARISON_BASELINE_DIR);
-  return Object.fromEntries(SLUGS.map((s) => [PAGE(s), execFileSync("git",
-    ["show", `${BASE_COMMIT}:sites/ayurvedichealingvillage.com/campaign-v2/production/pages/${s}.ts`],
-    { cwd: SITE, encoding: "utf8", stdio: ["ignore", "pipe", "pipe"] })]));
+  // Exact released source fixtures keep preservation checks runnable in shallow CI checkouts.
+  const dir = P("test/fixtures/package-comparison-baseline");
+  const provenance = JSON.parse(fs.readFileSync(path.join(dir, "PROVENANCE.json"), "utf8"));
+  assert.equal(provenance.sourceCommit, BASE_COMMIT);
+  const sources = sourcesFrom(dir);
+  for (const slug of SLUGS) assert.equal(crypto.createHash("sha256").update(sources[PAGE(slug)]).digest("hex"), provenance.sha256[slug]);
+  return sources;
 }
 const nowLoad = graph(process.env.AHV_COMPARISON_SOURCE_DIR ? sourcesFrom(process.env.AHV_COMPARISON_SOURCE_DIR) : {});
 const wasLoad = graph(baselineSources());
