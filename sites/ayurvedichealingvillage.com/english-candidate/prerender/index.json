@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-11T19:28:53.640Z",
+ "generated": "2026-10-11T20:53:38.905Z",
  "base": "http://127.0.0.1:3218",
  "count": 227,
  "failures": 0,
@@ -1509,8 +1509,8 @@
    "path": "/digestive-wellness-gut-health-yoga-therapy/",
    "ok": true,
    "file": "digestive-wellness-gut-health-yoga-therapy.html",
-   "bytes": 232843,
-   "textChars": 16975,
+   "bytes": 228789,
+   "textChars": 16344,
    "imgs": 52,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
@@ -1518,38 +1518,18 @@
    "contentProof": {
     "errors": [],
     "heading": "Digestive Wellness & Gut Health Yoga Therapy",
-    "bodyChars": 27313,
+    "bodyChars": 26697,
     "requiredForm": true,
     "requiredContent": true,
-    "forbiddenContent": false,
-    "retainedDigestiveContact": {
-     "id": "ahv-digestive-production-contact-v1",
-     "locale": "en",
-     "path": "/contact-us/",
-     "contactLinks": 8,
-     "inlineForms": 0,
-     "deadProgrammeLinks": 0,
-     "bodyForms": 0,
-     "programmeSections": 0
-    }
+    "forbiddenContent": false
    },
    "liveContentProof": {
     "errors": [],
     "heading": "Digestive Wellness & Gut Health Yoga Therapy",
-    "bodyChars": 27313,
+    "bodyChars": 26697,
     "requiredForm": true,
     "requiredContent": true,
-    "forbiddenContent": false,
-    "retainedDigestiveContact": {
-     "id": "ahv-digestive-production-contact-v1",
-     "locale": "en",
-     "path": "/contact-us/",
-     "contactLinks": 8,
-     "inlineForms": 0,
-     "deadProgrammeLinks": 0,
-     "bodyForms": 0,
-     "programmeSections": 0
-    }
+    "forbiddenContent": false
    }
   },
   {
@@ -3664,8 +3644,8 @@
    "path": "/preventive-and-regenerative-treatment/",
    "ok": true,
    "file": "preventive-and-regenerative-treatment.html",
-   "bytes": 227540,
-   "textChars": 15248,
+   "bytes": 218492,
+   "textChars": 14227,
    "imgs": 54,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
@@ -3673,7 +3653,7 @@
    "contentProof": {
     "errors": [],
     "heading": "Preventive Health & Regenerative Ayurvedic Detox Program",
-    "bodyChars": 25423,
+    "bodyChars": 24429,
     "requiredForm": true,
     "requiredContent": true,
     "forbiddenContent": false
@@ -3681,7 +3661,7 @@
    "liveContentProof": {
     "errors": [],
     "heading": "Preventive Health & Regenerative Ayurvedic Detox Program",
-    "bodyChars": 25423,
+    "bodyChars": 24429,
     "requiredForm": true,
     "requiredContent": true,
     "forbiddenContent": false
@@ -5067,11 +5047,28 @@
    "path": "/weight-loss-programme/",
    "ok": true,
    "file": "weight-loss-programme.html",
-   "bytes": 236175,
-   "textChars": 15821,
+   "bytes": 232743,
+   "textChars": 14558,
    "imgs": 58,
    "flattened": 0,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+   "liveRuntimeVerified": true,
+   "contentProof": {
+    "errors": [],
+    "heading": "Weight Management & Metabolism Therapy",
+    "bodyChars": 25123,
+    "requiredForm": true,
+    "requiredContent": true,
+    "forbiddenContent": false
+   },
+   "liveContentProof": {
+    "errors": [],
+    "heading": "Weight Management & Metabolism Therapy",
+    "bodyChars": 25123,
+    "requiredForm": true,
+    "requiredContent": true,
+    "forbiddenContent": false
+   }
   },
   {
    "path": "/weight-loss.html",
@@ -5340,8 +5337,8 @@
    "path": "/womens-hormonal-balance-endocrine-therapy/",
    "ok": true,
    "file": "womens-hormonal-balance-endocrine-therapy.html",
-   "bytes": 228444,
-   "textChars": 14992,
+   "bytes": 219490,
+   "textChars": 14065,
    "imgs": 53,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
@@ -5349,7 +5346,7 @@
    "contentProof": {
     "errors": [],
     "heading": "Women’s Hormonal Balance & Endocrine Therapy",
-    "bodyChars": 25019,
+    "bodyChars": 24119,
     "requiredForm": true,
     "requiredContent": true,
     "forbiddenContent": false
@@ -5357,7 +5354,7 @@
    "liveContentProof": {
     "errors": [],
     "heading": "Women’s Hormonal Balance & Endocrine Therapy",
-    "bodyChars": 25019,
+    "bodyChars": 24119,
     "requiredForm": true,
     "requiredContent": true,
     "forbiddenContent": false
@@ -5377,8 +5374,8 @@
    "path": "/yoga-and-meditation-package/",
    "ok": true,
    "file": "yoga-and-meditation-package.html",
-   "bytes": 205411,
-   "textChars": 10967,
+   "bytes": 197813,
+   "textChars": 10493,
    "imgs": 53,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
@@ -5386,7 +5383,7 @@
    "contentProof": {
     "errors": [],
     "heading": "Yoga & Meditation Package",
-    "bodyChars": 18612,
+    "bodyChars": 18162,
     "requiredForm": true,
     "requiredContent": true,
     "forbiddenContent": false
@@ -5394,7 +5391,7 @@
    "liveContentProof": {
     "errors": [],
     "heading": "Yoga & Meditation Package",
-    "bodyChars": 18612,
+    "bodyChars": 18162,
     "requiredForm": true,
     "requiredContent": true,
     "forbiddenContent": false
@@ -5404,8 +5401,8 @@
    "path": "/yoga-based-stress-energy-reset-program/",
    "ok": true,
    "file": "yoga-based-stress-energy-reset-program.html",
-   "bytes": 230515,
-   "textChars": 13903,
+   "bytes": 222917,
+   "textChars": 13429,
    "imgs": 54,
    "flattened": 0,
    "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
@@ -5413,7 +5410,7 @@
    "contentProof": {
     "errors": [],
     "heading": "Yoga-Based Stress & Energy Reset Program",
-    "bodyChars": 24088,
+    "bodyChars": 23638,
     "requiredForm": true,
     "requiredContent": true,
     "forbiddenContent": false
@@ -5421,7 +5418,7 @@
    "liveContentProof": {
     "errors": [],
     "heading": "Yoga-Based Stress & Energy Reset Program",
-    "bodyChars": 24088,
+    "bodyChars": 23638,
     "requiredForm": true,
     "requiredContent": true,
     "forbiddenContent": false
