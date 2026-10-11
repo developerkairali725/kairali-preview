@@ -1,11 +1,11 @@
 {
   "repository": "kairali-digital/kairali-web-factory",
   "tag": "ahv-english-staging-20260915",
-  "asset": "ahv-locale-prerenders-dinacharya06a-20261011.tar.gz",
-  "archive": "ahv-locale-prerenders-dinacharya06a-20261011.tar.gz",
-  "sha256": "121f4de6deb00216450b2334cf41f1bb1f227b7e2c7afb941f18f8f0c5e457d4",
-  "bytes": 43830913,
-  "capturedSource": "Composed from72 fresh live-runtime snapshots for the six approved Dinacharya pages across12 locales and2340 byte-identical parent bodies. Original unmodified index rows retained. Detailed source-delta and capture lineage: english-candidate/dinacharya06a-integration-proof.json.",
+  "asset": "ahv-locale-prerenders-dinacharya06a-rest-20261011.tar.gz",
+  "archive": "ahv-locale-prerenders-dinacharya06a-rest-20261011.tar.gz",
+  "sha256": "0207b752efb735b36f2675f12e08101d0748a896dd56b6ba1271090ea54fafe1",
+  "bytes": 43773585,
+  "capturedSource": "Composed from72 fresh live-runtime snapshots for the six approved Dinacharya pages across12 locales and2340 byte-identical parent bodies. Original unmodified index rows retained. Detailed source-delta and capture lineage: english-candidate/dinacharya06a-rest-integration-proof.json.",
   "sources": [
     {
       "file": "english-candidate/route-manifest.json",
@@ -801,27 +801,27 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-hypertension-desktop.json",
-      "sha256": "38a7f2da7633021ce97901c972cc5a83d982c00954675022eef88a681f4bbf44"
+      "sha256": "555a18e0b078f633674d9202113531dacabae39dbd746a89ff2c9625898548e9"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-hypertension-mobile.json",
-      "sha256": "267d50b7c7aaa0eaa14448190e9974522185692bc319a968f6169f26775e29e7"
+      "sha256": "3739ff001749b5b90a7c2813f5c0ab7ea653df14d87db0d81af4dbb465401132"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-immunity-executive-health-desktop.json",
-      "sha256": "a83022ae186eddcceec80109bce437abf72f61ee365c2b61d9e9419fa679dd07"
+      "sha256": "cdd688f85684633bfc0f1f78a7da1defeadcdfa01ada42b72229786b3a0f775d"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-immunity-executive-health-mobile.json",
-      "sha256": "ce7eb4491c816d46f78a8f33b9cab2191509276684012f84c89232c3b68aeb6a"
+      "sha256": "e33c7df5dcce7a6f3714da5e38bda4ed21a41a2711223b0c4130e2b47c3dd621"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
-      "sha256": "26365f089e2e6093027472401dc7ead6b621ce0a9457402d34a77a9014a4fe72"
+      "sha256": "be68b157d076a012baa4ffc779921633009b50063c63e8c70d3b29caaedb3010"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
-      "sha256": "ed4bbf9aed030cf468c1c8c03e90355c94d7e95a53b307bf99862565ff28383a"
+      "sha256": "cd37921d71d9b45a61410f3988f0d05835820efe7f6a1312038afb6cc6f7ae4a"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-knowledge-centre-desktop.json",
@@ -857,19 +857,19 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-neck-upper-back-desktop.json",
-      "sha256": "102b8b67ca8e35c6f550b377eee56eded436578fa9df7e6b5b69247bece7acb9"
+      "sha256": "c28f07e350f965790fefd0d6a3524005d12a93d6890a281eef77143c134b7981"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-neck-upper-back-mobile.json",
-      "sha256": "fca101e5fbe589bab15661b963641d7d479e829a45cd7a73e48a8577d6e74775"
+      "sha256": "cfb34ea5a3321b32b50d76e333e7a06284ed6bd041caaf17f292ed089a81a894"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-nervous-disability-desktop.json",
-      "sha256": "db30e37944ce02760fd720672d558915ccea5eb358d4ca160217580d99a8d511"
+      "sha256": "7d68cb8e53cecb519740a2ce00bda9f617c8c56eafe6e10f4335c2aee7089ad8"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-nervous-disability-mobile.json",
-      "sha256": "4bb9f84108bb5b6c0ea76762be188fdf9125ff0e954335c7fdf25227f099b0f3"
+      "sha256": "04657c59255d5eac78de0985099e2e43a49675051bd4b5adc468bd1a8734f204"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
@@ -905,11 +905,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-panchakarma-therapy-desktop.json",
-      "sha256": "a390b7cb43f69cdda91efc1f4e0b4848fb51d71f4e73548045037222cf8f2d6f"
+      "sha256": "8d0bbe5ddea19e0bee330db5ff8994aa68b6c651213bae9262ea655530dea05a"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-panchakarma-therapy-mobile.json",
-      "sha256": "8240aa5312d7821b9b818623b63fb5d1a88a6fc0ddbf2ee3804f049cbea45ea1"
+      "sha256": "7f4fd388d68b5d7644a96e1dec20f57cbcd381782d75b6b9c9bfb2883835d239"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-panchkarma-treatment-desktop.json",
@@ -1861,27 +1861,27 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-hypertension-desktop.json",
-      "sha256": "4458999f19d31e14f6ef933f9e1825fd092f73c4c015262e6e550fc734ba0162"
+      "sha256": "14fb157bc18696e306dd4eb9b17f90ff644fb39e186101c708452fe6324c9d53"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-hypertension-mobile.json",
-      "sha256": "8d35aafcf9a247bffdf3a9ade70ac864774e65ea45bfa633b692b273a7cc93c7"
+      "sha256": "e70a2c3571b9005b22c2622d9754045c544e74b897492ee48b36763b38ee7af6"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-immunity-executive-health-desktop.json",
-      "sha256": "59eb9d2bdf31ad206a5d762b4fb9d663a3439d86a82fd27e2d60780702792ddb"
+      "sha256": "7804fcf925244ab1db8f183eec7b23686380535dcb42e2f4f6d2478acfddeea6"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-immunity-executive-health-mobile.json",
-      "sha256": "df3a0140ca544d63cf7f85a7558ba38b873d20c19e34ea9c7f4ba163b653b95d"
+      "sha256": "3e9c264f20aa47b3e54337b97c846cfeb64815034b6e31c04b3d522b76b23bcb"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
-      "sha256": "45ce3794a61bd020360d6b437a8a867982bcbc78aee867861f7be044dddfa1e5"
+      "sha256": "b0f211fd48ad8a09ab9ed6ccc3cb5326ef0b7fc584446a2bd83b0116cfd8d973"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
-      "sha256": "d87b1adf9fd9a47f24ec1c8e8c38ca960f5bd9bd2fe78389d872404d94f85962"
+      "sha256": "3fbb0f60690a7601896d1125bbfc3a8e934f4370810d75824c54e0276053fcd3"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-knowledge-centre-desktop.json",
@@ -1917,19 +1917,19 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-neck-upper-back-desktop.json",
-      "sha256": "5011d3b806f136cae3d47c6ab51d4f086fbbc4733192cf0f2d5d324ff7cf5c22"
+      "sha256": "a1a57d9b8db9d900b463eb7deadcfd29535e489296e65f0a88aa1490347c0c2a"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-neck-upper-back-mobile.json",
-      "sha256": "7d31cfe2ddc23d3766f3b5d0876f06ee96e6234d2f3cce3c96362684920aebf7"
+      "sha256": "1d8b8f3fabeb65efd2e2ab2723dd1f661a38a013384c30acb2fbc61a62a7c6d9"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-nervous-disability-desktop.json",
-      "sha256": "965566324a771b22efca62b08f9b9babeb2192ae91675883f5d3363ed12e8fbe"
+      "sha256": "0f59016acf45f950212f3dbd9b9bddb1370f19aa0c213805576c5054da8aff45"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-nervous-disability-mobile.json",
-      "sha256": "fe461e29674dde46155ffe911ba09169b1dd583d669edcbb880d38e4b65613cc"
+      "sha256": "e9ac826575f4995a2ab881c05fe4d7b41c76e509965c7e782599084b38457b05"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
@@ -1965,11 +1965,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-panchakarma-therapy-desktop.json",
-      "sha256": "d8e216b7af0901166e22a5121559152507b0c82fb2774050e8c1987194cf4921"
+      "sha256": "0f2c037c997a52f2c57a45260a0a1fe033ef959683a7771554c223664f6ebaf5"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-panchakarma-therapy-mobile.json",
-      "sha256": "1d4bf4e9a433846f22fa39b3d94804a0ef2443b72dd9322e2486833bb4cf3d3f"
+      "sha256": "b7d08a2c5c483bfabe3e3018fbc7649a50dd1fb1fbcc4ec34f6f21288d047a6e"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-panchkarma-treatment-desktop.json",
@@ -2917,27 +2917,27 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-hypertension-desktop.json",
-      "sha256": "56fa665477180c7b8280c125f238f636152681e4d0c18af511b5f59edf0a43b5"
+      "sha256": "d6d7256d6bfe60637100456d549454dbf2d40af6cd90132d52cfc850235a2aa0"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-hypertension-mobile.json",
-      "sha256": "66cc4004476410d5385ae73e508eb2db49fe5b2bc2bcfba38e311833254353ed"
+      "sha256": "86f87cd14e7c6f4f46693db6be3f8d1e2e9ffe52e7e174afccb977bfb25bb237"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-immunity-executive-health-desktop.json",
-      "sha256": "90288959ff3dc3a19abf196f5b2666b2219c19361c0f04ab5b382face2727399"
+      "sha256": "b9172646cc640c8bd895fffb835ea3cce28003f41fbea7596994d2a3e701d80d"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-immunity-executive-health-mobile.json",
-      "sha256": "9b17bdae7a9df118c951a3bec8c173d4fea8f750572d95ddf52cd908f6d504e0"
+      "sha256": "77e1f0de55e8c910638e6da6b8299759d7202ef3d965e36ecc909123cf8e6b24"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
-      "sha256": "b61f94b514e54fbcd41ed4efd48556e3181e0954b0a7be40544f2c0dac561453"
+      "sha256": "1ea61c192e589d3932d1f61994e9179281e0ea9d87ec8ebdd7cc5ae1291ba2ec"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
-      "sha256": "f5b7196aab2344c0fc79e4e15169ff9dd7cf820ec179f27bede344b8e245eec2"
+      "sha256": "30baee64089095de5c3ffd7cd1a5c5d42829bf9c75115b59b08996af905df98e"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-knowledge-centre-desktop.json",
@@ -2973,19 +2973,19 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-neck-upper-back-desktop.json",
-      "sha256": "07bfaa63faa96e59cbbf3ad9d2a1bbb7956e1d477ec0c92fe5bd3d329889cace"
+      "sha256": "12c2af9d787fb0f9ecf646cb18f66f0b34125f717361757602d3b8797b2bf872"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-neck-upper-back-mobile.json",
-      "sha256": "31cef6ed38c7dbbf9c6447705b782578ef8a36f85ac43243189650a01eb4d892"
+      "sha256": "617722103d7f594953ffb88ce0dcb7ec9982c7c47267c308b8830285efb25f0f"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-nervous-disability-desktop.json",
-      "sha256": "6cd76856a15d32fea8d19aa8083d913baea26e82ed18a0eb83d2f17fc8c8346f"
+      "sha256": "50721945af465788f94b8acf873ff88f9806faea28a116513d7a7010b4ef4e15"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-nervous-disability-mobile.json",
-      "sha256": "5a99bb082d24aca1d5f61484cfbe7ab8fd5ea22a21bd1204f43bb72f915f0ea3"
+      "sha256": "6697e57058c7a8d6a1a82202c9baa752b44aec2f152a699433dce4108f2dcb02"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
@@ -3021,11 +3021,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-panchakarma-therapy-desktop.json",
-      "sha256": "5c98b2fe89adc4c182a8841025a452fbb5386ac5107ffe1596d72b7920913757"
+      "sha256": "c9d0bddf0a75b43a6c6c1c9d9187b7a73110336874e5110beda4d76adbc2d7f7"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-panchakarma-therapy-mobile.json",
-      "sha256": "971febcd0a0500d66106863739ccaff95f331b7665ed2bdadc345a7e5e7cd42e"
+      "sha256": "1e693a0e940d2d177512421f6379fc5e731a15575a5bb5c65c760985c00253d0"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-panchkarma-treatment-desktop.json",
@@ -3973,27 +3973,27 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-hypertension-desktop.json",
-      "sha256": "3a7f03eae648547adf00c51c4efb02269268be05c5184d1064376d44b3c777d0"
+      "sha256": "e131f7121dfa2b0e363474683871d536822fa8e1566a0fbc27cd60e5a6ba912a"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-hypertension-mobile.json",
-      "sha256": "5183bc10f955f7264f31d1c3fd3cd1e61419408c0c5169ff9e609b79848ce966"
+      "sha256": "e0a4c04ef6d10a7f6c0e001e1c271d2f8a34c805210bcda536f6e557fd43ef9c"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-immunity-executive-health-desktop.json",
-      "sha256": "a8645fede1fcf3267336799d23e55b5a3509208dacea12fed6cc91d367a66abe"
+      "sha256": "e45fab9e318a621adcc216c4555e85f0cabbe651a6acc752d5a91397f03f43be"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-immunity-executive-health-mobile.json",
-      "sha256": "4cd3bed18d0013f6a99d8402de411925e526a8b03f00df1f580d370272f2b16c"
+      "sha256": "1740ebe4741f4447d7519bfb8a50098dd8c92b9b2dadabf57a3456985983208c"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
-      "sha256": "a5470ce70d9b7c83bb01e77cee17420557afdd7c8222c0f5952cc21176bee9f1"
+      "sha256": "567e4e0399fadcf614d268a911953044302f4f65519fb86d1ddd7093697edfa2"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
-      "sha256": "509cc6f064a46dc72bf49c2b4c341f6f7964e5792fe5ec3f2a688b11354b292e"
+      "sha256": "2568d95b733b9c27be6b5ae9080ebedb979b5e156c4782540d532e09630a28ea"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-knowledge-centre-desktop.json",
@@ -4029,19 +4029,19 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-neck-upper-back-desktop.json",
-      "sha256": "50f29936a56299a4286f0fb80ee54651662c7e03dcf231d7c895cc566fd76cf3"
+      "sha256": "f12756efd50f468a32f0f0554a6f4e5becf04f20f741f4056fdced4eece6372f"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-neck-upper-back-mobile.json",
-      "sha256": "2b5d79387fba2940db1e7fd34412a5aa3b0e866513ed979317dfcd7a64e17091"
+      "sha256": "f0fcbf467609cb6e10290c55a6d238f792808fd8cc9f03a13e60438cae4b049d"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-nervous-disability-desktop.json",
-      "sha256": "5cd36dab56c342ae9cbed35ecaf69a77c1bb2f14f081ce08ec4a45f92e7506f9"
+      "sha256": "a7c8b351a5ae10e06827d41de19e41cae7ba808ca5af2921d4319516a04ba007"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-nervous-disability-mobile.json",
-      "sha256": "a24f2d24c355c81df762d554d092e2d731094e030991206c66875f58f34dfcfb"
+      "sha256": "ab8bef1150537f7095c6443ea0877e6d07588d663f0d5267dd861cdbc20aebcd"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
@@ -4077,11 +4077,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-panchakarma-therapy-desktop.json",
-      "sha256": "f113a65aed87a695560cfeb71286bd351f962680ad2235097daf7ff1d2468a5f"
+      "sha256": "efd6ac53fe398266157769eba1e5160631031bd29b5ef3d50b69204beb8f0162"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-panchakarma-therapy-mobile.json",
-      "sha256": "82b1081c1f2c07fa52e34e8503092dbda405d54b5f83610eaf49722af882db07"
+      "sha256": "7bc3f4bfa2634be76e9a58325916f9a7b9f74ac72d08679de876fc64fc132437"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-panchkarma-treatment-desktop.json",
@@ -5029,27 +5029,27 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-hypertension-desktop.json",
-      "sha256": "5a56ef565ad289cef5e6b475cd3f965357aad9ddc43b7a6aa3997708628c6fe2"
+      "sha256": "87c29c1d66952f8bb88f11c7efe026ce17eba33dcd044bb149970898a33ddd24"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-hypertension-mobile.json",
-      "sha256": "e58c89668ba9d4de38769f89066963cc39560906e8b5f5ce8bfccc416f0f9ca4"
+      "sha256": "6d8a0b5920e1a2bf119a0096f3d16fe05e3f8ac39f1f5872bad1361016c7f07d"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-immunity-executive-health-desktop.json",
-      "sha256": "f1ae4c0d34bb2ff104b1f97066ec8ef614015246616cb0608f95638cd46e7042"
+      "sha256": "ca94178f3990e0688c8a9d9f8142b51c4dbcecc45a39a41ef09c016ec0a96fd9"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-immunity-executive-health-mobile.json",
-      "sha256": "106156fa5f05a4d9ffe5723db68da20595ae2de13fe417858f73ab9f98e9df7b"
+      "sha256": "7abf590c7026306a585dee8aefa5eb15a50c50fca5e3d4f0cd918099733486ad"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
-      "sha256": "fe2f5b73d7d3c045548a2098771960c9f4343828b8d1ff0e6fff0fb83bcb2a3f"
+      "sha256": "71217aadb20ca38e01ee89412a8146480a412c0f2744e942c1ab78c92d74e022"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
-      "sha256": "d0c791c97de8f7f4d9835513a684aeda169d8469dfdaf274233dfb334ae17629"
+      "sha256": "9cc1e95ed2611bb667a021ab1990d4df46474012b907d0877f7a8e2b562cfade"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-knowledge-centre-desktop.json",
@@ -5085,19 +5085,19 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-neck-upper-back-desktop.json",
-      "sha256": "09188868a1ce6e905e1eba19b62346246e6290378479b0c2656fac3ad5254e8f"
+      "sha256": "2b051df8c00523d7c13200f762bb76c7089a41c3a786938ad749cf7e8a601870"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-neck-upper-back-mobile.json",
-      "sha256": "033cc65ca93c585dfb79827cff0243356846b8a455d01012e8f653e07a752ac8"
+      "sha256": "044d1b30318998f8019ba15b0cd0de6525b8ff17fa5be7c481bf39c033433614"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-nervous-disability-desktop.json",
-      "sha256": "7c82855176de688a1525c1177ee78cb5df12a87f7ef485eac644d20b963222e8"
+      "sha256": "38b163ccec72cc030833540386507f8286fe8cebf48e8ba2b079f7d20d6a8925"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-nervous-disability-mobile.json",
-      "sha256": "5acb1d96af272cd97f68a8ac838c2e650561b89ef2b593b42023a4641442fad8"
+      "sha256": "f1801614bf52b2919c9c5d8a4f93c2bfb289fe682de4f751cb89ed999af09186"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
@@ -5133,11 +5133,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-panchakarma-therapy-desktop.json",
-      "sha256": "d9af3555f5f8cffd400a0728cd40d5f08ab43712f1b36e4320855f05cad6545d"
+      "sha256": "6645c6335038e4d8799755ee96a913034b2e02f1b36d9b4502025450de12e8f2"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-panchakarma-therapy-mobile.json",
-      "sha256": "6cbed256227d09e8d277a4bb6ae05d57af121b525fffb546c3bcb504bf61b8e9"
+      "sha256": "7b63c2fa3e23d6aa22e4a27322494dcc0e7e82193eaab3b83d0bd21071c01608"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-panchkarma-treatment-desktop.json",
@@ -6085,27 +6085,27 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-hypertension-desktop.json",
-      "sha256": "f1f40c7908a4f6e3a278acf2f1d6d3bdab7fa89fcb572e1ef368b19022a7254a"
+      "sha256": "65e01cc613f1d62e414f901d368b4df7afb382696bdc954a1292dcf2e4741a0d"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-hypertension-mobile.json",
-      "sha256": "d125ba07f361eda254c48706a904f88460b3d6cfd5c27d055026a622adeb6300"
+      "sha256": "2a583e921022754e58e2aa345238e83e162ef192b54d7ede6f72a3aa15afa202"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-immunity-executive-health-desktop.json",
-      "sha256": "6f363a23f0faa426a094005d8ff0e6117cc32c7f49aba91fdc840a6fef8f81c5"
+      "sha256": "9bcd1aa6a15565620cbe570f7de6fb807951fa22dfd595dd0f77e3e20afa83d9"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-immunity-executive-health-mobile.json",
-      "sha256": "759eeb5ce773cb0b5d9fb805077d25c6d06f2faa3355a874d97e633d096c9c23"
+      "sha256": "34c10c3473c53d5cd884197839b5448f94c7b908b6d8821d3b5c1869b1845ed3"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
-      "sha256": "4872949a27f6f9165d7a81228b8f203292b99c00dc32c85a92e1d0bfbfb5acc1"
+      "sha256": "a11eb7a1e727b60d7daf08ce8435c4f342e613cc6aee4ad6b7d16aa0373baf0d"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
-      "sha256": "9ae52182ab95d9ddde4dfc5c9513b87eb3e5c5ad4354377ff7bc9569c8ba723c"
+      "sha256": "2da6831afaf6151495ac462212a3cdc8f7f47c8402458a2d1eccdbfad168b959"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-knowledge-centre-desktop.json",
@@ -6141,19 +6141,19 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-neck-upper-back-desktop.json",
-      "sha256": "e78c37a3cf257eb9bed8c2298447e9cfe84593209a7186d5e0a9e6a5c6583759"
+      "sha256": "f5227e8ecaa284b2b54c775030868341277585df4944c0a99bf1337c945b0c3a"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-neck-upper-back-mobile.json",
-      "sha256": "8f04e3a883bb2842645ffc378cff9409753a0046853e8517e26a86426f06f897"
+      "sha256": "10a5b9629e1310d384b148e08f9bf5859408a27191225e322e45a163cc39fd02"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-nervous-disability-desktop.json",
-      "sha256": "8f7bd2c4c6869d28c78c76dbe21a6843564cea796553aaad9c10a5b4b3c2f797"
+      "sha256": "e9f887f1d28851bbc496b98f3865c9935f155987c2ce43b4b76bbf1defea4f5d"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-nervous-disability-mobile.json",
-      "sha256": "512492663661a0957284bec51fb6950a79478d616764525ab3772ce84c626cf8"
+      "sha256": "93bfff0258e65eb8a11b74b1a91298d2bc3940e5f5c1f95930b757248c5d31aa"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
@@ -6189,11 +6189,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-panchakarma-therapy-desktop.json",
-      "sha256": "01bc48c11b912eeaa8ebe2a4f2971ffffe8bb76ccd228013757b47068e0294f7"
+      "sha256": "3aa89ba52a46fbb78b5d86c79a9fa10106c71643d8dfaa24fe7740ba0215c9fb"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-panchakarma-therapy-mobile.json",
-      "sha256": "346065c45e256b6356e2ae3a18b7d94ef5a7ea9b736ec9e2adba8affd7811694"
+      "sha256": "94761b27ff6314c5f6516255a2484c32e05b264ced2a19a6e6394c768f770dd8"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-panchkarma-treatment-desktop.json",
@@ -7141,27 +7141,27 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-hypertension-desktop.json",
-      "sha256": "d445a497210c416a2ab5a587aa7a6865d1a6fcc25c6409942a983c45e05417e1"
+      "sha256": "e041dd74fa8798248971107eabf1ab6f4df60a5014b886125716fb988c1f5d0f"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-hypertension-mobile.json",
-      "sha256": "4f210a1256451af1d2679e225aec55dd437cc204ed71931c41c0f045c0c13f1f"
+      "sha256": "f5360e8bd404eca7b7ff085ff72b48ba2d8faa6894f000e71734d5b9ddeb69ed"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-immunity-executive-health-desktop.json",
-      "sha256": "4207c0c07f62e4d68757ab4469725db90882b347f3325438719ce6c27d1be9d7"
+      "sha256": "dfc26feab2d59b26ed613bce3641d6bea6c62c6dda946be603211f6423f157a3"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-immunity-executive-health-mobile.json",
-      "sha256": "6d1bcb42706110d72e379dcd9846fd2f0b9bb476ae24e5853eeb707788958958"
+      "sha256": "b180a4cecef6cc0985c7ffc0157a5658828f0e2a7c241a3cbb4fe39c80ee747f"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
-      "sha256": "31917f526dc5b7e12a12ef148ca3e2d53d19bc0728302c2fc65fb986a0a7897a"
+      "sha256": "33c4cd344a73b8933b66301d3f67b03d0dff9647a272e273ebc3258b87d6f0b0"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
-      "sha256": "52a27bdcc0400121af47a8f7df1d83d2a8f0efcb5cb1790d27a22dc8450a8d48"
+      "sha256": "eda4c771fce79888dca35f79ccbfec0f78ad7bb746d4a1fcf02a11e339dfc09a"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-knowledge-centre-desktop.json",
@@ -7197,19 +7197,19 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-neck-upper-back-desktop.json",
-      "sha256": "6a25ba49bb68d1a767cd4f306be270e672b0dacb8dc891fc3b2cb4975098d752"
+      "sha256": "a7174f4304c314ebd7195c66a768e04ee9f6ce61cbc1c0f95c8dcb67050810b1"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-neck-upper-back-mobile.json",
-      "sha256": "ae9737091e4cc992a5802d8158dacd2bd53055dbe16bf3c1a3dafa73c26727c8"
+      "sha256": "7e2927b2f7454db6e9a056273bb7a3726b76f6f39ab015702e85012f4f321336"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-nervous-disability-desktop.json",
-      "sha256": "38d3c3ea5a2080dfaf6d447d7cb7b485916b711d6c4eabefb8cb15a0cf25c17f"
+      "sha256": "2a4a6b676c6f7219e3c8484087cec75f9743120ff549699a10b4aa8ce48bb466"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-nervous-disability-mobile.json",
-      "sha256": "000e71450f8b2d3e3955e052e75883809dd49e8b5d54671bb1f66ad85c77fa34"
+      "sha256": "67d79b360d154c1864442e4c46688102c32983ae13da3e46f1eca7ab1bb036a0"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
@@ -7245,11 +7245,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-panchakarma-therapy-desktop.json",
-      "sha256": "80b1fa6fdadddd13f514ff0e2166859efd9d47e54d82932c3773000ee14b88e4"
+      "sha256": "6058dd86a5128fb407f71d2ef89cd02e72f9b87dace617a83ba6f59b7065a5fe"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-panchakarma-therapy-mobile.json",
-      "sha256": "360fa0c9a019d0dd1dd816b4aa53977e217dcac149101102a8bee1c481e901d2"
+      "sha256": "bcc36227306448657ce910edf2802571b791346ea9c6a5c6fcccb7ad967a6e8e"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-panchkarma-treatment-desktop.json",
@@ -8197,27 +8197,27 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-hypertension-desktop.json",
-      "sha256": "13c5def88a0ee576f38f33b78c41b3e07401eee7f470907558a3cd7514244826"
+      "sha256": "15dd4bde3b7025fb01a5d74f0da5e55c1c2a422e1939f7ef33b3e49a2df306a6"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-hypertension-mobile.json",
-      "sha256": "239933b3fc727ca49554b9c6fc91215e61a2ef8712c1207effbad29c9a9899b9"
+      "sha256": "298ea76bc671ca998b3df4df513d70e4a4ab9f37a6269b542a1b9e8f095950c4"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-immunity-executive-health-desktop.json",
-      "sha256": "112c623fa6aa961977a1e59e18ce8c599fd01eff682bb50a5a5d5556358bbf4f"
+      "sha256": "254fe5a8250e05016f828ea95179626bc7f4ce89a872ef52c14e3c70b065b3d3"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-immunity-executive-health-mobile.json",
-      "sha256": "7af0012365f372e13fc40b5d1bb9cced78c6910aa9f064e2c965b4e0df853326"
+      "sha256": "fe832b5049b7d414b29b124d7f154fde4b9a62d1a1998ff04a8f9c27255e8313"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
-      "sha256": "92c4c876803594d1eca7b05b6e12a71c29ef2da041ad5fabc2f1f4d214bdd925"
+      "sha256": "8e94a34632e31facf8a617c1f4244fa557a284a086ea7554ef5db00eede87a73"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
-      "sha256": "e15032b8828f2c56bf2eafcac0ed61dbbfed8118287d84e1e32a590b936b9d66"
+      "sha256": "6b3204db25f9bc0a4f8168c2783c559c1a4ec4e05b893966e0432782681c1d79"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-knowledge-centre-desktop.json",
@@ -8253,19 +8253,19 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-neck-upper-back-desktop.json",
-      "sha256": "cfdae487b1eed50e56e3413f3c82361adc3cce6e34937269c511fc8c4c7cd71c"
+      "sha256": "0d99738b71b5976883dced02f26b1b3f42e21d291cd78335bd13d988d82f2144"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-neck-upper-back-mobile.json",
-      "sha256": "de604ff3d3d648cb4d64fa709584625bc17a9a727e522381896967161c003300"
+      "sha256": "70f7796096e8f241ad50475f6c57bee01077e6f868fa4efbde158d7589f45d7d"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-nervous-disability-desktop.json",
-      "sha256": "6a9c30b09b98bed87ce76926c7ae91ff73de7747e38895930b2c7cd06f0f71cd"
+      "sha256": "172271a791168aacd30fbc489147c4ad147492d78ead321c8a61b6a073dcfc1e"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-nervous-disability-mobile.json",
-      "sha256": "2b1a105f6eabfbac88817a559b21a6bb09a5f23f72a59e89d30c3724c5688b69"
+      "sha256": "64fc9e2a1328222af6658fd7c524dabbe7a440de86e5daf1256aab157495a76f"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
@@ -8301,11 +8301,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-panchakarma-therapy-desktop.json",
-      "sha256": "4fb88009c6082c7b7488be79f2172cf2e129faadad61cd52448fcdfb1f0a0dbb"
+      "sha256": "a24a269aaeeee86bfaece1858a92eb4821e487b39bd2252b5e96c847dc512872"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-panchakarma-therapy-mobile.json",
-      "sha256": "2fdeaa86a8de0d59e036e38210aaabcecb9600928b2068027d655b8f4f4db274"
+      "sha256": "6861eee87def64b7a6c226587ba24d21cc5e19f2bda7073e971fd9f728f98d0f"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-panchkarma-treatment-desktop.json",
@@ -9253,27 +9253,27 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-hypertension-desktop.json",
-      "sha256": "bdefa844ec24053538370e013bca306fab7f29815bd7d92a2f66cc3b8fd8d1ac"
+      "sha256": "15b9688835159d2dd3c9b82e3a2e97ccbda148f73c9f0a6778f752f5f02b032a"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-hypertension-mobile.json",
-      "sha256": "ebf7398eea99f5d4a5c82b97b956824e8257eb2f4dfcbfa2243fd4399ecb44ec"
+      "sha256": "f1fde12dba34158ce7866a9641397d9df26d45f589dc2480400efce764d62808"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-immunity-executive-health-desktop.json",
-      "sha256": "e2b2869deb972d92d9ebeb831709f03a3d7dfbe7d7f23e4055b8759384d59b33"
+      "sha256": "99fe214bdcb793178c802ab5e9a96d756420b0fcc221a26778cc5fd9491502cc"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-immunity-executive-health-mobile.json",
-      "sha256": "87d82ae66f5b456d7290aa6f9ff40d9cd3a7e30564a9418f84b636df630c07ab"
+      "sha256": "e9b69086ff783ffbac1f4696641cf1a581c4145ee143194a07f8793da5496096"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
-      "sha256": "c2198fb08fb36d555df130d4463210ffe7753d0e3a7e9c5d5a269d8f98607c9b"
+      "sha256": "fe170722b998963da18162ea60fead50ef89452b45c449e4ac1fd3f21c616ba9"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
-      "sha256": "8b314e8f52943e4960e47e6926e01d2ce1420c9f3c36ea0b24fc492c6fb83b3e"
+      "sha256": "e89abb1a9b789a50ced3fc7ea193c113ae37da3b5a135e5443cc8f331e8ab15c"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-knowledge-centre-desktop.json",
@@ -9309,19 +9309,19 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-neck-upper-back-desktop.json",
-      "sha256": "56a98f305489c66854c1ad7ee80c59dacfe10d66520f8f48ce35e64b966fdede"
+      "sha256": "9eff681f3ac1a738a47cac08fb31f90b3b23e16cc3ea7b8ac3c02b9af076e9d2"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-neck-upper-back-mobile.json",
-      "sha256": "32c86841b72d037af1b68c36cb8601fcba984f9d00e446622b1eceaf2681e141"
+      "sha256": "c26f4c852f9e1158f683f0193b1df6e6e5bdd78b0a9f56929c1ab68eff9d6657"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-nervous-disability-desktop.json",
-      "sha256": "b4698d5c14eece38a42e5d3f78a31f414df7a504e5ca6b2bcee406837726ff55"
+      "sha256": "248f86aee8cc0bd83a379534136540ab516e3ccd3bcfaf7300c4225a210a9489"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-nervous-disability-mobile.json",
-      "sha256": "7915d5d6f04dfed3f9a425e26a8c0586c0a82b903bd2b4912beb4a80769ec2ee"
+      "sha256": "79f1a5b85c70517bf705c10197e1309417e5968335233fa5dc6e029747b92c93"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
@@ -9357,11 +9357,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-panchakarma-therapy-desktop.json",
-      "sha256": "5d4236440e150681abf78a30744d370c051c571e7f93f84f92f0b65ae0420e0f"
+      "sha256": "284b829be6be0623445a624ce89f97cb7fbf92e64e07943d2a2290c18d1cca65"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-panchakarma-therapy-mobile.json",
-      "sha256": "82613cb5275235b28b947ab279049c90efd06edc1bf97df7377043cc9b901fda"
+      "sha256": "c4a662b9bc5a019aae5892be3a3b8b6989b911faf0b2680fdb171fad66616e93"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-panchkarma-treatment-desktop.json",
@@ -10309,27 +10309,27 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-hypertension-desktop.json",
-      "sha256": "405c7840fe24d1337ebd1293c74d6028c20233c7a1b80a0dacef9bc9e28692f3"
+      "sha256": "3cb8befa5c060de7e83f7912d679a049925051dfa53489ee61dd354d815a45e2"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-hypertension-mobile.json",
-      "sha256": "f2df959731f7b094ed2abbd51491d0242624804a6600b9815a3b6aa1d9f54b57"
+      "sha256": "5497374f98e97d1eb82edda41ae6d41be867f42bfda6f43928a928622f7c8019"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-immunity-executive-health-desktop.json",
-      "sha256": "94a0bc3b8a8ea649e8e72ce707af3e400f07736d59a152a3c675128abebdbfd0"
+      "sha256": "dc3828724dc5da0712224937f4c43493e4e95703f951732ab96a27a0d1a652f4"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-immunity-executive-health-mobile.json",
-      "sha256": "cd0cab5cc42f60784d565d985343412e8a66d060d09a196df3347ce420fa4604"
+      "sha256": "79a0bddf8f0db3aa49b7cc03a282cde8f548002c762c35ffff0855503aeabaa1"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
-      "sha256": "cdd6e1ad5f25b54dfcc15ae6ee570c5d3adf56bed8039344e29d904a2b0cc99b"
+      "sha256": "901784165c7270a259bbb975ad25d4b61beb6d698556c27c581889bd7273a27e"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
-      "sha256": "46a63dcaf058ad68d9539cb9148a61c6f23e6455528ce071495e3a0502089ff8"
+      "sha256": "dd3d7d6528324d3a82a9cf9376e83ce6057c4f8becd8a368fb7871e16ee55ccf"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-knowledge-centre-desktop.json",
@@ -10365,19 +10365,19 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-neck-upper-back-desktop.json",
-      "sha256": "8e594746f05cd6baef84460fd6b8b07be0750a9d2b8a6fe87be4be1de694bc3d"
+      "sha256": "03e7a96ea16985079a3ea0c2bbc9bc806cee8848efb67159db42c9c907ef7871"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-neck-upper-back-mobile.json",
-      "sha256": "b1a0c146988eb4c562a3bacb02655a74077f688a4907a2c863110649b172ad33"
+      "sha256": "becb0562e100f1d639856ba4d56c694678073498b05c9e35bc87075753897f3e"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-nervous-disability-desktop.json",
-      "sha256": "3ac38dc33532057543250f2fdc820206f515d7f2d99a5eb30168b867edd9b5b1"
+      "sha256": "8d6bc639f8be71e0294a01b67605fff2ef3a9418bca598a3d1d76094a695d8b3"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-nervous-disability-mobile.json",
-      "sha256": "e4a9f440d536e4261209b0c71982d5eab197ec9323e0e575ce0cb2b346ee7c8d"
+      "sha256": "88849bae14193002562cd43a786bad20afafa7a5f97d2c4b8db27a546b90adf6"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
@@ -10413,11 +10413,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-panchakarma-therapy-desktop.json",
-      "sha256": "47c60854c1f8c1f14d6779a76f5f67e90c5bd84a21a36a116bd70015b9becf5d"
+      "sha256": "7eef4f3085e1e4fe11fcf7310891d646ec8b7504956b9d614f3f032d549c716f"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-panchakarma-therapy-mobile.json",
-      "sha256": "d010216997e568badd4a5f2d1f81b79f8efcd4fa698f9bba5ab20c7b0da715bc"
+      "sha256": "d21799fe7c9899da062760017de2aa00a383387a98acf38047df47d85430a9c0"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-panchkarma-treatment-desktop.json",
@@ -11369,27 +11369,27 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-hypertension-desktop.json",
-      "sha256": "2894c47003bc0eccbca19e1006d667e86bb18258c054bf864a078ac912fee024"
+      "sha256": "e07885ba4e22fd5464632b91060b705765d34c22190aeb2f14720a54e8f9731f"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-hypertension-mobile.json",
-      "sha256": "d44de8d59a7f3d124cfbb2cfbe12b3f7aceb12bb37ead0590817a4ac189eeb0c"
+      "sha256": "4caad643da721de4f73a63467e518e7a481fa1092da5e922450180f5ed72a7ed"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-immunity-executive-health-desktop.json",
-      "sha256": "878f7d96f37063bdf1c2a51132df2f2dc84ccec034759ddc176b4d4408ce55a2"
+      "sha256": "cb9b9be7020169c0fca757d93330d3dc12e34b86adf44335e63197c658baa802"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-immunity-executive-health-mobile.json",
-      "sha256": "d52c785bc73fcd2f1af11be34c3091f2e28ec7bb44759aaf53711c3ca9198a78"
+      "sha256": "42f947a267afe141f98eaf9fc06b5a2bdd5f9a63e18a104d76be6957d8cc1f3e"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
-      "sha256": "f4cf41beb099670d48f38917cf6d28574817d72d8a28ebb66909c7d17c15f92d"
+      "sha256": "830e72bc0c50b264223e2ff10c63e67ab623a9b0cd187a61d027002ab06cec3a"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
-      "sha256": "c695dc427f7a4b50152a75653464c291ae0432a7aa096b8e44d09fff7d437eaa"
+      "sha256": "f093e1f7472e1a999f91d86a5cfaaf32285cc06471419390ed04e8e8e21e0093"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-knowledge-centre-desktop.json",
@@ -11425,19 +11425,19 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-neck-upper-back-desktop.json",
-      "sha256": "816236b702b042c015f30f7f3b4e60e1867846c1fbd41e27dc0a9b8cfbea3848"
+      "sha256": "6a56666f3a5e356027820d0d75f4a35fbafc348a1fb9eb0a2024ce43ff5c50c8"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-neck-upper-back-mobile.json",
-      "sha256": "746acea0411277220e0d7a6780e880a40e97263ae1f87af5a5b6ee69078a2810"
+      "sha256": "d3741dd5429ca7d0c8923bddcb6b31a8fc30c28a5bd4e4b1082efdf2760c8ec9"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-nervous-disability-desktop.json",
-      "sha256": "892f098e32004c39a7291aa538dbfc9d577970430e6a49e9c9837a5e91f86795"
+      "sha256": "9f50986694d6f13d293d940fc994df133abd8bf8856526724cf6d2266886d0d7"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-nervous-disability-mobile.json",
-      "sha256": "d9476825e3d1b7427fbc8d5ac891a02fb7cad28c36249224c90d9b30b73fd558"
+      "sha256": "70038d58ef15775ce042300c3a662b860a12d19fed871eada9274e90aa33b03c"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
@@ -11473,11 +11473,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-panchakarma-therapy-desktop.json",
-      "sha256": "8a178d373196d3f8c06d3fb645f2ef9250c062e0bc61b8f3114f987df59371c0"
+      "sha256": "713143d149589c78cbc98c436bc5538089085fdfc24bfa8bdbf525fca1cbdd4b"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-panchakarma-therapy-mobile.json",
-      "sha256": "bb376e96358c202cf0e75efc46a14c70a4aa15cdaf9d033988c349003916d644"
+      "sha256": "646b04db10234195c284f46ac32e2295febe2cc6bcd849399850ba6ac13cb305"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-panchkarma-treatment-desktop.json",
@@ -12425,27 +12425,27 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-hypertension-desktop.json",
-      "sha256": "2eac1220b40f8e2bb817aec865055538e28f0ef70bab0f067f972f19043e41f5"
+      "sha256": "3736c543c2881f6578242b4219a0a4ecaeca873a7c2b0f16bfa306b6df25c77d"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-hypertension-mobile.json",
-      "sha256": "c1139c3c11c1d04dd4f0316494c889b7abb1cf95d438845ddbff11da43d6be8b"
+      "sha256": "6780a4a81f0dbe12c45b1291d3261c93528cf05f5d211a2f1dded9f361a591a6"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-immunity-executive-health-desktop.json",
-      "sha256": "2d93342499035d0aa099d96724e39366d2ac38bd47c90b8fc801de99ee73f971"
+      "sha256": "44f5de5c4f2ccf6a43233f911c8ce9a8ae40814a344be203ec2aa58318a92055"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-immunity-executive-health-mobile.json",
-      "sha256": "5908b56d44abb5ef17bea8cd4d28836200e9b89d1d4d0aa450c978fed2864c48"
+      "sha256": "4f79df5f03f84ae7f65d2362be20dc1f02764d2fe326ef5cd78439d515e71772"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
-      "sha256": "7c1c396367aaa7d90cead42da2458ef17d9e9fe7ba5c651e47816aa5eebe6b9a"
+      "sha256": "226e105572499e2ff9e899831f1d9acfb22097e7991568b5c7ae396f64781917"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
-      "sha256": "91af2716dffa18e01841840524fa85afd868274d877fc0e7c76406cad179b6b2"
+      "sha256": "e096507e0b87ae1a2460a838548fe2dcaf9f7eefe3d2f743d5089dca38a55468"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-knowledge-centre-desktop.json",
@@ -12481,19 +12481,19 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-neck-upper-back-desktop.json",
-      "sha256": "ebbc1685abcd1e242f692f1aa7e181cac69e051097fe61981d840482bfcd4838"
+      "sha256": "7a458eb8bb7dcaeca18be9c065d42da34c9ecc956a0f503411996a3aed0e2f58"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-neck-upper-back-mobile.json",
-      "sha256": "dbdb688a8079313d15d2d24cbe9522c0301d27cd699e3a89c38539260b25a42a"
+      "sha256": "d008a123b9b9374835a32d1bd9b60eea374ff68486875638fc36407ecd55e54d"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-nervous-disability-desktop.json",
-      "sha256": "062c7ca05579fc2b31205bc5b010c75a5705cee2091902d3adcfa33ce0fa04ce"
+      "sha256": "0ff61e8a2145c678eed525084192410c1b9851130c4744844e43f67bda79378c"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-nervous-disability-mobile.json",
-      "sha256": "e5d55f4bb8ae8ab502db4a9e6b3c8901eccf994db79221f29e3ebb47dfc353f0"
+      "sha256": "989c95ad2b6a45ed6c77541865a2617fcf08037b0eec5e3823841ec24e3a3130"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-new-to-yoga-teacher-training-desktop.json",
@@ -12529,11 +12529,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-panchakarma-therapy-desktop.json",
-      "sha256": "bea110034d65fb50a0bf2c01eba67663597f1498d15d1365abce125cef57ae02"
+      "sha256": "d932b38dd029b4963201f3d480afb758c328144a453b86fdd6b4b4e328dbbbda"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-panchakarma-therapy-mobile.json",
-      "sha256": "7d75961d98d07c4b41e9c7b5081bba1b5ee8775f9286787f2ba172c43f78ad0b"
+      "sha256": "1634894270fd7cfa897ffa8231ad15f7a08519b751c05d4f53485252f6bdb0b6"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-panchkarma-treatment-desktop.json",
@@ -13178,8 +13178,8 @@
     },
     {
       "file": "l10n/prerender/hi/immunity-enhancement-executive-health-assessment-therapy.html.gz",
-      "sha256": "ed0323503b94b0fb36df3378b19fb5781522726459d68bfd508c3f98ea2da004",
-      "bytes": 38383
+      "sha256": "25def0974c6f85933ca9eeea8e089c6856fe60a05d57ac4caf66d54b9010eb1a",
+      "bytes": 37717
     },
     {
       "file": "l10n/prerender/hi/in-house-products.html.gz",
@@ -13443,8 +13443,8 @@
     },
     {
       "file": "l10n/prerender/hi/panchakarma-therapy.html.gz",
-      "sha256": "a83655ae144c5d7e6215c8e3c7dc23a29114940c98c9d23982a3bed538f0f9cf",
-      "bytes": 38651
+      "sha256": "efe8affe317303bf1175298d2df8182f50d1afc37ac2edbd1acefaed34bb9238",
+      "bytes": 37942
     },
     {
       "file": "l10n/prerender/hi/panchakarma.html.gz",
@@ -13618,8 +13618,8 @@
     },
     {
       "file": "l10n/prerender/hi/treatment-for-arthritis-and-spondylitis.html.gz",
-      "sha256": "3fbbfd767240d0c02d9196b2a05b90bde7f2a8bbe85cbf67d6d779ab42845146",
-      "bytes": 38629
+      "sha256": "8053be461e0bbe600fa8e47e3c99308d13692e21b01e848af85367a3887b90de",
+      "bytes": 37961
     },
     {
       "file": "l10n/prerender/hi/treatment-for-bronchial-diseases.html.gz",
@@ -13628,8 +13628,8 @@
     },
     {
       "file": "l10n/prerender/hi/treatment-for-cervical-spondylosis.html.gz",
-      "sha256": "c625524579966100ab52034ec86778e55bf85e56cbedeef8df3598bd068ef01b",
-      "bytes": 37784
+      "sha256": "16e1c20e9d8a4c61b2f314ed49fc28e35949b66e99b4c158a0b8d594ad2021ca",
+      "bytes": 37152
     },
     {
       "file": "l10n/prerender/hi/treatment-for-chronic-back-pain.html.gz",
@@ -13648,13 +13648,13 @@
     },
     {
       "file": "l10n/prerender/hi/treatment-for-hypertension.html.gz",
-      "sha256": "cb3b6dfefa0e228a7ce22fcf7ae9bfba553da0e7c54b934aa43ed3771a1d897a",
-      "bytes": 37688
+      "sha256": "8bf5a52bc886021e5634da979780f3672f0c8884e811e8b94ee97ea226c5e190",
+      "bytes": 37039
     },
     {
       "file": "l10n/prerender/hi/treatment-for-nervous-disability.html.gz",
-      "sha256": "1cb94c02e9e2f5f205f241b66323e2f8f05db843a29a6eb99e0a9d35e838268c",
-      "bytes": 37937
+      "sha256": "04b3289a2b8aa7e8686005a11f77a40620ab75f92f3ffc394349e902344ff86c",
+      "bytes": 37294
     },
     {
       "file": "l10n/prerender/hi/treatment-for-paralysis.html.gz",
@@ -13848,7 +13848,7 @@
     },
     {
       "file": "l10n/prerender/hi/index.json",
-      "sha256": "8942bc4ad0923ab41624cfbab708fa526e03b17b267b03fba32f08f75cb6fcc8",
+      "sha256": "41fe63da748feea0d04292f6bf475e74db0c414493818c5d72c818d6392ea4ed",
       "bytes": 151572
     },
     {
@@ -14188,8 +14188,8 @@
     },
     {
       "file": "l10n/prerender/de/immunity-enhancement-executive-health-assessment-therapy.html.gz",
-      "sha256": "0f3598b800e937c2d099231b3cc7afa483908bdaed1c2402fe148fd8c6443e41",
-      "bytes": 36241
+      "sha256": "2d143c10d7301570084c364096dccf05d015704c899a02726513c320b6c60269",
+      "bytes": 35423
     },
     {
       "file": "l10n/prerender/de/in-house-products.html.gz",
@@ -14453,8 +14453,8 @@
     },
     {
       "file": "l10n/prerender/de/panchakarma-therapy.html.gz",
-      "sha256": "cf263fcccd4005b22d90e1a818028d307a21439554c712d7ec9cad83efdfd048",
-      "bytes": 36442
+      "sha256": "ad80fbbc84c6872667ba32da718b2b5d1bca55a1f920a2d8f41385865300f2e8",
+      "bytes": 35594
     },
     {
       "file": "l10n/prerender/de/panchakarma.html.gz",
@@ -14628,8 +14628,8 @@
     },
     {
       "file": "l10n/prerender/de/treatment-for-arthritis-and-spondylitis.html.gz",
-      "sha256": "2a2f059cde5a507b8bfb868c9b826b7e191403569c467f979d77bc473fd3a99a",
-      "bytes": 36446
+      "sha256": "1acc3f97bb5ad2eb0745d0ac3aced129041f9537dabedd6a5210ebb6703df561",
+      "bytes": 35624
     },
     {
       "file": "l10n/prerender/de/treatment-for-bronchial-diseases.html.gz",
@@ -14638,8 +14638,8 @@
     },
     {
       "file": "l10n/prerender/de/treatment-for-cervical-spondylosis.html.gz",
-      "sha256": "61999d344c4431b1a23f8e30e3dee395a664c8f0fe5b110404bf0d2e39f9a5a6",
-      "bytes": 35807
+      "sha256": "909d6ea0f37a7e1a1d09ebd1f9604d8cda211f4454737a9baf98fc61ed100a3a",
+      "bytes": 34996
     },
     {
       "file": "l10n/prerender/de/treatment-for-chronic-back-pain.html.gz",
@@ -14658,13 +14658,13 @@
     },
     {
       "file": "l10n/prerender/de/treatment-for-hypertension.html.gz",
-      "sha256": "ae7c39f32322649df020d322cd5f5027e816df8de0e6ac8a7e40f9687b6cc571",
-      "bytes": 35775
+      "sha256": "f10285864af2bcc2a7f3117766c197dd42f5c63bb74f2a1f6cb85d5cc537d000",
+      "bytes": 34964
     },
     {
       "file": "l10n/prerender/de/treatment-for-nervous-disability.html.gz",
-      "sha256": "59a53f94438e226a42420ed72b39162cefdce05755434459c40a0f0cb9cd6d9c",
-      "bytes": 35841
+      "sha256": "43d7c4990d94a2cdd63a3e5622985c421872c599aca7e96364f54e462d8cb878",
+      "bytes": 35035
     },
     {
       "file": "l10n/prerender/de/treatment-for-paralysis.html.gz",
@@ -14858,7 +14858,7 @@
     },
     {
       "file": "l10n/prerender/de/index.json",
-      "sha256": "6383cd166a477a48f4e92357b2c063bf8e5b6c26a06bea2769ca7f6ad7c8d5d3",
+      "sha256": "1ecd40eea81e1fae15b9e8e4a6eae4a83bfd6110e2ed9b8d36fbddec1de313eb",
       "bytes": 138069
     },
     {
@@ -15198,8 +15198,8 @@
     },
     {
       "file": "l10n/prerender/fr/immunity-enhancement-executive-health-assessment-therapy.html.gz",
-      "sha256": "7bdbaf15115bb3df07727e69795c08005e0941b87c5e9b64d987f0f7ed05fdf0",
-      "bytes": 35846
+      "sha256": "2cc7d84861cb422ec6878d8df13bf3ae51f880006a0e066f4dec9506aeb1d214",
+      "bytes": 35060
     },
     {
       "file": "l10n/prerender/fr/in-house-products.html.gz",
@@ -15463,8 +15463,8 @@
     },
     {
       "file": "l10n/prerender/fr/panchakarma-therapy.html.gz",
-      "sha256": "0019c60fc503a29f33c561e86c2670dd4f87b8fd158671f978ed88aee6ea74ca",
-      "bytes": 36207
+      "sha256": "623e2efc55ac86700e100c481f120b3270a14e923b3809c7e72df9137943a957",
+      "bytes": 35446
     },
     {
       "file": "l10n/prerender/fr/panchakarma.html.gz",
@@ -15638,8 +15638,8 @@
     },
     {
       "file": "l10n/prerender/fr/treatment-for-arthritis-and-spondylitis.html.gz",
-      "sha256": "b224794b6c72b9c179ad14fa6f066b189ee4b57c50d7d0890d967ae657b75cd4",
-      "bytes": 36177
+      "sha256": "d26dadd20f890b3ed35770f0164802aa9b9a2b66eefabfb482c30954ffcc087f",
+      "bytes": 35375
     },
     {
       "file": "l10n/prerender/fr/treatment-for-bronchial-diseases.html.gz",
@@ -15648,8 +15648,8 @@
     },
     {
       "file": "l10n/prerender/fr/treatment-for-cervical-spondylosis.html.gz",
-      "sha256": "58604bb0074e53c39259bc843a273b0c662252c267cb39952caa5333ce5ba9f3",
-      "bytes": 35449
+      "sha256": "6cb7b2ac428b7f14d1536bc3e59b14d84c29a6e62164e676d48c4059aed2f03c",
+      "bytes": 34650
     },
     {
       "file": "l10n/prerender/fr/treatment-for-chronic-back-pain.html.gz",
@@ -15668,13 +15668,13 @@
     },
     {
       "file": "l10n/prerender/fr/treatment-for-hypertension.html.gz",
-      "sha256": "499ce91033ef5e11a74432cee1b6393de5a5ad158aa58523145421ca56a38ecc",
-      "bytes": 35500
+      "sha256": "751d2676e9436f3c0a8799db0cb81d6598393611745342558fa0ecc5f709d9db",
+      "bytes": 34730
     },
     {
       "file": "l10n/prerender/fr/treatment-for-nervous-disability.html.gz",
-      "sha256": "94b535344d8565760cd53d82bc8d6e3bf095593a86a05bfa9c6d2c61711a7908",
-      "bytes": 35563
+      "sha256": "38ea0dce80f386f5fddcf69d743c6637a6322ce0055d8742a8678bff9d15f066",
+      "bytes": 34772
     },
     {
       "file": "l10n/prerender/fr/treatment-for-paralysis.html.gz",
@@ -15868,7 +15868,7 @@
     },
     {
       "file": "l10n/prerender/fr/index.json",
-      "sha256": "91d15154758abeadbc8ad22fd64afa78a05f4ba676e630a2e2998f71fe76147d",
+      "sha256": "6086180a985d2b7ec749c28ec4f8c39feedd492dd5d038c2899a59c78b8314eb",
       "bytes": 138908
     },
     {
@@ -16208,8 +16208,8 @@
     },
     {
       "file": "l10n/prerender/es/immunity-enhancement-executive-health-assessment-therapy.html.gz",
-      "sha256": "c58574775be55935022535fd53cbf039fc45f532e72b70901483dfdba9a62c7d",
-      "bytes": 35310
+      "sha256": "6e591eaa4c066fe5ea4eed6f6e4581b33ee8e28b0eb5ce3eed79f5f6465390a1",
+      "bytes": 34599
     },
     {
       "file": "l10n/prerender/es/in-house-products.html.gz",
@@ -16473,8 +16473,8 @@
     },
     {
       "file": "l10n/prerender/es/panchakarma-therapy.html.gz",
-      "sha256": "ac4909e46141e8293c9a68be33384a871cee1f3efc2187b237a0d003ccbb1414",
-      "bytes": 35597
+      "sha256": "11dd526d8219188231a016d47c0eb1a43da2b44ab4ae93de6b90e855dc532586",
+      "bytes": 34876
     },
     {
       "file": "l10n/prerender/es/panchakarma.html.gz",
@@ -16648,8 +16648,8 @@
     },
     {
       "file": "l10n/prerender/es/treatment-for-arthritis-and-spondylitis.html.gz",
-      "sha256": "3ff2732bb1aaeee37df938660270266a3260702b8ac3584f0dbd887933ba0b84",
-      "bytes": 35456
+      "sha256": "3e58fd079355b806f7374748f85bc9b4007914f5a9085ae42db4b271c32a7f2c",
+      "bytes": 34736
     },
     {
       "file": "l10n/prerender/es/treatment-for-bronchial-diseases.html.gz",
@@ -16658,8 +16658,8 @@
     },
     {
       "file": "l10n/prerender/es/treatment-for-cervical-spondylosis.html.gz",
-      "sha256": "966fcd70fdfc6a20bba7567e648250262ee8b122898f5814e4065533d44a2788",
-      "bytes": 34806
+      "sha256": "1a2ef7e83ae4a96f2701e9cccdfa97d6f55fbf1ecce0483dd7b45907fbb5c803",
+      "bytes": 34099
     },
     {
       "file": "l10n/prerender/es/treatment-for-chronic-back-pain.html.gz",
@@ -16678,13 +16678,13 @@
     },
     {
       "file": "l10n/prerender/es/treatment-for-hypertension.html.gz",
-      "sha256": "b9360c785ca8b4e00f275a8b05562293ae18b19a924c2cae1fa6797622bc5e05",
-      "bytes": 34786
+      "sha256": "93ecc6164572b8704a83cf8d1471827af6c445c967559755a5769f7db2a4fd64",
+      "bytes": 34146
     },
     {
       "file": "l10n/prerender/es/treatment-for-nervous-disability.html.gz",
-      "sha256": "c4f01e1243a4285390ec12a8e5d6c48f6e6aeb930448f1d919d7c54cbb516024",
-      "bytes": 34915
+      "sha256": "c191af202bbc76242fe5729bff88c5a11e07491770f8f5dc499d1d124b82e0f0",
+      "bytes": 34210
     },
     {
       "file": "l10n/prerender/es/treatment-for-paralysis.html.gz",
@@ -16878,7 +16878,7 @@
     },
     {
       "file": "l10n/prerender/es/index.json",
-      "sha256": "c7ced063315c73d4fa68f013b847132c1ee3f531dc24e0df05f2ebdbdcde2845",
+      "sha256": "d1d98378b08805337b42da63fee158ec4a64972132ced4e582670ed650412d6f",
       "bytes": 138839
     },
     {
@@ -17218,8 +17218,8 @@
     },
     {
       "file": "l10n/prerender/it/immunity-enhancement-executive-health-assessment-therapy.html.gz",
-      "sha256": "392aee479cd9bc0cee5d992941c00c9b60444035bdee63ba0b37fba2756433cb",
-      "bytes": 35156
+      "sha256": "6ab6a6eda7c211f15aeca9cd6b848162e02fc2deea0e4fe5ceaad0c945c08b34",
+      "bytes": 34392
     },
     {
       "file": "l10n/prerender/it/in-house-products.html.gz",
@@ -17483,8 +17483,8 @@
     },
     {
       "file": "l10n/prerender/it/panchakarma-therapy.html.gz",
-      "sha256": "02eb5be42ad85c2f34942c94bcb5493ceebeec65cf1702e9bfe631cd16ef8abb",
-      "bytes": 35467
+      "sha256": "a69c1023729b9a80f36c57dc34848aa9d1b350b1809c3020fd75e236bf56a766",
+      "bytes": 34650
     },
     {
       "file": "l10n/prerender/it/panchakarma.html.gz",
@@ -17658,8 +17658,8 @@
     },
     {
       "file": "l10n/prerender/it/treatment-for-arthritis-and-spondylitis.html.gz",
-      "sha256": "59a33d574f94b09c05ead08fba9270a70ac211b86912d8aff246e86bf567fa33",
-      "bytes": 35328
+      "sha256": "ee17cf294e39064ecdf3e1750ec32f6289ce302cddc381e4d6ae4e064af0ee80",
+      "bytes": 34501
     },
     {
       "file": "l10n/prerender/it/treatment-for-bronchial-diseases.html.gz",
@@ -17668,8 +17668,8 @@
     },
     {
       "file": "l10n/prerender/it/treatment-for-cervical-spondylosis.html.gz",
-      "sha256": "b86b71635c4dfecb90eec0d3642c0cd96dfa8fffbb4caf85034ffda6dd1bc6b4",
-      "bytes": 34728
+      "sha256": "3ff42a80fa5f0f22309b995363815c038efbac8abbad3afc93240ddd91b778c3",
+      "bytes": 33955
     },
     {
       "file": "l10n/prerender/it/treatment-for-chronic-back-pain.html.gz",
@@ -17688,13 +17688,13 @@
     },
     {
       "file": "l10n/prerender/it/treatment-for-hypertension.html.gz",
-      "sha256": "7f82ac27ec84ca6837bf560d269bb02d0651ce2afcfe61b21e0377cb386bda58",
-      "bytes": 34743
+      "sha256": "f2bdbbd6a1addbafa8c3bb07c71431cc7849cc6f5accf30e79bf55d6464e6edd",
+      "bytes": 33986
     },
     {
       "file": "l10n/prerender/it/treatment-for-nervous-disability.html.gz",
-      "sha256": "2132408815e59996bb549cfe7a95937416b5a07396d6766e072fb1e18ad1dd09",
-      "bytes": 34845
+      "sha256": "5483ed5482a75647fe2e9935ae78ddc421fd84b5da900fe537092d59fce63578",
+      "bytes": 34064
     },
     {
       "file": "l10n/prerender/it/treatment-for-paralysis.html.gz",
@@ -17888,7 +17888,7 @@
     },
     {
       "file": "l10n/prerender/it/index.json",
-      "sha256": "94b72fd1272d7011d77ae368f729bd325162b9232b49028281a1e66cc0f3e98f",
+      "sha256": "f855760d1bb7f8604ef9141c591324686393c282c6b07173e636605897db9a23",
       "bytes": 138631
     },
     {
@@ -18228,8 +18228,8 @@
     },
     {
       "file": "l10n/prerender/pt/immunity-enhancement-executive-health-assessment-therapy.html.gz",
-      "sha256": "62b799b61362d5b86874e1289d336d24fde98a81e64990095e8f1f05246d610b",
-      "bytes": 35140
+      "sha256": "bacc14e67b984f5b9ed274d1034545b2c36c1d0285bfd92fb6f29041a09257e6",
+      "bytes": 34435
     },
     {
       "file": "l10n/prerender/pt/in-house-products.html.gz",
@@ -18493,8 +18493,8 @@
     },
     {
       "file": "l10n/prerender/pt/panchakarma-therapy.html.gz",
-      "sha256": "9ae3ef7c742017d821b08639184abd2137a1d5bf3cd8f332dc7ec292cab284ec",
-      "bytes": 35412
+      "sha256": "7a2dd6a09ca1cd4359be312978e6becc01d62963521351db68f259e3b23c512f",
+      "bytes": 34652
     },
     {
       "file": "l10n/prerender/pt/panchakarma.html.gz",
@@ -18668,8 +18668,8 @@
     },
     {
       "file": "l10n/prerender/pt/treatment-for-arthritis-and-spondylitis.html.gz",
-      "sha256": "939b31aba242485805072dc82a70a2f4d71709088f8d504e57570d4fa83589ae",
-      "bytes": 35346
+      "sha256": "40bcf2f9a26e03a29882cd9759b7be875cf7b3317345e6d2ccbb60c18e1bb369",
+      "bytes": 34572
     },
     {
       "file": "l10n/prerender/pt/treatment-for-bronchial-diseases.html.gz",
@@ -18678,8 +18678,8 @@
     },
     {
       "file": "l10n/prerender/pt/treatment-for-cervical-spondylosis.html.gz",
-      "sha256": "ee6919e293e301aa06ad801414c2a65ebe21883d2c797416ab2f45892b0869ea",
-      "bytes": 34758
+      "sha256": "fdc7f157eb48d8588ad3ffffef22c703bb9319cfb29f74ccc425782816a5ed94",
+      "bytes": 34055
     },
     {
       "file": "l10n/prerender/pt/treatment-for-chronic-back-pain.html.gz",
@@ -18698,13 +18698,13 @@
     },
     {
       "file": "l10n/prerender/pt/treatment-for-hypertension.html.gz",
-      "sha256": "f32d142ed2a7ee093701c38df6a3b431a1b5c9ffae1c25d42bdf2373058b4588",
-      "bytes": 34716
+      "sha256": "c598a4b173207db9ca6876896b0b6bb775dbf358a8c01e23be6911d9a053d789",
+      "bytes": 34016
     },
     {
       "file": "l10n/prerender/pt/treatment-for-nervous-disability.html.gz",
-      "sha256": "0a5e07db35cd82dde314f3b0de579ebebed5c8db3abcb89614d9544af7ae9d67",
-      "bytes": 34807
+      "sha256": "02a883ab30aca4956b77f3d517fe2c2bd36bd7d23a22522000dad7891ac3ac69",
+      "bytes": 34111
     },
     {
       "file": "l10n/prerender/pt/treatment-for-paralysis.html.gz",
@@ -18898,7 +18898,7 @@
     },
     {
       "file": "l10n/prerender/pt/index.json",
-      "sha256": "93e961b63b60f92f8403b1cf6bdc9082ebb6fcbd0d1d01ac754635d9f98b0995",
+      "sha256": "0d8f38e5df5ea8f5043fba0f1be27e0f8111b0e255ddf1c911b50c4020843b6f",
       "bytes": 138522
     },
     {
@@ -19238,8 +19238,8 @@
     },
     {
       "file": "l10n/prerender/nl/immunity-enhancement-executive-health-assessment-therapy.html.gz",
-      "sha256": "a38098b3f09bc7f0ca86d51f510dffd6eabfde6bf33f94245cd2e5bc019c0e01",
-      "bytes": 35229
+      "sha256": "9e3688a4914502d324863609c58a372e2a780b0e87f06251402385388c0d53a9",
+      "bytes": 34453
     },
     {
       "file": "l10n/prerender/nl/in-house-products.html.gz",
@@ -19503,8 +19503,8 @@
     },
     {
       "file": "l10n/prerender/nl/panchakarma-therapy.html.gz",
-      "sha256": "0733dd08103f4ab9c25ca64394da68c08122c3174923efdfe1b6a82b86ac8c2e",
-      "bytes": 35437
+      "sha256": "ebbf466465a26a1498aa1c523cd4c467c5fc1bd518adf69228fd055e0ee1549e",
+      "bytes": 34637
     },
     {
       "file": "l10n/prerender/nl/panchakarma.html.gz",
@@ -19678,8 +19678,8 @@
     },
     {
       "file": "l10n/prerender/nl/treatment-for-arthritis-and-spondylitis.html.gz",
-      "sha256": "1a5afc1e009350b881a556c9e4d798a139d27bfd3de054f4744b33c23ec353b2",
-      "bytes": 35406
+      "sha256": "ff37e53bf34610025e36d7f5652465b5a528ef599571ce4d7250cfa4c1cc9274",
+      "bytes": 34563
     },
     {
       "file": "l10n/prerender/nl/treatment-for-bronchial-diseases.html.gz",
@@ -19688,8 +19688,8 @@
     },
     {
       "file": "l10n/prerender/nl/treatment-for-cervical-spondylosis.html.gz",
-      "sha256": "ce81f3d319ee9c52522717b325586671c636ef04bfb7df3c26d5db60c6b680f3",
-      "bytes": 34707
+      "sha256": "61bd5a127fffe4bd649240895434a81def1c71ccae00007776133f852077d18a",
+      "bytes": 33937
     },
     {
       "file": "l10n/prerender/nl/treatment-for-chronic-back-pain.html.gz",
@@ -19708,13 +19708,13 @@
     },
     {
       "file": "l10n/prerender/nl/treatment-for-hypertension.html.gz",
-      "sha256": "a010519aac9c0c793ba09b27e3e7fafb7c29cea861d45c6dccdfdfc428e328c5",
-      "bytes": 34746
+      "sha256": "97e2a4a60a2d757660f90fa0bb15680c108ab2e6d1ae8a6ff0da513258da2408",
+      "bytes": 33968
     },
     {
       "file": "l10n/prerender/nl/treatment-for-nervous-disability.html.gz",
-      "sha256": "e1e154c3b7fbc958015c4eae4cd5fb8760897e904893fb5c0e0f2a38d633a869",
-      "bytes": 34853
+      "sha256": "e3e7efe33c423bd3ae1831f74ad4ce410aa132120fd76bd0a1f568b03da68a66",
+      "bytes": 34078
     },
     {
       "file": "l10n/prerender/nl/treatment-for-paralysis.html.gz",
@@ -19908,7 +19908,7 @@
     },
     {
       "file": "l10n/prerender/nl/index.json",
-      "sha256": "ea3fc0a74b70fe5b3d1ec608e6612a5b00317c0ae43ae4daefc1a919f44b629c",
+      "sha256": "3dfebee7ce442b1aa53b44e8f674d9ad86ac7231275745247965e319c9df45a3",
       "bytes": 137812
     },
     {
@@ -20248,8 +20248,8 @@
     },
     {
       "file": "l10n/prerender/ru/immunity-enhancement-executive-health-assessment-therapy.html.gz",
-      "sha256": "d9e3492bc392860c7a7143fe1aba00a3a035b0d4948fa69107fa7e0fbf115d8f",
-      "bytes": 39825
+      "sha256": "d9301a23edeadf82f1f4ccda3ed0af691f69339febd51d31d33e9d0cb8fedf5a",
+      "bytes": 39005
     },
     {
       "file": "l10n/prerender/ru/in-house-products.html.gz",
@@ -20513,8 +20513,8 @@
     },
     {
       "file": "l10n/prerender/ru/panchakarma-therapy.html.gz",
-      "sha256": "c5eae85067c6b2493fb0380f958b3e8201200bfbb9e3fdddedbe41641f3d7b97",
-      "bytes": 40099
+      "sha256": "4ff5081b7fdc09811d701dddb44fe50348bc61d193a91ccd62ed46344695435b",
+      "bytes": 39256
     },
     {
       "file": "l10n/prerender/ru/panchakarma.html.gz",
@@ -20688,8 +20688,8 @@
     },
     {
       "file": "l10n/prerender/ru/treatment-for-arthritis-and-spondylitis.html.gz",
-      "sha256": "21ac3324e70b7084b16218f869a5e401a7ec11fe98d628087b794b876fe916b6",
-      "bytes": 40116
+      "sha256": "3e6b433ebf95fcd2c5c635d4a3c379d41a054ae4567f6039ce3b11aeffd9bba0",
+      "bytes": 39268
     },
     {
       "file": "l10n/prerender/ru/treatment-for-bronchial-diseases.html.gz",
@@ -20698,8 +20698,8 @@
     },
     {
       "file": "l10n/prerender/ru/treatment-for-cervical-spondylosis.html.gz",
-      "sha256": "dac65ed3c399bfdaf532745d124e30746ab271fbf12f8edf1c04df3fa53d8adc",
-      "bytes": 39535
+      "sha256": "4595154aa89efdeffcece532ace77ec43e76f8e40454df2bffcfd108f20bee5d",
+      "bytes": 38677
     },
     {
       "file": "l10n/prerender/ru/treatment-for-chronic-back-pain.html.gz",
@@ -20718,13 +20718,13 @@
     },
     {
       "file": "l10n/prerender/ru/treatment-for-hypertension.html.gz",
-      "sha256": "b3f91e448700f3e05701804d38459e0a54d4cc3d69efd77c39d7316c149dd00c",
-      "bytes": 39508
+      "sha256": "067d807e41754128e028d96a56d98cf8bc627357b8cad61a150aec72d613aae8",
+      "bytes": 38648
     },
     {
       "file": "l10n/prerender/ru/treatment-for-nervous-disability.html.gz",
-      "sha256": "54805406b86d2bbe38fee72aede73bbf1a1c16b7213fea5bf9934f0603e98a9f",
-      "bytes": 39617
+      "sha256": "cdc10c991306b296f77175c96d39be925205fae5e3df946411e2e09c0a8163f4",
+      "bytes": 38751
     },
     {
       "file": "l10n/prerender/ru/treatment-for-paralysis.html.gz",
@@ -20918,7 +20918,7 @@
     },
     {
       "file": "l10n/prerender/ru/index.json",
-      "sha256": "435e1847b6b7c2d10e55a7f46141d47ff080515652965b0ebd6317e575c44161",
+      "sha256": "aafaa77a5ed327017623a29dcde5551682691e0e6b602691785df2288e6a88ff",
       "bytes": 147629
     },
     {
@@ -21258,8 +21258,8 @@
     },
     {
       "file": "l10n/prerender/ar/immunity-enhancement-executive-health-assessment-therapy.html.gz",
-      "sha256": "5cea3776fc5d2b9b87cddb26d4818937f93a404b6bce47761fe55497854473bf",
-      "bytes": 37229
+      "sha256": "cf7088b291d821b7c429e2614bf482ee5d167cc9771e1c9cba4f5af9fe4fe0c7",
+      "bytes": 36462
     },
     {
       "file": "l10n/prerender/ar/in-house-products.html.gz",
@@ -21523,8 +21523,8 @@
     },
     {
       "file": "l10n/prerender/ar/panchakarma-therapy.html.gz",
-      "sha256": "1aeb4504f6f2179597e2cb83150436f52619b5b6f39a304bc03975fcebccc91d",
-      "bytes": 37433
+      "sha256": "87f5c939af2bb3996633dfd07df538344ca21b1734ddf1236cc8681395044434",
+      "bytes": 36678
     },
     {
       "file": "l10n/prerender/ar/panchakarma.html.gz",
@@ -21698,8 +21698,8 @@
     },
     {
       "file": "l10n/prerender/ar/treatment-for-arthritis-and-spondylitis.html.gz",
-      "sha256": "1b83908ca645906cb295869cdc055e560d888f61b66302bb7c3d9433aa20a686",
-      "bytes": 37335
+      "sha256": "d45696294b7abd5c3f2df916840e66a682d98467edc4b0b482053349ea41f921",
+      "bytes": 36609
     },
     {
       "file": "l10n/prerender/ar/treatment-for-bronchial-diseases.html.gz",
@@ -21708,8 +21708,8 @@
     },
     {
       "file": "l10n/prerender/ar/treatment-for-cervical-spondylosis.html.gz",
-      "sha256": "52ecccc8843ef498dea48ca22df21ba5768ee34dfcf0159e00e3ea77c1b46ced",
-      "bytes": 36550
+      "sha256": "1deb2b0058a188b9aafb672a1fe7ab9a4963abcaa4743b069fc369d05c05e746",
+      "bytes": 35852
     },
     {
       "file": "l10n/prerender/ar/treatment-for-chronic-back-pain.html.gz",
@@ -21728,13 +21728,13 @@
     },
     {
       "file": "l10n/prerender/ar/treatment-for-hypertension.html.gz",
-      "sha256": "3ff31f9fe24c39d680d7c853daecd7f5109c746fa15a763af2af4309e48f86e6",
-      "bytes": 36655
+      "sha256": "a32478eb993c0a825d4096b0b3f63d66b13a10718d93b80630ea6abc47af6b6a",
+      "bytes": 35933
     },
     {
       "file": "l10n/prerender/ar/treatment-for-nervous-disability.html.gz",
-      "sha256": "cf9e9f6bdb3e683256422c9f3019717432d58a450e46a70ed5377c8d64c9ad6d",
-      "bytes": 36794
+      "sha256": "37c5c02537212c5e04a53122ab82760619638d5b6bd2a976bc99d6bbe1859d2f",
+      "bytes": 36066
     },
     {
       "file": "l10n/prerender/ar/treatment-for-paralysis.html.gz",
@@ -21928,7 +21928,7 @@
     },
     {
       "file": "l10n/prerender/ar/index.json",
-      "sha256": "f443744f84779bc0af0ad7a2f35cd062f0e0d3e74285cecefc73c106e54a6bbc",
+      "sha256": "8cca1f96366f449936983fd508c034b0cb74dd51869efdbb30987a0d454b4f03",
       "bytes": 143674
     },
     {
@@ -22268,8 +22268,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/immunity-enhancement-executive-health-assessment-therapy.html.gz",
-      "sha256": "f8919b08b2b51b8af2373ff70f5d9cba9623934ad1068072ed2d694c1fb41a52",
-      "bytes": 36251
+      "sha256": "522eca34f00f4232aeb0a65fda502a8ea767e4d96537adf098038698783f7729",
+      "bytes": 35563
     },
     {
       "file": "l10n/prerender/zh-Hans/in-house-products.html.gz",
@@ -22533,8 +22533,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/panchakarma-therapy.html.gz",
-      "sha256": "e25b139935f2538763e2e57a787712c6c5cae6a31446606d38b1dc42b047a374",
-      "bytes": 36653
+      "sha256": "b75b09a6dd779790fd9b1560d631f007b37ab6a1a72407aa0ba579047eaf66b6",
+      "bytes": 35928
     },
     {
       "file": "l10n/prerender/zh-Hans/panchakarma.html.gz",
@@ -22708,8 +22708,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/treatment-for-arthritis-and-spondylitis.html.gz",
-      "sha256": "faa4c57014407a872599aac3f01a46b5cf4b829fcf417ddb5f9544cd15814423",
-      "bytes": 36382
+      "sha256": "5fd63dd8e8633d502d01313a3bcfe9253448d3dd9983f20e6f39bc911b11039f",
+      "bytes": 35627
     },
     {
       "file": "l10n/prerender/zh-Hans/treatment-for-bronchial-diseases.html.gz",
@@ -22718,8 +22718,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/treatment-for-cervical-spondylosis.html.gz",
-      "sha256": "1f5b06108e89f63ba0616d7a5a00d474d41e0faf9254caea5c477c1db7572b60",
-      "bytes": 35717
+      "sha256": "ede70b64d9bda4fb6066148b091b0a352f3a14fdd620cbfd287a0412d9cd6a97",
+      "bytes": 35020
     },
     {
       "file": "l10n/prerender/zh-Hans/treatment-for-chronic-back-pain.html.gz",
@@ -22738,13 +22738,13 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/treatment-for-hypertension.html.gz",
-      "sha256": "42c6d2df4ded5dd8a1dd66f4f6b2e7f87e793d05d59f422a30430dffd86028e1",
-      "bytes": 35796
+      "sha256": "cc5816cac767043fb806e0e59c677b2cd498962decd62587df436995a6d151e0",
+      "bytes": 35082
     },
     {
       "file": "l10n/prerender/zh-Hans/treatment-for-nervous-disability.html.gz",
-      "sha256": "65dc2c61cf922d3631b066a6c0b738c905858ad82f4b8d95653eb2256e63db55",
-      "bytes": 35933
+      "sha256": "d4968451e1da8454513f26112d77f3a5f910b04b43da587d8f598f2bae5f4cba",
+      "bytes": 35226
     },
     {
       "file": "l10n/prerender/zh-Hans/treatment-for-paralysis.html.gz",
@@ -22938,7 +22938,7 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/index.json",
-      "sha256": "a6b2c221f49d71d5a59b912bf44ed0b15f6115a2a0c1b31e327452333c3f1aa0",
+      "sha256": "ed4bfbf71f6b4bbca6b5cd9026e0222c7766e3ebb03b79573191dfbe9c280fe6",
       "bytes": 137638
     },
     {
@@ -23278,8 +23278,8 @@
     },
     {
       "file": "l10n/prerender/ja/immunity-enhancement-executive-health-assessment-therapy.html.gz",
-      "sha256": "e8cac47ffc72efa541e7715d24476e17cde6c84f5b1ca9a4e536e13ec3d61af6",
-      "bytes": 37658
+      "sha256": "2e8b0ca2cb73dc734263b071a8bf79ff6b71261acb6d4c5b39c710f9137d8ce8",
+      "bytes": 36861
     },
     {
       "file": "l10n/prerender/ja/in-house-products.html.gz",
@@ -23543,8 +23543,8 @@
     },
     {
       "file": "l10n/prerender/ja/panchakarma-therapy.html.gz",
-      "sha256": "c74a497b3dcde4adbfd91fe3934e124c4b978ec0cfb0ebf6a96735a68102ae38",
-      "bytes": 37926
+      "sha256": "385edb837f907b3622dd986d98a50ebcbcb6c5bbba905b9a233d8b7134cabb67",
+      "bytes": 37121
     },
     {
       "file": "l10n/prerender/ja/panchakarma.html.gz",
@@ -23718,8 +23718,8 @@
     },
     {
       "file": "l10n/prerender/ja/treatment-for-arthritis-and-spondylitis.html.gz",
-      "sha256": "1fae253b744a3179dde9a85f509b5e385cf5afcba4ad2f48bd09876a6d505783",
-      "bytes": 37961
+      "sha256": "2a381b0058dd6f27e0faf753f6231383d91879d9eb489a8617da797608de965a",
+      "bytes": 37171
     },
     {
       "file": "l10n/prerender/ja/treatment-for-bronchial-diseases.html.gz",
@@ -23728,8 +23728,8 @@
     },
     {
       "file": "l10n/prerender/ja/treatment-for-cervical-spondylosis.html.gz",
-      "sha256": "56a125d2b3e52a0d1b2d1e831eccb34fd35756345d795e60e5d47da5ecb3f391",
-      "bytes": 37154
+      "sha256": "93694097ba83686082dced54c58b7b57470d9204918b3a9093e735557c5b53e4",
+      "bytes": 36345
     },
     {
       "file": "l10n/prerender/ja/treatment-for-chronic-back-pain.html.gz",
@@ -23748,13 +23748,13 @@
     },
     {
       "file": "l10n/prerender/ja/treatment-for-hypertension.html.gz",
-      "sha256": "b265c26dd8f07ad22d92147a592f57b68987d80a9a416d5ad2e5dfb2c0b7300d",
-      "bytes": 37077
+      "sha256": "3d2ec160d181c4457ecc4c2ab19f78368c448ad7814f9eb882889219b73faf93",
+      "bytes": 36284
     },
     {
       "file": "l10n/prerender/ja/treatment-for-nervous-disability.html.gz",
-      "sha256": "ce71768a2b11a6acf30a42dd725ebf62dd74fb5c25fe6f01db3ccf2f2dbcc442",
-      "bytes": 37398
+      "sha256": "f04525191534f12f33840a713630e74f2b1d4f42e6b3037f063a5e32b252690e",
+      "bytes": 36571
     },
     {
       "file": "l10n/prerender/ja/treatment-for-paralysis.html.gz",
@@ -23948,7 +23948,7 @@
     },
     {
       "file": "l10n/prerender/ja/index.json",
-      "sha256": "d395a2a56590eaace5dd9b30789f2a0200e67d508b47bb00f897eafd346ba264",
+      "sha256": "39ae44d78ec556b7713d0ffab8eba56e9b8e190f5de6864129fbdcbb6f2b7755",
       "bytes": 140433
     },
     {
@@ -24288,8 +24288,8 @@
     },
     {
       "file": "l10n/prerender/ko/immunity-enhancement-executive-health-assessment-therapy.html.gz",
-      "sha256": "38edcebe872fccdc845e13a51ca5b29031991c053cfc55370ac0140137b03591",
-      "bytes": 36701
+      "sha256": "f98b925e6cf3059bb87e8b244d1c60c9dacc0945cb4730c207fa9fe54392f7d0",
+      "bytes": 35970
     },
     {
       "file": "l10n/prerender/ko/in-house-products.html.gz",
@@ -24553,8 +24553,8 @@
     },
     {
       "file": "l10n/prerender/ko/panchakarma-therapy.html.gz",
-      "sha256": "6bda2585d833a4eaf232138ad7d0e4deb738f215f8cd287eeed4f31413c6a7a4",
-      "bytes": 36759
+      "sha256": "4294887d9d43cc1a1d2039b3dee50dd181e266fe7f2f6502fe6326e945377980",
+      "bytes": 35971
     },
     {
       "file": "l10n/prerender/ko/panchakarma.html.gz",
@@ -24728,8 +24728,8 @@
     },
     {
       "file": "l10n/prerender/ko/treatment-for-arthritis-and-spondylitis.html.gz",
-      "sha256": "0b1f981c7231b5cee8d2eaab51effd7b2b5056beb882205f982f43dc0ed2b828",
-      "bytes": 36795
+      "sha256": "9ddf6e049108f75b1c8537d18bd323027868ed34ef9d4a6bc94fd8098f6dd614",
+      "bytes": 36053
     },
     {
       "file": "l10n/prerender/ko/treatment-for-bronchial-diseases.html.gz",
@@ -24738,8 +24738,8 @@
     },
     {
       "file": "l10n/prerender/ko/treatment-for-cervical-spondylosis.html.gz",
-      "sha256": "8717e3de4c9bf145860ec4801431e714afef807a0284413027cfdcbe3ca5cead",
-      "bytes": 36027
+      "sha256": "7cb4d0266304bb93a480d93e765a0ddd4ecbc2b8d8e6529f9da0203b5e69fe2f",
+      "bytes": 35280
     },
     {
       "file": "l10n/prerender/ko/treatment-for-chronic-back-pain.html.gz",
@@ -24758,13 +24758,13 @@
     },
     {
       "file": "l10n/prerender/ko/treatment-for-hypertension.html.gz",
-      "sha256": "eedf062e7da75d69e9995adc4f5256c62f26978b64b2d19566f7f7c5ce9a0f1e",
-      "bytes": 36073
+      "sha256": "c4cb5114772fd0e91483f0b05312e53add6679087162aaceb91e0eb4f8006d47",
+      "bytes": 35339
     },
     {
       "file": "l10n/prerender/ko/treatment-for-nervous-disability.html.gz",
-      "sha256": "910f772e9de9200c26e46811b2e305dce89744095333b3699484a2c11e8c4e07",
-      "bytes": 36171
+      "sha256": "ab27b460eb7cdd03a723044e09eb1a4d71a3ce2a372690f472539504f7aaa144",
+      "bytes": 35418
     },
     {
       "file": "l10n/prerender/ko/treatment-for-paralysis.html.gz",
@@ -24958,7 +24958,7 @@
     },
     {
       "file": "l10n/prerender/ko/index.json",
-      "sha256": "44b4f1b4f6336146cae1003f0c3deac0d3bc3725bf9c17aabd5e9526df5afa07",
+      "sha256": "de198f3c698a2e5251d7c95eb573e0fb418e07a9d1dda4278bc520fa18379d94",
       "bytes": 137915
     }
   ],
@@ -25722,5 +25722,5 @@
     "proof": "english-candidate/weight-integration-proof.json",
     "sha256": "0b25796e994c0bd72566fc3e442203f9b36256785565771a5f17bbf468fae1e7"
   },
-  "captured": "2026-10-11T16:46:38.324331+00:00"
+  "captured": "2026-10-11T17:52:08.487577+00:00"
 }

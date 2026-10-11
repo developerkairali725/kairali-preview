@@ -11,7 +11,7 @@ const VIEW = fs.readFileSync("app/(english)/_families/design-view.tsx", "utf8");
 const SLOT = fs.readFileSync("app/(english)/_families/ssr-only-html-slot.tsx", "utf8");
 
 test("server-only markup is scoped to Contact, Weight and the two traced programme routes", () => {
-  assert.deepEqual([...SSR_ONLY_HTML_ROUTES], ["/contact-us/", "/weight-loss-programme/", "/treatment-for-bronchial-diseases/", "/holistic-treatment-for-rejuvenation-and-detoxification/"]);
+  assert.deepEqual([...SSR_ONLY_HTML_ROUTES], ["/contact-us/", "/weight-loss-programme/", "/treatment-for-bronchial-diseases/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-hypertension/"]);
 });
 
 test("slot store returns the stored markup and fails loudly when a slot is missing", () => {

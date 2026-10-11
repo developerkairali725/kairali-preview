@@ -1,0 +1,950 @@
+{
+  "status": "PASS",
+  "parentArchive": "ahv-locale-prerenders-dinacharya06a-20261011.tar.gz",
+  "parentArchiveSHA256": "121f4de6deb00216450b2334cf41f1bb1f227b7e2c7afb941f18f8f0c5e457d4",
+  "captureInputsSHA256": "83911c597f4b5a1741cd7daed406a4d1d59aff59974862aff8389603392ff8cb",
+  "newBodyCount": 72,
+  "preservedBodyCount": 2340,
+  "changedSources": [
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-hypertension-desktop.json",
+      "sha256": "555a18e0b078f633674d9202113531dacabae39dbd746a89ff2c9625898548e9"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-hypertension-mobile.json",
+      "sha256": "3739ff001749b5b90a7c2813f5c0ab7ea653df14d87db0d81af4dbb465401132"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-immunity-executive-health-desktop.json",
+      "sha256": "cdd688f85684633bfc0f1f78a7da1defeadcdfa01ada42b72229786b3a0f775d"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-immunity-executive-health-mobile.json",
+      "sha256": "e33c7df5dcce7a6f3714da5e38bda4ed21a41a2711223b0c4130e2b47c3dd621"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
+      "sha256": "be68b157d076a012baa4ffc779921633009b50063c63e8c70d3b29caaedb3010"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
+      "sha256": "cd37921d71d9b45a61410f3988f0d05835820efe7f6a1312038afb6cc6f7ae4a"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-neck-upper-back-desktop.json",
+      "sha256": "c28f07e350f965790fefd0d6a3524005d12a93d6890a281eef77143c134b7981"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-neck-upper-back-mobile.json",
+      "sha256": "cfb34ea5a3321b32b50d76e333e7a06284ed6bd041caaf17f292ed089a81a894"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-nervous-disability-desktop.json",
+      "sha256": "7d68cb8e53cecb519740a2ce00bda9f617c8c56eafe6e10f4335c2aee7089ad8"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-nervous-disability-mobile.json",
+      "sha256": "04657c59255d5eac78de0985099e2e43a49675051bd4b5adc468bd1a8734f204"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-panchakarma-therapy-desktop.json",
+      "sha256": "8d0bbe5ddea19e0bee330db5ff8994aa68b6c651213bae9262ea655530dea05a"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-panchakarma-therapy-mobile.json",
+      "sha256": "7f4fd388d68b5d7644a96e1dec20f57cbcd381782d75b6b9c9bfb2883835d239"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-hypertension-desktop.json",
+      "sha256": "14fb157bc18696e306dd4eb9b17f90ff644fb39e186101c708452fe6324c9d53"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-hypertension-mobile.json",
+      "sha256": "e70a2c3571b9005b22c2622d9754045c544e74b897492ee48b36763b38ee7af6"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-immunity-executive-health-desktop.json",
+      "sha256": "7804fcf925244ab1db8f183eec7b23686380535dcb42e2f4f6d2478acfddeea6"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-immunity-executive-health-mobile.json",
+      "sha256": "3e9c264f20aa47b3e54337b97c846cfeb64815034b6e31c04b3d522b76b23bcb"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
+      "sha256": "b0f211fd48ad8a09ab9ed6ccc3cb5326ef0b7fc584446a2bd83b0116cfd8d973"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
+      "sha256": "3fbb0f60690a7601896d1125bbfc3a8e934f4370810d75824c54e0276053fcd3"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-neck-upper-back-desktop.json",
+      "sha256": "a1a57d9b8db9d900b463eb7deadcfd29535e489296e65f0a88aa1490347c0c2a"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-neck-upper-back-mobile.json",
+      "sha256": "1d8b8f3fabeb65efd2e2ab2723dd1f661a38a013384c30acb2fbc61a62a7c6d9"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-nervous-disability-desktop.json",
+      "sha256": "0f59016acf45f950212f3dbd9b9bddb1370f19aa0c213805576c5054da8aff45"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-nervous-disability-mobile.json",
+      "sha256": "e9ac826575f4995a2ab881c05fe4d7b41c76e509965c7e782599084b38457b05"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-panchakarma-therapy-desktop.json",
+      "sha256": "0f2c037c997a52f2c57a45260a0a1fe033ef959683a7771554c223664f6ebaf5"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-panchakarma-therapy-mobile.json",
+      "sha256": "b7d08a2c5c483bfabe3e3018fbc7649a50dd1fb1fbcc4ec34f6f21288d047a6e"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-hypertension-desktop.json",
+      "sha256": "d6d7256d6bfe60637100456d549454dbf2d40af6cd90132d52cfc850235a2aa0"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-hypertension-mobile.json",
+      "sha256": "86f87cd14e7c6f4f46693db6be3f8d1e2e9ffe52e7e174afccb977bfb25bb237"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-immunity-executive-health-desktop.json",
+      "sha256": "b9172646cc640c8bd895fffb835ea3cce28003f41fbea7596994d2a3e701d80d"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-immunity-executive-health-mobile.json",
+      "sha256": "77e1f0de55e8c910638e6da6b8299759d7202ef3d965e36ecc909123cf8e6b24"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
+      "sha256": "1ea61c192e589d3932d1f61994e9179281e0ea9d87ec8ebdd7cc5ae1291ba2ec"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
+      "sha256": "30baee64089095de5c3ffd7cd1a5c5d42829bf9c75115b59b08996af905df98e"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-neck-upper-back-desktop.json",
+      "sha256": "12c2af9d787fb0f9ecf646cb18f66f0b34125f717361757602d3b8797b2bf872"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-neck-upper-back-mobile.json",
+      "sha256": "617722103d7f594953ffb88ce0dcb7ec9982c7c47267c308b8830285efb25f0f"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-nervous-disability-desktop.json",
+      "sha256": "50721945af465788f94b8acf873ff88f9806faea28a116513d7a7010b4ef4e15"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-nervous-disability-mobile.json",
+      "sha256": "6697e57058c7a8d6a1a82202c9baa752b44aec2f152a699433dce4108f2dcb02"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-panchakarma-therapy-desktop.json",
+      "sha256": "c9d0bddf0a75b43a6c6c1c9d9187b7a73110336874e5110beda4d76adbc2d7f7"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-panchakarma-therapy-mobile.json",
+      "sha256": "1e693a0e940d2d177512421f6379fc5e731a15575a5bb5c65c760985c00253d0"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-hypertension-desktop.json",
+      "sha256": "e131f7121dfa2b0e363474683871d536822fa8e1566a0fbc27cd60e5a6ba912a"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-hypertension-mobile.json",
+      "sha256": "e0a4c04ef6d10a7f6c0e001e1c271d2f8a34c805210bcda536f6e557fd43ef9c"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-immunity-executive-health-desktop.json",
+      "sha256": "e45fab9e318a621adcc216c4555e85f0cabbe651a6acc752d5a91397f03f43be"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-immunity-executive-health-mobile.json",
+      "sha256": "1740ebe4741f4447d7519bfb8a50098dd8c92b9b2dadabf57a3456985983208c"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
+      "sha256": "567e4e0399fadcf614d268a911953044302f4f65519fb86d1ddd7093697edfa2"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
+      "sha256": "2568d95b733b9c27be6b5ae9080ebedb979b5e156c4782540d532e09630a28ea"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-neck-upper-back-desktop.json",
+      "sha256": "f12756efd50f468a32f0f0554a6f4e5becf04f20f741f4056fdced4eece6372f"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-neck-upper-back-mobile.json",
+      "sha256": "f0fcbf467609cb6e10290c55a6d238f792808fd8cc9f03a13e60438cae4b049d"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-nervous-disability-desktop.json",
+      "sha256": "a7c8b351a5ae10e06827d41de19e41cae7ba808ca5af2921d4319516a04ba007"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-nervous-disability-mobile.json",
+      "sha256": "ab8bef1150537f7095c6443ea0877e6d07588d663f0d5267dd861cdbc20aebcd"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-panchakarma-therapy-desktop.json",
+      "sha256": "efd6ac53fe398266157769eba1e5160631031bd29b5ef3d50b69204beb8f0162"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-panchakarma-therapy-mobile.json",
+      "sha256": "7bc3f4bfa2634be76e9a58325916f9a7b9f74ac72d08679de876fc64fc132437"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-hypertension-desktop.json",
+      "sha256": "87c29c1d66952f8bb88f11c7efe026ce17eba33dcd044bb149970898a33ddd24"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-hypertension-mobile.json",
+      "sha256": "6d8a0b5920e1a2bf119a0096f3d16fe05e3f8ac39f1f5872bad1361016c7f07d"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-immunity-executive-health-desktop.json",
+      "sha256": "ca94178f3990e0688c8a9d9f8142b51c4dbcecc45a39a41ef09c016ec0a96fd9"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-immunity-executive-health-mobile.json",
+      "sha256": "7abf590c7026306a585dee8aefa5eb15a50c50fca5e3d4f0cd918099733486ad"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
+      "sha256": "71217aadb20ca38e01ee89412a8146480a412c0f2744e942c1ab78c92d74e022"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
+      "sha256": "9cc1e95ed2611bb667a021ab1990d4df46474012b907d0877f7a8e2b562cfade"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-neck-upper-back-desktop.json",
+      "sha256": "2b051df8c00523d7c13200f762bb76c7089a41c3a786938ad749cf7e8a601870"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-neck-upper-back-mobile.json",
+      "sha256": "044d1b30318998f8019ba15b0cd0de6525b8ff17fa5be7c481bf39c033433614"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-nervous-disability-desktop.json",
+      "sha256": "38b163ccec72cc030833540386507f8286fe8cebf48e8ba2b079f7d20d6a8925"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-nervous-disability-mobile.json",
+      "sha256": "f1801614bf52b2919c9c5d8a4f93c2bfb289fe682de4f751cb89ed999af09186"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-panchakarma-therapy-desktop.json",
+      "sha256": "6645c6335038e4d8799755ee96a913034b2e02f1b36d9b4502025450de12e8f2"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-panchakarma-therapy-mobile.json",
+      "sha256": "7b63c2fa3e23d6aa22e4a27322494dcc0e7e82193eaab3b83d0bd21071c01608"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-hypertension-desktop.json",
+      "sha256": "65e01cc613f1d62e414f901d368b4df7afb382696bdc954a1292dcf2e4741a0d"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-hypertension-mobile.json",
+      "sha256": "2a583e921022754e58e2aa345238e83e162ef192b54d7ede6f72a3aa15afa202"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-immunity-executive-health-desktop.json",
+      "sha256": "9bcd1aa6a15565620cbe570f7de6fb807951fa22dfd595dd0f77e3e20afa83d9"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-immunity-executive-health-mobile.json",
+      "sha256": "34c10c3473c53d5cd884197839b5448f94c7b908b6d8821d3b5c1869b1845ed3"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
+      "sha256": "a11eb7a1e727b60d7daf08ce8435c4f342e613cc6aee4ad6b7d16aa0373baf0d"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
+      "sha256": "2da6831afaf6151495ac462212a3cdc8f7f47c8402458a2d1eccdbfad168b959"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-neck-upper-back-desktop.json",
+      "sha256": "f5227e8ecaa284b2b54c775030868341277585df4944c0a99bf1337c945b0c3a"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-neck-upper-back-mobile.json",
+      "sha256": "10a5b9629e1310d384b148e08f9bf5859408a27191225e322e45a163cc39fd02"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-nervous-disability-desktop.json",
+      "sha256": "e9f887f1d28851bbc496b98f3865c9935f155987c2ce43b4b76bbf1defea4f5d"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-nervous-disability-mobile.json",
+      "sha256": "93bfff0258e65eb8a11b74b1a91298d2bc3940e5f5c1f95930b757248c5d31aa"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-panchakarma-therapy-desktop.json",
+      "sha256": "3aa89ba52a46fbb78b5d86c79a9fa10106c71643d8dfaa24fe7740ba0215c9fb"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-panchakarma-therapy-mobile.json",
+      "sha256": "94761b27ff6314c5f6516255a2484c32e05b264ced2a19a6e6394c768f770dd8"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-hypertension-desktop.json",
+      "sha256": "e041dd74fa8798248971107eabf1ab6f4df60a5014b886125716fb988c1f5d0f"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-hypertension-mobile.json",
+      "sha256": "f5360e8bd404eca7b7ff085ff72b48ba2d8faa6894f000e71734d5b9ddeb69ed"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-immunity-executive-health-desktop.json",
+      "sha256": "dfc26feab2d59b26ed613bce3641d6bea6c62c6dda946be603211f6423f157a3"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-immunity-executive-health-mobile.json",
+      "sha256": "b180a4cecef6cc0985c7ffc0157a5658828f0e2a7c241a3cbb4fe39c80ee747f"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
+      "sha256": "33c4cd344a73b8933b66301d3f67b03d0dff9647a272e273ebc3258b87d6f0b0"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
+      "sha256": "eda4c771fce79888dca35f79ccbfec0f78ad7bb746d4a1fcf02a11e339dfc09a"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-neck-upper-back-desktop.json",
+      "sha256": "a7174f4304c314ebd7195c66a768e04ee9f6ce61cbc1c0f95c8dcb67050810b1"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-neck-upper-back-mobile.json",
+      "sha256": "7e2927b2f7454db6e9a056273bb7a3726b76f6f39ab015702e85012f4f321336"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-nervous-disability-desktop.json",
+      "sha256": "2a4a6b676c6f7219e3c8484087cec75f9743120ff549699a10b4aa8ce48bb466"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-nervous-disability-mobile.json",
+      "sha256": "67d79b360d154c1864442e4c46688102c32983ae13da3e46f1eca7ab1bb036a0"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-panchakarma-therapy-desktop.json",
+      "sha256": "6058dd86a5128fb407f71d2ef89cd02e72f9b87dace617a83ba6f59b7065a5fe"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-panchakarma-therapy-mobile.json",
+      "sha256": "bcc36227306448657ce910edf2802571b791346ea9c6a5c6fcccb7ad967a6e8e"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-hypertension-desktop.json",
+      "sha256": "15dd4bde3b7025fb01a5d74f0da5e55c1c2a422e1939f7ef33b3e49a2df306a6"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-hypertension-mobile.json",
+      "sha256": "298ea76bc671ca998b3df4df513d70e4a4ab9f37a6269b542a1b9e8f095950c4"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-immunity-executive-health-desktop.json",
+      "sha256": "254fe5a8250e05016f828ea95179626bc7f4ce89a872ef52c14e3c70b065b3d3"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-immunity-executive-health-mobile.json",
+      "sha256": "fe832b5049b7d414b29b124d7f154fde4b9a62d1a1998ff04a8f9c27255e8313"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
+      "sha256": "8e94a34632e31facf8a617c1f4244fa557a284a086ea7554ef5db00eede87a73"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
+      "sha256": "6b3204db25f9bc0a4f8168c2783c559c1a4ec4e05b893966e0432782681c1d79"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-neck-upper-back-desktop.json",
+      "sha256": "0d99738b71b5976883dced02f26b1b3f42e21d291cd78335bd13d988d82f2144"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-neck-upper-back-mobile.json",
+      "sha256": "70f7796096e8f241ad50475f6c57bee01077e6f868fa4efbde158d7589f45d7d"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-nervous-disability-desktop.json",
+      "sha256": "172271a791168aacd30fbc489147c4ad147492d78ead321c8a61b6a073dcfc1e"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-nervous-disability-mobile.json",
+      "sha256": "64fc9e2a1328222af6658fd7c524dabbe7a440de86e5daf1256aab157495a76f"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-panchakarma-therapy-desktop.json",
+      "sha256": "a24a269aaeeee86bfaece1858a92eb4821e487b39bd2252b5e96c847dc512872"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-panchakarma-therapy-mobile.json",
+      "sha256": "6861eee87def64b7a6c226587ba24d21cc5e19f2bda7073e971fd9f728f98d0f"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-hypertension-desktop.json",
+      "sha256": "15b9688835159d2dd3c9b82e3a2e97ccbda148f73c9f0a6778f752f5f02b032a"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-hypertension-mobile.json",
+      "sha256": "f1fde12dba34158ce7866a9641397d9df26d45f589dc2480400efce764d62808"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-immunity-executive-health-desktop.json",
+      "sha256": "99fe214bdcb793178c802ab5e9a96d756420b0fcc221a26778cc5fd9491502cc"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-immunity-executive-health-mobile.json",
+      "sha256": "e9b69086ff783ffbac1f4696641cf1a581c4145ee143194a07f8793da5496096"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
+      "sha256": "fe170722b998963da18162ea60fead50ef89452b45c449e4ac1fd3f21c616ba9"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
+      "sha256": "e89abb1a9b789a50ced3fc7ea193c113ae37da3b5a135e5443cc8f331e8ab15c"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-neck-upper-back-desktop.json",
+      "sha256": "9eff681f3ac1a738a47cac08fb31f90b3b23e16cc3ea7b8ac3c02b9af076e9d2"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-neck-upper-back-mobile.json",
+      "sha256": "c26f4c852f9e1158f683f0193b1df6e6e5bdd78b0a9f56929c1ab68eff9d6657"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-nervous-disability-desktop.json",
+      "sha256": "248f86aee8cc0bd83a379534136540ab516e3ccd3bcfaf7300c4225a210a9489"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-nervous-disability-mobile.json",
+      "sha256": "79f1a5b85c70517bf705c10197e1309417e5968335233fa5dc6e029747b92c93"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-panchakarma-therapy-desktop.json",
+      "sha256": "284b829be6be0623445a624ce89f97cb7fbf92e64e07943d2a2290c18d1cca65"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-panchakarma-therapy-mobile.json",
+      "sha256": "c4a662b9bc5a019aae5892be3a3b8b6989b911faf0b2680fdb171fad66616e93"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-hypertension-desktop.json",
+      "sha256": "3cb8befa5c060de7e83f7912d679a049925051dfa53489ee61dd354d815a45e2"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-hypertension-mobile.json",
+      "sha256": "5497374f98e97d1eb82edda41ae6d41be867f42bfda6f43928a928622f7c8019"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-immunity-executive-health-desktop.json",
+      "sha256": "dc3828724dc5da0712224937f4c43493e4e95703f951732ab96a27a0d1a652f4"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-immunity-executive-health-mobile.json",
+      "sha256": "79a0bddf8f0db3aa49b7cc03a282cde8f548002c762c35ffff0855503aeabaa1"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
+      "sha256": "901784165c7270a259bbb975ad25d4b61beb6d698556c27c581889bd7273a27e"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
+      "sha256": "dd3d7d6528324d3a82a9cf9376e83ce6057c4f8becd8a368fb7871e16ee55ccf"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-neck-upper-back-desktop.json",
+      "sha256": "03e7a96ea16985079a3ea0c2bbc9bc806cee8848efb67159db42c9c907ef7871"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-neck-upper-back-mobile.json",
+      "sha256": "becb0562e100f1d639856ba4d56c694678073498b05c9e35bc87075753897f3e"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-nervous-disability-desktop.json",
+      "sha256": "8d6bc639f8be71e0294a01b67605fff2ef3a9418bca598a3d1d76094a695d8b3"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-nervous-disability-mobile.json",
+      "sha256": "88849bae14193002562cd43a786bad20afafa7a5f97d2c4b8db27a546b90adf6"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-panchakarma-therapy-desktop.json",
+      "sha256": "7eef4f3085e1e4fe11fcf7310891d646ec8b7504956b9d614f3f032d549c716f"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-panchakarma-therapy-mobile.json",
+      "sha256": "d21799fe7c9899da062760017de2aa00a383387a98acf38047df47d85430a9c0"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-hypertension-desktop.json",
+      "sha256": "e07885ba4e22fd5464632b91060b705765d34c22190aeb2f14720a54e8f9731f"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-hypertension-mobile.json",
+      "sha256": "4caad643da721de4f73a63467e518e7a481fa1092da5e922450180f5ed72a7ed"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-immunity-executive-health-desktop.json",
+      "sha256": "cb9b9be7020169c0fca757d93330d3dc12e34b86adf44335e63197c658baa802"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-immunity-executive-health-mobile.json",
+      "sha256": "42f947a267afe141f98eaf9fc06b5a2bdd5f9a63e18a104d76be6957d8cc1f3e"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
+      "sha256": "830e72bc0c50b264223e2ff10c63e67ab623a9b0cd187a61d027002ab06cec3a"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
+      "sha256": "f093e1f7472e1a999f91d86a5cfaaf32285cc06471419390ed04e8e8e21e0093"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-neck-upper-back-desktop.json",
+      "sha256": "6a56666f3a5e356027820d0d75f4a35fbafc348a1fb9eb0a2024ce43ff5c50c8"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-neck-upper-back-mobile.json",
+      "sha256": "d3741dd5429ca7d0c8923bddcb6b31a8fc30c28a5bd4e4b1082efdf2760c8ec9"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-nervous-disability-desktop.json",
+      "sha256": "9f50986694d6f13d293d940fc994df133abd8bf8856526724cf6d2266886d0d7"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-nervous-disability-mobile.json",
+      "sha256": "70038d58ef15775ce042300c3a662b860a12d19fed871eada9274e90aa33b03c"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-panchakarma-therapy-desktop.json",
+      "sha256": "713143d149589c78cbc98c436bc5538089085fdfc24bfa8bdbf525fca1cbdd4b"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-panchakarma-therapy-mobile.json",
+      "sha256": "646b04db10234195c284f46ac32e2295febe2cc6bcd849399850ba6ac13cb305"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-hypertension-desktop.json",
+      "sha256": "3736c543c2881f6578242b4219a0a4ecaeca873a7c2b0f16bfa306b6df25c77d"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-hypertension-mobile.json",
+      "sha256": "6780a4a81f0dbe12c45b1291d3261c93528cf05f5d211a2f1dded9f361a591a6"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-immunity-executive-health-desktop.json",
+      "sha256": "44f5de5c4f2ccf6a43233f911c8ce9a8ae40814a344be203ec2aa58318a92055"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-immunity-executive-health-mobile.json",
+      "sha256": "4f79df5f03f84ae7f65d2362be20dc1f02764d2fe326ef5cd78439d515e71772"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-joint-rehabilitation-arthritis-desktop.json",
+      "sha256": "226e105572499e2ff9e899831f1d9acfb22097e7991568b5c7ae396f64781917"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-joint-rehabilitation-arthritis-mobile.json",
+      "sha256": "e096507e0b87ae1a2460a838548fe2dcaf9f7eefe3d2f743d5089dca38a55468"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-neck-upper-back-desktop.json",
+      "sha256": "7a458eb8bb7dcaeca18be9c065d42da34c9ecc956a0f503411996a3aed0e2f58"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-neck-upper-back-mobile.json",
+      "sha256": "d008a123b9b9374835a32d1bd9b60eea374ff68486875638fc36407ecd55e54d"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-nervous-disability-desktop.json",
+      "sha256": "0ff61e8a2145c678eed525084192410c1b9851130c4744844e43f67bda79378c"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-nervous-disability-mobile.json",
+      "sha256": "989c95ad2b6a45ed6c77541865a2617fcf08037b0eec5e3823841ec24e3a3130"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-panchakarma-therapy-desktop.json",
+      "sha256": "d932b38dd029b4963201f3d480afb758c328144a453b86fdd6b4b4e328dbbbda"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-panchakarma-therapy-mobile.json",
+      "sha256": "1634894270fd7cfa897ffa8231ad15f7a08519b751c05d4f53485252f6bdb0b6"
+    }
+  ],
+  "freshBodies": [
+    {
+      "file": "l10n/prerender/hi/immunity-enhancement-executive-health-assessment-therapy.html.gz",
+      "sha256": "25def0974c6f85933ca9eeea8e089c6856fe60a05d57ac4caf66d54b9010eb1a",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/hi/panchakarma-therapy.html.gz",
+      "sha256": "efe8affe317303bf1175298d2df8182f50d1afc37ac2edbd1acefaed34bb9238",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/hi/treatment-for-arthritis-and-spondylitis.html.gz",
+      "sha256": "8053be461e0bbe600fa8e47e3c99308d13692e21b01e848af85367a3887b90de",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/hi/treatment-for-cervical-spondylosis.html.gz",
+      "sha256": "16e1c20e9d8a4c61b2f314ed49fc28e35949b66e99b4c158a0b8d594ad2021ca",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/hi/treatment-for-hypertension.html.gz",
+      "sha256": "8bf5a52bc886021e5634da979780f3672f0c8884e811e8b94ee97ea226c5e190",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/hi/treatment-for-nervous-disability.html.gz",
+      "sha256": "04b3289a2b8aa7e8686005a11f77a40620ab75f92f3ffc394349e902344ff86c",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/de/immunity-enhancement-executive-health-assessment-therapy.html.gz",
+      "sha256": "2d143c10d7301570084c364096dccf05d015704c899a02726513c320b6c60269",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/de/panchakarma-therapy.html.gz",
+      "sha256": "ad80fbbc84c6872667ba32da718b2b5d1bca55a1f920a2d8f41385865300f2e8",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/de/treatment-for-arthritis-and-spondylitis.html.gz",
+      "sha256": "1acc3f97bb5ad2eb0745d0ac3aced129041f9537dabedd6a5210ebb6703df561",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/de/treatment-for-cervical-spondylosis.html.gz",
+      "sha256": "909d6ea0f37a7e1a1d09ebd1f9604d8cda211f4454737a9baf98fc61ed100a3a",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/de/treatment-for-hypertension.html.gz",
+      "sha256": "f10285864af2bcc2a7f3117766c197dd42f5c63bb74f2a1f6cb85d5cc537d000",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/de/treatment-for-nervous-disability.html.gz",
+      "sha256": "43d7c4990d94a2cdd63a3e5622985c421872c599aca7e96364f54e462d8cb878",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/fr/immunity-enhancement-executive-health-assessment-therapy.html.gz",
+      "sha256": "2cc7d84861cb422ec6878d8df13bf3ae51f880006a0e066f4dec9506aeb1d214",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/fr/panchakarma-therapy.html.gz",
+      "sha256": "623e2efc55ac86700e100c481f120b3270a14e923b3809c7e72df9137943a957",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/fr/treatment-for-arthritis-and-spondylitis.html.gz",
+      "sha256": "d26dadd20f890b3ed35770f0164802aa9b9a2b66eefabfb482c30954ffcc087f",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/fr/treatment-for-cervical-spondylosis.html.gz",
+      "sha256": "6cb7b2ac428b7f14d1536bc3e59b14d84c29a6e62164e676d48c4059aed2f03c",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/fr/treatment-for-hypertension.html.gz",
+      "sha256": "751d2676e9436f3c0a8799db0cb81d6598393611745342558fa0ecc5f709d9db",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/fr/treatment-for-nervous-disability.html.gz",
+      "sha256": "38ea0dce80f386f5fddcf69d743c6637a6322ce0055d8742a8678bff9d15f066",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/es/immunity-enhancement-executive-health-assessment-therapy.html.gz",
+      "sha256": "6e591eaa4c066fe5ea4eed6f6e4581b33ee8e28b0eb5ce3eed79f5f6465390a1",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/es/panchakarma-therapy.html.gz",
+      "sha256": "11dd526d8219188231a016d47c0eb1a43da2b44ab4ae93de6b90e855dc532586",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/es/treatment-for-arthritis-and-spondylitis.html.gz",
+      "sha256": "3e58fd079355b806f7374748f85bc9b4007914f5a9085ae42db4b271c32a7f2c",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/es/treatment-for-cervical-spondylosis.html.gz",
+      "sha256": "1a2ef7e83ae4a96f2701e9cccdfa97d6f55fbf1ecce0483dd7b45907fbb5c803",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/es/treatment-for-hypertension.html.gz",
+      "sha256": "93ecc6164572b8704a83cf8d1471827af6c445c967559755a5769f7db2a4fd64",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/es/treatment-for-nervous-disability.html.gz",
+      "sha256": "c191af202bbc76242fe5729bff88c5a11e07491770f8f5dc499d1d124b82e0f0",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/it/immunity-enhancement-executive-health-assessment-therapy.html.gz",
+      "sha256": "6ab6a6eda7c211f15aeca9cd6b848162e02fc2deea0e4fe5ceaad0c945c08b34",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/it/panchakarma-therapy.html.gz",
+      "sha256": "a69c1023729b9a80f36c57dc34848aa9d1b350b1809c3020fd75e236bf56a766",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/it/treatment-for-arthritis-and-spondylitis.html.gz",
+      "sha256": "ee17cf294e39064ecdf3e1750ec32f6289ce302cddc381e4d6ae4e064af0ee80",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/it/treatment-for-cervical-spondylosis.html.gz",
+      "sha256": "3ff42a80fa5f0f22309b995363815c038efbac8abbad3afc93240ddd91b778c3",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/it/treatment-for-hypertension.html.gz",
+      "sha256": "f2bdbbd6a1addbafa8c3bb07c71431cc7849cc6f5accf30e79bf55d6464e6edd",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/it/treatment-for-nervous-disability.html.gz",
+      "sha256": "5483ed5482a75647fe2e9935ae78ddc421fd84b5da900fe537092d59fce63578",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/pt/immunity-enhancement-executive-health-assessment-therapy.html.gz",
+      "sha256": "bacc14e67b984f5b9ed274d1034545b2c36c1d0285bfd92fb6f29041a09257e6",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/pt/panchakarma-therapy.html.gz",
+      "sha256": "7a2dd6a09ca1cd4359be312978e6becc01d62963521351db68f259e3b23c512f",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/pt/treatment-for-arthritis-and-spondylitis.html.gz",
+      "sha256": "40bcf2f9a26e03a29882cd9759b7be875cf7b3317345e6d2ccbb60c18e1bb369",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/pt/treatment-for-cervical-spondylosis.html.gz",
+      "sha256": "fdc7f157eb48d8588ad3ffffef22c703bb9319cfb29f74ccc425782816a5ed94",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/pt/treatment-for-hypertension.html.gz",
+      "sha256": "c598a4b173207db9ca6876896b0b6bb775dbf358a8c01e23be6911d9a053d789",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/pt/treatment-for-nervous-disability.html.gz",
+      "sha256": "02a883ab30aca4956b77f3d517fe2c2bd36bd7d23a22522000dad7891ac3ac69",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/nl/immunity-enhancement-executive-health-assessment-therapy.html.gz",
+      "sha256": "9e3688a4914502d324863609c58a372e2a780b0e87f06251402385388c0d53a9",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/nl/panchakarma-therapy.html.gz",
+      "sha256": "ebbf466465a26a1498aa1c523cd4c467c5fc1bd518adf69228fd055e0ee1549e",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/nl/treatment-for-arthritis-and-spondylitis.html.gz",
+      "sha256": "ff37e53bf34610025e36d7f5652465b5a528ef599571ce4d7250cfa4c1cc9274",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/nl/treatment-for-cervical-spondylosis.html.gz",
+      "sha256": "61bd5a127fffe4bd649240895434a81def1c71ccae00007776133f852077d18a",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/nl/treatment-for-hypertension.html.gz",
+      "sha256": "97e2a4a60a2d757660f90fa0bb15680c108ab2e6d1ae8a6ff0da513258da2408",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/nl/treatment-for-nervous-disability.html.gz",
+      "sha256": "e3e7efe33c423bd3ae1831f74ad4ce410aa132120fd76bd0a1f568b03da68a66",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ru/immunity-enhancement-executive-health-assessment-therapy.html.gz",
+      "sha256": "d9301a23edeadf82f1f4ccda3ed0af691f69339febd51d31d33e9d0cb8fedf5a",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ru/panchakarma-therapy.html.gz",
+      "sha256": "4ff5081b7fdc09811d701dddb44fe50348bc61d193a91ccd62ed46344695435b",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ru/treatment-for-arthritis-and-spondylitis.html.gz",
+      "sha256": "3e6b433ebf95fcd2c5c635d4a3c379d41a054ae4567f6039ce3b11aeffd9bba0",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ru/treatment-for-cervical-spondylosis.html.gz",
+      "sha256": "4595154aa89efdeffcece532ace77ec43e76f8e40454df2bffcfd108f20bee5d",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ru/treatment-for-hypertension.html.gz",
+      "sha256": "067d807e41754128e028d96a56d98cf8bc627357b8cad61a150aec72d613aae8",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ru/treatment-for-nervous-disability.html.gz",
+      "sha256": "cdc10c991306b296f77175c96d39be925205fae5e3df946411e2e09c0a8163f4",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ar/immunity-enhancement-executive-health-assessment-therapy.html.gz",
+      "sha256": "cf7088b291d821b7c429e2614bf482ee5d167cc9771e1c9cba4f5af9fe4fe0c7",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ar/panchakarma-therapy.html.gz",
+      "sha256": "87f5c939af2bb3996633dfd07df538344ca21b1734ddf1236cc8681395044434",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ar/treatment-for-arthritis-and-spondylitis.html.gz",
+      "sha256": "d45696294b7abd5c3f2df916840e66a682d98467edc4b0b482053349ea41f921",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ar/treatment-for-cervical-spondylosis.html.gz",
+      "sha256": "1deb2b0058a188b9aafb672a1fe7ab9a4963abcaa4743b069fc369d05c05e746",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ar/treatment-for-hypertension.html.gz",
+      "sha256": "a32478eb993c0a825d4096b0b3f63d66b13a10718d93b80630ea6abc47af6b6a",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ar/treatment-for-nervous-disability.html.gz",
+      "sha256": "37c5c02537212c5e04a53122ab82760619638d5b6bd2a976bc99d6bbe1859d2f",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/immunity-enhancement-executive-health-assessment-therapy.html.gz",
+      "sha256": "522eca34f00f4232aeb0a65fda502a8ea767e4d96537adf098038698783f7729",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/panchakarma-therapy.html.gz",
+      "sha256": "b75b09a6dd779790fd9b1560d631f007b37ab6a1a72407aa0ba579047eaf66b6",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/treatment-for-arthritis-and-spondylitis.html.gz",
+      "sha256": "5fd63dd8e8633d502d01313a3bcfe9253448d3dd9983f20e6f39bc911b11039f",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/treatment-for-cervical-spondylosis.html.gz",
+      "sha256": "ede70b64d9bda4fb6066148b091b0a352f3a14fdd620cbfd287a0412d9cd6a97",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/treatment-for-hypertension.html.gz",
+      "sha256": "cc5816cac767043fb806e0e59c677b2cd498962decd62587df436995a6d151e0",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/treatment-for-nervous-disability.html.gz",
+      "sha256": "d4968451e1da8454513f26112d77f3a5f910b04b43da587d8f598f2bae5f4cba",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ja/immunity-enhancement-executive-health-assessment-therapy.html.gz",
+      "sha256": "2e8b0ca2cb73dc734263b071a8bf79ff6b71261acb6d4c5b39c710f9137d8ce8",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ja/panchakarma-therapy.html.gz",
+      "sha256": "385edb837f907b3622dd986d98a50ebcbcb6c5bbba905b9a233d8b7134cabb67",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ja/treatment-for-arthritis-and-spondylitis.html.gz",
+      "sha256": "2a381b0058dd6f27e0faf753f6231383d91879d9eb489a8617da797608de965a",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ja/treatment-for-cervical-spondylosis.html.gz",
+      "sha256": "93694097ba83686082dced54c58b7b57470d9204918b3a9093e735557c5b53e4",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ja/treatment-for-hypertension.html.gz",
+      "sha256": "3d2ec160d181c4457ecc4c2ab19f78368c448ad7814f9eb882889219b73faf93",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ja/treatment-for-nervous-disability.html.gz",
+      "sha256": "f04525191534f12f33840a713630e74f2b1d4f42e6b3037f063a5e32b252690e",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ko/immunity-enhancement-executive-health-assessment-therapy.html.gz",
+      "sha256": "f98b925e6cf3059bb87e8b244d1c60c9dacc0945cb4730c207fa9fe54392f7d0",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ko/panchakarma-therapy.html.gz",
+      "sha256": "4294887d9d43cc1a1d2039b3dee50dd181e266fe7f2f6502fe6326e945377980",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ko/treatment-for-arthritis-and-spondylitis.html.gz",
+      "sha256": "9ddf6e049108f75b1c8537d18bd323027868ed34ef9d4a6bc94fd8098f6dd614",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ko/treatment-for-cervical-spondylosis.html.gz",
+      "sha256": "7cb4d0266304bb93a480d93e765a0ddd4ecbc2b8d8e6529f9da0203b5e69fe2f",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ko/treatment-for-hypertension.html.gz",
+      "sha256": "c4cb5114772fd0e91483f0b05312e53add6679087162aaceb91e0eb4f8006d47",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ko/treatment-for-nervous-disability.html.gz",
+      "sha256": "ab27b460eb7cdd03a723044e09eb1a4d71a3ce2a372690f472539504f7aaa144",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    }
+  ],
+  "capturedSourceSignature": "d7db3c4118574cdd985d7d79dab5b83f39e38af886d5199ce9011b8c9044191b",
+  "captureReceipt": "deliverables/WOPS-WEBSITE-SEQUENTIAL-20261008-001/local-first-20261011/N12-06A-rest/CAPTURE.json"
+}
