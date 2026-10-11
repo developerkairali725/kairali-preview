@@ -207,7 +207,9 @@ id = "generic-api-key"
 # N12 inspected 2026-10-11: historical c23200f03 test lines 112–113
 # are SHA-256 fingerprints of the released 807c535e3 consultant-course
 # desktop/mobile JSON bytes, recomputed exactly. No authentication use.
-# Preserve full-history scanning; exempt only these values in this test.
+# Same fingerprints in batch07 and training-preservation tests verified against
+# the unchanged course JSON bytes on 2026-10-11. Preserve full-history scanning;
+# exempt only these two exact values in these three exact tests.
 [[rules.allowlists]]
   targetRules = ["generic-api-key"]
   condition = "AND"
@@ -216,7 +218,11 @@ id = "generic-api-key"
     '''^9dbefe06cb3b0c6f4e68cd72a8b5b5a90e7cc4a390fdb1fe982ee7d696183e92$''',
     '''^7df0b7e8e193250cd9a386934899700e77774db76b2424800475a0963c0c267a$''',
   ]
-  paths = ['''^sites/ayurvedichealingvillage\.com/test/dinacharya-two-therapy-batch06a\.test\.mjs$''']
+  paths = [
+    '''^sites/ayurvedichealingvillage\.com/test/dinacharya-two-therapy-batch06a\.test\.mjs$''',
+    '''^sites/ayurvedichealingvillage\.com/test/dinacharya-one-therapy-batch07\.test\.mjs$''',
+    '''^sites/ayurvedichealingvillage\.com/test/dinacharya-training-preservation-n12-08\.test\.mjs$''',
+  ]
 
 # Mined raw-sources layer (immutable, PUBLIC live-page snapshots — CLAUDE.md doctrine (a)).
 # Live WordPress pages embed public per-session tokens (WPForms nonces, site keys) that

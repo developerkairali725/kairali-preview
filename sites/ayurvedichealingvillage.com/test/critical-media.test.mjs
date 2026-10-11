@@ -68,11 +68,11 @@ test('Digestive below-fold yoga image keeps its authored lazy/low intent in snap
   assert.equal(mapped.replace(/<img\b[^>]*>/g, ''), phoneCriticalMedia(body).replace(/<img\b[^>]*>/g, ''), 'only img tags differ from the generic mapping');
 });
 
-test('Digestive candidate views and English body are pinned to the held c35727ec4 bytes', () => {
+test('Digestive views and English body are pinned to the approved final N12 schedule', () => {
   const pins = {
-    'public/ahv/views/ahv-page-digestive-wellness-gut-health-mobile.json': /^ab8ba8ab4b4ea13b/,
-    'public/ahv/views/ahv-page-digestive-wellness-gut-health-desktop.json': /^d28ba7e44334aadb/,
-    'english-candidate/prerender/digestive-wellness-gut-health-yoga-therapy.html': /^2190d6574e47ecb3/,
+    'public/ahv/views/ahv-page-digestive-wellness-gut-health-mobile.json': /^44564e7d7c9ec172bec3defe7bb5b9e02b6c423a6cf8015d91db6c72dd29774a$/,
+    'public/ahv/views/ahv-page-digestive-wellness-gut-health-desktop.json': /^857d68f8491abee785007069dddf19777c999160f6f13f91f5a6de0a65a02a8f$/,
+    'english-candidate/prerender/digestive-wellness-gut-health-yoga-therapy.html': /^c42f81befcccab8a379a008f4e8fc95adf0c2e72a68be71a236a529b2689af53$/,
   };
   for (const [file, pin] of Object.entries(pins)) {
     assert.match(createHash('sha256').update(fs.readFileSync(file)).digest('hex'), pin, file);

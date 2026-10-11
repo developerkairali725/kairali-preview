@@ -1,11 +1,11 @@
 {
   "repository": "kairali-digital/kairali-web-factory",
   "tag": "ahv-english-staging-20260915",
-  "asset": "ahv-locale-prerenders-dinacharya06b-20261011.tar.gz",
-  "archive": "ahv-locale-prerenders-dinacharya06b-20261011.tar.gz",
-  "sha256": "e968a085bcf99f489f2f087a3d282ccfeb4522520ce9592ed0ffe22feed5bfa7",
-  "bytes": 43668476,
-  "capturedSource": "Composed from144 fresh live-runtime snapshots for the twelve approved Dinacharya pages across12 locales and2268 byte-identical parent bodies. Original unmodified index rows retained. Detailed source-delta and capture lineage: english-candidate/dinacharya06b-integration-proof.json.",
+  "asset": "ahv-locale-prerenders-dinacharya-final-20261011.tar.gz",
+  "archive": "ahv-locale-prerenders-dinacharya-final-20261011.tar.gz",
+  "sha256": "518c116ae23ba078f853c0959a4eba873d2157030e04fd16348a1632d3a1d1e4",
+  "bytes": 43625958,
+  "capturedSource": "Composed from72 fresh live-runtime snapshots for the six approved Dinacharya pages across12 locales and2340 byte-identical parent bodies. Original unmodified index rows retained. Detailed source-delta and capture lineage: english-candidate/dinacharya-final-integration-proof.json.",
   "sources": [
     {
       "file": "english-candidate/route-manifest.json",
@@ -13,7 +13,7 @@
     },
     {
       "file": "l10n/generated/ar.catalog.json",
-      "sha256": "c3ff88ddda395f502633f29b732f342e682a3323a3e5405fb2f0617bf2bfc2fa"
+      "sha256": "de2f786760eb271446d045c98621bf225e42d681b19a51da7d58cb6ec6584b0a"
     },
     {
       "file": "l10n/generated/ar.derived-sitemap.json",
@@ -21,11 +21,11 @@
     },
     {
       "file": "l10n/generated/ar.json",
-      "sha256": "9c9c7b973d80dc0dc4878b58f62a6c167f6d619a195f8a8871fbf8d99b61afde"
+      "sha256": "6188661f06a17a28a03bef0f1ebb26a3d1b67f175bf53be7c4f159b7e15decf7"
     },
     {
       "file": "l10n/generated/de.catalog.json",
-      "sha256": "813315d4a7685dc99027c7ea30cf49509617b6b89181c67e45aa3e32cebfc49c"
+      "sha256": "0a4db18c9df310e8fe127fed61bb6adb6fb200b4f6c962b536317ae98e7a209e"
     },
     {
       "file": "l10n/generated/de.derived-sitemap.json",
@@ -33,11 +33,11 @@
     },
     {
       "file": "l10n/generated/de.json",
-      "sha256": "8e29ff02f494b16b0200bc9e664ac6b81a500c4ec65b56d2d9b81f5675c6bb03"
+      "sha256": "a567e759a68d2be3a785a8cb84a00d05b4548ef19d59dbe2861151787eda2f5f"
     },
     {
       "file": "l10n/generated/es.catalog.json",
-      "sha256": "d7d111ad8bd66bd28482c0bf5eeba782e890674cf4f0d194f615aa9a6d60a4aa"
+      "sha256": "cf44540d75edd1949fc2377664713d8472bf4fcd85367e86f8d6725f1273dfdc"
     },
     {
       "file": "l10n/generated/es.derived-sitemap.json",
@@ -45,11 +45,11 @@
     },
     {
       "file": "l10n/generated/es.json",
-      "sha256": "182e2a6701c16d3ad2db8dde74d846c0705cbeaac35c81a14f3c1eb39ffddebe"
+      "sha256": "07063d7aa1407022c461ab68f35bd6620ae458cce3c07dfe0c5e6ed69b957138"
     },
     {
       "file": "l10n/generated/fr.catalog.json",
-      "sha256": "27105f0aaacaeeb9b4a89c73094603352f3e212b978b1aa153b8b0a37ef2e0a7"
+      "sha256": "a8744de2c8befa37f09177f5378ec881bf6b89d5cee0fbd82189be360ac29a88"
     },
     {
       "file": "l10n/generated/fr.derived-sitemap.json",
@@ -57,11 +57,11 @@
     },
     {
       "file": "l10n/generated/fr.json",
-      "sha256": "3109c34cc400b8c9a1b42b566d8d13ab077f463ab708f3ea6db6032dc70e156b"
+      "sha256": "4939589b0143928cd5fef9df7a5449c40830c6a9236370acec91855aff89778d"
     },
     {
       "file": "l10n/generated/hi.catalog.json",
-      "sha256": "3f8fe2de2c53a15a5554d138c5bde064a48e7d8423b28dedf7fbbb1e8c62e522"
+      "sha256": "8906bff32afbb8f1d6ad4e2729ffe3c2cf21bd0159e00838a0cfaec3000e5b16"
     },
     {
       "file": "l10n/generated/hi.derived-sitemap.json",
@@ -69,11 +69,11 @@
     },
     {
       "file": "l10n/generated/hi.json",
-      "sha256": "dc06dfa8e3c2a9fc42177b8acc0372ebc18aeb2ab097b73ef9905c6d03d085a2"
+      "sha256": "a364c928d70e5d600f39e327027ae6086723d004a1c908c999277b7768d79c27"
     },
     {
       "file": "l10n/generated/it.catalog.json",
-      "sha256": "3ab2f8372291a5c7341ce1e57cbda4fccb9d7568928348c1cb9c9b4a33c8bfc3"
+      "sha256": "8fc975cc697d3f8eaf4da6b95e514ed9c96bc18c06ade96c6db77059b5fc400c"
     },
     {
       "file": "l10n/generated/it.derived-sitemap.json",
@@ -81,11 +81,11 @@
     },
     {
       "file": "l10n/generated/it.json",
-      "sha256": "d64c6bb0b6c0e2bad77483e32e5969dcc7366dda730494689f47be04d0a09578"
+      "sha256": "2a1bf0ba2ed503c46a7e65bfff1609f24a27567201dc6b489625d9616944a09d"
     },
     {
       "file": "l10n/generated/ja.catalog.json",
-      "sha256": "e0525c9d574011343bf2057353dd043e4a3723548f8bacc3bd93f4bb38ad5958"
+      "sha256": "d84eb079852fe8fe3a98946a7489bff5f50e1db7a65187d770a08f3db858f90d"
     },
     {
       "file": "l10n/generated/ja.derived-sitemap.json",
@@ -93,11 +93,11 @@
     },
     {
       "file": "l10n/generated/ja.json",
-      "sha256": "3298bd09069fe0afa299cab406dfc220ed6a9d9d428019af72e0a6aace4936ba"
+      "sha256": "11bb5afe7128752874c090548490699eebc0027d453385c54a1a4d4cc00ff109"
     },
     {
       "file": "l10n/generated/ko.catalog.json",
-      "sha256": "3689ee109f7ea040a4bbfd3822ee32117c500ceaa7f275f2f0e0432a33d62bdd"
+      "sha256": "2ec5a8e7252afb3fe1309dcf7eeb40428dd2f638ca4b42229e79ce32a32043e1"
     },
     {
       "file": "l10n/generated/ko.derived-sitemap.json",
@@ -105,11 +105,11 @@
     },
     {
       "file": "l10n/generated/ko.json",
-      "sha256": "691692ae8d95bd50a745ff58d54b1b1d07e54dc617a702f437096227026cbe44"
+      "sha256": "d5acc68e41190409d91b1904283e3fb00e01731e2bec6e564ae1e9b3f913cfe5"
     },
     {
       "file": "l10n/generated/nl.catalog.json",
-      "sha256": "b2c3a7c469694788aa0d5b64e7d3e5eb1261735d8ef8843893d301294e1e44a4"
+      "sha256": "c9484389efb9f7cb9b8da545fe17eb0d72b330358bb9aaf9480cada6080b335b"
     },
     {
       "file": "l10n/generated/nl.derived-sitemap.json",
@@ -117,11 +117,11 @@
     },
     {
       "file": "l10n/generated/nl.json",
-      "sha256": "81135324accaf9b73a010fc3708d33f85c4833e0c16fae0df7c573088a12cbab"
+      "sha256": "9b633296d32c4f77418eb81614e8bc87fb0de7b485a8ddf4a03bbc85db16d302"
     },
     {
       "file": "l10n/generated/pt.catalog.json",
-      "sha256": "e05d4792d847bbbdd7f8d2a4a1bd1ed47295c264c0caffb122a802169cb8ec08"
+      "sha256": "848ac34d0663e1a379c49c4ca9ce952ccd50f87d3177382d5987ff5382ae703d"
     },
     {
       "file": "l10n/generated/pt.derived-sitemap.json",
@@ -129,11 +129,11 @@
     },
     {
       "file": "l10n/generated/pt.json",
-      "sha256": "0115be105b736a4097dabe1d3c7b0fbd861f48a3403016d311b65e52ba59719b"
+      "sha256": "3510f0f25e03e97de143ed48d9569acd3d0e34aea004b8d872857aeda58444d4"
     },
     {
       "file": "l10n/generated/ru.catalog.json",
-      "sha256": "d25a5b172285121c45619178c5d8b4c3e2c2bb4acc1336bcefad9120ef982c4b"
+      "sha256": "cb2ac45f44a9b36975600994bdfc325af06f609a2e9ca4b1ba3f7ea4c680f32e"
     },
     {
       "file": "l10n/generated/ru.derived-sitemap.json",
@@ -141,11 +141,11 @@
     },
     {
       "file": "l10n/generated/ru.json",
-      "sha256": "5adc0658a5e1b9bcf04c76dad1e6f40a41724e930223185edeb1df5df24bf7fd"
+      "sha256": "068e1384e0fab09c289589de2394ecf8a8c84dd423bbef3428bd791008bff6ea"
     },
     {
       "file": "l10n/generated/zh-Hans.catalog.json",
-      "sha256": "485710d68f4a424e571464181098b3307ec4912b332039f0cd6b2b73b0222c70"
+      "sha256": "40f59cde33feda2e546bdc0f3dcba7663ec30798f0b5ebcad42946bb7a02e361"
     },
     {
       "file": "l10n/generated/zh-Hans.derived-sitemap.json",
@@ -153,7 +153,7 @@
     },
     {
       "file": "l10n/generated/zh-Hans.json",
-      "sha256": "19957fabaaf4a2397ba258999c1ebcb91da94b6f9667c652836cd0f8e2aa5487"
+      "sha256": "d5bcf6503a59fe8aa4446087f4b360fe7360942979c9847a22d20d3202e37840"
     },
     {
       "file": "l10n/routes.json",
@@ -745,11 +745,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-      "sha256": "8b0ac7fa837eff5c498f720bf1b1ca2b7c227903df1c7c9a699ef25d27e50d54"
+      "sha256": "5160d276c6ff190835afb10c636727d937d739feffa10f862910c1ab7174e000"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-      "sha256": "428e2255a6c59f25d04959c3f752728647490d8546a57bcde251d8861ea08b64"
+      "sha256": "904f554c27ec7e0cd77a6c533ae0cf3fd3d86155c4a3e0539a00ba5a82fc616d"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-enquiry-desktop.json",
@@ -961,11 +961,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-preventive-regenerative-desktop.json",
-      "sha256": "2392de74fa5c074777ccd5ecf2bb5e0d8baf0092c346c33db4eaf38d8f2c196d"
+      "sha256": "302e996b545fda76c68203d1feebc60710e96fcc4588aa0eec4b7bc26b44e524"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-preventive-regenerative-mobile.json",
-      "sha256": "c33c696cf19bfd6b263c57567607f0be3ed848000388ff1898d90433665f8ff8"
+      "sha256": "1038d88eb868d413183958afbd053c852e88c49f3c60c05b149879f2804b043a"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-psoriasis-desktop.json",
@@ -1073,11 +1073,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-weight-loss-programme-desktop.json",
-      "sha256": "1e0d8dbd2b6842c6e71e2ba5f22047e3149804e600f7c877d199986d59824be8"
+      "sha256": "c179ba3b1f18d0f23052e181e70eb0adff85d4182ec829b608a497df663a7702"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-weight-loss-programme-mobile.json",
-      "sha256": "8c2731329c21c216c8ae60220d73351b895c7a5513cb8ce785fdace9a2d2dfdd"
+      "sha256": "008bb4e579625b62bb2e191e3939a5824b73a5a3c9dc39de686e3239f59975c7"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-wellness-programs-desktop.json",
@@ -1089,11 +1089,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-womens-hormonal-balance-desktop.json",
-      "sha256": "60c43cef620df4588f05b2ac43629907daacb92ca4d3b7a77cec9e229b82dcb8"
+      "sha256": "51a19473e3a3fef106f3ec1d64d8eb11df8d9407267fc3398d8a337d15ed290a"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-womens-hormonal-balance-mobile.json",
-      "sha256": "7db580206176af3f2c35951448265916402f75e9e8d85b095ab9903f2e8266c7"
+      "sha256": "65a94dad369e00275b988b00f8aaf15e4fdfe28eb33accdff1f860cb83782f69"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-yala-2018-retreat-desktop.json",
@@ -1105,11 +1105,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-yoga-and-meditation-package-desktop.json",
-      "sha256": "c1a3e8a38fdcdc3ede136e684ee7ae44196f60787f712d22eab369b6c3cdb944"
+      "sha256": "aac10607d16522535b25132bf7a7fa31e379e84df16c0bc5925785979679e2a8"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-yoga-and-meditation-package-mobile.json",
-      "sha256": "7f0f34d2724147841d06a71bba1a2fd996433608c81616ad1fb73d8a80deeb2a"
+      "sha256": "e568e1d112f8c72bed9fe389c7e24f2686b3f49701fc5d41c1d08d3bbc6b47ee"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-yoga-meditation-program-desktop.json",
@@ -1145,11 +1145,11 @@
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-yoga-stress-reset-desktop.json",
-      "sha256": "a4f28cbdd0660858c298b7ec62172811e83f2431616904bf6bf92ebef2658078"
+      "sha256": "0b4e14143bf3694b6c59960c334d8a1432af3b138c30eb47b6b14add5a0c3579"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-page-yoga-stress-reset-mobile.json",
-      "sha256": "ec6921ac57b9104900b6676673d4efcc62cd716f758edef1c9f497122963d5ff"
+      "sha256": "b6536e82374502cee34e7be5d044e707da31715eb321094a5beb590fb0a05497"
     },
     {
       "file": "public/ahv/l10n/ar/views/ahv-template-attractions-by-distance-desktop.json",
@@ -1805,11 +1805,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-      "sha256": "15edfcbed1a4859c6b52adf81cf0ed8eadf313fa11ccc9af138a6751d84f821c"
+      "sha256": "89a522f9d9e6c4703693a84a131e3a562dbf081bef7a87f22c8531733a0c6603"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-      "sha256": "df157579ccad83854a6f98332ce0bd45905129b175b36d5bfccf81a6a9dd6c55"
+      "sha256": "0c2e88e15502904e0a6ab89d79c1dd7f4d449b28a99f1bdc2b146e7db03d4320"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-enquiry-desktop.json",
@@ -2021,11 +2021,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-preventive-regenerative-desktop.json",
-      "sha256": "1ca6d1b6b97482f9f65983343ae85fe58abb431d511f1bc6e9082b10bcab5434"
+      "sha256": "6e86eea395e2efec13f14d33a12dffe1ac2db90ce79a7e7377cf5fcf2392fb75"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-preventive-regenerative-mobile.json",
-      "sha256": "dc94d0da2bb204c4bc8581867faf5cec828e4bb33c1a128cf9be353146a072eb"
+      "sha256": "e3d407c11d252e082d4640adaf052c39dab4428f5ce0029d977ce6096c4aff36"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-psoriasis-desktop.json",
@@ -2133,11 +2133,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-weight-loss-programme-desktop.json",
-      "sha256": "51aef6abaceb3fdadee18b722954a1f53356bf460ce40ec3953fa979fc8810b4"
+      "sha256": "4411f825b08471665a92854d77daa67dc4db341b0d2ddddcead73db59b2d07df"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-weight-loss-programme-mobile.json",
-      "sha256": "eac0216f74125889bf06b9d1fabda280c63f002968d1f82d6cf7aef46607d1fc"
+      "sha256": "52cd6c33e7dd72f644aeae7110b7e6f5cde14f6205d2126639a7d9b3296d7e03"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-wellness-programs-desktop.json",
@@ -2149,11 +2149,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-womens-hormonal-balance-desktop.json",
-      "sha256": "05916d9dcdc51e42735f48f984a5a2f15f7b8d7a8575270d5bac12a6f676eb9a"
+      "sha256": "5ffe6a47feabbb50463ffc1aca83ed3273f8e4e7f73e5978998d62fd37195780"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-womens-hormonal-balance-mobile.json",
-      "sha256": "4654d1f069ba560496efca8f93488d56af249e349ef6af79ce0fd9982cd9e29a"
+      "sha256": "305eb93232e07853ad686f051f2802e9aab42d542d835082e8ac2f7db5e6c6a8"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-yala-2018-retreat-desktop.json",
@@ -2165,11 +2165,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-yoga-and-meditation-package-desktop.json",
-      "sha256": "604809b0284eb84907d72c12521b75828eba05aa82150c244b058030d6c6d88a"
+      "sha256": "0a01f3fc9d97170269809e49f5a3112364fe78cc639dfc960239e1cbef0dc856"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-yoga-and-meditation-package-mobile.json",
-      "sha256": "dd9e2baefd437bf18839aed0f1d69f90793238b260967c4f25685af9728dc541"
+      "sha256": "af5fdc11973beb28269f1d998a27791515bb0e255f0817a59e6e50e8a3c3e67d"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-yoga-meditation-program-desktop.json",
@@ -2205,11 +2205,11 @@
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-yoga-stress-reset-desktop.json",
-      "sha256": "881bfd3918fcb8557f32d5d0c02bf37bd51ddfe2f4b84b172b44d434a236dcc1"
+      "sha256": "ade9411d0c265d36fea8bdfd3a6c13fd5d800bb7f8c43589b58ca7825448f1a0"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-page-yoga-stress-reset-mobile.json",
-      "sha256": "1047848a3c1af9828f9adc786c24aceff2ff2eb70e7ee2da61894a624d82152f"
+      "sha256": "e4531a941c30daa8389791e81bca52d0466272b30dc25ac6e3c8dd418b4c600d"
     },
     {
       "file": "public/ahv/l10n/de/views/ahv-template-attractions-by-distance-desktop.json",
@@ -2861,11 +2861,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-      "sha256": "760fb201cb2acb105b7d38dc66d4c6351543d21634bf9f8007ddd032dbb06ba4"
+      "sha256": "a9b5ce237249df12cd06801822ea232a37e15d473cfb7129d58b7707c4018d19"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-      "sha256": "d6f3dc548a7c0d687db0d70eeeca2bbb1ac835ccf2e63b1b4049f264bc90cb9b"
+      "sha256": "cb516dd16d579546748dbb05008a341689956dddc0319e1e405a8cb503e54e5e"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-enquiry-desktop.json",
@@ -3077,11 +3077,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-preventive-regenerative-desktop.json",
-      "sha256": "15ffc8854aef39cffbdd8a8133faf6671a8e5677933b9c91a4440c02ad43bc5b"
+      "sha256": "30fac602ccf5b7f6b96c2438aeda441601c8a009781efcac96859166bfbb9203"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-preventive-regenerative-mobile.json",
-      "sha256": "023983db3ab08323a07d000618832c8f640f5f34f04698c31bcae8e00ed0af38"
+      "sha256": "98b86eed95119e7002cecd252d2bf0a4ff2a649fb4bcc3d16f10f3d577b04e2b"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-psoriasis-desktop.json",
@@ -3189,11 +3189,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-weight-loss-programme-desktop.json",
-      "sha256": "6c02daa8f6a595dbefae1b4872a7ea3c5fced0ece2269f6dbd6af91c4efcdee1"
+      "sha256": "660e1f9fc5766f5eae000102c6783b7d5fdbee01e48f222b9e10c3f31e1f4783"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-weight-loss-programme-mobile.json",
-      "sha256": "b92e7c9baf6775904bd633941a27247b76a118f3a8736c882a4b0d072b60bc55"
+      "sha256": "85632f03afaffe1a993c91ebc26a1f077df836be007620f23aa2b4e4575ae73e"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-wellness-programs-desktop.json",
@@ -3205,11 +3205,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-womens-hormonal-balance-desktop.json",
-      "sha256": "f3e0a210a1840a62ff954ef73395a06eb521333a27aa4ffe2ba88dfe7e6b98de"
+      "sha256": "06e865224b7a76e22b210a7cf302b407e1753b7e380c6cc8a89a87ca0350436c"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-womens-hormonal-balance-mobile.json",
-      "sha256": "aa70e0ebb15b6f1ea58c7537aec8bc88eaaa457a2ba6301cd177ceb59666126c"
+      "sha256": "93441658d3b219767c51e1c0f4573d33532f77f15a32c3d2544cd9f73603382a"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-yala-2018-retreat-desktop.json",
@@ -3221,11 +3221,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-yoga-and-meditation-package-desktop.json",
-      "sha256": "c355ebba22810b340138906e7facfe0999d839072b80c8aee6d1bd9d95156d56"
+      "sha256": "4f5a4ab146450cc2fe8d16e5bcd6c61f6ac1433dce21de81c259c63d37c57691"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-yoga-and-meditation-package-mobile.json",
-      "sha256": "f3787921973e6ef51c40894a0b76e42286d57cdde0cdd5365dafb205c9c444a2"
+      "sha256": "5f5ec72499e7c949672f717ac12d2c09b63497972d86bbf3fb386e8c658ddaa9"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-yoga-meditation-program-desktop.json",
@@ -3261,11 +3261,11 @@
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-yoga-stress-reset-desktop.json",
-      "sha256": "595634bd735dd4d428d79095a9ea10e69bb4e07f77e497d0641bc166f04266b4"
+      "sha256": "f004c9783841c04635ccd1d64624079183f06be346c4b191ee6883649bd81ec6"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-page-yoga-stress-reset-mobile.json",
-      "sha256": "21b955a3d33b7b6c7472272f3d00b73c796a4831087ce62653e3f2846e4069a9"
+      "sha256": "40de434cc89b07505d882243e1ab596d0cbbecaca156adefde0b990fdd0475d7"
     },
     {
       "file": "public/ahv/l10n/es/views/ahv-template-attractions-by-distance-desktop.json",
@@ -3917,11 +3917,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-      "sha256": "a5864b736b9225f4da70ffd9c68e0c8f71f7da7bb9112fa806696921faffe536"
+      "sha256": "f1faa2e4ff2d1bf500a45dfeab62a6642ea3c377f9aa053d084479a386305d11"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-      "sha256": "e086c9315d612b720df83e86747dc1c3be5805598842923b5de3aaee3c47c852"
+      "sha256": "e109c427a4ed908e21dcf1cf7018e00b54e05f0fa3faaaf25a975fed41296e29"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-enquiry-desktop.json",
@@ -4133,11 +4133,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-preventive-regenerative-desktop.json",
-      "sha256": "d84a3f3e675615dd107774497f17a2745c4f810ec87094be86c1e821b5dc2b3e"
+      "sha256": "2295fbad873748a078b92d4c95af70c97ad13277f054f6ddd0858dca05139d93"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-preventive-regenerative-mobile.json",
-      "sha256": "c87f0d639f105cd550e1d885d7fb4ddffc8aff3faa25a4f2065a0fd60f8289f0"
+      "sha256": "8a1cbee579c38b12ce508f898bb6cff85d23de0f53c4a07cafc535a9b57fc18e"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-psoriasis-desktop.json",
@@ -4245,11 +4245,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-weight-loss-programme-desktop.json",
-      "sha256": "d95b1fd2310bc486e50a811f72034fb848afecf86e77d6d90e98d2a105614aab"
+      "sha256": "9a815b359f499bd62684c6dfd8ea0c400b40a75d784bc24de395d833b374be71"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-weight-loss-programme-mobile.json",
-      "sha256": "d896397fb8c9c543547fa0eac4ff9357b9c6dedf5c1c575b8e226fc83b083ec4"
+      "sha256": "7043fb332a25b88c05f84c4fea826453f25b0f1b47117e613647ccabea39d633"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-wellness-programs-desktop.json",
@@ -4261,11 +4261,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-womens-hormonal-balance-desktop.json",
-      "sha256": "8d12ca491afb345a36f92d573e2e26d7aef2e784a71eafa39a2eca84d7d73e8e"
+      "sha256": "d7924ceaf9d80abc390d4d36db44be591b49b51f54aa8d1939ce316e1ca04803"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-womens-hormonal-balance-mobile.json",
-      "sha256": "a7b7cd67d70011266aa555ad75bbdc8bf4d4e778f42c6e2954d8e8f4726badf4"
+      "sha256": "e1f738576d06ea80b8db5d50961c02f5925eea033ff8f52c52a088c021261ec1"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-yala-2018-retreat-desktop.json",
@@ -4277,11 +4277,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-yoga-and-meditation-package-desktop.json",
-      "sha256": "f8f0a2d5ed72d7102016d895bd611239bf1299528263d453deb504aa75a410cb"
+      "sha256": "5b91f0e4933c91ec63ae19cbf9ab5d72bea41046841dc6746ec7ea069796fcd4"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-yoga-and-meditation-package-mobile.json",
-      "sha256": "86c859a883e0f3c454131faf135eaedd88a7f41fbb43ab82b9061925ace595a0"
+      "sha256": "c47e2e0a812e6b1d0bb4aae212f28a3053c376c3938e087de652a19df9c1d726"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-yoga-meditation-program-desktop.json",
@@ -4317,11 +4317,11 @@
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-yoga-stress-reset-desktop.json",
-      "sha256": "df9a90ec2d7343b7d8e14ca30e52cb571d98c59e606ba24084ec8bff8375b495"
+      "sha256": "47c4daf7c6287e6240fcf9a0965167072ec0b175f9ed9068b87c08765b32c0a7"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-page-yoga-stress-reset-mobile.json",
-      "sha256": "ac16b388fa51fc4627d76873054b15914b666e86712557d00e54769f0e9f79e2"
+      "sha256": "f6a599cd4cd04bd5d83e1a3768f639ec43e57e9a1a186459addb7f2e26290d41"
     },
     {
       "file": "public/ahv/l10n/fr/views/ahv-template-attractions-by-distance-desktop.json",
@@ -4973,11 +4973,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-      "sha256": "85d76ef1c01c9c4cd81310dc3b7ce335450744a13c83fb95184e38b64be628ff"
+      "sha256": "5e3c82782461ccc5143d9956db143a69198f9d63a2f742ebd1b01bab115ca25a"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-      "sha256": "c3db0475214f5dd79c0d5c629c7b8483ac4c017995d47e84ca24afb989aa76ae"
+      "sha256": "bddb846a0c6d64eb7b67a2db89dfe0fc682b9792e4b38c0c296c467b07e71182"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-enquiry-desktop.json",
@@ -5189,11 +5189,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-preventive-regenerative-desktop.json",
-      "sha256": "89eb33ae82a7def27db65c1ba1a3da305ce4d2a48c59b04b6d654e15e101d237"
+      "sha256": "8d6217648337d03223b65134c3672d11f583e65d6943f72905c60206f71e0c4a"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-preventive-regenerative-mobile.json",
-      "sha256": "7f741d4d0f2b49f6254aa37f364a8e6ec71b8a1ccc735ed4ee2a1c3ac50e50e1"
+      "sha256": "8d5cfa51bee2dd86d8d701b298c6c597d9877e6a1e6e9f82cd1881c5a57be84d"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-psoriasis-desktop.json",
@@ -5301,11 +5301,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-weight-loss-programme-desktop.json",
-      "sha256": "1edbc6ef10cf62b178d5e595d38e51a06d5dd43e7044235d80f28e41ab9a49ba"
+      "sha256": "da8b245e35a1fb7deda95886a576ee5b213214b4e532ea430c6785a447cd5b70"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-weight-loss-programme-mobile.json",
-      "sha256": "2c79fc18d9bd585ff30136e06c5dbe75e4599f9e8524c5a9654a0c437adb15b5"
+      "sha256": "2214fd75f12918e7fe57374db076b78f3ce69ccfdc172569bc98adc29f20fadc"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-wellness-programs-desktop.json",
@@ -5317,11 +5317,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-womens-hormonal-balance-desktop.json",
-      "sha256": "522536b3454068f9c9ccb6d7c99cc52dd1d7bfd8c478fbfa378fa20bc5336fdf"
+      "sha256": "a198ae16fb578aabd5bf5e5f88d276ce8c52de2a5851bfdc2936a90faf47455c"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-womens-hormonal-balance-mobile.json",
-      "sha256": "708c4cbe1f37ad4e6c0d02353ad1ecefe87759cd7da95a9e9b6600a6b423a3f7"
+      "sha256": "41e9721dd8bfe265670c606ee63fffd074a2442bc339705d8e2ffd2b705df57e"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-yala-2018-retreat-desktop.json",
@@ -5333,11 +5333,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-yoga-and-meditation-package-desktop.json",
-      "sha256": "3b872d5fccc517e4fc733da4c744e2ce8b497f0f791fb271d294dd40c401dcac"
+      "sha256": "5dffae4cce22614e1a8aeaa99f3aa37a9cb32ce7302ca7749a403da6108d10f9"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-yoga-and-meditation-package-mobile.json",
-      "sha256": "5387b8c3ea2adabaf2f68743cca703dff50cd2a2ba4e329698e28eb4c95bb2f3"
+      "sha256": "ae655ce77ad3c5006cdb49a059d4ab65f68bcc73e354a2c2f1966f951e4fc613"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-yoga-meditation-program-desktop.json",
@@ -5373,11 +5373,11 @@
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-yoga-stress-reset-desktop.json",
-      "sha256": "d610c4d3fc8e6b78a3784ce3a596a0b959df5ab1422c30fbf5e0a8fea1941aa2"
+      "sha256": "42f822c4f408a717a823f9abf03e8604e4347b1d316fd388662f927db10f72e9"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-page-yoga-stress-reset-mobile.json",
-      "sha256": "3eb40cecf1cf8f30b10bf5a166d0d434771f63656a7570f8e5ec542e5d2fa021"
+      "sha256": "541929d5d12036c7224c24b21f630f4d99ea5d9026b805d57391e53feb42ae72"
     },
     {
       "file": "public/ahv/l10n/hi/views/ahv-template-attractions-by-distance-desktop.json",
@@ -6029,11 +6029,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-      "sha256": "cc7102066a209ba8035679d1714d985fa92a3de75b95f71f9bceddb9d12fa896"
+      "sha256": "789cc179c42b4408744c6f730f0559990420c338b2c44b36c870c96539021107"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-      "sha256": "b965aff90b4c1aed714ae52d1fc7625112eb74d09115a034603218d1aa62d985"
+      "sha256": "161d53f283659d540491ed1b1c638a0eeb1a2f93e1434e30633aeccbc17951e3"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-enquiry-desktop.json",
@@ -6245,11 +6245,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-preventive-regenerative-desktop.json",
-      "sha256": "e3befdb747f452f6b8002793f85a12f1def8e61e22cbb376b89d4bab70c55d1d"
+      "sha256": "bfc9eae26f89b93d742191074c5565634b4bc30cebd0f4cbdc35859e993b02fe"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-preventive-regenerative-mobile.json",
-      "sha256": "134deee791a1077b61fd08544b8eeb5bdb2c798597d72fbc33bacfa16307db65"
+      "sha256": "2ebb69fc5c52b6e123230d4b36c85dbca9c1ba6718def058e397c00c7069349a"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-psoriasis-desktop.json",
@@ -6357,11 +6357,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-weight-loss-programme-desktop.json",
-      "sha256": "18021edd21073b51cd4a28a1d977297a62a28405074c467f7f42415aa0b364a9"
+      "sha256": "bc675040da350072fbb72ae162d986c3c5d78c142d3d1da14585f2d7d1580737"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-weight-loss-programme-mobile.json",
-      "sha256": "f1c817d11712294be3aff14c1917f26709f652feba12448ab8e224a3f7ec29d6"
+      "sha256": "d6a86d41d8f1adfe53a68b460aa2d1edfa048c7473e1edb5da7ffabe94aeb2c6"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-wellness-programs-desktop.json",
@@ -6373,11 +6373,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-womens-hormonal-balance-desktop.json",
-      "sha256": "b23697bfc9c222e2f72d7f4457224e435e96e3621123b7d2039045fb822b6dce"
+      "sha256": "334e522371af36512c4e71509739552eeccf5adf12c3c487b2f59332e0b7b645"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-womens-hormonal-balance-mobile.json",
-      "sha256": "f5dc3cc4c217ec40fd60c0f2424f67d42d22e54ce126d3a9a79edb1df710bcc8"
+      "sha256": "c752ea2f9bc11683c05ddd383b461d73d4539da52d2be5b6e51282aca2fc5978"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-yala-2018-retreat-desktop.json",
@@ -6389,11 +6389,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-yoga-and-meditation-package-desktop.json",
-      "sha256": "8d3f64dc1e96e26651aadad4b04d1c5209eeca5bb47f7fdbaa29e3effcb6d212"
+      "sha256": "6b4c04f9231cdf1839bc439c6c8c8a26895de1dd8e54d0db2e6ca89117d5599d"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-yoga-and-meditation-package-mobile.json",
-      "sha256": "35df1ddf49d476b1ea4bf6bbdc87905f02571068ecfde1d4b65dd63e1d4dba69"
+      "sha256": "3664a6130e89d06ed0bab97261639c17a7914d1363e32fb2ea91603f44fceb5e"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-yoga-meditation-program-desktop.json",
@@ -6429,11 +6429,11 @@
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-yoga-stress-reset-desktop.json",
-      "sha256": "719074f83a391ad0230b868e87444c885dfd8ede6f42c87c932b465d5138cedc"
+      "sha256": "751fc5b6b92f40316f6b1027a71c2b60cf4c466fed1393fa2736f3f3db75cf28"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-page-yoga-stress-reset-mobile.json",
-      "sha256": "cc483c41be8fed2c9d70041f1ba3a937646fdd057f58278fbe20b3ad356a2634"
+      "sha256": "c9668d9c04310f72cf5414a460686d792ebde44ad72a789fb784a464239f7f36"
     },
     {
       "file": "public/ahv/l10n/it/views/ahv-template-attractions-by-distance-desktop.json",
@@ -7085,11 +7085,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-      "sha256": "37da98dbb350979976f8c0ed972f9dc7adabc84fccc0ff7c62deb7fa17545079"
+      "sha256": "882cf32c1e02162ce95fc1c6a9cceb8ad1491173820108cd03d14ccfab3d8de3"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-      "sha256": "3500db0dcf5451b0a80a018501cfe3e875a5cf9ecba92d9162a2a86acbb910f4"
+      "sha256": "56279c3faede08b987b4e4b2ffe4199e17749821f1f936c5562d6eaaa85dbf2b"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-enquiry-desktop.json",
@@ -7301,11 +7301,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-preventive-regenerative-desktop.json",
-      "sha256": "89b4f14116b579618db3b79a3dd58aafb11efab7a555f9864ca77f4627e5906a"
+      "sha256": "e0d71c815a9325b7663848b9dcdf7daac7cad3adb739f8e2ef4e491e86a9ef3b"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-preventive-regenerative-mobile.json",
-      "sha256": "1788d412835876709dffa9776e166e2bc47343a73da34f2fa57d6e28eb86b8d3"
+      "sha256": "da1d811ccbda7906bb93ba24a3f01610746f5d1e77743a654450a51aa5caf668"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-psoriasis-desktop.json",
@@ -7413,11 +7413,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-weight-loss-programme-desktop.json",
-      "sha256": "72d060f9aaec98deb9aec8eb4ccd2f615c5b7a678a144ee4c7541e320d7dcd5f"
+      "sha256": "c69d6b9ee01345a4924436a0f31f7ac9a3160bc9fb2a572a20eca5cd5f55e99c"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-weight-loss-programme-mobile.json",
-      "sha256": "a792f667c804c44f6ccb584d021daf046ba635e606bc4c03ed3c386bdaafd3f3"
+      "sha256": "e86453522ee6923387a516fd8dfd18a5e6d48ebc192e04abc23812879b64e54b"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-wellness-programs-desktop.json",
@@ -7429,11 +7429,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-womens-hormonal-balance-desktop.json",
-      "sha256": "a897d19398e6aaa52e6bfa0b253bdd5d3dd2c4e6a431f95ba2fc96280021ea12"
+      "sha256": "71e0d7117f5ac12d3416f4f7468fbf456372afe785b99240387f698e29bed284"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-womens-hormonal-balance-mobile.json",
-      "sha256": "b5520a31b09edcdb0a5f5ec3947d66e5cdf52c3d4eedb4151d245599a8c87a77"
+      "sha256": "3d8a64dff1ebd3aa4c663c868869058e61c6d472ca0d9c4269c50edc82ee0eb8"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-yala-2018-retreat-desktop.json",
@@ -7445,11 +7445,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-yoga-and-meditation-package-desktop.json",
-      "sha256": "3a619308d29f964321166825a49726bba6491a66aab8dab588708760a7899c0a"
+      "sha256": "db5a20f4fd34b475f5cc5048c79aca573e36ae27bddc4ca03cd81ba719d4c015"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-yoga-and-meditation-package-mobile.json",
-      "sha256": "8cd1c632105ea9b1741d2681a0ffb475da57a29f7db9bc6589b655a8d655b4ce"
+      "sha256": "ab62b8fb3f52a3b1a8b3ae03621ca5ab3949d5dc4eb402340837f74fba21c5b2"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-yoga-meditation-program-desktop.json",
@@ -7485,11 +7485,11 @@
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-yoga-stress-reset-desktop.json",
-      "sha256": "219451977e41e7166febe5d1aaaf2b76bdd48a383107dda00e3fbd531635d88d"
+      "sha256": "e3242e692cf73364d8ad2cf599b00bd48c9a74221f6e79b34ac431c478a7cf1f"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-page-yoga-stress-reset-mobile.json",
-      "sha256": "d66175f0261be7e36b3178db7d38dab8159fcfcdc6859fa58ec34d4ec85d3902"
+      "sha256": "b5a5cfc80229e434a0588205f1fc19832d236d7dbde8ce260c90c5a4feb626ab"
     },
     {
       "file": "public/ahv/l10n/ja/views/ahv-template-attractions-by-distance-desktop.json",
@@ -8141,11 +8141,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-      "sha256": "b62875a3a1ea006015c2a74598df8a5f1dd5d0e80d7d66bf5118e2819ef4f6d7"
+      "sha256": "8884180dd83ca52e39672d11575052fa5bcc995b969d946735c9691eb16b3141"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-      "sha256": "59320b6960e7e6c09772edf837cc972463afb36e95b9f071e86004d962568c7c"
+      "sha256": "8770627c0e4a17422f2f7fc37f802e53d3a70b314db41d60419c54ad467e4c85"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-enquiry-desktop.json",
@@ -8357,11 +8357,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-preventive-regenerative-desktop.json",
-      "sha256": "89d38b5bf5ea8c02dd71712087fe4acc6b55ff8383356848d79367432161ab68"
+      "sha256": "f26e586efa0b2bdff44483b2a5f7a835abcca6bd756822c2abedf0fa98d38827"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-preventive-regenerative-mobile.json",
-      "sha256": "887392dc54017d9c7fd554ebd5a0110bd68e7a86cd3d1ec0aaad7e8f1bbe2e7d"
+      "sha256": "45349e5e2273442a6df540ed35274a4ced0a86cdec0ae0f9d7f362cbb3acc32c"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-psoriasis-desktop.json",
@@ -8469,11 +8469,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-weight-loss-programme-desktop.json",
-      "sha256": "9be636a58cd1ec8deabb9b5d55978ed810a600b24aa40e664d7ad15690cde94c"
+      "sha256": "688caffcd0562c7f290a36f9ffd60890a5938d4cb3c04fd8446c69e9f69dcfac"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-weight-loss-programme-mobile.json",
-      "sha256": "7bbad33ac825466e883b3304aa567660e1d38732835d6a73f02698b640dd029d"
+      "sha256": "ab9a9a62b4f05d592ac93733d3a90e6f4cfc740d6d42714712fb7669444b3cc7"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-wellness-programs-desktop.json",
@@ -8485,11 +8485,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-womens-hormonal-balance-desktop.json",
-      "sha256": "b96e78b6cd67171d9cd2ff1c7f86149be0a12a32b648d24b5232e329d1630c0c"
+      "sha256": "8ec1d504bc7ed9eff4bf9f966514246307c9a46b18945685a081f071f6316f56"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-womens-hormonal-balance-mobile.json",
-      "sha256": "48bdfcd96121f633c108fa624b9bcff249ba8587d25584aa9bf371e8996a39d6"
+      "sha256": "736ffeca38e62fa593274510a6a6b950dd18590bddac1b3929c12eed5916fb18"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-yala-2018-retreat-desktop.json",
@@ -8501,11 +8501,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-yoga-and-meditation-package-desktop.json",
-      "sha256": "aa2d1ed4700580700a150aad37367fd5fe69571465502ae949691c51f5625111"
+      "sha256": "9565a996b322dc83036e2fc11b05ee4ae47c837202cc3c79eef6821ede5b85a5"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-yoga-and-meditation-package-mobile.json",
-      "sha256": "738dd9b91f622a9a8b98f405e3b7d3a7db7a70dd4c7b7126d8fbdaf1f2b13254"
+      "sha256": "91941949991159f77a0972e7f06732724e628075dc266e6fe5c242a3ac59ba64"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-yoga-meditation-program-desktop.json",
@@ -8541,11 +8541,11 @@
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-yoga-stress-reset-desktop.json",
-      "sha256": "494f676144f46c8e33900603f8d5d5cd13f3f835287fc23e57607e351c6f223d"
+      "sha256": "b70bd1bdf240326fdc879c9725a55d04cf4bb283dc6c849bcff937847d65d714"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-page-yoga-stress-reset-mobile.json",
-      "sha256": "bbffac53cd1593154d9c21bd90f76b1dee5bf9a3ac3e623addb25f44fe5255e5"
+      "sha256": "982d54e63abb3321794e165f75df430a0f88703a651dcbbd05acb61c0d833ae0"
     },
     {
       "file": "public/ahv/l10n/ko/views/ahv-template-attractions-by-distance-desktop.json",
@@ -9197,11 +9197,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-      "sha256": "54306c05b331daa8bc6b18f04d95fcc7a863dab681f398ec2884d2ace28fbe56"
+      "sha256": "2f8f413365e8804cd8a9bd7fdf1e2940256db32ca2572e9033518450051f59d7"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-      "sha256": "37ab3411f45f7d58af1ba707c69c247778872db3b07971d9160776149be2b8e0"
+      "sha256": "e58dab319d46a3fd7dd94330bbf61515242280e1a388a66535bb56ee12377658"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-enquiry-desktop.json",
@@ -9413,11 +9413,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-preventive-regenerative-desktop.json",
-      "sha256": "62bf7c397de6ddff64f53b1d27c46f26eed796e5c37abaeb49f7f43081e3079c"
+      "sha256": "bbce6ebff85d1166896a223d7fa16186624e787f2cb8fd1eef1d69ae2ab36283"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-preventive-regenerative-mobile.json",
-      "sha256": "823addd0140955dea76b9202cb3bbadf0701d1680321de269cb0cf8a98c0aa6e"
+      "sha256": "a5b70f60bb4e480dfb6f6d86b3108d941cd7e021d487c8eb9cd2b5590fc34045"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-psoriasis-desktop.json",
@@ -9525,11 +9525,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-weight-loss-programme-desktop.json",
-      "sha256": "4e5432f0cc82d1b1464bb92bfca935b12c15045ee906c8d797ecda7a42ecded7"
+      "sha256": "aefb8eb1f1fb5c38118e82891444c9df55484705f5f6881e7c3f69c4b5bda344"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-weight-loss-programme-mobile.json",
-      "sha256": "8fb8a56648a0bd2b62887764d8d88097f3cd4151b3374536f71dd76d7ec9243c"
+      "sha256": "d7b0379c6db84a3db466082ece964d8982e5f7420fee033e153fad8ec34f1d15"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-wellness-programs-desktop.json",
@@ -9541,11 +9541,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-womens-hormonal-balance-desktop.json",
-      "sha256": "dffd2cb2f6f92bdc997c9a5cc34349c59784b7649f36ed9ba2f6136fc65279a4"
+      "sha256": "ea1552d0313e51d5f61162eb8f80b3ad81471225c50c45fc4d54881d8e44f64c"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-womens-hormonal-balance-mobile.json",
-      "sha256": "36a1b29b6b009d6328d7cc976390501d55aafb465ad2f61ec90afb13cc24be01"
+      "sha256": "d08641348311b16d9abff1fca6740a38555026cf87bace9427daa52977856a14"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-yala-2018-retreat-desktop.json",
@@ -9557,11 +9557,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-yoga-and-meditation-package-desktop.json",
-      "sha256": "4effd943bf410dafff2d705cb134d9a34984ce23880f59fc9a269c244638f3e6"
+      "sha256": "acbbf03852c6f682a3d34cefa820c483d82e841c9d5834eb061e554de254140e"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-yoga-and-meditation-package-mobile.json",
-      "sha256": "3158228d36db16fe4133caa59e45084955395b2cc6ec877cae4e6969b572a0f2"
+      "sha256": "2e6275f20bfbc8e6042efd6b11d2f3d15644f5fbcb0877b58700b474f8c984e5"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-yoga-meditation-program-desktop.json",
@@ -9597,11 +9597,11 @@
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-yoga-stress-reset-desktop.json",
-      "sha256": "eebab1b807ba28e14b194148413cd8ab029b4164d5742a6370ed9b9c00fff57d"
+      "sha256": "6b290ff028b7e692517d38fac1e54b11b0b2c8795f02b1ea9b522afd69f085d5"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-page-yoga-stress-reset-mobile.json",
-      "sha256": "63d96708cf48444ed86b9fa9e854420f9137581a9048609f0a856fc7cb48b40a"
+      "sha256": "3430ba6728c7aae1473ef1268f925a68a9ddffe45a9afa047397516564bd080b"
     },
     {
       "file": "public/ahv/l10n/nl/views/ahv-template-attractions-by-distance-desktop.json",
@@ -10253,11 +10253,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-      "sha256": "3b51b495eef69589a164216ba5aab14fb678507f1c88d00d6fb90c7c503bb142"
+      "sha256": "d6bcef9a874d77d0856404b6d112713be1784e66813a81cdb5547c3637d126bb"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-      "sha256": "21a80eea7d771e5eba5ea3fb20f3d6165baf623b4a6aa0667d8140d4474d27c6"
+      "sha256": "2d54eb84386a7e278266c67554b2a6745f5f0ed54b3ffea8fb0793cb3042da84"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-enquiry-desktop.json",
@@ -10469,11 +10469,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-preventive-regenerative-desktop.json",
-      "sha256": "48917643cbfc854ce3b62cf6603aa1efca9982fcdacf778e9cb56f97309e4340"
+      "sha256": "6f0e08e7f20694f4f8243137d825e79dce4eba75661f6913fdcadd88728cab26"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-preventive-regenerative-mobile.json",
-      "sha256": "1c9f132a59dbc0ef55880ffd45726dbd58eccde04dd60054936a0f1491c98304"
+      "sha256": "6193f0a0b4cf41d34ac7a46146beef14ac8d0c60c7922cbae5e37e010a1e7eda"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-psoriasis-desktop.json",
@@ -10581,11 +10581,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-weight-loss-programme-desktop.json",
-      "sha256": "076db0260b9d73cd91fa6ea38b7e74914ac45d0b6d700f72a5928e1e311eb972"
+      "sha256": "13594ac6f42579469cf981a8608f08911c6bf1d086042a86cbcea9bb5d2b5770"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-weight-loss-programme-mobile.json",
-      "sha256": "17047b47b8e282f51f6bcd18ecd67e481a369447d8f25c5ede59699542486e02"
+      "sha256": "1f74e749a7e14db3e4a7559ca7ab1dca43d976d81b6345ae937f974a4f40c83e"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-wellness-programs-desktop.json",
@@ -10597,11 +10597,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-womens-hormonal-balance-desktop.json",
-      "sha256": "8b1a0810f2f49991daaaf6112f9fcc01071107760c30b16cad12740e1b8f966c"
+      "sha256": "e2ee1941caa4c091dbac6b3fbbdb8c93e178c381733ad44e1159ba46b651e3bc"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-womens-hormonal-balance-mobile.json",
-      "sha256": "e010863c42dcce9649888f3de68ed6f5f30737d27ddcc562e86f5b3f5ecd96ee"
+      "sha256": "3df8f24c0f467155c6080113023679ca5b8147751e18aaefbe7193aa6240752e"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-yala-2018-retreat-desktop.json",
@@ -10613,11 +10613,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-yoga-and-meditation-package-desktop.json",
-      "sha256": "3bb1a423b0020f9eda9d29fb599f4ab4f9d6129ff91fa2cf0fe2473a5eceadfc"
+      "sha256": "3a0416d6352c7f2304b25155ebb78f0ceab94aa3bbd831bb5780ae3f1836fe8f"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-yoga-and-meditation-package-mobile.json",
-      "sha256": "bd004eef99389435f8e7be3996e80ff4accb501440e5483f704447641fa19090"
+      "sha256": "83633ccd01e29403486a9c8161b0d53fd6a77f29827cd5aece5d6a7780be99bf"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-yoga-meditation-program-desktop.json",
@@ -10653,11 +10653,11 @@
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-yoga-stress-reset-desktop.json",
-      "sha256": "7eac43cefc4f79b79ad791e8d11c51d102b7e6c544b9999f39a4aee581e78506"
+      "sha256": "b499ba880300eb23a9f28cbcee7418caf5b95a16ff82bde6a83b07d603ea40c2"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-page-yoga-stress-reset-mobile.json",
-      "sha256": "cf233d70861eb6296620cc7ce7f0aeae5c33de152eff92031a8d6427b478d2b2"
+      "sha256": "776eeba5242ddcae5a7c8d9801d63c52f2bbd7b75ae10121f70ea611d71d0cc3"
     },
     {
       "file": "public/ahv/l10n/pt/views/ahv-template-attractions-by-distance-desktop.json",
@@ -11313,11 +11313,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-      "sha256": "604c37e583b4dbbcfae3add2c6f735b0b2f1cc0793c4017ccb56a272fbf09159"
+      "sha256": "5823f654811c5c7211988dfb74653f5d5fd0d4d9bf9973dd5811a61d6c284107"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-      "sha256": "b7a246071dd59c9201baf40fd4d52219777836ea8526a298d2c97b3af36eff80"
+      "sha256": "4cd65501542e7c14720f8d4644619b351d5a1f25e0068a24729e7a5193f1dddb"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-enquiry-desktop.json",
@@ -11529,11 +11529,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-preventive-regenerative-desktop.json",
-      "sha256": "8886bbb1762219ff55341a355105c2cafec2bced7c66c99d804137c14dce4d4a"
+      "sha256": "ddab00412c12ae8cd948f53ce0492cef599c82463b7fd662627583f40888530d"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-preventive-regenerative-mobile.json",
-      "sha256": "92576c3875288c2b9f2dc955740e47f485e444350568e9487026541d9ac79e0f"
+      "sha256": "3da0667826078a83f5e8da5a60fae2ef6b479c878ef496428b20f0a393c4f3ac"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-psoriasis-desktop.json",
@@ -11641,11 +11641,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-weight-loss-programme-desktop.json",
-      "sha256": "59bee619b582701255739ab8d2e5aba39fc15315e168244e74660440a293019f"
+      "sha256": "48d6eaca2011a730c3ce706011b2f1b8464f2ab451482a82d0db9799782de2de"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-weight-loss-programme-mobile.json",
-      "sha256": "5ba47810dbc885d7ffd5c08afa0e27c7bcd1011e4cc475fc5b89806f73ba02cd"
+      "sha256": "5ad23922929628dcc5eb834ed5fc0d9cbaeddbfaea4ddc83c439446487b55673"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-wellness-programs-desktop.json",
@@ -11657,11 +11657,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-womens-hormonal-balance-desktop.json",
-      "sha256": "69f90db31a28ef8b40b6ab3ae30c38d92ef885be06e7adba2ebaceee674e00a6"
+      "sha256": "f77c03c749f84c70b3dde5888ee2a85731a69cdceb7fe2df0476c886df6d308e"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-womens-hormonal-balance-mobile.json",
-      "sha256": "c232feb2b375fe03fc9f0d8912c7b252461189132de73119b72f4988454638ab"
+      "sha256": "f817f8298517c5aca4d78805afba8c63c7d985e060e491140de921f11d18ed7c"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-yala-2018-retreat-desktop.json",
@@ -11673,11 +11673,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-yoga-and-meditation-package-desktop.json",
-      "sha256": "854798ac1dede570f978328d22abcad25ff3734cc71d1e70c672d9e74b0c94fe"
+      "sha256": "ff58d5288afbd301176d18869071983d67bbad791f8fb984af7ea185e9e22c16"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-yoga-and-meditation-package-mobile.json",
-      "sha256": "0de7f7acb4780ca503036e2efda62f7d204c2d298d0e70edf5b92b2e3a91b8a8"
+      "sha256": "b2cd5e4242beb8d23032181ce1ef06af320f4c3df6b0b184cf9f02151d2b80fe"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-yoga-meditation-program-desktop.json",
@@ -11713,11 +11713,11 @@
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-yoga-stress-reset-desktop.json",
-      "sha256": "58d25836a1978754f2adce580594fe4ecdb1f0e8f493080054c80074c7de32d9"
+      "sha256": "6b1f828347c617da926cdf21a0b9981a7645dea61ec136ca31d55d930583ee79"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-page-yoga-stress-reset-mobile.json",
-      "sha256": "0c5d8cf05d3afb2f47c4afa03edd078a5e7a06a078268710434e99e138021040"
+      "sha256": "8d2fca0992ce9642bda6edefedc71b3611d5bea95f19512e8d129d3a5727f8e9"
     },
     {
       "file": "public/ahv/l10n/ru/views/ahv-template-attractions-by-distance-desktop.json",
@@ -12369,11 +12369,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-      "sha256": "178a6807ab675771cb12fb95638d08da20ab8c15e2073f8f7d1731b3f5d121ea"
+      "sha256": "39b7a62038c968ef4d49f3ff39dc479c7eef5af1dc84212a4d0cf22910da634d"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-      "sha256": "12d9820ae0059079437f3583842a4dcfd9467e2eea42437f143f1f36826caba6"
+      "sha256": "9e84ca27bd33c4c6e7d5aea2632e3d960bbb9aa8ec8a54fae6a0adf8f74f4fe5"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-enquiry-desktop.json",
@@ -12585,11 +12585,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-preventive-regenerative-desktop.json",
-      "sha256": "68c3692339a9fc242e622d2f60512b0dfeb794e53515944ff54f8e8ca0eb964a"
+      "sha256": "55144839977fa87b2a1e2a23020b78fa1cac91b25a65495c6b60ec9348e1fd7b"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-preventive-regenerative-mobile.json",
-      "sha256": "ed65f805969f034afa1a316e753b2b00ca8c659258d90ef78c69a26ff5113c7b"
+      "sha256": "521e730ce7f8ef7a053056ff7c944a1828c024aca4b06fec5d54b0b46f159c24"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-psoriasis-desktop.json",
@@ -12697,11 +12697,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-weight-loss-programme-desktop.json",
-      "sha256": "9b2828f78a4e3865adcf3df35d7720251dfc4b626ee5c745f0843430aecaaf86"
+      "sha256": "9a00f1a573275c4a6e58ca16cc9a6ad103c20619d7f516bef58075667e398d19"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-weight-loss-programme-mobile.json",
-      "sha256": "2b12c1cf012e2d522db9e1941fba45198cd9dff5e82c53240efa52522b292f78"
+      "sha256": "2659c738b973c2e81912b0e40840b22161064845d873325c8c80fcfb5754fe27"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-wellness-programs-desktop.json",
@@ -12713,11 +12713,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-womens-hormonal-balance-desktop.json",
-      "sha256": "411d063ee61a92b2151000eb9bdb1ad17ceff9d0a8cc1a0d864201c64e0d5ce4"
+      "sha256": "4bde2598cf811c60bb3a73737282a1d1ae0f2cb52414215ad1672b7a048e18bb"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-womens-hormonal-balance-mobile.json",
-      "sha256": "eea8b91ff7002789d40ab49426178807bf7147a437810800bc0d0e3497cd8932"
+      "sha256": "93325598329c3b902ddb519a774b08ab8c2578d4fdc3ecb2cad4aae703df6d97"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-yala-2018-retreat-desktop.json",
@@ -12729,11 +12729,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-yoga-and-meditation-package-desktop.json",
-      "sha256": "5909793813dbc95c60afe61b8e113782221366329584f8faae9d998c12b8064b"
+      "sha256": "c07780d4288c32d04ce3a524a372e750783ac2e7a36b6582eaf72587ece5888d"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-yoga-and-meditation-package-mobile.json",
-      "sha256": "0fb95849a271127c69e8b7801d8e0e244bd99a12bae21f05c70fb1328859dc43"
+      "sha256": "bf33757d1e98a69ce5aa70e7fb4d948a03e0d218f4369724f7d86692bddfdbb3"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-yoga-meditation-program-desktop.json",
@@ -12769,11 +12769,11 @@
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-yoga-stress-reset-desktop.json",
-      "sha256": "c593fc9c2145846941d12156c4d15a4d149b5a79a405b06a3f0fb30565fc74cc"
+      "sha256": "28023c13281cd4f80b7fe0b47c923045d93e5ecc1b733a600cf50b56db597f31"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-page-yoga-stress-reset-mobile.json",
-      "sha256": "022d9459f089b96d967589285e3060b0399963bea1594603b335a385919dbd61"
+      "sha256": "b0cea0a8da3a8b3aa155540d1eab5ab72c72d8038719f0fc5479c7eb23135208"
     },
     {
       "file": "public/ahv/l10n/zh/views/ahv-template-attractions-by-distance-desktop.json",
@@ -13113,8 +13113,8 @@
     },
     {
       "file": "l10n/prerender/hi/digestive-wellness-gut-health-yoga-therapy.html.gz",
-      "sha256": "dc7257978207fabb0c91ed0df82cdd32f163f003a479a0c4e8d1ddcfc46d54ef",
-      "bytes": 41129
+      "sha256": "b139bd1d1a5904d11a5f54a6c25a21e7fb46ad162da7691af4eb382a67b794ec",
+      "bytes": 40447
     },
     {
       "file": "l10n/prerender/hi/disclaimer.html.gz",
@@ -13498,8 +13498,8 @@
     },
     {
       "file": "l10n/prerender/hi/preventive-and-regenerative-treatment.html.gz",
-      "sha256": "2fbc53956976066ffeda78780bff6330d56f10e79f194d984944f2a6132a94e0",
-      "bytes": 37746
+      "sha256": "a2fb90519732864aaaf9ff3db5f696034fe883156070aeeaad7c8ea733443b0c",
+      "bytes": 37114
     },
     {
       "file": "l10n/prerender/hi/product-gallery.html.gz",
@@ -13743,8 +13743,8 @@
     },
     {
       "file": "l10n/prerender/hi/weight-loss-programme.html.gz",
-      "sha256": "b6e794b26f8e9829015867aea19946c91f9cbd89e7643ac3732a593fdea63052",
-      "bytes": 40830
+      "sha256": "5639b965e94d2e9181aaeded6c282eb0cfbf4c0a2108745743444622950aed59",
+      "bytes": 40146
     },
     {
       "file": "l10n/prerender/hi/wellness-programs.html.gz",
@@ -13793,18 +13793,18 @@
     },
     {
       "file": "l10n/prerender/hi/womens-hormonal-balance-endocrine-therapy.html.gz",
-      "sha256": "ef88dbd7d4c032477e9d28a71a259275fa19a139eae797983a8f87f7ea616689",
-      "bytes": 37684
+      "sha256": "a97ab008463f1f8c648b00009ab1b0b2d5cb2f038b1e6940a7f3241a643be447",
+      "bytes": 37048
     },
     {
       "file": "l10n/prerender/hi/yoga-and-meditation-package.html.gz",
-      "sha256": "368e9ecd39e0754e4582a598bf0cfbaab2cb0521811a509876e6494f5c9a59c0",
-      "bytes": 33794
+      "sha256": "54803eb58e966c6747f8d682655f8ee19b569485a4cd111b13e1e5c44224e733",
+      "bytes": 33442
     },
     {
       "file": "l10n/prerender/hi/yoga-based-stress-energy-reset-program.html.gz",
-      "sha256": "12a6074c8c12cf2f038afcd1029dc8444b78eca6ce721c21dcc6cc1ff4643583",
-      "bytes": 38307
+      "sha256": "6899ec6f2ba17a7d8fee828363f711a529a890bdb088d2459ffe60d08b65d943",
+      "bytes": 37931
     },
     {
       "file": "l10n/prerender/hi/yoga-classes-practical.html.gz",
@@ -13848,7 +13848,7 @@
     },
     {
       "file": "l10n/prerender/hi/index.json",
-      "sha256": "dfed84b959a920353f0c7c4f0af0a407407230ca427562b049bd3dc22a062664",
+      "sha256": "88fee856034c5630684796f47610bcc2052f5aa81bcd011e740f3a84440674d5",
       "bytes": 151572
     },
     {
@@ -14123,8 +14123,8 @@
     },
     {
       "file": "l10n/prerender/de/digestive-wellness-gut-health-yoga-therapy.html.gz",
-      "sha256": "8e6e8816a781d46a98e4c1cb39fcfddcec5576493fcb7a541753963eff458563",
-      "bytes": 38649
+      "sha256": "f3425abcc7fdfd472c4985ad7f0b652613749188ba949bb5b14cf21190e12905",
+      "bytes": 37895
     },
     {
       "file": "l10n/prerender/de/disclaimer.html.gz",
@@ -14508,8 +14508,8 @@
     },
     {
       "file": "l10n/prerender/de/preventive-and-regenerative-treatment.html.gz",
-      "sha256": "3d08fa698f0338af47620a2bbe4a2074951a6bd1c932c8e3d063f2866d0aca4b",
-      "bytes": 35765
+      "sha256": "67e593df9407981d63bf61416ddbb9ea3c9b98a7b5754820bb7a05095e9dd1fa",
+      "bytes": 34994
     },
     {
       "file": "l10n/prerender/de/product-gallery.html.gz",
@@ -14753,8 +14753,8 @@
     },
     {
       "file": "l10n/prerender/de/weight-loss-programme.html.gz",
-      "sha256": "3e26704c73e2619bcdadf4b37234d04300f01c8dcb5d6dafbddf8d1f456f1f70",
-      "bytes": 38348
+      "sha256": "1d553dd0b7c4d15ee31da3ac6494ed1fb7e6d6f66eaf6a6f17a3a5897f968ca3",
+      "bytes": 37582
     },
     {
       "file": "l10n/prerender/de/wellness-programs.html.gz",
@@ -14803,18 +14803,18 @@
     },
     {
       "file": "l10n/prerender/de/womens-hormonal-balance-endocrine-therapy.html.gz",
-      "sha256": "50dbc2b35387086f4d0aab60ef20f9cd44ca9873f44bd96326ee969f6edb2945",
-      "bytes": 35673
+      "sha256": "d2f3e700f7bf4f64296322a05e1b48d3cbe25cd20220dce70aa8f9f8464dcead",
+      "bytes": 34872
     },
     {
       "file": "l10n/prerender/de/yoga-and-meditation-package.html.gz",
-      "sha256": "4b88f55d0cbaf175b9eeb10cd3874610745b2644df51efcf1edbe1bf15a1196a",
-      "bytes": 32043
+      "sha256": "8ed1f181f8b4af2c21975f72863f80fae611906b1545f4a14b0bb8b1ddf8d3db",
+      "bytes": 31584
     },
     {
       "file": "l10n/prerender/de/yoga-based-stress-energy-reset-program.html.gz",
-      "sha256": "4b63bf01b00f0c06cd6d0e90076a7a9019ff2d5540ca8214f4fb07649204818a",
-      "bytes": 36136
+      "sha256": "c7de1b04f842984f5f4850d88e32aa18ca708161450c551fef9b56ba0f7cafe5",
+      "bytes": 35642
     },
     {
       "file": "l10n/prerender/de/yoga-classes-practical.html.gz",
@@ -14858,7 +14858,7 @@
     },
     {
       "file": "l10n/prerender/de/index.json",
-      "sha256": "fe6b3d36aaed8be810883f759938d7391687fab9861a9003c75c87c87c5893ce",
+      "sha256": "c7e668ac2ceafef0e4fe43bab1ca3fc5d5b414fd6d8075231e3f67378d537c0e",
       "bytes": 138069
     },
     {
@@ -15133,8 +15133,8 @@
     },
     {
       "file": "l10n/prerender/fr/digestive-wellness-gut-health-yoga-therapy.html.gz",
-      "sha256": "91d5b46743147c3b4ee5ca55ed5832c08dfd568be21a700973f6877e008c436f",
-      "bytes": 38286
+      "sha256": "6312bfa430541475445ba0236b806bcde0b1cf3ceb7b3491f9eafefa82caa80a",
+      "bytes": 37611
     },
     {
       "file": "l10n/prerender/fr/disclaimer.html.gz",
@@ -15518,8 +15518,8 @@
     },
     {
       "file": "l10n/prerender/fr/preventive-and-regenerative-treatment.html.gz",
-      "sha256": "d4b8d4954690438eb370a370a55832e405c814b2afec3c2246f6cb0a2ab8b4f8",
-      "bytes": 35475
+      "sha256": "3a0112aaaa1a476befa6f904ea6a2cb6cbf4c9f39eac92ee5bff4633a788ae96",
+      "bytes": 34700
     },
     {
       "file": "l10n/prerender/fr/product-gallery.html.gz",
@@ -15763,8 +15763,8 @@
     },
     {
       "file": "l10n/prerender/fr/weight-loss-programme.html.gz",
-      "sha256": "73acac51009b72e5eb21177a985be3a9ad17bb235c1d832368021aaa42cabb7b",
-      "bytes": 38031
+      "sha256": "d208e0508739ebed6844362534f1b9933129c075b90d3f25c855da8bc3cc6fdc",
+      "bytes": 37291
     },
     {
       "file": "l10n/prerender/fr/wellness-programs.html.gz",
@@ -15813,18 +15813,18 @@
     },
     {
       "file": "l10n/prerender/fr/womens-hormonal-balance-endocrine-therapy.html.gz",
-      "sha256": "c56fefab329c976e389400f681d35509ee7418557c537c78a0cdc1f3e91a64c3",
-      "bytes": 35363
+      "sha256": "280a68dce1e4c6bb1bf888ce61e0200db4577ad513ce7f524317a954f430651c",
+      "bytes": 34576
     },
     {
       "file": "l10n/prerender/fr/yoga-and-meditation-package.html.gz",
-      "sha256": "86439b86e5c400808b91ee73fa4b947741592aa84bb368cd91035c8fa1ef81b6",
-      "bytes": 31751
+      "sha256": "7a112a66b1564870fdcc2435d008bb07a9af58387ba37ee3161edbf6e3c19774",
+      "bytes": 31359
     },
     {
       "file": "l10n/prerender/fr/yoga-based-stress-energy-reset-program.html.gz",
-      "sha256": "2b6595242ee01d83f3a8f3d2bcb43faf3b2b80cdf85f1894edeac29b2490b54f",
-      "bytes": 35890
+      "sha256": "563756c05ec18ab1d2e91962bae77c8d23b619e661009bd236bcc253bc9cc46d",
+      "bytes": 35452
     },
     {
       "file": "l10n/prerender/fr/yoga-classes-practical.html.gz",
@@ -15868,7 +15868,7 @@
     },
     {
       "file": "l10n/prerender/fr/index.json",
-      "sha256": "e5970e9573f52a8b5b7b35ce5b0b447134aca0f708a5b2ee056264765be48394",
+      "sha256": "78ce9b4b3ff234db897ed811cd900a7cbb2fbeeb87ac4e3eb32b813412c3a596",
       "bytes": 138908
     },
     {
@@ -16143,8 +16143,8 @@
     },
     {
       "file": "l10n/prerender/es/digestive-wellness-gut-health-yoga-therapy.html.gz",
-      "sha256": "c9cf0b1f3c5afc85647d154ec810def42c7f97bfb67b666ace53c2b9badb23be",
-      "bytes": 37663
+      "sha256": "1c3e7aefe517a706a1ebaadd76e8a0304fc043c6358fb57d73ecdcf6a4357d7b",
+      "bytes": 37014
     },
     {
       "file": "l10n/prerender/es/disclaimer.html.gz",
@@ -16528,8 +16528,8 @@
     },
     {
       "file": "l10n/prerender/es/preventive-and-regenerative-treatment.html.gz",
-      "sha256": "16e2b53ec62a4d8f0d85ceca339bb5ec438a34dbb00478336955f6bd9f20ad22",
-      "bytes": 34815
+      "sha256": "5658053c8b25e9b792a7177b150e977d0c275b2536ef5f00243139420f1b0ac5",
+      "bytes": 34122
     },
     {
       "file": "l10n/prerender/es/product-gallery.html.gz",
@@ -16773,8 +16773,8 @@
     },
     {
       "file": "l10n/prerender/es/weight-loss-programme.html.gz",
-      "sha256": "8421f900c0d3a864871644b192ca2fc9871325ad3769d6ef3c195ad906e7fac6",
-      "bytes": 37426
+      "sha256": "367741396ab516e490de50df2a9a14c2502594e98c41281d3c1a6d4f2d9bb523",
+      "bytes": 36759
     },
     {
       "file": "l10n/prerender/es/wellness-programs.html.gz",
@@ -16823,18 +16823,18 @@
     },
     {
       "file": "l10n/prerender/es/womens-hormonal-balance-endocrine-therapy.html.gz",
-      "sha256": "369a29581763f50c73d8c95672157a4b465c492de3c63eb6e5ff63ea48bcc7cf",
-      "bytes": 34713
+      "sha256": "69472b9d17e7c9a4015dba198442bcafe008886ce0da47fdbab66606b7f37411",
+      "bytes": 34007
     },
     {
       "file": "l10n/prerender/es/yoga-and-meditation-package.html.gz",
-      "sha256": "c9450ee4d1006d2b4c75c3903ef5d2ee6a9b60c6217c17002e478c497accf1ed",
-      "bytes": 31251
+      "sha256": "f6d9be9c741a6058d64fdd6b3a4a5f2197a3815e58dad152eb5ed9c1d27acf39",
+      "bytes": 30860
     },
     {
       "file": "l10n/prerender/es/yoga-based-stress-energy-reset-program.html.gz",
-      "sha256": "d792fa9bb63bc7f9add7968a6bfd177d832a930cab738c4cced46ea7a8776b73",
-      "bytes": 35349
+      "sha256": "7a03bf791f9c6877dea8f7f4d26bdc7e1fad6bc8b2b039901fbf920c46a5c27c",
+      "bytes": 34937
     },
     {
       "file": "l10n/prerender/es/yoga-classes-practical.html.gz",
@@ -16878,7 +16878,7 @@
     },
     {
       "file": "l10n/prerender/es/index.json",
-      "sha256": "5c0114cb1415aedf468889f1e4e3c24e5de5d817dca6dff8a78125ff1ced8edc",
+      "sha256": "2ddcb006f1b9a744b9f7a2397a2cbfd6fff364e578137614c7351b57a7898b0f",
       "bytes": 138839
     },
     {
@@ -17153,8 +17153,8 @@
     },
     {
       "file": "l10n/prerender/it/digestive-wellness-gut-health-yoga-therapy.html.gz",
-      "sha256": "186ef4de697c5d7b0facc702bf046d9a69f3dc1cca4e84208158c8db080680ef",
-      "bytes": 37454
+      "sha256": "011412ba3576bde3567e83d6f3f384eaa1fd2fb419367bb8955d94d8f117ee46",
+      "bytes": 36747
     },
     {
       "file": "l10n/prerender/it/disclaimer.html.gz",
@@ -17538,8 +17538,8 @@
     },
     {
       "file": "l10n/prerender/it/preventive-and-regenerative-treatment.html.gz",
-      "sha256": "f120474f46bf0802146a351387203d04ba82413a6def74f58627f98f35d9fe82",
-      "bytes": 34752
+      "sha256": "489e97c673480630445e6109a8ca674bd5d3ffbacef3a571bb0ab79d04412fe2",
+      "bytes": 34007
     },
     {
       "file": "l10n/prerender/it/product-gallery.html.gz",
@@ -17783,8 +17783,8 @@
     },
     {
       "file": "l10n/prerender/it/weight-loss-programme.html.gz",
-      "sha256": "d5fa3b7de8762da36e0d3931dae100666dcff664c2b4239a93e0cb96fd9b8c8f",
-      "bytes": 37352
+      "sha256": "67aa880730a5cc617e7fb7484f01434b6ec12ff02a8ffe77a82e44a4e65ec4d4",
+      "bytes": 36570
     },
     {
       "file": "l10n/prerender/it/wellness-programs.html.gz",
@@ -17833,18 +17833,18 @@
     },
     {
       "file": "l10n/prerender/it/womens-hormonal-balance-endocrine-therapy.html.gz",
-      "sha256": "5bcede16613c95567a375de5f27751cb2697d0ac7046304da41bac3534b28635",
-      "bytes": 34577
+      "sha256": "c26cfaff3be0464d64090e72b5f631c121416aca3a897fd5b4e6ad727eb40d44",
+      "bytes": 33830
     },
     {
       "file": "l10n/prerender/it/yoga-and-meditation-package.html.gz",
-      "sha256": "d3e162a495451c495153e530251d0a2f412cc8de416de693d587814742e3190f",
-      "bytes": 31161
+      "sha256": "8f1d6519c985e17f01c2897f9d31622c5a68e970108d26dc46b614d171eb9149",
+      "bytes": 30750
     },
     {
       "file": "l10n/prerender/it/yoga-based-stress-energy-reset-program.html.gz",
-      "sha256": "346752bb383cfc65a3577912525b0df641d60f5418409e1f144707857777875c",
-      "bytes": 35111
+      "sha256": "424aea55b10a16a950ed5efe59ec0ae1e2861b1b1063db4c98dcba26f504bba3",
+      "bytes": 34706
     },
     {
       "file": "l10n/prerender/it/yoga-classes-practical.html.gz",
@@ -17888,7 +17888,7 @@
     },
     {
       "file": "l10n/prerender/it/index.json",
-      "sha256": "0fefe583f7490d2c2955268e14307a39781a6af80a9b0783fe33a86b03edc7a3",
+      "sha256": "1752ebabfff40da13f1c25d50b15a8758af57671f64e97681ee33220e9e10cea",
       "bytes": 138631
     },
     {
@@ -18163,8 +18163,8 @@
     },
     {
       "file": "l10n/prerender/pt/digestive-wellness-gut-health-yoga-therapy.html.gz",
-      "sha256": "795db1a6e922dab834d05e9516d91eec2a82e4dff55255920e7ed5e97dd6ebc8",
-      "bytes": 37462
+      "sha256": "8acabceb37da859716b6bde2f12be584190e3953cec1698b3be894b4193385ce",
+      "bytes": 36756
     },
     {
       "file": "l10n/prerender/pt/disclaimer.html.gz",
@@ -18548,8 +18548,8 @@
     },
     {
       "file": "l10n/prerender/pt/preventive-and-regenerative-treatment.html.gz",
-      "sha256": "12d6db88499b7aae2bb74f1b35a3e545133af40c0b1f011167015508e3ce6c6f",
-      "bytes": 34703
+      "sha256": "ca6842b900e1aa8834122011131c65a1e0b62c30ea66998b169344a4737be426",
+      "bytes": 34025
     },
     {
       "file": "l10n/prerender/pt/product-gallery.html.gz",
@@ -18793,8 +18793,8 @@
     },
     {
       "file": "l10n/prerender/pt/weight-loss-programme.html.gz",
-      "sha256": "b7dbab44271739de60a12daafccc2d483712814bb555bf7d9c6e3d9594d5bcad",
-      "bytes": 37353
+      "sha256": "56d1cbdfaf5dd80e3a3611ea3bc982138015c557f1ad58aca5ddc7d55f0c7cf2",
+      "bytes": 36624
     },
     {
       "file": "l10n/prerender/pt/wellness-programs.html.gz",
@@ -18843,18 +18843,18 @@
     },
     {
       "file": "l10n/prerender/pt/womens-hormonal-balance-endocrine-therapy.html.gz",
-      "sha256": "9f5cb67eefef0f152e3792d34b89007c4e226d88a15e30ab41d96f1881c2f6bc",
-      "bytes": 34700
+      "sha256": "6b19144cab281e9cbc2041122b578e81966f522df6f5b979d75a8ed2fa78efd6",
+      "bytes": 33999
     },
     {
       "file": "l10n/prerender/pt/yoga-and-meditation-package.html.gz",
-      "sha256": "bce8fc677cd5362530f0ecb18cf0cbbfe4d997a6aa263a7e65bb9e863333893c",
-      "bytes": 31168
+      "sha256": "0da69593faa00355576c34a81041be74100c13508f8f47508b6551c93fc2fd83",
+      "bytes": 30790
     },
     {
       "file": "l10n/prerender/pt/yoga-based-stress-energy-reset-program.html.gz",
-      "sha256": "fe13daedf8975b54f86d9cfc04bafcfb84c295a9397836b221c4a37863aa34dd",
-      "bytes": 35249
+      "sha256": "3b0c4e6e4654defc89f4a63679176087466f2d84d5332307d6b2fa7a67c56238",
+      "bytes": 34858
     },
     {
       "file": "l10n/prerender/pt/yoga-classes-practical.html.gz",
@@ -18898,7 +18898,7 @@
     },
     {
       "file": "l10n/prerender/pt/index.json",
-      "sha256": "64805361a49870f818b148a536f18a4f3cac5c070bb7ceef1e7c08447d0fec59",
+      "sha256": "8b19d5bca281c6204820945c9fdbebd78106d690591f138c14c3801abc1e2172",
       "bytes": 138522
     },
     {
@@ -19173,8 +19173,8 @@
     },
     {
       "file": "l10n/prerender/nl/digestive-wellness-gut-health-yoga-therapy.html.gz",
-      "sha256": "dc13d2e9f7dc50fa2fe4bab046af8997ade82c70224f00881733bb261cf6d7df",
-      "bytes": 37447
+      "sha256": "e7f4512d7a27e5e98b0fc8cf6a09ad04072781b95c66a32a5b5198ca34eabe22",
+      "bytes": 36738
     },
     {
       "file": "l10n/prerender/nl/disclaimer.html.gz",
@@ -19558,8 +19558,8 @@
     },
     {
       "file": "l10n/prerender/nl/preventive-and-regenerative-treatment.html.gz",
-      "sha256": "7f7bbafed9de8fdd0c0742466b900e2c5b8924939f5fcc14416044d72e17aebd",
-      "bytes": 34785
+      "sha256": "2d5d70843399addeb76e55ab74ab72b4d3748578cabbe264bc0c0cad6012ee22",
+      "bytes": 34058
     },
     {
       "file": "l10n/prerender/nl/product-gallery.html.gz",
@@ -19803,8 +19803,8 @@
     },
     {
       "file": "l10n/prerender/nl/weight-loss-programme.html.gz",
-      "sha256": "950c3c7936ecd81bd43d90e24cafe52ef4721b737dff7cf14e865126cd936304",
-      "bytes": 37312
+      "sha256": "0ee44d09ad6c25acf97ae54821dd7cead8e7c99684ae593a08e0d97d3a8807e8",
+      "bytes": 36530
     },
     {
       "file": "l10n/prerender/nl/wellness-programs.html.gz",
@@ -19853,18 +19853,18 @@
     },
     {
       "file": "l10n/prerender/nl/womens-hormonal-balance-endocrine-therapy.html.gz",
-      "sha256": "d47b303821203fbb62c4b2d217418180d968e8d63d1903e45f21935597a11534",
-      "bytes": 34664
+      "sha256": "3c6120fe5f98c03d3a54978304bfc2127b4390d87ef674a48f57a932871bf445",
+      "bytes": 33886
     },
     {
       "file": "l10n/prerender/nl/yoga-and-meditation-package.html.gz",
-      "sha256": "5e3f2bce66ef4107737b07af843361fb0561925c140102b55f17291088eb56de",
-      "bytes": 31222
+      "sha256": "3fa5ad46c10b9f830102f29b2af6a25e5fe742729710556b2a64f2335364a56b",
+      "bytes": 30793
     },
     {
       "file": "l10n/prerender/nl/yoga-based-stress-energy-reset-program.html.gz",
-      "sha256": "d1124ea5722d0eb20c1c9235f59d363683116c361e0e375c517e1e2c948b4317",
-      "bytes": 35166
+      "sha256": "52fabc3933531130d933c304265b4ef7808c271a67178ac97b92944c718156ed",
+      "bytes": 34695
     },
     {
       "file": "l10n/prerender/nl/yoga-classes-practical.html.gz",
@@ -19908,7 +19908,7 @@
     },
     {
       "file": "l10n/prerender/nl/index.json",
-      "sha256": "c7e8fb2fcb9584be166af3dfa2ff770233b43f19f45b04db6b3cf1458f43175c",
+      "sha256": "2f4d6feca3cf6f5044a91f0b82bf204264aabdde0ff14643765ada147572bab9",
       "bytes": 137812
     },
     {
@@ -20183,8 +20183,8 @@
     },
     {
       "file": "l10n/prerender/ru/digestive-wellness-gut-health-yoga-therapy.html.gz",
-      "sha256": "be0506382f751d2a800fae6d78648e2d058acf645c1fbe67da2ac631e88c0356",
-      "bytes": 42529
+      "sha256": "68036823fefa6123e41b7f91428b74c4c5e0d9380eece252a213852021ca6295",
+      "bytes": 41778
     },
     {
       "file": "l10n/prerender/ru/disclaimer.html.gz",
@@ -20568,8 +20568,8 @@
     },
     {
       "file": "l10n/prerender/ru/preventive-and-regenerative-treatment.html.gz",
-      "sha256": "a8b034bd36856761ca7f5e268150e435d0c002b2b8438a7895991f42723b0672",
-      "bytes": 39316
+      "sha256": "56ee767efe5b0d4b5fca6ab91ba8198c13cc4687ef881479ed09c9e51350bee7",
+      "bytes": 38452
     },
     {
       "file": "l10n/prerender/ru/product-gallery.html.gz",
@@ -20813,8 +20813,8 @@
     },
     {
       "file": "l10n/prerender/ru/weight-loss-programme.html.gz",
-      "sha256": "06dc3308c763998f71903ca2be28b8a0e7dced67527864f624f09358d67e5399",
-      "bytes": 42231
+      "sha256": "d4bf62e5b6793b5915035bc70b3445a2af94e1926c48a18221a63eaea7f8d6cf",
+      "bytes": 41394
     },
     {
       "file": "l10n/prerender/ru/wellness-programs.html.gz",
@@ -20863,18 +20863,18 @@
     },
     {
       "file": "l10n/prerender/ru/womens-hormonal-balance-endocrine-therapy.html.gz",
-      "sha256": "abceb7d38e866e2489e795dee7601db1f0797d1979d43e02f6a0469867020a1d",
-      "bytes": 39310
+      "sha256": "7c55b30e7e96e6c33b5be5b999b1f868cb6ac31a5eb2ac12928a112e5274879a",
+      "bytes": 38490
     },
     {
       "file": "l10n/prerender/ru/yoga-and-meditation-package.html.gz",
-      "sha256": "b7ef2548bcbf00dbdea112b24d13350560ce6b16cf7d9e68b134456cebf72ece",
-      "bytes": 34830
+      "sha256": "5fb90e2069a77f663f7e3bb836ba8b0b118b04f285bfa088077ae5c4408e8db4",
+      "bytes": 34390
     },
     {
       "file": "l10n/prerender/ru/yoga-based-stress-energy-reset-program.html.gz",
-      "sha256": "932f32ddea67fdb0b8d5ddef2f15fd4bd04c382e462d80a750057d5452a556bb",
-      "bytes": 39841
+      "sha256": "b718a783cb851e0a6a80ba9d83ef8aee1186b060feff197b65b8953935f82901",
+      "bytes": 39399
     },
     {
       "file": "l10n/prerender/ru/yoga-classes-practical.html.gz",
@@ -20918,7 +20918,7 @@
     },
     {
       "file": "l10n/prerender/ru/index.json",
-      "sha256": "9f30adbac43d7313c8970e62458e9313e93d9fa799a0dfba6a72ca48f41ce43f",
+      "sha256": "5e670007bf05aca38394d630e8488288eb232d0789e79b2abf266759349dab1c",
       "bytes": 147629
     },
     {
@@ -21193,8 +21193,8 @@
     },
     {
       "file": "l10n/prerender/ar/digestive-wellness-gut-health-yoga-therapy.html.gz",
-      "sha256": "30be6857b2195b23b1a147677fa7aac515016dae99b9cf459fe7242546e262b9",
-      "bytes": 39638
+      "sha256": "2a43343dd7cdecf7c7de3792f219c53bab1f7d2e233a8cb04a4c3075d00cd6a0",
+      "bytes": 38988
     },
     {
       "file": "l10n/prerender/ar/disclaimer.html.gz",
@@ -21578,8 +21578,8 @@
     },
     {
       "file": "l10n/prerender/ar/preventive-and-regenerative-treatment.html.gz",
-      "sha256": "b6c25f6e602960c17828ffd4f16b2e7a063e4244d416a642cfa56ed7449eefd9",
-      "bytes": 36556
+      "sha256": "31c1a311fc66a6cdcdaf588f1217fea1800a778836915a7f27abcb7979509b93",
+      "bytes": 35829
     },
     {
       "file": "l10n/prerender/ar/product-gallery.html.gz",
@@ -21823,8 +21823,8 @@
     },
     {
       "file": "l10n/prerender/ar/weight-loss-programme.html.gz",
-      "sha256": "42bb283bc673ee9c74298a95a664b32dea5ae3ba5401b64386f6c92412f9a569",
-      "bytes": 39406
+      "sha256": "55acc777882e967ed6cf2ee356256b5d136bab1ea462d1a038704e0b60cb925c",
+      "bytes": 38651
     },
     {
       "file": "l10n/prerender/ar/wellness-programs.html.gz",
@@ -21873,18 +21873,18 @@
     },
     {
       "file": "l10n/prerender/ar/womens-hormonal-balance-endocrine-therapy.html.gz",
-      "sha256": "8fa7d714287d929a3daa468230d70778256fa4385a390651840dca687615ff24",
-      "bytes": 36633
+      "sha256": "11bafeb9c927bbbd7183803fc81ce8b9065c918bf8cb6270d1ea27e62113e355",
+      "bytes": 35887
     },
     {
       "file": "l10n/prerender/ar/yoga-and-meditation-package.html.gz",
-      "sha256": "31d766727de4bf6991bf12333ee3eeb866b2f77b996b7d91c22ae2b0a04ecc6c",
-      "bytes": 32970
+      "sha256": "22f526811e87a5362c0ce982bc68eccc8cbfe29acd7ce4b8a1c0474c7b353d30",
+      "bytes": 32598
     },
     {
       "file": "l10n/prerender/ar/yoga-based-stress-energy-reset-program.html.gz",
-      "sha256": "8ea5369ec17e2ba3cd9222e15a8489d81bcf288936fdb811454756411ac0c921",
-      "bytes": 37238
+      "sha256": "373e067298373ad89f99053e7bfb0242299cf80a5ea90f300d1696c3ad7a24c4",
+      "bytes": 36817
     },
     {
       "file": "l10n/prerender/ar/yoga-classes-practical.html.gz",
@@ -21928,7 +21928,7 @@
     },
     {
       "file": "l10n/prerender/ar/index.json",
-      "sha256": "c453e48dd546ff2c74271eab48fb123b76350a45f25da30bfa75c0c0e3cd65d7",
+      "sha256": "bd13e111c53eeada6bf3022fb2da83364ef6cd5c78337cad6654a96c016ef9c4",
       "bytes": 143674
     },
     {
@@ -22203,8 +22203,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/digestive-wellness-gut-health-yoga-therapy.html.gz",
-      "sha256": "0d8e5f0595c4bb00d460c40f303415caa7049bc1cc72b8213a792fea43c41047",
-      "bytes": 38853
+      "sha256": "266a7a682617df17bbef4af49a6b3c6388a1e25d0f5c5d68cd307e3a415991e7",
+      "bytes": 38126
     },
     {
       "file": "l10n/prerender/zh-Hans/disclaimer.html.gz",
@@ -22588,8 +22588,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/preventive-and-regenerative-treatment.html.gz",
-      "sha256": "21c8d30936ecd568d20ab1b4b3817f57a2331819b86b973c77413d1b36a9574e",
-      "bytes": 35818
+      "sha256": "e372f90431f0c18e3056c19fd8fef5487089132f36e31997e2d524f5e0ff1c47",
+      "bytes": 35138
     },
     {
       "file": "l10n/prerender/zh-Hans/product-gallery.html.gz",
@@ -22833,8 +22833,8 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/weight-loss-programme.html.gz",
-      "sha256": "3750a7661809329ebdf5a0d8e9f408019877a36f4346a54f0d2af93be873961c",
-      "bytes": 38466
+      "sha256": "22c782add595fc217775d8ef238c282e901267b1baba318c80a9bcfacf600405",
+      "bytes": 37749
     },
     {
       "file": "l10n/prerender/zh-Hans/wellness-programs.html.gz",
@@ -22883,18 +22883,18 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/womens-hormonal-balance-endocrine-therapy.html.gz",
-      "sha256": "66984367212e4c473965b524ad753b3cd290683a7462f3e154a0fdad38ede498",
-      "bytes": 35729
+      "sha256": "3027d0c495933e7064b03d36fa1323d14791ec4fd612e135da642c28f62055b2",
+      "bytes": 35046
     },
     {
       "file": "l10n/prerender/zh-Hans/yoga-and-meditation-package.html.gz",
-      "sha256": "3d76464fcf70729f08a3d27195e52e5bdf633c0cc7fc980a3b6c828dda8d12e1",
-      "bytes": 32294
+      "sha256": "ebd70eb76f5ec65ba3360509ae67ac7639f608fcf84f742ecf30bf49dc270ab6",
+      "bytes": 31785
     },
     {
       "file": "l10n/prerender/zh-Hans/yoga-based-stress-energy-reset-program.html.gz",
-      "sha256": "6104aeb810d579d9851d1697d3fd8795dd8e29e4d3f90617c529a175f80f21c4",
-      "bytes": 36398
+      "sha256": "657c3c43dec9947292c7672d65e7ee4965abd04b0f5437990066e35ce3a38a86",
+      "bytes": 35876
     },
     {
       "file": "l10n/prerender/zh-Hans/yoga-classes-practical.html.gz",
@@ -22938,7 +22938,7 @@
     },
     {
       "file": "l10n/prerender/zh-Hans/index.json",
-      "sha256": "296f5b7da895b787462c7c521c4298d0dbb9b40f07bbf42e5b03f5b7c0652413",
+      "sha256": "52f3b463a2eeee2da36dfeea253dd2fa30d8f2cacc11446419d6a4e911d29857",
       "bytes": 137636
     },
     {
@@ -23213,8 +23213,8 @@
     },
     {
       "file": "l10n/prerender/ja/digestive-wellness-gut-health-yoga-therapy.html.gz",
-      "sha256": "9211cce66859d48dfa8c2137867c8914cd404df77c4600cf688451a2190a2c28",
-      "bytes": 40192
+      "sha256": "05d037ac8f22d646cb96d58de1610ec99f30e0c2ebbfe86f46b49a62616a5d0c",
+      "bytes": 39465
     },
     {
       "file": "l10n/prerender/ja/disclaimer.html.gz",
@@ -23598,8 +23598,8 @@
     },
     {
       "file": "l10n/prerender/ja/preventive-and-regenerative-treatment.html.gz",
-      "sha256": "dc7f504f8bb0d7ad309d4c09fa6d47404aefe5a25a692b8fd83fa852a820fb85",
-      "bytes": 37318
+      "sha256": "d364d298056f1317dafabdc9ec53c0e9bb1fdda79cf72ff4c54d058e89cf546b",
+      "bytes": 36556
     },
     {
       "file": "l10n/prerender/ja/product-gallery.html.gz",
@@ -23843,8 +23843,8 @@
     },
     {
       "file": "l10n/prerender/ja/weight-loss-programme.html.gz",
-      "sha256": "02e8ab99e941db3326f33e51033216a8e42f81c95a1ae211148978251fde2dfe",
-      "bytes": 40063
+      "sha256": "205405a5af29ab998fbeaf49e30917483414486ec4213febb3876c3d6a2bf302",
+      "bytes": 39305
     },
     {
       "file": "l10n/prerender/ja/wellness-programs.html.gz",
@@ -23893,18 +23893,18 @@
     },
     {
       "file": "l10n/prerender/ja/womens-hormonal-balance-endocrine-therapy.html.gz",
-      "sha256": "f5ed89a9730703db0e1b3b593be0ee095714e4002d48ffa56109e296b1cd067c",
-      "bytes": 37105
+      "sha256": "29a5f82f534ad07d52fbc7eacd2deadf1030c6e36898405af2d6048cfa0e6033",
+      "bytes": 36322
     },
     {
       "file": "l10n/prerender/ja/yoga-and-meditation-package.html.gz",
-      "sha256": "53f14003485693d7c334db64498f95439146bff2da58f82be1289c136afe0918",
-      "bytes": 33418
+      "sha256": "9ba86affb9ca605aba0a9ab62bbb7e08847f92eaaa6a63c9097f93bfe41d8f77",
+      "bytes": 33014
     },
     {
       "file": "l10n/prerender/ja/yoga-based-stress-energy-reset-program.html.gz",
-      "sha256": "f7662f4c174a4e304b1ce4d879e8de70cbe65795f540d1bf244eef0984ed08e3",
-      "bytes": 37741
+      "sha256": "f71b5d984cefd2d24904801a632e43d5bd5265096b24d6b795dc803368d7d201",
+      "bytes": 37288
     },
     {
       "file": "l10n/prerender/ja/yoga-classes-practical.html.gz",
@@ -23948,7 +23948,7 @@
     },
     {
       "file": "l10n/prerender/ja/index.json",
-      "sha256": "0fb14ad455e41553e5957fefd4b51bb55f3bb86f357254911cd847205cde402d",
+      "sha256": "f45f553f6069c6f8c0e9bee8296346479bec6bfca20e89a15ab514a531fed0ad",
       "bytes": 140433
     },
     {
@@ -24223,8 +24223,8 @@
     },
     {
       "file": "l10n/prerender/ko/digestive-wellness-gut-health-yoga-therapy.html.gz",
-      "sha256": "fd847711a7abbbc31eccdc37189650518f038dd5bc2e0a81e44c9ecf52f25572",
-      "bytes": 39228
+      "sha256": "fda8b31fc2a33a33ef106aab2199ad8a42dcbc2bc6e146ca86707706826822da",
+      "bytes": 38513
     },
     {
       "file": "l10n/prerender/ko/disclaimer.html.gz",
@@ -24608,8 +24608,8 @@
     },
     {
       "file": "l10n/prerender/ko/preventive-and-regenerative-treatment.html.gz",
-      "sha256": "80d2ba6db77725febe9a963bfdf7df8d7ae575a8c9d41379f5fd795442ea91c6",
-      "bytes": 36150
+      "sha256": "2c2156139fd43130c5a87e2aea519f6731722a773aaedd42a6c0a847fffd4533",
+      "bytes": 35429
     },
     {
       "file": "l10n/prerender/ko/product-gallery.html.gz",
@@ -24853,8 +24853,8 @@
     },
     {
       "file": "l10n/prerender/ko/weight-loss-programme.html.gz",
-      "sha256": "63ca865b2d6e2f4cefaa3658c7cd3c17e25e4b471203384ba8494b23527e7a1d",
-      "bytes": 38796
+      "sha256": "320de3cd604d7bb35d42547f3bc28f14d20db5f142b12d04e38340b6baa2545c",
+      "bytes": 38086
     },
     {
       "file": "l10n/prerender/ko/wellness-programs.html.gz",
@@ -24903,18 +24903,18 @@
     },
     {
       "file": "l10n/prerender/ko/womens-hormonal-balance-endocrine-therapy.html.gz",
-      "sha256": "01430c59ed5b8cd144e4ca9dfcb320b88c4c90bb92ac25219535ec057f5678a2",
-      "bytes": 36055
+      "sha256": "9b4fc1a6678a63e95b5727a74b938285a133f0b8c2924f75e534ba6c47218717",
+      "bytes": 35341
     },
     {
       "file": "l10n/prerender/ko/yoga-and-meditation-package.html.gz",
-      "sha256": "132f6722e00708f2d843fe347811fbafd4d5dd16f684e1b22ecda5242e5ec1f3",
-      "bytes": 32564
+      "sha256": "b0b1c10f9edba04187c7130d78d67dc8177d32086b01cc5b0451e47a24f69a46",
+      "bytes": 32156
     },
     {
       "file": "l10n/prerender/ko/yoga-based-stress-energy-reset-program.html.gz",
-      "sha256": "4d01607b1e7c2b83ab8f394e7e041cc19dcebf22172ff98c5ad9e6c90d612cd5",
-      "bytes": 36642
+      "sha256": "4515b5c051dede36b08c56a7c461ba668076a8bc6e0156d20e92ae7fa2f59007",
+      "bytes": 36235
     },
     {
       "file": "l10n/prerender/ko/yoga-classes-practical.html.gz",
@@ -24958,7 +24958,7 @@
     },
     {
       "file": "l10n/prerender/ko/index.json",
-      "sha256": "a19a9d7a90f5a19aa4ad7c611a82dfa6e76b844d10029b899c3d1058877c27ed",
+      "sha256": "cee5d14ccbd4e488c153e97eda4e0d72d3eb5b25a9ae503091ff2b98efd462d6",
       "bytes": 137915
     }
   ],
@@ -25722,5 +25722,5 @@
     "proof": "english-candidate/weight-integration-proof.json",
     "sha256": "0b25796e994c0bd72566fc3e442203f9b36256785565771a5f17bbf468fae1e7"
   },
-  "captured": "2026-10-11T19:39:06.118534+00:00"
+  "captured": "2026-10-11T20:59:18.641938+00:00"
 }
