@@ -47,14 +47,21 @@ test('programme integration behavior stays available for an explicitly unheld fi
   assert.deepEqual(integrateProgrammeView(integrated), integrated, 'idempotence for unheld inputs');
 });
 
-test('held Digestive views retain external enquiry links and cannot be reintegrated by the builder', () => {
+// The Digestive candidate carries the approved inline enquiry form frozen at c35727ec4 (Final-E capture 2190d657).
+// The builder still refuses to regenerate it, so the frozen bytes cannot drift.
+test('Digestive views keep the frozen approved inline enquiry form and cannot be reintegrated by the builder', () => {
   for (const variant of ['desktop', 'mobile']) {
     const view = JSON.parse(read(`public/ahv/views/ahv-page-digestive-wellness-gut-health-${variant}.json`));
-    assert.deepEqual(view.scripts, []);
-    assert.doesNotMatch(view.template, /AHV Programme Enquiry|#programme-enquiry/);
-    assert.match(view.template, /href="https:\/\/ayurvedichealingvillage\.com\/enquiry-form\/"/);
+    const before = structuredClone(view);
+    assert.deepEqual(view.scripts, ['/ahv/assets/enquiry-family-data.js', '/ahv/assets/enquiry-family-render.js']);
+    assert.equal(view.template.match(/name="AHV Programme Enquiry"/g)?.length, 1);
+    assert.ok(view.template.indexOf('name="AHV Programme Enquiry"') < view.template.indexOf('<nav aria-label="On this page"'));
+    assert.ok(view.template.includes('href="#programme-enquiry"'));
+    assert.doesNotMatch(view.template, /href="https:\/\/ayurvedichealingvillage\.com\/enquiry-form\/"/);
     assert.throws(() => integrateProgrammeView(view), /held at its production baseline/);
-    assert.deepEqual(orderedRuntimeScripts(view, { previewSrc: '/preview.js', supportSrc: '/support.js' }, false).map(x => x.src), ['/preview.js', '/support.js']);
+    assert.deepEqual(view, before, 'rejected generation cannot mutate the frozen view');
+    assert.deepEqual(orderedRuntimeScripts(view, { previewSrc: '/preview.js', supportSrc: '/support.js' }, false).map(x => x.src),
+      ['/preview.js', '/design/lead-receipt.js', '/ahv/assets/enquiry-family-data.js', '/ahv/assets/enquiry-family-render.js', '/support.js']);
   }
 });
 

@@ -1,11 +1,11 @@
 {
  "repository": "kairali-digital/kairali-web-factory",
  "tag": "ahv-english-staging-20260915",
- "asset": "ahv-locale-prerenders-weight-baseline-source-closed-001.tar.gz",
- "archive": "ahv-locale-prerenders-weight-baseline-source-closed-001.tar.gz",
- "sha256": "ecf134b717288fe5e98138fae245d189459c5d228f766139889aacb564443e70",
- "bytes": 43656215,
- "capturedSource": "12 production Weight bodies retained; 2400 F2 other bodies unchanged; 12 indexes explicitly composed with literal production Weight rows. No fresh capture. Exact approved serving-source closure independently recorded.",
+ "asset": "ahv-locale-prerenders-digestive-source-closed-20261009.tar.gz",
+ "archive": "ahv-locale-prerenders-digestive-source-closed-20261009.tar.gz",
+ "sha256": "4e5f4d24bf41d9837f899c398b64808e7b563820728a6e770dab14ed8d419cfe",
+ "bytes": 43766186,
+ "capturedSource": "12 translated Digestive bodies captured from the current candidate runtime at399d260;2400 other bodies and their literal index rows preserved from the previous verified release. Exact24 route-view delta and capture lineage independently verified. Retained bodies are not recaptured or relabelled.",
  "sources": [
   {
    "file": "english-candidate/route-manifest.json",
@@ -745,11 +745,11 @@
   },
   {
    "file": "public/ahv/l10n/ar/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-   "sha256": "c4a213455d2ca9d18c759314b0b04c2ed42ed51015db0581a0ca68d6625f86bb"
+   "sha256": "8b0ac7fa837eff5c498f720bf1b1ca2b7c227903df1c7c9a699ef25d27e50d54"
   },
   {
    "file": "public/ahv/l10n/ar/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-   "sha256": "43690f1030f6f3bbfc55cdffb38dd0cebb60ace7f41d68365e8dadb4670c792a"
+   "sha256": "428e2255a6c59f25d04959c3f752728647490d8546a57bcde251d8861ea08b64"
   },
   {
    "file": "public/ahv/l10n/ar/views/ahv-page-enquiry-desktop.json",
@@ -1801,11 +1801,11 @@
   },
   {
    "file": "public/ahv/l10n/de/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-   "sha256": "4b76ff53b84ec1a617ba615065c214c9ae743f983ce577a4d213626f740337a4"
+   "sha256": "15edfcbed1a4859c6b52adf81cf0ed8eadf313fa11ccc9af138a6751d84f821c"
   },
   {
    "file": "public/ahv/l10n/de/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-   "sha256": "0b4c62891073ee89effef353e85bb9c37d23cd294957150213df38aac029a1aa"
+   "sha256": "df157579ccad83854a6f98332ce0bd45905129b175b36d5bfccf81a6a9dd6c55"
   },
   {
    "file": "public/ahv/l10n/de/views/ahv-page-enquiry-desktop.json",
@@ -2857,11 +2857,11 @@
   },
   {
    "file": "public/ahv/l10n/es/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-   "sha256": "f1e588ca6f6a335f4bf067e2d7ecf97f2e2160167e9b4aee95e1b26560fe26a1"
+   "sha256": "760fb201cb2acb105b7d38dc66d4c6351543d21634bf9f8007ddd032dbb06ba4"
   },
   {
    "file": "public/ahv/l10n/es/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-   "sha256": "84386f72af5f7f5564205982523af354a8c574b73eb99226c25c5426e849b3f9"
+   "sha256": "d6f3dc548a7c0d687db0d70eeeca2bbb1ac835ccf2e63b1b4049f264bc90cb9b"
   },
   {
    "file": "public/ahv/l10n/es/views/ahv-page-enquiry-desktop.json",
@@ -3913,11 +3913,11 @@
   },
   {
    "file": "public/ahv/l10n/fr/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-   "sha256": "aeffee5137a3a4ab24ee53e73a84b4dffd8f7216013ea0941a69bacbee54e3c4"
+   "sha256": "a5864b736b9225f4da70ffd9c68e0c8f71f7da7bb9112fa806696921faffe536"
   },
   {
    "file": "public/ahv/l10n/fr/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-   "sha256": "7b3f28891f582dffe6bb6a0ae818cbca5cbe39501b3511f11b95a0d117eb71d1"
+   "sha256": "e086c9315d612b720df83e86747dc1c3be5805598842923b5de3aaee3c47c852"
   },
   {
    "file": "public/ahv/l10n/fr/views/ahv-page-enquiry-desktop.json",
@@ -4969,11 +4969,11 @@
   },
   {
    "file": "public/ahv/l10n/hi/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-   "sha256": "bddd1dbfadc4d661280c20257522e241f863c4d53e544a8da9f374a7802a5fe9"
+   "sha256": "85d76ef1c01c9c4cd81310dc3b7ce335450744a13c83fb95184e38b64be628ff"
   },
   {
    "file": "public/ahv/l10n/hi/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-   "sha256": "bcfc1fb5a43352d71d23300c0109859d056a8b53ce14fef41ba1a53a770046c5"
+   "sha256": "c3db0475214f5dd79c0d5c629c7b8483ac4c017995d47e84ca24afb989aa76ae"
   },
   {
    "file": "public/ahv/l10n/hi/views/ahv-page-enquiry-desktop.json",
@@ -6025,11 +6025,11 @@
   },
   {
    "file": "public/ahv/l10n/it/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-   "sha256": "5c029a305a5ba1075ba22aa3cb83b9c4c4a92022820fdda229978042c7019784"
+   "sha256": "cc7102066a209ba8035679d1714d985fa92a3de75b95f71f9bceddb9d12fa896"
   },
   {
    "file": "public/ahv/l10n/it/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-   "sha256": "8c40f4137b73c16eca03bf1adf26a580a7ba68dd8bf294925feeb187ef63247b"
+   "sha256": "b965aff90b4c1aed714ae52d1fc7625112eb74d09115a034603218d1aa62d985"
   },
   {
    "file": "public/ahv/l10n/it/views/ahv-page-enquiry-desktop.json",
@@ -7081,11 +7081,11 @@
   },
   {
    "file": "public/ahv/l10n/ja/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-   "sha256": "300e1c8b6a26ac32185e964789afa57b84da95bd83c06da9f1b62ba52bb809a4"
+   "sha256": "37da98dbb350979976f8c0ed972f9dc7adabc84fccc0ff7c62deb7fa17545079"
   },
   {
    "file": "public/ahv/l10n/ja/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-   "sha256": "5763ad06a6dbe525c8b62752c1a2df22c91124167f2909344131d47ea4f925e9"
+   "sha256": "3500db0dcf5451b0a80a018501cfe3e875a5cf9ecba92d9162a2a86acbb910f4"
   },
   {
    "file": "public/ahv/l10n/ja/views/ahv-page-enquiry-desktop.json",
@@ -8137,11 +8137,11 @@
   },
   {
    "file": "public/ahv/l10n/ko/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-   "sha256": "b22fab75b9dcbe8f69ba26f7b89cff2435b656747b4fd378070520c32a6acdfb"
+   "sha256": "b62875a3a1ea006015c2a74598df8a5f1dd5d0e80d7d66bf5118e2819ef4f6d7"
   },
   {
    "file": "public/ahv/l10n/ko/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-   "sha256": "2a1ea18249602dbb1d5083839dfa5f80a5970384031b3737557b98607dffa705"
+   "sha256": "59320b6960e7e6c09772edf837cc972463afb36e95b9f071e86004d962568c7c"
   },
   {
    "file": "public/ahv/l10n/ko/views/ahv-page-enquiry-desktop.json",
@@ -9193,11 +9193,11 @@
   },
   {
    "file": "public/ahv/l10n/nl/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-   "sha256": "52311fdf5d30ff0dfa45580537ba60cd5ae583672683078e1437f41c30cce84f"
+   "sha256": "54306c05b331daa8bc6b18f04d95fcc7a863dab681f398ec2884d2ace28fbe56"
   },
   {
    "file": "public/ahv/l10n/nl/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-   "sha256": "8ba3543c1b404c8d55f107b8234fa9d42cea66059cfce5e04f01a012453ace8f"
+   "sha256": "37ab3411f45f7d58af1ba707c69c247778872db3b07971d9160776149be2b8e0"
   },
   {
    "file": "public/ahv/l10n/nl/views/ahv-page-enquiry-desktop.json",
@@ -10249,11 +10249,11 @@
   },
   {
    "file": "public/ahv/l10n/pt/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-   "sha256": "cfdeb5e6c07b67a3dd700f4c86ca0a9d0edb60ee574f1dcfadef45fcf44ee9f5"
+   "sha256": "3b51b495eef69589a164216ba5aab14fb678507f1c88d00d6fb90c7c503bb142"
   },
   {
    "file": "public/ahv/l10n/pt/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-   "sha256": "cb9910f703b368edfe8c073b56773287fe872139b771e3569e898b21d6b6db1e"
+   "sha256": "21a80eea7d771e5eba5ea3fb20f3d6165baf623b4a6aa0667d8140d4474d27c6"
   },
   {
    "file": "public/ahv/l10n/pt/views/ahv-page-enquiry-desktop.json",
@@ -11305,11 +11305,11 @@
   },
   {
    "file": "public/ahv/l10n/ru/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-   "sha256": "4c5f6ce75566733bb66fad28d4092611fab2639b233372f9169ebb89a45f32eb"
+   "sha256": "604c37e583b4dbbcfae3add2c6f735b0b2f1cc0793c4017ccb56a272fbf09159"
   },
   {
    "file": "public/ahv/l10n/ru/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-   "sha256": "a1a525866f2971ac21ca14966761734ef71a4e652f5603c51fcd9409a4afad31"
+   "sha256": "b7a246071dd59c9201baf40fd4d52219777836ea8526a298d2c97b3af36eff80"
   },
   {
    "file": "public/ahv/l10n/ru/views/ahv-page-enquiry-desktop.json",
@@ -12361,11 +12361,11 @@
   },
   {
    "file": "public/ahv/l10n/zh/views/ahv-page-digestive-wellness-gut-health-desktop.json",
-   "sha256": "2a5d6fb5b48ff1ee6d9b1246d5a5ca86e8f6c98ef6afb420ce8092feb3742d86"
+   "sha256": "178a6807ab675771cb12fb95638d08da20ab8c15e2073f8f7d1731b3f5d121ea"
   },
   {
    "file": "public/ahv/l10n/zh/views/ahv-page-digestive-wellness-gut-health-mobile.json",
-   "sha256": "0a1eb777dcd3fb3b5125208ef6a73e3ae0345824fd1f8397e62a09d4b1a0fa8e"
+   "sha256": "12d9820ae0059079437f3583842a4dcfd9467e2eea42437f143f1f36826caba6"
   },
   {
    "file": "public/ahv/l10n/zh/views/ahv-page-enquiry-desktop.json",
@@ -13105,8 +13105,8 @@
   },
   {
    "file": "l10n/prerender/hi/digestive-wellness-gut-health-yoga-therapy.html.gz",
-   "sha256": "daa09d689d294e93812fd06ffd4692afe82a48d681974ebd16738bc33d67237e",
-   "bytes": 39791
+   "sha256": "dc7257978207fabb0c91ed0df82cdd32f163f003a479a0c4e8d1ddcfc46d54ef",
+   "bytes": 41129
   },
   {
    "file": "l10n/prerender/hi/disclaimer.html.gz",
@@ -13840,8 +13840,8 @@
   },
   {
    "file": "l10n/prerender/hi/index.json",
-   "sha256": "053b22c35aa5bf5242976c8d82bfa2becbbca507cf50f0a4c9bc37153abcd620",
-   "bytes": 151529
+   "sha256": "6693f3767445e1161caec036f68ff0712f07a49cb0cb477431e06bd691f84eec",
+   "bytes": 150988
   },
   {
    "file": "l10n/prerender/de/index.html.gz",
@@ -14115,8 +14115,8 @@
   },
   {
    "file": "l10n/prerender/de/digestive-wellness-gut-health-yoga-therapy.html.gz",
-   "sha256": "28d54c5d3e99324f85935d743defd74760e23c6d534a8377d3bd43590821325c",
-   "bytes": 37462
+   "sha256": "8e6e8816a781d46a98e4c1cb39fcfddcec5576493fcb7a541753963eff458563",
+   "bytes": 38649
   },
   {
    "file": "l10n/prerender/de/disclaimer.html.gz",
@@ -14850,8 +14850,8 @@
   },
   {
    "file": "l10n/prerender/de/index.json",
-   "sha256": "e4ddfaa9c6cf977fcb4efbd8d194642831617c81aabb2d9cdf5e2e1be4e8147d",
-   "bytes": 138126
+   "sha256": "52e398ceaa5ef970a58f9d04c2431ecfb5d945784a33434d49e01adf5090833b",
+   "bytes": 137591
   },
   {
    "file": "l10n/prerender/fr/index.html.gz",
@@ -15125,8 +15125,8 @@
   },
   {
    "file": "l10n/prerender/fr/digestive-wellness-gut-health-yoga-therapy.html.gz",
-   "sha256": "590a87e0ad3ffa9b40b701110bc98eea5e1ef8d1313dad5b514026a777e91300",
-   "bytes": 37114
+   "sha256": "91d5b46743147c3b4ee5ca55ed5832c08dfd568be21a700973f6877e008c436f",
+   "bytes": 38286
   },
   {
    "file": "l10n/prerender/fr/disclaimer.html.gz",
@@ -15860,8 +15860,8 @@
   },
   {
    "file": "l10n/prerender/fr/index.json",
-   "sha256": "127ef5818b7497bcf73e394d67feb0d6928e444b537849f1a6355de43822e465",
-   "bytes": 138977
+   "sha256": "2b4d9f9e142305d96cc55ad532c1bac16e091c3cd416dd1152e9760031a51dec",
+   "bytes": 138428
   },
   {
    "file": "l10n/prerender/es/index.html.gz",
@@ -16135,8 +16135,8 @@
   },
   {
    "file": "l10n/prerender/es/digestive-wellness-gut-health-yoga-therapy.html.gz",
-   "sha256": "5f61c7d7e18fa4935ac0a5995df08273317218bb2ebc57af336805009c8de6a5",
-   "bytes": 36503
+   "sha256": "c9cf0b1f3c5afc85647d154ec810def42c7f97bfb67b666ace53c2b9badb23be",
+   "bytes": 37663
   },
   {
    "file": "l10n/prerender/es/disclaimer.html.gz",
@@ -16870,8 +16870,8 @@
   },
   {
    "file": "l10n/prerender/es/index.json",
-   "sha256": "724c3e4773ecdeacce3f2a49ba5d45b2301edf077359a01812cfd3d7dd23b099",
-   "bytes": 138916
+   "sha256": "2de8086314e0761d4f546aed34699ded29aefc63f55d6c7077f55bb77bed26b5",
+   "bytes": 138375
   },
   {
    "file": "l10n/prerender/it/index.html.gz",
@@ -17145,8 +17145,8 @@
   },
   {
    "file": "l10n/prerender/it/digestive-wellness-gut-health-yoga-therapy.html.gz",
-   "sha256": "9bc89775277f20363493172659d3af8c571a7d3b013b2518fdd1d484057be74b",
-   "bytes": 36300
+   "sha256": "186ef4de697c5d7b0facc702bf046d9a69f3dc1cca4e84208158c8db080680ef",
+   "bytes": 37454
   },
   {
    "file": "l10n/prerender/it/disclaimer.html.gz",
@@ -17880,8 +17880,8 @@
   },
   {
    "file": "l10n/prerender/it/index.json",
-   "sha256": "834ad3c4e1d7e4460b5232c0e2bdeea0b9ee6ece0f0109fadb8da21ed1b0da32",
-   "bytes": 138690
+   "sha256": "b3e6780d86cba123aa4decba0bb3035a65f43eaabb9da4c0486b7bd96dda14f9",
+   "bytes": 138149
   },
   {
    "file": "l10n/prerender/pt/index.html.gz",
@@ -18155,8 +18155,8 @@
   },
   {
    "file": "l10n/prerender/pt/digestive-wellness-gut-health-yoga-therapy.html.gz",
-   "sha256": "d324cf59724ec81e2cfda99bd8aefc64a338969662014d5cd4df231bd1d39c6f",
-   "bytes": 36241
+   "sha256": "795db1a6e922dab834d05e9516d91eec2a82e4dff55255920e7ed5e97dd6ebc8",
+   "bytes": 37462
   },
   {
    "file": "l10n/prerender/pt/disclaimer.html.gz",
@@ -18890,8 +18890,8 @@
   },
   {
    "file": "l10n/prerender/pt/index.json",
-   "sha256": "e4428a7569c4ca0f9088dd6154b648054e3a2f3c8c47762e9bfc7891ff370099",
-   "bytes": 138591
+   "sha256": "89be44615721fb89a3e6e7f384f63d8d0b2a74dd0322f92fd9369c07bc65af5b",
+   "bytes": 138050
   },
   {
    "file": "l10n/prerender/nl/index.html.gz",
@@ -19165,8 +19165,8 @@
   },
   {
    "file": "l10n/prerender/nl/digestive-wellness-gut-health-yoga-therapy.html.gz",
-   "sha256": "771795693de913ea77ee497dd6be1a85edf22aea363253d23c447f128839cf24",
-   "bytes": 36277
+   "sha256": "dc13d2e9f7dc50fa2fe4bab046af8997ade82c70224f00881733bb261cf6d7df",
+   "bytes": 37447
   },
   {
    "file": "l10n/prerender/nl/disclaimer.html.gz",
@@ -19900,8 +19900,8 @@
   },
   {
    "file": "l10n/prerender/nl/index.json",
-   "sha256": "2210041cada862d88ba1bf59207e6bde29482b4c12f241d15c1fd286756b78a5",
-   "bytes": 137871
+   "sha256": "d4abd98c39cd2a7f1c0dc0ea6c8485f529762e0c2399b278737c6b0d7cd9e694",
+   "bytes": 137330
   },
   {
    "file": "l10n/prerender/ru/index.html.gz",
@@ -20175,8 +20175,8 @@
   },
   {
    "file": "l10n/prerender/ru/digestive-wellness-gut-health-yoga-therapy.html.gz",
-   "sha256": "b5342aa6510638111bb020712b6aa54b1d3e94d856af88b7ce24d81737bd7297",
-   "bytes": 41273
+   "sha256": "be0506382f751d2a800fae6d78648e2d058acf645c1fbe67da2ac631e88c0356",
+   "bytes": 42529
   },
   {
    "file": "l10n/prerender/ru/disclaimer.html.gz",
@@ -20910,8 +20910,8 @@
   },
   {
    "file": "l10n/prerender/ru/index.json",
-   "sha256": "be507c39195d3ed306847811f27bc7ab77223e9d81adf5ad5412a198e8256d5e",
-   "bytes": 147630
+   "sha256": "0232456617ef4b89e18436a7dea4e25d2f5fa705b080b2446cbeda238540901c",
+   "bytes": 147089
   },
   {
    "file": "l10n/prerender/ar/index.html.gz",
@@ -21185,8 +21185,8 @@
   },
   {
    "file": "l10n/prerender/ar/digestive-wellness-gut-health-yoga-therapy.html.gz",
-   "sha256": "4efcbaae1b5bdd3982e77733e46cf8a3e3c1e84a75769145a7e226def0d4e26f",
-   "bytes": 38386
+   "sha256": "30be6857b2195b23b1a147677fa7aac515016dae99b9cf459fe7242546e262b9",
+   "bytes": 39638
   },
   {
    "file": "l10n/prerender/ar/disclaimer.html.gz",
@@ -21920,8 +21920,8 @@
   },
   {
    "file": "l10n/prerender/ar/index.json",
-   "sha256": "c64a5e9c682be93eeefed3a84fbde7c3341c371823366e21841b5ba6481c782c",
-   "bytes": 143709
+   "sha256": "fdde4f4265c1dcf1d368e79c8d02e0cda29d10df4b8fa7e3fee6713a119f837b",
+   "bytes": 143168
   },
   {
    "file": "l10n/prerender/zh-Hans/index.html.gz",
@@ -22195,8 +22195,8 @@
   },
   {
    "file": "l10n/prerender/zh-Hans/digestive-wellness-gut-health-yoga-therapy.html.gz",
-   "sha256": "ad812ef697be28587230ab86bbc96c70f9266e347133cae1fbc3d04bcd78e0b7",
-   "bytes": 37602
+   "sha256": "0d8e5f0595c4bb00d460c40f303415caa7049bc1cc72b8213a792fea43c41047",
+   "bytes": 38853
   },
   {
    "file": "l10n/prerender/zh-Hans/disclaimer.html.gz",
@@ -22930,8 +22930,8 @@
   },
   {
    "file": "l10n/prerender/zh-Hans/index.json",
-   "sha256": "5379462884594bcbdf4e76df83462cd8c3522af518258d790f841959bba3c69f",
-   "bytes": 137753
+   "sha256": "02b6626338a56c7590b8cc669f202a308ab376a349fb5584246c4290508b1a7e",
+   "bytes": 137202
   },
   {
    "file": "l10n/prerender/ja/index.html.gz",
@@ -23205,8 +23205,8 @@
   },
   {
    "file": "l10n/prerender/ja/digestive-wellness-gut-health-yoga-therapy.html.gz",
-   "sha256": "c0b02ca1b50677a57adb39fb517603edf685272a302464556266831fc6162a97",
-   "bytes": 38948
+   "sha256": "9211cce66859d48dfa8c2137867c8914cd404df77c4600cf688451a2190a2c28",
+   "bytes": 40192
   },
   {
    "file": "l10n/prerender/ja/disclaimer.html.gz",
@@ -23940,8 +23940,8 @@
   },
   {
    "file": "l10n/prerender/ja/index.json",
-   "sha256": "76ba84be37f59b6ca5bce2d1f7ba64316235384613eb99ee6fdf27d741c46183",
-   "bytes": 140539
+   "sha256": "c816707b8a72c0dde13248aeb08e35dd5a16a5d7832ad0f360890fd2ec5770a2",
+   "bytes": 139998
   },
   {
    "file": "l10n/prerender/ko/index.html.gz",
@@ -24215,8 +24215,8 @@
   },
   {
    "file": "l10n/prerender/ko/digestive-wellness-gut-health-yoga-therapy.html.gz",
-   "sha256": "557de23e5d313134edef60ae268a8cd781e5d715ed1cf071e7ec03e2abb084b8",
-   "bytes": 37978
+   "sha256": "fd847711a7abbbc31eccdc37189650518f038dd5bc2e0a81e44c9ecf52f25572",
+   "bytes": 39228
   },
   {
    "file": "l10n/prerender/ko/disclaimer.html.gz",
@@ -24950,8 +24950,8 @@
   },
   {
    "file": "l10n/prerender/ko/index.json",
-   "sha256": "b3bccc41b292130b749e814e60c5b626d9f0d2fff1b2d7ad6477ca61afd058d4",
-   "bytes": 138012
+   "sha256": "2acdd450c266c2f8250f857f00354cab8f6c61cac79da283d7913b81baac9e8a",
+   "bytes": 137471
   }
  ],
  "interactionOnlySources": [
@@ -24981,7 +24981,7 @@
   "public/ahv/l10n/zh/design/opd-form-submit.js"
  ],
  "interactionOnlyRationale": "Submission-only scripts are validated at each build to register only user-interaction listeners and perform no DOM writes, network, timers or load-event work before interaction. Crawlable body, translated data, render scripts and archive hashes remain pinned.",
- "assembledAt": "2026-10-07T23:29:32.265621+00:00",
+ "assembledAt": "2026-10-08T19:00:23.341896+00:00",
  "baselinePreservation": {
   "schema": "ahv-weight-baseline-preservation/v1",
   "classification": "SOURCE-CLOSURE-VERIFIED RELEASE CANDIDATE; NOT PUBLICATION",
@@ -25601,5 +25601,13 @@
    "Normal guarded build and required CI",
    "Hosted and public acceptance before publication"
   ]
+ },
+ "incrementalDigestiveCapture": {
+  "proof": "english-candidate/digestive-capture-proof.json",
+  "proofSha256": "ac6db97cccf067bfb959672fc53e8ea1736d60d745e1b5970045265360dfc29b",
+  "parentSpecSha256": "2c3e013f294a005b232cb735b7b94139daf5e567349238f1668a65c27d54ef0c",
+  "parentArchiveSha256": "ecf134b717288fe5e98138fae245d189459c5d228f766139889aacb564443e70",
+  "freshBodies": 12,
+  "preservedOtherBodies": 2400
  }
 }
