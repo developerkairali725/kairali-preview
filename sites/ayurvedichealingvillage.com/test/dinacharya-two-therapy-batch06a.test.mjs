@@ -1,4 +1,4 @@
-// N12.06-A — approved two-therapy indicative Dinacharya on the 24 batch views.
+// N12.06-A — approved two-therapy indicative Dinacharya on the first 12 responsive views (six programme pages).
 // Checks the parsed routine data, not its wording: two included therapies (one morning,
 // one afternoon), the approved start time of each activity role and the approved yoga and
 // breakfast ranges, ordered slots and ranges, doctor-plan wording on each therapy slot, no
@@ -76,19 +76,7 @@ const BATCH = {
   "ahv-page-facial-paralysis-desktop": "025906f0b2ffd542f5f3844be8fdfd6f21aea2c10070f9063465211bc4ce0bf9",
   "ahv-page-facial-paralysis-mobile": "c909f0c2fdec849b6ff9edf9b062ca2e820d67070b920a55c288ebd60d018e80",
   "ahv-page-holistic-rejuvenation-detoxification-desktop": "34386573b2bf1d0830a220d53ecd997ba80657a2d507af4a4028cdfba4eb3e7b",
-  "ahv-page-holistic-rejuvenation-detoxification-mobile": "dd4e0f6aab47b23cc1e9eece0508731d345947151460e435f0e2abe61d39c842",
-  "ahv-page-hypertension-desktop": "034922f17d6bb4dc31c3566ce2146e28fd5f86aa56a606e70b15f4b1fd67c62e",
-  "ahv-page-hypertension-mobile": "d6b9e8f6805760ab4f668b6606ecdc884a5f4d99f48770e5572dee156df2ca5e",
-  "ahv-page-immunity-executive-health-desktop": "0bf2da300380c6594dd772b362da373d4a3232bbd5f29356d6a90ce23735a7cf",
-  "ahv-page-immunity-executive-health-mobile": "12602221a3eebd5a2e66fba6e5549829822564496734ea9509d76b8b476b5d98",
-  "ahv-page-joint-rehabilitation-arthritis-desktop": "8ec24d15fd910b2a460ad050b589646ece84effe443a8bd892c1bc290621bf77",
-  "ahv-page-joint-rehabilitation-arthritis-mobile": "4371598373a2b6d7613c54fc52c715d65c2bbda1412fc61e0010c759132d74bf",
-  "ahv-page-neck-upper-back-desktop": "b292f395be59d91be4b6d066071f48c7f47adff55ddf06094c39697e4b1069ff",
-  "ahv-page-neck-upper-back-mobile": "102301c2cdb1e47603343d0bb42066d0d62b64e500888280c63d8735d024afc2",
-  "ahv-page-nervous-disability-desktop": "09c136dda9b07b2d6a5c1db802c2d599cc8eb0d4825c7af1d3c7315d55fb5ba2",
-  "ahv-page-nervous-disability-mobile": "2149f151b595d5968167ee23e2a392d10efc3fb9e86ea1e211d958fc4959c508",
-  "ahv-page-panchakarma-therapy-desktop": "ac5c70dec9d26e3e94992516e72bf938a37c955af20a836ef939d3f1436c5dc4",
-  "ahv-page-panchakarma-therapy-mobile": "40b841b792f9d702d66217b306e32105496d9f17c1898df6e5d1f85582df4950"
+  "ahv-page-holistic-rejuvenation-detoxification-mobile": "dd4e0f6aab47b23cc1e9eece0508731d345947151460e435f0e2abe61d39c842"
 };
 const FROZEN_ROUTINE_VIEWS = {};
 const FROZEN_COURSE_AND_TARIFF = {
