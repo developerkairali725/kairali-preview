@@ -101,6 +101,8 @@ test("imageLedFirstScreen: listed hero-background routes only; every other route
   assert.equal(imageLedFirstScreen(digestive), true);
   assert.equal(imageLedFirstScreen("/weight-loss-programme/"), true);
   assert.equal(imageLedFirstScreen("/offers/"), true);
+  assert.equal(imageLedFirstScreen("/treatment-for-bronchial-diseases/"), true);
+  assert.equal(imageLedFirstScreen("/holistic-treatment-for-rejuvenation-and-detoxification/"), true);
   for (const p of ["/", "/our-villas/", "/kairali-ayurvedic-way-of-weight-management/", "/panchakarma-therapy/", "/digestive-wellness-gut-health-yoga-therapy", "", undefined]) {
 
     assert.equal(imageLedFirstScreen(p), false, String(p));

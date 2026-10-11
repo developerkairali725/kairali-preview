@@ -21,8 +21,7 @@ function slots() {
 }
 
 /** Routes whose snapshot and boot script ship in the server HTML only. */
-export const SSR_ONLY_HTML_ROUTES = new Set(["/contact-us/", "/offers/", "/weight-loss-programme/"]);
-
+export const SSR_ONLY_HTML_ROUTES = new Set(["/contact-us/", "/offers/", "/weight-loss-programme/", "/treatment-for-bronchial-diseases/", "/holistic-treatment-for-rejuvenation-and-detoxification/"]);
 
 export function putSsrOnlyHtml(slot, html) {
   if (typeof html !== "string") throw new TypeError(`AHV server-only markup must be a string: ${slot}`);
