@@ -139,10 +139,10 @@ test("document: the current production campaign document's consent, measurement,
   }
   // English keeps the same chrome file; German and Russian load the site's own localized copies of it.
   assert.match(doc, /en: "\/design\/review-chrome\.js"/);
-  assert.match(doc, /de: "\/ahv\/l10n\/de\/design\/review-chrome\.js"/);
-  assert.match(doc, /ru: "\/ahv\/l10n\/ru\/design\/review-chrome\.js"/);
+  assert.match(doc, /de: "\/ahv\/l10n\/de\/design\/campaign-review-chrome\.js"/);
+  assert.match(doc, /ru: "\/ahv\/l10n\/ru\/design\/campaign-review-chrome\.js"/);
   assert.match(doc, /<Script src=\{CHROME\[lang\]\} strategy="afterInteractive" \/>/);
-  for (const l of ["de", "ru"]) assert.ok(fs.existsSync(P(`public/ahv/l10n/${l}/design/review-chrome.js`)), l);
+  for (const l of ["de", "ru"]) assert.ok(fs.existsSync(P(`public/ahv/l10n/${l}/design/campaign-review-chrome.js`)), l);
   assert.match(doc, /data-lp-surface="production"/);
   assert.match(read("app/(ppc-v2)/layout.tsx"), /<ProductionDocument>\{children\}<\/ProductionDocument>/);
 });

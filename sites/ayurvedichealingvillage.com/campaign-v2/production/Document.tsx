@@ -14,11 +14,11 @@ import "../sections/sections.css";
 import "./production.css";
 
 /** The site's shared chrome per page language: the localized copies the site already serves (as the German campaign
- *  document did for /lp/behandlung-in-kerala/). English is unchanged. */
+ *  document did for /lp/behandlung-in-kerala/). Dedicated DE/RU campaign bundles preserve snapshot-bound chrome elsewhere. */
 const CHROME: Record<PageLocale, string> = {
   en: "/design/review-chrome.js",
-  de: "/ahv/l10n/de/design/review-chrome.js",
-  ru: "/ahv/l10n/ru/design/review-chrome.js",
+  de: "/ahv/l10n/de/design/campaign-review-chrome.js",
+  ru: "/ahv/l10n/ru/design/campaign-review-chrome.js",
 };
 
 /**

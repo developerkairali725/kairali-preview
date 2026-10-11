@@ -342,6 +342,7 @@
     var lp = window.AHV_LOCAL_PATHS, form = root.querySelector("form[id]");
     var here = location.pathname.replace(/\/?$/, "/");
     bar.querySelectorAll("a").forEach(function (a) {
+      if (campaignRoot && a.classList.contains("ahv-cta-consult")) { syncFreeConsult(a, lp); return; }
       var h = a.getAttribute("href") || "";
       if (lp && lp[h] && lp[h] !== h) a.setAttribute("href", (h = lp[h]));
       // the enquiry page itself: "Enquire" goes to its form, as boot.ts does for the page's own self-links
@@ -349,7 +350,7 @@
       // a landing page: "Enquire" goes to its own in-page consultation form (the LP's "Request a consultation" link)
       if (campaignRoot && a.classList.contains("ahv-cta-enquire")) {
         var campaignForm = root.querySelector("#enquiry, #consult") || root.querySelector("main form[id]");
-        if (campaignForm) a.setAttribute("href", "#" + campaignForm.id);
+        if (campaignForm && a.getAttribute("href") !== "#" + campaignForm.id) a.setAttribute("href", "#" + campaignForm.id);
       }
       if (isLp && a.classList.contains("ahv-cta-enquire")) {
         var lpForm = document.querySelector('a.lp-enquire-link[href^="#"]');
@@ -364,6 +365,41 @@
     if (html.style.getPropertyValue("--ahv-cta-bar-h") !== barHeight) {
       if (hgt) html.style.setProperty("--ahv-cta-bar-h", barHeight); else html.style.removeProperty("--ahv-cta-bar-h");
     }
+  }
+  // LATER-011 / DEC-FREE-CONSULT (owner, 10 Oct 2026: same-page Free Consult, unchanged styling). On the live campaign
+  // routes (app/(ppc-v2*): the same free doctor consultation the bar's own link offers) "Free Consult" opens the page's
+  // own consultation form, #enquiry, the target of every in-page consultation CTA. Any other route, or a page whose
+  // #enquiry holds no form, keeps the bar's own consultation link (`own`, as first built; through the locale path map).
+  // Decided for the current path on every pass, so client navigation never keeps a stale target; written only on change.
+  // A route change by history alone mutates nothing the observer watches, so the link also re-decides its own
+  // destination when it is activated (click, middle click, context menu), before the browser's default action reads
+  // the href. Installed once per link; never cancels or stops the event, so modified clicks keep their defaults.
+  function syncFreeConsult(a, lp) {
+    if (a.__ahvConsultHref == null) a.__ahvConsultHref = a.getAttribute("href") || "";
+    if (!a.__ahvConsultBound && typeof a.addEventListener === "function") {
+      a.__ahvConsultBound = true;
+      var refresh = function () { syncFreeConsult(a, lp); };
+      a.addEventListener("click", refresh);
+      a.addEventListener("auxclick", refresh);
+      a.addEventListener("contextmenu", refresh);
+    }
+    var want = freeConsultHref(lp, a.__ahvConsultHref);
+    if (want && a.getAttribute("href") !== want) a.setAttribute("href", want);
+  }
+  function freeConsultHref(lp, own) {
+    var routes = {
+      "/ayurvedic-treatment-packages.html": 1, "/panchkarma-treatment.html": 1, "/pain-management.html": 1,
+      "/family-ayurvedic-retreat-kerala.html": 1, "/karkidaka-chikitsha-or-monsoon-wellness.html": 1,
+      "/preventive-rejuvenation-detoxification.html": 1, "/ayurveda-retreat-kerala.html": 1, "/wellness-resort-kerala.html": 1,
+      "/kairali-cleansing-centre.html": 1, "/treatment-in-kerala.html": 1, "/Ayurveda_Treatment_Neo_S.India_Cities.html": 1,
+      "/Kairali_Brand_and_Competition_Neo-original.html": 1, "/weight-loss.html": 1,
+      "/lp/ayurveda-treatment-south-india": 1, "/lp/ayurvedic-hospital-kerala": 1, "/lp/kairali-brand": 1,
+      "/lp/kairali-cleansing-centre": 1, "/lp/pain-management": 1, "/lp/panchkarma-treatment": 1, "/lp/treatment-in-kerala": 1,
+      "/lp/treatment-packages": 1, "/lp/weight-loss": 1, "/lp/behandlung-in-kerala": 1, "/lp/treatment-in-kerala-russian": 1
+    };
+    var path = location.pathname.replace(/\/+$/, "");
+    if (Object.prototype.hasOwnProperty.call(routes, path) && root.querySelector("#enquiry form")) return "#enquiry";
+    return lp && own && lp[own] ? lp[own] : own;
   }
   window.addEventListener("resize", function () { schedule(); });
   // Shared policy, including carousel href changes and links outside the design root.
