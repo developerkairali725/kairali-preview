@@ -50,7 +50,8 @@ export default function Hero({ c, v, req, carry }: SectionProps) {
   // Art direction: one <picture>, so each viewport downloads exactly one hero image. The <img> is the mobile
   // photo, so its alt describes that photo.
   const { props: { srcSet: deskSrcSet } } = getImageProps({ src: desk.src, width: desk.width, height: desk.height, alt: "", sizes: layout.sizes });
-  const { props: mobProps } = getImageProps({ src: mob.src, width: mob.width, height: mob.height, alt: ui.alt[mob.id] ?? mob.alt, sizes: layout.mobileSizes, quality: c.hero.mobileQuality, priority: true });
+  const staticMobileHero = production ? ({ "/lp/weight-loss/": "/design/hero-weight-750.avif", "/lp/panchkarma-treatment/": "/design/hero-panchakarma-750.avif" } as Record<string,string>)[c.route] : undefined;
+  const { props: mobProps } = getImageProps({ src: staticMobileHero ?? mob.src, width: mob.width, height: mob.height, alt: ui.alt[mob.id] ?? mob.alt, sizes: layout.mobileSizes, quality: c.hero.mobileQuality, priority: true, unoptimized: !!staticMobileHero });
 
   // The LCP image. React does not auto-preload an <img> inside <picture>, so preload each art-directed source for
   // its own media query; React puts these in <head> (and the Link header), so the phone fetches only its image,
