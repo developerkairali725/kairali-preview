@@ -98,6 +98,7 @@ export function createCaptureEvaluation(extract) {
 }
 
 export function captureFormSelector(route) {
+  if (route === '/digestive-wellness-gut-health-yoga-therapy/') return '#programme-enquiry form[data-form="contact"]';
   if (['/contact-us/', '/enquiry-form/'].includes(route)) return 'form[data-form="contact"]';
   if (route === '/apply-now/') return 'form[data-form="apply"]';
   if (route === '/jobs/business-development-manager/') return 'form[data-form="job"]';
@@ -107,7 +108,7 @@ export function captureFormSelector(route) {
   return null;
 }
 
-// Production Digestive remains a held page with an external contact journey.
+// Weight remains held with its external contact journey; Digestive uses its approved inline form.
 // Paths are the existing public contact route map, not an English fallback.
 function digestiveContactContract(locale) {
   const paths = {
@@ -140,7 +141,7 @@ function neutralConfirmationContract(route, locale) {
 }
 
 export function captureContentRequirements(route, sourceRecord = {}, locale = 'en') {
-  if (route === '/digestive-wellness-gut-health-yoga-therapy/') return { formSelector: null, retainedDigestiveContact: digestiveContactContract(locale ?? 'en') };
+  if (route === '/digestive-wellness-gut-health-yoga-therapy/') return { formSelector: captureFormSelector(route), formCount: 1 };
   if (route === '/weight-loss-programme/') return { formSelector: null, retainedWeightContact: { ...digestiveContactContract(locale ?? 'en'), id: 'ahv-weight-production-contact-v1' } };
   if (route === '/jobs/business-development-manager/' && sourceRecord.closed === true && sourceRecord.applicationsOpen === false) {
     return { formSelector: null, requiredSelector: '[data-job-closed="true"]', forbiddenSelector: 'form[data-form="job"]' };
@@ -156,7 +157,7 @@ export function assertCapturePage(state, route) {
   }
   if (state.errors.length) throw new Error('Rendered component error on ' + route + ': ' + state.errors.join('; '));
   if (!state.heading) throw new Error('Missing meaningful page H1 on ' + route);
-  const heldKey = route === '/digestive-wellness-gut-health-yoga-therapy/' ? 'retainedDigestiveContact' : route === '/weight-loss-programme/' ? 'retainedWeightContact' : null;
+  const heldKey = route === '/weight-loss-programme/' ? 'retainedWeightContact' : null;
   if (heldKey) {
     const retained = state[heldKey];
     if (!retained || typeof retained.locale !== 'string') throw new Error('Missing held programme contact proof');

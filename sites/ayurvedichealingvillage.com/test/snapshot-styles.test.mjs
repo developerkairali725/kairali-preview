@@ -2,7 +2,9 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import { helmetStyles, importedComponents, viewFirstPaintStyles, snapshotStylesFor, firstScreenPoster, bodyFontFiles, inlineFontStyles } from "../app/(english)/_families/snapshot-styles.mjs";
+import zlib from "node:zlib";
+import { helmetStyles, importedComponents, viewFirstPaintStyles, snapshotStylesFor, firstScreenPoster, imageLedFirstScreen, bodyFontFiles, inlineFontStyles } from "../app/(english)/_families/snapshot-styles.mjs";
+import { firstCriticalImage, phoneCriticalMedia } from "../app/(english)/_families/critical-media.mjs";
 
 test("helmetStyles keeps local font stylesheets and <style> blocks only, in order", () => {
   const t = `<helmet>
@@ -92,6 +94,30 @@ test("firstScreenPoster: a first-screen <video poster> only, local paths only", 
   // the served EN home snapshot opens on the hero poster; a content page does not
   assert.equal(firstScreenPoster(fs.readFileSync("english-candidate/prerender/index.html", "utf8")), "/ahv/assets/img/wx-hero-544.avif");
   assert.equal(firstScreenPoster(fs.readFileSync("english-candidate/prerender/our-villas.html", "utf8")), null);
+});
+
+test("imageLedFirstScreen: listed hero-background routes only; every other route keeps its faces", () => {
+  const digestive = "/digestive-wellness-gut-health-yoga-therapy/";
+  assert.equal(imageLedFirstScreen(digestive), true);
+  for (const p of ["/", "/our-villas/", "/kairali-ayurvedic-way-of-weight-management/", "/panchakarma-therapy/", "/digestive-wellness-gut-health-yoga-therapy", "", undefined]) {
+    assert.equal(imageLedFirstScreen(p), false, String(p));
+  }
+  // the listed route really is image-led in every served locale: no poster, and its first screen is the hero
+  // background (the EN phone hero is the preloaded 768 AVIF the gate measured as the LCP element)
+  const en = fs.readFileSync("english-candidate/prerender/digestive-wellness-gut-health-yoga-therapy.html", "utf8");
+  assert.equal(firstScreenPoster(en), null);
+  assert.equal(firstCriticalImage(phoneCriticalMedia(en, digestive), digestive), "/ahv/assets/img/digestive-768-hero.avif");
+  const locales = fs.readdirSync("l10n/prerender").filter((l) => fs.existsSync(`l10n/prerender/${l}/digestive-wellness-gut-health-yoga-therapy.html.gz`));
+  assert.equal(locales.length, 12);
+  for (const html of [en, ...locales.map((l) => zlib.gunzipSync(fs.readFileSync(`l10n/prerender/${l}/digestive-wellness-gut-health-yoga-therapy.html.gz`)).toString("utf8"))]) {
+    // Frozen English is WebP; captures from the current runtime already contain the optimized AVIF.
+    // Check the served media contract after the same normalization used by DesignView.
+    const served = phoneCriticalMedia(html, digestive);
+    assert.equal(firstCriticalImage(served, digestive), "/ahv/assets/img/digestive-768-hero.avif");
+    const hero = served.search(/background-image:\s*url\((?:&quot;|")?\/ahv\/assets\/img\/digestive-768-hero\.avif/);
+    assert.ok(hero > 0 && hero < served.search(/<img\b[^>]*\sloading="lazy"/i));
+    assert.doesNotMatch(served, /<video\b/);
+  }
 });
 
 test("bodyFontFiles: the local face of the body family, upright 400 only", () => {

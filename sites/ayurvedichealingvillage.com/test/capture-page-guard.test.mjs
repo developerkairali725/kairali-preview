@@ -33,56 +33,30 @@ function digestiveProof(locale = 'en', { hrefs = [contactPaths[locale]], chromeH
   return inspectCapturePage({ ...captureContentRequirements(route, {}, locale), rootElement: root });
 }
 
-test('held Digestive accepts the prerender English null locale without weakening its contact contract', () => {
-  // English prerender sets LOCALE to null when --locale is absent.
-  const expected = captureContentRequirements(digestiveRoute, {}, 'en');
-  for (const locale of [null, undefined]) {
-    assert.deepEqual(captureContentRequirements(digestiveRoute, undefined, locale), expected);
-    const proof = digestiveProof(locale, { hrefs: ['/contact-us/'] });
-    assert.equal(proof.retainedDigestiveContact.locale, 'en');
-    assert.doesNotThrow(() => assertCapturePage(proof, digestiveRoute));
-    assert.throws(() => assertCapturePage(digestiveProof(locale, { hrefs: ['/de/kontakt/'] }), digestiveRoute), /external contact journey/);
-  }
-  for (const locale of ['', 'unknown', 'EN', false, 0]) {
-    assert.throws(() => captureContentRequirements(digestiveRoute, {}, locale), /Unknown held Digestive locale/);
-  }
-});
-
-test('held Digestive requires its own localized contact CTA and zero inline forms in all13 locales', () => {
-  for (const [locale, path] of Object.entries(contactPaths)) {
-    assert.equal(captureContentRequirements(digestiveRoute, {}, locale).retainedDigestiveContact.path, path);
-    for (const href of [path, `https://ayurvedichealingvillage.com${path}`, `${path}?programme=treatment`]) {
-      assert.doesNotThrow(() => assertCapturePage(digestiveProof(locale, { hrefs: [href] }), digestiveRoute));
+// Restores the approved c35727ec4 inline-form contract for Digestive alone.
+// Weight remains held and keeps the adversarial external-contact tests below.
+test('Digestive capture requires exactly one populated programme contact form in every locale', () => {
+  for (const locale of [null, undefined, ...Object.keys(contactPaths)]) {
+    const requirements = captureContentRequirements(digestiveRoute, {}, locale);
+    assert.deepEqual(requirements, { formSelector: '#programme-enquiry form[data-form="contact"]', formCount: 1 });
+    assert.equal(captureFormSelector(digestiveRoute), requirements.formSelector);
+    for (const [count, populated] of [[0, false], [1, false], [1, true], [2, true]]) {
+      const root = fixtureRoot(), query = root.querySelectorAll.bind(root);
+      const form = { querySelector: () => populated ? { tagName: 'INPUT' } : null };
+      root.querySelector = selector => selector === requirements.formSelector && count ? form : null;
+      root.querySelectorAll = selector => selector === requirements.formSelector ? Array.from({ length: count }, () => form) : query(selector);
+      const proof = inspectCapturePage({ ...requirements, rootElement: root });
+      if (count === 1 && populated) assert.doesNotThrow(() => assertCapturePage(proof, digestiveRoute));
+      else assert.throws(() => assertCapturePage(proof, digestiveRoute), /page form/);
     }
   }
-  assert.equal(captureFormSelector(digestiveRoute), null);
-  assert.throws(() => captureContentRequirements(digestiveRoute, {}, 'unknown'), /Unknown held Digestive locale/);
 });
 
-test('held Digestive rejects missing, chrome-only, wrong-locale and foreign-origin contact journeys', () => {
-  for (const hrefs of [[], ['/enquiry-form/'], ['/de/kontakt/'], ['https://foreign.test/contact-us/'], ['//foreign.test/contact-us/'], ['https://user@ayurvedichealingvillage.com/contact-us/'], ['javascript:void(0)'], ['/contact-us/#missing']]) {
-    assert.throws(() => assertCapturePage(digestiveProof('en', { hrefs, chromeHrefs: ['/contact-us/'] }), digestiveRoute), /external contact journey/);
+test('Digestive cannot accept an obsolete held-contact proof or incomplete content', () => {
+  assert.throws(() => assertCapturePage({ ...complete, retainedDigestiveContact: { id: 'ahv-digestive-production-contact-v1' } }, digestiveRoute), /Unexpected held programme/);
+  for (const change of [{ requiredForm: false }, { heading: '' }, { bodyChars: 0 }, { errors: ['Component import failed'] }]) {
+    assert.throws(() => assertCapturePage({ ...complete, ...change }, digestiveRoute));
   }
-  assert.throws(() => assertCapturePage(digestiveProof('de', { hrefs: ['/contact-us/'] }), digestiveRoute), /external contact journey/);
-});
-
-test('held Digestive rejects reintroduced forms, programme sections, dead anchors and incomplete content', () => {
-  for (const options of [{ actions: ['/api/lead/'] }, { actions: [''] }, { actions: ['https://foreign.test/api/newsletter'] }, { bodyActions: ['/api/newsletter'] }, { sections: 1 }, { hrefs: ['/contact-us/', '#programme-enquiry'] }, { hrefs: ['/contact-us/', 'https://ayurvedichealingvillage.com/digestive-wellness-gut-health-yoga-therapy/#programme-enquiry'] }]) {
-    assert.throws(() => assertCapturePage(digestiveProof('en', options), digestiveRoute), /external contact journey/);
-  }
-  assert.throws(() => assertCapturePage(digestiveProof('en', { empty: true }), digestiveRoute), /page body/);
-  assert.throws(() => assertCapturePage(digestiveProof('en', { noHeading: true }), digestiveRoute), /H1/);
-  assert.throws(() => assertCapturePage(digestiveProof('en', { error: true }), digestiveRoute), /Component import failed/);
-  assert.throws(() => assertCapturePage({ ...complete, requiredForm: false }, '/contact-us/'), /page form/);
-});
-
-test('held Digestive proof is mandatory, typed and cannot weaken another route', () => {
-  const proof = digestiveProof();
-  assert.throws(() => assertCapturePage(complete, digestiveRoute), /Missing held programme contact proof/);
-  for (const change of [{ id: 'forged' }, { path: '/elsewhere/' }, { contactLinks: -1 }, { inlineForms: false }, { deadProgrammeLinks: undefined }]) {
-    assert.throws(() => assertCapturePage({ ...proof, retainedDigestiveContact: { ...proof.retainedDigestiveContact, ...change } }, digestiveRoute), /Malformed/);
-  }
-  assert.throws(() => assertCapturePage(proof, '/weight-loss-programme/'), /(?:Missing|Unexpected) held programme/);
 });
 
 function fixtureRoot(importFailure = false) {

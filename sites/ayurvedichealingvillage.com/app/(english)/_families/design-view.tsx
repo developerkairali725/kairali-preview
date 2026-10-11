@@ -4,7 +4,7 @@ import { reviewCopyFor, applyReviewSnapshot, bookingLabelsFor } from "./content-
 import { measurementForEnvironment } from "../../../lib/measurement-config.mjs";
 import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage, deferHomeSnapshotImages, responsiveVillaImages } from "./critical-media.mjs";
 import { formPostSafety } from "./form-post-safety.mjs";
-import { snapshotStylesFor, firstScreenPoster } from "./snapshot-styles.mjs";
+import { snapshotStylesFor, firstScreenPoster, imageLedFirstScreen } from "./snapshot-styles.mjs";
 import { newsletterFooters } from "./newsletter-markup.mjs";
 import { computedFooterYear } from "./computed-footer-year";
 import { routeRobots } from "./robots-policy";
@@ -161,8 +161,9 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
   const firstPaint = snapshot ? snapshotStylesFor(cfg) : null;
   // Where the snapshot opens on a <video poster> (the home views, every locale) that poster is the LCP
   // element, not text, and the snapshot's font stylesheet and faces only competed with it — measured +0.8-0.9 s
-  // simulated / +1.2 s throttled LCP. There the faces keep arriving with the runtime, as before.
-  const snapshotFaces = firstPaint && !firstScreenPoster(snapshot) ? firstPaint : null;
+  // simulated / +1.2 s throttled LCP. There the faces keep arriving with the runtime, as before. The same holds
+  // for the listed routes whose first screen is a hero background image (imageLedFirstScreen).
+  const snapshotFaces = firstPaint && !firstScreenPoster(snapshot) && !imageLedFirstScreen(route.path) ? firstPaint : null;
   const snapshotAssets: SnapshotStyleAsset[] = [
     ...(snapshotFaces?.fontCss.map(({ href, css }) => css
       ? { key: `font:${href}`, kind: 'style' as const, css }
