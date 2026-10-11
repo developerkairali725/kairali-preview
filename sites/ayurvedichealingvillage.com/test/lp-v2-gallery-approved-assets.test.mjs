@@ -136,7 +136,7 @@ test("counts: the page config carries the binding's gallery, so the mosaic chip 
 test("assets are unique: no addition repeats an id, file or source already in the route", () => {
   assert.equal(new Set(ADDED_IDS).size, ADDED_IDS.length);
   assert.equal(new Set(APPROVED_GALLERY_IMAGES.map((a) => a.image.src)).size, ADDED_IDS.length);
-  assert.equal(new Set(APPROVED_GALLERY_IMAGES.map((a) => a.provenance.librarySha256)).size, ADDED_IDS.length);
+  assert.equal(new Set(APPROVED_GALLERY_IMAGES.map((a) => a.provenance.librarySha256 ?? a.provenance.publishedSha256)).size, ADDED_IDS.length);
   for (const id of ADDED_IDS) assert.equal(IMAGES[id], undefined, `${id} is not a registry image key`);
   for (const slug of TARGETS) {
     const g = ROUTES[slug].gallery;
@@ -156,6 +156,18 @@ test("provenance: each addition is in the named published manifest with the same
       const chapter = route.chapters.find((c) => c.id === pv.manifestChapter);
       assert.ok(chapter, `${pv.manifestRoute} ${pv.manifestChapter}`);
       entry = chapter.images.find((i) => i.src === image.src);
+    } else if (pv.manifest === "english-candidate/prerender/deluxe-villa.html") {
+      assert.equal(pv.manifestRoute, "/deluxe-villa/");
+      const source = fs.readFileSync(P(pv.manifest), "utf8");
+      const tags = [...source.matchAll(/<img\b[^>]*>/g)].map(x => x[0]);
+      const tag = tags.find(x => x.includes(`src="${image.src}"`) && x.includes(`data-dc-tpl="${pv.manifestChapter}"`));
+      assert.ok(tag, image.src);
+      const attr = name => tag.match(new RegExp(`${name}="([^"\n]+)"`))?.[1];
+      assert.deepEqual(pv.publishedSize, { width: Number(attr("width")), height: Number(attr("height")) });
+      assert.equal(pv.libraryPath, undefined); // No invented library-original provenance.
+      assert.equal(pv.librarySha256, undefined);
+      entry = { src: attr("src"), alt: attr("alt"), width: image.width, height: image.height };
+      // Actual intrinsic dimensions and bytes are checked independently below.
     } else {
       assert.equal(pv.manifest, "public/ahv/assets/enquiry-family-data.js");
       const source = fs.readFileSync(P(pv.manifest), "utf8");
