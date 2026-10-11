@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
 
-const source = fs.readFileSync(new URL('../app/(english)/_families/static-design-view.tsx', import.meta.url), 'utf8');
+const source = fs.readFileSync(new URL('../app/(english)/_families/static-design-boot.mjs', import.meta.url), 'utf8');
 const script = source.slice(source.indexOf('  var form = host.querySelector(\'form[data-form="contact"]\');'), source.indexOf('\n})();`;')).replaceAll('\\\\', '\\');
 
 function harness() {
