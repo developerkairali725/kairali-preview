@@ -143,3 +143,13 @@ test("bodyFontFiles: the local face of the body family, upright 400 only", () =>
     assert.ok(fs.existsSync("public" + out.preloadFonts[0]), v + " body face is served");
   }
 });
+
+test("hypertension image-led loading stays exact-route scoped", () => { assert.equal(imageLedFirstScreen("/treatment-for-hypertension/"), true); assert.equal(imageLedFirstScreen("/treatment-for-hypertension"), false); });
+
+test("N12.06-B measured image-led loading remains exact-route scoped", () => {
+ for (const route of ["/treatment-for-paralysis/", "/treatment-for-skin-diseases/"]) {
+  assert.equal(imageLedFirstScreen(route), true);
+  assert.equal(imageLedFirstScreen(route.slice(0,-1)), false);
+ }
+ assert.equal(imageLedFirstScreen("/treatment-for-psoriasis/"), false);
+});

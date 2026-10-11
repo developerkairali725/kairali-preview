@@ -50,7 +50,7 @@ export function descriptiveAwardLinks(html, route = "") {
 
 export function firstCriticalImage(html, routePath = '') {
   // N12 measured background LCPs: prioritize the existing approved hero only on its own route.
-  var programmeHeroes = {'/treatment-for-bronchial-diseases/':'/ahv/assets/img/bronchial-hero-nasyam.webp','/holistic-treatment-for-rejuvenation-and-detoxification/':'/ahv/assets/img/ho-pizhichil.webp'};
+  var programmeHeroes = {'/treatment-for-bronchial-diseases/':'/ahv/assets/img/bronchial-hero-nasyam.webp','/holistic-treatment-for-rejuvenation-and-detoxification/':'/ahv/assets/img/ho-pizhichil.webp','/treatment-for-hypertension/':'/ahv/assets/img/hypertension-hero-thakaradhara.webp','/treatment-for-paralysis/':'/ahv/assets/img/paralysis-hero-pinda-sweda.webp','/treatment-for-skin-diseases/':'/ahv/assets/img/skin-vitality-hero-mukha-abhyanga-3.webp'};
   var programmeHero = programmeHeroes[routePath];
   if (programmeHero && html.indexOf(programmeHero) >= 0) return programmeHero;
   var paths = ['/design/offers-hub-640.avif', '/ahv/assets/img/wx-hero-544.avif', '/ahv/assets/img/owner-approved-20260928/ahv-img-002-768.webp', '/ahv/assets/img/wx-hero-544.webp', '/ahv/assets/img/ktahv-abhyanga-oil-therapy-2025-544.webp', '/ahv/assets/img/AHV-Enquiry-Garden-Banner-768.webp', '/ahv/assets/img/weightloss-768-hero.avif', '/ahv/assets/img/digestive-768-hero.avif'];
