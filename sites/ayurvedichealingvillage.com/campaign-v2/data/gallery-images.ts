@@ -1,10 +1,10 @@
-// Approved photographs added to the full gallery of the first four live ad routes (owner decision: add suitable
+// Approved photographs added to the full gallery of live ad routes (owner decision: add suitable
 // approved villa/bathroom/consultation/therapy/yoga/dining/grounds photographs, keep the gallery design, truthful
 // counts). Each is an image the site already publishes, at its published URL, size and alt (english-candidate/
 // galleries-2026.json, D-20260922-31); nothing is re-cropped or newly copied. Only photographs whose owner approval
 // is on record, whose file is tracked in git (CI and the existing public/ check see it), whose published alt passes
 // the kit's alt lint verbatim, and in which no person can be identified. Activation is in production/bindings.ts
-// (first four routes only).
+// (the first four routes, then the twelve in APPROVED_GALLERY_ROUTES).
 //
 // Erasable TypeScript only (node --test imports this file).
 
