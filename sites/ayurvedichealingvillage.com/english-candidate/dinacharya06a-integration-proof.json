@@ -1,0 +1,1054 @@
+{
+  "status": "PASS",
+  "parentArchive": "ahv-locale-prerenders-weight-integrated-20261011.tar.gz",
+  "parentArchiveSHA256": "13e4b1fb1be6f3a0c4241e7dfe92a049bb5b09d944978370b5d1245e8f451355",
+  "captureInputsSHA256": "97d5d24f98b21305015e6578b017ca7a39f4831fa08b0cb251f963f8aeaf17ce",
+  "newBodyCount": 72,
+  "preservedBodyCount": 2340,
+  "changedSources": [
+    {
+      "file": "l10n/generated/ar.catalog.json",
+      "sha256": "c3ff88ddda395f502633f29b732f342e682a3323a3e5405fb2f0617bf2bfc2fa"
+    },
+    {
+      "file": "l10n/generated/ar.json",
+      "sha256": "9c9c7b973d80dc0dc4878b58f62a6c167f6d619a195f8a8871fbf8d99b61afde"
+    },
+    {
+      "file": "l10n/generated/de.catalog.json",
+      "sha256": "813315d4a7685dc99027c7ea30cf49509617b6b89181c67e45aa3e32cebfc49c"
+    },
+    {
+      "file": "l10n/generated/de.json",
+      "sha256": "8e29ff02f494b16b0200bc9e664ac6b81a500c4ec65b56d2d9b81f5675c6bb03"
+    },
+    {
+      "file": "l10n/generated/es.catalog.json",
+      "sha256": "d7d111ad8bd66bd28482c0bf5eeba782e890674cf4f0d194f615aa9a6d60a4aa"
+    },
+    {
+      "file": "l10n/generated/es.json",
+      "sha256": "182e2a6701c16d3ad2db8dde74d846c0705cbeaac35c81a14f3c1eb39ffddebe"
+    },
+    {
+      "file": "l10n/generated/fr.catalog.json",
+      "sha256": "27105f0aaacaeeb9b4a89c73094603352f3e212b978b1aa153b8b0a37ef2e0a7"
+    },
+    {
+      "file": "l10n/generated/fr.json",
+      "sha256": "3109c34cc400b8c9a1b42b566d8d13ab077f463ab708f3ea6db6032dc70e156b"
+    },
+    {
+      "file": "l10n/generated/hi.catalog.json",
+      "sha256": "3f8fe2de2c53a15a5554d138c5bde064a48e7d8423b28dedf7fbbb1e8c62e522"
+    },
+    {
+      "file": "l10n/generated/hi.json",
+      "sha256": "dc06dfa8e3c2a9fc42177b8acc0372ebc18aeb2ab097b73ef9905c6d03d085a2"
+    },
+    {
+      "file": "l10n/generated/it.catalog.json",
+      "sha256": "3ab2f8372291a5c7341ce1e57cbda4fccb9d7568928348c1cb9c9b4a33c8bfc3"
+    },
+    {
+      "file": "l10n/generated/it.json",
+      "sha256": "d64c6bb0b6c0e2bad77483e32e5969dcc7366dda730494689f47be04d0a09578"
+    },
+    {
+      "file": "l10n/generated/ja.catalog.json",
+      "sha256": "e0525c9d574011343bf2057353dd043e4a3723548f8bacc3bd93f4bb38ad5958"
+    },
+    {
+      "file": "l10n/generated/ja.json",
+      "sha256": "3298bd09069fe0afa299cab406dfc220ed6a9d9d428019af72e0a6aace4936ba"
+    },
+    {
+      "file": "l10n/generated/ko.catalog.json",
+      "sha256": "3689ee109f7ea040a4bbfd3822ee32117c500ceaa7f275f2f0e0432a33d62bdd"
+    },
+    {
+      "file": "l10n/generated/ko.json",
+      "sha256": "691692ae8d95bd50a745ff58d54b1b1d07e54dc617a702f437096227026cbe44"
+    },
+    {
+      "file": "l10n/generated/nl.catalog.json",
+      "sha256": "b2c3a7c469694788aa0d5b64e7d3e5eb1261735d8ef8843893d301294e1e44a4"
+    },
+    {
+      "file": "l10n/generated/nl.json",
+      "sha256": "81135324accaf9b73a010fc3708d33f85c4833e0c16fae0df7c573088a12cbab"
+    },
+    {
+      "file": "l10n/generated/pt.catalog.json",
+      "sha256": "e05d4792d847bbbdd7f8d2a4a1bd1ed47295c264c0caffb122a802169cb8ec08"
+    },
+    {
+      "file": "l10n/generated/pt.json",
+      "sha256": "0115be105b736a4097dabe1d3c7b0fbd861f48a3403016d311b65e52ba59719b"
+    },
+    {
+      "file": "l10n/generated/ru.catalog.json",
+      "sha256": "d25a5b172285121c45619178c5d8b4c3e2c2bb4acc1336bcefad9120ef982c4b"
+    },
+    {
+      "file": "l10n/generated/ru.json",
+      "sha256": "5adc0658a5e1b9bcf04c76dad1e6f40a41724e930223185edeb1df5df24bf7fd"
+    },
+    {
+      "file": "l10n/generated/zh-Hans.catalog.json",
+      "sha256": "485710d68f4a424e571464181098b3307ec4912b332039f0cd6b2b73b0222c70"
+    },
+    {
+      "file": "l10n/generated/zh-Hans.json",
+      "sha256": "19957fabaaf4a2397ba258999c1ebcb91da94b6f9667c652836cd0f8e2aa5487"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-breath-respiratory-desktop.json",
+      "sha256": "3ca66c01bc86f21d323cc3fae954202f92cf50adefdd7e0dc0252ab847630af7"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-breath-respiratory-mobile.json",
+      "sha256": "b956315b05098134e132c0b8db7766c052861473e4ecef422fc7d77d46ee1339"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-chronic-back-pain-desktop.json",
+      "sha256": "a3a761a60f00b3c686ee4a95522e3a41e277d3f47ea3fed1a88f9c12df7fbda7"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-chronic-back-pain-mobile.json",
+      "sha256": "76fa164acd8c3b2c282e4d08b0941987f1c7fb5fe181b8598131206eb519a82c"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-de-addiction-rehabilitation-desktop.json",
+      "sha256": "9c0a0caa943e7ebdf299728dd62bd5eae2483cab69fd4965c9865a47c40475c7"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-de-addiction-rehabilitation-mobile.json",
+      "sha256": "92a9890f9b9fc92d22d36a4578c7988698e518c5baa845c543c71e57f0f7b86c"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-diabetes-metabolic-balance-desktop.json",
+      "sha256": "3fea80a62701b326ea34d4416ec7d17af97dec325fa3afd24b5d46d0cd353fb4"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-diabetes-metabolic-balance-mobile.json",
+      "sha256": "747620b868a4c5873abc39e06f16159c03a9974bc9274477cbfc3d28d393b32d"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-facial-paralysis-desktop.json",
+      "sha256": "132a784f9bf791ccb41be772f81ce846857df727dca8a658defee58fc4bb68c0"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-facial-paralysis-mobile.json",
+      "sha256": "2f46ea6b71ceb146d35c0a9695c9a7a2a3a0f9064a71882ec10f251692c0d0de"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
+      "sha256": "ba758b3422add6570ff26be931620f1680ff9bf1767c13dfd649b7832f12263d"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
+      "sha256": "e0e6221fc093b5f5633cb7aee19fd36ef2b4b5137d62c4550a1b73edc2a7f242"
+    },
+    {
+      "file": "public/ahv/l10n/de/design/campaign-review-chrome.js",
+      "sha256": "96338e49b52a078186dd34e62267d232a19ede3fd72fff55517a5ac4a94a37d9"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-breath-respiratory-desktop.json",
+      "sha256": "a8b4892269967b5ea45496dc361c3052fcc0c8379a9ebe8565a27b8239de504c"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-breath-respiratory-mobile.json",
+      "sha256": "6fb89ba1a67ada81c3824628cf85686f216eaae0c6bb00a486b474829d4f2689"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-chronic-back-pain-desktop.json",
+      "sha256": "c2db0dcbddf9f42792c7a033808eb1c85521ba879e0f20207db3398de7bab89b"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-chronic-back-pain-mobile.json",
+      "sha256": "2c0c1e9d3985277306ec48706bcf6fa0f2f2e290a91fcc0d75df787fc69e98ee"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-de-addiction-rehabilitation-desktop.json",
+      "sha256": "34d6b157022aab884c8dbcd8fffdb44a49ed97653fd9601fce65fac39f6c1f56"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-de-addiction-rehabilitation-mobile.json",
+      "sha256": "02e5fa91df6ce19b7f62489e1056fd498fcb420d9bd0c6b883ebc298c85505d8"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-diabetes-metabolic-balance-desktop.json",
+      "sha256": "6ceb65eca4769615a5797866017e5b424041a9b449610362ea4ae78bd7d5e7ae"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-diabetes-metabolic-balance-mobile.json",
+      "sha256": "0f6892e31d34014721ff3c520176a2b0655700b5d8ee11f0f71c58275b4ac738"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-facial-paralysis-desktop.json",
+      "sha256": "eb49f6fc8688faaf18657a497af93e5cff2c71527510a988606efc8473e0a8e3"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-facial-paralysis-mobile.json",
+      "sha256": "5857bfdfd84fb96edd6350cb9e19c55a97a85fc3d6752bb5ad26903066ca96fe"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
+      "sha256": "ceb9ec41c1a0f3d04f8e5389c3ec5a01c94b7050fe3f833974238dbcbb8a09a7"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
+      "sha256": "703ecfaee8375a2ea1595554d63c5774d529451d6eef131e1b4bb212d3c6b321"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-breath-respiratory-desktop.json",
+      "sha256": "ee0877b0606654b5fbf10c3c52894fe0e80d2003c5bd3cff25bba00b5004ad16"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-breath-respiratory-mobile.json",
+      "sha256": "a2e12890d835400b53ff83449e50e79f1d7249e0d8a8da96800835150de48831"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-chronic-back-pain-desktop.json",
+      "sha256": "123506d3bbbba0f23b04ebf26bb1b81eb7dc7888aee2d5b7b4076c018a2b98ed"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-chronic-back-pain-mobile.json",
+      "sha256": "05d2dfc9598442299fb5b6df71ed9cdeaf76b6130121c106e27361648f122364"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-de-addiction-rehabilitation-desktop.json",
+      "sha256": "b3cf15abb5ac534ae74e7825feece5137fc70c0fc6f47785d67f1d480317c398"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-de-addiction-rehabilitation-mobile.json",
+      "sha256": "b787c98b8298564fd918b99f7ba40350b8353dd8a8c028f59a8f7af6fe3c29c3"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-diabetes-metabolic-balance-desktop.json",
+      "sha256": "2a32bc6a933b1f0fa841ec18bf75044d88123552a9f242c596db5de7baf20077"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-diabetes-metabolic-balance-mobile.json",
+      "sha256": "ecbae00b5ae5ca0db706d13c1ce29b1b314bf7f1f695349ea361061c8be0f040"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-facial-paralysis-desktop.json",
+      "sha256": "9445f52ef9723411517bd71a8a3860791ffbeff74d301136402816c94cf04d57"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-facial-paralysis-mobile.json",
+      "sha256": "63e47a79b139bdb64053c41eb3c8fa1c9610c0eda0af73322c73d13be22c032c"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
+      "sha256": "37aa0a32a956d7ba99b993097397b3fe7c4cf30654819671001658a36fbac12e"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
+      "sha256": "cfa1fd4b3aecc61ba3664a8f2b77b6f50dfac8399fa3133d5c13c322641edad2"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-breath-respiratory-desktop.json",
+      "sha256": "0b3cfa6cdd336eebfd503a148ef72ec65ce87191b4d0c760cb5bca5460ba4bfd"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-breath-respiratory-mobile.json",
+      "sha256": "5ea4be02ce705ae559f7e256621a859be0a453d7466c6e7e70661ca1e8759082"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-chronic-back-pain-desktop.json",
+      "sha256": "ab0337514695a19f0a7f49515b77b476741bf42201f690e0cef27c4811f0cabc"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-chronic-back-pain-mobile.json",
+      "sha256": "39b10776b656b00c19fc47ff10e2d4337acd637b140090ae6ff3ca8102b055b2"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-de-addiction-rehabilitation-desktop.json",
+      "sha256": "7260ae97886e30aab9c43f1ac031c1339e298522ca78e723b14242e7059f3b99"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-de-addiction-rehabilitation-mobile.json",
+      "sha256": "1c6a11e0bb3a9d762e7eba4c855f7bfa4627572398e97c01d356adb96b849db3"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-diabetes-metabolic-balance-desktop.json",
+      "sha256": "b8c1132018e83c73536f15e75a98cbfa305d636618366c1836dc668a489888f1"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-diabetes-metabolic-balance-mobile.json",
+      "sha256": "a94f96135421cedcd587976c965179b44891e0257d3e02e99085aa1a46fbcf4c"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-facial-paralysis-desktop.json",
+      "sha256": "1f3d41c46c44586f91e370899a79bdd2de0bbd9f16db621d283308fb1be3d7da"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-facial-paralysis-mobile.json",
+      "sha256": "6bfbc7ee87c83ddb5e7144d16a7cec04581831995262a7d2b404bb069ef25995"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
+      "sha256": "9a26471fae3c448a2e3490d96936680277ddded6d2a4a9c5d9c69e6029939716"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
+      "sha256": "f8d79f01158bee5383de7427f7abdf58ba9183bc957fe9a66ddf8454596d8c30"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-breath-respiratory-desktop.json",
+      "sha256": "7d941f19c374ea1c7a3676f11143a72707377cacd3026f773831a6b4908fe435"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-breath-respiratory-mobile.json",
+      "sha256": "e54662227b616a074893e0cceb33c3a7b54fa16dc55cdfc706c7259f2a8b7bfc"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-chronic-back-pain-desktop.json",
+      "sha256": "d089da5ef85a11ece866bceb52904dec7c140362998825b58148c4eefe8595a3"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-chronic-back-pain-mobile.json",
+      "sha256": "3663f8d186255ec8382beb7981d2cbab2438137121a8b158f8953fc03f08a909"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-de-addiction-rehabilitation-desktop.json",
+      "sha256": "88fba9ff3626ea6861fe79d03f0ddc9866628a14d964629e6aa7afa5635cef2c"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-de-addiction-rehabilitation-mobile.json",
+      "sha256": "2fb6181c96a33fcc7de194466b920e91c0ac51e0b2435c5927a24ee6c210ebf8"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-diabetes-metabolic-balance-desktop.json",
+      "sha256": "b06e3a56157173ae1d8916411a7b5dc19d709c9dac1338a94571652707cff25e"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-diabetes-metabolic-balance-mobile.json",
+      "sha256": "420141a896ca03f57c369bc7a1eb71874b9955ff55034f49adca1dede92643ff"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-facial-paralysis-desktop.json",
+      "sha256": "72e0a9dd7726ed99b9042f9bcf0fb6a183431370b4dabebd01b75b8cfa5f1ede"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-facial-paralysis-mobile.json",
+      "sha256": "ff22b0d5e19ae67a14a9290c518433ca21fa96965fbb4fbeb23cd86c85429225"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
+      "sha256": "89baa0b946b3ce64d59733d097c01250bd6818a8a5e5190fd9e7b88bf3c7073c"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
+      "sha256": "139a5bad0351ffbd4d7078ed2c52226f4095db106e998a582ab21ac8c6bb478a"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-breath-respiratory-desktop.json",
+      "sha256": "be8051e0ab30b9293cac6161eb97d61a4f9b03da22ddfb5530368326f80e4c80"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-breath-respiratory-mobile.json",
+      "sha256": "20590d5ea1a91bf7a1d86936fd79e5bdeaf780b578fdd717be0e0adac1614e67"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-chronic-back-pain-desktop.json",
+      "sha256": "1f372b764c3e6dfd4e24bfd050b9680a2b148f400ed916c62b6a8323cc64f9f3"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-chronic-back-pain-mobile.json",
+      "sha256": "249f3941c921d23aba2f8c65d0745b0461161de39cbbc8dcb65f7f6dab1c4047"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-de-addiction-rehabilitation-desktop.json",
+      "sha256": "60f063aba4f27e047819b5fe19aaff935eab3b7edb5e2aff9f8fe380ee7ac103"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-de-addiction-rehabilitation-mobile.json",
+      "sha256": "defee3c4b25f6271c405c0a6004ea3f8cc4209f8e7ef77cc7fd33baf88a8895b"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-diabetes-metabolic-balance-desktop.json",
+      "sha256": "ff2d662f035a5eaafa1db8b6432992961f16f414475095745ab9e20116773324"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-diabetes-metabolic-balance-mobile.json",
+      "sha256": "95bd0b36cc315fec3ec65d90698885c8bfc69fd3ab3908751478ea4cbb17a41d"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-facial-paralysis-desktop.json",
+      "sha256": "2f444734b51d5b619785fb5a56a7587a7313688160f231b9dffb42fe1c8bee62"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-facial-paralysis-mobile.json",
+      "sha256": "5a8d9a54d1d585b098af4555cf4b9e256546bbc5daab92e480c31a40cfe8f0b7"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
+      "sha256": "7e36d0d88dd2ae5f17cf60441d0591ff0af5f942581674028751871d773f87f1"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
+      "sha256": "b9dab09e7f84167aa5b453d7dbed4e917edd6531215694b72874d5b4626e3e30"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-breath-respiratory-desktop.json",
+      "sha256": "5d9f9f8cfb8e75fb910f5b87a54d6e897b86159735ac5b135d20d50984f0916b"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-breath-respiratory-mobile.json",
+      "sha256": "89e7053d51fa43f6b56279d1bf37a6b53a7fe93057fbb81c42fe6ea29549d129"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-chronic-back-pain-desktop.json",
+      "sha256": "9adb23deb49fc5e258d1ec3328520f8397806029fc029adc5c3fd8a6866971ac"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-chronic-back-pain-mobile.json",
+      "sha256": "0fb7ac8dd77888e4152dbd08eb041f2cb987bd4aba7faaa8ff2c819a8f36f3af"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-de-addiction-rehabilitation-desktop.json",
+      "sha256": "f36d157989682ceac3a4993b379271c82bcf70c0069ff909f607f3e3f6b86908"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-de-addiction-rehabilitation-mobile.json",
+      "sha256": "9cd29d7b0db2bc1cf81b0d3476fc400f3c9a96b6bec44cb541f3e443e8a069ca"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-diabetes-metabolic-balance-desktop.json",
+      "sha256": "9820a48edb05987ba48bafe7b8b19a3377df236337e5d161b95e07903b8f578a"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-diabetes-metabolic-balance-mobile.json",
+      "sha256": "9f075be420e9d25cd02a10170e007ad7c5989f15c4ef59b201859e6570d1e9a8"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-facial-paralysis-desktop.json",
+      "sha256": "a5eaec93be0f5b3079b0a4fce38e4ce82798614829c2c447c648e8b4deb5c3eb"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-facial-paralysis-mobile.json",
+      "sha256": "915b138d7383bb4cecdb9315113cfb93e6c3d3ba9d374b76f07f62274cfe176b"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
+      "sha256": "496fa542c9aecf597a3a86c0e45b10a0d98408090bb1682f53a08f1f598aca3a"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
+      "sha256": "6d194814ff6bccbb660d58e2b72b25cd4ea5cd00fcf6c442141094c28be7d8a8"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-breath-respiratory-desktop.json",
+      "sha256": "1017a9a2b54c4b81752a120afc8e60418a8660ee51b5b666db06ed0a88a090c2"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-breath-respiratory-mobile.json",
+      "sha256": "f822f80d35edbc78021b73e5973bff9e73f434c62d3f7e362ade6ed5326fe389"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-chronic-back-pain-desktop.json",
+      "sha256": "9e97914c6f35b0c157adcf287619964fbd149e4984d76fcd6dbbed66e2b82f5a"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-chronic-back-pain-mobile.json",
+      "sha256": "3c8d66473d9801cd9300c987c9d15942a8da3b9ea4e3c1ea9bedb6dd6406795e"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-de-addiction-rehabilitation-desktop.json",
+      "sha256": "478d350b1d08add5ef8346047d00243a5a759df82f0193d9605338c9dfb99216"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-de-addiction-rehabilitation-mobile.json",
+      "sha256": "df20fb9aebeb73f7755daa498b8941d881feb1e08ee27ddb955fd4d529a4a44b"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-diabetes-metabolic-balance-desktop.json",
+      "sha256": "bface431970854be499104fe634095fc908b9880276e1f2b6ef318fc94c7f49d"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-diabetes-metabolic-balance-mobile.json",
+      "sha256": "723d3f1db6ac02c79eb51b03fe2eba348ae1d1506c76b637b00b4549df372af1"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-facial-paralysis-desktop.json",
+      "sha256": "72a6a24336fbabe9b2bf9f298153d1f7b18d0d1a79d63376187989878a0ebb14"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-facial-paralysis-mobile.json",
+      "sha256": "dbea5bb401307db5cd278b67ac9b0526ca044bb83ba3edc8897ac81616db7742"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
+      "sha256": "241433646dce3ede6ffd6c8f0fd1feac3dbe0ca10514be0060f0d1ee2253c908"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
+      "sha256": "861d269436bf3de9abd1fd6b34f9c7b865a82e63a9d30181fc0db6e8618e6ae5"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-breath-respiratory-desktop.json",
+      "sha256": "0f1f0ec31ca592a4864f847683c29d0d3678b2c4042e3e982f1a193401ffb1e4"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-breath-respiratory-mobile.json",
+      "sha256": "41e3184731d7d7d809b7ddd6bf1c790bbf428f8c5af7060a2135b8f789f5e761"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-chronic-back-pain-desktop.json",
+      "sha256": "7fa941f478b48677034f273241e3a0e2a69fd68ce9b33933b72991dd41733b02"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-chronic-back-pain-mobile.json",
+      "sha256": "9e170bcc3e317b6a605ae6e565f466b16462e278fc6a0511e4333a0d35fbc137"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-de-addiction-rehabilitation-desktop.json",
+      "sha256": "a472cc4c44838fe4e6ae9ea9ac194023138277316600ea098c265d60a81e3059"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-de-addiction-rehabilitation-mobile.json",
+      "sha256": "e8dd8e8cb2b642f36da05204a4929633f11c7e84ca20fd1fdad954f8b7370b09"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-diabetes-metabolic-balance-desktop.json",
+      "sha256": "73abceed8ee0a55c57c2d8d20d1bc1ea38bc82992d83b196b71a40bba1e94fa3"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-diabetes-metabolic-balance-mobile.json",
+      "sha256": "2911297d19ac22a4d908681f7d56dd8ddb1bea346ff84a0b08ff8fece441f118"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-facial-paralysis-desktop.json",
+      "sha256": "17226bc20afbd19a940b03b918a17103a200ea2e6c04b766035d2a645e7bfb03"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-facial-paralysis-mobile.json",
+      "sha256": "0131b735d3708455b439a6399718761e79ffacb89734566a1bbdf0125bc0267d"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
+      "sha256": "236ef925966bd58b7a7e9e612cab8bda1dc31111f800c1ca538b54acccbf5d25"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
+      "sha256": "17c7b29c92db62e453829d6d48cd328130a42ee682fac2bc55644dd1688717a5"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-breath-respiratory-desktop.json",
+      "sha256": "a580fb27901b4ea4b49500cd4f2a003c4964febececbd9b53990b0dd00dd6a23"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-breath-respiratory-mobile.json",
+      "sha256": "a1422154059d656ba971aad2e8cf0a76b589b34d67819f3ae3f2833416d966d3"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-chronic-back-pain-desktop.json",
+      "sha256": "5cb86995c920d2759b738dcb735a26868fd27cabbc4a5b18b9c5f6768b9b224b"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-chronic-back-pain-mobile.json",
+      "sha256": "873d1d088b0e2a711604c9f20d93b20feae46b28355745eb0fb89ed166a18098"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-de-addiction-rehabilitation-desktop.json",
+      "sha256": "e7c9251200c13f5fb7d9e168fa5bb657cb64b04ab43f09aa44af55db4c26d6b1"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-de-addiction-rehabilitation-mobile.json",
+      "sha256": "cbd2e03027ecc34e58af890c52689b56fec7941ed991b2155f5d11aa23d14e97"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-diabetes-metabolic-balance-desktop.json",
+      "sha256": "7d4d76e8ae1ab9e15c368c5754d6bc543b5d36ccf5e7a9c69895be7c45ea3071"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-diabetes-metabolic-balance-mobile.json",
+      "sha256": "f40ed55ff7ee8175c1abe34aabe80f79b20429782d09024149ebb29241b10563"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-facial-paralysis-desktop.json",
+      "sha256": "a99ca9421ce21bcfeb80a58cbf0f8cc8a5eefc62925db0efa9baa3587e90acc8"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-facial-paralysis-mobile.json",
+      "sha256": "350c45db1f9cc4c0e09b317d08cd34301a8cfe2196e9066237fc832f8d9528a8"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
+      "sha256": "79537dd020bc60f02c995ca5aa473fb82712c7a4da9f95b9182619ea41170b82"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
+      "sha256": "fb03e87c8250e08116fedfef06ca4d48f7d8c7c23a42bf0affca9ab7a631de6d"
+    },
+    {
+      "file": "public/ahv/l10n/ru/design/campaign-review-chrome.js",
+      "sha256": "59bfba25748465ea279364e70a8515ff68eac79955a32e80fb777d51e68880c4"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-breath-respiratory-desktop.json",
+      "sha256": "4da5c63b5f4d35caf034945866c017f1195dfc3ad15318fee047af40e0e4c8ec"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-breath-respiratory-mobile.json",
+      "sha256": "8bcb18da313aea9e983fcc61b18c03a556ed67addb85c1f389b9beeeeed48081"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-chronic-back-pain-desktop.json",
+      "sha256": "716548888be8bd9071a59d69e40142746802ae38efc37333cad6a62b23b85510"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-chronic-back-pain-mobile.json",
+      "sha256": "44aecc454a33940afb1399551d053a7d40943766b1c0ff4ad1023bd4b2157189"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-de-addiction-rehabilitation-desktop.json",
+      "sha256": "0c9ddf73f33159f95f2725c30462c54af3e4ce787d7b56b07a61c5e9f218e741"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-de-addiction-rehabilitation-mobile.json",
+      "sha256": "27256c894ba27eb3fca2dda92d7b096fd91a29d8a798d38251e3534f276574b3"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-diabetes-metabolic-balance-desktop.json",
+      "sha256": "268946a0bdc7d8b4184b37aa9085883be9bd04cb666845c8d73d9e06294af20a"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-diabetes-metabolic-balance-mobile.json",
+      "sha256": "c59e8d9651f5e3d0ea7af2b591723ce18726bdc365be2018977fc98c4f62a8f3"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-facial-paralysis-desktop.json",
+      "sha256": "ba3e8d6f8b14535d62dec25e9f09eb71a74a1ac8be147db14a9ca35f95aac3b7"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-facial-paralysis-mobile.json",
+      "sha256": "d0605e657020489fb0b711ae2e95e16e18d431cbae993a02674e785d01615b51"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
+      "sha256": "3d04edf2db7acf2d5738b5693a1850bf5fc2889c9279c6a5b904c8e731f414e0"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
+      "sha256": "1346b08acf7c5e611b273a88d454cdb48203889c1a81bbd5d30fd2bd4e4e5c79"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-breath-respiratory-desktop.json",
+      "sha256": "962dbddc8efe6f5ecdcf0416e5d27e519c381374a8614406cdab2d15e3a3fa5d"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-breath-respiratory-mobile.json",
+      "sha256": "f1995d1d1da07ede4194d66671d10163707cb6d18de836c530dd8e9a6224307e"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-chronic-back-pain-desktop.json",
+      "sha256": "37003dd7149fd5c7156b02761fbb66634e3c24069bf25f20bfd63ad6e633a81e"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-chronic-back-pain-mobile.json",
+      "sha256": "ba08e988f79de718e440c82af695f005301b10e80b4b78e90ba517b723ee6f2e"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-de-addiction-rehabilitation-desktop.json",
+      "sha256": "8c22da62cedea59545a75628982bbb6f2d7d1d3238bb86330228abc295b89a0d"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-de-addiction-rehabilitation-mobile.json",
+      "sha256": "f2201910b3aa4d7c27070fc729de458ccb1994e9e8b67e41b1660ec7f1ca0481"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-diabetes-metabolic-balance-desktop.json",
+      "sha256": "ca9cd0634a9cffc4c54e695646663e233bc4add4f234b7c1bf92e0c6903c8804"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-diabetes-metabolic-balance-mobile.json",
+      "sha256": "325dd19038cb3b82e40d660c1c2b4af9ba80b430862b653fe70caebe9112e47e"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-facial-paralysis-desktop.json",
+      "sha256": "4d1a7796c11dc2aeb071c132de6882a8ee0fed3133065bcdd712e5e8f8b86867"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-facial-paralysis-mobile.json",
+      "sha256": "1354961bed8799409a434b5365e3c67489ba34bee5c88bbc5094cdeb805b4d12"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-holistic-rejuvenation-detoxification-desktop.json",
+      "sha256": "015712c978257745032cc96001f6febfeb27c68c37c7dad770dd6ea0a9693b70"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json",
+      "sha256": "d2a10df98a85deb275bf9343908de2d29fa60509831e07dbaee031a400a4280e"
+    }
+  ],
+  "freshBodies": [
+    {
+      "file": "l10n/prerender/hi/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
+      "sha256": "7aff5c55aa3062dc3b155700180598a59c8073df20bce1703b04ba2190e3193d",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/hi/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
+      "sha256": "1aeafda103682c5b2195b87f5035bfacf162afa952050e3fe8ecb324d904f517",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/hi/treatment-for-bronchial-diseases.html.gz",
+      "sha256": "a6705ebcb9b22697732dd78a1d5396f0f3f038589d2c51413715e581180c4ca9",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/hi/treatment-for-chronic-back-pain.html.gz",
+      "sha256": "6a4bbe807a1a8c981bd823cdccbd51fa1d3c1c917642234760856ce9f0ef2d5e",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/hi/treatment-for-diabetes.html.gz",
+      "sha256": "5e5265a8257e546989ccd2300125fcbe10776649b0e95e1514511779b1413373",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/hi/treatment-for-facial-paralysis.html.gz",
+      "sha256": "c85207251f3d56f0cc9bb837d78bbe96a403ae65a5e13c0c5c40ea34f2ac8354",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/de/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
+      "sha256": "3b8c21c7cd288dd78371f3b0f32564abf4436f7535ff3ea893d9b81bbb5d7eaa",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/de/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
+      "sha256": "c99c06ae4fef0bd87f107c50c13b636180ed52aea86195b99707932854977e54",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/de/treatment-for-bronchial-diseases.html.gz",
+      "sha256": "b8028c28203031ac460a5a9eefd43f4c041341a91daca09bb2174794119373bf",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/de/treatment-for-chronic-back-pain.html.gz",
+      "sha256": "acdaa8094809fa749862fbeb5ee23e0c097f1624ed9f649c94f5f728dde066ce",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/de/treatment-for-diabetes.html.gz",
+      "sha256": "2eb39fff524a785bf4b7e8ec4e5d7b6521b6908624415f429d47e57ff55244c1",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/de/treatment-for-facial-paralysis.html.gz",
+      "sha256": "20cf29cda8ca4462ee27bb8908eb23227550702f607bc4efeab78e7bd83cf525",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/fr/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
+      "sha256": "9552629bcc27e8840fcdf9f12cdff23c9a4fe7a131f3e9776fd81055ca42ee87",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/fr/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
+      "sha256": "cbfdc977bfc9b36f5b10a59a4be22456bcf144b0672b1b7e66fa0aec07388dc0",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/fr/treatment-for-bronchial-diseases.html.gz",
+      "sha256": "295e20a3b4f35eb13ea461090acd4c8878324768cd7ede206c5b41906a85ee52",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/fr/treatment-for-chronic-back-pain.html.gz",
+      "sha256": "9a84bf4998ba9b9e71353beb95237ff181a9412e81629e7144848cf1bea2cbda",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/fr/treatment-for-diabetes.html.gz",
+      "sha256": "d0870af8793cb65941dc12bf23fa5e328528df1c0fff1c19012fe7f69906898c",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/fr/treatment-for-facial-paralysis.html.gz",
+      "sha256": "6def171c684fe9ad5505d3da73deddd3dec54a9b6eb7b30405fb4719a273975c",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/es/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
+      "sha256": "da8e075b705fc2b47aaea9d8ed1221d7565809e4e944a6d78c633c7b8e2631ca",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/es/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
+      "sha256": "93163963bd02029889a04fe1da9adfc85510e472ca7964f266451944725b1314",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/es/treatment-for-bronchial-diseases.html.gz",
+      "sha256": "67c150c0e965f51a9d2d441b8d9e5ff2c0193835b53947e674ca6c9d9f34fe2c",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/es/treatment-for-chronic-back-pain.html.gz",
+      "sha256": "d141331048f33eaf401c9f59ab03e196a2480ccea29bd0699f11db5de77c17ad",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/es/treatment-for-diabetes.html.gz",
+      "sha256": "645df4d4bd20c71582b17943792473bcbcc2f3d396d10de4afd68d0840403032",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/es/treatment-for-facial-paralysis.html.gz",
+      "sha256": "0ba037378ec1eeb4a1c70fdfa786da300901f35dab6d34dfc717fc404a42fea5",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/it/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
+      "sha256": "74703ceaa20de959974e3af9e09ff4a820d7314819b93b0943affffe1453d4c7",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/it/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
+      "sha256": "df2f9677032e5f2808e0f3c51a8df5985d4d212bced3e80f70d2c97701dc8240",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/it/treatment-for-bronchial-diseases.html.gz",
+      "sha256": "1696abfddd736d80903ba84876c85de7e0e7125f0e2fa6cdfefb8662b35582ac",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/it/treatment-for-chronic-back-pain.html.gz",
+      "sha256": "c47eec6096dca2bafcdfa54dc57d613e72e289a8c3e3180f551bdc25f53e8a37",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/it/treatment-for-diabetes.html.gz",
+      "sha256": "2d8677e251bb50f177d8565b62ddb38b99baf8c28d10a82300d8a888772cdb81",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/it/treatment-for-facial-paralysis.html.gz",
+      "sha256": "2f867ce851d20df11b6e2f7672d2e474fa0bac329547e79fc58e8988f4fc1a5c",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/pt/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
+      "sha256": "86b16b6c47d7a717964a2affdc44c79cc63eb53ff85fea7b18fe2c8572c8deb9",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/pt/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
+      "sha256": "5886bbd2a85d4a4338f0c8b3eee06d39302c1ee9f7c683ab0ec0e0a22ba31f37",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/pt/treatment-for-bronchial-diseases.html.gz",
+      "sha256": "fabbb53246ddc6d093e4f42bb3d6281531481c98a5acde408414b90fcdf51608",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/pt/treatment-for-chronic-back-pain.html.gz",
+      "sha256": "8782dd5a67a8ecb59fc76a734abd297b4a881386ef8388c0c9cc3d9101e17429",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/pt/treatment-for-diabetes.html.gz",
+      "sha256": "fffb078c367fe359d64635b235b43e60631d3dd4c04bc9c5af5ea6a1ba1e6afa",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/pt/treatment-for-facial-paralysis.html.gz",
+      "sha256": "37595e708a758bc9d4bc03d7b14e9180d1f403c0f49f1beb6ad24e17dfe9bc79",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/nl/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
+      "sha256": "ee852f30bf855d226070d9c7271988183faab1e5760ef28d65b8c59d2d982786",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/nl/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
+      "sha256": "865f0d05fefd905154a00bed1eb1406109e50410e3587f9142c73c728ca0b79e",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/nl/treatment-for-bronchial-diseases.html.gz",
+      "sha256": "2017ef47e3252a68619e541aaef74ea6c9d8229af1ab6450f19da68cc5d97c43",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/nl/treatment-for-chronic-back-pain.html.gz",
+      "sha256": "03706a8fcb09488aa1347d50fd91d1e9480f817a847bfa96f4032dd8b2b55818",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/nl/treatment-for-diabetes.html.gz",
+      "sha256": "cc5b55d9ba91e26c7008a9385e3dd624893e803f20635faa0e3a38161f8c5eab",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/nl/treatment-for-facial-paralysis.html.gz",
+      "sha256": "b2e72da214d3d0dc574740a5e758da8b039bb8a76fb55ae08d7bad7ec3620881",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ru/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
+      "sha256": "c7bb927dfb4d33d460bb4e56d6a5d8ef0079cb1804dc7b80f7bbfc9e4413010a",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ru/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
+      "sha256": "997088c50311579ea31309f5229c4da2956a408ffe2dbc603a058d128bd28d75",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ru/treatment-for-bronchial-diseases.html.gz",
+      "sha256": "d385734526596c8e49bb9d5baca12db23f8b2402c64de50a5789acf843cccd38",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ru/treatment-for-chronic-back-pain.html.gz",
+      "sha256": "8ea25322251a72165feff065bd8d02be95fcfa10d6a8e709113d83c8a844e560",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ru/treatment-for-diabetes.html.gz",
+      "sha256": "6bac0b0c31eb37765ae50838200a4636b232b8e43ce5dab9bce2262ac7ce9551",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ru/treatment-for-facial-paralysis.html.gz",
+      "sha256": "b7a887993132369b742a44b2ed7f441f7e16878af992680dfe5eaa2aa2b059ef",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ar/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
+      "sha256": "ba1113d1de0b06e3f050e8326e7bd6ff50225ab00f3df2cfd3a1a83e5560980a",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ar/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
+      "sha256": "0f8a08da39dc6ec6e6363cc77f4c1b2ac15d6077531ef756a905828f8e14314f",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ar/treatment-for-bronchial-diseases.html.gz",
+      "sha256": "ec1a0ee8619d65487da17f1945c2d763c312a639136a6b65ced3c2296c0142e4",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ar/treatment-for-chronic-back-pain.html.gz",
+      "sha256": "0ead4c0c8487cfb2582dcb1a48df619fb71b66df1b996f7ae7230c4c0f4f37d9",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ar/treatment-for-diabetes.html.gz",
+      "sha256": "812d5b3078bb4ce40d0b945922e30de9f99ae1aedacda1f88637d4f533927e58",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ar/treatment-for-facial-paralysis.html.gz",
+      "sha256": "7e6ad6651ee8849f079715450f14ebf4351728467ae00b77b773c77949e122ca",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
+      "sha256": "486e02564b4356e45ad6c99d01c6e4b1540f65833a539e1e52147bfdb74c64e5",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
+      "sha256": "479b7f6b88b012b02602d48f8f62e67e9cf14648bdc564b05f43db8dd24e199b",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/treatment-for-bronchial-diseases.html.gz",
+      "sha256": "78dc5b5746280526befbf07317f68795b8c549965dba26a4304b585fb325aa19",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/treatment-for-chronic-back-pain.html.gz",
+      "sha256": "a613f4769c2f4c0906b0eb26ab87225670f26bee2919f4b77fde13afcc11aafd",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/treatment-for-diabetes.html.gz",
+      "sha256": "9845f8888182ac88710bc857ec5965cf6d44fcf85ebdb5cc71779a747dda68c1",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/treatment-for-facial-paralysis.html.gz",
+      "sha256": "73048399583cb952c9a86dcc7f42171aee68452c69119507504bd31b889ede3c",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ja/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
+      "sha256": "da5981c74a996a5efcd7c41ebb3a9f58d1b1a76341c7c4a63fb06ac56c8c4029",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ja/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
+      "sha256": "3dda7dd4d3d6eff7f4927b9b41ad2058a02dabe59f9642648d8060347815c4db",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ja/treatment-for-bronchial-diseases.html.gz",
+      "sha256": "165f0c20481bfd328cf52ae0022a2c795203d5f4807afec494b1241db0e0292e",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ja/treatment-for-chronic-back-pain.html.gz",
+      "sha256": "efec632fb6daae59fafd42695bca0c1c68559f498753a6f4f940c9ac32a7af0d",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ja/treatment-for-diabetes.html.gz",
+      "sha256": "1c257571f1835bbe6392f1715980c7e6c7b0c18c95a829ac46f7e700b1f2f512",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ja/treatment-for-facial-paralysis.html.gz",
+      "sha256": "a12c5176fe6855a0a530368f137d0d94be6188b71e25cb58e5d2979aa952f7c4",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ko/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco.html.gz",
+      "sha256": "a34f4c735b8e08abc406077d34787333da7262630c2290a69537333041aa35ea",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ko/holistic-treatment-for-rejuvenation-and-detoxification.html.gz",
+      "sha256": "9f9a50bcdc5943145f15fd6d27c1603f701313c4a8e60d29c4af5ea2ff11db7a",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ko/treatment-for-bronchial-diseases.html.gz",
+      "sha256": "1dae09463bc3223c94ef11e2fba56daf2f3624894c7074d0d0d37cc2647d6505",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ko/treatment-for-chronic-back-pain.html.gz",
+      "sha256": "18790d9a0096184ee4ba02352b30f9bf5d638ca282edebacde37da0798a6a8b2",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ko/treatment-for-diabetes.html.gz",
+      "sha256": "fde52580a73d143148e51af4c6266bbb16f89c809ed4de929408fdc816cb0a45",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    },
+    {
+      "file": "l10n/prerender/ko/treatment-for-facial-paralysis.html.gz",
+      "sha256": "0e44621a33f75ad07bf6dbbd0e9a12070b226b634c9d909f7401f9f6b419fb30",
+      "routeProof": "Fresh live-runtime capture; matching original accepted translation and approved times."
+    }
+  ],
+  "capturedSourceSignature": "a84390dac583667cdb9886310cce0af43a066ec94b636f6f6967e09ecd80823a",
+  "captureReceipt": "deliverables/WOPS-WEBSITE-SEQUENTIAL-20261008-001/local-first-20261011/N12-06A/CAPTURE.json"
+}

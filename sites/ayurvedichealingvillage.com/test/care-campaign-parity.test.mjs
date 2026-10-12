@@ -91,10 +91,10 @@ for (const variant of ['desktop', 'mobile', 'ssr']) {
     for (const slug of slugs) {
       const button = buttons.find(node => node.attribs.href === `/offers/${slug}/`);
       assert.ok(button, slug);
-      assert.match(button.parent.attribs.style, /justify-content:center/);
-      assert.match(button.attribs.style, /text-align:center/);
-      assert.match(button.attribs.style, /min-height:52px/);
-      assert.match(button.attribs.style, /background:#5A4420;color:#F7F4EA/);
+      assert.match(button.parent.attribs.style, /justify-content:\s*center/);
+      assert.match(button.attribs.style, /text-align:\s*center/);
+      assert.match(button.attribs.style, /min-height:\s*52px/);
+      assert.match(button.attribs.style, /background:\s*(?:#5A4420|rgb\(90, 68, 32\));\s*color:\s*(?:#F7F4EA|rgb\(247, 244, 234\))/i);
       assert.doesNotMatch(button.attribs.style, /!important/, 'React style props must use valid CSS values');
       let card=button.parent;
       while(card.parent && !walk(card.children ?? [],n=>/^h[1-6]$/.test(n.name??'')).length)card=card.parent;

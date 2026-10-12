@@ -8,7 +8,7 @@ const consentRuntime = consentSource.slice(consentSource.indexOf("`") + 1, conse
 const receiptRuntime = readFileSync(new URL("../public/design/lead-receipt.js", import.meta.url), "utf8");
 const token = "c3da5d5e-95ca-4a0a-a730-e4ab31c7f65a";
 
-function browser(choice = "accepted", status = 200, result = { ok: true, status: "received" }, search = "?gclid=paid123", environment = "production") {
+function browser(choice = "accepted", status = 200, result = { ok: true, status: "received" }, search = "?gclid=paid123", environment = "production", adsTagId = "GT-TEST") {
   const items = new Map([["ktahv-consent", choice]]);
   const storage = {
     getItem: (key) => items.get(key) ?? null,
@@ -30,14 +30,19 @@ function browser(choice = "accepted", status = 200, result = { ok: true, status:
       referrer: "https://search.example/result?email=private%40example.com",
       addEventListener() {},
       createElement: () => ({}),
-      head: { appendChild() {} },
+      head: { appendChild(script) {
+        if (script.src?.includes("googletagmanager.com")) {
+          ctx.googleLoader = script.src;
+          ctx.googleCommandsAtLoad = Array.from(ctx.dataLayer || [], entry => Array.from(entry));
+        }
+      } },
       getElementById: () => null,
     },
     setTimeout() {},
   };
   ctx.window = ctx;
   ctx.window.fetch = async () => ({ status, clone: () => ({ json: async () => result }) });
-  runInNewContext(`var cfg={measurement:{ga4:"G-test",clarity:"c-test",metaPixel:"p-test",adsSendTo:"AW-test/action",environment:${JSON.stringify(environment)}}};var host=document.body;${consentRuntime}\nif(consentChoice()==="accepted")startMeasurement();`, ctx);
+  runInNewContext(`var cfg={measurement:{ga4:"G-test",clarity:"c-test",metaPixel:"p-test",adsTagId:${JSON.stringify(adsTagId)},adsSendTo:"AW-test/action",environment:${JSON.stringify(environment)}}};var host=document.body;${consentRuntime}\nwindow.AHV_SET_CONSENT({analytics:${choice === "accepted" || choice === "analytics"},advertising:${choice === "accepted" || choice === "advertising"}});`, ctx);
   runInNewContext(receiptRuntime, ctx);
   return ctx;
 }
@@ -54,7 +59,7 @@ test("paid arrival starts only consented measurement; unsafe query suppresses th
   assert.equal(fragment.AHV_MEASUREMENT.recordLead("contact", token), false);
   const declined = browser("declined");
   assert.equal(declined.__ahvMeasurementStarted, undefined);
-  assert.equal(declined.dataLayer, undefined);
+  assert.equal(declined.dataLayer.at(-1)[2].analytics_storage, "denied");
 });
 
 test('active campaign URLs retain consented measurement and the first nonempty attribution value', async () => {
@@ -177,28 +182,15 @@ test('consented attribution survives programme navigation, expires, and excludes
  assert.equal(declined.sessionStorage.getItem('ahv-paid-attribution-v1'),null);
 });
 
-test('cookie preferences revoke current tags and leave no stored choice for the reopened notice', () => {
-  const stored = new Map([['ktahv-consent', 'accepted'], ['kairali-consent-v1', 'accepted']]);
-  let click, reloads = 0;
-  const ctx = {
-    JSON, Date,
-    localStorage: {getItem: k => stored.get(k) ?? null, setItem: (k,v) => stored.set(k,v), removeItem: k => stored.delete(k)},
-    document: {addEventListener: (type, handler) => {if(type === 'click') click = handler;}},
-    location: {reload: () => {assert.equal(stored.size, 0); reloads++;}},
-  };
-  ctx.window = ctx;
-  runInNewContext(`var cfg={}; ${consentRuntime}`, ctx);
-  let prevented = false;
-  click({target: {closest: selector => selector === '[data-ahv-cookie-choices]' ? {} : null}, preventDefault: () => {prevented = true;}});
-  assert.equal(prevented, true);
-  assert.equal(reloads, 1);
-  assert.equal(stored.size, 0);
-  const signals = ctx.dataLayer.find(entry => entry[0] === 'consent' && entry[1] === 'update')[2];
-  assert.equal(signals.analytics_storage, 'denied');
-  assert.equal(signals.ad_storage, 'denied');
-  assert.equal(signals.security_storage, 'granted');
+test('saved withdrawal denies loaded tags before a reload', () => {
+ const ctx=browser(); let reloads=0;
+ ctx.location.reload=()=>{reloads++;assert.equal(ctx.dataLayer.at(-1)[2].analytics_storage,'denied');};
+ ctx.AHV_SET_CONSENT({analytics:false,advertising:false});
+ assert.equal(reloads,1);
+ assert.equal(ctx.fbq.queue.at(-1)[1],'revoke');
+ assert.equal(ctx.clarity.q.at(-1)[1].analytics_Storage,'denied');
+ assert.equal(ctx.AHV_MEASUREMENT.recordLead('contact',token),false);
 });
-
 
 test('paid page location retains attribution in Safari without URLSearchParams.size', () => {
   const descriptor = Object.getOwnPropertyDescriptor(URLSearchParams.prototype, 'size');
@@ -208,4 +200,73 @@ test('paid page location retains attribution in Safari without URLSearchParams.s
     const config = ctx.dataLayer.find(entry => entry[0] === 'config' && entry[1] === 'G-test');
     assert.equal(new URL(config[2].page_location).searchParams.get('utm_campaign'),'Brand & Competition');
   } finally { if(descriptor) Object.defineProperty(URLSearchParams.prototype,'size',descriptor); }
+});
+
+
+test("automatic Google customer-data collection is disabled before SDK load and for every enquiry event", async () => {
+  for (const environment of ["production", "staging"]) {
+    const ctx = browser("accepted", 200, {ok:true,status:"received"}, "?gclid=paid123", environment);
+    const commands = ctx.googleCommandsAtLoad;
+    assert.equal(commands[0][0], "consent");
+    const privacy = commands.find(entry => entry[0] === "set");
+    assert.equal(Object.hasOwn(privacy[1], "user_data"), true);
+    assert.equal(privacy[1].user_data, null);
+    assert.ok(commands.some(entry => entry[0] === "config"));
+    for (const entry of commands.filter(entry => entry[0] === "config")) {
+      assert.equal(Object.hasOwn(entry[2], "user_data"), true);
+      assert.equal(entry[2].user_data, null);
+    }
+    await ctx.fetch("/api/lead/", {method:"POST",body:JSON.stringify({form:"contact",submissionToken:token,email:"synthetic@example.com"})});
+    ctx.location.pathname = "/ayurvedic-treatment-packages.html";
+    assert.equal(ctx.AHV_MEASUREMENT.recordInteraction("contact_click", "whatsapp"), true);
+    for (const entry of ctx.dataLayer.filter(entry => entry[0] === "event")) {
+      assert.equal(Object.hasOwn(entry[2], "user_data"), true);
+      assert.equal(entry[2].user_data, null);
+      assert.equal(JSON.stringify(entry).includes("synthetic@example.com"), false);
+    }
+    assert.equal(ctx.dataLayer.filter(entry => entry[1] === (environment === "staging" ? "ahv_staging_lead" : "generate_lead")).length, 1);
+  }
+});
+
+// VM-only commands: no network or conversion receipts reach vendors.
+test('category choices keep lead destinations separate', () => {
+ for (const category of ['analytics','advertising']) {
+  const ctx=browser(category);
+  assert.equal(ctx.AHV_MEASUREMENT.recordLead('contact',token),true);
+  const events=ctx.dataLayer.filter(c=>c[0]==='event').map(c=>c[1]);
+  assert.equal(events.includes('generate_lead'),category==='analytics');
+  assert.equal(events.includes('conversion'),category==='advertising');
+  assert.equal(!!ctx.fbq,category==='advertising');
+  assert.equal(!!ctx.clarity,category==='analytics');
+ }
+});
+
+test('Ads boots its verified GT tag and retains the separate accepted-lead AW destination', () => {
+  for (const choice of ['accepted','advertising','analytics','declined']) {
+    const ctx=browser(choice),advertising=['accepted','advertising'].includes(choice),analytics=['accepted','analytics'].includes(choice);
+    const configs=ctx.dataLayer.filter(entry=>entry[0]==='config').map(entry=>entry[1]);
+    assert.equal(configs.includes('GT-TEST'),advertising);
+    assert.equal(configs.includes('AW-test'),false);
+    assert.equal(configs.includes('G-test'),analytics);
+    assert.equal(ctx.googleLoader,analytics?'https://www.googletagmanager.com/gtag/js?id=G-test':advertising?'https://www.googletagmanager.com/gtag/js?id=GT-TEST':undefined);
+    ctx.AHV_MEASUREMENT.recordLead('contact',token);
+    const conversions=ctx.dataLayer.filter(entry=>entry[1]==='conversion');
+    assert.equal(conversions.length,advertising?1:0);
+    if(advertising)assert.equal(conversions[0][2].send_to,'AW-test/action');
+  }
+});
+
+test('missing Ads tag cannot fall back through a GA loader or emit an Ads conversion', () => {
+  for (const choice of ['accepted','advertising']) {
+    const ctx=browser(choice,200,{ok:true,status:'received'},'?gclid=paid123','production',null);
+    const configs=ctx.dataLayer.filter(entry=>entry[0]==='config').map(entry=>entry[1]);
+    assert.equal(configs.length,choice==='accepted'?1:0);
+    assert.equal(configs.includes('AW-test'),false);
+    assert.equal(ctx.googleLoader,choice==='accepted'?'https://www.googletagmanager.com/gtag/js?id=G-test':undefined);
+    ctx.AHV_MEASUREMENT.recordLead('contact',token);
+    assert.equal(ctx.dataLayer.filter(entry=>entry[1]==='conversion').length,0);
+    assert.equal(ctx.dataLayer.filter(entry=>entry[1]==='generate_lead').length,choice==='accepted'?1:0);
+    assert.ok(ctx.fbq);
+    assert.equal(!!ctx.clarity,choice==='accepted');
+  }
 });

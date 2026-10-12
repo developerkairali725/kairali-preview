@@ -1,5 +1,33 @@
 /** Selected image variants; only phone templates/snapshots use these. */
-export function phoneCriticalMedia(html) {
+export function phoneCriticalMedia(html, routePath = '') {
+  if (routePath === '/karkidaka-chikitsha-or-monsoon-wellness.html') {
+    html = html.split('/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19.webp').join('/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19-768.avif');
+    html = html.replace(/<img\b[^>]*>/gi, function (tag) {
+      if (!/\ssrc=["']\/ahv\/assets\/img\/legacy\/karkidaka-chikitsha-or-monsoon-wellness\/kar5-19-768\.avif["']/.test(tag)) return tag;
+      return '<img loading="eager" fetchpriority="high"' + tag.slice(4).replace(/\s(?:loading|fetchpriority)=["'][^"']*["']/gi, '');
+    });
+  }
+  if (routePath === '/offers/') html = html.split('/ahv/assets/img/commercial/775c5adec97f99fbd773ee36cf4903844f79ea13635db974cf00821263818e82.webp').join('/design/offers-hub-640.avif');
+  for (var name of ['weight-loss', 'weight-history']) {
+    html = html.split('/ahv/assets/img/' + name + '.webp').join('/ahv/assets/img/' + name + '-768.avif');
+  }
+  // Snapshot repair promoted this below-fold body image; retain its authored lazy/low intent.
+  if (routePath === '/weight-loss-programme/') html = html.replace(/<img\b[^>]*>/gi, function (tag) {
+    var src = tag.match(/\ssrc\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/i);
+    if (!src || (src[1] || src[2] || src[3]) !== '/ahv/assets/img/weight-loss-768.avif') return tag;
+    var attrs = tag.slice(4, -1).replace(/\s(?:loading|fetchpriority)\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '');
+    return '<img loading="lazy" fetchpriority="low"' + attrs + '>';
+  });
+  // Generic snapshot repair also promoted this below-fold Digestive body image; retain its authored lazy/low intent.
+  if (routePath === '/digestive-wellness-gut-health-yoga-therapy/') html = html.replace(/<img\b[^>]*>/gi, function (tag) {
+    var src = tag.match(/\ssrc\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/i);
+    if (!src || (src[1] || src[2] || src[3]) !== '/ahv/assets/img/YOGA-AND-MEDITATION-benefits-min.webp') return tag;
+    var attrs = tag.slice(4, -1).replace(/\s(?:loading|fetchpriority)\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '');
+    return '<img loading="lazy" fetchpriority="low"' + attrs + '>';
+  });
+  for (var name of ['weightloss', 'digestive']) {
+    html = html.split('/ahv/assets/img/' + name + '.webp').join('/ahv/assets/img/' + name + '-768-hero.avif');
+  }
   for (var name of ['ktahv-abhyanga-oil-therapy-2025', 'AHV-Enquiry-Garden-Banner', 'wx-welcome', 'kt-317', 'wx-yogahall', 'kt-106']) {
     html = html.split('/ahv/assets/img/' + name + '.webp').join('/ahv/assets/img/' + name + '-768.webp');
   }
@@ -21,14 +49,19 @@ export function descriptiveAwardLinks(html, route = "") {
   html = html.split('aria-label="{{ g.alt }}"').join('aria-label="{{ g.caption }}" aria-description="{{ g.alt }}"');
   return html.replace(/<a\b([^>]*)>([^<>]+)<[/]a>/gi, function (full, attrs, text) {
     var label = attrs.match(/aria-label="([^"]+)"/i);
-    if (!label || label[1].indexOf(text.trim() + ' — ') !== 0) return full;
+    if (!label || (label[1].indexOf(text.trim() + ' — ') !== 0 && label[1].indexOf(text.trim() + ' – ') !== 0)) return full;
     var title = label[1].slice(text.trim().length);
     return '<a' + attrs + '>' + text + '<span class="ahv-link-context">' + title + '</span></a>';
   });
 }
 
-export function firstCriticalImage(html) {
-  var paths = ['/ahv/assets/img/wx-hero-544.avif', '/ahv/assets/img/owner-approved-20260928/ahv-img-002-768.webp', '/ahv/assets/img/wx-hero-544.webp', '/ahv/assets/img/ktahv-abhyanga-oil-therapy-2025-544.webp', '/ahv/assets/img/AHV-Enquiry-Garden-Banner-768.webp'];
+export function firstCriticalImage(html, routePath = '') {
+  // N12 measured background LCPs: prioritize the existing approved hero only on its own route.
+  if (routePath === '/karkidaka-chikitsha-or-monsoon-wellness.html' && html.includes('/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19-768.avif')) return '/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19-768.avif';
+  var programmeHeroes = {'/treatment-for-bronchial-diseases/':'/ahv/assets/img/bronchial-hero-nasyam.webp','/holistic-treatment-for-rejuvenation-and-detoxification/':'/ahv/assets/img/ho-pizhichil.webp','/treatment-for-hypertension/':'/ahv/assets/img/hypertension-hero-thakaradhara.webp','/treatment-for-paralysis/':'/ahv/assets/img/paralysis-hero-pinda-sweda.webp','/treatment-for-skin-diseases/':'/ahv/assets/img/skin-vitality-hero-mukha-abhyanga-3.webp'};
+  var programmeHero = programmeHeroes[routePath];
+  if (programmeHero && html.indexOf(programmeHero) >= 0) return programmeHero;
+  var paths = ['/design/offers-hub-640.avif', '/ahv/assets/img/wx-hero-544.avif', '/ahv/assets/img/owner-approved-20260928/ahv-img-002-768.webp', '/ahv/assets/img/wx-hero-544.webp', '/ahv/assets/img/ktahv-abhyanga-oil-therapy-2025-544.webp', '/ahv/assets/img/AHV-Enquiry-Garden-Banner-768.webp', '/ahv/assets/img/weightloss-768-hero.avif', '/ahv/assets/img/digestive-768-hero.avif'];
   return paths.filter(function (path) { return html.indexOf(path) >= 0; }).sort(function (a, b) { return html.indexOf(a) - html.indexOf(b); })[0] || null;
 }
 
@@ -64,4 +97,13 @@ export function responsiveVillaImages(html) {
     const clean = tag.slice(4,-1).replace(/\s(?:srcset|sizes)=["'][^"']*["']/gi, '');
     return '<img srcset="' + attrs.srcset + '" sizes="' + attrs.sizes + '"' + clean + '>';
   });
+}
+
+/** Keep the same approved phone hero after the article renderer takes over the snapshot. */
+export function monsoonRuntimeMedia(win, routePath) {
+  if (routePath !== '/karkidaka-chikitsha-or-monsoon-wellness.html' || !win.matchMedia('(max-width:699px)').matches) return;
+  var route = win.AHV_ARTICLE && win.AHV_ARTICLE.routes.find(function (r) { return r.path === routePath; });
+  if (route && route.heroImg && route.heroImg.src === '/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19.webp') {
+    route.heroImg = Object.assign({}, route.heroImg, { src: '/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19-768.avif' });
+  }
 }

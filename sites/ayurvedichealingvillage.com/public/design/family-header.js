@@ -51,11 +51,17 @@
     for (var i = 0; i < nodes.length; i++) {
       var n = nodes[i], here = onPath(n), cur = n.path === route, kids = n.children && n.children.length, id = "ahv-fh-b" + (++bid);
       h += '<li><div class="ahv-fh-row">';
-      if (n.link) h += '<a href="' + esc(lp(n.path)) + '"' + (cur ? ' aria-current="page"' : "") + ">" + esc(n.label) + "</a>";
+      if (kids) {
+        h += '<button type="button" class="ahv-fh-toggle" aria-controls="' + id + '" aria-expanded="' + (here ? "true" : "false") + '"><span class="ahv-fh-branch-label">' + esc(n.label) + '</span><span class="ahv-fh-branch-icon" aria-hidden="true">' + (here ? "−" : "+") + '</span></button>';
+      } else if (n.link) h += '<a href="' + esc(lp(n.path)) + '"' + (cur ? ' aria-current="page"' : "") + ">" + esc(n.label) + "</a>";
       else h += '<span class="ahv-fh-plain">' + esc(n.label) + "</span>";
-      if (kids) h += '<button type="button" class="ahv-fh-toggle" aria-controls="' + id + '" aria-expanded="' + (here ? "true" : "false") + '" aria-label="' + esc(n.label) + '"><span aria-hidden="true">' + (here ? "−" : "+") + "</span></button>";
       h += "</div>";
-      if (kids) h += '<div id="' + id + '" class="ahv-fh-kids"' + (here ? "" : " hidden") + ">" + list(n.children) + "</div>";
+      if (kids) {
+        h += '<div id="' + id + '" class="ahv-fh-kids"' + (here ? "" : " hidden") + ">";
+        // The whole parent row expands. Keep its original page reachable inside the branch.
+        if (n.link) h += '<a class="ahv-fh-overview" href="' + esc(lp(n.path)) + '"' + (cur ? ' aria-current="page"' : "") + ">" + esc(T("Overview")) + " — " + esc(n.label) + "</a>";
+        h += list(n.children) + "</div>";
+      }
       h += "</li>";
     }
     return h + "</ul>";
@@ -115,7 +121,7 @@
       if (t.classList.contains("ahv-fh-toggle")) {
         var kids = panel.querySelector("#" + t.getAttribute("aria-controls"));
         var ex = t.getAttribute("aria-expanded") !== "true";
-        t.setAttribute("aria-expanded", String(ex)); t.firstElementChild.textContent = ex ? "−" : "+";
+        t.setAttribute("aria-expanded", String(ex)); t.querySelector(".ahv-fh-branch-icon").textContent = ex ? "−" : "+";
         if (kids) kids.hidden = !ex;
       }
     });
@@ -339,4 +345,27 @@
   if (window.MutationObserver) new MutationObserver(schedule).observe(document.body || document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ["aria-pressed"] });
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", schedule); else schedule();
   window.addEventListener("load", schedule);
+})();
+
+/* Weight programme page only (ADD04 inline enquiry, 8 Oct 2026). The ONE shared bottom bar (#ahv-cta-bar,
+ * OWNER-REG-02) keeps its labels, order and styling; on this page its "Enquire" goes to the page's own inline
+ * enquiry (#programme-enquiry), as the /lp/ lane's goes to its form (chrome.js ctaBar). Call, Free Consult and
+ * every other page keep the homepage destinations. Keyed on the English route the design root carries in every
+ * locale; the current locale URL is kept (in-page anchor). Kept here, not in ctaBar: the locale review-chrome.js
+ * copies are bound sources of the captured locale bodies (tools/restore-locale-prerenders.mjs), which do not
+ * contain the bar. Consent, forms and tracking are untouched. */
+(function () {
+  "use strict";
+  var root = document.getElementById("ahv-design-root");
+  if (!root || root.getAttribute("data-ahv-route") !== "/weight-loss-programme/") return;
+  var target = "#programme-enquiry", observer = null;
+  function retarget() {
+    var bar = document.getElementById("ahv-cta-bar"), a = bar && bar.querySelector("a.ahv-cta-enquire");
+    if (!a || !document.getElementById(target.slice(1))) return;
+    if (a.getAttribute("href") !== target) a.setAttribute("href", target);
+    if (observer) { observer.disconnect(); observer = null; }
+  }
+  if (window.MutationObserver) { observer = new MutationObserver(retarget); observer.observe(document.body || document.documentElement, { childList: true, subtree: true }); }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", retarget); else retarget();
+  window.addEventListener("load", retarget);
 })();

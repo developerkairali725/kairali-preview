@@ -4,7 +4,7 @@
   "sourceFiles": [
     {
       "file": "training.json",
-      "sha256": "07e2dac88ac9eae501535f4f5648dd4cd76c112b275c2c165ea1c383d7c848fc"
+      "sha256": "1175165aa2a78ed11e1fefc9c06008e0dd3c7cb8c92eaa311ea17b0889475f50"
     },
     {
       "file": "opd.json",
@@ -16,14 +16,21 @@
     },
     {
       "file": "yoga.json",
-      "sha256": "c5d135af7c8ebd22875c12ec9936bb723bf2f51ab2b936da5d7d21a44b06bf5e"
+      "sha256": "7a335d163af6e2ef673c36cf99966fd6fb8fd865e9deab736dee9cb487c32a88"
     },
     {
       "file": "ayurveda.json",
-      "sha256": "c83a8dab8d5af38baf3e10a8e1425d952cab6c7979fc5670398bb142dc72104a"
+      "sha256": "0a4e8782a7852328ad6eaacc887d53fd47fa8be7dd2d411c3727f15447fcad46"
     }
   ],
   "currencyRule": "Use published amounts; no exchange-rate conversion. English and Hindi INR; DE/FR/ES/IT/PT/NL EUR; RU/AR/ZH/JA/KO USD. Current existing multi-currency programme controls retained; translated-site release remains separate.",
   "unpriced": "Personalized yoga has no separate published tariff entry; request a quote.",
-  "opd": "Effective 2025-10-01; no expiry invented. Final published PDF is the displayed OPD rate source."
+  "opd": "Effective 2025-10-01; no expiry invented. Final published PDF is the displayed OPD rate source.",
+  "amendments": [
+    {
+      "task": "WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001",
+      "scope": "Airport road distances only: CJB approximately 66 km; COK approximately 114 km; CCJ approximately 116 km. Shared Cochin/Calicut transfer charges and row cardinality unchanged.",
+      "evidence": "deliverables/WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001/airport-site/VERIFICATION.json"
+    }
+  ]
 }

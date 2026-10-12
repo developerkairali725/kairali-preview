@@ -14,3 +14,17 @@
   --ahv-footer-input-ink: #211d18;
   --ahv-footer-input-paper: #fffdf7;
 }
+
+/* AHV campaign-v2 handed-off interaction palette. These selectors are scoped to
+   the kit wrapper and production consent; other campaign consumers are unchanged. */
+.lp {
+  --ahv-lp-focus: #6B7726;
+  --ahv-lp-mask-opaque: #000;
+}
+/* Same existing production brand values; the LP skin never overrides consent. */
+html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
+  --forest-500: #006038;
+  --ivory: #F7F4EA;
+  --ink: #1C1B19;
+  --card-bg: #FFFFFF;
+}

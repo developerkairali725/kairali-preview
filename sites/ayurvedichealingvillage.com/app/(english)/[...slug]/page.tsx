@@ -1,3 +1,4 @@
+import { captureRuntimeEnabled } from "../_families/capture-runtime.mjs";
 import retainedOriginalRoutes from "../../../campaign-v110/retained-original-routes.json";
 import campaignRoutes from "../../../campaign-v110/routes.json";
 import type { Metadata } from "next";
@@ -24,7 +25,7 @@ export const dynamicParams = false;
 export function generateStaticParams(): Array<{ slug: string[] }> {
   // Native pages must not also be emitted by this catch-all: duplicate static
   // output can overwrite them during production builds despite route priority.
-  const nativePages = new Set(["/read-feedback/", "/givefeedback/", "/sightseeing/", "/video-gallery/", "/weight-loss-programme/", "/digestive-wellness-gut-health-yoga-therapy/"]);
+  const nativePages = new Set(["/read-feedback/", "/givefeedback/", "/sightseeing/", "/video-gallery/"]);
   return subRoutes().filter((r) => !nativePages.has(r.path) && (!campaignRoutes.includes(r.path) || retainedOriginalRoutes.includes(r.path))).map((r) => ({ slug: r.segments }));
 }
 
@@ -47,6 +48,6 @@ export default async function Page({
   const { slug } = await params;
   const route = findRoute(slug);
   if (!route) notFound();
-  if (route.path === "/contact-us/" || route.path === "/panchakarma-therapy/") return <StaticDesignView route={route} />;
+  if (!captureRuntimeEnabled() && (route.path === "/contact-us/" || route.path === "/panchakarma-therapy/")) return <StaticDesignView route={route} />;
   return <DesignView route={route} />;
 }

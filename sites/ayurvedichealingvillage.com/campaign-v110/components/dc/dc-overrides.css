@@ -1211,3 +1211,29 @@ html:has(#ahv-design-root), body:has(#ahv-design-root) { overflow-x:clip; }
   object-fit: contain !important;
   max-height: none !important;
 }
+
+/* Owner 10 Oct 2026 (OWNER-20261010-OFFERS), the three care offer pages:
+   the dark hero banner spans the full viewport width (its height still follows
+   its content) while the copy keeps the container's line. Sharp corners go only
+   on the listed nodes: the audience badges, the offer cards (cards holding a
+   heading or a photograph, the card carrying a badge, the terms card and the
+   enquiry card), the body buttons (shared buttons, the hero phone button and
+   the guest-experience arrows) and the header Enquire button. Photographs,
+   award logos, form fields and the consent and chat UI keep their shapes. The
+   id is repeated so these outrank the earlier offer-terms and button radii. */
+#ahv-design-root#ahv-design-root:is([data-ahv-route="/offers/senior-citizen-offer/"], [data-ahv-route="/offers/olympics-and-paralympics-offer/"], [data-ahv-route="/offers/defence-and-paramilitary/"]) section[aria-labelledby="v2-h1"] {
+  background-image:linear-gradient(color-mix(in srgb, var(--ink) 74%, transparent),color-mix(in srgb, var(--ink) 80%, transparent)),url(/design/offer-pathway-1200.avif) !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin-inline: 0 !important;
+  padding-inline: calc(max(0px, (100% - var(--container-w)) / 2) + clamp(20px, 4vw, 48px)) !important;
+}
+#ahv-design-root#ahv-design-root:is([data-ahv-route="/offers/senior-citizen-offer/"], [data-ahv-route="/offers/olympics-and-paralympics-offer/"], [data-ahv-route="/offers/defence-and-paramilitary/"]) :is(p[style*="radius"], div[style*="radius"]:has(> p[style*="radius"]), li[style*="radius"]:has(h3, img[data-dc-kind="photo"]), #offer-terms, form.enquiry-form, .btn, [data-dc-hero-cta] a[href^="tel:"], button[aria-label$=" guest experience"]),
+body:has(#ahv-design-root:is([data-ahv-route="/offers/senior-citizen-offer/"], [data-ahv-route="/offers/olympics-and-paralympics-offer/"], [data-ahv-route="/offers/defence-and-paramilitary/"])) header .btn {
+  border-radius: 0 !important;
+}
+
+/* The legacy shared background also paints a nested lower section. Reuse the same optimized photograph there, avoiding a duplicate full JPEG download. */
+#ahv-design-root#ahv-design-root:is([data-ahv-route="/offers/senior-citizen-offer/"], [data-ahv-route="/offers/olympics-and-paralympics-offer/"], [data-ahv-route="/offers/defence-and-paramilitary/"]) section:first-of-type {background-image:linear-gradient(color-mix(in srgb, var(--ink) 74%, transparent),color-mix(in srgb, var(--ink) 80%, transparent)),url(/design/offer-pathway-1200.avif)!important}
+
+@media(max-width:699px){#ahv-design-root#ahv-design-root:is([data-ahv-route="/offers/senior-citizen-offer/"], [data-ahv-route="/offers/olympics-and-paralympics-offer/"], [data-ahv-route="/offers/defence-and-paramilitary/"]) section:first-of-type {background-image:linear-gradient(color-mix(in srgb, var(--ink) 74%, transparent),color-mix(in srgb, var(--ink) 80%, transparent)),url(/design/offer-pathway-phone.avif)!important}}

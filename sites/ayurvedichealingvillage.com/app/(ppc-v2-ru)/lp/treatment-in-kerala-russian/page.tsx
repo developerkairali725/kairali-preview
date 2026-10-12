@@ -1,0 +1,20 @@
+import type { Metadata } from "next";
+import ProductionPage from "../../../../campaign-v2/production/ProductionPage";
+import { productionCampaign } from "../../../../campaign-v2/production/load.ts";
+import { productionJsonLdScript, productionMetadata } from "../../../../campaign-v2/production/metadata.ts";
+
+// Live ad route /lp/treatment-in-kerala-russian/ (new campaign path; /treatment-in-kerala-russian.html redirects here). Copy: campaign-v2/production/pages/lp-treatment-kerala-ru.ts; route facts, variant and lead identity:
+// campaign-v2/production/bindings.ts.
+const SLUG = "lp-treatment-kerala-ru" as const;
+const campaign = productionCampaign(SLUG);
+
+export const metadata: Metadata = productionMetadata(SLUG, campaign);
+
+export default function Page() {
+  return (
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: productionJsonLdScript(SLUG, campaign) }} />
+      <ProductionPage c={campaign} />
+    </>
+  );
+}

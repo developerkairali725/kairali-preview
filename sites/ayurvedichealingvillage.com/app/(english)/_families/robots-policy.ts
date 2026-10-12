@@ -13,5 +13,5 @@ export function routeRobots(route: Pick<CandidateRoute, "path" | "sitemapExclude
   if (staging) return "noindex, nofollow";
   const explicit = (overrides.robotsOverrides as Record<string, string>)[route.path];
   if (explicit) return explicit;
-  return internalRoutes.has(route.path) || route.path.startsWith("/lp/") ? "noindex, follow" : "index, follow";
+  return internalRoutes.has(route.path) ? "noindex, follow" : "index, follow";
 }

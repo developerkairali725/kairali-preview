@@ -1,13 +1,17 @@
+import { trainingSnapshotFontCss } from "./training-snapshot-fonts.mjs";
+import { reviewedTitleFor } from "./localized-title.mjs";
 import { SnapshotStyles, type SnapshotStyleAsset } from './SnapshotStyles';
 import { routeStylesFor, routeStyleHref } from "./route-styles.mjs";
 import { reviewCopyFor, applyReviewSnapshot, bookingLabelsFor } from "./content-review.mjs";
 import { measurementForEnvironment } from "../../../lib/measurement-config.mjs";
 import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage, deferHomeSnapshotImages, responsiveVillaImages } from "./critical-media.mjs";
 import { formPostSafety } from "./form-post-safety.mjs";
-import { snapshotStylesFor, firstScreenPoster } from "./snapshot-styles.mjs";
+import { snapshotStylesFor, firstScreenPoster, imageLedFirstScreen } from "./snapshot-styles.mjs";
 import { newsletterFooters } from "./newsletter-markup.mjs";
 import { computedFooterYear } from "./computed-footer-year";
 import { routeRobots } from "./robots-policy";
+import { SSR_ONLY_HTML_ROUTES, putSsrOnlyHtml } from "./ssr-only-html.mjs";
+import { SsrOnlyHtml } from "./ssr-only-html-slot";
 /**
  * AHV English candidate — the shared route component.
  *
@@ -33,7 +37,7 @@ import { routeSchema } from "./schema";
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { gunzipSync } from "node:zlib";
-import { LOCALE_INFO, LOCALE_CODES, localizedPath, t, type LocaleCode } from "./l10n";
+import { LOCALE_INFO, LOCALE_CODES, localizedPath, canonicalUrl, localeData, t, type LocaleCode } from "./l10n";
 import componentMap from "../../../english-candidate/component-map.json";
 import analyticsConfig from "../../../analytics.config.json";
 import consistencyLock from "../../../english-candidate/consistency-locked-families.json";
@@ -92,6 +96,7 @@ const PREVIEW_SRC = "/ahv/preview/portable-preview.js";
 
 export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"): BootConfig {
   const info = LOCALE_INFO[locale];
+  const reviewedLocaleTitle = reviewedTitleFor(route.path, locale, localeData(locale)?.meta[route.path]?.title);
   const base = locale === "en" ? "" : `/ahv/l10n/${info.prefix}`;
   const resources = Object.fromEntries(
     Object.entries(componentMap.resources as Record<string, string>).map(([k, v]) => [k, locale === "en" ? v : v.replace(/^\/ahv\//, `${base}/`)]),
@@ -102,6 +107,8 @@ export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"
     // visitor sees is locale.path.
     path: route.path,
     contentReviewCopy: reviewCopyFor(route.path, locale),
+    reviewedLocaleTitle,
+    reviewedLocaleCanonical: (reviewedLocaleTitle || (route.path === "/karkidaka-chikitsha-or-monsoon-wellness.html" && locale !== "en")) ? canonicalUrl(route.path, locale) : undefined,
     bookingCopy: bookingLabelsFor(locale),
     robots: routeRobots(route),
     desktopView: route.desktopView,
@@ -133,7 +140,7 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
   const bootScript = await compactBoot;
   // Served once, read once: the snapshot body and the "held" state that keeps
   // a desktop viewport from painting it (see the layout's third style rule).
-  const body = responsiveVillaImages(phoneCriticalMedia(applyReviewSnapshot(prerenderedBody(route.path, locale), route.path, locale)));
+  const body = responsiveVillaImages(phoneCriticalMedia(applyReviewSnapshot(prerenderedBody(route.path, locale), route.path, locale), route.path));
   const snapshot = applyReviewSnapshot(descriptiveAwardLinks(route.path === "/" || route.path === "/photo-gallery/" ? deferHomeSnapshotImages(body) : body, route.path), route.path, locale);
   const cfg = buildBootConfig(route, locale);
   // The view family, as a styling scope. Template-level corrections live in
@@ -161,14 +168,33 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
   const firstPaint = snapshot ? snapshotStylesFor(cfg) : null;
   // Where the snapshot opens on a <video poster> (the home views, every locale) that poster is the LCP
   // element, not text, and the snapshot's font stylesheet and faces only competed with it — measured +0.8-0.9 s
-  // simulated / +1.2 s throttled LCP. There the faces keep arriving with the runtime, as before.
-  const snapshotFaces = firstPaint && !firstScreenPoster(snapshot) ? firstPaint : null;
+  // simulated / +1.2 s throttled LCP. There the faces keep arriving with the runtime, as before. The same holds
+  // for the listed routes whose first screen is a hero background image (imageLedFirstScreen).
+  const snapshotFaces = firstPaint && !firstScreenPoster(snapshot) && !imageLedFirstScreen(route.path) ? firstPaint : null;
   const snapshotAssets: SnapshotStyleAsset[] = [
     ...(snapshotFaces?.fontCss.map(({ href, css }) => css
-      ? { key: `font:${href}`, kind: 'style' as const, css }
+      ? { key: `font:${href}`, kind: 'style' as const, css: trainingSnapshotFontCss(route.path, css, snapshot) }
       : { key: `font:${href}`, kind: 'link' as const, href }) ?? []),
     ...(firstPaint?.styles.map((css, i) => ({ key: `view:${i}`, kind: 'style' as const, css, media: narrowMedia })) ?? []),
   ];
+
+  const rootAttrs = {
+    id: DESIGN_ROOT_ID,
+    role: route.path === "/" ? "main" : undefined,
+    "data-ahv-route": route.path,
+    "data-ahv-locale": locale === "en" ? undefined : locale,
+    "data-ahv-family": family || undefined,
+    "data-ahv-consistency": consistency,
+    "data-ahv-snapshot-state": snapshot ? "held" : undefined,
+    // Pairs the deferred-background rule in site-document.tsx with the boot script below that reveals
+    // them: only a root this boot runs in may hold its inline backgrounds back (native views that
+    // reuse the id carry no boot, so they are never matched).
+    "data-ahv-bg-defer": "",
+  };
+  // Contact and Weight performance repair: snapshot and boot markup ship in the HTML
+  // only, not a second time in the Flight data. Same markup, same attributes, same order.
+  const serverHtmlOnly = SSR_ONLY_HTML_ROUTES.has(route.path);
+  const slot = `${locale}:${route.path}`;
 
   return (
     <>
@@ -185,7 +211,7 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonForScript(routeSchema(route, locale)) }}
       />
-      {firstCriticalImage(snapshot) ? <link rel="preload" as="image" fetchPriority="high" href={firstCriticalImage(snapshot)!} media={narrowMedia} /> : null}
+      {firstCriticalImage(snapshot, route.path) ? <link rel="preload" as="image" fetchPriority="high" href={firstCriticalImage(snapshot, route.path)!} media={narrowMedia} /> : null}
       {/* Get the right family payload in flight before the boot script runs.
           Media-scoped so a phone never downloads the desktop view. */}
       {route.mobileView ? (
@@ -224,6 +250,9 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
           ))
         : null}
       <SnapshotStyles key={`${locale}:${route.path}`} assets={snapshotAssets} />
+      {/* The existing finder toggle collapses these rows. Match that first paint and reserve its 44px button + 14px margins. */}
+      {route.path === "/ayurvedic-treatments/" ? <style data-ahv-finder-first-paint="" dangerouslySetInnerHTML={{ __html: `@media(scripting:enabled){#ahv-design-root[data-ahv-route="/ayurvedic-treatments/"] nav[data-ahv-finder-search]:not([data-ahv-fh-open]) [role="group"]{display:none!important}#ahv-design-root[data-ahv-route="/ayurvedic-treatments/"] nav[data-ahv-finder-search]:not(:has(+ .ahv-fh-filterbar))::after{content:"";display:block;height:58px}}` }} /> : null}
+
 
       {/* dangerouslySetInnerHTML with an empty string is load-bearing, not
           decoration: it tells React this subtree is not its own, so React
@@ -231,21 +260,11 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
           Without it, hydration threw 418 and React's recovery render wiped
           the approved design off the page. */}
       {route.path === "/" ? <style dangerouslySetInnerHTML={{ __html: `#ahv-design-root .sc-host > div[data-dc-tpl="31"] > section[data-dc-tpl]:not(:first-of-type){content-visibility:auto;contain-intrinsic-size:auto 1000px}` }} /> : null}
-      <div
-        id={DESIGN_ROOT_ID}
-        role={route.path === "/" ? "main" : undefined}
-        data-ahv-route={route.path}
-        data-ahv-locale={locale === "en" ? undefined : locale}
-        data-ahv-family={family || undefined}
-        data-ahv-consistency={consistency}
-        data-ahv-snapshot-state={snapshot ? "held" : undefined}
-        // Pairs the deferred-background rule in site-document.tsx with the boot script below that reveals
-        // them: only a root this boot runs in may hold its inline backgrounds back (native views that
-        // reuse the id carry no boot, so they are never matched).
-        data-ahv-bg-defer=""
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{ __html: snapshot }}
-      />
+      {serverHtmlOnly ? (
+        <SsrOnlyHtml as="div" slot={putSsrOnlyHtml(`${slot}:snapshot`, snapshot)} attrs={rootAttrs} />
+      ) : (
+        <div {...rootAttrs} suppressHydrationWarning dangerouslySetInnerHTML={{ __html: snapshot }} />
+      )}
 
       <noscript>
         <p style={{ font: "17px/1.6 system-ui, sans-serif", margin: "40px auto", maxWidth: "62ch", padding: "0 20px" }}>
@@ -260,7 +279,11 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
         // <script> text node below.
         dangerouslySetInnerHTML={{ __html: jsonForScript(cfg) }}
       />
-      <script dangerouslySetInnerHTML={{ __html: bootScript }} />
+      {serverHtmlOnly ? (
+        <SsrOnlyHtml as="script" slot={putSsrOnlyHtml(`${slot}:boot`, bootScript)} />
+      ) : (
+        <script dangerouslySetInnerHTML={{ __html: bootScript }} />
+      )}
     </>
   );
 }

@@ -1,3 +1,7 @@
+import { treatmentHeadingLevels } from '../app/(english)/_families/treatment-heading-levels.mjs';
+import { restoreReviewedHead } from '../app/(english)/_families/localized-title.mjs';
+import { repairFaqTopicTargets } from '../app/(english)/_families/faq-topic-targets.mjs';
+import { removeHomeVillaRates } from '../app/(english)/_families/home-villa-rates.mjs';
 import {offersFlow} from '../app/(english)/_families/offers-flow.mjs';
 // Media loading (lane P-perf): the runtime-side fixes in app/(english)/_families/media-loading.mjs.
 // They are injected into BOOT_SCRIPT with fn.toString(), so each must also be self-contained and must
@@ -8,8 +12,9 @@ import fs from "node:fs";
 import {
   EAGER_SLOTS, lazyImgFirst, deferHeroFilm, installLazyImgOrder, installSlotLoading, createBackgroundDeferral,
 } from "../app/(english)/_families/media-loading.mjs";
-import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes } from "../app/(english)/_families/critical-media.mjs";
+import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, monsoonRuntimeMedia } from "../app/(english)/_families/critical-media.mjs";
 import { formPostSafety } from "../app/(english)/_families/form-post-safety.mjs";
+import { orderedRuntimeScripts } from "../app/(english)/_families/runtime-script-order.mjs";
 import { CONSENT_RUNTIME } from "../app/(english)/_families/consent-runtime.ts";
 // lane PERF2: two more helpers injected into BOOT_SCRIPT (snapshot-paint.mjs); the parse test needs them in scope
 import { deferFarSnapshotContent, whenSnapshotPainted, snapshotFocusTarget, preserveSnapshotInputs } from "../app/(english)/_families/snapshot-paint.mjs";
@@ -51,16 +56,18 @@ test("lazyImgFirst over every approved view template: same attributes per tag, e
 });
 
 test("deferHeroFilm rewrites the homepage film start in English and every built locale, and the logic still compiles", () => {
-  const files = ["public/ahv/views/home-hi-fi-v4.json"];
+  const files = ["public/ahv/views/home-hi-fi-v4.json", "public/ahv/views/home-mobile.json"];
   const L = JSON.parse(fs.readFileSync("l10n/locales.json", "utf8"));
   for (const [loc, info] of Object.entries(L)) {
-    const f = `public/ahv/l10n/${info.prefix}/views/home-hi-fi-v4.json`;
-    if (loc !== "en" && fs.existsSync(f)) files.push(f);
+    for (const name of ["home-hi-fi-v4", "home-mobile"]) {
+      const f = `public/ahv/l10n/${info.prefix}/views/${name}.json`;
+      if (loc !== "en" && fs.existsSync(f)) files.push(f);
+    }
   }
-  assert.ok(files.length >= 13, `EN + 12 locales, found ${files.length}`);
+  assert.ok(files.length >= 26, `Both layouts in EN + 12 locales, found ${files.length}`);
   for (const f of files) {
     const { logic } = JSON.parse(fs.readFileSync(f, "utf8"));
-    assert.equal(logic.split("if (wide && !calm) this._heroPlay();").length, 2, `${f} carries the exact start line once`);
+    assert.ok(logic.includes("if (wide && !calm) this._heroPlay();") || logic.includes("_setHero = (el) => { if (el) this._hv = el; };"), `${f} carries the known homepage ref`);
     const out = deferHeroFilm(logic);
     assert.notEqual(out, logic, f);
     assert.doesNotMatch(out, /if \(wide && !calm\) this\._heroPlay\(\);/);
@@ -68,8 +75,8 @@ test("deferHeroFilm rewrites the homepage film start in English and every built 
     assert.match(out, /saveData/);
     new Function("DCLogic", "StreamableLogic", "React", out + '\n;return (typeof Component!=="undefined"&&Component)||undefined;');
   }
-  // every other view is untouched, and the phone view never gains an autoplay
-  for (const f of fs.readdirSync("public/ahv/views").filter((x) => x.endsWith(".json") && x !== "home-hi-fi-v4.json")) {
+  // Other page families never gain autoplay.
+  for (const f of fs.readdirSync("public/ahv/views").filter((x) => x.endsWith(".json") && !["home-hi-fi-v4.json", "home-mobile.json"].includes(x))) {
     const { logic = "" } = JSON.parse(fs.readFileSync(`public/ahv/views/${f}`, "utf8"));
     assert.equal(deferHeroFilm(logic), logic, f);
   }
@@ -196,7 +203,7 @@ test("BOOT_SCRIPT with the media-loading layer is valid JavaScript", async () =>
   const end = src.lastIndexOf("`.trim();");
   const body = src.slice(start, end);
   const env = { IS_STAGING: true, ROUTE_CONFIG_ID: "ahv-route-config", DESIGN_ROOT_ID: "ahv-design-root", LINK_ALIASES: {}, IMAGE_ALIASES: {},
-    offersFlow, phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, EAGER_SLOTS, createBackgroundDeferral, installLazyImgOrder, installSlotLoading, lazyImgFirst, deferHeroFilm, formPostSafety, CONSENT_RUNTIME,
+    treatmentHeadingLevels, restoreReviewedHead, orderedRuntimeScripts, repairFaqTopicTargets, removeHomeVillaRates, offersFlow, phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, monsoonRuntimeMedia, EAGER_SLOTS, createBackgroundDeferral, installLazyImgOrder, installSlotLoading, lazyImgFirst, deferHeroFilm, formPostSafety, CONSENT_RUNTIME,
     deferFarSnapshotContent, whenSnapshotPainted, snapshotFocusTarget, preserveSnapshotInputs };
   const script = new Function(...Object.keys(env), "return `" + body + "`;")(...Object.values(env));
   assert.doesNotThrow(() => new Function(script), "BOOT_SCRIPT parses");

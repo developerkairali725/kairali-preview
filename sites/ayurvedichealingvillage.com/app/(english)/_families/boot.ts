@@ -1,5 +1,10 @@
+import { treatmentHeadingLevels } from "./treatment-heading-levels.mjs";
+import { restoreReviewedHead } from "./localized-title.mjs";
+import { repairFaqTopicTargets } from './faq-topic-targets.mjs';
+import { orderedRuntimeScripts } from './runtime-script-order.mjs';
+import { removeHomeVillaRates } from './home-villa-rates.mjs';
 import {offersFlow} from './offers-flow.mjs';
-import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes } from "./critical-media.mjs";
+import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, monsoonRuntimeMedia } from "./critical-media.mjs";
 import { formPostSafety } from "./form-post-safety.mjs";
 import {
   EAGER_SLOTS,
@@ -66,6 +71,8 @@ import LINK_ALIASES from "../../../english-candidate/link-aliases.json";
 import IMAGE_ALIASES from "../../../english-candidate/image-aliases.json";
 
 export interface BootConfig {
+  reviewedLocaleTitle?: string;
+  reviewedLocaleCanonical?: string;
   bookingCopy?: {old: string; new: string};
   contentReviewCopy?: Array<{old: string; new: string; kind: string}>;
   path: string;
@@ -84,7 +91,7 @@ export interface BootConfig {
    * so no tag can load however the visitor answers the cookie notice. The
    * consent gate is the second lock, not the only one.
    */
-  measurement?: { ga4?: string; clarity?: string; metaPixel?: string; adsSendTo?: string; environment?: string };
+  measurement?: { ga4?: string; clarity?: string; metaPixel?: string; adsTagId?: string; adsSendTo?: string; environment?: string };
   /**
    * The page's locale (25 Sep 2026): code, document language/direction, the
    * localized URL, every language that has THIS page (for the switcher), and
@@ -216,7 +223,7 @@ export const BOOT_SCRIPT = `
   // two hooks that decide loading ahead of the first src write.
   var EAGER_SLOTS = ${JSON.stringify(EAGER_SLOTS)};
   var deferBackgrounds = (${createBackgroundDeferral.toString()})(window, 800);
-  (${installLazyImgOrder.toString()})(window, (${villaImageAttributes.toString()}), (${phoneCriticalMedia.toString()}));
+  (${installLazyImgOrder.toString()})(window, (${villaImageAttributes.toString()}), function (src) { return (${phoneCriticalMedia.toString()})(src, cfg.path); });
   (${installSlotLoading.toString()})(window, EAGER_SLOTS);
 
   // The server response carries the prerendered snapshot (phone width, for
@@ -954,6 +961,8 @@ export const BOOT_SCRIPT = `
       try { url = new URL(raw, window.location.href); } catch (e) { return; }
       if (url.origin !== window.location.origin) return;
       if (url.pathname.replace(/[/]$/, "") !== here) return;
+      // Section and locale links retain their own destination; only a bare self-link can point to the form.
+      if (url.hash || url.search || a.hasAttribute("hreflang")) return;
       a.setAttribute("href", "#" + form.id);
       a.__ahvSelfRetargeted = true;
     });
@@ -1116,6 +1125,7 @@ export const BOOT_SCRIPT = `
   function enforceStagingHead() {
     governedWins("title");
     governedWins('link[rel="canonical"]');
+    (${restoreReviewedHead.toString()})(document, cfg.reviewedLocaleTitle, cfg.reviewedLocaleCanonical);
     governedWins('meta[name="description"]');
     // og:* and twitter:* are many slots, so they dedupe per property name.
     var tagged = document.head.querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]');
@@ -1282,7 +1292,9 @@ export const BOOT_SCRIPT = `
       if (snapshotNodes.length) host.setAttribute("data-ahv-live-pending", "");
       host.insertBefore(document.createElement("x-dc"), host.firstChild);
       // lazyImgFirst: loading="lazy" ahead of src in every template <img> (media-loading.mjs, P1a).
-      pendingTemplate = (${lazyImgFirst.toString()})((${formPostSafety.toString()})((${descriptiveAwardLinks.toString()})(narrow ? (${phoneCriticalMedia.toString()})((${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en")) : (${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path)));
+      view.template = (${removeHomeVillaRates.toString()})(view.template, cfg.path);
+      view.template = (${treatmentHeadingLevels.toString()})(view.template, cfg.path, view.variant);
+      pendingTemplate = (${lazyImgFirst.toString()})((${formPostSafety.toString()})((${descriptiveAwardLinks.toString()})(narrow ? (${phoneCriticalMedia.toString()})((${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path) : (${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path)));
       host.setAttribute("data-ahv-view", view.id);
       host.setAttribute("data-ahv-variant", view.variant);
       host.setAttribute("data-ahv-view-file", view.file || "");
@@ -1296,21 +1308,19 @@ export const BOOT_SCRIPT = `
       logic.setAttribute("data-dc-script", "");
       logic.setAttribute("data-props", JSON.stringify(props));
       // deferHeroFilm: the homepage film starts after load + idle on wide screens (media-loading.mjs, P3).
-      logic.text = (${deferHeroFilm.toString()})(view.logic || "");
+      logic.text = (${deferHeroFilm.toString()})((${repairFaqTopicTargets.toString()})(view.logic || "", view.id));
       host.appendChild(logic);
 
       // Step 5 — the accepted preview layer self-attaches from its own tag,
       // using the exact view filename the package's marker list keys on.
-      var srcs = [{ src: cfg.previewSrc, view: view.file || "" }];
-      (view.scripts || []).forEach(function (s) { srcs.push({ src: s }); });
-      srcs.push({ src: cfg.supportSrc });
+      var srcs = (${orderedRuntimeScripts.toString()})(view, cfg, !!window.AHV_LEAD_RECEIPT);
 
       srcs.forEach(function (entry) {
         var s = document.createElement("script");
         s.src = entry.src;
         if (entry.view) s.setAttribute("data-ahv-view", entry.view);
         s.async = false; // keeps classic-script execution in insertion order
-        s.onload = function () { honeypotDatasetCache = new WeakMap(); hideHoneypots(host); };
+        s.onload = function () { if (entry.src.endsWith("/article-family-data.js")) (${monsoonRuntimeMedia.toString()})(window, cfg.path); honeypotDatasetCache = new WeakMap(); hideHoneypots(host); };
         s.onerror = function () { fail(new Error("script " + entry.src)); };
         host.appendChild(s);
       });

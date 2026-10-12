@@ -1,0 +1,77 @@
+/* AHV — villa details dialog (villa-dialog.js). Dedicated selectors only; uses the campaign page's own tokens
+ * (--lp-*, inherited because the dialog is appended inside the page's .lp wrapper) with neutral fallbacks.
+ * The dialog box is height-capped to the viewport and its body scrolls internally on phones. */
+html:has(dialog.ahv-villa-dialog[open]) { overflow: hidden; }
+
+dialog.ahv-villa-dialog {
+  width: min(760px, calc(100vw - 32px));
+  max-width: none;
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: var(--lp-surface, #fff);
+  color: var(--lp-ink, #1f2a24);
+  font-family: var(--lp-font-body, inherit);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+}
+dialog.ahv-villa-dialog::backdrop { background: rgba(15, 20, 17, 0.62); }
+dialog.ahv-villa-dialog[open] { display: flex; }
+
+.ahv-villa-dialog__box { display: flex; flex-direction: column; width: 100%; max-height: calc(100dvh - 32px); min-height: 0; }
+.ahv-villa-dialog__head {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 16px 20px; border-bottom: 1px solid var(--lp-hairline, rgba(0, 0, 0, 0.12));
+}
+.ahv-villa-dialog__title { margin: 0; font-family: var(--lp-font-display, inherit); font-size: 26px; line-height: 1.2; font-weight: 400; }
+.ahv-villa-dialog__close {
+  flex: none; display: inline-flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; margin: -8px -8px -8px 0; padding: 0;
+  border: 0; border-radius: 50%; background: transparent; color: inherit;
+  font: inherit; font-size: 30px; line-height: 1; cursor: pointer;
+}
+.ahv-villa-dialog__close:hover { background: var(--lp-chip, rgba(0, 0, 0, 0.06)); }
+.ahv-villa-dialog__close:focus-visible,
+.ahv-villa-dialog__more:focus-visible { outline: 2px solid var(--lp-accent-text, currentColor); outline-offset: 2px; }
+
+.ahv-villa-dialog__body {
+  flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch; padding: 20px;
+}
+.ahv-villa-dialog__gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.ahv-villa-dialog__gallery img { display: block; width: 100%; height: auto; aspect-ratio: 7 / 5; object-fit: cover; border-radius: 4px; }
+.ahv-villa-dialog__gallery img.ahv-villa-dialog__lead { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+
+.ahv-villa-dialog__facts { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.ahv-villa-dialog__facts li {
+  display: inline-flex; align-items: center; min-height: 40px; padding: 0 14px;
+  border: 1px solid var(--lp-hairline, rgba(0, 0, 0, 0.14)); border-radius: 4px; font-size: 15px; font-weight: 600;
+}
+.ahv-villa-dialog__sub { margin: 24px 0 12px; font-family: var(--lp-font-display, inherit); font-size: 21px; line-height: 1.25; font-weight: 400; }
+.ahv-villa-dialog__groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.ahv-villa-dialog__group { min-width: 0; padding-top: 12px; border-top: 2px solid var(--lp-accent-line, currentColor); }
+.ahv-villa-dialog__group h4 { margin: 0 0 6px; font-size: 13px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--lp-accent-text, inherit); }
+.ahv-villa-dialog__group ul { list-style: none; margin: 0; padding: 0; }
+.ahv-villa-dialog__group li { padding: 8px 0; border-bottom: 1px solid var(--lp-hairline, rgba(0, 0, 0, 0.1)); font-size: 16px; line-height: 1.5; }
+
+.ahv-villa-dialog__foot { padding: 14px 20px; border-top: 1px solid var(--lp-hairline, rgba(0, 0, 0, 0.12)); }
+.ahv-villa-dialog__more {
+  display: inline-flex; align-items: center; min-height: 48px; font-size: 16px; font-weight: 600;
+  color: var(--lp-ink, inherit); text-decoration: underline; text-decoration-color: var(--lp-accent-line, currentColor); text-underline-offset: 3px;
+}
+
+@media (max-width: 640px) {
+  dialog.ahv-villa-dialog { width: calc(100vw - 16px); max-height: calc(100dvh - 16px); }
+  .ahv-villa-dialog__box { max-height: calc(100dvh - 16px); }
+  .ahv-villa-dialog__head, .ahv-villa-dialog__body, .ahv-villa-dialog__foot { padding-inline: 16px; }
+  .ahv-villa-dialog__title { font-size: 22px; }
+  .ahv-villa-dialog__gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ahv-villa-dialog__gallery img:not(.ahv-villa-dialog__lead):last-child { display: none; }
+  .ahv-villa-dialog__groups { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  dialog.ahv-villa-dialog[open] { animation: ahv-villa-dialog-in 160ms ease-out; }
+  @keyframes ahv-villa-dialog-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+}

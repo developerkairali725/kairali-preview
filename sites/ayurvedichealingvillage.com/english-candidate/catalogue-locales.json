@@ -1,0 +1,687 @@
+{
+  "taskId": "WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001",
+  "provenance": "Localized equivalents of approved programme identities, availability copy and exact two hero introductions. No fees, dates, qualifications or online mode added.",
+  "review": "Source and functional consistency checked; independent human linguistic review not claimed.",
+  "units": [
+    {
+      "source": "Yoga Training for Personal Practice — Coming Soon",
+      "translations": {
+        "de": "Yogakurs für die persönliche Praxis — Demnächst",
+        "fr": "Formation de yoga pour la pratique personnelle — Bientôt disponible",
+        "es": "Formación de yoga para la práctica personal — Próximamente",
+        "it": "Formazione yoga per la pratica personale — Prossimamente",
+        "pt": "Formação em yoga para a prática pessoal — Em breve",
+        "nl": "Yogaopleiding voor persoonlijke beoefening — Binnenkort",
+        "ru": "Обучение йоге для личной практики — Скоро",
+        "hi": "व्यक्तिगत अभ्यास के लिए योग प्रशिक्षण — जल्द आ रहा है",
+        "ar": "تدريب اليوغا للممارسة الشخصية — قريبًا",
+        "zh-Hans": "个人练习瑜伽培训 — 即将推出",
+        "ja": "個人の実践のためのヨガトレーニング — 近日公開",
+        "ko": "개인 수련을 위한 요가 교육 — 출시 예정"
+      }
+    },
+    {
+      "source": "Professional Yoga Teacher Training — Coming Soon",
+      "translations": {
+        "de": "Professionelle Yogalehrerausbildung — Demnächst",
+        "fr": "Formation professionnelle de professeurs de yoga — Bientôt disponible",
+        "es": "Formación profesional de profesores de yoga — Próximamente",
+        "it": "Formazione professionale per insegnanti di yoga — Prossimamente",
+        "pt": "Formação profissional de professores de yoga — Em breve",
+        "nl": "Professionele yogadocentenopleiding — Binnenkort",
+        "ru": "Профессиональная подготовка преподавателей йоги — Скоро",
+        "hi": "पेशेवर योग शिक्षक प्रशिक्षण — जल्द आ रहा है",
+        "ar": "تدريب مهني لمعلمي اليوغا — قريبًا",
+        "zh-Hans": "专业瑜伽教师培训 — 即将推出",
+        "ja": "専門ヨガ指導者養成 — 近日公開",
+        "ko": "전문 요가 지도자 교육 — 출시 예정"
+      }
+    },
+    {
+      "source": "A forthcoming course for personal yoga practice.",
+      "translations": {
+        "de": "Ein künftiger Kurs für die persönliche Yogapraxis.",
+        "fr": "Un futur cours consacré à la pratique personnelle du yoga.",
+        "es": "Un próximo curso para la práctica personal del yoga.",
+        "it": "Un futuro corso per la pratica personale dello yoga.",
+        "pt": "Um futuro curso para a prática pessoal de yoga.",
+        "nl": "Een toekomstige cursus voor persoonlijke yogabeoefening.",
+        "ru": "Будущий курс йоги для личной практики.",
+        "hi": "व्यक्तिगत योग अभ्यास के लिए आगामी पाठ्यक्रम।",
+        "ar": "دورة قادمة للممارسة الشخصية لليوغا.",
+        "zh-Hans": "即将推出的个人瑜伽练习课程。",
+        "ja": "個人のヨガ実践のための開講予定コースです。",
+        "ko": "개인 요가 수련을 위한 개설 예정 과정입니다."
+      }
+    },
+    {
+      "source": "A forthcoming professional teacher-training track.",
+      "translations": {
+        "de": "Ein künftiger Ausbildungsgang für professionelle Yogalehrkräfte.",
+        "fr": "Un futur parcours de formation professionnelle pour les professeurs de yoga.",
+        "es": "Un próximo itinerario de formación profesional para profesores de yoga.",
+        "it": "Un futuro percorso di formazione professionale per insegnanti di yoga.",
+        "pt": "Um futuro percurso de formação profissional para professores de yoga.",
+        "nl": "Een toekomstig opleidingstraject voor professionele yogadocenten.",
+        "ru": "Будущая программа профессиональной подготовки преподавателей йоги.",
+        "hi": "पेशेवर योग शिक्षकों के प्रशिक्षण का आगामी पाठ्यक्रम।",
+        "ar": "مسار قادم للتدريب المهني لمعلمي اليوغا.",
+        "zh-Hans": "即将推出的专业瑜伽教师培训课程。",
+        "ja": "専門のヨガ指導者を養成する開講予定コースです。",
+        "ko": "전문 요가 지도자를 양성하는 개설 예정 과정입니다."
+      }
+    },
+    {
+      "source": "Personal practice",
+      "translations": {
+        "de": "Persönliche Praxis",
+        "fr": "Pratique personnelle",
+        "es": "Práctica personal",
+        "it": "Pratica personale",
+        "pt": "Prática pessoal",
+        "nl": "Persoonlijke beoefening",
+        "ru": "Личная практика",
+        "hi": "व्यक्तिगत अभ्यास",
+        "ar": "الممارسة الشخصية",
+        "zh-Hans": "个人练习",
+        "ja": "個人の実践",
+        "ko": "개인 수련"
+      }
+    },
+    {
+      "source": "Professional teacher training",
+      "translations": {
+        "de": "Professionelle Yogalehrerausbildung",
+        "fr": "Formation professionnelle de professeurs de yoga",
+        "es": "Formación profesional de profesores de yoga",
+        "it": "Formazione professionale per insegnanti di yoga",
+        "pt": "Formação profissional de professores de yoga",
+        "nl": "Professionele yogadocentenopleiding",
+        "ru": "Профессиональная подготовка преподавателей йоги",
+        "hi": "पेशेवर योग शिक्षक प्रशिक्षण",
+        "ar": "التدريب المهني لمعلمي اليوغا",
+        "zh-Hans": "专业瑜伽教师培训",
+        "ja": "専門ヨガ指導者養成",
+        "ko": "전문 요가 지도자 교육"
+      }
+    },
+    {
+      "source": "Coming Soon",
+      "translations": {
+        "de": "Demnächst",
+        "fr": "Bientôt disponible",
+        "es": "Próximamente",
+        "it": "Prossimamente",
+        "pt": "Em breve",
+        "nl": "Binnenkort",
+        "ru": "Скоро",
+        "hi": "जल्द आ रहा है",
+        "ar": "قريبًا",
+        "zh-Hans": "即将推出",
+        "ja": "近日公開",
+        "ko": "출시 예정"
+      }
+    },
+    {
+      "source": "Enrolment is not currently open. Course details, dates and fees will be announced when confirmed.",
+      "translations": {
+        "de": "Eine Anmeldung ist derzeit nicht möglich. Kursinhalte, Termine und Gebühren werden nach ihrer Bestätigung bekannt gegeben.",
+        "fr": "Les inscriptions ne sont pas encore ouvertes. Les détails des cours, les dates et les tarifs seront annoncés après confirmation.",
+        "es": "Las inscripciones aún no están abiertas. Los detalles del curso, las fechas y las tarifas se anunciarán cuando estén confirmados.",
+        "it": "Le iscrizioni non sono ancora aperte. I dettagli del corso, le date e le tariffe saranno pubblicati dopo la conferma.",
+        "pt": "As inscrições ainda não estão abertas. Os detalhes do curso, as datas e os valores serão anunciados após confirmação.",
+        "nl": "Inschrijven is momenteel nog niet mogelijk. Cursusdetails, data en tarieven worden na bevestiging bekendgemaakt.",
+        "ru": "Запись пока не открыта. Подробности курса, даты и стоимость будут опубликованы после подтверждения.",
+        "hi": "अभी नामांकन शुरू नहीं हुआ है। पुष्टि होने पर पाठ्यक्रम का विवरण, तिथियाँ और शुल्क घोषित किए जाएँगे।",
+        "ar": "التسجيل غير مفتوح حاليًا. ستُعلن تفاصيل الدورة ومواعيدها ورسومها بعد تأكيدها.",
+        "zh-Hans": "目前尚未开放报名。课程详情、日期和费用将在确认后公布。",
+        "ja": "現在、受講申し込みは受け付けていません。コースの詳細、日程、料金は確定後にお知らせします。",
+        "ko": "현재 수강 신청을 받지 않습니다. 과정 세부 내용, 일정 및 비용은 확정 후 안내합니다."
+      }
+    },
+    {
+      "source": "This forthcoming course is separate from the current yoga and meditation programmes.",
+      "translations": {
+        "de": "Dieser künftige Kurs ist von den derzeitigen Yoga- und Meditationsprogrammen unabhängig.",
+        "fr": "Ce futur cours est distinct des programmes actuels de yoga et de méditation.",
+        "es": "Este próximo curso es independiente de los programas actuales de yoga y meditación.",
+        "it": "Questo futuro corso è distinto dagli attuali programmi di yoga e meditazione.",
+        "pt": "Este futuro curso é independente dos programas atuais de yoga e meditação.",
+        "nl": "Deze toekomstige cursus staat los van de huidige yoga- en meditatieprogramma’s.",
+        "ru": "Этот будущий курс не относится к действующим программам йоги и медитации.",
+        "hi": "यह आगामी पाठ्यक्रम वर्तमान योग और ध्यान कार्यक्रमों से अलग है।",
+        "ar": "هذه الدورة القادمة منفصلة عن برامج اليوغا والتأمل الحالية.",
+        "zh-Hans": "此项即将推出的课程与目前的瑜伽和冥想项目相互独立。",
+        "ja": "この開講予定コースは、現在のヨガ・瞑想プログラムとは別のものです。",
+        "ko": "이 개설 예정 과정은 현재 운영 중인 요가 및 명상 프로그램과 별개입니다."
+      }
+    },
+    {
+      "source": "Explore yoga and learning",
+      "translations": {
+        "de": "Yoga und Lernen entdecken",
+        "fr": "Découvrir le yoga et les formations",
+        "es": "Explorar yoga y formación",
+        "it": "Scoprire yoga e formazione",
+        "pt": "Explorar yoga e formação",
+        "nl": "Yoga en opleidingen ontdekken",
+        "ru": "Йога и обучение",
+        "hi": "योग और प्रशिक्षण के विकल्प देखें",
+        "ar": "استكشف اليوغا والتعلّم",
+        "zh-Hans": "探索瑜伽与学习",
+        "ja": "ヨガと学びを探す",
+        "ko": "요가와 교육 살펴보기"
+      }
+    },
+    {
+      "source": "Current yoga programmes",
+      "translations": {
+        "de": "Aktuelle Yogaprogramme",
+        "fr": "Programmes de yoga actuels",
+        "es": "Programas de yoga actuales",
+        "it": "Programmi yoga attuali",
+        "pt": "Programas de yoga atuais",
+        "nl": "Huidige yogaprogramma’s",
+        "ru": "Действующие программы йоги",
+        "hi": "वर्तमान योग कार्यक्रम",
+        "ar": "برامج اليوغا الحالية",
+        "zh-Hans": "现有瑜伽项目",
+        "ja": "現在のヨガプログラム",
+        "ko": "현재 운영 중인 요가 프로그램"
+      }
+    },
+    {
+      "source": "View the three yoga programmes and personalised yoga option.",
+      "translations": {
+        "de": "Entdecken Sie die drei Yogaprogramme und das individuelle Yogaangebot.",
+        "fr": "Découvrez les trois programmes de yoga et l’option de yoga personnalisé.",
+        "es": "Consulte los tres programas de yoga y la opción de yoga personalizado.",
+        "it": "Scoprite i tre programmi yoga e l’opzione di yoga personalizzato.",
+        "pt": "Conheça os três programas de yoga e a opção de yoga personalizado.",
+        "nl": "Bekijk de drie yogaprogramma’s en de mogelijkheid voor yoga op maat.",
+        "ru": "Ознакомьтесь с тремя программами йоги и индивидуальным вариантом.",
+        "hi": "तीन योग कार्यक्रम और व्यक्तिगत योग का विकल्प देखें।",
+        "ar": "اطّلع على برامج اليوغا الثلاثة وخيار اليوغا المخصص.",
+        "zh-Hans": "查看三个瑜伽项目及个性化瑜伽选项。",
+        "ja": "3つのヨガプログラムと個別ヨガの選択肢をご覧ください。",
+        "ko": "세 가지 요가 프로그램과 맞춤형 요가 옵션을 확인하세요."
+      }
+    },
+    {
+      "source": "Explore yoga programmes",
+      "translations": {
+        "de": "Yogaprogramme entdecken",
+        "fr": "Découvrir les programmes de yoga",
+        "es": "Explorar programas de yoga",
+        "it": "Scoprire i programmi yoga",
+        "pt": "Explorar programas de yoga",
+        "nl": "Yogaprogramma’s ontdekken",
+        "ru": "Посмотреть программы йоги",
+        "hi": "योग कार्यक्रम देखें",
+        "ar": "استكشف برامج اليوغا",
+        "zh-Hans": "探索瑜伽项目",
+        "ja": "ヨガプログラムを見る",
+        "ko": "요가 프로그램 살펴보기"
+      }
+    },
+    {
+      "source": "Browse forthcoming yoga training",
+      "translations": {
+        "de": "Künftige Yogakurse ansehen",
+        "fr": "Voir les futures formations de yoga",
+        "es": "Ver próximas formaciones de yoga",
+        "it": "Consultare i futuri corsi yoga",
+        "pt": "Ver futuras formações em yoga",
+        "nl": "Toekomstige yogaopleidingen bekijken",
+        "ru": "Посмотреть будущие курсы йоги",
+        "hi": "आगामी योग प्रशिक्षण देखें",
+        "ar": "تصفّح دورات اليوغا القادمة",
+        "zh-Hans": "浏览即将推出的瑜伽培训",
+        "ja": "開講予定のヨガトレーニングを見る",
+        "ko": "개설 예정 요가 교육 보기"
+      }
+    },
+    {
+      "source": "Yoga & Training",
+      "translations": {
+        "de": "Yoga & Ausbildung",
+        "fr": "Yoga et formations",
+        "es": "Yoga y formación",
+        "it": "Yoga e formazione",
+        "pt": "Yoga e formação",
+        "nl": "Yoga en opleidingen",
+        "ru": "Йога и обучение",
+        "hi": "योग और प्रशिक्षण",
+        "ar": "اليوغا والتدريب",
+        "zh-Hans": "瑜伽与培训",
+        "ja": "ヨガとトレーニング",
+        "ko": "요가와 교육"
+      }
+    },
+    {
+      "source": "Explore yoga and meditation programmes, personalised yoga and Ayurveda courses. Forthcoming yoga training is clearly marked Coming Soon.",
+      "translations": {
+        "de": "Entdecken Sie Yoga- und Meditationsprogramme, individuelles Yoga und Ayurvedakurse. Künftige Yogakurse sind deutlich mit „Demnächst“ gekennzeichnet.",
+        "fr": "Découvrez les programmes de yoga et de méditation, le yoga personnalisé et les cours d’Ayurveda. Les futures formations de yoga portent clairement la mention « Bientôt disponible ».",
+        "es": "Explore programas de yoga y meditación, yoga personalizado y cursos de Ayurveda. Las próximas formaciones de yoga se identifican claramente como «Próximamente».",
+        "it": "Scoprite programmi di yoga e meditazione, yoga personalizzato e corsi di Ayurveda. I futuri corsi yoga sono chiaramente indicati come «Prossimamente».",
+        "pt": "Explore programas de yoga e meditação, yoga personalizado e cursos de Ayurveda. As futuras formações em yoga estão claramente identificadas como «Em breve».",
+        "nl": "Ontdek yoga- en meditatieprogramma’s, yoga op maat en Ayurvedacursussen. Toekomstige yogaopleidingen zijn duidelijk gemarkeerd met ‘Binnenkort’.",
+        "ru": "Ознакомьтесь с программами йоги и медитации, индивидуальной йогой и курсами аюрведы. Будущие курсы йоги отмечены пометкой «Скоро».",
+        "hi": "योग और ध्यान कार्यक्रम, व्यक्तिगत योग और आयुर्वेद पाठ्यक्रम देखें। आगामी योग प्रशिक्षण पर स्पष्ट रूप से ‘जल्द आ रहा है’ लिखा है।",
+        "ar": "استكشف برامج اليوغا والتأمل واليوغا المخصصة ودورات الأيورفيدا. تُميَّز دورات اليوغا القادمة بوضوح بعبارة «قريبًا».",
+        "zh-Hans": "探索瑜伽与冥想项目、个性化瑜伽及阿育吠陀课程。未来的瑜伽培训均明确标注“即将推出”。",
+        "ja": "ヨガ・瞑想プログラム、個別ヨガ、アーユルヴェーダのコースをご覧ください。開講予定のヨガトレーニングには「近日公開」と明記しています。",
+        "ko": "요가 및 명상 프로그램, 맞춤형 요가와 아유르베다 과정을 살펴보세요. 개설 예정 요가 교육에는 ‘출시 예정’이 명확히 표시됩니다."
+      }
+    },
+    {
+      "source": "Yoga & meditation programmes",
+      "translations": {
+        "de": "Yoga- und Meditationsprogramme",
+        "fr": "Programmes de yoga et de méditation",
+        "es": "Programas de yoga y meditación",
+        "it": "Programmi di yoga e meditazione",
+        "pt": "Programas de yoga e meditação",
+        "nl": "Yoga- en meditatieprogramma’s",
+        "ru": "Программы йоги и медитации",
+        "hi": "योग और ध्यान कार्यक्रम",
+        "ar": "برامج اليوغا والتأمل",
+        "zh-Hans": "瑜伽与冥想项目",
+        "ja": "ヨガ・瞑想プログラム",
+        "ko": "요가 및 명상 프로그램"
+      }
+    },
+    {
+      "source": "Three distinct yoga programmes, with their own minimum admissions and published tariffs.",
+      "translations": {
+        "de": "Drei eigenständige Yogaprogramme mit jeweils eigener Mindestaufenthaltsdauer und veröffentlichten Tarifen.",
+        "fr": "Trois programmes de yoga distincts, chacun avec sa durée minimale de séjour et ses tarifs publiés.",
+        "es": "Tres programas de yoga distintos, cada uno con su estancia mínima y sus tarifas publicadas.",
+        "it": "Tre programmi yoga distinti, ciascuno con il proprio soggiorno minimo e le tariffe pubblicate.",
+        "pt": "Três programas de yoga distintos, cada um com a sua estadia mínima e os seus valores publicados.",
+        "nl": "Drie afzonderlijke yogaprogramma’s, elk met een eigen minimumverblijf en gepubliceerde tarieven.",
+        "ru": "Три самостоятельные программы йоги, каждая со своим минимальным сроком пребывания и опубликованными тарифами.",
+        "hi": "तीन अलग योग कार्यक्रम, प्रत्येक की अपनी न्यूनतम प्रवास अवधि और प्रकाशित शुल्क हैं।",
+        "ar": "ثلاثة برامج يوغا مستقلة، لكل منها حد أدنى للإقامة ورسوم منشورة.",
+        "zh-Hans": "三个独立的瑜伽项目，各有其最低住院天数和已公布的费用。",
+        "ja": "それぞれに最低滞在期間と公表料金がある、3つの独立したヨガプログラムです。",
+        "ko": "각각 최소 입원 기간과 공개된 요금이 있는 세 가지 독립적인 요가 프로그램입니다."
+      }
+    },
+    {
+      "source": "Compare yoga programmes",
+      "translations": {
+        "de": "Yogaprogramme vergleichen",
+        "fr": "Comparer les programmes de yoga",
+        "es": "Comparar programas de yoga",
+        "it": "Confrontare i programmi yoga",
+        "pt": "Comparar programas de yoga",
+        "nl": "Yogaprogramma’s vergelijken",
+        "ru": "Сравнить программы йоги",
+        "hi": "योग कार्यक्रमों की तुलना करें",
+        "ar": "قارن برامج اليوغا",
+        "zh-Hans": "比较瑜伽项目",
+        "ja": "ヨガプログラムを比較する",
+        "ko": "요가 프로그램 비교"
+      }
+    },
+    {
+      "source": "Personalised yoga",
+      "translations": {
+        "de": "Individuelles Yoga",
+        "fr": "Yoga personnalisé",
+        "es": "Yoga personalizado",
+        "it": "Yoga personalizzato",
+        "pt": "Yoga personalizado",
+        "nl": "Yoga op maat",
+        "ru": "Индивидуальная йога",
+        "hi": "व्यक्तिगत योग",
+        "ar": "يوغا مخصصة",
+        "zh-Hans": "个性化瑜伽",
+        "ja": "個別ヨガ",
+        "ko": "맞춤형 요가"
+      }
+    },
+    {
+      "source": "An enquiry-only option, with a yoga programme tailored after a physician’s assessment.",
+      "translations": {
+        "de": "Ein Angebot auf Anfrage mit einem Yogaprogramm, das nach einer ärztlichen Beurteilung angepasst wird.",
+        "fr": "Une option sur demande, avec un programme de yoga adapté après une évaluation médicale.",
+        "es": "Una opción sujeta a consulta, con un programa de yoga adaptado tras la valoración de un médico.",
+        "it": "Un’opzione su richiesta, con un programma yoga adattato dopo una valutazione medica.",
+        "pt": "Uma opção mediante consulta, com um programa de yoga adaptado após avaliação médica.",
+        "nl": "Een optie op aanvraag, met een yogaprogramma dat na een beoordeling door een arts wordt afgestemd.",
+        "ru": "Вариант по запросу: программа йоги составляется индивидуально после оценки врача.",
+        "hi": "केवल पूछताछ पर उपलब्ध विकल्प, जिसमें चिकित्सक के आकलन के बाद योग कार्यक्रम व्यक्तिगत रूप से तैयार किया जाता है।",
+        "ar": "خيار متاح للاستفسار فقط، يتضمن برنامج يوغا مخصصًا بعد تقييم الطبيب.",
+        "zh-Hans": "仅接受咨询的选项，由医生评估后量身制定瑜伽项目。",
+        "ja": "お問い合わせに基づく選択肢です。医師の評価後にヨガプログラムを個別に組み立てます。",
+        "ko": "문의 전용 옵션으로, 의사의 평가 후 요가 프로그램을 개인에 맞게 구성합니다."
+      }
+    },
+    {
+      "source": "Explore personalised yoga",
+      "translations": {
+        "de": "Individuelles Yoga entdecken",
+        "fr": "Découvrir le yoga personnalisé",
+        "es": "Explorar yoga personalizado",
+        "it": "Scoprire lo yoga personalizzato",
+        "pt": "Explorar yoga personalizado",
+        "nl": "Yoga op maat ontdekken",
+        "ru": "Посмотреть индивидуальную йогу",
+        "hi": "व्यक्तिगत योग देखें",
+        "ar": "استكشف اليوغا المخصصة",
+        "zh-Hans": "探索个性化瑜伽",
+        "ja": "個別ヨガを見る",
+        "ko": "맞춤형 요가 살펴보기"
+      }
+    },
+    {
+      "source": "Ayurveda training",
+      "translations": {
+        "de": "Ayurvedaausbildung",
+        "fr": "Formation en Ayurveda",
+        "es": "Formación en Ayurveda",
+        "it": "Formazione in Ayurveda",
+        "pt": "Formação em Ayurveda",
+        "nl": "Ayurvedaopleiding",
+        "ru": "Обучение аюрведе",
+        "hi": "आयुर्वेद प्रशिक्षण",
+        "ar": "تدريب الأيورفيدا",
+        "zh-Hans": "阿育吠陀培训",
+        "ja": "アーユルヴェーダ研修",
+        "ko": "아유르베다 교육"
+      }
+    },
+    {
+      "source": "Explore the five Ayurveda courses, from the one-day workshop to the advanced training programme.",
+      "translations": {
+        "de": "Entdecken Sie die fünf Ayurvedakurse, vom eintägigen Workshop bis zum fortgeschrittenen Ausbildungsprogramm.",
+        "fr": "Découvrez les cinq cours d’Ayurveda, de l’atelier d’une journée au programme de formation avancée.",
+        "es": "Explore los cinco cursos de Ayurveda, desde el taller de un día hasta el programa de formación avanzada.",
+        "it": "Scoprite i cinque corsi di Ayurveda, dal laboratorio di un giorno al programma di formazione avanzata.",
+        "pt": "Explore os cinco cursos de Ayurveda, desde a oficina de um dia até ao programa de formação avançada.",
+        "nl": "Ontdek de vijf Ayurvedacursussen, van de eendaagse workshop tot het gevorderde opleidingsprogramma.",
+        "ru": "Ознакомьтесь с пятью курсами аюрведы — от однодневного семинара до программы углублённой подготовки.",
+        "hi": "एक दिन की कार्यशाला से उन्नत प्रशिक्षण कार्यक्रम तक, पाँच आयुर्वेद पाठ्यक्रम देखें।",
+        "ar": "استكشف دورات الأيورفيدا الخمس، من ورشة العمل ليوم واحد إلى برنامج التدريب المتقدم.",
+        "zh-Hans": "探索五个阿育吠陀课程，从一日工作坊到进阶培训项目。",
+        "ja": "1日ワークショップから上級研修プログラムまで、5つのアーユルヴェーダコースをご覧ください。",
+        "ko": "하루 워크숍부터 고급 교육 프로그램까지 다섯 가지 아유르베다 과정을 살펴보세요."
+      }
+    },
+    {
+      "source": "View Ayurveda courses",
+      "translations": {
+        "de": "Ayurvedakurse ansehen",
+        "fr": "Voir les cours d’Ayurveda",
+        "es": "Ver cursos de Ayurveda",
+        "it": "Consultare i corsi di Ayurveda",
+        "pt": "Ver cursos de Ayurveda",
+        "nl": "Ayurvedacursussen bekijken",
+        "ru": "Посмотреть курсы аюрведы",
+        "hi": "आयुर्वेद पाठ्यक्रम देखें",
+        "ar": "اطّلع على دورات الأيورفيدا",
+        "zh-Hans": "查看阿育吠陀课程",
+        "ja": "アーユルヴェーダのコースを見る",
+        "ko": "아유르베다 과정 보기"
+      }
+    },
+    {
+      "source": "Forthcoming yoga training",
+      "translations": {
+        "de": "Künftige Yogakurse",
+        "fr": "Futures formations de yoga",
+        "es": "Próximas formaciones de yoga",
+        "it": "Futuri corsi yoga",
+        "pt": "Futuras formações em yoga",
+        "nl": "Toekomstige yogaopleidingen",
+        "ru": "Будущие курсы йоги",
+        "hi": "आगामी योग प्रशिक्षण",
+        "ar": "دورات اليوغا القادمة",
+        "zh-Hans": "即将推出的瑜伽培训",
+        "ja": "開講予定のヨガトレーニング",
+        "ko": "개설 예정 요가 교육"
+      }
+    },
+    {
+      "source": "Enrolment is not currently open.",
+      "translations": {
+        "de": "Eine Anmeldung ist derzeit nicht möglich.",
+        "fr": "Les inscriptions ne sont pas encore ouvertes.",
+        "es": "Las inscripciones aún no están abiertas.",
+        "it": "Le iscrizioni non sono ancora aperte.",
+        "pt": "As inscrições ainda não estão abertas.",
+        "nl": "Inschrijven is momenteel nog niet mogelijk.",
+        "ru": "Запись пока не открыта.",
+        "hi": "अभी नामांकन शुरू नहीं हुआ है।",
+        "ar": "التسجيل غير مفتوح حاليًا.",
+        "zh-Hans": "目前尚未开放报名。",
+        "ja": "現在、受講申し込みは受け付けていません。",
+        "ko": "현재 수강 신청을 받지 않습니다."
+      }
+    },
+    {
+      "source": "All availability",
+      "translations": {
+        "de": "Alle Verfügbarkeiten",
+        "fr": "Toutes les disponibilités",
+        "es": "Toda la disponibilidad",
+        "it": "Tutte le disponibilità",
+        "pt": "Todas as disponibilidades",
+        "nl": "Alle beschikbaarheid",
+        "ru": "Все варианты доступности",
+        "hi": "सभी उपलब्धता स्थितियाँ",
+        "ar": "جميع حالات التوفر",
+        "zh-Hans": "所有开放状态",
+        "ja": "すべての提供状況",
+        "ko": "모든 제공 상태"
+      }
+    },
+    {
+      "source": "Current offerings",
+      "translations": {
+        "de": "Aktuelle Angebote",
+        "fr": "Offres actuelles",
+        "es": "Opciones actuales",
+        "it": "Offerte attuali",
+        "pt": "Opções atuais",
+        "nl": "Huidig aanbod",
+        "ru": "Действующие программы",
+        "hi": "वर्तमान कार्यक्रम",
+        "ar": "البرامج الحالية",
+        "zh-Hans": "现有项目",
+        "ja": "現在のプログラム",
+        "ko": "현재 제공 프로그램"
+      }
+    },
+    {
+      "source": "Enquiry-only",
+      "translations": {
+        "de": "Nur auf Anfrage",
+        "fr": "Sur demande uniquement",
+        "es": "Solo mediante consulta",
+        "it": "Solo su richiesta",
+        "pt": "Apenas mediante consulta",
+        "nl": "Alleen op aanvraag",
+        "ru": "Только по запросу",
+        "hi": "केवल पूछताछ पर",
+        "ar": "للاستفسار فقط",
+        "zh-Hans": "仅接受咨询",
+        "ja": "お問い合わせのみ",
+        "ko": "문의 전용"
+      }
+    },
+    {
+      "source": "Coming Soon — enrolment is not open",
+      "translations": {
+        "de": "Demnächst — Anmeldung noch nicht möglich",
+        "fr": "Bientôt disponible — inscriptions non ouvertes",
+        "es": "Próximamente — inscripciones aún no abiertas",
+        "it": "Prossimamente — iscrizioni non ancora aperte",
+        "pt": "Em breve — inscrições ainda não abertas",
+        "nl": "Binnenkort — inschrijven is nog niet mogelijk",
+        "ru": "Скоро — запись пока не открыта",
+        "hi": "जल्द आ रहा है — नामांकन अभी शुरू नहीं हुआ है",
+        "ar": "قريبًا — التسجيل غير مفتوح",
+        "zh-Hans": "即将推出 — 尚未开放报名",
+        "ja": "近日公開 — 申し込み受付前",
+        "ko": "출시 예정 — 수강 신청 전"
+      }
+    },
+    {
+      "source": "35 priced programmes, one enquiry-only service and two Coming Soon courses.",
+      "translations": {
+        "de": "35 Programme mit Preisangabe, ein Angebot auf Anfrage und zwei künftige Kurse.",
+        "fr": "35 programmes avec tarifs, un service sur demande et deux futurs cours.",
+        "es": "35 programas con tarifas, un servicio sujeto a consulta y dos próximos cursos.",
+        "it": "35 programmi con tariffe, un servizio su richiesta e due futuri corsi.",
+        "pt": "35 programas com valores publicados, um serviço mediante consulta e dois futuros cursos.",
+        "nl": "35 programma’s met tarieven, één dienst op aanvraag en twee toekomstige cursussen.",
+        "ru": "35 программ с опубликованной стоимостью, одна услуга по запросу и два будущих курса.",
+        "hi": "शुल्क सहित 35 कार्यक्रम, पूछताछ पर एक सेवा और दो आगामी पाठ्यक्रम।",
+        "ar": "35 برنامجًا برسوم منشورة، وخدمة واحدة للاستفسار فقط، ودورتان قادمتان.",
+        "zh-Hans": "35个已公布费用的项目、1项仅接受咨询的服务，以及2个即将推出的课程。",
+        "ja": "料金掲載済みの35プログラム、お問い合わせのみの1サービス、開講予定の2コース。",
+        "ko": "요금이 공개된 프로그램 35개, 문의 전용 서비스 1개와 개설 예정 과정 2개."
+      }
+    },
+    {
+      "source": "A physician-guided Ayurvedic programme for weight management and daily habits. Minimum admission: 14 nights. Discuss your health history, goals and suitable duration during a free initial consultation.",
+      "translations": {
+        "de": "Ein ärztlich begleitetes Ayurvedaprogramm für Gewichtsmanagement und tägliche Gewohnheiten. Mindestaufenthalt: 14 Nächte. Besprechen Sie Ihre gesundheitliche Vorgeschichte, Ihre Ziele und eine geeignete Aufenthaltsdauer in einer kostenlosen Erstberatung.",
+        "fr": "Un programme ayurvédique encadré par un médecin pour la gestion du poids et les habitudes quotidiennes. Séjour minimum : 14 nuits. Discutez de vos antécédents de santé, de vos objectifs et d’une durée adaptée lors d’une première consultation gratuite.",
+        "es": "Un programa ayurvédico guiado por un médico para el control del peso y los hábitos diarios. Estancia mínima: 14 noches. Hable sobre su historial de salud, sus objetivos y la duración adecuada durante una primera consulta gratuita.",
+        "it": "Un programma ayurvedico guidato da un medico per la gestione del peso e le abitudini quotidiane. Soggiorno minimo: 14 notti. Parlate della vostra storia clinica, dei vostri obiettivi e della durata adatta durante una prima consulenza gratuita.",
+        "pt": "Um programa ayurvédico orientado por um médico para a gestão do peso e dos hábitos diários. Estadia mínima: 14 noites. Converse sobre o seu histórico de saúde, os seus objetivos e a duração adequada durante uma primeira consulta gratuita.",
+        "nl": "Een door een arts begeleid Ayurvedaprogramma voor gewichtsbeheersing en dagelijkse gewoonten. Minimumverblijf: 14 nachten. Bespreek uw gezondheidsgeschiedenis, doelen en een geschikte verblijfsduur tijdens een gratis eerste consult.",
+        "ru": "Аюрведическая программа под руководством врача для управления весом и повседневными привычками. Минимальный срок пребывания — 14 ночей. Обсудите историю своего здоровья, цели и подходящую длительность во время бесплатной первичной консультации.",
+        "hi": "वजन प्रबंधन और दैनिक आदतों के लिए चिकित्सक के मार्गदर्शन में आयुर्वेदिक कार्यक्रम। न्यूनतम भर्ती अवधि: 14 रातें। निःशुल्क प्रारंभिक परामर्श में अपने स्वास्थ्य इतिहास, लक्ष्यों और उपयुक्त अवधि पर चर्चा करें।",
+        "ar": "برنامج أيورفيدا بإشراف طبيب لإدارة الوزن والعادات اليومية. الحد الأدنى للإقامة: 14 ليلة. ناقش تاريخك الصحي وأهدافك والمدة المناسبة خلال استشارة أولية مجانية.",
+        "zh-Hans": "由医生指导的阿育吠陀项目，关注体重管理和日常习惯。最低住院时长：14晚。在免费初次咨询中讨论您的健康史、目标及适合的住院时长。",
+        "ja": "医師の指導による、体重管理と日々の習慣のためのアーユルヴェーダプログラムです。最低入院期間は14泊です。無料の初回相談で、健康歴、目標、適切な期間についてご相談ください。",
+        "ko": "체중 관리와 일상 습관을 위한 의사 지도하의 아유르베다 프로그램입니다. 최소 입원 기간은 14박입니다. 무료 첫 상담에서 건강 이력, 목표 및 적절한 기간을 상담하세요."
+      }
+    },
+    {
+      "source": "A physician-guided yoga, Ayurveda and dietary programme for digestive wellbeing. Minimum admission: 14 nights. Discuss your symptoms, medical history and suitable care during a free initial consultation.",
+      "translations": {
+        "de": "Ein ärztlich begleitetes Programm aus Yoga, Ayurveda und Ernährung für das Wohlbefinden der Verdauung. Mindestaufenthalt: 14 Nächte. Besprechen Sie Ihre Beschwerden, Ihre Krankengeschichte und eine geeignete Behandlung in einer kostenlosen Erstberatung.",
+        "fr": "Un programme de yoga, d’Ayurveda et d’alimentation encadré par un médecin pour le bien-être digestif. Séjour minimum : 14 nuits. Discutez de vos symptômes, de vos antécédents médicaux et des soins adaptés lors d’une première consultation gratuite.",
+        "es": "Un programa de yoga, Ayurveda y alimentación guiado por un médico para el bienestar digestivo. Estancia mínima: 14 noches. Hable sobre sus síntomas, su historial médico y la atención adecuada durante una primera consulta gratuita.",
+        "it": "Un programma di yoga, Ayurveda e alimentazione guidato da un medico per il benessere digestivo. Soggiorno minimo: 14 notti. Parlate dei vostri sintomi, della vostra storia clinica e delle cure adatte durante una prima consulenza gratuita.",
+        "pt": "Um programa de yoga, Ayurveda e alimentação orientado por um médico para o bem-estar digestivo. Estadia mínima: 14 noites. Converse sobre os seus sintomas, o seu histórico médico e os cuidados adequados durante uma primeira consulta gratuita.",
+        "nl": "Een door een arts begeleid programma met yoga, Ayurveda en voeding voor het welzijn van de spijsvertering. Minimumverblijf: 14 nachten. Bespreek uw klachten, medische voorgeschiedenis en passende zorg tijdens een gratis eerste consult.",
+        "ru": "Программа йоги, аюрведы и питания под руководством врача для благополучия пищеварительной системы. Минимальный срок пребывания — 14 ночей. Обсудите симптомы, историю болезни и подходящую помощь во время бесплатной первичной консультации.",
+        "hi": "पाचन संबंधी स्वास्थ्य के लिए चिकित्सक के मार्गदर्शन में योग, आयुर्वेद और आहार कार्यक्रम। न्यूनतम भर्ती अवधि: 14 रातें। निःशुल्क प्रारंभिक परामर्श में अपने लक्षणों, चिकित्सा इतिहास और उपयुक्त देखभाल पर चर्चा करें।",
+        "ar": "برنامج لليوغا والأيورفيدا والتغذية بإشراف طبيب لدعم العافية الهضمية. الحد الأدنى للإقامة: 14 ليلة. ناقش أعراضك وتاريخك الطبي والرعاية المناسبة خلال استشارة أولية مجانية.",
+        "zh-Hans": "由医生指导的瑜伽、阿育吠陀和饮食项目，关注消化健康。最低住院时长：14晚。在免费初次咨询中讨论您的症状、病史及适合的照护。",
+        "ja": "医師の指導による、消化の健康のためのヨガ、アーユルヴェーダ、食事のプログラムです。最低入院期間は14泊です。無料の初回相談で、症状、病歴、適切なケアについてご相談ください。",
+        "ko": "소화 건강을 위한 의사 지도하의 요가, 아유르베다 및 식이 프로그램입니다. 최소 입원 기간은 14박입니다. 무료 첫 상담에서 증상, 병력 및 적절한 관리에 대해 상담하세요."
+      }
+    },
+    {
+      "source": "View details",
+      "translations": {
+        "de": "Details ansehen",
+        "fr": "Voir les détails",
+        "es": "Ver detalles",
+        "it": "Visualizzare i dettagli",
+        "pt": "Ver detalhes",
+        "nl": "Details bekijken",
+        "ru": "Подробнее",
+        "hi": "विवरण देखें",
+        "ar": "عرض التفاصيل",
+        "zh-Hans": "查看详情",
+        "ja": "詳細を見る",
+        "ko": "자세히 보기"
+      }
+    },
+    {
+      "source": "Read the programme",
+      "translations": {
+        "de": "Programm ansehen",
+        "fr": "Découvrir le programme",
+        "es": "Consultar el programa",
+        "it": "Consultare il programma",
+        "pt": "Consultar o programa",
+        "nl": "Programma bekijken",
+        "ru": "Посмотреть программу",
+        "hi": "कार्यक्रम पढ़ें",
+        "ar": "اطّلع على البرنامج",
+        "zh-Hans": "查看项目",
+        "ja": "プログラムを見る",
+        "ko": "프로그램 보기"
+      }
+    },
+    {
+      "source": "Explore yoga programmes, personalised yoga and Ayurveda courses.",
+      "translations": {
+        "de": "Entdecken Sie Yogaprogramme, individuelles Yoga und Ayurvedakurse.",
+        "fr": "Découvrez les programmes de yoga, le yoga personnalisé et les cours d’Ayurveda.",
+        "es": "Explore programas de yoga, yoga personalizado y cursos de Ayurveda.",
+        "it": "Scoprite programmi yoga, yoga personalizzato e corsi di Ayurveda.",
+        "pt": "Explore programas de yoga, yoga personalizado e cursos de Ayurveda.",
+        "nl": "Ontdek yogaprogramma’s, yoga op maat en Ayurvedacursussen.",
+        "ru": "Ознакомьтесь с программами йоги, индивидуальной йогой и курсами аюрведы.",
+        "hi": "योग कार्यक्रम, व्यक्तिगत योग और आयुर्वेद पाठ्यक्रम देखें।",
+        "ar": "استكشف برامج اليوغا واليوغا المخصصة ودورات الأيورفيدا.",
+        "zh-Hans": "探索瑜伽项目、个性化瑜伽及阿育吠陀课程。",
+        "ja": "ヨガプログラム、個別ヨガ、アーユルヴェーダのコースをご覧ください。",
+        "ko": "요가 프로그램, 맞춤형 요가와 아유르베다 과정을 살펴보세요."
+      }
+    },
+    {
+      "source": "Yoga Training for Personal Practice — Coming Soon | Kairali",
+      "translations": {
+        "de": "Yogakurs für die persönliche Praxis — Demnächst | Kairali",
+        "fr": "Formation de yoga pour la pratique personnelle — Bientôt disponible | Kairali",
+        "es": "Formación de yoga para la práctica personal — Próximamente | Kairali",
+        "it": "Formazione yoga per la pratica personale — Prossimamente | Kairali",
+        "pt": "Formação em yoga para a prática pessoal — Em breve | Kairali",
+        "nl": "Yogaopleiding voor persoonlijke beoefening — Binnenkort | Kairali",
+        "ru": "Обучение йоге для личной практики — Скоро | Kairali",
+        "hi": "व्यक्तिगत अभ्यास के लिए योग प्रशिक्षण — जल्द आ रहा है | Kairali",
+        "ar": "تدريب اليوغا للممارسة الشخصية — قريبًا | Kairali",
+        "zh-Hans": "个人练习瑜伽培训 — 即将推出 | Kairali",
+        "ja": "個人の実践のためのヨガトレーニング — 近日公開 | Kairali",
+        "ko": "개인 수련을 위한 요가 교육 — 출시 예정 | Kairali"
+      }
+    },
+    {
+      "source": "Professional Yoga Teacher Training — Coming Soon | Kairali",
+      "translations": {
+        "de": "Professionelle Yogalehrerausbildung — Demnächst | Kairali",
+        "fr": "Formation professionnelle de professeurs de yoga — Bientôt disponible | Kairali",
+        "es": "Formación profesional de profesores de yoga — Próximamente | Kairali",
+        "it": "Formazione professionale per insegnanti di yoga — Prossimamente | Kairali",
+        "pt": "Formação profissional de professores de yoga — Em breve | Kairali",
+        "nl": "Professionele yogadocentenopleiding — Binnenkort | Kairali",
+        "ru": "Профессиональная подготовка преподавателей йоги — Скоро | Kairali",
+        "hi": "पेशेवर योग शिक्षक प्रशिक्षण — जल्द आ रहा है | Kairali",
+        "ar": "تدريب مهني لمعلمي اليوغا — قريبًا | Kairali",
+        "zh-Hans": "专业瑜伽教师培训 — 即将推出 | Kairali",
+        "ja": "専門ヨガ指導者養成 — 近日公開 | Kairali",
+        "ko": "전문 요가 지도자 교육 — 출시 예정 | Kairali"
+      }
+    },
+    {
+      "source": "Yoga & Training | Kairali",
+      "translations": {
+        "de": "Yoga & Ausbildung | Kairali",
+        "fr": "Yoga et formations | Kairali",
+        "es": "Yoga y formación | Kairali",
+        "it": "Yoga e formazione | Kairali",
+        "pt": "Yoga e formação | Kairali",
+        "nl": "Yoga en opleidingen | Kairali",
+        "ru": "Йога и обучение | Kairali",
+        "hi": "योग और प्रशिक्षण | Kairali",
+        "ar": "اليوغا والتدريب | Kairali",
+        "zh-Hans": "瑜伽与培训 | Kairali",
+        "ja": "ヨガとトレーニング | Kairali",
+        "ko": "요가와 교육 | Kairali"
+      }
+    }
+  ]
+}

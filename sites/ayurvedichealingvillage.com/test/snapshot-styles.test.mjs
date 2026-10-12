@@ -2,7 +2,9 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
-import { helmetStyles, importedComponents, viewFirstPaintStyles, snapshotStylesFor, firstScreenPoster, bodyFontFiles, inlineFontStyles } from "../app/(english)/_families/snapshot-styles.mjs";
+import zlib from "node:zlib";
+import { helmetStyles, importedComponents, viewFirstPaintStyles, snapshotStylesFor, firstScreenPoster, imageLedFirstScreen, bodyFontFiles, inlineFontStyles } from "../app/(english)/_families/snapshot-styles.mjs";
+import { firstCriticalImage, phoneCriticalMedia } from "../app/(english)/_families/critical-media.mjs";
 
 test("helmetStyles keeps local font stylesheets and <style> blocks only, in order", () => {
   const t = `<helmet>
@@ -94,6 +96,36 @@ test("firstScreenPoster: a first-screen <video poster> only, local paths only", 
   assert.equal(firstScreenPoster(fs.readFileSync("english-candidate/prerender/our-villas.html", "utf8")), null);
 });
 
+test("imageLedFirstScreen: listed hero-background routes only; every other route keeps its faces", () => {
+  const digestive = "/digestive-wellness-gut-health-yoga-therapy/";
+  assert.equal(imageLedFirstScreen(digestive), true);
+  assert.equal(imageLedFirstScreen("/weight-loss-programme/"), true);
+  assert.equal(imageLedFirstScreen("/offers/"), true);
+  assert.equal(imageLedFirstScreen("/treatment-for-bronchial-diseases/"), true);
+  assert.equal(imageLedFirstScreen("/holistic-treatment-for-rejuvenation-and-detoxification/"), true);
+  for (const p of ["/", "/our-villas/", "/kairali-ayurvedic-way-of-weight-management/", "/panchakarma-therapy/", "/digestive-wellness-gut-health-yoga-therapy", "", undefined]) {
+
+    assert.equal(imageLedFirstScreen(p), false, String(p));
+  }
+  // the listed route really is image-led in every served locale: no poster, and its first screen is the hero
+  // background (the EN phone hero is the preloaded 768 AVIF the gate measured as the LCP element)
+  const en = fs.readFileSync("english-candidate/prerender/digestive-wellness-gut-health-yoga-therapy.html", "utf8");
+  assert.equal(firstScreenPoster(en), null);
+  assert.equal(firstCriticalImage(phoneCriticalMedia(en, digestive), digestive), "/ahv/assets/img/digestive-768-hero.avif");
+  const locales = fs.readdirSync("l10n/prerender").filter((l) => fs.existsSync(`l10n/prerender/${l}/digestive-wellness-gut-health-yoga-therapy.html.gz`));
+  assert.equal(locales.length, 12);
+  for (const html of [en, ...locales.map((l) => zlib.gunzipSync(fs.readFileSync(`l10n/prerender/${l}/digestive-wellness-gut-health-yoga-therapy.html.gz`)).toString("utf8"))]) {
+    // Frozen English is WebP; captures from the current runtime already contain the optimized AVIF.
+    // Check the served media contract after the same normalization used by DesignView.
+    const served = phoneCriticalMedia(html, digestive);
+    assert.equal(firstCriticalImage(served, digestive), "/ahv/assets/img/digestive-768-hero.avif");
+    const hero = served.search(/background-image:\s*url\((?:&quot;|")?\/ahv\/assets\/img\/digestive-768-hero\.avif/);
+    assert.ok(hero > 0 && hero < served.search(/<img\b[^>]*\sloading="lazy"/i));
+    assert.doesNotMatch(served, /<video\b/);
+
+  }
+});
+
 test("bodyFontFiles: the local face of the body family, upright 400 only", () => {
   const css = '@font-face{font-family:"Marcellus";font-style:normal;font-weight:400;src:url("m.ttf")}' +
     '@font-face{font-family:"Mulish";font-style:italic;font-weight:400;src:url("mi.ttf")}' +
@@ -110,4 +142,19 @@ test("bodyFontFiles: the local face of the body family, upright 400 only", () =>
     assert.equal(out.preloadFonts.length, 1, v);
     assert.ok(fs.existsSync("public" + out.preloadFonts[0]), v + " body face is served");
   }
+});
+
+test("hypertension image-led loading stays exact-route scoped", () => { assert.equal(imageLedFirstScreen("/treatment-for-hypertension/"), true); assert.equal(imageLedFirstScreen("/treatment-for-hypertension"), false); });
+
+test("N12.06-B measured image-led loading remains exact-route scoped", () => {
+ for (const route of ["/treatment-for-paralysis/", "/treatment-for-skin-diseases/"]) {
+  assert.equal(imageLedFirstScreen(route), true);
+  assert.equal(imageLedFirstScreen(route.slice(0,-1)), false);
+ }
+ assert.equal(imageLedFirstScreen("/treatment-for-psoriasis/"), false);
+});
+
+test("Monsoon image-led loading uses its traced exact route only", () => {
+ assert.equal(imageLedFirstScreen('/karkidaka-chikitsha-or-monsoon-wellness.html'),true);
+ assert.equal(imageLedFirstScreen('/karkidaka-chikitsha-or-monsoon-wellness/'),false);
 });

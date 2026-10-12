@@ -6,6 +6,8 @@ allowBuilds:
   sharp: true
   unrs-resolver: true
 overrides:
+  # GHSA-6qxp-vccf-f47h: patched SDK for the shadcn development CLI.
+  "shadcn>@modelcontextprotocol/sdk": "1.31.0"
   # Patch both undici 7.29.0 advisories; published 4 September 2026.
   undici: "7.29.1"
   postcss: ">=8.5.10"
@@ -16,9 +18,9 @@ overrides:
   "@opentelemetry/core@<2.8.0": ">=2.8.0"
   # 6 Oct 2026: fast-uri 4.1.5 also fixes GHSA-hrr3-gc8f-f4qj / GHSA-jvvf-x445-j334.
   fast-uri: "4.1.5"
-  # 25 Sep 2026: GHSA-rgj7-g3m4-5g8c requires sharp 0.35.4.
+  # 6 Oct 2026: GHSA-wq5f-xc86-pv6w requires sharp 0.35.5.
   # Apply consistently to all direct/transitive image-tooling instances.
-  sharp: "0.35.4"
+  sharp: "0.35.5"
   # 22 Jul 2026: pin the fleet's proven React — the security-override re-resolve
   # floated react 19.2.4 -> 19.2.7 and next@15.5.20's vendored runtime skews
   # against it (patchFetch server/client prerender failure, arogyashala +

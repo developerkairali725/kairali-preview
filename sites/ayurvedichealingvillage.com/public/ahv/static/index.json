@@ -1,18 +1,89 @@
 {
- "generated": "2026-10-01T06:13:20.072Z",
- "base": "http://localhost:4313",
- "count": 1,
+ "generated": "2026-10-08T22:30:49.331Z",
+ "base": "http://127.0.0.1:4541",
+ "count": 3,
  "failures": 0,
  "routes": [
   {
    "path": "/",
    "ok": true,
    "file": "index.html",
-   "bytes": 260344,
-   "textChars": 17573,
-   "imgs": 74,
+   "bytes": 260491,
+   "textChars": 1936,
+   "imgs": 76,
    "flattened": 50,
-   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0"
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+   "liveRuntimeVerified": true,
+   "contentProof": {
+    "errors": [],
+    "heading": "Kairali – The Ayurvedic Healing Village",
+    "bodyChars": 20513,
+    "requiredForm": true,
+    "requiredContent": true,
+    "forbiddenContent": false
+   },
+   "liveContentProof": {
+    "errors": [],
+    "heading": "Kairali – The Ayurvedic Healing Village",
+    "bodyChars": 20513,
+    "requiredForm": true,
+    "requiredContent": true,
+    "forbiddenContent": false
+   }
+  },
+  {
+   "path": "/contact-us/",
+   "ok": true,
+   "file": "contact-us.html",
+   "bytes": 112481,
+   "textChars": 4841,
+   "imgs": 9,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+   "liveRuntimeVerified": true,
+   "contentProof": {
+    "errors": [],
+    "heading": "Speak with our care team",
+    "bodyChars": 5824,
+    "requiredForm": true,
+    "requiredContent": true,
+    "forbiddenContent": false
+   },
+   "liveContentProof": {
+    "errors": [],
+    "heading": "Speak with our care team",
+    "bodyChars": 5824,
+    "requiredForm": true,
+    "requiredContent": true,
+    "forbiddenContent": false
+   }
+  },
+  {
+   "path": "/panchakarma-therapy/",
+   "ok": true,
+   "file": "panchakarma-therapy.html",
+   "bytes": 223110,
+   "textChars": 14626,
+   "imgs": 56,
+   "flattened": 0,
+   "leftovers": "x-dc:0 sc-for:0 sc-if:0 dc-import:0 image-slot:0",
+   "liveRuntimeVerified": true,
+   "contentProof": {
+    "errors": [],
+    "heading": "Ayurvedic Panchakarma Detoxification Therapy",
+    "bodyChars": 24735,
+    "requiredForm": true,
+    "requiredContent": true,
+    "forbiddenContent": false
+   },
+   "liveContentProof": {
+    "errors": [],
+    "heading": "Ayurvedic Panchakarma Detoxification Therapy",
+    "bodyChars": 24735,
+    "requiredForm": true,
+    "requiredContent": true,
+    "forbiddenContent": false
+   }
   }
  ]
 }

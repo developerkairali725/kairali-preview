@@ -41,3 +41,23 @@
 ## Priority Pages
 - High-priority (conversion/traffic drivers): fresh content, rankings monitored, strategy adjusted.
 - Low-priority: basic SEO standards; periodic review for stale content/broken links.
+
+## 2026-10-07 20:30:03 IST — current release dispositions
+
+WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001: [candidate evidence and remaining gates](releases/2026-10-07-consolidated-release.md). Historical master text above remains unchanged; this is scoped release evidence, not a new all-page audit.
+
+| Master scope | Current disposition |
+| --- | --- |
+| Content/proofreading/claims |Approved content captured in 201 EN / 2,412 locale bodies; owner airport guidance 66/114/116 km. Unconfirmed Baoli terms separate; no broader medical/translation approval inferred. |
+| Links/URLs/breadcrumbs |Actual released routes drive acceptance; final served checks/document-entry journeys pending. |
+| Multimedia/alt/OG/social |Approved illustration/share changes included; final asset-byte/metadata/visual checks pending. No blanket image/alt or external-audit PASS claimed. |
+| Canonical/schema/headings/metadata |Final served checks pending; September FAQ/search reports are historical limited evidence. |
+| Marketing query parameters |Ordinary/query variants for 169 changed redirects prepared; served preservation pending. No analytics conversion sent. |
+| Hreflang/switcher |Two real clusters × 13 languages, raw/hydrated and desktop/mobile; 48 offline tests PASS, served runs pending; no all-page claim. |
+| Forms/integrations/Chat |Final safe interaction/error-path regression pending; no real lead/message. Q03 acknowledgement stays NOT-PROVEN/separate. |
+| Accessibility/mobile/touch |Final factory/visual checks pending; no new WAVE audit claimed. |
+| Redirects |169 total = 13 EN + 156 locale; 26 merger subset, 143 added verifier coverage. 17 offline tests PASS; final served checks pending. Closed unchanged routes not reopened. |
+| Performance/individual optimization |Final production Lighthouse pending; no per-page GTmetrix/PageSpeed/SEOptimer claim. |
+| Priority/ranking/monitoring |Approved retained merger targets preserved; ranking/engagement monitoring follows release. |
+
+Preparation does not certify final hosted/public behavior; no production publication is asserted.

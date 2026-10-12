@@ -86,7 +86,7 @@ for (const [src, rule] of Object.entries(EN_REDIRECTS)) {
   if (!routes[src]) continue;
   for (const loc of CODES) {
     const from = routes[src][loc];
-    const to = (routes[rule.to] && routes[rule.to][loc]) || `/${LOCALES[loc].prefix}/`;
+    const to = (routes[rule.to] && routes[rule.to][loc]) || rule.to;
     if (from && from.toLowerCase() !== to.toLowerCase()) redirects[from] = { to, basis: `mirrors the English protection-map 301 ${src} → ${rule.to}`, clicks: null };
   }
   delete routes[src];

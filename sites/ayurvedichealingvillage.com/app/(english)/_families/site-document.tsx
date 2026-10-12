@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
 import Script from "next/script";
 import { ChatbaseLoader } from "@kairali/chat";
-import { ConsentScripts } from "@kairali/consent";
+import { ConsentScripts } from "../../../components/ConsentScripts";
 import analyticsConfig from "../../../analytics.config.json";
 
 /**
@@ -32,22 +32,7 @@ export function SiteDocument({
   return (
     <html lang={lang} dir={dir} suppressHydrationWarning>
       <head>
-        {/* Consent Mode v2 defaults, DENIED, before any loader — the pilot
-            security-audit ordering contract, added on the owner's ruling of
-            2026-09-21 ("wire Consent Mode properly") alongside the chat bubble.
-
-            This lane keeps its OWN visitor-facing notice (the approved design's,
-            extended site-wide in _families/boot.ts on localStorage
-            "ktahv-consent") — nothing here adds a second banner or asks a second
-            question. What this adds is the signal layer underneath it: boot.ts
-            now calls gtag("consent","update", …) on whichever notice records the
-            choice, and mirrors the record into the fleet key so THIS snippet can
-            re-apply it synchronously on the next page load.
-
-            Before this pair, adding the script alone would have set everything
-            denied with nothing in the lane to grant it — startMeasurement()
-            calls gtag("config") and never gtag("consent") — and an accepting
-            visitor would have been measured in denied mode forever. */}
+        {/* Default denied before loaders; only the current AHV consent revision may grant. */}
         <ConsentScripts />
         {/* Keep one-use thank-you navigation tied to a confirmed lead receipt. */}
         <Script src="/design/lead-receipt.js" strategy="beforeInteractive" />
@@ -116,7 +101,7 @@ export function SiteDocument({
             the same header row; labels via window.__AHV_T, hrefs via AHV_LOCAL_PATHS, so one file
             serves every locale. */}
 
-        <script defer src="/design/family-header.js" />
+        <script defer src="/design/family-header.js?v=20261006-row" />
         <meta name="google-site-verification" content={verification.googleSiteVerification} />
         <meta name="msvalidate.01" content={verification.msvalidate01} />
         <meta name="facebook-domain-verification" content={verification.facebookDomainVerification} />

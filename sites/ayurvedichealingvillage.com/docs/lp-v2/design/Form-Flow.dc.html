@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Three-step enquiry with reply channel</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&amp;family=Mulish:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Mulish',system-ui,sans-serif;color:#2A2118}
+a{color:#2A2118}a:hover{color:#121A15}
+h2{font-family:'Marcellus',Georgia,serif;font-weight:400;margin:0}
+p{margin:0}
+label{font-size:14px;font-weight:600;letter-spacing:.02em}
+select,input[type=text],input[type=email],input[type=tel]{font-family:'Mulish',sans-serif;font-size:17px;color:#2A2118;background:#FFFFFF;border:1px solid rgba(42,33,24,.3);border-radius:2px;min-height:52px;padding:0 14px;box-sizing:border-box;width:100%}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; background: #F7F4EA; display: flex; flex-direction: column; box-sizing: border-box; padding: 18px 16px; gap: 18px; overflow: hidden">
+
+  <div style="display: flex; justify-content: space-between; align-items: center">
+    <img src="/_blob/24e7190c37f53d37f4e6564118281782" alt="Kairali — The Ayurvedic Healing Village" style="height: 44px; width: auto">
+    <span style="font-size: 13px; color: #5C5448">Free doctor consultation</span>
+  </div>
+
+  <sc-if value="{{ inSteps }}" hint-placeholder-val="{{ true }}">
+    <ol style="list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; font-size: 12px; letter-spacing: .04em">
+      <li style="{{ s1 }}">1 · Program</li>
+      <li style="{{ s2 }}">2 · Stay &amp; reply</li>
+      <li style="{{ s3 }}">3 · Contact</li>
+    </ol>
+  </sc-if>
+
+  <sc-if value="{{ isStep1 }}" hint-placeholder-val="{{ true }}">
+    <div style="display: flex; flex-direction: column; gap: 18px">
+      <h2 style="font-size: 28px; line-height: 1.15">Your free doctor consultation</h2>
+      <div style="display: flex; flex-direction: column; gap: 8px"><label for="m-prog">Program</label><select id="m-prog"><option>Panchakarma</option><option>Weight management</option><option>Rejuvenation</option><option>Not sure — advise me</option></select></div>
+      <div style="display: flex; flex-direction: column; gap: 8px"><label for="m-month">Preferred month</label><select id="m-month"><option>November 2026</option><option>December 2026</option><option>January 2027</option><option>Flexible</option></select></div>
+      <button type="button" onClick="{{ next }}" style="min-height: 54px; background: #121A15; color: #F7F4EA; border: 0; border-radius: 2px; font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 16px">Continue</button>
+      <p style="font-size: 13px; color: #5C5448">No medical details needed. Your doctor asks for those privately at consultation.</p>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isStep2 }}" hint-placeholder-val="{{ false }}">
+    <div style="display: flex; flex-direction: column; gap: 14px">
+      <h2 style="font-size: 26px; line-height: 1.15">Your stay, and how we reply</h2>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px">
+        <div style="display: flex; flex-direction: column; gap: 6px"><label for="m-nights">Length</label><select id="m-nights"><option>14 nights</option><option>21 nights</option><option>28 nights</option><option>Doctor to advise</option></select></div>
+        <div style="display: flex; flex-direction: column; gap: 6px"><label for="m-party">Who is coming</label><select id="m-party"><option>Just me</option><option>Two patients</option><option>Patient + companion</option></select></div>
+      </div>
+      <fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px">
+        <legend style="font-size: 14px; font-weight: 600; margin-bottom: 8px">Where would you like us to reply?</legend>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+          <sc-for list="{{ channels }}" as="c" hint-placeholder-count="6">
+            <button type="button" role="radio" aria-checked="{{ c.checked }}" onClick="{{ c.pick }}" style="{{ c.style }}">
+              {{ c.label }}
+            </button>
+          </sc-for>
+        </div>
+        <p style="font-size: 13px; color: #5C5448; line-height: 1.45">All channels answer instantly — our AI assistant replies first and a member of the patient team follows up.</p>
+      </fieldset>
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 10px">
+        <button type="button" onClick="{{ back }}" style="min-height: 54px; background: transparent; color: #121A15; border: 1px solid #121A15; border-radius: 2px; font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 16px">Back</button>
+        <button type="button" onClick="{{ next }}" style="min-height: 54px; background: #121A15; color: #F7F4EA; border: 0; border-radius: 2px; font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 16px">Continue</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isStep3 }}" hint-placeholder-val="{{ false }}">
+    <div style="display: flex; flex-direction: column; gap: 13px">
+      <h2 style="font-size: 26px; line-height: 1.15">Your details</h2>
+      <div style="display: flex; flex-direction: column; gap: 6px"><label for="m-name">Full name</label><input id="m-name" type="text" autocomplete="name"></div>
+      <div style="display: flex; flex-direction: column; gap: 6px"><label for="m-email">Email</label><input id="m-email" type="email" autocomplete="email"></div>
+      <div style="display: flex; flex-direction: column; gap: 6px"><label for="m-phone">{{ phoneLabel }}</label><input id="m-phone" type="tel" autocomplete="tel" placeholder="+44 7700 900000"></div>
+      <label style="display: flex; gap: 12px; align-items: flex-start; font-weight: 500; font-size: 14px; line-height: 1.45"><input type="checkbox" onChange="{{ toggleAgree }}" style="width: 22px; height: 22px; margin: 0; flex: none"> I agree that Kairali may contact me about this enquiry by {{ consentChannel }}, phone or email. <a href="/privacy">Privacy notice</a></label>
+      <label style="display: flex; gap: 12px; align-items: flex-start; font-weight: 500; font-size: 14px; line-height: 1.45; color: #5C5448"><input type="checkbox" style="width: 22px; height: 22px; margin: 0; flex: none"> Optional: send me occasional news and offers.</label>
+      <sc-if value="{{ showError }}" hint-placeholder-val="{{ false }}">
+        <p role="alert" style="font-size: 14px; color: #A3212C; font-weight: 600">Please tick the first box so we can reply to you.</p>
+      </sc-if>
+      <div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 10px">
+        <button type="button" onClick="{{ back }}" style="min-height: 54px; background: transparent; color: #121A15; border: 1px solid #121A15; border-radius: 2px; font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 16px">Back</button>
+        <button type="button" onClick="{{ submit }}" style="min-height: 54px; background: #121A15; color: #F7F4EA; border: 0; border-radius: 2px; font-family: 'Mulish', sans-serif; font-weight: 600; font-size: 16px">Send</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isDone }}" hint-placeholder-val="{{ false }}">
+    <div style="display: flex; flex-direction: column; gap: 16px; padding-top: 12px">
+      <p style="font-size: 12px; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; color: #7A5A22">Enquiry received · ref {{ refCode }}</p>
+      <h2 style="font-size: 30px; line-height: 1.15">Thank you. Let’s talk now — no waiting.</h2>
+      <p style="color: #5C5448; font-size: 16px; line-height: 1.55">{{ doneText }}</p>
+      <a href="#continue" style="{{ primaryStyle }}">{{ primaryLabel }}</a>
+      <p style="font-size: 14px; font-weight: 600; margin-top: 4px">Or continue on</p>
+      <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+        <sc-for list="{{ others }}" as="o" hint-placeholder-count="4">
+          <a href="#continue" style="min-height: 48px; display: flex; align-items: center; justify-content: center; border: 1px solid rgba(42,33,24,.3); background: #FFFFFF; color: #121A15; text-decoration: none; font-weight: 600; font-size: 14px; border-radius: 2px">{{ o.label }}</a>
+        </sc-for>
+      </div>
+      <p style="font-size: 12px; color: #5C5448; line-height: 1.5">Our AI assistant replies first; a member of the patient team follows up. The chat link carries only your reference code — never your personal details.</p>
+      <button type="button" onClick="{{ restart }}" style="min-height: 44px; background: transparent; border: 0; color: #5C5448; font-family: 'Mulish', sans-serif; font-size: 13px; text-decoration: underline">Restart demo</button>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { step: 1, agreed: false, error: false, channel: 'whatsapp' };
+  }
+  renderVals() {
+    const s = this.state.step;
+    const ch = this.state.channel;
+    const on = 'border-top: 3px solid #121A15; padding-top: 8px; font-weight: 700; color: #2A2118';
+    const off = 'border-top: 3px solid rgba(42,33,24,.18); padding-top: 8px; color: #5C5448';
+    const list = [
+      { id: 'whatsapp', label: 'WhatsApp', glyph: '◯', name: 'WhatsApp' },
+      { id: 'instagram', label: 'Instagram', glyph: '◻', name: 'Instagram' },
+      { id: 'messenger', label: 'Messenger', glyph: '◇', name: 'Messenger' },
+      { id: 'chat', label: 'Chat here', glyph: '▭', name: 'chat on this page' },
+      { id: 'call', label: 'Phone call', glyph: '✆', name: 'phone' },
+      { id: 'email', label: 'Email', glyph: '✉', name: 'email' }
+    ];
+    const tileOn = 'min-height: 52px; display: flex; align-items: center; gap: 8px; padding: 0 12px; border: 2px solid #121A15; background: #FFFFFF; color: #121A15; font-family: Mulish, sans-serif; font-weight: 700; font-size: 15px; border-radius: 2px; cursor: pointer';
+    const tileOff = 'min-height: 52px; display: flex; align-items: center; gap: 8px; padding: 0 12px; border: 1px solid rgba(42,33,24,.3); background: #FFFFFF; color: #2A2118; font-family: Mulish, sans-serif; font-weight: 500; font-size: 15px; border-radius: 2px; cursor: pointer';
+    const cur = list.find((c) => c.id === ch) || list[0];
+    const primaryLabels = {
+      whatsapp: 'Continue on WhatsApp now', instagram: 'Continue on Instagram now', messenger: 'Continue on Messenger now',
+      chat: 'Open chat now', call: 'Call us now · +91 95551 56156', email: 'Open chat now while you wait'
+    };
+    const doneTexts = {
+      whatsapp: 'We have also sent your enquiry to WhatsApp. Tap below to open the conversation — our assistant already has your details.',
+      instagram: 'Tap below to open our Instagram chat. Your reference code tells our assistant who you are.',
+      messenger: 'Tap below to open Messenger. Your reference code tells our assistant who you are.',
+      chat: 'Open the chat on this page — our assistant already has your enquiry.',
+      call: 'Our patient team will call you to arrange your free consultation — or call us now.',
+      email: 'Our patient team will email you to arrange your free consultation. Prefer to talk now? Open the chat.'
+    };
+    const primaryStyle = 'min-height: 54px; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 600; font-size: 16px; border-radius: 2px; ' + (ch === 'whatsapp' ? 'background: #1F5E43; color: #FFFFFF' : 'background: #121A15; color: #F7F4EA');
+    return {
+      inSteps: s < 4,
+      isStep1: s === 1, isStep2: s === 2, isStep3: s === 3, isDone: s === 4,
+      s1: s >= 1 ? on : off, s2: s >= 2 ? on : off, s3: s >= 3 ? on : off,
+      channels: list.map((c) => ({ ...c, checked: c.id === ch ? 'true' : 'false', style: c.id === ch ? tileOn : tileOff, pick: () => this.setState({ channel: c.id }) })),
+      phoneLabel: (ch === 'whatsapp' || ch === 'call') ? 'WhatsApp / phone with country code' : 'Phone with country code (optional)',
+      consentChannel: (ch === 'chat' || ch === 'call' || ch === 'email') ? 'WhatsApp' : cur.name,
+      refCode: 'KT-7Q4M',
+      primaryLabel: primaryLabels[ch],
+      primaryStyle: primaryStyle,
+      doneText: doneTexts[ch],
+      others: list.filter((c) => c.id !== ch && c.id !== 'email').slice(0, 4),
+      showError: this.state.error,
+      next: () => this.setState({ step: Math.min(3, s + 1) }),
+      back: () => this.setState({ step: Math.max(1, s - 1), error: false }),
+      toggleAgree: (e) => this.setState({ agreed: !!(e && e.target && e.target.checked), error: false }),
+      submit: () => this.state.agreed ? this.setState({ step: 4, error: false }) : this.setState({ error: true }),
+      restart: () => this.setState({ step: 1, agreed: false, error: false, channel: 'whatsapp' })
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+/* campaign-v2/production/production.css — the live ad routes only (loaded by production/Document.tsx, which only
+   app/(ppc-v2) uses). Everything is scoped to the page wrapper (.lp-prod) or to the site's own consent notice;
+   colours and type come from the kit skin vars (--lp-*), never new values. */
+
+html[data-lp-surface="production"] body { margin: 0; }
+
+/* The site's consent notice reads the brand tokens, which the main site sets on :root (app/globals.css →
+   @kairali/ui/brand-tokens.css). They are set here only where the notice renders, with the same values, so the
+   notice matches the rest of the site and the tokens never reach the kit design. */
+html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
+  --line: currentColor;
+  --font-body: "Asap", "Trebuchet MS", sans-serif;
+}
+
+/* Header: the site's shared "Chat" control (review-chrome.js) joins the kit's actions. */
+.lp-prod .lp-header__actions .ahv-contact-trigger { flex: none; }
+
+/* Header pinned on desktop (owner, 8 Oct 2026: "the header should be sticky in desktop view so when we scroll the
+   CTA is always there"). Over the hero the header is exactly as approved. Once it has scrolled away,
+   production/StickyHeader.tsx marks it [data-stuck] and it slides back in pinned to the top: a compact bar on the
+   hero's own night ground (no scrim needed on a solid ground), the same phone / WhatsApp / Chat actions, and the
+   route's consultation CTA in the hero CTA's colours (ivory on night), going to the same #enquiry form. The bar is
+   72px tall (12 + 48 + 12), so: anchor jumps and the form's own scrollIntoView land below it (scroll-padding-top),
+   Tab focus is already kept 96px clear of the top (campaign-bundle.css), and the family page's sticky topic heading
+   sits under it. Gallery, chat choices and the consent notice are top-layer dialogs or bottom layers, above or away
+   from it. Phones (≤767px) are untouched: their header and the site's bottom bar stay as they are. */
+.lp-prod .lp-header__consult { display: none; }
+@keyframes lp-prod-header-in { from { transform: translateY(-100%); } }
+@media (min-width: 768px) {
+  html[data-lp-surface="production"] { scroll-padding-top: 72px; }
+  .lp-prod .lp-header[data-stuck] {
+    position: fixed; z-index: 30;
+    background: var(--lp-night);
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--lp-on-night) 12%, transparent), 0 14px 32px -22px color-mix(in srgb, var(--lp-night) 85%, transparent);
+    animation: lp-prod-header-in .28s ease-out;
+  }
+  .lp-prod .lp-header[data-stuck]::before { display: none; }
+  .lp-prod .lp-header[data-stuck] .lp-header__bar { padding-block: 12px; gap: 24px; }
+  .lp-prod .lp-header[data-stuck] .lp-header__logo { height: 48px; }
+  .lp-prod .lp-header[data-stuck] .lp-header__actions { margin-inline-start: auto; gap: 24px; }
+  .lp-prod .lp-header[data-stuck] .lp-header__consult {
+    display: inline-flex; flex: none; min-height: 48px; padding-block: 0; padding-inline: 24px;
+    background: var(--lp-on-night); color: var(--lp-night); letter-spacing: .02em; white-space: nowrap;
+  }
+}
+/* Tablet widths: the phone number steps out of the pinned bar (WhatsApp, Chat and the CTA stay; the number is still
+   in the header over the hero and in the footer), so the CTA never wraps or crowds. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .lp-prod .lp-header[data-stuck] .lp-header__bar { padding-inline: 32px; }
+  .lp-prod .lp-header[data-stuck] .lp-header__actions { gap: 16px; }
+  .lp-prod .lp-header[data-stuck] .lp-header__phone { display: none; }
+}
+
+/* Enquiry: country code beside the number, as on the form it replaces. */
+.lp-prod .lp-enq__fields--enquiry { display: grid; grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr); gap: 18px 12px; }
+.lp-prod .lp-enq__fields--enquiry > * { grid-column: 1 / -1; }
+.lp-prod .lp-enq__fields--enquiry > .lp-enq__field--name-dialCode { grid-column: 1; }
+.lp-prod .lp-enq__fields--enquiry > .lp-enq__field--name-phone { grid-column: 2; }
+
+/* The consultation CTA is a fragment link so it also works without JavaScript. */
+.lp-prod a.lp-consult__submit { color: var(--lp-on-primary); text-decoration: none; }
+
+@media (max-width: 767px) {
+  .lp-prod .lp-enq__fields--enquiry { grid-template-columns: minmax(0, 6.5rem) minmax(0, 1fr); }
+}
+
+/* ═════════════ The designed page (production/sections/*) ═════════════
+   The reviewed copy set into variant A ("Quiet Admission"). Rhythm and type follow the kit's lower sections
+   (sections.css): .lp-sec 80px 56px (44px 16px on phones), the 5/7 heading grid, h2 46/30, h3 26/21, body 18/17,
+   numerals in the display face. Backgrounds alternate ivory ground, warm-white surface and night bands. */
+
+/* Shared: the section CTA, and links inside running copy (underlined in the bronze hairline colour). */
+.lp-prod a.lp-pcta { color: var(--lp-on-primary); text-decoration: none; }
+.lp-prod :is(.lp-plead, .lp-poffer, .lp-ppath, .lp-pplace, .lp-pstay, .lp-enq__intro) p a {
+  text-decoration: underline; text-decoration-color: var(--lp-accent-line); text-decoration-thickness: 1px; text-underline-offset: 3px;
+}
+.lp-prod :is(.lp-plead, .lp-poffer, .lp-ppath, .lp-pplace, .lp-pstay, .lp-enq__intro) p a:hover { text-decoration-color: currentColor; }
+
+/* Hero: what "free" covers, under the buttons, in the colour of the ground it actually sits on. C and D set it on
+   their light ground / white headline card, so it takes the skin's muted text (muted on ground and on surface are
+   tested ≥ 4.5:1 in every skin, test/lp-v2-skins.test.mjs); only A's hero is the night band. B's hero card already
+   says the same sentence beside its CTA (ConsultCard .lp-consult__sub), so B does not repeat it above the card. */
+.lp-prod .lp-hero__note { font-size: 14px; line-height: 1.5; max-width: 470px; color: var(--lp-muted); }
+.lp-prod[data-variant="A"] .lp-hero__note { color: color-mix(in srgb, var(--lp-on-night) 78%, transparent); }
+.lp-prod[data-variant="B"] .lp-hero__note { display: none; }
+
+/* Hero CTA: base.css's `.lp a { color: inherit }` outranks `.lp-btn--primary`, so on C the link took the ink colour
+   over the wine button. A sets its own ivory-on-night CTA; the light-headed variants get the skin's on-primary
+   (onPrimary on primary is tested ≥ 4.5:1 in every skin), as .lp-pcta and the enquiry buttons already do. */
+.lp-prod:not([data-variant="A"]) a.lp-hero__cta { color: var(--lp-on-primary); }
+
+/* Russian (C) headline: the long Russian words ("индивидуальным" ≈ 8em in the system serif) must never be split
+   mid-word by the hero's overflow-wrap guard, which stays. The type is sized so the longest word fits the column it
+   sets in: desktop 7/12 of (100vw − 64·2 padding − 56 gap), phones 100vw − 2·16, each with ~7% room for the
+   platform's Cyrillic fallback face. Wide screens keep the kit's 92px cap; English and German are unchanged. */
+@media (min-width: 768px) {
+  .lp-prod[data-variant="C"]:lang(ru) .lp-hero h1 { font-size: clamp(36px, calc((100vw - 184px) / 14.75), 92px); }
+}
+@media (max-width: 767px) {
+  .lp-prod[data-variant="C"]:lang(ru) .lp-hero h1 { font-size: min(42px, calc((100vw - 32px) / 8.6)); }
+}
+
+/* Russian phone action bar (the site's own review-chrome.js bar: Позвонить · Запрос · Бесплатная консультация ·
+   Chat). Cyrillic caps run ≈ 9px a letter at 12px bold with the bar's .4px tracking, so four equal (or fixed-weight)
+   columns split words at 320px ("КОНСУЛЬТАЦ / ИЯ", "ПОЗВОНИТ / Ь", "ЗАПРО / С"). On the Russian route only:
+   - the one-word labels' columns never go narrower than their word (minmax(max-content, …)), Chat's never under
+     48px, and the consultation tile takes the rest, which always leaves "БЕСПЛАТНАЯ / КОНСУЛЬТАЦИЯ" two whole lines;
+   - tracking 0 (Cyrillic caps need it least) buys ≈ 20px, so at 320px the tracks are ≈ 85 / 60 / 124 / 51px and at
+     390px ≈ 98 / 73 / 156 / 63px — every tile ≥ 48px wide, all still 52px tall.
+   Font, size, colours, order, destinations and the overflow guard are unchanged; English and German keep their bar. */
+@media (max-width: 699px) {
+  html[data-lp-surface="production"]:lang(ru) #ahv-cta-bar { grid-template-columns: minmax(max-content, 1fr) minmax(max-content, .75fr) minmax(0, 1.6fr) minmax(48px, .65fr); }
+  html[data-lp-surface="production"]:lang(ru) #ahv-cta-bar :is(a, button) { letter-spacing: 0; }
+}
+
+/* Enquiry: the closing invitation, then the same note. */
+.lp-prod .lp-enq__support { font-size: 15px; }
+
+/* ── Lead: the opening argument ── */
+.lp-prod .lp-plead { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 80px; align-items: start; padding-bottom: 40px; }
+.lp-prod .lp-plead__body { display: flex; flex-direction: column; gap: 18px; max-width: 760px; }
+.lp-prod .lp-plead__first { font-size: 21px; line-height: 1.6; color: var(--lp-ink); }
+.lp-prod .lp-plead__p { color: var(--lp-muted); }
+.lp-prod .lp-plead__points { list-style: none; margin: 14px 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 32px; }
+.lp-prod .lp-plead__points li { position: relative; padding-block: 18px; border-top: 1px solid var(--lp-hairline); font-size: 17px; font-weight: 600; line-height: 1.45; }
+.lp-prod .lp-plead__points li::before { content: ""; position: absolute; inset-inline-start: 0; top: -1px; width: 40px; height: 2px; background: var(--lp-accent-line); }
+
+/* ── Offering ── */
+.lp-prod .lp-poffer { display: flex; flex-direction: column; gap: 44px; }
+.lp-prod .lp-poffer__top { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 80px; align-items: end; }
+.lp-prod .lp-poffer__intro { display: flex; flex-direction: column; gap: 14px; }
+.lp-prod .lp-poffer__p { color: var(--lp-muted); }
+.lp-prod .lp-poffer__no { font-family: var(--lp-font-display); font-size: 30px; line-height: 1; color: var(--lp-numeral); }
+.lp-prod .lp-poffer__foot { display: flex; flex-wrap: wrap; align-items: center; gap: 16px 28px; }
+
+/* cards: 2 × 2, each with its programme links as full-width rows (48px+ targets) */
+.lp-prod .lp-poffer__cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.lp-prod .lp-poffer__card { display: flex; flex-direction: column; gap: 14px; min-width: 0; padding: 36px 40px 40px; background: var(--lp-surface); border: 1px solid var(--lp-hairline); border-radius: var(--lp-radius); }
+.lp-prod .lp-poffer__title { font-size: 28px; line-height: 1.2; }
+.lp-prod .lp-poffer__links { list-style: none; margin: 4px 0 6px; padding: 0; border-top: 1px solid var(--lp-hairline); }
+.lp-prod .lp-poffer__links li { border-bottom: 1px solid var(--lp-hairline); }
+.lp-prod .lp-poffer__link { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 52px; font-size: 17px; font-weight: 600; color: var(--lp-ink); text-decoration: none; }
+.lp-prod .lp-poffer__link svg { flex: none; color: var(--lp-accent-text); transition: transform .2s; }
+.lp-prod .lp-poffer__link:hover span { text-decoration: underline; text-decoration-color: var(--lp-accent-line); text-underline-offset: 3px; }
+.lp-prod .lp-poffer__link:hover svg { transform: translateX(4px); }
+
+/* row: named items completing a sentence — a surface band, one ruled row of five */
+.lp-prod .lp-poffer--row { background: var(--lp-surface); border-block: 1px solid var(--lp-hairline); }
+.lp-prod .lp-poffer__lead { font-family: var(--lp-font-display); font-size: 26px; line-height: 1.35; max-width: 620px; }
+.lp-prod .lp-poffer__row { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px 24px; }
+.lp-prod .lp-poffer__item { display: flex; flex-direction: column; gap: 14px; min-width: 0; padding-block: 20px 6px; border-top: 2px solid var(--lp-ink); }
+.lp-prod .lp-poffer__item .lp-poffer__no { font-size: 22px; }
+.lp-prod .lp-poffer__name { font-family: var(--lp-font-display); font-size: clamp(22px, 2vw, 30px); line-height: 1.15; }
+.lp-prod .lp-poffer__text { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 56px; max-width: 1120px; }
+
+/* index: many short topics as numbered disclosures, beside a sticky heading (24px under the pinned 72px header) */
+.lp-prod .lp-poffer--index { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 80px; align-items: start; }
+.lp-prod .lp-poffer__aside { position: sticky; top: 96px; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.lp-prod .lp-poffer__index { list-style: none; margin: 0; padding: 0; border-bottom: 1px solid var(--lp-hairline); }
+.lp-prod .lp-ptopic { border-top: 1px solid var(--lp-hairline); }
+.lp-prod .lp-ptopic__sum { display: grid; grid-template-columns: 44px minmax(0, 1fr) 16px; align-items: center; gap: 16px; min-height: 64px; padding-block: 10px; }
+.lp-prod .lp-ptopic__no { font-size: 13px; font-weight: 700; letter-spacing: .08em; font-variant-numeric: tabular-nums; color: var(--lp-accent-text); }
+.lp-prod .lp-ptopic__title { font-size: 22px; line-height: 1.3; }
+.lp-prod .lp-ptopic__body { max-width: 640px; padding: 0 0 22px 60px; color: var(--lp-muted); }
+
+/* ── Pathway: the kit's Admission layout (sections.css .lp-adm) ── */
+.lp-prod .lp-ppath__p { color: var(--lp-muted); }
+
+/* ── Place: the kit's Village (sections.css .lp-vil) after a full-bleed band, plus the villa cards ── */
+.lp-prod .lp-pplace { padding-top: 80px; }
+.lp-prod .lp-pplace .lp-vil__body + .lp-vil__body { margin-top: 12px; }
+.lp-prod .lp-pplace__villas { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px; }
+.lp-prod .lp-pplace__villa { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; min-width: 0; padding-top: 20px; border-top: 1px solid var(--lp-hairline); }
+.lp-prod .lp-pplace__name { font-size: 24px; line-height: 1.25; }
+.lp-prod .lp-pplace__text { font-size: 16px; line-height: 1.55; color: var(--lp-muted); }
+.lp-prod .lp-pplace__link { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; margin-top: auto; font-size: 16px; font-weight: 600; color: var(--lp-ink); text-decoration: none; }
+.lp-prod .lp-pplace__link svg { color: var(--lp-accent-text); }
+.lp-prod .lp-pplace__link:hover span { text-decoration: underline; text-decoration-color: var(--lp-accent-line); text-underline-offset: 3px; }
+
+/* ── Stories: patient films as outbound links, a night band (as the kit's Films, variant A) ── */
+.lp-prod .lp-pstories { display: flex; flex-direction: column; gap: 36px; background: var(--lp-night); color: var(--lp-on-night); }
+.lp-prod .lp-pstories .lp-kicker { color: var(--lp-on-night-accent); }
+.lp-prod .lp-pstories__top { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); column-gap: 80px; align-items: end; }
+.lp-prod .lp-pstories__body { max-width: 560px; color: color-mix(in srgb, var(--lp-on-night) 86%, transparent); }
+.lp-prod .lp-pstories__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.lp-prod .lp-pstory { display: flex; flex-direction: column; gap: 14px; color: var(--lp-on-night); text-decoration: none; }
+.lp-prod .lp-pstory__thumb { position: relative; display: block; aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--lp-radius); background: color-mix(in srgb, var(--lp-on-night) 8%, var(--lp-night)); }
+.lp-prod .lp-pstory__thumb img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.lp-prod .lp-pstory:hover .lp-pstory__thumb img { transform: scale(1.03); }
+.lp-prod .lp-pstory__play { position: absolute; inset: 0; margin: auto; width: 64px; height: 64px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: color-mix(in srgb, var(--lp-surface) 92%, transparent); color: var(--lp-night); }
+.lp-prod .lp-pstory__text { display: flex; flex-direction: column; gap: 4px; }
+.lp-prod .lp-pstory__title { font-family: var(--lp-font-display); font-size: 22px; line-height: 1.3; }
+.lp-prod .lp-pstory:hover .lp-pstory__title { text-decoration: underline; text-decoration-color: var(--lp-on-night-accent); text-underline-offset: 4px; }
+.lp-prod .lp-pstory__where { font-size: 14px; color: color-mix(in srgb, var(--lp-on-night) 72%, transparent); }
+
+/* ── Stay: what a stay covers, the lists on a surface panel ── */
+.lp-prod .lp-pstay { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-rows: auto 1fr; column-gap: 80px; row-gap: 28px; align-items: start; }
+.lp-prod .lp-pstay__intro { grid-column: 1; grid-row: 1; display: flex; flex-direction: column; gap: 18px; }
+.lp-prod .lp-pstay__p { color: var(--lp-muted); }
+.lp-prod .lp-pstay__panel { grid-column: 2; grid-row: 1 / span 2; display: flex; flex-direction: column; gap: 28px; padding: 36px 40px; background: var(--lp-surface); border: 1px solid var(--lp-hairline); border-radius: var(--lp-radius); }
+.lp-prod .lp-pstay__after { grid-column: 1; grid-row: 2; display: flex; flex-direction: column; align-items: flex-start; gap: 22px; }
+.lp-prod .lp-pstay__h { margin-bottom: 10px; font-family: var(--lp-font-body); font-size: 16px; font-weight: 700; letter-spacing: .02em; }
+.lp-prod .lp-pstay__list { list-style: none; margin: 0; padding: 0; }
+.lp-prod .lp-pstay__list li { position: relative; padding-block: 12px; padding-inline-start: 34px; border-top: 1px solid var(--lp-hairline); line-height: 1.5; }
+.lp-prod .lp-pstay__list li:last-child { border-bottom: 1px solid var(--lp-hairline); }
+/* Included: a drawn check. Ask about: a drawn plus, muted. */
+.lp-prod .lp-pstay__list li::before { content: ""; position: absolute; inset-inline-start: 4px; top: 19px; width: 12px; height: 7px; border-inline-start: 2px solid var(--lp-accent-text); border-bottom: 2px solid var(--lp-accent-text); transform: rotate(-45deg); }
+.lp-prod .lp-pstay__group--extra .lp-pstay__list li { color: var(--lp-muted); }
+.lp-prod .lp-pstay__group--extra .lp-pstay__list li::before { top: 24px; width: 12px; height: 2px; border: 0; background: var(--lp-muted); transform: none; }
+.lp-prod .lp-pstay__group--extra .lp-pstay__list li::after { content: ""; position: absolute; inset-inline-start: 9px; top: 19px; width: 2px; height: 12px; background: var(--lp-muted); }
+
+/* ── Physicians: one row of five portraits, three across on tablets, a ruled list on phones ── */
+.lp-prod .lp-pdocs { display: flex; flex-direction: column; gap: 44px; }
+.lp-prod .lp-pdocs .lp-head { max-width: 760px; }
+.lp-prod .lp-pdocs__intro { color: var(--lp-muted); }
+.lp-prod .lp-pdocs__list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 28px; }
+.lp-prod .lp-pdoc { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+.lp-prod .lp-pdoc__frame { position: relative; aspect-ratio: 4 / 5; overflow: hidden; border-radius: var(--lp-radius); background: var(--lp-surface); }
+.lp-prod .lp-pdoc__img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--pdoc-pos, 50% 18%); transform: scale(var(--pdoc-zoom, 1)); transform-origin: var(--pdoc-origin, 50% 18%); }
+.lp-prod .lp-pdoc__text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.lp-prod .lp-pdoc__name { font-size: 23px; line-height: 1.25; }
+.lp-prod .lp-pdoc__role { font-size: 15px; font-weight: 600; line-height: 1.45; }
+.lp-prod .lp-pdoc__line { font-size: 14px; line-height: 1.5; color: var(--lp-muted); }
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .lp-prod .lp-pdocs__list { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 36px; }
+}
+@media (min-width: 768px) and (max-width: 1099px) {
+  .lp-prod .lp-poffer__row { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .lp-prod .lp-pplace__villas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lp-prod .lp-pstories__list { gap: 16px; }
+}
+
+/* Phones: everything stacks; nothing scrolls sideways (spec decision 7). */
+@media (max-width: 767px) {
+  .lp-prod .lp-hero__note { font-size: 13px; }
+
+  .lp-prod .lp-plead { display: flex; flex-direction: column; gap: 20px; padding-bottom: 20px; }
+  .lp-prod .lp-plead__first { font-size: 19px; }
+  .lp-prod .lp-plead__points { grid-template-columns: minmax(0, 1fr); }
+  .lp-prod .lp-plead__points li { padding-block: 14px; }
+
+  .lp-prod .lp-poffer { gap: 24px; }
+  .lp-prod .lp-poffer__top { display: flex; flex-direction: column; gap: 14px; }
+  .lp-prod .lp-poffer__cards { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .lp-prod .lp-poffer__card { padding: 24px 20px 26px; gap: 12px; }
+  .lp-prod .lp-poffer__no { font-size: 24px; }
+  .lp-prod .lp-poffer__title { font-size: 23px; }
+  .lp-prod .lp-poffer__foot .lp-btn { width: 100%; }
+  .lp-prod .lp-poffer__lead { font-size: 21px; }
+  .lp-prod .lp-poffer__row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px 16px; }
+  .lp-prod .lp-poffer__item { padding-block: 14px 0; gap: 8px; }
+  .lp-prod .lp-poffer__text { grid-template-columns: minmax(0, 1fr); }
+  .lp-prod .lp-poffer--index { display: flex; flex-direction: column; gap: 20px; }
+  .lp-prod .lp-poffer__aside { position: static; }
+  .lp-prod .lp-poffer__aside .lp-btn { width: 100%; }
+  .lp-prod .lp-ptopic__sum { grid-template-columns: 30px minmax(0, 1fr) 16px; gap: 10px; min-height: 56px; }
+  .lp-prod .lp-ptopic__title { font-size: 19px; }
+  .lp-prod .lp-ptopic__body { padding-inline-start: 40px; padding-bottom: 18px; }
+
+  .lp-prod .lp-pplace { padding-top: 44px; }
+  .lp-prod .lp-pplace__villas { order: 4; grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .lp-prod .lp-pplace__villa { padding-block: 16px 4px; }
+  .lp-prod .lp-pplace__name { font-size: 21px; }
+
+  .lp-prod .lp-pstories { gap: 20px; }
+  .lp-prod .lp-pstories__top { display: flex; flex-direction: column; gap: 12px; }
+  .lp-prod .lp-pstories__list { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .lp-prod .lp-pstory { display: grid; grid-template-columns: 150px minmax(0, 1fr); align-items: center; gap: 14px; }
+  .lp-prod .lp-pstory__play { width: 40px; height: 40px; }
+  .lp-prod .lp-pstory__title { font-size: 19px; }
+
+  .lp-prod .lp-pstay { display: flex; flex-direction: column; gap: 20px; }
+  .lp-prod .lp-pstay__panel { padding: 24px 20px; gap: 22px; }
+  .lp-prod .lp-pstay__after .lp-btn { width: 100%; }
+
+  .lp-prod .lp-pdocs { gap: 20px; }
+  .lp-prod .lp-pdocs__list { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .lp-prod .lp-pdoc { display: grid; grid-template-columns: 112px minmax(0, 1fr); align-items: start; gap: 16px; padding-block: 16px; border-top: 1px solid var(--lp-hairline); }
+  .lp-prod .lp-pdoc:last-child { border-bottom: 1px solid var(--lp-hairline); }
+  .lp-prod .lp-pdoc__name { font-size: 20px; }
+}
+
+/* ═════════════ Variants B, C and D on the live routes (remaining 20, 8 Oct 2026) ═════════════
+   The kit variants' own layouts (sections.css [data-variant]) carry these pages; only what the production surface adds
+   is styled here, from the same skin vars. */
+
+/* Heritage line in the proof strip (review finding, 8 Oct 2026): the approved "Ayurvedic family tradition since 1908",
+   shown on every live route. A: an item in the proof row, its year in the display face like the rating. B phones show
+   it too (the kit hid the tile there); D: a plain tile like the others. */
+.lp-prod[data-variant="A"] .lp-proof__item--since { display: flex; align-items: baseline; gap: 10px; }
+.lp-prod[data-variant="A"] .lp-proof__item--since .lp-proof__label { max-width: 15ch; line-height: 1.35; }
+@media (max-width: 767px) {
+  .lp-prod[data-variant="A"] .lp-proof__item--since { flex-direction: column; gap: 2px; }
+  .lp-prod[data-variant="B"] .lp-proof__item--since { display: flex; }
+}
+
+/* Hero card (B and D) on routes without a Step-1 bar: the consultation itself, never a question. */
+.lp-prod .lp-consult--card { gap: 16px; justify-content: center; }
+.lp-prod .lp-consult--card .lp-consult__sub { margin-top: 0; font-size: 15px; line-height: 1.5; }
+.lp-prod a.lp-consult__submit { text-decoration: none; }
+.lp-prod .lp-consult__ask { width: 100%; justify-content: center; }
+.lp-prod[data-variant="D"] .lp-consult--card .lp-consult__sub { color: color-mix(in srgb, var(--lp-on-night) 80%, transparent); }
+.lp-prod[data-variant="D"] .lp-consult--card .lp-consult__submit { background: var(--lp-on-night); color: var(--lp-night); }
+.lp-prod[data-variant="D"] .lp-consult--card .lp-consult__arrow { background: color-mix(in srgb, var(--lp-night) 12%, transparent); }
+.lp-prod[data-variant="D"] .lp-consult__ask { color: var(--lp-on-night); border-color: color-mix(in srgb, var(--lp-on-night) 45%, transparent); background: transparent; }
+@media (max-width: 767px) {
+  /* B phones: the kit drops the hero body and form; here the card (what is free + the CTA) stays under the photograph. */
+  .lp-prod[data-variant="B"] .lp-hero__form { display: block; margin: 12px 12px 0; }
+  .lp-prod[data-variant="B"] .lp-consult--card { padding: 22px 20px; }
+  .lp-prod[data-variant="B"] .lp-consult--card .lp-consult__title,
+  .lp-prod[data-variant="D"] .lp-consult--card .lp-consult__title { font-size: 26px; }
+}
+
+/* Pinned header in the light-headed variants (B, C, D): their own surface and colour logo, the CTA in the primary
+   colours. A keeps its night bar above. */
+@media (min-width: 768px) {
+  .lp-prod:not([data-variant="A"]) .lp-header[data-stuck] {
+    inset-inline: 0; top: 0; padding: 0; background: var(--lp-surface); color: var(--lp-ink);
+    box-shadow: 0 1px 0 color-mix(in srgb, var(--lp-ink) 10%, transparent), 0 14px 32px -24px color-mix(in srgb, var(--lp-ink) 40%, transparent);
+  }
+  .lp-prod:not([data-variant="A"]) .lp-header[data-stuck] .lp-header__bar {
+    max-width: none; margin: 0; border-radius: 0; box-shadow: none; background: transparent; padding-inline: 40px;
+  }
+  .lp-prod:not([data-variant="A"]) .lp-header[data-stuck] .lp-header__consult { background: var(--lp-primary); color: var(--lp-on-primary); }
+}
+
+/* One physician (the German and Russian routes, as their reviewed copy presents him): one wide card. */
+.lp-prod .lp-pdocs--one .lp-pdocs__list { grid-template-columns: minmax(0, 1fr); max-width: 760px; }
+.lp-prod .lp-pdocs--one .lp-pdoc { display: grid; grid-template-columns: 240px minmax(0, 1fr); align-items: center; gap: 32px; }
+.lp-prod .lp-pdocs--one .lp-pdoc__name { font-size: 28px; }
+@media (max-width: 767px) {
+  .lp-prod .lp-pdocs--one .lp-pdoc { grid-template-columns: 112px minmax(0, 1fr); gap: 16px; align-items: start; }
+  .lp-prod .lp-pdocs--one .lp-pdoc__name { font-size: 21px; }
+}
+
+/* Layout repairs (owner, 8 Oct 2026: preventive / retreat / wellness review). Kit values and skin vars only.
+   Stories: the night band ended on its last film (no bottom padding in B and C, whose .lp-sec drops it), so the
+   "YouTube" line sat on the band's edge; the band now closes with its own top padding. A keeps the kit's 80px. */
+.lp-prod[data-variant="C"] .lp-pstories { padding-bottom: 96px; }
+.lp-prod[data-variant="B"] .lp-pstories { padding-bottom: 56px; }
+/* B's band kicker kept the light chip under the night-accent text (1:1); the kit's night chip, as on its enquiry. */
+.lp-prod[data-variant="B"] .lp-pstories .lp-kicker { background: color-mix(in srgb, var(--lp-on-night) 14%, transparent); color: var(--lp-on-night); }
+@media (min-width: 768px) {
+  /* B header: the site's Chat control as a pill inside the island (WhatsApp's height and inset, the outline of B's
+     "View all photos"), so its square corners no longer cross the island's rounded end. Header Chat only. */
+  .lp-prod[data-variant="B"] .lp-header__actions .ahv-contact-trigger {
+    min-height: 48px; padding-block: 0; padding-inline: 18px; border-radius: 999px;
+    border-color: color-mix(in srgb, var(--lp-ink) 16%, transparent); font-size: 14px; font-weight: 600;
+  }
+  /* B pinned bar: the island is fit-content, so pinned it stopped at its own width with its border; full width. */
+  .lp-prod[data-variant="B"] .lp-header[data-stuck] .lp-header__bar { width: auto; border: 0; }
+  /* B village bento: the villa list had no cell in the 12-column grid and fell into one narrow track; full row. */
+  .lp-prod[data-variant="B"] .lp-pplace__villas { grid-column: 1 / -1; margin-top: 26px; }
+  /* …and the text card spans two fixed 220px rows, too short for its copy in the narrow tablet column (text ran out
+     of the card, "View all photos" was clipped); those rows now grow with it. Where it fits (desktop) they stay 220px. */
+  .lp-prod[data-variant="B"] .lp-vil { grid-template-rows: minmax(220px, auto) minmax(220px, auto) 220px; }
+  /* The card is a flex column aligned to the start, so its heading block took its min-content width: the widest
+     unbreakable word of the 44px heading (overflow-wrap: break-word does not lower min-content). Where that word is
+     wider than the tablet card, heading and paragraph ran out under the photo. The block now keeps to the card and
+     the heading hyphenates (break-word stays as the fallback). Same type, same words. */
+  .lp-prod[data-variant="B"] .lp-vil__top .lp-head { min-width: 0; max-width: 100%; }
+  .lp-prod[data-variant="B"] .lp-vil__top .lp-h2 { hyphens: auto; }
+  /* B rhythm: 28px between sections read as the 14px tile gap; sections open at 56px, and the night band stands
+     clear of the photo tile above it. The village keeps its 80px. */
+  .lp-prod[data-variant="B"] .lp-sec:not(.lp-pplace) { padding-top: 56px; }
+  .lp-prod[data-variant="B"] .lp-pstories { margin-top: 56px; }
+}
+@media (max-width: 767px) {
+  .lp-prod[data-variant="C"] .lp-pstories { padding-bottom: 56px; }
+  .lp-prod[data-variant="B"] .lp-pstories { padding-bottom: 24px; }
+}
+
+/* Approved optional month/stay controls already exist on these two routes.
+   Keep that same control group usable on phones instead of adding duplicate fields. */
+@media (max-width: 767px) {
+  .lp-prod[data-mobile-consult] .lp-consultbar { display: block; margin-top: 0; padding: 16px; }
+  .lp-prod[data-mobile-consult] .lp-consult { grid-template-columns: minmax(0, 1fr); padding: 16px; }
+  .lp-prod[data-mobile-consult] .lp-consult__submit { min-width: 0; width: 100%; padding-inline: 16px; }
+}

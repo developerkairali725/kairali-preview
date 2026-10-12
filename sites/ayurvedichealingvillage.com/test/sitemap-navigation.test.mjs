@@ -9,6 +9,9 @@ const url = (p) => new URL('../' + p, import.meta.url);
 const read = (p) => JSON.parse(fs.readFileSync(url(p), 'utf8'));
 const tree = read('english-candidate/site-tree.json');
 const manifest = read('english-candidate/route-manifest.json');
+const campaignRoutes = read('campaign-v110/routes.json');
+for (const path of campaignRoutes) if (!manifest.routes.some(r => r.path === path)) manifest.routes.push({ path });
+const redirects = read('english-candidate/redirect-map.json').redirects;
 const byPath = new Map(manifest.routes.map((r) => [r.path, r]));
 const overrides = fs.existsSync(url('english-candidate/site-tree-overrides.json')) ? read('english-candidate/site-tree-overrides.json') : { drops: [] };
 const dropped = new Set((overrides.drops || []).map((d) => d.path));
@@ -20,7 +23,7 @@ const walk = (list) => list.forEach((n) => { nodes.push(n); walk(n.children); })
 tree.sections.forEach((s) => walk(s.children));
 
 test('every indexable page is in the tree exactly once, and every entry is a served page', () => {
-  const expected = manifest.routes.filter((r) => r.path !== '/' && !r.sitemapExclude && !manifest.deferred.includes(r.path) && !JUNK.test(r.path) && !dropped.has(r.path)).map((r) => r.path).sort();
+  const expected = manifest.routes.filter((r) => r.path !== '/' && !r.sitemapExclude && !manifest.deferred.includes(r.path) && !JUNK.test(r.path) && !dropped.has(r.path) && !redirects[r.path]).map((r) => r.path).sort();
   assert.deepEqual(Object.keys(tree.index).sort(), expected);
   const paths = nodes.filter((n) => n.path).map((n) => n.path);
   assert.equal(new Set(paths).size, paths.length, 'a page is listed twice');
@@ -62,20 +65,20 @@ test('the rail renders the same tree the sitemap renders', () => {
 });
 test('both sitemap views carry every page; mobile imports the narrow chrome; the filter is typo-tolerant', () => {
   const d = read('public/ahv/views/ahv-page-sitemap-desktop.json'), m = read('public/ahv/views/ahv-page-sitemap-mobile.json');
-  for (const p of Object.keys(tree.index).filter(p=>tree.index[p].section!=='campaigns')) { assert.ok(d.template.includes('href="' + p + '"'), p); assert.ok(m.template.includes('href="' + p + '"'), p); }
+  for (const p of Object.keys(tree.index)) { assert.ok(d.template.includes('href="' + p + '"'), p); assert.ok(m.template.includes('href="' + p + '"'), p); }
   assert.match(m.template, /AHV Chrome Header" narrow="true"/);
   assert.ok(d.logic.includes('const hit='));
 });
 test('the server-rendered sitemap carries every page', () => {
   const ssr = fs.readFileSync(url('english-candidate/prerender/sitemap.html'), 'utf8');
-  for (const p of Object.keys(tree.index).filter(p=>tree.index[p].section!=='campaigns')) assert.ok(ssr.includes('href="' + p + '"'), p);
+  for (const p of Object.keys(tree.index)) assert.ok(ssr.includes('href="' + p + '"'), p);
   assert.ok(!ssr.includes('{{')); assert.ok(!ssr.includes('<dc-import'));
 });
 
-test('visitor sitemap excludes campaign links while offering both programme entry paths', () => {
+test('visitor sitemap includes the approved campaign section while offering both programme entry paths', () => {
   for (const variant of ['desktop', 'mobile']) {
     const view = read('public/ahv/views/ahv-page-sitemap-' + variant + '.json');
-    for (const [p, entry] of Object.entries(tree.index)) if (entry.section === 'campaigns') assert.ok(!view.template.includes('href="' + p + '"'), p);
+    for (const [p, entry] of Object.entries(tree.index)) if (entry.section === 'campaigns') assert.ok(view.template.includes('href="' + p + '"'), p);
     assert.match(view.template, /class="sm-entry-paths"/);
     assert.match(view.template, /Browse our main pages/);
     assert.ok(view.logic.includes("hits===1?'page':'pages'"));
@@ -86,10 +89,10 @@ test('visitor sitemap excludes campaign links while offering both programme entr
 
 test('server sitemap mirrors the corrected visitor directory', () => {
   const html = fs.readFileSync(url('english-candidate/prerender/sitemap.html'), 'utf8');
-  const pageCount = Object.values(tree.index).filter(x => x.section !== "campaigns").length;
-  const sectionCount = tree.sections.filter(x => x.id !== "campaigns").length;
+  const pageCount = Object.keys(tree.index).length;
+  const sectionCount = tree.sections.length;
   assert.ok(html.includes(`${pageCount} pages across ${sectionCount} sections`));
   assert.ok(!html.includes("/founders-message/"));
   assert.match(html, /class="sm-entry-paths"/);
-  for (const [p, entry] of Object.entries(tree.index)) if (entry.section === 'campaigns') assert.ok(!html.includes('href="' + p + '"'), p);
+  for (const [p, entry] of Object.entries(tree.index)) if (entry.section === 'campaigns') assert.ok(html.includes('href="' + p + '"'), p);
 });

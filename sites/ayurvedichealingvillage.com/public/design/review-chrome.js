@@ -62,11 +62,26 @@
       if (!/^\s*Ayurvedic Healing Village · Palakkad · 1908/.test(el.innerHTML)) return;
       el.innerHTML = el.innerHTML.replace(/(Ayurvedic Healing Village · Palakkad)\s*·\s*1908\s*[—–-]\s*(?:<span[^>]*>\d{4}<\/span>|\d{4})/, "$1");
     });
-    if (f.querySelector("[data-ahv-copyright]")) return;
+    var existing = f.querySelector("[data-ahv-copyright]");
+    if (existing) {
+      // Older captures put this line inside the preferences control. Keep
+      // copyright text separate from the button's accessible label/border.
+      var control = existing.closest("[data-ahv-cookie-choices]");
+      if (control) {
+        var bottom = control.previousElementSibling;
+        (bottom && bottom.matches("div,section") ? bottom : f).appendChild(existing);
+      }
+      return;
+    }
     if (/©/.test(f.textContent || "")) return;
-    // the bottom bar: the footer's last element block
+    // A preferences control can be appended after the footer's bottom bar.
+    // Never make the copyright a child of an interactive element.
     var bar = f.lastElementChild;
     if (!bar) return;
+    if (bar.matches("button,a,input,select,textarea")) {
+      var previous = bar.previousElementSibling;
+      bar = previous && previous.matches("div,section") ? previous : f;
+    }
     var span = document.createElement("span");
     span.setAttribute("data-ahv-copyright", "1");
     // the year is computed here, so it carries the same marker the footer component's live binding gets
@@ -222,14 +237,17 @@
     })();
   }
   function chatLinks(f) {
-    var links = f.querySelectorAll('a[href^="https://chat.kairali.com"]');
+    var links = f.querySelectorAll('a[href^="https://chat.kairali.com"], a[href="#chat"][data-ahv-chat="1"]');
     for (var i = 0; i < links.length; i++) {
       var a = links[i];
-      if (a.getAttribute("data-ahv-chat") === "1") continue;
+      // Snapshots keep attributes, but event handlers must bind again on their
+      // new DOM nodes. This runtime-only flag also makes repeated passes safe.
+      if (a.__ahvChatBound) continue;
       a.setAttribute("data-ahv-chat", "1");
       a.setAttribute("href", "#chat");
       a.removeAttribute("target");
       a.addEventListener("click", openChat);
+      a.__ahvChatBound = true;
     }
   }
   // Owner 5 Oct: one Chat control, with explicit channel choices. Closed controls
@@ -240,19 +258,25 @@
     var dialog = document.getElementById("ahv-contact-controls");
     if (dialog && !dialog.open) { dialog.showModal(); dialog.querySelector("button[data-ahv-close]").focus(); }
   }
+  function bindContactTrigger(button) {
+    if (button.__ahvContactBound) return;
+    button.addEventListener("click", openContactChoices);
+    button.__ahvContactBound = true;
+  }
   function contactTrigger() {
     var b = document.createElement("button");
     b.type = "button"; b.className = "ahv-contact-trigger"; b.textContent = "Chat";
     b.setAttribute("aria-haspopup", "dialog"); b.setAttribute("aria-controls", "ahv-contact-controls");
-    b.addEventListener("click", openContactChoices);
+    bindContactTrigger(b);
     return b;
   }
   function priyaWidget() {
     if (!document.getElementById("ahv-contact-controls")) {
       var controls = document.createElement("dialog");
       controls.id = "ahv-contact-controls";
+      controls.className = "ahv-contact-choices";
       controls.setAttribute("aria-labelledby", "ahv-contact-title");
-      controls.innerHTML = '<button type="button" data-ahv-close aria-label="Close chat choices">Close</button><h2 id="ahv-contact-title">How would you like to chat?</h2><a class="ahv-contact-wa" href="https://wa.me/919289838797" target="_blank" rel="noopener noreferrer">WhatsApp us</a><button type="button" class="ahv-contact-chat"><span class="ahv-contact-label">Chat with Priya</span></button>';
+      controls.innerHTML = '<button type="button" data-ahv-close aria-label="Close chat choices">Close</button><h2 id="ahv-contact-title">How would you like to chat?</h2><div class="ahv-contact-channels"><a class="ahv-contact-wa" href="https://wa.me/919289838797" target="_blank" rel="noopener noreferrer">WhatsApp us</a><button type="button" class="ahv-contact-chat"><span class="ahv-contact-label">Chat with Priya</span></button><a class="ahv-contact-social" href="https://ig.me/m/kairaliayurvedichealingvillage" target="_blank" rel="noopener noreferrer">Instagram</a><a class="ahv-contact-social" href="https://m.me/KairaliTheAyurvedicHealingVillage" target="_blank" rel="noopener noreferrer">Facebook Messenger</a></div>';
       controls.querySelector("[data-ahv-close]").addEventListener("click", function () { controls.close(); });
       controls.querySelector(".ahv-contact-chat").addEventListener("click", function (ev) { controls.close(); openChat(ev); });
       document.body.appendChild(controls);
@@ -261,8 +285,9 @@
       var familyMenu = header.querySelector(".ahv-fh-btn");
       var group = (familyMenu && familyMenu.parentElement) || header.querySelector("nav") || header.querySelector("div:last-child") || header;
       var trigger = header.querySelector(".ahv-contact-trigger");
-      if (!trigger) group.appendChild(contactTrigger());
+      if (!trigger) { trigger = contactTrigger(); group.appendChild(trigger); }
       else if (trigger.parentElement !== group) group.appendChild(trigger);
+      bindContactTrigger(trigger);
     });
   }
   // OWNER-REG-02 (owner, 28 Sep 2026: "apply the homepage bottom call/enquire/free-consult contact bar
@@ -317,6 +342,7 @@
     var lp = window.AHV_LOCAL_PATHS, form = root.querySelector("form[id]");
     var here = location.pathname.replace(/\/?$/, "/");
     bar.querySelectorAll("a").forEach(function (a) {
+      if (campaignRoot && a.classList.contains("ahv-cta-consult")) { syncFreeConsult(a, lp); return; }
       var h = a.getAttribute("href") || "";
       if (lp && lp[h] && lp[h] !== h) a.setAttribute("href", (h = lp[h]));
       // the enquiry page itself: "Enquire" goes to its form, as boot.ts does for the page's own self-links
@@ -324,7 +350,7 @@
       // a landing page: "Enquire" goes to its own in-page consultation form (the LP's "Request a consultation" link)
       if (campaignRoot && a.classList.contains("ahv-cta-enquire")) {
         var campaignForm = root.querySelector("#enquiry, #consult") || root.querySelector("main form[id]");
-        if (campaignForm) a.setAttribute("href", "#" + campaignForm.id);
+        if (campaignForm && a.getAttribute("href") !== "#" + campaignForm.id) a.setAttribute("href", "#" + campaignForm.id);
       }
       if (isLp && a.classList.contains("ahv-cta-enquire")) {
         var lpForm = document.querySelector('a.lp-enquire-link[href^="#"]');
@@ -339,6 +365,41 @@
     if (html.style.getPropertyValue("--ahv-cta-bar-h") !== barHeight) {
       if (hgt) html.style.setProperty("--ahv-cta-bar-h", barHeight); else html.style.removeProperty("--ahv-cta-bar-h");
     }
+  }
+  // LATER-011 / DEC-FREE-CONSULT (owner, 10 Oct 2026: same-page Free Consult, unchanged styling). On the live campaign
+  // routes (app/(ppc-v2*): the same free doctor consultation the bar's own link offers) "Free Consult" opens the page's
+  // own consultation form, #enquiry, the target of every in-page consultation CTA. Any other route, or a page whose
+  // #enquiry holds no form, keeps the bar's own consultation link (`own`, as first built; through the locale path map).
+  // Decided for the current path on every pass, so client navigation never keeps a stale target; written only on change.
+  // A route change by history alone mutates nothing the observer watches, so the link also re-decides its own
+  // destination when it is activated (click, middle click, context menu), before the browser's default action reads
+  // the href. Installed once per link; never cancels or stops the event, so modified clicks keep their defaults.
+  function syncFreeConsult(a, lp) {
+    if (a.__ahvConsultHref == null) a.__ahvConsultHref = a.getAttribute("href") || "";
+    if (!a.__ahvConsultBound && typeof a.addEventListener === "function") {
+      a.__ahvConsultBound = true;
+      var refresh = function () { syncFreeConsult(a, lp); };
+      a.addEventListener("click", refresh);
+      a.addEventListener("auxclick", refresh);
+      a.addEventListener("contextmenu", refresh);
+    }
+    var want = freeConsultHref(lp, a.__ahvConsultHref);
+    if (want && a.getAttribute("href") !== want) a.setAttribute("href", want);
+  }
+  function freeConsultHref(lp, own) {
+    var routes = {
+      "/ayurvedic-treatment-packages.html": 1, "/panchkarma-treatment.html": 1, "/pain-management.html": 1,
+      "/family-ayurvedic-retreat-kerala.html": 1, "/karkidaka-chikitsha-or-monsoon-wellness.html": 1,
+      "/preventive-rejuvenation-detoxification.html": 1, "/ayurveda-retreat-kerala.html": 1, "/wellness-resort-kerala.html": 1,
+      "/kairali-cleansing-centre.html": 1, "/treatment-in-kerala.html": 1, "/Ayurveda_Treatment_Neo_S.India_Cities.html": 1,
+      "/Kairali_Brand_and_Competition_Neo-original.html": 1, "/weight-loss.html": 1,
+      "/lp/ayurveda-treatment-south-india": 1, "/lp/ayurvedic-hospital-kerala": 1, "/lp/kairali-brand": 1,
+      "/lp/kairali-cleansing-centre": 1, "/lp/pain-management": 1, "/lp/panchkarma-treatment": 1, "/lp/treatment-in-kerala": 1,
+      "/lp/treatment-packages": 1, "/lp/weight-loss": 1, "/lp/behandlung-in-kerala": 1, "/lp/treatment-in-kerala-russian": 1
+    };
+    var path = location.pathname.replace(/\/+$/, "");
+    if (Object.prototype.hasOwnProperty.call(routes, path) && root.querySelector("#enquiry form")) return "#enquiry";
+    return lp && own && lp[own] ? lp[own] : own;
   }
   window.addEventListener("resize", function () { schedule(); });
   // Shared policy, including carousel href changes and links outside the design root.
@@ -414,12 +475,31 @@
       if (input && document.documentElement.lang.indexOf("en") === 0) input.placeholder = "e.g. back pain";
     }
     root.querySelectorAll(".ahv-home-rates .ahv-rate-grid article").forEach(function (card, i) {
-      if (card.querySelector(".ahv-rate-photo")) return;
-      var img = document.createElement("img");
-      img.className = "ahv-rate-photo";
-      img.src = i === 1 ? "/ahv/assets/img/kt-181.webp" : "/ahv/assets/img/kt-199.webp";
-      img.alt = ""; img.loading = "lazy"; img.width = 640; img.height = 400;
-      card.insertBefore(img, card.firstChild);
+      var heading = card.querySelector("h3"), programme = card.querySelector(":scope > a[href]:not(.ahv-package-image-link)");
+      if (heading && programme && !heading.querySelector("a")) {
+        var titleLink = document.createElement("a");
+        titleLink.href = programme.getAttribute("href");
+        titleLink.className = "ahv-package-title-link";
+        titleLink.style.cssText = "display:inline;color:inherit;font:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px;margin:0";
+        while (heading.firstChild) titleLink.appendChild(heading.firstChild);
+        heading.appendChild(titleLink);
+      }
+      var img = card.querySelector(".ahv-rate-photo");
+      if (!img) {
+        img = document.createElement("img");
+        img.className = "ahv-rate-photo";
+        img.src = i === 1 ? "/ahv/assets/img/kt-181.webp" : "/ahv/assets/img/kt-199.webp";
+        img.alt = ""; img.loading = "lazy"; img.width = 640; img.height = 400;
+        card.insertBefore(img, card.firstChild);
+      }
+      if (heading && programme && !img.closest("a")) {
+        var imageLink = document.createElement("a");
+        imageLink.href = programme.getAttribute("href");
+        imageLink.className = "ahv-package-image-link";
+        imageLink.setAttribute("aria-label", heading.textContent.trim());
+        img.parentNode.insertBefore(imageLink, img);
+        imageLink.appendChild(img);
+      }
     });
     root.querySelectorAll("section").forEach(function (section) {
       var title = section.querySelector("h2");

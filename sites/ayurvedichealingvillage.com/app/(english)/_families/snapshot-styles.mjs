@@ -155,6 +155,21 @@ export function firstScreenPoster(snapshotHtml) {
   return /^[/](?![/])[^"'<>\s]+$/.test(src) ? src : null;
 }
 
+/**
+ * Routes whose phone first screen opens on a preloaded hero BACKGROUND image that is the measured LCP
+ * element — the poster case above without a <video>. design-view.tsx skips the snapshot's font faces there
+ * too: they only competed with the hero (they arrive with the runtime, as on the poster-led views).
+ * An explicit, per-route list, each entry backed by its own saved trace — never inferred, because a
+ * text-LCP route needs its body face at first paint (099a5664a).
+ * Digestive and Weight each retain their saved image-LCP traces and approved font deferral.
+ */
+// N12: the saved 2026-10-11 mobile traces identify these two programme background heroes as LCP.
+// Monsoon: saved 2026-10-12 trace confirms the phone hero is the only LCP candidate.
+const IMAGE_LED_FIRST_SCREEN = new Set(["/karkidaka-chikitsha-or-monsoon-wellness.html", "/digestive-wellness-gut-health-yoga-therapy/", "/weight-loss-programme/", "/offers/", "/treatment-for-bronchial-diseases/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/"]);
+export function imageLedFirstScreen(routePath) {
+  return IMAGE_LED_FIRST_SCREEN.has(String(routePath || ""));
+}
+
 const TEXT_CACHE = new Map();
 
 /**

@@ -10,7 +10,7 @@ export function ReviewsShell({children,consentScript,headerScript,route='/read-f
    const root=ref.current;if(!root||cancelled||root.id==='ahv-design-root')return;
    root.id='ahv-design-root';
    for(const code of [consentScript,headerScript])if(code){const script=document.createElement('script');script.textContent=code;root.appendChild(script);}
-   for(const src of [designBase+'chrome.js',designBase+'search.js',designBase+'section-nav.js']){
+   for(const src of [designBase+'review-chrome.js',designBase+'search.js',designBase+'section-nav.js']){
     if(cancelled)return;
     const script=document.createElement('script');script.src=src;script.async=false;root.appendChild(script);
    }

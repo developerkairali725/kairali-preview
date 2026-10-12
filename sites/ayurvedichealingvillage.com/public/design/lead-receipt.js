@@ -16,8 +16,12 @@
     'online-consultation': '/onlineconsultation-thanks/',
     'apply-now': '/thanks/',
     'opd': '/thanks/',
-    'landing-page': '/ppc-thanks/'
+    'landing-page': '/thanks/'
   };
+  // Paid landing receipts used to go to /ppc-thanks/, which now 301s to the same
+  // locale's /thanks/. A receipt a cached bridge stored for the old path is
+  // honoured there; any other form, locale or path still fails closed.
+  var retired = { 'landing-page': '/ppc-thanks/' };
   var received = {
     application: {
       en: 'Thank you — your application has been received.', hi: 'धन्यवाद — आपका आवेदन प्राप्त हो गया है।',
@@ -93,12 +97,19 @@
     });
     return result;
   }
-  function targetFor(form, lang) {
-    var base = targets[form];
-    if (!base) return null;
+  function localize(base, lang) {
     if (lang === 'en') return base;
     if (lang === 'fr' && base === '/thanks/') return '/fr/remerciers/';
     return '/' + lang + base;
+  }
+  function targetFor(form, lang) {
+    var base = targets[form];
+    return base ? localize(base, lang) : null;
+  }
+  function retiredFor(item, path) {
+    return Object.prototype.hasOwnProperty.call(retired, item.form) && typeof item.lang === 'string' &&
+      /^(en|hi|de|fr|es|it|pt|nl|ru|ar|zh|ja|ko)$/.test(item.lang) &&
+      item.path === localize(retired[item.form], item.lang) && path === targetFor(item.form, item.lang);
   }
   function receiptKind(form) { return form === 'apply-now' ? 'application' : form === 'opd' ? 'opd' : form; }
   async function submission(init) {
@@ -122,10 +133,13 @@
       if (!raw) return null;
       sessionStorage.removeItem(key);
       var item = JSON.parse(raw);
-      if (item && item.path === path && typeof item.at === 'number' &&
+      if (item && (item.path === path || retiredFor(item, path)) && typeof item.at === 'number' &&
           Date.now() >= item.at && Date.now() - item.at < ttl &&
           typeof item.token === 'string' && /^[0-9a-f-]{36}$/i.test(item.token) &&
-          Object.prototype.hasOwnProperty.call(targets, item.form)) active = item;
+          Object.prototype.hasOwnProperty.call(targets, item.form)) {
+        // Keep the original token and time; only the page it is bound to moves.
+        active = item.path === path ? item : Object.assign({}, item, { path: path });
+      }
     } catch (_) { return null; }
     return active;
   }

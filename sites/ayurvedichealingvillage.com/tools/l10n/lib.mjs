@@ -447,6 +447,7 @@ export function isInternalDatum(keyPath, value) {
   // A provenance container hides its whole subtree (29 Sep 2026: ef12.structural20260929.removed[].why "S1 stand-in
   // photo" reached the translators because only the LAST key was tested).
   if (segs.some((s) => /^ef\d{2}$/.test(s))) return true;
+  if (key === "note" && segs.at(-1) === "headingOutline") return true;
   if (INTERNAL_KEYS.has(key) || /Sha256$|Note$|Notes$|Rationale$|Provenance$|Evidence$|Policy$|Acceptance$|Instructions$|Private$|^ef\d{2}$|^externalImages$/.test(key)) return true; // efNN = owner-feedback provenance notes (26 Sep 2026), never rendered
   const t = value.trim();
   if (HASHLIKE.test(t) && !/\s/.test(t) && !/^[A-Z][a-z]+$/.test(t)) return true;
@@ -468,7 +469,7 @@ export function isNonEnglishSource(t) {
   return false;
 }
 
-const IDENT = (n) => n && n.type === "Literal" && typeof n.value === "string" && /^[a-z][a-z0-9-]*$/.test(n.value);
+const IDENT = (n) => n && n.type === "Literal" && typeof n.value === "string" && /^[a-z][a-z0-9_-]*$/.test(n.value);
 function literalContext(node, ancestors) {
   const parent = ancestors[ancestors.length - 2];
   const gp = ancestors[ancestors.length - 3];
@@ -515,7 +516,17 @@ function literalContext(node, ancestors) {
     if (IDENT(parent.consequent) && IDENT(parent.alternate)) return "key";
     return gp && gp.type === "BinaryExpression" && gp.operator === "+" ? "concat" : "display";
   }
-  if (parent.type === "ArrayExpression") return parent.elements.length && parent.elements.every(IDENT) ? "key" : "display";
+  if (parent.type === "ArrayExpression") {
+    // The tariff renderer indexes prices and callback names with these exact
+    // currency keys. "Euro" is a key here, while a visible Euro label elsewhere
+    // remains a translation unit.
+    const currencyKeys = parent.elements.map(n => n?.type === 'Literal' ? n.value : null);
+    if (currencyKeys.length === 3 && currencyKeys.every(v => typeof v === 'string') && currencyKeys.slice().sort().join('|') === 'Euro|INR|USD') return "key";
+    // Finder status options are [submitted enum, visible label] tuples. The
+    // first cell controls filtering and must remain byte-for-byte stable.
+    if (parent.elements[0] === node && parent.elements.length === 2 && /(?:^|\.)statuses$/.test(propertyPath(ancestors))) return "key";
+    return parent.elements.length && parent.elements.every(IDENT) ? "key" : "display";
+  }
   if (parent.type === "ReturnStatement" || parent.type === "ArrowFunctionExpression") return "display";
   if (parent.type === "TemplateLiteral") return "concat";
   if (parent.type === "LogicalExpression") return IDENT(node) ? "key" : "display";

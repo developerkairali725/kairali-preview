@@ -173,6 +173,57 @@ id = "generic-api-key"
     regexes = ['''^c3da5d5e-95ca-4a0a-a730-e4ab31c7f65a$''']
     paths = ['''^sites/ayurvedichealingvillage\.com/test/lead-measurement\.test\.mjs$''']
 
+    # Inspected 2026-10-07 with pinned gitleaks 8.30.1: commit 29729becb,
+    # public/consent/policy.mjs:8 declares a public localStorage key NAME,
+    # not a credential or the saved refusal values. Match only the exact
+    # extracted secret AND exact file; never a line/path-only exception.
+    # Same-line/file secret canaries and this value elsewhere still fail.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexTarget = "secret"
+    regexes = ['''^ahv-consent-refusals-v1$''']
+    paths = ['''^sites/ayurvedichealingvillage\.com/public/consent/policy\.mjs$''']
+
+    # Inspected 2026-10-07 with pinned gitleaks 8.30.1: four historical
+    # generic-api-key findings are the same synthetic submission UUID used
+    # in mocked lp-v2 tests and the PLAN's copied test example, not a credential.
+    # f995725a live-form:17; 2212b176 form:100; f9ed6faa lead:9;
+    # b1e24edf PLAN:1429. The UUID is a payload/idempotency ID; no auth use.
+    # Current files have already refactored these fixed literals; the four
+    # findings are historical. Preserve history and full-history scanning.
+    # Exempt only this exact extracted value AND one
+    # of these exact paths; other values and same-line secrets still fail.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexTarget = "secret"
+    regexes = ['''^3f2a9c1e\-5b7d\-4e8f\-9a0b\-1c2d3e4f5a6b$''']
+    paths = [
+        '''^sites/ayurvedichealingvillage\.com/test/lp-v2-live-form\.test\.mjs$''',
+        '''^sites/ayurvedichealingvillage\.com/test/lp-v2-form\.test\.mjs$''',
+        '''^sites/ayurvedichealingvillage\.com/test/lp-v2-lead\.test\.mjs$''',
+        '''^sites/ayurvedichealingvillage\.com/docs/lp-v2/PLAN\.md$''',
+    ]
+
+# N12 inspected 2026-10-11: historical c23200f03 test lines 112–113
+# are SHA-256 fingerprints of the released 807c535e3 consultant-course
+# desktop/mobile JSON bytes, recomputed exactly. No authentication use.
+# Same fingerprints in batch07 and training-preservation tests verified against
+# the unchanged course JSON bytes on 2026-10-11. Preserve full-history scanning;
+# exempt only these two exact values in these three exact tests.
+[[rules.allowlists]]
+  targetRules = ["generic-api-key"]
+  condition = "AND"
+  regexTarget = "secret"
+  regexes = [
+    '''^9dbefe06cb3b0c6f4e68cd72a8b5b5a90e7cc4a390fdb1fe982ee7d696183e92$''',
+    '''^7df0b7e8e193250cd9a386934899700e77774db76b2424800475a0963c0c267a$''',
+  ]
+  paths = [
+    '''^sites/ayurvedichealingvillage\.com/test/dinacharya-two-therapy-batch06a\.test\.mjs$''',
+    '''^sites/ayurvedichealingvillage\.com/test/dinacharya-one-therapy-batch07\.test\.mjs$''',
+    '''^sites/ayurvedichealingvillage\.com/test/dinacharya-training-preservation-n12-08\.test\.mjs$''',
+  ]
+
 # Mined raw-sources layer (immutable, PUBLIC live-page snapshots — CLAUDE.md doctrine (a)).
 # Live WordPress pages embed public per-session tokens (WPForms nonces, site keys) that
 # trip generic-api-key. These are third-party public-page artifacts, not repo secrets;

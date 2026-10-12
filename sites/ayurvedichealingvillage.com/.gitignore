@@ -1,3 +1,5 @@
+# pnpm lp:perf production build (LP_DIST_DIR)
+/.next-lp-perf/
 .vercel
 .env*
 
@@ -1943,3 +1945,10 @@
 !/public/ahv/assets/img/therapy-illustrations/matravasti.webp
 !/public/ahv/assets/img/therapy-illustrations/thalam.webp
 !/public/ahv/assets/img/therapy-illustrations/urovasti.webp
+
+# lp-v2 local verification screenshots (archived outside the repo)
+/docs/lp-v2/screens/
+
+# Content-addressed homepage boot, generated from the shared runtime before build
+/public/design/static-design-boot-*.js
+/public/design/static-design-boot.json

@@ -931,8 +931,77 @@
  #ahv-design-root[data-ahv-route="/offers/"] .ahv-care-cta-row a{width:100%;font-size:17px!important;padding:14px 18px!important}
 }
 
+/* Owner 10 Oct 2026 (OWNER-20261010-OFFERS): the hero photograph spans the full
+   viewport width on phones too (its height is unchanged). Sharp corners go only
+   on the listed nodes: offer cards and badges in the main content (articles,
+   offer panels, fact lists, step cards, bordered text cards and badges), the
+   body buttons (rounded links in the content, "On this page" links, the phone
+   consultation and WhatsApp buttons, care CTAs) and the header buttons (Book,
+   language, Chat, family menu, Search). Photographs, logos, the round Close
+   button, form fields, dialogs and the footer keep their shapes. The id is
+   repeated so these outrank the shared button system's corner radius. */
+#ahv-design-root[data-ahv-route="/offers/"] section:has(h1) + div:has(> img:only-child) {padding:0 !important;}
+#ahv-design-root#ahv-design-root[data-ahv-route="/offers/"] :is(main :is(article, section[aria-labelledby], dl, li)[style*="border"][style*="radius"], main :is(div, p)[style*="border"][style*="radius"]:not(:has(img)), main a[style*="radius"], main .ahv-care-cta-row a, nav:has(> ul > li > a[href^="#"]) a, a[style*="radius"]:is([href$="/online-consultation/"], [href*="wa.me/"]):not(header a, footer a), header :is(a[href^="https://bookings."], button.ahv-lang-btn, button.ahv-contact-trigger, button.ahv-fh-btn, button[aria-label="Search"])) {border-radius:0 !important;}
+
 /* Preserve the footer contrast while deferred background layers initialise. */
 #ahv-design-root[data-ahv-route="/offers/"] footer{background-color:#2a2014!important}
+
+/* Owner report, 6 Oct: four yoga recommendations were imported as one card.
+   Keep this commercial package's cards and tariff policies out of article-label grids. */
+#ahv-design-root[data-ahv-route="/yoga-and-meditation-package/"] main > section:is([data-source-component="yoga-popular-packages"],[data-source-component="approved-tariff-terms"],[data-source-component^="yoga-"]) {
+ display:block !important; padding:32px 0 !important; border-top:1px solid #e4dcc8;
+}
+#ahv-design-root[data-ahv-route="/yoga-and-meditation-package/"] main > section:is([data-source-component="yoga-popular-packages"],[data-source-component="approved-tariff-terms"],[data-source-component^="yoga-"]) > :is(h2,h3) {
+ max-width:none !important; margin:0 0 24px !important; padding:0 !important; border:0 !important; font-size:clamp(25px,2.5vw,34px) !important;
+}
+#ahv-design-root[data-ahv-route="/yoga-and-meditation-package/"] [data-source-component="yoga-popular-packages"] > ul {
+ display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:32px !important; max-width:none !important; padding:0 !important; margin:0 !important;
+}
+#ahv-design-root[data-ahv-route="/yoga-and-meditation-package/"] [data-source-component="yoga-popular-packages"] li {max-width:none !important;gap:12px !important;}
+#ahv-design-root[data-ahv-route="/yoga-and-meditation-package/"] [data-source-component="yoga-popular-packages"] li > :is(div,p) {max-width:none !important;margin:0 !important;}
+#ahv-design-root[data-ahv-route="/yoga-and-meditation-package/"] [data-source-component="yoga-popular-packages"] img {width:100% !important;max-width:none !important;aspect-ratio:400/267;object-fit:cover;}
+#ahv-design-root[data-ahv-route="/yoga-and-meditation-package/"] [data-source-component="yoga-popular-packages"] p a {display:inline-flex;align-items:center;min-height:44px;font-weight:600;text-decoration:none;}
+#ahv-design-root[data-ahv-route="/yoga-and-meditation-package/"] [data-source-component="yoga-popular-packages"] a:is(:hover,:focus-visible) {text-decoration:underline;text-underline-offset:5px;}
+#ahv-design-root[data-ahv-route="/yoga-and-meditation-package/"] main > section:is([data-source-component="yoga-inclusions"],[data-source-component="yoga-exclusions"],[data-source-component="yoga-booking"],[data-source-component="yoga-cancellation"]) > ul {
+ display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 56px !important;max-width:none !important;margin:0 !important;padding-inline-start:22px !important;
+}
+#ahv-design-root[data-ahv-route="/yoga-and-meditation-package/"] main > section[data-source-component^="yoga-"] > ul > li {padding-inline-start:4px;}
+@media(min-width:1180px){
+ #ahv-design-root[data-ahv-route="/yoga-and-meditation-package/"] [data-source-component="yoga-popular-packages"] > ul {grid-template-columns:repeat(4,minmax(0,1fr)) !important;gap:24px !important;}
+}
+@media(max-width:699px){
+ #ahv-design-root[data-ahv-route="/yoga-and-meditation-package/"] main > section:is([data-source-component^="yoga-"],[data-source-component="approved-tariff-terms"]) {padding:26px 0 !important;}
+ #ahv-design-root[data-ahv-route="/yoga-and-meditation-package/"] main > section[data-source-component^="yoga-"] > ul {grid-template-columns:minmax(0,1fr) !important;gap:20px !important;}
+}
+
+/* WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001: historical related links keep
+   their destinations and dates, grouped by actual subject rather than programmes. */
+[data-ahv-family="article-reader"] .ahv-related-groups {display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:16px;align-items:start}
+[data-ahv-family="article-reader"] .ahv-related-group {border:1px solid var(--hair);border-radius:4px;background:var(--raise);min-width:0}
+[data-ahv-family="article-reader"] .ahv-related-group summary {min-height:52px;box-sizing:border-box;padding:14px 18px;font-weight:700;cursor:pointer;line-height:1.5}
+[data-ahv-family="article-reader"] .ahv-related-group ul {list-style:none;margin:0!important;padding:0 18px 14px!important}
+[data-ahv-family="article-reader"] .ahv-related-group li {max-width:none!important;margin:0!important}
+[data-ahv-family="article-reader"] .ahv-related-group a {display:flex;align-items:center;min-height:44px;padding:6px 0;overflow-wrap:anywhere}
+[data-ahv-family="article-reader"] .ahv-related-group summary:focus-visible {outline:3px solid var(--green);outline-offset:3px}
+/* The educational article has one comfortable reading column at desktop,
+   with its authentic illustration kept at its natural aspect ratio. */
+[data-ahv-route="/kairali-ayurvedic-way-of-weight-management/"] main [data-source-component="article"],
+[data-ahv-route="/kairali-ayurvedic-way-of-weight-management/"] main [data-source-component="related-weight-management"] {width:min(820px,calc(100% - 40px))!important;margin-inline:auto!important;padding-block:24px!important}
+[data-ahv-route="/kairali-ayurvedic-way-of-weight-management/"] main [data-source-component="article"] > p {max-width:none!important}
+[data-ahv-route="/kairali-ayurvedic-way-of-weight-management/"] main [data-source-component="article"] img {max-width:100%;height:auto}
+[data-ahv-route="/kairali-ayurvedic-way-of-weight-management/"] main [data-source-component="related-weight-management"] a {display:inline-flex;align-items:center;min-height:44px}
+/* Individual therapies are separate from programme packages: preserve each
+   existing procedure name and source image in a responsive directory. */
+[data-ahv-route="/ayurveda-treatment/"] [data-collection="cards"] {grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr))!important;gap:24px!important}
+[data-ahv-route="/ayurveda-treatment/"] [data-source-card] {border:1px solid var(--hair);border-radius:4px;background:var(--raise);overflow:hidden;padding:16px;box-sizing:border-box;align-self:stretch}
+[data-ahv-route="/ayurveda-treatment/"] [data-source-card] > div:has(img) {width:100%;max-width:none!important;margin:0!important}
+[data-ahv-route="/ayurveda-treatment/"] [data-source-card] img {width:100%!important;height:220px!important;object-fit:contain;background:var(--paper)}
+[data-ahv-route="/ayurveda-treatment/"] [data-source-card] h3,
+[data-ahv-route="/ayurveda-treatment/"] [data-source-card] p {margin:12px 0 0!important;padding:0!important;border:0!important;font-size:20px!important;line-height:1.4!important}
+[data-ahv-route="/panchakarma/"] main [data-source-component="article"],
+[data-ahv-route="/panchakarma/"] main [data-source-component="contextual-resources"] {width:min(820px,calc(100% - 40px))!important;margin-inline:auto!important;padding-block:24px!important}
+[data-ahv-route="/panchakarma/"] main [data-source-component="article"] p {max-width:none!important}
+[data-ahv-family="article-reader"] [data-source-component="contextual-resources"] a {display:inline-flex;align-items:center;min-height:44px}
 
 /* source: /design/campaign.css */
 /* AHV — the two legacy campaign families (15 routes).
@@ -1809,7 +1878,14 @@ body[data-ahv-chat-open="true"] #ahv-contact-controls .ahv-contact-wa{display:no
  #ahv-design-root nav[aria-label="On this page"] > ul{display:flex!important;gap:8px;list-style:none;margin:0!important;padding:4px 16px 8px!important;overflow-x:auto;overscroll-behavior-x:contain}
  #ahv-design-root nav[aria-label="On this page"] > ul > li{flex:0 0 auto;list-style:none}
  #ahv-design-root nav[aria-label="On this page"] > ul > li > a{min-height:44px!important;padding:0 12px;border:1px solid #E9E2D3!important;border-radius:4px;white-space:nowrap;font-size:14px!important}
+ /* Owner 10 Oct 2026 (OWNER-20261010-OFFERS): on /offers/ the five links wrap onto further rows, so none is clipped behind a sideways scroller. */
+ #ahv-design-root[data-ahv-route="/offers/"] nav:has(> ul > li > a[href^="#"]) > ul{flex-wrap:wrap!important;overflow-x:visible!important}
+ #ahv-design-root[data-ahv-route="/offers/"] nav:has(> ul > li > a[href^="#"]) > ul > li{flex:0 1 auto;min-width:0;max-width:100%}
+ #ahv-design-root[data-ahv-route="/offers/"] nav:has(> ul > li > a[href^="#"]) > ul > li > a{white-space:normal;overflow-wrap:anywhere}
 }
+/* Owner 10 Oct 2026: the "About Kairali" link in the phone Gita Ramesh card starts on the quote's inset line
+   (only the phone card holds the link outside its padded text block). */
+#ahv-design-root[data-ahv-route="/"] div:has(> div > img[src$="/team-gita1.webp"]) > a:last-child{margin-inline:24px!important}
 
 .ahv-home-rates{width:min(1180px,92%);margin:40px auto;padding:28px 0;border-top:1px solid #E9E2D3;color:#2A2118}.ahv-home-rates h2,.ahv-home-rates h3{font-family:Marcellus,serif;font-weight:400}.ahv-home-rates h2{font-size:clamp(27px,3vw,38px);line-height:1.2}.ahv-home-rates p{line-height:1.6}.ahv-rate-kicker{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:#8F6212;font-weight:700}.ahv-rate-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:24px 0}.ahv-rate-grid article{border-top:2px solid #C1882C;padding-top:12px}.ahv-rate-grid h3{font-size:22px;line-height:1.3}.ahv-rate-price{font-size:28px;margin:12px 0;font-variant-numeric:tabular-nums}.ahv-rate-price span{font-size:15px}.ahv-rate-grid a{display:inline-flex;align-items:center;min-height:44px;font-weight:700}@media(max-width:699px){.ahv-rate-grid{grid-template-columns:1fr;gap:16px}.ahv-home-rates{margin:28px auto}.ahv-rate-grid h3{margin:8px 0}}
 
@@ -2174,6 +2250,73 @@ html[lang="pt"] #ahv-consent * { font-family: Arial, sans-serif !important; }
  #ahv-design-root [data-ahv-home-finder] > div > a { padding-inline:12px!important; }
 }
 
+/* Keep the treatments closing photograph whole instead of a shallow crop. */
+#ahv-design-root[data-ahv-route="/ayurvedic-treatments/"] div[style*="background-image"][style*="neck-upper-back-pain.webp"] {
+  width:100%;max-width:1440px;height:auto!important;aspect-ratio:48/25;
+  margin-inline:auto;background-size:contain!important;background-position:center!important;background-repeat:no-repeat;
+}
+
+/* All four chat channels remain readable in phone and short landscape dialogs. */
+#ahv-contact-controls.ahv-contact-choices {
+  max-height:calc(100vh - 32px);
+  max-height:calc(100dvh - 32px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+}
+#ahv-contact-controls.ahv-contact-choices .ahv-contact-channels { display:grid;gap:12px; }
+#ahv-contact-controls.ahv-contact-choices .ahv-contact-channels > :is(a,button) {
+  width:100%;min-width:0;height:auto;min-height:48px;margin:0;padding:12px 16px;
+  border-radius:4px;background:#5A4420;color:#F7F4EA;text-align:center;
+}
+#ahv-contact-controls.ahv-contact-choices .ahv-contact-label { display:inline; }
+#ahv-contact-controls.ahv-contact-choices [data-ahv-close] { width:auto;height:auto;min-width:48px; }
+
+/* Homepage header option: one row where it fits, a centred navigation row
+   below logo/actions on compact desktop screens; mobile layout is unchanged. */
+@media (min-width:700px) and (min-height:501px) {
+ #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child {
+  width:calc(100% - 48px)!important;max-width:1440px!important;display:grid!important;
+  grid-template-columns:auto minmax(0,1fr)!important;gap:4px 24px!important;padding:10px 0 6px!important;box-sizing:border-box;
+ }
+ #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child > a {grid-row:1;grid-column:1;}
+ #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child > div:last-child {
+  grid-row:1;grid-column:2;justify-self:end;flex-wrap:nowrap!important;gap:10px!important;
+ }
+ #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child > nav {
+  grid-row:2;grid-column:1 / -1;justify-content:center!important;flex-wrap:wrap!important;
+  gap:2px 20px!important;margin:0!important;font-size:12.5px!important;letter-spacing:.8px!important;
+ }
+ #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) nav > a {white-space:nowrap;}
+ #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) .ahv-contact-trigger {font-size:14px;padding:8px 10px;}
+ #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) a[href^="https://bookings."] {
+  font-size:12px!important;letter-spacing:.7px!important;padding:10px 14px!important;min-height:44px!important;display:inline-flex;align-items:center;
+ }
+}
+@media (min-width:1200px) and (min-height:501px) {
+ #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child {
+  grid-template-columns:auto minmax(0,1fr) auto!important;gap:18px!important;padding:10px 0!important;
+ }
+ #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child > nav {
+  grid-row:1;grid-column:2;flex-wrap:nowrap!important;gap:14px!important;
+ }
+ #ahv-design-root[data-ahv-family="home-hi-fi-v4"] header:has(> div > nav) > div:first-child > div:last-child {grid-column:3;}
+}
+
+
+/* Selective dividers for the shared 24-section homepage layout: news (7),
+   villas (9), training (13) and offers (14). Template IDs and URLs vary by
+   language; section order is shared by desktop, mobile and server snapshots. */
+#ahv-design-root[data-ahv-family="home-hi-fi-v4"] section:is(:nth-of-type(7),:nth-of-type(9),:nth-of-type(13),:nth-of-type(14))::before {
+ content:"";display:block;height:1px;background:#E9E2D3;margin-bottom:32px;
+}
+@media(max-width:699px) {
+ #ahv-design-root[data-ahv-family="home-hi-fi-v4"] section:is(:nth-of-type(7),:nth-of-type(9),:nth-of-type(13),:nth-of-type(14))::before {margin-bottom:24px;}
+}
+
+/* Programme photographs share the corresponding title destination. */
+#ahv-design-root[data-ahv-family="home-hi-fi-v4"] .ahv-rate-grid article > .ahv-package-image-link {display:block;margin:0;min-height:0;}
+#ahv-design-root[data-ahv-family="home-hi-fi-v4"] .ahv-package-image-link:focus-visible {outline:2px solid #8F6212;outline-offset:4px;}
+
 /* source: /design/newsletter.css */
 /* Shared by desktop/mobile footers, including native English pages.
    Space the input itself: password-manager helper nodes must not add flex gaps. */
@@ -2203,6 +2346,23 @@ footer .ahv-newsletter-status:empty {display:none}
   #ahv-design-root[data-ahv-family="home-hi-fi-v4"] a[href*="youtube.com/watch"]:has(> div > img) > div > span > span:has(> svg) {transition:transform 220ms ease,background-color 220ms ease,box-shadow 220ms ease;}
   #ahv-design-root[data-ahv-family="home-hi-fi-v4"] a[href*="youtube.com/watch"]:has(> div > img):hover > div > img {transform:scale(1.025);}
   #ahv-design-root[data-ahv-family="home-hi-fi-v4"] a[href*="youtube.com/watch"]:has(> div > img):hover > div > span > span:has(> svg) {transform:scale(1.06);}
+}
+
+/* Keep homepage hero CTA labels centred when the adjacent buttons stretch or wrap. */
+#ahv-design-root[data-ahv-route="/"] section:has(video) a:has(+ a[data-ahv-film]),
+#ahv-design-root[data-ahv-route="/"] section:has(video) a[data-ahv-film] {
+  display:inline-flex !important;
+  align-items:center;
+  justify-content:center;
+  text-align:center !important;
+  box-sizing:border-box;
+}
+#ahv-design-root[data-ahv-route="/"] section:has(video) a[data-ahv-film] > span {
+  justify-content:center;
+  text-align:center;
+}
+#ahv-design-root[data-ahv-route="/"] section:has(video) a[data-ahv-film] svg {
+  flex-shrink:0;
 }
 
 /* source: /design/search.css */
@@ -2549,7 +2709,7 @@ html[data-ahv-fh] nav[data-ahv-section-nav] { display:none !important; }
 .ahv-fh-list { list-style:none; margin:0; padding:0; }
 .ahv-fh-list li { margin:0; padding:0; }
 .ahv-fh-row { display:flex; align-items:center; gap:8px; border-bottom:1px solid #E9E2D3; }
-.ahv-fh-row a, .ahv-fh-plain, .ahv-fh-hub, .ahv-fh-here, .ahv-fh-main .ahv-fh-list a {
+.ahv-fh-row a, .ahv-fh-plain, .ahv-fh-hub, .ahv-fh-here, .ahv-fh-overview, .ahv-fh-main .ahv-fh-list a {
   flex:1; display:flex; align-items:center; min-height:44px; padding-block:6px; box-sizing:border-box;
   color:#2A2118; text-decoration:none; font-size:16px; line-height:1.35;
 }
@@ -2559,7 +2719,16 @@ html[data-ahv-fh] nav[data-ahv-section-nav] { display:none !important; }
 .ahv-fh-main .ahv-fh-kicker { margin-bottom:4px; }
 .ahv-fh-panel a:hover { color:#006038; }
 .ahv-fh-panel a[aria-current="page"] { color:#006038; font-weight:700; border-inline-start:3px solid #C1882C; padding-inline-start:10px; }
-.ahv-fh-toggle { flex:none; width:44px; height:44px; border:0; background:none; color:#5A4420; font-size:20px; cursor:pointer; }
+.ahv-fh-toggle {
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  flex:1; width:100%; min-width:0; min-height:48px; padding:8px 10px;
+  box-sizing:border-box; border:0; background:none; color:#2A2118;
+  font:inherit; font-size:16px; line-height:1.35; text-align:start; cursor:pointer;
+}
+.ahv-fh-branch-label { min-width:0; overflow-wrap:anywhere; }
+.ahv-fh-branch-icon { flex:none; width:24px; text-align:center; color:#5A4420; font-size:20px; }
+.ahv-fh-toggle:hover { background:#F7F4EA; color:#006038; }
+.ahv-fh-toggle:focus-visible { outline:3px solid #6B7726; outline-offset:-3px; }
 .ahv-fh-kids { padding-inline-start:16px; }
 .ahv-fh-kids[hidden] { display:none; }
 html[data-ahv-fh-open] { scroll-padding-top:0; }

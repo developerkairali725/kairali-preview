@@ -6,5 +6,5 @@ import content from "./content";
 export const metadata = lpMetadata(content);
 
 export default function Page() {
-  return <LpPage content={content} />;
+  return <LpPage content={content} stableIntro />;
 }

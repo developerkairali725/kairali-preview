@@ -1,6 +1,6 @@
 // /yoga-retreats/ — governed data, verbatim from family-02/YOGA-RETREATS-BUILD.json (7 Sep 2026; owner authority 31 Aug rounds 4+5). Do not edit by hand.
 window.AHV_YOGA_RETREATS = {
-  route: "/yoga-retreats/",
+  route: "/yoga-therapy-individual/",
   practices: [
     { title: "Yoga postures", text: "Explore yoga postures as part of your retreat practice." },
     { title: "Breathing and meditation", text: "Make time for breathing exercises, meditation and relaxation." },

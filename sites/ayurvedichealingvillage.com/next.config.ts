@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
+import { captureConfigEnabled } from "./app/(english)/_families/capture-runtime.mjs";
 import documentRedirects from "./english-candidate/document-redirects.json";
 import legacyEnglishRedirects from "./english-candidate/legacy-english-redirects.json";
 import adSitelinks from "./english-candidate/ad-sitelink-redirects.json";
+import ppcThanksRedirects from "./english-candidate/ppc-thanks-redirects.json";
 import l10nRoutes from "./l10n/routes.json";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -39,7 +41,17 @@ import { join } from "node:path";
 // "index, follow"): a response header is the one directive page JavaScript
 // cannot overwrite. robots.txt Disallow backs it up. Set AHV_STAGING=0 only
 // when the owner takes this to production.
+// Production builds must never silently consume a redacted `vercel pull`
+// placeholder or an absent staging flag. Preview remains closed by default.
+if (process.env.VERCEL_ENV === "production" && process.env.AHV_STAGING !== "0") {
+  throw new Error("AHV production build requires explicit AHV_STAGING=0; verify the non-secret flag before building.");
+}
 const IS_STAGING = process.env.AHV_STAGING !== "0";
+// Redacted local mode flags must not silently disable approved measurement.
+if (process.env.VERCEL_ENV === "production" && !["0", "1"].includes(process.env.AHV_ANALYTICS || "")) {
+  throw new Error("AHV production build requires explicit AHV_ANALYTICS=0 or 1; verify the approved non-secret mode before building.");
+}
+
 // Submitted WordPress sitemap URLs, read from the current public WP index on
 // 30 Sep 2026. Keep the old submissions alive through one 301 to the new
 // canonical sitemap; GSC/Bing can then be resubmitted and monitored.
@@ -84,7 +96,9 @@ const REDIRECT_MAP = JSON.parse(
 
 const nextConfig: NextConfig = {
   // This app has multiple root layouts; unmatched URLs need their own document.
-  experimental: { globalNotFound: true },
+  experimental: { globalNotFound: true, cssChunking: false },
+  // `pnpm lp:perf` builds into its own directory (LP_DIST_DIR) so it never collides with a running dev server's .next.
+  ...(process.env.LP_DIST_DIR ? { distDir: process.env.LP_DIST_DIR } : {}),
   // Keep dependency tracing inside this monorepo on Windows and macOS.
   outputFileTracingRoot: join(process.cwd(), "../.."),
   // Static media is served from Vercel's static output, not read by page functions.
@@ -124,9 +138,17 @@ const nextConfig: NextConfig = {
       source: "/ahv/static/:path*.html",
       headers: [{ key: "X-Robots-Tag", value: "noindex, nofollow, noarchive" }],
     };
-    if (!IS_STAGING) return [assets, documents, staticFragments];
+    // Campaign v2 preview variants are per-visitor (geo + language): never cache shared, never index.
+    const lpV2 = {
+      source: "/lp-v2/:path*",
+      headers: [
+        { key: "Cache-Control", value: "private, no-store" },
+        { key: "X-Robots-Tag", value: "noindex, nofollow" },
+      ],
+    };
+    if (!IS_STAGING) return [assets, documents, staticFragments, lpV2];
     return [
-      assets, documents, staticFragments,
+      assets, documents, staticFragments, lpV2,
       {
         source: "/:path*",
         headers: [
@@ -145,11 +167,16 @@ const nextConfig: NextConfig = {
     // also a single hop, just by the other rule. They are ad-landing URLs that
     // were never in the manifest: unlisted in the sitemap and linked from no
     // page on the live site, which is why nothing surfaced them until now.
-    return [...LEGACY_SITEMAPS.map((source) => ({source,destination:"/sitemap.xml",statusCode:301})), {source:"/offers/defence-paramilitary-personnel-get-upto-30-off/",destination:"/offers/defence-and-paramilitary/",statusCode:301}, ...Object.entries(REDIRECT_MAP.redirects).map(([source, rule]) => ({
+    return [...LEGACY_SITEMAPS.map((source) => ({source,destination:"/sitemap.xml",statusCode:301})), ...Object.entries(REDIRECT_MAP.redirects).map(([source, rule]) => ({
       source,
       destination: rule.to,
       statusCode: REDIRECT_MAP.statusCode,
     })), ...[...adSitelinks, ...legacyEnglishRedirects, ...documentRedirects].map(rule => ({ source:rule.source, destination:rule.destination, statusCode:301 })),
+    // The retired paid-landing confirmation (owner request, 8 Oct 2026): each of the
+    // 13 released /ppc-thanks/ locale paths gets one 301 to the same locale's /thanks/.
+    // Next carries the incoming query string through unchanged. lead-receipt.js
+    // accepts a receipt still addressed to the old path on its new page.
+    ...ppcThanksRedirects.map(rule => ({ source:rule.source, destination:rule.destination, statusCode:301 as const })),
     // Legacy German/French/Russian URLs of the WordPress site that the locale
     // lane does not serve in place (l10n/routes.json, generated from the verified
     // l10n/legacy-map.json): one 301 hop each. Case-only variants are NOT here -
@@ -165,4 +192,9 @@ const nextConfig: NextConfig = {
   // cutover map above stays commented; nothing about the live Ads URLs changes.
 };
 
-export default nextConfig;
+export default function config(phase: string): NextConfig {
+  // Reject capture before build/start/export, even if NODE_ENV was inherited
+  // as development. Next supplies this phase independently of NODE_ENV.
+  captureConfigEnabled(phase);
+  return nextConfig;
+}
