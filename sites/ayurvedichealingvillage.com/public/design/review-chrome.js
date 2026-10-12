@@ -339,13 +339,6 @@
       html.setAttribute("data-ahv-cta-bar-on", "");
       bar.appendChild(contactTrigger());
     }
-    // P05: variant C hides its hero actions on phones. Reuse that page's already-localized
-    // Ask Anything label on the existing fourth bar button; same styling, order and chat handler.
-    var mobileAsk = campaignRoot && root.querySelector('.lp-prod[data-variant="C"] .lp-hero__ask');
-    if (mobileAsk) {
-      var mobileChat = bar.querySelector(".ahv-contact-trigger"), askLabel = mobileAsk.textContent.trim();
-      if (mobileChat && askLabel && mobileChat.textContent !== askLabel) mobileChat.textContent = askLabel;
-    }
     var lp = window.AHV_LOCAL_PATHS, form = root.querySelector("form[id]");
     var here = location.pathname.replace(/\/?$/, "/");
     bar.querySelectorAll("a").forEach(function (a) {
