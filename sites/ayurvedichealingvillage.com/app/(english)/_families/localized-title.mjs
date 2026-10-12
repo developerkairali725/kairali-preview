@@ -5,11 +5,16 @@ export function reviewedTitleFor(path, locale, title) {
   return PATHS.has(path) && LOCALES.has(locale) && typeof title === 'string' && title.trim() ? title : undefined;
 }
 // Self-contained: boot.ts injects this function into its existing head-mutation guard.
-export function restoreReviewedTitle(doc, title) {
+export function restoreReviewedHead(doc, title, canonical) {
   if (typeof title !== 'string' || !title.trim()) return false;
+  let changed = false;
   let node = doc.head.querySelector('title');
-  if (!node) { node = doc.createElement('title'); node.textContent = title; doc.head.appendChild(node); return true; }
-  if (node.textContent === title) return false;
-  node.textContent = title;
-  return true;
+  if (!node) { node = doc.createElement('title'); node.textContent = title; doc.head.appendChild(node); changed = true; }
+  else if (node.textContent !== title) { node.textContent = title; changed = true; }
+  if (typeof canonical === 'string' && canonical.startsWith('https://ayurvedichealingvillage.com/')) {
+    let link = doc.head.querySelector('link[rel="canonical"]');
+    if (!link) { link = doc.createElement('link'); link.setAttribute('rel', 'canonical'); link.setAttribute('href', canonical); doc.head.appendChild(link); changed = true; }
+    else if (link.getAttribute('href') !== canonical) { link.setAttribute('href', canonical); changed = true; }
+  }
+  return changed;
 }
