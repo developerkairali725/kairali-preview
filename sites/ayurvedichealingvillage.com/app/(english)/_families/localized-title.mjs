@@ -1,5 +1,5 @@
-// N08: keep the accepted Package/Panchakarma locale titles after imported views write their English helmet.
-const PATHS = new Set(['/ayurvedic-treatment-packages.html', '/panchkarma-treatment.html']);
+// N08: keep the accepted reviewed programme locale titles after imported views write their English helmet.
+const PATHS = new Set(["/ayurvedic-treatment-packages.html", "/panchkarma-treatment.html", "/weight-loss-programme/", "/digestive-wellness-gut-health-yoga-therapy/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-bronchial-diseases/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/", "/personalized-customized-healing-program/"]);
 const LOCALES = new Set(['hi','de','fr','es','it','pt','nl','ru','ar','zh-Hans','ja','ko']);
 export function reviewedTitleFor(path, locale, title) {
   return PATHS.has(path) && LOCALES.has(locale) && typeof title === 'string' && title.trim() ? title : undefined;

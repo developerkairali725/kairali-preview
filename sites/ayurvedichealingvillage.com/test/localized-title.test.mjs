@@ -1,8 +1,8 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import vm from 'node:vm';
 import { reviewedTitleFor, restoreReviewedHead } from '../app/(english)/_families/localized-title.mjs';
 const locales=['hi','de','fr','es','it','pt','nl','ru','ar','zh-Hans','ja','ko'];
-test('Only the two reviewed routes in twelve registered locales reuse their accepted catalogue titles',()=>{
- for(const locale of locales){const meta=JSON.parse(fs.readFileSync(new URL('../l10n/generated/'+locale+'.json',import.meta.url))).meta;for(const path of ['/ayurvedic-treatment-packages.html','/panchkarma-treatment.html']){const title=meta[path].title;assert.equal(reviewedTitleFor(path,locale,title),title);assert.equal(reviewedTitleFor(path,'en',title),undefined);}}
+test('Only the reviewed programme routes in twelve registered locales reuse their accepted catalogue titles',()=>{
+ for(const locale of locales){const meta=JSON.parse(fs.readFileSync(new URL('../l10n/generated/'+locale+'.json',import.meta.url))).meta;for(const path of ["/ayurvedic-treatment-packages.html", "/panchkarma-treatment.html", "/weight-loss-programme/", "/digestive-wellness-gut-health-yoga-therapy/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-bronchial-diseases/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/", "/personalized-customized-healing-program/"]){const title=meta[path].title;assert.equal(reviewedTitleFor(path,locale,title),title);assert.equal(reviewedTitleFor(path,'en',title),undefined);}}
  for(const path of ['/','/contact-us/','/lp/treatment-packages/'])assert.equal(reviewedTitleFor(path,'de','Title'),undefined);
  for(const value of [undefined,null,'', '  '])assert.equal(reviewedTitleFor('/panchkarma-treatment.html','de',value),undefined);
  assert.equal(reviewedTitleFor('/panchkarma-treatment.html','xx','Title'),undefined);
