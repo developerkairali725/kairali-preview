@@ -34,3 +34,5 @@ test('Canonical-only repair preserves the already translated title and remains q
  for(let i=0;i<25;i++)assert.equal(run(doc,undefined,canonical),false);
  assert.equal(writes,1);assert.equal(run(doc,undefined,'https://example.org/'),false);
 });
+
+test("Mindfulness keeps accepted translated titles without changing English", () => { assert.equal(reviewedTitleFor("/mindfulness-retreat/", "de", "Achtsamkeits-Retreat"), "Achtsamkeits-Retreat"); assert.equal(reviewedTitleFor("/mindfulness-retreat/", "en", "Mindfulness Retreat"), undefined); });

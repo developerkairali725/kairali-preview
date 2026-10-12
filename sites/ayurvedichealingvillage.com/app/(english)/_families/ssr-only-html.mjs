@@ -21,7 +21,7 @@ function slots() {
 }
 
 /** Routes whose snapshot and boot script ship in the server HTML only. */
-export const SSR_ONLY_HTML_ROUTES = new Set(["/all-programs/", "/ayurveda-training-programme/", "/contact-us/", "/offers/", "/weight-loss-programme/", "/treatment-for-bronchial-diseases/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/", "/karkidaka-chikitsha-or-monsoon-wellness.html", "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/", "/intensive-ayurveda-training-program-learn-practice-ayurveda/"]);
+export const SSR_ONLY_HTML_ROUTES = new Set(["/mindfulness-retreat/", "/all-programs/", "/ayurveda-training-programme/", "/contact-us/", "/offers/", "/weight-loss-programme/", "/treatment-for-bronchial-diseases/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/", "/karkidaka-chikitsha-or-monsoon-wellness.html", "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/", "/intensive-ayurveda-training-program-learn-practice-ayurveda/"]);
 
 export function putSsrOnlyHtml(slot, html) {
   if (typeof html !== "string") throw new TypeError(`AHV server-only markup must be a string: ${slot}`);
