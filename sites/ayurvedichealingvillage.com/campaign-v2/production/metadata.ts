@@ -11,6 +11,8 @@ import type { CampaignConfig } from "../kit/types.ts";
 import { faqPage, jsonLdScript } from "../integrations/seo.ts";
 import { OG_IMAGE, ROUTES, SITE_ORIGIN, type ProductionSlug } from "./bindings.ts";
 
+import localeRoutes from "../../l10n/routes.json" with { type: "json" };
+
 const SITE_NAME = "Kairali Ayurvedic Healing Village";
 
 /** `env` is injected in tests; robots follow the build's AHV_STAGING exactly as the old pages did. */
@@ -23,7 +25,14 @@ export function productionMetadata(slug: ProductionSlug, c: CampaignConfig, env:
   return {
     title,
     description,
-    alternates: { canonical: b.canonical },
+    alternates: {
+      canonical: b.canonical,
+      // The released Monsoon page shares this existing 13-language sitemap cluster.
+      ...(slug === "monsoon-wellness" ? { languages: {
+        ...Object.fromEntries(Object.entries(localeRoutes.routes["/karkidaka-chikitsha-or-monsoon-wellness.html"]).map(([locale, route]) => [locale, SITE_ORIGIN + route])),
+        "x-default": b.canonical,
+      } } : {}),
+    },
     robots: { index: env.AHV_STAGING === "0", follow: true },
     openGraph: {
       type: "website", locale: og.locale, siteName: og.siteName, title, description, url: b.canonical,
