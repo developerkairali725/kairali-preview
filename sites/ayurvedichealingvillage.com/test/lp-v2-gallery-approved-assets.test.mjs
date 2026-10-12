@@ -13,6 +13,7 @@ import { ROUTES } from "../campaign-v2/production/bindings.ts";
 import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/load.ts";
 import { IMAGES } from "../campaign-v2/data/images.ts";
 import { APPROVED_GALLERY_IMAGES, APPROVED_GALLERY_ADDITIONS } from "../campaign-v2/data/gallery-images.ts";
+import { UI } from "../campaign-v2/production/ui.ts";
 import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -211,4 +212,11 @@ test("files: each addition is in public/, tracked in git, a WebP of the stated s
 
 test("lint: the nineteen target routes stay free of kit lint errors (alt length, size, consent, duplicates, count)", () => {
   for (const slug of TARGETS) assert.deepEqual(lintCampaign(productionCampaign(slug), NOW).errors, [], slug);
+});
+
+test("German and Russian additions retain localized accessible descriptions", () => {
+  for (const locale of ["de", "ru"]) for (const { image } of APPROVED_GALLERY_IMAGES) {
+    assert.ok(UI[locale].alt[image.id]?.length > 20, `${locale}: ${image.id}`);
+    assert.notEqual(UI[locale].alt[image.id], image.alt);
+  }
 });
