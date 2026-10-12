@@ -96,7 +96,7 @@ const REDIRECT_MAP = JSON.parse(
 
 const nextConfig: NextConfig = {
   // This app has multiple root layouts; unmatched URLs need their own document.
-  experimental: { globalNotFound: true },
+  experimental: { globalNotFound: true, inlineCss: true },
   // `pnpm lp:perf` builds into its own directory (LP_DIST_DIR) so it never collides with a running dev server's .next.
   ...(process.env.LP_DIST_DIR ? { distDir: process.env.LP_DIST_DIR } : {}),
   // Keep dependency tracing inside this monorepo on Windows and macOS.
