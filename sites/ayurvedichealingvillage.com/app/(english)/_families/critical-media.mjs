@@ -119,3 +119,13 @@ export function monsoonRuntimeMedia(win, routePath) {
     route.heroImg = Object.assign({}, route.heroImg, { src: '/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19-768.avif' });
   }
 }
+
+/** Map the same selected phone photos before retreat data renders; desktop data stays intact. */
+export function retreatRuntimeMedia(win, routePath, phoneSrc) {
+  if (!win.matchMedia('(max-width:699px)').matches) return;
+  var rows = routePath === '/ananda-lahari-yoga-and-ayurveda-retreat/'
+    ? win.AHV_ANANDA && win.AHV_ANANDA.sections
+    : routePath === '/archive-yoga-retreat/' ? win.AHV_PAST_RETREATS && win.AHV_PAST_RETREATS.cards : null;
+  if (!rows) return;
+  for (var row of rows) if (typeof row.image === 'string') row.image = phoneSrc(row.image, routePath);
+}

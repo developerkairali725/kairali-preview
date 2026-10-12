@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
-import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage } from '../app/(english)/_families/critical-media.mjs';
+import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage, retreatRuntimeMedia } from '../app/(english)/_families/critical-media.mjs';
 import { installLazyImgOrder } from '../app/(english)/_families/media-loading.mjs';
 
 test('Digestive candidate uses its phone hero derivative and the matching priority preload', () => {
@@ -263,4 +263,17 @@ test('Retreat phone derivatives keep photos exact-route scoped and survive runti
       assert(fs.existsSync('public'+original));assert(fs.statSync('public'+derivative).size<fs.statSync('public'+original).size);
     }
   }
+});
+
+test('Retreat runtime image data is mapped before rendering only for the selected phone route', () => {
+ const runtime=new Function(`return (${retreatRuntimeMedia.toString()})`)();
+ for(const [route,key,collection,name] of [['/ananda-lahari-yoga-and-ayurveda-retreat/','AHV_ANANDA','sections','AHV-Ananda-Village'],['/archive-yoga-retreat/','AHV_PAST_RETREATS','cards','AHV-Retreat-Archive-01']]){
+  for(const phone of [false,true]){
+   const image='/ahv/assets/img/'+name+'.webp',row={image,text:'Unchanged'};
+   const win={matchMedia:()=>({matches:phone}),[key]:{[collection]:[row,{text:'No image'}]}};
+   runtime(win,'/unrelated/',phoneCriticalMedia);assert.equal(row.image,image);
+   runtime(win,route,phoneCriticalMedia);assert.equal(row.image,phone?image.replace('.webp','-768-phone.avif'):image);assert.equal(row.text,'Unchanged');
+   runtime(win,route,phoneCriticalMedia);assert.equal(row.image,phone?image.replace('.webp','-768-phone.avif'):image);
+  }
+ }
 });

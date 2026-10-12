@@ -13,7 +13,7 @@ import fs from "node:fs";
 import {
   EAGER_SLOTS, lazyImgFirst, deferHeroFilm, installLazyImgOrder, installSlotLoading, createBackgroundDeferral,
 } from "../app/(english)/_families/media-loading.mjs";
-import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, monsoonRuntimeMedia } from "../app/(english)/_families/critical-media.mjs";
+import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, monsoonRuntimeMedia, retreatRuntimeMedia } from "../app/(english)/_families/critical-media.mjs";
 import { formPostSafety } from "../app/(english)/_families/form-post-safety.mjs";
 import { orderedRuntimeScripts } from "../app/(english)/_families/runtime-script-order.mjs";
 import { CONSENT_RUNTIME } from "../app/(english)/_families/consent-runtime.ts";
@@ -204,7 +204,7 @@ test("BOOT_SCRIPT with the media-loading layer is valid JavaScript", async () =>
   const end = src.lastIndexOf("`.trim();");
   const body = src.slice(start, end);
   const env = { IS_STAGING: true, ROUTE_CONFIG_ID: "ahv-route-config", DESIGN_ROOT_ID: "ahv-design-root", LINK_ALIASES: {}, IMAGE_ALIASES: {},
-    repairArticleContactHeading, treatmentHeadingLevels, restoreReviewedHead, orderedRuntimeScripts, repairFaqTopicTargets, removeHomeVillaRates, offersFlow, phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, monsoonRuntimeMedia, EAGER_SLOTS, createBackgroundDeferral, installLazyImgOrder, installSlotLoading, lazyImgFirst, deferHeroFilm, formPostSafety, CONSENT_RUNTIME,
+    repairArticleContactHeading, treatmentHeadingLevels, restoreReviewedHead, orderedRuntimeScripts, repairFaqTopicTargets, removeHomeVillaRates, offersFlow, phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, monsoonRuntimeMedia, retreatRuntimeMedia, EAGER_SLOTS, createBackgroundDeferral, installLazyImgOrder, installSlotLoading, lazyImgFirst, deferHeroFilm, formPostSafety, CONSENT_RUNTIME,
     deferFarSnapshotContent, whenSnapshotPainted, snapshotFocusTarget, preserveSnapshotInputs };
   const script = new Function(...Object.keys(env), "return `" + body + "`;")(...Object.values(env));
   assert.doesNotThrow(() => new Function(script), "BOOT_SCRIPT parses");
