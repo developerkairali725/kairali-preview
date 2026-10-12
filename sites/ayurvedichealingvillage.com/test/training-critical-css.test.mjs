@@ -14,3 +14,9 @@ test("unexpected framework output fails closed before publication",()=>{
  assert.throws(()=>inlineTrainingCss(link+flight,()=>"</style><script>"),/Unsafe/);
  assert.throws(()=>inlineTrainingCss(link.replace('data-precedence="next"','')+flight,()=>"p{}"),/precedence/);
 });
+
+test("English custom layout with no framework CSS remains byte-identical only when explicitly allowed",()=>{
+ const html='<head></head><body>Approved</body>'+flight;
+ assert.deepEqual(inlineTrainingCss(html,()=>{throw Error("unexpected read")},{allowNoStylesheets:true}),{html,records:[]});
+ assert.throws(()=>inlineTrainingCss(html,()=>"p{}"),/No original/);
+});

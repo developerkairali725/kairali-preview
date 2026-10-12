@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import { TRAINING_SNAPSHOT_ROUTES } from "../app/(english)/_families/training-snapshot-fonts.mjs";
 const sha = text => createHash("sha256").update(text).digest("hex");
 /** Exact Next CSS bytes, original order; Flight/RSC strings are never edited. */
-export function inlineTrainingCss(html, readCss) {
+export function inlineTrainingCss(html, readCss, { allowNoStylesheets = false } = {}) {
   const boundary = html.indexOf("<script>(self.__next_f");
   if (boundary < 0) throw new Error("Missing Flight boundary");
   const records = [];
@@ -19,7 +19,7 @@ export function inlineTrainingCss(html, readCss) {
     records.push({ href: match[1], cssSha256: sha(css), cssBytes: Buffer.byteLength(css) });
     return `<style data-precedence="next" data-href="${match[1]}">${css}</style>`;
   });
-  if (!records.length) throw new Error("No original Next stylesheets to inline");
+  if (!records.length && !allowNoStylesheets) throw new Error("No original Next stylesheets to inline");
   return { html: prefix + html.slice(boundary), records };
 }
 export function buildTrainingCss(site) {
@@ -31,7 +31,7 @@ export function buildTrainingCss(site) {
     for (const localized of locales) {
       const file = path.join(site,".next/server/app",localized.replace(/^\/|\/$/g,"") + ".html");
       const before = fs.readFileSync(file,"utf8");
-      const result = inlineTrainingCss(before, href => fs.readFileSync(path.join(site,".next",href.slice("/_next/".length)),"utf8"));
+      const result = inlineTrainingCss(before, href => fs.readFileSync(path.join(site,".next",href.slice("/_next/".length)),"utf8"), { allowNoStylesheets: localized === route });
       planned.push({ file, html: result.html, route: localized, beforeSha256: sha(before), afterSha256: sha(result.html), styles: result.records });
     }
   }
