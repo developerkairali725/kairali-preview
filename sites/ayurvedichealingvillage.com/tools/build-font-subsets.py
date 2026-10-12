@@ -10,11 +10,14 @@ from fontTools import subset
 from fontTools.ttLib import TTFont
 units=json.load(open('l10n/source/units.json'))['units'];common=set(range(0x180))
 for u in units:common.update(map(ord,u['source']))
+# Shared language-menu labels occur on every locale, including Latin-script pages.
+# Keep their covered glyphs in the common subset to avoid loading an entire extra face.
+for locale in json.load(open('l10n/locales.json')).values():common.update(map(ord,locale['name']))
 
 import re,hashlib
 root=Path('public/ahv/fonts');css_paths=list(root.glob('*.css'))
 css_sources={p:p.read_text() for p in css_paths}
-font_names=sorted(set(re.findall(r'([a-f0-9]{64})(?:[.]common|[.]extra)?[.]woff2',''.join(css_sources.values()))))
+font_names=sorted(set(re.findall(r'([a-f0-9]{64})(?:[.][a-f0-9]{12})?(?:[.]common|[.]extra)?[.]woff2',''.join(css_sources.values()))))
 records=[]
 def ranges(points):
  runs=[]
@@ -28,21 +31,25 @@ for name in font_names:
   if not points:continue
   font=TTFont(source, recalcTimestamp=False);options=subset.Options();options.layout_features=['*'];options.name_IDs=['*'];options.recalc_timestamp=False
   worker=subset.Subsetter(options=options);worker.populate(unicodes=points);worker.subset(font);font.flavor='woff2'
-  target=root/(name+'.'+kind+'.woff2');font.save(target)
+  import io
+  output=io.BytesIO();font.save(output);data=output.getvalue()
+  original_target=root/(name+'.'+kind+'.woff2')
+  filename=original_target.name if original_target.exists() and original_target.read_bytes()==data else name+'.'+hashlib.sha256(data).hexdigest()[:12]+'.'+kind+'.woff2'
+  target=root/filename;target.write_bytes(data)
   check=TTFont(target);new_cmap=check.getBestCmap();assert set(new_cmap)==points
   assert check['head'].unitsPerEm==original['head'].unitsPerEm
   for cp,glyph in new_cmap.items():assert check['hmtx'][glyph]==original['hmtx'][cmap[cp]], (name,cp)
-  parts[kind]={'range':ranges(points),'bytes':target.stat().st_size,'coverage':points}
+  parts[kind]={'file':filename,'range':ranges(points),'bytes':target.stat().st_size,'coverage':points}
  assert set().union(*(v['coverage'] for v in parts.values()))==coverage
- records.append({'font':name,'originalSha256':hashlib.sha256(source.read_bytes()).hexdigest(),'fullBytes':(root/(name+'.woff2')).stat().st_size,'commonBytes':parts['common']['bytes'],'extraBytes':parts.get('extra',{}).get('bytes',0),'codepoints':len(coverage),'commonCodepoints':len(parts['common']['coverage']),'metricsUnchanged':True})
+ records.append({'font':name,'originalSha256':hashlib.sha256(source.read_bytes()).hexdigest(),'fullBytes':(root/(name+'.woff2')).stat().st_size,'commonBytes':parts['common']['bytes'],'extraBytes':parts.get('extra',{}).get('bytes',0),'codepoints':len(coverage),'commonCodepoints':len(parts['common']['coverage']),'metricsUnchanged':True,'commonFile':parts['common']['file'],'extraFile':parts.get('extra',{}).get('file')})
  for css,content in list(css_sources.items()):
   # Regenerate from each original definition once; already-split faces are replaced as a group.
-  pattern=r'@font-face\s*\{[^}]*'+re.escape(name)+r'(?:[.]common|[.]extra)?[.]woff2[^}]*\}'
+  pattern=r'@font-face\s*\{[^}]*'+re.escape(name)+r'(?:[.][a-f0-9]{12})?(?:[.]common|[.]extra)?[.]woff2[^}]*\}'
   found=list(re.finditer(pattern,content))
   if not found:continue
   prototype=re.sub(r'unicode-range:[^;}]*;?','',found[0].group())
-  prototype=re.sub(re.escape(name)+r'(?:[.]common|[.]extra)?[.]woff2',name+'.woff2',prototype)
-  rebuilt='\n'.join(prototype.replace(name+'.woff2',name+'.'+kind+'.woff2').replace('}', 'unicode-range:'+info['range']+';}') for kind,info in parts.items())
+  prototype=re.sub(re.escape(name)+r'(?:[.][a-f0-9]{12})?(?:[.]common|[.]extra)?[.]woff2',name+'.woff2',prototype)
+  rebuilt='\n'.join(prototype.replace(name+'.woff2',info['file']).replace('}', 'unicode-range:'+info['range']+';}') for kind,info in parts.items())
   first=True
   def replacement(match):
    global first

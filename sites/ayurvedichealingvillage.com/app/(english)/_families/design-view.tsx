@@ -1,3 +1,4 @@
+import { trainingSnapshotFontCss } from "./training-snapshot-fonts.mjs";
 import { reviewedTitleFor } from "./localized-title.mjs";
 import { SnapshotStyles, type SnapshotStyleAsset } from './SnapshotStyles';
 import { routeStylesFor, routeStyleHref } from "./route-styles.mjs";
@@ -172,7 +173,7 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
   const snapshotFaces = firstPaint && !firstScreenPoster(snapshot) && !imageLedFirstScreen(route.path) ? firstPaint : null;
   const snapshotAssets: SnapshotStyleAsset[] = [
     ...(snapshotFaces?.fontCss.map(({ href, css }) => css
-      ? { key: `font:${href}`, kind: 'style' as const, css }
+      ? { key: `font:${href}`, kind: 'style' as const, css: trainingSnapshotFontCss(route.path, css, snapshot) }
       : { key: `font:${href}`, kind: 'link' as const, href }) ?? []),
     ...(firstPaint?.styles.map((css, i) => ({ key: `view:${i}`, kind: 'style' as const, css, media: narrowMedia })) ?? []),
   ];
