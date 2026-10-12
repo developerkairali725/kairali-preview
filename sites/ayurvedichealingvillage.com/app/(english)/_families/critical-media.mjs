@@ -42,7 +42,7 @@ export function descriptiveAwardLinks(html, route = "") {
   html = html.split('aria-label="{{ g.alt }}"').join('aria-label="{{ g.caption }}" aria-description="{{ g.alt }}"');
   return html.replace(/<a\b([^>]*)>([^<>]+)<[/]a>/gi, function (full, attrs, text) {
     var label = attrs.match(/aria-label="([^"]+)"/i);
-    if (!label || label[1].indexOf(text.trim() + ' — ') !== 0) return full;
+    if (!label || (label[1].indexOf(text.trim() + ' — ') !== 0 && label[1].indexOf(text.trim() + ' – ') !== 0)) return full;
     var title = label[1].slice(text.trim().length);
     return '<a' + attrs + '>' + text + '<span class="ahv-link-context">' + title + '</span></a>';
   });
