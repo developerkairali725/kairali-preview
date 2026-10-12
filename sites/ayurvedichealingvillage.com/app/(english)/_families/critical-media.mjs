@@ -1,5 +1,6 @@
 /** Selected image variants; only phone templates/snapshots use these. */
 export function phoneCriticalMedia(html, routePath = '') {
+  if (routePath === '/panchakarma/') html = html.split('/ahv/assets/img/gallery/ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd.webp').join('/ahv/assets/img/AHV-Ananda-Landscape-768-phone.avif');
   // PR406: same-photo phone derivatives, measured with the released font-loading fix.
   var retreatImages = routePath === '/ananda-lahari-yoga-and-ayurveda-retreat/'
     ? ['AHV-Ananda-Alcohol-Free', 'AHV-Ananda-Landscape', 'AHV-Ananda-Massage', 'AHV-Ananda-Village']

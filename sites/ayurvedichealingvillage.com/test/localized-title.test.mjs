@@ -36,3 +36,23 @@ test('Canonical-only repair preserves the already translated title and remains q
 });
 
 test("Mindfulness keeps accepted translated titles without changing English", () => { assert.equal(reviewedTitleFor("/mindfulness-retreat/", "de", "Achtsamkeits-Retreat"), "Achtsamkeits-Retreat"); assert.equal(reviewedTitleFor("/mindfulness-retreat/", "en", "Mindfulness Retreat"), undefined); });
+
+test('Panchakarma keeps its existing English and translated titles; other English routes stay untouched',()=>{
+ for(const locale of ['en',...locales])assert.equal(reviewedTitleFor('/panchakarma/',locale,'Approved title'),'Approved title');
+ assert.equal(reviewedTitleFor('/panchakarma-therapy/','en','Title'),undefined);
+});
+test('Panchakarma description guard repairs one overwrite and then remains idle',()=>{
+ let value='Old dataset description',writes=0;
+ const node={getAttribute:k=>value,setAttribute(k,v){assert.equal(k,'content');value=v;writes++;}};
+ const doc={head:{querySelector(s){assert.equal(s,'meta[name="description"]');return node;}}};
+ const run=vm.runInNewContext('('+restoreReviewedHead.toString()+')');assert.equal(run(doc,undefined,undefined,'Approved source description'),true);
+ for(let i=0;i<25;i++)assert.equal(run(doc,undefined,undefined,'Approved source description'),false);
+ assert.equal(writes,1);assert.equal(value,'Approved source description');assert.equal(run(doc),false);
+});
+
+test('Approved social description repairs both share tags without repeated writes',()=>{
+ const values={'meta[property="og:description"]':'Old OG','meta[name="twitter:description"]':'Old Twitter'};let writes=0;
+ const doc={head:{querySelector(selector){assert(selector in values);return {getAttribute:()=>values[selector],setAttribute(k,v){assert.equal(k,'content');values[selector]=v;writes++;}}}}};
+ const run=vm.runInNewContext('('+restoreReviewedHead.toString()+')');assert.equal(run(doc,undefined,undefined,undefined,'Approved social description'),true);assert.equal(writes,2);
+ for(let i=0;i<25;i++)assert.equal(run(doc,undefined,undefined,undefined,'Approved social description'),false);assert.equal(writes,2);
+});

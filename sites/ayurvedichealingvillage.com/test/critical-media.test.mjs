@@ -277,3 +277,5 @@ test('Retreat runtime image data is mapped before rendering only for the selecte
   }
  }
 });
+
+test('Panchakarma reuses the exact existing landscape derivative only on its phone route', () => { const original='/ahv/assets/img/gallery/ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd.webp', target='/ahv/assets/img/AHV-Ananda-Landscape-768-phone.avif'; assert.equal(phoneCriticalMedia(original,'/panchakarma/'),target); assert.equal(phoneCriticalMedia(original,'/unrelated/'),original); assert.equal(phoneCriticalMedia(target,'/panchakarma/'),target); const serialized=new Function('return ('+phoneCriticalMedia.toString()+')')(); assert.equal(serialized(original,'/panchakarma/'),target); });
