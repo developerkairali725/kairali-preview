@@ -7,7 +7,7 @@ export function reviewedCatalogueTitle(path, metadata) {
   return metadata?.title ?? (path === '/archive-yoga-retreat/' ? metadata?.ogTitle : undefined);
 }
 export function reviewedTitleFor(path, locale, title) {
-  return PATHS.has(path) && (LOCALES.has(locale) || (path === '/panchakarma/' && locale === 'en')) && typeof title === 'string' && title.trim() ? title : undefined;
+  return PATHS.has(path) && (LOCALES.has(locale) || (['/panchakarma/', '/archive-yoga-retreat/'].includes(path) && locale === 'en')) && typeof title === 'string' && title.trim() ? title : undefined;
 }
 // Self-contained: boot.ts injects this function into its existing head-mutation guard.
 export function restoreReviewedHead(doc, title, canonical, description, shareDescription) {
