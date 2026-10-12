@@ -1,5 +1,12 @@
 /** Selected image variants; only phone templates/snapshots use these. */
 export function phoneCriticalMedia(html, routePath = '') {
+  // PR406: same-photo phone derivatives, measured with the released font-loading fix.
+  var retreatImages = routePath === '/ananda-lahari-yoga-and-ayurveda-retreat/'
+    ? ['AHV-Ananda-Alcohol-Free', 'AHV-Ananda-Landscape', 'AHV-Ananda-Massage', 'AHV-Ananda-Village']
+    : routePath === '/archive-yoga-retreat/'
+      ? ['AHV-Retreat-Archive-Landscape', 'AHV-Retreat-Archive-01', 'AHV-Retreat-Archive-02', 'AHV-Retreat-Archive-03', 'AHV-Retreat-Archive-04', 'AHV-Retreat-Archive-05', 'AHV-Retreat-Archive-06', 'AHV-Retreat-Archive-07'] : [];
+  for (var retreatImage of retreatImages) html = html.split('/ahv/assets/img/' + retreatImage + '.webp').join('/ahv/assets/img/' + retreatImage + '-768-phone.avif');
+
   if (routePath === '/all-programs/') {
     for (var name of ['y-based', 'ayurveda-training', 'immune-1']) html = html.split('/ahv/assets/img/' + name + '.webp').join('/ahv/assets/img/' + name + '-768-card.avif');
     html = html.split('/ahv/assets/img/F-6.jpg').join('/ahv/assets/img/F-6-768-card.avif');

@@ -251,3 +251,16 @@ test('N12 programme background priorities stay route-scoped', () => {
   assert.equal(firstCriticalImage('<div></div>',route),null);
  }
 });
+
+test('Retreat phone derivatives keep photos exact-route scoped and survive runtime serialization', () => {
+  const serializable = new Function(`return (${phoneCriticalMedia.toString()})`)();
+  for (const [route,names] of [['/ananda-lahari-yoga-and-ayurveda-retreat/',['AHV-Ananda-Alcohol-Free','AHV-Ananda-Landscape','AHV-Ananda-Massage','AHV-Ananda-Village']],['/archive-yoga-retreat/',['AHV-Retreat-Archive-Landscape',...Array.from({length:7},(_,i)=>'AHV-Retreat-Archive-0'+(i+1))]]]) {
+    for (const name of names) {
+      const original='/ahv/assets/img/'+name+'.webp', derivative='/ahv/assets/img/'+name+'-768-phone.avif';
+      const html='<img src="'+original+'"><div style="background-image:url('+original+')"></div>';
+      assert.equal(serializable(html,route),html.replaceAll(original,derivative));
+      assert.equal(serializable(html,'/unrelated/'),html);
+      assert(fs.existsSync('public'+original));assert(fs.statSync('public'+derivative).size<fs.statSync('public'+original).size);
+    }
+  }
+});
