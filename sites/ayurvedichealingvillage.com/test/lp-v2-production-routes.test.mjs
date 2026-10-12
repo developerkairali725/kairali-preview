@@ -194,7 +194,7 @@ test("merge: .gitignore and next.config.ts carry main's lines and the kit's, wit
   for (const f of [gi, cfg]) assert.doesNotMatch(f, /^(<{7}|={7}|>{7})( |$)/m);
   assert.match(gi, /^\/docs\/lp-v2\/screens\/$/m);
   assert.match(gi, /^\/public\/design\/\*\.min\.js$/m);
-  assert.match(cfg, /experimental: \{ globalNotFound: true, cssChunking: false \}/);
+  assert.match(cfg, /experimental: \{ globalNotFound: true, cssChunking: false, inlineCss: true \}/);
   assert.match(cfg, /process\.env\.LP_DIST_DIR \? \{ distDir: process\.env\.LP_DIST_DIR \}/);
   assert.match(cfg, /source: "\/lp-v2\/:path\*"/);
   assert.match(cfg, /\{ key: "Cache-Control", value: "private, no-store" \}/);
