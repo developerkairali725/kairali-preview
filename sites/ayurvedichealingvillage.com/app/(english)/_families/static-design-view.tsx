@@ -113,7 +113,7 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
     : route.path === "/panchakarma-therapy/"
       ? `#ahv-design-root .sc-host main#main-content > section[data-dc-tpl]:not(:first-of-type){content-visibility:auto;contain-intrinsic-size:auto 1000px}`
       : "";
-  const serverOnlySnapshot = ["/", "/contact-us/", "/all-programs/", "/ayurveda-training-programme/"].includes(route.path);
+  const serverOnlySnapshot = ["/", "/contact-us/", "/all-programs/"].includes(route.path);
   const phoneImage = route.path === "/all-programs/" ? null : firstCriticalImage(mobile);
   const wideImage = route.path === "/all-programs/" ? null : firstCriticalImage(desktop);
   const phonePaint = snapshotStylesFor(cfg);

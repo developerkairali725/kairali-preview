@@ -162,7 +162,9 @@ test("Monsoon image-led loading uses its traced exact route only", () => {
 test("finder and hub preload only body and existing heading faces; unrelated routes retain body-only", () => {
  const css='@font-face{font-family:"Mulish";font-weight:400;src:url("body.common.woff2")}@font-face{font-family:"Marcellus";font-weight:400;src:url("heading.common.woff2")}@font-face{font-family:"Mulish";font-weight:700;src:url("bold.common.woff2")}';
  const styles={fonts:['/ahv/fonts/test.css'],styles:['body{font-family:Mulish}']};
- for(const route of ['/all-programs/','/ayurveda-training-programme/']) assert.deepEqual(routeFontPreloads(route,styles,()=>css),['/ahv/fonts/body.common.woff2','/ahv/fonts/heading.common.woff2']);
+ for(const route of ['/all-programs/','/ayurveda-training-programme/']) assert.deepEqual(routeFontPreloads(route,styles,()=>css,'de'),['/ahv/fonts/body.common.woff2','/ahv/fonts/heading.common.woff2']);
+ assert.deepEqual(routeFontPreloads('/all-programs/',styles,()=>css,'en'),['/ahv/fonts/body.common.woff2','/ahv/fonts/heading.common.woff2']);
+ assert.deepEqual(routeFontPreloads('/ayurveda-training-programme/',styles,()=>css,'en'),['/ahv/fonts/body.common.woff2','/ahv/fonts/heading.common.woff2','/ahv/fonts/bold.common.woff2']);
  assert.deepEqual(routeFontPreloads('/offers/',styles,()=>css),['/ahv/fonts/body.common.woff2']);
  assert.deepEqual(routeFontPreloads('/all-programs/',styles,()=>null),[]);
 });
