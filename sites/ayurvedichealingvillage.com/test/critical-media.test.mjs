@@ -254,7 +254,7 @@ test('N12 programme background priorities stay route-scoped', () => {
 
 test('Retreat phone derivatives keep photos exact-route scoped and survive runtime serialization', () => {
   const serializable = new Function(`return (${phoneCriticalMedia.toString()})`)();
-  for (const [route,names] of [['/ananda-lahari-yoga-and-ayurveda-retreat/',['AHV-Ananda-Alcohol-Free','AHV-Ananda-Landscape','AHV-Ananda-Massage','AHV-Ananda-Village']]]) {
+  for (const [route,names] of [['/ananda-lahari-yoga-and-ayurveda-retreat/',['AHV-Ananda-Alcohol-Free','AHV-Ananda-Landscape','AHV-Ananda-Massage','AHV-Ananda-Village']],['/archive-yoga-retreat/',['AHV-Retreat-Archive-Landscape',...Array.from({length:7},(_,i)=>'AHV-Retreat-Archive-0'+(i+1))]]]) {
     for (const name of names) {
       const original='/ahv/assets/img/'+name+'.webp', derivative='/ahv/assets/img/'+name+'-768-phone.avif';
       const html='<img src="'+original+'"><div style="background-image:url('+original+')"></div>';
@@ -267,7 +267,7 @@ test('Retreat phone derivatives keep photos exact-route scoped and survive runti
 
 test('Retreat runtime image data is mapped before rendering only for the selected phone route', () => {
  const runtime=new Function(`return (${retreatRuntimeMedia.toString()})`)();
- for(const [route,key,collection,name] of [['/ananda-lahari-yoga-and-ayurveda-retreat/','AHV_ANANDA','sections','AHV-Ananda-Village']]){
+ for(const [route,key,collection,name] of [['/ananda-lahari-yoga-and-ayurveda-retreat/','AHV_ANANDA','sections','AHV-Ananda-Village'],['/archive-yoga-retreat/','AHV_PAST_RETREATS','cards','AHV-Retreat-Archive-01']]){
   for(const phone of [false,true]){
    const image='/ahv/assets/img/'+name+'.webp',row={image,text:'Unchanged'};
    const win={matchMedia:()=>({matches:phone}),[key]:{[collection]:[row,{text:'No image'}]}};

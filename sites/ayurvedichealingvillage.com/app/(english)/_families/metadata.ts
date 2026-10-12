@@ -1,3 +1,4 @@
+import { reviewedCatalogueTitle } from "./localized-title.mjs";
 import { routeRobots } from "./robots-policy";
 /**
  * AHV English candidate — per-route head metadata.
@@ -70,7 +71,7 @@ function localizedFields(route: CandidateRoute, locale: LocaleCode) {
   const canonical = canonicalUrl(route.path, locale);
   return {
     ...m,
-    title: d?.title ?? m.title,
+    title: reviewedCatalogueTitle(route.path, d) ?? m.title,
     description: d?.description ?? m.description,
     ogTitle: d?.ogTitle ?? d?.title ?? m.ogTitle,
     ogDescription: d?.ogDescription ?? d?.description ?? m.ogDescription,
