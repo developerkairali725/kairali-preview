@@ -173,7 +173,7 @@ export function imageLedFirstScreen(routePath) {
 /** Measured text-led finder/hub: preload only the existing heading face alongside the body face. */
 export function routeFontPreloads(route, styles, readText, locale = "en") {
   const body = bodyFontFiles(styles, readText);
-  if (route !== "/ayurveda-treatment/" && route !== "/mindfulness-retreat/" && route !== "/all-programs/" && route !== "/ayurveda-training-programme/") return body;
+  if (!["/ayurveda-treatment/", "/mindfulness-retreat/", "/all-programs/", "/ayurveda-training-programme/", "/ananda-lahari-yoga-and-ayurveda-retreat/", "/ashtanga-yoga-and-ayurveda-retreat/"].includes(route)) return body;
   const heading = bodyFontFiles({ ...styles, styles: ['body{font-family:"Marcellus"}'] }, readText);
   const ui = route === "/ayurveda-training-programme/" && locale === "en" ? [...bodyFontFiles(styles, readText, "600"), ...bodyFontFiles(styles, readText, "700")] : [];
   return [...new Set([...body, ...heading, ...ui])];

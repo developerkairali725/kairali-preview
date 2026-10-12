@@ -5,7 +5,7 @@ import { repairFaqTopicTargets } from './faq-topic-targets.mjs';
 import { orderedRuntimeScripts } from './runtime-script-order.mjs';
 import { removeHomeVillaRates } from './home-villa-rates.mjs';
 import {offersFlow} from './offers-flow.mjs';
-import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, monsoonRuntimeMedia } from "./critical-media.mjs";
+import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, monsoonRuntimeMedia, retreatRuntimeMedia } from "./critical-media.mjs";
 import { formPostSafety } from "./form-post-safety.mjs";
 import {
   EAGER_SLOTS,
@@ -1324,7 +1324,7 @@ export const BOOT_SCRIPT = `
         s.src = entry.src;
         if (entry.view) s.setAttribute("data-ahv-view", entry.view);
         s.async = false; // keeps classic-script execution in insertion order
-        s.onload = function () { if (entry.src.endsWith("/article-family-data.js")) (${monsoonRuntimeMedia.toString()})(window, cfg.path); honeypotDatasetCache = new WeakMap(); hideHoneypots(host); };
+        s.onload = function () { if (entry.src.endsWith("/article-family-data.js")) (${monsoonRuntimeMedia.toString()})(window, cfg.path); if (/ananda-retreat-data[.]js$/.test(entry.src)) (${retreatRuntimeMedia.toString()})(window, cfg.path, (${phoneCriticalMedia.toString()})); honeypotDatasetCache = new WeakMap(); hideHoneypots(host); };
         s.onerror = function () { fail(new Error("script " + entry.src)); };
         host.appendChild(s);
       });

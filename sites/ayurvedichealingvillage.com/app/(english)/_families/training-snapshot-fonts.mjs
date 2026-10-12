@@ -5,6 +5,8 @@
  * Unrecognised entities or ranges conservatively keep the complete stylesheet.
  */
 export const TRAINING_SNAPSHOT_ROUTES = new Set([
+  "/ananda-lahari-yoga-and-ayurveda-retreat/",
+  "/ashtanga-yoga-and-ayurveda-retreat/",
   "/ayurveda-treatment/", "/mindfulness-retreat/",
   "/all-programs/",
   "/ayurveda-training-programme/",

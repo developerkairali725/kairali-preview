@@ -1,5 +1,11 @@
 /** Selected image variants; only phone templates/snapshots use these. */
 export function phoneCriticalMedia(html, routePath = '') {
+  // PR406: same-photo phone derivatives, measured with the released font-loading fix.
+  var retreatImages = routePath === '/ananda-lahari-yoga-and-ayurveda-retreat/'
+    ? ['AHV-Ananda-Alcohol-Free', 'AHV-Ananda-Landscape', 'AHV-Ananda-Massage', 'AHV-Ananda-Village']
+    : [];
+  for (var retreatImage of retreatImages) html = html.split('/ahv/assets/img/' + retreatImage + '.webp').join('/ahv/assets/img/' + retreatImage + '-768-phone.avif');
+
   if (routePath === '/all-programs/') {
     for (var name of ['y-based', 'ayurveda-training', 'immune-1']) html = html.split('/ahv/assets/img/' + name + '.webp').join('/ahv/assets/img/' + name + '-768-card.avif');
     html = html.split('/ahv/assets/img/F-6.jpg').join('/ahv/assets/img/F-6-768-card.avif');
@@ -111,4 +117,14 @@ export function monsoonRuntimeMedia(win, routePath) {
   if (route && route.heroImg && route.heroImg.src === '/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19.webp') {
     route.heroImg = Object.assign({}, route.heroImg, { src: '/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19-768.avif' });
   }
+}
+
+/** Map the same selected phone photos before retreat data renders; desktop data stays intact. */
+export function retreatRuntimeMedia(win, routePath, phoneSrc) {
+  if (!win.matchMedia('(max-width:699px)').matches) return;
+  var rows = routePath === '/ananda-lahari-yoga-and-ayurveda-retreat/'
+    ? win.AHV_ANANDA && win.AHV_ANANDA.sections
+    : null;
+  if (!rows) return;
+  for (var row of rows) if (typeof row.image === 'string') row.image = phoneSrc(row.image, routePath);
 }
