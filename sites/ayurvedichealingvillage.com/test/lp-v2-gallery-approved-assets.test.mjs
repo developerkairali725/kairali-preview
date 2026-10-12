@@ -13,6 +13,7 @@ import { ROUTES } from "../campaign-v2/production/bindings.ts";
 import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/load.ts";
 import { IMAGES } from "../campaign-v2/data/images.ts";
 import { APPROVED_GALLERY_IMAGES, APPROVED_GALLERY_ADDITIONS } from "../campaign-v2/data/gallery-images.ts";
+import { UI } from "../campaign-v2/production/ui.ts";
 import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -24,12 +25,18 @@ const BATCH2 = [
   "monsoon-wellness", "rejuvenation-detox", "ayurveda-retreat", "wellness-kerala", "cleansing-centre", "treatment-kerala",
   "weight-management", "lp-hospital-kerala", "lp-cleansing-centre", "lp-pain-management", "lp-treatment-kerala", "lp-treatment-packages",
 ];
-const TARGETS = [...FIRST4, ...BATCH2];
-// Variant D (no village, so no gallery on the page) and the later batch (lp-weight-management, German, Russian).
-const UNTARGETED = ["south-india-cities", "brand", "lp-south-india", "lp-brand", "lp-panchakarma", "lp-weight-management", "lp-behandlung-kerala", "lp-treatment-kerala-ru"];
+const BATCH3 = ["lp-weight-management", "lp-behandlung-kerala", "lp-treatment-kerala-ru"];
+const TARGETS = [...FIRST4, ...BATCH2, ...BATCH3];
+// Variant D has no visible gallery; preserve these five routes.
+const UNTARGETED = ["south-india-cities", "brand", "lp-south-india", "lp-brand", "lp-panchakarma"];
 
 // Frozen before the additions (first four at a831a6348, batch 2 at d9aabf28): each target route's gallery, in order.
 const BASE_GALLERY = {
+  // Final three galleries frozen from PR402 before the additions.
+  "lp-weight-management": [["Villas", "kt-116"], ["Villas", "kt-314"], ["Grounds", "wx-hero"], ["Grounds", "gal-poolside-rest-palakkad-2026"], ["Therapies", "kt-199"], ["Therapies", "kt-190"], ["Therapies", "kt-202"]],
+  "lp-behandlung-kerala": [["Villas", "kt-116"], ["Villas", "kt-314"], ["Grounds", "wx-hero"], ["Grounds", "gal-poolside-rest-palakkad-2026"], ["Dining", "wx-dining"], ["Therapies", "kt-202"], ["Therapies", "kt-199"]],
+  "lp-treatment-kerala-ru": [["Villas", "kt-116"], ["Villas", "kt-314"], ["Grounds", "wx-hero"], ["Grounds", "gal-poolside-rest-palakkad-2026"], ["Dining", "wx-dining"], ["Therapies", "kt-190"], ["Therapies", "kt-199"]],
+
   "treatment-packages": [["Villas", "kt-116"], ["Villas", "kt-314"], ["Grounds", "wx-hero"], ["Grounds", "gal-poolside-rest-palakkad-2026"], ["Dining", "wx-dining"], ["Therapies", "kt-199"]],
   panchakarma: [["Villas", "kt-116"], ["Villas", "kt-314"], ["Grounds", "wx-hero"], ["Grounds", "gal-poolside-rest-palakkad-2026"], ["Dining", "wx-dining"], ["Therapies", "kt-202"]],
   "pain-management": [["Villas", "kt-116"], ["Villas", "kt-314"], ["Grounds", "wx-hero"], ["Grounds", "gal-poolside-rest-palakkad-2026"], ["Dining", "wx-dining"], ["Therapies", "kt-202"]],
@@ -48,11 +55,12 @@ const BASE_GALLERY = {
   "lp-treatment-packages": [["Villas", "kt-314"], ["Grounds", "wx-hero"], ["Grounds", "gal-poolside-rest-palakkad-2026"], ["Dining", "wx-dining"], ["Therapies", "kt-202"], ["Therapies", "kt-190"], ["Therapies", "kt-199"]],
 };
 // Frozen SHA-256 of JSON.stringify of: the first four routes' bindings without `gallery` (a831a6348); the twelve batch-2
-// routes' bindings without `gallery` and the eight untargeted routes' full bindings (d9aabf28, same as a831a6348 for
+// routes' bindings without `gallery` and the five untargeted routes' full bindings (d9aabf28, same as a831a6348 for
 // those). Any change to those fields or routes changes the hash.
 const BASE_FIRST4_NO_GALLERY_HASH = "2f13ed04cdb22313676ad5ab4174f86640d7d9941178f24cf6a95720827d58d9";
 const BASE_BATCH2_NO_GALLERY_HASH = "0300b401a6dac87a8b1c5ad621352023a8fb974ced6100df121eac546df85aa6";
-const BASE_UNTARGETED_HASH = "87665e4d24357679ce5f1a06da43bd0365ba1566353ab0d67a32815c4e83a6a6";
+const BASE_BATCH3_NO_GALLERY_HASH = "8a2c23c0c441a1320d26d748c665d79840e6402724bc946970102e8eed3bb1ce";
+const BASE_UNTARGETED_HASH = "b715fa590241da12ef34b076c5ef6dff32a60359c276a307c8ff7b8fbbca7ba6";
 const pick = (slugs, dropGallery) => Object.fromEntries(slugs.map((s) => {
   if (!dropGallery) return [s, ROUTES[s]];
   const { gallery, ...rest } = ROUTES[s];
@@ -77,7 +85,7 @@ function webpSize(buf) {
 
 test("targets: the existing gallery is kept entry for entry, then only the approved additions are appended", () => {
   assert.ok(APPROVED_GALLERY_ADDITIONS.length >= 1);
-  assert.equal(TARGETS.length, 16);
+  assert.equal(TARGETS.length, 19);
   assert.equal(new Set([...TARGETS, ...UNTARGETED]).size, 24);
   assert.deepEqual([...TARGETS, ...UNTARGETED].sort(), [...PRODUCTION_SLUGS].sort());
   for (const slug of TARGETS) {
@@ -97,6 +105,7 @@ test("targets: the existing gallery is kept entry for entry, then only the appro
 test("targets: hero, phone hero, stillness, steps photograph and every other field are unchanged", () => {
   assert.equal(sha256(JSON.stringify(pick(FIRST4, true))), BASE_FIRST4_NO_GALLERY_HASH);
   assert.equal(sha256(JSON.stringify(pick(BATCH2, true))), BASE_BATCH2_NO_GALLERY_HASH);
+  assert.equal(sha256(JSON.stringify(pick(BATCH3, true))), BASE_BATCH3_NO_GALLERY_HASH);
   for (const slug of TARGETS) {
     const b = ROUTES[slug];
     const steps = b.pathwayImage.id;
@@ -107,8 +116,8 @@ test("targets: hero, phone hero, stillness, steps photograph and every other fie
   }
 });
 
-test("the eight untargeted routes are unchanged and carry none of the additions", () => {
-  assert.equal(UNTARGETED.length, 8);
+test("the five untargeted routes are unchanged and carry none of the additions", () => {
+  assert.equal(UNTARGETED.length, 5);
   assert.deepEqual(Object.keys(ROUTES).filter((s) => !TARGETS.includes(s)), UNTARGETED);
   assert.equal(sha256(JSON.stringify(pick(UNTARGETED, false))), BASE_UNTARGETED_HASH);
   for (const slug of UNTARGETED) {
@@ -121,8 +130,8 @@ test("counts: the page config carries the binding's gallery, so the mosaic chip 
   for (const slug of TARGETS) {
     const c = productionCampaign(slug);
     assert.equal(c.modesty, "standard", slug);
-    // Every target is an English page that shows the village (mosaic + dialog); no non-English route is a target.
-    assert.deepEqual(c.locales, ["en"], slug);
+    // Preserve the existing single locale on each route, including German and Russian.
+    assert.deepEqual(c.locales, [ROUTES[slug].locale ?? "en"], slug);
     assert.ok(c.page.place, `${slug}: shows the village`);
     assert.deepEqual(c.gallery, ROUTES[slug].gallery, slug);
     // Village.tsx Mosaic: more = pool.length - tiles.length (pool = gallery on a standard page); the dialog gets c.gallery.
@@ -201,6 +210,13 @@ test("files: each addition is in public/, tracked in git, a WebP of the stated s
   }
 });
 
-test("lint: the sixteen target routes stay free of kit lint errors (alt length, size, consent, duplicates, count)", () => {
+test("lint: the nineteen target routes stay free of kit lint errors (alt length, size, consent, duplicates, count)", () => {
   for (const slug of TARGETS) assert.deepEqual(lintCampaign(productionCampaign(slug), NOW).errors, [], slug);
+});
+
+test("German and Russian additions retain localized accessible descriptions", () => {
+  for (const locale of ["de", "ru"]) for (const { image } of APPROVED_GALLERY_IMAGES) {
+    assert.ok(UI[locale].alt[image.id]?.length > 20, `${locale}: ${image.id}`);
+    assert.notEqual(UI[locale].alt[image.id], image.alt);
+  }
 });
