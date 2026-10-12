@@ -4,7 +4,7 @@
  * visible text, so hidden menus and generated content retain their glyph coverage.
  * Unrecognised entities or ranges conservatively keep the complete stylesheet.
  */
-const ROUTES = new Set([
+export const TRAINING_SNAPSHOT_ROUTES = new Set([
   "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
   "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
   "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
@@ -14,7 +14,7 @@ const ROUTES = new Set([
 ]);
 const ENTITIES = { amp: "&", quot: '"', apos: "'", lt: "<", gt: ">", nbsp: "\u00a0" };
 export function trainingSnapshotFontCss(route, css, snapshot) {
-  if (!ROUTES.has(route) || !snapshot) return css;
+  if (!TRAINING_SNAPSHOT_ROUTES.has(route) || !snapshot) return css;
   let unknown = false;
   const decoded = snapshot.replace(/&(#x[0-9a-f]+|#\d+|[a-z][a-z0-9]+);/gi, (all, entity) => {
     if (entity[0] === "#") {
