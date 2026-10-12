@@ -5,7 +5,7 @@ export function reviewedTitleFor(path, locale, title) {
   return PATHS.has(path) && (LOCALES.has(locale) || (path === '/panchakarma/' && locale === 'en')) && typeof title === 'string' && title.trim() ? title : undefined;
 }
 // Self-contained: boot.ts injects this function into its existing head-mutation guard.
-export function restoreReviewedHead(doc, title, canonical, description) {
+export function restoreReviewedHead(doc, title, canonical, description, shareDescription) {
   let changed = false;
   if (typeof title === 'string' && title.trim()) {
     let node = doc.head.querySelector('title');
@@ -21,6 +21,13 @@ export function restoreReviewedHead(doc, title, canonical, description) {
     let node = doc.head.querySelector('meta[name="description"]');
     if (!node) { node = doc.createElement('meta'); node.setAttribute('name', 'description'); node.setAttribute('content', description); doc.head.appendChild(node); changed = true; }
     else if (node.getAttribute('content') !== description) { node.setAttribute('content', description); changed = true; }
+  }
+  if (typeof shareDescription === 'string' && shareDescription.trim()) {
+    for (const [attribute, key] of [['property', 'og:description'], ['name', 'twitter:description']]) {
+      let node = doc.head.querySelector('meta[' + attribute + '="' + key + '"]');
+      if (!node) { node = doc.createElement('meta'); node.setAttribute(attribute, key); node.setAttribute('content', shareDescription); doc.head.appendChild(node); changed = true; }
+      else if (node.getAttribute('content') !== shareDescription) { node.setAttribute('content', shareDescription); changed = true; }
+    }
   }
   return changed;
 }

@@ -110,6 +110,7 @@ export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"
     path: route.path,
     contentReviewCopy: reviewCopyFor(route.path, locale),
     reviewedLocaleTitle,
+    reviewedShareDescription: route.path === "/panchakarma/" ? ((locale === "en" ? route.metadata.ogDescription ?? route.metadata.description : localeData(locale)?.meta[route.path]?.ogDescription ?? localeData(locale)?.meta[route.path]?.description ?? route.metadata.ogDescription ?? route.metadata.description) ?? undefined) : undefined,
     reviewedDescription: route.path === "/panchakarma/" ? ((locale === "en" ? route.metadata.description : localeData(locale)?.meta[route.path]?.description ?? route.metadata.description) ?? undefined) : undefined,
     reviewedLocaleCanonical: (reviewedLocaleTitle || (route.path === "/karkidaka-chikitsha-or-monsoon-wellness.html" && locale !== "en")) ? ((route.path === "/panchakarma/" && locale === "en" ? serverCanonical(route) : canonicalUrl(route.path, locale)) ?? undefined) : undefined,
     bookingCopy: bookingLabelsFor(locale),
