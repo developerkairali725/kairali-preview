@@ -118,5 +118,15 @@
     "source": "/de/lakshya-yoga-retreat-2017/",
     "destination": "/lakshya-yoga-retreat-2017/",
     "evidence": "Live ayurvedichealingvillage.com resolves this legacy URL (301/200, read-only check 29 Sep 2026, SEO lane D-12); destination = the live target, HTTP 200 on the candidate. WOPS-AHV-FINAL-DRAFT-20260924-001"
+  },
+  {
+    "source": "/ayurvedic-treatment-packages/",
+    "destination": "/ayurvedic-treatment-packages.html",
+    "evidence": "N08 tracked URL returns404; repair to its existing accepted matching .html destination under standing implementation/live-release authority in AGENTS.md. Exact source/destination evidence: local-first-20261011/N08-aliases/."
+  },
+  {
+    "source": "/ayurveda-retreat-kerala/",
+    "destination": "/ayurveda-retreat-kerala.html",
+    "evidence": "N08 tracked URL returns404; repair to its existing accepted matching .html destination under standing implementation/live-release authority in AGENTS.md. Exact source/destination evidence: local-first-20261011/N08-aliases/."
   }
 ]
