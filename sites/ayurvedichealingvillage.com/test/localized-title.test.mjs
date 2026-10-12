@@ -40,3 +40,4 @@ test('Archive reuses approved localized OG title only when its title is absent',
  assert.equal(reviewedCatalogueTitle('/archive-yoga-retreat/',{title:'Explicit',ogTitle:'Other'}),'Explicit');
  assert.equal(reviewedCatalogueTitle('/unreviewed/',{title:null,ogTitle:'Other'}),undefined);
 });
+test("Mindfulness keeps accepted translated titles without changing English", () => { assert.equal(reviewedTitleFor("/mindfulness-retreat/", "de", "Achtsamkeits-Retreat"), "Achtsamkeits-Retreat"); assert.equal(reviewedTitleFor("/mindfulness-retreat/", "en", "Mindfulness Retreat"), undefined); });
