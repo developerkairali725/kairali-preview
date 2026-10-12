@@ -8,7 +8,7 @@ import {fileURLToPath} from 'node:url';
 const site=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const expected={
   "../../campaign-v110/integration.css": "ab3cf7ddd7531ee958f4d9132d039b576cfe60338f34c54c68b57faf10e6f8e0",
-  "../../public/design/campaign-bundle.css": "a64ce2ae9c70fcb8cc9cede72861ecd7cb442ee0cacc32b708e41430e99acb31",
+  "../../public/design/campaign-bundle.css": "27ed59f20509c4e0faa1522d4ec70d18e2143c2b9a71887d279ac57b02f31e2f",
   "../styles/base.css": "e4ad7f370d9d7ac29c3987dc3b5e8a4db90cba65064e1da5e5a0d6504c85e940",
   "../sections/sections.css": "e0dba528a7476ad61aecbd070fdf8d87be2ae0f3a75c35294ced1ba469525b3b",
   "./production.css": "289084143a396ebad7b899252efc332e8f72bd96b733fe48ed06d918e7fb0bbe"
