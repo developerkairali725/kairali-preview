@@ -10,6 +10,9 @@ from fontTools import subset
 from fontTools.ttLib import TTFont
 units=json.load(open('l10n/source/units.json'))['units'];common=set(range(0x180))
 for u in units:common.update(map(ord,u['source']))
+# Shared language-menu labels occur on every locale, including Latin-script pages.
+# Keep their covered glyphs in the common subset to avoid loading an entire extra face.
+for locale in json.load(open('l10n/locales.json')).values():common.update(map(ord,locale['name']))
 
 import re,hashlib
 root=Path('public/ahv/fonts');css_paths=list(root.glob('*.css'))
