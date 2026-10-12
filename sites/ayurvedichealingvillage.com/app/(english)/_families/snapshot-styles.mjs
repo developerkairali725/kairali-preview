@@ -165,8 +165,8 @@ export function firstScreenPoster(snapshotHtml) {
  */
 // N12: the saved 2026-10-11 mobile traces identify these two programme background heroes as LCP.
 // Monsoon: saved 2026-10-12 trace confirms the phone hero is the only LCP candidate.
-// Panchakarma Therapy: saved EN/DE traces identify the phone hero DIV image as the sole LCP candidate.
-const IMAGE_LED_FIRST_SCREEN = new Set(["/panchakarma-therapy/", "/karkidaka-chikitsha-or-monsoon-wellness.html", "/digestive-wellness-gut-health-yoga-therapy/", "/weight-loss-programme/", "/offers/", "/treatment-for-bronchial-diseases/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/"]);
+// Saved EN/DE traces identify programme hero DIV images as final LCP candidates for these three routes.
+const IMAGE_LED_FIRST_SCREEN = new Set(["/panchakarma-therapy/", "/post-pregnancy-health-programme/", "/preventive-and-regenerative-treatment/", "/karkidaka-chikitsha-or-monsoon-wellness.html", "/digestive-wellness-gut-health-yoga-therapy/", "/weight-loss-programme/", "/offers/", "/treatment-for-bronchial-diseases/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/"]);
 export function imageLedFirstScreen(routePath) {
   return IMAGE_LED_FIRST_SCREEN.has(String(routePath || ""));
 }
@@ -174,7 +174,7 @@ export function imageLedFirstScreen(routePath) {
 /** Measured text-led finder/hub: preload only the existing heading face alongside the body face. */
 export function routeFontPreloads(route, styles, readText, locale = "en") {
   const body = bodyFontFiles(styles, readText);
-  if (!["/panchakarma-therapy/", "/panchakarma/", "/ayurveda-treatment/", "/mindfulness-retreat/", "/all-programs/", "/ayurveda-training-programme/", "/ananda-lahari-yoga-and-ayurveda-retreat/", "/ashtanga-yoga-and-ayurveda-retreat/"].includes(route)) return body;
+  if (!["/panchakarma-therapy/", "/post-pregnancy-health-programme/", "/preventive-and-regenerative-treatment/", "/panchakarma/", "/ayurveda-treatment/", "/mindfulness-retreat/", "/all-programs/", "/ayurveda-training-programme/", "/ananda-lahari-yoga-and-ayurveda-retreat/", "/ashtanga-yoga-and-ayurveda-retreat/"].includes(route)) return body;
   const heading = bodyFontFiles({ ...styles, styles: ['body{font-family:"Marcellus"}'] }, readText);
   const ui = route === "/ayurveda-training-programme/" && locale === "en" ? [...bodyFontFiles(styles, readText, "600"), ...bodyFontFiles(styles, readText, "700")] : [];
   return [...new Set([...body, ...heading, ...ui])];
