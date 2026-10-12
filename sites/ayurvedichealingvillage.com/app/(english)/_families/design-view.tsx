@@ -1,3 +1,4 @@
+import { reviewedTitleFor } from "./localized-title.mjs";
 import { SnapshotStyles, type SnapshotStyleAsset } from './SnapshotStyles';
 import { routeStylesFor, routeStyleHref } from "./route-styles.mjs";
 import { reviewCopyFor, applyReviewSnapshot, bookingLabelsFor } from "./content-review.mjs";
@@ -35,7 +36,7 @@ import { routeSchema } from "./schema";
 import { readFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { gunzipSync } from "node:zlib";
-import { LOCALE_INFO, LOCALE_CODES, localizedPath, t, type LocaleCode } from "./l10n";
+import { LOCALE_INFO, LOCALE_CODES, localizedPath, canonicalUrl, localeData, t, type LocaleCode } from "./l10n";
 import componentMap from "../../../english-candidate/component-map.json";
 import analyticsConfig from "../../../analytics.config.json";
 import consistencyLock from "../../../english-candidate/consistency-locked-families.json";
@@ -94,6 +95,7 @@ const PREVIEW_SRC = "/ahv/preview/portable-preview.js";
 
 export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"): BootConfig {
   const info = LOCALE_INFO[locale];
+  const reviewedLocaleTitle = reviewedTitleFor(route.path, locale, localeData(locale)?.meta[route.path]?.title);
   const base = locale === "en" ? "" : `/ahv/l10n/${info.prefix}`;
   const resources = Object.fromEntries(
     Object.entries(componentMap.resources as Record<string, string>).map(([k, v]) => [k, locale === "en" ? v : v.replace(/^\/ahv\//, `${base}/`)]),
@@ -104,6 +106,8 @@ export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"
     // visitor sees is locale.path.
     path: route.path,
     contentReviewCopy: reviewCopyFor(route.path, locale),
+    reviewedLocaleTitle,
+    reviewedLocaleCanonical: reviewedLocaleTitle ? canonicalUrl(route.path, locale) : undefined,
     bookingCopy: bookingLabelsFor(locale),
     robots: routeRobots(route),
     desktopView: route.desktopView,
