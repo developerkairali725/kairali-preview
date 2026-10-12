@@ -1,3 +1,4 @@
+import { serverCanonical } from "./canonical-policy.mjs";
 import { articleContactHeadingHtml } from "./article-contact-heading.mjs";
 import { trainingSnapshotFontCss } from "./training-snapshot-fonts.mjs";
 import { reviewedTitleFor } from "./localized-title.mjs";
@@ -97,7 +98,7 @@ const PREVIEW_SRC = "/ahv/preview/portable-preview.js";
 
 export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"): BootConfig {
   const info = LOCALE_INFO[locale];
-  const reviewedLocaleTitle = reviewedTitleFor(route.path, locale, localeData(locale)?.meta[route.path]?.title);
+  const reviewedLocaleTitle = reviewedTitleFor(route.path, locale, locale === "en" ? route.metadata.title : localeData(locale)?.meta[route.path]?.title);
   const base = locale === "en" ? "" : `/ahv/l10n/${info.prefix}`;
   const resources = Object.fromEntries(
     Object.entries(componentMap.resources as Record<string, string>).map(([k, v]) => [k, locale === "en" ? v : v.replace(/^\/ahv\//, `${base}/`)]),
@@ -109,7 +110,8 @@ export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"
     path: route.path,
     contentReviewCopy: reviewCopyFor(route.path, locale),
     reviewedLocaleTitle,
-    reviewedLocaleCanonical: (reviewedLocaleTitle || (route.path === "/karkidaka-chikitsha-or-monsoon-wellness.html" && locale !== "en")) ? canonicalUrl(route.path, locale) : undefined,
+    reviewedDescription: route.path === "/panchakarma/" ? ((locale === "en" ? route.metadata.description : localeData(locale)?.meta[route.path]?.description ?? route.metadata.description) ?? undefined) : undefined,
+    reviewedLocaleCanonical: (reviewedLocaleTitle || (route.path === "/karkidaka-chikitsha-or-monsoon-wellness.html" && locale !== "en")) ? ((route.path === "/panchakarma/" && locale === "en" ? serverCanonical(route) : canonicalUrl(route.path, locale)) ?? undefined) : undefined,
     bookingCopy: bookingLabelsFor(locale),
     robots: routeRobots(route),
     desktopView: route.desktopView,

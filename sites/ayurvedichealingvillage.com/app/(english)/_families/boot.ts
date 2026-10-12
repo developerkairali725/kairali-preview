@@ -73,6 +73,7 @@ import IMAGE_ALIASES from "../../../english-candidate/image-aliases.json";
 
 export interface BootConfig {
   reviewedLocaleTitle?: string;
+  reviewedDescription?: string;
   reviewedLocaleCanonical?: string;
   bookingCopy?: {old: string; new: string};
   contentReviewCopy?: Array<{old: string; new: string; kind: string}>;
@@ -1128,7 +1129,7 @@ export const BOOT_SCRIPT = `
   function enforceStagingHead() {
     governedWins("title");
     governedWins('link[rel="canonical"]');
-    (${restoreReviewedHead.toString()})(document, cfg.reviewedLocaleTitle, cfg.reviewedLocaleCanonical);
+    (${restoreReviewedHead.toString()})(document, cfg.reviewedLocaleTitle, cfg.reviewedLocaleCanonical, cfg.reviewedDescription);
     governedWins('meta[name="description"]');
     // og:* and twitter:* are many slots, so they dedupe per property name.
     var tagged = document.head.querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]');

@@ -1,11 +1,11 @@
 // N08: keep the accepted reviewed programme and training locale titles after imported views write their English helmet.
-const PATHS = new Set(["/mindfulness-retreat/", "/ananda-lahari-yoga-and-ayurveda-retreat/", "/ashtanga-yoga-and-ayurveda-retreat/", "/all-programs/", "/ayurveda-training-programme/", "/ayurvedic-treatment-packages.html", "/panchkarma-treatment.html", "/weight-loss-programme/", "/digestive-wellness-gut-health-yoga-therapy/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-bronchial-diseases/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/", "/personalized-customized-healing-program/", "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/", "/intensive-ayurveda-training-program-learn-practice-ayurveda/", "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/", "/new-to-yoga-teacher-training/", "/one-day-ayurveda-workshop-program-kerala/", "/three-day-short-term-ayurveda-certificate-program-tap-hv/"]);
+const PATHS = new Set(["/panchakarma/", "/mindfulness-retreat/", "/ananda-lahari-yoga-and-ayurveda-retreat/", "/ashtanga-yoga-and-ayurveda-retreat/", "/all-programs/", "/ayurveda-training-programme/", "/ayurvedic-treatment-packages.html", "/panchkarma-treatment.html", "/weight-loss-programme/", "/digestive-wellness-gut-health-yoga-therapy/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-bronchial-diseases/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/", "/personalized-customized-healing-program/", "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/", "/intensive-ayurveda-training-program-learn-practice-ayurveda/", "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/", "/new-to-yoga-teacher-training/", "/one-day-ayurveda-workshop-program-kerala/", "/three-day-short-term-ayurveda-certificate-program-tap-hv/"]);
 const LOCALES = new Set(['hi','de','fr','es','it','pt','nl','ru','ar','zh-Hans','ja','ko']);
 export function reviewedTitleFor(path, locale, title) {
-  return PATHS.has(path) && LOCALES.has(locale) && typeof title === 'string' && title.trim() ? title : undefined;
+  return PATHS.has(path) && (LOCALES.has(locale) || (path === '/panchakarma/' && locale === 'en')) && typeof title === 'string' && title.trim() ? title : undefined;
 }
 // Self-contained: boot.ts injects this function into its existing head-mutation guard.
-export function restoreReviewedHead(doc, title, canonical) {
+export function restoreReviewedHead(doc, title, canonical, description) {
   let changed = false;
   if (typeof title === 'string' && title.trim()) {
     let node = doc.head.querySelector('title');
@@ -16,6 +16,11 @@ export function restoreReviewedHead(doc, title, canonical) {
     let link = doc.head.querySelector('link[rel="canonical"]');
     if (!link) { link = doc.createElement('link'); link.setAttribute('rel', 'canonical'); link.setAttribute('href', canonical); doc.head.appendChild(link); changed = true; }
     else if (link.getAttribute('href') !== canonical) { link.setAttribute('href', canonical); changed = true; }
+  }
+  if (typeof description === 'string' && description.trim()) {
+    let node = doc.head.querySelector('meta[name="description"]');
+    if (!node) { node = doc.createElement('meta'); node.setAttribute('name', 'description'); node.setAttribute('content', description); doc.head.appendChild(node); changed = true; }
+    else if (node.getAttribute('content') !== description) { node.setAttribute('content', description); changed = true; }
   }
   return changed;
 }
