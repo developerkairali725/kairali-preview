@@ -113,9 +113,6 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
     : route.path === "/panchakarma-therapy/"
       ? `#ahv-design-root .sc-host main#main-content > section[data-dc-tpl]:not(:first-of-type){content-visibility:auto;contain-intrinsic-size:auto 1000px}`
       : "";
-  const serverOnlySnapshot = ["/", "/contact-us/", "/all-programs/"].includes(route.path);
-  const phoneImage = route.path === "/all-programs/" ? null : firstCriticalImage(mobile);
-  const wideImage = route.path === "/all-programs/" ? null : firstCriticalImage(desktop);
   const phonePaint = snapshotStylesFor(cfg);
   const widePaint = snapshotStylesFor({ ...cfg, mobileView: cfg.desktopView });
   const fontCss = [...(phonePaint?.fontCss || []), ...(widePaint?.fontCss || [])].filter((value, index, all) =>
@@ -124,8 +121,8 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJson(routeSchema(route, "en")) }} />
-      {phoneImage ? <link rel="preload" as="image" fetchPriority="high" media={narrow} href={phoneImage} /> : null}
-      {wideImage ? <link rel="preload" as="image" fetchPriority="high" media={wide} href={wideImage} /> : null}
+      {firstCriticalImage(mobile) ? <link rel="preload" as="image" fetchPriority="high" media={narrow} href={firstCriticalImage(mobile)!} /> : null}
+      {firstCriticalImage(desktop) ? <link rel="preload" as="image" fetchPriority="high" media={wide} href={firstCriticalImage(desktop)!} /> : null}
       {routeStyleHref(route.path) ? <link data-ahv-route-styles="" rel="stylesheet" href={routeStyleHref(route.path)!} /> : <style data-ahv-route-styles="" dangerouslySetInnerHTML={{ __html: routeStylesFor(route.path) }} />}
       {phonePaint?.preloadFonts.map((href) => (
         <link key={href} rel="preload" as="font" type={href.endsWith(".woff2") ? "font/woff2" : "font/ttf"} crossOrigin="anonymous" href={href} media={deferFonts ? "print" : narrow} data-ahv-deferred-font={deferFonts ? "" : undefined} data-ahv-font-media={deferFonts ? narrow : undefined} />
@@ -138,12 +135,12 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
       {widePaint?.styles.map((css, index) => <style key={`wide-${index}`} media={wide} dangerouslySetInnerHTML={{ __html: css }} />)}
       <style dangerouslySetInnerHTML={{ __html: `#ahv-design-root .kReveal{opacity:1!important;transform:none!important}@media ${wide}{#ahv-design-root[data-ahv-static-pending]{visibility:hidden;min-height:100vh}}` }} />
       {deferredSectionLayout ? <style dangerouslySetInnerHTML={{ __html: deferredSectionLayout }} /> : null}
-      {serverOnlySnapshot ? <SsrOnlyHtml as="div" slot={putSsrOnlyHtml(`static:${route.path}:snapshot`, mobile)} attrs={{ id: "ahv-design-root", role: route.path === "/" ? "main" : undefined, "data-ahv-route": route.path, "data-ahv-family": family || undefined, "data-ahv-consistency": consistency, "data-ahv-bg-defer": "", "data-ahv-static-pending": "" }} /> : (
+      {route.path === "/contact-us/" || route.path === "/" ? <SsrOnlyHtml as="div" slot={putSsrOnlyHtml(`static:${route.path}:snapshot`, mobile)} attrs={{ id: "ahv-design-root", role: route.path === "/" ? "main" : undefined, "data-ahv-route": route.path, "data-ahv-family": family || undefined, "data-ahv-consistency": consistency, "data-ahv-bg-defer": "", "data-ahv-static-pending": "" }} /> : (
       <div id="ahv-design-root" role={route.path === "/" ? "main" : undefined} data-ahv-route={route.path} data-ahv-family={family || undefined} data-ahv-consistency={consistency} data-ahv-bg-defer="" data-ahv-static-pending=""
         suppressHydrationWarning dangerouslySetInnerHTML={{ __html: mobile }} />
       )}
       <script id="ahv-static-design-config" type="application/json" dangerouslySetInnerHTML={{ __html: safeJson(staticConfig) }} />
-      {homeBoot ? <script src={homeBoot} defer /> : serverOnlySnapshot ? <SsrOnlyHtml as="script" slot={putSsrOnlyHtml(route.path === "/contact-us/" ? "static:contact:boot" : `static:${route.path}:boot`, STATIC_BOOT)} /> : <script dangerouslySetInnerHTML={{ __html: STATIC_BOOT }} />}
+      {homeBoot ? <script src={homeBoot} defer /> : route.path === "/contact-us/" ? <SsrOnlyHtml as="script" slot={putSsrOnlyHtml("static:contact:boot", STATIC_BOOT)} /> : <script dangerouslySetInnerHTML={{ __html: STATIC_BOOT }} />}
     </>
   );
 }
