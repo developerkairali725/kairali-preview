@@ -1,3 +1,4 @@
+import { repairArticleContactHeading } from '../app/(english)/_families/article-contact-heading.mjs';
 import { treatmentHeadingLevels } from '../app/(english)/_families/treatment-heading-levels.mjs';
 import { restoreReviewedHead } from '../app/(english)/_families/localized-title.mjs';
 import { repairFaqTopicTargets } from '../app/(english)/_families/faq-topic-targets.mjs';
@@ -203,7 +204,7 @@ test("BOOT_SCRIPT with the media-loading layer is valid JavaScript", async () =>
   const end = src.lastIndexOf("`.trim();");
   const body = src.slice(start, end);
   const env = { IS_STAGING: true, ROUTE_CONFIG_ID: "ahv-route-config", DESIGN_ROOT_ID: "ahv-design-root", LINK_ALIASES: {}, IMAGE_ALIASES: {},
-    treatmentHeadingLevels, restoreReviewedHead, orderedRuntimeScripts, repairFaqTopicTargets, removeHomeVillaRates, offersFlow, phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, monsoonRuntimeMedia, EAGER_SLOTS, createBackgroundDeferral, installLazyImgOrder, installSlotLoading, lazyImgFirst, deferHeroFilm, formPostSafety, CONSENT_RUNTIME,
+    repairArticleContactHeading, treatmentHeadingLevels, restoreReviewedHead, orderedRuntimeScripts, repairFaqTopicTargets, removeHomeVillaRates, offersFlow, phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, monsoonRuntimeMedia, EAGER_SLOTS, createBackgroundDeferral, installLazyImgOrder, installSlotLoading, lazyImgFirst, deferHeroFilm, formPostSafety, CONSENT_RUNTIME,
     deferFarSnapshotContent, whenSnapshotPainted, snapshotFocusTarget, preserveSnapshotInputs };
   const script = new Function(...Object.keys(env), "return `" + body + "`;")(...Object.values(env));
   assert.doesNotThrow(() => new Function(script), "BOOT_SCRIPT parses");
