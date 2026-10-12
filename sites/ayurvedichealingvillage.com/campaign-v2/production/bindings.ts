@@ -195,11 +195,12 @@ const OG_LP = (path: string, locale = "en_IN") => ({ url: `${SITE_ORIGIN}/campai
 /**
  * The later routes whose full gallery also ends with the approved additions (data/gallery-images.ts), batch 2 of the
  * gallery work: the twelve English routes that show the village. The others are untouched: variant D shows no gallery,
- * and lp-weight-management, lp-behandlung-kerala and lp-treatment-kerala-ru are a later batch.
+ * the final three paid routes reuse the same approved additions below.
  */
 const APPROVED_GALLERY_ROUTES: ReadonlySet<ProductionSlug> = new Set<ProductionSlug>([
   "monsoon-wellness", "rejuvenation-detox", "ayurveda-retreat", "wellness-kerala", "cleansing-centre", "treatment-kerala",
   "weight-management", "lp-hospital-kerala", "lp-cleansing-centre", "lp-pain-management", "lp-treatment-kerala", "lp-treatment-packages",
+  "lp-weight-management", "lp-behandlung-kerala", "lp-treatment-kerala-ru",
 ]);
 
 type Spec = {
