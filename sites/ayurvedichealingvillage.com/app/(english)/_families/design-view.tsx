@@ -1,3 +1,4 @@
+import { articleContactHeadingHtml } from "./article-contact-heading.mjs";
 import { trainingSnapshotFontCss } from "./training-snapshot-fonts.mjs";
 import { reviewedTitleFor } from "./localized-title.mjs";
 import { SnapshotStyles, type SnapshotStyleAsset } from './SnapshotStyles';
@@ -141,7 +142,7 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
   // Served once, read once: the snapshot body and the "held" state that keeps
   // a desktop viewport from painting it (see the layout's third style rule).
   const body = responsiveVillaImages(phoneCriticalMedia(applyReviewSnapshot(prerenderedBody(route.path, locale), route.path, locale), route.path));
-  const snapshot = applyReviewSnapshot(descriptiveAwardLinks(route.path === "/" || route.path === "/photo-gallery/" ? deferHomeSnapshotImages(body) : body, route.path), route.path, locale);
+  const snapshot = articleContactHeadingHtml(applyReviewSnapshot(descriptiveAwardLinks(route.path === "/" || route.path === "/photo-gallery/" ? deferHomeSnapshotImages(body) : body, route.path), route.path, locale), route.path);
   const cfg = buildBootConfig(route, locale);
   // The view family, as a styling scope. Template-level corrections live in
   // public/design/<family>.css and key on this, so a rule written for one
