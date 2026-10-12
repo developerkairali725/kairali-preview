@@ -249,6 +249,9 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
           ))
         : null}
       <SnapshotStyles key={`${locale}:${route.path}`} assets={snapshotAssets} />
+      {/* The existing finder toggle collapses these rows. Match that first paint and reserve its 44px button + 14px margins. */}
+      {route.path === "/ayurvedic-treatments/" ? <style data-ahv-finder-first-paint="" dangerouslySetInnerHTML={{ __html: `@media(scripting:enabled){#ahv-design-root[data-ahv-route="/ayurvedic-treatments/"] nav[data-ahv-finder-search]:not([data-ahv-fh-open]) [role="group"]{display:none!important}#ahv-design-root[data-ahv-route="/ayurvedic-treatments/"] nav[data-ahv-finder-search]:not(:has(+ .ahv-fh-filterbar))::after{content:"";display:block;height:58px}}` }} /> : null}
+
 
       {/* dangerouslySetInnerHTML with an empty string is load-bearing, not
           decoration: it tells React this subtree is not its own, so React

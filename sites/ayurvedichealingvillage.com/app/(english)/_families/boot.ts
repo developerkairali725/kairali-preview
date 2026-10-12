@@ -1,3 +1,4 @@
+import { treatmentHeadingLevels } from "./treatment-heading-levels.mjs";
 import { restoreReviewedHead } from "./localized-title.mjs";
 import { repairFaqTopicTargets } from './faq-topic-targets.mjs';
 import { orderedRuntimeScripts } from './runtime-script-order.mjs';
@@ -1292,6 +1293,7 @@ export const BOOT_SCRIPT = `
       host.insertBefore(document.createElement("x-dc"), host.firstChild);
       // lazyImgFirst: loading="lazy" ahead of src in every template <img> (media-loading.mjs, P1a).
       view.template = (${removeHomeVillaRates.toString()})(view.template, cfg.path);
+      view.template = (${treatmentHeadingLevels.toString()})(view.template, cfg.path, view.variant);
       pendingTemplate = (${lazyImgFirst.toString()})((${formPostSafety.toString()})((${descriptiveAwardLinks.toString()})(narrow ? (${phoneCriticalMedia.toString()})((${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path) : (${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path)));
       host.setAttribute("data-ahv-view", view.id);
       host.setAttribute("data-ahv-variant", view.variant);
