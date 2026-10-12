@@ -153,3 +153,8 @@ test("N12.06-B measured image-led loading remains exact-route scoped", () => {
  }
  assert.equal(imageLedFirstScreen("/treatment-for-psoriasis/"), false);
 });
+
+test("Monsoon image-led loading uses its traced exact route only", () => {
+ assert.equal(imageLedFirstScreen('/karkidaka-chikitsha-or-monsoon-wellness.html'),true);
+ assert.equal(imageLedFirstScreen('/karkidaka-chikitsha-or-monsoon-wellness/'),false);
+});
