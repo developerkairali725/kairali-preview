@@ -1,8 +1,8 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import vm from 'node:vm';
-import { reviewedTitleFor, restoreReviewedHead } from '../app/(english)/_families/localized-title.mjs';
+import { reviewedTitleFor, restoreReviewedHead, reviewedCatalogueTitle } from '../app/(english)/_families/localized-title.mjs';
 const locales=['hi','de','fr','es','it','pt','nl','ru','ar','zh-Hans','ja','ko'];
 test('Only the reviewed programme and training routes in twelve registered locales reuse their accepted catalogue titles',()=>{
- for(const locale of locales){const meta=JSON.parse(fs.readFileSync(new URL('../l10n/generated/'+locale+'.json',import.meta.url))).meta;for(const path of ["/all-programs/", "/ayurveda-training-programme/", "/ayurvedic-treatment-packages.html", "/panchkarma-treatment.html", "/weight-loss-programme/", "/digestive-wellness-gut-health-yoga-therapy/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-bronchial-diseases/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/", "/personalized-customized-healing-program/", "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/", "/intensive-ayurveda-training-program-learn-practice-ayurveda/", "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/", "/new-to-yoga-teacher-training/", "/one-day-ayurveda-workshop-program-kerala/", "/three-day-short-term-ayurveda-certificate-program-tap-hv/"]){const title=meta[path].title;assert.equal(reviewedTitleFor(path,locale,title),title);assert.equal(reviewedTitleFor(path,'en',title),undefined);}}
+ for(const locale of locales){const meta=JSON.parse(fs.readFileSync(new URL('../l10n/generated/'+locale+'.json',import.meta.url))).meta;for(const path of ["/ananda-lahari-yoga-and-ayurveda-retreat/", "/archive-yoga-retreat/", "/ashtanga-yoga-and-ayurveda-retreat/", "/all-programs/", "/ayurveda-training-programme/", "/ayurvedic-treatment-packages.html", "/panchkarma-treatment.html", "/weight-loss-programme/", "/digestive-wellness-gut-health-yoga-therapy/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-bronchial-diseases/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/", "/personalized-customized-healing-program/", "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/", "/intensive-ayurveda-training-program-learn-practice-ayurveda/", "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/", "/new-to-yoga-teacher-training/", "/one-day-ayurveda-workshop-program-kerala/", "/three-day-short-term-ayurveda-certificate-program-tap-hv/"]){const title=reviewedCatalogueTitle(path,meta[path]);assert.equal(reviewedTitleFor(path,locale,title),title);assert.equal(reviewedTitleFor(path,'en',title),undefined);}}
  for(const path of ['/','/contact-us/','/lp/treatment-packages/'])assert.equal(reviewedTitleFor(path,'de','Title'),undefined);
  for(const value of [undefined,null,'', '  '])assert.equal(reviewedTitleFor('/panchkarma-treatment.html','de',value),undefined);
  assert.equal(reviewedTitleFor('/panchkarma-treatment.html','xx','Title'),undefined);
@@ -33,4 +33,10 @@ test('Canonical-only repair preserves the already translated title and remains q
  assert.equal(run(doc,undefined,canonical),true);assert.equal(href,canonical);
  for(let i=0;i<25;i++)assert.equal(run(doc,undefined,canonical),false);
  assert.equal(writes,1);assert.equal(run(doc,undefined,'https://example.org/'),false);
+});
+
+test('Archive reuses approved localized OG title only when its title is absent',()=>{
+ assert.equal(reviewedCatalogueTitle('/archive-yoga-retreat/',{title:null,ogTitle:'Vergangene Retreats & Veranstaltungen'}),'Vergangene Retreats & Veranstaltungen');
+ assert.equal(reviewedCatalogueTitle('/archive-yoga-retreat/',{title:'Explicit',ogTitle:'Other'}),'Explicit');
+ assert.equal(reviewedCatalogueTitle('/unreviewed/',{title:null,ogTitle:'Other'}),undefined);
 });

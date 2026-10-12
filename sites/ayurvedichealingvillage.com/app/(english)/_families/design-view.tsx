@@ -1,5 +1,5 @@
 import { trainingSnapshotFontCss } from "./training-snapshot-fonts.mjs";
-import { reviewedTitleFor } from "./localized-title.mjs";
+import { reviewedTitleFor, reviewedCatalogueTitle } from "./localized-title.mjs";
 import { SnapshotStyles, type SnapshotStyleAsset } from './SnapshotStyles';
 import { routeStylesFor, routeStyleHref } from "./route-styles.mjs";
 import { reviewCopyFor, applyReviewSnapshot, bookingLabelsFor } from "./content-review.mjs";
@@ -96,7 +96,7 @@ const PREVIEW_SRC = "/ahv/preview/portable-preview.js";
 
 export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"): BootConfig {
   const info = LOCALE_INFO[locale];
-  const reviewedLocaleTitle = reviewedTitleFor(route.path, locale, localeData(locale)?.meta[route.path]?.title);
+  const reviewedLocaleTitle = reviewedTitleFor(route.path, locale, reviewedCatalogueTitle(route.path, localeData(locale)?.meta[route.path]));
   const base = locale === "en" ? "" : `/ahv/l10n/${info.prefix}`;
   const resources = Object.fromEntries(
     Object.entries(componentMap.resources as Record<string, string>).map(([k, v]) => [k, locale === "en" ? v : v.replace(/^\/ahv\//, `${base}/`)]),
