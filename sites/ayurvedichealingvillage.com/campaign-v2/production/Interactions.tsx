@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { installMobileAskLabel } from "./mobile-ask-label.ts";
 import { interactionForLink, PROGRAMME_LINKS } from "./interaction-map.ts";
 
 /**
@@ -14,6 +15,7 @@ type Measurement = { recordInteraction?: (name: string, target: string) => boole
 
 export default function Interactions() {
   useEffect(() => {
+    const stopMobileAskLabel = installMobileAskLabel(document, MutationObserver);
     const onClick = (e: MouseEvent) => {
       try {
         const a = e.target instanceof Element ? e.target.closest("a") : null;
@@ -23,7 +25,7 @@ export default function Interactions() {
       } catch { /* measurement never breaks a click */ }
     };
     document.addEventListener("click", onClick);
-    return () => document.removeEventListener("click", onClick);
+    return () => { document.removeEventListener("click", onClick); stopMobileAskLabel(); };
   }, []);
   return null;
 }

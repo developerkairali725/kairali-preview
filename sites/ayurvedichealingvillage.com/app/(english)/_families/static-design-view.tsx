@@ -135,7 +135,7 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
       {widePaint?.styles.map((css, index) => <style key={`wide-${index}`} media={wide} dangerouslySetInnerHTML={{ __html: css }} />)}
       <style dangerouslySetInnerHTML={{ __html: `#ahv-design-root .kReveal{opacity:1!important;transform:none!important}@media ${wide}{#ahv-design-root[data-ahv-static-pending]{visibility:hidden;min-height:100vh}}` }} />
       {deferredSectionLayout ? <style dangerouslySetInnerHTML={{ __html: deferredSectionLayout }} /> : null}
-      {route.path === "/contact-us/" ? <SsrOnlyHtml as="div" slot={putSsrOnlyHtml("static:contact:snapshot", mobile)} attrs={{ id: "ahv-design-root", "data-ahv-route": route.path, "data-ahv-family": family || undefined, "data-ahv-consistency": consistency, "data-ahv-bg-defer": "", "data-ahv-static-pending": "" }} /> : (
+      {route.path === "/contact-us/" || route.path === "/" ? <SsrOnlyHtml as="div" slot={putSsrOnlyHtml(`static:${route.path}:snapshot`, mobile)} attrs={{ id: "ahv-design-root", role: route.path === "/" ? "main" : undefined, "data-ahv-route": route.path, "data-ahv-family": family || undefined, "data-ahv-consistency": consistency, "data-ahv-bg-defer": "", "data-ahv-static-pending": "" }} /> : (
       <div id="ahv-design-root" role={route.path === "/" ? "main" : undefined} data-ahv-route={route.path} data-ahv-family={family || undefined} data-ahv-consistency={consistency} data-ahv-bg-defer="" data-ahv-static-pending=""
         suppressHydrationWarning dangerouslySetInnerHTML={{ __html: mobile }} />
       )}
