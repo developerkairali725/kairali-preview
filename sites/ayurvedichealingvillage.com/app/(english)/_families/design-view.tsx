@@ -176,7 +176,7 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
   // for the listed routes whose first screen is a hero background image (imageLedFirstScreen).
   const snapshotFaces = firstPaint && !firstScreenPoster(snapshot) && !imageLedFirstScreen(route.path) ? firstPaint : null;
   const snapshotAssets: SnapshotStyleAsset[] = [
-    ...(snapshotFaces?.fontCss.map(({ href, css }) => css && !["/panchakarma/", "/ayurveda-treatment/", "/mindfulness-retreat/", "/ananda-lahari-yoga-and-ayurveda-retreat/", "/ashtanga-yoga-and-ayurveda-retreat/"].includes(route.path)
+    ...(snapshotFaces?.fontCss.map(({ href, css }) => css && !["/panchakarma-therapy/", "/post-pregnancy-health-programme/", "/preventive-and-regenerative-treatment/", "/panchakarma/", "/ayurveda-treatment/", "/mindfulness-retreat/", "/ananda-lahari-yoga-and-ayurveda-retreat/", "/ashtanga-yoga-and-ayurveda-retreat/"].includes(route.path)
       ? { key: `font:${href}`, kind: 'style' as const, css: trainingSnapshotFontCss(route.path, css, snapshot) }
       : { key: `font:${href}`, kind: 'link' as const, href }) ?? []),
     ...(firstPaint?.styles.map((css, i) => ({ key: `view:${i}`, kind: 'style' as const, css, media: narrowMedia })) ?? []),
