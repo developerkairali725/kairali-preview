@@ -70,3 +70,5 @@ test("Eleven clinical pages retain accepted locale titles without changing Engli
 });
 
 test("five retained programme titles use only their accepted locale value",()=>{for(const route of ["/beauty-care-and-eye-care/", "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/", "/immunity-enhancement-executive-health-assessment-therapy/", "/revitalizing-and-strengthening/", "/womens-hormonal-balance-endocrine-therapy/"]){for(const locale of ["hi","de","fr","es","it","pt","nl","ru","ar","zh-Hans","ja","ko"]){assert.equal(reviewedTitleFor(route,locale,"Accepted title"),"Accepted title");}assert.equal(reviewedTitleFor(route,"en","English"),undefined);assert.equal(reviewedTitleFor(route.slice(0,-1),"de","Title"),undefined);}});
+
+test("wellness and yoga hubs retain accepted locale titles",()=>{for(const route of ["/wellness-programs/", "/yoga-meditation-programs/"])for(const locale of ["hi","de","fr","es","it","pt","nl","ru","ar","zh-Hans","ja","ko"]){assert.equal(reviewedTitleFor(route,locale,"Accepted hub title"),"Accepted hub title");assert.equal(reviewedTitleFor(route,"en","English"),undefined);}});
