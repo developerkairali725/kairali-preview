@@ -98,3 +98,12 @@ export function responsiveVillaImages(html) {
     return '<img srcset="' + attrs.srcset + '" sizes="' + attrs.sizes + '"' + clean + '>';
   });
 }
+
+/** Keep the same approved phone hero after the article renderer takes over the snapshot. */
+export function monsoonRuntimeMedia(win, routePath) {
+  if (routePath !== '/karkidaka-chikitsha-or-monsoon-wellness.html' || !win.matchMedia('(max-width:699px)').matches) return;
+  var route = win.AHV_ARTICLE && win.AHV_ARTICLE.routes.find(function (r) { return r.path === routePath; });
+  if (route && route.heroImg && route.heroImg.src === '/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19.webp') {
+    route.heroImg = Object.assign({}, route.heroImg, { src: '/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19-768.avif' });
+  }
+}

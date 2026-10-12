@@ -11,7 +11,11 @@ export function orderedRuntimeScripts(view, cfg, hasLeadReceipt) {
   if (needsLeadReceipt && !hasLeadReceipt) {
     entries.push({ src: '/design/lead-receipt.js' });
   }
-  for (const src of view.scripts || []) entries.push({ src });
+  // Monsoon belongs to the article family. Its guarded shared reader does not use the other families.
+  const scripts = cfg.path === '/karkidaka-chikitsha-or-monsoon-wellness.html'
+    ? (view.scripts || []).filter(src => !/\/(?:article|travel|collection|commercial|reader25a|reader25b|story|training7|reader6c|hist9|utility7|exception-five|lakshya-recovered)-family-(?:data|render)\.js$/.test(src) && !/\/seven-informational-(?:data|render)\.js$/.test(src) || /\/article-family-(?:data|render)\.js$/.test(src))
+    : view.scripts || [];
+  for (const src of scripts) entries.push({ src });
   entries.push({ src: cfg.supportSrc });
   return entries;
 }
