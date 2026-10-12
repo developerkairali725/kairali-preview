@@ -407,3 +407,18 @@ test("owner facts: the 14–21 night Panchakarma programme as published; no year
   for (const slug of PRODUCTION_SLUGS) for (const { path: at, text } of allText(C[slug])) assert.doesNotMatch(text, /\b(18|19|20)\d{2}\b/, `${slug} ${at}`);
   for (const slug of BATCH1.concat(["pain-management", "family-ayurvedic-retreat"])) assert.equal(C[slug].hero.overline, "Doctor-guided Ayurveda · Palakkad, Kerala");
 });
+
+
+test("Monsoon metadata restores the existing sitemap language cluster without adding languages to unrelated campaigns", () => {
+  const route = "/karkidaka-chikitsha-or-monsoon-wellness.html";
+  const map = JSON.parse(fs.readFileSync(new URL("../l10n/routes.json", import.meta.url))).routes[route];
+  const expected = Object.fromEntries(Object.entries(map).map(([locale, pathname]) => [locale, "https://ayurvedichealingvillage.com" + pathname]));
+  expected["x-default"] = expected.en;
+  const metadata = productionMetadata("monsoon-wellness", C["monsoon-wellness"], { AHV_STAGING: "0" });
+  assert.deepEqual(metadata.alternates.languages, expected);
+  assert.equal(Object.keys(expected).length, 14);
+  assert.equal(metadata.alternates.canonical, expected.en);
+  for (const slug of PRODUCTION_SLUGS.filter(s => s !== "monsoon-wellness")) {
+    assert.equal(productionMetadata(slug, C[slug], { AHV_STAGING: "0" }).alternates.languages, undefined, slug);
+  }
+});

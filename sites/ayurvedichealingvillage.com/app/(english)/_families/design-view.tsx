@@ -107,7 +107,7 @@ export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"
     path: route.path,
     contentReviewCopy: reviewCopyFor(route.path, locale),
     reviewedLocaleTitle,
-    reviewedLocaleCanonical: reviewedLocaleTitle ? canonicalUrl(route.path, locale) : undefined,
+    reviewedLocaleCanonical: (reviewedLocaleTitle || (route.path === "/karkidaka-chikitsha-or-monsoon-wellness.html" && locale !== "en")) ? canonicalUrl(route.path, locale) : undefined,
     bookingCopy: bookingLabelsFor(locale),
     robots: routeRobots(route),
     desktopView: route.desktopView,

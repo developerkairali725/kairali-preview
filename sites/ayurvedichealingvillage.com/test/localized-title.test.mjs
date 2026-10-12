@@ -22,3 +22,15 @@ test('The same scoped head repair restores the accepted canonical once without t
  const run=vm.runInNewContext('('+restoreReviewedHead.toString()+')');assert.equal(run(doc,title,canonical),true);assert.equal(href,canonical);for(let i=0;i<25;i++)assert.equal(run(doc,title,canonical),false);assert.equal(writes,1);
  assert.equal(run(doc,undefined,'https://example.org/'),false);assert.equal(writes,1);
 });
+
+
+test('Canonical-only repair preserves the already translated title and remains quiet after one correction',()=>{
+ let href='https://ayurvedichealingvillage.com/karkidaka-chikitsha-or-monsoon-wellness.html',writes=0;
+ const canonical='https://ayurvedichealingvillage.com/de/karkidaka-chikitsha-or-monsoon-wellness.html';
+ const link={getAttribute(k){assert.equal(k,'href');return href},setAttribute(k,v){assert.equal(k,'href');href=v;writes++}};
+ const doc={head:{querySelector(s){assert.equal(s,'link[rel="canonical"]','Canonical-only mode must not access or change the title');return link}}};
+ const run=vm.runInNewContext('('+restoreReviewedHead.toString()+')');
+ assert.equal(run(doc,undefined,canonical),true);assert.equal(href,canonical);
+ for(let i=0;i<25;i++)assert.equal(run(doc,undefined,canonical),false);
+ assert.equal(writes,1);assert.equal(run(doc,undefined,'https://example.org/'),false);
+});
