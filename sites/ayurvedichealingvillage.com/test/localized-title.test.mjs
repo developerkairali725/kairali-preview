@@ -63,3 +63,8 @@ test('Approved social description repairs both share tags without repeated write
 });
 
 test("Archive keeps its accepted English server title after runtime writes",()=>{assert.equal(reviewedTitleFor("/archive-yoga-retreat/","en","Past Retreats & Events | Kairali Healing Village"),"Past Retreats & Events | Kairali Healing Village");});
+
+test("Eleven clinical pages retain accepted locale titles without changing English or body content",()=>{
+ const paths=["/treatment-for-arthritis-and-spondylitis/", "/treatment-for-cervical-spondylosis/", "/treatment-for-chronic-back-pain/", "/treatment-for-diabetes/", "/treatment-for-facial-paralysis/", "/treatment-for-nervous-disability/", "/treatment-for-psoriasis/", "/treatment-for-sinusitis-and-migraine/", "/treatment-for-slip-disc/", "/treatment-for-spondylitis/", "/treatment-to-remove-stress-and-strain/"];
+ for(const locale of locales){const meta=JSON.parse(fs.readFileSync(new URL("../l10n/generated/"+locale+".json",import.meta.url))).meta;for(const path of paths){const title=meta[path]?.title;assert.equal(typeof title,"string",locale+path);assert(title.trim());assert.equal(reviewedTitleFor(path,locale,title),title);assert.equal(reviewedTitleFor(path,"en",title),undefined);}}
+});
