@@ -114,6 +114,8 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
       ? `#ahv-design-root .sc-host main#main-content > section[data-dc-tpl]:not(:first-of-type){content-visibility:auto;contain-intrinsic-size:auto 1000px}`
       : "";
   const serverOnlySnapshot = ["/", "/contact-us/", "/all-programs/", "/ayurveda-training-programme/"].includes(route.path);
+  const phoneImage = route.path === "/all-programs/" ? null : firstCriticalImage(mobile);
+  const wideImage = route.path === "/all-programs/" ? null : firstCriticalImage(desktop);
   const phonePaint = snapshotStylesFor(cfg);
   const widePaint = snapshotStylesFor({ ...cfg, mobileView: cfg.desktopView });
   const fontCss = [...(phonePaint?.fontCss || []), ...(widePaint?.fontCss || [])].filter((value, index, all) =>
@@ -122,8 +124,8 @@ export function StaticDesignView({ route }: { route: CandidateRoute }) {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: safeJson(routeSchema(route, "en")) }} />
-      {firstCriticalImage(mobile) ? <link rel="preload" as="image" fetchPriority="high" media={narrow} href={firstCriticalImage(mobile)!} /> : null}
-      {firstCriticalImage(desktop) ? <link rel="preload" as="image" fetchPriority="high" media={wide} href={firstCriticalImage(desktop)!} /> : null}
+      {phoneImage ? <link rel="preload" as="image" fetchPriority="high" media={narrow} href={phoneImage} /> : null}
+      {wideImage ? <link rel="preload" as="image" fetchPriority="high" media={wide} href={wideImage} /> : null}
       {routeStyleHref(route.path) ? <link data-ahv-route-styles="" rel="stylesheet" href={routeStyleHref(route.path)!} /> : <style data-ahv-route-styles="" dangerouslySetInnerHTML={{ __html: routeStylesFor(route.path) }} />}
       {phonePaint?.preloadFonts.map((href) => (
         <link key={href} rel="preload" as="font" type={href.endsWith(".woff2") ? "font/woff2" : "font/ttf"} crossOrigin="anonymous" href={href} media={deferFonts ? "print" : narrow} data-ahv-deferred-font={deferFonts ? "" : undefined} data-ahv-font-media={deferFonts ? narrow : undefined} />
