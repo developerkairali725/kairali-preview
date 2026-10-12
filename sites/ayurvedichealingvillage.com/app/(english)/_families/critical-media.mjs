@@ -1,5 +1,12 @@
 /** Selected image variants; only phone templates/snapshots use these. */
 export function phoneCriticalMedia(html, routePath = '') {
+  if (routePath === '/karkidaka-chikitsha-or-monsoon-wellness.html') {
+    html = html.split('/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19.webp').join('/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19-768.avif');
+    html = html.replace(/<img\b[^>]*>/gi, function (tag) {
+      if (!/\ssrc=["']\/ahv\/assets\/img\/legacy\/karkidaka-chikitsha-or-monsoon-wellness\/kar5-19-768\.avif["']/.test(tag)) return tag;
+      return '<img loading="eager" fetchpriority="high"' + tag.slice(4).replace(/\s(?:loading|fetchpriority)=["'][^"']*["']/gi, '');
+    });
+  }
   if (routePath === '/offers/') html = html.split('/ahv/assets/img/commercial/775c5adec97f99fbd773ee36cf4903844f79ea13635db974cf00821263818e82.webp').join('/design/offers-hub-640.avif');
   for (var name of ['weight-loss', 'weight-history']) {
     html = html.split('/ahv/assets/img/' + name + '.webp').join('/ahv/assets/img/' + name + '-768.avif');
@@ -50,6 +57,7 @@ export function descriptiveAwardLinks(html, route = "") {
 
 export function firstCriticalImage(html, routePath = '') {
   // N12 measured background LCPs: prioritize the existing approved hero only on its own route.
+  if (routePath === '/karkidaka-chikitsha-or-monsoon-wellness.html' && html.includes('/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19-768.avif')) return '/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19-768.avif';
   var programmeHeroes = {'/treatment-for-bronchial-diseases/':'/ahv/assets/img/bronchial-hero-nasyam.webp','/holistic-treatment-for-rejuvenation-and-detoxification/':'/ahv/assets/img/ho-pizhichil.webp','/treatment-for-hypertension/':'/ahv/assets/img/hypertension-hero-thakaradhara.webp','/treatment-for-paralysis/':'/ahv/assets/img/paralysis-hero-pinda-sweda.webp','/treatment-for-skin-diseases/':'/ahv/assets/img/skin-vitality-hero-mukha-abhyanga-3.webp'};
   var programmeHero = programmeHeroes[routePath];
   if (programmeHero && html.indexOf(programmeHero) >= 0) return programmeHero;
