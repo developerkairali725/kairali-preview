@@ -35,7 +35,7 @@ export function buildTrainingCss(site) {
       planned.push({ file, html: result.html, route: localized, beforeSha256: sha(before), afterSha256: sha(result.html), styles: result.records });
     }
   }
-  if (planned.length !== 91) throw new Error("Unexpected training route count");
+  if (planned.length !== 104) throw new Error("Unexpected training route count");
   // Validate every input before changing any output; all other page files stay untouched.
   for (const row of planned) fs.writeFileSync(row.file,row.html);
   fs.writeFileSync(path.join(site,".next/training-css-inline.json"),JSON.stringify({status:"PASS",pages:planned.map(({file,html,...proof})=>proof)},null,2)+"\n");
