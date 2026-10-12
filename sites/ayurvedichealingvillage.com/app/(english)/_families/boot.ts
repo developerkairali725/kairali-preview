@@ -1,3 +1,4 @@
+import { repairArticleContactHeading } from "./article-contact-heading.mjs";
 import { treatmentHeadingLevels } from "./treatment-heading-levels.mjs";
 import { restoreReviewedHead } from "./localized-title.mjs";
 import { repairFaqTopicTargets } from './faq-topic-targets.mjs';
@@ -1004,6 +1005,7 @@ export const BOOT_SCRIPT = `
   var hpHidden = 0;
   function sweepHoneypots(tries) {
     hideHoneypots(host);
+    (${repairArticleContactHeading.toString()})(host, cfg.path);
     repairEmailLinks(host);
     upgradeLanguageControls(host);
     applyConsent();
@@ -1053,6 +1055,7 @@ export const BOOT_SCRIPT = `
         aliasImages(node);
         startIstClock(node);
         hideHoneypots(node);
+        (${repairArticleContactHeading.toString()})(node, cfg.path);
         repairEmailLinks(node);
         upgradeLanguageControls(node);
         retargetSelfLinks(node);
