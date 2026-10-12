@@ -14,6 +14,10 @@ for u in units:common.update(map(ord,u['source']))
 # Keep their covered glyphs in the common subset to avoid loading an entire extra face.
 for locale in json.load(open('l10n/locales.json')).values():common.update(map(ord,locale['name']))
 
+# Accepted German finder copy uses low quotation mark; expanded controls use minus.
+# Include these two typographic glyphs in common faces without changing font metrics.
+common.update(map(ord, "„−"))
+
 import re,hashlib
 root=Path('public/ahv/fonts');css_paths=list(root.glob('*.css'))
 css_sources={p:p.read_text() for p in css_paths}

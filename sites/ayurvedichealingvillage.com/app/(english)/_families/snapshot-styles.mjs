@@ -170,6 +170,14 @@ export function imageLedFirstScreen(routePath) {
   return IMAGE_LED_FIRST_SCREEN.has(String(routePath || ""));
 }
 
+/** Measured text-led finder/hub: preload only the existing heading face alongside the body face. */
+export function routeFontPreloads(route, styles, readText) {
+  const body = bodyFontFiles(styles, readText);
+  if (route !== "/all-programs/" && route !== "/ayurveda-training-programme/") return body;
+  const heading = bodyFontFiles({ ...styles, styles: ['body{font-family:"Marcellus"}'] }, readText);
+  return [...new Set([...body, ...heading])];
+}
+
 const TEXT_CACHE = new Map();
 
 /**
@@ -199,5 +207,5 @@ export function snapshotStylesFor(cfg, publicDir = join(process.cwd(), "public")
   if (!styles.fonts.length && !styles.styles.length) return null;
   // Only the body face is preloaded (measured: all four upright faces bought nothing on the simulated LCP and
   // cost 0.2-0.9 s under applied throttling, where 157 KB of TTF competed with the styles and the LCP image).
-  return { ...styles, fontCss: inlineFontStyles(styles.fonts, readText), preloadFonts: bodyFontFiles(styles, readText).filter((u) => { const f = fileFor(u); return !!f && existsSync(f); }) };
+  return { ...styles, fontCss: inlineFontStyles(styles.fonts, readText), preloadFonts: routeFontPreloads(cfg.path, styles, readText).filter((u) => { const f = fileFor(u); return !!f && existsSync(f); }) };
 }
