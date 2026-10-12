@@ -146,6 +146,10 @@ test('award link uses its existing title without inventing or translating copy',
   assert.equal(descriptiveAwardLinks(result), result);
   for (const untouched of ['<article>Read more</article>', '<a href="/x">Read more</a>', '<a aria-label="Other action">Read more</a>']) assert.equal(descriptiveAwardLinks(untouched), untouched);
   assert.ok(descriptiveAwardLinks('<a aria-label="Mehr — Titel">Mehr</a>').includes(' — Titel</span>'));
+  const german = '<a href="https://whyayurveda.org/example/" aria-label="Weiterlesen – NABH">Weiterlesen</a>';
+  const described = descriptiveAwardLinks(german);
+  assert.ok(described.includes('Weiterlesen<span class="ahv-link-context"> – NABH</span>'));
+  assert.equal(descriptiveAwardLinks(described), described);
 });
 
 test('package phone hero retains the approved asset and selects its smaller preload', () => {
