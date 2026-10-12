@@ -1,3 +1,4 @@
+import { restoreReviewedTitle } from "./localized-title.mjs";
 import { repairFaqTopicTargets } from './faq-topic-targets.mjs';
 import { orderedRuntimeScripts } from './runtime-script-order.mjs';
 import { removeHomeVillaRates } from './home-villa-rates.mjs';
@@ -69,6 +70,7 @@ import LINK_ALIASES from "../../../english-candidate/link-aliases.json";
 import IMAGE_ALIASES from "../../../english-candidate/image-aliases.json";
 
 export interface BootConfig {
+  reviewedLocaleTitle?: string;
   bookingCopy?: {old: string; new: string};
   contentReviewCopy?: Array<{old: string; new: string; kind: string}>;
   path: string;
@@ -1120,6 +1122,7 @@ export const BOOT_SCRIPT = `
 
   function enforceStagingHead() {
     governedWins("title");
+    (${restoreReviewedTitle.toString()})(document, cfg.reviewedLocaleTitle);
     governedWins('link[rel="canonical"]');
     governedWins('meta[name="description"]');
     // og:* and twitter:* are many slots, so they dedupe per property name.
