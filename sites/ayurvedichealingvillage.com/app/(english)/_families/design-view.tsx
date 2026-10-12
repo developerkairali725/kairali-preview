@@ -1,6 +1,6 @@
 import { articleContactHeadingHtml } from "./article-contact-heading.mjs";
 import { trainingSnapshotFontCss } from "./training-snapshot-fonts.mjs";
-import { reviewedTitleFor, reviewedCatalogueTitle } from "./localized-title.mjs";
+import { reviewedTitleFor } from "./localized-title.mjs";
 import { SnapshotStyles, type SnapshotStyleAsset } from './SnapshotStyles';
 import { routeStylesFor, routeStyleHref } from "./route-styles.mjs";
 import { reviewCopyFor, applyReviewSnapshot, bookingLabelsFor } from "./content-review.mjs";
@@ -97,7 +97,7 @@ const PREVIEW_SRC = "/ahv/preview/portable-preview.js";
 
 export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"): BootConfig {
   const info = LOCALE_INFO[locale];
-  const reviewedLocaleTitle = reviewedTitleFor(route.path, locale, reviewedCatalogueTitle(route.path, localeData(locale)?.meta[route.path]));
+  const reviewedLocaleTitle = reviewedTitleFor(route.path, locale(route.path, localeData(locale)?.meta[route.path]));
   const base = locale === "en" ? "" : `/ahv/l10n/${info.prefix}`;
   const resources = Object.fromEntries(
     Object.entries(componentMap.resources as Record<string, string>).map(([k, v]) => [k, locale === "en" ? v : v.replace(/^\/ahv\//, `${base}/`)]),
@@ -173,7 +173,7 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
   // for the listed routes whose first screen is a hero background image (imageLedFirstScreen).
   const snapshotFaces = firstPaint && !firstScreenPoster(snapshot) && !imageLedFirstScreen(route.path) ? firstPaint : null;
   const snapshotAssets: SnapshotStyleAsset[] = [
-    ...(snapshotFaces?.fontCss.map(({ href, css }) => css && !["/ayurveda-treatment/", "/mindfulness-retreat/", "/ananda-lahari-yoga-and-ayurveda-retreat/", "/archive-yoga-retreat/", "/ashtanga-yoga-and-ayurveda-retreat/"].includes(route.path)
+    ...(snapshotFaces?.fontCss.map(({ href, css }) => css && !["/ayurveda-treatment/", "/mindfulness-retreat/", "/ananda-lahari-yoga-and-ayurveda-retreat/", "/ashtanga-yoga-and-ayurveda-retreat/"].includes(route.path)
       ? { key: `font:${href}`, kind: 'style' as const, css: trainingSnapshotFontCss(route.path, css, snapshot) }
       : { key: `font:${href}`, kind: 'link' as const, href }) ?? []),
     ...(firstPaint?.styles.map((css, i) => ({ key: `view:${i}`, kind: 'style' as const, css, media: narrowMedia })) ?? []),

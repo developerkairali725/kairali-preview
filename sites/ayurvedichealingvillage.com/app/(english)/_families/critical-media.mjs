@@ -3,8 +3,7 @@ export function phoneCriticalMedia(html, routePath = '') {
   // PR406: same-photo phone derivatives, measured with the released font-loading fix.
   var retreatImages = routePath === '/ananda-lahari-yoga-and-ayurveda-retreat/'
     ? ['AHV-Ananda-Alcohol-Free', 'AHV-Ananda-Landscape', 'AHV-Ananda-Massage', 'AHV-Ananda-Village']
-    : routePath === '/archive-yoga-retreat/'
-      ? ['AHV-Retreat-Archive-Landscape', 'AHV-Retreat-Archive-01', 'AHV-Retreat-Archive-02', 'AHV-Retreat-Archive-03', 'AHV-Retreat-Archive-04', 'AHV-Retreat-Archive-05', 'AHV-Retreat-Archive-06', 'AHV-Retreat-Archive-07'] : [];
+    : [];
   for (var retreatImage of retreatImages) html = html.split('/ahv/assets/img/' + retreatImage + '.webp').join('/ahv/assets/img/' + retreatImage + '-768-phone.avif');
 
   if (routePath === '/all-programs/') {
@@ -125,7 +124,7 @@ export function retreatRuntimeMedia(win, routePath, phoneSrc) {
   if (!win.matchMedia('(max-width:699px)').matches) return;
   var rows = routePath === '/ananda-lahari-yoga-and-ayurveda-retreat/'
     ? win.AHV_ANANDA && win.AHV_ANANDA.sections
-    : routePath === '/archive-yoga-retreat/' ? win.AHV_PAST_RETREATS && win.AHV_PAST_RETREATS.cards : null;
+    : null;
   if (!rows) return;
   for (var row of rows) if (typeof row.image === 'string') row.image = phoneSrc(row.image, routePath);
 }
