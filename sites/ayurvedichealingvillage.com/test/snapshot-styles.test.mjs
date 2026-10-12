@@ -171,3 +171,5 @@ test("finder and hub preload only body and existing heading faces; unrelated rou
  assert.deepEqual(routeFontPreloads('/offers/',styles,()=>css),['/ahv/fonts/body.common.woff2']);
  assert.deepEqual(routeFontPreloads('/all-programs/',styles,()=>null),[]);
 });
+
+test("sleep font stability is English-only and retains image priority elsewhere",()=>{assert.equal(imageLedFirstScreen("/sleep-restoration-therapy/","en"),false);assert.equal(imageLedFirstScreen("/sleep-restoration-therapy/","de"),true);assert.equal(imageLedFirstScreen("/treatment-for-psoriasis/","en"),true);});
