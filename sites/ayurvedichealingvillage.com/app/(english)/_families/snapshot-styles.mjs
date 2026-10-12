@@ -165,7 +165,8 @@ export function firstScreenPoster(snapshotHtml) {
  */
 // N12: the saved 2026-10-11 mobile traces identify these two programme background heroes as LCP.
 // Monsoon: saved 2026-10-12 trace confirms the phone hero is the only LCP candidate.
-const IMAGE_LED_FIRST_SCREEN = new Set(["/karkidaka-chikitsha-or-monsoon-wellness.html", "/digestive-wellness-gut-health-yoga-therapy/", "/weight-loss-programme/", "/offers/", "/treatment-for-bronchial-diseases/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/"]);
+// Panchakarma Therapy: saved EN/DE traces identify the phone hero DIV image as the sole LCP candidate.
+const IMAGE_LED_FIRST_SCREEN = new Set(["/panchakarma-therapy/", "/karkidaka-chikitsha-or-monsoon-wellness.html", "/digestive-wellness-gut-health-yoga-therapy/", "/weight-loss-programme/", "/offers/", "/treatment-for-bronchial-diseases/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/"]);
 export function imageLedFirstScreen(routePath) {
   return IMAGE_LED_FIRST_SCREEN.has(String(routePath || ""));
 }
