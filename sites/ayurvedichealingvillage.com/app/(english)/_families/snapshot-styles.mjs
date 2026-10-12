@@ -109,7 +109,7 @@ export function inlineFontStyles(fonts, readText) {
  * Resolved against the local font stylesheets' @font-face rules; returns served URLs (at most one per
  * stylesheet), or [] when the family is not one of the local faces.
  */
-export function bodyFontFiles(styles, readText, wantedWeight = "400", wantedStyle = "normal") {
+export function bodyFontFiles(styles, readText, wantedWeight = "400") {
   let family = null;
   for (const css of styles.styles) {
     const m = css.match(/(?:^|[}\s])body\s*[{][^}]*?font-family\s*:\s*([^;}]+)/i);
@@ -126,7 +126,7 @@ export function bodyFontFiles(styles, readText, wantedWeight = "400", wantedStyl
       if (!fam || fam.trim().replace(/^["']|["']$/g, "") !== family) continue;
       const style = ((body.match(/font-style\s*:\s*([^;]+)/i) || [])[1] || "normal").trim();
       const weight = ((body.match(/font-weight\s*:\s*([^;]+)/i) || [])[1] || "400").trim();
-      if (style !== wantedStyle || (weight !== wantedWeight && !(wantedWeight === "400" && weight === "normal"))) continue;
+      if (style !== "normal" || (weight !== wantedWeight && !(wantedWeight === "400" && weight === "normal"))) continue;
       const src = (body.match(/url\(\s*["']?([^"')]+)["']?\s*\)/i) || [])[1];
       if (!src || /^[a-z]+:/i.test(src) || src.startsWith("//")) continue;
       const url = src.startsWith("/") ? src : href.replace(/[^/]*$/, "") + src;
@@ -166,20 +166,18 @@ export function firstScreenPoster(snapshotHtml) {
 // N12: the saved 2026-10-11 mobile traces identify these two programme background heroes as LCP.
 // Monsoon: saved 2026-10-12 trace confirms the phone hero is the only LCP candidate.
 // Saved EN/DE traces identify programme hero DIV images as final LCP candidates for these three routes.
-const IMAGE_LED_FIRST_SCREEN = new Set(["/beauty-care-and-eye-care/", "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/", "/immunity-enhancement-executive-health-assessment-therapy/", "/revitalizing-and-strengthening/", "/sleep-restoration-therapy/", "/womens-hormonal-balance-endocrine-therapy/", "/treatment-for-arthritis-and-spondylitis/", "/treatment-for-cervical-spondylosis/", "/treatment-for-chronic-back-pain/", "/treatment-for-diabetes/", "/treatment-for-facial-paralysis/", "/treatment-for-nervous-disability/", "/treatment-for-psoriasis/", "/treatment-for-sinusitis-and-migraine/", "/treatment-for-slip-disc/", "/treatment-for-spondylitis/", "/treatment-to-remove-stress-and-strain/", "/panchakarma-therapy/", "/post-pregnancy-health-programme/", "/preventive-and-regenerative-treatment/", "/karkidaka-chikitsha-or-monsoon-wellness.html", "/digestive-wellness-gut-health-yoga-therapy/", "/weight-loss-programme/", "/offers/", "/treatment-for-bronchial-diseases/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/"]);
-export function imageLedFirstScreen(routePath, locale) {
-  if (routePath === "/sleep-restoration-therapy/" && locale === "en") return false; // Saved EN trace: font swap shifts the hero by 0.193.
+const IMAGE_LED_FIRST_SCREEN = new Set(["/beauty-care-and-eye-care/", "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/", "/immunity-enhancement-executive-health-assessment-therapy/", "/revitalizing-and-strengthening/", "/womens-hormonal-balance-endocrine-therapy/", "/treatment-for-arthritis-and-spondylitis/", "/treatment-for-cervical-spondylosis/", "/treatment-for-chronic-back-pain/", "/treatment-for-diabetes/", "/treatment-for-facial-paralysis/", "/treatment-for-nervous-disability/", "/treatment-for-psoriasis/", "/treatment-for-sinusitis-and-migraine/", "/treatment-for-slip-disc/", "/treatment-for-spondylitis/", "/treatment-to-remove-stress-and-strain/", "/panchakarma-therapy/", "/post-pregnancy-health-programme/", "/preventive-and-regenerative-treatment/", "/karkidaka-chikitsha-or-monsoon-wellness.html", "/digestive-wellness-gut-health-yoga-therapy/", "/weight-loss-programme/", "/offers/", "/treatment-for-bronchial-diseases/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/"]);
+export function imageLedFirstScreen(routePath) {
   return IMAGE_LED_FIRST_SCREEN.has(String(routePath || ""));
 }
 
 /** Measured text-led finder/hub: preload only the existing heading face alongside the body face. */
 export function routeFontPreloads(route, styles, readText, locale = "en") {
   const body = bodyFontFiles(styles, readText);
-  if (!["/sleep-restoration-therapy/", "/panchakarma-therapy/", "/post-pregnancy-health-programme/", "/preventive-and-regenerative-treatment/", "/panchakarma/", "/ayurveda-treatment/", "/mindfulness-retreat/", "/all-programs/", "/ayurveda-training-programme/", "/ananda-lahari-yoga-and-ayurveda-retreat/", "/archive-yoga-retreat/", "/ashtanga-yoga-and-ayurveda-retreat/"].includes(route)) return body;
+  if (!["/panchakarma-therapy/", "/post-pregnancy-health-programme/", "/preventive-and-regenerative-treatment/", "/panchakarma/", "/ayurveda-treatment/", "/mindfulness-retreat/", "/all-programs/", "/ayurveda-training-programme/", "/ananda-lahari-yoga-and-ayurveda-retreat/", "/archive-yoga-retreat/", "/ashtanga-yoga-and-ayurveda-retreat/"].includes(route)) return body;
   const heading = bodyFontFiles({ ...styles, styles: ['body{font-family:"Marcellus"}'] }, readText);
   const ui = (route === "/ayurveda-training-programme/" || route === "/archive-yoga-retreat/") && locale === "en" ? [...bodyFontFiles(styles, readText, "600"), ...bodyFontFiles(styles, readText, "700")] : [];
-  const sleep = route === "/sleep-restoration-therapy/" && locale === "en" ? [...bodyFontFiles(styles, readText, "600"), ...bodyFontFiles(styles, readText, "700"), ...bodyFontFiles(styles, readText, "400", "italic")] : [];
-  return [...new Set([...body, ...heading, ...ui, ...sleep])];
+  return [...new Set([...body, ...heading, ...ui])];
 }
 
 const TEXT_CACHE = new Map();

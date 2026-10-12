@@ -4,7 +4,7 @@
  * visible text, so hidden menus and generated content retain their glyph coverage.
  * Unrecognised entities or ranges conservatively keep the complete stylesheet.
  */
-export const TRAINING_SNAPSHOT_ROUTES = new Set(["/beauty-care-and-eye-care/", "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/", "/immunity-enhancement-executive-health-assessment-therapy/", "/revitalizing-and-strengthening/", "/sleep-restoration-therapy/", "/womens-hormonal-balance-endocrine-therapy/", 
+export const TRAINING_SNAPSHOT_ROUTES = new Set(["/beauty-care-and-eye-care/", "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/", "/immunity-enhancement-executive-health-assessment-therapy/", "/revitalizing-and-strengthening/", "/womens-hormonal-balance-endocrine-therapy/", 
   "/treatment-for-psoriasis/", "/treatment-to-remove-stress-and-strain/",
   "/panchakarma-therapy/", "/post-pregnancy-health-programme/", "/preventive-and-regenerative-treatment/",
   "/panchakarma/",
