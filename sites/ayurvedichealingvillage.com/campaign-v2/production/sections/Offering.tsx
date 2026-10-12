@@ -1,3 +1,4 @@
+import { PACKAGE_FACTS } from "../package-facts";
 import { PROGRAMME_DESCRIPTIONS } from "../programme-descriptions";
 import type { CampaignConfig, PageOffering } from "../../kit/types.ts";
 import { SectionHead } from "../../sections/head";
@@ -6,6 +7,16 @@ import { PageA, Paras, Rich } from "../../sections/rich";
 import { ConsultCta, numeral, type SecProps } from "./parts";
 
 type Of<K extends PageOffering["kind"]> = Extract<PageOffering, { kind: K }>;
+
+function packageFactsFor(c: CampaignConfig) {
+  const facts = PACKAGE_FACTS[c.route];
+  return facts && c.locales.length === 1 && c.locales[0] === facts.locale ? facts.paragraphs : undefined;
+}
+function PackageFacts({ c }: { c: CampaignConfig }) {
+  const paragraphs = packageFactsFor(c);
+  return paragraphs ? <div data-package-facts={c.route}><Paras list={paragraphs} className="lp-poffer__p" /></div> : null;
+}
+
 
 /**
  * What the page offers, set for the shape of its content:
@@ -37,7 +48,7 @@ function Cards({ c, o, v, ui, no }: { c: CampaignConfig; o: Of<"cards"> } & SecP
     <section className="lp-sec lp-poffer lp-poffer--cards" aria-labelledby="lp-poffer-h">
       <div className="lp-poffer__top">
         <SectionHead v={v} no={no} kicker={o.kicker ?? ui.kicker.cards} title={o.heading} id="lp-poffer-h" />
-        {o.intro?.length ? <div className="lp-poffer__intro"><Paras list={o.intro} className="lp-poffer__p" /></div> : null}
+        {o.intro?.length || packageFactsFor(c) ? <div className="lp-poffer__intro"><Paras list={o.intro} className="lp-poffer__p" /><PackageFacts c={c} /></div> : null}
       </div>
       <ol className="lp-poffer__cards" {...(o.programmeLinks ? { "data-programme-links": "" } : {})}>
         {o.cards.map((card, i) => (
@@ -88,7 +99,7 @@ function Row({ c, o, v, ui, no }: { c: CampaignConfig; o: Of<"row"> } & SecProps
           </li>
         ))}
       </ol>
-      <div className="lp-poffer__text"><Paras list={o.paragraphs} className="lp-poffer__p" /></div>
+      <div className="lp-poffer__text"><Paras list={o.paragraphs} className="lp-poffer__p" /><PackageFacts c={c} /></div>
       <div className="lp-poffer__foot"><ConsultCta c={c} /></div>
     </section>
   );
@@ -100,6 +111,7 @@ function Index({ c, o, v, ui, no }: { c: CampaignConfig; o: Of<"index"> } & SecP
       <div className="lp-poffer__aside">
         <SectionHead v={v} no={no} kicker={o.kicker ?? ui.kicker.index} title={o.heading} id="lp-poffer-h" />
         <Paras list={o.intro} className="lp-poffer__p" />
+        <PackageFacts c={c} />
         <ConsultCta c={c} />
       </div>
       <ol className="lp-poffer__index">

@@ -86,6 +86,11 @@ const asks = (nodes) => all(nodes, (n) => n.name === "a" && text(n).trim() === A
 /** The rendered markup without the Ask anchors: what the page rendered before this change. */
 const withoutAsks = (html) => html.replace(/<div data-programme-description="[^"]+">[\s\S]*?<\/div>/g, "").replace(/<a class="lp-btn lp-btn--line" href="#enquiry"[^>]*>Ask about this programme<\/a>/g, "");
 
+// DEC-PACKAGE-CARDS adds independently approved facts outside the programme link/card content.
+// package-facts.test.mjs verifies their exact facts and preservation of every existing node across all24routes.
+// Remove only that new block for this older Ask/description delta comparison; all interaction tests still render it.
+const withoutPackageFacts = (html) => html.replace(/<div data-package-facts="[^"]+">[\s\S]*?<\/div>/g, "").replace('<div class="lp-poffer__intro"></div>', '');
+
 test("all four English routes render one Ask anchor per existing programme link: 11 + 3 + 5 + 2 = 21", () => {
   let total = 0;
   for (const [slug, [route, count]] of Object.entries(TARGETS)) {
@@ -155,7 +160,7 @@ test("original full-detail links, card order, headings, paragraphs and the gener
     // The same page with the gate closed (any other route) renders exactly the Ask-less markup: nothing else moved.
     const closed = render(Offering, { ...c, route: "/not-a-programme-route.html" });
     assert.equal(asks(dom(closed)).length, 0);
-    assert.equal(withoutAsks(html), closed, `${slug}: only the approved descriptions and Ask anchors were added`);
+    assert.equal(withoutAsks(withoutPackageFacts(html)), closed, `${slug}: only the approved descriptions and Ask anchors were added`);
   }
 });
 
@@ -207,7 +212,7 @@ test("against the pre-change Offering.tsx: untargeted routes are byte-identical,
   for (const slug of PRODUCTION_SLUGS) {
     const c = C[slug];
     const before = render(Before, c);
-    const after = render(Offering, c);
+    const after = withoutPackageFacts(render(Offering, c));
     assert.ok(!before.includes(ASK), `${slug}: the baseline had no Ask anchor`);
     if (Object.hasOwn(TARGETS, slug)) {
       assert.notEqual(after, before, `${slug}: the candidate adds the Ask anchors`);
