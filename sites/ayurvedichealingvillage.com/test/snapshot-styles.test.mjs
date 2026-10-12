@@ -3,7 +3,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import zlib from "node:zlib";
-import { helmetStyles, importedComponents, viewFirstPaintStyles, snapshotStylesFor, firstScreenPoster, imageLedFirstScreen, bodyFontFiles, inlineFontStyles } from "../app/(english)/_families/snapshot-styles.mjs";
+import { helmetStyles, importedComponents, viewFirstPaintStyles, snapshotStylesFor, firstScreenPoster, imageLedFirstScreen, bodyFontFiles, routeFontPreloads, inlineFontStyles } from "../app/(english)/_families/snapshot-styles.mjs";
 import { firstCriticalImage, phoneCriticalMedia } from "../app/(english)/_families/critical-media.mjs";
 
 test("helmetStyles keeps local font stylesheets and <style> blocks only, in order", () => {
@@ -157,4 +157,14 @@ test("N12.06-B measured image-led loading remains exact-route scoped", () => {
 test("Monsoon image-led loading uses its traced exact route only", () => {
  assert.equal(imageLedFirstScreen('/karkidaka-chikitsha-or-monsoon-wellness.html'),true);
  assert.equal(imageLedFirstScreen('/karkidaka-chikitsha-or-monsoon-wellness/'),false);
+});
+
+test("finder and hub preload only body and existing heading faces; unrelated routes retain body-only", () => {
+ const css='@font-face{font-family:"Mulish";font-weight:400;src:url("body.common.woff2")}@font-face{font-family:"Marcellus";font-weight:400;src:url("heading.common.woff2")}@font-face{font-family:"Mulish";font-weight:700;src:url("bold.common.woff2")}';
+ const styles={fonts:['/ahv/fonts/test.css'],styles:['body{font-family:Mulish}']};
+ for(const route of ['/all-programs/','/ayurveda-training-programme/']) assert.deepEqual(routeFontPreloads(route,styles,()=>css,'de'),['/ahv/fonts/body.common.woff2','/ahv/fonts/heading.common.woff2']);
+ assert.deepEqual(routeFontPreloads('/all-programs/',styles,()=>css,'en'),['/ahv/fonts/body.common.woff2','/ahv/fonts/heading.common.woff2']);
+ assert.deepEqual(routeFontPreloads('/ayurveda-training-programme/',styles,()=>css,'en'),['/ahv/fonts/body.common.woff2','/ahv/fonts/heading.common.woff2','/ahv/fonts/bold.common.woff2']);
+ assert.deepEqual(routeFontPreloads('/offers/',styles,()=>css),['/ahv/fonts/body.common.woff2']);
+ assert.deepEqual(routeFontPreloads('/all-programs/',styles,()=>null),[]);
 });

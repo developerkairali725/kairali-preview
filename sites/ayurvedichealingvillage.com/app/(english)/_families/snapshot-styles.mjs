@@ -109,7 +109,7 @@ export function inlineFontStyles(fonts, readText) {
  * Resolved against the local font stylesheets' @font-face rules; returns served URLs (at most one per
  * stylesheet), or [] when the family is not one of the local faces.
  */
-export function bodyFontFiles(styles, readText) {
+export function bodyFontFiles(styles, readText, wantedWeight = "400") {
   let family = null;
   for (const css of styles.styles) {
     const m = css.match(/(?:^|[}\s])body\s*[{][^}]*?font-family\s*:\s*([^;}]+)/i);
@@ -126,7 +126,7 @@ export function bodyFontFiles(styles, readText) {
       if (!fam || fam.trim().replace(/^["']|["']$/g, "") !== family) continue;
       const style = ((body.match(/font-style\s*:\s*([^;]+)/i) || [])[1] || "normal").trim();
       const weight = ((body.match(/font-weight\s*:\s*([^;]+)/i) || [])[1] || "400").trim();
-      if (style !== "normal" || (weight !== "400" && weight !== "normal")) continue;
+      if (style !== "normal" || (weight !== wantedWeight && !(wantedWeight === "400" && weight === "normal"))) continue;
       const src = (body.match(/url\(\s*["']?([^"')]+)["']?\s*\)/i) || [])[1];
       if (!src || /^[a-z]+:/i.test(src) || src.startsWith("//")) continue;
       const url = src.startsWith("/") ? src : href.replace(/[^/]*$/, "") + src;
@@ -170,6 +170,15 @@ export function imageLedFirstScreen(routePath) {
   return IMAGE_LED_FIRST_SCREEN.has(String(routePath || ""));
 }
 
+/** Measured text-led finder/hub: preload only the existing heading face alongside the body face. */
+export function routeFontPreloads(route, styles, readText, locale = "en") {
+  const body = bodyFontFiles(styles, readText);
+  if (route !== "/all-programs/" && route !== "/ayurveda-training-programme/") return body;
+  const heading = bodyFontFiles({ ...styles, styles: ['body{font-family:"Marcellus"}'] }, readText);
+  const ui = route === "/ayurveda-training-programme/" && locale === "en" ? [...bodyFontFiles(styles, readText, "600"), ...bodyFontFiles(styles, readText, "700")] : [];
+  return [...new Set([...body, ...heading, ...ui])];
+}
+
 const TEXT_CACHE = new Map();
 
 /**
@@ -199,5 +208,5 @@ export function snapshotStylesFor(cfg, publicDir = join(process.cwd(), "public")
   if (!styles.fonts.length && !styles.styles.length) return null;
   // Only the body face is preloaded (measured: all four upright faces bought nothing on the simulated LCP and
   // cost 0.2-0.9 s under applied throttling, where 157 KB of TTF competed with the styles and the LCP image).
-  return { ...styles, fontCss: inlineFontStyles(styles.fonts, readText), preloadFonts: bodyFontFiles(styles, readText).filter((u) => { const f = fileFor(u); return !!f && existsSync(f); }) };
+  return { ...styles, fontCss: inlineFontStyles(styles.fonts, readText), preloadFonts: routeFontPreloads(cfg.path, styles, readText, cfg.locale?.code ?? "en").filter((u) => { const f = fileFor(u); return !!f && existsSync(f); }) };
 }

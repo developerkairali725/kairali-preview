@@ -5,6 +5,8 @@
  * Unrecognised entities or ranges conservatively keep the complete stylesheet.
  */
 export const TRAINING_SNAPSHOT_ROUTES = new Set([
+  "/all-programs/",
+  "/ayurveda-training-programme/",
   "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
   "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
   "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
