@@ -1,4 +1,3 @@
-import { treatmentHeadingLevels } from "./lib/treatment-heading-levels.mjs";
 import { treatmentResponsive } from "./lib/treatment-responsive.mjs";
 /**
  * AHV programme finders — derive every finder page from the owner's template.
@@ -487,7 +486,6 @@ const write = (input) => {
       .replace(desktop ? 'padding:34px 0 0;position:relative' : 'padding:26px 0 0;position:relative', desktop ? 'padding:34px 0 64px;position:relative' : 'padding:26px 0 40px;position:relative')
       .replace('</a>. Programme fees are', '</a></p>\n    <p style="margin:12px 0 0;color:#75695A;font-size:14.5px;line-height:1.7;max-width:88ch">Programme fees are');
   }
-  treatmentHeadingLevels(view);
   treatmentResponsive(view);
   const file = path.join(VIEWS, view.id + ".json");
   // two-space indent: the served views are kept in that form by tools/apply-copy-plan.mjs, so a re-run is byte-stable

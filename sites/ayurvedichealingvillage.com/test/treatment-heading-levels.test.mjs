@@ -1,26 +1,23 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import { treatmentHeadingLevels } from '../tools/lib/treatment-heading-levels.mjs';
+import vm from 'node:vm';
+import { treatmentHeadingLevels } from '../app/(english)/_families/treatment-heading-levels.mjs';
 const read = id => JSON.parse(fs.readFileSync(`public/ahv/views/${id}.json`, 'utf8'));
-test('treatment finder headings survive regeneration without changing card content or styles', () => {
-  const current = read('ahv-page-ayurvedic-treatments-desktop');
-  assert.doesNotMatch(current.template, /<h3\b/);
-  assert.match(current.template, /<h2[^>]*><a[^>]*>\{\{ p.t \}\}<\/a><\/h2>/);
-  const old = structuredClone(current);
-  let count = 0;
-  old.template = old.template.replace(/<h2\b([^>]*)>([\s\S]*?)<\/h2>/g, (full, attrs, body) => {
-    if (!body.includes('{{ p.t }}') && !attrs.includes('font-size:27px')) return full;
-    count++; return `<h3${attrs}>${body}</h3>`;
-  });
-  assert.equal(count, 4);
-  assert.deepEqual(treatmentHeadingLevels(old), current);
-  assert.deepEqual(treatmentHeadingLevels(old), current);
+test('treatment desktop mounts top-level headings as H2 with all other template bytes retained', () => {
+  const source = read('ahv-page-ayurvedic-treatments-desktop').template;
+  assert.equal((source.match(/<h3\b/g) || []).length, 4);
+  const result = treatmentHeadingLevels(source, '/ayurvedic-treatments/');
+  assert.equal(result, source.replace(/<h3\b/g, '<h2').replace(/<\/h3>/g, '</h2>'));
+  assert.match(result, /<h2[^>]*><a[^>]*>\{\{ p.t \}\}<\/a><\/h2>/);
+  assert.equal(treatmentHeadingLevels(result, '/ayurvedic-treatments/'), result);
+  const serialized = vm.runInNewContext(`(${treatmentHeadingLevels.toString()})`);
+  assert.equal(serialized(source, '/ayurvedic-treatments/'), result);
 });
-test('heading correction leaves mobile and other finders unchanged and rejects changed desktop anchors', () => {
-  for (const id of ['ahv-page-ayurvedic-treatments-mobile', 'ahv-page-all-programs-desktop']) {
-    const view = read(id), original = structuredClone(view);
-    assert.deepEqual(treatmentHeadingLevels(view), original);
-  }
-  assert.throws(() => treatmentHeadingLevels({ id: 'ahv-page-ayurvedic-treatments-desktop', template: '<h3>Changed source</h3>' }), /anchors changed/);
+test('mobile, unrelated routes and changed hierarchy remain untouched', () => {
+  const mobile = read('ahv-page-ayurvedic-treatments-mobile').template;
+  assert.equal(treatmentHeadingLevels(mobile, '/ayurvedic-treatments/'), mobile);
+  const other = read('ahv-page-all-programs-desktop').template;
+  assert.equal(treatmentHeadingLevels(other, '/all-programs/'), other);
+  assert.equal(treatmentHeadingLevels('<h3>Nested heading</h3>', '/ayurvedic-treatments/'), '<h3>Nested heading</h3>');
 });
