@@ -110,11 +110,11 @@ const DE: ProductionUi = {
     "gal-poolside-rest-palakkad-2026": "Eine Patientin ruht auf einer Liege am Pool in den Gärten des Dorfes",
   },
   doctorFacts: {
-    "deepu-john": { role: "Chefarzt und Abteilungsleiter", tenure: "Praktiziert Ayurveda seit 2010 · Bei Kairali seit 2019", focus: "Panchakarma und Beratung zu Lebensgewohnheiten", languages: ["Malayalam", "Englisch", "Hindi", "Tamil"] },
-    "rahul-r": { role: "Ayurveda-Arzt", tenure: "Bei Kairali seit 2023", languages: ["Englisch", "Malayalam", "Tamil"] },
-    "akhila-oommen": { role: "Ayurveda-Ärztin", tenure: "Bei Kairali seit 2024", languages: ["Malayalam", "Hindi", "Englisch"] },
-    "adhina-ub": { role: "Stationsärztin (RMO)", tenure: "Bei Kairali seit 2026", languages: ["Englisch", "Malayalam"] },
-    "aashitha-ps": { role: "Ayurveda-Ärztin", tenure: "Bei Kairali seit 2026", languages: ["Malayalam", "Englisch", "Hindi", "Tamil"] },
+    "deepu-john": { role: "Chefarzt und Abteilungsleiter", tenure: "Mindestens 15 Jahre dokumentierte Berufserfahrung in Ayurveda (Stand: September 2026)", focus: "Panchakarma und Beratung zu Lebensgewohnheiten", languages: ["Malayalam", "Englisch", "Hindi", "Tamil"] },
+    "rahul-r": { role: "Ayurveda-Arzt", tenure: "Mindestens 3 Jahre dokumentierte Berufserfahrung in Ayurveda (Stand: September 2026)", languages: ["Englisch", "Malayalam", "Tamil"] },
+    "akhila-oommen": { role: "Ayurveda-Ärztin", tenure: "Mindestens 9 Jahre dokumentierte Berufserfahrung in Ayurveda (Stand: September 2026)", languages: ["Malayalam", "Hindi", "Englisch"] },
+    "adhina-ub": { role: "Stationsärztin (RMO)", tenure: "Mindestens 1 Jahr dokumentierte Berufserfahrung in Ayurveda (Stand: September 2026)", languages: ["Englisch", "Malayalam"] },
+    "aashitha-ps": { role: "Ayurveda-Ärztin", tenure: "Mindestens 9 Jahre dokumentierte klinische Ayurveda-Erfahrung (Stand: September 2026)", languages: ["Malayalam", "Englisch", "Hindi", "Tamil"] },
   },
 };
 
@@ -164,11 +164,11 @@ const RU: ProductionUi = {
     "gal-poolside-rest-palakkad-2026": "Пациентка отдыхает на шезлонге у бассейна в садах деревни",
   },
   doctorFacts: {
-    "deepu-john": { role: "Главный врач и заведующий отделением", tenure: "Практикует аюрведу с 2010 года · В Kairali с 2019 года", focus: "Панчакарма и рекомендации по образу жизни", languages: ["малаялам", "английском", "хинди", "тамильском"] },
-    "rahul-r": { role: "Аюрведический врач", tenure: "В Kairali с 2023 г.", languages: ["английском", "малаялам", "тамильском"] },
-    "akhila-oommen": { role: "Аюрведический врач", tenure: "В Kairali с 2024 г.", languages: ["малаялам", "хинди", "английском"] },
-    "adhina-ub": { role: "Дежурный врач", tenure: "В Kairali с 2026 г.", languages: ["английском", "малаялам"] },
-    "aashitha-ps": { role: "Аюрведический врач", tenure: "В Kairali с 2026 г.", languages: ["малаялам", "английском", "хинди", "тамильском"] },
+    "deepu-john": { role: "Главный врач и заведующий отделением", tenure: "Не менее 15 лет документально подтверждённого профессионального опыта в аюрведе (по состоянию на сентябрь 2026 года)", focus: "Панчакарма и рекомендации по образу жизни", languages: ["малаялам", "английском", "хинди", "тамильском"] },
+    "rahul-r": { role: "Аюрведический врач", tenure: "Не менее 3 лет документально подтверждённого профессионального опыта в аюрведе (по состоянию на сентябрь 2026 года)", languages: ["английском", "малаялам", "тамильском"] },
+    "akhila-oommen": { role: "Аюрведический врач", tenure: "Не менее 9 лет документально подтверждённого профессионального опыта в аюрведе (по состоянию на сентябрь 2026 года)", languages: ["малаялам", "хинди", "английском"] },
+    "adhina-ub": { role: "Дежурный врач", tenure: "Не менее 1 года документально подтверждённого профессионального опыта в аюрведе (по состоянию на сентябрь 2026 года)", languages: ["английском", "малаялам"] },
+    "aashitha-ps": { role: "Аюрведический врач", tenure: "Не менее 9 лет документально подтверждённого клинического опыта в аюрведе (по состоянию на сентябрь 2026 года)", languages: ["малаялам", "английском", "хинди", "тамильском"] },
   },
 };
 

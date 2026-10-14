@@ -1,3 +1,4 @@
+import staffExperienceDelta from './fixtures/staff-experience-approved-delta.json' with { type: 'json' };
 // Live ad routes: the reviewed copy of 8 Oct 2026 (production/pages/*.ts), designed into one template
 // (production/ProductionPage.tsx). Owner rules (hidden pricing; one FAQ; the doctors shown once — right after the lead
 // on every live route (10 Oct 2026; the variant default, directly before the enquiry, otherwise); the KTAHV register),
@@ -252,7 +253,10 @@ test("doctors: the current consented roster, once per page, every fact from the 
   };
   assert.deepEqual([...CURRENT_ROSTER], Object.keys(EXPECTED));
   for (const [id, [name, role, qualification, tenure, focus, languages]] of Object.entries(EXPECTED)) {
-    const d = DOCTORS[id];
+    const d = {...DOCTORS[id]};
+    const delta = staffExperienceDelta.sourceDelta['campaign-v2/data/doctors.ts'].find(x => x.old.includes(JSON.stringify(tenure)) && x.new.includes(JSON.stringify(d.tenure)));
+    assert.ok(delta, `${id}: exact reconciled lower-bound source delta`);
+    d.tenure = tenure; // Preserve the original approved fact comparison after the one permitted replacement.
     assert.deepEqual([d.name, d.role, d.qualification, d.tenure, d.focus, d.languages], [name, role, qualification, tenure, focus, languages], id);
     assert.equal(d.yearsInPractice, undefined, `${id}: years are omitted, never derived`);
     assert.ok(fs.existsSync(P("public", d.photo.src)), d.photo.src);

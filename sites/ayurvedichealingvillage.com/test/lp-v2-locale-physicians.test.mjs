@@ -1,3 +1,6 @@
+import staffRosterIntegration from './fixtures/staff-roster-experience-integration.json' with {type:'json'};
+import staffExperienceDelta from './fixtures/staff-experience-approved-delta.json' with {type:'json'};
+import experienceCopy from '../english-candidate/staff-experience-copy.json' with {type:'json'};
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
@@ -17,23 +20,30 @@ for(const [locale,slug] of Object.entries(byLocale))test(`${locale}: five comple
  for(const doc of c.doctors){
   assert.deepEqual(doc,DOCTORS[doc.id]);assert.equal(doc.photo.consent,'confirmed');assert.equal(doc.yearsInPractice,undefined);
   const facts=UI[locale].doctorFacts[doc.id];assert(facts?.role&&facts.tenure,doc.id);
+  const profile={'deepu-john':'dr-deepu-john','rahul-r':'dr-rahul-r','akhila-oommen':'dr-akhila-oommen','adhina-ub':'dr-adhina-u-b','aashitha-ps':'dr-aashitha-p-s'}[doc.id];
+  assert.equal(facts.tenure,experienceCopy.locales[locale].find(r=>r.profile===profile).experience,doc.id+' retains approved dated lower bound');
   assert.deepEqual(facts.languages,doc.languages.map(l=>languages[locale][l]),doc.id);
   assert(!facts.languages.some(l=>/Deutsch|Russisch|немец|русск/i.test(l)),doc.id);
   assert(UI[locale].doctors.speaks(facts.languages));
  }
  assert.equal(UI[locale].doctorFacts['adhina-ub'].role,locale==='de'?'Stationsärztin (RMO)':'Дежурный врач');
 });
-test('all22 English configs exactly preserved, only roster and doctor heading change in DE/RU configs',()=>{
+test('all24 configs preserve original bytes after exact approved experience facts and DE/RU roster/heading normalization',()=>{
  assert.equal(PRODUCTION_SLUGS.length,24);assert.equal(Object.keys(fixture.configSHA256).length,24);
  for(const slug of PRODUCTION_SLUGS){
   const c=JSON.parse(JSON.stringify(productionCampaign(slug)));const locale=Object.keys(byLocale).find(l=>byLocale[l]===slug);
   if(locale){c.doctors=c.doctors.filter(d=>d.id==='deepu-john');c.page.doctors.heading=originalTitles[locale];}
+  for(const doctor of c.doctors){const delta=staffExperienceDelta.sourceDelta['campaign-v2/data/doctors.ts'].find(d=>JSON.parse(d.new.trim().slice(8,-1))===doctor.tenure);assert(delta,doctor.id);doctor.tenure=JSON.parse(delta.old.trim().slice(8,-1));}
   assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);
  }
 });
 test('exact approved source corrections reverse to original bytes, preserving prior facts/copy/style fixtures',()=>{
  for(const [p,entry] of Object.entries(fixture.files)){
-  let value=fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');assert.equal(sha(value),entry.afterSHA256,p);
+  let value=fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
+  const combined=staffRosterIntegration.files[p];
+  if(combined){assert.equal(sha(value),combined.afterSHA256,p);for(const{before,after}of combined.replacements){assert.equal(value.split(after).length-1,1,p);value=value.replace(after,before);}assert.equal(sha(value),combined.beforeSHA256,p);}
+  for(const delta of staffExperienceDelta.sourceDelta[p]||[]){assert.equal(value.split(delta.new).length-1,1,p);value=value.replace(delta.new,delta.old);}
+  assert.equal(sha(value),entry.afterSHA256,p);
   for(const {before,after}of entry.replacements){assert.equal(value.split(after).length-1,1,p);value=value.replace(after,before);}
   assert.equal(sha(value),entry.beforeSHA256,p);
  }
