@@ -2,7 +2,8 @@
 // own URL, query never included), robots (indexable only on the production build, AHV_STAGING=0, exactly as
 // before), the Open Graph / Twitter image and its alt (none where the replaced page had none: batch 2), the
 // WebPage node and the treatment-packages breadcrumb.
-// From the copy: title and description. Added: FAQPage for the FAQ the page shows (integrations/seo.ts).
+// From the copy: title and description. Added: FAQPage for the FAQ the page shows (integrations/seo.ts) and, on the
+// routes in organization.ts ORGANIZATION_ROUTES only, the site's existing Organization/Hospital entity (14 Oct 2026).
 //
 // Erasable TypeScript only (node --test imports this file).
 
@@ -10,6 +11,7 @@ import type { Metadata } from "next";
 import type { CampaignConfig } from "../kit/types.ts";
 import { faqPage, jsonLdScript } from "../integrations/seo.ts";
 import { OG_IMAGE, ROUTES, SITE_ORIGIN, type ProductionSlug } from "./bindings.ts";
+import { ORGANIZATION_ID, ORGANIZATION_ROUTES, organizationNode } from "./organization.ts";
 
 import localeRoutes from "../../l10n/routes.json" with { type: "json" };
 
@@ -59,7 +61,13 @@ export function productionJsonLd(slug: ProductionSlug, c: CampaignConfig): objec
     };
   }
   const faq = faqPage(c, b.locale ?? "en");
-  return faq ? [page, faq] : [page];
+  const nodes: object[] = faq ? [page, faq] : [page];
+  if (ORGANIZATION_ROUTES.has(slug)) {
+    // The hospital that publishes the page; the same @id as the English graph (schema.ts ORG_ID), so one entity.
+    page.publisher = { "@id": ORGANIZATION_ID };
+    nodes.push(organizationNode(b.locale ?? "en"));
+  }
+  return nodes;
 }
 
 /** The <script type="application/ld+json"> body ("<" escaped). */
