@@ -212,8 +212,8 @@ const enquiry = (path: string): RouteBinding["productionForm"] => ({ formVariant
 
 const SPECS: Spec[] = [
   // Review batch 1
-  { slug: "monsoon-wellness", route: "/karkidaka-chikitsha-or-monsoon-wellness.html", variant: "C", hero: "kt-190", pathway: "kt-202", form: r10("monsoon") },
-  { slug: "rejuvenation-detox", route: "/preventive-rejuvenation-detoxification.html", variant: "C", hero: "kt-202", pathway: "kt-199", form: r10("detox") },
+  { slug: "monsoon-wellness", route: "/karkidaka-chikitsha-or-monsoon-wellness.html", variant: "C", hero: "kt-190", stillness: "ahv-img-016", pathway: "kt-202", form: r10("monsoon") },
+  { slug: "rejuvenation-detox", route: "/preventive-rejuvenation-detoxification.html", variant: "C", hero: "kt-202", stillness: "ahv-img-016", pathway: "kt-199", form: r10("detox") },
   { slug: "ayurveda-retreat", route: "/ayurveda-retreat-kerala.html", variant: "B", hero: "wx-hero", pathway: "kt-199", form: r10("retreat") },
   { slug: "wellness-kerala", route: "/wellness-resort-kerala.html", variant: "B", hero: "kt-314", pathway: "kt-202", form: enquiry("/wellness-resort-kerala.html"), og: OG_EN_US("wellness-resort-kerala.html.jpg") },
   { slug: "cleansing-centre", route: "/kairali-cleansing-centre.html", variant: "A", hero: "kt-202", mobile: "kt-190", stillness: "ahv-img-016", pathway: "kt-199", form: enquiry("/kairali-cleansing-centre.html"), og: OG_EN_US("kairali-cleansing-centre.html.jpg") },
@@ -236,7 +236,7 @@ const SPECS: Spec[] = [
   // Phone LCP is the landscape wx-dining rendition (CI image-delivery: w750 q75, 53,382 bytes, est. 14,367 saveable);
   // q40 as on family-ayurvedic-retreat's landscape phone hero. Same photo and crop; desktop unchanged; q40 bytes unmeasured.
   { slug: "lp-weight-management", route: "/lp/weight-loss/", variant: "A", hero: "wx-dining", pathway: "kt-202", form: enquiry("/lp/weight-loss/"), og: OG_LP("images/consultation-pulse.webp"), mobileQuality: 40 },
-  { slug: "lp-behandlung-kerala", route: "/lp/behandlung-in-kerala/", variant: "C", hero: "kt-190", pathway: "kt-199", locale: "de", form: enquiry("/lp/behandlung-in-kerala/"), og: OG_LP("images/patient-villa-maharaja.jpg", "de_DE") },
+  { slug: "lp-behandlung-kerala", route: "/lp/behandlung-in-kerala/", variant: "C", hero: "kt-190", stillness: "ahv-img-016", pathway: "kt-199", locale: "de", form: enquiry("/lp/behandlung-in-kerala/"), og: OG_LP("images/patient-villa-maharaja.jpg", "de_DE") },
   // New campaign path (owner); /treatment-in-kerala-russian.html redirects here (next.config.ts), query string kept.
   { slug: "lp-treatment-kerala-ru", route: "/lp/treatment-in-kerala-russian/", variant: "C", hero: "kt-202", pathway: "kt-199", locale: "ru", form: enquiry("/lp/treatment-in-kerala-russian/"), og: { url: `${SITE_ORIGIN}/images/og/treatment-in-kerala-russian.html.jpg`, width: 1200, height: 630, locale: "ru_RU", siteName: "Kairali Ayurvedic Healing Village" } },
 ];
