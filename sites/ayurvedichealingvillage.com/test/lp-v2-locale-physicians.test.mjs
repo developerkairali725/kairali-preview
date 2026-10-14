@@ -15,6 +15,15 @@ const languages={de:{Malayalam:'Malayalam',English:'Englisch',Hindi:'Hindi',Tami
 const titles={de:'Ihre Ayurveda-Ärzte',ru:'Ваши аюрведические врачи'};
 const originalTitles={de:'Ihr Ayurveda-Arzt',ru:'Ваш аюрведический врач'};
 const sha=x=>createHash('sha256').update(x).digest('hex');
+// Owner decisions, 14 Oct 2026 (AHV-WB.042.change, AHV-WB.299.change), reversed exactly before the original config pins:
+// the weight routes' one-card Rupak Mann Stories band and the Panchakarma 14–28 night range.
+const WEIGHT_STORY={heading:'Hear from people who have stayed at Kairali',body:'Watch a patient describe her stay in her own words. Individual experiences vary.',films:[{title:'Watch Rupak Mann’s experience',href:'https://www.youtube.com/watch?v=D3QLxKpwtJs',thumb:{src:'/ahv/assets/img/video-thumb-D3QLxKpwtJs.webp',width:480,height:360}}]};
+const PANCHAKARMA_RANGE={'panchakarma':3,'lp-panchakarma':2};
+const reverseOwnerDecisions=(slug,c)=>{
+ if(slug==='weight-management'||slug==='lp-weight-management'){assert.deepEqual(c.page.stories,WEIGHT_STORY,slug);delete c.page.stories;}
+ if(PANCHAKARMA_RANGE[slug]){let j=JSON.stringify(c);assert.equal(j.split('14–28 night').length-1,PANCHAKARMA_RANGE[slug],slug);assert.equal(j.split('14–21 night').length-1,0,slug);c=JSON.parse(j.replaceAll('14–28 night','14–21 night'));}
+ return c;
+};
 for(const [locale,slug] of Object.entries(byLocale))test(`${locale}: five complete approved cards, actual individual languages, existing portraits and no inferred experience`,()=>{
  const c=productionCampaign(slug);
  assert.deepEqual(c.doctors.map(d=>d.id),[...CURRENT_ROSTER]);assert.equal(c.page.doctors.heading,titles[locale]);
@@ -32,7 +41,7 @@ for(const [locale,slug] of Object.entries(byLocale))test(`${locale}: five comple
 test('all24 configs preserve original bytes after exact approved experience facts and DE/RU roster/heading normalization',()=>{
  assert.equal(PRODUCTION_SLUGS.length,24);assert.equal(Object.keys(fixture.configSHA256).length,24);
  for(const slug of PRODUCTION_SLUGS){
-  const c=JSON.parse(JSON.stringify(productionCampaign(slug)));const locale=Object.keys(byLocale).find(l=>byLocale[l]===slug);
+  const c=reverseOwnerDecisions(slug,JSON.parse(JSON.stringify(productionCampaign(slug))));const locale=Object.keys(byLocale).find(l=>byLocale[l]===slug);
   if(locale){c.doctors=c.doctors.filter(d=>d.id==='deepu-john');c.page.doctors.heading=originalTitles[locale];}
   for(const doctor of c.doctors){const delta=staffExperienceDelta.sourceDelta['campaign-v2/data/doctors.ts'].find(d=>JSON.parse(d.new.trim().slice(8,-1))===doctor.tenure);assert(delta,doctor.id);doctor.tenure=JSON.parse(delta.old.trim().slice(8,-1));}
   if(slug===monsoonCompatibility.slug){

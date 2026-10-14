@@ -25,16 +25,19 @@ const locale = (slug) => ROUTES[slug].locale ?? 'en';
 
 // ---------------------------------------------------------------------------------------------------------- scope
 
-test('allowlist = exactly the English production routes that render Stories (13)', () => {
+// Owner decision, 14 Oct 2026 (AHV-WB.299.change): the two weight routes joined the 13 with the Rupak Mann story (15).
+test('allowlist = exactly the English production routes that render Stories (15)', () => {
   const derived = storyPages.filter((c) => locale(c.slug) === 'en').map((c) => c.route).sort();
-  assert.equal(derived.length, 13);
+  assert.equal(derived.length, 15);
+  for (const r of ['/weight-loss.html', '/lp/weight-loss/']) assert.ok(derived.includes(r), r);
   assert.deepEqual([...GUEST_VIDEO_ROUTES].sort(), derived);
   for (const r of GUEST_VIDEO_ROUTES) assert.equal(routeAllowed(r, 'en'), true, r);
 });
 
 test('every other production route, locale and path variant is excluded', () => {
   const others = Object.values(ROUTES).filter((b) => !GUEST_VIDEO_ROUTES.includes(b.route));
-  assert.equal(others.length, 11);
+  assert.equal(others.length, 9);
+  for (const r of ['/weight-loss.html', '/lp/weight-loss/']) assert.ok(!others.some((b) => b.route === r), r);
   for (const b of others) assert.equal(routeAllowed(b.route, b.locale ?? 'en'), false, b.route);
   for (const r of GUEST_VIDEO_ROUTES) {
     for (const lang of ['de', 'fr', 'ru', '', 'english', undefined]) assert.equal(routeAllowed(r, lang), false, `${r} ${lang}`);
@@ -47,7 +50,7 @@ test('every other production route, locale and path variant is excluded', () => 
   assert.equal(routeAllowed(null, 'en'), false);
 });
 
-test('approved films = every film the 13 routes already link, each mapped back from its card href', () => {
+test('approved films = every film the 15 routes already link, each mapped back from its card href', () => {
   const hrefs = storyPages.flatMap((c) => c.page.stories.films.map((f) => f.href));
   const ids = new Set();
   for (const href of hrefs) {
@@ -267,7 +270,8 @@ function harness({ path = '/pain-management.html', rec = record(), lang = 'en', 
 const flush = () => new Promise((r) => setImmediate(r));
 
 test('wiring: first route unapproved, then a client navigation to an approved one — works there, nothing fetched before', async () => {
-  const h = harness({ path: '/lp/weight-loss/' });
+  // Was /lp/weight-loss/ until AHV-WB.299.change approved it; /lp/panchkarma-treatment/ renders no Stories.
+  const h = harness({ path: '/lp/panchkarma-treatment/' });
   await flush();
   assert.equal(h.calls.loads, 0, 'no consent module fetch off-route');
   assert.equal(h.click(h.cards['4x01PtWfNnk']).defaultPrevented, false, 'off-route the card stays a link');
@@ -284,7 +288,7 @@ test('wiring: first route unapproved, then a client navigation to an approved on
 });
 
 test('wiring: approved first, then an unapproved or localized route — no interception, nothing opens', async () => {
-  for (const [p, lang] of [['/lp/weight-loss/', 'en'], ['/lp/behandlung-in-kerala/', 'de'], ['/pain-management.html', 'de']]) {
+  for (const [p, lang] of [['/lp/panchkarma-treatment/', 'en'], ['/lp/behandlung-in-kerala/', 'de'], ['/pain-management.html', 'de']]) {
     const h = harness();
     await flush();
     h.go(p);

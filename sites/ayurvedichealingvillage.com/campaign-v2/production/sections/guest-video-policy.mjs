@@ -1,9 +1,9 @@
 // Pure rules for the on-page patient-film player mounted by Stories.tsx (GuestVideoDialog.tsx); node --test imports
-// this file. Owner decision DEC-GUEST-VIDEO-POPUP: play the existing films in an on-page popup on exactly the 13
+// this file. Owner decision DEC-GUEST-VIDEO-POPUP: play the existing films in an on-page popup on exactly the 15
 // English routes below, keeping each card's YouTube link as the fallback. Fail closed everywhere: an unknown route,
 // language, film, consent state or API means no player.
 
-/** The 13 English routes of DEC-GUEST-VIDEO-POPUP (WOPS-AHV-GUEST-VIDEO-20261010-001 SCOPE.json), exact paths. */
+/** The 13 English routes of DEC-GUEST-VIDEO-POPUP (WOPS-AHV-GUEST-VIDEO-20261010-001 SCOPE.json) plus the two weight routes, exact paths. */
 export const GUEST_VIDEO_ROUTES = Object.freeze([
   "/pain-management.html",
   "/family-ayurvedic-retreat-kerala.html",
@@ -18,10 +18,14 @@ export const GUEST_VIDEO_ROUTES = Object.freeze([
   "/lp/pain-management/",
   "/lp/treatment-in-kerala/",
   "/lp/treatment-packages/",
+  // Owner decision, 14 Oct 2026 (AHV-WB.299.change): the two weight routes now carry the Rupak Mann guest story.
+  "/weight-loss.html",
+  "/lp/weight-loss/",
 ]);
 
-/** Every film the 13 routes' reviewed copy already links (production/pages/*.ts). No other id is ever embedded. */
-export const APPROVED_FILM_IDS = Object.freeze(["iPARaMRASUs", "4x01PtWfNnk", "3vWviQfW1Ug", "07tVC2oXd8g", "DcTMckQD3rc"]);
+/** Every film the 15 routes' reviewed copy already links (production/pages/*.ts). No other id is ever embedded. */
+// D3QLxKpwtJs: Rupak Mann, already published on the legacy weight page; added by owner decision AHV-WB.299.change (14 Oct 2026).
+export const APPROVED_FILM_IDS = Object.freeze(["iPARaMRASUs", "4x01PtWfNnk", "3vWviQfW1Ug", "07tVC2oXd8g", "DcTMckQD3rc", "D3QLxKpwtJs"]);
 
 /**
  * Conservative gating by this popup only. The existing consent configuration (public/consent, unchanged) offers
@@ -35,7 +39,7 @@ const ROUTES = new Set(GUEST_VIDEO_ROUTES);
 const FILMS = new Set(APPROVED_FILM_IDS);
 const YOUTUBE_ID = /^[A-Za-z0-9_-]{11}$/;
 
-/** True only on one of the 13 exact paths of an English document. */
+/** True only on one of the 15 exact paths of an English document. */
 export function routeAllowed(pathname, lang) {
   return typeof pathname === "string" && typeof lang === "string" && ROUTES.has(pathname) && /^en(?:-[A-Za-z]{2})?$/.test(lang);
 }
@@ -119,7 +123,7 @@ export const CLOSED = Object.freeze({ kind: "closed" });
  * consent is currently granted on an allowed route. Consent granted later never starts playback by itself.
  *   open    {id, title, granted, routeOk}
  *   consent {granted}       — any consent change/recheck; withdrawal or expiry ends playback
- *   route   {routeOk}       — route/locale recheck; leaving the 13 routes closes
+ *   route   {routeOk}       — route/locale recheck; leaving the 15 routes closes
  *   close                   — close button, Escape, backdrop, navigation, unmount
  */
 /**
