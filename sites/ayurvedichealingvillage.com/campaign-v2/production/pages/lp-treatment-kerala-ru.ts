@@ -2,7 +2,7 @@
 // buyer: a Russian-speaking reader exploring assessed residential Ayurveda in Palakkad. Copy reorganised from the
 // reviewed Russian brief (independent linguistic + factual PASS) for sales clarity (kairali-akshar-marketing-science
 // CREATE+REVIEW); wording reused wherever possible; facts only from the brief and data/doctors.ts.
-// `seo` kept from the brief (its canonical moves to the /lp/ route — builder). Only Dr. Deepu John is presented.
+// `seo` kept from the brief (its canonical moves to the /lp/ route — builder). Owner correction, 14 Oct: show the current roster.
 // No stories and no villa cards (linked pages are English). adMatch keywords = the fact audit's editorial topics.
 // "отдых/отдыхать" is used only in the sense of rest between procedures, as in the reviewed brief.
 import { defineCopy } from "../copy.ts";
@@ -28,7 +28,7 @@ export default defineCopy({
     secondary: "Задать вопрос",
   },
   programDefault: "",
-  doctors: ["deepu-john"],
+  doctors: ["deepu-john", "rahul-r", "akhila-oommen", "adhina-ub", "aashitha-ps"],
   page: {
     lead: {
       heading: "Начните со своих вопросов и потребностей",
@@ -85,7 +85,7 @@ export default defineCopy({
       after: ["Первичная консультация врача бесплатна. Предложение на пребывание должно ясно описывать лечение, включённые и дополнительные услуги, в том числе последующие, и их стоимость."],
     },
     doctors: {
-      heading: "Ваш аюрведический врач",
+      heading: "Ваши аюрведические врачи",
       intro: "Аюрведические врачи оценивают ваши потребности, составляют план лечения и следят за его ходом во время пребывания. При обращении уточните доступность врача для консультации.",
     },
     faqHeading: "Часто задаваемые вопросы",

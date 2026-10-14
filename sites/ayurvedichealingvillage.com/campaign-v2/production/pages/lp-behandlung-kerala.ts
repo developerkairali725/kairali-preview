@@ -2,7 +2,7 @@
 // buyer: a German-speaking reader exploring assessed residential Ayurveda in Palakkad. Copy reorganised from the
 // reviewed German brief (independent linguistic + factual PASS) for sales clarity (kairali-akshar-marketing-science
 // CREATE+REVIEW); wording reused wherever possible; facts only from the brief and data/doctors.ts.
-// Only Dr. Deepu John is presented (brief). No stories and no villa cards (linked pages are English).
+// Owner correction, 14 Oct: present the complete current consented roster. No stories or villa cards (links are English).
 // adMatch keywords = the fact audit's editorial topics (no German search-volume evidence exists).
 // "Abhyanga" kept as the brief writes it (house lint prefers "Abhyangam" — warning only).
 import { defineCopy } from "../copy.ts";
@@ -28,7 +28,7 @@ export default defineCopy({
     secondary: "Fragen Sie uns",
   },
   programDefault: "",
-  doctors: ["deepu-john"],
+  doctors: ["deepu-john", "rahul-r", "akhila-oommen", "adhina-ub", "aashitha-ps"],
   page: {
     lead: {
       heading: "Sie müssen noch kein Programm ausgewählt haben",
@@ -84,7 +84,7 @@ export default defineCopy({
       after: ["Welche Leistungen zusätzlich berechnet werden, hängt von der Vereinbarung ab. Ihre ärztliche Erstberatung ist kostenlos. Lassen Sie sich die Leistungen und Kosten des Aufenthalts sowie etwaiger späterer Leistungen im Angebot erläutern."],
     },
     doctors: {
-      heading: "Ihr Ayurveda-Arzt",
+      heading: "Ihre Ayurveda-Ärzte",
       intro: "Unsere Ayurveda-Ärzte beurteilen Ihre Bedürfnisse, planen die verordneten Behandlungen und überprüfen den Verlauf während Ihres Aufenthalts. Fragen Sie bei Ihrer Anfrage nach der Verfügbarkeit eines Arztes.",
     },
     faqHeading: "Häufig gestellte Fragen",

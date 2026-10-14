@@ -261,8 +261,8 @@ test("doctors: the current consented roster, once per page, every fact from the 
   }
   for (const slug of PRODUCTION_SLUGS) {
     const c = C[slug];
-    // English pages show the roster; the German and Russian reviewed copy presents Dr. Deepu John only.
-    assert.deepEqual(c.doctors.map((d) => d.id), EN(slug) ? [...CURRENT_ROSTER] : ["deepu-john"], slug);
+    // Owner correction, 14 Oct: every campaign shows the complete current consented roster.
+    assert.deepEqual(c.doctors.map((d) => d.id), [...CURRENT_ROSTER], slug);
     // The designed sections never repeat a biography: names appear only on the doctor cards.
     for (const { path: at, text } of pageText(c)) assert.doesNotMatch(text, /\bDr\. /, `${slug} ${at}`);
     assert.doesNotMatch(pageStrings(c).join(" | "), /Ashikh?a/);
