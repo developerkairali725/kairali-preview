@@ -1,3 +1,4 @@
+import { productionCss } from "../scripts/build-production-css.mjs";
 // Approved gallery photographs on the live ad routes (campaign-v2/data/gallery-images.ts): the first four (batch 1)
 // and the twelve English village routes of batch 2. Data-level
 // checks only: the bindings, the campaign config each page renders from, the published gallery manifest and the files
@@ -259,9 +260,10 @@ test("German and Russian additions retain localized accessible descriptions", ()
 // Desktop gallery dialogs must override the shared dialog token just as mobile does.
 test("gallery outer dialog has sharp corners at desktop and phone widths", () => {
   const css = fs.readFileSync(P("campaign-v2/production/document.css"), "utf8");
-  const base = css.match(/^\.lp-gal\{([^}]+)\}/m);
-  assert.ok(base, "unconditional gallery rule exists");
-  assert.match(base[1], /(?:^|;)border-radius:0(?:;|$)/);
-  assert.ok(css.indexOf(base[0]) > css.indexOf(".lp-dlg{"), "gallery override follows shared dialog radius");
+  assert.equal(css, productionCss(), "checked CSS is generated from the maintained sources");
+  const override = ".lp-gal{border-radius:0}";
+  const production = fs.readFileSync(P("campaign-v2/production/production.css"), "utf8");
+  assert.ok(production.includes(override), "maintained production source sets sharp gallery corners");
+  assert.ok(css.lastIndexOf(override) > css.indexOf(".lp-dlg{"), "gallery override follows shared dialog radius");
   assert.match(css, /@media \(max-width:767px\)\{\s*\.lp-gal\{[^}]*border-radius:0\}/);
 });
