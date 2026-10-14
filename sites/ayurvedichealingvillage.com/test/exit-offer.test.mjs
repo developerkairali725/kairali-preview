@@ -1,8 +1,10 @@
 // public/design/exit-offer.js — the exit-intent "Get 10% OFF on all Treatment Packages" offer with a real form.
 // Owner decision, 14 Oct 2026 (direct chat, structured question): "10% offer popup", chosen over the no-discount help
-// popup and over keeping exit popups off. Source-level checks with a minimal in-process DOM and a mocked fetch (never
+// popup and over keeping exit popups off. Owner answers 14/15 Oct 2026 (direct chat, structured questions): count the
+// leads with the existing consented lead event (explicit approval for HARD GATE 11); show on paid pages too
+// (supersedes DEC-PAID-NAV for this popup only) but keep /offers/ excluded so discounts never stack; no terms. Source-level checks with a minimal in-process DOM and a mocked fetch (never
 // the network): trigger rules, once-per-session and 30-day suppression, the exclusion routes (confirmation, legal,
-// lead-form and DEC-PAID-NAV paid pages) kept in step with their route sources, 13-locale copy bound to the approved
+// lead-form and /offers/ pages) kept in step with their route sources, 13-locale copy bound to the approved
 // en/de/fr popup strings and the existing l10n translations, the accessible dialog, and the /api/lead/ payload shape.
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -23,22 +25,27 @@ const LOCALES = ["en", "hi", "de", "fr", "es", "it", "pt", "nl", "ru", "ar", "zh
 const DAY = 24 * 60 * 60 * 1000;
 
 // ---------------------------------------------------------------- wiring ----
-test("every site-tree document loads the one exit-offer script; the paid campaign documents do not", () => {
+test("the site tree and every paid campaign document load the one exit-offer script; offers/legal lanes do not", () => {
   const doc = read("app/(english)/_families/site-document.tsx");
   assert.match(doc, /<script defer src="\/design\/exit-offer\.js" \/>/);
-  assert.doesNotMatch(read("campaign-v2/production/Document.tsx"), /exit-offer/);
-  for (const layout of ["app/(ppc-v2)/layout.tsx", "app/(campaign)/layout.tsx", "app/(lp)/layout.tsx"]) {
-    assert.doesNotMatch(read(layout), /exit-offer|SiteDocument/, layout);
+  // Owner, 14/15 Oct 2026: "Show on paid pages too". One unconditional tag in the production campaign document, so
+  // all 24 paid ProductionPage routes (EN, DE, RU layouts) get it.
+  const production = read("campaign-v2/production/Document.tsx");
+  assert.equal(production.match(/exit-offer\.js/g).length, 1);
+  assert.match(production, /\n {8}<Script src="\/design\/exit-offer\.js" strategy="afterInteractive" \/>\n/);
+  for (const g of ["(ppc-v2)", "(ppc-v2-de)", "(ppc-v2-ru)"]) assert.match(read(`app/${g}/layout.tsx`), /<ProductionDocument[ >]/, g);
+  // The /offers/ pages (app/(campaign)) and the lp-lane legal pages (app/(lp)) use other documents: never loaded.
+  for (const f of ["app/(campaign)/layout.tsx", "app/(lp)/layout.tsx", "campaign-v110/CampaignDocument.tsx"]) {
+    assert.doesNotMatch(read(f), /exit-offer|SiteDocument|ProductionDocument/, f);
   }
 });
 
-test("accepted exit-intent submissions get the same receipt page; analytics logic is untouched (HARD GATE 11)", () => {
+test("accepted exit-intent submissions get the same receipt page and the same consented lead event (owner-approved)", () => {
   const receipt = read("public/design/lead-receipt.js");
   assert.match(receipt, /'exit-intent': '\/thanks\/'/);
-  // The consented lead-event allowlist is analytics logic: adding "exit-intent" there needs its own owner decision,
-  // so an accepted exit-intent lead reaches /thanks/ but sends no conversion event until that is approved.
+  // Owner, 14/15 Oct 2026: "Yes, count them" — explicit approval for HARD GATE 11. Behaviour: test/lead-measurement.
   const runtime = read("app/(english)/_families/consent-runtime.ts");
-  assert.match(runtime, /\["contact", "enquiry-form", "online-consultation", "opd", "landing-page"\]\.indexOf\(form\) === -1\) return false;/);
+  assert.match(runtime, /\["contact", "enquiry-form", "online-consultation", "opd", "landing-page", "exit-intent"\]\.indexOf\(form\) === -1\) return false;/);
   // No new tag or consent wiring in the offer script itself.
   const src = read("public/design/exit-offer.js");
   assert.doesNotMatch(src, /gtag|fbq|clarity|dataLayer|AHV_MEASUREMENT|recordInteraction|googletagmanager|AHV_SET_CONSENT/);
@@ -96,6 +103,9 @@ test("13 locales, every string present, no template residue", () => {
   assert.equal(xo.language("/zh/our-villas/"), "zh");
   assert.equal(xo.language("/de"), "de");
   assert.equal(xo.language("/delhi-wellness/"), "en");
+  assert.equal(xo.language("/lp/behandlung-in-kerala/"), "de", "German paid lander");
+  assert.equal(xo.language("/lp/treatment-in-kerala-russian/"), "ru", "Russian paid lander");
+  assert.equal(xo.language("/lp/weight-loss/"), "en");
 });
 
 test("English, German and French use the approved popup strings of the home view, verbatim", () => {
@@ -140,15 +150,16 @@ test("other strings reuse the site's existing translations (popup, form, consent
 
 // ---------------------------------------------------------------- routes ----
 function sourceExclusions() {
-  const cat = { confirmation: new Set(), legal: new Set(["/privacy/", "/terms/"]), form: new Set(), paid: new Set() };
+  const cat = { confirmation: new Set(), legal: new Set(["/privacy/", "/terms/", "/lp/cookie-policy/"]), form: new Set(), offers: new Set() };
+  const paid = new Set();
   for (const r of readJson("english-candidate/route-manifest.json").routes) {
     const v = r.mobileView;
     if (v === "ahv-page-confirmation-mobile") cat.confirmation.add(r.path);
     else if (v === "ahv-page-policy-reader-mobile" || v === "ahv-template-legal-policy-mobile") cat.legal.add(r.path);
     else if (v === "ahv-page-enquiry-mobile") cat.form.add(r.path);
-    else if (v.startsWith("ahv-page-campaign-")) cat.paid.add(r.path);
+    else if (v.startsWith("ahv-page-campaign-")) paid.add(r.path);
   }
-  for (const p of readJson("campaign-v110/routes.json")) cat.paid.add(p);
+  for (const p of readJson("campaign-v110/routes.json")) paid.add(p);
   const app = path.join(SITE, "app");
   const walk = (dir, url) => {
     for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -156,21 +167,25 @@ function sourceExclusions() {
       const seg = /^\(.*\)$/.test(e.name) ? "" : "/" + e.name;
       const sub = path.join(dir, e.name);
       const page = path.join(sub, "page.tsx");
-      if (fs.existsSync(page) && /<ProductionPage\b/.test(fs.readFileSync(page, "utf8"))) cat.paid.add(url + seg + (/\.html$/.test(e.name) ? "" : "/"));
+      if (fs.existsSync(page) && /<ProductionPage\b/.test(fs.readFileSync(page, "utf8"))) paid.add(url + seg + (/\.html$/.test(e.name) ? "" : "/"));
       walk(sub, url + seg);
     }
   };
   const paidGroups = fs.readdirSync(app).filter((d) => /^\(ppc-v2(-[a-z]+)?\)$/.test(d));
   for (const g of paidGroups) walk(path.join(app, g), "");
-  return cat;
+  for (const p of paid) if (p.startsWith("/offers/")) cat.offers.add(p);
+  return { cat, paid };
 }
 
-test("exclusion lists are exactly the route sources (confirmation, legal, lead-form and every paid page)", () => {
-  const src = sourceExclusions();
-  for (const k of Object.keys(src)) assert.deepEqual([...xo.EXCLUDED[k]].sort(), [...src[k]].sort(), k);
-  // DEC-PAID-NAV: the 24 live paid campaign pages (ProductionPage) are all excluded.
-  const production = [...src.paid].filter((p) => !p.startsWith("/offers/"));
-  assert.ok(production.length >= 24);
+test("exclusion lists are exactly the route sources; every paid page except /offers/ is eligible", () => {
+  const { cat, paid } = sourceExclusions();
+  assert.deepEqual(Object.keys(xo.EXCLUDED).sort(), Object.keys(cat).sort());
+  for (const k of Object.keys(cat)) assert.deepEqual([...xo.EXCLUDED[k]].sort(), [...cat[k]].sort(), k);
+  // Owner, 14/15 Oct 2026: "Show on paid pages too" (supersedes DEC-PAID-NAV for this popup only), keeping /offers/.
+  const shown = [...paid].filter((p) => !p.startsWith("/offers/"));
+  assert.ok(shown.length >= 25, `${shown.length} paid paths`);
+  for (const p of shown) assert.equal(xo.exclusionReason(p), null, p);
+  for (const p of [...paid].filter((p) => p.startsWith("/offers/"))) assert.equal(xo.exclusionReason(p), "offers", p);
 });
 
 test("every locale copy of an excluded route is excluded, with its reason; other pages stay eligible", () => {
@@ -182,12 +197,15 @@ test("every locale copy of an excluded route is excluded, with its reason; other
       for (const p of Object.values(routes[base] || {})) { assert.equal(xo.exclusionReason(p), reason, p); checked++; }
     }
   }
-  assert.ok(checked > 300, `${checked} localized paths`);
+  assert.ok(checked > 250, `${checked} localized paths`);
   for (const p of Object.keys(xo.LOCALIZED_EXCLUDED)) assert.ok(Object.values(routes).some((r) => Object.values(r).includes(p)), p);
   for (const p of ["/fr/remerciers/", "/de/thanks/", "/zh/onlineconsultation-thanks/", "/thanks", "/ar/contact-us/thank-you/"]) assert.equal(xo.exclusionReason(p), "confirmation", p);
   for (const p of ["/de/cookie-richtlinie/", "/fr/mentions-legales/", "/ja/new-privacy-policy/", "/terms-and-conditions/"]) assert.equal(xo.exclusionReason(p), "legal", p);
-  for (const p of ["/lp/weight-loss/", "/lp/anything-new/", "/ru/lp/treatment-in-kerala-russian/", "/lp-v2/pain-management/a/", "/pain-management.html", "/offers/new/", "/kairali-air-india-maharaja-club.html"]) assert.equal(xo.exclusionReason(p), "paid", p);
-  for (const p of ["/", "/de/", "/zh/", "/our-villas/", "/fr/villas/", "/ayurvedic-treatments/", "/hi/our-villas/", "/deluxe-villa/", "/delhi-something/"]) assert.equal(xo.exclusionReason(p), null, p);
+  for (const p of ["/offers/new/", "/offers/senior-citizen-offer/", "/de/offers/new/", "/offers/new"]) assert.equal(xo.exclusionReason(p), "offers", p);
+  assert.equal(xo.exclusionReason("/lp/cookie-policy/"), "legal");
+  for (const p of ["/", "/de/", "/zh/", "/our-villas/", "/fr/villas/", "/ayurvedic-treatments/", "/hi/our-villas/", "/deluxe-villa/", "/delhi-something/",
+    "/lp/weight-loss/", "/lp/behandlung-in-kerala/", "/lp/treatment-in-kerala-russian/", "/lp-v2/pain-management/a/", "/pain-management.html",
+    "/ayurvedic-treatment-packages.html", "/kairali-air-india-maharaja-club.html"]) assert.equal(xo.exclusionReason(p), null, p);
 });
 
 // ---------------------------------------------------------------- trigger ----
@@ -444,14 +462,14 @@ test("never over another dialog, the cookie notice, the open chat or a form the 
   assert.equal(xo.busyElsewhere(doc, own), false, "its own closed dialog does not block");
 });
 
-test("init: inert on excluded routes, campaign documents, after a session showing, while suppressed or without <dialog>", () => {
-  for (const p of ["/thanks/", "/fr/remerciers/", "/new-privacy-policy/", "/contact-us/", "/lp/weight-loss/", "/ayurvedic-treatment-packages.html", "/offers/senior-citizen-offer/"]) {
+test("init: inert on excluded routes, after a session showing, while suppressed or without <dialog>", () => {
+  for (const p of ["/thanks/", "/fr/remerciers/", "/new-privacy-policy/", "/contact-us/", "/offers/senior-citizen-offer/", "/lp/cookie-policy/"]) {
     const { win } = makeWin(p);
     assert.equal(xo.init(win), false, p);
     assert.equal((win.listeners.scroll || []).length, 0, p);
   }
-  let c = makeWin("/our-villas/"); c.doc.body.setAttribute("data-ahv-campaign", "true");
-  assert.equal(xo.init(c.win), false, "campaign document");
+  let c = makeWin("/ayurvedic-treatment-packages.html"); c.doc.body.setAttribute("data-ahv-campaign", "true");
+  assert.equal(xo.init(c.win), true, "paid campaign document (owner: show on paid pages too)");
   c = makeWin("/"); c.win.sessionStorage.setItem(xo.SESSION_KEY, "shown");
   assert.equal(xo.init(c.win), false, "once per session");
   c = makeWin("/"); xo.remember(c.win.localStorage, "dismissed", Date.now() - DAY);

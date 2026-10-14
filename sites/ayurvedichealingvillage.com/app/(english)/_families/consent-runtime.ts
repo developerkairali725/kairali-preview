@@ -186,7 +186,9 @@ export const CONSENT_RUNTIME = `
   }
   function recordAcceptedLead(form, token) {
     // Careers are applications, not the Ads EnquirySubmission conversion.
-    if (["contact", "enquiry-form", "online-consultation", "opd", "landing-page"].indexOf(form) === -1) return false;
+    // Exit-intent offer leads count as enquiries (owner approval for HARD GATE 11, 14/15 Oct 2026, direct chat): the
+    // same consented event, no new tag.
+    if (["contact", "enquiry-form", "online-consultation", "opd", "landing-page", "exit-intent"].indexOf(form) === -1) return false;
     if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(String(token || ""))) return false;
     if (consentChoice() !== "accepted" || !measurementStarted || !cfg.measurement || !measurementUrlSafe()) return false;
     var key = "ktahv-accepted-lead-events-v1";

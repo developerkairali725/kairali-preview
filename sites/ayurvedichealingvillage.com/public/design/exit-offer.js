@@ -11,16 +11,17 @@
  *     one viewport of scrolling, a fine pointer leaving through the top of the viewport (desktop) or, on a coarse
  *     pointer, a deliberate scroll back towards the top of more than one viewport (mobile). Never the Back button.
  *   - Frequency: at most once per browser session; none for 30 days after a dismissal or a submission.
- *   - Never on confirmation/thank-you, legal, lead-form or paid campaign pages (DEC-PAID-NAV keeps the paid landers'
- *     existing exits unchanged), never while the cookie notice, the chat or another dialog is open, and never while
- *     the visitor is typing into a form.
+ *   - Shown on the site tree and, by the owner's 14/15 Oct 2026 answer "Show on paid pages too" (superseding
+ *     DEC-PAID-NAV for this popup only), on the paid campaign pages (/lp/…, the .html landers, Air India) through
+ *     campaign-v2/production/Document.tsx. Never on confirmation/thank-you, legal or lead-form pages, never on the
+ *     /offers/ category-discount pages (the 10% must not stack), never while the cookie notice, the chat or another
+ *     dialog is open, and never while the visitor is typing into a form.
  *   - Form: name, country code + phone, email and the site's existing required consent wording, posted to the existing
  *     /api/lead/ pipeline as form "exit-intent" with the same body shape, validation, transport, guide download and
  *     messages as the contact form. The accepted response is observed by lead-receipt.js exactly as for the other
- *     forms and leads to the same-locale /thanks/ page. The consented lead-event allowlist (consent-runtime.ts) is
- *     analytics logic and is NOT changed here (HARD GATE 11): until the owner approves adding "exit-intent" to it,
- *     an accepted exit-intent lead sends no conversion event. No tracking tag, consent setting or delivery path is
- *     added or changed.
+ *     forms: the same consented lead event (exit-intent is on consent-runtime.ts's enquiry allowlist by explicit owner
+ *     approval for HARD GATE 11, 14/15 Oct 2026) and the same-locale /thanks/ page. No tracking tag, consent setting
+ *     or delivery path is added. Offer terms: none — the owner ruled "No terms, honour as shown".
  * Built with createElement/textContent only (no HTML parsing). Exposed as a CommonJS module for tests. */
 (function () {
   'use strict';
@@ -42,22 +43,14 @@
     confirmation: ['/book-now/', '/cart/', '/checkout/', '/contact-us/thank-you/', '/emailsubscriber/',
       '/onlinebookingthankyou/', '/onlineconsultation-thanks/', '/ppc-thanks/', '/thanks-old/', '/thanks/'],
     legal: ['/cancellation-and-refund-policy/', '/cookie-policy/', '/disclaimer/', '/legal-notice/',
-      '/new-privacy-policy/', '/payment-policy-compliance/', '/privacy-policy/', '/privacy-statement/', '/privacy/',
-      '/terms-and-conditions/', '/terms/'],
+      '/lp/cookie-policy/', '/new-privacy-policy/', '/payment-policy-compliance/', '/privacy-policy/',
+      '/privacy-statement/', '/privacy/', '/terms-and-conditions/', '/terms/'],
     form: ['/apply-now/', '/contact-us-old/', '/contact-us/', '/enquiry-form-old/', '/enquiry-form/',
       '/jobs/business-development-manager/', '/online-consultation-old/', '/online-consultation/',
       '/postulez-maintenant/', '/walk-in-ayurveda-treatment/'],
-    paid: ['/Ayurveda_Treatment_Neo_S.India_Cities.html', '/Kairali_Brand_and_Competition_Neo-original.html',
-      '/ayurveda-retreat-kerala.html', '/ayurvedic-treatment-packages.html', '/family-ayurvedic-retreat-kerala.html',
-      '/kairali-air-india-maharaja-club.html', '/kairali-cleansing-centre.html',
-      '/karkidaka-chikitsha-or-monsoon-wellness.html', '/lp/ayurveda-treatment-south-india/',
-      '/lp/ayurvedic-hospital-kerala/', '/lp/behandlung-in-kerala/', '/lp/kairali-brand/',
-      '/lp/kairali-cleansing-centre/', '/lp/pain-management/', '/lp/panchkarma-treatment/',
-      '/lp/treatment-in-kerala-russian/', '/lp/treatment-in-kerala/', '/lp/treatment-packages/', '/lp/weight-loss/',
-      '/offers/defence-and-paramilitary/', '/offers/defence-paramilitary-personnel-get-upto-30-off/', '/offers/new/',
-      '/offers/olympics-and-paralympics-offer/', '/offers/senior-citizen-offer/', '/pain-management.html',
-      '/panchkarma-treatment.html', '/preventive-rejuvenation-detoxification.html', '/treatment-in-kerala.html',
-      '/weight-loss.html', '/wellness-resort-kerala.html']
+    // Category-offer pages: the 10% offer must not stack with their discounts (owner, 14/15 Oct 2026).
+    offers: ['/offers/defence-and-paramilitary/', '/offers/defence-paramilitary-personnel-get-upto-30-off/',
+      '/offers/new/', '/offers/olympics-and-paralympics-offer/', '/offers/senior-citizen-offer/']
   };
   var LOCALIZED_EXCLUDED = {
     '/de/cookie-richtlinie/': 'legal', '/de/e-mail-abonnent/': 'confirmation', '/de/haftungsausschluss/': 'legal',
@@ -68,8 +61,7 @@
     '/fr/politique-dannulation-et-de-remboursement/': 'legal', '/fr/politique-en-matiere-de-cookies/': 'legal',
     '/fr/remerciers/': 'confirmation', '/fr/termes-et-conditions/': 'legal'
   };
-  // Every paid landing lane, in any locale: /lp/…, /lp-v2/… (DEC-PAID-NAV).
-  var PAID_PREFIX = /^\/(?:(?:hi|de|fr|es|it|pt|nl|ru|ar|zh|ja|ko)\/)?lp(?:-v2)?\//;
+  var PAID_LOCALE = { '/lp/behandlung-in-kerala/': 'de', '/lp/treatment-in-kerala-russian/': 'ru' };
   var LOCALE_PREFIX = /^\/(hi|de|fr|es|it|pt|nl|ru|ar|zh|ja|ko)(\/.*)?$/;
 
   var COPY = {
@@ -429,15 +421,16 @@
   function language(path) {
     // Same rule as lead-receipt.js: released route prefixes are stable (Chrome Translate can rewrite <html lang>).
     var match = LOCALE_PREFIX.exec(String(path || '/'));
-    return match ? match[1] : 'en';
+    if (match) return match[1];
+    // The two non-English paid landers have no locale prefix (app/(ppc-v2-de), app/(ppc-v2-ru)).
+    return PAID_LOCALE[String(path || '/')] || 'en';
   }
   function copyFor(lang) { return COPY[lang] || COPY.en; }
   function localPath(base, lang) { return !lang || lang === 'en' ? base : '/' + lang + base; }
 
-  /** The reason a path never shows the offer ('confirmation' | 'legal' | 'form' | 'paid'), or null. */
+  /** The reason a path never shows the offer ('confirmation' | 'legal' | 'form' | 'offers'), or null. */
   function exclusionReason(path) {
     var p = String(path || '/');
-    if (PAID_PREFIX.test(p)) return 'paid';
     var match = LOCALE_PREFIX.exec(p);
     var base = match ? (match[2] || '/') : p;
     var candidates = [p, base];
@@ -448,11 +441,6 @@
     if (Object.prototype.hasOwnProperty.call(LOCALIZED_EXCLUDED, p)) return LOCALIZED_EXCLUDED[p];
     if (Object.prototype.hasOwnProperty.call(LOCALIZED_EXCLUDED, p + '/')) return LOCALIZED_EXCLUDED[p + '/'];
     return null;
-  }
-
-  /** Paid campaign documents (ProductionDocument) carry body[data-ahv-campaign]; never show there either. */
-  function documentExcluded(doc) {
-    return !!(doc && doc.body && doc.body.hasAttribute && doc.body.hasAttribute('data-ahv-campaign'));
   }
 
   function readJson(storage, key) {
@@ -872,7 +860,7 @@
     var doc = win && win.document;
     if (!doc || win.__ahvExitOffer) return false;
     var path = win.location.pathname;
-    if (exclusionReason(path) || documentExcluded(doc)) return false;
+    if (exclusionReason(path)) return false;
     if (typeof win.HTMLDialogElement !== 'function') return false;
     var storage = null, session = null;
     try { storage = win.localStorage; } catch (_) { storage = null; }
@@ -888,7 +876,7 @@
       matches: function (q) { return !!(win.matchMedia && win.matchMedia(q).matches); }
     }, function (kind) {
       // Re-checked at the moment of exit: the route, other tabs' outcomes and anything else on screen.
-      if (exclusionReason(win.location.pathname) || documentExcluded(doc)) return false;
+      if (exclusionReason(win.location.pathname)) return false;
       if (shownThisSession(session) || suppressed(storage, now())) return false;
       if (busyElsewhere(doc, doc.querySelector('dialog[data-ahv-exit-offer]'))) return false;
       if (!open(win, kind, deps)) return false;
@@ -907,7 +895,7 @@
     LOCALES: LOCALES, COPY: COPY, EXCLUDED: EXCLUDED, LOCALIZED_EXCLUDED: LOCALIZED_EXCLUDED, OFFER_SUBJECT: OFFER_SUBJECT,
     STORE_KEY: STORE_KEY, SESSION_KEY: SESSION_KEY, SUPPRESS_DAYS: SUPPRESS_DAYS, MIN_ENGAGED_MS: MIN_ENGAGED_MS,
     language: language, copyFor: copyFor, localPath: localPath, exclusionReason: exclusionReason,
-    documentExcluded: documentExcluded, suppressed: suppressed, remember: remember, busyElsewhere: busyElsewhere,
+    suppressed: suppressed, remember: remember, busyElsewhere: busyElsewhere,
     createTrigger: createTrigger, validate: validate, buildPayload: buildPayload, buildDialog: buildDialog,
     trapTab: trapTab, submit: submit, open: open, init: init
   };
