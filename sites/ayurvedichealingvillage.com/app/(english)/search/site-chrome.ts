@@ -1,11 +1,11 @@
+import { searchRuntime, translateSearch as translate } from './runtime';
 import { applyReviewSnapshot } from "../_families/content-review.mjs";
 import { newsletterFooters } from "../_families/newsletter-markup.mjs";
 import { localizeFallbackChrome, searchLanguageHref } from "./search-language";
 import { computedFooterYear } from "../_families/computed-footer-year";
 import { youtubeNewTabs } from "../_families/youtube-links";
-import { readFileSync, existsSync } from "node:fs";
-import { gunzipSync } from "node:zlib";
-import { LOCALE_CODES, LOCALE_INFO, localizedPath, translate, type LocaleCode } from "../_families/l10n";
+import { readFileSync } from "node:fs";
+import { LOCALE_CODES, LOCALE_INFO, localizedPath, type LocaleCode } from "../_families/l10n";
 import { join } from "node:path";
 
 /**
@@ -104,10 +104,10 @@ function chromeFor(locale: LocaleCode): Chrome {
   try {
     if (locale === "en") t = newsletterFooters(computedFooterYear(youtubeNewTabs(readFileSync(join(process.cwd(), SNAPSHOT), "utf8"))));
     else {
-      const gz = join(process.cwd(), "l10n", "prerender", locale, "about-us.html.gz");
-      englishFallback = !existsSync(gz);
+      const snapshot = searchRuntime(locale).chrome;
+      englishFallback = !snapshot;
       t = englishFallback ? newsletterFooters(computedFooterYear(youtubeNewTabs(readFileSync(join(process.cwd(), SNAPSHOT), "utf8"))))
-        : computedFooterYear(youtubeNewTabs(gunzipSync(readFileSync(gz)).toString("utf8")));
+        : computedFooterYear(youtubeNewTabs(snapshot));
     }
   } catch { t = ""; }
   t = applyReviewSnapshot(t, "/about-us/", locale);
