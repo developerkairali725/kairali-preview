@@ -6,8 +6,9 @@
 // is separate and unchanged.
 //
 // Only the production surface gets a message; the /lp-v2 kit previews keep the bare link. A page language without a
-// reviewed message here (Russian) also keeps the bare link rather than an English one. The German line is flagged
-// for native review with the rest of the German interface (production/ui.ts).
+// reviewed message here (German, Russian) also keeps the bare link rather than an English one. The German line
+// (AHV-WB.514) was rejected in review (no native/owner acceptance; the generated DE chat choices stay bare) and is
+// excluded from Train A, so /lp/behandlung-in-kerala/ keeps the bare link everywhere.
 //
 // Erasable TypeScript only (node --test imports this file).
 
@@ -17,7 +18,6 @@ import { contact } from "../../campaign-v110/lib/site.ts";
 /** `{page}` = the page name. Locales absent here keep the bare link. */
 export const WHATSAPP_PAGE_MESSAGE: Partial<Record<string, string>> = {
   en: "Hello, I would like to enquire about your “{page}” page.",
-  de: "Hallo, ich habe eine Anfrage zu Ihrer Seite „{page}“.", // native review pending (as production/ui.ts DE)
 };
 
 /** The bare WhatsApp link (the locked patient-care number). */

@@ -94,6 +94,7 @@ test("the message is neutral: the page name only; no visitor data, digits, path,
   for (const slug of PRODUCTION_SLUGS) {
     const c = productionCampaign(slug), href = whatsappHref(c, productionRequest(c));
     if (c.locales[0] === "ru") { assert.equal(href, BARE, "Russian keeps the bare link (no reviewed Russian message)"); continue; }
+    if (c.locales[0] === "de") { assert.equal(href, BARE, "German keeps the bare link (AHV-WB.514 rejected: no accepted German message)"); continue; }
     const url = new URL(href);
     assert.equal(`${url.origin}${url.pathname}`, BARE, slug);
     assert.deepEqual([...url.searchParams.keys()], ["text"], slug);
@@ -106,7 +107,8 @@ test("the message is neutral: the page name only; no visitor data, digits, path,
     assert.doesNotMatch(text, /\b(cure|spa|resort|holiday|luxury|journey|guests?)\b/i, slug);
   }
   const de = productionCampaign("lp-behandlung-kerala");
-  assert.equal(new URL(whatsappHref(de, productionRequest(de))).searchParams.get("text"), "Hallo, ich habe eine Anfrage zu Ihrer Seite „Ayurveda-Behandlung in Kerala“.");
+  assert.equal(whatsappHref(de, productionRequest(de)), BARE, "AHV-WB.514 excluded: /lp/behandlung-in-kerala/ keeps the bare link");
+  assert.deepEqual(Object.keys(WHATSAPP_PAGE_MESSAGE), ["en"], "only the reviewed English message exists");
   const en = productionCampaign("treatment-packages");
   assert.equal(new URL(whatsappHref(en, productionRequest(en))).searchParams.get("text"), "Hello, I would like to enquire about your “Ayurvedic Treatment Packages in Kerala” page.");
 });
