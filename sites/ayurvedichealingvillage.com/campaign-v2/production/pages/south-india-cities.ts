@@ -3,6 +3,7 @@
 // (kairali-akshar-marketing-science CREATE+REVIEW); facts only from the brief and data/doctors.ts. No city branches,
 // distances, travel times or flight claims (the brief states none); no offers. "30 villas" is the brief's own fact.
 import { defineCopy } from "../copy.ts";
+import { story } from "../stories.ts";
 
 export default defineCopy({
   slug: "south-india-cities",
@@ -69,6 +70,29 @@ export default defineCopy({
         { title: "Start with a free consultation", body: "Share your health history, reports and current treatment. Tell patient care where you will travel from and the dates you have in mind." },
         { title: "Agree the programme and admission", body: "The doctor explains the proposed programme and recommended stay. Patient care then helps you clarify admission dates, villa accommodation and any assistance you need on arrival." },
         { title: "Arrange arrival and departure", body: "Share your proposed travel details and ask about transport options and charges. Confirm any transfer explicitly before relying on it, so your arrival and return fit the agreed plan." },
+      ],
+    },
+    // AHV-WB.249.villa-gallery and .guest-video (staff review 9 Oct 2026; owner's standing authority for approved
+    // villa photographs and on-page guest video; production/section-order.ts D_VILLAGE_AND_STORIES). Reviewed copy
+    // reused verbatim: the village from treatment-kerala.ts, the consented registry films from lp-hospital-kerala.ts.
+    // No new facts, names, countries or quotes.
+    place: {
+      heading: "Choose a villa that suits who is travelling",
+      paragraphs: ["Kairali has 30 villas across four categories. Tell patient care who is travelling with you and any room-access or occupancy preferences, then confirm the accommodation available for your dates."],
+      villas: [
+        { name: "Deluxe Villa", body: "A king-size bed and private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Deluxe Villa", href: "/deluxe-villa/" } },
+        { name: "Classic Villa", body: "Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Classic Villa", href: "/classic-villa/" } },
+        { name: "Royal Villa", body: "A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.", link: { label: "Explore Royal Villa", href: "/royal-villa/" } },
+        { name: "Maharaja Suite", body: "A king-size bed, a living area with a couch and garden access in a premium location.", link: { label: "Explore Maharaja Suite", href: "/maharaja-suite/" } },
+      ],
+    },
+    stories: {
+      heading: "See the village and hear from patients",
+      body: "Watch a day at the village and hear patients describe their stays in their own words. Individual experiences vary.",
+      films: [
+        story("iPARaMRASUs", "A day at the village"),
+        story("4x01PtWfNnk", "Watch Michaela & Jan’s experience"),
+        story("3vWviQfW1Ug", "Watch Supriya Agarwal’s experience"),
       ],
     },
     stay: {

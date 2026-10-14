@@ -4,6 +4,7 @@
 // panchakarma.ts (package comparison, cards rather than the numbered row). sha256 as recorded in
 // final-batch/NONPUBLIC/AUDIENCE-KEYWORDS-FACTS.json (not recomputed in this session).
 import { defineCopy } from "../copy.ts";
+import { story } from "../stories.ts";
 
 export default defineCopy({
   slug: "lp-panchakarma",
@@ -56,6 +57,29 @@ export default defineCopy({
         { title: "A free initial consultation", body: "Share your symptoms, diagnoses, current medicines and previous treatment. Bring relevant medical records and mention any dietary needs or practical assistance you may require." },
         { title: "Your plan and personal quotation", body: "Patient care prepares a quotation for your programme, dates, duration and occupancy. Check the included care and separately charged items before booking." },
         { title: "Your stay at the Healing Village", body: "Follow your prescribed programme from your villa, with gardens and space to rest between appointments." },
+      ],
+    },
+    // AHV-WB.430.villa-gallery and .guest-video (staff review 9 Oct 2026; owner's standing authority for approved
+    // villa photographs and on-page guest video; production/section-order.ts D_VILLAGE_AND_STORIES). Reviewed copy
+    // reused verbatim: the village from lp-cleansing-centre.ts, the consented registry films from lp-cleansing-centre.ts.
+    // No new facts, names, countries or quotes.
+    place: {
+      heading: "Choose your villa for the stay",
+      paragraphs: ["Explore the villa categories below, then confirm the accommodation and occupancy for your dates with patient care before booking."],
+      villas: [
+        { name: "Deluxe Villa", body: "A king-size bed and private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Deluxe Villa", href: "/deluxe-villa/" } },
+        { name: "Classic Villa", body: "Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Classic Villa", href: "/classic-villa/" } },
+        { name: "Royal Villa", body: "A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.", link: { label: "Explore Royal Villa", href: "/royal-villa/" } },
+        { name: "Maharaja Suite", body: "A king-size bed, a living area with a couch and garden access in a premium location.", link: { label: "Explore Maharaja Suite", href: "/maharaja-suite/" } },
+      ],
+    },
+    stories: {
+      heading: "Watch before you decide",
+      body: "Learn about Panchakarma, see the village and hear patients describe their stays in their own words. Individual experiences vary.",
+      films: [
+        story("07tVC2oXd8g", "Watch the Panchakarma film"),
+        story("iPARaMRASUs", "A day at the village"),
+        story("4x01PtWfNnk", "Watch Michaela & Jan’s experience"),
       ],
     },
     stay: {

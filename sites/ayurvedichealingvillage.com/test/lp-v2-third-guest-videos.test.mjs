@@ -6,6 +6,7 @@ import {productionCampaign,PRODUCTION_SLUGS} from '../campaign-v2/production/loa
 import {FILMS} from '../campaign-v2/data/films.ts';
 import {APPROVED_FILM_IDS,GUEST_VIDEO_ROUTES,filmIdFromHref,routeAllowed,reduce,CLOSED,playerSrc} from '../campaign-v2/production/sections/guest-video-policy.mjs';
 import fixture from './fixtures/third-guest-videos-20261014.json' with {type:'json'};
+import {BATCH6,reverseBatch6Config,reverseBatch6Source} from './fixtures/train-a-batch6-20261014.mjs';
 const targets={
  'wellness-kerala':{source:'ayurveda-retreat',index:1,id:'4x01PtWfNnk'},
  'cleansing-centre':{source:'lp-cleansing-centre',index:2,id:'4x01PtWfNnk'},
@@ -25,10 +26,12 @@ for(const [slug,{source,index,id}] of Object.entries(targets))test(`${slug}: thi
 });
 test('all21 other configs unchanged; remove only appended third card to restore each target and its original two cards',()=>{
  assert.equal(PRODUCTION_SLUGS.length,24);assert.equal(Object.keys(targets).length,3);
- for(const slug of PRODUCTION_SLUGS){const c=JSON.parse(JSON.stringify(productionCampaign(slug)));if(targets[slug])c.page.stories.films.pop();assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);}
- assert.equal(GUEST_VIDEO_ROUTES.length,13);assert.equal(APPROVED_FILM_IDS.length,5);
+ for(const slug of PRODUCTION_SLUGS){const c=reverseBatch6Config(slug,JSON.parse(JSON.stringify(productionCampaign(slug))));if(targets[slug])c.page.stories.films.pop();assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);}
+ // Train A batch 6 appended exactly four D routes after the original 13; the approved film list is unchanged.
+ assert.equal(GUEST_VIDEO_ROUTES.length,13+BATCH6.guestVideoRoutesAdded.length);assert.deepEqual(GUEST_VIDEO_ROUTES.slice(13),BATCH6.guestVideoRoutesAdded);assert.equal(APPROVED_FILM_IDS.length,5);
 });
 test('exact source additions reverse to the prior byte hashes; no testimonial text or rendering/consent policy changes',()=>{
  for(const [p,e]of Object.entries(fixture.files)){let s=fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');assert.equal(sha(s),e.afterSHA256);assert.equal(s.split(e.addition).length-1,1);s=s.replace(e.addition,'');assert.equal(sha(s),e.beforeSHA256);}
- for(const [p,hash]of Object.entries(fixture.unchangedSHA256))assert.equal(sha(fs.readFileSync(new URL('../'+p,import.meta.url))),hash,p);
+ // Train A batch 6 changed only the guest-video allowlist (exact delta reversed first); rendering and consent code are unchanged.
+ for(const [p,hash]of Object.entries(fixture.unchangedSHA256))assert.equal(sha(reverseBatch6Source(p,fs.readFileSync(new URL('../'+p,import.meta.url),'utf8'))),hash,p);
 });
