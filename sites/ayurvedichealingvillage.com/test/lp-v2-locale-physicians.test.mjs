@@ -14,6 +14,8 @@ import {reverseTrainAConfig,reverseTrainASource} from './fixtures/train-a-202610
 import {reverseTrainBConfig,reverseTrainBSource} from './fixtures/train-b-20261015.mjs';
 // Train F (15 Oct 2026) sits on top of Train B: its exact photograph picks are reversed first (fixtures/train-f-20261015.mjs).
 import {reverseTrainFConfig,reverseTrainFSource} from './fixtures/train-f-20261015.mjs';
+// Train G rework (15 Oct 2026) sits on top of Train F: its exact RU phone placeholder is reversed first (fixtures/train-g-rework-20261015.mjs).
+import {reverseTrainGConfig} from './fixtures/train-g-rework-20261015.mjs';
 import {reverseThirdGuestFilmsConfig} from './fixtures/pr429-integration-config.mjs';
 const byLocale={de:'lp-behandlung-kerala',ru:'lp-treatment-kerala-ru'};
 const languages={de:{Malayalam:'Malayalam',English:'Englisch',Hindi:'Hindi',Tamil:'Tamil'},ru:{Malayalam:'малаялам',English:'английском',Hindi:'хинди',Tamil:'тамильском'}};
@@ -41,7 +43,7 @@ test('all24 configs preserve original bytes after exact approved experience fact
  for(const slug of PRODUCTION_SLUGS){
   // PR429 also appended the approved third guest film to three campaigns after these pins; reverse it exactly too.
   // Train B (15 Oct): every merged Train B candidate's exact config change is reversed first (fixtures/train-b-20261015.mjs).
-  const c=reverseThirdGuestFilmsConfig(slug,reverseTrainAConfig(slug,reverseTrainBConfig(slug,reverseTrainFConfig(slug,JSON.parse(JSON.stringify(productionCampaign(slug)))))));const locale=Object.keys(byLocale).find(l=>byLocale[l]===slug);
+  const c=reverseThirdGuestFilmsConfig(slug,reverseTrainAConfig(slug,reverseTrainBConfig(slug,reverseTrainFConfig(slug,reverseTrainGConfig(slug,JSON.parse(JSON.stringify(productionCampaign(slug))))))));const locale=Object.keys(byLocale).find(l=>byLocale[l]===slug);
   if(locale){c.doctors=c.doctors.filter(d=>d.id==='deepu-john');c.page.doctors.heading=originalTitles[locale];}
   for(const doctor of c.doctors){const delta=staffExperienceDelta.sourceDelta['campaign-v2/data/doctors.ts'].find(d=>JSON.parse(d.new.trim().slice(8,-1))===doctor.tenure);assert(delta,doctor.id);doctor.tenure=JSON.parse(delta.old.trim().slice(8,-1));}
   if(slug===monsoonCompatibility.slug){

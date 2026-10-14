@@ -340,6 +340,11 @@ export const CAMPAIGN_ENQUIRY_COPY: Record<"en" | "de" | "ru", EnquiryCopy> = {
   },
 };
 
+/** The phone field's example. AHV-WB.548.phone-example (Train G rework, 15 Oct 2026): the Russian page shows the Russian
+ *  example its own validation message already gives (production/ui.ts, "например +7 900 000 00 00") instead of the
+ *  India desk "+91 …"; English and German keep "+91 …". Presentation only: the field, pattern and lead are unchanged. */
+export const CAMPAIGN_PHONE_PLACEHOLDER: Record<"en" | "de" | "ru", string> = { en: "+91 …", de: "+91 …", ru: "+7 900 000 00 00" };
+
 export function campaignEnquiryForm(locale: string): FormSchema {
   const k = locale === "de" || locale === "ru" ? locale : "en";
   const t = CAMPAIGN_ENQUIRY_COPY[k];
@@ -359,7 +364,7 @@ export function campaignEnquiryForm(locale: string): FormSchema {
       fields: [
         { name: "fullName", type: "text", label: t.name, required: true, autocomplete: "name", maxLength: 120, mapsTo: "fname" },
         { name: "email", type: "email", label: t.email, required: true, autocomplete: "email", maxLength: 254, mapsTo: "email" },
-        { name: "phone", type: "tel", label: t.phone, required: false, autocomplete: "tel", placeholder: "+91 …", maxLength: 30, pattern: LIVE_PHONE_PATTERN, mapsTo: "phone" },
+        { name: "phone", type: "tel", label: t.phone, required: false, autocomplete: "tel", placeholder: CAMPAIGN_PHONE_PLACEHOLDER[k], maxLength: 30, pattern: LIVE_PHONE_PATTERN, mapsTo: "phone" },
         { name: "message", type: "textarea", label: t.message, required: false, rows: 3, maxLength: 3000, mapsTo: "message" },
       ],
     }],

@@ -128,13 +128,31 @@
     document.body.appendChild(panel);
     return panel;
   }
+  // AHV-M008.02 (Train G rework, 15 Oct 2026): the compact consent notice (public/consent/ahv.css, fixed, z-index 999999)
+  // sat over the panel's lower links on phones ('Yoga & Training' tapped the notice). Layering/offset only: the open
+  // panel now ends above a visible compact notice and scrolls within that space; the notice, its text and its
+  // behaviour are untouched. When too little room is left above it, the panel is layered over it instead.
+  var CONSENT_GAP = 8, MIN_PANEL = 160;
+  function consentTop() {
+    var n = document.querySelector(".ahv-consent-compact");
+    if (!n || n.hidden) return 0;
+    var r = n.getBoundingClientRect();
+    return r.height > 0 && r.top > 0 && r.top < window.innerHeight ? Math.floor(r.top) : 0;
+  }
   function place() {
     if (!panel || panel.hidden || !openBtn) return;
     var hdr = openBtn.closest("header");
     var top = hdr ? Math.max(0, Math.round(hdr.getBoundingClientRect().bottom)) : 64;
     panel.style.top = top + "px";
-    panel.style.maxHeight = "calc(100vh - " + top + "px)";
+    var limit = consentTop(), room = limit ? limit - CONSENT_GAP - top : 0;
+    if (limit && room >= MIN_PANEL) { panel.style.maxHeight = room + "px"; panel.removeAttribute("data-ahv-fh-over-consent"); }
+    else {
+      panel.style.maxHeight = "calc(100vh - " + top + "px)";
+      if (limit) panel.setAttribute("data-ahv-fh-over-consent", ""); else panel.removeAttribute("data-ahv-fh-over-consent");
+    }
   }
+  // the notice is appended to <body> after an asynchronous consent check and removed once a choice is saved
+  if (window.MutationObserver && document.body) new MutationObserver(function () { if (panel && !panel.hidden) place(); }).observe(document.body, { childList: true });
   function open(btn) {
     buildPanel(); openBtn = btn; panel.hidden = false; place();
     var all = document.querySelectorAll("[data-ahv-fh-btn]"); for (var i = 0; i < all.length; i++) all[i].setAttribute("aria-expanded", "true");

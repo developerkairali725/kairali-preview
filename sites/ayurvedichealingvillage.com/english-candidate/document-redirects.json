@@ -8,6 +8,102 @@
     "destination": "https://kairali-documents.vercel.app/?property=ahv"
   },
   {
+    "source": "/hi/documents/",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=hi&language=Hindi&currency=INR"
+  },
+  {
+    "source": "/hi/documents/index.html",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=hi&language=Hindi&currency=INR"
+  },
+  {
+    "source": "/de/documents/",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=de&language=German&currency=EUR"
+  },
+  {
+    "source": "/de/documents/index.html",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=de&language=German&currency=EUR"
+  },
+  {
+    "source": "/fr/documents/",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=fr&language=French&currency=EUR"
+  },
+  {
+    "source": "/fr/documents/index.html",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=fr&language=French&currency=EUR"
+  },
+  {
+    "source": "/es/documents/",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=es&language=Spanish&currency=EUR"
+  },
+  {
+    "source": "/es/documents/index.html",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=es&language=Spanish&currency=EUR"
+  },
+  {
+    "source": "/it/documents/",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=it&language=Italian&currency=EUR"
+  },
+  {
+    "source": "/it/documents/index.html",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=it&language=Italian&currency=EUR"
+  },
+  {
+    "source": "/pt/documents/",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=pt&language=Portuguese&currency=EUR"
+  },
+  {
+    "source": "/pt/documents/index.html",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=pt&language=Portuguese&currency=EUR"
+  },
+  {
+    "source": "/nl/documents/",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=nl&language=Dutch&currency=EUR"
+  },
+  {
+    "source": "/nl/documents/index.html",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=nl&language=Dutch&currency=EUR"
+  },
+  {
+    "source": "/ru/documents/",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=ru&language=Russian&currency=USD"
+  },
+  {
+    "source": "/ru/documents/index.html",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=ru&language=Russian&currency=USD"
+  },
+  {
+    "source": "/ar/documents/",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=ar&language=Arabic&currency=USD"
+  },
+  {
+    "source": "/ar/documents/index.html",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=ar&language=Arabic&currency=USD"
+  },
+  {
+    "source": "/zh/documents/",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=zh-hans&language=Chinese%20%28Simplified%29&currency=USD"
+  },
+  {
+    "source": "/zh/documents/index.html",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=zh-hans&language=Chinese%20%28Simplified%29&currency=USD"
+  },
+  {
+    "source": "/ja/documents/",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=ja&language=Japanese&currency=USD"
+  },
+  {
+    "source": "/ja/documents/index.html",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=ja&language=Japanese&currency=USD"
+  },
+  {
+    "source": "/ko/documents/",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=ko&language=Korean&currency=USD"
+  },
+  {
+    "source": "/ko/documents/index.html",
+    "destination": "https://kairali-documents.vercel.app/?property=ahv&locale=ko&language=Korean&currency=USD"
+  },
+  {
     "source": "/ahv/assets/doc/healing-secrets.pdf",
     "destination": "/documents/pdf/healing-secrets/en/Healing-Secrets-of-Kairali-EN_20260925-R1.pdf"
   },
