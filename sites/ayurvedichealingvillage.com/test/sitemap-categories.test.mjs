@@ -134,12 +134,27 @@ for (let start = 0; start < 93; start += 25) test(`review ledger placements and 
 });
 
 test('unresolved ranking and Baoli merges are recorded without deciding a survivor', () => {
-  for (const id of ['M005', 'M009', 'M010', 'M016', 'M017']) {
+  for (const id of ['M009', 'M010', 'M016', 'M017']) {
     const row = ledger.rows.find(row => row.id === id);
     assert.equal(row.disposition, 'conditional-merge', id);
     assert.equal(row.target, undefined, id);
     assert.ok(row.dependency, id);
   }
+});
+
+// M005 left the unresolved set on the owner's 7 Oct 2026 survivor ruling ("approved as
+// per search data"). The ledger records exactly the survivor the runtime 301 serves.
+test('M005 cancer-support ledger row records the owner-approved survivor the runtime 301 serves', () => {
+  const row = ledger.rows.find(row => row.id === 'M005');
+  assert.equal(row.path, '/revitalizing-and-strengthening-treatment-for-cancer-patients/');
+  assert.equal(row.sitemapCategory, 'ayurveda');
+  assert.equal(row.disposition, 'redirect-after-preservation');
+  assert.equal(row.dependency, undefined);
+  assert.equal(row.target, '/revitalizing-and-strengthening/');
+  assert.equal(redirects[row.path].to, row.target);
+  assert.match(row.survivorRuling, /approved as per search data; M005\/M009\/M010; cb41d2e2d2c48191a3ead4fe5c267451/);
+  assert.equal(redirects[row.target], undefined, 'survivor is not itself redirected');
+  assert.ok(manifest.routes.some(route => route.path === row.target), 'survivor is a served route');
 });
 
 test('all 13 locale canonical URLs retain the same reciprocal alternate cluster and x-default', () => {
