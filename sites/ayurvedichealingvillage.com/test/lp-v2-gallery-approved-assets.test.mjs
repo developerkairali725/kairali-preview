@@ -208,9 +208,19 @@ test("provenance: each addition is in the named published manifest with the same
     assert.equal(entry.alt, pv.publishedAlt ?? image.alt);
     assert.equal(entry.libraryPath ?? entry.libraryPathPrivate, pv.libraryPath);
     assert.equal(pv.ownerDecision.decision, "yes");
-    // Never consent "confirmed" on a filename: the additions are frames with no identifiable person.
-    assert.equal(image.consent, "not-applicable", image.id);
-    assert.match(pv.people, /^No identifiable (person|patient or staff member)/, image.id);
+    // Consent is specific to the owner-approved photograph, never inferred from a filename.
+    if (image.id === "ahv-yoga-hall-consented-20261014") {
+      assert.equal(image.src, "/ahv/assets/img/gallery-2026/photo/yoga-large-hall-exposed-03.webp");
+      assert.equal(pv.publishedSha256, "5ea375faff82fcf26adddda817e81eced1f4a4f3eb0dcbd45f64630c319a5a81");
+      assert.equal(pv.ownerDecision.id, "AHV-YOGA-CONSENT-20261014");
+      assert.equal(pv.ownerDecision.record, "deliverables/WOPS-WEBSITE-SEQUENTIAL-20261008-001/recovery-20261014/yoga-gallery-consent/CONSENT-BINDING.json");
+      assert.equal(image.consent, "confirmed");
+      assert.match(image.alt, /^Two people practising yoga/);
+      assert.match(pv.people, /^Two people practising yoga; direct owner consent/);
+    } else {
+      assert.equal(image.consent, "not-applicable", image.id);
+      assert.match(pv.people, /^No identifiable (person|patient or staff member)/, image.id);
+    }
     assert.equal(image.decorative, false);
   }
 });

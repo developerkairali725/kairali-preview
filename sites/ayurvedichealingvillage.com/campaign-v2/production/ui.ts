@@ -97,6 +97,7 @@ const DE: ProductionUi = {
     "ahv-img-011": "Weiße Holzbrücke mit Gittergeländer zu einem Gebäude auf Stelzen zwischen tropischen Bäumen",
     "ahv-img-017": "Traditionelle hölzerne Behandlungsliege und Messing-Ölgefäß im Behandlungsraum in Palakkad",
     "ahv-img-033": "Sprechzimmer mit Untersuchungsliege und unverputzten Backsteinwänden bei Kairali in Palakkad",
+    "ahv-yoga-hall-consented-20261014": "Zwei Personen praktizieren Yoga in einer geräumigen Halle mit offenem Holzdach bei Kairali in Palakkad",
     "ahv-deluxe-bathroom": "Badezimmer der Deluxe-Villa mit Glasdusche und Waschbecken",
 
     "kt-199": "Zwei Therapeutinnen bei einer Abhyanga-Ganzkörpermassage mit warmem medizinischem Öl",
@@ -146,6 +147,7 @@ const RU: ProductionUi = {
     "ahv-img-011": "Белый деревянный мост с решетчатыми перилами к зданию на сваях среди тропических деревьев",
     "ahv-img-017": "Традиционный деревянный лечебный стол и латунный сосуд для масла в процедурной в Палаккаде",
     "ahv-img-033": "Кабинет консультаций со смотровой кушеткой и открытыми кирпичными стенами в Kairali в Палаккаде",
+    "ahv-yoga-hall-consented-20261014": "Два человека занимаются йогой в просторном зале с открытыми деревянными стропилами в Kairali в Палаккаде",
     "ahv-deluxe-bathroom": "Ванная комната виллы Deluxe со стеклянной душевой кабиной и раковиной",
 
     "kt-199": "Два терапевта проводят абхьянгу — массаж всего тела тёплым лечебным маслом",
