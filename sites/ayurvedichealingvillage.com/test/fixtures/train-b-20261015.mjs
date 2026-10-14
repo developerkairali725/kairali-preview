@@ -22,10 +22,12 @@ const plain = (v) => JSON.parse(JSON.stringify(v));
 
 export const TRAIN_B = json("train-b-20261015.json");
 const OWNER_DECISIONS_C = json("owner-decisions-c-20261014.json");
+const SURVIVOR_LINK = json("yoga-survivor-link-20261014.json");
 
 /** Candidates in merge order: name and per-file entries ({beforeSHA256, afterSHA256, replacements: [{before, after}]}). */
 export const TRAIN_B_CANDIDATES = Object.freeze([
   { name: "owner decisions C", files: OWNER_DECISIONS_C.files },
+  { name: "queued batch 15", files: SURVIVOR_LINK.files },
 ]);
 
 function strip(path, text, replacements, name) {
@@ -76,8 +78,8 @@ export function candidateSource(name, path, text) {
 const PHOTO_PICKS = OWNER_DECISIONS_C.photoPicks.routes;
 
 /** Owner decisions C config reversal: hero (A-D), phone hero, steps photograph, appended gallery entry, DE/RU Stories. */
-export function reverseOwnerDecisionsCConfig(slug, c) {
-  const picked = PHOTO_PICKS[slug];
+export function reverseOwnerDecisionsCConfig(slug, c, { pagesOnly = false } = {}) {
+  const picked = pagesOnly ? undefined : PHOTO_PICKS[slug];
   if (picked) {
     const id = (field) => ({ heroImage: c.hero.image.A.id, mobileImage: c.hero.mobileImage.id, pathwayImage: c.page.pathway.image.id })[field];
     for (const [field, want] of Object.entries(picked.after)) assert.equal(id(field), want, `${slug}.${field}`);
@@ -116,10 +118,25 @@ export function trainBGalleryBefore(slug, g) {
   return g.slice(0, -1);
 }
 
+// Queued batch 15 (AHV-WB.026.change): the one treatment-packages "Personalised yoga" link now points at the survivor URL.
+export function reverseBatch15Config(slug, c) {
+  if (slug !== "treatment-packages") return c;
+  const hits = c.page.offering.cards.flatMap((x) => x.links ?? []).filter((l) => l.href === SURVIVOR_LINK.survivorHref.after);
+  assert.equal(hits.length, 1, `${slug}: exactly one approved survivor link`);
+  hits[0].href = SURVIVOR_LINK.survivorHref.before;
+  return c;
+}
+
 /**
  * A JSON copy of a production config with every Train B candidate's exact config change reversed, newest first.
  * Use the returned value: a reversal may return a new object.
  */
-export function reverseTrainBConfig(slug, config) {
-  return reverseOwnerDecisionsCConfig(slug, config);
+export function reverseTrainBConfig(slug, config, options = {}) {
+  return reverseOwnerDecisionsCConfig(slug, reverseBatch15Config(slug, config), options);
 }
+
+/**
+ * As reverseTrainBConfig, but only the changes made in campaign page sources (production/pages/*.ts). For tests whose
+ * baseline loads the old page sources with the current bindings.ts, where the binding-level photo picks belong to both.
+ */
+export const reverseTrainBPageConfig = (slug, config) => reverseTrainBConfig(slug, config, { pagesOnly: true });

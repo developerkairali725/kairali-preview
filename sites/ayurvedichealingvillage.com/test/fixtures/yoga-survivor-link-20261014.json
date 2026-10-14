@@ -1,0 +1,20 @@
+{
+  "row": "AHV-WB.026.change",
+  "basis": "Vikash workbook 9 Oct row 29 (link straight to /yoga-therapy-individual/); approved M009 survivor; live 301 /yoga-retreats/ -> /yoga-therapy-individual/.",
+  "survivorHref": {
+    "before": "https://ayurvedichealingvillage.com/yoga-retreats/",
+    "after": "https://ayurvedichealingvillage.com/yoga-therapy-individual/"
+  },
+  "files": {
+    "campaign-v2/production/pages/treatment-packages.ts": {
+      "beforeSHA256": "6e6daa604b6b010c483a22ca539f654b15de3c0ac387ed51171a098572721a06",
+      "afterSHA256": "241835d25abbd4651472b71d864ef399beca09c3355018d0eb0a47f445baaa89",
+      "replacements": [
+        {
+          "before": "{ label: \"Personalised yoga\", href: `${SITE}/yoga-retreats/` }",
+          "after": "{ label: \"Personalised yoga\", href: `${SITE}/yoga-therapy-individual/` }"
+        }
+      ]
+    }
+  }
+}

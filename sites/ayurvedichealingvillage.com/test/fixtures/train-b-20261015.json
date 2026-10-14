@@ -3,11 +3,13 @@
  "base": "cc1ddad6ace2c557787d603ac7d5af2bd967a3b0 (Train A head, PR #430)",
  "note": "trainABytesSHA256 = SHA-256 of each path at the Train A head; removing every Train B candidate's recorded delta from the integrated file must give exactly these bytes (fixtures/train-b-20261015.mjs). recordedDeltas holds exact deltas of candidates that recorded none themselves.",
  "candidateFixtures": [
-  "owner-decisions-c-20261014.json"
+  "owner-decisions-c-20261014.json",
+  "yoga-survivor-link-20261014.json"
  ],
  "recordedDeltas": {},
  "trainABytesSHA256": {
   "campaign-v2/production/pages/lp-behandlung-kerala.ts": "d4ef5383368d11918d946701a5b27a25059426c77a51c25861ad636be4f7b330",
-  "campaign-v2/production/pages/lp-treatment-kerala-ru.ts": "4c94264eb4c81d5c5cedb1f7ca5332e6c5ea314e7bb56320a558760305a87c30"
+  "campaign-v2/production/pages/lp-treatment-kerala-ru.ts": "4c94264eb4c81d5c5cedb1f7ca5332e6c5ea314e7bb56320a558760305a87c30",
+  "campaign-v2/production/pages/treatment-packages.ts": "6e6daa604b6b010c483a22ca539f654b15de3c0ac387ed51171a098572721a06"
  }
 }
