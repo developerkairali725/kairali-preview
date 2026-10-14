@@ -1,0 +1,311 @@
+{
+ "task": "AHV train D06 (CANDIDATE-COMPLETE / SOURCE ONLY)",
+ "authority": "Standing owner implementation authority, 10 Oct 2026; settled assessments IMPLEMENT_SCOPED_COPY_CONSOLIDATION (WB.105/128/170/263/354/510) and SCOPED_LANGUAGE_FACT_REVIEW (WB.507).",
+ "rule": "Exact replacements only. Reversing every `after` with its `before` (last first) restores each file's exact prior bytes (beforeSHA256).",
+ "files": {
+  "campaign-v2/production/pages/lp-behandlung-kerala.ts": {
+   "beforeSHA256": "d4ef5383368d11918d946701a5b27a25059426c77a51c25861ad636be4f7b330",
+   "afterSHA256": "e61e5d0ddaed2728108f286661d75cb836d6d5d5335b6170caf4f2f6564ce79b",
+   "replacements": [
+    {
+     "row": "AHV-WB.507.change",
+     "before": "Abhyanga ist eine Ganzkörpermassage mit medizinierten Ölen.",
+     "after": "Abhyanga ist eine Ganzkörperanwendung mit medizinischen Kräuterölen."
+    },
+    {
+     "row": "AHV-WB.510.quotation-box",
+     "before": "\"Welche Leistungen zusätzlich berechnet werden, hängt von der Vereinbarung ab. Ihre ärztliche Erstberatung ist kostenlos. Lassen Sie sich die Leistungen und Kosten des Aufenthalts sowie etwaiger späterer Leistungen im Angebot erläutern.\"",
+     "after": "\"Welche Leistungen zusätzlich berechnet werden, hängt von der Vereinbarung ab.\""
+    }
+   ]
+  },
+  "campaign-v2/production/ui.ts": {
+   "beforeSHA256": "330c1582cba73535d5b1eaf5c1726cbf455eb735e6295e547e0637b48d095140",
+   "afterSHA256": "62148e33ba8fc0d3818d80b6cdbdc35e0b9c64cba0d8215a9d671882578e272f",
+   "replacements": [
+    {
+     "row": "AHV-WB.507.change",
+     "before": "\"Zwei Therapeutinnen bei einer Abhyanga-Ganzkörpermassage mit warmem medizinischem Öl\"",
+     "after": "\"Zwei Therapeutinnen bei einer Abhyanga-Ganzkörperanwendung mit warmem medizinischem Kräuteröl\""
+    }
+   ]
+  },
+  "campaign-v2/production/pages/monsoon-wellness.ts": {
+   "beforeSHA256": "98a6a085b63453303eb33e97f9c7a2268ba2e8100354ab1a38704b134100e13a",
+   "afterSHA256": "aa30d12f9943625a574675768541c6337b449607c77bb95f34bfdc1abe2a6e7b",
+   "replacements": [
+    {
+     "row": "AHV-WB.105.quotation-box",
+     "before": "any later services before you book.\" },\n    { q: \"What should I check in my quotation?\", a: \"Ask for the recommended programme, number of nights, villa occupancy and the care included for your dates. Confirm which medicines, tests, specialist services or travel arrangements cost extra. Review the full quotation with our team before booking, so you understand both the stay and any additional charges.\" },",
+     "after": "any later services before you book.\" },"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/rejuvenation-detox.ts": {
+   "beforeSHA256": "7ce1700dbe520c539e2bfef207d8712eb0647fb1ab6c015355e45ab8641edb00",
+   "afterSHA256": "ca333266a33cd19c6eb666ce26b26ec90d0a540628cadfe5f7516ce92e593781",
+   "replacements": [
+    {
+     "row": "AHV-WB.128.quotation-box",
+     "before": "Your doctor will discuss the suitable duration for you. Confirm the exact programme and number of nights in your quotation.\" },",
+     "after": "Your doctor will discuss the suitable duration for you.\" },"
+    },
+    {
+     "row": "AHV-WB.128.quotation-box",
+     "before": "any later services before you book.\" },\n    { q: \"What should I check in my quotation?\", a: \"Ask for the recommended programme, number of nights, villa occupancy and the care included for your dates. Confirm which medicines, tests, specialist services or travel arrangements cost extra. Review the full quotation with our team before booking, so you understand both the stay and any additional charges.\" },",
+     "after": "any later services before you book.\" },"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/wellness-kerala.ts": {
+   "beforeSHA256": "17d586516e431c963529bbacbd9d2053f5cc26f04f3c4fadc06fa0f47ab3fae4",
+   "afterSHA256": "7caadb9dfa48ceaf48d6615f1f6e875e96305ff137522ce1e57f073af5908ce3",
+   "replacements": [
+    {
+     "row": "AHV-WB.170.quotation-box",
+     "before": "Start with a free initial doctor consultation, then review your plan and quotation before booking.\"]",
+     "after": "Start with a free initial doctor consultation.\"]"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/brand.ts": {
+   "beforeSHA256": "6146b737ac6b4fdf3728579d68334994e1dc29f5cc076308dae5aeec9c10feff",
+   "afterSHA256": "3badb466785e65b8e5b3475c425468d88542728452cd304b1e94a2055d643f59",
+   "replacements": [
+    {
+     "row": "AHV-WB.263.quotation-box",
+     "before": "compare the full proposal: care, duration, accommodation, meals, reviews and additional charges. Ask for an individual quotation so you can see what applies to your dates and needs.\"]",
+     "after": "compare the full proposal: care, duration, accommodation, meals, reviews and additional charges.\"]"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-brand.ts": {
+   "beforeSHA256": "c186a49096184e68fc9031fc6451ba3b6e716a211307da0269ecfa5a10950ba7",
+   "afterSHA256": "e028a27617faae947ec5a886c403b8588689ab2b28985ae4021ce0dbb947cc1c",
+   "replacements": [
+    {
+     "row": "AHV-WB.354.quotation-box",
+     "before": "along with separately charged items.\" },\n    { q: \"What should I check before booking?\", a: \"Confirm the recommended programme, number of nights, villa category and occupancy in your quotation. Ask which care, meals and sessions are included, and which medicines, tests, additional services or travel arrangements cost extra. Review the booking terms before making a payment.\" },",
+     "after": "along with separately charged items.\" },"
+    }
+   ]
+  }
+ },
+ "configRule": "productionCampaign(slug) fields these source replacements change; setting each path back to `before` restores the exact prior config.",
+ "configChanges": [
+  {
+   "slug": "monsoon-wellness",
+   "path": [
+    "faq"
+   ],
+   "before": [
+    {
+     "q": "When can I book a Karkidaka Chikitsa stay?",
+     "a": "Plan your Karkidaka Chikitsa stay for July–August 2027. Confirm your arrival date, programme suitability and accommodation availability before arranging travel. Discuss your recommended care and length of stay before making your booking."
+    },
+    {
+     "q": "Does the monsoon make this suitable for everyone?",
+     "a": "Suitability depends on your individual assessment. Share your health history, current treatment and reasons for considering a stay with the doctor. Ask what a seasonal programme would involve for you, including the therapies, meals and rest. The season alone does not determine the care you need."
+    },
+    {
+     "q": "How long should I plan to stay?",
+     "a": "The Monsoon Starter is 7 days, The Monsoon Reset is 14 days and The Monsoon Overhaul is 21 days. Your physician assesses which programme suits you. Inclusions are indicative and subject to clinical evaluation. These durations are days; confirm accommodation nights, preparation and follow-up before booking."
+    },
+    {
+     "q": "What should I prepare before travelling?",
+     "a": "Share medical reports, current prescriptions and dietary needs during the consultation. Pack light cotton clothing and ask for current pre-arrival guidance. Confirm travel or access arrangements, your villa occupancy and the cancellation or rescheduling conditions before paying for your stay."
+    },
+    {
+     "q": "Is the initial doctor consultation free?",
+     "a": "Yes. Your initial doctor consultation is free. Share your health history, current treatment and questions to discuss whether a stay may suit you. Ask for a quotation covering your programme, accommodation and any later services before you book."
+    },
+    {
+     "q": "What should I check in my quotation?",
+     "a": "Ask for the recommended programme, number of nights, villa occupancy and the care included for your dates. Confirm which medicines, tests, specialist services or travel arrangements cost extra. Review the full quotation with our team before booking, so you understand both the stay and any additional charges."
+    }
+   ],
+   "after": [
+    {
+     "q": "When can I book a Karkidaka Chikitsa stay?",
+     "a": "Plan your Karkidaka Chikitsa stay for July–August 2027. Confirm your arrival date, programme suitability and accommodation availability before arranging travel. Discuss your recommended care and length of stay before making your booking."
+    },
+    {
+     "q": "Does the monsoon make this suitable for everyone?",
+     "a": "Suitability depends on your individual assessment. Share your health history, current treatment and reasons for considering a stay with the doctor. Ask what a seasonal programme would involve for you, including the therapies, meals and rest. The season alone does not determine the care you need."
+    },
+    {
+     "q": "How long should I plan to stay?",
+     "a": "The Monsoon Starter is 7 days, The Monsoon Reset is 14 days and The Monsoon Overhaul is 21 days. Your physician assesses which programme suits you. Inclusions are indicative and subject to clinical evaluation. These durations are days; confirm accommodation nights, preparation and follow-up before booking."
+    },
+    {
+     "q": "What should I prepare before travelling?",
+     "a": "Share medical reports, current prescriptions and dietary needs during the consultation. Pack light cotton clothing and ask for current pre-arrival guidance. Confirm travel or access arrangements, your villa occupancy and the cancellation or rescheduling conditions before paying for your stay."
+    },
+    {
+     "q": "Is the initial doctor consultation free?",
+     "a": "Yes. Your initial doctor consultation is free. Share your health history, current treatment and questions to discuss whether a stay may suit you. Ask for a quotation covering your programme, accommodation and any later services before you book."
+    }
+   ]
+  },
+  {
+   "slug": "rejuvenation-detox",
+   "path": [
+    "faq"
+   ],
+   "before": [
+    {
+     "q": "How is rejuvenation different from Panchakarma?",
+     "a": "These are distinct programme choices. Ask your doctor to explain the purpose of the recommended plan, the procedures it includes and any preparation involved. A rejuvenation enquiry does not mean that every Panchakarma procedure is appropriate for you. Your assessment guides the care selected for your stay."
+    },
+    {
+     "q": "What is the minimum stay for rejuvenation?",
+     "a": "Complete Rejuvenation & Detoxification Therapy has a seven-night minimum. The separate Preventive Health & Regenerative programme has a three-night minimum. Your doctor will discuss the suitable duration for you. Confirm the exact programme and number of nights in your quotation."
+    },
+    {
+     "q": "What happens during a residential stay?",
+     "a": "Your day is arranged around the plan discussed with your Ayurvedic doctor. Ask about the proposed therapies, meals, yoga or meditation and time for rest. Confirm which sessions and amenities are included in your chosen programme, and tell the team about dietary, mobility or other practical needs."
+    },
+    {
+     "q": "What should I discuss before returning home?",
+     "a": "Ask your doctor about the routine and dietary guidance recommended after your stay. Confirm any follow-up appointments, medicines and charges before departure. Bring up questions about fitting the advice into daily life, and make sure you understand who to contact if you need further guidance."
+    },
+    {
+     "q": "Is the initial doctor consultation free?",
+     "a": "Yes. Your initial doctor consultation is free. Share your health history, current treatment and questions to discuss whether a stay may suit you. Ask for a quotation covering your programme, accommodation and any later services before you book."
+    },
+    {
+     "q": "What should I check in my quotation?",
+     "a": "Ask for the recommended programme, number of nights, villa occupancy and the care included for your dates. Confirm which medicines, tests, specialist services or travel arrangements cost extra. Review the full quotation with our team before booking, so you understand both the stay and any additional charges."
+    }
+   ],
+   "after": [
+    {
+     "q": "How is rejuvenation different from Panchakarma?",
+     "a": "These are distinct programme choices. Ask your doctor to explain the purpose of the recommended plan, the procedures it includes and any preparation involved. A rejuvenation enquiry does not mean that every Panchakarma procedure is appropriate for you. Your assessment guides the care selected for your stay."
+    },
+    {
+     "q": "What is the minimum stay for rejuvenation?",
+     "a": "Complete Rejuvenation & Detoxification Therapy has a seven-night minimum. The separate Preventive Health & Regenerative programme has a three-night minimum. Your doctor will discuss the suitable duration for you."
+    },
+    {
+     "q": "What happens during a residential stay?",
+     "a": "Your day is arranged around the plan discussed with your Ayurvedic doctor. Ask about the proposed therapies, meals, yoga or meditation and time for rest. Confirm which sessions and amenities are included in your chosen programme, and tell the team about dietary, mobility or other practical needs."
+    },
+    {
+     "q": "What should I discuss before returning home?",
+     "a": "Ask your doctor about the routine and dietary guidance recommended after your stay. Confirm any follow-up appointments, medicines and charges before departure. Bring up questions about fitting the advice into daily life, and make sure you understand who to contact if you need further guidance."
+    },
+    {
+     "q": "Is the initial doctor consultation free?",
+     "a": "Yes. Your initial doctor consultation is free. Share your health history, current treatment and questions to discuss whether a stay may suit you. Ask for a quotation covering your programme, accommodation and any later services before you book."
+    }
+   ]
+  },
+  {
+   "slug": "wellness-kerala",
+   "path": [
+    "page",
+    "closing",
+    "paragraphs"
+   ],
+   "before": [
+    "Tell us what you would like to discuss, and our patient care team will help you take the next step. Start with a free initial doctor consultation, then review your plan and quotation before booking."
+   ],
+   "after": [
+    "Tell us what you would like to discuss, and our patient care team will help you take the next step. Start with a free initial doctor consultation."
+   ]
+  },
+  {
+   "slug": "brand",
+   "path": [
+    "page",
+    "offering",
+    "cards",
+    2,
+    "paragraphs"
+   ],
+   "before": [
+    "When considering a residential Ayurveda programme, compare the full proposal: care, duration, accommodation, meals, reviews and additional charges. Ask for an individual quotation so you can see what applies to your dates and needs."
+   ],
+   "after": [
+    "When considering a residential Ayurveda programme, compare the full proposal: care, duration, accommodation, meals, reviews and additional charges."
+   ]
+  },
+  {
+   "slug": "lp-brand",
+   "path": [
+    "faq"
+   ],
+   "before": [
+    {
+     "q": "Where is Kairali – The Ayurvedic Healing Village?",
+     "a": "The Healing Village is in Palakkad, Kerala. This page is for that residential Ayurvedic hospital. Tell patient care where you will travel from and discuss the admission plan, accommodation and onward travel arrangements before you book."
+    },
+    {
+     "q": "What does Kairali’s Ayurvedic heritage refer to?",
+     "a": "It refers to the family tradition of Ayurveda behind Kairali. For your own stay, the practical starting point is a consultation with the current medical team to discuss your health, proposed programme and arrangements for care."
+    },
+    {
+     "q": "How do I find the right programme?",
+     "a": "Begin with your health history, current treatment and goals. Ask the doctor to explain the programme being considered, its therapies, preparation and suitable duration. Confirm the exact care plan and inclusions with the team before arranging your stay."
+    },
+    {
+     "q": "Is the initial doctor consultation free?",
+     "a": "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Before booking a stay, request a quotation explaining the treatment, accommodation, doctor reviews and any later services, along with separately charged items."
+    },
+    {
+     "q": "What should I check before booking?",
+     "a": "Confirm the recommended programme, number of nights, villa category and occupancy in your quotation. Ask which care, meals and sessions are included, and which medicines, tests, additional services or travel arrangements cost extra. Review the booking terms before making a payment."
+    }
+   ],
+   "after": [
+    {
+     "q": "Where is Kairali – The Ayurvedic Healing Village?",
+     "a": "The Healing Village is in Palakkad, Kerala. This page is for that residential Ayurvedic hospital. Tell patient care where you will travel from and discuss the admission plan, accommodation and onward travel arrangements before you book."
+    },
+    {
+     "q": "What does Kairali’s Ayurvedic heritage refer to?",
+     "a": "It refers to the family tradition of Ayurveda behind Kairali. For your own stay, the practical starting point is a consultation with the current medical team to discuss your health, proposed programme and arrangements for care."
+    },
+    {
+     "q": "How do I find the right programme?",
+     "a": "Begin with your health history, current treatment and goals. Ask the doctor to explain the programme being considered, its therapies, preparation and suitable duration. Confirm the exact care plan and inclusions with the team before arranging your stay."
+    },
+    {
+     "q": "Is the initial doctor consultation free?",
+     "a": "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Before booking a stay, request a quotation explaining the treatment, accommodation, doctor reviews and any later services, along with separately charged items."
+    }
+   ]
+  },
+  {
+   "slug": "lp-behandlung-kerala",
+   "path": [
+    "page",
+    "offering",
+    "cards",
+    1,
+    "paragraphs"
+   ],
+   "before": [
+    "Abhyanga ist eine Ganzkörpermassage mit medizinierten Ölen. Bei Shirodhara wird ein gleichmäßiger Ölstrahl über die Stirn geführt. Beide sind mögliche, ärztlich verordnete Behandlungen; sie gehören nicht automatisch zu jedem Programm."
+   ],
+   "after": [
+    "Abhyanga ist eine Ganzkörperanwendung mit medizinischen Kräuterölen. Bei Shirodhara wird ein gleichmäßiger Ölstrahl über die Stirn geführt. Beide sind mögliche, ärztlich verordnete Behandlungen; sie gehören nicht automatisch zu jedem Programm."
+   ]
+  },
+  {
+   "slug": "lp-behandlung-kerala",
+   "path": [
+    "page",
+    "stay",
+    "after"
+   ],
+   "before": [
+    "Welche Leistungen zusätzlich berechnet werden, hängt von der Vereinbarung ab. Ihre ärztliche Erstberatung ist kostenlos. Lassen Sie sich die Leistungen und Kosten des Aufenthalts sowie etwaiger späterer Leistungen im Angebot erläutern."
+   ],
+   "after": [
+    "Welche Leistungen zusätzlich berechnet werden, hängt von der Vereinbarung ab."
+   ]
+  }
+ ]
+}
