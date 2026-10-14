@@ -50,8 +50,8 @@
      "pathwayImage": "kt-199"
     },
     "after": {
-     "heroImage": "ahv-img-018",
-     "mobileImage": "ahv-img-018",
+     "heroImage": "kt-202",
+     "mobileImage": "kt-190",
      "pathwayImage": "ahv-img-045"
     },
     "galleryAppended": "ahv-img-045",
@@ -77,8 +77,8 @@
      "pathwayImage": "kt-199"
     },
     "after": {
-     "heroImage": "ahv-img-045",
-     "mobileImage": "ahv-img-045",
+     "heroImage": "kt-202",
+     "mobileImage": "kt-190",
      "pathwayImage": "ahv-img-026"
     },
     "galleryAppended": "ahv-img-026",
@@ -98,7 +98,8 @@
     "galleryAppended": "ahv-img-045",
     "galleryCategory": "Therapies"
    }
-  }
+  },
+  "trainBExclusions": "Train B (15 Oct 2026): AHV-WB.005.hero-image (treatment-packages) and AHV-WB.403.change (lp-pain-management) were rejected by REVIEW.json and are excluded; their hero/phone-hero 'after' equals 'before'. Their steps rows (AHV-WB.005.how-image, AHV-WB.400.how-image) are kept."
  },
  "storiesAddedTo": [
   "lp-behandlung-kerala",

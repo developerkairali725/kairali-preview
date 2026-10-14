@@ -289,9 +289,11 @@ for (const sp of SPECS) {
  * (/pain-management.html vs /lp/pain-management/). Reversible: delete a route's entry.
  */
 export const PHOTO_PICKS_20261014: Readonly<Partial<Record<ProductionSlug, { hero?: string; pathway?: string }>>> = {
-  "treatment-packages": { hero: "ahv-img-018", pathway: "ahv-img-045" }, // AHV-WB.005.hero-image, AHV-WB.005.how-image
+  // Train B (15 Oct 2026): AHV-WB.005.hero-image and AHV-WB.403.change are excluded (rejected by the candidate's
+  // independent REVIEW.json), so treatment-packages and lp-pain-management keep their prior heroes; their steps rows stay.
+  "treatment-packages": { pathway: "ahv-img-045" }, // AHV-WB.005.how-image
   "pain-management": { hero: "ahv-img-034" }, // AHV-WB.060.change (partial: no person-free doctor photo left for both siblings)
-  "lp-pain-management": { hero: "ahv-img-045", pathway: "ahv-img-026" }, // AHV-WB.403.change (partial), AHV-WB.400.how-image
+  "lp-pain-management": { pathway: "ahv-img-026" }, // AHV-WB.400.how-image
   "lp-treatment-kerala": { hero: "ahv-img-012", pathway: "ahv-img-045" }, // AHV-WB.445.hero-image, AHV-WB.445.how-image
 };
 /** Gallery category of an appended steps photograph: the pulse check with the therapies (as the approved consultation-room

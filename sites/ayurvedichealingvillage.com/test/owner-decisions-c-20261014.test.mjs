@@ -162,15 +162,21 @@ test("10: no bare-back therapy photograph remains in a picked hero or steps slot
   assert.notEqual(hero("pain-management"), hero("lp-pain-management"));
   assert.notEqual(hero("treatment-packages"), hero("lp-treatment-packages"));
   assert.notEqual(hero("lp-treatment-kerala"), hero("treatment-kerala"));
-  // WB.403: /lp/pain-management/ leads with the pulse check; its steps photograph differs.
-  assert.equal(hero("lp-pain-management"), "ahv-img-045");
+  // Train B (15 Oct 2026): AHV-WB.403.change and AHV-WB.005.hero-image are excluded (rejected by REVIEW.json), so
+  // /lp/pain-management/ and /ayurvedic-treatment-packages.html keep their prior heroes; the steps photographs differ.
+  assert.equal(hero("lp-pain-management"), "kt-202");
+  assert.equal(hero("treatment-packages"), "kt-202");
+  assert.equal(PHOTO_PICKS_20261014["lp-pain-management"].hero, undefined);
+  assert.equal(PHOTO_PICKS_20261014["treatment-packages"].hero, undefined);
   assert.notEqual(productionCampaign("lp-pain-management").page.pathway.image.id, "ahv-img-045");
+  const heroPicks = Object.keys(PHOTO_PICKS_20261014).filter((s) => PHOTO_PICKS_20261014[s].hero);
+  assert.deepEqual(heroPicks.sort(), ["lp-treatment-kerala", "pain-management"]);
   // No picked hero repeats any route's mosaic tile.
-  for (const slug of PRODUCTION_SLUGS) for (const h of Object.keys(PHOTO_PICKS_20261014).map(hero)) {
+  for (const slug of PRODUCTION_SLUGS) for (const h of heroPicks.map(hero)) {
     assert.ok(!productionCampaign(slug).gallery.slice(0, 5).some((g) => g.image.id === h), `${slug} mosaic: ${h}`);
   }
   // The picked heroes differ from each other.
-  const picked = Object.keys(PHOTO_PICKS_20261014).map(hero);
+  const picked = heroPicks.map(hero);
   assert.equal(new Set(picked).size, picked.length);
 });
 
