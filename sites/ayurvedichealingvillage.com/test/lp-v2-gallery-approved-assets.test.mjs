@@ -1,3 +1,4 @@
+import { productionCss } from "../scripts/build-production-css.mjs";
 // Approved gallery photographs on the live ad routes (campaign-v2/data/gallery-images.ts): the first four (batch 1)
 // and the twelve English village routes of batch 2. Data-level
 // checks only: the bindings, the campaign config each page renders from, the published gallery manifest and the files
@@ -216,9 +217,19 @@ test("provenance: each addition is in the named published manifest with the same
     assert.equal(entry.alt, pv.publishedAlt ?? image.alt);
     assert.equal(entry.libraryPath ?? entry.libraryPathPrivate, pv.libraryPath);
     assert.equal(pv.ownerDecision.decision, "yes");
-    // Never consent "confirmed" on a filename: the additions are frames with no identifiable person.
-    assert.equal(image.consent, "not-applicable", image.id);
-    assert.match(pv.people, /^No identifiable (person|patient or staff member)/, image.id);
+    // Consent is specific to the owner-approved photograph, never inferred from a filename.
+    if (image.id === "ahv-yoga-hall-consented-20261014") {
+      assert.equal(image.src, "/ahv/assets/img/gallery-2026/photo/yoga-large-hall-exposed-03.webp");
+      assert.equal(pv.publishedSha256, "5ea375faff82fcf26adddda817e81eced1f4a4f3eb0dcbd45f64630c319a5a81");
+      assert.equal(pv.ownerDecision.id, "AHV-YOGA-CONSENT-20261014");
+      assert.equal(pv.ownerDecision.record, "deliverables/WOPS-WEBSITE-SEQUENTIAL-20261008-001/recovery-20261014/yoga-gallery-consent/CONSENT-BINDING.json");
+      assert.equal(image.consent, "confirmed");
+      assert.match(image.alt, /^Two people practising yoga/);
+      assert.match(pv.people, /^Two people practising yoga; direct owner consent/);
+    } else {
+      assert.equal(image.consent, "not-applicable", image.id);
+      assert.match(pv.people, /^No identifiable (person|patient or staff member)/, image.id);
+    }
     assert.equal(image.decorative, false);
   }
 });
@@ -244,4 +255,22 @@ test("German and Russian additions retain localized accessible descriptions", ()
     assert.ok(UI[locale].alt[image.id]?.length > 20, `${locale}: ${image.id}`);
     assert.notEqual(UI[locale].alt[image.id], image.alt);
   }
+});
+
+// Desktop gallery dialogs must override the shared dialog token just as mobile does.
+test("gallery outer dialog has sharp corners at desktop and phone widths", () => {
+  const css = fs.readFileSync(P("campaign-v2/production/document.css"), "utf8");
+  assert.equal(css, productionCss(), "checked CSS is generated from the maintained sources");
+  const override = ".lp-prod .lp-gal{border-radius:0}";
+  const production = fs.readFileSync(P("campaign-v2/production/production.css"), "utf8");
+  assert.ok(production.includes(override), "maintained production source sets sharp gallery corners");
+  const page = fs.readFileSync(P("campaign-v2/production/ProductionPage.tsx"), "utf8");
+  assert.match(page, /className="lp lp-prod"/);
+  assert.ok(page.indexOf('<Gallery items=') > page.indexOf('className="lp lp-prod"'));
+  const gallery = fs.readFileSync(P("campaign-v2/sections/interactive/Gallery.tsx"), "utf8");
+  assert.match(gallery, /<dialog ref=\{ref\} className="lp-dlg lp-gal"/);
+  assert.doesNotMatch(gallery, /createPortal/);
+
+  assert.ok(css.lastIndexOf(override) > css.indexOf(".lp-dlg{"), "gallery override follows shared dialog radius");
+  assert.match(css, /@media \(max-width:767px\)\{\s*\.lp-gal\{[^}]*border-radius:0\}/);
 });

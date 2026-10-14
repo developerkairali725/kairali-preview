@@ -379,3 +379,6 @@ html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
   .lp-prod[data-mobile-consult] .lp-consult { grid-template-columns: minmax(0, 1fr); padding: 16px; }
   .lp-prod[data-mobile-consult] .lp-consult__submit { min-width: 0; width: 100%; padding-inline: 16px; }
 }
+
+/* Owner-approved sharp corners, including the desktop gallery dialog. */
+.lp-prod .lp-gal{border-radius:0}

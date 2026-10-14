@@ -3,7 +3,7 @@
 // counts). Each is an image the site already publishes, at its published URL and size, with concise accurate alt text (english-candidate/
 // galleries-2026.json, D-20260922-31); nothing is re-cropped or newly copied. Only photographs whose owner approval
 // is on record, whose file is tracked in git (CI and the existing public/ check see it), whose accessible description passes
-// the kit's alt lint, and in which no person can be identified. Activation is in production/bindings.ts
+// the kit's alt lint, and either contain no identifiable person or have exact owner consent. Activation is in production/bindings.ts
 // (the first four routes, then the twelve in APPROVED_GALLERY_ROUTES).
 //
 // Erasable TypeScript only (node --test imports this file).
@@ -147,6 +147,31 @@ export const APPROVED_GALLERY_IMAGES: readonly ApprovedGalleryImage[] = [
       "publishedSha256": "1090f286085171335c5a5b532a0b02f7ed9663aa8c31df36b16332ec33cf7e18",
       "people": "No identifiable person; empty bathroom with glass shower, basin and mirror."
     }
+  },
+  {
+    category: "Yoga",
+    image: {
+      id: "ahv-yoga-hall-consented-20261014",
+      src: "/ahv/assets/img/gallery-2026/photo/yoga-large-hall-exposed-03.webp",
+      width: 1600, height: 1067,
+      alt: "Two people practising yoga in a spacious hall with an exposed timber roof at Kairali in Palakkad",
+      decorative: false, gccSafe: true, location: "palakkad", consent: "confirmed",
+    },
+    provenance: {
+      manifest: "english-candidate/galleries-2026.json",
+      manifestRoute: "/yoga-gallery/",
+      manifestChapter: "hall",
+      publishedAlt: "Large yoga hall with exposed timber trussed roof and clerestory glazing",
+      ownerDecision: {
+        id: "AHV-YOGA-CONSENT-20261014",
+        decision: "yes",
+        recorded: "2026-10-14; exact owner-message timestamp not supplied",
+        record: "deliverables/WOPS-WEBSITE-SEQUENTIAL-20261008-001/recovery-20261014/yoga-gallery-consent/CONSENT-BINDING.json",
+      },
+      libraryPath: "ahv-edited/kAIRALI PALAK KAD_DEPICTIONS BY PRACHI KHASGIWALA-138.jpg",
+      publishedSha256: "5ea375faff82fcf26adddda817e81eced1f4a4f3eb0dcbd45f64630c319a5a81",
+      people: "Two people practising yoga; direct owner consent bound to this exact photograph and nineteen campaign galleries. No identity or clinical status asserted.",
+    },
   },
 ];
 
