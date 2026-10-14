@@ -90,10 +90,38 @@
      ]
     }
    }
+  },
+  "trains C01/C02/D01/D02 entity": {
+   "rows": "C01/C02 AHV-WB.*.organization-schema/.hospital-schema (batch003), D02 (batch004), D01 (six live ad routes, publisher); composed to one node per route",
+   "files": {
+    "campaign-v2/production/metadata.ts": {
+     "beforeSHA256": "980d37677cccf89d013c86496d4fdad9179839e3cdd94571d959c4da976db6d2",
+     "afterSHA256": "2bd523b234bae6ffb4622539772d5fc627dfdf2d357b65b10e9856c2ef97f828",
+     "replacements": [
+      {
+       "before": "\n//\n// Erasable TypeScript only",
+       "after": "\n// Also the site's existing Organization/Hospital entity, once per route: on the reviewed routes (REVIEWED_ENTITY_ROUTES)\n// and on the routes in organization.ts ORGANIZATION_ROUTES, whose WebPage also names it as publisher (14 Oct 2026).\n//\n// Erasable TypeScript only"
+      },
+      {
+       "before": "import { OG_IMAGE, ROUTES, SITE_ORIGIN, type ProductionSlug } from \"./bindings.ts\";\n",
+       "after": "import { OG_IMAGE, ROUTES, SITE_ORIGIN, type ProductionSlug } from \"./bindings.ts\";\nimport { ORGANIZATION_ID, ORGANIZATION_ROUTES } from \"./organization.ts\";\n"
+      },
+      {
+       "before": "/** `env` is injected in tests;",
+       "after": "// Batch003: only the 13 reviewed campaign routes. Hospital typing is owner-confirmed (30 Sep 2026);\n// identity/NAP/logo match the existing main-site schema. Certificate details and MedicalClinic remain separate.\nconst REVIEWED_ENTITY_ROUTES: ReadonlySet<ProductionSlug> = new Set([\n  \"cleansing-centre\", \"lp-cleansing-centre\", \"lp-hospital-kerala\", \"lp-pain-management\", \"lp-panchakarma\",\n  \"lp-south-india\", \"lp-treatment-kerala\", \"lp-treatment-kerala-ru\", \"lp-treatment-packages\",\n  \"lp-weight-management\", \"south-india-cities\", \"treatment-kerala\", \"weight-management\",\n  // Batch004 (train D02): the six routes HOSPITAL-AUTHORITY-RESOLUTION (14 Oct 2026) moved to the same bounded scope.\n  \"monsoon-wellness\", \"rejuvenation-detox\", \"wellness-kerala\", \"brand\", \"lp-brand\", \"lp-behandlung-kerala\",\n]);\n\nfunction reviewedOrganization(locale: string): object {\n  const logoId = `${SITE_ORIGIN}/#/schema/logo/image/`;\n  const logoUrl = `${SITE_ORIGIN}/ahv/assets/img/kairali-colorful-logo.png`;\n  const name = \"Kairali — The Ayurvedic Healing Village\";\n  return {\n    \"@context\": \"https://schema.org\",\n    \"@type\": [\"Organization\", \"Hospital\"], \"@id\": `${SITE_ORIGIN}/#organization`, name, url: `${SITE_ORIGIN}/`,\n    address: {\n      \"@type\": \"PostalAddress\", streetAddress: \"III/73 Palayamkadu, P.O. Olassery, Kodumbu\",\n      addressLocality: \"Palakkad\", addressRegion: \"Kerala\", postalCode: \"678551\", addressCountry: \"IN\",\n    },\n    telephone: \"+91 9555 156 156\", email: \"info@kairali.com\",\n    logo: {\n      \"@type\": \"ImageObject\", inLanguage: locale === \"en\" ? \"en-US\" : locale, \"@id\": logoId,\n      url: logoUrl, contentUrl: logoUrl, width: 290, height: 68, caption: name,\n    },\n    image: { \"@id\": logoId },\n  };\n}\n\n/** `env` is injected in tests;"
+      },
+      {
+       "before": "  return faq ? [page, faq] : [page];\n",
+       "after": "  const nodes: object[] = faq ? [page, faq] : [page];\n  // Train B (15 Oct 2026): C01/C02/D02 (REVIEWED_ENTITY_ROUTES) and D01 (ORGANIZATION_ROUTES) add the same entity\n  // (@id #organization); cleansing-centre is in both, so the node is emitted once, as the main-site parity node.\n  if (ORGANIZATION_ROUTES.has(slug)) {\n    // The hospital that publishes the page; the same @id as the English graph (schema.ts ORG_ID), so one entity.\n    page.publisher = { \"@id\": ORGANIZATION_ID };\n  }\n  if (REVIEWED_ENTITY_ROUTES.has(slug) || ORGANIZATION_ROUTES.has(slug)) nodes.push(reviewedOrganization(b.locale ?? \"en\"));\n  return nodes;\n"
+      }
+     ]
+    }
+   }
   }
  },
  "trainABytesSHA256": {
   "campaign-v2/production/bindings.ts": "04df431550c836481104ab37f85c179fb4cd588c2ef373aa28b5ddbf13ed9bff",
+  "campaign-v2/production/metadata.ts": "94bcfca199e9e3f887711058e3b5aec80ad99311be94cfd59e53cb8e7335ed88",
   "campaign-v2/production/pages/cleansing-centre.ts": "ee9cfda4dacd74945b34927f4ab9715ae326acd5a99cebabbef04c451ac23832",
   "campaign-v2/production/pages/family-ayurvedic-retreat.ts": "d058680767cd08ffb26fc1e513c549fc5670ab776bf988e56f7a2ce4b2e220ae",
   "campaign-v2/production/pages/lp-behandlung-kerala.ts": "d4ef5383368d11918d946701a5b27a25059426c77a51c25861ad636be4f7b330",

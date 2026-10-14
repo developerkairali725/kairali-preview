@@ -31,6 +31,7 @@ export const TRAIN_B_CANDIDATES = Object.freeze([
   { name: "queued batch 15", files: SURVIVOR_LINK.files },
   { name: "train C02", files: TRAIN_B.recordedDeltas["train C02"].files },
   { name: "trains C03/C04", files: TRAIN_B.recordedDeltas["trains C03/C04"].files },
+  { name: "trains C01/C02/D01/D02 entity", files: TRAIN_B.recordedDeltas["trains C01/C02/D01/D02 entity"].files },
   { name: "train D03", files: D03.files },
 ]);
 
