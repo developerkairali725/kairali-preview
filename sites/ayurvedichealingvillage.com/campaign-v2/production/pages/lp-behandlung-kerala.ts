@@ -94,7 +94,7 @@ export default defineCopy({
         { heading: "Klären Sie, was enthalten ist", items: ["Unterkunft in der gewählten Villa und Belegung", "Mahlzeiten", "Ärztliche Besprechungen", "Verordnete Therapien und Aktivitäten"] },
         { heading: "Fragen Sie nach zusätzlich berechneten Leistungen", items: ["Medikamente", "Untersuchungen", "Weitere Anwendungen", "Transfers", "Persönliche Dienstleistungen"], extra: true },
       ],
-      after: ["Welche Leistungen zusätzlich berechnet werden, hängt von der Vereinbarung ab."],
+      after: ["Welche Leistungen zusätzlich berechnet werden, hängt von der Vereinbarung ab. Ihre ärztliche Erstberatung ist kostenlos. Lassen Sie sich die Leistungen und Kosten des Aufenthalts sowie etwaiger späterer Leistungen im Angebot erläutern."],
     },
     doctors: {
       heading: "Ihre Ayurveda-Ärzte",

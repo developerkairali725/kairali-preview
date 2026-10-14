@@ -26,6 +26,7 @@ const SURVIVOR_LINK = json("yoga-survivor-link-20261014.json");
 const D03 = json("d03-copy-corrections-20261014.json");
 const D04 = json("train-d04-copy-20261014.json");
 const D05 = json("train-d05-20261014.json");
+const D06 = json("train-d06-copy-20261015.json");
 
 /** Candidates in merge order: name and per-file entries ({beforeSHA256, afterSHA256, replacements: [{before, after}]}). */
 export const TRAIN_B_CANDIDATES = Object.freeze([
@@ -36,6 +37,7 @@ export const TRAIN_B_CANDIDATES = Object.freeze([
   { name: "trains C01/C02/D01/D02 entity", files: TRAIN_B.recordedDeltas["trains C01/C02/D01/D02 entity"].files },
   { name: "train D04", files: D04.files },
   { name: "train D05", files: D05.files },
+  { name: "train D06", files: D06.files },
   { name: "train D03", files: D03.files },
 ]);
 
@@ -192,6 +194,7 @@ function reverseFields(slug, c, changes, name) {
   }
   return c;
 }
+export const reverseD06Config = (slug, c) => reverseFields(slug, c, D06.configChanges.filter((x) => x.slug === slug), "train D06");
 export const reverseD05Config = (slug, c) => reverseFields(slug, c, D05.configChanges[slug] ?? [], "train D05");
 export const reverseD04Config = (slug, c) => reverseFields(slug, c, D04.configChanges[slug] ?? [], "train D04");
 
@@ -200,7 +203,7 @@ export const reverseD04Config = (slug, c) => reverseFields(slug, c, D04.configCh
  * Use the returned value: a reversal may return a new object.
  */
 export function reverseTrainBConfig(slug, config, options = {}) {
-  return reverseOwnerDecisionsCConfig(slug, reverseBatch15Config(slug, reverseC02Config(slug, reverseRestConfig(slug, reverseD03Config(slug, reverseD04Config(slug, reverseD05Config(slug, config))), options))), options);
+  return reverseOwnerDecisionsCConfig(slug, reverseBatch15Config(slug, reverseC02Config(slug, reverseRestConfig(slug, reverseD03Config(slug, reverseD04Config(slug, reverseD05Config(slug, reverseD06Config(slug, config)))), options))), options);
 }
 
 /**

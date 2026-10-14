@@ -6,6 +6,7 @@ import crypto from "node:crypto";
 import fs from "node:fs";
 import { productionCampaign } from "../campaign-v2/production/load.ts";
 import { UI } from "../campaign-v2/production/ui.ts";
+import { candidateSource } from "./fixtures/train-b-20261015.mjs";
 
 const read = (p) => fs.readFileSync(new URL(`../${p}`, import.meta.url), "utf8");
 const sha = (s) => crypto.createHash("sha256").update(s).digest("hex");
@@ -13,14 +14,16 @@ const fixture = JSON.parse(read("test/fixtures/train-d06-copy-20261015.json"));
 const QUOTE_SLUGS = ["monsoon-wellness", "rejuvenation-detox", "wellness-kerala", "brand", "lp-brand", "lp-behandlung-kerala"];
 const text = (c) => JSON.stringify([c.page, c.faq]);
 
+// Train B (15 Oct 2026): the six quotation-box rows were rejected by train-d06/REVIEW.json and are reverted; only
+// AHV-WB.507.change is included. The integrated files also carry other candidates' deltas, so D06's own bytes are
+// checked through candidateSource (c54e2795e plus this fixture's delta, every Train A/B delta verified).
 test("each replacement is applied exactly once and reverses to the prior bytes", () => {
-  assert.equal(Object.keys(fixture.files).length, 7);
+  assert.deepEqual(Object.keys(fixture.files).sort(), ["campaign-v2/production/pages/lp-behandlung-kerala.ts", "campaign-v2/production/ui.ts"]);
   for (const [p, e] of Object.entries(fixture.files)) {
-    let s = read(p);
+    let s = candidateSource("train D06", p, read(p));
     assert.equal(sha(s), e.afterSHA256, p);
     for (const { row, before, after } of [...e.replacements].reverse()) {
-      assert.match(row, /^AHV-WB\.(105|128|170|263|354|510)\.quotation-box$|^AHV-WB\.507\.change$/);
-      assert.ok(before.length > after.length || row === "AHV-WB.507.change", `${p}: consolidation only removes wording`);
+      assert.equal(row, "AHV-WB.507.change");
       assert.equal(s.split(after).length - 1, 1, p);
       s = s.replace(after, before);
     }
@@ -28,7 +31,13 @@ test("each replacement is applied exactly once and reverses to the prior bytes",
   }
 });
 
-test("quotation: the one stay box, its separate-charges list and the CTA support line stay; repeats are gone", () => {
+test("Train B: the rejected quotation-box rows are reverted exactly; the stay box and CTA support line stay", () => {
+  const rows = fixture.trainBExclusions.replacements.map((x) => x.row);
+  assert.deepEqual([...new Set(rows)].sort(), ["AHV-WB.105.quotation-box", "AHV-WB.128.quotation-box", "AHV-WB.170.quotation-box",
+    "AHV-WB.263.quotation-box", "AHV-WB.354.quotation-box", "AHV-WB.510.quotation-box"]);
+  for (const { file, before, row } of fixture.trainBExclusions.replacements) {
+    assert.equal(read(file).split(before).length - 1, 1, `${row}: the prior wording is back once`);
+  }
   for (const slug of QUOTE_SLUGS) {
     const c = productionCampaign(slug);
     const [box, extra] = c.page.stay.lists;
@@ -38,14 +47,9 @@ test("quotation: the one stay box, its separate-charges list and the CTA support
     assert.doesNotMatch(text(c), /₹|\bINR\b|\bRs\.?\s?\d|\bfrom \d/i, `${slug}: still enquiry-only`);
   }
   for (const slug of ["monsoon-wellness", "rejuvenation-detox"]) {
-    assert.ok(!productionCampaign(slug).faq.some((f) => f.q === "What should I check in my quotation?"), slug);
+    assert.ok(productionCampaign(slug).faq.some((f) => f.q === "What should I check in my quotation?"), slug);
   }
-  assert.ok(!productionCampaign("lp-brand").faq.some((f) => f.q === "What should I check before booking?"));
-  assert.ok(productionCampaign("lp-brand").page.stay.after.includes("Review the booking terms before making a payment."));
-  for (const { slug, before, after } of fixture.configChanges) {
-    const count = (v) => (JSON.stringify(v).match(/quotation|Angebot/gi) ?? []).length;
-    assert.ok(count(after) <= count(before), slug);
-  }
+  assert.ok(productionCampaign("lp-brand").faq.some((f) => f.q === "What should I check before booking?"));
 });
 
 test("AHV-WB.507: German Abhyanga paragraph and photo alt use Anwendung with Kräuteröl", () => {

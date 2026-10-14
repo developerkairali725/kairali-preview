@@ -62,7 +62,7 @@ export default defineCopy({
           paragraphs: ["You may want to discuss Panchakarma, rejuvenation, weight management, pain, sleep, stress or another health concern. Explain your goals in your own words. The doctor can help you understand which programme is relevant and what the proposed care involves."],
         },
         { title: "Know how your plan is prescribed and reviewed", paragraphs: ["Your assessment informs the procedures, dietary guidance and suitable activity. Trained therapists deliver prescribed sessions. Ask how progress will be reviewed, how to raise concerns and what follow-up may be recommended after your stay."] },
-        { title: "Compare the whole stay", paragraphs: ["When considering a residential Ayurveda programme, compare the full proposal: care, duration, accommodation, meals, reviews and additional charges."] },
+        { title: "Compare the whole stay", paragraphs: ["When considering a residential Ayurveda programme, compare the full proposal: care, duration, accommodation, meals, reviews and additional charges. Ask for an individual quotation so you can see what applies to your dates and needs."] },
       ],
     },
     pathway: {
