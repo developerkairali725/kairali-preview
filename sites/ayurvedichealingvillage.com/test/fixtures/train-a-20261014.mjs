@@ -9,7 +9,7 @@
 //   - where two candidates edited the same lines (train-a-20261014.json `overlaps`), the integrated bytes are pinned
 //     and the exact merged form of the newer delta is removed first; the result must be the older candidate's
 //     recorded after-bytes, and that candidate is then checked as above.
-// Merge order: batch 6, batch 8 (rejected AHV-WB.015/039/253 excluded), owner decisions, owner decisions B.
+// Merge order: batch 5 (its delta recorded in train-a-20261014.json), batch 6, batch 8 (rejected AHV-WB.015/039/253 excluded), owner decisions, owner decisions B.
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import fs from "node:fs";
@@ -24,6 +24,7 @@ const OWNER_DECISIONS_B = json("owner-decisions-b-20261014.json");
 
 /** Candidates in merge order: name, per-file entries and the key that holds their {before, after} list. */
 export const TRAIN_A_CANDIDATES = Object.freeze([
+  { name: "train-a batch 5", files: TRAIN_A.batch5.files, list: "replacements" },
   { name: "train-a batch 6", files: BATCH6.files, list: "replacements" },
   { name: "train-a batch 8", files: json("train-a-batch8-20261014.json").files, list: "replacements" },
   { name: "owner decisions", files: json("owner-decisions-20261014-approved-delta.json").files, list: "edits" },
