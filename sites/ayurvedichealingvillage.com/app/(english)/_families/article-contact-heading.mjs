@@ -24,6 +24,9 @@ export function repairArticleContactHeading(root, route) {
     '/yoga-retreats-for-everyone/': ['h4', 'h3', [4, 8]],
     '/ayurveda-workshop/': ['h4', 'h3', [4, 26]],
     '/karkidaka-chikitsha-or-monsoon-wellness.html': ['h4', 'h3', null],
+    '/what-is-yoga/': ['h3', 'h2', [2, 8, 16, 26, 34, 38]],
+    '/yoga-classes-practical/': ['h4', 'h3', [4, 8, 14, 20, 24, 28, 32]],
+    '/yoga-classes-theory/': ['h4', 'h3', [4, 8, 12, 18, 24, 30, 34]],
   };
   const rule = Object.prototype.hasOwnProperty.call(rules, route) ? rules[route] : null;
   if (!rule) return;
