@@ -16,6 +16,10 @@ const expected = {
   '/yoga-retreats-for-everyone/': ['h4', 'h3', 2],
   '/ayurveda-workshop/': ['h4', 'h3', 2],
   '/karkidaka-chikitsha-or-monsoon-wellness.html': ['h4', 'h3', 10],
+  // N08 queued batch 6: the article body skips from H1 to H3, or from the section H2 to H4.
+  '/what-is-yoga/': ['h3', 'h2', 6],
+  '/yoga-classes-practical/': ['h4', 'h3', 7],
+  '/yoga-classes-theory/': ['h4', 'h3', 7],
 };
 const snapshot = (route, locale) => {
   const name = route.replace(/^\/+|\/+$/g, '').replace(/[^a-z0-9._-]+/gi, '_') + '.html';
