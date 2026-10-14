@@ -1,0 +1,91 @@
+{
+ "row": "AHV-N03.01",
+ "note": "Sanskrit programme subtitle directly after the H1: one style per side (desktop 24px / mobile 20px, margin 10px 0 0); text and element unchanged.",
+ "views": {
+  "ahv-page-de-addiction-rehabilitation-desktop": {
+   "element": "div",
+   "before": "font-family:'Marcellus',serif;font-size:22px;color:#75695A;margin:12px 0 0",
+   "after": "font-family:'Marcellus',serif;font-size:24px;color:#75695A;margin:10px 0 0"
+  },
+  "ahv-page-diabetes-metabolic-balance-mobile": {
+   "element": "div",
+   "before": "font-family:'Marcellus',serif;font-size:19px;color:#75695A;margin:10px 0 0",
+   "after": "font-family:'Marcellus',serif;font-size:20px;color:#75695A;margin:10px 0 0"
+  },
+  "ahv-page-digestive-wellness-gut-health-mobile": {
+   "element": "div",
+   "before": "font-family:'Marcellus',serif;font-size:21px;color:#75695A;margin:8px 0 0",
+   "after": "font-family:'Marcellus',serif;font-size:20px;color:#75695A;margin:10px 0 0"
+  },
+  "ahv-page-holistic-rejuvenation-detoxification-mobile": {
+   "element": "div",
+   "before": "font-family:'Marcellus',serif;font-size:19px;color:#75695A;margin:10px 0 0",
+   "after": "font-family:'Marcellus',serif;font-size:20px;color:#75695A;margin:10px 0 0"
+  },
+  "ahv-page-immunity-executive-health-mobile": {
+   "element": "div",
+   "before": "font-family:'Marcellus',serif;font-size:21px;color:#75695A;margin:8px 0 0",
+   "after": "font-family:'Marcellus',serif;font-size:20px;color:#75695A;margin:10px 0 0"
+  },
+  "ahv-page-joint-rehabilitation-arthritis-desktop": {
+   "element": "div",
+   "before": "font-family:'Marcellus',serif;font-size:22px;color:#75695A;margin:12px 0 0",
+   "after": "font-family:'Marcellus',serif;font-size:24px;color:#75695A;margin:10px 0 0"
+  },
+  "ahv-page-panchakarma-therapy-desktop": {
+   "element": "div",
+   "before": "font-family:'Marcellus',serif;font-size:22px;color:#75695A;margin:12px 0 0",
+   "after": "font-family:'Marcellus',serif;font-size:24px;color:#75695A;margin:10px 0 0"
+  },
+  "ahv-page-personalized-customized-healing-mobile": {
+   "element": "div",
+   "before": "font-family:'Marcellus',serif;font-size:21px;color:#75695A;margin:8px 0 0",
+   "after": "font-family:'Marcellus',serif;font-size:20px;color:#75695A;margin:10px 0 0"
+  },
+  "ahv-page-post-pregnancy-health-programme-mobile": {
+   "element": "div",
+   "before": "font-family:'Marcellus',serif;font-size:19px;color:#75695A;margin:10px 0 0",
+   "after": "font-family:'Marcellus',serif;font-size:20px;color:#75695A;margin:10px 0 0"
+  },
+  "ahv-page-preventive-regenerative-mobile": {
+   "element": "div",
+   "before": "font-family:'Marcellus',serif;font-size:21px;color:#75695A;margin:8px 0 0",
+   "after": "font-family:'Marcellus',serif;font-size:20px;color:#75695A;margin:10px 0 0"
+  },
+  "ahv-page-sleep-restoration-mobile": {
+   "element": "div",
+   "before": "font-family:'Marcellus',serif;font-size:21px;color:#75695A;margin:8px 0 0",
+   "after": "font-family:'Marcellus',serif;font-size:20px;color:#75695A;margin:10px 0 0"
+  },
+  "ahv-page-spinal-disc-nerve-restoration-mobile": {
+   "element": "div",
+   "before": "font-family:'Marcellus',serif;font-size:19px;color:#75695A;margin:10px 0 0",
+   "after": "font-family:'Marcellus',serif;font-size:20px;color:#75695A;margin:10px 0 0"
+  },
+  "ahv-page-supportive-care-cancer-mobile": {
+   "element": "div",
+   "before": "font-family:'Marcellus',serif;font-size:21px;color:#75695A;margin:8px 0 0",
+   "after": "font-family:'Marcellus',serif;font-size:20px;color:#75695A;margin:10px 0 0"
+  },
+  "ahv-page-vision-eye-rejuvenation-mobile": {
+   "element": "div",
+   "before": "font-family:'Marcellus',serif;font-size:19px;color:#75695A;margin:10px 0 0",
+   "after": "font-family:'Marcellus',serif;font-size:20px;color:#75695A;margin:10px 0 0"
+  },
+  "ahv-page-weight-loss-programme-mobile": {
+   "element": "div",
+   "before": "font-family:'Marcellus',serif;font-size:21px;color:#75695A;margin:8px 0 0",
+   "after": "font-family:'Marcellus',serif;font-size:20px;color:#75695A;margin:10px 0 0"
+  },
+  "ahv-page-yoga-and-meditation-package-desktop": {
+   "element": "p",
+   "before": "font-size:22px",
+   "after": "font-family:'Marcellus',serif;font-size:24px;color:#75695A;margin:10px 0 0"
+  },
+  "ahv-page-yoga-and-meditation-package-mobile": {
+   "element": "p",
+   "before": "font-size:22px",
+   "after": "font-family:'Marcellus',serif;font-size:20px;color:#75695A;margin:10px 0 0"
+  }
+ }
+}

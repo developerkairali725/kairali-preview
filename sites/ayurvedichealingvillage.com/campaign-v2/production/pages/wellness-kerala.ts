@@ -76,7 +76,7 @@ export default defineCopy({
       heading: "Understand the stay before you choose it",
       steps: [
         { title: "Start with a free consultation", body: "Explain what you need from the visit in your own words. Share your health history, current treatment and any help you may need." },
-        { title: "Agree your plan and quotation", body: "Your doctor discusses suitable care, how it would be reviewed and the recommended duration. Confirm the programme, nights, accommodation and charges before you make travel plans." },
+        { title: "Agree your plan", body: "Your doctor discusses suitable care, how it would be reviewed and the recommended duration. Confirm the programme, nights, accommodation and charges before you make travel plans." },
         { title: "Settle into a prescribed routine", body: "Attend your sessions, meals and suitable yoga or meditation, with time to rest in between. Tell the care team if your needs change during the stay." },
       ],
     },
@@ -105,7 +105,7 @@ export default defineCopy({
     faqHeading: "Your questions, answered",
     closing: {
       heading: "Tell us what you need from your stay",
-      paragraphs: ["Tell us what you would like to discuss, and our patient care team will help you take the next step. Start with a free initial doctor consultation, then review your plan and quotation before booking."],
+      paragraphs: ["Tell us what you would like to discuss, and our patient care team will help you take the next step. Start with a free initial doctor consultation, then review your plan before booking."],
     },
   },
   faq: [

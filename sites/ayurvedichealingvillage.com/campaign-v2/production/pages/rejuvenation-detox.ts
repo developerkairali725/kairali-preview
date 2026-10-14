@@ -87,7 +87,7 @@ export default defineCopy({
       heading: "A clear plan before you commit",
       steps: [
         { title: "Start with a free consultation", body: "Share your health history, current treatment, sleep, food and activity, and what you hope to address. Ask whether a stay may suit you." },
-        { title: "Confirm programme and quotation", body: "Your doctor recommends a programme and length of stay. Confirm the exact programme name, number of nights and care included in your quotation before booking." },
+        { title: "Confirm your programme", body: "Your doctor recommends a programme and length of stay. Confirm the exact programme name and number of nights before booking." },
         { title: "Follow your plan, then take it home", body: "Attend your prescribed care, vegetarian meals and rest. Before you return home, discuss the daily routine, dietary guidance and any follow-up recommended for you." },
       ],
     },
@@ -135,10 +135,9 @@ export default defineCopy({
   },
   faq: [
     { q: "How is rejuvenation different from Panchakarma?", a: "These are distinct programme choices. Ask your doctor to explain the purpose of the recommended plan, the procedures it includes and any preparation involved. A rejuvenation enquiry does not mean that every Panchakarma procedure is appropriate for you. Your assessment guides the care selected for your stay." },
-    { q: "What is the minimum stay for rejuvenation?", a: "Complete Rejuvenation & Detoxification Therapy has a seven-night minimum. The separate Preventive Health & Regenerative programme has a three-night minimum. Your doctor will discuss the suitable duration for you. Confirm the exact programme and number of nights in your quotation." },
+    { q: "What is the minimum stay for rejuvenation?", a: "Complete Rejuvenation & Detoxification Therapy has a seven-night minimum. The separate Preventive Health & Regenerative programme has a three-night minimum. Your doctor will discuss the suitable duration for you." },
     { q: "What happens during a residential stay?", a: "Your day is arranged around the plan discussed with your Ayurvedic doctor. Ask about the proposed therapies, meals, yoga or meditation and time for rest. Confirm which sessions and amenities are included in your chosen programme, and tell the team about dietary, mobility or other practical needs." },
     { q: "What should I discuss before returning home?", a: "Ask your doctor about the routine and dietary guidance recommended after your stay. Confirm any follow-up appointments, medicines and charges before departure. Bring up questions about fitting the advice into daily life, and make sure you understand who to contact if you need further guidance." },
-    { q: "Is the initial doctor consultation free?", a: "Yes. Your initial doctor consultation is free. Share your health history, current treatment and questions to discuss whether a stay may suit you. Ask for a quotation covering your programme, accommodation and any later services before you book." },
-    { q: "What should I check in my quotation?", a: "Ask for the recommended programme, number of nights, villa occupancy and the care included for your dates. Confirm which medicines, tests, specialist services or travel arrangements cost extra. Review the full quotation with our team before booking, so you understand both the stay and any additional charges." },
+    { q: "Is the initial doctor consultation free?", a: "Yes. Your initial doctor consultation is free. Share your health history, current treatment and questions to discuss whether a stay may suit you. Treatment and accommodation are confirmed separately before you book." },
   ],
 });

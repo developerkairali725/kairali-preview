@@ -21,7 +21,9 @@ test('three named day programmes retain clinical qualifiers, included care and n
   assert.equal(c.page.offering.kind, 'cards'); const cards = c.page.offering.cards;
   assert.deepEqual(cards.map(x => x.title), ['The Monsoon Starter · 7 days', 'The Monsoon Reset · 14 days', 'The Monsoon Overhaul · 21 days']);
   assert.ok(c.page.offering.intro.includes(qualifier));
-  assert.ok(c.page.offering.intro.includes('Programme durations are stated in days. Confirm the number of accommodation nights and the full quotation before booking.'));
+  // AHV-WB.105.quotation-box (train E02): the nights confirmation stays; the quotation itself is explained once, in the stay box.
+  assert.ok(c.page.offering.intro.includes('Programme durations are stated in days. Confirm the number of accommodation nights before booking.'));
+  assert.ok(c.page.stay.lists[0].items.includes('Your programme and number of nights'));
   for (const card of cards) {
     assert.match(card.paragraphs.join(' '), /Two physician-prescribed therapy sessions daily/);
     assert.doesNotMatch(card.paragraphs.join(' '), /\b(?:7|14|21)[ -]nights?\b|₹|\bINR\b|factory|guaranteed|cure/i);

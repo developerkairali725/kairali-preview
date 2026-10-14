@@ -55,7 +55,7 @@ export default defineCopy({
       heading: "How a stay at Kairali begins",
       steps: [
         { title: "Book your free consultation", body: "Tell us what you would like to discuss with the doctor and when you hope to visit. Use the enquiry form or the available contact options." },
-        { title: "Agree your plan and quotation", body: "Discuss suitability, the proposed programme and its length. Treatment and accommodation are then confirmed in your care plan and a personalised quotation." },
+        { title: "Agree your plan", body: "Discuss suitability, the proposed programme and its length. Treatment and accommodation are then confirmed in your care plan." },
         { title: "Arrive for your stay", body: "Confirm your dates, villa occupancy and travel, then arrive for admission. Your care is reviewed through the stay." },
       ],
     },
@@ -75,14 +75,13 @@ export default defineCopy({
     faqHeading: "Questions about Kairali",
     closing: {
       heading: "Talk with patient care",
-      paragraphs: ["Tell us what you would like to discuss with the doctor and when you hope to visit. Your free initial doctor consultation is the starting point for discussing suitability; treatment and accommodation are confirmed separately in your care plan and quotation."],
+      paragraphs: ["Tell us what you would like to discuss with the doctor and when you hope to visit. Your free initial doctor consultation is the starting point for discussing suitability; treatment and accommodation are confirmed separately in your care plan."],
     },
   },
   faq: [
     { q: "Where is Kairali – The Ayurvedic Healing Village?", a: "The Healing Village is in Palakkad, Kerala. This page is for that residential Ayurvedic hospital. Tell patient care where you will travel from and discuss the admission plan, accommodation and onward travel arrangements before you book." },
     { q: "What does Kairali’s Ayurvedic heritage refer to?", a: "It refers to the family tradition of Ayurveda behind Kairali. The Healing Village is an Ayurvedic hospital of the Kairali Ayurvedic Group. For your own stay, the practical starting point is a consultation with the current medical team to discuss your health, proposed programme and arrangements for care." },
     { q: "How do I find the right programme?", a: "Begin with your health history, current treatment and goals. Ask the doctor to explain the programme being considered, its therapies, preparation and suitable duration. Confirm the exact care plan and inclusions with the team before arranging your stay." },
-    { q: "Is the initial doctor consultation free?", a: "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Before booking a stay, request a quotation explaining the treatment, accommodation, doctor reviews and any later services, along with separately charged items." },
-    { q: "What should I check before booking?", a: "Confirm the recommended programme, number of nights, villa category and occupancy in your quotation. Ask which care, meals and sessions are included, and which medicines, tests, additional services or travel arrangements cost extra. Review the booking terms before making a payment." },
+    { q: "Is the initial doctor consultation free?", a: "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Treatment and accommodation are confirmed separately in your care plan." },
   ],
 });
