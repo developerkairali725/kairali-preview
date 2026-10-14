@@ -7,6 +7,7 @@ import vm from 'node:vm';
 import copy from '../english-candidate/room209-area-copy.json' with {type:'json'};
 import {withRoom209Area} from '../app/(english)/_families/room209-area.mjs';
 import {reviewCopyFor, applyReviewSnapshot} from '../app/(english)/_families/content-review.mjs';
+import {applyStaffExperienceDom} from '../app/(english)/_families/staff-experience.mjs';
 
 const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const read = p => fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
@@ -15,7 +16,8 @@ const bootSource = read('app/(english)/_families/boot.ts');
 const start = bootSource.indexOf('  var reviewByKey = new Map();');
 const end = bootSource.indexOf('\n\n  // Media loading', start);
 assert(start > 0 && end > start);
-const actualRuntime = Function('return `'+bootSource.slice(start,end)+'`;')();
+// boot.ts interpolates the imported staff-experience DOM helper into this runtime template.
+const actualRuntime = Function('applyStaffExperienceDom','return `'+bootSource.slice(start,end)+'`;')(applyStaffExperienceDom);
 
 test('exact thirteen locales; total includes outdoor43 and indoor228, no invented footprint/occupancy',()=>{
  assert.deepEqual(Object.keys(copy).sort(),['en','ar','de','es','fr','hi','it','ja','ko','nl','pt','ru','zh-Hans'].sort());
