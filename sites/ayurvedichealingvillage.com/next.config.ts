@@ -103,6 +103,13 @@ const nextConfig: NextConfig = {
   outputFileTracingRoot: join(process.cwd(), "../.."),
   // Static media is served from Vercel's static output, not read by page functions.
   // Keep JSON/JS datasets and SSR snapshots in the trace for dynamic rendering.
+  // Search selects its locale at request time. Static tracing cannot discover
+  // these computed paths; ship every supported locale's engine and index.
+  outputFileTracingIncludes: {
+    "/search": [
+      "./search-runtime/*.json",
+    ],
+  },
   outputFileTracingExcludes: {
     "/*": [
       "./public/**/*.{webp,png,jpg,jpeg,gif,svg,ico,avif,mp4,webm,pdf,woff,woff2,ttf,otf}",

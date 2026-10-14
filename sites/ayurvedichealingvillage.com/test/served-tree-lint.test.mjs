@@ -35,6 +35,7 @@ test("every git-ignored directory of the site is either linted as a served tree 
 
 test("the served-tree lint scans every served tree with the unchanged lint and fails on a known-bad served string", () => {
   const site = fixture({
+    "search-runtime/de.json": '{"script":"","index":{},"catalog":{},"chrome":""}\n',
     "public/ahv/l10n/de/assets/probe-data.js": 'window.X = {"contact":"reservations@kairali.com"};\n',
     "l10n/generated/de.catalog.json": '{"t_1":"info@kairali.com"}\n',
     "l10n/prerender/de/probe.html": "<main><p>info@kairali.com</p></main>\n",
@@ -44,7 +45,7 @@ test("the served-tree lint scans every served tree with the unchanged lint and f
   assert.equal(code, 2, "a banned string in a served tree must fail exactly as the lint would");
   const report = JSON.parse(fs.readFileSync(out, "utf8"));
   assert.deepEqual(report.roots, SERVED_UNTRACKED_ROOTS);
-  assert.equal(report.filesScanned, 3);
+  assert.equal(report.filesScanned, 4);
   assert.equal(report.controlProbe.ok, true);
   assert.deepEqual(report.byRule, { "wrong-contact-email": 1 });
   assert.deepEqual(report.byRoot, { "public/ahv/l10n": 1 });
