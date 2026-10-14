@@ -378,9 +378,14 @@ export default function EnquiryForm({ schema, adapterId, campaign, variant, loca
                       aria-invalid={consentErr ? true : undefined} aria-describedby={consentErr ? id(`${CONSENT_FIELD}-err`) : undefined} />
                     <span>{schema.consentLabels[channel]}</span>
                   </label>
-                  {/* Outside the label so tapping it never toggles consent; its own 44px row. */}
-                  <a className="lp-enq__privacy" href={production ? "/new-privacy-policy/" : privacyHref} target="_blank" rel="noopener">{schema.privacyLabel}</a>
-                  {production ? <a className="lp-enq__privacy" href="/terms-and-conditions/" target="_blank" rel="noopener">{ui?.terms ?? "Terms"}</a> : null}
+                  {/* Legal links remain outside the consent label; production shares one wrapping row. */}
+                  {production ? (
+                    <div className="lp-enq__legal-links">
+                      <a className="lp-enq__privacy" href={production ? "/new-privacy-policy/" : privacyHref} target="_blank" rel="noopener">{schema.privacyLabel}</a>
+                      <span aria-hidden="true">·</span>
+                      {production ? <a className="lp-enq__privacy" href="/terms-and-conditions/" target="_blank" rel="noopener">{ui?.terms ?? "Terms"}</a> : null}
+                    </div>
+                  ) : <a className="lp-enq__privacy" href={privacyHref} target="_blank" rel="noopener">{schema.privacyLabel}</a>}
                   {consentErr ? <p id={id(`${CONSENT_FIELD}-err`)} className="lp-enq__err">{say(consentErr)}</p> : null}
                 </div>
                 {schema.marketingOptIn ? (
