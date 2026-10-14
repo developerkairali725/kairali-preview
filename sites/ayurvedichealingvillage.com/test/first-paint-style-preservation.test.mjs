@@ -18,7 +18,16 @@ test('campaign first-paint bundle preserves exact approved stylesheet bytes and 
  const imports=Object.keys(expected);
  assert.equal(entry,productionCss());
  assert.deepEqual([...entry.matchAll(/@import "([^"]+)";/g)].map(x=>x[1]),[imports[0],imports[1],'@kairali/ui/ahv-campaign-tokens.css']);
- for(const name of imports)assert.equal(createHash('sha256').update(fs.readFileSync(path.resolve(site,'campaign-v2/production',name))).digest('hex'),expected[name],name);
+ for(const name of imports){
+  let bytes=fs.readFileSync(path.resolve(site,'campaign-v2/production',name),'utf8');
+  if(name==='./production.css'){
+   // Reverse only the exact owner-approved desktop-gallery corner correction; retain the historical hash.
+   const delta='\n/* Owner-approved sharp corners, including the desktop gallery dialog. */\n.lp-prod .lp-gal{border-radius:0}\n';
+   assert.ok(bytes.endsWith(delta));
+   bytes=bytes.slice(0,-delta.length);
+  }
+  assert.equal(createHash('sha256').update(bytes).digest('hex'),expected[name],name);
+ }
  // Menu-font subset repair changes only unicode-range partitions, never approved design declarations.
  const bundle=fs.readFileSync(path.join(site,'public/design/campaign-bundle.css'),'utf8');
  assert.equal(createHash('sha256').update(bundle.replace(/unicode-range:[^;}]*;?/g,'').replace(/[.][a-f0-9]{12}(?=[.](?:common|extra)[.]woff2)/g,'')).digest('hex'),'45fb2b76bb019b2b89feaa1dbb505742b021f1d4d613b3515b67efdf10885333');
