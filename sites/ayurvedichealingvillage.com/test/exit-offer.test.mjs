@@ -174,15 +174,25 @@ function sourceExclusions() {
   const paidGroups = fs.readdirSync(app).filter((d) => /^\(ppc-v2(-[a-z]+)?\)$/.test(d));
   for (const g of paidGroups) walk(path.join(app, g), "");
   for (const p of paid) if (p.startsWith("/offers/")) cat.offers.add(p);
+  // The site-tree /offers/ hub (and anything under it) in every locale, and every URL that 301s to one of them.
+  const l10n = readJson("l10n/routes.json");
+  for (const [base, locales] of Object.entries(l10n.routes)) if (base.startsWith("/offers/")) for (const p of Object.values(locales)) cat.offers.add(p);
+  const targets = new Set(cat.offers);
+  for (const [from, rule] of Object.entries(l10n.redirects)) if (targets.has(rule.to)) cat.offers.add(from);
+  for (const [from, rule] of Object.entries(readJson("english-candidate/redirect-map.json").redirects)) if (targets.has(rule.to) || String(rule.to).startsWith("/offers/")) cat.offers.add(from);
   return { cat, paid };
 }
 
 test("exclusion lists are exactly the route sources; every paid page except /offers/ is eligible", () => {
   const { cat, paid } = sourceExclusions();
   assert.deepEqual(Object.keys(xo.EXCLUDED).sort(), Object.keys(cat).sort());
-  for (const k of Object.keys(cat)) assert.deepEqual([...xo.EXCLUDED[k]].sort(), [...cat[k]].sort(), k);
+  for (const k of ["confirmation", "legal", "form"]) assert.deepEqual([...xo.EXCLUDED[k]].sort(), [...cat[k]].sort(), k);
+  // Offers: the hub in all 13 locales, every child page and every redirect into them (fails on the 3c0b1b041 list,
+  // which named only the five child pages).
+  assert.ok(cat.offers.size >= 13 + 5 + 25, `${cat.offers.size} offers paths`);
+  for (const p of cat.offers) assert.equal(xo.exclusionReason(p), "offers", p);
   // Owner, 14/15 Oct 2026: "Show on paid pages too" (supersedes DEC-PAID-NAV for this popup only), keeping /offers/.
-  const shown = [...paid].filter((p) => !p.startsWith("/offers/"));
+  const shown = [...paid].filter((p) => !p.startsWith("/offers/") && !p.startsWith("/lp-v2/"));
   assert.ok(shown.length >= 25, `${shown.length} paid paths`);
   for (const p of shown) assert.equal(xo.exclusionReason(p), null, p);
   for (const p of [...paid].filter((p) => p.startsWith("/offers/"))) assert.equal(xo.exclusionReason(p), "offers", p);
@@ -198,13 +208,18 @@ test("every locale copy of an excluded route is excluded, with its reason; other
     }
   }
   assert.ok(checked > 250, `${checked} localized paths`);
-  for (const p of Object.keys(xo.LOCALIZED_EXCLUDED)) assert.ok(Object.values(routes).some((r) => Object.values(r).includes(p)), p);
+  const redirects = readJson("l10n/routes.json").redirects;
+  for (const p of Object.keys(xo.LOCALIZED_EXCLUDED)) assert.ok(Object.values(routes).some((r) => Object.values(r).includes(p)) || p in redirects, p);
   for (const p of ["/fr/remerciers/", "/de/thanks/", "/zh/onlineconsultation-thanks/", "/thanks", "/ar/contact-us/thank-you/"]) assert.equal(xo.exclusionReason(p), "confirmation", p);
   for (const p of ["/de/cookie-richtlinie/", "/fr/mentions-legales/", "/ja/new-privacy-policy/", "/terms-and-conditions/"]) assert.equal(xo.exclusionReason(p), "legal", p);
-  for (const p of ["/offers/new/", "/offers/senior-citizen-offer/", "/de/offers/new/", "/offers/new"]) assert.equal(xo.exclusionReason(p), "offers", p);
+  for (const p of ["/offers/", "/offers", "/de/offers/", "/ja/offers/", "/zh/offers/", "/offers/new/", "/offers/senior-citizen-offer/", "/de/offers/new/", "/offers/new",
+    "/special-offers/", "/ayurveda-offers/", "/de/ayurveda-angebote/", "/de/olympia-und-paralympics-angebot/", "/fr/offres-speciales/", "/ko/special-offers/"]) assert.equal(xo.exclusionReason(p), "offers", p);
+  // Root ruling 15 Oct 2026: the /lp-v2/ preview lane stays excluded.
+  assert.ok(fs.existsSync(path.join(SITE, "app/(campaign-v2)/lp-v2")));
+  for (const p of ["/lp-v2/", "/lp-v2/pain-management/a/", "/de/lp-v2/x/"]) assert.equal(xo.exclusionReason(p), "preview", p);
   assert.equal(xo.exclusionReason("/lp/cookie-policy/"), "legal");
   for (const p of ["/", "/de/", "/zh/", "/our-villas/", "/fr/villas/", "/ayurvedic-treatments/", "/hi/our-villas/", "/deluxe-villa/", "/delhi-something/",
-    "/lp/weight-loss/", "/lp/behandlung-in-kerala/", "/lp/treatment-in-kerala-russian/", "/lp-v2/pain-management/a/", "/pain-management.html",
+    "/lp/weight-loss/", "/lp/behandlung-in-kerala/", "/lp/treatment-in-kerala-russian/", "/offerings/", "/pain-management.html",
     "/ayurvedic-treatment-packages.html", "/kairali-air-india-maharaja-club.html"]) assert.equal(xo.exclusionReason(p), null, p);
 });
 
@@ -331,8 +346,11 @@ function matchOne(n, s) {
   for (const [, k, v] of s.matchAll(/\[([\w-]+)(?:="([^"]*)")?\]/g)) if (!(k in n.attrs) || (v !== undefined && n.attrs[k] !== v)) return false;
   return true;
 }
+function decidedChoice(now = Date.now()) {
+  return JSON.stringify({ categories: ["necessary"], revision: 2, consentId: "test-id", consentTimestamp: new Date(now - DAY).toISOString(), lastConsentTimestamp: new Date(now - DAY).toISOString(), expirationTime: now + 300 * DAY });
+}
 function makeWin(pathname = "/", over = {}) {
-  const doc = { activeElement: null, clicked: [], referrer: "https://www.google.com/" };
+  const doc = { activeElement: null, clicked: [], referrer: "https://www.google.com/search?q=private+words&email=x%40y.z" };
   doc.createElement = (t) => (t === "dialog" ? new Dialog(doc) : new Node(doc, t));
   doc.createTextNode = (t) => { const n = new Node(doc, "#text"); n.textContent = t; return n; };
   doc.documentElement = new Node(doc, "html");
@@ -348,8 +366,8 @@ function makeWin(pathname = "/", over = {}) {
   doc.addEventListener = (t, f) => (doc.listeners[t] ||= []).push(f);
   doc.removeEventListener = (t, f) => { doc.listeners[t] = (doc.listeners[t] || []).filter((x) => x !== f); };
   const win = {
-    document: doc, location: { pathname, href: `https://ayurvedichealingvillage.com${pathname}?utm_source=google&gclid=abc` },
-    HTMLDialogElement: function () {}, localStorage: store(), sessionStorage: store(), scrollY: 0, innerHeight: 800,
+    document: doc, location: { origin: "https://ayurvedichealingvillage.com", pathname, href: `https://ayurvedichealingvillage.com${pathname}?utm_source=google&gclid=abc&gad_source=1&campaignid=99&email=private%40example.com` },
+    HTMLDialogElement: function () {}, localStorage: store({ "ahv-consent-v2": decidedChoice() }), sessionStorage: store(), scrollY: 0, innerHeight: 800,
     matchMedia: (q) => ({ matches: q === "(pointer: fine)" }), listeners: {},
     addEventListener(t, f) { (this.listeners[t] ||= []).push(f); }, removeEventListener(t, f) { this.listeners[t] = (this.listeners[t] || []).filter((x) => x !== f); },
     setTimeout: (f, ms) => ({ f, ms }), clearTimeout() {},
@@ -444,6 +462,8 @@ test("never over another dialog, the cookie notice, the open chat or a form the 
     (doc) => { doc.body.appendChild(new Node(doc, "div")).id = "ahv-consent"; },
     (doc) => { doc.documentElement.classList.add("show--consent"); },
     (doc) => { doc.documentElement.classList.add("show--preferences"); },
+    (doc) => { doc.documentElement.setAttribute("data-consent-open", ""); },
+    (doc) => { doc.body.appendChild(new Node(doc, "section")).className = "ahv-consent-compact"; },
     (doc) => { doc.body.setAttribute("data-ahv-chat-open", "true"); },
     (doc) => { const f = doc.body.appendChild(new Node(doc, "form")); f.appendChild(new Node(doc, "input")).focus(); },
   ];
@@ -458,6 +478,13 @@ test("never over another dialog, the cookie notice, the open chat or a form the 
   hiddenPanel.setAttribute("aria-modal", "true");
   hiddenPanel.getClientRects = () => [];
   assert.equal(xo.busyElsewhere(doc, null), false, "a mounted but hidden aria-modal panel does not block");
+  const compact = doc.body.appendChild(new Node(doc, "section"));
+  compact.className = "ahv-consent-compact";
+  compact.hidden = true;
+  assert.equal(xo.busyElsewhere(doc, null), false, "a hidden compact notice (full modal took over or choice made) does not block");
+  compact.hidden = false;
+  assert.equal(xo.busyElsewhere(doc, null), true, "the visible compact cookie notice blocks");
+  compact.remove();
   const own = doc.body.appendChild(new Dialog(doc)); own.setAttribute("aria-modal", "true");
   assert.equal(xo.busyElsewhere(doc, own), false, "its own closed dialog does not block");
 });
@@ -563,8 +590,11 @@ test("payload: the contact form's /api/lead/ body as form exit-intent, with cons
   assert.equal(body.utm_source, "google");
   assert.equal(body.gclid, "abc");
   assert.equal(body.utm_medium, "");
+  // Paid-form rules: origin + path + consent-aware allow-listed attribution only; referrer origin only. The raw query
+  // (gad_source, campaignid, a private email) and the referrer's path/query are never sent.
   assert.equal(body.lead_source_url, "https://ayurvedichealingvillage.com/zh/?utm_source=google&gclid=abc");
   assert.equal(body.referrer, "https://www.google.com/");
+  assert.doesNotMatch(JSON.stringify(body), /gad_source|campaignid|private|search\?q/);
   assert.deepEqual(body.fields, { full_name: "Test Guest", countrycode: "+49", phone: "170 1234567", email: "guest@example.invalid", consent: true, subject: "Get 10% OFF on all Treatment Packages", trigger_type: "mobile-scroll-return" });
   assert.equal(validationProblem("exit-intent", body.fields), null, "the server accepts it");
   // Outcome: success shown, form hidden, guide offered like the contact form, 30-day suppression recorded.
@@ -600,4 +630,73 @@ test("server outcomes keep the details and show the site's existing messages; a 
     await xo.submit(o.d, o.deps);
     assert.notEqual(tokens[2], tokens[1], `${key}: edited details get a new token`);
   }
+});
+
+// ---------------------------------------------------------------- review fixes (15 Oct 2026) ----
+test("consent first: undecided visitors never get the offer; a later exit after the choice does", () => {
+  const now = Date.UTC(2026, 9, 15);
+  const s = store();
+  assert.equal(xo.consentDecided(s, now), false, "no record");
+  s.setItem("ahv-consent-v2", decidedChoice(now));
+  assert.equal(xo.consentDecided(s, now), true, "saved choice");
+  s.setItem("ahv-consent-v2", JSON.stringify({ ...JSON.parse(decidedChoice(now)), expirationTime: now - 1 }));
+  assert.equal(xo.consentDecided(s, now), false, "expired choice");
+  s.setItem("ahv-consent-v2", JSON.stringify({ ...JSON.parse(decidedChoice(now)), revision: 3 }));
+  assert.equal(xo.consentDecided(s, now), false, "future revision");
+  s.removeItem("ahv-consent-v2");
+  s.setItem("ahv-consent-refusals-v1", JSON.stringify({ version: 1, analytics: now - DAY }));
+  assert.equal(xo.consentDecided(s, now), true, "recorded refusal (incl. GPC)");
+  s.setItem("ahv-consent-refusals-v1", JSON.stringify({ version: 1, analytics: now - 400 * DAY }));
+  assert.equal(xo.consentDecided(s, now), false, "stale refusal");
+  assert.equal(xo.consentDecided({ getItem() { throw new Error("blocked"); } }, now), false, "unreadable storage = undecided");
+
+  const realNow = Date.now;
+  let t = 2_000_000;
+  Date.now = () => t;
+  try {
+    const { win, doc } = makeWin("/");
+    win.localStorage.removeItem("ahv-consent-v2");
+    assert.equal(xo.init(win), true);
+    win.scrollY = 900; win.listeners.scroll[0]();
+    t += 31000;
+    doc.listeners.mouseout[0](leave());
+    assert.equal(doc.querySelector("dialog[data-ahv-exit-offer]"), null, "undecided: nothing opens");
+    assert.equal(doc.listeners.mouseout.length, 1, "still armed");
+    win.localStorage.setItem("ahv-consent-v2", decidedChoice(t));
+    const compact = doc.body.appendChild(new Node(doc, "section"));
+    compact.className = "ahv-consent-compact";
+    doc.listeners.mouseout[0](leave());
+    assert.equal(doc.querySelector("dialog[data-ahv-exit-offer]"), null, "visible compact notice: deferred");
+    compact.hidden = true;
+    doc.listeners.mouseout[0](leave());
+    assert.ok(doc.querySelector("dialog[data-ahv-exit-offer]").open, "opens once the notice is gone");
+  } finally { Date.now = realNow; }
+});
+
+test("source rules equal the paid forms' helpers (campaign-v2/forms/adapter.ts)", () => {
+  const adapter = read("campaign-v2/forms/adapter.ts");
+  assert.match(adapter, /const sourceUrl = ctx\.env\.location\.origin \+ ctx\.env\.location\.pathname \+ \(query \? `\?\$\{query\}` : ""\);/);
+  assert.match(adapter, /referrer = new URL\(ctx\.env\.referrer\)\.origin \+ "\/";/);
+  const keys = JSON.parse(adapter.match(/ATTRIBUTION_KEYS = (\[[^\]]+\])/)[1]);
+  const all = Object.fromEntries(keys.map((k) => [k, k.startsWith("utm_") ? "Brand & Competition" : "id-1"]));
+  const query = new URLSearchParams(all).toString();
+  assert.equal(xo.sourceUrl("https://ayurvedichealingvillage.com", "/lp/weight-loss/", { ...all, gad_source: "1", email: "x" }), `https://ayurvedichealingvillage.com/lp/weight-loss/?${query}`);
+  assert.equal(xo.sourceUrl("https://ayurvedichealingvillage.com", "/", {}), "https://ayurvedichealingvillage.com/");
+  for (const r of ["https://www.google.com/search?q=1", "https://WWW.Google.com:8443/x#y", "http://bing.com"]) assert.equal(xo.referrerOrigin(r), new URL(r).origin + "/", r);
+  assert.equal(xo.referrerOrigin(""), "");
+  assert.equal(xo.referrerOrigin("not a url"), "");
+  // Without the consent runtime the payload keeps only allow-listed keys from whatever attribution it is given.
+  const body = xo.buildPayload(GOOD, { token: "t", siteLanguage: "en", attribution: { gclid: "g", gad_source: "1", email: "x" }, origin: "https://a.example", pathname: "/p/", referrer: "https://r.example/path?q=1" });
+  assert.equal(body.lead_source_url, "https://a.example/p/?gclid=g");
+  assert.equal(body.referrer, "https://r.example/");
+  assert.doesNotMatch(JSON.stringify(body), /gad_source|"email":"x"/);
+});
+
+test("a browser without crypto.randomUUID gets the network message, not a silent failure", async () => {
+  const o = openedOn("/", { crypto: {}, fetch: async () => { throw new Error("must not fetch"); } });
+  fill(o.d, GOOD);
+  assert.equal(await xo.submit(o.d, o.deps), false);
+  assert.equal(o.d.querySelector("[data-ahv-exit-status]").textContent, xo.COPY.en.network);
+  assert.equal(o.deps.state.busy, false);
+  assert.equal(o.d.querySelector("form").getAttribute("aria-busy"), null);
 });

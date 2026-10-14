@@ -14,8 +14,11 @@
  *   - Shown on the site tree and, by the owner's 14/15 Oct 2026 answer "Show on paid pages too" (superseding
  *     DEC-PAID-NAV for this popup only), on the paid campaign pages (/lp/…, the .html landers, Air India) through
  *     campaign-v2/production/Document.tsx. Never on confirmation/thank-you, legal or lead-form pages, never on the
- *     /offers/ category-discount pages (the 10% must not stack), never while the cookie notice, the chat or another
- *     dialog is open, and never while the visitor is typing into a form.
+ *     /offers/ hub, its pages or the URLs that redirect to them (the 10% must not stack), never on the /lp-v2/
+ *     preview lane, never before the visitor has made a cookie choice, never while the cookie notice (compact or
+ *     full), the chat or another dialog is open, and never while the visitor is typing into a form.
+ *   - Source data: like the paid forms, only origin + path + the consent-aware allow-listed attribution values, and
+ *     the referrer's origin; never the raw page URL or query.
  *   - Form: name, country code + phone, email and the site's existing required consent wording, posted to the existing
  *     /api/lead/ pipeline as form "exit-intent" with the same body shape, validation, transport, guide download and
  *     messages as the contact form. The accepted response is observed by lead-receipt.js exactly as for the other
@@ -48,9 +51,9 @@
     form: ['/apply-now/', '/contact-us-old/', '/contact-us/', '/enquiry-form-old/', '/enquiry-form/',
       '/jobs/business-development-manager/', '/online-consultation-old/', '/online-consultation/',
       '/postulez-maintenant/', '/walk-in-ayurveda-treatment/'],
-    // Category-offer pages: the 10% offer must not stack with their discounts (owner, 14/15 Oct 2026).
-    offers: ['/offers/defence-and-paramilitary/', '/offers/defence-paramilitary-personnel-get-upto-30-off/',
-      '/offers/new/', '/offers/olympics-and-paralympics-offer/', '/offers/senior-citizen-offer/']
+    // The /offers/ hub and every page under it, in every locale (prefix rule in exclusionReason), plus the URLs that
+    // 301 to them: the 10% offer must not stack with category discounts (owner, 14/15 Oct 2026).
+    offers: ['/offers/', '/ayurveda-offers/', '/special-offers/', '/defence-and-paramilitary-forces/']
   };
   var LOCALIZED_EXCLUDED = {
     '/de/cookie-richtlinie/': 'legal', '/de/e-mail-abonnent/': 'confirmation', '/de/haftungsausschluss/': 'legal',
@@ -59,8 +62,13 @@
     '/fr/abonne-au-courrier-electronique/': 'confirmation', '/fr/clause-de-non-responsabilite/': 'legal',
     '/fr/consultation-en-ligne/': 'form', '/fr/contactez-nous/': 'form', '/fr/mentions-legales/': 'legal',
     '/fr/politique-dannulation-et-de-remboursement/': 'legal', '/fr/politique-en-matiere-de-cookies/': 'legal',
-    '/fr/remerciers/': 'confirmation', '/fr/termes-et-conditions/': 'legal'
+    '/fr/remerciers/': 'confirmation', '/fr/termes-et-conditions/': 'legal',
+    '/de/olympia-und-paralympics-angebot/': 'offers', '/de/ayurveda-angebote/': 'offers',
+    '/fr/offres-ayurvediques/': 'offers', '/fr/offres-speciales/': 'offers',
+    '/fr/forces-de-defense-et-paramilitaires/': 'offers'
   };
+  // The /lp-v2/ kit preview lane: noindex, its own document; excluded explicitly (root ruling, 15 Oct 2026).
+  var PREVIEW_PREFIX = /^\/(?:(?:hi|de|fr|es|it|pt|nl|ru|ar|zh|ja|ko)\/)?lp-v2(?:\/|$)/;
   var PAID_LOCALE = { '/lp/behandlung-in-kerala/': 'de', '/lp/treatment-in-kerala-russian/': 'ru' };
   var LOCALE_PREFIX = /^\/(hi|de|fr|es|it|pt|nl|ru|ar|zh|ja|ko)(\/.*)?$/;
 
@@ -428,11 +436,13 @@
   function copyFor(lang) { return COPY[lang] || COPY.en; }
   function localPath(base, lang) { return !lang || lang === 'en' ? base : '/' + lang + base; }
 
-  /** The reason a path never shows the offer ('confirmation' | 'legal' | 'form' | 'offers'), or null. */
+  /** The reason a path never shows the offer ('confirmation' | 'legal' | 'form' | 'offers' | 'preview'), or null. */
   function exclusionReason(path) {
     var p = String(path || '/');
+    if (PREVIEW_PREFIX.test(p)) return 'preview';
     var match = LOCALE_PREFIX.exec(p);
     var base = match ? (match[2] || '/') : p;
+    if (/^\/offers(?:\/|$)/.test(base)) return 'offers';
     var candidates = [p, base];
     if (!/\/$/.test(base) && !/\.html$/i.test(base)) candidates.push(base + '/');
     for (var reason in EXCLUDED) {
@@ -461,12 +471,37 @@
   }
   function markShown(session) { try { session.setItem(SESSION_KEY, 'shown'); } catch (_) { /* once per page then */ } }
 
-  /** Another overlay or an active form owns the visitor's attention. */
+  // The CMP's own records (public/consent/policy.mjs): a saved choice, or a recorded refusal (also how GPC is kept).
+  var CONSENT_KEY = 'ahv-consent-v2', REFUSAL_KEY = 'ahv-consent-refusals-v1', CONSENT_REVISION = 2;
+  /** True once the visitor has a current saved consent choice or a recorded refusal; false while undecided. */
+  function consentDecided(storage, now) {
+    var saved = readJson(storage, CONSENT_KEY);
+    if (saved && Array.isArray(saved.categories) && typeof saved.consentId === 'string' && saved.consentId &&
+        typeof saved.revision === 'number' && saved.revision >= 1 && saved.revision <= CONSENT_REVISION &&
+        typeof saved.expirationTime === 'number' && saved.expirationTime > now) return true;
+    var refusals = readJson(storage, REFUSAL_KEY);
+    if (refusals && refusals.version === 1) {
+      var keys = ['analytics', 'advertising'];
+      for (var i = 0; i < keys.length; i++) {
+        var at = refusals[keys[i]];
+        if (typeof at === 'number' && at > 0 && at <= now && now - at < 366 * DAY_MS) return true;
+      }
+    }
+    return false;
+  }
+  function visible(n) {
+    if (!n || n.hidden) return false;
+    return typeof n.getClientRects === 'function' ? n.getClientRects().length > 0 : true;
+  }
+  /** Another overlay, the cookie notice (compact or full) or an active form owns the visitor's attention. */
   function busyElsewhere(doc, own) {
     if (!doc) return true;
     var html = doc.documentElement;
     if (doc.getElementById && doc.getElementById('ahv-consent')) return true;
     if (html && html.classList && (html.classList.contains('show--consent') || html.classList.contains('show--preferences'))) return true;
+    if (html && html.hasAttribute && html.hasAttribute('data-consent-open')) return true;
+    var compact = doc.querySelectorAll ? doc.querySelectorAll('.ahv-consent-compact') : [];
+    for (var c = 0; c < compact.length; c++) if (visible(compact[c])) return true;
     if (doc.body && doc.body.getAttribute && doc.body.getAttribute('data-ahv-chat-open') === 'true') return true;
     var active = doc.activeElement;
     if (active && active.closest && active.closest('form')) return true;
@@ -522,17 +557,37 @@
     return { ok: ok, invalid: invalid };
   }
 
-  /** Exactly the contact form's /api/lead/ body (static-design-boot), as table "exit-intent". */
+  var ATTRIBUTION_KEYS = ['gclid', 'gbraid', 'wbraid', 'fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+  /** The paid forms' source rule (campaign-v2/forms/adapter.ts buildProductionLead): the page's origin + path plus only
+   *  the consent-aware allow-listed attribution values, serialised as URLSearchParams does. Never the raw query. */
+  function sourceUrl(origin, pathname, attribution) {
+    var parts = [];
+    for (var k in attribution) {
+      if (ATTRIBUTION_KEYS.indexOf(k) !== -1 && typeof attribution[k] === 'string' && attribution[k]) {
+        parts.push(encodeURIComponent(k) + '=' + encodeURIComponent(attribution[k]).replace(/%20/g, '+'));
+      }
+    }
+    return String(origin || '') + String(pathname || '') + (parts.length ? '?' + parts.join('&') : '');
+  }
+  /** The paid forms' referrer rule: origin only ("https://host/"), else empty. */
+  function referrerOrigin(referrer) {
+    var m = /^(https?:\/\/[^\/?#]+)/i.exec(String(referrer || ''));
+    return m ? m[1].toLowerCase() + '/' : '';
+  }
+
+  /** The contact form's /api/lead/ keys (static-design-boot) as table "exit-intent", with the paid forms' URL rules. */
   function buildPayload(values, ctx) {
-    var c = ctx.attribution || {};
+    var c = {};
+    var given = ctx.attribution || {};
+    for (var key in given) if (ATTRIBUTION_KEYS.indexOf(key) !== -1 && typeof given[key] === 'string') c[key] = given[key];
     return {
       form: 'exit-intent', submissionToken: ctx.token,
       site_language: ctx.siteLanguage,
       utm_source: c.utm_source || '', utm_medium: c.utm_medium || '', utm_campaign: c.utm_campaign || '',
       utm_term: c.utm_term || '', utm_content: c.utm_content || '',
       gclid: c.gclid || '', fbclid: c.fbclid || '', gbraid: c.gbraid || '', wbraid: c.wbraid || '',
-      lead_source_url: String(ctx.href || '').slice(0, 500),
-      referrer: String(ctx.referrer || '').slice(0, 500),
+      lead_source_url: sourceUrl(ctx.origin, ctx.pathname, c).slice(0, 500),
+      referrer: referrerOrigin(ctx.referrer).slice(0, 500),
       fields: {
         full_name: String(values.full_name || '').trim(),
         countrycode: String(values.countrycode || '').trim(),
@@ -749,20 +804,22 @@
     alert.hidden = true;
     alert.textContent = '';
     var win = deps.win;
-    if (!state.token) state.token = win.crypto.randomUUID();
     state.busy = true;
     form.setAttribute('aria-busy', 'true');
     status.textContent = t.sending;
     var controller = typeof win.AbortController === 'function' ? new win.AbortController() : null;
     var timeout = win.setTimeout(function () { if (controller) controller.abort(); }, SUBMIT_TIMEOUT_MS);
     try {
+      // Inside the error handling: a browser without crypto.randomUUID (Safari < 15.4) gets the network message.
+      if (!state.token) state.token = win.crypto.randomUUID();
       var receipt = win.AHV_LEAD_RECEIPT;
       var payload = buildPayload(values, {
         token: state.token,
         trigger: deps.trigger,
         attribution: receipt && typeof receipt.attribution === 'function' ? receipt.attribution() : {},
         siteLanguage: receipt && typeof receipt.siteLanguage === 'function' ? receipt.siteLanguage() : (deps.lang === 'zh' ? 'zh-Hans' : deps.lang),
-        href: win.location.href,
+        origin: win.location.origin,
+        pathname: win.location.pathname,
         referrer: deps.doc.referrer || ''
       });
       var response = await win.fetch('/api/lead/', {
@@ -878,6 +935,8 @@
       // Re-checked at the moment of exit: the route, other tabs' outcomes and anything else on screen.
       if (exclusionReason(win.location.pathname)) return false;
       if (shownThisSession(session) || suppressed(storage, now())) return false;
+      // Consent first: while the visitor has not decided, the offer waits (the trigger stays armed).
+      if (!consentDecided(storage, now())) return false;
       if (busyElsewhere(doc, doc.querySelector('dialog[data-ahv-exit-offer]'))) return false;
       if (!open(win, kind, deps)) return false;
       markShown(session);
@@ -895,7 +954,7 @@
     LOCALES: LOCALES, COPY: COPY, EXCLUDED: EXCLUDED, LOCALIZED_EXCLUDED: LOCALIZED_EXCLUDED, OFFER_SUBJECT: OFFER_SUBJECT,
     STORE_KEY: STORE_KEY, SESSION_KEY: SESSION_KEY, SUPPRESS_DAYS: SUPPRESS_DAYS, MIN_ENGAGED_MS: MIN_ENGAGED_MS,
     language: language, copyFor: copyFor, localPath: localPath, exclusionReason: exclusionReason,
-    suppressed: suppressed, remember: remember, busyElsewhere: busyElsewhere,
+    suppressed: suppressed, consentDecided: consentDecided, sourceUrl: sourceUrl, referrerOrigin: referrerOrigin, remember: remember, busyElsewhere: busyElsewhere,
     createTrigger: createTrigger, validate: validate, buildPayload: buildPayload, buildDialog: buildDialog,
     trapTab: trapTab, submit: submit, open: open, init: init
   };
