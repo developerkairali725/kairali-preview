@@ -60,7 +60,7 @@ test("registration: both batch-2 routes are production slugs with their own revi
   }
 });
 
-test("routes: unchanged URLs, canonicals and robots (indexable only on the production build, as before); no OG alt or breadcrumb the replaced pages lacked", () => {
+test("routes: unchanged URLs, canonicals and robots (indexable only on the production build, as before); no OG alt the replaced pages lacked; Home > H1 breadcrumb (AHV-WB.069/093)", () => {
   const old = read("app/(campaign)/_traffic/TrafficLanding.tsx");
   assert.match(old, /robots:\{index:process\.env\.AHV_STAGING==='0',follow:true\}/); // the replaced pages' rule
   assert.match(old, /images:\[\{url:image,width:1200,height:630\}\]/); // their OG image: no alt
@@ -82,7 +82,16 @@ test("routes: unchanged URLs, canonicals and robots (indexable only on the produ
     const [page, faq] = productionJsonLd(slug, c);
     assert.equal(page["@type"], "WebPage");
     assert.equal(page.url, canonical);
-    assert.equal(page.breadcrumb, undefined);
+    // AHV-WB.069 / AHV-WB.093 (14 Oct 2026): Home > the page's visible H1, nothing else in the WebPage node changed.
+    assert.deepEqual(page.breadcrumb, {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://ayurvedichealingvillage.com/" },
+        { "@type": "ListItem", position: 2, name: { [PAIN]: "Ayurvedic pain management in Kerala", [FAMILY]: "Family Ayurveda retreat in Kerala" }[slug], item: canonical },
+      ],
+    });
+    assert.equal(page.breadcrumb.itemListElement[1].name, c.hero.h1);
+    assert.deepEqual(Object.keys(page), ["@context", "@type", "@id", "url", "name", "description", "inLanguage", "isPartOf", "breadcrumb"]);
     assert.equal(faq["@type"], "FAQPage");
     assert.equal(faq.mainEntity.length, c.faq.length);
   }
