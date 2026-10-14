@@ -85,6 +85,7 @@ export default defineCopy({
       films: [
         story("iPARaMRASUs", "A day at the village"),
         story("3vWviQfW1Ug", "Watch Ms. Supriya’s experience"),
+        story("4x01PtWfNnk", "Watch Michaela & Jan’s experience"),
       ],
     },
     stay: {

@@ -96,6 +96,7 @@ export default defineCopy({
       films: [
         story("07tVC2oXd8g", "Watch the Panchakarma film"),
         story("iPARaMRASUs", "A day at the village"),
+        story("4x01PtWfNnk", "Watch Michaela & Jan’s experience"),
       ],
     },
     stay: {

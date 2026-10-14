@@ -211,6 +211,13 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
       }
       assert.equal(crypto.createHash("sha256").update(current).digest("hex"), localeCorrection.beforeSHA256, f);
     }
+    const thirdVideo = JSON.parse(read("test/fixtures/third-guest-videos-20261014.json")).files[f];
+    if (thirdVideo) {
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), thirdVideo.afterSHA256, f);
+      assert.equal(current.split(thirdVideo.addition).length - 1, 1, `${f}: exact approved third card`);
+      current = current.replace(thirdVideo.addition, "");
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), thirdVideo.beforeSHA256, f);
+    }
     if (f === "campaign-v2/production/production.css") {
       // Remove only the approved desktop-card sizing delta before the existing historical checks.
       const cardDelta = "\n/* Owner feedback, 14 Oct: size desktop D consultation cards to their existing actions. */\n@media (min-width: 768px) {\n  .lp-prod[data-variant=\"D\"] .lp-hero__form { align-self: start; }\n  .lp-prod[data-variant=\"D\"] .lp-consult--card { height: auto; }\n}\n";
