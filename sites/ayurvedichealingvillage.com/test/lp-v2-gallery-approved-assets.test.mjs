@@ -102,8 +102,25 @@ test("targets: the existing gallery is kept entry for entry, then only the appro
   }
 });
 
-test("targets: hero, phone hero, stillness, steps photograph and every other field are unchanged", () => {
-  assert.equal(sha256(JSON.stringify(pick(FIRST4, true))), BASE_FIRST4_NO_GALLERY_HASH);
+test("targets: only the four approved rest images change; all prior gallery and other-field preservation checks remain", () => {
+  const approvedRest = {
+    id: "ahv-img-016", src: "/ahv/assets/img/owner-approved-20260928/ahv-img-016.webp",
+    width: 1600, height: 1067, alt: "Cottage, garden path and water channel among palms at the Healing Village in Palakkad",
+    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
+  };
+  assert.deepEqual(IMAGES["ahv-img-016"], approvedRest);
+  const file = fs.readFileSync(P("public" + approvedRest.src));
+  assert.equal(sha256(file), "52bb11bb871ff8b2a9e325149e79a010df5f7023294c15ee905a5621be1e49b2");
+  assert.deepEqual(webpSize(file), { width: 1600, height: 1067 });
+  const first4BeforeRestChange = pick(FIRST4, true);
+  for (const slug of FIRST4) {
+    assert.deepEqual(ROUTES[slug].stillnessImage, approvedRest, slug);
+    assert.deepEqual(productionCampaign(slug).stillness.image, approvedRest, slug);
+    assert.ok(!ROUTES[slug].gallery.some(g => g.image.id === approvedRest.id), slug);
+    // Reverse only this reviewed delta; retain the original baseline hash and every other field.
+    first4BeforeRestChange[slug].stillnessImage = IMAGES["gal-post-therapy-stillness-wakem"];
+  }
+  assert.equal(sha256(JSON.stringify(first4BeforeRestChange)), BASE_FIRST4_NO_GALLERY_HASH);
   assert.equal(sha256(JSON.stringify(pick(BATCH2, true))), BASE_BATCH2_NO_GALLERY_HASH);
   assert.equal(sha256(JSON.stringify(pick(BATCH3, true))), BASE_BATCH3_NO_GALLERY_HASH);
   for (const slug of TARGETS) {
