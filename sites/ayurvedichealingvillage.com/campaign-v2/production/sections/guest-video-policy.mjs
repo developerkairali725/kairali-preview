@@ -1,11 +1,11 @@
 // Pure rules for the on-page patient-film player mounted by Stories.tsx (GuestVideoDialog.tsx); node --test imports
-// this file. Owner decision DEC-GUEST-VIDEO-POPUP: play the existing films in an on-page popup on exactly the 13
+// this file. Owner decision DEC-GUEST-VIDEO-POPUP: play the existing films in an on-page popup on exactly the 19
 // English routes below, keeping each card's YouTube link as the fallback. Fail closed everywhere: an unknown route,
 // language, film, consent state or API means no player. Staff review 9 Oct 2026 (AHV-WB.249/320/430/272.guest-video),
 // under the owner's standing authority for on-page guest-video playback: four Direct routes gain the same Stories
 // section (production/section-order.ts D_VILLAGE_AND_STORIES) and are appended here, same films and consent gating.
 
-/** The 13 English routes of DEC-GUEST-VIDEO-POPUP (WOPS-AHV-GUEST-VIDEO-20261010-001 SCOPE.json), then the four D routes. */
+/** The 13 English routes of DEC-GUEST-VIDEO-POPUP (WOPS-AHV-GUEST-VIDEO-20261010-001 SCOPE.json), then the four D routes, then the two weight routes, exact paths. */
 export const GUEST_VIDEO_ROUTES = Object.freeze([
   "/pain-management.html",
   "/family-ayurvedic-retreat-kerala.html",
@@ -25,10 +25,14 @@ export const GUEST_VIDEO_ROUTES = Object.freeze([
   "/lp/ayurveda-treatment-south-india/",
   "/lp/panchkarma-treatment/",
   "/Kairali_Brand_and_Competition_Neo-original.html",
+  // Owner decision, 14 Oct 2026 (AHV-WB.299.change): the two weight routes now carry the Rupak Mann guest story.
+  "/weight-loss.html",
+  "/lp/weight-loss/",
 ]);
 
 /** Every film the allowed routes' reviewed copy already links (production/pages/*.ts). No other id is ever embedded. */
-export const APPROVED_FILM_IDS = Object.freeze(["iPARaMRASUs", "4x01PtWfNnk", "3vWviQfW1Ug", "07tVC2oXd8g", "DcTMckQD3rc"]);
+// D3QLxKpwtJs: Rupak Mann, already published on the legacy weight page; added by owner decision AHV-WB.299.change (14 Oct 2026).
+export const APPROVED_FILM_IDS = Object.freeze(["iPARaMRASUs", "4x01PtWfNnk", "3vWviQfW1Ug", "07tVC2oXd8g", "DcTMckQD3rc", "D3QLxKpwtJs"]);
 
 /**
  * Conservative gating by this popup only. The existing consent configuration (public/consent, unchanged) offers

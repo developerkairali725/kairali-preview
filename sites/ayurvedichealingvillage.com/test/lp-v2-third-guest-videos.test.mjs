@@ -28,9 +28,10 @@ for(const [slug,{source,index,id}] of Object.entries(targets))test(`${slug}: thi
 test('all21 other configs unchanged; remove only appended third card to restore each target and its original two cards',()=>{
  assert.equal(PRODUCTION_SLUGS.length,24);assert.equal(Object.keys(targets).length,3);
  for(const slug of PRODUCTION_SLUGS){const c=reverseTrainAConfig(slug,JSON.parse(JSON.stringify(productionCampaign(slug))));if(targets[slug])c.page.stories.films.pop();assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);}
- // Train A batch 6 appended exactly four D routes after the original 13 (batch 8's AHV-WB.015/039 routes were rejected and
- // excluded); the approved film list is unchanged.
- assert.equal(GUEST_VIDEO_ROUTES.length,13+BATCH6.guestVideoRoutesAdded.length);assert.deepEqual(GUEST_VIDEO_ROUTES.slice(13),BATCH6.guestVideoRoutesAdded);assert.equal(APPROVED_FILM_IDS.length,5);
+ // Train A: batch 6 appended exactly four D routes after the original 13 (batch 8's AHV-WB.015/039 routes were rejected and
+ // excluded), then the owner decision of 14 Oct 2026 (AHV-WB.299.change) the two weight routes and the Rupak Mann film.
+ assert.equal(GUEST_VIDEO_ROUTES.length,13+BATCH6.guestVideoRoutesAdded.length+2);assert.deepEqual(GUEST_VIDEO_ROUTES.slice(13,17),BATCH6.guestVideoRoutesAdded);
+ assert.deepEqual(GUEST_VIDEO_ROUTES.slice(17),['/weight-loss.html','/lp/weight-loss/']);assert.deepEqual(APPROVED_FILM_IDS.slice(5),['D3QLxKpwtJs']);assert.equal(APPROVED_FILM_IDS.length-1,5);
 });
 test('exact source additions reverse to the prior byte hashes; no testimonial text or rendering/consent policy changes',()=>{
  // Train A: every merged candidate's exact source delta is reversed first (fixtures/train-a-20261014.mjs); rendering and consent code are unchanged.

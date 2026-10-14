@@ -3,6 +3,8 @@
 // facts only from the brief and data/doctors.ts. The quotation is personal; no price. Distinct angle from
 // panchakarma.ts (package comparison, cards rather than the numbered row). sha256 as recorded in
 // final-batch/NONPUBLIC/AUDIENCE-KEYWORDS-FACTS.json (not recomputed in this session).
+// Owner decision, 14 Oct 2026 (AHV-WB.042.change: "panchakarma has 28 as well"): the stated stay reads 14–28 nights,
+// matching the Length-of-stay box (14/21/28); lead and FAQ changed only in that range.
 import { defineCopy } from "../copy.ts";
 import { story } from "../stories.ts";
 
@@ -32,7 +34,7 @@ export default defineCopy({
       heading: "Comparing Panchakarma packages? Start with your needs",
       paragraphs: [
         "When you compare Panchakarma packages, it is natural to look at length and cost first. At Kairali, the programme is not picked from a list: your doctor first assesses whether Panchakarma is suitable, which procedures may be considered and how long you would need.",
-        "Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. The published Panchakarma programme is a 14–21 night stay; discuss the time you can set aside and confirm the recommended duration before arranging travel.",
+        "Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. The published Panchakarma programme is a 14–28 night stay; discuss the time you can set aside and confirm the recommended duration before arranging travel.",
       ],
       points: [
         "You are comparing Panchakarma packages and what they cost",
@@ -103,7 +105,7 @@ export default defineCopy({
   faq: [
     { q: "Do I need to choose procedures before I enquire?", a: "No. Describe your needs and goals to the doctor. Assessment determines whether a Panchakarma programme is appropriate and which procedures may be considered. You do not need to select a treatment schedule yourself." },
     { q: "Will my stay include every Panchakarma procedure?", a: "Not automatically. Your doctor selects appropriate procedures and explains their preparation, suitability and availability. The programme is individual rather than a fixed list for every patient." },
-    { q: "Can I fit Panchakarma into a short visit?", a: "The published programme is a 14–21 night stay. Share your available dates before choosing a programme. Ask the doctor what duration is appropriate; do not assume that a shorter visit provides the same care." },
+    { q: "Can I fit Panchakarma into a short visit?", a: "The published programme is a 14–28 night stay. Share your available dates before choosing a programme. Ask the doctor what duration is appropriate; do not assume that a shorter visit provides the same care." },
     { q: "Can I discuss an existing health condition?", a: "Yes. Share your medical records, current medicines and previous treatment. The doctor can discuss suitability, realistic expectations and any further information needed. Individual responses vary, and a consultation cannot promise an outcome." },
     { q: "How is the programme cost confirmed?", a: "Patient care prepares a quotation for your programme, dates, duration and occupancy. Check the included care and separately charged items before booking. Your initial doctor consultation is free; ask for a quotation covering your care and any later services." },
   ],

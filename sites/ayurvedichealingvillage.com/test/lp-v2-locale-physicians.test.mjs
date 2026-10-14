@@ -16,6 +16,8 @@ const languages={de:{Malayalam:'Malayalam',English:'Englisch',Hindi:'Hindi',Tami
 const titles={de:'Ihre Ayurveda-Ärzte',ru:'Ваши аюрведические врачи'};
 const originalTitles={de:'Ihr Ayurveda-Arzt',ru:'Ваш аюрведический врач'};
 const sha=x=>createHash('sha256').update(x).digest('hex');
+// Owner decisions, 14 Oct 2026 (AHV-WB.042.change, AHV-WB.299.change): their exact config reversal (weight Stories band,
+// Panchakarma 14–28 night range) is composed with the other Train A candidates in fixtures/train-a-20261014.mjs.
 for(const [locale,slug] of Object.entries(byLocale))test(`${locale}: five complete approved cards, actual individual languages, existing portraits and no inferred experience`,()=>{
  const c=productionCampaign(slug);
  assert.deepEqual(c.doctors.map(d=>d.id),[...CURRENT_ROSTER]);assert.equal(c.page.doctors.heading,titles[locale]);

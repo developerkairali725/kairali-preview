@@ -16,9 +16,20 @@ import { GUEST_VIDEO_ROUTES, routeAllowed, filmIdFromHref } from "../campaign-v2
 import {
   MESSAGES, PRODUCTION_CAMPAIGN_FORM, campaignEnquiryForm, monthOptions, validateStep, CONSENT_FIELD,
 } from "../campaign-v2/forms/schema.ts";
-import { BATCH6, reverseBatch6Source } from "./fixtures/train-a-batch6-20261014.mjs";
+import { BATCH6 } from "./fixtures/train-a-batch6-20261014.mjs";
+import { reverseTrainASource } from "./fixtures/train-a-20261014.mjs";
 
 const read = (p) => fs.readFileSync(new URL(`../${p}`, import.meta.url), "utf8");
+// Train A integration: batch 7 (AHV-WB.*.whatsapp-message) later edited the same Enquiry wiring line; its exact recorded
+// edits (test/fixtures/whatsapp-prefill-delta.json) are reversed before the batch 6 wiring assertion below.
+const unWhatsApp = (p) => {
+  let text = read(p);
+  for (const e of [...JSON.parse(read("test/fixtures/whatsapp-prefill-delta.json")).edits[p]].reverse()) {
+    assert.equal(text.split(e.to).length - 1, 1, `${p}: batch 7 edit occurs once`);
+    text = text.replace(e.to, e.from);
+  }
+  return text;
+};
 
 // The production form's message lookup, as EnquiryForm.tsx writes it (pinned below).
 const say = (ui, e) => ui?.errors[e.field === "fullName" ? "name" : e.field] ?? ui?.errors[e.code] ?? e.message;
@@ -48,7 +59,7 @@ test("AHV-WB.021/459/161/304: English production errors name one box and no exam
   // The lookup the production form uses, and the wiring that hands it the page language's words.
   assert.match(read("campaign-v2/sections/interactive/EnquiryForm.tsx"),
     /const say = \(e: FieldError\) => ui\?\.errors\[e\.field === "fullName" \? "name" : e\.field\] \?\? ui\?\.errors\[e\.code\] \?\? e\.message;/);
-  assert.match(read("campaign-v2/sections/interactive/Enquiry.tsx"), /\{\.\.\.\(production \? \{ production, ui: ui\.form \} : \{\}\)\}/);
+  assert.match(unWhatsApp("campaign-v2/sections/interactive/Enquiry.tsx"), /\{\.\.\.\(production \? \{ production, ui: ui\.form \} : \{\}\)\}/);
   // R10 production form: missing consent, a bad dial code and a bad number all read the new English words.
   const r10 = validateStep(PRODUCTION_CAMPAIGN_FORM, 0, { fullName: "A", email: "a@b.co", dialCode: "91", phone: "12", [CONSENT_FIELD]: false }, "whatsapp");
   assert.deepEqual(r10.map((e) => [e.field, say(UI.en.form, e)]), [
@@ -126,7 +137,8 @@ test("AHV-WB.249/320/430/272: four D routes show the existing village and consen
 
 test("batch 6 deltas reverse exactly to the prior source bytes", () => {
   for (const path of Object.keys(BATCH6.files)) {
-    const before = reverseBatch6Source(path, read(path));
+    // Train A: later candidates edited some of these files too; the composed reversal checks batch 6's own after-bytes.
+    const before = reverseTrainASource(path, read(path));
     assert.notEqual(before, read(path), path);
   }
   assert.equal(BATCH6.base.length, 40);

@@ -26,6 +26,7 @@ import crypto from "node:crypto";
 import batch8 from "./fixtures/train-a-batch8-20261014.json" with { type: "json" };
 import { richLinks, richRuns, richText } from "../campaign-v2/kit/rich.ts";
 import { contact } from "../campaign-v110/lib/site.ts";
+import { LENGTHS } from "../campaign-v2/forms/schema.ts";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const P = (...p) => path.join(SITE, ...p);
@@ -490,10 +491,19 @@ test("locked facts: WhatsApp +91 92898 38797 and info@kairali.com; the wrong …
   for (const slug of PRODUCTION_SLUGS) assert.doesNotMatch(pageStrings(C[slug]).join(" "), /\+?\s?91[\s-]?\d{4,5}[\s-]?\d{3,6}|@[a-z]+\.[a-z]+/i, `${slug}: contact details render from site.ts only`);
 });
 
-test("owner facts: the 14–21 night Panchakarma programme as published; only the owner-approved Monsoon season may carry a year", () => {
-  assert.match(C.panchakarma.seo.description, /14–21 night/);
-  assert.ok(C.panchakarma.page.lead.paragraphs.some((p) => p.includes("The published programme is a 14–21 night stay")));
-  assert.ok(C.panchakarma.faq.some((f) => f.a.startsWith("The published Panchakarma programme is a 14–21 night stay.")));
+// Owner decision, 14 Oct 2026 (AHV-WB.042.change: "panchakarma has 28 as well"): the stated stay is 14–28 nights, so
+// the text agrees with the Length-of-stay box (14/21/28 nights) on both Panchakarma routes; no 14–21 range remains.
+test("owner facts: the 14–28 night Panchakarma programme, matching the Length-of-stay box; only the owner-approved Monsoon season may carry a year", () => {
+  assert.match(C.panchakarma.seo.description, /14–28 night/);
+  assert.ok(C.panchakarma.page.lead.paragraphs.some((p) => p.includes("The published programme is a 14–28 night stay")));
+  assert.ok(C.panchakarma.faq.some((f) => f.a.startsWith("The published Panchakarma programme is a 14–28 night stay.")));
+  assert.ok(C["lp-panchakarma"].page.lead.paragraphs.some((p) => p.includes("The published Panchakarma programme is a 14–28 night stay")));
+  assert.ok(C["lp-panchakarma"].faq.some((f) => f.a.startsWith("The published programme is a 14–28 night stay.")));
+  assert.deepEqual(LENGTHS.filter((o) => /^\d+$/.test(o.value)).map((o) => o.value), ["14", "21", "28"], "the box offers 14/21/28 nights");
+  for (const slug of ["panchakarma", "lp-panchakarma"]) {
+    const strings = [C[slug].seo.description, ...allText(C[slug]).map((t) => t.text)];
+    assert.deepEqual(strings.filter((t) => /14[–-]21|14 to 21/.test(t)), [], `${slug}: no 14–21 night range left`);
+  }
   for (const slug of PRODUCTION_SLUGS) for (const { path: at, text } of allText(C[slug])) {
     // Owner, 14 October 2026: exactly the month-only Monsoon season; no other year or founding-date exception.
     const reviewed = slug === "monsoon-wellness" ? text.replaceAll("July–August 2027", "July–August") : text;

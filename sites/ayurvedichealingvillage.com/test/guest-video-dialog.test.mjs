@@ -26,14 +26,17 @@ const locale = (slug) => ROUTES[slug].locale ?? 'en';
 
 // ---------------------------------------------------------------------------------------------------------- scope
 
-test('allowlist = exactly the English production routes that render Stories (13, then the four batch-6 D routes)', () => {
+// Train A: the original 13, batch 6's four D routes, then the two weight routes of the owner decision of 14 Oct 2026
+// (AHV-WB.299.change, Rupak Mann story) = 19. Batch 8's AHV-WB.015/039.change were rejected in review and excluded.
+test('allowlist = exactly the English production routes that render Stories (13, then the four batch-6 D routes, then the two weight routes)', () => {
   const derived = storyPages.filter((c) => locale(c.slug) === 'en').map((c) => c.route).sort();
-  assert.equal(derived.length, 17);
-  // Train A: AHV-WB.015/039.change (batch 8) were rejected in review and excluded, so these two stay without Stories.
+  assert.equal(derived.length, 19);
+  for (const r of ['/weight-loss.html', '/lp/weight-loss/']) assert.ok(derived.includes(r), r);
   assert.ok(!derived.includes('/ayurvedic-treatment-packages.html') && !derived.includes('/panchkarma-treatment.html'));
   assert.deepEqual([...GUEST_VIDEO_ROUTES].sort(), derived);
   // The original 13 of DEC-GUEST-VIDEO-POPUP stay first and unchanged; batch 6 appends exactly its four D routes.
-  assert.deepEqual(GUEST_VIDEO_ROUTES.slice(13), BATCH6.guestVideoRoutesAdded);
+  assert.deepEqual(GUEST_VIDEO_ROUTES.slice(13, 17), BATCH6.guestVideoRoutesAdded);
+  assert.deepEqual(GUEST_VIDEO_ROUTES.slice(17), ['/weight-loss.html', '/lp/weight-loss/']);
   assert.deepEqual([...BATCH6.guestVideoRoutesAdded].sort(), BATCH6.dSlugs.map((slug) => ROUTES[slug].route).sort());
   assert.equal(GUEST_VIDEO_ROUTES.slice(0, 13).filter((r) => BATCH6.guestVideoRoutesAdded.includes(r)).length, 0);
   for (const r of GUEST_VIDEO_ROUTES) assert.equal(routeAllowed(r, 'en'), true, r);
@@ -41,8 +44,9 @@ test('allowlist = exactly the English production routes that render Stories (13,
 
 test('every other production route, locale and path variant is excluded', () => {
   const others = Object.values(ROUTES).filter((b) => !GUEST_VIDEO_ROUTES.includes(b.route));
-  assert.equal(others.length, 7); // 11 before batch 6 appended four D routes
-  assert.deepEqual(others.map((b) => b.slug).sort(), ['lp-behandlung-kerala', 'lp-brand', 'lp-treatment-kerala-ru', 'lp-weight-management', 'panchakarma', 'treatment-packages', 'weight-management']);
+  assert.equal(others.length, 5); // 11 before batch 6 appended four D routes and the owner decision two weight routes
+  assert.deepEqual(others.map((b) => b.slug).sort(), ['lp-behandlung-kerala', 'lp-brand', 'lp-treatment-kerala-ru', 'panchakarma', 'treatment-packages']);
+  for (const r of ['/weight-loss.html', '/lp/weight-loss/']) assert.ok(!others.some((b) => b.route === r), r);
   for (const b of others) assert.equal(routeAllowed(b.route, b.locale ?? 'en'), false, b.route);
   for (const r of GUEST_VIDEO_ROUTES) {
     for (const lang of ['de', 'fr', 'ru', '', 'english', undefined]) assert.equal(routeAllowed(r, lang), false, `${r} ${lang}`);
@@ -55,7 +59,7 @@ test('every other production route, locale and path variant is excluded', () => 
   assert.equal(routeAllowed(null, 'en'), false);
 });
 
-test('approved films = every film the 13 routes already link, each mapped back from its card href', () => {
+test('approved films = every film the 15 routes already link, each mapped back from its card href', () => {
   const hrefs = storyPages.flatMap((c) => c.page.stories.films.map((f) => f.href));
   const ids = new Set();
   for (const href of hrefs) {
@@ -275,7 +279,9 @@ function harness({ path = '/pain-management.html', rec = record(), lang = 'en', 
 const flush = () => new Promise((r) => setImmediate(r));
 
 test('wiring: first route unapproved, then a client navigation to an approved one — works there, nothing fetched before', async () => {
-  const h = harness({ path: '/lp/weight-loss/' });
+  // Was /lp/weight-loss/ until AHV-WB.299.change approved it. /lp/panchkarma-treatment/ (the owner-decision candidate's
+  // choice) gained Stories in Train A batch 6, so the integrated train uses /ayurvedic-treatment-packages.html: English, no Stories.
+  const h = harness({ path: '/ayurvedic-treatment-packages.html' });
   await flush();
   assert.equal(h.calls.loads, 0, 'no consent module fetch off-route');
   assert.equal(h.click(h.cards['4x01PtWfNnk']).defaultPrevented, false, 'off-route the card stays a link');
@@ -292,7 +298,7 @@ test('wiring: first route unapproved, then a client navigation to an approved on
 });
 
 test('wiring: approved first, then an unapproved or localized route — no interception, nothing opens', async () => {
-  for (const [p, lang] of [['/lp/weight-loss/', 'en'], ['/lp/behandlung-in-kerala/', 'de'], ['/pain-management.html', 'de']]) {
+  for (const [p, lang] of [['/ayurvedic-treatment-packages.html', 'en'], ['/lp/behandlung-in-kerala/', 'de'], ['/pain-management.html', 'de']]) {
     const h = harness();
     await flush();
     h.go(p);

@@ -141,8 +141,7 @@ test("only paragraphs were appended: every original card, heading, link, paragra
     cardsNow.forEach((card, i) => { card.paragraphs = card.paragraphs.slice(0, cardsWas[i].paragraphs.length); });
     // Train A: reverse exactly every merged candidate's recorded config change (batch 8's AHV-WB.015.change Stories
     // addition was rejected and excluded, so none remains on these routes today).
-    reverseTrainAConfig(slug, now);
-    same(now, was, `${slug}: nothing else changed`);
+    same(reverseTrainAConfig(slug, now), was, `${slug}: nothing else changed`);
   }
   const links = (slug) => NOW_C[slug].page.offering.cards.flatMap((c) => c.links ?? []).length;
   assert.equal(links("treatment-packages"), 11, "the 11 programme links stay");
