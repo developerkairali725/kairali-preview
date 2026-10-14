@@ -10,6 +10,8 @@ import {productionCampaign,PRODUCTION_SLUGS} from '../campaign-v2/production/loa
 import {DOCTORS,CURRENT_ROSTER} from '../campaign-v2/data/doctors.ts';
 import {UI} from '../campaign-v2/production/ui.ts';
 import fixture from './fixtures/locale-physicians-20261014.json' with {type:'json'};
+import batch8 from './fixtures/train-a-batch8-20261014.json' with {type:'json'};
+import {reverseBatch8Config} from './fixtures/train-a-batch8-reverse.mjs';
 const byLocale={de:'lp-behandlung-kerala',ru:'lp-treatment-kerala-ru'};
 const languages={de:{Malayalam:'Malayalam',English:'Englisch',Hindi:'Hindi',Tamil:'Tamil'},ru:{Malayalam:'малаялам',English:'английском',Hindi:'хинди',Tamil:'тамильском'}};
 const titles={de:'Ihre Ayurveda-Ärzte',ru:'Ваши аюрведические врачи'};
@@ -32,7 +34,7 @@ for(const [locale,slug] of Object.entries(byLocale))test(`${locale}: five comple
 test('all24 configs preserve original bytes after exact approved experience facts and DE/RU roster/heading normalization',()=>{
  assert.equal(PRODUCTION_SLUGS.length,24);assert.equal(Object.keys(fixture.configSHA256).length,24);
  for(const slug of PRODUCTION_SLUGS){
-  const c=JSON.parse(JSON.stringify(productionCampaign(slug)));const locale=Object.keys(byLocale).find(l=>byLocale[l]===slug);
+  const c=reverseBatch8Config(slug,JSON.parse(JSON.stringify(productionCampaign(slug))));const locale=Object.keys(byLocale).find(l=>byLocale[l]===slug);
   if(locale){c.doctors=c.doctors.filter(d=>d.id==='deepu-john');c.page.doctors.heading=originalTitles[locale];}
   for(const doctor of c.doctors){const delta=staffExperienceDelta.sourceDelta['campaign-v2/data/doctors.ts'].find(d=>JSON.parse(d.new.trim().slice(8,-1))===doctor.tenure);assert(delta,doctor.id);doctor.tenure=JSON.parse(delta.old.trim().slice(8,-1));}
   if(slug===monsoonCompatibility.slug){
@@ -49,6 +51,9 @@ test('all24 configs preserve original bytes after exact approved experience fact
 test('exact approved source corrections reverse to original bytes, preserving prior facts/copy/style fixtures',()=>{
  for(const [p,entry] of Object.entries(fixture.files)){
   let value=fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
+  // Train A batch 8 (14 Oct 2026): reverse only its exact reviewed source deltas first.
+  const b8=batch8.files[p];
+  if(b8){assert.equal(sha(value),b8.afterSHA256,p);for(const{before,after}of b8.replacements){assert.equal(value.split(after).length-1,1,p);value=value.replace(after,before);}assert.equal(sha(value),b8.beforeSHA256,p);}
   const combined=staffRosterIntegration.files[p];
   if(combined){assert.equal(sha(value),combined.afterSHA256,p);for(const{before,after}of combined.replacements){assert.equal(value.split(after).length-1,1,p);value=value.replace(after,before);}assert.equal(sha(value),combined.beforeSHA256,p);}
   for(const delta of staffExperienceDelta.sourceDelta[p]||[]){assert.equal(value.split(delta.new).length-1,1,p);value=value.replace(delta.new,delta.old);}

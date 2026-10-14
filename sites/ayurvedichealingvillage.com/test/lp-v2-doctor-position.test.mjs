@@ -39,7 +39,8 @@ const C8 = ["lead", "physicians", "offering", "pathway", "rest", "place", "stori
 const D5 = ["lead", "physicians", "offering", "pathway", "stay"];
 /** Every route's new order (a route shows only the bands its copy writes). */
 const NEW_ORDER = {
-  "treatment-packages": A7, "panchakarma": A7, "pain-management": A8, "family-ayurvedic-retreat": A8,
+  // AHV-WB.015/039.change: treatment-packages and panchakarma now carry the consented Stories films (A8).
+  "treatment-packages": A8, "panchakarma": A8, "pain-management": A8, "family-ayurvedic-retreat": A8,
   "monsoon-wellness": C8, "rejuvenation-detox": C8, "ayurveda-retreat": B7, "wellness-kerala": B7, "cleansing-centre": A8,
   "treatment-kerala": A8, "south-india-cities": D5, "brand": D5, "weight-management": C7, "lp-south-india": D5,
   "lp-hospital-kerala": A8, "lp-brand": D5, "lp-cleansing-centre": A8, "lp-pain-management": A8, "lp-panchakarma": D5,
@@ -189,6 +190,16 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
       : f === "campaign-v2/production/ui.ts" ? "51a9637a750ca21623f4488c82b8a6592bc154d9"
       : ["campaign-v2/production/pages/family-ayurvedic-retreat.ts", "campaign-v2/production/pages/pain-management.ts"].includes(f) ? "76e9f767a7e000f3e6789c3453c1552cbfa2ec23" : BASE;
     let current = read(f);
+    // Train A batch 8 (14 Oct 2026): reverse only its exact reviewed source deltas first, then every earlier one.
+    const batch8 = JSON.parse(read("test/fixtures/train-a-batch8-20261014.json")).files[f];
+    if (batch8) {
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), batch8.afterSHA256, f);
+      for (const { before, after } of batch8.replacements) {
+        assert.equal(current.split(after).length - 1, 1, `${f}: exact batch 8 delta`);
+        current = current.replace(after, before);
+      }
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), batch8.beforeSHA256, f);
+    }
     const integrationCorrection = staffRosterIntegration.files[f];
     if (integrationCorrection) {
       assert.equal(crypto.createHash("sha256").update(current).digest("hex"), integrationCorrection.afterSHA256, f);

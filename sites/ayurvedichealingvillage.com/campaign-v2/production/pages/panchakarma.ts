@@ -61,6 +61,24 @@ export default defineCopy({
     place: {
       heading: "Your villa at Kairali",
       paragraphs: ["Our team can explain the available villa categories, room layouts and travel arrangements. Discuss any dietary or access needs before you confirm your stay."],
+      // AHV-WB.051.change: the four approved villa cards of pages/pain-management.ts, unchanged (no prices).
+      villas: [
+        { name: "Deluxe Villa", body: "A king-size bed and private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Deluxe Villa", href: "/deluxe-villa/" } },
+        { name: "Classic Villa", body: "Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Classic Villa", href: "/classic-villa/" } },
+        { name: "Royal Villa", body: "A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.", link: { label: "Explore Royal Villa", href: "/royal-villa/" } },
+        { name: "Maharaja Suite", body: "A king-size bed, a living area with a couch and garden access in a premium location.", link: { label: "Explore Maharaja Suite", href: "/maharaja-suite/" } },
+      ],
+    },
+    // AHV-WB.015/039.change: the three consented films of /pain-management.html (pages/pain-management.ts), with the
+    // same titles and thumbnails: links to YouTube. Names only as the films' own titles; no guest country (unsourced).
+    stories: {
+      heading: "Hear from people who have stayed at Kairali",
+      body: "Watch people describe their stays in their own words. Individual experiences vary.",
+      films: [
+        { title: "Watch Ms. Supriya’s experience", href: "https://www.youtube.com/watch?v=3vWviQfW1Ug", thumb: { src: "/ahv/images/7ed7fe732c79427d6e00bc42d720a2a3b0b6e5c5ce2e25e260b53823a33ed17d.webp", width: 480, height: 360 } },
+        { title: "Watch Michaela & Jan’s experience", href: "https://www.youtube.com/watch?v=4x01PtWfNnk", thumb: { src: "/ahv/images/5e86ab8760fb7570f517bfe69abfbcaa8a0168127e03d927656a69155934faf0.webp", width: 640, height: 480 } },
+        { title: "Watch Corine’s experience", href: "https://www.youtube.com/watch?v=DcTMckQD3rc", thumb: { src: "/ahv/images/d29b9a9547272822619b085b78fee54550d828dd5e1792486eef0b6e102d4351.webp", width: 480, height: 360 } },
+      ],
     },
     stay: {
       heading: "What your Panchakarma stay includes",

@@ -25,16 +25,18 @@ const locale = (slug) => ROUTES[slug].locale ?? 'en';
 
 // ---------------------------------------------------------------------------------------------------------- scope
 
-test('allowlist = exactly the English production routes that render Stories (13)', () => {
+// AHV-WB.015/039.change: 13 + the two routes whose copy now carries the same consented Stories films.
+test('allowlist = exactly the English production routes that render Stories (15)', () => {
   const derived = storyPages.filter((c) => locale(c.slug) === 'en').map((c) => c.route).sort();
-  assert.equal(derived.length, 13);
+  assert.equal(derived.length, 15);
+  assert.ok(derived.includes('/ayurvedic-treatment-packages.html') && derived.includes('/panchkarma-treatment.html'));
   assert.deepEqual([...GUEST_VIDEO_ROUTES].sort(), derived);
   for (const r of GUEST_VIDEO_ROUTES) assert.equal(routeAllowed(r, 'en'), true, r);
 });
 
 test('every other production route, locale and path variant is excluded', () => {
   const others = Object.values(ROUTES).filter((b) => !GUEST_VIDEO_ROUTES.includes(b.route));
-  assert.equal(others.length, 11);
+  assert.equal(others.length, 9);
   for (const b of others) assert.equal(routeAllowed(b.route, b.locale ?? 'en'), false, b.route);
   for (const r of GUEST_VIDEO_ROUTES) {
     for (const lang of ['de', 'fr', 'ru', '', 'english', undefined]) assert.equal(routeAllowed(r, lang), false, `${r} ${lang}`);

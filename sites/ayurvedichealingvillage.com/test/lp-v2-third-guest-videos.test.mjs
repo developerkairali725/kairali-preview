@@ -6,12 +6,16 @@ import {productionCampaign,PRODUCTION_SLUGS} from '../campaign-v2/production/loa
 import {FILMS} from '../campaign-v2/data/films.ts';
 import {APPROVED_FILM_IDS,GUEST_VIDEO_ROUTES,filmIdFromHref,routeAllowed,reduce,CLOSED,playerSrc} from '../campaign-v2/production/sections/guest-video-policy.mjs';
 import fixture from './fixtures/third-guest-videos-20261014.json' with {type:'json'};
+const sha=x=>createHash('sha256').update(x).digest('hex');
+import batch8 from './fixtures/train-a-batch8-20261014.json' with {type:'json'};
+import {reverseBatch8Config} from './fixtures/train-a-batch8-reverse.mjs';
+// Train A batch 8 (14 Oct 2026): reverse only its exact reviewed source deltas before the earlier pins below.
+const unBatch8=(p,s)=>{const e=batch8.files[p];if(!e)return s;assert.equal(sha(s),e.afterSHA256,p);for(const{before,after}of e.replacements){assert.equal(s.split(after).length-1,1,p);s=s.replace(after,before);}assert.equal(sha(s),e.beforeSHA256,p);return s;};
 const targets={
  'wellness-kerala':{source:'ayurveda-retreat',index:1,id:'4x01PtWfNnk'},
  'cleansing-centre':{source:'lp-cleansing-centre',index:2,id:'4x01PtWfNnk'},
  'lp-pain-management':{source:'pain-management',index:2,id:'DcTMckQD3rc'},
 };
-const sha=x=>createHash('sha256').update(x).digest('hex');
 for(const [slug,{source,index,id}] of Object.entries(targets))test(`${slug}: third card is the exact approved existing counterpart, including title and thumbnail`,()=>{
  const c=productionCampaign(slug),films=c.page.stories.films;assert.equal(films.length,3);
  assert.deepEqual(films[2],productionCampaign(source).page.stories.films[index]);assert.equal(new Set(films.map(f=>f.href)).size,3);
@@ -25,10 +29,10 @@ for(const [slug,{source,index,id}] of Object.entries(targets))test(`${slug}: thi
 });
 test('all21 other configs unchanged; remove only appended third card to restore each target and its original two cards',()=>{
  assert.equal(PRODUCTION_SLUGS.length,24);assert.equal(Object.keys(targets).length,3);
- for(const slug of PRODUCTION_SLUGS){const c=JSON.parse(JSON.stringify(productionCampaign(slug)));if(targets[slug])c.page.stories.films.pop();assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);}
+ for(const slug of PRODUCTION_SLUGS){const c=reverseBatch8Config(slug,JSON.parse(JSON.stringify(productionCampaign(slug))));if(targets[slug])c.page.stories.films.pop();assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);}
  assert.equal(GUEST_VIDEO_ROUTES.length,13);assert.equal(APPROVED_FILM_IDS.length,5);
 });
 test('exact source additions reverse to the prior byte hashes; no testimonial text or rendering/consent policy changes',()=>{
- for(const [p,e]of Object.entries(fixture.files)){let s=fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');assert.equal(sha(s),e.afterSHA256);assert.equal(s.split(e.addition).length-1,1);s=s.replace(e.addition,'');assert.equal(sha(s),e.beforeSHA256);}
- for(const [p,hash]of Object.entries(fixture.unchangedSHA256))assert.equal(sha(fs.readFileSync(new URL('../'+p,import.meta.url))),hash,p);
+ for(const [p,e]of Object.entries(fixture.files)){let s=unBatch8(p,fs.readFileSync(new URL('../'+p,import.meta.url),'utf8'));assert.equal(sha(s),e.afterSHA256);assert.equal(s.split(e.addition).length-1,1);s=s.replace(e.addition,'');assert.equal(sha(s),e.beforeSHA256);}
+ for(const [p,hash]of Object.entries(fixture.unchangedSHA256))assert.equal(sha(unBatch8(p,fs.readFileSync(new URL('../'+p,import.meta.url),'utf8'))),hash,p);
 });

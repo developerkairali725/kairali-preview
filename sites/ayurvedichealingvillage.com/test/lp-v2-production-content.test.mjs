@@ -21,6 +21,9 @@ import { PRICE, RATE_LINK } from "../campaign-v2/kit/lint/pricing.ts";
 import { productionMetadata, productionJsonLd } from "../campaign-v2/production/metadata.ts";
 import { interactionForLink, PROGRAMME_LINKS } from "../campaign-v2/production/interaction-map.ts";
 import { CURRENT_ROSTER, DOCTORS } from "../campaign-v2/data/doctors.ts";
+import { IMAGES } from "../campaign-v2/data/images.ts";
+import crypto from "node:crypto";
+import batch8 from "./fixtures/train-a-batch8-20261014.json" with { type: "json" };
 import { richLinks, richRuns, richText } from "../campaign-v2/kit/rich.ts";
 import { contact } from "../campaign-v110/lib/site.ts";
 
@@ -192,8 +195,9 @@ test("composition: every variant in decision order; the doctors right after the 
   // Owner, 10 Oct 2026: on the first four routes (variant A; batch 1), then the remaining 20 (batch 2), the same doctors
   // section follows the lead; this supersedes the 8 Oct "doctors directly before the enquiry" placement on these routes.
   const firstFour = {
-    "treatment-packages": ["lead", "physicians", "offering", "pathway", "rest", "place", "stay"],
-    "panchakarma": ["lead", "physicians", "offering", "pathway", "rest", "place", "stay"],
+    // AHV-WB.015/039.change: both now carry the consented Stories films, in variant A's own place.
+    "treatment-packages": ["lead", "physicians", "offering", "pathway", "rest", "place", "stories", "stay"],
+    "panchakarma": ["lead", "physicians", "offering", "pathway", "rest", "place", "stories", "stay"],
     "pain-management": ["lead", "physicians", "offering", "pathway", "rest", "place", "stories", "stay"],
     "family-ayurvedic-retreat": ["lead", "physicians", "offering", "pathway", "rest", "place", "stories", "stay"],
   };
@@ -346,7 +350,26 @@ test("media: the two oversized kit images are real JPEGs now, at their registry 
 test("metadata: canonical, robots and the Open Graph image are the replaced pages'; title and description from the copy", () => {
   // The batch-2 pages it replaces (app/(campaign)/_traffic/TrafficLanding.tsx trafficMetadata) set no image alt.
   const ALT = { "treatment-packages": "Kairali Ayurvedic Healing Village in Palakkad, Kerala", panchakarma: "Kairali Ayurvedic Healing Village, Palakkad" };
-  const ogImage = (slug) => ROUTES[slug].og
+  // AHV-WB.025/050/077/101/147.change: these five routes' own 1200×630 crop of one approved registry photograph, with
+  // that photograph's registry alt; og:locale/site name unchanged. Every other route keeps the image asserted below.
+  const OWN = { "treatment-packages": "kt-116", panchakarma: "kt-199", "pain-management": "kt-190", "family-ayurvedic-retreat": "kt-314", "rejuvenation-detox": "kt-202" };
+  for (const [slug, id] of Object.entries(OWN)) {
+    assert.deepEqual(ROUTES[slug].og, { url: `https://ayurvedichealingvillage.com/images/og/share-${slug}.jpg`, width: 1200, height: 630, locale: "en_IN" }, slug);
+    assert.equal(ROUTES[slug].ogImageAlt, IMAGES[id].alt, slug);
+    const buf = fs.readFileSync(new URL(`../public/images/og/share-${slug}.jpg`, import.meta.url));
+    assert.deepEqual([...buf.subarray(0, 3)], [0xff, 0xd8, 0xff], slug);
+    // The frame size from the JPEG's start-of-frame segment, and the exact recorded bytes (train-a-batch8 fixture).
+    let at = 2;
+    while (buf[at] === 0xff && !(buf[at + 1] >= 0xc0 && buf[at + 1] <= 0xc2)) at += 2 + buf.readUInt16BE(at + 2);
+    assert.deepEqual({ height: buf.readUInt16BE(at + 5), width: buf.readUInt16BE(at + 7) }, { height: 630, width: 1200 }, slug);
+    const rec = batch8.shareImages[`public/images/og/share-${slug}.jpg`];
+    assert.equal(rec.source, IMAGES[id].src, slug);
+    assert.equal(crypto.createHash("sha256").update(buf).digest("hex"), rec.sha256, slug);
+  }
+  assert.equal(new Set(Object.keys(OWN).map((s) => ROUTES[s].og.url)).size, 5, "each page its own picture");
+  const ogImage = (slug) => OWN[slug]
+    ? { url: ROUTES[slug].og.url, width: 1200, height: 630, alt: IMAGES[OWN[slug]].alt }
+    : ROUTES[slug].og
     ? { url: ROUTES[slug].og.url, ...(ROUTES[slug].og.width ? { width: ROUTES[slug].og.width, height: ROUTES[slug].og.height } : {}) }
     : { url: "https://ayurvedichealingvillage.com/landing/r10/og.jpg", width: 1200, height: 630, ...(ALT[slug] ? { alt: ALT[slug] } : {}) };
   for (const slug of PRODUCTION_SLUGS) {
@@ -426,7 +449,18 @@ test("Monsoon metadata restores the existing sitemap language cluster without ad
   assert.deepEqual(metadata.alternates.languages, expected);
   assert.equal(Object.keys(expected).length, 14);
   assert.equal(metadata.alternates.canonical, expected.en);
-  for (const slug of PRODUCTION_SLUGS.filter(s => s !== "monsoon-wellness")) {
+  // AHV-WB.545.change: the EN/DE/RU "treatment in Kerala" landing pages link reciprocally (English x-default).
+  const CLUSTER = ["lp-treatment-kerala", "lp-behandlung-kerala", "lp-treatment-kerala-ru"];
+  const reciprocal = {
+    en: "https://ayurvedichealingvillage.com/lp/treatment-in-kerala/", de: "https://ayurvedichealingvillage.com/lp/behandlung-in-kerala/",
+    ru: "https://ayurvedichealingvillage.com/lp/treatment-in-kerala-russian/", "x-default": "https://ayurvedichealingvillage.com/lp/treatment-in-kerala/",
+  };
+  for (const slug of CLUSTER) {
+    const m = productionMetadata(slug, C[slug], { AHV_STAGING: "0" });
+    assert.deepEqual(m.alternates.languages, reciprocal, slug);
+    assert.equal(m.alternates.languages[C[slug].locales[0]], m.alternates.canonical, `${slug}: self-referencing`);
+  }
+  for (const slug of PRODUCTION_SLUGS.filter(s => s !== "monsoon-wellness" && !CLUSTER.includes(s))) {
     assert.equal(productionMetadata(slug, C[slug], { AHV_STAGING: "0" }).alternates.languages, undefined, slug);
   }
 });
