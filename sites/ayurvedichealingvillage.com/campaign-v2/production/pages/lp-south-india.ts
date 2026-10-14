@@ -3,6 +3,7 @@
 // brief for sales clarity (kairali-akshar-marketing-science CREATE+REVIEW); facts only from the brief, its NONPUBLIC
 // audit (LP-COPY-FACT-AUDIT.json) and data/doctors.ts. Travel: only the brief's own "rail or flights via Coimbatore"
 // as options to discuss — no distances, travel times, speed or "weekend" claims; no offers.
+// Owner decision, 14 Oct 2026 (AHV-WB.330.change): airport pick-up on request at an extra charge; no prices or travel times.
 import { defineCopy } from "../copy.ts";
 
 export default defineCopy({
@@ -60,7 +61,7 @@ export default defineCopy({
       steps: [
         { title: "Start with a free consultation", body: "Share your health history and current medicine details with the doctor. Tell patient care where you will be travelling from and your preferred dates." },
         { title: "Confirm your plan and quotation", body: "Confirm your programme, villa occupancy, inclusions and booking terms in a personalised quotation. Keep your travel days separate from the time recommended for care." },
-        { title: "Arrange the trip to Palakkad", body: "Discuss arrival by rail or flights via Coimbatore, then confirm the onward trip from the station or airport. Check current routes and travel times when booking, and ask about transfers and charges." },
+        { title: "Arrange the trip to Palakkad", body: "Discuss arrival by rail or flights via Coimbatore, then confirm the onward trip from the station or airport. Check current routes and travel times when booking. Airport pick-up can be arranged on request at an extra charge." },
       ],
     },
     stay: {

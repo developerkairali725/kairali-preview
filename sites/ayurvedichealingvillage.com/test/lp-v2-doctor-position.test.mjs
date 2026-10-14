@@ -189,6 +189,16 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
       : f === "campaign-v2/production/ui.ts" ? "51a9637a750ca21623f4488c82b8a6592bc154d9"
       : ["campaign-v2/production/pages/family-ayurvedic-retreat.ts", "campaign-v2/production/pages/pain-management.ts"].includes(f) ? "76e9f767a7e000f3e6789c3453c1552cbfa2ec23" : BASE;
     let current = read(f);
+    // Owner decisions B, 14 Oct 2026 (AHV-WB.083/330/167.change): reverse only this exact source delta, newest first.
+    const ownerDecisionsB = JSON.parse(read("test/fixtures/owner-decisions-b-20261014.json")).files[f];
+    if (ownerDecisionsB) {
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), ownerDecisionsB.afterSHA256, f);
+      for (const { before, after } of ownerDecisionsB.replacements) {
+        assert.equal(current.split(after).length - 1, 1, `${f}: exact owner-decision replacement occurs once`);
+        current = current.replace(after, before);
+      }
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), ownerDecisionsB.beforeSHA256, f);
+    }
     const integrationCorrection = staffRosterIntegration.files[f];
     if (integrationCorrection) {
       assert.equal(crypto.createHash("sha256").update(current).digest("hex"), integrationCorrection.afterSHA256, f);

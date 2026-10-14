@@ -10,6 +10,7 @@ import {productionCampaign,PRODUCTION_SLUGS} from '../campaign-v2/production/loa
 import {DOCTORS,CURRENT_ROSTER} from '../campaign-v2/data/doctors.ts';
 import {UI} from '../campaign-v2/production/ui.ts';
 import fixture from './fixtures/locale-physicians-20261014.json' with {type:'json'};
+import ownerDecisionsB from './fixtures/owner-decisions-b-20261014.json' with {type:'json'};
 const byLocale={de:'lp-behandlung-kerala',ru:'lp-treatment-kerala-ru'};
 const languages={de:{Malayalam:'Malayalam',English:'Englisch',Hindi:'Hindi',Tamil:'Tamil'},ru:{Malayalam:'малаялам',English:'английском',Hindi:'хинди',Tamil:'тамильском'}};
 const titles={de:'Ihre Ayurveda-Ärzte',ru:'Ваши аюрведические врачи'};
@@ -43,6 +44,7 @@ test('all24 configs preserve original bytes after exact approved experience fact
     obj[key]=JSON.parse(JSON.stringify(before));
    }
   }
+  for(const {path,before,after} of (ownerDecisionsB.configChanges[slug]??[])){let obj=c;for(const key of path.slice(0,-1))obj=obj[key];const key=path.at(-1);assert.deepEqual(obj[key],after,'Exact owner-decision field: '+slug+' '+path.join('.'));obj[key]=JSON.parse(JSON.stringify(before));}
   assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);
  }
 });
