@@ -34,7 +34,7 @@
     },
     "/deluxe-villa/": {
       name: "Deluxe Villa",
-      facts: ["260- 375 Sqft", "Twin/King Size Bed", "Upto 3 Adults", "Garden View"],
+      facts: ["271–375 sq ft (including sit-outs)", "Twin/King Size Bed", "Upto 3 Adults", "Garden View"],
       amenitiesHeading: "In your villa",
       groups: [
         { heading: "Room and comfort", items: ["King or twin beds, depending on the villa", "Wardrobe", "Air conditioning", "LED television"] },

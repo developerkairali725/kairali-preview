@@ -1,5 +1,6 @@
 import { staffExperienceCopyFor, applyStaffExperienceHtml } from './staff-experience.mjs';
 import { describeHomeImages } from './home-image-descriptions.mjs';
+import { withRoom209Area } from './room209-area.mjs';
 import { removeHomeVillaRates } from './home-villa-rates.mjs';
 import {offersFlow} from './offers-flow.mjs';
 import fs from 'node:fs';
@@ -25,13 +26,13 @@ export function reviewCopyFor(route, locale = 'en') {
   const edits = copy[route] || [];
   // Owner's month-only 2027 season correction follows the same SSR/runtime text-review path.
   const seasonEdits = route === monsoonSeason.route ? (monsoonSeason.locales[locale] || []) : [];
-  if (locale === 'en') return edits.concat(seasonEdits, staffExperienceCopyFor(route, locale));
+  if (locale === 'en') return withRoom209Area(edits.concat(seasonEdits, staffExperienceCopyFor(route, locale)), route, locale);
   if (!cache.has(locale)) {
     const file = path.join(process.cwd(), 'l10n/generated', locale + '.json');
     const generated = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {};
     cache.set(locale, generated.data?.['content-review-copy'] || {});
   }
-  return (cache.get(locale)[route] || []).concat(seasonEdits, staffExperienceCopyFor(route, locale));
+  return withRoom209Area((cache.get(locale)[route] || []).concat(seasonEdits, staffExperienceCopyFor(route, locale)), route, locale);
 }
 const decode = s => s.replace(/&(?:amp|lt|gt|quot|apos|nbsp|ndash|mdash|rsquo|lsquo|rdquo|ldquo|#\d+|#x[\da-f]+);/gi, x => {
   const n = x.slice(1,-1); const names = {amp:'&',lt:'<',gt:'>',quot:'"',apos:"'",nbsp:' ',ndash:'–',mdash:'—',rsquo:'’',lsquo:'‘',rdquo:'”',ldquo:'“'};
