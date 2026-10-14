@@ -288,20 +288,22 @@ for (const sp of SPECS) {
  * hero is never in the gallery. On each route the hero and the steps photograph differ; sibling heroes differ
  * (/pain-management.html vs /lp/pain-management/). Reversible: delete a route's entry.
  */
-export const PHOTO_PICKS_20261014: Readonly<Partial<Record<ProductionSlug, { hero?: string; pathway?: string }>>> = {
+export const PHOTO_PICKS_20261014: Readonly<Partial<Record<ProductionSlug, { hero?: string; pathway?: string; keepPhone?: true }>>> = {
   // Train B (15 Oct 2026): AHV-WB.005.hero-image and AHV-WB.403.change are excluded (rejected by the candidate's
   // independent REVIEW.json), so treatment-packages and lp-pain-management keep their prior heroes; their steps rows stay.
   "treatment-packages": { pathway: "ahv-img-045" }, // AHV-WB.005.how-image
   "pain-management": { hero: "ahv-img-034" }, // AHV-WB.060.change (partial: no person-free doctor photo left for both siblings)
   "lp-pain-management": { pathway: "ahv-img-026" }, // AHV-WB.400.how-image
-  "lp-treatment-kerala": { hero: "ahv-img-012", pathway: "ahv-img-045" }, // AHV-WB.445.hero-image, AHV-WB.445.how-image
+  // Train B (15 Oct 2026): the phone cover stays Train A's AHV-WB.457.change villa photograph kt-314 (already no
+  // bare-back photograph), so the decision-10 hero applies to the desktop hero only on this route.
+  "lp-treatment-kerala": { hero: "ahv-img-012", pathway: "ahv-img-045", keepPhone: true }, // AHV-WB.445.hero-image, AHV-WB.445.how-image
 };
 /** Gallery category of an appended steps photograph: the pulse check with the therapies (as the approved consultation-room
  *  photo ahv-img-033), the reception lounge with the grounds (its owner-approved placement, "The hospital and its grounds"). */
 const STEP_CATEGORY: Readonly<Record<string, GalleryCategory>> = { "ahv-img-045": "Therapies", "ahv-img-026": "Grounds" };
-for (const [slug, pick] of Object.entries(PHOTO_PICKS_20261014) as [ProductionSlug, { hero?: string; pathway?: string }][]) {
+for (const [slug, pick] of Object.entries(PHOTO_PICKS_20261014) as [ProductionSlug, { hero?: string; pathway?: string; keepPhone?: true }][]) {
   const r = ROUTES[slug];
-  if (pick.hero) { r.heroImage = img(pick.hero); r.mobileImage = img(pick.hero); }
+  if (pick.hero) { r.heroImage = img(pick.hero); if (!pick.keepPhone) r.mobileImage = img(pick.hero); }
   if (pick.pathway) {
     r.pathwayImage = img(pick.pathway);
     const category = STEP_CATEGORY[pick.pathway];

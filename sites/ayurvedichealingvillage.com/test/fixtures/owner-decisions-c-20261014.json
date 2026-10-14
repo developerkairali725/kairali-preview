@@ -87,19 +87,20 @@
    "lp-treatment-kerala": {
     "before": {
      "heroImage": "kt-199",
-     "mobileImage": "kt-199",
+     "mobileImage": "kt-314",
      "pathwayImage": "kt-202"
     },
     "after": {
      "heroImage": "ahv-img-012",
-     "mobileImage": "ahv-img-012",
+     "mobileImage": "kt-314",
      "pathwayImage": "ahv-img-045"
     },
     "galleryAppended": "ahv-img-045",
     "galleryCategory": "Therapies"
    }
   },
-  "trainBExclusions": "Train B (15 Oct 2026): AHV-WB.005.hero-image (treatment-packages) and AHV-WB.403.change (lp-pain-management) were rejected by REVIEW.json and are excluded; their hero/phone-hero 'after' equals 'before'. Their steps rows (AHV-WB.005.how-image, AHV-WB.400.how-image) are kept."
+  "trainBExclusions": "Train B (15 Oct 2026): AHV-WB.005.hero-image (treatment-packages) and AHV-WB.403.change (lp-pain-management) were rejected by REVIEW.json and are excluded; their hero/phone-hero 'after' equals 'before'. Their steps rows (AHV-WB.005.how-image, AHV-WB.400.how-image) are kept.",
+  "trainBComposition": "Train B (15 Oct 2026): on lp-treatment-kerala the Train A head already shows the AHV-WB.457.change phone cover kt-314 (villa, no single patient), so 'before' is that integrated state and AHV-WB.445.hero-image changes the desktop hero only (PHOTO_PICKS keepPhone). The candidate's own c54e2795e-based record was before/after mobile kt-199 / ahv-img-012."
  },
  "storiesAddedTo": [
   "lp-behandlung-kerala",
