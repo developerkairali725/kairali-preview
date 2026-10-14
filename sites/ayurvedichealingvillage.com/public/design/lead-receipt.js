@@ -143,7 +143,19 @@
     } catch (_) { return null; }
     return active;
   }
+  // The consultation receipt used to show the legacy WordPress poster, whose message is baked into
+  // the image, then repeat it as "Text of the poster" (owner report, 14 Oct 2026). The route's own
+  // recorded poster lines are already translated in every released locale: line 1 ("Thank You")
+  // becomes the real H1 and line 3 ("we will get back to you soon") the paragraph, under the clean
+  // landscape banner. No new wording, timing or claim; a route without the lines is left unchanged.
+  function consultationReceipt(route) {
+    var lines = route.variant === 'image-receipt' && route.transcript && route.transcript.lines;
+    if (!lines || typeof lines[0] !== 'string' || typeof lines[2] !== 'string' || !lines[0] || !lines[2]) return route;
+    var text = lines[2].charAt(0).toUpperCase() + lines[2].slice(1);
+    return Object.assign({}, route, { h1: lines[0], body: { text: text, ptr: '' }, posterImage: false, transcript: null });
+  }
   function personalize(route, item, images) {
+    if (route && item && item.form === 'online-consultation') return consultationReceipt(route);
     if (!route || !item || (item.form !== 'apply-now' && item.form !== 'opd')) return route;
     var kind = receiptKind(item.form);
     var heading = received[kind][item.lang] || received[kind].en;
