@@ -2,7 +2,7 @@
 
 The production `/search/?lang=de&q=ayurveda` failure was an ENOENT for `public/ahv/l10n/de/design/search.js`. The deployment packager classified `/search/` as English and removed other languages. Normal English search and even the literal search template returned 200.
 
-The build now copies each accepted locale engine, index, translation catalogue and about-us chrome into `search-runtime/<locale>.json`. Only the shared search function traces these server-only files. Their location survives the existing locale narrowing; no new translation, public route, permission or paid service is introduced. Catalogue lookup retains the existing normalization and fallback behavior.
+The build now copies each accepted locale engine, index, search-used translation entries and about-us chrome into `search-runtime/<locale>.json`. Only the shared search function traces these server-only files. Their location survives the existing locale narrowing; no new translation, public route, permission or paid service is introduced. Catalogue lookup retains the existing normalization and fallback behavior.
 
 `npm run build` generates the runtime after validated locale restoration and checks its Next.js trace. Before uploading a prebuilt release, run the following from this site directory **after** the Vercel adapter and existing packager have finished:
 
