@@ -1,0 +1,100 @@
+{
+  "authority": "Latest owner correction, 14 October 2026: show the complete existing approved roster on DE/RU pages; keep actual credentials/languages. Exact UI labels reused from source-bound localized homepage metadata.",
+  "base": "8d59c69d6b1919942f1163ec4807699f981bfc98",
+  "files": {
+    "campaign-v2/production/pages/lp-behandlung-kerala.ts": {
+      "beforeSHA256": "69fdbe6ab6e9e1be9a8357b387b69731bd17ed5c82540d59e2afeaa7ef25281e",
+      "afterSHA256": "d4ef5383368d11918d946701a5b27a25059426c77a51c25861ad636be4f7b330",
+      "replacements": [
+        {
+          "before": "// Only Dr. Deepu John is presented (brief). No stories and no villa cards (linked pages are English).",
+          "after": "// Owner correction, 14 Oct: present the complete current consented roster. No stories or villa cards (links are English)."
+        },
+        {
+          "before": "doctors: [\"deepu-john\"],",
+          "after": "doctors: [\"deepu-john\", \"rahul-r\", \"akhila-oommen\", \"adhina-ub\", \"aashitha-ps\"],"
+        },
+        {
+          "before": "heading: \"Ihr Ayurveda-Arzt\",",
+          "after": "heading: \"Ihre Ayurveda-Ärzte\","
+        }
+      ]
+    },
+    "campaign-v2/production/pages/lp-treatment-kerala-ru.ts": {
+      "beforeSHA256": "9afd845c263a954685a8c138cd86c38eb62e5179c2c112dc86aa226c7bd5c704",
+      "afterSHA256": "4c94264eb4c81d5c5cedb1f7ca5332e6c5ea314e7bb56320a558760305a87c30",
+      "replacements": [
+        {
+          "before": "// `seo` kept from the brief (its canonical moves to the /lp/ route — builder). Only Dr. Deepu John is presented.",
+          "after": "// `seo` kept from the brief (its canonical moves to the /lp/ route — builder). Owner correction, 14 Oct: show the current roster."
+        },
+        {
+          "before": "doctors: [\"deepu-john\"],",
+          "after": "doctors: [\"deepu-john\", \"rahul-r\", \"akhila-oommen\", \"adhina-ub\", \"aashitha-ps\"],"
+        },
+        {
+          "before": "heading: \"Ваш аюрведический врач\",",
+          "after": "heading: \"Ваши аюрведические врачи\","
+        }
+      ]
+    },
+    "campaign-v2/production/ui.ts": {
+      "beforeSHA256": "933ee8a03e8b1e7e2ebfdc5b97a153b5d1a746484ccb67c5006551dee69f9b03",
+      "afterSHA256": "3dab5f2fbf7fbaec1242cf1a38512af5e929ec042bd298cfa131be2e33bb04a6",
+      "replacements": [
+        {
+          "before": "doctors: \"Ihr Arzt\",",
+          "after": "doctors: \"Ihre Ärzte\","
+        },
+        {
+          "before": "doctors: \"Ваш врач\",",
+          "after": "doctors: \"Ваши врачи\","
+        },
+        {
+          "before": "    \"deepu-john\": { role: \"Chefarzt und Abteilungsleiter\", tenure: \"Praktiziert Ayurveda seit 2010 · Bei Kairali seit 2019\", focus: \"Panchakarma und Beratung zu Lebensgewohnheiten\", languages: [\"Malayalam\", \"Englisch\", \"Hindi\", \"Tamil\"] },\n",
+          "after": "    \"deepu-john\": { role: \"Chefarzt und Abteilungsleiter\", tenure: \"Praktiziert Ayurveda seit 2010 · Bei Kairali seit 2019\", focus: \"Panchakarma und Beratung zu Lebensgewohnheiten\", languages: [\"Malayalam\", \"Englisch\", \"Hindi\", \"Tamil\"] },\n    \"rahul-r\": { role: \"Ayurveda-Arzt\", tenure: \"Bei Kairali seit 2023\", languages: [\"Englisch\", \"Malayalam\", \"Tamil\"] },\n    \"akhila-oommen\": { role: \"Ayurveda-Ärztin\", tenure: \"Bei Kairali seit 2024\", languages: [\"Malayalam\", \"Hindi\", \"Englisch\"] },\n    \"adhina-ub\": { role: \"Stationsärztin (RMO)\", tenure: \"Bei Kairali seit 2026\", languages: [\"Englisch\", \"Malayalam\"] },\n    \"aashitha-ps\": { role: \"Ayurveda-Ärztin\", tenure: \"Bei Kairali seit 2026\", languages: [\"Malayalam\", \"Englisch\", \"Hindi\", \"Tamil\"] },\n"
+        },
+        {
+          "before": "    \"deepu-john\": { role: \"Главный врач и заведующий отделением\", tenure: \"Практикует аюрведу с 2010 года · В Kairali с 2019 года\", focus: \"Панчакарма и рекомендации по образу жизни\", languages: [\"малаялам\", \"английском\", \"хинди\", \"тамильском\"] },\n",
+          "after": "    \"deepu-john\": { role: \"Главный врач и заведующий отделением\", tenure: \"Практикует аюрведу с 2010 года · В Kairali с 2019 года\", focus: \"Панчакарма и рекомендации по образу жизни\", languages: [\"малаялам\", \"английском\", \"хинди\", \"тамильском\"] },\n    \"rahul-r\": { role: \"Аюрведический врач\", tenure: \"В Kairali с 2023 г.\", languages: [\"английском\", \"малаялам\", \"тамильском\"] },\n    \"akhila-oommen\": { role: \"Аюрведический врач\", tenure: \"В Kairali с 2024 г.\", languages: [\"малаялам\", \"хинди\", \"английском\"] },\n    \"adhina-ub\": { role: \"Дежурный врач\", tenure: \"В Kairali с 2026 г.\", languages: [\"английском\", \"малаялам\"] },\n    \"aashitha-ps\": { role: \"Аюрведический врач\", tenure: \"В Kairali с 2026 г.\", languages: [\"малаялам\", \"английском\", \"хинди\", \"тамильском\"] },\n"
+        }
+      ]
+    },
+    "campaign-v2/production/sections/Physicians.tsx": {
+      "beforeSHA256": "083f66d5790c0e2f03d88bfa330c797e523356b9cdfd12a281d25de03e9f4092",
+      "afterSHA256": "29ad83b4ca06a59eff509890bef152cb289a4787ac7dfbdf740d50c653bf909e",
+      "replacements": [
+        {
+          "before": "text. A route presenting one physician (the German and Russian routes, as their reviewed copy does) shows a single\n * wide card instead.",
+          "after": "text. A route configured with one physician shows a single wide card instead; the current live routes use the\n * complete consented roster, including German and Russian under the owner correction of 14 October 2026."
+        }
+      ]
+    }
+  },
+  "configSHA256": {
+    "treatment-packages": "5860c28209782b030b376f0b972a1f04abc559282cc32c37b156503ef7fc26ee",
+    "panchakarma": "924ce558ccc2cf6f2a6710ff3a36cad7c5f5f5e31c7f951f6e88088e0e07874f",
+    "pain-management": "d0179c7f6e9992d4423300fd1d866b087e4ea2c75a7c1ade0c81cb882d944f7c",
+    "family-ayurvedic-retreat": "6c85b7492276819ada2286295afaf2ad113cb4f7d11f5a760038f245aed2667d",
+    "monsoon-wellness": "a223dec89aef92ec924590f71c3389613d069c6831fc1a1cd9321e084f9774d9",
+    "rejuvenation-detox": "012797e84f393b34a28bc13db2228c72683aa7f6f95f62262a13d85652ebea44",
+    "ayurveda-retreat": "c26bd5d51215542cad73b21ff46b7c7360a316236bd56c81bbb5a9bad4333213",
+    "wellness-kerala": "9d57dafab68016fe22d0bc730f99254106b9b7dc7e6ea5fc80c91c133aa734a9",
+    "cleansing-centre": "f5dde7c26675d85911d17c62da1ff0d5f7accb63741cd376174fc65dada6038a",
+    "treatment-kerala": "339d9371cc6062b66c97b370d3fdabe6e3fea84e9913752f2cebf14b1f1e838b",
+    "south-india-cities": "0488d0324b991388e468a11899d95797912ea8f67ad1fb17260df01ac88fab01",
+    "brand": "ff9aa7d7b8288eff354f66c7815da8c4b2a71a04c928551be23aec6e1de578c8",
+    "weight-management": "ad7a8072d2857162c70c6dd36ce9a17249f548c88ae60ac68092588dc0c2e98c",
+    "lp-south-india": "fd6a9ff71ea8546a2ce9676a971b777b0fb36f929f75778221d6293c58f0debb",
+    "lp-hospital-kerala": "498d924ee724f37108695b145985f98cdb81bed95de67dfa3296e77d702941d0",
+    "lp-brand": "5ba065955ae8c64e5e8e3ca784bb75b5d3b7cd68e271696c89f8afc59801b497",
+    "lp-cleansing-centre": "142d6948f832d5a620b37c47dc00e0f6d7598010a1d5e39284de8a482298ea78",
+    "lp-pain-management": "8947f1565080108cfae70486bc164c820bcef0f411dabae7bbdd84670931cdd7",
+    "lp-panchakarma": "aba4d67ad479d29126a7b8be2b69765057c1f7bcf0971b24e31cc1fee702a07f",
+    "lp-treatment-kerala": "c1df17cbe7dfb20bafa1f31752680b555ea46f4ea9b6e093b88a3b1c71b7f7d2",
+    "lp-treatment-packages": "9c0673dda8e09687b2601796e8c1e368fb293cbe6138d986902ea51c2e2f5be4",
+    "lp-weight-management": "d2073d2bc0c3375697e7a0f2ea723331c737b42231d80da58ec4adcb860424ca",
+    "lp-behandlung-kerala": "e0069413b9be842d36e8ed325aafe43bdea8eb02fc90e7c37dc1dea1aa5fdb50",
+    "lp-treatment-kerala-ru": "668177f5f4640ad2fbc96dd132aa187b68fc1aa48b0263b9dd42fe51cebe4d77"
+  }
+}
