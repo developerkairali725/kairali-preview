@@ -38,6 +38,7 @@ export const TRAIN_B_CANDIDATES = Object.freeze([
   { name: "train D04", files: D04.files },
   { name: "train D05", files: D05.files },
   { name: "train D06", files: D06.files },
+  { name: "owner decision 23", files: TRAIN_B.recordedDeltas["owner decision 23"].files },
   { name: "train D03", files: D03.files },
 ]);
 
@@ -194,6 +195,24 @@ function reverseFields(slug, c, changes, name) {
   }
   return c;
 }
+// Owner decision 22 (AHV-LATER-010.02/.03): the family form's optional duration choices are nights (forms/schema.ts
+// FAMILY_DURATIONS), on every config that carries that form.
+const FAMILY_NIGHTS = [["7 days", "7 nights"], ["14 days", "14 nights"], ["21 days", "21 nights"]];
+export function reverseDecision22Config(slug, c) {
+  const fields = (c.form?.schema?.steps ?? []).flatMap((s) => s.fields ?? []).filter((f) => f.name === "duration" && f.type === "select");
+  if (!fields.length) return c;
+  assert.equal(fields.length, 1, `${slug}: one family duration select`);
+  const options = fields[0].options;
+  assert.deepEqual(options.map((o) => [o.value, o.label]), [["", "Select duration"], ...FAMILY_NIGHTS.map(([, n]) => [n, n])], `${slug}: owner decision 22 durations`);
+  FAMILY_NIGHTS.forEach(([days], i) => { options[i + 1].value = days; options[i + 1].label = days; });
+  return c;
+}
+
+// Owner decision 23 (AHV-WB.434.change): the /lp/panchkarma-treatment/ lead no longer says "cost" (prices stay hidden).
+export function reverseDecision23Config(slug, c) {
+  if (slug !== "lp-panchakarma") return c;
+  return walkReplace(slug, c, "it is natural to look at length and cost first.", "it is natural to look at length first.", 1, 1, "owner decision 23");
+}
 export const reverseD06Config = (slug, c) => reverseFields(slug, c, D06.configChanges.filter((x) => x.slug === slug), "train D06");
 export const reverseD05Config = (slug, c) => reverseFields(slug, c, D05.configChanges[slug] ?? [], "train D05");
 export const reverseD04Config = (slug, c) => reverseFields(slug, c, D04.configChanges[slug] ?? [], "train D04");
@@ -203,7 +222,10 @@ export const reverseD04Config = (slug, c) => reverseFields(slug, c, D04.configCh
  * Use the returned value: a reversal may return a new object.
  */
 export function reverseTrainBConfig(slug, config, options = {}) {
-  return reverseOwnerDecisionsCConfig(slug, reverseBatch15Config(slug, reverseC02Config(slug, reverseRestConfig(slug, reverseD03Config(slug, reverseD04Config(slug, reverseD05Config(slug, reverseD06Config(slug, config)))), options))), options);
+  // Newest merge first: owner decisions 23 and 22, D06, D05, D04, D03, C03/C04 rest photos, C02, queued batch 15, owner decisions C.
+  const newestFirst = [reverseDecision23Config, reverseDecision22Config, reverseD06Config, reverseD05Config, reverseD04Config, reverseD03Config,
+    reverseRestConfig, reverseC02Config, reverseBatch15Config, reverseOwnerDecisionsCConfig];
+  return newestFirst.reduce((c, reverse) => reverse(slug, c, options), config);
 }
 
 /**

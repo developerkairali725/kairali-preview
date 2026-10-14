@@ -11,7 +11,7 @@ import { productionCampaign } from "../campaign-v2/production/load.ts";
 import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
 import { UI } from "../campaign-v2/production/ui.ts";
 import fixture from "./fixtures/train-d05-20261014.json" with { type: "json" };
-import { candidateSource } from "./fixtures/train-b-20261015.mjs";
+import { candidateSource, reverseDecision23Config } from "./fixtures/train-b-20261015.mjs";
 
 const NOW = new Date(Date.UTC(2026, 9, 14, 12));
 const sha = (s) => crypto.createHash("sha256").update(s).digest("hex");
@@ -46,7 +46,8 @@ test("AHV-WB.308: the weight routine uses only the approved programme times and 
 
 test("benefit-copy rows: one added lead line per English campaign, the two reviewed paragraphs kept first", () => {
   for (const slug of BENEFIT) {
-    const c = productionCampaign(slug);
+    // Train B: owner decision 23 later reworded the lp-panchakarma lead's first sentence; reversed exactly first.
+    const c = reverseDecision23Config(slug, JSON.parse(JSON.stringify(productionCampaign(slug))));
     const [{ before, after }] = fixture.configChanges[slug];
     assert.deepEqual(c.page.lead.paragraphs, after, slug);
     assert.deepEqual(c.page.lead.paragraphs.slice(0, 2), before, `${slug}: reviewed paragraphs unchanged and first`);

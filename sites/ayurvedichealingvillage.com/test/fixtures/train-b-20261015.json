@@ -120,6 +120,21 @@
      ]
     }
    }
+  },
+  "owner decision 23": {
+   "rows": "AHV-WB.434.change: keep prices hidden; the /lp/panchkarma-treatment/ lead sentence no longer says 'cost' (OWNER-DECISIONS-20261014-ANSWERS.json 23-panchakarma-cost)",
+   "files": {
+    "campaign-v2/production/pages/lp-panchakarma.ts": {
+     "beforeSHA256": "7849ad26ea062bee6d57f0c0fd2151483c066151ca96eb05d45ad41c81ed7d52",
+     "afterSHA256": "4b968a950b7f344f533716c5e21393511a3092c7c3d51972bc07129e4ed3cb95",
+     "replacements": [
+      {
+       "before": "it is natural to look at length and cost first.",
+       "after": "it is natural to look at length first."
+      }
+     ]
+    }
+   }
   }
  },
  "trainABytesSHA256": {
