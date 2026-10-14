@@ -1,3 +1,4 @@
+import { staffExperienceCopyFor, applyStaffExperienceHtml } from './staff-experience.mjs';
 import { describeHomeImages } from './home-image-descriptions.mjs';
 import { removeHomeVillaRates } from './home-villa-rates.mjs';
 import {offersFlow} from './offers-flow.mjs';
@@ -21,13 +22,13 @@ export function bookingLabelsFor(locale = 'en') {
 export function reviewCopyFor(route, locale = 'en') {
   if (route === '/villa-raag/') return undefined;
   const edits = copy[route] || [];
-  if (locale === 'en') return edits;
+  if (locale === 'en') return [...edits, ...staffExperienceCopyFor(route, locale)];
   if (!cache.has(locale)) {
     const file = path.join(process.cwd(), 'l10n/generated', locale + '.json');
     const generated = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {};
     cache.set(locale, generated.data?.['content-review-copy'] || {});
   }
-  return cache.get(locale)[route] || [];
+  return [...(cache.get(locale)[route] || []), ...staffExperienceCopyFor(route, locale)];
 }
 const decode = s => s.replace(/&(?:amp|lt|gt|quot|apos|nbsp|ndash|mdash|rsquo|lsquo|rdquo|ldquo|#\d+|#x[\da-f]+);/gi, x => {
   const n = x.slice(1,-1); const names = {amp:'&',lt:'<',gt:'>',quot:'"',apos:"'",nbsp:' ',ndash:'–',mdash:'—',rsquo:'’',lsquo:'‘',rdquo:'”',ldquo:'“'};
@@ -43,6 +44,7 @@ export function applyReviewSnapshot(html, route, locale = 'en') {
   html = html.replace(/<a\b[^>]*\bhref=["']https:\/\/bookings\.ayurvedichealingvillage\.com\/["'][^>]*>[\s\S]*?<\/a>/gi, anchor => anchor.replace(/[^<>]+/g, token => norm(token) === booking.old ? (token.match(/^\s*/)?.[0] || '') + escape(booking.new) + (token.match(/\s*$/)?.[0] || '') : token));
   const edits = reviewCopyFor(route, locale);
   if (!edits?.length) return html;
+  html = applyStaffExperienceHtml(html, edits);
   const byKey = new Map(edits.map(e => [e.kind + '\0' + e.old, e.new]));
   html = html.replace(/<span\b[^>]*class=["']ahv-link-context["'][^>]*>([^<]*)<\/span>/gi, (span, text) => {
     const replacement = byKey.get('text'+'\0'+norm(text));

@@ -1,3 +1,4 @@
+import { applyStaffExperienceDom } from './staff-experience.mjs';
 import { repairArticleContactHeading } from "./article-contact-heading.mjs";
 import { treatmentHeadingLevels } from "./treatment-heading-levels.mjs";
 import { restoreReviewedHead } from "./localized-title.mjs";
@@ -175,6 +176,7 @@ export const BOOT_SCRIPT = `
     if (!reviewByKey.has(key)) reviewByKey.set(key, e.new);
   });
   function applyContentReview(root) {
+    (${applyStaffExperienceDom.toString()})(root, cfg.contentReviewCopy);
     if (!cfg.contentReviewCopy || cfg.path === "/villa-raag/") return;
     function normal(s) { return (s || "").replace(/\\s+/g, " ").trim(); }
     function changeText(n) {

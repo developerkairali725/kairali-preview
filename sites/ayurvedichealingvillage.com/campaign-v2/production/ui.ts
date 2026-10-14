@@ -110,7 +110,7 @@ const DE: ProductionUi = {
     "gal-poolside-rest-palakkad-2026": "Eine Patientin ruht auf einer Liege am Pool in den Gärten des Dorfes",
   },
   doctorFacts: {
-    "deepu-john": { role: "Chefarzt und Abteilungsleiter", tenure: "Praktiziert Ayurveda seit 2010 · Bei Kairali seit 2019", focus: "Panchakarma und Beratung zu Lebensgewohnheiten", languages: ["Malayalam", "Englisch", "Hindi", "Tamil"] },
+    "deepu-john": { role: "Chefarzt und Abteilungsleiter", tenure: "Mindestens 15 Jahre dokumentierte Berufserfahrung in Ayurveda (Stand: September 2026)", focus: "Panchakarma und Beratung zu Lebensgewohnheiten", languages: ["Malayalam", "Englisch", "Hindi", "Tamil"] },
   },
 };
 
@@ -160,7 +160,7 @@ const RU: ProductionUi = {
     "gal-poolside-rest-palakkad-2026": "Пациентка отдыхает на шезлонге у бассейна в садах деревни",
   },
   doctorFacts: {
-    "deepu-john": { role: "Главный врач и заведующий отделением", tenure: "Практикует аюрведу с 2010 года · В Kairali с 2019 года", focus: "Панчакарма и рекомендации по образу жизни", languages: ["малаялам", "английском", "хинди", "тамильском"] },
+    "deepu-john": { role: "Главный врач и заведующий отделением", tenure: "Не менее 15 лет документально подтверждённого профессионального опыта в аюрведе (по состоянию на сентябрь 2026 года)", focus: "Панчакарма и рекомендации по образу жизни", languages: ["малаялам", "английском", "хинди", "тамильском"] },
   },
 };
 
