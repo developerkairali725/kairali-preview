@@ -186,6 +186,20 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
     const pin = f === "campaign-v2/production/production.css" ? "0272861b8c9033add121ad9106a63f24b2b99b99"
       : f === "campaign-v2/production/ui.ts" ? "51a9637a750ca21623f4488c82b8a6592bc154d9"
       : ["campaign-v2/production/pages/family-ayurvedic-retreat.ts", "campaign-v2/production/pages/pain-management.ts"].includes(f) ? "76e9f767a7e000f3e6789c3453c1552cbfa2ec23" : BASE;
-    assert.equal(read(f), git("show", `${pin}:./${f}`), f);
+    let current = read(f);
+    if (f === "campaign-v2/production/pages/monsoon-wellness.ts") {
+      // Two owner-adopted Monsoon clauses, exact source delta only. The original fixture/pins stay unchanged.
+      const delta = JSON.parse(read("test/fixtures/monsoon-2027-approved-delta.json"));
+      assert.equal(delta.source, f);
+      assert.equal(delta.historicalRevision, pin);
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), delta.afterSHA256);
+      for (const edit of delta.edits) {
+        assert.ok(edit.before && edit.after);
+        assert.equal(current.split(edit.after).length - 1, 1, "Each approved Monsoon replacement occurs once");
+        current = current.replace(edit.after, edit.before);
+      }
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), delta.beforeSHA256);
+    }
+    assert.equal(current, git("show", `${pin}:./${f}`), f);
   }
 });
