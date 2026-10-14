@@ -18,13 +18,18 @@ function matches(node,selector){
  return node.name===m[1]&&(!m[2]||(Object.hasOwn(node.attribs||{},m[2])&&(m[3]===undefined||node.attribs[m[2]]===m[3])));
 }
 function decorate(node){
- node.style={};node.listeners={};Object.defineProperty(node,'textContent',{get(){return text(node);}});
+ node.style={setProperty(name,value){this[name]=value;}};node.listeners={};Object.defineProperty(node,'textContent',{get(){return text(node);}});
  node.querySelectorAll=function(selector){return children(this).flatMap(child=>[...(matches(child,selector)?[child]:[]),...child.querySelectorAll(selector)]);};
  node.querySelector=function(selector){return this.querySelectorAll(selector)[0]||null;};
  node.addEventListener=function(name,fn){(this.listeners[name]||=[]).push(fn);};
  for(const child of children(node))decorate(child);return node;
 }
 function snapshot(path){return decorate({children:htmlToDOM(readFileSync(new URL(path,site),'utf8'))});}
+function getComputedStyle(node){
+ const styles=Object.fromEntries((node.attribs?.style||'').split(';').map(x=>x.split(':').map(y=>y.trim())).filter(x=>x.length===2));
+ return {backgroundColor:styles.background||'rgba(0, 0, 0, 0)',color:styles.color||''};
+}
+
 function categories(view){
  const payload=JSON.parse(readFileSync(new URL('public/ahv/views/'+view+'.json',site),'utf8'));
  const sandbox={DCLogic:class{}};
@@ -39,8 +44,23 @@ for(const [label,path,view] of [['mobile','english-candidate/prerender/index.htm
   const buttons=section.querySelectorAll('button');const items=section.querySelectorAll('a[aria-description]');const cats=categories(view);
   assert.equal(buttons.length,5);assert.equal(items.length,cats.length);assert.equal(items.length,15);
   const attrs=items.map(x=>({...x.attribs}));let initialized=0;
-  vm.runInNewContext(script,{host,cfg:{staticHome:{galleryCategories:cats}},initializeNearViewport(target,fn){assert.equal(target,section);initialized++;fn();}});
+  vm.runInNewContext(script,{host,getComputedStyle,cfg:{staticHome:{galleryCategories:cats}},initializeNearViewport(target,fn){assert.equal(target,section);initialized++;fn();}});
   assert.equal(initialized,1);
+  const palette={'--forest-800':'rgb(74, 55, 34)','--ivory':'rgb(247, 244, 234)','--marigold-400':'rgb(238, 180, 30)','--ink':'rgb(42, 33, 24)'};
+  for(const [name,value] of Object.entries(palette))assert.equal(section.style[name],value,'Captured palette '+name);
+  const dialogStart=source.indexOf('    var galleryDialog = document.createElement("dialog");',end);
+  const dialogEnd=source.indexOf('    var photoIndex =',dialogStart);assert(dialogStart>0&&dialogEnd>dialogStart);
+  let dialog;
+  const document={createElement(tag){return {tag,style:{setProperty(name,value){this[name]=value;}},attrs:{},children:[],setAttribute(k,v){this.attrs[k]=v;},append(...nodes){for(const n of nodes){n.parentNode=this;this.children.push(n);}}};},body:{appendChild(node){dialog=node;}}};
+  const paletteStart=source.indexOf('      function applyGalleryPalette(node) {',start);
+  const paletteEnd=source.indexOf('      applyGalleryPalette(gallerySection);',paletteStart);
+  vm.runInNewContext(source.slice(paletteStart,paletteEnd)+source.slice(dialogStart,dialogEnd),{document,galleryPalette:palette});
+  assert.equal(dialog.attrs['aria-label'],'Photo gallery');assert.match(dialog.style.cssText,/border-radius:0;/);
+  for(const [name,value] of Object.entries(palette))assert.equal(dialog.style[name],value,'Body-appended dialog owns '+name);
+  const controls=dialog.children.filter(x=>x.tag==='button').concat(dialog.children.find(x=>x.tag==='div').children);
+  assert.equal(controls.length,3);
+  for(const control of controls){assert.match(control.style.cssText,/background:var\(--forest-800\);color:var\(--ivory\)/);let ancestor=control.parentNode;while(ancestor&&!ancestor.style['--ivory'])ancestor=ancestor.parentNode;assert.equal(ancestor,dialog,'Controls inherit dialog palette');}
+
   for(const button of buttons){
    assert.equal(button.listeners.click.length,1);button.listeners.click[0]();const category=button.textContent.trim();
    assert.deepEqual(items.map(x=>x.style.display==='block'),cats.map(cat=>category==='All'||cat===category),category);
