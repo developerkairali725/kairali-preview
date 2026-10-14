@@ -20,6 +20,12 @@ test('campaign first-paint bundle preserves exact approved stylesheet bytes and 
  assert.deepEqual([...entry.matchAll(/@import "([^"]+)";/g)].map(x=>x[1]),[imports[0],imports[1],'@kairali/ui/ahv-campaign-tokens.css']);
  for(const name of imports){
   let bytes=fs.readFileSync(path.resolve(site,'campaign-v2/production',name),'utf8');
+  if(name==='../sections/sections.css'){
+   // Reverse only the 24 approved production legal-link row rules; retain the historical style hash.
+   const legal=JSON.parse(fs.readFileSync(path.join(site,'test/fixtures/form-legal-links-delta.json'),'utf8')).cssAddition;
+   assert.equal(bytes.split(legal).length-1,1);
+   bytes=bytes.replace(legal,'');
+  }
   if(name==='./production.css'){
    // Reverse only the exact approved desktop-card sizing delta; preserve the prior gallery rule and hash.
    const cardDelta="\n/* Owner feedback, 14 Oct: size desktop D consultation cards to their existing actions. */\n@media (min-width: 768px) {\n  .lp-prod[data-variant=\"D\"] .lp-hero__form { align-self: start; }\n  .lp-prod[data-variant=\"D\"] .lp-consult--card { height: auto; }\n}\n";
