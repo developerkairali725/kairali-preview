@@ -189,6 +189,11 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
       : f === "campaign-v2/production/ui.ts" ? "51a9637a750ca21623f4488c82b8a6592bc154d9"
       : ["campaign-v2/production/pages/family-ayurvedic-retreat.ts", "campaign-v2/production/pages/pain-management.ts"].includes(f) ? "76e9f767a7e000f3e6789c3453c1552cbfa2ec23" : BASE;
     let current = read(f);
+    if (f === "campaign-v2/production/pages/pain-management.ts") {
+      // AHV-WB.054.change / AHV-LATER-016.01: reverse only the approved Abhyangam description before the existing exact checks.
+      assert.equal(current.split("Abhyangam – full-body medicated oil therapy").length - 1, 1, "Exact approved Abhyangam wording occurs once");
+      current = current.replace("Abhyangam – full-body medicated oil therapy", "Abhyangam, a medicated oil massage");
+    }
     const integrationCorrection = staffRosterIntegration.files[f];
     if (integrationCorrection) {
       assert.equal(crypto.createHash("sha256").update(current).digest("hex"), integrationCorrection.afterSHA256, f);
