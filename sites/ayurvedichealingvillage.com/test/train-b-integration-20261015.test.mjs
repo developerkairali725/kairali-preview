@@ -7,6 +7,8 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import { createHash } from "node:crypto";
 import { TRAIN_B, TRAIN_B_CANDIDATES, reverseTrainBSource, candidateSource } from "./fixtures/train-b-20261015.mjs";
+// Train F (15 Oct 2026) sits on top of Train B: its exact source delta is removed first (fixtures/train-f-20261015.mjs).
+import { reverseTrainFSource } from "./fixtures/train-f-20261015.mjs";
 import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/load.ts";
 import { productionJsonLd } from "../campaign-v2/production/metadata.ts";
 import { PHOTO_PICKS_20261014 } from "../campaign-v2/production/bindings.ts";
@@ -20,7 +22,7 @@ test("every recorded Train B file reverses exactly to the integrated Train A byt
   const files = [...new Set(TRAIN_B_CANDIDATES.flatMap((c) => Object.keys(c.files)))].sort();
   assert.deepEqual(files, Object.keys(TRAIN_B.trainABytesSHA256).sort());
   for (const f of files) {
-    const current = read(f);
+    const current = reverseTrainFSource(f, read(f));
     const trainA = reverseTrainBSource(f, current);
     assert.notEqual(trainA, current, f);
     assert.equal(sha(trainA), TRAIN_B.trainABytesSHA256[f], f);
@@ -29,7 +31,8 @@ test("every recorded Train B file reverses exactly to the integrated Train A byt
 });
 
 test("the rejected rows stay out", () => {
-  // Owner decisions C: AHV-WB.005.hero-image and AHV-WB.403.change keep their prior heroes.
+  // Owner decisions C: AHV-WB.005.hero-image and AHV-WB.403.change keep their prior heroes. (Train F re-does both rows in
+  // its own PHOTO_PICKS_20261015, checked by train-f-photos-20261015.test.mjs; the decision-10 record here is unchanged.)
   assert.equal(PHOTO_PICKS_20261014["treatment-packages"].hero, undefined);
   assert.equal(PHOTO_PICKS_20261014["lp-pain-management"].hero, undefined);
   // D03 / D04 / D05 / D06: every rejected replacement's prior wording is back, once.

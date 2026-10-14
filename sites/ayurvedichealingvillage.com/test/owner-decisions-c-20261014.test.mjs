@@ -17,6 +17,7 @@ import { IMAGES } from "../campaign-v2/data/images.ts";
 import { APPROVED_FILM_IDS, filmIdFromHref, routeAllowed } from "../campaign-v2/production/sections/guest-video-policy.mjs";
 import fixture from "./fixtures/owner-decisions-c-20261014.json" with { type: "json" };
 import { candidateSource } from "./fixtures/train-b-20261015.mjs";
+import { reverseTrainFBindings, reverseTrainFConfig } from "./fixtures/train-f-20261015.mjs";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (p) => fs.readFileSync(path.join(SITE, p), "utf8");
@@ -75,6 +76,13 @@ test("9: mounted on the Russian route only, with the Russian locale", () => {
 
 // ── 10: photographs ─────────────────────────────────────────────────────────────────────────────────────────────
 
+// Train F (15 Oct 2026, fixtures/train-f-20261015.mjs) sits on top: these decision-10 checks run on the routes with Train F's
+// exact photograph picks reversed (each restored field asserted), i.e. on the Train B state this candidate integrated into.
+// Train F's own picks, including its re-done AHV-WB.005.hero-image and AHV-WB.403.change, are checked in
+// train-f-photos-20261015.test.mjs.
+const TRAIN_B_ROUTES = reverseTrainFBindings(JSON.parse(JSON.stringify(ROUTES)));
+const trainBCampaign = (slug) => reverseTrainFConfig(slug, JSON.parse(JSON.stringify(productionCampaign(slug))));
+
 const NEW_PHOTOS = {
   "ahv-img-045": { file: "public/ahv/assets/img/owner-decision-20261014/ahv-img-045.webp", sha: "13cc225808f4fbca77e8c38f94c3a46d83a6467acc392c6ea7d7a2faa3db2de6" },
   "ahv-img-018": { file: "public/ahv/assets/img/owner-approved-20260928/ahv-img-018.webp" },
@@ -104,8 +112,8 @@ test("10: the picks are exactly the recorded rows, routes and photographs", () =
   }
   assert.deepEqual(Object.keys(PHOTO_PICKS_20261014).sort(), Object.keys(recorded).sort());
   for (const [slug, r] of Object.entries(fixture.photoPicks.routes)) {
-    for (const [field, id] of Object.entries(r.after)) assert.deepEqual(ROUTES[slug][field], IMAGES[id], `${slug}.${field}`);
-    const c = productionCampaign(slug);
+    for (const [field, id] of Object.entries(r.after)) assert.deepEqual(TRAIN_B_ROUTES[slug][field], IMAGES[id], `${slug}.${field}`);
+    const c = trainBCampaign(slug);
     assert.equal(c.hero.image.A.id, r.after.heroImage, slug);
     assert.equal(c.hero.mobileImage.id, r.after.mobileImage, slug);
     assert.equal(c.page.pathway.image.id, r.after.pathwayImage, slug);
@@ -144,7 +152,7 @@ test("10: every pick is a non-identifying bank photograph at >=1600 px, file pre
 test("10: no bare-back therapy photograph remains in a picked hero or steps slot; hero, steps and mosaic never repeat", () => {
   const THERAPY = ["kt-199", "kt-190", "kt-202"];
   for (const [slug, r] of Object.entries(fixture.photoPicks.routes)) {
-    const c = productionCampaign(slug);
+    const c = trainBCampaign(slug);
     const pick = PHOTO_PICKS_20261014[slug];
     if (pick.hero) {
       assert.ok(!THERAPY.includes(c.hero.image.A.id) && !THERAPY.includes(c.hero.mobileImage.id), `${slug}: hero`);
@@ -159,7 +167,7 @@ test("10: no bare-back therapy photograph remains in a picked hero or steps slot
     }
   }
   // Siblings: the two pain-management routes and the two treatment-packages routes keep different heroes.
-  const hero = (s) => productionCampaign(s).hero.image.A.id;
+  const hero = (s) => trainBCampaign(s).hero.image.A.id;
   assert.notEqual(hero("pain-management"), hero("lp-pain-management"));
   assert.notEqual(hero("treatment-packages"), hero("lp-treatment-packages"));
   assert.notEqual(hero("lp-treatment-kerala"), hero("treatment-kerala"));
@@ -169,12 +177,12 @@ test("10: no bare-back therapy photograph remains in a picked hero or steps slot
   assert.equal(hero("treatment-packages"), "kt-202");
   assert.equal(PHOTO_PICKS_20261014["lp-pain-management"].hero, undefined);
   assert.equal(PHOTO_PICKS_20261014["treatment-packages"].hero, undefined);
-  assert.notEqual(productionCampaign("lp-pain-management").page.pathway.image.id, "ahv-img-045");
+  assert.notEqual(trainBCampaign("lp-pain-management").page.pathway.image.id, "ahv-img-045");
   const heroPicks = Object.keys(PHOTO_PICKS_20261014).filter((s) => PHOTO_PICKS_20261014[s].hero);
   assert.deepEqual(heroPicks.sort(), ["lp-treatment-kerala", "pain-management"]);
   // No picked hero repeats any route's mosaic tile.
   for (const slug of PRODUCTION_SLUGS) for (const h of heroPicks.map(hero)) {
-    assert.ok(!productionCampaign(slug).gallery.slice(0, 5).some((g) => g.image.id === h), `${slug} mosaic: ${h}`);
+    assert.ok(!trainBCampaign(slug).gallery.slice(0, 5).some((g) => g.image.id === h), `${slug} mosaic: ${h}`);
   }
   // The picked heroes differ from each other.
   const picked = heroPicks.map(hero);
@@ -185,7 +193,7 @@ test("10: no other route's photographs change", () => {
   for (const slug of PRODUCTION_SLUGS) {
     if (PHOTO_PICKS_20261014[slug]) continue;
     for (const id of Object.keys(NEW_PHOTOS)) {
-      const b = ROUTES[slug];
+      const b = TRAIN_B_ROUTES[slug];
       assert.ok(![b.heroImage.id, b.mobileImage.id, b.pathwayImage.id, ...b.gallery.map((g) => g.image.id)].includes(id), `${slug}: ${id}`);
     }
   }

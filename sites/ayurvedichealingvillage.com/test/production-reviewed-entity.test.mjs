@@ -11,6 +11,8 @@ import { ROUTES } from '../campaign-v2/production/bindings.ts';
 import { ORGANIZATION_ROUTES } from '../campaign-v2/production/organization.ts';
 import { reverseTrainAConfig } from './fixtures/train-a-20261014.mjs';
 import { reverseTrainBConfig } from './fixtures/train-b-20261015.mjs';
+// Train F (15 Oct 2026) sits on top of Train B: its exact photograph picks are reversed first (fixtures/train-f-20261015.mjs).
+import { reverseTrainFConfig } from './fixtures/train-f-20261015.mjs';
 
 const REVIEWED = new Set([
   'cleansing-centre', 'lp-cleansing-centre', 'lp-hospital-kerala', 'lp-pain-management', 'lp-panchakarma',
@@ -32,7 +34,7 @@ const plain = (v) => JSON.parse(JSON.stringify(v));
  * (bindings.ts breadcrumbName marks the one route, treatment-packages, whose breadcrumb predates it, unchanged).
  */
 function priorGraph(slug, c) {
-  const graph = productionJsonLd(slug, reverseTrainAConfig(slug, reverseTrainBConfig(slug, plain(c))));
+  const graph = productionJsonLd(slug, reverseTrainAConfig(slug, reverseTrainBConfig(slug, reverseTrainFConfig(slug, plain(c)))));
   const page = graph[0];
   assert.equal(page['@type'], 'WebPage', slug);
   if (D01.includes(slug)) { assert.deepEqual(page.publisher, { '@id': entityId }, slug); delete page.publisher; }

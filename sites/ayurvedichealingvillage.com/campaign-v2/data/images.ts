@@ -88,4 +88,40 @@ export const IMAGES: Record<string, ImageRef> = {
     width: 1600, height: 1067, alt: "Circular open veranda with cane chairs under a striped terracotta dome, looking out to the gardens",
     decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
   },
+  // Train F (15 Oct 2026), owner decision 10 ("pick one not just from new you can pick from old"): page-specific hero
+  // photographs (production/bindings.ts PHOTO_PICKS_20261015), all Palakkad (ahv-edited, IMAGE_CATALOG register_ok=yes;
+  // never the Delhi HO-centre shoot). ahv-pkd-*: built by tools/build-train-f-20261015-photos.py from the SHA-256-verified
+  // library originals; ahv-img-009: the owner-approved file of 28 Sep 2026 (batch 1, AHV-IMG-009, -105.jpg), unchanged.
+  "ahv-pkd-186": {
+    id: "ahv-pkd-186", src: "/ahv/assets/img/owner-decision-20261015/ahv-pkd-186.webp",
+    width: 1600, height: 1067, alt: "Two therapists press warm herbal boluses (Kizhi) on a patient's knee and thigh",
+    // Hands, forearms and an apron only; no face in frame.
+    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
+  },
+  "ahv-pkd-180": {
+    id: "ahv-pkd-180", src: "/ahv/assets/img/owner-decision-20261015/ahv-pkd-180.webp",
+    width: 1600, height: 2824, alt: "Warm medicated oil poured from a brass bowl into a dough ring on a patient's knee during Janu Vasti",
+    // A therapist's hand and the patient's draped leg only; the build trims the left edge so no face is in frame.
+    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
+  },
+  "ahv-pkd-115": {
+    id: "ahv-pkd-115", src: "/ahv/assets/img/owner-decision-20261015/ahv-pkd-115.webp",
+    width: 1600, height: 1067, alt: "Tiled-roof treatment blocks with a colonnaded veranda among palms and lawns at the Healing Village",
+    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
+  },
+  "ahv-pkd-132": {
+    id: "ahv-pkd-132", src: "/ahv/assets/img/owner-decision-20261015/ahv-pkd-132.webp",
+    width: 1600, height: 1067, alt: "Courtyard with a sculpted lotus relief wall, terracotta urns and planting between concrete columns",
+    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
+  },
+  "ahv-pkd-307": {
+    id: "ahv-pkd-307", src: "/ahv/assets/img/owner-decision-20261015/ahv-pkd-307.webp",
+    width: 1600, height: 1067, alt: "Elevated view of tiled-roof buildings and lawns in a dense coconut grove at the Healing Village",
+    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
+  },
+  "ahv-img-009": {
+    id: "ahv-img-009", src: "/ahv/assets/img/owner-approved-20260928/ahv-img-009.webp",
+    width: 1600, height: 1067, alt: "Covered colonnaded walkway with a timber roof linking brick-and-stone treatment blocks through gardens",
+    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
+  },
 };

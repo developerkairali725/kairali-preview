@@ -312,6 +312,44 @@ for (const [slug, pick] of Object.entries(PHOTO_PICKS_20261014) as [ProductionSl
   }
 }
 
+/**
+ * Train F (15 Oct 2026), owner decision 10 ("you have these images in the image bank check old and new and manifest ...
+ * pick one not just from new you can pick from old") and decision 15 ("let the photo be": the pulse-check photograph
+ * stays on the pain pages). Rows AHV-WB.005/.031/.058/.192/.218/.311/.377 hero-image, AHV-WB.192/.335 how-image and
+ * AHV-WB.403.change. Each hero (desktop and phone) becomes a page-specific Palakkad photograph with no bare back and no
+ * identifiable person: Panchakarma a Kizhi (Pinda Sweda) therapy, pain a Janu Vasti knee therapy, the cleansing centre its
+ * treatment blocks and treatment-block courtyard, treatment in Kerala the coconut grove, the packages page the lawns
+ * before the treatment blocks, south India the colonnade between the treatment blocks, /lp/pain-management/ the pulse
+ * check. A steps photograph is appended once at the end of the full gallery (as PHOTO_PICKS_20261014). No hero is one of
+ * the route's gallery photographs or an approved gallery addition. Applied after the decision-10 picks; every existing
+ * gallery entry and the five mosaic tiles stay exactly as they were. Hero, steps photograph and mosaic differ on every
+ * route, and sibling routes keep different heroes. Reversible: delete a route's entry.
+ */
+export const PHOTO_PICKS_20261015: Readonly<Partial<Record<ProductionSlug, { hero?: string; pathway?: string }>>> = {
+  "treatment-packages": { hero: "ahv-img-018" }, // AHV-WB.005.hero-image
+  panchakarma: { hero: "ahv-pkd-186" }, // AHV-WB.031.hero-image
+  "pain-management": { hero: "ahv-pkd-180" }, // AHV-WB.058.hero-image
+  "cleansing-centre": { hero: "ahv-pkd-115", pathway: "ahv-img-045" }, // AHV-WB.192.hero-image, AHV-WB.192.how-image
+  "treatment-kerala": { hero: "ahv-pkd-307" }, // AHV-WB.218.hero-image
+  "lp-south-india": { hero: "ahv-img-009" }, // AHV-WB.311.hero-image
+  "lp-hospital-kerala": { pathway: "ahv-img-045" }, // AHV-WB.335.how-image
+  "lp-cleansing-centre": { hero: "ahv-pkd-132" }, // AHV-WB.377.hero-image
+  "lp-pain-management": { hero: "ahv-img-045" }, // AHV-WB.403.change (owner decision 15)
+};
+for (const [slug, pick] of Object.entries(PHOTO_PICKS_20261015) as [ProductionSlug, { hero?: string; pathway?: string }][]) {
+  const r = ROUTES[slug];
+  if (pick.hero) {
+    if (r.gallery.some((g) => g.image.id === pick.hero)) throw new Error(`production/bindings: ${slug} hero ${pick.hero} is a gallery photograph`);
+    r.heroImage = img(pick.hero); r.mobileImage = r.heroImage;
+  }
+  if (pick.pathway) {
+    r.pathwayImage = img(pick.pathway);
+    const category = STEP_CATEGORY[pick.pathway];
+    if (!category) throw new Error(`production/bindings: no gallery category for steps photograph ${pick.pathway}`);
+    r.gallery = [...r.gallery, { category, image: r.pathwayImage }];
+  }
+}
+
 /** The 20 routes added on 8 Oct 2026, in their four review batches of five. */
 export const REVIEW_BATCHES: readonly (readonly ProductionSlug[])[] = [
   SPECS.slice(0, 5).map((x) => x.slug), SPECS.slice(5, 10).map((x) => x.slug),
