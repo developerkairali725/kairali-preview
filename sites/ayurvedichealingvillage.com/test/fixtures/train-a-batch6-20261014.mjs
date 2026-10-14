@@ -27,6 +27,10 @@ export function reverseBatch6Source(path, text) {
 export function reverseBatch6Config(slug, config) {
   if (!BATCH6.dSlugs.includes(slug)) return config;
   assert.ok(config.page?.place && config.page?.stories, `${slug}: batch 6 village and films present`);
+  // production/load.ts mirrors page.place into the kit `village` field (heading, plain paragraphs); without a place it
+  // falls back to the lead heading and an empty body. Restore that exact fallback too (Train A integration review).
+  assert.equal(config.village?.heading, config.page.place.heading, `${slug}: village mirrors the batch 6 place`);
+  config.village = { heading: config.page.lead.heading, body: "" };
   delete config.page.place;
   delete config.page.stories;
   return config;
