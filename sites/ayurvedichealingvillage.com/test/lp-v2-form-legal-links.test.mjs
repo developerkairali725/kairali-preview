@@ -98,7 +98,15 @@ test("only approved form/CSS deltas change; generated CSS equals its authored so
   assert.equal(digest(baseline), delta.baselineHashes["campaign-v2/sections/interactive/EnquiryForm.tsx"]);
   for (const file of ["campaign-v2/sections/sections.css", "campaign-v2/production/document.css"]) {
     const css = read(file);
-    assert.equal(digest(reverse(css, delta.cssAddition, "")), delta.baselineHashes[file]);
+    let prior = reverse(css, delta.cssAddition, "");
+    if (file === "campaign-v2/production/document.css") {
+      // These independently reviewed additive styles may arrive through the future release base.
+      // Remove only their exact approved blocks; the original baseline hash remains unchanged.
+      for (const change of delta.approvedIntegrationStyles) {
+        if (prior.includes(change.css)) prior = reverse(prior, change.css, "");
+      }
+    }
+    assert.equal(digest(prior), delta.baselineHashes[file]);
     assert.match(css, /\.lp-enq__legal-links\{display:flex;flex-wrap:wrap;align-items:center;column-gap:8px;margin-inline-start:36px\}/);
     assert.match(css, /\.lp-enq__legal-links \.lp-enq__privacy\{margin-inline-start:0;min-width:48px\}/);
     assert.match(css, /\.lp-enq__privacy\{[^}]*min-height:48px/);

@@ -8,5 +8,17 @@
     "campaign-v2/sections/interactive/EnquiryForm.tsx": "0c825f3a72ee5c65fe1f8c355ccbd77799ae92fd6548728407479d5463747a28",
     "campaign-v2/sections/sections.css": "e0dba528a7476ad61aecbd070fdf8d87be2ae0f3a75c35294ced1ba469525b3b",
     "campaign-v2/production/document.css": "584b0bc54b728dbd3b44ec4d9bd60e1332e495f452e9749814b864ff92abc89a"
-  }
+  },
+  "approvedIntegrationStyles": [
+    {
+      "sourceCommit": "569c0e2bc65498b71f538297e371518d31759e7e",
+      "scope": "D desktop card sizing",
+      "css": "\n/* Owner feedback, 14 Oct: size desktop D consultation cards to their existing actions. */\n@media (min-width: 768px) {\n  .lp-prod[data-variant=\"D\"] .lp-hero__form { align-self: start; }\n  .lp-prod[data-variant=\"D\"] .lp-consult--card { height: auto; }\n}\n"
+    },
+    {
+      "sourceCommit": "ac078269995f64c95ded60d021b3370c62c772ff",
+      "scope": "D unpinned desktop header grid",
+      "css": "\n/* Owner feedback, 14 Oct: align the unpinned desktop D header with its existing content grid. */\n@media (min-width: 768px) {\n  .lp-prod[data-variant=\"D\"] .lp-header:not([data-stuck]) { max-width: 1440px; margin-inline: auto; }\n}\n"
+    }
+  ]
 }
