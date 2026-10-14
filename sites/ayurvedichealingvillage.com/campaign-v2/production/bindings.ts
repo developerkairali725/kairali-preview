@@ -204,7 +204,7 @@ const APPROVED_GALLERY_ROUTES: ReadonlySet<ProductionSlug> = new Set<ProductionS
 ]);
 
 type Spec = {
-  slug: ProductionSlug; route: string; variant: Variant; hero: string; mobile?: string; pathway: string;
+  slug: ProductionSlug; route: string; variant: Variant; hero: string; mobile?: string; pathway: string; stillness?: string;
   form: RouteBinding["productionForm"]; og?: RouteBinding["og"]; locale?: PageLocale; mobileQuality?: number;
 };
 const r10 = (kind: string): RouteBinding["productionForm"] => ({ formVariant: `r10-${kind}`, downloadGuide: false, profile: "r10" });
@@ -216,15 +216,15 @@ const SPECS: Spec[] = [
   { slug: "rejuvenation-detox", route: "/preventive-rejuvenation-detoxification.html", variant: "C", hero: "kt-202", pathway: "kt-199", form: r10("detox") },
   { slug: "ayurveda-retreat", route: "/ayurveda-retreat-kerala.html", variant: "B", hero: "wx-hero", pathway: "kt-199", form: r10("retreat") },
   { slug: "wellness-kerala", route: "/wellness-resort-kerala.html", variant: "B", hero: "kt-314", pathway: "kt-202", form: enquiry("/wellness-resort-kerala.html"), og: OG_EN_US("wellness-resort-kerala.html.jpg") },
-  { slug: "cleansing-centre", route: "/kairali-cleansing-centre.html", variant: "A", hero: "kt-202", mobile: "kt-190", pathway: "kt-199", form: enquiry("/kairali-cleansing-centre.html"), og: OG_EN_US("kairali-cleansing-centre.html.jpg") },
+  { slug: "cleansing-centre", route: "/kairali-cleansing-centre.html", variant: "A", hero: "kt-202", mobile: "kt-190", stillness: "ahv-img-016", pathway: "kt-199", form: enquiry("/kairali-cleansing-centre.html"), og: OG_EN_US("kairali-cleansing-centre.html.jpg") },
   // Review batch 2
-  { slug: "treatment-kerala", route: "/treatment-in-kerala.html", variant: "A", hero: "kt-199", mobile: "kt-190", pathway: "kt-202", form: enquiry("/treatment-in-kerala.html"), og: OG_EN_US("treatment-in-kerala.html.jpg") },
+  { slug: "treatment-kerala", route: "/treatment-in-kerala.html", variant: "A", hero: "kt-199", mobile: "kt-190", stillness: "ahv-img-016", pathway: "kt-202", form: enquiry("/treatment-in-kerala.html"), og: OG_EN_US("treatment-in-kerala.html.jpg") },
   { slug: "south-india-cities", route: "/Ayurveda_Treatment_Neo_S.India_Cities.html", variant: "D", hero: "wx-hero", pathway: "kt-199", form: enquiry("/Ayurveda_Treatment_Neo_S.India_Cities.html"), og: OG_EN_US("ayurveda_treatment_neo_s.india_cities.html.jpg") },
   { slug: "brand", route: "/Kairali_Brand_and_Competition_Neo-original.html", variant: "D", hero: "kt-314", pathway: "kt-202", form: enquiry("/Kairali_Brand_and_Competition_Neo-original.html"), og: OG_EN_US("kairali_brand_and_competition_neo-original.html.jpg") },
-  { slug: "weight-management", route: "/weight-loss.html", variant: "C", hero: "kt-314", pathway: "kt-202", form: enquiry("/weight-loss.html"), og: OG_EN_US("weight-loss.html.jpg") },
+  { slug: "weight-management", route: "/weight-loss.html", variant: "C", hero: "kt-314", stillness: "ahv-img-016", pathway: "kt-202", form: enquiry("/weight-loss.html"), og: OG_EN_US("weight-loss.html.jpg") },
   { slug: "lp-south-india", route: "/lp/ayurveda-treatment-south-india/", variant: "D", hero: "kt-199", pathway: "kt-202", form: enquiry("/lp/ayurveda-treatment-south-india/"), og: OG_LP("ahv/assets/img/wx-welcome.webp") },
   // Review batch 3
-  { slug: "lp-hospital-kerala", route: "/lp/ayurvedic-hospital-kerala/", variant: "A", hero: "wx-hero", pathway: "kt-199", form: enquiry("/lp/ayurvedic-hospital-kerala/"), og: OG_LP("ahv/assets/img/wx-hero.webp") },
+  { slug: "lp-hospital-kerala", route: "/lp/ayurvedic-hospital-kerala/", variant: "A", hero: "wx-hero", stillness: "ahv-img-016", pathway: "kt-199", form: enquiry("/lp/ayurvedic-hospital-kerala/"), og: OG_LP("ahv/assets/img/wx-hero.webp") },
   { slug: "lp-brand", route: "/lp/kairali-brand/", variant: "D", hero: "wx-hero", pathway: "kt-202", form: enquiry("/lp/kairali-brand/"), og: OG_LP("ahv/assets/img/wx-hero.webp") },
   { slug: "lp-cleansing-centre", route: "/lp/kairali-cleansing-centre/", variant: "A", hero: "kt-190", pathway: "kt-202", form: enquiry("/lp/kairali-cleansing-centre/"), og: OG_LP("images/therapy-panchakarma.jpg") },
   // Not kt-199: /pain-management.html and /panchkarma-treatment.html already share that hero (review finding, 8 Oct).
@@ -250,7 +250,7 @@ for (const sp of SPECS) {
     heroImage: hero,
     mobileImage: img(sp.mobile ?? sp.hero),
     ...(sp.mobileQuality === undefined ? {} : { mobileHeroQuality: sp.mobileQuality }),
-    stillnessImage: img("gal-post-therapy-stillness-wakem"),
+    stillnessImage: img(sp.stillness ?? "gal-post-therapy-stillness-wakem"),
     pathwayImage: img(sp.pathway),
     gallery: [...galleryFor(sp.hero, sp.mobile ?? sp.hero, sp.pathway), ...(APPROVED_GALLERY_ROUTES.has(sp.slug) ? APPROVED_GALLERY_ADDITIONS : [])],
     productionForm: sp.form,
