@@ -1,5 +1,7 @@
 // Train G rework (15 Oct 2026): the 14 rows an adversarial reviewer returned from Train E, each fixed exactly as the
-// rejection says. Source only: no build, browser, network, form submission or lead. The reversal of the one production
+// rejection says. The three AHV-N08.documents.* rows were rejected in the independent Train G review (the hub title,
+// heading and description stay English for every locale, and the locale entry routes are not registered) and reverted
+// with their two tests. Source only: no build, browser, network, form submission or lead. The reversal of the one production
 // config change lives in fixtures/train-g-rework-20261015.mjs; AHV-I04.M066.links is in reader25a-contextual-resources.
 import { test } from "node:test";
 import assert from "node:assert/strict";
@@ -7,7 +9,6 @@ import fs from "node:fs";
 import vm from "node:vm";
 import { unitId } from "../tools/l10n/lib.mjs";
 import { LOCALES } from "../tools/l10n/locales.mjs";
-import { localizeDocumentHubLinks } from "../tools/l10n/document-hub.mjs";
 import { removeCampaignPriceNotes } from "../app/(english)/_families/campaign-price-notes.mjs";
 import { applyReviewSnapshot, reviewCopyFor } from "../app/(english)/_families/content-review.mjs";
 import { keepsLocaleCanonical, LOCALE_SELF_CANONICAL_PATHS, restoreReviewedHead } from "../app/(english)/_families/localized-title.mjs";
@@ -249,48 +250,4 @@ test("AHV-WB.548.phone-example: the RU campaign form shows the RU example its ow
   const c = { form: { schema: campaignEnquiryForm("ru") } };
   const back = reverseTrainGConfig(TRAIN_G_REWORK.phonePlaceholder.slug, JSON.parse(JSON.stringify(c)));
   assert.equal(back.form.schema.steps[0].fields[2].placeholder, "+91 …");
-});
-
-// ── AHV-N08.documents.*: each locale's document entry hands its language and currency to the maintained hub ─────────
-test("AHV-N08.documents: twelve locale entries, one 301 each to the AHV hub view in that language and tariff currency", () => {
-  const redirects = json("english-candidate/document-redirects.json");
-  const hub = "https://kairali-documents.vercel.app/";
-  const sources = redirects.map((r) => r.source);
-  assert.equal(new Set(sources).size, sources.length, "no ambiguous source");
-  for (const [code, lp] of Object.entries(LOCALES)) {
-    for (const source of [`/${lp.prefix}/documents/`, `/${lp.prefix}/documents/index.html`]) {
-      const hits = redirects.filter((r) => r.source === source);
-      assert.equal(hits.length, 1, source);
-      const u = new URL(hits[0].destination);
-      assert.equal(u.origin + u.pathname, hub);
-      assert.deepEqual(Object.fromEntries(u.searchParams), { property: "ahv", locale: code.toLowerCase(), language: lp.label, currency: lp.currency }, source);
-      assert.ok(!sources.includes(hits[0].destination), `${source}: no loop`);
-    }
-  }
-  // English is unchanged (document-hub-redirects.test.mjs pins it); no hub HTML is copied into the site for any locale
-  assert.equal(redirects.find((r) => r.source === "/documents/").destination, hub + "?property=ahv");
-  // the 301s answer before any page: no locale library page exists in the site to shadow them
-  for (const lp of Object.values(LOCALES)) assert.equal(fs.existsSync(new URL(`../public/${lp.prefix}/documents/`, import.meta.url)), false, lp.prefix);
-});
-
-test("AHV-N08.documents: the locale build points every library-entry link at the locale's own entry and leaves PDFs alone", () => {
-  const src = [
-    '<a href="/documents/">All</a>', '<a href="/documents/#ayurveda">Rates</a>', '<a href="https://ayurvedichealingvillage.com/documents/index.html">Lib</a>',
-    '{"href":"/documents/","label":"x"}', 'href=\\"/documents/\\"',
-    '<a href="/documents/pdf/ayurveda-programmes-tariff/de/KTAHV-Ayurveda-Programmes-Tariff-DE-EUR_20260925-R1.pdf">PDF</a>',
-    '<a href="/documents-old/">no</a>', 'text /documents/ prose',
-  ].join("\n");
-  assert.equal(localizeDocumentHubLinks(src, "de"), [
-    '<a href="/de/documents/">All</a>', '<a href="/de/documents/#ayurveda">Rates</a>', '<a href="/de/documents/">Lib</a>',
-    '{"href":"/de/documents/","label":"x"}', 'href=\\"/de/documents/\\"',
-    '<a href="/documents/pdf/ayurveda-programmes-tariff/de/KTAHV-Ayurveda-Programmes-Tariff-DE-EUR_20260925-R1.pdf">PDF</a>',
-    '<a href="/documents-old/">no</a>', 'text /documents/ prose',
-  ].join("\n"));
-  assert.equal(localizeDocumentHubLinks(src, ""), src, "English is never rewritten");
-  const build = read("tools/l10n/build.mjs");
-  assert.match(build, /function localizeUrls\(s, loc\) \{\n  const lp = LOCALES\[loc\];\n  \/\/ the document library[^\n]*\n  s = localizeDocumentHubLinks\(s, lp\.prefix\);/);
-  // every view that links the library is localized through that function
-  const linking = fs.readdirSync(new URL("../public/ahv/views/", import.meta.url)).filter((f) => /href=\\"\/documents\/(?:#[a-z-]+)?\\"/.test(read("public/ahv/views/" + f)));
-  assert.ok(linking.length > 10);
-  for (const f of linking) assert.doesNotMatch(localizeDocumentHubLinks(view(f.replace(/\.json$/, "")).template, "ja"), /href="\/documents\/(?:#[a-z-]+)?"/, f);
 });

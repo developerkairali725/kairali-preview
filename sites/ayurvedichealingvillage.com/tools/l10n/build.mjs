@@ -32,7 +32,6 @@ import { rel, readJson, sourceFiles, parseFile, includedRoutes } from "./sources
 import { LOCALES, CODES } from "./locales.mjs";
 import { composeSitemapCatalog } from "./derived-sitemap.mjs";
 import { currencyViews, applyCurrencyTables, applyCurrencyToDataset, COMMERCIAL_DATASET } from "./currency-tables.mjs";
-import { localizeDocumentHubLinks } from "./document-hub.mjs";
 
 const argv = process.argv;
 const arg = (n, d) => { const i = argv.indexOf("--" + n); return i > -1 ? argv[i + 1] : d; };
@@ -84,8 +83,6 @@ export function localPath(enPath, loc) {
 
 function localizeUrls(s, loc) {
   const lp = LOCALES[loc];
-  // the document library: each locale's own entry (AHV-N08.documents.*, ./document-hub.mjs), before the rules below
-  s = localizeDocumentHubLinks(s, lp.prefix);
   // absolute production URLs
   s = s.replace(/https?:\/\/(?:www\.)?ayurvedichealingvillage\.com(\/[^"'\s<>\\?#)]*)?/g, (m, p) => {
     // a BARE origin (no path) is a concatenation base in view logic (`A + o.href`), never a link: rewriting it to the
