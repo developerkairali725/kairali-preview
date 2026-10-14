@@ -17,11 +17,13 @@
     const groups = new Map();
     // Locale builds rewrite each href to the locale's own path (/ja/…, /de/translated-slug/), so the
     // English-path rules below would send every localized link to the fallback group. Group by the
-    // English route the link stands for, read back from the locale's own route table.
+    // English route the link stands for, read back from the locale's own route table, else the path
+    // without its locale prefix (AHV-M082.02).
     const englishPath = (path) => {
       const local = window.AHV_LOCAL_PATHS;
       if (local) for (const en in local) if (local[en] === path) return en;
-      return path;
+      const m = path.match(/^\/(?:hi|de|fr|es|it|pt|nl|ru|ar|zh|zh-Hans|ja|ko)(\/.*)$/);
+      return m ? m[1] : path;
     };
     const labelFor = (href) => {
       const path = englishPath(new URL(href, A).pathname);
