@@ -1,0 +1,94 @@
+{
+  "scope": "AHV-WB.*.whatsapp-message (train-a batch 7): production-only page-context WhatsApp prefill on the existing pre-submit entry points (header, hero fallback, enquiry contact row, form error row, footer, EN chat choices). Locked number, data-track attributes, consent, forms, lead delivery and the post-submit reference handoff unchanged.",
+  "base": "c54e2795e",
+  "edits": {
+    "campaign-v2/sections/Header.tsx": [
+      {
+        "from": "import { pageUi } from \"../production/ui.ts\";\n",
+        "to": "import { pageUi } from \"../production/ui.ts\";\nimport { whatsappHref } from \"../production/whatsapp.ts\";\n"
+      },
+      {
+        "from": "href={`https://wa.me/${contact.whatsapp.number}`} data-track=\"cta_click\" data-track-cta=\"whatsapp\" data-track-position=\"header\"",
+        "to": "href={whatsappHref(c, req)} data-track=\"cta_click\" data-track-cta=\"whatsapp\" data-track-position=\"header\""
+      }
+    ],
+    "campaign-v2/sections/Hero.tsx": [
+      {
+        "from": "import { contact } from \"../../campaign-v110/lib/site.ts\";\nimport { NABH_NO }",
+        "to": "import { NABH_NO }"
+      },
+      {
+        "from": "import { pageUi } from \"../production/ui.ts\";\n",
+        "to": "import { pageUi } from \"../production/ui.ts\";\nimport { whatsappHref } from \"../production/whatsapp.ts\";\n"
+      },
+      {
+        "from": "href={`https://wa.me/${contact.whatsapp.number}`} data-track=\"cta_click\" data-track-cta=\"whatsapp\" data-track-position=\"hero\"",
+        "to": "href={whatsappHref(c, req)} data-track=\"cta_click\" data-track-cta=\"whatsapp\" data-track-position=\"hero\""
+      }
+    ],
+    "campaign-v2/sections/Footer.tsx": [
+      {
+        "from": "import { pageUi } from \"../production/ui.ts\";\n",
+        "to": "import { pageUi } from \"../production/ui.ts\";\nimport { whatsappHref } from \"../production/whatsapp.ts\";\n"
+      },
+      {
+        "from": "export default function Footer({ req }: SectionProps) {",
+        "to": "export default function Footer({ c, req }: SectionProps) {"
+      },
+      {
+        "from": "href={`https://wa.me/${contact.whatsapp.number}`} {...track(\"whatsapp\")}",
+        "to": "href={whatsappHref(c, req)} {...track(\"whatsapp\")}"
+      }
+    ],
+    "campaign-v2/sections/interactive/Enquiry.tsx": [
+      {
+        "from": "import { pageUi } from \"../../production/ui.ts\";\n",
+        "to": "import { pageUi } from \"../../production/ui.ts\";\nimport { whatsappHref } from \"../../production/whatsapp.ts\";\n"
+      },
+      {
+        "from": "  const ui = pageUi(req);\n  return (",
+        "to": "  const ui = pageUi(req);\n  const wa = whatsappHref(c, req);\n  return ("
+      },
+      {
+        "from": "<a href={`https://wa.me/${contact.whatsapp.number}`} data-track=\"cta_click\" data-track-cta=\"whatsapp\" data-track-position=\"section\">",
+        "to": "<a href={wa} data-track=\"cta_click\" data-track-cta=\"whatsapp\" data-track-position=\"section\">"
+      },
+      {
+        "from": "{...(production ? { production, ui: ui.form } : {})}",
+        "to": "{...(production ? { production, ui: ui.form, whatsappHref: wa } : {})}"
+      }
+    ],
+    "campaign-v2/sections/interactive/EnquiryForm.tsx": [
+      {
+        "from": "  ui?: FormUi;\n};",
+        "to": "  ui?: FormUi;\n  /** Live ad routes only: the page-context WhatsApp link (production/whatsapp.ts). Absent = the bare number. */\n  whatsappHref?: string;\n};"
+      },
+      {
+        "from": "prefillEnabled = true, production, ui }: EnquiryFormProps)",
+        "to": "prefillEnabled = true, production, ui, whatsappHref }: EnquiryFormProps)"
+      },
+      {
+        "from": "  const waHref = `https://wa.me/${contact.whatsapp.number}`;",
+        "to": "  const waHref = whatsappHref ?? `https://wa.me/${contact.whatsapp.number}`;"
+      }
+    ],
+    "public/design/review-chrome.js": [
+      {
+        "from": "priyaWidget(); ctaBar(); syncChatState(); externalLinks(); return; }",
+        "to": "priyaWidget(); campaignWhatsApp(); ctaBar(); syncChatState(); externalLinks(); return; }"
+      },
+      {
+        "from": "  // TF-18 (owner, 28 Sep 2026)",
+        "to": "  // AHV-WB.*.whatsapp-message (live ad routes only): the chat choices' \"WhatsApp us\" opens with the same page-context\n  // message as the page's own header WhatsApp link (campaign-v2/production/whatsapp.ts), never a message of its own;\n  // where the page's link carries none (preview, or a language without a reviewed message) the choice is left as built.\n  function campaignWhatsApp() {\n    var own = campaignRoot.querySelector('a.lp-header__wa[href^=\"' + WA_HREF + '?text=\"]');\n    var choice = document.querySelector(\"#ahv-contact-controls .ahv-contact-wa\");\n    if (own && choice && choice.getAttribute(\"href\") !== own.getAttribute(\"href\")) choice.setAttribute(\"href\", own.getAttribute(\"href\"));\n  }\n  // TF-18 (owner, 28 Sep 2026)"
+      }
+    ]
+  },
+  "baseHashes": {
+    "campaign-v2/sections/Header.tsx": "3eb36357835c46089a286fa2d99477d7e429efee3c80bac59d5309f5ce29842d",
+    "campaign-v2/sections/Hero.tsx": "1e6643aa76a31bde583cfb169e01449b9eede9da0a91492061df38bf5506f11e",
+    "campaign-v2/sections/Footer.tsx": "fc1333bcf20dee81b34d68731562920b0e696f3ff6772b5b99289805751494ee",
+    "campaign-v2/sections/interactive/Enquiry.tsx": "757954d13ad4747fc69846be69c073218075264e3ebd4d201cb3bc89335c97b4",
+    "campaign-v2/sections/interactive/EnquiryForm.tsx": "36f124a79ea320e3de5c9e060aa4d69c00bbf9361d57dbdb4ec6f9209c8e067b",
+    "public/design/review-chrome.js": "b6b40b09d1717bcc599fab4b9e0efbf9acf3433c017aecc917c92d2216cb0c3a"
+  }
+}

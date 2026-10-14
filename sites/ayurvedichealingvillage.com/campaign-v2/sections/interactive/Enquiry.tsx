@@ -7,6 +7,7 @@ import { WaIcon, PhoneIcon } from "../icons";
 import { Rich } from "../rich";
 import EnquiryForm from "./EnquiryForm";
 import { pageUi } from "../../production/ui.ts";
+import { whatsappHref } from "../../production/whatsapp.ts";
 
 /**
  * #enquiry — the enquiry (Main.dc.html section 11). Default: the live campaign enquiry form (one step);
@@ -29,6 +30,7 @@ export default function Enquiry({ c, v, req }: SectionProps) {
   // A designed production page closes with its own invitation, and says what "free" covers beside the form.
   const closing = production ? c.page?.closing : undefined;
   const ui = pageUi(req);
+  const wa = whatsappHref(c, req);
   return (
     <section id="enquiry" className="lp-sec lp-enq" aria-labelledby="lp-enq-h">
       <div className="lp-enq__intro">
@@ -39,7 +41,7 @@ export default function Enquiry({ c, v, req }: SectionProps) {
         <p className="lp-enq__lede">{ui.enquiry.contactIntro}</p>
         <ul className="lp-enq__contact">
           <li>
-            <a href={`https://wa.me/${contact.whatsapp.number}`} data-track="cta_click" data-track-cta="whatsapp" data-track-position="section">
+            <a href={wa} data-track="cta_click" data-track-cta="whatsapp" data-track-position="section">
               <WaIcon size={18} />{ui.enquiry.wa} · {contact.whatsapp.display}
             </a>
           </li>
@@ -63,7 +65,7 @@ export default function Enquiry({ c, v, req }: SectionProps) {
         privacyHref={site.legal.privacy}
         prefillLabels={prefillLabels}
         prefillEnabled={c.consultBar !== false}
-        {...(production ? { production, ui: ui.form } : {})}
+        {...(production ? { production, ui: ui.form, whatsappHref: wa } : {})}
       />
     </section>
   );
