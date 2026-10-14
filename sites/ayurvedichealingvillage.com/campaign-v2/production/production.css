@@ -383,6 +383,11 @@ html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
 /* Owner-approved sharp corners, including the desktop gallery dialog. */
 .lp-prod .lp-gal{border-radius:0}
 
+/* Owner feedback, 14 Oct: align the unpinned desktop D header with its existing content grid. */
+@media (min-width: 768px) {
+  .lp-prod[data-variant="D"] .lp-header:not([data-stuck]) { max-width: 1440px; margin-inline: auto; }
+}
+
 /* Owner feedback, 14 Oct: size desktop D consultation cards to their existing actions. */
 @media (min-width: 768px) {
   .lp-prod[data-variant="D"] .lp-hero__form { align-self: start; }

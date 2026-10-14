@@ -193,6 +193,11 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
       assert.equal(current.split(cardDelta).length - 1, 1);
       assert.ok(current.endsWith(cardDelta));
       current = current.slice(0, -cardDelta.length);
+      // Reverse only the separately approved unpinned D desktop header delta.
+      const headerDelta = "\n/* Owner feedback, 14 Oct: align the unpinned desktop D header with its existing content grid. */\n@media (min-width: 768px) {\n  .lp-prod[data-variant=\"D\"] .lp-header:not([data-stuck]) { max-width: 1440px; margin-inline: auto; }\n}\n";
+      assert.equal(current.split(headerDelta).length - 1, 1);
+      assert.ok(current.endsWith(headerDelta));
+      current = current.slice(0, -headerDelta.length);
       // Reverse only the exact owner-approved scoped gallery correction; retain the historical style pin.
       const delta = "\n/* Owner-approved sharp corners, including the desktop gallery dialog. */\n.lp-prod .lp-gal{border-radius:0}\n";
       assert.ok(current.endsWith(delta), "Exact approved gallery correction is the final source rule");

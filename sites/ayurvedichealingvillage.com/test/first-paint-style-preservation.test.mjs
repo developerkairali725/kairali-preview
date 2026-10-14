@@ -26,6 +26,11 @@ test('campaign first-paint bundle preserves exact approved stylesheet bytes and 
    assert.equal(bytes.split(cardDelta).length-1,1);
    assert.ok(bytes.endsWith(cardDelta));
    bytes=bytes.slice(0,-cardDelta.length);
+   // Reverse only the separately approved unpinned D desktop header delta.
+   const headerDelta = "\n/* Owner feedback, 14 Oct: align the unpinned desktop D header with its existing content grid. */\n@media (min-width: 768px) {\n  .lp-prod[data-variant=\"D\"] .lp-header:not([data-stuck]) { max-width: 1440px; margin-inline: auto; }\n}\n";
+   assert.equal(bytes.split(headerDelta).length - 1, 1);
+   assert.ok(bytes.endsWith(headerDelta));
+   bytes = bytes.slice(0, -headerDelta.length);
    // Reverse only the exact owner-approved desktop-gallery corner correction; retain the historical hash.
    const delta='\n/* Owner-approved sharp corners, including the desktop gallery dialog. */\n.lp-prod .lp-gal{border-radius:0}\n';
    assert.ok(bytes.endsWith(delta));
