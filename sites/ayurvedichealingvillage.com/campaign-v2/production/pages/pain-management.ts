@@ -54,7 +54,7 @@ export default defineCopy({
       heading: "From your first conversation to your stay",
       steps: [
         { title: "Start with a free initial consultation", body: "Describe your pain, what has become difficult and what you would like to discuss. Share reports, your diagnosis and details of current or previous treatment." },
-        { title: "Agree the care and practical arrangements", body: "Discuss proposed therapies, the recommended stay, room access and any companion or assistance needs. Review the full quotation before arranging travel." },
+        { title: "Agree the care and practical arrangements", body: "Discuss proposed therapies, the recommended stay, room access and any companion or assistance needs." },
         { title: "Settle into your care routine", body: "Attend prescribed sessions and make time for meals and rest. Ask how your progress will be reviewed and what to do if you feel uncomfortable or your needs change." },
       ],
     },

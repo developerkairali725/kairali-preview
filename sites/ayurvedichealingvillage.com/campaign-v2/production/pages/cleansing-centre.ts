@@ -71,7 +71,7 @@ export default defineCopy({
       heading: "From assessment to a planned stay",
       steps: [
         { title: "Share the full picture", body: "Start with a free initial doctor consultation. Bring diagnoses, reports, prescriptions and supplements, with your reason for considering a programme." },
-        { title: "Understand the plan and quotation", body: "Discuss preparation, dietary guidance and practical requirements. Review the programme name, duration, accommodation and inclusions together before arranging travel." },
+        { title: "Understand the plan and quotation", body: "Discuss preparation, dietary guidance and practical requirements." },
         { title: "Follow your prescribed routine", body: "Vegetarian meals, suitable yoga or meditation and time to rest fit around prescribed care. Tell the team about allergies, dietary restrictions and mobility needs." },
       ],
     },
@@ -115,7 +115,7 @@ export default defineCopy({
     faqHeading: "Your questions, answered",
     closing: {
       heading: "Begin with your questions",
-      paragraphs: ["Our patient care team will help you discuss the programme and practical arrangements. Start with a free initial doctor consultation, then review your plan and quotation before booking."],
+      paragraphs: ["Our patient care team will help you discuss the programme and practical arrangements."],
     },
   },
   faq: [

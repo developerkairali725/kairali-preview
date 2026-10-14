@@ -51,7 +51,7 @@ export default defineCopy({
       intro: ["Your assessment decides your care. These are the parts of the programme to discuss with your doctor, rather than a fixed schedule for everyone."],
       cards: [
         { title: "An assessment before admission", paragraphs: ["Your assessment considers your history and relevant medical records. Explain other health conditions and any limits on movement or activity, so the doctor can discuss whether admission is appropriate."] },
-        { title: "Therapies prescribed for you", paragraphs: ["Prescribed therapies are carried out by the treatment team under physician supervision. Your programme may include massage-based or cleansing therapies where indicated; the specific care is determined by assessment."] },
+        { title: "Therapies prescribed for you", paragraphs: ["Prescribed therapies are carried out by the treatment team under physician supervision. Your programme may include oil-based or cleansing therapies where indicated; the specific care is determined by assessment."] },
         { title: "A personalised vegetarian diet and routine", paragraphs: ["Meals, suitable activity and rest share one daily schedule. Ask the doctor which yoga or meditation sessions fit your plan and how your progress will be reviewed."] },
         { title: "Guidance to continue at home", paragraphs: ["Before discharge, discuss the guidance you can continue at home. Ask what follow-up is recommended and how any later consultation or service would be arranged and charged."] },
       ],

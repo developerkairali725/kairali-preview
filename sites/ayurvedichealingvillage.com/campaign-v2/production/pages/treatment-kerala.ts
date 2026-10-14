@@ -82,7 +82,7 @@ export default defineCopy({
       heading: "Three steps from first question to your stay",
       steps: [
         { title: "A free initial doctor consultation", body: "Describe your health history, current treatment and goals in your own words. Share medical reports, prescriptions and details of earlier treatment, so the doctor understands the full context." },
-        { title: "Your plan and a clear quotation", body: "The doctor explains the proposed programme and recommended duration. Then review a quotation for the programme, nights, villa occupancy and taxes, with included meals, reviews and sessions, before you arrange travel." },
+        { title: "Your plan and a clear quotation", body: "The doctor explains the proposed programme and recommended duration." },
         { title: "Settle into your treatment routine", body: "Trained therapists deliver the sessions your Ayurvedic doctor prescribes. Meals, suitable yoga or meditation and rest fit around them. Keep the care team informed and ask when your progress will be reviewed." },
       ],
     },

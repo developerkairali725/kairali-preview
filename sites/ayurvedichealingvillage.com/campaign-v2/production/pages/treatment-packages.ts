@@ -133,7 +133,7 @@ export default defineCopy({
     faqHeading: "Frequently asked questions",
     closing: {
       heading: "Discuss your programme with a doctor",
-      paragraphs: ["Tell us what you need from your stay and when you hope to travel. Start with a free initial doctor consultation, then review your care plan and quotation before booking."],
+      paragraphs: ["Tell us what you need from your stay and when you hope to travel."],
     },
   },
   faq: [
