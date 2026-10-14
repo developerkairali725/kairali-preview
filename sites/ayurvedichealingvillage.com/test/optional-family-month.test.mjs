@@ -17,7 +17,7 @@ import { validationProblem } from "../lib/lead-validation.ts";
 import { normaliseCampaignPhone } from "../lib/campaign-phone.ts";
 
 const FAMILY = "family-ayurvedic-retreat";
-const NOW = new Date(Date.UTC(2026, 9, 10, 12)); // 10 Oct 2026 → Nov 2026 … Apr 2027, then Flexible
+const NOW = new Date(Date.UTC(2026, 9, 10, 12)); // 10 Oct 2026 → Oct 2026 … Mar 2027 (current month first, AHV-WB.020), then Flexible
 const TOKEN = "00000000-0000-4000-8000-000000000000";
 const C = productionCampaign(FAMILY);
 const FS = resolveSchema(C.form.schema, { campaign: C, locale: "en", now: NOW });
@@ -41,7 +41,7 @@ test("schema: one optional family month select, blank default, the shared six mo
   assert.ok(m, "family form has a preferredMonth field");
   assert.deepEqual([m.type, m.label, m.required, m.defaultValue, m.mapsTo], ["select", "Preferred month", false, "", "message"]);
   assert.deepEqual(m.options, [{ value: "", label: "Select month" }, ...monthOptions({ locale: "en", now: NOW })]);
-  assert.deepEqual(m.options.map((o) => o.value), ["", "2026-11", "2026-12", "2027-01", "2027-02", "2027-03", "2027-04", FLEXIBLE]);
+  assert.deepEqual(m.options.map((o) => o.value), ["", "2026-10", "2026-11", "2026-12", "2027-01", "2027-02", "2027-03", FLEXIBLE]);
   assert.equal(m.options.at(-1).label, "Flexible");
 });
 
@@ -130,7 +130,7 @@ test("synthetic receiver: the longest month label at the field maxima stays with
     for (const o of monthOptions({ locale: "en", now: new Date(Date.UTC(2026, m, 15)) })) if (o.label.length > longest.length) longest = o.label;
   }
   assert.equal(longest.length, "September 2027".length); // the longest English month label
-  const now = new Date(Date.UTC(2027, 2, 1)); // the list contains September 2027
+  const now = new Date(Date.UTC(2027, 3, 1)); // the list (April–September 2027, current month first) contains September 2027
   const S = resolveSchema(C.form.schema, { campaign: C, locale: "en", now });
   const sept = S.steps[0].fields.find((f) => f.name === "preferredMonth").options.find((o) => o.label === "September 2027");
   assert.ok(sept);

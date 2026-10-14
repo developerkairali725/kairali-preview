@@ -121,7 +121,7 @@ test("family form: the R10 familyFields contract — fields, order, required, li
   // the month is optional and starts unanswered (no preference assumed), then the shared six months + Flexible
   assert.deepEqual([f.preferredMonth.type, f.preferredMonth.label, f.preferredMonth.required, f.preferredMonth.defaultValue, f.preferredMonth.mapsTo], ["select", "Preferred month", false, "", "message"]);
   assert.deepEqual(f.preferredMonth.options[0], { value: "", label: "Select month" });
-  assert.deepEqual(f.preferredMonth.options.slice(1).map((o) => o.value), ["2026-11", "2026-12", "2027-01", "2027-02", "2027-03", "2027-04", "flexible"]);
+  assert.deepEqual(f.preferredMonth.options.slice(1).map((o) => o.value), ["2026-10", "2026-11", "2026-12", "2027-01", "2027-02", "2027-03", "flexible"]);
   assert.deepEqual([f.message.type, f.message.label, f.message.required, f.message.maxLength], ["textarea", "Any existing health conditions?", false, 2700]);
   assert.equal(f.message.hint, FAMILY_NOTE);
   assert.equal(COPY[FAMILY].familyFormNote, FAMILY_NOTE);

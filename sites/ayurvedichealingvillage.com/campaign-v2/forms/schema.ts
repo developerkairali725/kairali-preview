@@ -120,7 +120,10 @@ export function programOptions(ctx: OptionContext): Option[] {
   return [{ value: ctx.campaign.programDefault, label: ctx.campaign.programDefault }, { value: ADVISE, label: "Not sure — advise me" }];
 }
 
-/** The next six calendar months (value YYYY-MM, label in the page locale), then "Flexible". */
+/**
+ * Six calendar months starting with the current one (value YYYY-MM, label in the page locale), then "Flexible".
+ * AHV-WB.020.current-month (staff review 9 Oct 2026): the current month is offered too; values and Flexible unchanged.
+ */
 export function monthOptions(ctx: Pick<OptionContext, "locale" | "now">): Option[] {
   let fmt: Intl.DateTimeFormat;
   try {
@@ -130,7 +133,7 @@ export function monthOptions(ctx: Pick<OptionContext, "locale" | "now">): Option
   }
   const now = ctx.now;
   const out: Option[] = Array.from({ length: 6 }, (_, i) => {
-    const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + 1 + i, 1));
+    const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() + i, 1));
     return { value: `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}`, label: fmt.format(d) };
   });
   out.push({ value: FLEXIBLE, label: "Flexible" });
@@ -279,7 +282,7 @@ export const FAMILY_COUNTRY_MAX = 100;
 export const FAMILY_HEALTH_MAX = 2700;
 /**
  * The family form's optional preferred month (owner decision DEC-OPTIONAL-STAY-SELECTORS: optional only): an empty
- * default, so no preference is assumed, then the shared next six months + Flexible. A picked month is one extra line in
+ * default, so no preference is assumed, then the shared six months from the current one + Flexible. A picked month is one extra line in
  * the packed message (forms/adapter.ts familyMessage); unanswered, the request is unchanged.
  */
 export const FAMILY_MONTH_FIELD = "preferredMonth";
