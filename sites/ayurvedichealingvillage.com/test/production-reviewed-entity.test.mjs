@@ -12,6 +12,10 @@ const REVIEWED = new Set([
   'lp-south-india', 'lp-treatment-kerala', 'lp-treatment-kerala-ru', 'lp-treatment-packages',
   'lp-weight-management', 'south-india-cities', 'treatment-kerala', 'weight-management',
 ]);
+// Train D02: exactly the six batch004 routes of HOSPITAL-AUTHORITY-RESOLUTION.json (14 Oct 2026), same entity.
+const BATCH004 = ['monsoon-wellness', 'rejuvenation-detox', 'wellness-kerala', 'brand', 'lp-brand', 'lp-behandlung-kerala'];
+for (const slug of BATCH004) REVIEWED.add(slug);
+const LANGUAGE = { 'lp-treatment-kerala-ru': 'ru', 'lp-behandlung-kerala': 'de' };
 const ORIGIN = 'https://ayurvedichealingvillage.com';
 const entityId = `${ORIGIN}/#organization`;
 const sha = value => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
@@ -29,12 +33,15 @@ function expectedEntity(lang) {
   return { '@context': 'https://schema.org', ...JSON.parse(JSON.stringify(vm.runInNewContext(`(${expression})`, context))) };
 }
 
-test('reviewed allowlist covers exactly 13 of 24 routes; saved baseline covers every route', () => {
-  assert.equal(REVIEWED.size, 13);
+test('reviewed allowlist covers exactly 13 + 6 of 24 routes; saved baseline covers every route', () => {
+  assert.equal(REVIEWED.size, 19);
   assert.equal(PRODUCTION_SLUGS.length, 24);
+  assert.deepEqual([...PRODUCTION_SLUGS].filter(s => !REVIEWED.has(s)).sort(),
+    ['ayurveda-retreat', 'family-ayurvedic-retreat', 'pain-management', 'panchakarma', 'treatment-packages']);
   assert.deepEqual(Object.keys(baseline.hashes).sort(), [...PRODUCTION_SLUGS].sort());
   assert.deepEqual(Object.keys(baseline.integrationRebase.hashes), ['monsoon-wellness']);
-  assert.equal(REVIEWED.has('monsoon-wellness'), false);
+  // Monsoon joined the entity scope in D02; its non-entity graph is still pinned to the rebased hash below.
+  assert.equal(REVIEWED.has('monsoon-wellness'), true);
   for (const slug of REVIEWED) assert.ok(PRODUCTION_SLUGS.includes(slug));
 });
 
@@ -49,7 +56,7 @@ for (const slug of PRODUCTION_SLUGS) {
     if (rebased) assert.equal(baseline.integrationRebase.previous[slug], baseline.hashes[slug]);
     assert.equal(sha(graph.filter(n => n['@id'] !== entityId)), rebased ?? baseline.hashes[slug]);
     if (REVIEWED.has(slug)) {
-      const language = slug === 'lp-treatment-kerala-ru' ? 'ru' : 'en-US';
+      const language = LANGUAGE[slug] ?? 'en-US';
       assert.deepEqual(entities[0], expectedEntity(language));
       assert.deepEqual(graph.at(-1), entities[0]);
       for (const key of ['foundingDate', 'hasCredential', 'award', 'identifier', 'medicalSpecialty', 'priceRange', 'makesOffer', 'sameAs']) {
