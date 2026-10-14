@@ -15,8 +15,16 @@
   function applyHead(R) { window.AHV_COLLECTION_RENDER.applyHead(R); }
   function relatedGroups(links) {
     const groups = new Map();
+    // Locale builds rewrite each href to the locale's own path (/ja/…, /de/translated-slug/), so the
+    // English-path rules below would send every localized link to the fallback group. Group by the
+    // English route the link stands for, read back from the locale's own route table.
+    const englishPath = (path) => {
+      const local = window.AHV_LOCAL_PATHS;
+      if (local) for (const en in local) if (local[en] === path) return en;
+      return path;
+    };
     const labelFor = (href) => {
-      const path = new URL(href, A).pathname;
+      const path = englishPath(new URL(href, A).pathname);
       if (/\/(?:vision-and-mission|social-cultural-environmental-commitment|awards-and-accreditations|accreditations)\//.test(path)) return 'About Kairali';
       if (/\/(?:kairali-hospitality|arogya-kendra|arogya-shala|kairali-ayurvedic-centre|ayurvedic-franchise|kairali-institute-of-ayurveda-and-panchakarma-therapy)\//.test(path)) return 'Kairali Group & education';
       if (/\/(?:new-to-|why-|live-to-|ayurveda-retreats-for-everyone|what-is-)/.test(path)) return 'Ayurveda & yoga knowledge';
