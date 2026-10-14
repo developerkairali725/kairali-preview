@@ -5,6 +5,8 @@
 // From the copy: title and description. Added: FAQPage for the FAQ the page shows (integrations/seo.ts), and a
 // two-item BreadcrumbList on every other route (AHV-WB *.breadcrumb-schema, 14 Oct 2026) matching its visible
 // navigation: the header logo links to the site home, and the page is named by its own visible H1 (no new copy).
+// Also the site's existing Organization/Hospital entity, once per route: on the reviewed routes (REVIEWED_ENTITY_ROUTES)
+// and on the routes in organization.ts ORGANIZATION_ROUTES, whose WebPage also names it as publisher (14 Oct 2026).
 //
 // Erasable TypeScript only (node --test imports this file).
 
@@ -12,6 +14,7 @@ import type { Metadata } from "next";
 import type { CampaignConfig } from "../kit/types.ts";
 import { faqPage, jsonLdScript } from "../integrations/seo.ts";
 import { OG_IMAGE, ROUTES, SITE_ORIGIN, type ProductionSlug } from "./bindings.ts";
+import { ORGANIZATION_ID, ORGANIZATION_ROUTES } from "./organization.ts";
 
 import localeRoutes from "../../l10n/routes.json" with { type: "json" };
 
@@ -103,7 +106,13 @@ export function productionJsonLd(slug: ProductionSlug, c: CampaignConfig): objec
   };
   const faq = faqPage(c, b.locale ?? "en");
   const nodes: object[] = faq ? [page, faq] : [page];
-  if (REVIEWED_ENTITY_ROUTES.has(slug)) nodes.push(reviewedOrganization(b.locale ?? "en"));
+  // Train B (15 Oct 2026): C01/C02/D02 (REVIEWED_ENTITY_ROUTES) and D01 (ORGANIZATION_ROUTES) add the same entity
+  // (@id #organization); cleansing-centre is in both, so the node is emitted once, as the main-site parity node.
+  if (ORGANIZATION_ROUTES.has(slug)) {
+    // The hospital that publishes the page; the same @id as the English graph (schema.ts ORG_ID), so one entity.
+    page.publisher = { "@id": ORGANIZATION_ID };
+  }
+  if (REVIEWED_ENTITY_ROUTES.has(slug) || ORGANIZATION_ROUTES.has(slug)) nodes.push(reviewedOrganization(b.locale ?? "en"));
   return nodes;
 }
 
