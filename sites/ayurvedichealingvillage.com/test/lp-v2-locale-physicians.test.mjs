@@ -17,7 +17,7 @@ const originalTitles={de:'Ihr Ayurveda-Arzt',ru:'Ваш аюрведически
 const sha=x=>createHash('sha256').update(x).digest('hex');
 // Owner decisions, 14 Oct 2026 (AHV-WB.042.change, AHV-WB.299.change), reversed exactly before the original config pins:
 // the weight routes' one-card Rupak Mann Stories band and the Panchakarma 14–28 night range.
-const WEIGHT_STORY={heading:'Hear from people who have stayed at Kairali',body:'Watch a patient describe her stay in her own words. Individual experiences vary.',films:[{title:'Watch Rupak Mann’s experience',href:'https://www.youtube.com/watch?v=D3QLxKpwtJs',thumb:{src:'/ahv/assets/img/video-thumb-D3QLxKpwtJs.webp',width:480,height:360}}]};
+const WEIGHT_STORY={heading:'Hear from people who have stayed at Kairali',body:'Watch a patient describe their stay in their own words. Individual experiences vary.',films:[{title:'Watch Rupak Mann’s experience',href:'https://www.youtube.com/watch?v=D3QLxKpwtJs',thumb:{src:'/ahv/assets/img/video-thumb-D3QLxKpwtJs.webp',width:480,height:360}}]};
 const PANCHAKARMA_RANGE={'panchakarma':3,'lp-panchakarma':2};
 const reverseOwnerDecisions=(slug,c)=>{
  if(slug==='weight-management'||slug==='lp-weight-management'){assert.deepEqual(c.page.stories,WEIGHT_STORY,slug);delete c.page.stories;}

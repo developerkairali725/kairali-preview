@@ -50,7 +50,7 @@
     },
     "campaign-v2/production/pages/weight-management.ts": {
       "beforeSHA256": "e424c22f0d71947dc7c3cfddf22e456dbd1196a1f436c86f652670b065f640ca",
-      "afterSHA256": "f69ac1682072246301bb46d2b0ac84a936ab6ca63e2bccf38014caf19416c234",
+      "afterSHA256": "f38a9fae08910ffae796c3b6cb61de14cf9bcd71b02530e6a2f9f54c9e9923b0",
       "edits": [
         {
           "before": "// Stories omitted deliberately: no patient film is used on a weight page (audit: no testimonial outcome reproduced).\n",
@@ -58,13 +58,13 @@
         },
         {
           "before": "",
-          "after": "    stories: {\n      heading: \"Hear from people who have stayed at Kairali\",\n      body: \"Watch a patient describe her stay in her own words. Individual experiences vary.\",\n      films: [\n        { title: \"Watch Rupak Mann’s experience\", href: \"https://www.youtube.com/watch?v=D3QLxKpwtJs\", thumb: { src: \"/ahv/assets/img/video-thumb-D3QLxKpwtJs.webp\", width: 480, height: 360 } },\n      ],\n    },\n"
+          "after": "    stories: {\n      heading: \"Hear from people who have stayed at Kairali\",\n      body: \"Watch a patient describe their stay in their own words. Individual experiences vary.\",\n      films: [\n        { title: \"Watch Rupak Mann’s experience\", href: \"https://www.youtube.com/watch?v=D3QLxKpwtJs\", thumb: { src: \"/ahv/assets/img/video-thumb-D3QLxKpwtJs.webp\", width: 480, height: 360 } },\n      ],\n    },\n"
         }
       ]
     },
     "campaign-v2/production/pages/lp-weight-management.ts": {
       "beforeSHA256": "24679b7a5d78ad17baa4afcc55b9f19555617995afbd1a2f818b72823df3044f",
-      "afterSHA256": "fe53a453014a752ef398730a74dd18a5fcb4ca281f576fae7bf994078d5cc45c",
+      "afterSHA256": "cc180a656593f303f06414cb7baaa6944bc46ee855d5bb714fc3d6c36a345576",
       "edits": [
         {
           "before": "// No `stories`: patient films could read as weight-outcome testimonials on this route (fact audit excludes those).\n",
@@ -72,7 +72,7 @@
         },
         {
           "before": "",
-          "after": "    stories: {\n      heading: \"Hear from people who have stayed at Kairali\",\n      body: \"Watch a patient describe her stay in her own words. Individual experiences vary.\",\n      films: [\n        { title: \"Watch Rupak Mann’s experience\", href: \"https://www.youtube.com/watch?v=D3QLxKpwtJs\", thumb: { src: \"/ahv/assets/img/video-thumb-D3QLxKpwtJs.webp\", width: 480, height: 360 } },\n      ],\n    },\n"
+          "after": "    stories: {\n      heading: \"Hear from people who have stayed at Kairali\",\n      body: \"Watch a patient describe their stay in their own words. Individual experiences vary.\",\n      films: [\n        { title: \"Watch Rupak Mann’s experience\", href: \"https://www.youtube.com/watch?v=D3QLxKpwtJs\", thumb: { src: \"/ahv/assets/img/video-thumb-D3QLxKpwtJs.webp\", width: 480, height: 360 } },\n      ],\n    },\n"
         }
       ]
     },

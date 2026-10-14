@@ -84,7 +84,7 @@ export default defineCopy({
     },
     stories: {
       heading: "Hear from people who have stayed at Kairali",
-      body: "Watch a patient describe her stay in her own words. Individual experiences vary.",
+      body: "Watch a patient describe their stay in their own words. Individual experiences vary.",
       films: [
         { title: "Watch Rupak Mann’s experience", href: "https://www.youtube.com/watch?v=D3QLxKpwtJs", thumb: { src: "/ahv/assets/img/video-thumb-D3QLxKpwtJs.webp", width: 480, height: 360 } },
       ],
