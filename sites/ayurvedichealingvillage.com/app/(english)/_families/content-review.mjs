@@ -1,4 +1,5 @@
 import { describeHomeImages } from './home-image-descriptions.mjs';
+import { withRoom209Area } from './room209-area.mjs';
 import { removeHomeVillaRates } from './home-villa-rates.mjs';
 import {offersFlow} from './offers-flow.mjs';
 import fs from 'node:fs';
@@ -21,13 +22,13 @@ export function bookingLabelsFor(locale = 'en') {
 export function reviewCopyFor(route, locale = 'en') {
   if (route === '/villa-raag/') return undefined;
   const edits = copy[route] || [];
-  if (locale === 'en') return edits;
+  if (locale === 'en') return withRoom209Area(edits, route, locale);
   if (!cache.has(locale)) {
     const file = path.join(process.cwd(), 'l10n/generated', locale + '.json');
     const generated = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {};
     cache.set(locale, generated.data?.['content-review-copy'] || {});
   }
-  return cache.get(locale)[route] || [];
+  return withRoom209Area(cache.get(locale)[route] || [], route, locale);
 }
 const decode = s => s.replace(/&(?:amp|lt|gt|quot|apos|nbsp|ndash|mdash|rsquo|lsquo|rdquo|ldquo|#\d+|#x[\da-f]+);/gi, x => {
   const n = x.slice(1,-1); const names = {amp:'&',lt:'<',gt:'>',quot:'"',apos:"'",nbsp:' ',ndash:'–',mdash:'—',rsquo:'’',lsquo:'‘',rdquo:'”',ldquo:'“'};
