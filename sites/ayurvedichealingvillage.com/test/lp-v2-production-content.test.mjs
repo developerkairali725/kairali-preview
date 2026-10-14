@@ -400,11 +400,15 @@ test("locked facts: WhatsApp +91 92898 38797 and info@kairali.com; the wrong …
   for (const slug of PRODUCTION_SLUGS) assert.doesNotMatch(pageStrings(C[slug]).join(" "), /\+?\s?91[\s-]?\d{4,5}[\s-]?\d{3,6}|@[a-z]+\.[a-z]+/i, `${slug}: contact details render from site.ts only`);
 });
 
-test("owner facts: the 14–21 night Panchakarma programme as published; no year or opening date in the authored copy", () => {
+test("owner facts: the 14–21 night Panchakarma programme as published; only the owner-approved Monsoon season may carry a year", () => {
   assert.match(C.panchakarma.seo.description, /14–21 night/);
   assert.ok(C.panchakarma.page.lead.paragraphs.some((p) => p.includes("The published programme is a 14–21 night stay")));
   assert.ok(C.panchakarma.faq.some((f) => f.a.startsWith("The published Panchakarma programme is a 14–21 night stay.")));
-  for (const slug of PRODUCTION_SLUGS) for (const { path: at, text } of allText(C[slug])) assert.doesNotMatch(text, /\b(18|19|20)\d{2}\b/, `${slug} ${at}`);
+  for (const slug of PRODUCTION_SLUGS) for (const { path: at, text } of allText(C[slug])) {
+    // Owner, 14 October 2026: exactly the month-only Monsoon season; no other year or founding-date exception.
+    const reviewed = slug === "monsoon-wellness" ? text.replaceAll("July–August 2027", "July–August") : text;
+    assert.doesNotMatch(reviewed, /\b(18|19|20)\d{2}\b/, `${slug} ${at}`);
+  }
   for (const slug of BATCH1.concat(["pain-management", "family-ayurvedic-retreat"])) assert.equal(C[slug].hero.overline, "Doctor-guided Ayurveda · Palakkad, Kerala");
 });
 

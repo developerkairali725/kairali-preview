@@ -167,7 +167,11 @@ export function firstScreenPoster(snapshotHtml) {
 // Monsoon: saved 2026-10-12 trace confirms the phone hero is the only LCP candidate.
 // Saved EN/DE traces identify programme hero DIV images as final LCP candidates for these three routes.
 const IMAGE_LED_FIRST_SCREEN = new Set(["/beauty-care-and-eye-care/", "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/", "/immunity-enhancement-executive-health-assessment-therapy/", "/revitalizing-and-strengthening/", "/womens-hormonal-balance-endocrine-therapy/", "/treatment-for-arthritis-and-spondylitis/", "/treatment-for-cervical-spondylosis/", "/treatment-for-chronic-back-pain/", "/treatment-for-diabetes/", "/treatment-for-facial-paralysis/", "/treatment-for-nervous-disability/", "/treatment-for-psoriasis/", "/treatment-for-sinusitis-and-migraine/", "/treatment-for-slip-disc/", "/treatment-for-spondylitis/", "/treatment-to-remove-stress-and-strain/", "/panchakarma-therapy/", "/post-pregnancy-health-programme/", "/preventive-and-regenerative-treatment/", "/karkidaka-chikitsha-or-monsoon-wellness.html", "/digestive-wellness-gut-health-yoga-therapy/", "/weight-loss-programme/", "/offers/", "/treatment-for-bronchial-diseases/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/"]);
-export function imageLedFirstScreen(routePath) {
+export function imageLedFirstScreen(routePath, locale = "en") {
+  // Arabic Monsoon: the 14 Oct trace pairs late font loading with a shift above the hero,
+  // increasing its visible area and creating a later live-image LCP at snapshot retirement.
+  // Keep its existing first-paint faces; every other image-led route/locale retains deferral.
+  if (routePath === "/karkidaka-chikitsha-or-monsoon-wellness.html" && locale === "ar") return false;
   return IMAGE_LED_FIRST_SCREEN.has(String(routePath || ""));
 }
 
