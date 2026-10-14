@@ -29,6 +29,9 @@ function reverse(text, from, to) {
   return text.replace(from, to);
 }
 const baseline = reverse(source, delta.newFormBlock, delta.oldFormBlock);
+// A later approved delta (test/fixtures/whatsapp-prefill-delta.json): reversed exactly before the baseline hash only.
+const whatsAppEdits = JSON.parse(read("test/fixtures/whatsapp-prefill-delta.json")).edits["campaign-v2/sections/interactive/EnquiryForm.tsx"];
+const beforeWhatsApp = (text) => [...whatsAppEdits].reverse().reduce((t, e) => reverse(t, e.to, e.from), text);
 function loadForm(formSource) {
   const cache = new Map();
   function load(filename) {
@@ -96,7 +99,7 @@ test("non-production EN/DE/RU rendering retains its original privacy link and ex
 
 test("only approved form/CSS deltas change; generated CSS equals its authored sources", () => {
   const digest = (s) => crypto.createHash("sha256").update(s).digest("hex");
-  assert.equal(digest(baseline), delta.baselineHashes["campaign-v2/sections/interactive/EnquiryForm.tsx"]);
+  assert.equal(digest(beforeWhatsApp(baseline)), delta.baselineHashes["campaign-v2/sections/interactive/EnquiryForm.tsx"]);
   for (const file of ["campaign-v2/sections/sections.css", "campaign-v2/production/document.css"]) {
     const css = read(file);
     // Train A batch 6: remove only the exact Russian phone hero-CTA delta (AHV-WB.530) from the generated bundle first.
