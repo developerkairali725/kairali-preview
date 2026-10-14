@@ -34,6 +34,8 @@ export default defineCopy({
       paragraphs: [
         "Ongoing discomfort can quietly reorganise your day around it. A useful first step is an honest conversation: tell the doctor where you feel discomfort, how long it has been present and which activities have become difficult.",
         "At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, your Ayurvedic doctor assesses your needs before prescribing care. Together you discuss realistic goals, the proposed therapies and how progress would be reviewed during a stay.",
+        // AHV-WB.409.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.
+        "During a stay, your prescribed sessions and physician reviews share one daily routine, with time between sessions to rest in your villa and move at a pace that suits you.",
       ],
       points: [
         "Back or neck discomfort that affects work or sleep",

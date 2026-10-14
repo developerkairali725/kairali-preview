@@ -38,6 +38,8 @@ export default defineCopy({
       paragraphs: [
         "If you are travelling from Bengaluru, Chennai, Hyderabad or elsewhere in South India, start with the care you need and the time you can set aside. A residential Ayurveda programme gives you one place to follow your prescribed treatment and daily routine during your stay.",
         "At Kairali – The Ayurvedic Healing Village, your doctor assesses your health history and explains the proposed programme. Confirm the recommended stay and accommodation before arranging travel to Palakkad.",
+        // AHV-WB.318.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.
+        "Once you arrive, your days follow one routine in one place: therapies your doctor plans, meals from the hospital kitchen and a villa in the village gardens where you can rest between appointments.",
       ],
       points: [
         "You live in Bengaluru, Chennai, Hyderabad or nearby",
