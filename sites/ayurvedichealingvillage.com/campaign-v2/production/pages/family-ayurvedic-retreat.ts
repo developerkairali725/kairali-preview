@@ -32,7 +32,7 @@ export default defineCopy({
   page: {
     lead: {
       heading: "A family Ayurveda retreat, with care planned for each person.",
-      paragraphs: ["A family Ayurveda retreat in Kerala can bring your own wellbeing plans together with a parent’s care, a partner’s programme or time shared as companions. At Kairali’s NABH-accredited Ayurvedic hospital in Palakkad, each person’s assessment guides their care. Plan the travel and accommodation together, while leaving room for different therapies, routines and lengths of stay."],
+      paragraphs: ["A family Ayurveda retreat in Kerala can bring your own wellbeing plans together with a parent’s care, a partner’s programme or time shared as companions. At Kairali’s NABH-accredited Ayurvedic hospital in Palakkad, each person’s assessment guides their care. Plan the travel and accommodation together, while leaving room for different therapies, routines and lengths of stay.", "What your stay offers: travel and accommodation planned together, care planned for each person, and space for rest and time together in the gardens."],
       points: [
         "Travel with your partner, parents or several generations",
         "Discuss each person’s health, current treatment and goals separately",

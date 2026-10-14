@@ -37,6 +37,7 @@ export default defineCopy({
       paragraphs: [
         "This is Kairali – The Ayurvedic Healing Village in Palakkad, Kerala. Our NABH-accredited Ayurvedic hospital offers residential care guided by individual assessment.",
         "Cleansing, detoxification and rejuvenation appear in different Ayurvedic programme names, and they do not all describe the same care. Bring your health history and goals to the conversation, so your doctor can explain the programme that may be appropriate for you.",
+        "What your stay offers: a doctor who explains the programme that may be appropriate for you, and a slower pace in the village gardens, with prescribed care, meals and quiet time setting the rhythm of your day.",
       ],
       points: [
         "You searched for a cleansing or detox programme",

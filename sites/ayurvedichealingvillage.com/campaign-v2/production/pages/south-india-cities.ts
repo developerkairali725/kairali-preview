@@ -41,6 +41,7 @@ export default defineCopy({
       paragraphs: [
         "If you are comparing Ayurvedic treatment in South India, begin with the location and the care you need. Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Your enquiry is for a stay at this one property, wherever you are travelling from.",
         "You can start the conversation before choosing flights, trains or other transport. Discuss your health history first, then bring the programme, villa and travel plans together.",
+        "What your stay offers: one destination in Palakkad for your care, sessions delivered by trained therapists as prescribed by your Ayurvedic doctor, and time for suitable yoga or meditation and rest, kept separate from your travel days.",
       ],
       points: [
         "You are travelling from elsewhere in South India",

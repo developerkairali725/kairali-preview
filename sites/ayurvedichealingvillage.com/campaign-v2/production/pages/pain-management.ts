@@ -30,7 +30,7 @@ export default defineCopy({
   page: {
     lead: {
       heading: "Care that starts with your everyday life",
-      paragraphs: ["Planning Ayurvedic pain management starts with understanding how pain affects walking, sitting or sleeping. At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, your consultation brings together your symptoms, medical history and current treatment. Discuss whether a residential Ayurveda programme is right for you, and the practical help you would need during a stay."],
+      paragraphs: ["Planning Ayurvedic pain management starts with understanding how pain affects walking, sitting or sleeping. At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, your consultation brings together your symptoms, medical history and current treatment. Discuss whether a residential Ayurveda programme is right for you, and the practical help you would need during a stay.", "What your stay offers: a doctor who starts with how pain affects walking, sitting or sleeping, practical help discussed before you travel, and a quiet garden setting with room to pause between appointments rather than rush."],
       points: [
         "Back pain, slipped disc and associated discomfort",
         "Joint pain, osteoarthritis and rheumatoid arthritis",
