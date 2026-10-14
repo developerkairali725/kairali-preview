@@ -20,7 +20,7 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { htmlToDOM, Element, Text } from "html-react-parser";
 import ts from "typescript";
-import { reverseBatch8Config } from "./fixtures/train-a-batch8-reverse.mjs";
+import { reverseTrainAConfig } from "./fixtures/train-a-20261014.mjs";
 
 const require = createRequire(import.meta.url);
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -139,8 +139,9 @@ test("only paragraphs were appended: every original card, heading, link, paragra
     });
     // With the added paragraphs removed, the whole campaign is the baseline's: CTA, form, FAQ, metadata and the rest.
     cardsNow.forEach((card, i) => { card.paragraphs = card.paragraphs.slice(0, cardsWas[i].paragraphs.length); });
-    // Train A batch 8 (AHV-WB.015.change): reverse only its exact Stories addition on treatment-packages.
-    reverseBatch8Config(slug, now);
+    // Train A: reverse exactly every merged candidate's recorded config change (batch 8's AHV-WB.015.change Stories
+    // addition was rejected and excluded, so none remains on these routes today).
+    reverseTrainAConfig(slug, now);
     same(now, was, `${slug}: nothing else changed`);
   }
   const links = (slug) => NOW_C[slug].page.offering.cards.flatMap((c) => c.links ?? []).length;

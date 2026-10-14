@@ -16,51 +16,13 @@
     }
    ]
   },
-  "campaign-v2/production/sections/guest-video-policy.mjs": {
-   "beforeSHA256": "177ad1650b10c2826e8bf956ec3c6214eb6bc825ff394e4d3b94c921e3ee8333",
-   "afterSHA256": "b344bec35bf8d9687168058d660cfcec4ef1f44d233fc70276f8138e850bd688",
-   "replacements": [
-    {
-     "before": "",
-     "after": "  // AHV-WB.015/039.change (standing owner authority for on-page guest-video playback, 10 Oct 2026): the two routes that\n  // now render the same consented Stories films. Same consent gate, same films; nothing else changes.\n  \"/ayurvedic-treatment-packages.html\",\n  \"/panchkarma-treatment.html\",\n"
-    }
-   ]
-  },
-  "campaign-v2/production/pages/treatment-packages.ts": {
-   "beforeSHA256": "6e6daa604b6b010c483a22ca539f654b15de3c0ac387ed51171a098572721a06",
-   "afterSHA256": "ba8e69076a712a775411c67123fd7dbf2ff3b31b072a2cc6ef588b72e402b67b",
-   "replacements": [
-    {
-     "before": "",
-     "after": "    // AHV-WB.015/039.change: the three consented films of /pain-management.html (pages/pain-management.ts), with the\n    // same titles and thumbnails: links to YouTube. Names only as the films' own titles; no guest country (unsourced).\n    stories: {\n      heading: \"Hear from people who have stayed at Kairali\",\n      body: \"Watch people describe their stays in their own words. Individual experiences vary.\",\n      films: [\n        { title: \"Watch Ms. Supriya’s experience\", href: \"https://www.youtube.com/watch?v=3vWviQfW1Ug\", thumb: { src: \"/ahv/images/7ed7fe732c79427d6e00bc42d720a2a3b0b6e5c5ce2e25e260b53823a33ed17d.webp\", width: 480, height: 360 } },\n        { title: \"Watch Michaela & Jan’s experience\", href: \"https://www.youtube.com/watch?v=4x01PtWfNnk\", thumb: { src: \"/ahv/images/5e86ab8760fb7570f517bfe69abfbcaa8a0168127e03d927656a69155934faf0.webp\", width: 640, height: 480 } },\n        { title: \"Watch Corine’s experience\", href: \"https://www.youtube.com/watch?v=DcTMckQD3rc\", thumb: { src: \"/ahv/images/d29b9a9547272822619b085b78fee54550d828dd5e1792486eef0b6e102d4351.webp\", width: 480, height: 360 } },\n      ],\n    },\n"
-    }
-   ]
-  },
   "campaign-v2/production/pages/panchakarma.ts": {
    "beforeSHA256": "8418739b7bcf46776ea436c96135390a7f896dab5b507c96be56ede66caa3db4",
-   "afterSHA256": "229e63c4eeb578964d747609403965aed4192569381b70a3839a80635d011cc8",
+   "afterSHA256": "ea33c85af98143fbe4a87323bdb2cabe43c7d87c98b388cd3ea133fa1dfd16cd",
    "replacements": [
     {
      "before": "",
      "after": "      // AHV-WB.051.change: the four approved villa cards of pages/pain-management.ts, unchanged (no prices).\n      villas: [\n        { name: \"Deluxe Villa\", body: \"A king-size bed and private bathroom, with Wi-Fi, TV and air conditioning.\", link: { label: \"Explore Deluxe Villa\", href: \"/deluxe-villa/\" } },\n        { name: \"Classic Villa\", body: \"Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.\", link: { label: \"Explore Classic Villa\", href: \"/classic-villa/\" } },\n        { name: \"Royal Villa\", body: \"A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.\", link: { label: \"Explore Royal Villa\", href: \"/royal-villa/\" } },\n        { name: \"Maharaja Suite\", body: \"A king-size bed, a living area with a couch and garden access in a premium location.\", link: { label: \"Explore Maharaja Suite\", href: \"/maharaja-suite/\" } },\n      ],\n"
-    },
-    {
-     "before": "",
-     "after": "    // AHV-WB.015/039.change: the three consented films of /pain-management.html (pages/pain-management.ts), with the\n    // same titles and thumbnails: links to YouTube. Names only as the films' own titles; no guest country (unsourced).\n    stories: {\n      heading: \"Hear from people who have stayed at Kairali\",\n      body: \"Watch people describe their stays in their own words. Individual experiences vary.\",\n      films: [\n        { title: \"Watch Ms. Supriya’s experience\", href: \"https://www.youtube.com/watch?v=3vWviQfW1Ug\", thumb: { src: \"/ahv/images/7ed7fe732c79427d6e00bc42d720a2a3b0b6e5c5ce2e25e260b53823a33ed17d.webp\", width: 480, height: 360 } },\n        { title: \"Watch Michaela & Jan’s experience\", href: \"https://www.youtube.com/watch?v=4x01PtWfNnk\", thumb: { src: \"/ahv/images/5e86ab8760fb7570f517bfe69abfbcaa8a0168127e03d927656a69155934faf0.webp\", width: 640, height: 480 } },\n        { title: \"Watch Corine’s experience\", href: \"https://www.youtube.com/watch?v=DcTMckQD3rc\", thumb: { src: \"/ahv/images/d29b9a9547272822619b085b78fee54550d828dd5e1792486eef0b6e102d4351.webp\", width: 480, height: 360 } },\n      ],\n    },\n"
-    }
-   ]
-  },
-  "campaign-v2/production/pages/south-india-cities.ts": {
-   "beforeSHA256": "d6d2ca92d1dc5c08f9278758abcb34ef9254e0423cec3aa9aa005281a2332a98",
-   "afterSHA256": "35fe3ab4aac98e11f68f58d12950e2bebdde85c897bbedd3dcf373340510628e",
-   "replacements": [
-    {
-     "before": "// distances, travel times or flight claims (the brief states none); no offers. \"30 villas\" is the brief's own fact.\n",
-     "after": "// travel times or flight claims; no offers. \"30 villas\" is the brief's own fact. The only distances are the three\n// verified airport road distances (AHV-WB.253.change; WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001 airport-site\n// VERIFICATION.json PASS, the site's FAQ wording \"approximately N km by road\"). Railway-station distance, time and\n// pick-up are not stated here: they are not covered by that verification.\n"
-    },
-    {
-     "before": "    { q: \"Which airport or station should I use?\", a: \"Share your starting point and proposed itinerary with patient care. Ask about suitable arrival options and onward travel to the Healing Village. Confirm any transfer, timing and cost for your particular trip.\" },\n",
-     "after": "    { q: \"Which airport or station should I use?\", a: \"The nearest airport is Coimbatore International Airport (CJB), approximately 66 km by road. Cochin International Airport (COK) is approximately 114 km and Calicut International Airport (CCJ) approximately 116 km by road. Share your starting point and proposed itinerary with patient care. Ask about suitable arrival options and onward travel to the Healing Village. Confirm any transfer, timing and cost for your particular trip.\" },\n"
     }
    ]
   },
@@ -143,22 +105,6 @@
  },
  "configDeltas": [
   {
-   "slug": "treatment-packages",
-   "op": "delete",
-   "path": [
-    "page",
-    "stories"
-   ]
-  },
-  {
-   "slug": "panchakarma",
-   "op": "delete",
-   "path": [
-    "page",
-    "stories"
-   ]
-  },
-  {
    "slug": "panchakarma",
    "op": "delete",
    "path": [
@@ -166,16 +112,6 @@
     "place",
     "villas"
    ]
-  },
-  {
-   "slug": "south-india-cities",
-   "op": "set",
-   "path": [
-    "faq",
-    2,
-    "a"
-   ],
-   "value": "Share your starting point and proposed itinerary with patient care. Ask about suitable arrival options and onward travel to the Healing Village. Confirm any transfer, timing and cost for your particular trip."
   },
   {
    "slug": "lp-pain-management",
@@ -243,5 +179,6 @@
    "width": 1200,
    "height": 630
   }
- }
+ },
+ "trainAExclusions": "Train A integration (14 Oct 2026): the review (wf-candidates-20261014/train-a-batch8/REVIEW.json) rejected AHV-WB.015.change, AHV-WB.039.change and AHV-WB.253.change, so their exact deltas were removed from the source and from this record: the treatment-packages and panchakarma Stories blocks, the two guest-video allowlist routes, both south-india-cities replacements and their three config deltas. panchakarma.ts afterSHA256 now covers only the AHV-WB.051.change villa cards. Every other entry is unchanged."
 }

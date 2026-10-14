@@ -69,17 +69,6 @@ export default defineCopy({
         { name: "Maharaja Suite", body: "A king-size bed, a living area with a couch and garden access in a premium location.", link: { label: "Explore Maharaja Suite", href: "/maharaja-suite/" } },
       ],
     },
-    // AHV-WB.015/039.change: the three consented films of /pain-management.html (pages/pain-management.ts), with the
-    // same titles and thumbnails: links to YouTube. Names only as the films' own titles; no guest country (unsourced).
-    stories: {
-      heading: "Hear from people who have stayed at Kairali",
-      body: "Watch people describe their stays in their own words. Individual experiences vary.",
-      films: [
-        { title: "Watch Ms. Supriya’s experience", href: "https://www.youtube.com/watch?v=3vWviQfW1Ug", thumb: { src: "/ahv/images/7ed7fe732c79427d6e00bc42d720a2a3b0b6e5c5ce2e25e260b53823a33ed17d.webp", width: 480, height: 360 } },
-        { title: "Watch Michaela & Jan’s experience", href: "https://www.youtube.com/watch?v=4x01PtWfNnk", thumb: { src: "/ahv/images/5e86ab8760fb7570f517bfe69abfbcaa8a0168127e03d927656a69155934faf0.webp", width: 640, height: 480 } },
-        { title: "Watch Corine’s experience", href: "https://www.youtube.com/watch?v=DcTMckQD3rc", thumb: { src: "/ahv/images/d29b9a9547272822619b085b78fee54550d828dd5e1792486eef0b6e102d4351.webp", width: 480, height: 360 } },
-      ],
-    },
     stay: {
       heading: "What your Panchakarma stay includes",
       paragraphs: ["Stay in an independent villa at Kairali, an NABH-accredited Ayurvedic hospital with gardens and space to rest between appointments. Your programme brings care and daily routines together:"],

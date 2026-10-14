@@ -42,8 +42,7 @@ const D5 = ["lead", "physicians", "offering", "pathway", "stay"];
 const D7 = ["lead", "physicians", "offering", "pathway", "place", "stories", "stay"];
 /** Every route's new order (a route shows only the bands its copy writes). */
 const NEW_ORDER = {
-  // AHV-WB.015/039.change: treatment-packages and panchakarma now carry the consented Stories films (A8).
-  "treatment-packages": A8, "panchakarma": A8, "pain-management": A8, "family-ayurvedic-retreat": A8,
+  "treatment-packages": A7, "panchakarma": A7, "pain-management": A8, "family-ayurvedic-retreat": A8,
   "monsoon-wellness": C8, "rejuvenation-detox": C8, "ayurveda-retreat": B7, "wellness-kerala": B7, "cleansing-centre": A8,
   "treatment-kerala": A8, "south-india-cities": D7, "brand": D7, "weight-management": C7, "lp-south-india": D7,
   "lp-hospital-kerala": A8, "lp-brand": D5, "lp-cleansing-centre": A8, "lp-pain-management": A8, "lp-panchakarma": D7,

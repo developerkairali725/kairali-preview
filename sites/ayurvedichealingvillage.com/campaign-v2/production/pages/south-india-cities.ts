@@ -1,10 +1,7 @@
 // /Ayurveda_Treatment_Neo_S.India_Cities.html — next-five/south-india-cities.md, variant D (Direct), buyer: South
 // India searcher planning travel to the one Palakkad property. Copy adapted from the reviewed brief for sales clarity
 // (kairali-akshar-marketing-science CREATE+REVIEW); facts only from the brief and data/doctors.ts. No city branches,
-// travel times or flight claims; no offers. "30 villas" is the brief's own fact. The only distances are the three
-// verified airport road distances (AHV-WB.253.change; WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001 airport-site
-// VERIFICATION.json PASS, the site's FAQ wording "approximately N km by road"). Railway-station distance, time and
-// pick-up are not stated here: they are not covered by that verification.
+// distances, travel times or flight claims (the brief states none); no offers. "30 villas" is the brief's own fact.
 import { defineCopy } from "../copy.ts";
 import { story } from "../stories.ts";
 
@@ -119,7 +116,7 @@ export default defineCopy({
   faq: [
     { q: "Is the treatment centre in my home city?", a: "This page is for Kairali – The Ayurvedic Healing Village in Palakkad, Kerala, and your enquiry is about care at that property. Tell the team where you are travelling from so the location and travel arrangements are clear from the start." },
     { q: "Can I speak with the team before making travel bookings?", a: "Yes. Begin with the initial consultation and a discussion of your needs, available time and preferred dates. Confirm the programme, accommodation and admission arrangements before committing to transport." },
-    { q: "Which airport or station should I use?", a: "The nearest airport is Coimbatore International Airport (CJB), approximately 66 km by road. Cochin International Airport (COK) is approximately 114 km and Calicut International Airport (CCJ) approximately 116 km by road. Share your starting point and proposed itinerary with patient care. Ask about suitable arrival options and onward travel to the Healing Village. Confirm any transfer, timing and cost for your particular trip." },
+    { q: "Which airport or station should I use?", a: "Share your starting point and proposed itinerary with patient care. Ask about suitable arrival options and onward travel to the Healing Village. Confirm any transfer, timing and cost for your particular trip." },
     { q: "How much time should I set aside?", a: "The recommended stay depends on your assessment and programme. Ask about preparation and follow-up as well as the residential duration. Allow separately for travel rather than assuming it is included in the programme length." },
     { q: "Can I bring a family member or companion?", a: "Discuss who will travel and whether each person wants treatment. Confirm the care, meals, occupancy, support and charges that apply to each traveller. A shared booking does not necessarily mean an identical programme." },
     { q: "What should I bring for the doctor?", a: "Bring relevant medical reports, prescriptions and details of supplements or earlier treatment. Tell the team about allergies, dietary advice, mobility and other practical needs before arrival." },

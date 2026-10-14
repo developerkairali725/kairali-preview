@@ -195,9 +195,8 @@ test("composition: every variant in decision order; the doctors right after the 
   // Owner, 10 Oct 2026: on the first four routes (variant A; batch 1), then the remaining 20 (batch 2), the same doctors
   // section follows the lead; this supersedes the 8 Oct "doctors directly before the enquiry" placement on these routes.
   const firstFour = {
-    // AHV-WB.015/039.change: both now carry the consented Stories films, in variant A's own place.
-    "treatment-packages": ["lead", "physicians", "offering", "pathway", "rest", "place", "stories", "stay"],
-    "panchakarma": ["lead", "physicians", "offering", "pathway", "rest", "place", "stories", "stay"],
+    "treatment-packages": ["lead", "physicians", "offering", "pathway", "rest", "place", "stay"],
+    "panchakarma": ["lead", "physicians", "offering", "pathway", "rest", "place", "stay"],
     "pain-management": ["lead", "physicians", "offering", "pathway", "rest", "place", "stories", "stay"],
     "family-ayurvedic-retreat": ["lead", "physicians", "offering", "pathway", "rest", "place", "stories", "stay"],
   };
