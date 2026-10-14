@@ -101,7 +101,7 @@ test("design-view serves the snapshot's first-paint styles phone-only; faces ski
   assert.match(VIEW, /<SnapshotStyles key=\{`\$\{locale\}:\$\{route.path\}`\} assets=\{snapshotAssets\}/);
   assert.match(VIEW, /css, media: narrowMedia/);
   assert.match(VIEW, /rel="preload" as="font" type=\{href\.endsWith\("\.woff2"\) \? "font\/woff2" : "font\/ttf"\} crossOrigin="anonymous" href=\{href\} media=\{narrowMedia\}/);
-  assert.match(VIEW, /const snapshotFaces = firstPaint && !firstScreenPoster\(snapshot\) && !imageLedFirstScreen\(route\.path\) \? firstPaint : null;/);
+  assert.match(VIEW, /const snapshotFaces = firstPaint && !firstScreenPoster\(snapshot\) && !imageLedFirstScreen\(route\.path, locale\) \? firstPaint : null;/);
   // the no-JS fallback rules of 609d5377 are untouched
   assert.match(DOC, /html\[data-ahv-js\] #ahv-design-root\[data-ahv-snapshot-state='held'\]:not\(\[data-ahv-fallback\]\)>\*\{display:none!important\}/);
   assert.match(DOC, /html:not\(\[data-ahv-js\]\) #ahv-consent\{display:none!important\}/);

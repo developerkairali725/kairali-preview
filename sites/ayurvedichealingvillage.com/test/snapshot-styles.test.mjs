@@ -171,3 +171,14 @@ test("finder and hub preload only body and existing heading faces; unrelated rou
  assert.deepEqual(routeFontPreloads('/offers/',styles,()=>css),['/ahv/fonts/body.common.woff2']);
  assert.deepEqual(routeFontPreloads('/all-programs/',styles,()=>null),[]);
 });
+
+
+test("Arabic Monsoon keeps existing first-paint faces without changing other locale image deferral", () => {
+ const route="/karkidaka-chikitsha-or-monsoon-wellness.html";
+ for (const locale of ["en","hi","de","fr","es","it","pt","nl","ru","ar","zh-Hans","ja","ko"])
+  assert.equal(imageLedFirstScreen(route,locale),locale!=="ar",locale);
+ assert.equal(imageLedFirstScreen(route),true,"default English remains unchanged");
+ for(const other of ["/weight-loss-programme/","/digestive-wellness-gut-health-yoga-therapy/"])
+  assert.equal(imageLedFirstScreen(other,"ar"),true,"unrelated Arabic image-led routes retain deferral");
+ assert.equal(imageLedFirstScreen("/all-programs/","ar"),false,"existing text-led font path retained");
+});
