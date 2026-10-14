@@ -1,3 +1,5 @@
+import staffRosterIntegration from './fixtures/staff-roster-experience-integration.json' with { type: 'json' };
+import staffExperienceDelta from './fixtures/staff-experience-approved-delta.json' with { type: 'json' };
 // Owner, 10 Oct 2026 (WOPS-AHV-DOCTOR-POSITION-20261010-001): on every live ad route — the first four (batch 1), then
 // the remaining 20 (batch 2) — the complete existing doctors section moves up as-is, immediately after the lead. Every
 // other section keeps its relative order. Source-level: the template is TSX and is not rendered here (no browser, no
@@ -167,8 +169,8 @@ test("the doctors section is moved as-is: its props are the route's existing cop
     const c = C[slug];
     const en = (ROUTES[slug].locale ?? "en") === "en";
     assert.deepEqual(c.page.doctors, COPY[slug].page.doctors, `${slug}: heading and intro from the reviewed copy`);
-    // English routes show the roster; the German and Russian reviewed copy presents Dr. Deepu John only (unchanged).
-    assert.deepEqual(c.doctors.map((d) => d.id), en ? [...CURRENT_ROSTER] : ["deepu-john"], slug);
+    // Owner correction, 14 Oct: the complete consented roster is also presented on the DE/RU routes.
+    assert.deepEqual(c.doctors.map((d) => d.id), [...CURRENT_ROSTER], slug);
   }
 });
 
@@ -187,6 +189,28 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
       : f === "campaign-v2/production/ui.ts" ? "51a9637a750ca21623f4488c82b8a6592bc154d9"
       : ["campaign-v2/production/pages/family-ayurvedic-retreat.ts", "campaign-v2/production/pages/pain-management.ts"].includes(f) ? "76e9f767a7e000f3e6789c3453c1552cbfa2ec23" : BASE;
     let current = read(f);
+    const integrationCorrection = staffRosterIntegration.files[f];
+    if (integrationCorrection) {
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), integrationCorrection.afterSHA256, f);
+      for (const { before, after } of integrationCorrection.replacements) {
+        assert.equal(current.split(after).length - 1, 1, `${f}: exact approved integrated experience override`);
+        current = current.replace(after, before);
+      }
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), integrationCorrection.beforeSHA256, f);
+    }
+    for (const delta of staffExperienceDelta.sourceDelta[f] || []) {
+      assert.equal(current.split(delta.new).length - 1, 1, `Exact experience line: ${f}`);
+      current = current.replace(delta.new, delta.old);
+    }
+    const localeCorrection = JSON.parse(read("test/fixtures/locale-physicians-20261014.json")).files[f];
+    if (localeCorrection) {
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), localeCorrection.afterSHA256, f);
+      for (const { before, after } of localeCorrection.replacements) {
+        assert.equal(current.split(after).length - 1, 1, `${f}: exact approved locale-roster correction`);
+        current = current.replace(after, before);
+      }
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), localeCorrection.beforeSHA256, f);
+    }
     if (f === "campaign-v2/production/production.css") {
       // Remove only the approved desktop-card sizing delta before the existing historical checks.
       const cardDelta = "\n/* Owner feedback, 14 Oct: size desktop D consultation cards to their existing actions. */\n@media (min-width: 768px) {\n  .lp-prod[data-variant=\"D\"] .lp-hero__form { align-self: start; }\n  .lp-prod[data-variant=\"D\"] .lp-consult--card { height: auto; }\n}\n";

@@ -21,8 +21,8 @@ export function speaks(d: DoctorRef, ui: ProductionUi = UI.en): string {
  * The page's one doctors section — the route's current consented physicians, once, with their own portrait — placed
  * directly before the enquiry form: the doctors a visitor can consult, then the form that starts that consultation.
  * Desktop: one row of five 4:5 portraits (three across on tablets); phones: a ruled list with the portrait beside the
- * text. A route presenting one physician (the German and Russian routes, as their reviewed copy does) shows a single
- * wide card instead. Each portrait is positioned and enlarged per doctor (DoctorRef.frame) so faces read at a similar
+ * text. A route configured with one physician shows a single wide card instead; the current live routes use the
+ * complete consented roster, including German and Russian under the owner correction of 14 October 2026. Each portrait is positioned and enlarged per doctor (DoctorRef.frame) so faces read at a similar
  * size. Every fact comes from data/doctors.ts (the German / Russian wording of the same facts from production/ui.ts);
  * years in practice are never derived.
  */

@@ -16,20 +16,20 @@ import { pending } from "../kit/pending.ts";
 export const DOCTORS: Record<string, DoctorRef> = {
   "deepu-john": {
     id: "deepu-john", name: "Dr. Deepu John", role: "Chief Physician & Head of Department", qualification: "BAMS",
-    tenure: "Practising Ayurveda since 2010 · At Kairali since 2019",
+    tenure: "15+ years of documented professional Ayurveda experience (as of September 2026)",
     focus: "Panchakarma and lifestyle management",
     languages: ["Malayalam", "English", "Hindi", "Tamil"], photo: IMAGES["team-deepu-john-portrait"],
     frame: { position: "50% 50%", origin: "50% 0%", zoom: 1.27 },
   },
   "rahul-r": {
     id: "rahul-r", name: "Dr. Rahul R", role: "Ayurvedic Physician", qualification: "BAMS",
-    tenure: "At Kairali since 2023",
+    tenure: "3+ years of documented professional Ayurveda experience (as of September 2026)",
     languages: ["English", "Malayalam", "Tamil"], photo: IMAGES["team-rahul-r"],
     frame: { position: "50% 0%", origin: "51% 16.5%", zoom: 1.95 },
   },
   "akhila-oommen": {
     id: "akhila-oommen", name: "Dr. Akhila Oommen", role: "Ayurvedic Physician", qualification: "BAMS",
-    tenure: "At Kairali since 2024",
+    tenure: "9+ years of documented professional Ayurveda experience (as of September 2026)",
     // Her own full-length garden portrait (600×1051, data/images.ts): top-aligned, enlarged about her face so it
     // reads at the size and eye height of the other cards, cropped head to chest above the folded arms.
     languages: ["Malayalam", "Hindi", "English"], photo: IMAGES["team-akhila-oommen-portrait"],
@@ -37,13 +37,13 @@ export const DOCTORS: Record<string, DoctorRef> = {
   },
   "adhina-ub": {
     id: "adhina-ub", name: "Dr. Adhina U.B.", role: "Resident Medical Officer", qualification: "BAMS",
-    tenure: "At Kairali since 2026",
+    tenure: "1+ year of documented professional Ayurveda experience (as of September 2026)",
     languages: ["English", "Malayalam"], photo: IMAGES["team-adhina-ub"],
     frame: { position: "50% 50%", origin: "50% 50%", zoom: 1 },
   },
   "aashitha-ps": {
     id: "aashitha-ps", name: "Dr. Aashitha P.S.", role: "Ayurvedic Physician", qualification: "BAMS",
-    tenure: "At Kairali since 2026",
+    tenure: "9+ years of documented clinical Ayurveda experience (as of September 2026)",
     languages: ["Malayalam", "English", "Hindi", "Tamil"], photo: IMAGES["team-aashitha-ps"],
     frame: { position: "50% 25%", origin: "50% 25%", zoom: 1 },
   },

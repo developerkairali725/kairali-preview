@@ -1,3 +1,4 @@
+import staffExperienceDelta from './fixtures/staff-experience-approved-delta.json' with { type: 'json' };
 // Live ad routes: the reviewed copy of 8 Oct 2026 (production/pages/*.ts), designed into one template
 // (production/ProductionPage.tsx). Owner rules (hidden pricing; one FAQ; the doctors shown once — right after the lead
 // on every live route (10 Oct 2026; the variant default, directly before the enquiry, otherwise); the KTAHV register),
@@ -252,7 +253,10 @@ test("doctors: the current consented roster, once per page, every fact from the 
   };
   assert.deepEqual([...CURRENT_ROSTER], Object.keys(EXPECTED));
   for (const [id, [name, role, qualification, tenure, focus, languages]] of Object.entries(EXPECTED)) {
-    const d = DOCTORS[id];
+    const d = {...DOCTORS[id]};
+    const delta = staffExperienceDelta.sourceDelta['campaign-v2/data/doctors.ts'].find(x => x.old.includes(JSON.stringify(tenure)) && x.new.includes(JSON.stringify(d.tenure)));
+    assert.ok(delta, `${id}: exact reconciled lower-bound source delta`);
+    d.tenure = tenure; // Preserve the original approved fact comparison after the one permitted replacement.
     assert.deepEqual([d.name, d.role, d.qualification, d.tenure, d.focus, d.languages], [name, role, qualification, tenure, focus, languages], id);
     assert.equal(d.yearsInPractice, undefined, `${id}: years are omitted, never derived`);
     assert.ok(fs.existsSync(P("public", d.photo.src)), d.photo.src);
@@ -261,8 +265,8 @@ test("doctors: the current consented roster, once per page, every fact from the 
   }
   for (const slug of PRODUCTION_SLUGS) {
     const c = C[slug];
-    // English pages show the roster; the German and Russian reviewed copy presents Dr. Deepu John only.
-    assert.deepEqual(c.doctors.map((d) => d.id), EN(slug) ? [...CURRENT_ROSTER] : ["deepu-john"], slug);
+    // Owner correction, 14 Oct: every campaign shows the complete current consented roster.
+    assert.deepEqual(c.doctors.map((d) => d.id), [...CURRENT_ROSTER], slug);
     // The designed sections never repeat a biography: names appear only on the doctor cards.
     for (const { path: at, text } of pageText(c)) assert.doesNotMatch(text, /\bDr\. /, `${slug} ${at}`);
     assert.doesNotMatch(pageStrings(c).join(" | "), /Ashikh?a/);

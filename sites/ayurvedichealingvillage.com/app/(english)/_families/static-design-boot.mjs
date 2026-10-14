@@ -1,3 +1,4 @@
+import { applyStaffExperienceHtml } from './staff-experience.mjs';
 import { describeHomeImages } from './home-image-descriptions.mjs';
 import { removeHomeVillaRates } from './home-villa-rates.mjs';
 import { initializeHomeHero } from './home-hero.mjs';
@@ -37,6 +38,7 @@ export const STATIC_BOOT = `
       if (!response.ok) throw new Error("desktop view " + response.status);
       var desktopHtml = (${removeHomeVillaRates.toString()})(await response.text(), cfg.staticHome ? "/" : "");
       if (cfg.staticHome) desktopHtml = (${describeHomeImages.toString()})(desktopHtml);
+      if (cfg.staticHome) desktopHtml = (${applyStaffExperienceHtml.toString()})(desktopHtml, cfg.contentReviewCopy);
       host.innerHTML = desktopHtml;
       host.setAttribute("data-ahv-variant", "desktop");
     } catch (error) {

@@ -69,7 +69,7 @@ const DE: ProductionUi = {
   header: { contact: "Kontakt", whatsapp: "WhatsApp", call: "Anrufen", callAria: "Anrufen:" },
   hero: { accredited: "akkreditiert", card: "Kostenlose ärztliche Erstberatung", cardSub: "" },
   proof: { aria: "Akkreditierung, Bewertungen und Auszeichnungen", reviews: "Tripadvisor-Bewertungen", asOf: "Tripadvisor, Stand", hospital: "Akkreditiertes Ayurveda-Krankenhaus", tradition: "Ayurvedische Familientradition seit 1908", doctors: "Qualifizierte Ayurveda-Ärzte", team: "und Team" },
-  kicker: { lead: "Der erste Schritt", cards: "Programme", row: "Im Überblick", index: "Für jeden Einzelnen", pathway: "So funktioniert es", village: "Das Dorf", stories: "Erfahrungen", stay: "Ihr Angebot", doctors: "Ihr Arzt", faq: "Vor Ihrer Entscheidung", enquiry: "Kostenlose ärztliche Erstberatung" },
+  kicker: { lead: "Der erste Schritt", cards: "Programme", row: "Im Überblick", index: "Für jeden Einzelnen", pathway: "So funktioniert es", village: "Das Dorf", stories: "Erfahrungen", stay: "Ihr Angebot", doctors: "Ihre Ärzte", faq: "Vor Ihrer Entscheidung", enquiry: "Kostenlose ärztliche Erstberatung" },
   village: { all: "Alle Fotos ansehen", more: "weitere" },
   doctors: { speaks: (l) => `Spricht ${list(l, "und")}`, focus: "Schwerpunkte" },
   enquiry: { contactIntro: "Lieber direkt sprechen?", wa: "WhatsApp", call: "Anrufen" },
@@ -110,7 +110,11 @@ const DE: ProductionUi = {
     "gal-poolside-rest-palakkad-2026": "Eine Patientin ruht auf einer Liege am Pool in den Gärten des Dorfes",
   },
   doctorFacts: {
-    "deepu-john": { role: "Chefarzt und Abteilungsleiter", tenure: "Praktiziert Ayurveda seit 2010 · Bei Kairali seit 2019", focus: "Panchakarma und Beratung zu Lebensgewohnheiten", languages: ["Malayalam", "Englisch", "Hindi", "Tamil"] },
+    "deepu-john": { role: "Chefarzt und Abteilungsleiter", tenure: "Mindestens 15 Jahre dokumentierte Berufserfahrung in Ayurveda (Stand: September 2026)", focus: "Panchakarma und Beratung zu Lebensgewohnheiten", languages: ["Malayalam", "Englisch", "Hindi", "Tamil"] },
+    "rahul-r": { role: "Ayurveda-Arzt", tenure: "Mindestens 3 Jahre dokumentierte Berufserfahrung in Ayurveda (Stand: September 2026)", languages: ["Englisch", "Malayalam", "Tamil"] },
+    "akhila-oommen": { role: "Ayurveda-Ärztin", tenure: "Mindestens 9 Jahre dokumentierte Berufserfahrung in Ayurveda (Stand: September 2026)", languages: ["Malayalam", "Hindi", "Englisch"] },
+    "adhina-ub": { role: "Stationsärztin (RMO)", tenure: "Mindestens 1 Jahr dokumentierte Berufserfahrung in Ayurveda (Stand: September 2026)", languages: ["Englisch", "Malayalam"] },
+    "aashitha-ps": { role: "Ayurveda-Ärztin", tenure: "Mindestens 9 Jahre dokumentierte klinische Ayurveda-Erfahrung (Stand: September 2026)", languages: ["Malayalam", "Englisch", "Hindi", "Tamil"] },
   },
 };
 
@@ -119,7 +123,7 @@ const RU: ProductionUi = {
   header: { contact: "Контакты", whatsapp: "WhatsApp", call: "Позвонить", callAria: "Позвонить:" },
   hero: { accredited: "аккредитация", card: "Бесплатная консультация врача", cardSub: "" },
   proof: { aria: "Аккредитация, отзывы и награды", reviews: "отзывов на Tripadvisor", asOf: "Tripadvisor, по состоянию на", hospital: "Аккредитованная аюрведическая больница", tradition: "Семейная традиция аюрведы с 1908 года", doctors: "Квалифицированные аюрведические врачи", team: "и команда" },
-  kicker: { lead: "С чего начать", cards: "Программы", row: "Коротко", index: "Для каждого", pathway: "Как это работает", village: "Деревня", stories: "Отзывы", stay: "Ваше предложение", doctors: "Ваш врач", faq: "Прежде чем решить", enquiry: "Бесплатная консультация врача" },
+  kicker: { lead: "С чего начать", cards: "Программы", row: "Коротко", index: "Для каждого", pathway: "Как это работает", village: "Деревня", stories: "Отзывы", stay: "Ваше предложение", doctors: "Ваши врачи", faq: "Прежде чем решить", enquiry: "Бесплатная консультация врача" },
   village: { all: "Все фотографии", more: "ещё" },
   doctors: { speaks: (l) => `Говорит на ${list(l, "и")} языках`, focus: "Направления" },
   enquiry: { contactIntro: "Удобнее поговорить?", wa: "WhatsApp", call: "Позвонить" },
@@ -160,7 +164,11 @@ const RU: ProductionUi = {
     "gal-poolside-rest-palakkad-2026": "Пациентка отдыхает на шезлонге у бассейна в садах деревни",
   },
   doctorFacts: {
-    "deepu-john": { role: "Главный врач и заведующий отделением", tenure: "Практикует аюрведу с 2010 года · В Kairali с 2019 года", focus: "Панчакарма и рекомендации по образу жизни", languages: ["малаялам", "английском", "хинди", "тамильском"] },
+    "deepu-john": { role: "Главный врач и заведующий отделением", tenure: "Не менее 15 лет документально подтверждённого профессионального опыта в аюрведе (по состоянию на сентябрь 2026 года)", focus: "Панчакарма и рекомендации по образу жизни", languages: ["малаялам", "английском", "хинди", "тамильском"] },
+    "rahul-r": { role: "Аюрведический врач", tenure: "Не менее 3 лет документально подтверждённого профессионального опыта в аюрведе (по состоянию на сентябрь 2026 года)", languages: ["английском", "малаялам", "тамильском"] },
+    "akhila-oommen": { role: "Аюрведический врач", tenure: "Не менее 9 лет документально подтверждённого профессионального опыта в аюрведе (по состоянию на сентябрь 2026 года)", languages: ["малаялам", "хинди", "английском"] },
+    "adhina-ub": { role: "Дежурный врач", tenure: "Не менее 1 года документально подтверждённого профессионального опыта в аюрведе (по состоянию на сентябрь 2026 года)", languages: ["английском", "малаялам"] },
+    "aashitha-ps": { role: "Аюрведический врач", tenure: "Не менее 9 лет документально подтверждённого клинического опыта в аюрведе (по состоянию на сентябрь 2026 года)", languages: ["малаялам", "английском", "хинди", "тамильском"] },
   },
 };
 
