@@ -15,6 +15,7 @@ const languages={de:{Malayalam:'Malayalam',English:'Englisch',Hindi:'Hindi',Tami
 const titles={de:'Ihre Ayurveda-Ärzte',ru:'Ваши аюрведические врачи'};
 const originalTitles={de:'Ihr Ayurveda-Arzt',ru:'Ваш аюрведический врач'};
 const sha=x=>createHash('sha256').update(x).digest('hex');
+const trainD06Config=JSON.parse(fs.readFileSync(new URL('./fixtures/train-d06-copy-20261015.json',import.meta.url),'utf8')).configChanges;
 for(const [locale,slug] of Object.entries(byLocale))test(`${locale}: five complete approved cards, actual individual languages, existing portraits and no inferred experience`,()=>{
  const c=productionCampaign(slug);
  assert.deepEqual(c.doctors.map(d=>d.id),[...CURRENT_ROSTER]);assert.equal(c.page.doctors.heading,titles[locale]);
@@ -32,7 +33,10 @@ for(const [locale,slug] of Object.entries(byLocale))test(`${locale}: five comple
 test('all24 configs preserve original bytes after exact approved experience facts and DE/RU roster/heading normalization',()=>{
  assert.equal(PRODUCTION_SLUGS.length,24);assert.equal(Object.keys(fixture.configSHA256).length,24);
  for(const slug of PRODUCTION_SLUGS){
-  const c=JSON.parse(JSON.stringify(productionCampaign(slug)));const locale=Object.keys(byLocale).find(l=>byLocale[l]===slug);
+  const c=JSON.parse(JSON.stringify(productionCampaign(slug)));
+  // Train D06 (15 Oct): restore only its exact config fields first; every prior normalization and pin below is unchanged.
+  for(const {path,before,after} of trainD06Config.filter(x=>x.slug===slug)){let obj=c;for(const key of path.slice(0,-1))obj=obj[key];assert.deepEqual(obj[path.at(-1)],after,slug+': exact train D06 field '+path.join('.'));obj[path.at(-1)]=JSON.parse(JSON.stringify(before));}
+  const locale=Object.keys(byLocale).find(l=>byLocale[l]===slug);
   if(locale){c.doctors=c.doctors.filter(d=>d.id==='deepu-john');c.page.doctors.heading=originalTitles[locale];}
   for(const doctor of c.doctors){const delta=staffExperienceDelta.sourceDelta['campaign-v2/data/doctors.ts'].find(d=>JSON.parse(d.new.trim().slice(8,-1))===doctor.tenure);assert(delta,doctor.id);doctor.tenure=JSON.parse(delta.old.trim().slice(8,-1));}
   if(slug===monsoonCompatibility.slug){
@@ -49,6 +53,9 @@ test('all24 configs preserve original bytes after exact approved experience fact
 test('exact approved source corrections reverse to original bytes, preserving prior facts/copy/style fixtures',()=>{
  for(const [p,entry] of Object.entries(fixture.files)){
   let value=fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
+  // Train D06 (15 Oct): reverse its exact copy replacements first; every prior fixture check below is unchanged.
+  const trainD06=JSON.parse(fs.readFileSync(new URL('./fixtures/train-d06-copy-20261015.json',import.meta.url),'utf8')).files[p];
+  if(trainD06){assert.equal(sha(value),trainD06.afterSHA256,p);for(const{before,after}of[...trainD06.replacements].reverse()){assert.equal(value.split(after).length-1,1,p);value=value.replace(after,before);}assert.equal(sha(value),trainD06.beforeSHA256,p);}
   const combined=staffRosterIntegration.files[p];
   if(combined){assert.equal(sha(value),combined.afterSHA256,p);for(const{before,after}of combined.replacements){assert.equal(value.split(after).length-1,1,p);value=value.replace(after,before);}assert.equal(sha(value),combined.beforeSHA256,p);}
   for(const delta of staffExperienceDelta.sourceDelta[p]||[]){assert.equal(value.split(delta.new).length-1,1,p);value=value.replace(delta.new,delta.old);}

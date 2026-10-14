@@ -104,7 +104,7 @@ export default defineCopy({
     faqHeading: "Your questions, answered",
     closing: {
       heading: "Tell us what you need from your stay",
-      paragraphs: ["Tell us what you would like to discuss, and our patient care team will help you take the next step. Start with a free initial doctor consultation, then review your plan and quotation before booking."],
+      paragraphs: ["Tell us what you would like to discuss, and our patient care team will help you take the next step. Start with a free initial doctor consultation."],
     },
   },
   faq: [

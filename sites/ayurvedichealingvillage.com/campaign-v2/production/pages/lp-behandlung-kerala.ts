@@ -51,7 +51,7 @@ export default defineCopy({
       intro: ["Die folgenden Behandlungen sind Themen für das Gespräch mit Ihrem Arzt. Welche davon für Sie geeignet sind, ergibt sich aus Ihrer individuellen Beurteilung."],
       cards: [
         { title: "Panchakarma", paragraphs: ["Panchakarma umfasst fünf klassische ayurvedische Verfahren. Ob und welche davon für Sie geeignet sind, entscheidet der Arzt nach der Untersuchung. Ein Aufenthalt beinhaltet nicht automatisch alle fünf Verfahren. Vorbereitung, Ernährung und Ruhe werden mit dem vorgeschlagenen Programm abgestimmt."] },
-        { title: "Abhyanga und Shirodhara", paragraphs: ["Abhyanga ist eine Ganzkörpermassage mit medizinierten Ölen. Bei Shirodhara wird ein gleichmäßiger Ölstrahl über die Stirn geführt. Beide sind mögliche, ärztlich verordnete Behandlungen; sie gehören nicht automatisch zu jedem Programm."] },
+        { title: "Abhyanga und Shirodhara", paragraphs: ["Abhyanga ist eine Ganzkörperanwendung mit medizinischen Kräuterölen. Bei Shirodhara wird ein gleichmäßiger Ölstrahl über die Stirn geführt. Beide sind mögliche, ärztlich verordnete Behandlungen; sie gehören nicht automatisch zu jedem Programm."] },
         { title: "Anwendungen nach ärztlichem Plan", paragraphs: ["Geschulte Therapeuten führen die verordneten Anwendungen nach ärztlichem Plan durch. Fragen Sie, was die einzelnen Behandlungen beinhalten und wie der Verlauf überprüft wird."] },
       ],
     },
@@ -81,7 +81,7 @@ export default defineCopy({
         { heading: "Klären Sie, was enthalten ist", items: ["Unterkunft in der gewählten Villa und Belegung", "Mahlzeiten", "Ärztliche Besprechungen", "Verordnete Therapien und Aktivitäten"] },
         { heading: "Fragen Sie nach zusätzlich berechneten Leistungen", items: ["Medikamente", "Untersuchungen", "Weitere Anwendungen", "Transfers", "Persönliche Dienstleistungen"], extra: true },
       ],
-      after: ["Welche Leistungen zusätzlich berechnet werden, hängt von der Vereinbarung ab. Ihre ärztliche Erstberatung ist kostenlos. Lassen Sie sich die Leistungen und Kosten des Aufenthalts sowie etwaiger späterer Leistungen im Angebot erläutern."],
+      after: ["Welche Leistungen zusätzlich berechnet werden, hängt von der Vereinbarung ab."],
     },
     doctors: {
       heading: "Ihre Ayurveda-Ärzte",

@@ -12,6 +12,9 @@ const targets={
  'lp-pain-management':{source:'pain-management',index:2,id:'DcTMckQD3rc'},
 };
 const sha=x=>createHash('sha256').update(x).digest('hex');
+// Train D06 (15 Oct): reverse its exact copy replacements first; every pinned hash below is unchanged.
+const trainD06=JSON.parse(fs.readFileSync(new URL('./fixtures/train-d06-copy-20261015.json',import.meta.url),'utf8')).files;
+const preTrainD06=p=>{let s=fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');const e=trainD06[p];if(!e)return s;assert.equal(sha(s),e.afterSHA256,p);for(const{before,after}of[...e.replacements].reverse()){assert.equal(s.split(after).length-1,1,p);s=s.replace(after,before);}assert.equal(sha(s),e.beforeSHA256,p);return s;};
 for(const [slug,{source,index,id}] of Object.entries(targets))test(`${slug}: third card is the exact approved existing counterpart, including title and thumbnail`,()=>{
  const c=productionCampaign(slug),films=c.page.stories.films;assert.equal(films.length,3);
  assert.deepEqual(films[2],productionCampaign(source).page.stories.films[index]);assert.equal(new Set(films.map(f=>f.href)).size,3);
@@ -25,10 +28,11 @@ for(const [slug,{source,index,id}] of Object.entries(targets))test(`${slug}: thi
 });
 test('all21 other configs unchanged; remove only appended third card to restore each target and its original two cards',()=>{
  assert.equal(PRODUCTION_SLUGS.length,24);assert.equal(Object.keys(targets).length,3);
- for(const slug of PRODUCTION_SLUGS){const c=JSON.parse(JSON.stringify(productionCampaign(slug)));if(targets[slug])c.page.stories.films.pop();assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);}
+ const d06Config=JSON.parse(fs.readFileSync(new URL('./fixtures/train-d06-copy-20261015.json',import.meta.url),'utf8')).configChanges;
+ for(const slug of PRODUCTION_SLUGS){const c=JSON.parse(JSON.stringify(productionCampaign(slug)));for(const {path,before,after} of d06Config.filter(x=>x.slug===slug)){let o=c;for(const k of path.slice(0,-1))o=o[k];assert.deepEqual(o[path.at(-1)],after,slug);o[path.at(-1)]=JSON.parse(JSON.stringify(before));}if(targets[slug])c.page.stories.films.pop();assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);}
  assert.equal(GUEST_VIDEO_ROUTES.length,13);assert.equal(APPROVED_FILM_IDS.length,5);
 });
 test('exact source additions reverse to the prior byte hashes; no testimonial text or rendering/consent policy changes',()=>{
- for(const [p,e]of Object.entries(fixture.files)){let s=fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');assert.equal(sha(s),e.afterSHA256);assert.equal(s.split(e.addition).length-1,1);s=s.replace(e.addition,'');assert.equal(sha(s),e.beforeSHA256);}
- for(const [p,hash]of Object.entries(fixture.unchangedSHA256))assert.equal(sha(fs.readFileSync(new URL('../'+p,import.meta.url))),hash,p);
+ for(const [p,e]of Object.entries(fixture.files)){let s=preTrainD06(p);assert.equal(sha(s),e.afterSHA256);assert.equal(s.split(e.addition).length-1,1);s=s.replace(e.addition,'');assert.equal(sha(s),e.beforeSHA256);}
+ for(const [p,hash]of Object.entries(fixture.unchangedSHA256))assert.equal(sha(preTrainD06(p)),hash,p);
 });

@@ -82,6 +82,26 @@ const plain = (x) => (x === undefined ? undefined : JSON.parse(JSON.stringify(x)
 /** Deep equality across the vm realms (their arrays have another Array.prototype). */
 const same = (a, b, message) => assert.deepEqual(plain(a), plain(b), message);
 const NOW_C = Object.fromEntries(NOW_M.PRODUCTION_SLUGS.map((s) => [s, NOW_M.productionCampaign(s)]));
+// Train D06 (15 Oct): its exact quotation-consolidation replacements, reversed, give the source this comparison was pinned on.
+function preTrainD06Sources() {
+  const d06 = JSON.parse(fs.readFileSync(P("test/fixtures/train-d06-copy-20261015.json"), "utf8")).files;
+  return Object.fromEntries(SLUGS.map((slug) => {
+    const rel = `campaign-v2/production/pages/${slug}.ts`;
+    let text = fs.readFileSync(PAGE(slug), "utf8");
+    const entry = d06[rel];
+    if (entry) {
+      assert.equal(crypto.createHash("sha256").update(text).digest("hex"), entry.afterSHA256, rel);
+      for (const { before, after } of [...entry.replacements].reverse()) {
+        assert.equal(text.split(after).length - 1, 1, `${rel}: exact train D06 replacement`);
+        text = text.replace(after, before);
+      }
+      assert.equal(crypto.createHash("sha256").update(text).digest("hex"), entry.beforeSHA256, rel);
+    }
+    return [PAGE(slug), text];
+  }));
+}
+const PRE_D06_M = graph(process.env.AHV_COMPARISON_SOURCE_DIR ? sourcesFrom(process.env.AHV_COMPARISON_SOURCE_DIR) : preTrainD06Sources())(P("campaign-v2/production/load.ts"));
+const PRE_D06_C = Object.fromEntries(PRE_D06_M.PRODUCTION_SLUGS.map((s) => [s, PRE_D06_M.productionCampaign(s)]));
 const WAS_C = Object.fromEntries(WAS_M.PRODUCTION_SLUGS.map((s) => [s, WAS_M.productionCampaign(s)]));
 const { richText, richLinks } = nowLoad(P("campaign-v2/kit/rich.ts"));
 const { PRICE } = nowLoad(P("campaign-v2/kit/lint/pricing.ts"));
@@ -126,7 +146,8 @@ test("all four routes carry the comparison, and no other route changed", () => {
 
 test("only paragraphs were appended: every original card, heading, link, paragraph, CTA and FAQ is unchanged", () => {
   for (const slug of SLUGS) {
-    const now = plain(NOW_C[slug]);
+    // Train D06 removes only exact duplicate quotation wording (fixture-reversed here); the comparison pin is otherwise unchanged.
+    const now = plain(PRE_D06_C[slug]);
     const was = plain(WAS_C[slug]);
     const cardsNow = now.page.offering.cards;
     const cardsWas = was.page.offering.cards;
