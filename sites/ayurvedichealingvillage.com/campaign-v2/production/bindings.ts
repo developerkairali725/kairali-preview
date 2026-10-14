@@ -261,6 +261,31 @@ for (const sp of SPECS) {
   };
 }
 
+/**
+ * Owner decision 10 (14 Oct 2026, OWNER-DECISIONS-20261014-ANSWERS.json "10-photos"; rows AHV-WB.005 hero/how, .060,
+ * .400 how, .403, .445 hero/how): the bare-back therapy hero (desktop and phone) and "How it works" photographs on these
+ * routes become doctor-consultation, pulse-check or village photographs from the existing image bank (data/images.ts).
+ * Applied after the routes are built, so every existing gallery entry and the five mosaic tiles stay exactly as they
+ * were. A new steps photograph is appended once at the very end of the route's full gallery (as every steps photograph
+ * is one of the route's gallery photographs, outside the mosaic; "Therapies", as the approved consultation-room photo
+ * ahv-img-033); a new hero is never in the gallery. On each route the hero and the steps photograph differ, and sibling
+ * heroes differ (/pain-management.html vs /lp/pain-management/). Reversible: delete a route's entry.
+ */
+export const PHOTO_PICKS_20261014: Readonly<Partial<Record<ProductionSlug, { hero?: string; pathway?: string }>>> = {
+  "treatment-packages": { hero: "ahv-img-010", pathway: "ahv-img-045" }, // AHV-WB.005.hero-image, AHV-WB.005.how-image
+  "pain-management": { hero: "ahv-img-045" }, // AHV-WB.060.change
+  "lp-pain-management": { hero: "ahv-img-005", pathway: "ahv-img-045" }, // AHV-WB.403.change, AHV-WB.400.how-image
+  "lp-treatment-kerala": { hero: "ahv-img-012", pathway: "ahv-img-005" }, // AHV-WB.445.hero-image, AHV-WB.445.how-image
+};
+for (const [slug, pick] of Object.entries(PHOTO_PICKS_20261014) as [ProductionSlug, { hero?: string; pathway?: string }][]) {
+  const r = ROUTES[slug];
+  if (pick.hero) { r.heroImage = img(pick.hero); r.mobileImage = img(pick.hero); }
+  if (pick.pathway) {
+    r.pathwayImage = img(pick.pathway);
+    r.gallery = [...r.gallery, { category: "Therapies", image: r.pathwayImage }];
+  }
+}
+
 /** The 20 routes added on 8 Oct 2026, in their four review batches of five. */
 export const REVIEW_BATCHES: readonly (readonly ProductionSlug[])[] = [
   SPECS.slice(0, 5).map((x) => x.slug), SPECS.slice(5, 10).map((x) => x.slug),

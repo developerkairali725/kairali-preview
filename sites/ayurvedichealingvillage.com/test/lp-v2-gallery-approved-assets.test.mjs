@@ -16,6 +16,7 @@ import { IMAGES } from "../campaign-v2/data/images.ts";
 import { APPROVED_GALLERY_IMAGES, APPROVED_GALLERY_ADDITIONS } from "../campaign-v2/data/gallery-images.ts";
 import { UI } from "../campaign-v2/production/ui.ts";
 import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
+import ownerDecisionsC from "./fixtures/owner-decisions-c-20261014.json" with { type: "json" };
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const P = (...p) => path.join(SITE, ...p);
@@ -70,6 +71,29 @@ const pick = (slugs, dropGallery) => Object.fromEntries(slugs.map((s) => {
 
 const ADDED_IDS = APPROVED_GALLERY_IMAGES.map((a) => a.image.id);
 
+// Owner decision 10 (14 Oct 2026, fixtures/owner-decisions-c-20261014.json photoPicks): exact reversal of the newest
+// hero/steps photograph delta, applied before the historical checks below; every frozen value stays as it was.
+const PHOTO_PICKS = ownerDecisionsC.photoPicks.routes;
+/** The gallery without the one steps photograph decision 10 appended last (asserted exactly), else the gallery. */
+function galleryBeforePicks(slug) {
+  const g = ROUTES[slug].gallery;
+  const appended = PHOTO_PICKS[slug]?.galleryAppended;
+  if (!appended) return g;
+  assert.deepEqual(g.at(-1), { category: "Therapies", image: IMAGES[appended] }, `${slug}: appended steps photograph`);
+  assert.equal(g.filter((x) => x.image.id === appended).length, 1, `${slug}: appended once`);
+  return g.slice(0, -1);
+}
+/** Restore the prior hero, phone hero and steps photograph on picked bindings (asserting the current ones exactly). */
+function reversePhotoPicks(bindings) {
+  for (const [slug, b] of Object.entries(bindings)) {
+    const pick = PHOTO_PICKS[slug];
+    if (!pick) continue;
+    for (const [field, id] of Object.entries(pick.after)) assert.deepEqual(b[field], IMAGES[id], `${slug}.${field}`);
+    for (const [field, id] of Object.entries(pick.before)) b[field] = IMAGES[id];
+  }
+  return bindings;
+}
+
 /** Width and height from a WebP header (VP8X, VP8 or VP8L). */
 function webpSize(buf) {
   assert.equal(buf.toString("ascii", 0, 4), "RIFF");
@@ -90,7 +114,7 @@ test("targets: the existing gallery is kept entry for entry, then only the appro
   assert.equal(new Set([...TARGETS, ...UNTARGETED]).size, 24);
   assert.deepEqual([...TARGETS, ...UNTARGETED].sort(), [...PRODUCTION_SLUGS].sort());
   for (const slug of TARGETS) {
-    const g = ROUTES[slug].gallery;
+    const g = galleryBeforePicks(slug);
     const base = BASE_GALLERY[slug];
     assert.equal(g.length, base.length + APPROVED_GALLERY_ADDITIONS.length, slug);
     base.forEach(([category, id], i) => {
@@ -113,7 +137,7 @@ test("targets: only the eight approved rest images change; all prior gallery and
   const file = fs.readFileSync(P("public" + approvedRest.src));
   assert.equal(sha256(file), "52bb11bb871ff8b2a9e325149e79a010df5f7023294c15ee905a5621be1e49b2");
   assert.deepEqual(webpSize(file), { width: 1600, height: 1067 });
-  const first4BeforeRestChange = pick(FIRST4, true);
+  const first4BeforeRestChange = reversePhotoPicks(pick(FIRST4, true));
   for (const slug of FIRST4) {
     assert.deepEqual(ROUTES[slug].stillnessImage, approvedRest, slug);
     assert.deepEqual(productionCampaign(slug).stillness.image, approvedRest, slug);
@@ -123,7 +147,7 @@ test("targets: only the eight approved rest images change; all prior gallery and
   }
   assert.equal(sha256(JSON.stringify(first4BeforeRestChange)), BASE_FIRST4_NO_GALLERY_HASH);
   // Batch 2 adopts only these four route images; reverse them before the original historical hash check.
-  const batch2BeforeRestChange = pick(BATCH2, true);
+  const batch2BeforeRestChange = reversePhotoPicks(pick(BATCH2, true));
   for (const slug of ["cleansing-centre", "treatment-kerala", "weight-management", "lp-hospital-kerala"]) {
     assert.deepEqual(ROUTES[slug].stillnessImage, approvedRest, slug);
     assert.deepEqual(productionCampaign(slug).stillness.image, approvedRest, slug);
@@ -163,7 +187,8 @@ test("counts: the page config carries the binding's gallery, so the mosaic chip 
     // Village.tsx Mosaic: more = pool.length - tiles.length (pool = gallery on a standard page); the dialog gets c.gallery.
     const pool = c.gallery;
     const tiles = pool.slice(0, 5);
-    assert.equal(pool.length - tiles.length, BASE_GALLERY[slug].length + APPROVED_GALLERY_ADDITIONS.length - 5, slug);
+    // Plus the one steps photograph appended by owner decision 10, where recorded (fixtures/owner-decisions-c-20261014.json).
+    assert.equal(pool.length - tiles.length, BASE_GALLERY[slug].length + APPROVED_GALLERY_ADDITIONS.length + (PHOTO_PICKS[slug]?.galleryAppended ? 1 : 0) - 5, slug);
     assert.ok(c.gallery.length <= 24, slug); // kit lint count.gallery: 6-24
   }
 });

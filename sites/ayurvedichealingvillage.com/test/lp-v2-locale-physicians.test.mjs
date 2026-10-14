@@ -10,6 +10,7 @@ import {productionCampaign,PRODUCTION_SLUGS} from '../campaign-v2/production/loa
 import {DOCTORS,CURRENT_ROSTER} from '../campaign-v2/data/doctors.ts';
 import {UI} from '../campaign-v2/production/ui.ts';
 import fixture from './fixtures/locale-physicians-20261014.json' with {type:'json'};
+import ownerDecisionsC from './fixtures/owner-decisions-c-20261014.json' with {type:'json'};
 const byLocale={de:'lp-behandlung-kerala',ru:'lp-treatment-kerala-ru'};
 const languages={de:{Malayalam:'Malayalam',English:'Englisch',Hindi:'Hindi',Tamil:'Tamil'},ru:{Malayalam:'малаялам',English:'английском',Hindi:'хинди',Tamil:'тамильском'}};
 const titles={de:'Ihre Ayurveda-Ärzte',ru:'Ваши аюрведические врачи'};
@@ -49,6 +50,9 @@ test('all24 configs preserve original bytes after exact approved experience fact
 test('exact approved source corrections reverse to original bytes, preserving prior facts/copy/style fixtures',()=>{
  for(const [p,entry] of Object.entries(fixture.files)){
   let value=fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
+  // Owner decisions 9-11 (14 Oct 2026): reverse only that exact newest delta first (fixtures/owner-decisions-c-20261014.json).
+  const ownerC=ownerDecisionsC.files[p];
+  if(ownerC){assert.equal(sha(value),ownerC.afterSHA256,p);for(const{before,after}of ownerC.replacements){assert.equal(value.split(after).length-1,1,p);value=value.replace(after,before);}assert.equal(sha(value),ownerC.beforeSHA256,p);}
   const combined=staffRosterIntegration.files[p];
   if(combined){assert.equal(sha(value),combined.afterSHA256,p);for(const{before,after}of combined.replacements){assert.equal(value.split(after).length-1,1,p);value=value.replace(after,before);}assert.equal(sha(value),combined.beforeSHA256,p);}
   for(const delta of staffExperienceDelta.sourceDelta[p]||[]){assert.equal(value.split(delta.new).length-1,1,p);value=value.replace(delta.new,delta.old);}

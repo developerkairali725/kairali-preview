@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import ProductionPage from "../../../../campaign-v2/production/ProductionPage";
 import { productionCampaign } from "../../../../campaign-v2/production/load.ts";
 import { productionJsonLdScript, productionMetadata } from "../../../../campaign-v2/production/metadata.ts";
+// Owner decision 9 (14 Oct 2026, AHV-WB.536): the Russian page-context WhatsApp prefill (production/whatsapp-prefill.ts).
+import WhatsAppPrefill from "../../../../campaign-v2/production/WhatsAppPrefill";
 
 // Live ad route /lp/treatment-in-kerala-russian/ (new campaign path; /treatment-in-kerala-russian.html redirects here). Copy: campaign-v2/production/pages/lp-treatment-kerala-ru.ts; route facts, variant and lead identity:
 // campaign-v2/production/bindings.ts.
@@ -15,6 +17,7 @@ export default function Page() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: productionJsonLdScript(SLUG, campaign) }} />
       <ProductionPage c={campaign} />
+      <WhatsAppPrefill locale="ru" />
     </>
   );
 }

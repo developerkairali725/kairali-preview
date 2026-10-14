@@ -49,4 +49,30 @@ export const IMAGES: Record<string, ImageRef> = {
   "team-rahul-r": staff("team-rahul-r", "team-rahul-r-c.webp", 943, 1421, "Dr. Rahul R, Ayurvedic physician at the Healing Village"),
   "team-adhina-ub": staff("team-adhina-ub", "team-adhina-ub.webp", 600, 900, "Dr. Adhina U.B., Resident Medical Officer at the Healing Village"),
   "team-aashitha-ps": staff("team-aashitha-ps", "team-aashitha-ps.webp", 600, 900, "Dr. Aashitha P.S., Ayurvedic physician at the Healing Village"),
+  // Owner decision 10 (14 Oct 2026, OWNER-DECISIONS-20261014-ANSWERS.json "10-photos"): doctor-consultation, pulse-check
+  // and village photographs picked from the existing image bank (Palakkad, ahv-edited) to replace bare-back therapy hero
+  // and "How it works" photographs (production/bindings.ts PHOTO_PICKS_20261014). No identifiable person in any of them.
+  // ahv-img-005 / -045: built by tools/build-owner-decision-20261014-photos.py from the SHA-256-verified library
+  // originals (-111.jpg, -348.jpg); ahv-img-010 / -012: the owner-approved batch-1 files (28 Sep 2026), unchanged.
+  "ahv-img-005": {
+    id: "ahv-img-005", src: "/ahv/assets/img/owner-decision-20261014/ahv-img-005.webp",
+    width: 1600, height: 1067, alt: "Physician consultation room with a curved wooden desk and round windows at Kairali in Palakkad",
+    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
+  },
+  "ahv-img-045": {
+    id: "ahv-img-045", src: "/ahv/assets/img/owner-decision-20261014/ahv-img-045.webp",
+    width: 1600, height: 1067, alt: "A physician's fingers on a patient's wrist for an Ayurvedic pulse examination at a wooden desk",
+    // Hands and forearms only; faces are not shown (IMAGE_CATALOG register_ok=yes).
+    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
+  },
+  "ahv-img-010": {
+    id: "ahv-img-010", src: "/ahv/assets/img/owner-approved-20260928/ahv-img-010.webp",
+    width: 1600, height: 1067, alt: "Curved veranda of the main block overlooking lawns, a water channel and a colonnaded pavilion",
+    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
+  },
+  "ahv-img-012": {
+    id: "ahv-img-012", src: "/ahv/assets/img/owner-approved-20260928/ahv-img-012.webp",
+    width: 1600, height: 1067, alt: "Circular open veranda with cane chairs under a striped terracotta dome, looking out to the gardens",
+    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
+  },
 };

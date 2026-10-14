@@ -1,0 +1,100 @@
+{
+ "task": "WOPS-WEBSITE-SEQUENTIAL-20261008-001 owner decisions 9-11 (14 Oct 2026)",
+ "authority": "deliverables/WOPS-WEBSITE-SEQUENTIAL-20261008-001/recovery-20261014/OWNER-DECISIONS-20261014-ANSWERS.json",
+ "note": "Exact source deltas of owner decision 11 (English guest films on the DE/RU routes, rows AHV-WB.519/.541). Reverse each replacement (after -> before) to restore the prior bytes, then every earlier pin applies unchanged.",
+ "files": {
+  "campaign-v2/production/pages/lp-behandlung-kerala.ts": {
+   "afterSHA256": "a25564663a83a6290c815a0ade47bec6e0ac7240a4e146ecbb228dd9be95c893",
+   "beforeSHA256": "d4ef5383368d11918d946701a5b27a25059426c77a51c25861ad636be4f7b330",
+   "replacements": [
+    {
+     "before": "No stories or villa cards (links are English).",
+     "after": "No villa cards (links are English); stories = English films, labelled (decision 11)."
+    },
+    {
+     "before": "import { defineCopy } from \"../copy.ts\";\n",
+     "after": "import { defineCopy } from \"../copy.ts\";\nimport { story } from \"../stories.ts\";\n"
+    },
+    {
+     "before": "\n    stay: {\n",
+     "after": "\n    // Owner decision 11 (14 Oct 2026, AHV-WB.519): the existing consented English films, shown as English-language films\n    // (no German-subtitled film exists yet; subtitle request to the video owner is tracked separately). Same three films as\n    // the English sibling /lp/treatment-in-kerala/; YouTube links only (the on-page player stays English-route only).\n    stories: {\n      heading: \"Das Dorf und Erfahrungen von Patienten im Video\",\n      body: \"Diese Videos sind auf Englisch. Sehen Sie einen Tag im Dorf, einen Film über Panchakarma und Michaela & Jan, die von ihrem Aufenthalt erzählen. Individuelle Erfahrungen sind unterschiedlich.\",\n      films: [\n        story(\"iPARaMRASUs\", \"Ein Tag im Dorf (Video auf Englisch)\"),\n        story(\"4x01PtWfNnk\", \"Michaela & Jan berichten (Video auf Englisch)\"),\n        story(\"07tVC2oXd8g\", \"Film über Panchakarma (Video auf Englisch)\"),\n      ],\n    },\n    stay: {\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-treatment-kerala-ru.ts": {
+   "afterSHA256": "4f3cb23d740b6b0ea9fdb8d4b323dbf1bc0ae6a5d579126575fd26e633a04610",
+   "beforeSHA256": "4c94264eb4c81d5c5cedb1f7ca5332e6c5ea314e7bb56320a558760305a87c30",
+   "replacements": [
+    {
+     "before": "// No stories and no villa cards (linked pages are English).",
+     "after": "// No villa cards (linked pages are English); stories = English films, labelled (decision 11)."
+    },
+    {
+     "before": "import { defineCopy } from \"../copy.ts\";\n",
+     "after": "import { defineCopy } from \"../copy.ts\";\nimport { story } from \"../stories.ts\";\n"
+    },
+    {
+     "before": "\n    stay: {\n",
+     "after": "\n    // Owner decision 11 (14 Oct 2026, AHV-WB.541): the existing consented English films, shown as English-language films\n    // (no Russian-subtitled film exists yet; subtitle request to the video owner is tracked separately). Same three films as\n    // the English sibling /lp/treatment-in-kerala/; YouTube links only (the on-page player stays English-route only).\n    stories: {\n      heading: \"Деревня и опыт пациентов в видео\",\n      body: \"Эти видео на английском языке. Посмотрите день в деревне, фильм о панчакарме и рассказ Михаэлы и Яна о пребывании. Индивидуальный опыт может отличаться.\",\n      films: [\n        story(\"iPARaMRASUs\", \"День в деревне (видео на английском)\"),\n        story(\"4x01PtWfNnk\", \"Рассказ Михаэлы и Яна (видео на английском)\"),\n        story(\"07tVC2oXd8g\", \"Фильм о панчакарме (видео на английском)\"),\n      ],\n    },\n    stay: {\n"
+    }
+   ]
+  }
+ },
+ "photoPicks": {
+  "note": "Owner decision 10 (rows AHV-WB.005/.060/.400/.403/.445): production/bindings.ts PHOTO_PICKS_20261014. 'before' = the route's prior heroImage/mobileImage/pathwayImage ids; a new steps photograph is appended once as the gallery's last entry.",
+  "routes": {
+   "treatment-packages": {
+    "before": {
+     "heroImage": "kt-202",
+     "mobileImage": "kt-190",
+     "pathwayImage": "kt-199"
+    },
+    "after": {
+     "heroImage": "ahv-img-010",
+     "mobileImage": "ahv-img-010",
+     "pathwayImage": "ahv-img-045"
+    },
+    "galleryAppended": "ahv-img-045"
+   },
+   "pain-management": {
+    "before": {
+     "heroImage": "kt-190",
+     "mobileImage": "kt-199",
+     "pathwayImage": "kt-202"
+    },
+    "after": {
+     "heroImage": "ahv-img-045",
+     "mobileImage": "ahv-img-045",
+     "pathwayImage": "kt-202"
+    },
+    "galleryAppended": null
+   },
+   "lp-pain-management": {
+    "before": {
+     "heroImage": "kt-202",
+     "mobileImage": "kt-190",
+     "pathwayImage": "kt-199"
+    },
+    "after": {
+     "heroImage": "ahv-img-005",
+     "mobileImage": "ahv-img-005",
+     "pathwayImage": "ahv-img-045"
+    },
+    "galleryAppended": "ahv-img-045"
+   },
+   "lp-treatment-kerala": {
+    "before": {
+     "heroImage": "kt-199",
+     "mobileImage": "kt-199",
+     "pathwayImage": "kt-202"
+    },
+    "after": {
+     "heroImage": "ahv-img-012",
+     "mobileImage": "ahv-img-012",
+     "pathwayImage": "ahv-img-005"
+    },
+    "galleryAppended": "ahv-img-005"
+   }
+  }
+ }
+}
