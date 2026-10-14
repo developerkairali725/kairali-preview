@@ -29,6 +29,34 @@ const languagesFor = (slug: ProductionSlug): Record<string, string> | undefined 
   return { ...map, "x-default": map.en };
 };
 
+// Batch003: only the 13 reviewed campaign routes. Hospital typing is owner-confirmed (30 Sep 2026);
+// identity/NAP/logo match the existing main-site schema. Certificate details and MedicalClinic remain separate.
+const REVIEWED_ENTITY_ROUTES: ReadonlySet<ProductionSlug> = new Set([
+  "cleansing-centre", "lp-cleansing-centre", "lp-hospital-kerala", "lp-pain-management", "lp-panchakarma",
+  "lp-south-india", "lp-treatment-kerala", "lp-treatment-kerala-ru", "lp-treatment-packages",
+  "lp-weight-management", "south-india-cities", "treatment-kerala", "weight-management",
+]);
+
+function reviewedOrganization(locale: string): object {
+  const logoId = `${SITE_ORIGIN}/#/schema/logo/image/`;
+  const logoUrl = `${SITE_ORIGIN}/ahv/assets/img/kairali-colorful-logo.png`;
+  const name = "Kairali — The Ayurvedic Healing Village";
+  return {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "Hospital"], "@id": `${SITE_ORIGIN}/#organization`, name, url: `${SITE_ORIGIN}/`,
+    address: {
+      "@type": "PostalAddress", streetAddress: "III/73 Palayamkadu, P.O. Olassery, Kodumbu",
+      addressLocality: "Palakkad", addressRegion: "Kerala", postalCode: "678551", addressCountry: "IN",
+    },
+    telephone: "+91 9555 156 156", email: "info@kairali.com",
+    logo: {
+      "@type": "ImageObject", inLanguage: locale === "en" ? "en-US" : locale, "@id": logoId,
+      url: logoUrl, contentUrl: logoUrl, width: 290, height: 68, caption: name,
+    },
+    image: { "@id": logoId },
+  };
+}
+
 /** `env` is injected in tests; robots follow the build's AHV_STAGING exactly as the old pages did. */
 export function productionMetadata(slug: ProductionSlug, c: CampaignConfig, env: Record<string, string | undefined> = process.env): Metadata {
   const b = ROUTES[slug];
@@ -74,7 +102,9 @@ export function productionJsonLd(slug: ProductionSlug, c: CampaignConfig): objec
     ],
   };
   const faq = faqPage(c, b.locale ?? "en");
-  return faq ? [page, faq] : [page];
+  const nodes: object[] = faq ? [page, faq] : [page];
+  if (REVIEWED_ENTITY_ROUTES.has(slug)) nodes.push(reviewedOrganization(b.locale ?? "en"));
+  return nodes;
 }
 
 /** The <script type="application/ld+json"> body ("<" escaped). */

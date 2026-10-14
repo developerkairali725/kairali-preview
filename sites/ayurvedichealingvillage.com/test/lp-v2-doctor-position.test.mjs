@@ -275,6 +275,13 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
       }
       assert.equal(crypto.createHash("sha256").update(current).digest("hex"), delta.beforeSHA256);
     }
+    if (f === "campaign-v2/production/pages/pain-management.ts") {
+      // AHV-WB.054.change / AHV-LATER-016.01: only the approved Abhyangam description changes.
+      // Reverse that exact substitution for this historical preservation comparison; keep the original fixture.
+      const approved = "Abhyangam – full-body medicated oil therapy";
+      assert.equal(current.split(approved).length - 1, 1, "Exact approved Abhyangam wording occurs once");
+      current = current.replace(approved, "Abhyangam, a medicated oil massage");
+    }
     assert.equal(current, git("show", `${pin}:./${f}`), f);
   }
 });
