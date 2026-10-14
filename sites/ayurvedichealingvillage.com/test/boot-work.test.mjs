@@ -1,4 +1,5 @@
 import { repairArticleContactHeading } from '../app/(english)/_families/article-contact-heading.mjs';
+import { applyStaffExperienceDom } from '../app/(english)/_families/staff-experience.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -94,7 +95,8 @@ test('a deep insertion batch has linear repair traversal rather than repeated an
 
 const reviewSource = source.slice(source.indexOf('  var reviewByKey'), source.indexOf('  applyContentReview(host);'));
 test('translated review labels stabilize without repeatedly mutating unchanged text', () => {
-  const runtime = vm.runInNewContext('`' + reviewSource + '`');
+  // boot.ts interpolates the imported staff-experience DOM helper into this template at module load.
+  const runtime = vm.runInNewContext('`' + reviewSource + '`', {applyStaffExperienceDom});
   const parent = {closest: () => null};
   let value = '  Ayurvedic restaurant  ', writes = 0;
   const node = {nodeType: 3, parentElement: parent,
