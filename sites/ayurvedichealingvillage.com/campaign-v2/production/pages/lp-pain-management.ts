@@ -58,7 +58,7 @@ export default defineCopy({
       heading: "From your first conversation to admission",
       steps: [
         { title: "Describe what has become difficult", body: "In a free initial consultation, share previous diagnoses, reports, imaging and the treatments or medicines you currently use." },
-        { title: "Review the plan and quotation", body: "Confirm the recommended programme, number of nights, accommodation and any assistance you need. Ask for a quotation that sets out the included care and separate charges." },
+        { title: "Review the plan and quotation", body: "Confirm the recommended programme, number of nights, accommodation and any assistance you need." },
         { title: "Follow your prescribed plan", body: "Attend your prescribed sessions, with physician reviews through your stay. Before discharge, discuss the recommended routine, dietary guidance and follow-up." },
       ],
     },

@@ -72,6 +72,20 @@ function baselineSources() {
   const fixtureData = JSON.parse(fs.readFileSync(path.join(dir, "sources.json"), "utf8"));
   const sources = Object.fromEntries(SLUGS.map((slug) => [PAGE(slug), fixtureData[slug]]));
   for (const slug of SLUGS) assert.equal(crypto.createHash("sha256").update(sources[PAGE(slug)]).digest("hex"), provenance.sha256[slug]);
+  return withTrainD04(sources);
+}
+// Train D04 (14 Oct): the separately authorised quotation/benefit-line delta is applied to the baseline as well, exact
+// replacement by exact replacement, so this comparison still measures only the comparison paragraphs.
+function withTrainD04(sources) {
+  const d04 = JSON.parse(fs.readFileSync(P("test/fixtures/train-d04-copy-20261014.json"), "utf8")).files;
+  for (const slug of SLUGS) {
+    const entry = d04[`campaign-v2/production/pages/${slug}.ts`];
+    if (!entry) continue;
+    for (const { before, after } of entry.replacements) {
+      assert.equal(sources[PAGE(slug)].split(before).length - 1, 1, `${slug}: train D04 delta applies once to the baseline`);
+      sources[PAGE(slug)] = sources[PAGE(slug)].replace(before, after);
+    }
+  }
   return sources;
 }
 const nowLoad = graph(process.env.AHV_COMPARISON_SOURCE_DIR ? sourcesFrom(process.env.AHV_COMPARISON_SOURCE_DIR) : {});

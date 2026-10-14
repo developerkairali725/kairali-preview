@@ -29,6 +29,7 @@ export default defineCopy({
       paragraphs: [
         "Before setting aside time for Panchakarma, understand what the programme may involve for you. Your health history, current medicines, daily routine and goals all matter when discussing suitability with an Ayurvedic doctor.",
         "At Kairali – The Ayurvedic Healing Village in Palakkad, Kerala, the programme begins with an individual assessment. Your doctor explains the proposed therapies, dietary guidance and time needed, and reviews your care during the stay. The published programme is a 14–21 night stay; confirm the recommended duration for your needs before arranging travel.",
+        "What your stay offers: a programme your doctor explains before it begins and reviews during your stay, meals and activities that fit your programme, and a different daily pace, with time to sit in the gardens or rest in your villa.",
       ],
     },
     // "Panchakarma refers to five classical Ayurvedic procedures: Vamanam, Virechanam, Vasti, Nasyam and

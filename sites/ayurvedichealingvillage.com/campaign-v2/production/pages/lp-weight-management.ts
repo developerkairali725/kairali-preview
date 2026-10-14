@@ -59,7 +59,7 @@ export default defineCopy({
       heading: "Three steps from enquiry to admission",
       steps: [
         { title: "Start with a free consultation", body: "Share your health history, current medicines and previous approaches. Ask whether the programme is suitable for you and what goals are realistic." },
-        { title: "Agree the duration and quotation", body: "Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Confirm the duration recommended for you, your villa and the full quotation before arranging travel." },
+        { title: "Agree the duration and quotation", body: "Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Confirm the duration recommended for you and your villa before arranging travel." },
         { title: "Settle into your daily routine", body: "Your days bring together prescribed therapies, meals, suitable activity and rest, with your doctor reviewing progress during the stay." },
       ],
     },

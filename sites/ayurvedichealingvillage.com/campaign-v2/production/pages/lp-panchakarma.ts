@@ -54,13 +54,13 @@ export default defineCopy({
       heading: "How your Panchakarma stay is planned",
       steps: [
         { title: "A free initial consultation", body: "Share your symptoms, diagnoses, current medicines and previous treatment. Bring relevant medical records and mention any dietary needs or practical assistance you may require." },
-        { title: "Your plan and personal quotation", body: "Patient care prepares a quotation for your programme, dates, duration and occupancy. Check the included care and separately charged items before booking." },
+        { title: "Your plan and personal quotation", body: "Patient care prepares a quotation for your programme, dates, duration and occupancy." },
         { title: "Your stay at the Healing Village", body: "Follow your prescribed programme from your villa, with gardens and space to rest between appointments." },
       ],
     },
     stay: {
       heading: "Your quotation is personal to you",
-      paragraphs: ["Panchakarma is planned after assessment, so your quotation is prepared for your recommended programme, duration, dates and villa choice, rather than as a fixed package. Ask patient care for a quotation covering your care and any later services."],
+      paragraphs: ["Panchakarma is planned after assessment, so your quotation is prepared for your recommended programme, duration, dates and villa choice, rather than as a fixed package."],
       lists: [
         { heading: "Confirm in your quotation", items: ["The recommended programme and duration", "Villa choice and occupancy", "Meals, doctor reviews, therapies and activities"] },
         { heading: "Ask about separately", items: ["Medicines and tests", "Additional sessions", "Transport and personal services"], extra: true },

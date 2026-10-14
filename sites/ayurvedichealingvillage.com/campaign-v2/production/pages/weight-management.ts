@@ -37,6 +37,7 @@ export default defineCopy({
       paragraphs: [
         "Weight management raises practical questions: how to plan meals, make time for activity, cope with an irregular routine and keep changes going after a stay. At Kairali – The Ayurvedic Healing Village in Palakkad, Kerala, Weight Management & Metabolism Therapy is planned around an individual assessment and realistic goals.",
         "Kairali is an NABH-accredited Ayurvedic hospital. Ayurvedic doctors prescribe and review your care, and trained therapists carry out the recommended sessions. No one can promise a set amount of weight change or a fixed result for everyone.",
+        "What your stay offers: Ayurvedic doctors who prescribe and review your care, trained therapists for the recommended sessions, and a steady rhythm of meals, sessions and quiet time in the villas and gardens.",
       ],
       points: [
         "You have tried diets that were hard to keep up",

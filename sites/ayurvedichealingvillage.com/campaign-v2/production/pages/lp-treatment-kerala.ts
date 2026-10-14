@@ -58,7 +58,7 @@ export default defineCopy({
       heading: "From your first conversation to admission",
       steps: [
         { title: "Start with a free consultation", body: "Share your health history, current medicines and relevant records, and say what you hope to address. The doctor explains suitable options and the information needed to assess you." },
-        { title: "Agree your plan and quotation", body: "Review the recommended duration, villa category and occupancy. Ask for a quotation that sets out what is included and what is charged separately, and ask about any preparation before admission." },
+        { title: "Agree your plan and quotation", body: "Review the recommended duration, villa category and occupancy, and ask about any preparation before admission." },
         { title: "Settle into your prescribed routine", body: "Your days follow prescribed therapies, meals and rest, with doctors reviewing your programme during the stay. Before discharge, ask which guidance to continue at home." },
       ],
     },
@@ -89,7 +89,6 @@ export default defineCopy({
         { heading: "Ask for a quotation that explains", items: ["Your programme, recommended duration and dates", "Villa category and occupancy", "Included meals and doctor reviews", "Prescribed therapies and activities"] },
         { heading: "Ask about separately charged items", items: ["Medicines and tests", "Additional sessions", "Transport", "Personal services"], extra: true },
       ],
-      after: ["Your initial doctor consultation is free. Ask for a quotation covering your care and any later services, with the inclusions and any extra charges clearly explained."],
     },
     doctors: {
       heading: "Meet your Ayurvedic doctors",

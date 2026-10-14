@@ -189,6 +189,16 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
       : f === "campaign-v2/production/ui.ts" ? "51a9637a750ca21623f4488c82b8a6592bc154d9"
       : ["campaign-v2/production/pages/family-ayurvedic-retreat.ts", "campaign-v2/production/pages/pain-management.ts"].includes(f) ? "76e9f767a7e000f3e6789c3453c1552cbfa2ec23" : BASE;
     let current = read(f);
+    // Train D04 (14 Oct): reverse only the exact quotation consolidation and benefit-line delta first.
+    const trainD04 = JSON.parse(read("test/fixtures/train-d04-copy-20261014.json")).files[f];
+    if (trainD04) {
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), trainD04.afterSHA256, f);
+      for (const { before, after } of [...trainD04.replacements].reverse()) {
+        assert.equal(current.split(after).length - 1, 1, `${f}: exact train D04 copy delta`);
+        current = current.replace(after, before);
+      }
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), trainD04.beforeSHA256, f);
+    }
     const integrationCorrection = staffRosterIntegration.files[f];
     if (integrationCorrection) {
       assert.equal(crypto.createHash("sha256").update(current).digest("hex"), integrationCorrection.afterSHA256, f);

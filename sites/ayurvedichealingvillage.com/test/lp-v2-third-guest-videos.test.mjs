@@ -6,6 +6,10 @@ import {productionCampaign,PRODUCTION_SLUGS} from '../campaign-v2/production/loa
 import {FILMS} from '../campaign-v2/data/films.ts';
 import {APPROVED_FILM_IDS,GUEST_VIDEO_ROUTES,filmIdFromHref,routeAllowed,reduce,CLOSED,playerSrc} from '../campaign-v2/production/sections/guest-video-policy.mjs';
 import fixture from './fixtures/third-guest-videos-20261014.json' with {type:'json'};
+import trainD04 from "./fixtures/train-d04-copy-20261014.json" with {type:"json"};
+// Train D04 (14 Oct): reverse only the exact quotation/benefit-line delta, at config and at source level, before the older pins.
+const undoD04Config=(slug,c)=>{for(const {path,before,after,removed} of trainD04.configChanges[slug]||[]){let o=c;for(const k of path.slice(0,-1))o=o[k];const k=path.at(-1);if(removed)assert(!(k in o),slug+": train D04 removed "+path.join("."));else assert.deepEqual(o[k],after,slug+": exact train D04 field "+path.join("."));o[k]=JSON.parse(JSON.stringify(before));}return c;};
+const undoD04Source=(p,value)=>{const e=trainD04.files[p];if(!e)return value;assert.equal(createHash("sha256").update(value).digest("hex"),e.afterSHA256,p);for(const {before,after} of [...e.replacements].reverse()){assert.equal(value.split(after).length-1,1,p);value=value.replace(after,before);}assert.equal(createHash("sha256").update(value).digest("hex"),e.beforeSHA256,p);return value;};
 const targets={
  'wellness-kerala':{source:'ayurveda-retreat',index:1,id:'4x01PtWfNnk'},
  'cleansing-centre':{source:'lp-cleansing-centre',index:2,id:'4x01PtWfNnk'},
@@ -25,10 +29,10 @@ for(const [slug,{source,index,id}] of Object.entries(targets))test(`${slug}: thi
 });
 test('all21 other configs unchanged; remove only appended third card to restore each target and its original two cards',()=>{
  assert.equal(PRODUCTION_SLUGS.length,24);assert.equal(Object.keys(targets).length,3);
- for(const slug of PRODUCTION_SLUGS){const c=JSON.parse(JSON.stringify(productionCampaign(slug)));if(targets[slug])c.page.stories.films.pop();assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);}
+ for(const slug of PRODUCTION_SLUGS){const c=undoD04Config(slug,JSON.parse(JSON.stringify(productionCampaign(slug))));if(targets[slug])c.page.stories.films.pop();assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);}
  assert.equal(GUEST_VIDEO_ROUTES.length,13);assert.equal(APPROVED_FILM_IDS.length,5);
 });
 test('exact source additions reverse to the prior byte hashes; no testimonial text or rendering/consent policy changes',()=>{
- for(const [p,e]of Object.entries(fixture.files)){let s=fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');assert.equal(sha(s),e.afterSHA256);assert.equal(s.split(e.addition).length-1,1);s=s.replace(e.addition,'');assert.equal(sha(s),e.beforeSHA256);}
+ for(const [p,e]of Object.entries(fixture.files)){let s=undoD04Source(p,fs.readFileSync(new URL('../'+p,import.meta.url),'utf8'));assert.equal(sha(s),e.afterSHA256);assert.equal(s.split(e.addition).length-1,1);s=s.replace(e.addition,'');assert.equal(sha(s),e.beforeSHA256);}
  for(const [p,hash]of Object.entries(fixture.unchangedSHA256))assert.equal(sha(fs.readFileSync(new URL('../'+p,import.meta.url))),hash,p);
 });

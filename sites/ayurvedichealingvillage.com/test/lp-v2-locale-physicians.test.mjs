@@ -10,6 +10,10 @@ import {productionCampaign,PRODUCTION_SLUGS} from '../campaign-v2/production/loa
 import {DOCTORS,CURRENT_ROSTER} from '../campaign-v2/data/doctors.ts';
 import {UI} from '../campaign-v2/production/ui.ts';
 import fixture from './fixtures/locale-physicians-20261014.json' with {type:'json'};
+import trainD04 from "./fixtures/train-d04-copy-20261014.json" with {type:"json"};
+// Train D04 (14 Oct): reverse only the exact quotation/benefit-line delta, at config and at source level, before the older pins.
+const undoD04Config=(slug,c)=>{for(const {path,before,after,removed} of trainD04.configChanges[slug]||[]){let o=c;for(const k of path.slice(0,-1))o=o[k];const k=path.at(-1);if(removed)assert(!(k in o),slug+": train D04 removed "+path.join("."));else assert.deepEqual(o[k],after,slug+": exact train D04 field "+path.join("."));o[k]=JSON.parse(JSON.stringify(before));}return c;};
+const undoD04Source=(p,value)=>{const e=trainD04.files[p];if(!e)return value;assert.equal(createHash("sha256").update(value).digest("hex"),e.afterSHA256,p);for(const {before,after} of [...e.replacements].reverse()){assert.equal(value.split(after).length-1,1,p);value=value.replace(after,before);}assert.equal(createHash("sha256").update(value).digest("hex"),e.beforeSHA256,p);return value;};
 const byLocale={de:'lp-behandlung-kerala',ru:'lp-treatment-kerala-ru'};
 const languages={de:{Malayalam:'Malayalam',English:'Englisch',Hindi:'Hindi',Tamil:'Tamil'},ru:{Malayalam:'малаялам',English:'английском',Hindi:'хинди',Tamil:'тамильском'}};
 const titles={de:'Ihre Ayurveda-Ärzte',ru:'Ваши аюрведические врачи'};
@@ -32,7 +36,7 @@ for(const [locale,slug] of Object.entries(byLocale))test(`${locale}: five comple
 test('all24 configs preserve original bytes after exact approved experience facts and DE/RU roster/heading normalization',()=>{
  assert.equal(PRODUCTION_SLUGS.length,24);assert.equal(Object.keys(fixture.configSHA256).length,24);
  for(const slug of PRODUCTION_SLUGS){
-  const c=JSON.parse(JSON.stringify(productionCampaign(slug)));const locale=Object.keys(byLocale).find(l=>byLocale[l]===slug);
+  const c=undoD04Config(slug,JSON.parse(JSON.stringify(productionCampaign(slug))));const locale=Object.keys(byLocale).find(l=>byLocale[l]===slug);
   if(locale){c.doctors=c.doctors.filter(d=>d.id==='deepu-john');c.page.doctors.heading=originalTitles[locale];}
   for(const doctor of c.doctors){const delta=staffExperienceDelta.sourceDelta['campaign-v2/data/doctors.ts'].find(d=>JSON.parse(d.new.trim().slice(8,-1))===doctor.tenure);assert(delta,doctor.id);doctor.tenure=JSON.parse(delta.old.trim().slice(8,-1));}
   if(slug===monsoonCompatibility.slug){
@@ -48,7 +52,7 @@ test('all24 configs preserve original bytes after exact approved experience fact
 });
 test('exact approved source corrections reverse to original bytes, preserving prior facts/copy/style fixtures',()=>{
  for(const [p,entry] of Object.entries(fixture.files)){
-  let value=fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
+  let value=undoD04Source(p,fs.readFileSync(new URL('../'+p,import.meta.url),'utf8'));
   const combined=staffRosterIntegration.files[p];
   if(combined){assert.equal(sha(value),combined.afterSHA256,p);for(const{before,after}of combined.replacements){assert.equal(value.split(after).length-1,1,p);value=value.replace(after,before);}assert.equal(sha(value),combined.beforeSHA256,p);}
   for(const delta of staffExperienceDelta.sourceDelta[p]||[]){assert.equal(value.split(delta.new).length-1,1,p);value=value.replace(delta.new,delta.old);}
