@@ -125,9 +125,16 @@ test("all four routes carry the comparison, and no other route changed", () => {
 });
 
 test("only paragraphs were appended: every original card, heading, link, paragraph, CTA and FAQ is unchanged", () => {
+  // AHV-WB.026: the one approved survivor-link href is reversed exactly; every other link must still match.
+  const survivor = JSON.parse(fs.readFileSync(P("test/fixtures/yoga-survivor-link-20261014.json"), "utf8")).survivorHref;
   for (const slug of SLUGS) {
     const now = plain(NOW_C[slug]);
     const was = plain(WAS_C[slug]);
+    if (slug === "treatment-packages") {
+      const hits = now.page.offering.cards.flatMap((c) => c.links ?? []).filter((l) => l.href === survivor.after);
+      assert.equal(hits.length, 1, "exactly one approved survivor link");
+      hits[0].href = survivor.before;
+    }
     const cardsNow = now.page.offering.cards;
     const cardsWas = was.page.offering.cards;
     assert.equal(cardsNow.length, cardsWas.length, `${slug}: card count`);

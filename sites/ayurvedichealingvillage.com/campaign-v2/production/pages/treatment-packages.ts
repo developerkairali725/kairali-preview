@@ -84,7 +84,7 @@ export default defineCopy({
         {
           title: "Yoga and meditation",
           links: [
-            { label: "Personalised yoga", href: `${SITE}/yoga-retreats/` },
+            { label: "Personalised yoga", href: `${SITE}/yoga-therapy-individual/` },
             { label: "Yoga and meditation stay", href: `${SITE}/yoga-and-meditation-package/` },
             { label: "Yoga for digestive wellbeing", href: `${SITE}/digestive-wellness-gut-health-yoga-therapy/` },
             { label: "Yoga-based stress programme", href: `${SITE}/yoga-based-stress-energy-reset-program/` },

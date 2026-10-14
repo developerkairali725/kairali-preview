@@ -189,6 +189,16 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
       : f === "campaign-v2/production/ui.ts" ? "51a9637a750ca21623f4488c82b8a6592bc154d9"
       : ["campaign-v2/production/pages/family-ayurvedic-retreat.ts", "campaign-v2/production/pages/pain-management.ts"].includes(f) ? "76e9f767a7e000f3e6789c3453c1552cbfa2ec23" : BASE;
     let current = read(f);
+    // AHV-WB.026: reverse only the exact approved survivor-link href before the historical checks below.
+    const survivorLink = JSON.parse(read("test/fixtures/yoga-survivor-link-20261014.json")).files[f];
+    if (survivorLink) {
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), survivorLink.afterSHA256, f);
+      for (const { before, after } of survivorLink.replacements) {
+        assert.equal(current.split(after).length - 1, 1, `${f}: exact approved survivor link`);
+        current = current.replace(after, before);
+      }
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), survivorLink.beforeSHA256, f);
+    }
     const integrationCorrection = staffRosterIntegration.files[f];
     if (integrationCorrection) {
       assert.equal(crypto.createHash("sha256").update(current).digest("hex"), integrationCorrection.afterSHA256, f);

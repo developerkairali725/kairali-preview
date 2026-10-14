@@ -10,6 +10,9 @@ import {productionCampaign,PRODUCTION_SLUGS} from '../campaign-v2/production/loa
 import {DOCTORS,CURRENT_ROSTER} from '../campaign-v2/data/doctors.ts';
 import {UI} from '../campaign-v2/production/ui.ts';
 import fixture from './fixtures/locale-physicians-20261014.json' with {type:'json'};
+import survivorLink from './fixtures/yoga-survivor-link-20261014.json' with {type:'json'};
+// AHV-WB.026: reverse only the exact approved survivor-link href on treatment-packages before the config hash.
+const revertSurvivor=(slug,c)=>{if(slug!=='treatment-packages')return;const hits=c.page.offering.cards.flatMap(x=>x.links??[]).filter(l=>l.href===survivorLink.survivorHref.after);assert.equal(hits.length,1,slug);hits[0].href=survivorLink.survivorHref.before;};
 const byLocale={de:'lp-behandlung-kerala',ru:'lp-treatment-kerala-ru'};
 const languages={de:{Malayalam:'Malayalam',English:'Englisch',Hindi:'Hindi',Tamil:'Tamil'},ru:{Malayalam:'малаялам',English:'английском',Hindi:'хинди',Tamil:'тамильском'}};
 const titles={de:'Ihre Ayurveda-Ärzte',ru:'Ваши аюрведические врачи'};
@@ -43,6 +46,7 @@ test('all24 configs preserve original bytes after exact approved experience fact
     obj[key]=JSON.parse(JSON.stringify(before));
    }
   }
+  revertSurvivor(slug,c);
   assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);
  }
 });

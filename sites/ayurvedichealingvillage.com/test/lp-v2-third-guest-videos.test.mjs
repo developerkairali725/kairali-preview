@@ -6,6 +6,9 @@ import {productionCampaign,PRODUCTION_SLUGS} from '../campaign-v2/production/loa
 import {FILMS} from '../campaign-v2/data/films.ts';
 import {APPROVED_FILM_IDS,GUEST_VIDEO_ROUTES,filmIdFromHref,routeAllowed,reduce,CLOSED,playerSrc} from '../campaign-v2/production/sections/guest-video-policy.mjs';
 import fixture from './fixtures/third-guest-videos-20261014.json' with {type:'json'};
+import survivorLink from './fixtures/yoga-survivor-link-20261014.json' with {type:'json'};
+// AHV-WB.026: reverse only the exact approved survivor-link href on treatment-packages before the config hash.
+const revertSurvivor=(slug,c)=>{if(slug!=='treatment-packages')return;const hits=c.page.offering.cards.flatMap(x=>x.links??[]).filter(l=>l.href===survivorLink.survivorHref.after);assert.equal(hits.length,1,slug);hits[0].href=survivorLink.survivorHref.before;};
 const targets={
  'wellness-kerala':{source:'ayurveda-retreat',index:1,id:'4x01PtWfNnk'},
  'cleansing-centre':{source:'lp-cleansing-centre',index:2,id:'4x01PtWfNnk'},
@@ -25,7 +28,7 @@ for(const [slug,{source,index,id}] of Object.entries(targets))test(`${slug}: thi
 });
 test('all21 other configs unchanged; remove only appended third card to restore each target and its original two cards',()=>{
  assert.equal(PRODUCTION_SLUGS.length,24);assert.equal(Object.keys(targets).length,3);
- for(const slug of PRODUCTION_SLUGS){const c=JSON.parse(JSON.stringify(productionCampaign(slug)));if(targets[slug])c.page.stories.films.pop();assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);}
+ for(const slug of PRODUCTION_SLUGS){const c=JSON.parse(JSON.stringify(productionCampaign(slug)));if(targets[slug])c.page.stories.films.pop();revertSurvivor(slug,c);assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);}
  assert.equal(GUEST_VIDEO_ROUTES.length,13);assert.equal(APPROVED_FILM_IDS.length,5);
 });
 test('exact source additions reverse to the prior byte hashes; no testimonial text or rendering/consent policy changes',()=>{
