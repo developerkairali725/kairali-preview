@@ -85,6 +85,10 @@ html[data-ahv-fh] nav[data-ahv-fh-finder]:not([data-ahv-fh-open]) [role="group"]
 
 /* in-page anchors land below the ONE sticky header row (no second pinned bar on family pages) */
 html[data-ahv-fh] #ahv-design-root [id] { scroll-margin-top:84px; }
+/* AHV-I01.nav1-6: the Air India Maharaja Club sections carry the design's inline scroll-margin-top (16/20px),
+   which beat the rule above, so About/Features/Programs/Routine/Contact landed under the 64/73px sticky header in
+   WebKit. Same 84px offset as every other in-page anchor on family pages; the form keeps its own. */
+html[data-ahv-fh] #ahv-design-root .air-membership section[id] { scroll-margin-top:84px !important; }
 html[data-ahv-fh] #ahv-design-root nav[data-ahv-secondary] { position:static !important; top:auto !important; }
 
 /* native video gallery: its own fallback "Gallery" box duplicated the family menu — the header owns it */
