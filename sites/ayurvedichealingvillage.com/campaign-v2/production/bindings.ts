@@ -317,7 +317,8 @@ for (const [slug, pick] of Object.entries(PHOTO_PICKS_20261014) as [ProductionSl
  * pick one not just from new you can pick from old") and decision 15 ("let the photo be": the pulse-check photograph
  * stays on the pain pages). Rows AHV-WB.005/.031/.058/.192/.218/.311/.377 hero-image, AHV-WB.192/.335 how-image and
  * AHV-WB.403.change. Each hero (desktop and phone) becomes a page-specific Palakkad photograph with no bare back and no
- * identifiable person: Panchakarma a Kizhi (Pinda Sweda) therapy, pain a Janu Vasti knee therapy, the cleansing centre its
+ * identifiable person: Panchakarma a patient villa (staff: "looks like a spa, not a hospital"; therapy imagery only on the
+ * pain page), pain a Janu Vasti knee therapy, the cleansing centre its
  * treatment blocks and treatment-block courtyard, treatment in Kerala the coconut grove, the packages page the lawns
  * before the treatment blocks, south India the colonnade between the treatment blocks, /lp/pain-management/ the pulse
  * check. A steps photograph is appended once at the end of the full gallery (as PHOTO_PICKS_20261014). No hero is one of
@@ -327,7 +328,7 @@ for (const [slug, pick] of Object.entries(PHOTO_PICKS_20261014) as [ProductionSl
  */
 export const PHOTO_PICKS_20261015: Readonly<Partial<Record<ProductionSlug, { hero?: string; pathway?: string }>>> = {
   "treatment-packages": { hero: "ahv-img-018" }, // AHV-WB.005.hero-image
-  panchakarma: { hero: "ahv-pkd-186" }, // AHV-WB.031.hero-image
+  panchakarma: { hero: "ahv-pkd-50" }, // AHV-WB.031.hero-image
   "pain-management": { hero: "ahv-pkd-180" }, // AHV-WB.058.hero-image
   "cleansing-centre": { hero: "ahv-pkd-115", pathway: "ahv-img-045" }, // AHV-WB.192.hero-image, AHV-WB.192.how-image
   "treatment-kerala": { hero: "ahv-pkd-307" }, // AHV-WB.218.hero-image

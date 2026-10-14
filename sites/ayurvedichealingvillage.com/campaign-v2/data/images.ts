@@ -92,16 +92,16 @@ export const IMAGES: Record<string, ImageRef> = {
   // photographs (production/bindings.ts PHOTO_PICKS_20261015), all Palakkad (ahv-edited, IMAGE_CATALOG register_ok=yes;
   // never the Delhi HO-centre shoot). ahv-pkd-*: built by tools/build-train-f-20261015-photos.py from the SHA-256-verified
   // library originals; ahv-img-009: the owner-approved file of 28 Sep 2026 (batch 1, AHV-IMG-009, -105.jpg), unchanged.
-  "ahv-pkd-186": {
-    id: "ahv-pkd-186", src: "/ahv/assets/img/owner-decision-20261015/ahv-pkd-186.webp",
-    width: 1600, height: 1067, alt: "Two therapists press warm herbal boluses (Kizhi) on a patient's knee and thigh",
-    // Hands, forearms and an apron only; no face in frame.
+  "ahv-pkd-50": {
+    id: "ahv-pkd-50", src: "/ahv/assets/img/owner-decision-20261015/ahv-pkd-50.webp",
+    width: 1600, height: 1067, alt: "Laterite-brick patient villa with a blue arched porch and bay windows beside a water channel",
     decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
   },
   "ahv-pkd-180": {
     id: "ahv-pkd-180", src: "/ahv/assets/img/owner-decision-20261015/ahv-pkd-180.webp",
-    width: 1600, height: 2824, alt: "Warm medicated oil poured from a brass bowl into a dough ring on a patient's knee during Janu Vasti",
-    // A therapist's hand and the patient's draped leg only; the build trims the left edge so no face is in frame.
+    width: 1600, height: 1616, alt: "Warm medicated oil poured from a brass bowl into a dough ring on a patient's knee during Janu Vasti",
+    // A therapist's hand and the patient's draped leg only. Built as a near-square window of the portrait original, left
+    // edge trimmed (no face in frame) and centred on the oil stream, ring and knee for the variant-A hero cover crop.
     decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
   },
   "ahv-pkd-115": {
