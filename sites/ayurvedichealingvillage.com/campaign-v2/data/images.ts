@@ -49,26 +49,39 @@ export const IMAGES: Record<string, ImageRef> = {
   "team-rahul-r": staff("team-rahul-r", "team-rahul-r-c.webp", 943, 1421, "Dr. Rahul R, Ayurvedic physician at the Healing Village"),
   "team-adhina-ub": staff("team-adhina-ub", "team-adhina-ub.webp", 600, 900, "Dr. Adhina U.B., Resident Medical Officer at the Healing Village"),
   "team-aashitha-ps": staff("team-aashitha-ps", "team-aashitha-ps.webp", 600, 900, "Dr. Aashitha P.S., Ayurvedic physician at the Healing Village"),
-  // Owner decision 10 (14 Oct 2026, OWNER-DECISIONS-20261014-ANSWERS.json "10-photos"): doctor-consultation, pulse-check
-  // and village photographs picked from the existing image bank (Palakkad, ahv-edited) to replace bare-back therapy hero
-  // and "How it works" photographs (production/bindings.ts PHOTO_PICKS_20261014). No identifiable person in any of them.
-  // ahv-img-005 / -045: built by tools/build-owner-decision-20261014-photos.py from the SHA-256-verified library
-  // originals (-111.jpg, -348.jpg); ahv-img-010 / -012: the owner-approved batch-1 files (28 Sep 2026), unchanged.
-  "ahv-img-005": {
-    id: "ahv-img-005", src: "/ahv/assets/img/owner-decision-20261014/ahv-img-005.webp",
-    width: 1600, height: 1067, alt: "Physician consultation room with a curved wooden desk and round windows at Kairali in Palakkad",
-    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
-  },
+  // Owner decision 10 (14 Oct 2026, OWNER-DECISIONS-20261014-ANSWERS.json "10-photos"): pulse-check and village
+  // photographs picked from the existing image bank (Palakkad, ahv-edited) to replace bare-back therapy hero and
+  // "How it works" photographs (production/bindings.ts PHOTO_PICKS_20261014). No person in 018 / 026 / 034; 045 shows
+  // hands and forearms only. ahv-img-045: built by tools/build-owner-decision-20261014-photos.py from the SHA-256-verified
+  // library original (-348.jpg); 018 / 026 / 034: the owner-approved files of 28 Sep 2026 (batches 1-2), unchanged.
   "ahv-img-045": {
     id: "ahv-img-045", src: "/ahv/assets/img/owner-decision-20261014/ahv-img-045.webp",
     width: 1600, height: 1067, alt: "A physician's fingers on a patient's wrist for an Ayurvedic pulse examination at a wooden desk",
     // Hands and forearms only; faces are not shown (IMAGE_CATALOG register_ok=yes).
     decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
   },
+  "ahv-img-018": {
+    id: "ahv-img-018", src: "/ahv/assets/img/owner-approved-20260928/ahv-img-018.webp",
+    width: 1600, height: 1067, alt: "Lawns and a curving lily pond before stone-and-brick treatment blocks among coconut palms",
+    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
+  },
+  "ahv-img-026": {
+    id: "ahv-img-026", src: "/ahv/assets/img/owner-approved-20260928/ahv-img-026.webp",
+    width: 1600, height: 1067, alt: "Reception lounge under a high beamed ceiling with antique seating on red oxide tiles at Kairali",
+    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
+  },
+  "ahv-img-034": {
+    id: "ahv-img-034", src: "/ahv/assets/img/owner-approved-20260928/ahv-img-034.webp",
+    width: 1600, height: 1067, alt: "Arched wooden footbridge with red railings over a stream among crotons and palms in the gardens",
+    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
+  },
+  // Not used on any route (independent review, 14 Oct 2026): two uniformed staff members stand on the garden path in
+  // the background, one face partly visible at full size; owner-approved as a gallery tile only, staff likeness consent
+  // for hero use not on record.
   "ahv-img-010": {
     id: "ahv-img-010", src: "/ahv/assets/img/owner-approved-20260928/ahv-img-010.webp",
-    width: 1600, height: 1067, alt: "Curved veranda of the main block overlooking lawns, a water channel and a colonnaded pavilion",
-    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
+    width: 1600, height: 1067, alt: "Curved veranda over lawns and a water channel, with two staff members on the path beyond",
+    decorative: false, gccSafe: true, location: "palakkad", consent: "pending",
   },
   "ahv-img-012": {
     id: "ahv-img-012", src: "/ahv/assets/img/owner-approved-20260928/ahv-img-012.webp",

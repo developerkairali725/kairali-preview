@@ -41,7 +41,7 @@
   }
  },
  "photoPicks": {
-  "note": "Owner decision 10 (rows AHV-WB.005/.060/.400/.403/.445): production/bindings.ts PHOTO_PICKS_20261014. 'before' = the route's prior heroImage/mobileImage/pathwayImage ids; a new steps photograph is appended once as the gallery's last entry.",
+  "note": "Owner decision 10 (rows AHV-WB.005/.060/.400/.403/.445): production/bindings.ts PHOTO_PICKS_20261014. 'before' = the route's prior heroImage/mobileImage/pathwayImage ids; a new steps photograph is appended once as the gallery's last entry, in galleryCategory.",
   "routes": {
    "treatment-packages": {
     "before": {
@@ -50,11 +50,12 @@
      "pathwayImage": "kt-199"
     },
     "after": {
-     "heroImage": "ahv-img-010",
-     "mobileImage": "ahv-img-010",
+     "heroImage": "ahv-img-018",
+     "mobileImage": "ahv-img-018",
      "pathwayImage": "ahv-img-045"
     },
-    "galleryAppended": "ahv-img-045"
+    "galleryAppended": "ahv-img-045",
+    "galleryCategory": "Therapies"
    },
    "pain-management": {
     "before": {
@@ -63,8 +64,8 @@
      "pathwayImage": "kt-202"
     },
     "after": {
-     "heroImage": "ahv-img-045",
-     "mobileImage": "ahv-img-045",
+     "heroImage": "ahv-img-034",
+     "mobileImage": "ahv-img-034",
      "pathwayImage": "kt-202"
     },
     "galleryAppended": null
@@ -76,11 +77,12 @@
      "pathwayImage": "kt-199"
     },
     "after": {
-     "heroImage": "ahv-img-005",
-     "mobileImage": "ahv-img-005",
-     "pathwayImage": "ahv-img-045"
+     "heroImage": "ahv-img-045",
+     "mobileImage": "ahv-img-045",
+     "pathwayImage": "ahv-img-026"
     },
-    "galleryAppended": "ahv-img-045"
+    "galleryAppended": "ahv-img-026",
+    "galleryCategory": "Grounds"
    },
    "lp-treatment-kerala": {
     "before": {
@@ -91,10 +93,15 @@
     "after": {
      "heroImage": "ahv-img-012",
      "mobileImage": "ahv-img-012",
-     "pathwayImage": "ahv-img-005"
+     "pathwayImage": "ahv-img-045"
     },
-    "galleryAppended": "ahv-img-005"
+    "galleryAppended": "ahv-img-045",
+    "galleryCategory": "Therapies"
    }
   }
- }
+ },
+ "storiesAddedTo": [
+  "lp-behandlung-kerala",
+  "lp-treatment-kerala-ru"
+ ]
 }

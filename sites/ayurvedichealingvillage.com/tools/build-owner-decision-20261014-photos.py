@@ -5,8 +5,6 @@ from the EXISTING image bank (old and new). Two picks have no published web file
 library originals, verified by SHA-256 first, using the batch-1/batch-2 convention (tools/build-owner-batch02-assets.py):
 1600px-wide WebP q82 plus a 768px rendition, EXIF orientation applied, nothing cropped (crop is a display decision).
 
-  AHV-IMG-005  ahv-edited/...-111.jpg  physician consultation room, no people (owner batch 1 "yes", 28 Sep 2026;
-               also published in english-candidate/galleries-2026.json as property/block-facility-physician-consultation-room-01)
   AHV-IMG-045  ahv-edited/...-348.jpg  pulse examination close-up, hands only, faces not shown (image-approval batch 3
                manifest; IMAGE_CATALOG register_ok=yes; picked under owner decision 10)
 
@@ -18,7 +16,6 @@ from PIL import Image, ImageOps
 LIB = Path("/Volumes/Extreme SSD - Blue 2nd/Kairali-Image-Library/ahv-edited")
 OUT = Path("public/ahv/assets/img/owner-decision-20261014")
 PICKS = {
-    "005": ("kAIRALI PALAK KAD_DEPICTIONS BY PRACHI KHASGIWALA-111.jpg", "f110d9a4b4d42cd00593674cd7fd5d8bbd237340c5128aa3757241603c0c4e63"),
     "045": ("kAIRALI PALAK KAD_DEPICTIONS BY PRACHI KHASGIWALA-348.jpg", "8a253b8bd635e62c1a99054df3e8fc05deb48999f90a2c6256c1a83bc582ba3e"),
 }
 CHECK = "--check" in sys.argv

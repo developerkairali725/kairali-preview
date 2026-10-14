@@ -9,6 +9,7 @@ import fs from 'node:fs';
 import {productionCampaign,PRODUCTION_SLUGS} from '../campaign-v2/production/load.ts';
 import {DOCTORS,CURRENT_ROSTER} from '../campaign-v2/data/doctors.ts';
 import {UI} from '../campaign-v2/production/ui.ts';
+import {IMAGES} from '../campaign-v2/data/images.ts';
 import fixture from './fixtures/locale-physicians-20261014.json' with {type:'json'};
 import ownerDecisionsC from './fixtures/owner-decisions-c-20261014.json' with {type:'json'};
 const byLocale={de:'lp-behandlung-kerala',ru:'lp-treatment-kerala-ru'};
@@ -34,6 +35,17 @@ test('all24 configs preserve original bytes after exact approved experience fact
  assert.equal(PRODUCTION_SLUGS.length,24);assert.equal(Object.keys(fixture.configSHA256).length,24);
  for(const slug of PRODUCTION_SLUGS){
   const c=JSON.parse(JSON.stringify(productionCampaign(slug)));const locale=Object.keys(byLocale).find(l=>byLocale[l]===slug);
+  // Owner decisions 10-11 (14 Oct 2026): reverse only that exact newest config delta first (fixtures/owner-decisions-c-20261014.json).
+  const picked=ownerDecisionsC.photoPicks.routes[slug];
+  if(picked){
+   const id=(field)=>({heroImage:c.hero.image.A.id,mobileImage:c.hero.mobileImage.id,pathwayImage:c.page.pathway.image.id})[field];
+   for(const [field,want] of Object.entries(picked.after))assert.equal(id(field),want,slug+'.'+field);
+   const before=(field)=>JSON.parse(JSON.stringify(IMAGES[picked.before[field]]));
+   for(const v of ['A','B','C','D']){assert.equal(c.hero.image[v].id,picked.after.heroImage,slug);c.hero.image[v]=before('heroImage');}
+   c.hero.mobileImage=before('mobileImage');c.page.pathway.image=before('pathwayImage');
+   if(picked.galleryAppended){assert.deepEqual(c.gallery.at(-1),{category:picked.galleryCategory,image:IMAGES[picked.galleryAppended]},slug);c.gallery.pop();}
+  }
+  if(ownerDecisionsC.storiesAddedTo.includes(slug)){assert.equal(c.page.stories.films.length,3,slug);delete c.page.stories;}
   if(locale){c.doctors=c.doctors.filter(d=>d.id==='deepu-john');c.page.doctors.heading=originalTitles[locale];}
   for(const doctor of c.doctors){const delta=staffExperienceDelta.sourceDelta['campaign-v2/data/doctors.ts'].find(d=>JSON.parse(d.new.trim().slice(8,-1))===doctor.tenure);assert(delta,doctor.id);doctor.tenure=JSON.parse(delta.old.trim().slice(8,-1));}
   if(slug===monsoonCompatibility.slug){

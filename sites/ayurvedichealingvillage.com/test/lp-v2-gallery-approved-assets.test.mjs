@@ -79,7 +79,7 @@ function galleryBeforePicks(slug) {
   const g = ROUTES[slug].gallery;
   const appended = PHOTO_PICKS[slug]?.galleryAppended;
   if (!appended) return g;
-  assert.deepEqual(g.at(-1), { category: "Therapies", image: IMAGES[appended] }, `${slug}: appended steps photograph`);
+  assert.deepEqual(g.at(-1), { category: PHOTO_PICKS[slug].galleryCategory, image: IMAGES[appended] }, `${slug}: appended steps photograph`);
   assert.equal(g.filter((x) => x.image.id === appended).length, 1, `${slug}: appended once`);
   return g.slice(0, -1);
 }

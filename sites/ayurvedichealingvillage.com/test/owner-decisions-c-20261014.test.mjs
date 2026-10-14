@@ -75,9 +75,10 @@ test("9: mounted on the Russian route only, with the Russian locale", () => {
 // ── 10: photographs ─────────────────────────────────────────────────────────────────────────────────────────────
 
 const NEW_PHOTOS = {
-  "ahv-img-005": { file: "public/ahv/assets/img/owner-decision-20261014/ahv-img-005.webp", sha: "9db4942c372112a6e8907493875a0c22e6e0b7b199a4e095a48ef1268dd63438" },
   "ahv-img-045": { file: "public/ahv/assets/img/owner-decision-20261014/ahv-img-045.webp", sha: "13cc225808f4fbca77e8c38f94c3a46d83a6467acc392c6ea7d7a2faa3db2de6" },
-  "ahv-img-010": { file: "public/ahv/assets/img/owner-approved-20260928/ahv-img-010.webp" },
+  "ahv-img-018": { file: "public/ahv/assets/img/owner-approved-20260928/ahv-img-018.webp" },
+  "ahv-img-026": { file: "public/ahv/assets/img/owner-approved-20260928/ahv-img-026.webp" },
+  "ahv-img-034": { file: "public/ahv/assets/img/owner-approved-20260928/ahv-img-034.webp" },
   "ahv-img-012": { file: "public/ahv/assets/img/owner-approved-20260928/ahv-img-012.webp" },
 };
 /** Width and height from a WebP header (VP8X, VP8 or VP8L). */
@@ -124,9 +125,18 @@ test("10: every pick is a non-identifying bank photograph at >=1600 px, file pre
     assert.equal(im.decorative, false, id);
     assert.ok(im.alt.length >= 20 && im.alt.length <= 125, id);
   }
-  // The two built files come from the SHA-256-verified library originals (the script refuses any other source).
+  // The built file comes from the SHA-256-verified library original (the script refuses any other source).
   const tool = read("tools/build-owner-decision-20261014-photos.py");
-  assert.match(tool, /"005": \("kAIRALI PALAK KAD_DEPICTIONS BY PRACHI KHASGIWALA-111\.jpg", "f110d9a4b4d42cd00593674cd7fd5d8bbd237340c5128aa3757241603c0c4e63"\)/);
+  assert.doesNotMatch(tool, /KHASGIWALA-(111|344|345|347)\.jpg/, "no rejected or unapplied-approval source");
+  assert.ok(!fs.existsSync(path.join(SITE, "public/ahv/assets/img/owner-decision-20261014/ahv-img-005.webp")));
+  // Review, 14 Oct: ahv-img-010 has two staff in frame; it is recorded as such and used on no route.
+  assert.equal(IMAGES["ahv-img-010"].consent, "pending");
+  assert.match(IMAGES["ahv-img-010"].alt, /two staff members/);
+  for (const slug of PRODUCTION_SLUGS) {
+    const b = ROUTES[slug];
+    assert.ok(![b.heroImage.id, b.mobileImage.id, b.pathwayImage.id, ...b.gallery.map((g) => g.image.id)].includes("ahv-img-010"), slug);
+    assert.ok(![b.heroImage.id, b.pathwayImage.id].includes("ahv-img-005"), slug);
+  }
   assert.match(tool, /"045": \("kAIRALI PALAK KAD_DEPICTIONS BY PRACHI KHASGIWALA-348\.jpg", "8a253b8bd635e62c1a99054df3e8fc05deb48999f90a2c6256c1a83bc582ba3e"\)/);
 });
 
@@ -143,7 +153,7 @@ test("10: no bare-back therapy photograph remains in a picked hero or steps slot
     assert.notEqual(c.page.pathway.image.id, c.hero.image.A.id, slug);
     assert.ok(!c.gallery.slice(0, 5).some((g) => [c.hero.image.A.id, c.page.pathway.image.id].includes(g.image.id)), `${slug}: mosaic`);
     if (r.galleryAppended) {
-      assert.deepEqual(c.gallery.at(-1), { category: "Therapies", image: IMAGES[r.galleryAppended] }, slug);
+      assert.deepEqual(c.gallery.at(-1), { category: r.galleryCategory, image: IMAGES[r.galleryAppended] }, slug);
       assert.equal(c.gallery.filter((g) => g.image.id === r.galleryAppended).length, 1, slug);
     }
   }
@@ -152,6 +162,13 @@ test("10: no bare-back therapy photograph remains in a picked hero or steps slot
   assert.notEqual(hero("pain-management"), hero("lp-pain-management"));
   assert.notEqual(hero("treatment-packages"), hero("lp-treatment-packages"));
   assert.notEqual(hero("lp-treatment-kerala"), hero("treatment-kerala"));
+  // WB.403: /lp/pain-management/ leads with the pulse check; its steps photograph differs.
+  assert.equal(hero("lp-pain-management"), "ahv-img-045");
+  assert.notEqual(productionCampaign("lp-pain-management").page.pathway.image.id, "ahv-img-045");
+  // No picked hero repeats any route's mosaic tile.
+  for (const slug of PRODUCTION_SLUGS) for (const h of Object.keys(PHOTO_PICKS_20261014).map(hero)) {
+    assert.ok(!productionCampaign(slug).gallery.slice(0, 5).some((g) => g.image.id === h), `${slug} mosaic: ${h}`);
+  }
   // The picked heroes differ from each other.
   const picked = Object.keys(PHOTO_PICKS_20261014).map(hero);
   assert.equal(new Set(picked).size, picked.length);
