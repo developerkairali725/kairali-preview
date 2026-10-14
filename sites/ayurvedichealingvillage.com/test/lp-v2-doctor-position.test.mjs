@@ -198,6 +198,19 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
         current = current.replace(line, "");
       }
     }
+    if (f === "campaign-v2/production/pages/monsoon-wellness.ts") {
+      // Two owner-adopted Monsoon clauses, exact source delta only. The original fixture/pins stay unchanged.
+      const delta = JSON.parse(read("test/fixtures/monsoon-2027-approved-delta.json"));
+      assert.equal(delta.source, f);
+      assert.equal(delta.historicalRevision, pin);
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), delta.afterSHA256);
+      for (const edit of delta.edits) {
+        assert.ok(edit.before && edit.after);
+        assert.equal(current.split(edit.after).length - 1, 1, "Each approved Monsoon replacement occurs once");
+        current = current.replace(edit.after, edit.before);
+      }
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), delta.beforeSHA256);
+    }
     assert.equal(current, git("show", `${pin}:./${f}`), f);
   }
 });
