@@ -1,3 +1,4 @@
+import { describeHomeImages } from './home-image-descriptions.mjs';
 import { removeHomeVillaRates } from './home-villa-rates.mjs';
 import { initializeHomeHero } from './home-hero.mjs';
 import { createBackgroundDeferral } from './media-loading.mjs';
@@ -34,7 +35,9 @@ export const STATIC_BOOT = `
     try {
       var response = await fetch(cfg.staticDesktopPath, { credentials: "same-origin" });
       if (!response.ok) throw new Error("desktop view " + response.status);
-      host.innerHTML = (${removeHomeVillaRates.toString()})(await response.text(), cfg.staticHome ? "/" : "");
+      var desktopHtml = (${removeHomeVillaRates.toString()})(await response.text(), cfg.staticHome ? "/" : "");
+      if (cfg.staticHome) desktopHtml = (${describeHomeImages.toString()})(desktopHtml);
+      host.innerHTML = desktopHtml;
       host.setAttribute("data-ahv-variant", "desktop");
     } catch (error) {
       host.setAttribute("data-ahv-variant", "mobile-fallback");
