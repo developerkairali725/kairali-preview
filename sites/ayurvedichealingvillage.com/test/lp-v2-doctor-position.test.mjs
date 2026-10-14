@@ -187,6 +187,13 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
       : f === "campaign-v2/production/ui.ts" ? "51a9637a750ca21623f4488c82b8a6592bc154d9"
       : ["campaign-v2/production/pages/family-ayurvedic-retreat.ts", "campaign-v2/production/pages/pain-management.ts"].includes(f) ? "76e9f767a7e000f3e6789c3453c1552cbfa2ec23" : BASE;
     let current = read(f);
+    const thirdVideo = JSON.parse(read("test/fixtures/third-guest-videos-20261014.json")).files[f];
+    if (thirdVideo) {
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), thirdVideo.afterSHA256, f);
+      assert.equal(current.split(thirdVideo.addition).length - 1, 1, `${f}: exact approved third card`);
+      current = current.replace(thirdVideo.addition, "");
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), thirdVideo.beforeSHA256, f);
+    }
     if (f === "campaign-v2/production/production.css") {
       // Reverse only the exact owner-approved scoped gallery correction; retain the historical style pin.
       const delta = "\n/* Owner-approved sharp corners, including the desktop gallery dialog. */\n.lp-prod .lp-gal{border-radius:0}\n";

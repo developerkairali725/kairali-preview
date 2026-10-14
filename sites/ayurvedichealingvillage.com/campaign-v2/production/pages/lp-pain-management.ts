@@ -82,6 +82,7 @@ export default defineCopy({
       films: [
         story("4x01PtWfNnk", "Watch Michaela & Jan’s experience"),
         story("3vWviQfW1Ug", "Watch Supriya Agarwal’s experience"),
+        { title: "Watch Corine’s experience", href: "https://www.youtube.com/watch?v=DcTMckQD3rc", thumb: { src: "/ahv/images/d29b9a9547272822619b085b78fee54550d828dd5e1792486eef0b6e102d4351.webp", width: 480, height: 360 } },
       ],
     },
     stay: {
