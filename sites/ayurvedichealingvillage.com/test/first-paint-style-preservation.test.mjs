@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
+import {reverseBatch6Source} from './fixtures/train-a-batch6-20261014.mjs';
 const site=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const expected={
   "../../campaign-v110/integration.css": "ab3cf7ddd7531ee958f4d9132d039b576cfe60338f34c54c68b57faf10e6f8e0",
@@ -20,7 +21,15 @@ test('campaign first-paint bundle preserves exact approved stylesheet bytes and 
  assert.deepEqual([...entry.matchAll(/@import "([^"]+)";/g)].map(x=>x[1]),[imports[0],imports[1],'@kairali/ui/ahv-campaign-tokens.css']);
  for(const name of imports){
   let bytes=fs.readFileSync(path.resolve(site,'campaign-v2/production',name),'utf8');
+  if(name==='../sections/sections.css'){
+   // Reverse only the 24 approved production legal-link row rules; retain the historical style hash.
+   const legal=JSON.parse(fs.readFileSync(path.join(site,'test/fixtures/form-legal-links-delta.json'),'utf8')).cssAddition;
+   assert.equal(bytes.split(legal).length-1,1);
+   bytes=bytes.replace(legal,'');
+  }
   if(name==='./production.css'){
+   // Train A batch 6: remove only the exact Russian phone hero-CTA delta (AHV-WB.530) first.
+   bytes=reverseBatch6Source('campaign-v2/production/production.css',bytes);
    // Reverse only the exact approved desktop-card sizing delta; preserve the prior gallery rule and hash.
    const cardDelta="\n/* Owner feedback, 14 Oct: size desktop D consultation cards to their existing actions. */\n@media (min-width: 768px) {\n  .lp-prod[data-variant=\"D\"] .lp-hero__form { align-self: start; }\n  .lp-prod[data-variant=\"D\"] .lp-consult--card { height: auto; }\n}\n";
    assert.equal(bytes.split(cardDelta).length-1,1);

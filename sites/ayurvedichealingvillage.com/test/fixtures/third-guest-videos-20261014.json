@@ -1,0 +1,59 @@
+{
+  "base": "8d59c69d6b1919942f1163ec4807699f981bfc98",
+  "files": {
+    "campaign-v2/production/pages/wellness-kerala.ts": {
+      "addition": "        story(\"4x01PtWfNnk\", \"Watch Michaela & Jan’s experience\"),\n",
+      "beforeSHA256": "70f42c97df06e76865c2ebab4d93abee40795775d7859d2c1c24312facc10909",
+      "afterSHA256": "17d586516e431c963529bbacbd9d2053f5cc26f04f3c4fadc06fa0f47ab3fae4"
+    },
+    "campaign-v2/production/pages/cleansing-centre.ts": {
+      "addition": "        story(\"4x01PtWfNnk\", \"Watch Michaela & Jan’s experience\"),\n",
+      "beforeSHA256": "707f2e660eaad71c128b66f63a7042b7d8a726b74ca8a945c719767558f79d16",
+      "afterSHA256": "ee9cfda4dacd74945b34927f4ab9715ae326acd5a99cebabbef04c451ac23832"
+    },
+    "campaign-v2/production/pages/lp-pain-management.ts": {
+      "addition": "        { title: \"Watch Corine’s experience\", href: \"https://www.youtube.com/watch?v=DcTMckQD3rc\", thumb: { src: \"/ahv/images/d29b9a9547272822619b085b78fee54550d828dd5e1792486eef0b6e102d4351.webp\", width: 480, height: 360 } },\n",
+      "beforeSHA256": "7b825a15fdfc8ad221fdf8f70e4984fa4ccca63f4537b14e04a032a69a35098f",
+      "afterSHA256": "bc0bba7fd2a1403a7094af276d573e7a3d520b810a6104548a6e123f5512e5a8"
+    }
+  },
+  "configSHA256": {
+    "treatment-packages": "5860c28209782b030b376f0b972a1f04abc559282cc32c37b156503ef7fc26ee",
+    "panchakarma": "924ce558ccc2cf6f2a6710ff3a36cad7c5f5f5e31c7f951f6e88088e0e07874f",
+    "pain-management": "d0179c7f6e9992d4423300fd1d866b087e4ea2c75a7c1ade0c81cb882d944f7c",
+    "family-ayurvedic-retreat": "6c85b7492276819ada2286295afaf2ad113cb4f7d11f5a760038f245aed2667d",
+    "monsoon-wellness": "a223dec89aef92ec924590f71c3389613d069c6831fc1a1cd9321e084f9774d9",
+    "rejuvenation-detox": "012797e84f393b34a28bc13db2228c72683aa7f6f95f62262a13d85652ebea44",
+    "ayurveda-retreat": "c26bd5d51215542cad73b21ff46b7c7360a316236bd56c81bbb5a9bad4333213",
+    "wellness-kerala": "9d57dafab68016fe22d0bc730f99254106b9b7dc7e6ea5fc80c91c133aa734a9",
+    "cleansing-centre": "f5dde7c26675d85911d17c62da1ff0d5f7accb63741cd376174fc65dada6038a",
+    "treatment-kerala": "339d9371cc6062b66c97b370d3fdabe6e3fea84e9913752f2cebf14b1f1e838b",
+    "south-india-cities": "0488d0324b991388e468a11899d95797912ea8f67ad1fb17260df01ac88fab01",
+    "brand": "ff9aa7d7b8288eff354f66c7815da8c4b2a71a04c928551be23aec6e1de578c8",
+    "weight-management": "ad7a8072d2857162c70c6dd36ce9a17249f548c88ae60ac68092588dc0c2e98c",
+    "lp-south-india": "fd6a9ff71ea8546a2ce9676a971b777b0fb36f929f75778221d6293c58f0debb",
+    "lp-hospital-kerala": "498d924ee724f37108695b145985f98cdb81bed95de67dfa3296e77d702941d0",
+    "lp-brand": "5ba065955ae8c64e5e8e3ca784bb75b5d3b7cd68e271696c89f8afc59801b497",
+    "lp-cleansing-centre": "142d6948f832d5a620b37c47dc00e0f6d7598010a1d5e39284de8a482298ea78",
+    "lp-pain-management": "8947f1565080108cfae70486bc164c820bcef0f411dabae7bbdd84670931cdd7",
+    "lp-panchakarma": "aba4d67ad479d29126a7b8be2b69765057c1f7bcf0971b24e31cc1fee702a07f",
+    "lp-treatment-kerala": "c1df17cbe7dfb20bafa1f31752680b555ea46f4ea9b6e093b88a3b1c71b7f7d2",
+    "lp-treatment-packages": "9c0673dda8e09687b2601796e8c1e368fb293cbe6138d986902ea51c2e2f5be4",
+    "lp-weight-management": "d2073d2bc0c3375697e7a0f2ea723331c737b42231d80da58ec4adcb860424ca",
+    "lp-behandlung-kerala": "e0069413b9be842d36e8ed325aafe43bdea8eb02fc90e7c37dc1dea1aa5fdb50",
+    "lp-treatment-kerala-ru": "668177f5f4640ad2fbc96dd132aa187b68fc1aa48b0263b9dd42fe51cebe4d77"
+  },
+  "assetSHA256": {
+    "/lp-v2/img/yt-4x01PtWfNnk.jpg": "36feb29e7a12b9e3ece0629b315b741ac1bd7d107907d162ba991d8284d432a5",
+    "/ahv/images/d29b9a9547272822619b085b78fee54550d828dd5e1792486eef0b6e102d4351.webp": "73bba27c5d63334bd8465ace1ecb21a4f626bab812c26fbac98d22ab4b6c10ad"
+  },
+  "unchangedSHA256": {
+    "campaign-v2/production/sections/Stories.tsx": "fdec3ba404830624394b9e9c75d376ad71f2638f2aad133ad6bf2b3271891546",
+    "campaign-v2/production/sections/GuestVideoDialog.tsx": "48dbff5a9096ff11a14fa2d392ac4c039447a45b683f5c1b22a7f9662ca1dde2",
+    "campaign-v2/production/sections/guest-video-policy.mjs": "177ad1650b10c2826e8bf956ec3c6214eb6bc825ff394e4d3b94c921e3ee8333",
+    "campaign-v2/production/sections/GuestVideoDialog.module.css": "6b20ea0f14b545811e4f2156a068aa8739d7cdecf6121d5c5cd73940af8b88db",
+    "campaign-v2/data/films.ts": "2ca15ee62c8e55d024ee63ce32ff91b967417351617c2cb7bdf4f24776ab36f4",
+    "public/consent/policy.mjs": "483bb4d00982221007f89c487a5885517c4832314364951a170fffb42dcbc66c",
+    "public/consent/bridge.mjs": "622b4c5c4deaa7fbcb091c4e35850c6924ebcd6988ac7652b8781a19eb9849e7"
+  }
+}

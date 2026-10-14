@@ -388,6 +388,15 @@ html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
   .lp-prod[data-variant="D"] .lp-header:not([data-stuck]) { max-width: 1440px; margin-inline: auto; }
 }
 
+/* AHV-WB.530.first-screen-cta: on the Russian route's phone first screen, show the existing same-page consultation
+   button again (the kit hides the C hero actions on phones). Same label, link, tracking and button styling; the Ask
+   control stays hidden there; English, German and every other variant are unchanged. */
+@media (max-width: 767px) {
+  .lp-prod[data-variant="C"]:lang(ru) .lp-hero__ctas { display: flex; }
+  .lp-prod[data-variant="C"]:lang(ru) .lp-hero__ctas .lp-btn { width: 100%; }
+  .lp-prod[data-variant="C"]:lang(ru) .lp-hero__ask { display: none; }
+}
+
 /* Owner feedback, 14 Oct: size desktop D consultation cards to their existing actions. */
 @media (min-width: 768px) {
   .lp-prod[data-variant="D"] .lp-hero__form { align-self: start; }

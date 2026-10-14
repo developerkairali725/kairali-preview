@@ -840,6 +840,8 @@ details[open] > summary .lp-plus{transform:rotate(45deg)}
 .lp-enq__check{min-height:48px;padding-block:10px}
 .lp-enq__check--optional{color:var(--lp-muted)}
 .lp-enq__privacy{display:inline-flex;align-items:center;align-self:flex-start;min-height:48px;margin-inline-start:36px;font-size:15px;font-weight:600}
+.lp-enq__legal-links{display:flex;flex-wrap:wrap;align-items:center;column-gap:8px;margin-inline-start:36px}
+.lp-enq__legal-links .lp-enq__privacy{margin-inline-start:0;min-width:48px}
 .lp-enq__check-wrap,.lp-enq__checks{position:relative}
 .lp-enq__hp{position:absolute;width:1px;height:1px;margin:-1px;padding:0;border:0;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
 /* .lp a{color:inherit} outranks .lp-btn--*, and buttons do not inherit the page font by default */
@@ -1522,6 +1524,15 @@ html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
 /* Owner feedback, 14 Oct: align the unpinned desktop D header with its existing content grid. */
 @media (min-width: 768px) {
   .lp-prod[data-variant="D"] .lp-header:not([data-stuck]) { max-width: 1440px; margin-inline: auto; }
+}
+
+/* AHV-WB.530.first-screen-cta: on the Russian route's phone first screen, show the existing same-page consultation
+   button again (the kit hides the C hero actions on phones). Same label, link, tracking and button styling; the Ask
+   control stays hidden there; English, German and every other variant are unchanged. */
+@media (max-width: 767px) {
+  .lp-prod[data-variant="C"]:lang(ru) .lp-hero__ctas { display: flex; }
+  .lp-prod[data-variant="C"]:lang(ru) .lp-hero__ctas .lp-btn { width: 100%; }
+  .lp-prod[data-variant="C"]:lang(ru) .lp-hero__ask { display: none; }
 }
 
 /* Owner feedback, 14 Oct: size desktop D consultation cards to their existing actions. */

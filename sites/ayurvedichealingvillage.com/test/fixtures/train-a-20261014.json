@@ -1,0 +1,60 @@
+{
+  "scope": "Train A integration (14 Oct 2026): where two accepted candidates edited the same lines, the newer candidate's recorded delta cannot occur verbatim in the integrated file. For those files only, this records the exact merged form of the newer candidate's delta: applying the replacements (after -> before, each exactly once) to the integrated bytes must give the older candidate's recorded after-bytes, whose own record and the base hash are then checked as usual.",
+  "base": "c54e2795ebf7f1c525313ff2ea10b1fd95881f4e",
+  "batch5": {
+    "note": "Train A batch 5 (AHV-WB.*.breadcrumb-schema, 23 rows) recorded no source-delta fixture; its only source change is metadata.ts, which batch 8 (AHV-WB.545.change) also edited. Its exact delta, taken from codex/ahv-train-a-batch5-20261014 (41283f765) against the base, so the composed reversal can check both candidates.",
+    "head": "41283f76551f052a05f15fe31465de49d99cfb49",
+    "files": {
+      "campaign-v2/production/metadata.ts": {
+        "beforeSHA256": "980d37677cccf89d013c86496d4fdad9179839e3cdd94571d959c4da976db6d2",
+        "afterSHA256": "38bc9bf87f36f9112bfe82cca59e1291cb9df56859ba1e842d27ae8e84721a39",
+        "replacements": [
+          {
+            "before": "// From the copy: title and description. Added: FAQPage for the FAQ the page shows (integrations/seo.ts).\n",
+            "after": "// From the copy: title and description. Added: FAQPage for the FAQ the page shows (integrations/seo.ts), and a\n// two-item BreadcrumbList on every other route (AHV-WB *.breadcrumb-schema, 14 Oct 2026) matching its visible\n// navigation: the header logo links to the site home, and the page is named by its own visible H1 (no new copy).\n"
+          },
+          {
+            "before": "  if (b.breadcrumbName) {\n    page.breadcrumb = {\n      \"@type\": \"BreadcrumbList\",\n      itemListElement: [\n        { \"@type\": \"ListItem\", position: 1, name: \"Home\", item: `${SITE_ORIGIN}/` },\n        { \"@type\": \"ListItem\", position: 2, name: b.breadcrumbName, item: b.canonical },\n      ],\n    };\n  }\n",
+            "after": "  // Treatment packages keeps the replaced page's recorded name; every other route uses its visible H1. The German and\n  // Russian routes have no approved word for \"Home\", so their first item is the language-neutral site name.\n  page.breadcrumb = {\n    \"@type\": \"BreadcrumbList\",\n    itemListElement: [\n      { \"@type\": \"ListItem\", position: 1, name: (b.locale ?? \"en\") === \"en\" ? \"Home\" : SITE_NAME, item: `${SITE_ORIGIN}/` },\n      { \"@type\": \"ListItem\", position: 2, name: b.breadcrumbName ?? c.hero.h1, item: b.canonical },\n    ],\n  };\n"
+          }
+        ]
+      }
+    }
+  },
+  "overlaps": {
+    "campaign-v2/production/sections/guest-video-policy.mjs": {
+      "candidate": "owner decisions",
+      "over": "train-a batch 6",
+      "why": "Both rewrote the route-count wording, the allowlist docstring, the end of GUEST_VIDEO_ROUTES and the APPROVED_FILM_IDS docstring. Integrated wording: 19 routes (13 + four D routes + two weight routes), batch 6's generic 'allowed routes' docstrings kept, owner-decision routes and film appended after batch 6's.",
+      "integratedSHA256": "d34d1d271265c71c34263fec99ba05fe8f0d8acf1cfdbab528241ff3d9033361",
+      "replacements": [
+        {
+          "before": "on-page popup on exactly the 13\n",
+          "after": "on-page popup on exactly the 19\n"
+        },
+        {
+          "before": "SCOPE.json), then the four D routes. */\n",
+          "after": "SCOPE.json), then the four D routes, then the two weight routes, exact paths. */\n"
+        },
+        {
+          "before": "",
+          "after": "  // Owner decision, 14 Oct 2026 (AHV-WB.299.change): the two weight routes now carry the Rupak Mann guest story.\n  \"/weight-loss.html\",\n  \"/lp/weight-loss/\",\n"
+        },
+        {
+          "before": "export const APPROVED_FILM_IDS = Object.freeze([\"iPARaMRASUs\", \"4x01PtWfNnk\", \"3vWviQfW1Ug\", \"07tVC2oXd8g\", \"DcTMckQD3rc\"]);\n",
+          "after": "// D3QLxKpwtJs: Rupak Mann, already published on the legacy weight page; added by owner decision AHV-WB.299.change (14 Oct 2026).\nexport const APPROVED_FILM_IDS = Object.freeze([\"iPARaMRASUs\", \"4x01PtWfNnk\", \"3vWviQfW1Ug\", \"07tVC2oXd8g\", \"DcTMckQD3rc\", \"D3QLxKpwtJs\"]);\n"
+        }
+      ],
+      "resultSHA256": "0b428697d405b9f128ece9353114943afb84dc48eeb3631754a18410da5d1170",
+      "rows": [
+        "AHV-WB.299.change"
+      ],
+      "overRows": [
+        "AHV-WB.249.guest-video",
+        "AHV-WB.320.guest-video",
+        "AHV-WB.430.guest-video",
+        "AHV-WB.272.guest-video"
+      ]
+    }
+  }
+}

@@ -4,6 +4,7 @@
 // data/doctors.ts. No competitor copy, superiority, review counts or founding year (heritage = family tradition only;
 // the approved "since 1908" line is the renderer's proof strip, not this copy).
 import { defineCopy } from "../copy.ts";
+import { story } from "../stories.ts";
 
 export default defineCopy({
   slug: "brand",
@@ -70,6 +71,29 @@ export default defineCopy({
         { title: "Start with a free consultation", body: "Share the reason for your visit, the dates you are considering and relevant medical information, including your current treatment." },
         { title: "Review your plan and quotation", body: "Once the doctor has explained the proposed care, review the recommended stay and quotation with patient care, including anything charged separately." },
         { title: "Begin your stay at the village", body: "Vegetarian meals, suitable yoga or meditation and time to rest fit around your prescribed care. Ask which other activities or local cultural visits are available and whether they suit your programme." },
+      ],
+    },
+    // AHV-WB.272.villa-gallery and .guest-video (staff review 9 Oct 2026; owner's standing authority for approved
+    // villa photographs and on-page guest video; production/section-order.ts D_VILLAGE_AND_STORIES). Reviewed copy
+    // reused verbatim: the village from ayurveda-retreat.ts, the consented registry films from lp-treatment-packages.ts.
+    // No new facts, names, countries or quotes.
+    place: {
+      heading: "Choose a villa set among the gardens",
+      paragraphs: ["Your villa is your base between appointments. Walk through the grounds, sit outside your villa or rest in your room. Ask our team about availability, layout, occupancy and any access needs for your dates."],
+      villas: [
+        { name: "Deluxe Villa", body: "A king-size bed and private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Deluxe Villa", href: "/deluxe-villa/" } },
+        { name: "Classic Villa", body: "Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Classic Villa", href: "/classic-villa/" } },
+        { name: "Royal Villa", body: "A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.", link: { label: "Explore Royal Villa", href: "/royal-villa/" } },
+        { name: "Maharaja Suite", body: "A king-size bed, a living area with a couch and garden access in a premium location.", link: { label: "Explore Maharaja Suite", href: "/maharaja-suite/" } },
+      ],
+    },
+    stories: {
+      heading: "See the village before you decide",
+      body: "Watch a day at the village, then hear patients describe their stays in their own words. Individual experiences vary.",
+      films: [
+        story("iPARaMRASUs", "A day at the village"),
+        story("3vWviQfW1Ug", "Watch Supriya’s experience"),
+        story("4x01PtWfNnk", "Watch Michaela & Jan’s experience"),
       ],
     },
     stay: {

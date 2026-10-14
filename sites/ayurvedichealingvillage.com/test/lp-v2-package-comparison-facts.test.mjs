@@ -20,6 +20,7 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { htmlToDOM, Element, Text } from "html-react-parser";
 import ts from "typescript";
+import { reverseTrainAConfig } from "./fixtures/train-a-20261014.mjs";
 
 const require = createRequire(import.meta.url);
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -138,7 +139,9 @@ test("only paragraphs were appended: every original card, heading, link, paragra
     });
     // With the added paragraphs removed, the whole campaign is the baseline's: CTA, form, FAQ, metadata and the rest.
     cardsNow.forEach((card, i) => { card.paragraphs = card.paragraphs.slice(0, cardsWas[i].paragraphs.length); });
-    same(now, was, `${slug}: nothing else changed`);
+    // Train A: reverse exactly every merged candidate's recorded config change (batch 8's AHV-WB.015.change Stories
+    // addition was rejected and excluded, so none remains on these routes today).
+    same(reverseTrainAConfig(slug, now), was, `${slug}: nothing else changed`);
   }
   const links = (slug) => NOW_C[slug].page.offering.cards.flatMap((c) => c.links ?? []).length;
   assert.equal(links("treatment-packages"), 11, "the 11 programme links stay");

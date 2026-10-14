@@ -12,7 +12,7 @@ export default defineCopy({
   route: "/lp/pain-management/",
   source: { file: "lp-batch/pain-management.md", sha256: "bd774a86f3f2b309dac51842e14dba7ddd9362fd31c4ff9fc19413b732298426" },
   seo: {
-    title: "Ayurvedic Pain Management in Kerala | Kairali KTAHV",
+    title: "Ayurvedic Pain Management in Kerala | Kairali",
     description: "Discuss back, neck or joint discomfort with an Ayurvedic doctor at Kairali in Kerala. Explore residential care in a free initial consultation.",
   },
   adMatch: { keywords: ["ayurvedic pain management kerala", "chronic pain ayurveda programme", "ayurvedic hospital palakkad"], adHeadlines: [] },
@@ -82,6 +82,7 @@ export default defineCopy({
       films: [
         story("4x01PtWfNnk", "Watch Michaela & Jan’s experience"),
         story("3vWviQfW1Ug", "Watch Supriya Agarwal’s experience"),
+        { title: "Watch Corine’s experience", href: "https://www.youtube.com/watch?v=DcTMckQD3rc", thumb: { src: "/ahv/images/d29b9a9547272822619b085b78fee54550d828dd5e1792486eef0b6e102d4351.webp", width: 480, height: 360 } },
       ],
     },
     stay: {

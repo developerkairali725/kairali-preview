@@ -15,7 +15,8 @@ import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/
 import { ROUTES } from "../campaign-v2/production/bindings.ts";
 import { COPY } from "../campaign-v2/production/pages/index.ts";
 import { CURRENT_ROSTER } from "../campaign-v2/data/doctors.ts";
-import { DOCTORS_AFTER_LEAD, ORDER, sectionOrder, variantOrder } from "../campaign-v2/production/section-order.ts";
+import { DOCTORS_AFTER_LEAD, D_VILLAGE_AND_STORIES, ORDER, baseOrder as routeBaseOrder, sectionOrder, variantOrder } from "../campaign-v2/production/section-order.ts";
+import { reverseTrainASource } from "./fixtures/train-a-20261014.mjs";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (p) => fs.readFileSync(path.join(SITE, p), "utf8");
@@ -37,14 +38,18 @@ const B7 = ["lead", "physicians", "place", "offering", "pathway", "stories", "st
 const C7 = ["lead", "physicians", "offering", "pathway", "rest", "place", "stay"];
 const C8 = ["lead", "physicians", "offering", "pathway", "rest", "place", "stories", "stay"];
 const D5 = ["lead", "physicians", "offering", "pathway", "stay"];
+/** Staff review 9 Oct (AHV-WB.249/320/430/272): the four listed D routes add the existing village and films after the steps. */
+const D7 = ["lead", "physicians", "offering", "pathway", "place", "stories", "stay"];
 /** Every route's new order (a route shows only the bands its copy writes). */
 const NEW_ORDER = {
   "treatment-packages": A7, "panchakarma": A7, "pain-management": A8, "family-ayurvedic-retreat": A8,
   "monsoon-wellness": C8, "rejuvenation-detox": C8, "ayurveda-retreat": B7, "wellness-kerala": B7, "cleansing-centre": A8,
-  "treatment-kerala": A8, "south-india-cities": D5, "brand": D5, "weight-management": C7, "lp-south-india": D5,
-  "lp-hospital-kerala": A8, "lp-brand": D5, "lp-cleansing-centre": A8, "lp-pain-management": A8, "lp-panchakarma": D5,
-  "lp-treatment-kerala": C8, "lp-treatment-packages": B7, "lp-weight-management": A7, "lp-behandlung-kerala": C7, "lp-treatment-kerala-ru": C7,
+  "treatment-kerala": A8, "south-india-cities": D7, "brand": D7, "weight-management": C8, "lp-south-india": D7,
+  "lp-hospital-kerala": A8, "lp-brand": D5, "lp-cleansing-centre": A8, "lp-pain-management": A8, "lp-panchakarma": D7,
+  "lp-treatment-kerala": C8, "lp-treatment-packages": B7, "lp-weight-management": A8, "lp-behandlung-kerala": C7, "lp-treatment-kerala-ru": C7,
 };
+// Owner decision, 14 Oct 2026 (AHV-WB.299.change): both weight routes gained their Stories band (weight-management C7 -> C8,
+// lp-weight-management A7 -> A8); the doctors still follow the lead and every other section keeps its variant order.
 
 /** Before any move (8 Oct order), and after batch 1 (the first four moved); compared against when present. */
 const BASE = "3db79539137017885880b865b01a0ccf7823880f";
@@ -119,7 +124,7 @@ test("every route: the doctors once, immediately after the lead; every other sec
     assert.equal(order.indexOf("physicians"), order.indexOf("lead") + 1, `${slug}: right after the lead`);
     assert.equal(order.filter((b) => b === "physicians").length, 1, `${slug}: doctors once`);
     assert.equal(new Set(order).size, order.length, `${slug}: no section twice`);
-    assert.deepEqual(order.filter((b) => b !== "physicians"), ORDER[v].filter((b) => b !== "physicians" && order.includes(b)), `${slug}: other sections keep their relative order`);
+    assert.deepEqual(order.filter((b) => b !== "physicians"), routeBaseOrder(slug, v).filter((b) => b !== "physicians" && order.includes(b)), `${slug}: other sections keep their relative order`);
   }
 });
 
@@ -140,7 +145,12 @@ test("helper: the default tables are the 8 Oct ones and stay untouched; an unlis
 test("against the base template: all 24 only move the doctors from last to after the lead, nothing lost or added", { skip: !hasBase && "base commit not in this checkout" }, () => {
   for (const slug of PRODUCTION_SLUGS) {
     const before = baseOrder(slug);
-    const after = sectionOrder(C[slug], variantOf(slug));
+    let after = sectionOrder(C[slug], variantOf(slug));
+    if (D_VILLAGE_AND_STORIES.includes(slug)) {
+      // Batch 6 (staff review 9 Oct): exactly the existing village and films, after the steps; nothing else differs.
+      assert.deepEqual(after.slice(after.indexOf("pathway") + 1, after.indexOf("stay")), ["place", "stories"], slug);
+      after = after.filter((b) => b !== "place" && b !== "stories");
+    }
     assert.equal(before.at(-1), "physicians", `${slug}: was directly before the enquiry`);
     assert.deepEqual([...after].sort(), [...before].sort(), `${slug}: same sections`);
     assert.deepEqual(after.filter((b) => b !== "physicians"), before.filter((b) => b !== "physicians"), slug);
@@ -188,7 +198,10 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
     const pin = f === "campaign-v2/production/production.css" ? "0272861b8c9033add121ad9106a63f24b2b99b99"
       : f === "campaign-v2/production/ui.ts" ? "51a9637a750ca21623f4488c82b8a6592bc154d9"
       : ["campaign-v2/production/pages/family-ayurvedic-retreat.ts", "campaign-v2/production/pages/pain-management.ts"].includes(f) ? "76e9f767a7e000f3e6789c3453c1552cbfa2ec23" : BASE;
-    let current = read(f);
+    // Train A (14 Oct): newest first, remove exactly every merged candidate's recorded delta (fixtures/train-a-20261014.mjs:
+    // owner decisions B AHV-WB.083/330/167, owner decisions AHV-WB.042/299, batch 8, batch 6), each checked against its
+    // record and the shared base hash, then every earlier approved reversal and the historical pin as before.
+    let current = reverseTrainASource(f, read(f));
     const integrationCorrection = staffRosterIntegration.files[f];
     if (integrationCorrection) {
       assert.equal(crypto.createHash("sha256").update(current).digest("hex"), integrationCorrection.afterSHA256, f);
@@ -210,6 +223,13 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
         current = current.replace(after, before);
       }
       assert.equal(crypto.createHash("sha256").update(current).digest("hex"), localeCorrection.beforeSHA256, f);
+    }
+    const thirdVideo = JSON.parse(read("test/fixtures/third-guest-videos-20261014.json")).files[f];
+    if (thirdVideo) {
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), thirdVideo.afterSHA256, f);
+      assert.equal(current.split(thirdVideo.addition).length - 1, 1, `${f}: exact approved third card`);
+      current = current.replace(thirdVideo.addition, "");
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), thirdVideo.beforeSHA256, f);
     }
     if (f === "campaign-v2/production/production.css") {
       // Remove only the approved desktop-card sizing delta before the existing historical checks.

@@ -12,7 +12,7 @@ import { fileURLToPath } from "node:url";
 import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/load.ts";
 import { ROUTES, OG_IMAGE, PRICING_HIDDEN, REVIEW_BATCHES, SITE_ORIGIN } from "../campaign-v2/production/bindings.ts";
 import { COPY } from "../campaign-v2/production/pages/index.ts";
-import { ORDER, sectionOrder } from "../campaign-v2/production/section-order.ts";
+import { ORDER, baseOrder, sectionOrder, D_VILLAGE_AND_STORIES } from "../campaign-v2/production/section-order.ts";
 import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
 import { allText } from "../campaign-v2/kit/lint/claims.ts";
 import { pageLinks, pageText } from "../campaign-v2/kit/lint/page-text.ts";
@@ -21,8 +21,12 @@ import { PRICE, RATE_LINK } from "../campaign-v2/kit/lint/pricing.ts";
 import { productionMetadata, productionJsonLd } from "../campaign-v2/production/metadata.ts";
 import { interactionForLink, PROGRAMME_LINKS } from "../campaign-v2/production/interaction-map.ts";
 import { CURRENT_ROSTER, DOCTORS } from "../campaign-v2/data/doctors.ts";
+import { IMAGES } from "../campaign-v2/data/images.ts";
+import crypto from "node:crypto";
+import batch8 from "./fixtures/train-a-batch8-20261014.json" with { type: "json" };
 import { richLinks, richRuns, richText } from "../campaign-v2/kit/rich.ts";
 import { contact } from "../campaign-v110/lib/site.ts";
+import { LENGTHS } from "../campaign-v2/forms/schema.ts";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const P = (...p) => path.join(SITE, ...p);
@@ -206,7 +210,7 @@ test("composition: every variant in decision order; the doctors right after the 
     const order = sectionOrder(C[slug], v);
     assert.equal(order[1], "physicians", `${slug}: the doctors right after the lead`);
     assert.equal(order.filter((b) => b === "physicians").length, 1, `${slug}: the doctors once`);
-    assert.deepEqual(order.filter((b) => b !== "physicians"), ORDER[v].filter((b) => b !== "physicians" && order.includes(b)), `${slug}: the variant's order otherwise`);
+    assert.deepEqual(order.filter((b) => b !== "physicians"), baseOrder(slug, v).filter((b) => b !== "physicians" && order.includes(b)), `${slug}: the variant's order otherwise`);
   }
   for (const [v, list] of Object.entries(ORDER)) {
     assert.equal(list.at(-1), "physicians", `${v}: by default the doctors lead straight into the enquiry`);
@@ -215,15 +219,24 @@ test("composition: every variant in decision order; the doctors right after the 
     assert.ok(list.indexOf("stay") < list.indexOf("physicians"), `${v}: doctors follow the quotation section`);
   }
   assert.ok(!ORDER.B.includes("rest") && !ORDER.D.includes("rest") && !ORDER.D.includes("place"), "B has no stillness band; D neither band nor village");
+  // Staff review 9 Oct (AHV-WB.249/320/430/272): only the four listed D routes add the existing village and films, after the
+  // steps and before the quotation; no stillness band; the fifth D route (lp-brand) keeps the shortest path.
+  assert.deepEqual([...D_VILLAGE_AND_STORIES], ["south-india-cities", "brand", "lp-south-india", "lp-panchakarma"]);
+  for (const slug of PRODUCTION_SLUGS) {
+    const v = ROUTES[slug].variant ?? "A";
+    const listed = D_VILLAGE_AND_STORIES.includes(slug);
+    assert.equal(listed, v === "D" && slug !== "lp-brand", slug);
+    assert.deepEqual(baseOrder(slug, v), listed ? ["lead", "offering", "pathway", "place", "stories", "stay", "physicians"] : [...ORDER[v]], slug);
+  }
   for (const gone of ["Doctors", "Body", "FeePlan", "Stillness", "Admission", "Village", "Films", "LongForm", "OfferBand", "Fees"]) {
     assert.doesNotMatch(src, new RegExp(`<${gone}\\b`), `${gone} is not part of the designed page`);
   }
   // A page writes only the sections its variant shows.
   for (const slug of PRODUCTION_SLUGS) {
     const v = ROUTES[slug].variant ?? "A";
-    if (!ORDER[v].includes("rest")) assert.equal(C[slug].page.rest, undefined, `${slug}: no unused stillness copy`);
-    if (!ORDER[v].includes("place")) assert.equal(C[slug].page.place, undefined, `${slug}: no unused village copy`);
-    if (!ORDER[v].includes("stories")) assert.equal(C[slug].page.stories, undefined, `${slug}: no unused films`);
+    if (!baseOrder(slug, v).includes("rest")) assert.equal(C[slug].page.rest, undefined, `${slug}: no unused stillness copy`);
+    if (!baseOrder(slug, v).includes("place")) assert.equal(C[slug].page.place, undefined, `${slug}: no unused village copy`);
+    if (!baseOrder(slug, v).includes("stories")) assert.equal(C[slug].page.stories, undefined, `${slug}: no unused films`);
   }
 });
 
@@ -346,7 +359,26 @@ test("media: the two oversized kit images are real JPEGs now, at their registry 
 test("metadata: canonical, robots and the Open Graph image are the replaced pages'; title and description from the copy", () => {
   // The batch-2 pages it replaces (app/(campaign)/_traffic/TrafficLanding.tsx trafficMetadata) set no image alt.
   const ALT = { "treatment-packages": "Kairali Ayurvedic Healing Village in Palakkad, Kerala", panchakarma: "Kairali Ayurvedic Healing Village, Palakkad" };
-  const ogImage = (slug) => ROUTES[slug].og
+  // AHV-WB.025/050/077/101/147.change: these five routes' own 1200×630 crop of one approved registry photograph, with
+  // that photograph's registry alt; og:locale/site name unchanged. Every other route keeps the image asserted below.
+  const OWN = { "treatment-packages": "kt-116", panchakarma: "kt-199", "pain-management": "kt-190", "family-ayurvedic-retreat": "kt-314", "rejuvenation-detox": "kt-202" };
+  for (const [slug, id] of Object.entries(OWN)) {
+    assert.deepEqual(ROUTES[slug].og, { url: `https://ayurvedichealingvillage.com/images/og/share-${slug}.jpg`, width: 1200, height: 630, locale: "en_IN" }, slug);
+    assert.equal(ROUTES[slug].ogImageAlt, IMAGES[id].alt, slug);
+    const buf = fs.readFileSync(new URL(`../public/images/og/share-${slug}.jpg`, import.meta.url));
+    assert.deepEqual([...buf.subarray(0, 3)], [0xff, 0xd8, 0xff], slug);
+    // The frame size from the JPEG's start-of-frame segment, and the exact recorded bytes (train-a-batch8 fixture).
+    let at = 2;
+    while (buf[at] === 0xff && !(buf[at + 1] >= 0xc0 && buf[at + 1] <= 0xc2)) at += 2 + buf.readUInt16BE(at + 2);
+    assert.deepEqual({ height: buf.readUInt16BE(at + 5), width: buf.readUInt16BE(at + 7) }, { height: 630, width: 1200 }, slug);
+    const rec = batch8.shareImages[`public/images/og/share-${slug}.jpg`];
+    assert.equal(rec.source, IMAGES[id].src, slug);
+    assert.equal(crypto.createHash("sha256").update(buf).digest("hex"), rec.sha256, slug);
+  }
+  assert.equal(new Set(Object.keys(OWN).map((s) => ROUTES[s].og.url)).size, 5, "each page its own picture");
+  const ogImage = (slug) => OWN[slug]
+    ? { url: ROUTES[slug].og.url, width: 1200, height: 630, alt: IMAGES[OWN[slug]].alt }
+    : ROUTES[slug].og
     ? { url: ROUTES[slug].og.url, ...(ROUTES[slug].og.width ? { width: ROUTES[slug].og.width, height: ROUTES[slug].og.height } : {}) }
     : { url: "https://ayurvedichealingvillage.com/landing/r10/og.jpg", width: 1200, height: 630, ...(ALT[slug] ? { alt: ALT[slug] } : {}) };
   for (const slug of PRODUCTION_SLUGS) {
@@ -388,7 +420,62 @@ test("JSON-LD: the replaced pages' WebPage (and breadcrumb), plus FAQPage for th
   assert.equal(pkFaq.mainEntity.length, C["treatment-packages"].faq.length);
   const [pc] = productionJsonLd("panchakarma", C.panchakarma);
   assert.equal(pc["@id"], "https://ayurvedichealingvillage.com/panchkarma-treatment.html#webpage");
-  assert.equal(pc.breadcrumb, undefined);
+  // AHV-WB *.breadcrumb-schema (14 Oct 2026): every other route gets Home > its own visible H1 at its own canonical;
+  // German and Russian take the language-neutral site name for the first item (no approved localised "Home").
+  // Treatment packages (above) is the unchanged regression control.
+  assert.deepEqual(pc.breadcrumb, {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://ayurvedichealingvillage.com/" },
+      { "@type": "ListItem", position: 2, name: "Panchakarma treatment in Kerala", item: "https://ayurvedichealingvillage.com/panchkarma-treatment.html" },
+    ],
+  });
+  const CRUMB = {
+    "panchakarma": "Panchakarma treatment in Kerala",
+    "pain-management": "Ayurvedic pain management in Kerala",
+    "family-ayurvedic-retreat": "Family Ayurveda retreat in Kerala",
+    "monsoon-wellness": "Monsoon Ayurvedic treatment in Kerala",
+    "rejuvenation-detox": "Ayurvedic rejuvenation & detoxification in Kerala",
+    "ayurveda-retreat": "Ayurveda retreat in Kerala",
+    "wellness-kerala": "Ayurvedic wellness in Kerala",
+    "cleansing-centre": "Ayurvedic cleansing programmes in Kerala",
+    "treatment-kerala": "Ayurvedic treatment in Kerala",
+    "south-india-cities": "Ayurvedic treatment in South India",
+    "brand": "Kairali Ayurveda in Palakkad, Kerala",
+    "weight-management": "Ayurvedic weight management for the way you live",
+    "lp-south-india": "Ayurvedic treatment in South India",
+    "lp-hospital-kerala": "Ayurvedic hospital in Kerala",
+    "lp-brand": "Kairali – The Ayurvedic Healing Village",
+    "lp-cleansing-centre": "Ayurvedic cleansing programmes in Kerala",
+    "lp-pain-management": "Ayurvedic pain management in Palakkad, Kerala",
+    "lp-panchakarma": "Panchakarma treatment planned around your assessment",
+    "lp-treatment-kerala": "Ayurvedic treatment in Kerala, with a plan you understand",
+    "lp-treatment-packages": "Find an Ayurvedic treatment package that fits your needs",
+    "lp-weight-management": "Ayurvedic weight management, planned around you",
+    "lp-behandlung-kerala": "Ayurveda-Behandlung in Kerala, individuell geplant",
+    "lp-treatment-kerala-ru": "Аюрведическое лечение в Керале с индивидуальным планом",
+  };
+  assert.deepEqual([...Object.keys(CRUMB), "treatment-packages"].sort(), [...PRODUCTION_SLUGS].sort());
+  for (const [slug, name] of Object.entries(CRUMB)) {
+    const [page] = productionJsonLd(slug, C[slug]);
+    assert.equal(ROUTES[slug].breadcrumbName, undefined, slug);
+    assert.equal(C[slug].hero.h1, name, slug);
+    const home = slug === "lp-behandlung-kerala" || slug === "lp-treatment-kerala-ru" ? "Kairali Ayurvedic Healing Village" : "Home";
+    assert.deepEqual(page.breadcrumb, {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: home, item: "https://ayurvedichealingvillage.com/" },
+        { "@type": "ListItem", position: 2, name, item: ROUTES[slug].canonical },
+      ],
+    }, slug);
+  }
+  assert.deepEqual(pk.breadcrumb, {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://ayurvedichealingvillage.com/" },
+      { "@type": "ListItem", position: 2, name: "Ayurvedic treatment packages", item: "https://ayurvedichealingvillage.com/ayurvedic-treatment-packages.html" },
+    ],
+  });
   for (const slug of PRODUCTION_SLUGS) assert.ok(!JSON.stringify(productionJsonLd(slug, C[slug])).match(/"@type":"(Offer|Product|MedicalClinic|VideoObject)"/), slug);
 });
 
@@ -404,10 +491,19 @@ test("locked facts: WhatsApp +91 92898 38797 and info@kairali.com; the wrong …
   for (const slug of PRODUCTION_SLUGS) assert.doesNotMatch(pageStrings(C[slug]).join(" "), /\+?\s?91[\s-]?\d{4,5}[\s-]?\d{3,6}|@[a-z]+\.[a-z]+/i, `${slug}: contact details render from site.ts only`);
 });
 
-test("owner facts: the 14–21 night Panchakarma programme as published; only the owner-approved Monsoon season may carry a year", () => {
-  assert.match(C.panchakarma.seo.description, /14–21 night/);
-  assert.ok(C.panchakarma.page.lead.paragraphs.some((p) => p.includes("The published programme is a 14–21 night stay")));
-  assert.ok(C.panchakarma.faq.some((f) => f.a.startsWith("The published Panchakarma programme is a 14–21 night stay.")));
+// Owner decision, 14 Oct 2026 (AHV-WB.042.change: "panchakarma has 28 as well"): the stated stay is 14–28 nights, so
+// the text agrees with the Length-of-stay box (14/21/28 nights) on both Panchakarma routes; no 14–21 range remains.
+test("owner facts: the 14–28 night Panchakarma programme, matching the Length-of-stay box; only the owner-approved Monsoon season may carry a year", () => {
+  assert.match(C.panchakarma.seo.description, /14–28 night/);
+  assert.ok(C.panchakarma.page.lead.paragraphs.some((p) => p.includes("The published programme is a 14–28 night stay")));
+  assert.ok(C.panchakarma.faq.some((f) => f.a.startsWith("The published Panchakarma programme is a 14–28 night stay.")));
+  assert.ok(C["lp-panchakarma"].page.lead.paragraphs.some((p) => p.includes("The published Panchakarma programme is a 14–28 night stay")));
+  assert.ok(C["lp-panchakarma"].faq.some((f) => f.a.startsWith("The published programme is a 14–28 night stay.")));
+  assert.deepEqual(LENGTHS.filter((o) => /^\d+$/.test(o.value)).map((o) => o.value), ["14", "21", "28"], "the box offers 14/21/28 nights");
+  for (const slug of ["panchakarma", "lp-panchakarma"]) {
+    const strings = [C[slug].seo.description, ...allText(C[slug]).map((t) => t.text)];
+    assert.deepEqual(strings.filter((t) => /14[–-]21|14 to 21/.test(t)), [], `${slug}: no 14–21 night range left`);
+  }
   for (const slug of PRODUCTION_SLUGS) for (const { path: at, text } of allText(C[slug])) {
     // Owner, 14 October 2026: exactly the month-only Monsoon season; no other year or founding-date exception.
     const reviewed = slug === "monsoon-wellness" ? text.replaceAll("July–August 2027", "July–August") : text;
@@ -426,7 +522,18 @@ test("Monsoon metadata restores the existing sitemap language cluster without ad
   assert.deepEqual(metadata.alternates.languages, expected);
   assert.equal(Object.keys(expected).length, 14);
   assert.equal(metadata.alternates.canonical, expected.en);
-  for (const slug of PRODUCTION_SLUGS.filter(s => s !== "monsoon-wellness")) {
+  // AHV-WB.545.change: the EN/DE/RU "treatment in Kerala" landing pages link reciprocally (English x-default).
+  const CLUSTER = ["lp-treatment-kerala", "lp-behandlung-kerala", "lp-treatment-kerala-ru"];
+  const reciprocal = {
+    en: "https://ayurvedichealingvillage.com/lp/treatment-in-kerala/", de: "https://ayurvedichealingvillage.com/lp/behandlung-in-kerala/",
+    ru: "https://ayurvedichealingvillage.com/lp/treatment-in-kerala-russian/", "x-default": "https://ayurvedichealingvillage.com/lp/treatment-in-kerala/",
+  };
+  for (const slug of CLUSTER) {
+    const m = productionMetadata(slug, C[slug], { AHV_STAGING: "0" });
+    assert.deepEqual(m.alternates.languages, reciprocal, slug);
+    assert.equal(m.alternates.languages[C[slug].locales[0]], m.alternates.canonical, `${slug}: self-referencing`);
+  }
+  for (const slug of PRODUCTION_SLUGS.filter(s => s !== "monsoon-wellness" && !CLUSTER.includes(s))) {
     assert.equal(productionMetadata(slug, C[slug], { AHV_STAGING: "0" }).alternates.languages, undefined, slug);
   }
 });

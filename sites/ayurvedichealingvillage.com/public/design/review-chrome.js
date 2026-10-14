@@ -520,7 +520,7 @@
   function pass() {
     scheduled = false;
     try {
-      if (campaignRoot) { footers().forEach(function(f) { whatsapp(f); copyright(f); chatLinks(f); }); priyaWidget(); ctaBar(); syncChatState(); externalLinks(); return; }
+      if (campaignRoot) { footers().forEach(function(f) { whatsapp(f); copyright(f); chatLinks(f); }); priyaWidget(); campaignWhatsApp(); ctaBar(); syncChatState(); externalLinks(); return; }
       var fs = footers();
       for (var i = 0; i < fs.length; i++) { whatsapp(fs[i]); copyright(fs[i]); chatLinks(fs[i]); }
       priyaWidget();
@@ -551,6 +551,14 @@
       enquiryPreselect();
       footerLanguages();
     } catch (e) { /* never break the page */ }
+  }
+  // AHV-WB.*.whatsapp-message (live ad routes only): the chat choices' "WhatsApp us" opens with the same page-context
+  // message as the page's own header WhatsApp link (campaign-v2/production/whatsapp.ts), never a message of its own;
+  // where the page's link carries none (preview, or a language without a reviewed message) the choice is left as built.
+  function campaignWhatsApp() {
+    var own = campaignRoot.querySelector('a.lp-header__wa[href^="' + WA_HREF + '?text="]');
+    var choice = document.querySelector("#ahv-contact-controls .ahv-contact-wa");
+    if (own && choice && choice.getAttribute("href") !== own.getAttribute("href")) choice.setAttribute("href", own.getAttribute("href"));
   }
   // TF-18 (owner, 28 Sep 2026): a treatment page's enquiry button opens /enquiry-form/?programme=treatment and the
   // form's existing, editable "What's it about?" select starts on its existing "Planning a treatment programme"

@@ -3,7 +3,9 @@
 // clarity (kairali-akshar-marketing-science CREATE+REVIEW); facts only from the brief, its NONPUBLIC audit (C22) and
 // data/doctors.ts. Highest claims risk: weight-management framing only — no kilograms, no timelines, no BMI, no
 // outcome, no body-shaming, no named conditions. The 14-night minimum admission is the brief's own fact (audit C22).
-// Stories omitted deliberately: no patient film is used on a weight page (audit: no testimonial outcome reproduced).
+// Owner decision, 14 Oct 2026 (AHV-WB.299.change: "it needs guest film you can use rupak mann one"): one guest story,
+// the Rupak Mann film already published on the legacy weight page, with its existing local thumbnail. Title uses only
+// the approved attribution; no quote, figure or timeline is reproduced, and the caveat matches the other story bands.
 import { defineCopy } from "../copy.ts";
 
 export default defineCopy({
@@ -78,6 +80,13 @@ export default defineCopy({
         { name: "Classic Villa", body: "Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Classic Villa", href: "/classic-villa/" } },
         { name: "Royal Villa", body: "A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.", link: { label: "Explore Royal Villa", href: "/royal-villa/" } },
         { name: "Maharaja Suite", body: "A king-size bed, a living area with a couch and garden access in a premium location.", link: { label: "Explore Maharaja Suite", href: "/maharaja-suite/" } },
+      ],
+    },
+    stories: {
+      heading: "Hear from people who have stayed at Kairali",
+      body: "Watch a patient describe their stay in their own words. Individual experiences vary.",
+      films: [
+        { title: "Watch Rupak Mann’s experience", href: "https://www.youtube.com/watch?v=D3QLxKpwtJs", thumb: { src: "/ahv/assets/img/video-thumb-D3QLxKpwtJs.webp", width: 480, height: 360 } },
       ],
     },
     stay: {

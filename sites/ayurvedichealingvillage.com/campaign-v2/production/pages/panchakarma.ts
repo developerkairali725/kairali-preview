@@ -1,5 +1,7 @@
 // /panchkarma-treatment.html — the reviewed copy (owner-correction/panchakarma.md), arranged into the production
 // template. Wording is the brief's own, except where a comment says otherwise.
+// Owner decision, 14 Oct 2026 (AHV-WB.042.change: "panchakarma has 28 as well"): the stated stay reads 14–28 nights,
+// matching the Length-of-stay box (14/21/28); description, lead and FAQ changed only in that range.
 import { defineCopy } from "../copy.ts";
 
 export default defineCopy({
@@ -8,7 +10,7 @@ export default defineCopy({
   source: { file: "panchakarma.md", sha256: "cce75640a02253b4d3c66206c91ecbb67236d23e326f052fff08f849ef5e240e" },
   seo: {
     title: "Panchakarma Treatment in Kerala | Kairali Ayurvedic Healing Village",
-    description: "Explore the 14–21 night Panchakarma programme at Kairali in Palakkad, Kerala, with Ayurvedic doctors, villa accommodation, vegetarian meals, yoga and meditation.",
+    description: "Explore the 14–28 night Panchakarma programme at Kairali in Palakkad, Kerala, with Ayurvedic doctors, villa accommodation, vegetarian meals, yoga and meditation.",
   },
   adMatch: { keywords: ["panchakarma treatment kerala", "panchakarma centre india", "panchakarma treatment in kerala"], adHeadlines: [] },
   hero: {
@@ -28,7 +30,7 @@ export default defineCopy({
       heading: "Is Panchakarma right for you?",
       paragraphs: [
         "Before setting aside time for Panchakarma, understand what the programme may involve for you. Your health history, current medicines, daily routine and goals all matter when discussing suitability with an Ayurvedic doctor.",
-        "At Kairali – The Ayurvedic Healing Village in Palakkad, Kerala, the programme begins with an individual assessment. Your doctor explains the proposed therapies, dietary guidance and time needed, and reviews your care during the stay. The published programme is a 14–21 night stay; confirm the recommended duration for your needs before arranging travel.",
+        "At Kairali – The Ayurvedic Healing Village in Palakkad, Kerala, the programme begins with an individual assessment. Your doctor explains the proposed therapies, dietary guidance and time needed, and reviews your care during the stay. The published programme is a 14–28 night stay; confirm the recommended duration for your needs before arranging travel.",
       ],
     },
     // "Panchakarma refers to five classical Ayurvedic procedures: Vamanam, Virechanam, Vasti, Nasyam and
@@ -61,6 +63,13 @@ export default defineCopy({
     place: {
       heading: "Your villa at Kairali",
       paragraphs: ["Our team can explain the available villa categories, room layouts and travel arrangements. Discuss any dietary or access needs before you confirm your stay."],
+      // AHV-WB.051.change: the four approved villa cards of pages/pain-management.ts, unchanged (no prices).
+      villas: [
+        { name: "Deluxe Villa", body: "A king-size bed and private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Deluxe Villa", href: "/deluxe-villa/" } },
+        { name: "Classic Villa", body: "Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Classic Villa", href: "/classic-villa/" } },
+        { name: "Royal Villa", body: "A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.", link: { label: "Explore Royal Villa", href: "/royal-villa/" } },
+        { name: "Maharaja Suite", body: "A king-size bed, a living area with a couch and garden access in a premium location.", link: { label: "Explore Maharaja Suite", href: "/maharaja-suite/" } },
+      ],
     },
     stay: {
       heading: "What your Panchakarma stay includes",
@@ -89,7 +98,7 @@ export default defineCopy({
   },
   faq: [
     { q: "Who can enquire about Panchakarma?", a: "You can enquire whether you have a diagnosed condition or simply want to understand the programme. Suitability depends on your health, medicines and the proposed procedures. Share your symptoms, medical history and goals so the doctor can assess what may be appropriate." },
-    { q: "How long is the programme, and when might I notice a change?", a: "The published Panchakarma programme is a 14–21 night stay. Your doctor will confirm the recommended duration and discuss realistic goals with you. Responses and timing vary; ask how progress will be reviewed and what preparation or follow-up your plan may involve." },
+    { q: "How long is the programme, and when might I notice a change?", a: "The published Panchakarma programme is a 14–28 night stay. Your doctor will confirm the recommended duration and discuss realistic goals with you. Responses and timing vary; ask how progress will be reviewed and what preparation or follow-up your plan may involve." },
     { q: "Will I have all five Panchakarma procedures?", a: "Not automatically. Your doctor decides which procedures are appropriate after assessing your health history, medicines and needs. Ask them to explain the proposed procedures, their preparation and availability before you decide on a stay." },
     { q: "What will I eat and do each day?", a: "Your programme combines prescribed therapies, vegetarian meals, yoga, meditation and rest. The doctor advises on your diet and reviews your care. Walks, lectures and garden visits are also available according to the schedule; discuss which activities fit your individual treatment plan." },
     { q: "Is the consultation free, and how is my stay quoted?", a: "Your initial doctor consultation is free. The stay is quoted according to your programme, duration, dates and villa occupancy. Ask for a breakdown of included care, doctor reviews and any later services, with separately charged items clearly explained before booking." },

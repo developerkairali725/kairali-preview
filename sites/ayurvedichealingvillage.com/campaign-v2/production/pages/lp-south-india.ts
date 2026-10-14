@@ -3,7 +3,9 @@
 // brief for sales clarity (kairali-akshar-marketing-science CREATE+REVIEW); facts only from the brief, its NONPUBLIC
 // audit (LP-COPY-FACT-AUDIT.json) and data/doctors.ts. Travel: only the brief's own "rail or flights via Coimbatore"
 // as options to discuss — no distances, travel times, speed or "weekend" claims; no offers.
+// Owner decision, 14 Oct 2026 (AHV-WB.330.change): airport pick-up on request at an extra charge; no prices or travel times.
 import { defineCopy } from "../copy.ts";
+import { story } from "../stories.ts";
 
 export default defineCopy({
   slug: "lp-south-india",
@@ -60,7 +62,29 @@ export default defineCopy({
       steps: [
         { title: "Start with a free consultation", body: "Share your health history and current medicine details with the doctor. Tell patient care where you will be travelling from and your preferred dates." },
         { title: "Confirm your plan and quotation", body: "Confirm your programme, villa occupancy, inclusions and booking terms in a personalised quotation. Keep your travel days separate from the time recommended for care." },
-        { title: "Arrange the trip to Palakkad", body: "Discuss arrival by rail or flights via Coimbatore, then confirm the onward trip from the station or airport. Check current routes and travel times when booking, and ask about transfers and charges." },
+        { title: "Arrange the trip to Palakkad", body: "Discuss arrival by rail or flights via Coimbatore, then confirm the onward trip from the station or airport. Check current routes and travel times when booking. Airport pick-up can be arranged on request at an extra charge." },
+      ],
+    },
+    // AHV-WB.320.villa-gallery and .guest-video (staff review 9 Oct 2026; owner's standing authority for approved
+    // villa photographs and on-page guest video; production/section-order.ts D_VILLAGE_AND_STORIES). Reviewed copy
+    // reused verbatim: the village from lp-hospital-kerala.ts, the consented registry films from ayurveda-retreat.ts.
+    // No new facts, names, countries or quotes.
+    place: {
+      heading: "Choose a villa that suits your needs",
+      paragraphs: ["Residential accommodation is in villas within the village gardens. Tell patient care about mobility needs, dietary requirements or a companion who may travel with you, then confirm the room layout and occupancy before booking."],
+      villas: [
+        { name: "Deluxe Villa", body: "A king-size bed and private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Deluxe Villa", href: "/deluxe-villa/" } },
+        { name: "Classic Villa", body: "Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Classic Villa", href: "/classic-villa/" } },
+        { name: "Royal Villa", body: "A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.", link: { label: "Explore Royal Villa", href: "/royal-villa/" } },
+        { name: "Maharaja Suite", body: "A king-size bed, a living area with a couch and garden access in a premium location.", link: { label: "Explore Maharaja Suite", href: "/maharaja-suite/" } },
+      ],
+    },
+    stories: {
+      heading: "See the village before you travel",
+      body: "See a day at the village and hear patients describe their stays in their own words. Individual experiences vary.",
+      films: [
+        story("iPARaMRASUs", "A day at the village"),
+        story("4x01PtWfNnk", "Watch Michaela & Jan’s experience"),
       ],
     },
     stay: {

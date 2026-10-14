@@ -46,6 +46,8 @@ export type EnquiryFormProps = {
   production?: ProductionFormContext;
   /** Live ad routes only: the page language's interface words (production/ui.ts). Absent = the English below. */
   ui?: FormUi;
+  /** Live ad routes only: the page-context WhatsApp link (production/whatsapp.ts). Absent = the bare number. */
+  whatsappHref?: string;
 };
 
 type Status =
@@ -73,7 +75,7 @@ function uuid(): string {
   return `${h.slice(0, 8)}-${h.slice(8, 12)}-${h.slice(12, 16)}-${h.slice(16, 20)}-${h.slice(20)}`;
 }
 
-export default function EnquiryForm({ schema, adapterId, campaign, variant, locale, country, privacyHref, prefillLabels, prefillEnabled = true, production, ui }: EnquiryFormProps) {
+export default function EnquiryForm({ schema, adapterId, campaign, variant, locale, country, privacyHref, prefillLabels, prefillEnabled = true, production, ui, whatsappHref }: EnquiryFormProps) {
   // A page language other than English replaces the validation messages by field, then by code (production/ui.ts).
   const say = (e: FieldError) => ui?.errors[e.field === "fullName" ? "name" : e.field] ?? ui?.errors[e.code] ?? e.message;
   const uid = useId();
@@ -345,7 +347,7 @@ export default function EnquiryForm({ schema, adapterId, campaign, variant, loca
 
   const consentErr = errFor(CONSENT_FIELD);
   const submitting = status.kind === "submitting";
-  const waHref = `https://wa.me/${contact.whatsapp.number}`;
+  const waHref = whatsappHref ?? `https://wa.me/${contact.whatsapp.number}`;
 
   return (
     <div className="lp-enq__card">
@@ -378,9 +380,14 @@ export default function EnquiryForm({ schema, adapterId, campaign, variant, loca
                       aria-invalid={consentErr ? true : undefined} aria-describedby={consentErr ? id(`${CONSENT_FIELD}-err`) : undefined} />
                     <span>{schema.consentLabels[channel]}</span>
                   </label>
-                  {/* Outside the label so tapping it never toggles consent; its own 44px row. */}
-                  <a className="lp-enq__privacy" href={production ? "/new-privacy-policy/" : privacyHref} target="_blank" rel="noopener">{schema.privacyLabel}</a>
-                  {production ? <a className="lp-enq__privacy" href="/terms-and-conditions/" target="_blank" rel="noopener">{ui?.terms ?? "Terms"}</a> : null}
+                  {/* Legal links remain outside the consent label; production shares one wrapping row. */}
+                  {production ? (
+                    <div className="lp-enq__legal-links">
+                      <a className="lp-enq__privacy" href={production ? "/new-privacy-policy/" : privacyHref} target="_blank" rel="noopener">{schema.privacyLabel}</a>
+                      <span aria-hidden="true">·</span>
+                      {production ? <a className="lp-enq__privacy" href="/terms-and-conditions/" target="_blank" rel="noopener">{ui?.terms ?? "Terms"}</a> : null}
+                    </div>
+                  ) : <a className="lp-enq__privacy" href={privacyHref} target="_blank" rel="noopener">{schema.privacyLabel}</a>}
                   {consentErr ? <p id={id(`${CONSENT_FIELD}-err`)} className="lp-enq__err">{say(consentErr)}</p> : null}
                 </div>
                 {schema.marketingOptIn ? (

@@ -2,7 +2,8 @@
 // approaches and wants a doctor-guided residential programme with realistic goals. Copy adapted from the reviewed brief
 // for sales clarity (kairali-akshar-marketing-science CREATE+REVIEW); facts only from the brief and data/doctors.ts.
 // Highest claims risk: no kilogram figures, timelines, BMI, outcome promises or body-shaming; no supplements/products.
-// No `stories`: patient films could read as weight-outcome testimonials on this route (fact audit excludes those).
+// Owner decision, 14 Oct 2026 (AHV-WB.299.change: "it needs guest film you can use rupak mann one") supersedes the
+// earlier no-`stories` rule: one guest story, the Rupak Mann film, titled with its approved attribution only.
 // /lp/ route: no outbound programme or villa links in copy.
 import { defineCopy } from "../copy.ts";
 
@@ -71,6 +72,13 @@ export default defineCopy({
       heading: "Plan the practical side early",
       paragraphs: [
         "Patient care can explain villa accommodation, occupancy and available dates. Share dietary needs, access requirements or companion arrangements before booking, so the team can confirm what is available for you.",
+      ],
+    },
+    stories: {
+      heading: "Hear from people who have stayed at Kairali",
+      body: "Watch a patient describe their stay in their own words. Individual experiences vary.",
+      films: [
+        { title: "Watch Rupak Mann’s experience", href: "https://www.youtube.com/watch?v=D3QLxKpwtJs", thumb: { src: "/ahv/assets/img/video-thumb-D3QLxKpwtJs.webp", width: 480, height: 360 } },
       ],
     },
     stay: {

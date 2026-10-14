@@ -54,7 +54,11 @@ const EN: ProductionUi = {
   },
   form: {
     formAria: "Free doctor consultation enquiry", stepOf: "Step {i} of {n}", back: "Back", next: "Continue", sending: "Sending…", terms: "Terms",
-    note: "No medical details needed. Your doctor asks for those privately at consultation.", honeypot: "Leave this empty", errors: {}, contactWa: "WhatsApp",
+    note: "No medical details needed. Your doctor asks for those privately at consultation.", honeypot: "Leave this empty",
+    // AHV-WB.021/459.phone-example, AHV-WB.021/161/304.checkbox-wording: the production form has one consent box and a
+    // +91 default or placeholder, so no "first box" and no UK example number. Validation, requiredness and the kit's English are unchanged.
+    errors: { phone: "Please enter your WhatsApp or phone number with the country code.", consent: "Please tick the box so we can reply to you." },
+    contactWa: "WhatsApp",
   },
   gallery: {
     title: "Gallery", count: "The village · {n} photos", filter: "Filter photos", all: "All", close: "Close gallery", closeViewer: "Close photo viewer", prev: "Previous photo", next: "Next photo",

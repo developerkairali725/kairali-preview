@@ -2,7 +2,9 @@
 // own URL, query never included), robots (indexable only on the production build, AHV_STAGING=0, exactly as
 // before), the Open Graph / Twitter image and its alt (none where the replaced page had none: batch 2), the
 // WebPage node and the treatment-packages breadcrumb.
-// From the copy: title and description. Added: FAQPage for the FAQ the page shows (integrations/seo.ts).
+// From the copy: title and description. Added: FAQPage for the FAQ the page shows (integrations/seo.ts), and a
+// two-item BreadcrumbList on every other route (AHV-WB *.breadcrumb-schema, 14 Oct 2026) matching its visible
+// navigation: the header logo links to the site home, and the page is named by its own visible H1 (no new copy).
 //
 // Erasable TypeScript only (node --test imports this file).
 
@@ -14,6 +16,18 @@ import { OG_IMAGE, ROUTES, SITE_ORIGIN, type ProductionSlug } from "./bindings.t
 import localeRoutes from "../../l10n/routes.json" with { type: "json" };
 
 const SITE_NAME = "Kairali Ayurvedic Healing Village";
+
+/**
+ * AHV-WB.545.change: the "treatment in Kerala" landing page in English, German and Russian — one topic and one next step
+ * (variant C, free doctor consultation, the same Palakkad hospital), each self-canonical and indexable on the same
+ * terms — linked reciprocally, English as x-default. Paths from bindings.ts; no other campaign gets alternates.
+ */
+const TREATMENT_KERALA_CLUSTER: Readonly<Record<string, ProductionSlug>> = { en: "lp-treatment-kerala", de: "lp-behandlung-kerala", ru: "lp-treatment-kerala-ru" };
+const languagesFor = (slug: ProductionSlug): Record<string, string> | undefined => {
+  if (!Object.values(TREATMENT_KERALA_CLUSTER).includes(slug)) return undefined;
+  const map = Object.fromEntries(Object.entries(TREATMENT_KERALA_CLUSTER).map(([locale, s]) => [locale, ROUTES[s].canonical]));
+  return { ...map, "x-default": map.en };
+};
 
 /** `env` is injected in tests; robots follow the build's AHV_STAGING exactly as the old pages did. */
 export function productionMetadata(slug: ProductionSlug, c: CampaignConfig, env: Record<string, string | undefined> = process.env): Metadata {
@@ -32,6 +46,7 @@ export function productionMetadata(slug: ProductionSlug, c: CampaignConfig, env:
         ...Object.fromEntries(Object.entries(localeRoutes.routes["/karkidaka-chikitsha-or-monsoon-wellness.html"]).map(([locale, route]) => [locale, SITE_ORIGIN + route])),
         "x-default": b.canonical,
       } } : {}),
+      ...(languagesFor(slug) ? { languages: languagesFor(slug) } : {}),
     },
     robots: { index: env.AHV_STAGING === "0", follow: true },
     openGraph: {
@@ -49,15 +64,15 @@ export function productionJsonLd(slug: ProductionSlug, c: CampaignConfig): objec
     name: c.seo.title, description: c.seo.description, inLanguage: b.locale ?? "en",
     isPartOf: { "@type": "WebSite", url: `${SITE_ORIGIN}/`, name: SITE_NAME },
   };
-  if (b.breadcrumbName) {
-    page.breadcrumb = {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_ORIGIN}/` },
-        { "@type": "ListItem", position: 2, name: b.breadcrumbName, item: b.canonical },
-      ],
-    };
-  }
+  // Treatment packages keeps the replaced page's recorded name; every other route uses its visible H1. The German and
+  // Russian routes have no approved word for "Home", so their first item is the language-neutral site name.
+  page.breadcrumb = {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: (b.locale ?? "en") === "en" ? "Home" : SITE_NAME, item: `${SITE_ORIGIN}/` },
+      { "@type": "ListItem", position: 2, name: b.breadcrumbName ?? c.hero.h1, item: b.canonical },
+    ],
+  };
   const faq = faqPage(c, b.locale ?? "en");
   return faq ? [page, faq] : [page];
 }

@@ -93,7 +93,9 @@ export default defineCopy({
       steps: [
         { title: "Start with a free consultation", body: "Share your health history, current treatment and what you hope to address. Your doctor discusses a programme with you before you decide on your stay." },
         { title: "Review your plan and quotation", body: "Confirm the prescribed plan, recommended length of stay, villa and occupancy. Check what is included and what is charged separately before choosing your dates." },
-        { title: "Settle into a daily routine", body: "Your prescribed care sets the pace, with meals, yoga or meditation and rest fitting around it. Ask about Ayurveda talks, cooking demonstrations, village walks and organic garden visits." },
+        // Owner decision, 14 Oct 2026 (AHV-WB.167.change): a typical day from the approved Dinacharya times only. Variant B
+        // has no quiet band, so the day sits in the existing routine step; the second therapy is never promised universally.
+        { title: "Settle into a daily routine", body: "Your prescribed care sets the pace, with meals, yoga or meditation and rest fitting around it. On a typical day, your first treatment is at 09:30 and an activity at 14:00; a second therapy follows at 15:30 only when your plan includes two therapies. Ask about Ayurveda talks, cooking demonstrations, village walks and organic garden visits." },
       ],
     },
     stories: {
