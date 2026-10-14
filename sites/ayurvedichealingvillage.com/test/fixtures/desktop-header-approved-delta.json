@@ -1,0 +1,15 @@
+{
+  "base": "569c0e2bc65498b71f538297e371518d31759e7e",
+  "delta": "\n/* Owner feedback, 14 Oct: align the unpinned desktop D header with its existing content grid. */\n@media (min-width: 768px) {\n  .lp-prod[data-variant=\"D\"] .lp-header:not([data-stuck]) { max-width: 1440px; margin-inline: auto; }\n}\n",
+  "baseline": {
+    "campaign-v2/production/production.css": "6600f484392e9a177c2b41c84eb698273c36039ee1be6c76c1221ff1f41963f3",
+    "campaign-v2/production/document.css": "8da82fd75942c25187b5a2b034c11b783283c0a6f93288cd558e8c9b0db80376"
+  },
+  "unchanged": {
+    "test/lp-v2-desktop-consult-card.test.mjs": "4d3890d54ecdc40b28f66a4cd5f73c3d3aa589b72ed5d843c35064401e714b28",
+    "campaign-v2/sections/Header.tsx": "3eb36357835c46089a286fa2d99477d7e429efee3c80bac59d5309f5ce29842d",
+    "campaign-v2/production/ConsultCard.tsx": "3f74aaeae081967605a1f45dcf5a4cc4728e849be96b93f06bf09463a5185a2b",
+    "campaign-v2/sections/sections.css": "e0dba528a7476ad61aecbd070fdf8d87be2ae0f3a75c35294ced1ba469525b3b",
+    "campaign-v2/production/bindings.ts": "fb718c4df061fa342972eb79f054d0b0661b36a388bfdfd4b1fe6a279510d72d"
+  }
+}
