@@ -180,10 +180,10 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
     ...PRODUCTION_SLUGS.map((s) => `campaign-v2/production/pages/${s}.ts`),
   ];
   for (const f of files) {
-    // Optional selectors and the eight approved gallery alt translations changed separately.
+    // Optional selectors, gallery alt translations and AHV-LATER-050.01 contact wording changed under their own authority.
     // Keep exact source pins for both; all doctor text, data, props and placement checks remain.
     const pin = f === "campaign-v2/production/production.css" ? "0272861b8c9033add121ad9106a63f24b2b99b99"
-      : f === "campaign-v2/production/ui.ts" ? "fa1718c727e8d7660c448450dea25d44361c5e3f" : BASE;
+      : f === "campaign-v2/production/ui.ts" ? "51a9637a750ca21623f4488c82b8a6592bc154d9" : BASE;
     assert.equal(read(f), git("show", `${pin}:./${f}`), f);
   }
 });
