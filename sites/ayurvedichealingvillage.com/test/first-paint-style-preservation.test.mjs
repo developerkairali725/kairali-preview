@@ -21,6 +21,11 @@ test('campaign first-paint bundle preserves exact approved stylesheet bytes and 
  for(const name of imports){
   let bytes=fs.readFileSync(path.resolve(site,'campaign-v2/production',name),'utf8');
   if(name==='./production.css'){
+   // Reverse only the exact approved desktop-card sizing delta; preserve the prior gallery rule and hash.
+   const cardDelta="\n/* Owner feedback, 14 Oct: size desktop D consultation cards to their existing actions. */\n@media (min-width: 768px) {\n  .lp-prod[data-variant=\"D\"] .lp-hero__form { align-self: start; }\n  .lp-prod[data-variant=\"D\"] .lp-consult--card { height: auto; }\n}\n";
+   assert.equal(bytes.split(cardDelta).length-1,1);
+   assert.ok(bytes.endsWith(cardDelta));
+   bytes=bytes.slice(0,-cardDelta.length);
    // Reverse only the exact owner-approved desktop-gallery corner correction; retain the historical hash.
    const delta='\n/* Owner-approved sharp corners, including the desktop gallery dialog. */\n.lp-prod .lp-gal{border-radius:0}\n';
    assert.ok(bytes.endsWith(delta));
