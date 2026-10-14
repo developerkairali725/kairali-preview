@@ -26,7 +26,7 @@ export type ProductionUi = {
   kicker: { lead: string; cards: string; row: string; index: string; pathway: string; village: string; stories: string; stay: string; doctors: string; faq: string; enquiry: string };
   village: { all: string; more: string };
   doctors: { speaks: (langs: string[]) => string; focus: string };
-  enquiry: { wa: string; call: string };
+  enquiry: { contactIntro: string; wa: string; call: string };
   footer: { brand: string; visit: string; speak: string; accreditation: string; disclaimer: string; group: string; privacy: string; terms: string; cookiePolicy: string; cookiePrefs: string; main: string; mainHref: string };
   form: FormUi;
   gallery: GalleryUi;
@@ -46,7 +46,7 @@ const EN: ProductionUi = {
   kicker: { lead: "Where to begin", cards: "Programmes", row: "In brief", index: "Care for each person", pathway: "How it works", village: "The village", stories: "In their words", stay: "Your quotation", doctors: "Your doctors", faq: "Before you decide", enquiry: "Free doctor consultation" },
   village: { all: "View all photos", more: "more" },
   doctors: { speaks: (l) => `Speaks ${list(l, "and")}`, focus: "Focus" },
-  enquiry: { wa: "Prefer to talk? WhatsApp", call: "Call" },
+  enquiry: { contactIntro: "Prefer to talk?", wa: "WhatsApp", call: "Call" },
   footer: {
     brand: "A NABH-accredited Ayurvedic hospital of the Kairali Ayurvedic Group, in Palakkad, Kerala.", visit: "Visit", speak: "Speak to us", accreditation: "Accreditation",
     disclaimer: "Ayurvedic programs at Kairali are supervised by qualified doctors and complement, not replace, the medical care you already receive. Individual experiences vary.",
@@ -72,7 +72,7 @@ const DE: ProductionUi = {
   kicker: { lead: "Der erste Schritt", cards: "Programme", row: "Im Überblick", index: "Für jeden Einzelnen", pathway: "So funktioniert es", village: "Das Dorf", stories: "Erfahrungen", stay: "Ihr Angebot", doctors: "Ihr Arzt", faq: "Vor Ihrer Entscheidung", enquiry: "Kostenlose ärztliche Erstberatung" },
   village: { all: "Alle Fotos ansehen", more: "weitere" },
   doctors: { speaks: (l) => `Spricht ${list(l, "und")}`, focus: "Schwerpunkte" },
-  enquiry: { wa: "Lieber direkt sprechen? WhatsApp", call: "Anrufen" },
+  enquiry: { contactIntro: "Lieber direkt sprechen?", wa: "WhatsApp", call: "Anrufen" },
   footer: {
     brand: "Ein NABH-akkreditiertes Ayurveda-Krankenhaus der Kairali Ayurvedic Group in Palakkad, Kerala.", visit: "Adresse", speak: "Kontakt", accreditation: "Akkreditierung",
     disclaimer: "Ayurvedische Programme bei Kairali werden von qualifizierten Ärzten betreut und ergänzen Ihre bestehende medizinische Versorgung, ohne sie zu ersetzen. Individuelle Erfahrungen können variieren.",
@@ -121,7 +121,7 @@ const RU: ProductionUi = {
   kicker: { lead: "С чего начать", cards: "Программы", row: "Коротко", index: "Для каждого", pathway: "Как это работает", village: "Деревня", stories: "Отзывы", stay: "Ваше предложение", doctors: "Ваш врач", faq: "Прежде чем решить", enquiry: "Бесплатная консультация врача" },
   village: { all: "Все фотографии", more: "ещё" },
   doctors: { speaks: (l) => `Говорит на ${list(l, "и")} языках`, focus: "Направления" },
-  enquiry: { wa: "Удобнее поговорить? WhatsApp", call: "Позвонить" },
+  enquiry: { contactIntro: "Удобнее поговорить?", wa: "WhatsApp", call: "Позвонить" },
   footer: {
     brand: "Аюрведическая больница с аккредитацией NABH в составе Kairali Ayurvedic Group, Палаккад, Керала.", visit: "Адрес", speak: "Связаться с нами", accreditation: "Аккредитация",
     disclaimer: "Аюрведические программы в Kairali проходят под наблюдением квалифицированных врачей и дополняют, а не заменяют медицинскую помощь, которую вы уже получаете. Индивидуальный опыт может отличаться.",

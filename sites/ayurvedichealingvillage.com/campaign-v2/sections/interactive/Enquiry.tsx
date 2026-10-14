@@ -36,6 +36,7 @@ export default function Enquiry({ c, v, req }: SectionProps) {
         {closing?.paragraphs.map((p, i) => <p key={i} className="lp-enq__lede"><Rich text={p} /></p>)}
         {closing && c.cta?.primarySupport ? <p className="lp-enq__lede lp-enq__support">{c.cta.primarySupport}</p> : null}
         {schema.lede ? <p className="lp-enq__lede">{schema.lede}</p> : null}
+        <p className="lp-enq__lede">{ui.enquiry.contactIntro}</p>
         <ul className="lp-enq__contact">
           <li>
             <a href={`https://wa.me/${contact.whatsapp.number}`} data-track="cta_click" data-track-cta="whatsapp" data-track-position="section">
