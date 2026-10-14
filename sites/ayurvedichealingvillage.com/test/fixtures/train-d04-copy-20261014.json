@@ -66,19 +66,6 @@
         }
       ]
     },
-    "campaign-v2/production/pages/lp-treatment-packages.ts": {
-      "rows": [
-        "AHV-WB.465.quotation-box"
-      ],
-      "beforeSHA256": "a8f43a17770b5375f4dac8a2f59e0fd4d7126100fcd66f005e5708c9926e4f71",
-      "afterSHA256": "415a0da05320ffedc34b4bc3e970f151811ff4e7e8ceaea9351d0485301da0d7",
-      "replacements": [
-        {
-          "before": "dates, duration and occupancy. When you compare, compare like with like: the same duration, dates and occupancy, with the care and accommodation clearly described.\"]",
-          "after": "dates, duration and occupancy.\"]"
-        }
-      ]
-    },
     "campaign-v2/production/pages/lp-weight-management.ts": {
       "rows": [
         "AHV-WB.487.quotation-box"
@@ -154,19 +141,6 @@
         {
           "before": "while leaving room for different therapies, routines and lengths of stay.\"],",
           "after": "while leaving room for different therapies, routines and lengths of stay.\", \"What your stay offers: travel and accommodation planned together, care planned for each person, and space for rest and time together in the gardens.\"],"
-        }
-      ]
-    },
-    "campaign-v2/production/pages/ayurveda-retreat.ts": {
-      "rows": [
-        "AHV-WB.156.benefit-copy"
-      ],
-      "beforeSHA256": "719a6f8d1f045abc28fc25ec8430b6861b0456c43750d15d66d506a09f989ce3",
-      "afterSHA256": "0892ecf3ed9115dcb7e8389ee4494a1396e906a3ba2899522aa7f5784a4a7c4e",
-      "replacements": [
-        {
-          "before": "come together around your care plan.\",\n      ],",
-          "after": "come together around your care plan.\",\n        \"What your stay offers: time away from your usual schedule, a programme discussed with your Ayurvedic doctor, and days in the village gardens where prescribed therapies, food, yoga and rest come together.\",\n      ],"
         }
       ]
     },
@@ -251,11 +225,11 @@
         ],
         "before": [
           "Before setting aside time for Panchakarma, understand what the programme may involve for you. Your health history, current medicines, daily routine and goals all matter when discussing suitability with an Ayurvedic doctor.",
-          "At Kairali – The Ayurvedic Healing Village in Palakkad, Kerala, the programme begins with an individual assessment. Your doctor explains the proposed therapies, dietary guidance and time needed, and reviews your care during the stay. The published programme is a 14–21 night stay; confirm the recommended duration for your needs before arranging travel."
+          "At Kairali – The Ayurvedic Healing Village in Palakkad, Kerala, the programme begins with an individual assessment. Your doctor explains the proposed therapies, dietary guidance and time needed, and reviews your care during the stay. The published programme is a 14–28 night stay; confirm the recommended duration for your needs before arranging travel."
         ],
         "after": [
           "Before setting aside time for Panchakarma, understand what the programme may involve for you. Your health history, current medicines, daily routine and goals all matter when discussing suitability with an Ayurvedic doctor.",
-          "At Kairali – The Ayurvedic Healing Village in Palakkad, Kerala, the programme begins with an individual assessment. Your doctor explains the proposed therapies, dietary guidance and time needed, and reviews your care during the stay. The published programme is a 14–21 night stay; confirm the recommended duration for your needs before arranging travel.",
+          "At Kairali – The Ayurvedic Healing Village in Palakkad, Kerala, the programme begins with an individual assessment. Your doctor explains the proposed therapies, dietary guidance and time needed, and reviews your care during the stay. The published programme is a 14–28 night stay; confirm the recommended duration for your needs before arranging travel.",
           "What your stay offers: a programme your doctor explains before it begins and reviews during your stay, meals and activities that fit your programme, and a different daily pace, with time to sit in the gardens or rest in your villa."
         ]
       }
@@ -289,24 +263,6 @@
         "after": [
           "A family Ayurveda retreat in Kerala can bring your own wellbeing plans together with a parent’s care, a partner’s programme or time shared as companions. At Kairali’s NABH-accredited Ayurvedic hospital in Palakkad, each person’s assessment guides their care. Plan the travel and accommodation together, while leaving room for different therapies, routines and lengths of stay.",
           "What your stay offers: travel and accommodation planned together, care planned for each person, and space for rest and time together in the gardens."
-        ]
-      }
-    ],
-    "ayurveda-retreat": [
-      {
-        "path": [
-          "page",
-          "lead",
-          "paragraphs"
-        ],
-        "before": [
-          "A residential stay gives you time to focus on care and daily routines away from your usual schedule. At Kairali – The Ayurvedic Healing Village in Palakkad, your Ayurvedic doctor assesses your needs and discusses a programme with you before you decide on your stay.",
-          "Kairali is an NABH-accredited Ayurvedic hospital with villas in the village gardens. Its Ayurvedic family tradition informs a place where prescribed therapies, food, yoga and rest come together around your care plan."
-        ],
-        "after": [
-          "A residential stay gives you time to focus on care and daily routines away from your usual schedule. At Kairali – The Ayurvedic Healing Village in Palakkad, your Ayurvedic doctor assesses your needs and discusses a programme with you before you decide on your stay.",
-          "Kairali is an NABH-accredited Ayurvedic hospital with villas in the village gardens. Its Ayurvedic family tradition informs a place where prescribed therapies, food, yoga and rest come together around your care plan.",
-          "What your stay offers: time away from your usual schedule, a programme discussed with your Ayurvedic doctor, and days in the village gardens where prescribed therapies, food, yoga and rest come together."
         ]
       }
     ],
@@ -504,18 +460,6 @@
         "removed": true
       }
     ],
-    "lp-treatment-packages": [
-      {
-        "path": [
-          "page",
-          "stay",
-          "paragraphs",
-          0
-        ],
-        "before": "Ask for a written quotation for your proposed programme, dates, duration and occupancy. When you compare, compare like with like: the same duration, dates and occupancy, with the care and accommodation clearly described.",
-        "after": "Ask for a written quotation for your proposed programme, dates, duration and occupancy."
-      }
-    ],
     "lp-weight-management": [
       {
         "path": [
@@ -552,5 +496,62 @@
         "removed": true
       }
     ]
-  }
+  },
+  "trainBExclusions": [
+    {
+      "row": "AHV-WB.465.quotation-box",
+      "file": "campaign-v2/production/pages/lp-treatment-packages.ts",
+      "replacements": [
+        {
+          "before": "dates, duration and occupancy. When you compare, compare like with like: the same duration, dates and occupancy, with the care and accommodation clearly described.\"]",
+          "after": "dates, duration and occupancy.\"]"
+        }
+      ],
+      "configChanges": [
+        {
+          "path": [
+            "page",
+            "stay",
+            "paragraphs",
+            0
+          ],
+          "before": "Ask for a written quotation for your proposed programme, dates, duration and occupancy. When you compare, compare like with like: the same duration, dates and occupancy, with the care and accommodation clearly described.",
+          "after": "Ask for a written quotation for your proposed programme, dates, duration and occupancy."
+        }
+      ],
+      "reason": "rejected (train-d04/REVIEW.json)",
+      "action": "reverted"
+    },
+    {
+      "row": "AHV-WB.156.benefit-copy",
+      "file": "campaign-v2/production/pages/ayurveda-retreat.ts",
+      "replacements": [
+        {
+          "before": "come together around your care plan.\",\n      ],",
+          "after": "come together around your care plan.\",\n        \"What your stay offers: time away from your usual schedule, a programme discussed with your Ayurvedic doctor, and days in the village gardens where prescribed therapies, food, yoga and rest come together.\",\n      ],"
+        }
+      ],
+      "configChanges": [
+        {
+          "path": [
+            "page",
+            "lead",
+            "paragraphs"
+          ],
+          "before": [
+            "A residential stay gives you time to focus on care and daily routines away from your usual schedule. At Kairali – The Ayurvedic Healing Village in Palakkad, your Ayurvedic doctor assesses your needs and discusses a programme with you before you decide on your stay.",
+            "Kairali is an NABH-accredited Ayurvedic hospital with villas in the village gardens. Its Ayurvedic family tradition informs a place where prescribed therapies, food, yoga and rest come together around your care plan."
+          ],
+          "after": [
+            "A residential stay gives you time to focus on care and daily routines away from your usual schedule. At Kairali – The Ayurvedic Healing Village in Palakkad, your Ayurvedic doctor assesses your needs and discusses a programme with you before you decide on your stay.",
+            "Kairali is an NABH-accredited Ayurvedic hospital with villas in the village gardens. Its Ayurvedic family tradition informs a place where prescribed therapies, food, yoga and rest come together around your care plan.",
+            "What your stay offers: time away from your usual schedule, a programme discussed with your Ayurvedic doctor, and days in the village gardens where prescribed therapies, food, yoga and rest come together."
+          ]
+        }
+      ],
+      "reason": "rejected (train-d04/REVIEW.json)",
+      "action": "reverted"
+    }
+  ],
+  "trainBComposition": "Train B (15 Oct 2026): the panchakarma configChanges entry is recorded on the integrated tree, where Train A's AHV-WB.042.change (owner decision 2) already reads '14–28 night'; Train A's own reversal then restores '14–21 night'. The source replacement is unchanged (it anchors after that sentence)."
 }

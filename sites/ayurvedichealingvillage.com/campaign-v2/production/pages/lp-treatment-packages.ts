@@ -92,7 +92,7 @@ export default defineCopy({
     },
     stay: {
       heading: "Know exactly what your quotation covers",
-      paragraphs: ["Ask for a written quotation for your proposed programme, dates, duration and occupancy."],
+      paragraphs: ["Ask for a written quotation for your proposed programme, dates, duration and occupancy. When you compare, compare like with like: the same duration, dates and occupancy, with the care and accommodation clearly described."],
       lists: [
         { heading: "Check that it sets out", items: ["Villa accommodation, occupancy and taxes", "Meals included in your programme", "Doctor reviews and prescribed therapies", "Activities, and which yoga or meditation sessions are included"] },
         { heading: "Confirm what is charged separately", items: ["Medicines and tests", "Specialist care and additional sessions", "Transport", "Personal services"], extra: true },

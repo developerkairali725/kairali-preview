@@ -24,6 +24,7 @@ export const TRAIN_B = json("train-b-20261015.json");
 const OWNER_DECISIONS_C = json("owner-decisions-c-20261014.json");
 const SURVIVOR_LINK = json("yoga-survivor-link-20261014.json");
 const D03 = json("d03-copy-corrections-20261014.json");
+const D04 = json("train-d04-copy-20261014.json");
 
 /** Candidates in merge order: name and per-file entries ({beforeSHA256, afterSHA256, replacements: [{before, after}]}). */
 export const TRAIN_B_CANDIDATES = Object.freeze([
@@ -32,6 +33,7 @@ export const TRAIN_B_CANDIDATES = Object.freeze([
   { name: "train C02", files: TRAIN_B.recordedDeltas["train C02"].files },
   { name: "trains C03/C04", files: TRAIN_B.recordedDeltas["trains C03/C04"].files },
   { name: "trains C01/C02/D01/D02 entity", files: TRAIN_B.recordedDeltas["trains C01/C02/D01/D02 entity"].files },
+  { name: "train D04", files: D04.files },
   { name: "train D03", files: D03.files },
 ]);
 
@@ -176,12 +178,26 @@ export function reverseD03Config(slug, c) {
   return c;
 }
 
+/** Field-level config changes [{path, before, after, removed?}] (the D04/D05/D06 fixture form), reversed exactly. */
+function reverseFields(slug, c, changes, name) {
+  for (const { path, before, after, removed } of [...changes].reverse()) {
+    let o = c;
+    for (const k of path.slice(0, -1)) o = o[k];
+    const k = path.at(-1);
+    if (removed) assert.ok(!(k in o), `${slug}: ${name} removed ${path.join(".")}`);
+    else assert.deepEqual(o[k], after, `${slug}: exact ${name} field ${path.join(".")}`);
+    o[k] = plain(before);
+  }
+  return c;
+}
+export const reverseD04Config = (slug, c) => reverseFields(slug, c, D04.configChanges[slug] ?? [], "train D04");
+
 /**
  * A JSON copy of a production config with every Train B candidate's exact config change reversed, newest first.
  * Use the returned value: a reversal may return a new object.
  */
 export function reverseTrainBConfig(slug, config, options = {}) {
-  return reverseOwnerDecisionsCConfig(slug, reverseBatch15Config(slug, reverseC02Config(slug, reverseRestConfig(slug, reverseD03Config(slug, config), options))), options);
+  return reverseOwnerDecisionsCConfig(slug, reverseBatch15Config(slug, reverseC02Config(slug, reverseRestConfig(slug, reverseD03Config(slug, reverseD04Config(slug, config)), options))), options);
 }
 
 /**

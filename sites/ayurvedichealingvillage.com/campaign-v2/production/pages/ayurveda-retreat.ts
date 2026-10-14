@@ -37,7 +37,6 @@ export default defineCopy({
       paragraphs: [
         "A residential stay gives you time to focus on care and daily routines away from your usual schedule. At Kairali – The Ayurvedic Healing Village in Palakkad, your Ayurvedic doctor assesses your needs and discusses a programme with you before you decide on your stay.",
         "Kairali is an NABH-accredited Ayurvedic hospital with villas in the village gardens. Its Ayurvedic family tradition informs a place where prescribed therapies, food, yoga and rest come together around your care plan.",
-        "What your stay offers: time away from your usual schedule, a programme discussed with your Ayurvedic doctor, and days in the village gardens where prescribed therapies, food, yoga and rest come together.",
       ],
       points: [
         "You want time away from your usual schedule",
