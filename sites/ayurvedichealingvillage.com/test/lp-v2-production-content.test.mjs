@@ -12,7 +12,7 @@ import { fileURLToPath } from "node:url";
 import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/load.ts";
 import { ROUTES, OG_IMAGE, PRICING_HIDDEN, REVIEW_BATCHES, SITE_ORIGIN } from "../campaign-v2/production/bindings.ts";
 import { COPY } from "../campaign-v2/production/pages/index.ts";
-import { ORDER, sectionOrder } from "../campaign-v2/production/section-order.ts";
+import { ORDER, baseOrder, sectionOrder, D_VILLAGE_AND_STORIES } from "../campaign-v2/production/section-order.ts";
 import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
 import { allText } from "../campaign-v2/kit/lint/claims.ts";
 import { pageLinks, pageText } from "../campaign-v2/kit/lint/page-text.ts";
@@ -206,7 +206,7 @@ test("composition: every variant in decision order; the doctors right after the 
     const order = sectionOrder(C[slug], v);
     assert.equal(order[1], "physicians", `${slug}: the doctors right after the lead`);
     assert.equal(order.filter((b) => b === "physicians").length, 1, `${slug}: the doctors once`);
-    assert.deepEqual(order.filter((b) => b !== "physicians"), ORDER[v].filter((b) => b !== "physicians" && order.includes(b)), `${slug}: the variant's order otherwise`);
+    assert.deepEqual(order.filter((b) => b !== "physicians"), baseOrder(slug, v).filter((b) => b !== "physicians" && order.includes(b)), `${slug}: the variant's order otherwise`);
   }
   for (const [v, list] of Object.entries(ORDER)) {
     assert.equal(list.at(-1), "physicians", `${v}: by default the doctors lead straight into the enquiry`);
@@ -215,15 +215,24 @@ test("composition: every variant in decision order; the doctors right after the 
     assert.ok(list.indexOf("stay") < list.indexOf("physicians"), `${v}: doctors follow the quotation section`);
   }
   assert.ok(!ORDER.B.includes("rest") && !ORDER.D.includes("rest") && !ORDER.D.includes("place"), "B has no stillness band; D neither band nor village");
+  // Staff review 9 Oct (AHV-WB.249/320/430/272): only the four listed D routes add the existing village and films, after the
+  // steps and before the quotation; no stillness band; the fifth D route (lp-brand) keeps the shortest path.
+  assert.deepEqual([...D_VILLAGE_AND_STORIES], ["south-india-cities", "brand", "lp-south-india", "lp-panchakarma"]);
+  for (const slug of PRODUCTION_SLUGS) {
+    const v = ROUTES[slug].variant ?? "A";
+    const listed = D_VILLAGE_AND_STORIES.includes(slug);
+    assert.equal(listed, v === "D" && slug !== "lp-brand", slug);
+    assert.deepEqual(baseOrder(slug, v), listed ? ["lead", "offering", "pathway", "place", "stories", "stay", "physicians"] : [...ORDER[v]], slug);
+  }
   for (const gone of ["Doctors", "Body", "FeePlan", "Stillness", "Admission", "Village", "Films", "LongForm", "OfferBand", "Fees"]) {
     assert.doesNotMatch(src, new RegExp(`<${gone}\\b`), `${gone} is not part of the designed page`);
   }
   // A page writes only the sections its variant shows.
   for (const slug of PRODUCTION_SLUGS) {
     const v = ROUTES[slug].variant ?? "A";
-    if (!ORDER[v].includes("rest")) assert.equal(C[slug].page.rest, undefined, `${slug}: no unused stillness copy`);
-    if (!ORDER[v].includes("place")) assert.equal(C[slug].page.place, undefined, `${slug}: no unused village copy`);
-    if (!ORDER[v].includes("stories")) assert.equal(C[slug].page.stories, undefined, `${slug}: no unused films`);
+    if (!baseOrder(slug, v).includes("rest")) assert.equal(C[slug].page.rest, undefined, `${slug}: no unused stillness copy`);
+    if (!baseOrder(slug, v).includes("place")) assert.equal(C[slug].page.place, undefined, `${slug}: no unused village copy`);
+    if (!baseOrder(slug, v).includes("stories")) assert.equal(C[slug].page.stories, undefined, `${slug}: no unused films`);
   }
 });
 

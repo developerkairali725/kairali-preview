@@ -1,0 +1,148 @@
+{
+ "base": "c54e2795ebf7f1c525313ff2ea10b1fd95881f4e",
+ "scope": "Train A batch 6 (14 Oct 2026): AHV-WB.530.first-screen-cta, AHV-WB.021/459.phone-example, AHV-WB.021/161/304.checkbox-wording, AHV-WB.249/320/430/272 guest-video + villa-gallery. Exact source deltas; remove them to restore the prior bytes and every prior pin.",
+ "dSlugs": [
+  "south-india-cities",
+  "brand",
+  "lp-south-india",
+  "lp-panchakarma"
+ ],
+ "guestVideoRoutesAdded": [
+  "/Ayurveda_Treatment_Neo_S.India_Cities.html",
+  "/lp/ayurveda-treatment-south-india/",
+  "/lp/panchkarma-treatment/",
+  "/Kairali_Brand_and_Competition_Neo-original.html"
+ ],
+ "files": {
+  "campaign-v2/production/ui.ts": {
+   "beforeSHA256": "330c1582cba73535d5b1eaf5c1726cbf455eb735e6295e547e0637b48d095140",
+   "afterSHA256": "0574ef47e13e078b6d7e8de7abad714d553f5d35d8f1b56c02796057ad0e124a",
+   "replacements": [
+    {
+     "before": "    formAria: \"Free doctor consultation enquiry\", stepOf: \"Step {i} of {n}\", back: \"Back\", next: \"Continue\", sending: \"Sending…\", terms: \"Terms\",\n    note: \"No medical details needed. Your doctor asks for those privately at consultation.\", honeypot: \"Leave this empty\", errors: {}, contactWa: \"WhatsApp\",\n  },\n",
+     "after": "    formAria: \"Free doctor consultation enquiry\", stepOf: \"Step {i} of {n}\", back: \"Back\", next: \"Continue\", sending: \"Sending…\", terms: \"Terms\",\n    note: \"No medical details needed. Your doctor asks for those privately at consultation.\", honeypot: \"Leave this empty\",\n    // AHV-WB.021/459.phone-example, AHV-WB.021/161/304.checkbox-wording: the production form has one consent box and a\n    // +91 default or placeholder, so no \"first box\" and no UK example number. Validation, requiredness and the kit's English are unchanged.\n    errors: { phone: \"Please enter your WhatsApp or phone number with the country code.\", consent: \"Please tick the box so we can reply to you.\" },\n    contactWa: \"WhatsApp\",\n  },\n"
+    }
+   ]
+  },
+  "campaign-v2/production/production.css": {
+   "beforeSHA256": "9a6fe8bbc872bb52aa48347a6529a0b3661e6ea1c91a632041d79039dbe704d3",
+   "afterSHA256": "d51ea8007b1f2e8f484213709eafac8e3b5ce418d180fbc4b6399adb8ea69154",
+   "replacements": [
+    {
+     "before": "\n/* Owner feedback, 14 Oct: size desktop D consultation cards to their existing actions. */\n",
+     "after": "\n/* AHV-WB.530.first-screen-cta: on the Russian route's phone first screen, show the existing same-page consultation\n   button again (the kit hides the C hero actions on phones). Same label, link, tracking and button styling; the Ask\n   control stays hidden there; English, German and every other variant are unchanged. */\n@media (max-width: 767px) {\n  .lp-prod[data-variant=\"C\"]:lang(ru) .lp-hero__ctas { display: flex; }\n  .lp-prod[data-variant=\"C\"]:lang(ru) .lp-hero__ctas .lp-btn { width: 100%; }\n  .lp-prod[data-variant=\"C\"]:lang(ru) .lp-hero__ask { display: none; }\n}\n\n/* Owner feedback, 14 Oct: size desktop D consultation cards to their existing actions. */\n"
+    }
+   ]
+  },
+  "campaign-v2/production/document.css": {
+   "beforeSHA256": "bfa9c8f7ab54a4ccdd430e3c202e3f54a4a8a6a4841af5964ec4cc24f33dd042",
+   "afterSHA256": "a3a659b33aa793bd4d24b1b02bfda18d8ea402142ffa1a929ab3afc0ddaab86c",
+   "replacements": [
+    {
+     "before": "\n/* Owner feedback, 14 Oct: size desktop D consultation cards to their existing actions. */\n",
+     "after": "\n/* AHV-WB.530.first-screen-cta: on the Russian route's phone first screen, show the existing same-page consultation\n   button again (the kit hides the C hero actions on phones). Same label, link, tracking and button styling; the Ask\n   control stays hidden there; English, German and every other variant are unchanged. */\n@media (max-width: 767px) {\n  .lp-prod[data-variant=\"C\"]:lang(ru) .lp-hero__ctas { display: flex; }\n  .lp-prod[data-variant=\"C\"]:lang(ru) .lp-hero__ctas .lp-btn { width: 100%; }\n  .lp-prod[data-variant=\"C\"]:lang(ru) .lp-hero__ask { display: none; }\n}\n\n/* Owner feedback, 14 Oct: size desktop D consultation cards to their existing actions. */\n"
+    }
+   ]
+  },
+  "campaign-v2/production/section-order.ts": {
+   "beforeSHA256": "8d1e18fe9ef8ae3c284d608b5d38737aa52f9088a31191a06d2cb9792d09a407",
+   "afterSHA256": "4718d4da2f108d6f603d0bd5aa31b29dccd5c25c35218a44bb8299b9e683c2f1",
+   "replacements": [
+    {
+     "before": "\n/** The variant's order for one route: the default, or (allowlisted routes) the doctors moved up to follow the lead. */\n",
+     "after": "\n/**\n * Staff review 9 Oct 2026 (AHV-WB.249/320/430/272 guest-video and villa-gallery), under the owner's standing authority\n * for approved villa photographs and on-page guest video: on the Direct (D) routes listed here the existing village\n * section (Place, with the route's own approved gallery) and patient films (Stories) follow the three steps, before the\n * quotation, as in variant A. Same sections, styles and props; every other D route keeps the shortest path. Reversible:\n * remove a slug to restore its D order.\n */\nexport const D_VILLAGE_AND_STORIES: readonly string[] = [\"south-india-cities\", \"brand\", \"lp-south-india\", \"lp-panchakarma\"];\nconst D_WITH_VILLAGE_AND_STORIES: readonly Block[] = [\"lead\", \"offering\", \"pathway\", \"place\", \"stories\", \"stay\", \"physicians\"];\n\n/** The variant's designed sections for one route, before the doctors move (ORDER, or a listed D route's override). */\nexport function baseOrder(slug: string, v: Variant): Block[] {\n  return v === \"D\" && D_VILLAGE_AND_STORIES.includes(slug) ? [...D_WITH_VILLAGE_AND_STORIES] : [...ORDER[v]];\n}\n\n/** The variant's order for one route: the default, or (allowlisted routes) the doctors moved up to follow the lead. */\n"
+    },
+    {
+     "before": "export function variantOrder(slug: string, v: Variant): Block[] {\n  const base = [...ORDER[v]];\n  if (!DOCTORS_AFTER_LEAD.includes(slug)) return base;\n",
+     "after": "export function variantOrder(slug: string, v: Variant): Block[] {\n  const base = baseOrder(slug, v);\n  if (!DOCTORS_AFTER_LEAD.includes(slug)) return base;\n"
+    }
+   ]
+  },
+  "campaign-v2/production/sections/guest-video-policy.mjs": {
+   "beforeSHA256": "177ad1650b10c2826e8bf956ec3c6214eb6bc825ff394e4d3b94c921e3ee8333",
+   "afterSHA256": "0b428697d405b9f128ece9353114943afb84dc48eeb3631754a18410da5d1170",
+   "replacements": [
+    {
+     "before": "// English routes below, keeping each card's YouTube link as the fallback. Fail closed everywhere: an unknown route,\n// language, film, consent state or API means no player.\n\n",
+     "after": "// English routes below, keeping each card's YouTube link as the fallback. Fail closed everywhere: an unknown route,\n// language, film, consent state or API means no player. Staff review 9 Oct 2026 (AHV-WB.249/320/430/272.guest-video),\n// under the owner's standing authority for on-page guest-video playback: four Direct routes gain the same Stories\n// section (production/section-order.ts D_VILLAGE_AND_STORIES) and are appended here, same films and consent gating.\n\n"
+    },
+    {
+     "before": "\n/** The 13 English routes of DEC-GUEST-VIDEO-POPUP (WOPS-AHV-GUEST-VIDEO-20261010-001 SCOPE.json), exact paths. */\nexport const GUEST_VIDEO_ROUTES = Object.freeze([\n",
+     "after": "\n/** The 13 English routes of DEC-GUEST-VIDEO-POPUP (WOPS-AHV-GUEST-VIDEO-20261010-001 SCOPE.json), then the four D routes. */\nexport const GUEST_VIDEO_ROUTES = Object.freeze([\n"
+    },
+    {
+     "before": "  \"/lp/treatment-packages/\",\n]);\n",
+     "after": "  \"/lp/treatment-packages/\",\n  // AHV-WB.249 / 320 / 430 / 272.guest-video (14 Oct 2026).\n  \"/Ayurveda_Treatment_Neo_S.India_Cities.html\",\n  \"/lp/ayurveda-treatment-south-india/\",\n  \"/lp/panchkarma-treatment/\",\n  \"/Kairali_Brand_and_Competition_Neo-original.html\",\n]);\n"
+    },
+    {
+     "before": "\n/** Every film the 13 routes' reviewed copy already links (production/pages/*.ts). No other id is ever embedded. */\nexport const APPROVED_FILM_IDS = Object.freeze([\"iPARaMRASUs\", \"4x01PtWfNnk\", \"3vWviQfW1Ug\", \"07tVC2oXd8g\", \"DcTMckQD3rc\"]);\n",
+     "after": "\n/** Every film the allowed routes' reviewed copy already links (production/pages/*.ts). No other id is ever embedded. */\nexport const APPROVED_FILM_IDS = Object.freeze([\"iPARaMRASUs\", \"4x01PtWfNnk\", \"3vWviQfW1Ug\", \"07tVC2oXd8g\", \"DcTMckQD3rc\"]);\n"
+    },
+    {
+     "before": "\n/** True only on one of the 13 exact paths of an English document. */\nexport function routeAllowed(pathname, lang) {\n",
+     "after": "\n/** True only on one of the allowed exact paths of an English document. */\nexport function routeAllowed(pathname, lang) {\n"
+    },
+    {
+     "before": " *   consent {granted}       — any consent change/recheck; withdrawal or expiry ends playback\n *   route   {routeOk}       — route/locale recheck; leaving the 13 routes closes\n *   close                   — close button, Escape, backdrop, navigation, unmount\n",
+     "after": " *   consent {granted}       — any consent change/recheck; withdrawal or expiry ends playback\n *   route   {routeOk}       — route/locale recheck; leaving the allowed routes closes\n *   close                   — close button, Escape, backdrop, navigation, unmount\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/south-india-cities.ts": {
+   "beforeSHA256": "d6d2ca92d1dc5c08f9278758abcb34ef9254e0423cec3aa9aa005281a2332a98",
+   "afterSHA256": "6f59633eec1111580fd6991cd363e4635b57c293d8c0d4f08535e47fb6ba223e",
+   "replacements": [
+    {
+     "before": "import { defineCopy } from \"../copy.ts\";\n\n",
+     "after": "import { defineCopy } from \"../copy.ts\";\nimport { story } from \"../stories.ts\";\n\n"
+    },
+    {
+     "before": "    },\n    stay: {\n",
+     "after": "    },\n    // AHV-WB.249.villa-gallery and .guest-video (staff review 9 Oct 2026; owner's standing authority for approved\n    // villa photographs and on-page guest video; production/section-order.ts D_VILLAGE_AND_STORIES). Reviewed copy\n    // reused verbatim: the village from treatment-kerala.ts, the consented registry films from lp-hospital-kerala.ts.\n    // No new facts, names, countries or quotes.\n    place: {\n      heading: \"Choose a villa that suits who is travelling\",\n      paragraphs: [\"Kairali has 30 villas across four categories. Tell patient care who is travelling with you and any room-access or occupancy preferences, then confirm the accommodation available for your dates.\"],\n      villas: [\n        { name: \"Deluxe Villa\", body: \"A king-size bed and private bathroom, with Wi-Fi, TV and air conditioning.\", link: { label: \"Explore Deluxe Villa\", href: \"/deluxe-villa/\" } },\n        { name: \"Classic Villa\", body: \"Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.\", link: { label: \"Explore Classic Villa\", href: \"/classic-villa/\" } },\n        { name: \"Royal Villa\", body: \"A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.\", link: { label: \"Explore Royal Villa\", href: \"/royal-villa/\" } },\n        { name: \"Maharaja Suite\", body: \"A king-size bed, a living area with a couch and garden access in a premium location.\", link: { label: \"Explore Maharaja Suite\", href: \"/maharaja-suite/\" } },\n      ],\n    },\n    stories: {\n      heading: \"See the village and hear from patients\",\n      body: \"Watch a day at the village and hear patients describe their stays in their own words. Individual experiences vary.\",\n      films: [\n        story(\"iPARaMRASUs\", \"A day at the village\"),\n        story(\"4x01PtWfNnk\", \"Watch Michaela & Jan’s experience\"),\n        story(\"3vWviQfW1Ug\", \"Watch Supriya Agarwal’s experience\"),\n      ],\n    },\n    stay: {\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/brand.ts": {
+   "beforeSHA256": "6146b737ac6b4fdf3728579d68334994e1dc29f5cc076308dae5aeec9c10feff",
+   "afterSHA256": "8994c9f08c4020fa96be1587ce2c2091cbd4e42114f826407bd5d52697d14c2e",
+   "replacements": [
+    {
+     "before": "import { defineCopy } from \"../copy.ts\";\n\n",
+     "after": "import { defineCopy } from \"../copy.ts\";\nimport { story } from \"../stories.ts\";\n\n"
+    },
+    {
+     "before": "    },\n    stay: {\n",
+     "after": "    },\n    // AHV-WB.272.villa-gallery and .guest-video (staff review 9 Oct 2026; owner's standing authority for approved\n    // villa photographs and on-page guest video; production/section-order.ts D_VILLAGE_AND_STORIES). Reviewed copy\n    // reused verbatim: the village from ayurveda-retreat.ts, the consented registry films from lp-treatment-packages.ts.\n    // No new facts, names, countries or quotes.\n    place: {\n      heading: \"Choose a villa set among the gardens\",\n      paragraphs: [\"Your villa is your base between appointments. Walk through the grounds, sit outside your villa or rest in your room. Ask our team about availability, layout, occupancy and any access needs for your dates.\"],\n      villas: [\n        { name: \"Deluxe Villa\", body: \"A king-size bed and private bathroom, with Wi-Fi, TV and air conditioning.\", link: { label: \"Explore Deluxe Villa\", href: \"/deluxe-villa/\" } },\n        { name: \"Classic Villa\", body: \"Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.\", link: { label: \"Explore Classic Villa\", href: \"/classic-villa/\" } },\n        { name: \"Royal Villa\", body: \"A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.\", link: { label: \"Explore Royal Villa\", href: \"/royal-villa/\" } },\n        { name: \"Maharaja Suite\", body: \"A king-size bed, a living area with a couch and garden access in a premium location.\", link: { label: \"Explore Maharaja Suite\", href: \"/maharaja-suite/\" } },\n      ],\n    },\n    stories: {\n      heading: \"See the village before you decide\",\n      body: \"Watch a day at the village, then hear patients describe their stays in their own words. Individual experiences vary.\",\n      films: [\n        story(\"iPARaMRASUs\", \"A day at the village\"),\n        story(\"3vWviQfW1Ug\", \"Watch Supriya’s experience\"),\n        story(\"4x01PtWfNnk\", \"Watch Michaela & Jan’s experience\"),\n      ],\n    },\n    stay: {\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-south-india.ts": {
+   "beforeSHA256": "791b262d8a534937661f03e694cce5397bf11a55246bc48f8ddad40497d01bd4",
+   "afterSHA256": "75c583d26290ae3f7266b8ea07bdbd289dbe74ea59b3e514112e6f10aa196a2e",
+   "replacements": [
+    {
+     "before": "import { defineCopy } from \"../copy.ts\";\n\n",
+     "after": "import { defineCopy } from \"../copy.ts\";\nimport { story } from \"../stories.ts\";\n\n"
+    },
+    {
+     "before": "    },\n    stay: {\n",
+     "after": "    },\n    // AHV-WB.320.villa-gallery and .guest-video (staff review 9 Oct 2026; owner's standing authority for approved\n    // villa photographs and on-page guest video; production/section-order.ts D_VILLAGE_AND_STORIES). Reviewed copy\n    // reused verbatim: the village from lp-hospital-kerala.ts, the consented registry films from ayurveda-retreat.ts.\n    // No new facts, names, countries or quotes.\n    place: {\n      heading: \"Choose a villa that suits your needs\",\n      paragraphs: [\"Residential accommodation is in villas within the village gardens. Tell patient care about mobility needs, dietary requirements or a companion who may travel with you, then confirm the room layout and occupancy before booking.\"],\n      villas: [\n        { name: \"Deluxe Villa\", body: \"A king-size bed and private bathroom, with Wi-Fi, TV and air conditioning.\", link: { label: \"Explore Deluxe Villa\", href: \"/deluxe-villa/\" } },\n        { name: \"Classic Villa\", body: \"Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.\", link: { label: \"Explore Classic Villa\", href: \"/classic-villa/\" } },\n        { name: \"Royal Villa\", body: \"A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.\", link: { label: \"Explore Royal Villa\", href: \"/royal-villa/\" } },\n        { name: \"Maharaja Suite\", body: \"A king-size bed, a living area with a couch and garden access in a premium location.\", link: { label: \"Explore Maharaja Suite\", href: \"/maharaja-suite/\" } },\n      ],\n    },\n    stories: {\n      heading: \"See the village before you travel\",\n      body: \"See a day at the village and hear patients describe their stays in their own words. Individual experiences vary.\",\n      films: [\n        story(\"iPARaMRASUs\", \"A day at the village\"),\n        story(\"4x01PtWfNnk\", \"Watch Michaela & Jan’s experience\"),\n      ],\n    },\n    stay: {\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-panchakarma.ts": {
+   "beforeSHA256": "7849ad26ea062bee6d57f0c0fd2151483c066151ca96eb05d45ad41c81ed7d52",
+   "afterSHA256": "a46e01551d6d6b79627fe1fd05a43e9462e2f137dc5f0901df1b9d36b4cb26e1",
+   "replacements": [
+    {
+     "before": "import { defineCopy } from \"../copy.ts\";\n\n",
+     "after": "import { defineCopy } from \"../copy.ts\";\nimport { story } from \"../stories.ts\";\n\n"
+    },
+    {
+     "before": "    },\n    stay: {\n",
+     "after": "    },\n    // AHV-WB.430.villa-gallery and .guest-video (staff review 9 Oct 2026; owner's standing authority for approved\n    // villa photographs and on-page guest video; production/section-order.ts D_VILLAGE_AND_STORIES). Reviewed copy\n    // reused verbatim: the village from lp-cleansing-centre.ts, the consented registry films from lp-cleansing-centre.ts.\n    // No new facts, names, countries or quotes.\n    place: {\n      heading: \"Choose your villa for the stay\",\n      paragraphs: [\"Explore the villa categories below, then confirm the accommodation and occupancy for your dates with patient care before booking.\"],\n      villas: [\n        { name: \"Deluxe Villa\", body: \"A king-size bed and private bathroom, with Wi-Fi, TV and air conditioning.\", link: { label: \"Explore Deluxe Villa\", href: \"/deluxe-villa/\" } },\n        { name: \"Classic Villa\", body: \"Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.\", link: { label: \"Explore Classic Villa\", href: \"/classic-villa/\" } },\n        { name: \"Royal Villa\", body: \"A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.\", link: { label: \"Explore Royal Villa\", href: \"/royal-villa/\" } },\n        { name: \"Maharaja Suite\", body: \"A king-size bed, a living area with a couch and garden access in a premium location.\", link: { label: \"Explore Maharaja Suite\", href: \"/maharaja-suite/\" } },\n      ],\n    },\n    stories: {\n      heading: \"Watch before you decide\",\n      body: \"Learn about Panchakarma, see the village and hear patients describe their stays in their own words. Individual experiences vary.\",\n      films: [\n        story(\"07tVC2oXd8g\", \"Watch the Panchakarma film\"),\n        story(\"iPARaMRASUs\", \"A day at the village\"),\n        story(\"4x01PtWfNnk\", \"Watch Michaela & Jan’s experience\"),\n      ],\n    },\n    stay: {\n"
+    }
+   ]
+  }
+ }
+}

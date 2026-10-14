@@ -16,6 +16,7 @@ import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/
 import { formSchemaFor, resolveSchema } from "../campaign-v2/forms/schema.ts";
 import { uiFor } from "../campaign-v2/production/ui.ts";
 import { productionCss } from "../scripts/build-production-css.mjs";
+import { reverseBatch6Source } from "./fixtures/train-a-batch6-20261014.mjs";
 
 const require = createRequire(import.meta.url);
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -98,7 +99,8 @@ test("only approved form/CSS deltas change; generated CSS equals its authored so
   assert.equal(digest(baseline), delta.baselineHashes["campaign-v2/sections/interactive/EnquiryForm.tsx"]);
   for (const file of ["campaign-v2/sections/sections.css", "campaign-v2/production/document.css"]) {
     const css = read(file);
-    let prior = reverse(css, delta.cssAddition, "");
+    // Train A batch 6: remove only the exact Russian phone hero-CTA delta (AHV-WB.530) from the generated bundle first.
+    let prior = reverse(reverseBatch6Source(file, css), delta.cssAddition, "");
     if (file === "campaign-v2/production/document.css") {
       // These independently reviewed additive styles may arrive through the future release base.
       // Remove only their exact approved blocks; the original baseline hash remains unchanged.

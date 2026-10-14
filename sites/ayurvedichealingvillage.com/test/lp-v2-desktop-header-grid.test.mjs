@@ -4,13 +4,15 @@ import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {productionCss} from '../scripts/build-production-css.mjs';
 import {PRODUCTION_SLUGS,productionCampaign} from '../campaign-v2/production/load.ts';
+import {reverseBatch6Source} from './fixtures/train-a-batch6-20261014.mjs';
 const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const f=JSON.parse(read('test/fixtures/desktop-header-approved-delta.json'));
 const hash=s=>createHash('sha256').update(s).digest('hex');
 const D=['south-india-cities','brand','lp-south-india','lp-brand','lp-panchakarma'];
 test('only the exact approved unpinned desktop header rule changes either stylesheet',()=>{
  for(const [p,expected] of Object.entries(f.baseline)){
-  const current=read(p);assert.equal(current.split(f.delta).length-1,1,p);
+  // Train A batch 6: remove only its exact Russian phone hero-CTA delta (AHV-WB.530) first.
+  const current=reverseBatch6Source(p,read(p));assert.equal(current.split(f.delta).length-1,1,p);
   assert.equal(hash(current.replace(f.delta,'')),expected,p+' entire prior stylesheet retained');
  }
  assert.equal(read('campaign-v2/production/document.css'),productionCss());

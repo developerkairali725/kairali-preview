@@ -1,9 +1,11 @@
 // Pure rules for the on-page patient-film player mounted by Stories.tsx (GuestVideoDialog.tsx); node --test imports
 // this file. Owner decision DEC-GUEST-VIDEO-POPUP: play the existing films in an on-page popup on exactly the 13
 // English routes below, keeping each card's YouTube link as the fallback. Fail closed everywhere: an unknown route,
-// language, film, consent state or API means no player.
+// language, film, consent state or API means no player. Staff review 9 Oct 2026 (AHV-WB.249/320/430/272.guest-video),
+// under the owner's standing authority for on-page guest-video playback: four Direct routes gain the same Stories
+// section (production/section-order.ts D_VILLAGE_AND_STORIES) and are appended here, same films and consent gating.
 
-/** The 13 English routes of DEC-GUEST-VIDEO-POPUP (WOPS-AHV-GUEST-VIDEO-20261010-001 SCOPE.json), exact paths. */
+/** The 13 English routes of DEC-GUEST-VIDEO-POPUP (WOPS-AHV-GUEST-VIDEO-20261010-001 SCOPE.json), then the four D routes. */
 export const GUEST_VIDEO_ROUTES = Object.freeze([
   "/pain-management.html",
   "/family-ayurvedic-retreat-kerala.html",
@@ -18,9 +20,14 @@ export const GUEST_VIDEO_ROUTES = Object.freeze([
   "/lp/pain-management/",
   "/lp/treatment-in-kerala/",
   "/lp/treatment-packages/",
+  // AHV-WB.249 / 320 / 430 / 272.guest-video (14 Oct 2026).
+  "/Ayurveda_Treatment_Neo_S.India_Cities.html",
+  "/lp/ayurveda-treatment-south-india/",
+  "/lp/panchkarma-treatment/",
+  "/Kairali_Brand_and_Competition_Neo-original.html",
 ]);
 
-/** Every film the 13 routes' reviewed copy already links (production/pages/*.ts). No other id is ever embedded. */
+/** Every film the allowed routes' reviewed copy already links (production/pages/*.ts). No other id is ever embedded. */
 export const APPROVED_FILM_IDS = Object.freeze(["iPARaMRASUs", "4x01PtWfNnk", "3vWviQfW1Ug", "07tVC2oXd8g", "DcTMckQD3rc"]);
 
 /**
@@ -35,7 +42,7 @@ const ROUTES = new Set(GUEST_VIDEO_ROUTES);
 const FILMS = new Set(APPROVED_FILM_IDS);
 const YOUTUBE_ID = /^[A-Za-z0-9_-]{11}$/;
 
-/** True only on one of the 13 exact paths of an English document. */
+/** True only on one of the allowed exact paths of an English document. */
 export function routeAllowed(pathname, lang) {
   return typeof pathname === "string" && typeof lang === "string" && ROUTES.has(pathname) && /^en(?:-[A-Za-z]{2})?$/.test(lang);
 }
@@ -119,7 +126,7 @@ export const CLOSED = Object.freeze({ kind: "closed" });
  * consent is currently granted on an allowed route. Consent granted later never starts playback by itself.
  *   open    {id, title, granted, routeOk}
  *   consent {granted}       — any consent change/recheck; withdrawal or expiry ends playback
- *   route   {routeOk}       — route/locale recheck; leaving the 13 routes closes
+ *   route   {routeOk}       — route/locale recheck; leaving the allowed routes closes
  *   close                   — close button, Escape, backdrop, navigation, unmount
  */
 /**

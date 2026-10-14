@@ -13,6 +13,7 @@ import * as policy from '../public/consent/policy.mjs';
 import * as vendor from '../public/consent/vendor/cookieconsent.esm.js';
 import { COPY } from '../campaign-v2/production/pages/index.ts';
 import { ROUTES } from '../campaign-v2/production/bindings.ts';
+import { BATCH6 } from './fixtures/train-a-batch6-20261014.mjs';
 
 const read = (p) => readFileSync(new URL(p, import.meta.url), 'utf8');
 const dialogSrc = read('../campaign-v2/production/sections/GuestVideoDialog.tsx');
@@ -25,16 +26,21 @@ const locale = (slug) => ROUTES[slug].locale ?? 'en';
 
 // ---------------------------------------------------------------------------------------------------------- scope
 
-test('allowlist = exactly the English production routes that render Stories (13)', () => {
+test('allowlist = exactly the English production routes that render Stories (13, then the four batch-6 D routes)', () => {
   const derived = storyPages.filter((c) => locale(c.slug) === 'en').map((c) => c.route).sort();
-  assert.equal(derived.length, 13);
+  assert.equal(derived.length, 17);
   assert.deepEqual([...GUEST_VIDEO_ROUTES].sort(), derived);
+  // The original 13 of DEC-GUEST-VIDEO-POPUP stay first and unchanged; batch 6 appends exactly its four D routes.
+  assert.deepEqual(GUEST_VIDEO_ROUTES.slice(13), BATCH6.guestVideoRoutesAdded);
+  assert.deepEqual([...BATCH6.guestVideoRoutesAdded].sort(), BATCH6.dSlugs.map((slug) => ROUTES[slug].route).sort());
+  assert.equal(GUEST_VIDEO_ROUTES.slice(0, 13).filter((r) => BATCH6.guestVideoRoutesAdded.includes(r)).length, 0);
   for (const r of GUEST_VIDEO_ROUTES) assert.equal(routeAllowed(r, 'en'), true, r);
 });
 
 test('every other production route, locale and path variant is excluded', () => {
   const others = Object.values(ROUTES).filter((b) => !GUEST_VIDEO_ROUTES.includes(b.route));
-  assert.equal(others.length, 11);
+  assert.equal(others.length, 7); // 11 before batch 6 appended four D routes
+  assert.deepEqual(others.map((b) => b.slug).sort(), ['lp-behandlung-kerala', 'lp-brand', 'lp-treatment-kerala-ru', 'lp-weight-management', 'panchakarma', 'treatment-packages', 'weight-management']);
   for (const b of others) assert.equal(routeAllowed(b.route, b.locale ?? 'en'), false, b.route);
   for (const r of GUEST_VIDEO_ROUTES) {
     for (const lang of ['de', 'fr', 'ru', '', 'english', undefined]) assert.equal(routeAllowed(r, lang), false, `${r} ${lang}`);
