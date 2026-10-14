@@ -199,8 +199,8 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
       : f === "campaign-v2/production/ui.ts" ? "51a9637a750ca21623f4488c82b8a6592bc154d9"
       : ["campaign-v2/production/pages/family-ayurvedic-retreat.ts", "campaign-v2/production/pages/pain-management.ts"].includes(f) ? "76e9f767a7e000f3e6789c3453c1552cbfa2ec23" : BASE;
     // Train A (14 Oct): newest first, remove exactly every merged candidate's recorded delta (fixtures/train-a-20261014.mjs:
-    // owner decisions AHV-WB.042/299, batch 8, batch 6, ...), each checked against its record and the shared base hash,
-    // then every earlier approved reversal and the historical pin as before.
+    // owner decisions B AHV-WB.083/330/167, owner decisions AHV-WB.042/299, batch 8, batch 6), each checked against its
+    // record and the shared base hash, then every earlier approved reversal and the historical pin as before.
     let current = reverseTrainASource(f, read(f));
     const integrationCorrection = staffRosterIntegration.files[f];
     if (integrationCorrection) {

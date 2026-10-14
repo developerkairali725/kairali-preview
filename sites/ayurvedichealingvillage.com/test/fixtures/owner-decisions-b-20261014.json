@@ -1,0 +1,207 @@
+{
+ "task": "AHV owner decisions B, 14 Oct 2026",
+ "rows": {
+  "AHV-WB.083.change": "family-ayurvedic-retreat",
+  "AHV-WB.330.change": "lp-south-india",
+  "AHV-WB.167.change": "ayurveda-retreat"
+ },
+ "decisions": "deliverables/WOPS-WEBSITE-SEQUENTIAL-20261008-001/recovery-20261014/OWNER-DECISIONS-20261014-ANSWERS.json (5-family-conditions, 6-airport-pickup, 7-timetable)",
+ "base": "c54e2795e",
+ "files": {
+  "campaign-v2/production/pages/family-ayurvedic-retreat.ts": {
+   "beforeSHA256": "f2e4e5ad17afe672a5eaa4791884139ad242b3aa64324e8b4271cd29a459bb60",
+   "afterSHA256": "d058680767cd08ffb26fc1e513c549fc5670ab776bf988e56f7a2ce4b2e220ae",
+   "replacements": [
+    {
+     "before": "      intro: [\"Use these programme topics to start the conversation with your doctor. Family members may need different care, and participation is confirmed individually.\"],\n      topics: [\n",
+     "after": "      intro: [\"Use these programme topics to start the conversation with your doctor. Family members may need different care, and participation is confirmed individually.\"],\n      // Owner decision, 14 Oct 2026 (AHV-WB.083.change): adult children bringing their parents — only the existing\n      // approved topics suited to older parents, in their reviewed order and wording; no new topic, wording or claim.\n      topics: [\n"
+    },
+    {
+     "before": "      topics: [\n        { title: \"Panchakarma\", body: \"Explore Ayurvedic Panchakarma detoxification therapy and the preparation, procedures and time it may involve. Your assessment determines which parts, if any, are appropriate for you.\" },\n        { title: \"Addiction recovery\", body: \"Discuss the person’s history and current treatment before considering an addiction recovery programme. Confirm the scope of support available and how proposed care relates to existing clinical care.\" },\n        { title: \"Skin concerns\", body: \"Bring details of your skin concerns, diagnosis and current treatment. Discuss the proposed Ayurvedic skin care programme, including prescribed therapies, medicines and practical guidance for daily life.\" },\n        { title: \"Respiratory health\", body: \"Share your respiratory diagnosis and current care. Ask which breathing practices, prescribed therapies or other procedures may suit you, and how any proposed medicines will be reviewed.\" },\n        { title: \"Cardiovascular health and blood pressure\", body: \"Discuss your diagnosis, blood-pressure history and prescriptions. Confirm assessment, monitoring, meals and suitable activity as part of planning the stay alongside your existing care.\" },\n",
+     "after": "      topics: [\n        { title: \"Cardiovascular health and blood pressure\", body: \"Discuss your diagnosis, blood-pressure history and prescriptions. Confirm assessment, monitoring, meals and suitable activity as part of planning the stay alongside your existing care.\" },\n"
+    },
+    {
+     "before": "        { title: \"Joint care and arthritis\", body: \"Discuss osteoarthritis, rheumatoid arthritis or other joint concerns, including stairs, walking and daily tasks. Ask about suitable local therapies such as Janu Basti, movement and support during the stay.\" },\n        { title: \"Neurological care needs\", body: \"Explain any diagnosis, current rehabilitation and needs around mobility, communication or daily living. Confirm the services and qualified support available, including whether specialist care is needed elsewhere.\" },\n        { title: \"Women’s hormonal health\", body: \"Discuss menstrual, menopausal or other hormonal concerns in an individual consultation. Share relevant reports and treatment, then ask how proposed care relates to your current clinical advice.\" },\n        { title: \"Weight management\", body: \"Talk through your goals, medicines, meals and daily routine. Discuss suitable activity and any proposed therapies, including Udhwarthanam, a herbal powder massage, with realistic individual goals and follow-up.\" },\n        { title: \"Yoga and meditation\", body: \"Discuss experience, mobility and suitability before choosing sessions. Ask about Hatha Yoga, Vinyasa, breathing practices, meditation and yoga philosophy. Teacher training is a separate enquiry with its own requirements.\" },\n        { title: \"Meals for the family\", body: \"Plan around each person’s allergies, dietary restrictions and medical advice. Discuss prescribed vegetarian or vegan meals, sattvic food and companion arrangements, with time to explore the organic garden during your stay.\" },\n      ],\n",
+     "after": "        { title: \"Joint care and arthritis\", body: \"Discuss osteoarthritis, rheumatoid arthritis or other joint concerns, including stairs, walking and daily tasks. Ask about suitable local therapies such as Janu Basti, movement and support during the stay.\" },\n      ],\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-south-india.ts": {
+   "beforeSHA256": "791b262d8a534937661f03e694cce5397bf11a55246bc48f8ddad40497d01bd4",
+   "afterSHA256": "de099a588b5e69f908400a03a597547ee0e958c2e2b1706b6bd0c8e062e8e073",
+   "replacements": [
+    {
+     "before": "// as options to discuss — no distances, travel times, speed or \"weekend\" claims; no offers.\nimport { defineCopy } from \"../copy.ts\";\n",
+     "after": "// as options to discuss — no distances, travel times, speed or \"weekend\" claims; no offers.\n// Owner decision, 14 Oct 2026 (AHV-WB.330.change): airport pick-up on request at an extra charge; no prices or travel times.\nimport { defineCopy } from \"../copy.ts\";\n"
+    },
+    {
+     "before": "        { title: \"Confirm your plan and quotation\", body: \"Confirm your programme, villa occupancy, inclusions and booking terms in a personalised quotation. Keep your travel days separate from the time recommended for care.\" },\n        { title: \"Arrange the trip to Palakkad\", body: \"Discuss arrival by rail or flights via Coimbatore, then confirm the onward trip from the station or airport. Check current routes and travel times when booking, and ask about transfers and charges.\" },\n      ],\n",
+     "after": "        { title: \"Confirm your plan and quotation\", body: \"Confirm your programme, villa occupancy, inclusions and booking terms in a personalised quotation. Keep your travel days separate from the time recommended for care.\" },\n        { title: \"Arrange the trip to Palakkad\", body: \"Discuss arrival by rail or flights via Coimbatore, then confirm the onward trip from the station or airport. Check current routes and travel times when booking. Airport pick-up can be arranged on request at an extra charge.\" },\n      ],\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/ayurveda-retreat.ts": {
+   "beforeSHA256": "719a6f8d1f045abc28fc25ec8430b6861b0456c43750d15d66d506a09f989ce3",
+   "afterSHA256": "15d7e98fa1a086fd9c62a5b8379eba4b207d975893bc552412104922c164471c",
+   "replacements": [
+    {
+     "before": "        { title: \"Review your plan and quotation\", body: \"Confirm the prescribed plan, recommended length of stay, villa and occupancy. Check what is included and what is charged separately before choosing your dates.\" },\n        { title: \"Settle into a daily routine\", body: \"Your prescribed care sets the pace, with meals, yoga or meditation and rest fitting around it. Ask about Ayurveda talks, cooking demonstrations, village walks and organic garden visits.\" },\n      ],\n",
+     "after": "        { title: \"Review your plan and quotation\", body: \"Confirm the prescribed plan, recommended length of stay, villa and occupancy. Check what is included and what is charged separately before choosing your dates.\" },\n        // Owner decision, 14 Oct 2026 (AHV-WB.167.change): a typical day from the approved Dinacharya times only. Variant B\n        // has no quiet band, so the day sits in the existing routine step; the second therapy is never promised universally.\n        { title: \"Settle into a daily routine\", body: \"Your prescribed care sets the pace, with meals, yoga or meditation and rest fitting around it. On a typical day, your first treatment is at 09:30 and an activity at 14:00; a second therapy follows at 15:30 only when your plan includes two therapies. Ask about Ayurveda talks, cooking demonstrations, village walks and organic garden visits.\" },\n      ],\n"
+    }
+   ]
+  }
+ },
+ "configChanges": {
+  "family-ayurvedic-retreat": [
+   {
+    "path": [
+     "page",
+     "offering",
+     "topics"
+    ],
+    "before": [
+     {
+      "title": "Panchakarma",
+      "body": "Explore Ayurvedic Panchakarma detoxification therapy and the preparation, procedures and time it may involve. Your assessment determines which parts, if any, are appropriate for you."
+     },
+     {
+      "title": "Addiction recovery",
+      "body": "Discuss the person’s history and current treatment before considering an addiction recovery programme. Confirm the scope of support available and how proposed care relates to existing clinical care."
+     },
+     {
+      "title": "Skin concerns",
+      "body": "Bring details of your skin concerns, diagnosis and current treatment. Discuss the proposed Ayurvedic skin care programme, including prescribed therapies, medicines and practical guidance for daily life."
+     },
+     {
+      "title": "Respiratory health",
+      "body": "Share your respiratory diagnosis and current care. Ask which breathing practices, prescribed therapies or other procedures may suit you, and how any proposed medicines will be reviewed."
+     },
+     {
+      "title": "Cardiovascular health and blood pressure",
+      "body": "Discuss your diagnosis, blood-pressure history and prescriptions. Confirm assessment, monitoring, meals and suitable activity as part of planning the stay alongside your existing care."
+     },
+     {
+      "title": "Back pain and sciatica",
+      "body": "Explain how pain or stiffness affects walking, sitting and sleep. Discuss the suitability of therapies such as Kati Basti, along with room access, assistance and guidance for everyday movement."
+     },
+     {
+      "title": "Stress and mental wellbeing",
+      "body": "Give each person space to discuss stress, daily life and current mental-health care. Explore suitable meditation, breathing practices or prescribed therapies such as Shirodhara, and confirm the support available."
+     },
+     {
+      "title": "Diabetes and metabolism",
+      "body": "Share your diagnosis, monitoring, medicines and dietary guidance. Discuss how meals, timing, suitable activity and any proposed Ayurvedic care fit your existing treatment and travel needs."
+     },
+     {
+      "title": "Digestive and gut health",
+      "body": "Discuss symptoms, reports, current care and dietary needs. The doctor can explain the Ayurvedic concept of Agni and any proposed diet, therapies or yoga practice, with a plan for review."
+     },
+     {
+      "title": "Immunity and executive health assessment",
+      "body": "Talk about your wellbeing goals, fatigue or other concerns, and the assessment that would be useful. Ask what proposed Ojas or Rasayana care involves rather than assuming a particular outcome."
+     },
+     {
+      "title": "Joint care and arthritis",
+      "body": "Discuss osteoarthritis, rheumatoid arthritis or other joint concerns, including stairs, walking and daily tasks. Ask about suitable local therapies such as Janu Basti, movement and support during the stay."
+     },
+     {
+      "title": "Neurological care needs",
+      "body": "Explain any diagnosis, current rehabilitation and needs around mobility, communication or daily living. Confirm the services and qualified support available, including whether specialist care is needed elsewhere."
+     },
+     {
+      "title": "Women’s hormonal health",
+      "body": "Discuss menstrual, menopausal or other hormonal concerns in an individual consultation. Share relevant reports and treatment, then ask how proposed care relates to your current clinical advice."
+     },
+     {
+      "title": "Weight management",
+      "body": "Talk through your goals, medicines, meals and daily routine. Discuss suitable activity and any proposed therapies, including Udhwarthanam, a herbal powder massage, with realistic individual goals and follow-up."
+     },
+     {
+      "title": "Yoga and meditation",
+      "body": "Discuss experience, mobility and suitability before choosing sessions. Ask about Hatha Yoga, Vinyasa, breathing practices, meditation and yoga philosophy. Teacher training is a separate enquiry with its own requirements."
+     },
+     {
+      "title": "Meals for the family",
+      "body": "Plan around each person’s allergies, dietary restrictions and medical advice. Discuss prescribed vegetarian or vegan meals, sattvic food and companion arrangements, with time to explore the organic garden during your stay."
+     }
+    ],
+    "after": [
+     {
+      "title": "Cardiovascular health and blood pressure",
+      "body": "Discuss your diagnosis, blood-pressure history and prescriptions. Confirm assessment, monitoring, meals and suitable activity as part of planning the stay alongside your existing care."
+     },
+     {
+      "title": "Back pain and sciatica",
+      "body": "Explain how pain or stiffness affects walking, sitting and sleep. Discuss the suitability of therapies such as Kati Basti, along with room access, assistance and guidance for everyday movement."
+     },
+     {
+      "title": "Stress and mental wellbeing",
+      "body": "Give each person space to discuss stress, daily life and current mental-health care. Explore suitable meditation, breathing practices or prescribed therapies such as Shirodhara, and confirm the support available."
+     },
+     {
+      "title": "Diabetes and metabolism",
+      "body": "Share your diagnosis, monitoring, medicines and dietary guidance. Discuss how meals, timing, suitable activity and any proposed Ayurvedic care fit your existing treatment and travel needs."
+     },
+     {
+      "title": "Digestive and gut health",
+      "body": "Discuss symptoms, reports, current care and dietary needs. The doctor can explain the Ayurvedic concept of Agni and any proposed diet, therapies or yoga practice, with a plan for review."
+     },
+     {
+      "title": "Immunity and executive health assessment",
+      "body": "Talk about your wellbeing goals, fatigue or other concerns, and the assessment that would be useful. Ask what proposed Ojas or Rasayana care involves rather than assuming a particular outcome."
+     },
+     {
+      "title": "Joint care and arthritis",
+      "body": "Discuss osteoarthritis, rheumatoid arthritis or other joint concerns, including stairs, walking and daily tasks. Ask about suitable local therapies such as Janu Basti, movement and support during the stay."
+     }
+    ]
+   }
+  ],
+  "lp-south-india": [
+   {
+    "path": [
+     "admission",
+     "steps",
+     2,
+     "body"
+    ],
+    "before": "Discuss arrival by rail or flights via Coimbatore, then confirm the onward trip from the station or airport. Check current routes and travel times when booking, and ask about transfers and charges.",
+    "after": "Discuss arrival by rail or flights via Coimbatore, then confirm the onward trip from the station or airport. Check current routes and travel times when booking. Airport pick-up can be arranged on request at an extra charge."
+   },
+   {
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     2,
+     "body"
+    ],
+    "before": "Discuss arrival by rail or flights via Coimbatore, then confirm the onward trip from the station or airport. Check current routes and travel times when booking, and ask about transfers and charges.",
+    "after": "Discuss arrival by rail or flights via Coimbatore, then confirm the onward trip from the station or airport. Check current routes and travel times when booking. Airport pick-up can be arranged on request at an extra charge."
+   }
+  ],
+  "ayurveda-retreat": [
+   {
+    "path": [
+     "admission",
+     "steps",
+     2,
+     "body"
+    ],
+    "before": "Your prescribed care sets the pace, with meals, yoga or meditation and rest fitting around it. Ask about Ayurveda talks, cooking demonstrations, village walks and organic garden visits.",
+    "after": "Your prescribed care sets the pace, with meals, yoga or meditation and rest fitting around it. On a typical day, your first treatment is at 09:30 and an activity at 14:00; a second therapy follows at 15:30 only when your plan includes two therapies. Ask about Ayurveda talks, cooking demonstrations, village walks and organic garden visits."
+   },
+   {
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     2,
+     "body"
+    ],
+    "before": "Your prescribed care sets the pace, with meals, yoga or meditation and rest fitting around it. Ask about Ayurveda talks, cooking demonstrations, village walks and organic garden visits.",
+    "after": "Your prescribed care sets the pace, with meals, yoga or meditation and rest fitting around it. On a typical day, your first treatment is at 09:30 and an activity at 14:00; a second therapy follows at 15:30 only when your plan includes two therapies. Ask about Ayurveda talks, cooking demonstrations, village walks and organic garden visits."
+   }
+  ]
+ }
+}

@@ -44,11 +44,9 @@ export default defineCopy({
       kind: "index",
       heading: "Explore the care each person wants to discuss",
       intro: ["Use these programme topics to start the conversation with your doctor. Family members may need different care, and participation is confirmed individually."],
+      // Owner decision, 14 Oct 2026 (AHV-WB.083.change): adult children bringing their parents — only the existing
+      // approved topics suited to older parents, in their reviewed order and wording; no new topic, wording or claim.
       topics: [
-        { title: "Panchakarma", body: "Explore Ayurvedic Panchakarma detoxification therapy and the preparation, procedures and time it may involve. Your assessment determines which parts, if any, are appropriate for you." },
-        { title: "Addiction recovery", body: "Discuss the person’s history and current treatment before considering an addiction recovery programme. Confirm the scope of support available and how proposed care relates to existing clinical care." },
-        { title: "Skin concerns", body: "Bring details of your skin concerns, diagnosis and current treatment. Discuss the proposed Ayurvedic skin care programme, including prescribed therapies, medicines and practical guidance for daily life." },
-        { title: "Respiratory health", body: "Share your respiratory diagnosis and current care. Ask which breathing practices, prescribed therapies or other procedures may suit you, and how any proposed medicines will be reviewed." },
         { title: "Cardiovascular health and blood pressure", body: "Discuss your diagnosis, blood-pressure history and prescriptions. Confirm assessment, monitoring, meals and suitable activity as part of planning the stay alongside your existing care." },
         { title: "Back pain and sciatica", body: "Explain how pain or stiffness affects walking, sitting and sleep. Discuss the suitability of therapies such as Kati Basti, along with room access, assistance and guidance for everyday movement." },
         { title: "Stress and mental wellbeing", body: "Give each person space to discuss stress, daily life and current mental-health care. Explore suitable meditation, breathing practices or prescribed therapies such as Shirodhara, and confirm the support available." },
@@ -56,11 +54,6 @@ export default defineCopy({
         { title: "Digestive and gut health", body: "Discuss symptoms, reports, current care and dietary needs. The doctor can explain the Ayurvedic concept of Agni and any proposed diet, therapies or yoga practice, with a plan for review." },
         { title: "Immunity and executive health assessment", body: "Talk about your wellbeing goals, fatigue or other concerns, and the assessment that would be useful. Ask what proposed Ojas or Rasayana care involves rather than assuming a particular outcome." },
         { title: "Joint care and arthritis", body: "Discuss osteoarthritis, rheumatoid arthritis or other joint concerns, including stairs, walking and daily tasks. Ask about suitable local therapies such as Janu Basti, movement and support during the stay." },
-        { title: "Neurological care needs", body: "Explain any diagnosis, current rehabilitation and needs around mobility, communication or daily living. Confirm the services and qualified support available, including whether specialist care is needed elsewhere." },
-        { title: "Women’s hormonal health", body: "Discuss menstrual, menopausal or other hormonal concerns in an individual consultation. Share relevant reports and treatment, then ask how proposed care relates to your current clinical advice." },
-        { title: "Weight management", body: "Talk through your goals, medicines, meals and daily routine. Discuss suitable activity and any proposed therapies, including Udhwarthanam, a herbal powder massage, with realistic individual goals and follow-up." },
-        { title: "Yoga and meditation", body: "Discuss experience, mobility and suitability before choosing sessions. Ask about Hatha Yoga, Vinyasa, breathing practices, meditation and yoga philosophy. Teacher training is a separate enquiry with its own requirements." },
-        { title: "Meals for the family", body: "Plan around each person’s allergies, dietary restrictions and medical advice. Discuss prescribed vegetarian or vegan meals, sattvic food and companion arrangements, with time to explore the organic garden during your stay." },
       ],
     },
     pathway: {

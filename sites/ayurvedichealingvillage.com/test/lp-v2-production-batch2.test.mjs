@@ -322,7 +322,7 @@ test("contact details: rendered from site.ts by the kit (enquiry and footer), ne
 });
 
 // ── films, doctors, villas, topics (the reviewed copy) ────────────────────────────────────────────────────
-test("structure from the reviewed copy: 3 patient films as links, the 5 current doctors, 4 villas; pain 4 plan topics; family 16 care topics", () => {
+test("structure from the reviewed copy: 3 patient films as links, the 5 current doctors, 4 villas; pain 4 plan topics; family 7 care topics", () => {
   const VIDEOS = ["https://www.youtube.com/watch?v=3vWviQfW1Ug", "https://www.youtube.com/watch?v=4x01PtWfNnk", "https://www.youtube.com/watch?v=DcTMckQD3rc"];
   const VILLAS = ["/deluxe-villa/", "/classic-villa/", "/royal-villa/", "/maharaja-suite/"];
   for (const slug of B2) {
@@ -339,10 +339,11 @@ test("structure from the reviewed copy: 3 patient films as links, the 5 current 
   assert.deepEqual(pain.cards.map((c) => c.title), ["Ayurvedic therapies", "Medicines considered alongside your current care", "Food, movement and rest", "Reviews during the stay and guidance for home"]);
   const family = C[FAMILY].page.offering;
   assert.equal(family.kind, "index");
+  // Owner decision, 14 Oct 2026 (AHV-WB.083.change): only the existing reviewed topics suited to older parents, in
+  // their reviewed order; each kept topic's reviewed wording is pinned by the source reversal (lp-v2-doctor-position).
   assert.deepEqual(family.topics.map((t) => t.title), [
-    "Panchakarma", "Addiction recovery", "Skin concerns", "Respiratory health", "Cardiovascular health and blood pressure", "Back pain and sciatica",
-    "Stress and mental wellbeing", "Diabetes and metabolism", "Digestive and gut health", "Immunity and executive health assessment", "Joint care and arthritis",
-    "Neurological care needs", "Women’s hormonal health", "Weight management", "Yoga and meditation", "Meals for the family",
+    "Cardiovascular health and blood pressure", "Back pain and sciatica", "Stress and mental wellbeing", "Diabetes and metabolism",
+    "Digestive and gut health", "Immunity and executive health assessment", "Joint care and arthritis",
   ]);
   // The day's routine, as prose in the quiet band (the old page's routine table is not carried over).
   assert.equal(C[FAMILY].page.rest.heading, "A day with time for care and time together");

@@ -20,12 +20,14 @@ const json = (name) => JSON.parse(fs.readFileSync(new URL(`./${name}`, import.me
 const sha = (s) => createHash("sha256").update(s).digest("hex");
 
 export const TRAIN_A = json("train-a-20261014.json");
+const OWNER_DECISIONS_B = json("owner-decisions-b-20261014.json");
 
 /** Candidates in merge order: name, per-file entries and the key that holds their {before, after} list. */
 export const TRAIN_A_CANDIDATES = Object.freeze([
   { name: "train-a batch 6", files: BATCH6.files, list: "replacements" },
   { name: "train-a batch 8", files: json("train-a-batch8-20261014.json").files, list: "replacements" },
   { name: "owner decisions", files: json("owner-decisions-20261014-approved-delta.json").files, list: "edits" },
+  { name: "owner decisions B", files: OWNER_DECISIONS_B.files, list: "replacements" },
 ]);
 
 function strip(path, text, replacements, name) {
@@ -71,10 +73,16 @@ export const reverseOwnerDecisionsConfig=(slug,c)=>{
  return c;
 };
 
+/** Owner decisions B (AHV-WB.083/330/167.change): each recorded config field must equal `after`; restore `before`. */
+export function reverseOwnerDecisionsBConfig(slug, c) {
+  for(const {path,before,after} of (OWNER_DECISIONS_B.configChanges[slug]??[])){let obj=c;for(const key of path.slice(0,-1))obj=obj[key];const key=path.at(-1);assert.deepEqual(obj[key],after,'Exact owner-decision field: '+slug+' '+path.join('.'));obj[key]=JSON.parse(JSON.stringify(before));}
+  return c;
+}
+
 /**
  * A JSON copy of a production config with every Train A candidate's exact config change reversed, newest first.
  * Use the returned value: a reversal may return a new object.
  */
 export function reverseTrainAConfig(slug, config) {
-  return reverseBatch6Config(slug, reverseBatch8Config(slug, reverseOwnerDecisionsConfig(slug, config)));
+  return reverseBatch6Config(slug, reverseBatch8Config(slug, reverseOwnerDecisionsConfig(slug, reverseOwnerDecisionsBConfig(slug, config))));
 }
