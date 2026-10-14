@@ -11,6 +11,15 @@ const staff = (id: string, file: string, width: number, height: number, alt: str
 });
 
 export const IMAGES: Record<string, ImageRef> = {
+  // AHV-WB.001/027/053/078.change: rest-section grounds photo, reused unchanged from /photo-gallery/.
+  // AHV-IMG-016 owner batch 1, 28 Sep 2026; Palakkad archive -127.jpg. The owner's "current is Delhi"
+  // note refers to the replaced HO doorway, not this approved cottage/garden photograph. Reuse adopted 14 Oct.
+  // Published file SHA-256: 52bb11bb871ff8b2a9e325149e79a010df5f7023294c15ee905a5621be1e49b2.
+  "ahv-img-016": {
+    id: "ahv-img-016", src: "/ahv/assets/img/owner-approved-20260928/ahv-img-016.webp",
+    width: 1600, height: 1067, alt: "Cottage, garden path and water channel among palms at the Healing Village in Palakkad",
+    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
+  },
   "kt-199": photo("kt-199", "kt-199.jpg", 1600, 1067, "Two therapists performing four-hand Abhyangam with warm medicated oil", { gccSafe: false }),
   "kt-190": photo("kt-190", "kt-190.jpg", 1067, 1600, "A therapist preparing a patient for Shiro Abhyangam, a head therapy with warm oil", { gccSafe: false }),
   "gal-post-therapy-stillness-wakem": photo("gal-post-therapy-stillness-wakem", "gal-post-therapy-stillness-wakem.jpg", 1400, 1120, "", { decorative: true, gccSafe: false }),
