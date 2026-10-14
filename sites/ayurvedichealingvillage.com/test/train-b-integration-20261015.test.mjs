@@ -9,6 +9,9 @@ import { createHash } from "node:crypto";
 import { TRAIN_B, TRAIN_B_CANDIDATES, reverseTrainBSource, candidateSource } from "./fixtures/train-b-20261015.mjs";
 // Train F (15 Oct 2026) sits on top of Train B: its exact source delta is removed first (fixtures/train-f-20261015.mjs).
 import { reverseTrainFSource } from "./fixtures/train-f-20261015.mjs";
+// Train G (15 Oct 2026) sits on top of Train F; its accepted E02 rework of the six quotation-box rows edits some of the
+// prior wording checked below, so those checks read the Train F head bytes (fixtures/train-g-20261015.mjs).
+import { reverseTrainGSource } from "./fixtures/train-g-20261015.mjs";
 import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/load.ts";
 import { productionJsonLd } from "../campaign-v2/production/metadata.ts";
 import { PHOTO_PICKS_20261014 } from "../campaign-v2/production/bindings.ts";
@@ -44,8 +47,9 @@ test("the rejected rows stay out", () => {
   ];
   assert.equal(reverted.length, 6 + 2 + 2 + 7);
   for (const { file, before, after, row } of reverted) {
-    assert.equal(read(file).split(before).length - 1, 1, `${row}: prior wording present once`);
-    if (!before.includes(after)) assert.equal(read(file).split(after).length - 1, 0, `${row}: rejected wording absent`);
+    const trainF = reverseTrainGSource(file, read(file));
+    assert.equal(trainF.split(before).length - 1, 1, `${row}: prior wording present once`);
+    if (!before.includes(after)) assert.equal(trainF.split(after).length - 1, 0, `${row}: rejected wording absent`);
   }
   // Train D07 (AHV-WB.516.benefit-copy) and queued batch 12 (AHV-N03.01) were not merged.
   assert.doesNotMatch(read("campaign-v2/production/pages/lp-behandlung-kerala.ts"), /AHV-WB\.516/);

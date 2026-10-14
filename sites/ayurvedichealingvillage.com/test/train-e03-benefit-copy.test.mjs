@@ -7,6 +7,9 @@ import { createHash } from "node:crypto";
 import assert from "node:assert/strict";
 import { productionCampaign } from "../campaign-v2/production/load.ts";
 import { TRAIN_E03 } from "./fixtures/train-e03-20261015.mjs";
+// Train G (15 Oct 2026): on brand the AHV-WB.270 line is joined to its anchor paragraph (with E04's AHV-WB.276 line the
+// lead would otherwise exceed the 1-3 paragraph lint); the recorded join is undone exactly before the per-line check.
+import { splitTrainGLeadJoin } from "./fixtures/train-g-20261015.mjs";
 
 const LOCKED = /\b(spa|resort|holiday|luxury|luxurious|cure[sd]?|journey|guests?)\b/i;
 const OUTCOME = /\b(results?|heal(s|ed|ing)?|improve[sd]?|relief|relieve|feel better|guarantee[sd]?|transform)\b/i;
@@ -14,7 +17,7 @@ const OUTCOME = /\b(results?|heal(s|ed|ing)?|improve[sd]?|relief|relieve|feel be
 test("each route carries exactly its one recorded benefit line, after its anchor paragraph", () => {
   assert.deepEqual(Object.keys(TRAIN_E03.configChanges).sort(), ["brand", "monsoon-wellness", "rejuvenation-detox", "wellness-kerala"]);
   for (const [slug, rec] of Object.entries(TRAIN_E03.configChanges)) {
-    const paras = productionCampaign(slug).page.lead.paragraphs;
+    const paras = splitTrainGLeadJoin(slug, productionCampaign(slug).page.lead.paragraphs);
     assert.equal(paras.filter((p) => p === rec.text).length, 1, slug);
     assert.equal(paras[paras.indexOf(rec.text) - 1], rec.insertedAfter, slug);
     assert.match(rec.text, /^What your stay gives you: /, slug);
