@@ -25,6 +25,7 @@ import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
 import { PRICE, RATE_LINK } from "../campaign-v2/kit/lint/pricing.ts";
 import { interactionForLink } from "../campaign-v2/production/interaction-map.ts";
 import { CURRENT_ROSTER } from "../campaign-v2/data/doctors.ts";
+import { IMAGES } from "../campaign-v2/data/images.ts";
 import { contact } from "../campaign-v110/lib/site.ts";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -75,7 +76,11 @@ test("routes: unchanged URLs, canonicals and robots (indexable only on the produ
     assert.deepEqual(live.robots, { index: true, follow: true });
     assert.deepEqual(productionMetadata(slug, c, { AHV_STAGING: "1" }).robots, { index: false, follow: true });
     assert.deepEqual(productionMetadata(slug, c, {}).robots, { index: false, follow: true });
-    assert.deepEqual(live.openGraph.images, [{ url: "https://ayurvedichealingvillage.com/landing/r10/og.jpg", width: 1200, height: 630 }]);
+    // AHV-WB.077/101.change: each route's own 1200×630 crop of its approved registry photograph, with that photograph's
+    // registry alt (the replaced pages' shared R10 image carried none).
+    const own = { [PAIN]: "kt-190", [FAMILY]: "kt-314" }[slug];
+    assert.deepEqual(live.openGraph.images, [{ url: `https://ayurvedichealingvillage.com/images/og/share-${slug}.jpg`, width: 1200, height: 630, alt: IMAGES[own].alt }]);
+    assert.equal(live.openGraph.locale, "en_IN");
     assert.equal(live.openGraph.url, canonical);
     assert.equal(live.title, c.seo.title);
     assert.equal(live.description, c.seo.description);

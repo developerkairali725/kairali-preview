@@ -25,6 +25,10 @@ export const GUEST_VIDEO_ROUTES = Object.freeze([
   "/lp/ayurveda-treatment-south-india/",
   "/lp/panchkarma-treatment/",
   "/Kairali_Brand_and_Competition_Neo-original.html",
+  // AHV-WB.015/039.change (standing owner authority for on-page guest-video playback, 10 Oct 2026): the two routes that
+  // now render the same consented Stories films. Same consent gate, same films; nothing else changes.
+  "/ayurvedic-treatment-packages.html",
+  "/panchkarma-treatment.html",
 ]);
 
 /** Every film the allowed routes' reviewed copy already links (production/pages/*.ts). No other id is ever embedded. */

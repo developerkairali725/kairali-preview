@@ -1,0 +1,247 @@
+{
+ "authority": "Standing owner implementation authority (AGENTS.md, 10 Oct 2026); AHV-WB.015/039/051/024/100/260/025/050/077/101/147/253/413/457/545/372.change, train A batch 8 source candidate (14 Oct 2026). Exact before/after replacements; applying them in order restores the base bytes.",
+ "base": "c54e2795ebf7f1c525313ff2ea10b1fd95881f4e",
+ "files": {
+  "campaign-v2/production/sections/Physicians.tsx": {
+   "beforeSHA256": "29ad83b4ca06a59eff509890bef152cb289a4787ac7dfbdf740d50c653bf909e",
+   "afterSHA256": "c6a409949b582240461b544b348f457a6db0eb201c92a827c3200473bbd9f98d",
+   "replacements": [
+    {
+     "before": "",
+     "after": "  // AHV-WB.024/100/260.change: the portrait's own registry description (data/images.ts); on DE/RU the doctor's name\n  // with the reviewed localized role (production/ui.ts doctorFacts). No new fact.\n  const alt = local?.role ? `${d.name}, ${local.role}` : d.photo.alt;\n"
+    },
+    {
+     "before": "        <Image className=\"lp-pdoc__img\" src={d.photo.src} alt=\"\" width={d.photo.width} height={d.photo.height} sizes={sizes} loading=\"lazy\" />\n",
+     "after": "        <Image className=\"lp-pdoc__img\" src={d.photo.src} alt={alt} width={d.photo.width} height={d.photo.height} sizes={sizes} loading=\"lazy\" />\n"
+    }
+   ]
+  },
+  "campaign-v2/production/sections/guest-video-policy.mjs": {
+   "beforeSHA256": "177ad1650b10c2826e8bf956ec3c6214eb6bc825ff394e4d3b94c921e3ee8333",
+   "afterSHA256": "b344bec35bf8d9687168058d660cfcec4ef1f44d233fc70276f8138e850bd688",
+   "replacements": [
+    {
+     "before": "",
+     "after": "  // AHV-WB.015/039.change (standing owner authority for on-page guest-video playback, 10 Oct 2026): the two routes that\n  // now render the same consented Stories films. Same consent gate, same films; nothing else changes.\n  \"/ayurvedic-treatment-packages.html\",\n  \"/panchkarma-treatment.html\",\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/treatment-packages.ts": {
+   "beforeSHA256": "6e6daa604b6b010c483a22ca539f654b15de3c0ac387ed51171a098572721a06",
+   "afterSHA256": "ba8e69076a712a775411c67123fd7dbf2ff3b31b072a2cc6ef588b72e402b67b",
+   "replacements": [
+    {
+     "before": "",
+     "after": "    // AHV-WB.015/039.change: the three consented films of /pain-management.html (pages/pain-management.ts), with the\n    // same titles and thumbnails: links to YouTube. Names only as the films' own titles; no guest country (unsourced).\n    stories: {\n      heading: \"Hear from people who have stayed at Kairali\",\n      body: \"Watch people describe their stays in their own words. Individual experiences vary.\",\n      films: [\n        { title: \"Watch Ms. Supriya’s experience\", href: \"https://www.youtube.com/watch?v=3vWviQfW1Ug\", thumb: { src: \"/ahv/images/7ed7fe732c79427d6e00bc42d720a2a3b0b6e5c5ce2e25e260b53823a33ed17d.webp\", width: 480, height: 360 } },\n        { title: \"Watch Michaela & Jan’s experience\", href: \"https://www.youtube.com/watch?v=4x01PtWfNnk\", thumb: { src: \"/ahv/images/5e86ab8760fb7570f517bfe69abfbcaa8a0168127e03d927656a69155934faf0.webp\", width: 640, height: 480 } },\n        { title: \"Watch Corine’s experience\", href: \"https://www.youtube.com/watch?v=DcTMckQD3rc\", thumb: { src: \"/ahv/images/d29b9a9547272822619b085b78fee54550d828dd5e1792486eef0b6e102d4351.webp\", width: 480, height: 360 } },\n      ],\n    },\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/panchakarma.ts": {
+   "beforeSHA256": "8418739b7bcf46776ea436c96135390a7f896dab5b507c96be56ede66caa3db4",
+   "afterSHA256": "229e63c4eeb578964d747609403965aed4192569381b70a3839a80635d011cc8",
+   "replacements": [
+    {
+     "before": "",
+     "after": "      // AHV-WB.051.change: the four approved villa cards of pages/pain-management.ts, unchanged (no prices).\n      villas: [\n        { name: \"Deluxe Villa\", body: \"A king-size bed and private bathroom, with Wi-Fi, TV and air conditioning.\", link: { label: \"Explore Deluxe Villa\", href: \"/deluxe-villa/\" } },\n        { name: \"Classic Villa\", body: \"Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.\", link: { label: \"Explore Classic Villa\", href: \"/classic-villa/\" } },\n        { name: \"Royal Villa\", body: \"A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.\", link: { label: \"Explore Royal Villa\", href: \"/royal-villa/\" } },\n        { name: \"Maharaja Suite\", body: \"A king-size bed, a living area with a couch and garden access in a premium location.\", link: { label: \"Explore Maharaja Suite\", href: \"/maharaja-suite/\" } },\n      ],\n"
+    },
+    {
+     "before": "",
+     "after": "    // AHV-WB.015/039.change: the three consented films of /pain-management.html (pages/pain-management.ts), with the\n    // same titles and thumbnails: links to YouTube. Names only as the films' own titles; no guest country (unsourced).\n    stories: {\n      heading: \"Hear from people who have stayed at Kairali\",\n      body: \"Watch people describe their stays in their own words. Individual experiences vary.\",\n      films: [\n        { title: \"Watch Ms. Supriya’s experience\", href: \"https://www.youtube.com/watch?v=3vWviQfW1Ug\", thumb: { src: \"/ahv/images/7ed7fe732c79427d6e00bc42d720a2a3b0b6e5c5ce2e25e260b53823a33ed17d.webp\", width: 480, height: 360 } },\n        { title: \"Watch Michaela & Jan’s experience\", href: \"https://www.youtube.com/watch?v=4x01PtWfNnk\", thumb: { src: \"/ahv/images/5e86ab8760fb7570f517bfe69abfbcaa8a0168127e03d927656a69155934faf0.webp\", width: 640, height: 480 } },\n        { title: \"Watch Corine’s experience\", href: \"https://www.youtube.com/watch?v=DcTMckQD3rc\", thumb: { src: \"/ahv/images/d29b9a9547272822619b085b78fee54550d828dd5e1792486eef0b6e102d4351.webp\", width: 480, height: 360 } },\n      ],\n    },\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/south-india-cities.ts": {
+   "beforeSHA256": "d6d2ca92d1dc5c08f9278758abcb34ef9254e0423cec3aa9aa005281a2332a98",
+   "afterSHA256": "35fe3ab4aac98e11f68f58d12950e2bebdde85c897bbedd3dcf373340510628e",
+   "replacements": [
+    {
+     "before": "// distances, travel times or flight claims (the brief states none); no offers. \"30 villas\" is the brief's own fact.\n",
+     "after": "// travel times or flight claims; no offers. \"30 villas\" is the brief's own fact. The only distances are the three\n// verified airport road distances (AHV-WB.253.change; WOPS-AHV-CONSOLIDATED-RELEASE-20261007-001 airport-site\n// VERIFICATION.json PASS, the site's FAQ wording \"approximately N km by road\"). Railway-station distance, time and\n// pick-up are not stated here: they are not covered by that verification.\n"
+    },
+    {
+     "before": "    { q: \"Which airport or station should I use?\", a: \"Share your starting point and proposed itinerary with patient care. Ask about suitable arrival options and onward travel to the Healing Village. Confirm any transfer, timing and cost for your particular trip.\" },\n",
+     "after": "    { q: \"Which airport or station should I use?\", a: \"The nearest airport is Coimbatore International Airport (CJB), approximately 66 km by road. Cochin International Airport (COK) is approximately 114 km and Calicut International Airport (CCJ) approximately 116 km by road. Share your starting point and proposed itinerary with patient care. Ask about suitable arrival options and onward travel to the Healing Village. Confirm any transfer, timing and cost for your particular trip.\" },\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-pain-management.ts": {
+   "beforeSHA256": "bc0bba7fd2a1403a7094af276d573e7a3d520b810a6104548a6e123f5512e5a8",
+   "afterSHA256": "28b62fe27da18c8e23136857dc53f2c2bf6000537d1d559dcd8471d4e0ce8be4",
+   "replacements": [
+    {
+     "before": "    title: \"Ayurvedic Pain Management in Kerala | Kairali KTAHV\",\n",
+     "after": "    title: \"Ayurvedic Pain Management in Kerala | Kairali\",\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-brand.ts": {
+   "beforeSHA256": "c186a49096184e68fc9031fc6451ba3b6e716a211307da0269ecfa5a10950ba7",
+   "afterSHA256": "7e42a179dbf26ecc0c6eb4cf9a091dfde7017a1d1f96ccf9317418717b901470",
+   "replacements": [
+    {
+     "before": "    { q: \"What does Kairali’s Ayurvedic heritage refer to?\", a: \"It refers to the family tradition of Ayurveda behind Kairali. For your own stay, the practical starting point is a consultation with the current medical team to discuss your health, proposed programme and arrangements for care.\" },\n",
+     "after": "    { q: \"What does Kairali’s Ayurvedic heritage refer to?\", a: \"It refers to the family tradition of Ayurveda behind Kairali. The Healing Village is an Ayurvedic hospital of the Kairali Ayurvedic Group. For your own stay, the practical starting point is a consultation with the current medical team to discuss your health, proposed programme and arrangements for care.\" },\n"
+    }
+   ]
+  },
+  "campaign-v2/production/bindings.ts": {
+   "beforeSHA256": "fb718c4df061fa342972eb79f054d0b0661b36a388bfdfd4b1fe6a279510d72d",
+   "afterSHA256": "04df431550c836481104ab37f85c179fb4cd588c2ef373aa28b5ddbf13ed9bff",
+   "replacements": [
+    {
+     "before": "",
+     "after": "/**\n * AHV-WB.025/050/077/101/147.change: a route's own share picture, 1200×630, cropped (no other edit) from one approved\n * registry photograph (data/images.ts) and described by that photograph's registry alt. og:locale and og:site_name\n * stay as before (en_IN, the default site name). Files: public/images/og/share-<slug>.jpg.\n */\nconst OG_OWN = (slug: ProductionSlug) => ({ url: `${SITE_ORIGIN}/images/og/share-${slug}.jpg`, width: 1200, height: 630, locale: \"en_IN\" });\n\n"
+    },
+    {
+     "before": "    ogImageAlt: \"Kairali Ayurvedic Healing Village in Palakkad, Kerala\",\n",
+     "after": "    ogImageAlt: img(\"kt-116\").alt,\n    og: OG_OWN(\"treatment-packages\"),\n"
+    },
+    {
+     "before": "    ogImageAlt: \"Kairali Ayurvedic Healing Village, Palakkad\",\n",
+     "after": "    ogImageAlt: img(\"kt-199\").alt,\n    og: OG_OWN(\"panchakarma\"),\n"
+    },
+    {
+     "before": "",
+     "after": "    ogImageAlt: img(\"kt-190\").alt,\n    og: OG_OWN(\"pain-management\"),\n"
+    },
+    {
+     "before": "",
+     "after": "    ogImageAlt: img(\"kt-314\").alt,\n    og: OG_OWN(\"family-ayurvedic-retreat\"),\n"
+    },
+    {
+     "before": "  form: RouteBinding[\"productionForm\"]; og?: RouteBinding[\"og\"]; locale?: PageLocale; mobileQuality?: number;\n",
+     "after": "  form: RouteBinding[\"productionForm\"]; og?: RouteBinding[\"og\"]; ogAlt?: string; locale?: PageLocale; mobileQuality?: number;\n"
+    },
+    {
+     "before": "  { slug: \"rejuvenation-detox\", route: \"/preventive-rejuvenation-detoxification.html\", variant: \"C\", hero: \"kt-202\", pathway: \"kt-199\", form: r10(\"detox\") },\n",
+     "after": "  { slug: \"rejuvenation-detox\", route: \"/preventive-rejuvenation-detoxification.html\", variant: \"C\", hero: \"kt-202\", pathway: \"kt-199\", form: r10(\"detox\"), og: OG_OWN(\"rejuvenation-detox\"), ogAlt: img(\"kt-202\").alt },\n"
+    },
+    {
+     "before": "  { slug: \"lp-treatment-kerala\", route: \"/lp/treatment-in-kerala/\", variant: \"C\", hero: \"kt-199\", pathway: \"kt-202\", form: enquiry(\"/lp/treatment-in-kerala/\"), og: OG_LP(\"ahv/assets/img/wx-pathway.jpg\") },\n",
+     "after": "  // AHV-WB.457.change: the phone's small C cover shows the registry villa photograph kt-314 (no single patient in frame)\n  // instead of the therapy photograph; desktop keeps kt-199. As on every route with a phone override, the gallery omits\n  // the phone hero, so the mosaic never repeats it.\n  { slug: \"lp-treatment-kerala\", route: \"/lp/treatment-in-kerala/\", variant: \"C\", hero: \"kt-199\", mobile: \"kt-314\", pathway: \"kt-202\", form: enquiry(\"/lp/treatment-in-kerala/\"), og: OG_LP(\"ahv/assets/img/wx-pathway.jpg\") },\n"
+    },
+    {
+     "before": "",
+     "after": "    ...(sp.ogAlt ? { ogImageAlt: sp.ogAlt } : {}),\n"
+    }
+   ]
+  },
+  "campaign-v2/production/metadata.ts": {
+   "beforeSHA256": "980d37677cccf89d013c86496d4fdad9179839e3cdd94571d959c4da976db6d2",
+   "afterSHA256": "346b7f7f0e24d2fe61db7b895287b16f8b041c3d0bfbfbb582a1fc9a897e22da",
+   "replacements": [
+    {
+     "before": "",
+     "after": "/**\n * AHV-WB.545.change: the \"treatment in Kerala\" landing page in English, German and Russian — one topic and one next step\n * (variant C, free doctor consultation, the same Palakkad hospital), each self-canonical and indexable on the same\n * terms — linked reciprocally, English as x-default. Paths from bindings.ts; no other campaign gets alternates.\n */\nconst TREATMENT_KERALA_CLUSTER: Readonly<Record<string, ProductionSlug>> = { en: \"lp-treatment-kerala\", de: \"lp-behandlung-kerala\", ru: \"lp-treatment-kerala-ru\" };\nconst languagesFor = (slug: ProductionSlug): Record<string, string> | undefined => {\n  if (!Object.values(TREATMENT_KERALA_CLUSTER).includes(slug)) return undefined;\n  const map = Object.fromEntries(Object.entries(TREATMENT_KERALA_CLUSTER).map(([locale, s]) => [locale, ROUTES[s].canonical]));\n  return { ...map, \"x-default\": map.en };\n};\n\n"
+    },
+    {
+     "before": "",
+     "after": "      ...(languagesFor(slug) ? { languages: languagesFor(slug) } : {}),\n"
+    }
+   ]
+  }
+ },
+ "configDeltas": [
+  {
+   "slug": "treatment-packages",
+   "op": "delete",
+   "path": [
+    "page",
+    "stories"
+   ]
+  },
+  {
+   "slug": "panchakarma",
+   "op": "delete",
+   "path": [
+    "page",
+    "stories"
+   ]
+  },
+  {
+   "slug": "panchakarma",
+   "op": "delete",
+   "path": [
+    "page",
+    "place",
+    "villas"
+   ]
+  },
+  {
+   "slug": "south-india-cities",
+   "op": "set",
+   "path": [
+    "faq",
+    2,
+    "a"
+   ],
+   "value": "Share your starting point and proposed itinerary with patient care. Ask about suitable arrival options and onward travel to the Healing Village. Confirm any transfer, timing and cost for your particular trip."
+  },
+  {
+   "slug": "lp-pain-management",
+   "op": "set",
+   "path": [
+    "seo",
+    "title"
+   ],
+   "value": "Ayurvedic Pain Management in Kerala | Kairali KTAHV"
+  },
+  {
+   "slug": "lp-brand",
+   "op": "set",
+   "path": [
+    "faq",
+    1,
+    "a"
+   ],
+   "value": "It refers to the family tradition of Ayurveda behind Kairali. For your own stay, the practical starting point is a consultation with the current medical team to discuss your health, proposed programme and arrangements for care."
+  },
+  {
+   "slug": "lp-treatment-kerala",
+   "op": "heroPhone",
+   "note": "hero.mobileImage kt-314 -> the desktop hero (kt-199); gallery regains kt-314 at index 1"
+  }
+ ],
+ "shareImages": {
+  "public/images/og/share-treatment-packages.jpg": {
+   "source": "/lp-v2/img/kt-116.jpg",
+   "sourceSHA256": "68d62b144346ecf2cf16a881c8e9e9132fcb6b7fe4b420b0c627ae802fde97f2",
+   "crop": "resize 1200x630 cover, centre; sharp 0.35.5 JPEG q82 mozjpeg; no other edit",
+   "sha256": "b1d65b2e57f147f24c420a9968a9b1f9ea642211d0237e59d4da41e0c0bf8c3d",
+   "width": 1200,
+   "height": 630
+  },
+  "public/images/og/share-panchakarma.jpg": {
+   "source": "/lp-v2/img/kt-199.jpg",
+   "sourceSHA256": "226c35c21b0fa7aad6839379fcecc8fd4660e50077c92058c35ff44ae4f36c51",
+   "crop": "resize 1200x630 cover, centre; sharp 0.35.5 JPEG q82 mozjpeg; no other edit",
+   "sha256": "a48e5ab64eb8a4e51ab85d3b902df3787add79b31b51c140bdef1749693f6865",
+   "width": 1200,
+   "height": 630
+  },
+  "public/images/og/share-pain-management.jpg": {
+   "source": "/lp-v2/img/kt-190.jpg",
+   "sourceSHA256": "f3f98e7de7f0792b7d674c18fba30144409532bc2aafef71a2f837a35c3f06c3",
+   "crop": "resize to 1200 wide (1200x1800), extract 1200x630 from y=500; sharp 0.35.5 JPEG q82 mozjpeg; no other edit",
+   "sha256": "9a402e203018075e2494b2cd6e6f37f1dc82dc7fbefb2c55036f3d678b363ec7",
+   "width": 1200,
+   "height": 630
+  },
+  "public/images/og/share-family-ayurvedic-retreat.jpg": {
+   "source": "/lp-v2/img/kt-314.jpg",
+   "sourceSHA256": "5e3d7be8454f80f2c4a865ebef07be9c70d6e9a4c69e694007291d1bb0475f26",
+   "crop": "resize 1200x630 cover, centre; sharp 0.35.5 JPEG q82 mozjpeg; no other edit",
+   "sha256": "3442f7f842cbea2f978edf9bc89135315b3ac186349cccae753dcc5def0ef91c",
+   "width": 1200,
+   "height": 630
+  },
+  "public/images/og/share-rejuvenation-detox.jpg": {
+   "source": "/lp-v2/img/kt-202.jpg",
+   "sourceSHA256": "dd638c56b7bc6bf9481dd777b371be3e4cbbcbdda7f6601b62322117ebfced85",
+   "crop": "resize 1200x630 cover, centre; sharp 0.35.5 JPEG q82 mozjpeg; no other edit",
+   "sha256": "0fbf92dc4a3cbf801965b767379c6c4ff74e467b4b68c6bbdfc4cbb1869e81b5",
+   "width": 1200,
+   "height": 630
+  }
+ }
+}

@@ -17,6 +17,18 @@ import localeRoutes from "../../l10n/routes.json" with { type: "json" };
 
 const SITE_NAME = "Kairali Ayurvedic Healing Village";
 
+/**
+ * AHV-WB.545.change: the "treatment in Kerala" landing page in English, German and Russian — one topic and one next step
+ * (variant C, free doctor consultation, the same Palakkad hospital), each self-canonical and indexable on the same
+ * terms — linked reciprocally, English as x-default. Paths from bindings.ts; no other campaign gets alternates.
+ */
+const TREATMENT_KERALA_CLUSTER: Readonly<Record<string, ProductionSlug>> = { en: "lp-treatment-kerala", de: "lp-behandlung-kerala", ru: "lp-treatment-kerala-ru" };
+const languagesFor = (slug: ProductionSlug): Record<string, string> | undefined => {
+  if (!Object.values(TREATMENT_KERALA_CLUSTER).includes(slug)) return undefined;
+  const map = Object.fromEntries(Object.entries(TREATMENT_KERALA_CLUSTER).map(([locale, s]) => [locale, ROUTES[s].canonical]));
+  return { ...map, "x-default": map.en };
+};
+
 /** `env` is injected in tests; robots follow the build's AHV_STAGING exactly as the old pages did. */
 export function productionMetadata(slug: ProductionSlug, c: CampaignConfig, env: Record<string, string | undefined> = process.env): Metadata {
   const b = ROUTES[slug];
@@ -34,6 +46,7 @@ export function productionMetadata(slug: ProductionSlug, c: CampaignConfig, env:
         ...Object.fromEntries(Object.entries(localeRoutes.routes["/karkidaka-chikitsha-or-monsoon-wellness.html"]).map(([locale, route]) => [locale, SITE_ORIGIN + route])),
         "x-default": b.canonical,
       } } : {}),
+      ...(languagesFor(slug) ? { languages: languagesFor(slug) } : {}),
     },
     robots: { index: env.AHV_STAGING === "0", follow: true },
     openGraph: {

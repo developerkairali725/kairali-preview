@@ -55,10 +55,13 @@ function Card({ d, ui, one }: { d: DoctorRef; ui: ProductionUi; one: boolean }) 
   const tenure = local?.tenure ?? d.tenure;
   const focus = local?.focus ?? d.focus;
   const langs = speaks(d, ui);
+  // AHV-WB.024/100/260.change: the portrait's own registry description (data/images.ts); on DE/RU the doctor's name
+  // with the reviewed localized role (production/ui.ts doctorFacts). No new fact.
+  const alt = local?.role ? `${d.name}, ${local.role}` : d.photo.alt;
   return (
     <li className="lp-pdoc">
       <div className="lp-pdoc__frame" style={frame}>
-        <Image className="lp-pdoc__img" src={d.photo.src} alt="" width={d.photo.width} height={d.photo.height} sizes={sizes} loading="lazy" />
+        <Image className="lp-pdoc__img" src={d.photo.src} alt={alt} width={d.photo.width} height={d.photo.height} sizes={sizes} loading="lazy" />
       </div>
       <div className="lp-pdoc__text">
         <h3 className="lp-pdoc__name">{d.name}</h3>

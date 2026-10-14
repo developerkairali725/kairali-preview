@@ -70,6 +70,31 @@ const pick = (slugs, dropGallery) => Object.fromEntries(slugs.map((s) => {
 
 const ADDED_IDS = APPROVED_GALLERY_IMAGES.map((a) => a.image.id);
 
+// Train A batch 8 (14 Oct 2026), exact reviewed deltas on top of the frozen baselines above:
+// AHV-WB.457.change: /lp/treatment-in-kerala/ shows kt-314 as its phone hero, so (as on every phone-override route) its
+// gallery omits kt-314; every other entry keeps its order.
+const PHONE_HERO_DELTA = { "lp-treatment-kerala": "kt-314" };
+const baseGallery = (slug) => BASE_GALLERY[slug].filter(([, id]) => id !== PHONE_HERO_DELTA[slug]);
+// AHV-WB.025/050/077/101/147.change: these routes' own share picture (og) and its registry alt. Reverse exactly that.
+const OG_DELTA = {
+  "treatment-packages": "Kairali Ayurvedic Healing Village in Palakkad, Kerala", panchakarma: "Kairali Ayurvedic Healing Village, Palakkad",
+  "pain-management": undefined, "family-ayurvedic-retreat": undefined, "rejuvenation-detox": undefined,
+};
+function reverseBatch8(picked) {
+  for (const [slug, alt] of Object.entries(OG_DELTA)) {
+    if (!picked[slug]) continue;
+    assert.equal(picked[slug].og.url, `https://ayurvedichealingvillage.com/images/og/share-${slug}.jpg`, slug);
+    delete picked[slug].og;
+    if (alt === undefined) delete picked[slug].ogImageAlt; else picked[slug].ogImageAlt = alt;
+  }
+  for (const [slug, id] of Object.entries(PHONE_HERO_DELTA)) {
+    if (!picked[slug]) continue;
+    assert.equal(picked[slug].mobileImage.id, id, slug);
+    picked[slug].mobileImage = picked[slug].heroImage;
+  }
+  return picked;
+}
+
 /** Width and height from a WebP header (VP8X, VP8 or VP8L). */
 function webpSize(buf) {
   assert.equal(buf.toString("ascii", 0, 4), "RIFF");
@@ -91,7 +116,7 @@ test("targets: the existing gallery is kept entry for entry, then only the appro
   assert.deepEqual([...TARGETS, ...UNTARGETED].sort(), [...PRODUCTION_SLUGS].sort());
   for (const slug of TARGETS) {
     const g = ROUTES[slug].gallery;
-    const base = BASE_GALLERY[slug];
+    const base = baseGallery(slug);
     assert.equal(g.length, base.length + APPROVED_GALLERY_ADDITIONS.length, slug);
     base.forEach(([category, id], i) => {
       assert.equal(g[i].category, category, `${slug}[${i}]`);
@@ -113,7 +138,7 @@ test("targets: only the eight approved rest images change; all prior gallery and
   const file = fs.readFileSync(P("public" + approvedRest.src));
   assert.equal(sha256(file), "52bb11bb871ff8b2a9e325149e79a010df5f7023294c15ee905a5621be1e49b2");
   assert.deepEqual(webpSize(file), { width: 1600, height: 1067 });
-  const first4BeforeRestChange = pick(FIRST4, true);
+  const first4BeforeRestChange = reverseBatch8(pick(FIRST4, true));
   for (const slug of FIRST4) {
     assert.deepEqual(ROUTES[slug].stillnessImage, approvedRest, slug);
     assert.deepEqual(productionCampaign(slug).stillness.image, approvedRest, slug);
@@ -123,7 +148,7 @@ test("targets: only the eight approved rest images change; all prior gallery and
   }
   assert.equal(sha256(JSON.stringify(first4BeforeRestChange)), BASE_FIRST4_NO_GALLERY_HASH);
   // Batch 2 adopts only these four route images; reverse them before the original historical hash check.
-  const batch2BeforeRestChange = pick(BATCH2, true);
+  const batch2BeforeRestChange = reverseBatch8(pick(BATCH2, true));
   for (const slug of ["cleansing-centre", "treatment-kerala", "weight-management", "lp-hospital-kerala"]) {
     assert.deepEqual(ROUTES[slug].stillnessImage, approvedRest, slug);
     assert.deepEqual(productionCampaign(slug).stillness.image, approvedRest, slug);
@@ -163,7 +188,7 @@ test("counts: the page config carries the binding's gallery, so the mosaic chip 
     // Village.tsx Mosaic: more = pool.length - tiles.length (pool = gallery on a standard page); the dialog gets c.gallery.
     const pool = c.gallery;
     const tiles = pool.slice(0, 5);
-    assert.equal(pool.length - tiles.length, BASE_GALLERY[slug].length + APPROVED_GALLERY_ADDITIONS.length - 5, slug);
+    assert.equal(pool.length - tiles.length, baseGallery(slug).length + APPROVED_GALLERY_ADDITIONS.length - 5, slug);
     assert.ok(c.gallery.length <= 24, slug); // kit lint count.gallery: 6-24
   }
 });

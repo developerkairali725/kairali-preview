@@ -90,12 +90,20 @@ const GALLERY_BASE = (therapy: string): RouteBinding["gallery"] => [
   { category: "Dining", image: img("wx-dining") }, { category: "Therapies", image: img(therapy) },
 ];
 
+/**
+ * AHV-WB.025/050/077/101/147.change: a route's own share picture, 1200×630, cropped (no other edit) from one approved
+ * registry photograph (data/images.ts) and described by that photograph's registry alt. og:locale and og:site_name
+ * stay as before (en_IN, the default site name). Files: public/images/og/share-<slug>.jpg.
+ */
+const OG_OWN = (slug: ProductionSlug) => ({ url: `${SITE_ORIGIN}/images/og/share-${slug}.jpg`, width: 1200, height: 630, locale: "en_IN" });
+
 export const ROUTES = {
   "treatment-packages": {
     slug: "treatment-packages",
     route: "/ayurvedic-treatment-packages.html",
     canonical: `${SITE_ORIGIN}/ayurvedic-treatment-packages.html`,
-    ogImageAlt: "Kairali Ayurvedic Healing Village in Palakkad, Kerala",
+    ogImageAlt: img("kt-116").alt,
+    og: OG_OWN("treatment-packages"),
     breadcrumbName: "Ayurvedic treatment packages",
     heroImage: img("kt-202"),
     mobileImage: img("kt-190"),
@@ -108,7 +116,8 @@ export const ROUTES = {
     slug: "panchakarma",
     route: "/panchkarma-treatment.html",
     canonical: `${SITE_ORIGIN}/panchkarma-treatment.html`,
-    ogImageAlt: "Kairali Ayurvedic Healing Village, Palakkad",
+    ogImageAlt: img("kt-199").alt,
+    og: OG_OWN("panchakarma"),
     heroImage: img("kt-199"),
     mobileImage: img("kt-190"),
     stillnessImage: img("ahv-img-016"),
@@ -124,6 +133,8 @@ export const ROUTES = {
     slug: "pain-management",
     route: "/pain-management.html",
     canonical: `${SITE_ORIGIN}/pain-management.html`,
+    ogImageAlt: img("kt-190").alt,
+    og: OG_OWN("pain-management"),
     // Review finding (Gaurav, 8 Oct 2026): this page and /panchkarma-treatment.html showed the same hero. The desktop
     // hero is now the head-therapy portrait (its centre crop fills the near-square desktop frame) and the phone shows
     // the four-hand therapy; /panchkarma-treatment.html keeps kt-199 / kt-190. Photographs only; nothing else changed.
@@ -144,6 +155,8 @@ export const ROUTES = {
     slug: "family-ayurvedic-retreat",
     route: "/family-ayurvedic-retreat-kerala.html",
     canonical: `${SITE_ORIGIN}/family-ayurvedic-retreat-kerala.html`,
+    ogImageAlt: img("kt-314").alt,
+    og: OG_OWN("family-ayurvedic-retreat"),
     heroImage: img("kt-314"),
     mobileImage: img("kt-314"),
     mobileHeroQuality: 40,
@@ -205,7 +218,7 @@ const APPROVED_GALLERY_ROUTES: ReadonlySet<ProductionSlug> = new Set<ProductionS
 
 type Spec = {
   slug: ProductionSlug; route: string; variant: Variant; hero: string; mobile?: string; pathway: string; stillness?: string;
-  form: RouteBinding["productionForm"]; og?: RouteBinding["og"]; locale?: PageLocale; mobileQuality?: number;
+  form: RouteBinding["productionForm"]; og?: RouteBinding["og"]; ogAlt?: string; locale?: PageLocale; mobileQuality?: number;
 };
 const r10 = (kind: string): RouteBinding["productionForm"] => ({ formVariant: `r10-${kind}`, downloadGuide: false, profile: "r10" });
 const enquiry = (path: string): RouteBinding["productionForm"] => ({ formVariant: path, downloadGuide: true, profile: "campaign-enquiry" });
@@ -213,7 +226,7 @@ const enquiry = (path: string): RouteBinding["productionForm"] => ({ formVariant
 const SPECS: Spec[] = [
   // Review batch 1
   { slug: "monsoon-wellness", route: "/karkidaka-chikitsha-or-monsoon-wellness.html", variant: "C", hero: "kt-190", pathway: "kt-202", form: r10("monsoon") },
-  { slug: "rejuvenation-detox", route: "/preventive-rejuvenation-detoxification.html", variant: "C", hero: "kt-202", pathway: "kt-199", form: r10("detox") },
+  { slug: "rejuvenation-detox", route: "/preventive-rejuvenation-detoxification.html", variant: "C", hero: "kt-202", pathway: "kt-199", form: r10("detox"), og: OG_OWN("rejuvenation-detox"), ogAlt: img("kt-202").alt },
   { slug: "ayurveda-retreat", route: "/ayurveda-retreat-kerala.html", variant: "B", hero: "wx-hero", pathway: "kt-199", form: r10("retreat") },
   { slug: "wellness-kerala", route: "/wellness-resort-kerala.html", variant: "B", hero: "kt-314", pathway: "kt-202", form: enquiry("/wellness-resort-kerala.html"), og: OG_EN_US("wellness-resort-kerala.html.jpg") },
   { slug: "cleansing-centre", route: "/kairali-cleansing-centre.html", variant: "A", hero: "kt-202", mobile: "kt-190", stillness: "ahv-img-016", pathway: "kt-199", form: enquiry("/kairali-cleansing-centre.html"), og: OG_EN_US("kairali-cleansing-centre.html.jpg") },
@@ -231,7 +244,10 @@ const SPECS: Spec[] = [
   { slug: "lp-pain-management", route: "/lp/pain-management/", variant: "A", hero: "kt-202", mobile: "kt-190", pathway: "kt-199", form: enquiry("/lp/pain-management/"), og: OG_LP("images/therapy-pain-management.jpg") },
   { slug: "lp-panchakarma", route: "/lp/panchkarma-treatment/", variant: "D", hero: "kt-202", pathway: "kt-199", form: enquiry("/lp/panchkarma-treatment/"), og: OG_LP("images/consultation-pulse.webp") },
   // Review batch 4
-  { slug: "lp-treatment-kerala", route: "/lp/treatment-in-kerala/", variant: "C", hero: "kt-199", pathway: "kt-202", form: enquiry("/lp/treatment-in-kerala/"), og: OG_LP("ahv/assets/img/wx-pathway.jpg") },
+  // AHV-WB.457.change: the phone's small C cover shows the registry villa photograph kt-314 (no single patient in frame)
+  // instead of the therapy photograph; desktop keeps kt-199. As on every route with a phone override, the gallery omits
+  // the phone hero, so the mosaic never repeats it.
+  { slug: "lp-treatment-kerala", route: "/lp/treatment-in-kerala/", variant: "C", hero: "kt-199", mobile: "kt-314", pathway: "kt-202", form: enquiry("/lp/treatment-in-kerala/"), og: OG_LP("ahv/assets/img/wx-pathway.jpg") },
   { slug: "lp-treatment-packages", route: "/lp/treatment-packages/", variant: "B", hero: "kt-116", pathway: "kt-199", form: enquiry("/lp/treatment-packages/"), og: OG_LP("images/therapy-abhyanga.jpg") },
   // Phone LCP is the landscape wx-dining rendition (CI image-delivery: w750 q75, 53,382 bytes, est. 14,367 saveable);
   // q40 as on family-ayurvedic-retreat's landscape phone hero. Same photo and crop; desktop unchanged; q40 bytes unmeasured.
@@ -258,6 +274,7 @@ for (const sp of SPECS) {
     variant: sp.variant,
     ...(sp.locale ? { locale: sp.locale } : {}),
     ...(sp.og ? { og: sp.og } : {}),
+    ...(sp.ogAlt ? { ogImageAlt: sp.ogAlt } : {}),
   };
 }
 
