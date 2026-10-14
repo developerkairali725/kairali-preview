@@ -30,7 +30,7 @@ export default defineCopy({
   page: {
     lead: {
       heading: "Care that starts with your everyday life",
-      paragraphs: ["When pain makes walking, sitting or sleeping difficult, choosing a programme starts with understanding your needs. At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, your consultation brings together your symptoms, medical history and current treatment. Discuss whether a residential Ayurveda programme is right for you, and the practical help you would need during a stay."],
+      paragraphs: ["Planning Ayurvedic pain management starts with understanding how pain affects walking, sitting or sleeping. At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, your consultation brings together your symptoms, medical history and current treatment. Discuss whether a residential Ayurveda programme is right for you, and the practical help you would need during a stay."],
       points: [
         "Back pain, slipped disc and associated discomfort",
         "Joint pain, osteoarthritis and rheumatoid arthritis",
@@ -101,7 +101,7 @@ export default defineCopy({
     },
   },
   faq: [
-    { q: "Can I enquire about Ayurvedic treatment for back or joint pain?", a: "Yes. Share where you feel pain, any diagnosis and how symptoms affect your daily routine. The doctor can discuss back pain, joint pain, arthritis, sciatica or related concerns in the context of your medical history. An individual assessment determines whether a programme is suitable." },
+    { q: "Can I enquire about Ayurvedic pain management for back or joint pain?", a: "Yes. Share where you feel pain, any diagnosis and how symptoms affect your daily routine. The doctor can discuss back pain, joint pain, arthritis, sciatica or related concerns in the context of your medical history. An individual assessment determines whether a programme is suitable." },
     { q: "What happens in the free initial doctor consultation?", a: "You can explain your health history, current treatment and questions about a stay. The doctor discusses suitability and the care that may be proposed. The initial consultation is free; treatment, tests, medicines and later services are not automatically free." },
     { q: "How long should I stay, and when might I notice a change?", a: "There is no single duration or result that applies to everyone. Discuss your available time, the recommended programme and how progress would be reviewed before booking. Ask what would prompt a change in the plan and confirm the number of nights with patient care." },
     { q: "Can I continue my existing medicines and treatment?", a: "Share all prescriptions, supplements and other care with the Ayurvedic doctor and your other treating clinicians. Ask them to review the proposed plan, including any interactions or adjustments. Decisions about combining treatments need to be made for your individual circumstances." },
