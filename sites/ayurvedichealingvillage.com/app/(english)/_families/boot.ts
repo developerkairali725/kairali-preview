@@ -1299,7 +1299,7 @@ export const BOOT_SCRIPT = `
       // lazyImgFirst: loading="lazy" ahead of src in every template <img> (media-loading.mjs, P1a).
       view.template = (${removeHomeVillaRates.toString()})(view.template, cfg.path);
       view.template = (${treatmentHeadingLevels.toString()})(view.template, cfg.path, view.variant);
-      if (narrow && cfg.path === "/all-programs/" && view.logic) view.logic = (${phoneCriticalMedia.toString()})(view.logic, cfg.path);
+      if (narrow && ["/all-programs/", "/wellness-programs/", "/yoga-meditation-programs/"].includes(cfg.path) && view.logic) view.logic = (${phoneCriticalMedia.toString()})(view.logic, cfg.path);
       pendingTemplate = (${lazyImgFirst.toString()})((${formPostSafety.toString()})((${descriptiveAwardLinks.toString()})(narrow ? (${phoneCriticalMedia.toString()})((${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path) : (${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path)));
       host.setAttribute("data-ahv-view", view.id);
       host.setAttribute("data-ahv-variant", view.variant);
