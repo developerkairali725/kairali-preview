@@ -33,6 +33,8 @@ test('reviewed allowlist covers exactly 13 of 24 routes; saved baseline covers e
   assert.equal(REVIEWED.size, 13);
   assert.equal(PRODUCTION_SLUGS.length, 24);
   assert.deepEqual(Object.keys(baseline.hashes).sort(), [...PRODUCTION_SLUGS].sort());
+  assert.deepEqual(Object.keys(baseline.integrationRebase.hashes), ['monsoon-wellness']);
+  assert.equal(REVIEWED.has('monsoon-wellness'), false);
   for (const slug of REVIEWED) assert.ok(PRODUCTION_SLUGS.includes(slug));
 });
 
@@ -42,7 +44,10 @@ for (const slug of PRODUCTION_SLUGS) {
     const graph = productionJsonLd(slug, c);
     const entities = graph.filter(n => n['@id'] === entityId);
     assert.equal(entities.length, REVIEWED.has(slug) ? 1 : 0);
-    assert.equal(sha(graph.filter(n => n['@id'] !== entityId)), baseline.hashes[slug]);
+    // Integration rebase: only the separately approved Monsoon 2027 graph moved after 8146a2bc; its prior hash stays recorded.
+    const rebased = baseline.integrationRebase.hashes[slug];
+    if (rebased) assert.equal(baseline.integrationRebase.previous[slug], baseline.hashes[slug]);
+    assert.equal(sha(graph.filter(n => n['@id'] !== entityId)), rebased ?? baseline.hashes[slug]);
     if (REVIEWED.has(slug)) {
       const language = slug === 'lp-treatment-kerala-ru' ? 'ru' : 'en-US';
       assert.deepEqual(entities[0], expectedEntity(language));
