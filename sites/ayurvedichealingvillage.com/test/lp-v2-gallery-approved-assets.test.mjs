@@ -130,7 +130,7 @@ test("targets: the existing gallery is kept entry for entry, then only the appro
   }
 });
 
-test("targets: only the thirteen approved rest images change; all prior gallery and other-field preservation checks remain", () => {
+test("targets: only the sixteen approved rest images change; all prior gallery and other-field preservation checks remain", () => {
   const approvedRest = {
     id: "ahv-img-016", src: "/ahv/assets/img/owner-approved-20260928/ahv-img-016.webp",
     width: 1600, height: 1067, alt: "Cottage, garden path and water channel among palms at the Healing Village in Palakkad",
@@ -150,10 +150,10 @@ test("targets: only the thirteen approved rest images change; all prior gallery 
     first4BeforeRestChange[slug].stillnessImage = IMAGES["gal-post-therapy-stillness-wakem"];
   }
   assert.equal(sha256(JSON.stringify(first4BeforeRestChange)), BASE_FIRST4_NO_GALLERY_HASH);
-  // Prior batch 2 four and reviewed batch 3 (train C03) three route images; reverse only rest fields before the original
-  // hash check, after the composed Train B and Train A batch 8 binding reversals.
+  // Prior batch 2 four, reviewed batch 3 (train C03) three and final batch (train C04) two route images; reverse only rest
+  // fields before the original hash check, after the composed Train B and Train A batch 8 binding reversals.
   const batch2BeforeRestChange = reverseBatch8(reverseTrainBBindings(pick(BATCH2, true)));
-  for (const slug of ["cleansing-centre", "treatment-kerala", "weight-management", "lp-hospital-kerala", "lp-cleansing-centre", "lp-pain-management", "lp-treatment-kerala"]) {
+  for (const slug of ["cleansing-centre", "treatment-kerala", "weight-management", "lp-hospital-kerala", "lp-cleansing-centre", "lp-pain-management", "lp-treatment-kerala", "monsoon-wellness", "rejuvenation-detox"]) {
     assert.deepEqual(ROUTES[slug].stillnessImage, approvedRest, slug);
     assert.deepEqual(productionCampaign(slug).stillness.image, approvedRest, slug);
     assert.ok(!ROUTES[slug].gallery.some(g => g.image.id === approvedRest.id), slug);
@@ -161,7 +161,7 @@ test("targets: only the thirteen approved rest images change; all prior gallery 
   }
   assert.equal(sha256(JSON.stringify(batch2BeforeRestChange)), BASE_BATCH2_NO_GALLERY_HASH);
   const batch3BeforeRestChange = pick(BATCH3, true);
-  for (const slug of ["lp-weight-management", "lp-treatment-kerala-ru"]) {
+  for (const slug of ["lp-weight-management", "lp-treatment-kerala-ru", "lp-behandlung-kerala"]) {
     assert.deepEqual(ROUTES[slug].stillnessImage, approvedRest, slug);
     assert.deepEqual(productionCampaign(slug).stillness.image, approvedRest, slug);
     assert.ok(!ROUTES[slug].gallery.some(g => g.image.id === approvedRest.id), slug);
