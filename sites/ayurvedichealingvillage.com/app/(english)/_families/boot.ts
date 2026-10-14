@@ -851,7 +851,20 @@ export const BOOT_SCRIPT = `
       else i = (i + (e.key === "ArrowDown" ? 1 : -1) + links.length) % links.length;
       links[i].focus();
     });
-    wrap.addEventListener("focusout", function (e) { if (!wrap.contains(e.relatedTarget)) close(false); });
+    // Safari (iOS and macOS) never focuses a link on tap/click: pressing an
+    // option blurs the focused current option with relatedTarget null, BEFORE
+    // the click. Closing then hid the list under the finger, so the click hit
+    // the page beneath and no language change happened (owner report,
+    // 14 Oct 2026: inner pages and every locale homepage on iOS). A press
+    // inside the switcher keeps it open for its own click; a real focus move
+    // elsewhere (Tab) or a press outside still closes it.
+    var pressInside = false;
+    document.addEventListener("pointerdown", function (e) { pressInside = wrap.contains(e.target); }, true);
+    wrap.addEventListener("focusout", function (e) {
+      if (wrap.contains(e.relatedTarget)) return;
+      if (!e.relatedTarget && pressInside) return;
+      close(false);
+    });
     document.addEventListener("click", function (e) { if (!wrap.contains(e.target)) close(false); });
     wrap.appendChild(btn);
     wrap.appendChild(list);
