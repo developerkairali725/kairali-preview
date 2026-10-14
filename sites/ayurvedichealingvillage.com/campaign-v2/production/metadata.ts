@@ -38,6 +38,8 @@ const REVIEWED_ENTITY_ROUTES: ReadonlySet<ProductionSlug> = new Set([
   "cleansing-centre", "lp-cleansing-centre", "lp-hospital-kerala", "lp-pain-management", "lp-panchakarma",
   "lp-south-india", "lp-treatment-kerala", "lp-treatment-kerala-ru", "lp-treatment-packages",
   "lp-weight-management", "south-india-cities", "treatment-kerala", "weight-management",
+  // Batch004 (train D02): the six routes HOSPITAL-AUTHORITY-RESOLUTION (14 Oct 2026) moved to the same bounded scope.
+  "monsoon-wellness", "rejuvenation-detox", "wellness-kerala", "brand", "lp-brand", "lp-behandlung-kerala",
 ]);
 
 function reviewedOrganization(locale: string): object {
