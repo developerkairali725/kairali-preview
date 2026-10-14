@@ -38,6 +38,7 @@ const SOURCE_SHA256 = {
   [TARIFF]: "df4ded50ccdb7dbc04cff609bdd17a248d658e8d3cac480bb520338fef8e5a47",
 };
 const AYT = "KTAHV/AYT/EN-INR/20260925-R1";
+const TRAIN_D05 = JSON.parse(fs.readFileSync(P("test/fixtures/train-d05-20261014.json"), "utf8"));
 
 // ── the config graph (TypeScript transpiled and run, so two copies can be loaded side by side) ──────────
 function graph(pageSources = {}) {
@@ -138,6 +139,12 @@ test("only paragraphs were appended: every original card, heading, link, paragra
     });
     // With the added paragraphs removed, the whole campaign is the baseline's: CTA, form, FAQ, metadata and the rest.
     cardsNow.forEach((card, i) => { card.paragraphs = card.paragraphs.slice(0, cardsWas[i].paragraphs.length); });
+    // Train D05 (AHV-WB.473.benefit-copy, 14 Oct 2026): reverse only that exact separately authorised lead field.
+    for (const { path: at, before, after } of TRAIN_D05.configChanges[slug] ?? []) {
+      let obj = now; for (const key of at.slice(0, -1)) obj = obj[key];
+      same(obj[at.at(-1)], after, `${slug}: exact train D05 field ${at.join(".")}`);
+      obj[at.at(-1)] = plain(before);
+    }
     same(now, was, `${slug}: nothing else changed`);
   }
   const links = (slug) => NOW_C[slug].page.offering.cards.flatMap((c) => c.links ?? []).length;

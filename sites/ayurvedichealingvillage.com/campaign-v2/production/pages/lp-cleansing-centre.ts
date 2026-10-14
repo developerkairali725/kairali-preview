@@ -33,6 +33,8 @@ export default defineCopy({
       paragraphs: [
         "If you are looking into Ayurvedic cleansing, Panchakarma or rejuvenation, you will often see the terms used side by side. They can refer to different plans of care, and your medical history and assessment guide the choice.",
         "At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, your doctor explains the preparation, prescribed procedures and recommended duration before treatment begins.",
+        // AHV-WB.385.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.
+        "During your stay, prescribed sessions, meals and rest share one daily routine, and the time between sessions is yours to slow down, sit quietly or rest in your villa.",
       ],
       points: [
         "You are unsure whether cleansing, Panchakarma or rejuvenation fits",

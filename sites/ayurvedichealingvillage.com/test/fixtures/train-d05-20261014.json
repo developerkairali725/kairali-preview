@@ -1,0 +1,323 @@
+{
+ "task": "AHV train D05, 14 Oct 2026 (staff workbook User Review 9 Oct; standing owner implementation authority)",
+ "rows": {
+  "AHV-WB.213.change": "cleansing-centre",
+  "AHV-WB.308.change": "weight-management",
+  "AHV-WB.318.benefit-copy": "lp-south-india",
+  "AHV-WB.342.benefit-copy": "lp-hospital-kerala",
+  "AHV-WB.385.benefit-copy": "lp-cleansing-centre",
+  "AHV-WB.409.benefit-copy": "lp-pain-management",
+  "AHV-WB.428.benefit-copy": "lp-panchakarma",
+  "AHV-WB.452.benefit-copy": "lp-treatment-kerala",
+  "AHV-WB.473.benefit-copy": "lp-treatment-packages",
+  "AHV-WB.494.benefit-copy": "lp-weight-management",
+  "AHV-WB.546.change": "lp-treatment-kerala-ru (ui.ts RU alt kt-199)"
+ },
+ "sources": {
+  "AHV-WB.308.change": "public/ahv/views/ahv-page-weight-loss-programme-desktop.json (approved Dinacharya times and inclusions of /weight-loss-programme/)",
+  "AHV-WB.546.change": "approved English terminology 'full-body medicated oil therapy' (AHV-WB.054.change / AHV-LATER-016.01); staff Russian wording, inflected"
+ },
+ "base": "c54e2795e",
+ "files": {
+  "campaign-v2/production/pages/cleansing-centre.ts": {
+   "beforeSHA256": "ee9cfda4dacd74945b34927f4ab9715ae326acd5a99cebabbef04c451ac23832",
+   "afterSHA256": "a0205940ebfc1c4d14d37bf73629e5e4274f4cb5e813504cbc9a381a5073b131",
+   "replacements": [
+    {
+     "before": "    lead: {\n      heading: \"Looking for Kairali Cleansing Centre?\",\n",
+     "after": "    lead: {\n      // AHV-WB.213.change (staff workbook row 216): the heading names the care, not the centre name visitors may not know.\n      heading: \"Ayurvedic cleansing (detox) at an NABH hospital in Kerala\",\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/weight-management.ts": {
+   "beforeSHA256": "e424c22f0d71947dc7c3cfddf22e456dbd1196a1f436c86f652670b065f640ca",
+   "afterSHA256": "7ec6d3461d5ac1f23adb1cf195861a647e5eee6fd79a67b207143172155b5e77",
+   "replacements": [
+    {
+     "before": "        { title: \"Agree your plan, dates and quotation\", body: \"Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Your doctor discusses the duration appropriate to your needs; confirm the programme, dates and quotation before making travel arrangements.\" },\n        { title: \"Follow your routine at Kairali\", body: \"Attend your prescribed sessions, meals, suitable activity and rest. Keep your doctor informed about how you feel, and ask how your progress will be reviewed during the stay.\" },\n",
+     "after": "        { title: \"Agree your plan, dates and quotation\", body: \"Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Your doctor discusses the duration appropriate to your needs; confirm the programme, dates and quotation before making travel arrangements.\" },\n        // AHV-WB.308.change (staff workbook row 311): the day plan from the programme's own approved Dinacharya and\n        // inclusions (/weight-loss-programme/: two therapies a day, morning yoga, evening meditation, weekly walk). No outcome.\n        { title: \"Your 14-night routine\", body: \"Over the minimum 14-night admission, a typical day begins with group yoga at 06:30, as advised by your doctor, and a vegetarian breakfast. Your therapies are at 09:30 and 15:30, each followed by rest; therapy types, times and durations follow your doctor’s plan. Lunch is at 13:00, and a cooking demonstration, garden visit, workshop or lecture may be scheduled at 14:00. Guided meditation at 18:30 comes before dinner, and a farm, village or nature walk is arranged each week. Keep your doctor informed about how you feel, and ask how your progress will be reviewed during the stay.\" },\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-south-india.ts": {
+   "beforeSHA256": "791b262d8a534937661f03e694cce5397bf11a55246bc48f8ddad40497d01bd4",
+   "afterSHA256": "e0bcbafd9528e36b4e68578bce587a0145ada6717b90966b715c0b5c54352ced",
+   "replacements": [
+    {
+     "before": "        \"At Kairali – The Ayurvedic Healing Village, your doctor assesses your health history and explains the proposed programme. Confirm the recommended stay and accommodation before arranging travel to Palakkad.\",\n",
+     "after": "        \"At Kairali – The Ayurvedic Healing Village, your doctor assesses your health history and explains the proposed programme. Confirm the recommended stay and accommodation before arranging travel to Palakkad.\",\n        // AHV-WB.318.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.\n        \"Once you arrive, your days follow one routine in one place: therapies your doctor plans, meals from the hospital kitchen and a villa in the village gardens where you can rest between appointments.\",\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-hospital-kerala.ts": {
+   "beforeSHA256": "7a2fbe5bf6dae14c34a804cbafed0536cacc37fd11ac5760ecd3a36a3238c748",
+   "afterSHA256": "83c65d2447d950b5f1940c32dbeeb12912c478d660f9b3a01987befb8c5bf037",
+   "replacements": [
+    {
+     "before": "        \"At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, an Ayurvedic doctor reviews your medical history and examines you before prescribing treatment. Your programme is reviewed during your stay, and the next steps are discussed before discharge.\",\n",
+     "after": "        \"At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, an Ayurvedic doctor reviews your medical history and examines you before prescribing treatment. Your programme is reviewed during your stay, and the next steps are discussed before discharge.\",\n        // AHV-WB.342.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.\n        \"Once you are admitted, physicians review your care through the stay, and your villa in the village gardens gives you a quiet place to pause between appointments.\",\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-cleansing-centre.ts": {
+   "beforeSHA256": "5aca7d911dc4638d883f55e944c41f48a7cf0392edddf383ffd59bb145173515",
+   "afterSHA256": "0cadd27ace85787f3ad5f98d9ca548f2d5966be795cc20055f9f65197511421a",
+   "replacements": [
+    {
+     "before": "        \"At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, your doctor explains the preparation, prescribed procedures and recommended duration before treatment begins.\",\n",
+     "after": "        \"At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, your doctor explains the preparation, prescribed procedures and recommended duration before treatment begins.\",\n        // AHV-WB.385.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.\n        \"During your stay, prescribed sessions, meals and rest share one daily routine, and the time between sessions is yours to slow down, sit quietly or rest in your villa.\",\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-pain-management.ts": {
+   "beforeSHA256": "bc0bba7fd2a1403a7094af276d573e7a3d520b810a6104548a6e123f5512e5a8",
+   "afterSHA256": "d727cfc607ee69952fd275519b67569ffe7328551233b13c4a186d4fc20cfb4c",
+   "replacements": [
+    {
+     "before": "        \"At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, your Ayurvedic doctor assesses your needs before prescribing care. Together you discuss realistic goals, the proposed therapies and how progress would be reviewed during a stay.\",\n",
+     "after": "        \"At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, your Ayurvedic doctor assesses your needs before prescribing care. Together you discuss realistic goals, the proposed therapies and how progress would be reviewed during a stay.\",\n        // AHV-WB.409.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.\n        \"During a stay, your prescribed sessions and physician reviews share one daily routine, with time between sessions to rest in your villa and move at a pace that suits you.\",\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-panchakarma.ts": {
+   "beforeSHA256": "7849ad26ea062bee6d57f0c0fd2151483c066151ca96eb05d45ad41c81ed7d52",
+   "afterSHA256": "af79e8b976c1a2156d080dac8402c7edb18f739fa57170afda13175e1a14c676",
+   "replacements": [
+    {
+     "before": "        \"Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. The published Panchakarma programme is a 14–21 night stay; discuss the time you can set aside and confirm the recommended duration before arranging travel.\",\n",
+     "after": "        \"Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. The published Panchakarma programme is a 14–21 night stay; discuss the time you can set aside and confirm the recommended duration before arranging travel.\",\n        // AHV-WB.428.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.\n        \"During your stay, trained therapists carry out your prescribed sessions under physician supervision. Your villa and its gardens give you space to rest between appointments.\",\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-treatment-kerala.ts": {
+   "beforeSHA256": "02cdaab1c917ad98ae2be7ece1ab0ea3d7c9b2606a62a61fc02828beed7a8275",
+   "afterSHA256": "d409c9ec5b2f5c67f7962bbb94af41e4ac86399aead36826dc4aeec6c5387601",
+   "replacements": [
+    {
+     "before": "        \"Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Residential care brings together an individual assessment, prescribed therapies, meals and time to rest, with doctors reviewing your programme during the stay.\",\n",
+     "after": "        \"Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Residential care brings together an individual assessment, prescribed therapies, meals and time to rest, with doctors reviewing your programme during the stay.\",\n        // AHV-WB.452.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.\n        \"Your days bring prescribed therapies, meals and rest into one schedule, with doctors reviewing your programme and time between appointments to walk in the gardens or rest in your villa.\",\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-treatment-packages.ts": {
+   "beforeSHA256": "a8f43a17770b5375f4dac8a2f59e0fd4d7126100fcd66f005e5708c9926e4f71",
+   "afterSHA256": "460b2f15071f192f70fef727233c020811a39df27ebd873f476c98307a755541",
+   "replacements": [
+    {
+     "before": "        \"Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, with residential villa accommodation. After an Ayurvedic doctor’s assessment, your programme brings prescribed care, meals and rest together in one place.\",\n",
+     "after": "        \"Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, with residential villa accommodation. After an Ayurvedic doctor’s assessment, your programme brings prescribed care, meals and rest together in one place.\",\n        // AHV-WB.473.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.\n        \"Whichever programme is recommended, your days bring prescribed care, meals and quiet time together, with villas and gardens around you and doctors reviewing your care during the stay.\",\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-weight-management.ts": {
+   "beforeSHA256": "24679b7a5d78ad17baa4afcc55b9f19555617995afbd1a2f818b72823df3044f",
+   "afterSHA256": "287b68cf86e4abb128d9e0390c094fa79f3800bdf2abb5058987b370cf5f7ce1",
+   "replacements": [
+    {
+     "before": "        \"Kairali’s Weight Management & Metabolism Therapy is planned after assessment at Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Your doctor discusses the proposed care and reviews progress during the stay. Weight change and timing vary from person to person.\",\n",
+     "after": "        \"Kairali’s Weight Management & Metabolism Therapy is planned after assessment at Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Your doctor discusses the proposed care and reviews progress during the stay. Weight change and timing vary from person to person.\",\n        // AHV-WB.494.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.\n        \"During your stay, prescribed therapies, a personalised vegetarian diet, suitable activity and rest share one daily routine, with time to walk through the village gardens between therapies and meals.\",\n"
+    }
+   ]
+  },
+  "campaign-v2/production/ui.ts": {
+   "beforeSHA256": "330c1582cba73535d5b1eaf5c1726cbf455eb735e6295e547e0637b48d095140",
+   "afterSHA256": "2c04877589ef3957f69ee695584a0227773f45cb38095d62b87033ee1fc42a28",
+   "replacements": [
+    {
+     "before": "\n    \"kt-199\": \"Два терапевта проводят абхьянгу — массаж всего тела тёплым лечебным маслом\",\n",
+     "after": "\n    \"kt-199\": \"Два терапевта проводят абхьянгу — процедуру всего тела с тёплым лечебным маслом\",\n"
+    }
+   ]
+  }
+ },
+ "configChanges": {
+  "cleansing-centre": [
+   {
+    "path": [
+     "page",
+     "lead",
+     "heading"
+    ],
+    "before": "Looking for Kairali Cleansing Centre?",
+    "after": "Ayurvedic cleansing (detox) at an NABH hospital in Kerala"
+   }
+  ],
+  "weight-management": [
+   {
+    "path": [
+     "admission",
+     "steps",
+     2
+    ],
+    "before": {
+     "title": "Follow your routine at Kairali",
+     "body": "Attend your prescribed sessions, meals, suitable activity and rest. Keep your doctor informed about how you feel, and ask how your progress will be reviewed during the stay."
+    },
+    "after": {
+     "title": "Your 14-night routine",
+     "body": "Over the minimum 14-night admission, a typical day begins with group yoga at 06:30, as advised by your doctor, and a vegetarian breakfast. Your therapies are at 09:30 and 15:30, each followed by rest; therapy types, times and durations follow your doctor’s plan. Lunch is at 13:00, and a cooking demonstration, garden visit, workshop or lecture may be scheduled at 14:00. Guided meditation at 18:30 comes before dinner, and a farm, village or nature walk is arranged each week. Keep your doctor informed about how you feel, and ask how your progress will be reviewed during the stay."
+    }
+   },
+   {
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     2
+    ],
+    "before": {
+     "title": "Follow your routine at Kairali",
+     "body": "Attend your prescribed sessions, meals, suitable activity and rest. Keep your doctor informed about how you feel, and ask how your progress will be reviewed during the stay."
+    },
+    "after": {
+     "title": "Your 14-night routine",
+     "body": "Over the minimum 14-night admission, a typical day begins with group yoga at 06:30, as advised by your doctor, and a vegetarian breakfast. Your therapies are at 09:30 and 15:30, each followed by rest; therapy types, times and durations follow your doctor’s plan. Lunch is at 13:00, and a cooking demonstration, garden visit, workshop or lecture may be scheduled at 14:00. Guided meditation at 18:30 comes before dinner, and a farm, village or nature walk is arranged each week. Keep your doctor informed about how you feel, and ask how your progress will be reviewed during the stay."
+    }
+   }
+  ],
+  "lp-south-india": [
+   {
+    "path": [
+     "page",
+     "lead",
+     "paragraphs"
+    ],
+    "before": [
+     "If you are travelling from Bengaluru, Chennai, Hyderabad or elsewhere in South India, start with the care you need and the time you can set aside. A residential Ayurveda programme gives you one place to follow your prescribed treatment and daily routine during your stay.",
+     "At Kairali – The Ayurvedic Healing Village, your doctor assesses your health history and explains the proposed programme. Confirm the recommended stay and accommodation before arranging travel to Palakkad."
+    ],
+    "after": [
+     "If you are travelling from Bengaluru, Chennai, Hyderabad or elsewhere in South India, start with the care you need and the time you can set aside. A residential Ayurveda programme gives you one place to follow your prescribed treatment and daily routine during your stay.",
+     "At Kairali – The Ayurvedic Healing Village, your doctor assesses your health history and explains the proposed programme. Confirm the recommended stay and accommodation before arranging travel to Palakkad.",
+     "Once you arrive, your days follow one routine in one place: therapies your doctor plans, meals from the hospital kitchen and a villa in the village gardens where you can rest between appointments."
+    ]
+   }
+  ],
+  "lp-hospital-kerala": [
+   {
+    "path": [
+     "page",
+     "lead",
+     "paragraphs"
+    ],
+    "before": [
+     "Choosing a residential Ayurveda programme means trusting people you have not met yet. Before you commit, you need to know who will assess you, how your care is planned and what your stay involves.",
+     "At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, an Ayurvedic doctor reviews your medical history and examines you before prescribing treatment. Your programme is reviewed during your stay, and the next steps are discussed before discharge."
+    ],
+    "after": [
+     "Choosing a residential Ayurveda programme means trusting people you have not met yet. Before you commit, you need to know who will assess you, how your care is planned and what your stay involves.",
+     "At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, an Ayurvedic doctor reviews your medical history and examines you before prescribing treatment. Your programme is reviewed during your stay, and the next steps are discussed before discharge.",
+     "Once you are admitted, physicians review your care through the stay, and your villa in the village gardens gives you a quiet place to pause between appointments."
+    ]
+   }
+  ],
+  "lp-cleansing-centre": [
+   {
+    "path": [
+     "page",
+     "lead",
+     "paragraphs"
+    ],
+    "before": [
+     "If you are looking into Ayurvedic cleansing, Panchakarma or rejuvenation, you will often see the terms used side by side. They can refer to different plans of care, and your medical history and assessment guide the choice.",
+     "At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, your doctor explains the preparation, prescribed procedures and recommended duration before treatment begins."
+    ],
+    "after": [
+     "If you are looking into Ayurvedic cleansing, Panchakarma or rejuvenation, you will often see the terms used side by side. They can refer to different plans of care, and your medical history and assessment guide the choice.",
+     "At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, your doctor explains the preparation, prescribed procedures and recommended duration before treatment begins.",
+     "During your stay, prescribed sessions, meals and rest share one daily routine, and the time between sessions is yours to slow down, sit quietly or rest in your villa."
+    ]
+   }
+  ],
+  "lp-pain-management": [
+   {
+    "path": [
+     "page",
+     "lead",
+     "paragraphs"
+    ],
+    "before": [
+     "Ongoing discomfort can quietly reorganise your day around it. A useful first step is an honest conversation: tell the doctor where you feel discomfort, how long it has been present and which activities have become difficult.",
+     "At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, your Ayurvedic doctor assesses your needs before prescribing care. Together you discuss realistic goals, the proposed therapies and how progress would be reviewed during a stay."
+    ],
+    "after": [
+     "Ongoing discomfort can quietly reorganise your day around it. A useful first step is an honest conversation: tell the doctor where you feel discomfort, how long it has been present and which activities have become difficult.",
+     "At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, your Ayurvedic doctor assesses your needs before prescribing care. Together you discuss realistic goals, the proposed therapies and how progress would be reviewed during a stay.",
+     "During a stay, your prescribed sessions and physician reviews share one daily routine, with time between sessions to rest in your villa and move at a pace that suits you."
+    ]
+   }
+  ],
+  "lp-panchakarma": [
+   {
+    "path": [
+     "page",
+     "lead",
+     "paragraphs"
+    ],
+    "before": [
+     "When you compare Panchakarma packages, it is natural to look at length and cost first. At Kairali, the programme is not picked from a list: your doctor first assesses whether Panchakarma is suitable, which procedures may be considered and how long you would need.",
+     "Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. The published Panchakarma programme is a 14–21 night stay; discuss the time you can set aside and confirm the recommended duration before arranging travel."
+    ],
+    "after": [
+     "When you compare Panchakarma packages, it is natural to look at length and cost first. At Kairali, the programme is not picked from a list: your doctor first assesses whether Panchakarma is suitable, which procedures may be considered and how long you would need.",
+     "Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. The published Panchakarma programme is a 14–21 night stay; discuss the time you can set aside and confirm the recommended duration before arranging travel.",
+     "During your stay, trained therapists carry out your prescribed sessions under physician supervision. Your villa and its gardens give you space to rest between appointments."
+    ]
+   }
+  ],
+  "lp-treatment-kerala": [
+   {
+    "path": [
+     "page",
+     "lead",
+     "paragraphs"
+    ],
+    "before": [
+     "You may be exploring Ayurveda for the first time, or considering a programme alongside care you already receive. You do not need a programme name before you enquire. Explain what brings you here, any diagnosis or ongoing treatment, and what you hope to address.",
+     "Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Residential care brings together an individual assessment, prescribed therapies, meals and time to rest, with doctors reviewing your programme during the stay."
+    ],
+    "after": [
+     "You may be exploring Ayurveda for the first time, or considering a programme alongside care you already receive. You do not need a programme name before you enquire. Explain what brings you here, any diagnosis or ongoing treatment, and what you hope to address.",
+     "Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Residential care brings together an individual assessment, prescribed therapies, meals and time to rest, with doctors reviewing your programme during the stay.",
+     "Your days bring prescribed therapies, meals and rest into one schedule, with doctors reviewing your programme and time between appointments to walk in the gardens or rest in your villa."
+    ]
+   }
+  ],
+  "lp-treatment-packages": [
+   {
+    "path": [
+     "page",
+     "lead",
+     "paragraphs"
+    ],
+    "before": [
+     "A package name alone does not tell you which therapies you will receive, how long you need or what is included. A useful comparison starts with the programme, its suitability for you and the time it requires.",
+     "Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, with residential villa accommodation. After an Ayurvedic doctor’s assessment, your programme brings prescribed care, meals and rest together in one place."
+    ],
+    "after": [
+     "A package name alone does not tell you which therapies you will receive, how long you need or what is included. A useful comparison starts with the programme, its suitability for you and the time it requires.",
+     "Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, with residential villa accommodation. After an Ayurvedic doctor’s assessment, your programme brings prescribed care, meals and rest together in one place.",
+     "Whichever programme is recommended, your days bring prescribed care, meals and quiet time together, with villas and gardens around you and doctors reviewing your care during the stay."
+    ]
+   }
+  ],
+  "lp-weight-management": [
+   {
+    "path": [
+     "page",
+     "lead",
+     "paragraphs"
+    ],
+    "before": [
+     "If you are looking for Ayurvedic weight loss treatment, the first conversation is about more than a target weight. Tell the doctor about your health history, current medicines, previous approaches and the routines you find difficult to maintain.",
+     "Kairali’s Weight Management & Metabolism Therapy is planned after assessment at Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Your doctor discusses the proposed care and reviews progress during the stay. Weight change and timing vary from person to person."
+    ],
+    "after": [
+     "If you are looking for Ayurvedic weight loss treatment, the first conversation is about more than a target weight. Tell the doctor about your health history, current medicines, previous approaches and the routines you find difficult to maintain.",
+     "Kairali’s Weight Management & Metabolism Therapy is planned after assessment at Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Your doctor discusses the proposed care and reviews progress during the stay. Weight change and timing vary from person to person.",
+     "During your stay, prescribed therapies, a personalised vegetarian diet, suitable activity and rest share one daily routine, with time to walk through the village gardens between therapies and meals."
+    ]
+   }
+  ]
+ }
+}

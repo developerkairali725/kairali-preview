@@ -34,6 +34,8 @@ export default defineCopy({
       paragraphs: [
         "If you are looking for Ayurvedic weight loss treatment, the first conversation is about more than a target weight. Tell the doctor about your health history, current medicines, previous approaches and the routines you find difficult to maintain.",
         "Kairali’s Weight Management & Metabolism Therapy is planned after assessment at Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Your doctor discusses the proposed care and reviews progress during the stay. Weight change and timing vary from person to person.",
+        // AHV-WB.494.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.
+        "During your stay, prescribed therapies, a personalised vegetarian diet, suitable activity and rest share one daily routine, with time to walk through the village gardens between therapies and meals.",
       ],
       points: [
         "You have tried other approaches and want a doctor’s view",

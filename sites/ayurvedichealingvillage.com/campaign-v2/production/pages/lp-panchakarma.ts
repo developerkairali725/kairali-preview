@@ -32,6 +32,8 @@ export default defineCopy({
       paragraphs: [
         "When you compare Panchakarma packages, it is natural to look at length and cost first. At Kairali, the programme is not picked from a list: your doctor first assesses whether Panchakarma is suitable, which procedures may be considered and how long you would need.",
         "Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. The published Panchakarma programme is a 14–21 night stay; discuss the time you can set aside and confirm the recommended duration before arranging travel.",
+        // AHV-WB.428.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.
+        "During your stay, trained therapists carry out your prescribed sessions under physician supervision. Your villa and its gardens give you space to rest between appointments.",
       ],
       points: [
         "You are comparing Panchakarma packages and what they cost",

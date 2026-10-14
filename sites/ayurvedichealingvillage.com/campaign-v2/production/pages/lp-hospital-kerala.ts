@@ -32,6 +32,8 @@ export default defineCopy({
       paragraphs: [
         "Choosing a residential Ayurveda programme means trusting people you have not met yet. Before you commit, you need to know who will assess you, how your care is planned and what your stay involves.",
         "At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, an Ayurvedic doctor reviews your medical history and examines you before prescribing treatment. Your programme is reviewed during your stay, and the next steps are discussed before discharge.",
+        // AHV-WB.342.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.
+        "Once you are admitted, physicians review your care through the stay, and your villa in the village gardens gives you a quiet place to pause between appointments.",
       ],
       points: [
         "You want a doctor’s assessment before any treatment begins",

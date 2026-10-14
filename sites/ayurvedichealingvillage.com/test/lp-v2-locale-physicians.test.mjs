@@ -10,6 +10,7 @@ import {productionCampaign,PRODUCTION_SLUGS} from '../campaign-v2/production/loa
 import {DOCTORS,CURRENT_ROSTER} from '../campaign-v2/data/doctors.ts';
 import {UI} from '../campaign-v2/production/ui.ts';
 import fixture from './fixtures/locale-physicians-20261014.json' with {type:'json'};
+import trainD05 from './fixtures/train-d05-20261014.json' with {type:'json'};
 const byLocale={de:'lp-behandlung-kerala',ru:'lp-treatment-kerala-ru'};
 const languages={de:{Malayalam:'Malayalam',English:'Englisch',Hindi:'Hindi',Tamil:'Tamil'},ru:{Malayalam:'малаялам',English:'английском',Hindi:'хинди',Tamil:'тамильском'}};
 const titles={de:'Ihre Ayurveda-Ärzte',ru:'Ваши аюрведические врачи'};
@@ -43,12 +44,15 @@ test('all24 configs preserve original bytes after exact approved experience fact
     obj[key]=JSON.parse(JSON.stringify(before));
    }
   }
+  for(const {path,before,after} of (trainD05.configChanges[slug]??[])){let obj=c;for(const key of path.slice(0,-1))obj=obj[key];const key=path.at(-1);assert.deepEqual(obj[key],after,'Exact train D05 field: '+slug+' '+path.join('.'));obj[key]=JSON.parse(JSON.stringify(before));}
   assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);
  }
 });
 test('exact approved source corrections reverse to original bytes, preserving prior facts/copy/style fixtures',()=>{
  for(const [p,entry] of Object.entries(fixture.files)){
   let value=fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
+  const d05=trainD05.files[p];
+  if(d05){assert.equal(sha(value),d05.afterSHA256,p);for(const{before,after}of d05.replacements){assert.equal(value.split(after).length-1,1,p);value=value.replace(after,before);}assert.equal(sha(value),d05.beforeSHA256,p);}
   const combined=staffRosterIntegration.files[p];
   if(combined){assert.equal(sha(value),combined.afterSHA256,p);for(const{before,after}of combined.replacements){assert.equal(value.split(after).length-1,1,p);value=value.replace(after,before);}assert.equal(sha(value),combined.beforeSHA256,p);}
   for(const delta of staffExperienceDelta.sourceDelta[p]||[]){assert.equal(value.split(delta.new).length-1,1,p);value=value.replace(delta.new,delta.old);}

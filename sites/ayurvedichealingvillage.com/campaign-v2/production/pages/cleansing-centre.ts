@@ -33,7 +33,8 @@ export default defineCopy({
   doctors: ["deepu-john", "rahul-r", "akhila-oommen", "adhina-ub", "aashitha-ps"],
   page: {
     lead: {
-      heading: "Looking for Kairali Cleansing Centre?",
+      // AHV-WB.213.change (staff workbook row 216): the heading names the care, not the centre name visitors may not know.
+      heading: "Ayurvedic cleansing (detox) at an NABH hospital in Kerala",
       paragraphs: [
         "This is Kairali – The Ayurvedic Healing Village in Palakkad, Kerala. Our NABH-accredited Ayurvedic hospital offers residential care guided by individual assessment.",
         "Cleansing, detoxification and rejuvenation appear in different Ayurvedic programme names, and they do not all describe the same care. Bring your health history and goals to the conversation, so your doctor can explain the programme that may be appropriate for you.",
