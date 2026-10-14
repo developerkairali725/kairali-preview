@@ -388,7 +388,62 @@ test("JSON-LD: the replaced pages' WebPage (and breadcrumb), plus FAQPage for th
   assert.equal(pkFaq.mainEntity.length, C["treatment-packages"].faq.length);
   const [pc] = productionJsonLd("panchakarma", C.panchakarma);
   assert.equal(pc["@id"], "https://ayurvedichealingvillage.com/panchkarma-treatment.html#webpage");
-  assert.equal(pc.breadcrumb, undefined);
+  // AHV-WB *.breadcrumb-schema (14 Oct 2026): every other route gets Home > its own visible H1 at its own canonical;
+  // German and Russian take the language-neutral site name for the first item (no approved localised "Home").
+  // Treatment packages (above) is the unchanged regression control.
+  assert.deepEqual(pc.breadcrumb, {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://ayurvedichealingvillage.com/" },
+      { "@type": "ListItem", position: 2, name: "Panchakarma treatment in Kerala", item: "https://ayurvedichealingvillage.com/panchkarma-treatment.html" },
+    ],
+  });
+  const CRUMB = {
+    "panchakarma": "Panchakarma treatment in Kerala",
+    "pain-management": "Ayurvedic pain management in Kerala",
+    "family-ayurvedic-retreat": "Family Ayurveda retreat in Kerala",
+    "monsoon-wellness": "Monsoon Ayurvedic treatment in Kerala",
+    "rejuvenation-detox": "Ayurvedic rejuvenation & detoxification in Kerala",
+    "ayurveda-retreat": "Ayurveda retreat in Kerala",
+    "wellness-kerala": "Ayurvedic wellness in Kerala",
+    "cleansing-centre": "Ayurvedic cleansing programmes in Kerala",
+    "treatment-kerala": "Ayurvedic treatment in Kerala",
+    "south-india-cities": "Ayurvedic treatment in South India",
+    "brand": "Kairali Ayurveda in Palakkad, Kerala",
+    "weight-management": "Ayurvedic weight management for the way you live",
+    "lp-south-india": "Ayurvedic treatment in South India",
+    "lp-hospital-kerala": "Ayurvedic hospital in Kerala",
+    "lp-brand": "Kairali – The Ayurvedic Healing Village",
+    "lp-cleansing-centre": "Ayurvedic cleansing programmes in Kerala",
+    "lp-pain-management": "Ayurvedic pain management in Palakkad, Kerala",
+    "lp-panchakarma": "Panchakarma treatment planned around your assessment",
+    "lp-treatment-kerala": "Ayurvedic treatment in Kerala, with a plan you understand",
+    "lp-treatment-packages": "Find an Ayurvedic treatment package that fits your needs",
+    "lp-weight-management": "Ayurvedic weight management, planned around you",
+    "lp-behandlung-kerala": "Ayurveda-Behandlung in Kerala, individuell geplant",
+    "lp-treatment-kerala-ru": "Аюрведическое лечение в Керале с индивидуальным планом",
+  };
+  assert.deepEqual([...Object.keys(CRUMB), "treatment-packages"].sort(), [...PRODUCTION_SLUGS].sort());
+  for (const [slug, name] of Object.entries(CRUMB)) {
+    const [page] = productionJsonLd(slug, C[slug]);
+    assert.equal(ROUTES[slug].breadcrumbName, undefined, slug);
+    assert.equal(C[slug].hero.h1, name, slug);
+    const home = slug === "lp-behandlung-kerala" || slug === "lp-treatment-kerala-ru" ? "Kairali Ayurvedic Healing Village" : "Home";
+    assert.deepEqual(page.breadcrumb, {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: home, item: "https://ayurvedichealingvillage.com/" },
+        { "@type": "ListItem", position: 2, name, item: ROUTES[slug].canonical },
+      ],
+    }, slug);
+  }
+  assert.deepEqual(pk.breadcrumb, {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://ayurvedichealingvillage.com/" },
+      { "@type": "ListItem", position: 2, name: "Ayurvedic treatment packages", item: "https://ayurvedichealingvillage.com/ayurvedic-treatment-packages.html" },
+    ],
+  });
   for (const slug of PRODUCTION_SLUGS) assert.ok(!JSON.stringify(productionJsonLd(slug, C[slug])).match(/"@type":"(Offer|Product|MedicalClinic|VideoObject)"/), slug);
 });
 

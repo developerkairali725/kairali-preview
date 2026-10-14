@@ -2,7 +2,9 @@
 // own URL, query never included), robots (indexable only on the production build, AHV_STAGING=0, exactly as
 // before), the Open Graph / Twitter image and its alt (none where the replaced page had none: batch 2), the
 // WebPage node and the treatment-packages breadcrumb.
-// From the copy: title and description. Added: FAQPage for the FAQ the page shows (integrations/seo.ts).
+// From the copy: title and description. Added: FAQPage for the FAQ the page shows (integrations/seo.ts), and a
+// two-item BreadcrumbList on every other route (AHV-WB *.breadcrumb-schema, 14 Oct 2026) matching its visible
+// navigation: the header logo links to the site home, and the page is named by its own visible H1 (no new copy).
 //
 // Erasable TypeScript only (node --test imports this file).
 
@@ -49,15 +51,15 @@ export function productionJsonLd(slug: ProductionSlug, c: CampaignConfig): objec
     name: c.seo.title, description: c.seo.description, inLanguage: b.locale ?? "en",
     isPartOf: { "@type": "WebSite", url: `${SITE_ORIGIN}/`, name: SITE_NAME },
   };
-  if (b.breadcrumbName) {
-    page.breadcrumb = {
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_ORIGIN}/` },
-        { "@type": "ListItem", position: 2, name: b.breadcrumbName, item: b.canonical },
-      ],
-    };
-  }
+  // Treatment packages keeps the replaced page's recorded name; every other route uses its visible H1. The German and
+  // Russian routes have no approved word for "Home", so their first item is the language-neutral site name.
+  page.breadcrumb = {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: (b.locale ?? "en") === "en" ? "Home" : SITE_NAME, item: `${SITE_ORIGIN}/` },
+      { "@type": "ListItem", position: 2, name: b.breadcrumbName ?? c.hero.h1, item: b.canonical },
+    ],
+  };
   const faq = faqPage(c, b.locale ?? "en");
   return faq ? [page, faq] : [page];
 }
