@@ -226,19 +226,19 @@ const SPECS: Spec[] = [
   // Review batch 3
   { slug: "lp-hospital-kerala", route: "/lp/ayurvedic-hospital-kerala/", variant: "A", hero: "wx-hero", stillness: "ahv-img-016", pathway: "kt-199", form: enquiry("/lp/ayurvedic-hospital-kerala/"), og: OG_LP("ahv/assets/img/wx-hero.webp") },
   { slug: "lp-brand", route: "/lp/kairali-brand/", variant: "D", hero: "wx-hero", pathway: "kt-202", form: enquiry("/lp/kairali-brand/"), og: OG_LP("ahv/assets/img/wx-hero.webp") },
-  { slug: "lp-cleansing-centre", route: "/lp/kairali-cleansing-centre/", variant: "A", hero: "kt-190", pathway: "kt-202", form: enquiry("/lp/kairali-cleansing-centre/"), og: OG_LP("images/therapy-panchakarma.jpg") },
+  { slug: "lp-cleansing-centre", route: "/lp/kairali-cleansing-centre/", variant: "A", hero: "kt-190", stillness: "ahv-img-016", pathway: "kt-202", form: enquiry("/lp/kairali-cleansing-centre/"), og: OG_LP("images/therapy-panchakarma.jpg") },
   // Not kt-199: /pain-management.html and /panchkarma-treatment.html already share that hero (review finding, 8 Oct).
-  { slug: "lp-pain-management", route: "/lp/pain-management/", variant: "A", hero: "kt-202", mobile: "kt-190", pathway: "kt-199", form: enquiry("/lp/pain-management/"), og: OG_LP("images/therapy-pain-management.jpg") },
+  { slug: "lp-pain-management", route: "/lp/pain-management/", variant: "A", hero: "kt-202", mobile: "kt-190", stillness: "ahv-img-016", pathway: "kt-199", form: enquiry("/lp/pain-management/"), og: OG_LP("images/therapy-pain-management.jpg") },
   { slug: "lp-panchakarma", route: "/lp/panchkarma-treatment/", variant: "D", hero: "kt-202", pathway: "kt-199", form: enquiry("/lp/panchkarma-treatment/"), og: OG_LP("images/consultation-pulse.webp") },
   // Review batch 4
-  { slug: "lp-treatment-kerala", route: "/lp/treatment-in-kerala/", variant: "C", hero: "kt-199", pathway: "kt-202", form: enquiry("/lp/treatment-in-kerala/"), og: OG_LP("ahv/assets/img/wx-pathway.jpg") },
+  { slug: "lp-treatment-kerala", route: "/lp/treatment-in-kerala/", variant: "C", hero: "kt-199", stillness: "ahv-img-016", pathway: "kt-202", form: enquiry("/lp/treatment-in-kerala/"), og: OG_LP("ahv/assets/img/wx-pathway.jpg") },
   { slug: "lp-treatment-packages", route: "/lp/treatment-packages/", variant: "B", hero: "kt-116", pathway: "kt-199", form: enquiry("/lp/treatment-packages/"), og: OG_LP("images/therapy-abhyanga.jpg") },
   // Phone LCP is the landscape wx-dining rendition (CI image-delivery: w750 q75, 53,382 bytes, est. 14,367 saveable);
   // q40 as on family-ayurvedic-retreat's landscape phone hero. Same photo and crop; desktop unchanged; q40 bytes unmeasured.
-  { slug: "lp-weight-management", route: "/lp/weight-loss/", variant: "A", hero: "wx-dining", pathway: "kt-202", form: enquiry("/lp/weight-loss/"), og: OG_LP("images/consultation-pulse.webp"), mobileQuality: 40 },
+  { slug: "lp-weight-management", route: "/lp/weight-loss/", variant: "A", hero: "wx-dining", stillness: "ahv-img-016", pathway: "kt-202", form: enquiry("/lp/weight-loss/"), og: OG_LP("images/consultation-pulse.webp"), mobileQuality: 40 },
   { slug: "lp-behandlung-kerala", route: "/lp/behandlung-in-kerala/", variant: "C", hero: "kt-190", pathway: "kt-199", locale: "de", form: enquiry("/lp/behandlung-in-kerala/"), og: OG_LP("images/patient-villa-maharaja.jpg", "de_DE") },
   // New campaign path (owner); /treatment-in-kerala-russian.html redirects here (next.config.ts), query string kept.
-  { slug: "lp-treatment-kerala-ru", route: "/lp/treatment-in-kerala-russian/", variant: "C", hero: "kt-202", pathway: "kt-199", locale: "ru", form: enquiry("/lp/treatment-in-kerala-russian/"), og: { url: `${SITE_ORIGIN}/images/og/treatment-in-kerala-russian.html.jpg`, width: 1200, height: 630, locale: "ru_RU", siteName: "Kairali Ayurvedic Healing Village" } },
+  { slug: "lp-treatment-kerala-ru", route: "/lp/treatment-in-kerala-russian/", variant: "C", hero: "kt-202", stillness: "ahv-img-016", pathway: "kt-199", locale: "ru", form: enquiry("/lp/treatment-in-kerala-russian/"), og: { url: `${SITE_ORIGIN}/images/og/treatment-in-kerala-russian.html.jpg`, width: 1200, height: 630, locale: "ru_RU", siteName: "Kairali Ayurvedic Healing Village" } },
 ];
 
 for (const sp of SPECS) {

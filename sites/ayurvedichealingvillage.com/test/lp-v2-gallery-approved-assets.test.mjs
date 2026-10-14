@@ -103,7 +103,7 @@ test("targets: the existing gallery is kept entry for entry, then only the appro
   }
 });
 
-test("targets: only the eight approved rest images change; all prior gallery and other-field preservation checks remain", () => {
+test("targets: only the thirteen approved rest images change; all prior gallery and other-field preservation checks remain", () => {
   const approvedRest = {
     id: "ahv-img-016", src: "/ahv/assets/img/owner-approved-20260928/ahv-img-016.webp",
     width: 1600, height: 1067, alt: "Cottage, garden path and water channel among palms at the Healing Village in Palakkad",
@@ -122,16 +122,23 @@ test("targets: only the eight approved rest images change; all prior gallery and
     first4BeforeRestChange[slug].stillnessImage = IMAGES["gal-post-therapy-stillness-wakem"];
   }
   assert.equal(sha256(JSON.stringify(first4BeforeRestChange)), BASE_FIRST4_NO_GALLERY_HASH);
-  // Batch 2 adopts only these four route images; reverse them before the original historical hash check.
+  // Prior batch 2 four and reviewed batch 3 three route images; reverse only rest fields before the original hash check.
   const batch2BeforeRestChange = pick(BATCH2, true);
-  for (const slug of ["cleansing-centre", "treatment-kerala", "weight-management", "lp-hospital-kerala"]) {
+  for (const slug of ["cleansing-centre", "treatment-kerala", "weight-management", "lp-hospital-kerala", "lp-cleansing-centre", "lp-pain-management", "lp-treatment-kerala"]) {
     assert.deepEqual(ROUTES[slug].stillnessImage, approvedRest, slug);
     assert.deepEqual(productionCampaign(slug).stillness.image, approvedRest, slug);
     assert.ok(!ROUTES[slug].gallery.some(g => g.image.id === approvedRest.id), slug);
     batch2BeforeRestChange[slug].stillnessImage = IMAGES["gal-post-therapy-stillness-wakem"];
   }
   assert.equal(sha256(JSON.stringify(batch2BeforeRestChange)), BASE_BATCH2_NO_GALLERY_HASH);
-  assert.equal(sha256(JSON.stringify(pick(BATCH3, true))), BASE_BATCH3_NO_GALLERY_HASH);
+  const batch3BeforeRestChange = pick(BATCH3, true);
+  for (const slug of ["lp-weight-management", "lp-treatment-kerala-ru"]) {
+    assert.deepEqual(ROUTES[slug].stillnessImage, approvedRest, slug);
+    assert.deepEqual(productionCampaign(slug).stillness.image, approvedRest, slug);
+    assert.ok(!ROUTES[slug].gallery.some(g => g.image.id === approvedRest.id), slug);
+    batch3BeforeRestChange[slug].stillnessImage = IMAGES["gal-post-therapy-stillness-wakem"];
+  }
+  assert.equal(sha256(JSON.stringify(batch3BeforeRestChange)), BASE_BATCH3_NO_GALLERY_HASH);
   for (const slug of TARGETS) {
     const b = ROUTES[slug];
     const steps = b.pathwayImage.id;
