@@ -28,3 +28,5 @@ for (const variant of ['desktop', 'mobile']) test(`all-programs ${variant}: repa
  assert.equal(result,source.replace(/<h3\b/g,'<h2').replace(/<\/h3>/g,'</h2>'));
  assert.equal(treatmentHeadingLevels(result,'/all-programs/',variant),result);
 });
+
+for(const route of ["/wellness-programs/", "/yoga-meditation-programs/"])for(const variant of ["mobile","desktop"])test(route+variant+" exact finder heading repair retains every style and other byte",()=>{const source=read("ahv-page-"+route.slice(1,-1)+"-"+variant).template;assert.equal((source.match(/<h3\b/g)||[]).length,variant==="desktop"?4:3);const expected=source.replace(/<h3\b/g,"<h2").replace(/<\/h3>/g,"</h2>");assert.equal(treatmentHeadingLevels(source,route,variant),expected);assert.equal(vm.runInNewContext("("+treatmentHeadingLevels.toString()+")")(source,route,variant),expected);assert.equal(treatmentHeadingLevels(expected,route,variant),expected);});
