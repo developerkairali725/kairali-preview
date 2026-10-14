@@ -16,6 +16,7 @@ import { IMAGES } from "../campaign-v2/data/images.ts";
 import { APPROVED_GALLERY_IMAGES, APPROVED_GALLERY_ADDITIONS } from "../campaign-v2/data/gallery-images.ts";
 import { UI } from "../campaign-v2/production/ui.ts";
 import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
+import { reverseTrainBBindings, trainBGalleryAppended, trainBGalleryBefore } from "./fixtures/train-b-20261015.mjs";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const P = (...p) => path.join(SITE, ...p);
@@ -115,7 +116,8 @@ test("targets: the existing gallery is kept entry for entry, then only the appro
   assert.equal(new Set([...TARGETS, ...UNTARGETED]).size, 24);
   assert.deepEqual([...TARGETS, ...UNTARGETED].sort(), [...PRODUCTION_SLUGS].sort());
   for (const slug of TARGETS) {
-    const g = ROUTES[slug].gallery;
+    // Train B (15 Oct): the steps photographs appended by owner decision 10 are removed exactly first (fixtures/train-b-20261015.mjs).
+    const g = trainBGalleryBefore(slug, ROUTES[slug].gallery);
     const base = baseGallery(slug);
     assert.equal(g.length, base.length + APPROVED_GALLERY_ADDITIONS.length, slug);
     base.forEach(([category, id], i) => {
@@ -138,7 +140,8 @@ test("targets: only the eight approved rest images change; all prior gallery and
   const file = fs.readFileSync(P("public" + approvedRest.src));
   assert.equal(sha256(file), "52bb11bb871ff8b2a9e325149e79a010df5f7023294c15ee905a5621be1e49b2");
   assert.deepEqual(webpSize(file), { width: 1600, height: 1067 });
-  const first4BeforeRestChange = reverseBatch8(pick(FIRST4, true));
+  // Train B (15 Oct) first, then Train A batch 8: each candidate's exact binding delta is reversed newest first.
+  const first4BeforeRestChange = reverseBatch8(reverseTrainBBindings(pick(FIRST4, true)));
   for (const slug of FIRST4) {
     assert.deepEqual(ROUTES[slug].stillnessImage, approvedRest, slug);
     assert.deepEqual(productionCampaign(slug).stillness.image, approvedRest, slug);
@@ -148,7 +151,7 @@ test("targets: only the eight approved rest images change; all prior gallery and
   }
   assert.equal(sha256(JSON.stringify(first4BeforeRestChange)), BASE_FIRST4_NO_GALLERY_HASH);
   // Batch 2 adopts only these four route images; reverse them before the original historical hash check.
-  const batch2BeforeRestChange = reverseBatch8(pick(BATCH2, true));
+  const batch2BeforeRestChange = reverseBatch8(reverseTrainBBindings(pick(BATCH2, true)));
   for (const slug of ["cleansing-centre", "treatment-kerala", "weight-management", "lp-hospital-kerala"]) {
     assert.deepEqual(ROUTES[slug].stillnessImage, approvedRest, slug);
     assert.deepEqual(productionCampaign(slug).stillness.image, approvedRest, slug);
@@ -188,7 +191,8 @@ test("counts: the page config carries the binding's gallery, so the mosaic chip 
     // Village.tsx Mosaic: more = pool.length - tiles.length (pool = gallery on a standard page); the dialog gets c.gallery.
     const pool = c.gallery;
     const tiles = pool.slice(0, 5);
-    assert.equal(pool.length - tiles.length, baseGallery(slug).length + APPROVED_GALLERY_ADDITIONS.length - 5, slug);
+    // Plus the one steps photograph appended by owner decision 10, where recorded (Train B, fixtures/train-b-20261015.mjs).
+    assert.equal(pool.length - tiles.length, baseGallery(slug).length + APPROVED_GALLERY_ADDITIONS.length + trainBGalleryAppended(slug) - 5, slug);
     assert.ok(c.gallery.length <= 24, slug); // kit lint count.gallery: 6-24
   }
 });

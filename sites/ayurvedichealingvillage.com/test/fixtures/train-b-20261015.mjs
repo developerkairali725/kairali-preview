@@ -1,0 +1,125 @@
+// Train B integration (15 Oct 2026), composed exactly as Train A was (fixtures/train-a-20261014.mjs). Every Train B
+// candidate was built on c54e2795e and recorded its own exact source delta (before/after text replacements plus
+// before/after SHA-256) and, where it changed campaign configs, its own exact config reversal. Train B sits on top of the
+// integrated Train A tree, so no candidate's after-hash can hold on the integrated file. This module composes them
+// without loosening any pin:
+//   - removing every Train B candidate's delta from the integrated text (newest merge first, each edit occurring exactly
+//     once) must hash to the integrated Train A bytes recorded in train-b-20261015.json `trainABytesSHA256`;
+//   - those bytes, with Train A reversed by reverseTrainASource, are the c54e2795e base; each candidate's recorded
+//     before-SHA-256 must equal them, and applying that candidate's own delta to them must give exactly its recorded
+//     after-SHA-256 (so each candidate's exact bytes are still checked).
+// Callers then hand the returned Train A bytes to reverseTrainASource and every older pin runs unchanged.
+// Config reversals run newest first, each asserting the exact field it restores (see reverseTrainBConfig).
+import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
+import fs from "node:fs";
+import { IMAGES } from "../../campaign-v2/data/images.ts";
+import { reverseTrainASource } from "./train-a-20261014.mjs";
+
+const json = (name) => JSON.parse(fs.readFileSync(new URL(`./${name}`, import.meta.url), "utf8"));
+const sha = (s) => createHash("sha256").update(s).digest("hex");
+const plain = (v) => JSON.parse(JSON.stringify(v));
+
+export const TRAIN_B = json("train-b-20261015.json");
+const OWNER_DECISIONS_C = json("owner-decisions-c-20261014.json");
+
+/** Candidates in merge order: name and per-file entries ({beforeSHA256, afterSHA256, replacements: [{before, after}]}). */
+export const TRAIN_B_CANDIDATES = Object.freeze([
+  { name: "owner decisions C", files: OWNER_DECISIONS_C.files },
+]);
+
+function strip(path, text, replacements, name) {
+  let value = text;
+  for (const { before, after } of [...replacements].reverse()) {
+    assert.equal(value.split(after).length - 1, 1, `${path}: ${name} delta occurs exactly once`);
+    value = value.replace(after, before);
+  }
+  return value;
+}
+
+function apply(path, text, replacements, name) {
+  let value = text;
+  for (const { before, after } of replacements) {
+    assert.equal(value.split(before).length - 1, 1, `${path}: ${name} delta applies exactly once to the base`);
+    value = value.replace(before, after);
+  }
+  return value;
+}
+
+/** The integrated Train A text of `path` with every Train B candidate delta removed (unchanged if none touched it). */
+export function reverseTrainBSource(path, text) {
+  const touching = TRAIN_B_CANDIDATES.filter((c) => c.files[path]);
+  if (!touching.length) return text;
+  const trainA = [...touching].reverse().reduce((t, c) => strip(path, t, c.files[path].replacements, c.name), text);
+  assert.equal(sha(trainA), TRAIN_B.trainABytesSHA256[path], `${path}: exactly the integrated Train A bytes`);
+  const base = reverseTrainASource(path, trainA);
+  for (const c of touching) {
+    assert.equal(sha(base), c.files[path].beforeSHA256, `${path}: base bytes (${c.name})`);
+    assert.equal(sha(apply(path, base, c.files[path].replacements, c.name)), c.files[path].afterSHA256, `${path}: exactly the ${c.name} source`);
+  }
+  return trainA;
+}
+
+/** The exact c54e2795e base text plus only `name`'s own recorded delta (that candidate's own after-bytes, asserted). */
+export function candidateSource(name, path, text) {
+  const own = TRAIN_B_CANDIDATES.find((c) => c.name === name);
+  assert.ok(own?.files[path], `${path}: ${name} recorded`);
+  const base = reverseTrainASource(path, reverseTrainBSource(path, text));
+  const value = apply(path, base, own.files[path].replacements, name);
+  assert.equal(sha(value), own.files[path].afterSHA256, `${path}: exactly the ${name} source`);
+  return value;
+}
+
+// Owner decisions C (14 Oct 2026, decisions 10-11): the hero/steps photograph picks (fixtures/owner-decisions-c-20261014.json
+// photoPicks, as integrated: AHV-WB.005.hero-image and AHV-WB.403.change excluded, the /lp/treatment-in-kerala/ phone cover
+// kept as Train A's AHV-WB.457 kt-314) and the English-film Stories band on the DE/RU routes.
+const PHOTO_PICKS = OWNER_DECISIONS_C.photoPicks.routes;
+
+/** Owner decisions C config reversal: hero (A-D), phone hero, steps photograph, appended gallery entry, DE/RU Stories. */
+export function reverseOwnerDecisionsCConfig(slug, c) {
+  const picked = PHOTO_PICKS[slug];
+  if (picked) {
+    const id = (field) => ({ heroImage: c.hero.image.A.id, mobileImage: c.hero.mobileImage.id, pathwayImage: c.page.pathway.image.id })[field];
+    for (const [field, want] of Object.entries(picked.after)) assert.equal(id(field), want, `${slug}.${field}`);
+    const before = (field) => plain(IMAGES[picked.before[field]]);
+    for (const v of ["A", "B", "C", "D"]) { assert.equal(c.hero.image[v].id, picked.after.heroImage, slug); c.hero.image[v] = before("heroImage"); }
+    c.hero.mobileImage = before("mobileImage"); c.page.pathway.image = before("pathwayImage");
+    if (picked.galleryAppended) {
+      assert.deepEqual(c.gallery.at(-1), { category: picked.galleryCategory, image: IMAGES[picked.galleryAppended] }, slug);
+      c.gallery.pop();
+    }
+  }
+  if (OWNER_DECISIONS_C.storiesAddedTo.includes(slug)) { assert.equal(c.page.stories.films.length, 3, slug); delete c.page.stories; }
+  return c;
+}
+
+/** Bindings (production/bindings.ts ROUTES picks): restore the prior hero, phone hero and steps photograph exactly. */
+export function reverseTrainBBindings(bindings) {
+  for (const [slug, b] of Object.entries(bindings)) {
+    const pick = PHOTO_PICKS[slug];
+    if (!pick) continue;
+    for (const [field, id] of Object.entries(pick.after)) assert.deepEqual(b[field], IMAGES[id], `${slug}.${field}`);
+    for (const [field, id] of Object.entries(pick.before)) b[field] = IMAGES[id];
+  }
+  return bindings;
+}
+
+/** 1 where owner decision 10 appended a steps photograph to the route's gallery, else 0. */
+export const trainBGalleryAppended = (slug) => (PHOTO_PICKS[slug]?.galleryAppended ? 1 : 0);
+
+/** The gallery without the one steps photograph decision 10 appended last (asserted exactly), else the gallery. */
+export function trainBGalleryBefore(slug, g) {
+  const appended = PHOTO_PICKS[slug]?.galleryAppended;
+  if (!appended) return g;
+  assert.deepEqual(g.at(-1), { category: PHOTO_PICKS[slug].galleryCategory, image: IMAGES[appended] }, `${slug}: appended steps photograph`);
+  assert.equal(g.filter((x) => x.image.id === appended).length, 1, `${slug}: appended once`);
+  return g.slice(0, -1);
+}
+
+/**
+ * A JSON copy of a production config with every Train B candidate's exact config change reversed, newest first.
+ * Use the returned value: a reversal may return a new object.
+ */
+export function reverseTrainBConfig(slug, config) {
+  return reverseOwnerDecisionsCConfig(slug, config);
+}
