@@ -33,8 +33,6 @@ export default defineCopy({
       paragraphs: [
         "A package name alone does not tell you which therapies you will receive, how long you need or what is included. A useful comparison starts with the programme, its suitability for you and the time it requires.",
         "Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, with residential villa accommodation. After an Ayurvedic doctor’s assessment, your programme brings prescribed care, meals and rest together in one place.",
-        // AHV-WB.473.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.
-        "Whichever programme is recommended, your days bring prescribed care, meals and quiet time together, with villas and gardens around you and doctors reviewing your care during the stay.",
       ],
       points: [
         "You are comparing treatment packages and their costs",

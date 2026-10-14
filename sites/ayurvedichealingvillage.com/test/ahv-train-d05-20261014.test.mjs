@@ -11,10 +11,14 @@ import { productionCampaign } from "../campaign-v2/production/load.ts";
 import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
 import { UI } from "../campaign-v2/production/ui.ts";
 import fixture from "./fixtures/train-d05-20261014.json" with { type: "json" };
+import { candidateSource } from "./fixtures/train-b-20261015.mjs";
 
 const NOW = new Date(Date.UTC(2026, 9, 14, 12));
 const sha = (s) => crypto.createHash("sha256").update(s).digest("hex");
-const BENEFIT = ["lp-south-india", "lp-hospital-kerala", "lp-cleansing-centre", "lp-pain-management", "lp-panchakarma", "lp-treatment-kerala", "lp-treatment-packages", "lp-weight-management"];
+// Train B (15 Oct 2026): AHV-WB.452 (lp-treatment-kerala) and AHV-WB.473 (lp-treatment-packages) were rejected by
+// train-d05/REVIEW.json and are reverted (fixture trainBExclusions); six benefit rows remain.
+const BENEFIT = ["lp-south-india", "lp-hospital-kerala", "lp-cleansing-centre", "lp-pain-management", "lp-panchakarma", "lp-weight-management"];
+const EXCLUDED = { "AHV-WB.452.benefit-copy": "lp-treatment-kerala", "AHV-WB.473.benefit-copy": "lp-treatment-packages" };
 
 test("AHV-WB.213: the cleansing lead heading names the care; paragraphs and points unchanged", () => {
   const c = productionCampaign("cleansing-centre");
@@ -51,6 +55,16 @@ test("benefit-copy rows: one added lead line per English campaign, the two revie
   }
 });
 
+test("Train B: the two rejected benefit rows are reverted exactly (the reviewed two-paragraph lead)", () => {
+  assert.deepEqual(fixture.trainBExclusions.map((x) => x.row).sort(), Object.keys(EXCLUDED).sort());
+  for (const x of fixture.trainBExclusions) {
+    const slug = EXCLUDED[x.row];
+    assert.equal(x.file, `campaign-v2/production/pages/${slug}.ts`);
+    const [{ before }] = x.configChanges;
+    assert.deepEqual(productionCampaign(slug).page.lead.paragraphs, before, slug);
+  }
+});
+
 test("AHV-WB.546: RU alt for kt-199 uses the approved procedure term, not massage", () => {
   assert.equal(UI.ru.alt["kt-199"], "Два терапевта проводят абхьянгу — процедуру всего тела с тёплым лечебным маслом");
   assert.ok(!UI.ru.alt["kt-199"].includes("массаж"));
@@ -64,7 +78,9 @@ test("changed campaigns lint without errors", () => {
 
 test("fixture reverses every source file to its base bytes", () => {
   for (const [p, e] of Object.entries(fixture.files)) {
-    let s = fs.readFileSync(new URL("../" + p, import.meta.url), "utf8");
+    // Train B: the integrated file holds other candidates' deltas too; candidateSource gives exactly D05's own bytes
+    // (c54e2795e plus this fixture's delta), after checking every Train B and Train A delta (fixtures/train-b-20261015.mjs).
+    let s = candidateSource("train D05", p, fs.readFileSync(new URL("../" + p, import.meta.url), "utf8"));
     assert.equal(sha(s), e.afterSHA256, p);
     for (const { before, after } of e.replacements) { assert.equal(s.split(after).length - 1, 1, p); s = s.replace(after, before); }
     assert.equal(sha(s), e.beforeSHA256, p);
