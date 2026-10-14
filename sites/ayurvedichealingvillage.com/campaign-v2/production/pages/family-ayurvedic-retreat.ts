@@ -31,7 +31,7 @@ export default defineCopy({
   familyFormNote: "Share any health concerns you would like to discuss with the doctor. This field is optional.",
   page: {
     lead: {
-      heading: "One family trip. Care planned for each person.",
+      heading: "A family Ayurveda retreat, with care planned for each person.",
       paragraphs: ["A family Ayurveda retreat in Kerala can bring your own wellbeing plans together with a parent’s care, a partner’s programme or time shared as companions. At Kairali’s NABH-accredited Ayurvedic hospital in Palakkad, each person’s assessment guides their care. Plan the travel and accommodation together, while leaving room for different therapies, routines and lengths of stay."],
       points: [
         "Travel with your partner, parents or several generations",
@@ -138,7 +138,7 @@ export default defineCopy({
   },
   faq: [
     { q: "Can family members follow different programmes?", a: "Yes. Each person’s medical history, current care and goals are assessed individually. Programmes and recommended durations may differ even when you travel together. Patient care can help coordinate dates, villas and practical arrangements once those individual plans are clear." },
-    { q: "Can I book an Ayurvedic retreat with my parents?", a: "You can discuss a shared stay with our team. Explain your parents’ health, prescriptions, mobility and any assistance needs. The doctor assesses programme suitability; patient care helps you confirm access, accommodation and travel arrangements. Panchakarma or other therapies may be modified or deferred according to medical guidance." },
+    { q: "Can I book a family Ayurveda retreat with my parents?", a: "You can discuss a shared stay with our team. Explain your parents’ health, prescriptions, mobility and any assistance needs. The doctor assesses programme suitability; patient care helps you confirm access, accommodation and travel arrangements. Panchakarma or other therapies may be modified or deferred according to medical guidance." },
     { q: "Can children and teenagers take part?", a: "Tell the team each child’s age, health needs and the reason for your enquiry. Care, yoga and other participation should be assessed individually. An adult programme is not automatically suitable for a younger family member, and age alone does not determine the right plan." },
     { q: "Can someone come as a companion without treatment?", a: "Ask patient care about companion arrangements for your dates. Explain who will receive treatment and who will accompany them, then confirm occupancy, meals, leisure access and charges. Ayurveda, yoga and companion stays can have different inclusions." },
     { q: "Will we stay together, and can you accommodate dietary needs?", a: "Discuss how many people are travelling, who will share and whether you prefer adjoining villas. Tell the team about allergies, restrictions and existing dietary advice for every family member. Confirm the actual rooms and meal arrangements before booking, including the needs of older relatives or children." },
