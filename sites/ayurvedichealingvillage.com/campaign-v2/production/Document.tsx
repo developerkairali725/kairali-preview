@@ -50,6 +50,9 @@ export default function ProductionDocument({ children, lang = "en" }: { children
         <ChatbaseLoader />
         <Script src={CHROME[lang]} strategy="afterInteractive" />
         {lang === "en" ? <Script id="ahv-villa-dialog-loader" strategy="afterInteractive" dangerouslySetInnerHTML={{ __html: VILLA_DIALOG_LOADER }} /> : null}
+        {/* Exit-intent 10% offer (owner, 14/15 Oct 2026: "Show on paid pages too" — supersedes DEC-PAID-NAV for this
+            popup only). Same file as the site tree; it picks its copy from the path and posts to /api/lead/. */}
+        <Script src="/design/exit-offer.js" strategy="afterInteractive" />
       </body>
     </html>
   );

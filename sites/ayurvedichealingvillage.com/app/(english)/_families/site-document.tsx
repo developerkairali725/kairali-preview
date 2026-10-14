@@ -81,6 +81,11 @@ export function SiteDocument({
             and show receipt only after the server confirms storage (a truthful "not connected" otherwise). */}
         <script defer src={`${designBase}opd-form-submit.js`} />
         <script defer src={`${designBase}landing-page-form-submit.js`} />
+        {/* Exit-intent "10% OFF on all Treatment Packages" offer with a real enquiry form (owner decision,
+            14 Oct 2026). One file for every locale (its own 13-locale copy, chosen from the URL prefix, like
+            lead-receipt.js), so it is not a designBase copy. It stays inert on confirmation, legal, lead-form and
+            /offers/ pages (the paid landers load the same file from their own campaign document), posts to /api/lead/ as "exit-intent" and adds no new tag. */}
+        <script defer src="/design/exit-offer.js" />
         {/* Site search (D-20260922-32, Option A): one engine + one prebuilt index
             (/ahv/search-index.json, tools/build-search-index.mjs) behind the header's
             search control on every page, the programme finder and the FAQ filter.

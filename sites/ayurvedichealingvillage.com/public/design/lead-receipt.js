@@ -16,7 +16,9 @@
     'online-consultation': '/onlineconsultation-thanks/',
     'apply-now': '/thanks/',
     'opd': '/thanks/',
-    'landing-page': '/thanks/'
+    'landing-page': '/thanks/',
+    // Exit-intent 10% offer (owner decision 14 Oct 2026): the same-locale /thanks/ page as the other enquiries.
+    'exit-intent': '/thanks/'
   };
   // Paid landing receipts used to go to /ppc-thanks/, which now 301s to the same
   // locale's /thanks/. A receipt a cached bridge stored for the old path is
