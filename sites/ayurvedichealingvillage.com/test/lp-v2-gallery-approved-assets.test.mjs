@@ -261,9 +261,16 @@ test("German and Russian additions retain localized accessible descriptions", ()
 test("gallery outer dialog has sharp corners at desktop and phone widths", () => {
   const css = fs.readFileSync(P("campaign-v2/production/document.css"), "utf8");
   assert.equal(css, productionCss(), "checked CSS is generated from the maintained sources");
-  const override = ".lp-gal{border-radius:0}";
+  const override = ".lp-prod .lp-gal{border-radius:0}";
   const production = fs.readFileSync(P("campaign-v2/production/production.css"), "utf8");
   assert.ok(production.includes(override), "maintained production source sets sharp gallery corners");
+  const page = fs.readFileSync(P("campaign-v2/production/ProductionPage.tsx"), "utf8");
+  assert.match(page, /className="lp lp-prod"/);
+  assert.ok(page.indexOf('<Gallery items=') > page.indexOf('className="lp lp-prod"'));
+  const gallery = fs.readFileSync(P("campaign-v2/sections/interactive/Gallery.tsx"), "utf8");
+  assert.match(gallery, /<dialog ref=\{ref\} className="lp-dlg lp-gal"/);
+  assert.doesNotMatch(gallery, /createPortal/);
+
   assert.ok(css.lastIndexOf(override) > css.indexOf(".lp-dlg{"), "gallery override follows shared dialog radius");
   assert.match(css, /@media \(max-width:767px\)\{\s*\.lp-gal\{[^}]*border-radius:0\}/);
 });

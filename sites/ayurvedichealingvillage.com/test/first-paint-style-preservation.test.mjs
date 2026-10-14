@@ -22,7 +22,7 @@ test('campaign first-paint bundle preserves exact approved stylesheet bytes and 
   let bytes=fs.readFileSync(path.resolve(site,'campaign-v2/production',name),'utf8');
   if(name==='./production.css'){
    // Reverse only the exact owner-approved desktop-gallery corner correction; retain the historical hash.
-   const delta='\n/* Owner-approved sharp corners, including the desktop gallery dialog. */\n.lp-gal{border-radius:0}\n';
+   const delta='\n/* Owner-approved sharp corners, including the desktop gallery dialog. */\n.lp-prod .lp-gal{border-radius:0}\n';
    assert.ok(bytes.endsWith(delta));
    bytes=bytes.slice(0,-delta.length);
   }

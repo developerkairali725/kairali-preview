@@ -1517,4 +1517,4 @@ html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
 }
 
 /* Owner-approved sharp corners, including the desktop gallery dialog. */
-.lp-gal{border-radius:0}
+.lp-prod .lp-gal{border-radius:0}
