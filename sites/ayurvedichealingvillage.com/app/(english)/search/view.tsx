@@ -1,13 +1,12 @@
+import { searchRuntime, translateSearch as translate } from './runtime';
 import { routeStylesFor } from "../_families/route-styles.mjs";
 import { measurementForEnvironment } from "../../../lib/measurement-config.mjs";
-import { translate, localizedPath, LOCALE_INFO, routeTable, type LocaleCode } from "../_families/l10n";
+import { localizedPath, LOCALE_INFO, routeTable, type LocaleCode } from "../_families/l10n";
 import { mapSearchHref, resolveSearchLocale } from "./search-language";
 import "@kairali/ui/brand-tokens.css";
 import { CONSENT_RUNTIME } from "../_families/consent-runtime";
 import analyticsConfig from "../../../analytics.config.json";
 import type { Metadata } from "next";
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
 import vm from "node:vm";
 import { siteChrome } from "./site-chrome";
 
@@ -52,11 +51,7 @@ const cached = new Map<LocaleCode, { engine: Engine; index: any }>();
 function engine(locale: LocaleCode): { engine: Engine; index: any } {
   const hit = cached.get(locale);
   if (hit) return hit;
-  const prefix = LOCALE_INFO[locale].prefix;
-  const base = prefix ? join("public", "ahv", "l10n", prefix) : "public";
-  const src = readFileSync(join(process.cwd(), base, "design/search.js"), "utf8");
-  const indexPath = prefix ? join(process.cwd(), base, "search-index.json") : join(process.cwd(), "public/ahv/search-index.json");
-  const index = JSON.parse(readFileSync(indexPath, "utf8"));
+  const { script: src, index } = searchRuntime(locale);
   const ctx: any = { console };
   vm.createContext(ctx);
   vm.runInContext(src, ctx, { filename: `search-${locale}.js` });

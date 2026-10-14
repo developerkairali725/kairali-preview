@@ -30,7 +30,7 @@ export const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "
 
 /** Git-ignored text trees the deploy serves or bakes in. Kept in step with the site .gitignore by
  *  test/served-tree-lint.test.mjs: every ignored DIRECTORY must be listed here or in NOT_SERVED. */
-export const SERVED_UNTRACKED_ROOTS = ["public/ahv/l10n", "l10n/generated", "l10n/prerender"];
+export const SERVED_UNTRACKED_ROOTS = ["public/ahv/l10n", "l10n/generated", "l10n/prerender", "search-runtime"];
 /** Ignored directories that are never deployed content, each with the reason. */
 export const NOT_SERVED = {
   "l10n/prerender-tmp": "scratch output of tools/prerender-english.mjs --locale; promoted into l10n/prerender before use",
