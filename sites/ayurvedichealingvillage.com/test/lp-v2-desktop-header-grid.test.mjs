@@ -28,7 +28,15 @@ test('real five D routes use the existing centered 1440px grid; other nineteen a
  assert.doesNotMatch(f.delta,/!important|height:|padding:|position:|display:|background:|color:|\.lp-hero__form|\.lp-consult/);
 });
 test('original card tests, header markup, mobile styles, contact actions and route bindings are byte-preserved',()=>{
- for(const [p,expected] of Object.entries(f.unchanged))assert.equal(hash(read(p)),expected,p);
+ for(const [p,expected] of Object.entries(f.unchanged)){
+  let s=read(p);
+  if(p==='campaign-v2/sections/Header.tsx'){
+   // AHV-WB phone-label rows (call-label-source): reverse only the production Call prefix on the header telephone link.
+   const label='{production ? `${ui.header.call} · ` : ""}{contact.phone.display}</a>';
+   assert.equal(s.split(label).length-1,1,p);s=s.replace(label,'{contact.phone.display}</a>');
+  }
+  assert.equal(hash(s),expected,p);
+ }
  const css=read('campaign-v2/production/production.css');
  assert(css.indexOf(f.delta)<css.indexOf('/* Owner feedback, 14 Oct: size desktop D consultation cards'));
 });

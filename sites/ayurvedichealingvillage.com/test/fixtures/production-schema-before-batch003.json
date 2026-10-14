@@ -25,5 +25,15 @@
     "lp-weight-management": "0d9565a5722050b31101b12391f0083db842dce0be1adbff206814cdb8f1ca71",
     "lp-behandlung-kerala": "6fa02d814723506cb7d0980919a8d9f83efe5083154d5704e6c1291975d7930e",
     "lp-treatment-kerala-ru": "c96e98fb8bbb79c2847db401bccf5671ce958642e006e432259989ada6a992d9"
+  },
+  "integrationRebase": {
+    "base": "c54e2795e",
+    "reason": "Monsoon 2027 day-programme restoration (d3e8de62b) changed only the Monsoon WebPage/FAQ graph after 8146a2bc; Monsoon is outside the reviewed entity scope. All other 23 hashes are byte-identical at c54e2795e.",
+    "previous": {
+      "monsoon-wellness": "15c6ef5283d098b390b12872e0c75b11ee44ccf0830b5935feb521fa38b96ef6"
+    },
+    "hashes": {
+      "monsoon-wellness": "9d088e45771e30b339cb10966b52b3a621b65bb9013392de4f5d378fd816d5ff"
+    }
   }
 }

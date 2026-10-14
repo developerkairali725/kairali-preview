@@ -25,7 +25,10 @@ for(const [slug,{source,index,id}] of Object.entries(targets))test(`${slug}: thi
 });
 test('all21 other configs unchanged; remove only appended third card to restore each target and its original two cards',()=>{
  assert.equal(PRODUCTION_SLUGS.length,24);assert.equal(Object.keys(targets).length,3);
- for(const slug of PRODUCTION_SLUGS){const c=JSON.parse(JSON.stringify(productionCampaign(slug)));if(targets[slug])c.page.stories.films.pop();assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);}
+ for(const slug of PRODUCTION_SLUGS){let json=JSON.stringify(productionCampaign(slug));
+  // AHV-WB.054.change: reverse only the approved Pain Abhyangam description before the existing config hash.
+  if(slug==="pain-management"){assert.equal(json.split("Abhyangam – full-body medicated oil therapy").length-1,1);json=json.replace("Abhyangam – full-body medicated oil therapy","Abhyangam, a medicated oil massage");}
+  const c=JSON.parse(json);if(targets[slug])c.page.stories.films.pop();assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);}
  assert.equal(GUEST_VIDEO_ROUTES.length,13);assert.equal(APPROVED_FILM_IDS.length,5);
 });
 test('exact source additions reverse to the prior byte hashes; no testimonial text or rendering/consent policy changes',()=>{

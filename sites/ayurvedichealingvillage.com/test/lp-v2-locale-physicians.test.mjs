@@ -32,7 +32,10 @@ for(const [locale,slug] of Object.entries(byLocale))test(`${locale}: five comple
 test('all24 configs preserve original bytes after exact approved experience facts and DE/RU roster/heading normalization',()=>{
  assert.equal(PRODUCTION_SLUGS.length,24);assert.equal(Object.keys(fixture.configSHA256).length,24);
  for(const slug of PRODUCTION_SLUGS){
-  const c=JSON.parse(JSON.stringify(productionCampaign(slug)));const locale=Object.keys(byLocale).find(l=>byLocale[l]===slug);
+  let json=JSON.stringify(productionCampaign(slug));
+  // AHV-WB.054.change: reverse only the approved Pain Abhyangam description before the existing config hash.
+  if(slug==="pain-management"){assert.equal(json.split("Abhyangam – full-body medicated oil therapy").length-1,1);json=json.replace("Abhyangam – full-body medicated oil therapy","Abhyangam, a medicated oil massage");}
+  const c=JSON.parse(json);const locale=Object.keys(byLocale).find(l=>byLocale[l]===slug);
   if(locale){c.doctors=c.doctors.filter(d=>d.id==='deepu-john');c.page.doctors.heading=originalTitles[locale];}
   for(const doctor of c.doctors){const delta=staffExperienceDelta.sourceDelta['campaign-v2/data/doctors.ts'].find(d=>JSON.parse(d.new.trim().slice(8,-1))===doctor.tenure);assert(delta,doctor.id);doctor.tenure=JSON.parse(delta.old.trim().slice(8,-1));}
   if(slug===monsoonCompatibility.slug){
