@@ -312,7 +312,11 @@ export const STATIC_BOOT = `
       if (savedCurrency && rateCurrencies.indexOf(savedCurrency) >= 0) chooseHomeCurrency(savedCurrency);
     } catch (error) {}
     });
-    var gallerySection = host.querySelector('section[data-dc-tpl="770"]');
+    // Captured mobile/desktop template IDs differ. Use the existing gallery
+    // structure so both snapshots receive the same unchanged filter handlers.
+    var gallerySection = Array.from(host.querySelectorAll("section")).find(function (section) {
+      return section.querySelector("a[aria-description]") && section.querySelector("button");
+    });
     var galleryButtons = gallerySection ? Array.from(gallerySection.querySelectorAll("button")).filter(function (button) {
       return ["All", "Treatment", "Villa", "Yoga & Meditation", "Experience at Kairali"].indexOf(button.textContent.trim()) >= 0;
     }) : [];
