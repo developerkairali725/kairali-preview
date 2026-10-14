@@ -1063,7 +1063,7 @@ body.lp [data-consent-banner] button{min-height:48px!important;min-width:132px;b
 }
 
 /* ───────────── Gallery ───────────── */
-.lp-gal{width:min(1360px,calc(100vw - 48px));height:calc(100dvh - 48px);background:var(--lp-ground)}
+.lp-gal{width:min(1360px,calc(100vw - 48px));height:calc(100dvh - 48px);background:var(--lp-ground);border-radius:0}
 .lp-gal__inner{position:relative;height:100%;display:flex;flex-direction:column;gap:20px;padding:32px 40px}
 .lp-gal__top{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:16px 24px}
 .lp-gal__top[hidden]{display:none}

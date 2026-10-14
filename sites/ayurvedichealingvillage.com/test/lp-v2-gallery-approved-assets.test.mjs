@@ -255,3 +255,13 @@ test("German and Russian additions retain localized accessible descriptions", ()
     assert.notEqual(UI[locale].alt[image.id], image.alt);
   }
 });
+
+// Desktop gallery dialogs must override the shared dialog token just as mobile does.
+test("gallery outer dialog has sharp corners at desktop and phone widths", () => {
+  const css = fs.readFileSync(P("campaign-v2/production/document.css"), "utf8");
+  const base = css.match(/^\.lp-gal\{([^}]+)\}/m);
+  assert.ok(base, "unconditional gallery rule exists");
+  assert.match(base[1], /(?:^|;)border-radius:0(?:;|$)/);
+  assert.ok(css.indexOf(base[0]) > css.indexOf(".lp-dlg{"), "gallery override follows shared dialog radius");
+  assert.match(css, /@media \(max-width:767px\)\{\s*\.lp-gal\{[^}]*border-radius:0\}/);
+});
