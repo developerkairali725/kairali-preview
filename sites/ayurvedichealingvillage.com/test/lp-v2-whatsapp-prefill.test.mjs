@@ -20,6 +20,7 @@ import { interactionForLink } from "../campaign-v2/production/interaction-map.ts
 import { channelLink } from "../campaign-v2/kit/handoff.ts";
 
 const require = createRequire(import.meta.url);
+import { reverseTrainBSource } from "./fixtures/train-b-20261015.mjs";
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (p) => fs.readFileSync(path.join(SITE, p), "utf8");
 const delta = JSON.parse(read("test/fixtures/whatsapp-prefill-delta.json"));
@@ -148,7 +149,8 @@ test("only the exact approved edits changed the six pinned files (reversal repro
   const digest = (s) => crypto.createHash("sha256").update(s).digest("hex");
   assert.equal(delta.base, "c54e2795e");
   for (const [file, edits] of Object.entries(delta.edits)) {
-    let text = read(file);
+    // Train B (15 Oct 2026): later approved deltas (C02/C03 header Call prefix) are removed exactly first.
+    let text = reverseTrainBSource(file, read(file));
     for (const e of [...edits].reverse()) {
       assert.equal(text.split(e.to).length - 1, 1, `${file}: approved edit occurs exactly once`);
       text = text.replace(e.to, e.from);

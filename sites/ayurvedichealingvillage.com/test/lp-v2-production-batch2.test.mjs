@@ -96,7 +96,10 @@ test("routes: unchanged URLs, canonicals and robots (indexable only on the produ
       ],
     });
     assert.equal(page.breadcrumb.itemListElement[1].name, c.hero.h1);
-    assert.deepEqual(Object.keys(page), ["@context", "@type", "@id", "url", "name", "description", "inLanguage", "isPartOf", "breadcrumb"]);
+    // Train B (15 Oct 2026): train D01 (AHV-WB.069/093 organization/hospital-schema) names the one site entity as the
+    // WebPage publisher on both routes; nothing else in the WebPage node changed.
+    assert.deepEqual(page.publisher, { "@id": "https://ayurvedichealingvillage.com/#organization" });
+    assert.deepEqual(Object.keys(page), ["@context", "@type", "@id", "url", "name", "description", "inLanguage", "isPartOf", "breadcrumb", "publisher"]);
     assert.equal(faq["@type"], "FAQPage");
     assert.equal(faq.mainEntity.length, c.faq.length);
   }
@@ -129,8 +132,10 @@ test("family form: the R10 familyFields contract — fields, order, required, li
   assert.deepEqual(f.rdogender.options, [{ value: "Male", label: "Male" }, { value: "Female", label: "Female" }]);
   assert.deepEqual([f.country.type, f.country.label, f.country.required, f.country.maxLength, f.country.autocomplete], ["text", "Country", true, 100, "country-name"]);
   assert.deepEqual([f.duration.type, f.duration.label, f.duration.required, f.duration.defaultValue], ["select", "Preferred duration", false, ""]);
+  // Owner decision 22 (14 Oct 2026, AHV-LATER-010.02/.03): the choices are nights; the replaced R10 form's day choices
+  // are still asserted on its own file below (that file is unchanged).
   assert.deepEqual(f.duration.options, [
-    { value: "", label: "Select duration" }, { value: "7 days", label: "7 days" }, { value: "14 days", label: "14 days" }, { value: "21 days", label: "21 days" },
+    { value: "", label: "Select duration" }, { value: "7 nights", label: "7 nights" }, { value: "14 nights", label: "14 nights" }, { value: "21 nights", label: "21 nights" },
   ]);
   // the month is optional and starts unanswered (no preference assumed), then the shared six months + Flexible
   assert.deepEqual([f.preferredMonth.type, f.preferredMonth.label, f.preferredMonth.required, f.preferredMonth.defaultValue, f.preferredMonth.mapsTo], ["select", "Preferred month", false, "", "message"]);
@@ -164,7 +169,8 @@ test("family form validation: country required with its own message, duration an
   assert.deepEqual(validateStep(FS, 0, fam(), "whatsapp"), []);
   assert.deepEqual(validateStep(FS, 0, fam({ country: " " }), "whatsapp").map((e) => [e.field, e.message]), [["country", MESSAGES.country]]);
   assert.deepEqual(errs({ country: "x".repeat(101) }), [["country", "too_long"]]);
-  assert.deepEqual(errs({ rdogender: "Female", duration: "14 days", message: "Knee stiffness" }), []);
+  assert.deepEqual(errs({ rdogender: "Female", duration: "14 nights", message: "Knee stiffness" }), []);
+  assert.deepEqual(errs({ duration: "14 days" }), [["duration", "required"]]); // owner decision 22: days are no longer a choice
   assert.deepEqual(errs({ duration: "28 nights" }), [["duration", "required"]]);
   assert.deepEqual(errs({ preferredMonth: "" }), []); // the month stays optional
   assert.deepEqual(errs({ preferredMonth: "2026-11" }), []);
@@ -215,9 +221,9 @@ const envFor = (pathname, over = {}) => ({
 test("family request: byte-identical to the replaced R10 familyFields form (Country / Preferred duration prefix, gender, attribution)", () => {
   const route = ROUTES[FAMILY].route;
   const cases = [
-    fam({ rdogender: "Female", country: " Germany ", duration: "14 days", message: " Lower back stiffness after long drives. " }),
+    fam({ rdogender: "Female", country: " Germany ", duration: "14 nights", message: " Lower back stiffness after long drives. " }),
     fam(), // gender unanswered, no duration, no health text
-    fam({ rdogender: "Male", country: "x".repeat(100), duration: "21 days", message: "y".repeat(2700) }), // the maxima
+    fam({ rdogender: "Male", country: "x".repeat(100), duration: "21 nights", message: "y".repeat(2700) }), // the maxima
     fam({ dialCode: "+44", phone: "7700 900123", honeypot: "Acme Trading" }),
   ];
   for (const values of cases) {
@@ -230,7 +236,7 @@ test("family request: byte-identical to the replaced R10 familyFields form (Coun
     }
   }
   assert.equal(familyMessage(fam()), "Country: India\nPreferred duration: \n");
-  assert.equal(familyMessage(fam({ duration: "7 days", message: "Asthma" })), "Country: India\nPreferred duration: 7 days\nAsthma");
+  assert.equal(familyMessage(fam({ duration: "7 nights", message: "Asthma" })), "Country: India\nPreferred duration: 7 nights\nAsthma");
   assert.deepEqual(["Male", "Female", "", "other", undefined].map(familyGender), ["Male", "Female", "", "", ""]);
 });
 

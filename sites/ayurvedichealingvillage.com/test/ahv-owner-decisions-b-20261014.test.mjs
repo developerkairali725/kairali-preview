@@ -11,6 +11,7 @@ import { fileURLToPath } from "node:url";
 import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/load.ts";
 import { COPY } from "../campaign-v2/production/pages/index.ts";
 import { reverseTrainASource } from "./fixtures/train-a-20261014.mjs";
+import { reverseTrainBSource } from "./fixtures/train-b-20261015.mjs";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (p) => fs.readFileSync(path.join(SITE, p), "utf8");
@@ -29,7 +30,8 @@ test("scope: exactly the three row routes change, each by an exact reversible so
   // Train A integration: batch 6 also edited lp-south-india.ts, so the composed reversal (fixtures/train-a-20261014.mjs)
   // checks this candidate's own after-bytes with every other candidate's delta removed, then the base bytes.
   for (const [f, e] of Object.entries(fixture.files)) {
-    const s = reverseTrainASource(f, read(f));
+    // Train B (15 Oct 2026): D03/D04 later edited the family page; their exact deltas are removed first.
+    const s = reverseTrainASource(f, reverseTrainBSource(f, read(f)));
     assert.equal(sha(s), e.beforeSHA256, f);
   }
   assert.deepEqual(Object.keys(fixture.configChanges).sort(), Object.values(fixture.rows).sort());

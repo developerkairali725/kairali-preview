@@ -15,7 +15,10 @@ test("Pain's loaded treatment description uses approved Abhyangam terminology, r
   assert.ok(!strings.some((text) => text.includes("Abhyangam, a medicated oil massage")));
 });
 
+// Train B (15 Oct 2026): train D06's AHV-WB.507.change later replaced the German first sentence ("Ganzkörpermassage mit
+// medizinierten Ölen" -> "Ganzkörperanwendung mit medizinischen Kräuterölen"); the qualifications after it are unchanged.
 test("reviewed German procedural equivalent keeps its existing doctor-direction and inclusion qualifications", () => {
   const strings = pageText(productionCampaign("lp-behandlung-kerala")).map(({ text }) => text);
-  assert.ok(strings.includes("Abhyanga ist eine Ganzkörpermassage mit medizinierten Ölen. Bei Shirodhara wird ein gleichmäßiger Ölstrahl über die Stirn geführt. Beide sind mögliche, ärztlich verordnete Behandlungen; sie gehören nicht automatisch zu jedem Programm."));
+  assert.ok(strings.includes("Abhyanga ist eine Ganzkörperanwendung mit medizinischen Kräuterölen. Bei Shirodhara wird ein gleichmäßiger Ölstrahl über die Stirn geführt. Beide sind mögliche, ärztlich verordnete Behandlungen; sie gehören nicht automatisch zu jedem Programm."));
+  assert.ok(!strings.some((text) => /Ganzkörpermassage/.test(text)));
 });

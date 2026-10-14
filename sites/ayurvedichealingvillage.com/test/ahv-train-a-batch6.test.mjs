@@ -18,6 +18,7 @@ import {
 } from "../campaign-v2/forms/schema.ts";
 import { BATCH6 } from "./fixtures/train-a-batch6-20261014.mjs";
 import { reverseTrainASource } from "./fixtures/train-a-20261014.mjs";
+import { reverseTrainBSource } from "./fixtures/train-b-20261015.mjs";
 
 const read = (p) => fs.readFileSync(new URL(`../${p}`, import.meta.url), "utf8");
 // Train A integration: batch 7 (AHV-WB.*.whatsapp-message) later edited the same Enquiry wiring line; its exact recorded
@@ -138,8 +139,10 @@ test("AHV-WB.249/320/430/272: four D routes show the existing village and consen
 test("batch 6 deltas reverse exactly to the prior source bytes", () => {
   for (const path of Object.keys(BATCH6.files)) {
     // Train A: later candidates edited some of these files too; the composed reversal checks batch 6's own after-bytes.
-    const before = reverseTrainASource(path, read(path));
-    assert.notEqual(before, read(path), path);
+    // Train B (15 Oct 2026): its exact deltas are removed first (fixtures/train-b-20261015.mjs).
+    const trainA = reverseTrainBSource(path, read(path));
+    const before = reverseTrainASource(path, trainA);
+    assert.notEqual(before, trainA, path);
   }
   assert.equal(BATCH6.base.length, 40);
 });

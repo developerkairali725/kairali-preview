@@ -16,6 +16,7 @@ import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/
 import { IMAGES } from "../campaign-v2/data/images.ts";
 import { APPROVED_FILM_IDS, filmIdFromHref, routeAllowed } from "../campaign-v2/production/sections/guest-video-policy.mjs";
 import fixture from "./fixtures/owner-decisions-c-20261014.json" with { type: "json" };
+import { candidateSource } from "./fixtures/train-b-20261015.mjs";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (p) => fs.readFileSync(path.join(SITE, p), "utf8");
@@ -227,7 +228,9 @@ test("11: the on-page player stays English-route only; the DE/RU cards are YouTu
 
 test("11: the copy deltas are exactly the recorded, reversible additions", () => {
   for (const [p, e] of Object.entries(fixture.files)) {
-    let v = read(p);
+    // Train B (15 Oct 2026): the integrated files carry later deltas too; candidateSource gives exactly this
+    // candidate's own bytes (c54e2795e plus its recorded delta) after checking every Train A/B delta.
+    let v = candidateSource("owner decisions C", p, read(p));
     assert.equal(sha256(v), e.afterSHA256, p);
     for (const { before, after } of e.replacements) {
       assert.equal(v.split(after).length - 1, 1, p);
