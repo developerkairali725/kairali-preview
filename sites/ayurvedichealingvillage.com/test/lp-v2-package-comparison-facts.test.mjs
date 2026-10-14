@@ -74,7 +74,24 @@ function baselineSources() {
   for (const slug of SLUGS) assert.equal(crypto.createHash("sha256").update(sources[PAGE(slug)]).digest("hex"), provenance.sha256[slug]);
   return sources;
 }
-const nowLoad = graph(process.env.AHV_COMPARISON_SOURCE_DIR ? sourcesFrom(process.env.AHV_COMPARISON_SOURCE_DIR) : {});
+// AHV train D03 edited two of these routes' copy (quotation restatements); reverse exactly those fixture edits, hash-checked,
+// so this test still measures only the comparison paragraphs. D03's own wording is tested in d03-copy-corrections.test.mjs.
+function d03Reversed() {
+  const d03 = JSON.parse(fs.readFileSync(P("test/fixtures/d03-copy-corrections-20261014.json"), "utf8")).files;
+  const sha = (t) => crypto.createHash("sha256").update(t).digest("hex");
+  return Object.fromEntries(SLUGS.filter((s) => d03[`campaign-v2/production/pages/${s}.ts`]).map((s) => {
+    const entry = d03[`campaign-v2/production/pages/${s}.ts`];
+    let text = fs.readFileSync(PAGE(s), "utf8");
+    assert.equal(sha(text), entry.afterSHA256, s);
+    for (const { before, after } of [...entry.replacements].reverse()) {
+      assert.equal(text.split(after).length - 1, 1, `${s}: exact D03 copy correction`);
+      text = text.replace(after, before);
+    }
+    assert.equal(sha(text), entry.beforeSHA256, s);
+    return [PAGE(s), text];
+  }));
+}
+const nowLoad = graph(process.env.AHV_COMPARISON_SOURCE_DIR ? sourcesFrom(process.env.AHV_COMPARISON_SOURCE_DIR) : d03Reversed());
 const wasLoad = graph(baselineSources());
 const NOW_M = nowLoad(P("campaign-v2/production/load.ts"));
 const WAS_M = wasLoad(P("campaign-v2/production/load.ts"));

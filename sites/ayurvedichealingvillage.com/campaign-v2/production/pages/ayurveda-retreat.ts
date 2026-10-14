@@ -123,7 +123,7 @@ export default defineCopy({
     faqHeading: "Your questions, answered",
     closing: {
       heading: "Plan your stay at Kairali",
-      paragraphs: ["Tell us what you need from your stay, who will travel with you and when you hope to visit. Start with a free initial doctor consultation, then review your programme and quotation with our team."],
+      paragraphs: ["Tell us what you need from your stay, who will travel with you and when you hope to visit."],
     },
   },
   faq: [

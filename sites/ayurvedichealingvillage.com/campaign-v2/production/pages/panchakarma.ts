@@ -84,7 +84,7 @@ export default defineCopy({
     faqHeading: "Frequently asked questions",
     closing: {
       heading: "Plan your Panchakarma stay",
-      paragraphs: ["Discuss your needs, the time you have available and what the programme may involve. Start with a free initial doctor consultation and review your treatment plan and quotation before you book."],
+      paragraphs: ["Discuss your needs, the time you have available and what the programme may involve."],
     },
   },
   faq: [
