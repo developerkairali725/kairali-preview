@@ -14,9 +14,13 @@ export function phoneCriticalMedia(html, routePath = '') {
       ? ['AHV-Retreat-Archive-Landscape', 'AHV-Retreat-Archive-01', 'AHV-Retreat-Archive-02', 'AHV-Retreat-Archive-03', 'AHV-Retreat-Archive-04', 'AHV-Retreat-Archive-05', 'AHV-Retreat-Archive-06', 'AHV-Retreat-Archive-07'] : [];
   for (var retreatImage of retreatImages) html = html.split('/ahv/assets/img/' + retreatImage + '.webp').join('/ahv/assets/img/' + retreatImage + '-768-phone.avif');
 
-  if (routePath === '/all-programs/') {
+  if (['/all-programs/', '/wellness-programs/', '/yoga-meditation-programs/'].includes(routePath)) {
     for (var name of ['y-based', 'ayurveda-training', 'immune-1']) html = html.split('/ahv/assets/img/' + name + '.webp').join('/ahv/assets/img/' + name + '-768-card.avif');
     html = html.split('/ahv/assets/img/F-6.jpg').join('/ahv/assets/img/F-6-768-card.avif');
+  }
+  if (['/wellness-programs/', '/yoga-meditation-programs/'].includes(routePath)) {
+    html = html.split('/ahv/assets/img/preventive.webp').join('/ahv/assets/img/preventive-768-phone.avif');
+    for (var name of ['stress-relief', 'immunity', 'yoga-meditation']) html = html.split('/ahv/assets/img/' + name + '.webp').join('/ahv/assets/img/' + name + '-768-card.avif');
   }
   if (routePath === '/karkidaka-chikitsha-or-monsoon-wellness.html') {
     html = html.split('/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19.webp').join('/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19-768.avif');
@@ -74,7 +78,7 @@ export function descriptiveAwardLinks(html, route = "") {
 }
 
 export function firstCriticalImage(html, routePath = '') {
-  if (routePath === '/all-programs/') return null; // Measured LCP is intro text; card photos are below it.
+  if (['/all-programs/', '/wellness-programs/', '/yoga-meditation-programs/'].includes(routePath)) return null; // Measured LCP is intro text; card photos are below it.
   // N12 measured background LCPs: prioritize the existing approved hero only on its own route.
   if (routePath === '/karkidaka-chikitsha-or-monsoon-wellness.html' && html.includes('/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19-768.avif')) return '/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19-768.avif';
   var programmeHeroes = {"/beauty-care-and-eye-care/":"/ahv/assets/img/vision-768-programme.avif","/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/":"/ahv/assets/img/kairali-khasgiwala-173-768-programme.avif","/immunity-enhancement-executive-health-assessment-therapy/":"/ahv/assets/img/immune-1-768-programme.avif","/revitalizing-and-strengthening/":"/ahv/assets/img/Supportive-Care-Hero-Shirodhara-768-programme.avif","/womens-hormonal-balance-endocrine-therapy/":"/ahv/assets/img/hormonal-hero-udara-abhyanga-2-768-programme.avif","/treatment-for-arthritis-and-spondylitis/":"/ahv/assets/img/ktahv-janu-vasti-2.webp","/treatment-for-cervical-spondylosis/":"/ahv/assets/img/cervical-hero-greeva-pichu-768-phone.avif","/treatment-for-chronic-back-pain/":"/ahv/assets/img/chronic-back-hero-kati-vasti.webp","/treatment-for-diabetes/":"/ahv/assets/img/ktahv-abhyanga-5.webp","/treatment-for-facial-paralysis/":"/ahv/assets/img/facial-paralysis-hero-mukha-abhyanga.webp","/treatment-for-nervous-disability/":"/ahv/assets/img/neurological-hero-shiro-abhyanga.webp","/treatment-for-psoriasis/":"/ahv/assets/img/psoriasis-hero-back-udwarthanam-768-phone.avif","/treatment-for-sinusitis-and-migraine/":"/ahv/assets/img/sinus-migraine-hero-shirodhara-6-768-phone.avif","/treatment-for-slip-disc/":"/ahv/assets/img/ktahv-kati-vasti-2025-2-768-phone.avif","/treatment-for-spondylitis/":"/ahv/assets/img/spondylitis-hero-kati-greeva-vasti-1-768-phone.avif","/treatment-to-remove-stress-and-strain/":"/ahv/assets/img/stress-hero-thalapothichil-3-768-phone.avif",'/post-pregnancy-health-programme/':'/ahv/assets/img/gen-postpartum-768-phone.avif','/preventive-and-regenerative-treatment/':'/ahv/assets/img/preventive-768-phone.avif','/treatment-for-bronchial-diseases/':'/ahv/assets/img/bronchial-hero-nasyam.webp','/holistic-treatment-for-rejuvenation-and-detoxification/':'/ahv/assets/img/ho-pizhichil.webp','/treatment-for-hypertension/':'/ahv/assets/img/hypertension-hero-thakaradhara.webp','/treatment-for-paralysis/':'/ahv/assets/img/paralysis-hero-pinda-sweda.webp','/treatment-for-skin-diseases/':'/ahv/assets/img/skin-vitality-hero-mukha-abhyanga-3.webp'};
