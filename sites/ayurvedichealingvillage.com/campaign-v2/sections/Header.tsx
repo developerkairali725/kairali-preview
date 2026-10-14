@@ -32,7 +32,7 @@ export default function Header({ c, v, req }: SectionProps) {
         <span className="lp-header__rule" aria-hidden="true" />
         <Actions className="lp-header__actions" {...(production ? { "aria-label": ui.header.contact } : {})}>
           {production ? null : <LocaleSwitcher locales={c.locales} locale={req.locale} currency={req.currency} />}
-          <a className="lp-header__phone" href={contact.phone.href} data-track="cta_click" data-track-cta="call" data-track-position="header">{contact.phone.display}</a>
+          <a className="lp-header__phone" href={contact.phone.href} data-track="cta_click" data-track-cta="call" data-track-position="header">{production ? `${ui.header.call} · ` : ""}{contact.phone.display}</a>
           <a className="lp-header__wa" href={whatsappHref(c, req)} data-track="cta_click" data-track-cta="whatsapp" data-track-position="header">
             <WaIcon />{ui.header.whatsapp}
           </a>
