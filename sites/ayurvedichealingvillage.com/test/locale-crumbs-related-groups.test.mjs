@@ -41,12 +41,17 @@ test('hist9 related groups: localized hrefs are grouped by their English route',
   const data = read('public/ahv/assets/hist9-family-data.js');
   const D = JSON.parse(data.slice(data.indexOf('{'), data.trimEnd().lastIndexOf('}') + 1));
   const R = D.routes.find((r) => r.path === '/food-sadhana/');
-  const groupsFor = (locale, withMap) => {
+  // Train G rework (AHV-I04.M082.links) replaced the rendered set with four contextual links and kept the captured 19-link
+  // corporate sidebar as retiredRelatedLinks.links (accounting only). The grouping parity is checked on BOTH sets: the
+  // original M082.02 assertions run unchanged on the retired set, and the rendered set must group identically too.
+  const RETIRED = R.retiredRelatedLinks.links;
+  assert.equal(RETIRED.length, 19);
+  const groupsFor = (locale, withMap, set = RETIRED) => {
     const localPaths = Object.fromEntries(Object.entries(routes).map(([en, r]) => [en, r[locale]]).filter(([, p]) => p));
     const win = { AHV_LOCAL_PATHS: withMap ? localPaths : undefined, AHV_COLLECTION_RENDER: { sourceBlocks: () => [] } };
     const ctx = { window: win, location: { search: '' }, URL, URLSearchParams, React: { createElement: () => null } };
     vm.runInNewContext(read('public/ahv/assets/hist9-family-render.js'), ctx);
-    const links = R.relatedLinks.map((l) => {
+    const links = set.map((l) => {
       const en = new URL(l.href).pathname;
       return { ...l, href: 'https://ayurvedichealingvillage.com' + (locale === 'en' ? en : localPaths[en] || `/${locale}${en}`) };
     });
@@ -62,4 +67,11 @@ test('hist9 related groups: localized hrefs are grouped by their English route',
   }
   // the German page no longer files Kairali Hospitality under products
   assert.ok(!groupsFor('de', true).some((g) => /^Products & publications:19$/.test(g)));
+  // the rendered (Train G rework) set: same groups on every locale as on English
+  const current = groupsFor('en', false, R.relatedLinks);
+  assert.deepEqual(current, ['Ayurveda & yoga knowledge:3', 'Food & cooking at Kairali:1']);
+  for (const locale of ['de', 'fr', 'es', 'zh-Hans']) {
+    assert.deepEqual(groupsFor(locale, true, R.relatedLinks), current, `${locale} rendered set with route table`);
+    if (locale === 'es' || locale === 'zh-Hans') assert.deepEqual(groupsFor(locale, false, R.relatedLinks), current, `${locale} rendered set prefix fallback`);
+  }
 });

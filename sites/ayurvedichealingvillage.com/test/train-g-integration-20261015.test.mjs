@@ -12,6 +12,8 @@ import fs from "node:fs";
 import { createHash } from "node:crypto";
 import { TRAIN_G, reverseTrainGSource, reverseTrainGConfig, splitTrainGLeadJoin } from "./fixtures/train-g-20261015.mjs";
 import { reverseTrainFSource } from "./fixtures/train-f-20261015.mjs";
+// The Train G rework (f883eedb3) is merged on top; its exact change to a Train G file is reversed first.
+import { reverseTrainGReworkSource, TRAIN_G_REWORK_SOURCES } from "./fixtures/train-g-rework-20261015.mjs";
 import { reverseTrainBSource } from "./fixtures/train-b-20261015.mjs";
 import { reverseTrainASource } from "./fixtures/train-a-20261014.mjs";
 import { TRAIN_E03 } from "./fixtures/train-e03-20261015.mjs";
@@ -34,13 +36,20 @@ const CANDIDATES = [
 
 test("every recorded Train G file reverses exactly to the Train F head bytes; a Train F head text passes through", () => {
   for (const [f, e] of Object.entries(TRAIN_G.files)) {
-    const now = read(f);
+    const integrated = read(f);
+    if (TRAIN_G_REWORK_SOURCES[f]) assert.equal(sha(integrated), TRAIN_G_REWORK_SOURCES[f].afterSHA256, `${f}: integrated with the rework`);
+    const now = reverseTrainGReworkSource(f, integrated);
     assert.equal(sha(now), e.afterSHA256, f);
     const trainF = reverseTrainGSource(f, now);
     assert.equal(sha(trainF), e.beforeSHA256, f);
     assert.equal(reverseTrainGSource(f, trainF), trainF, `${f}: idempotent on the Train F head bytes only`);
     assert.throws(() => reverseTrainGSource(f, now + " "), undefined, `${f}: any third state fails`);
     assert.ok(e.rows.length >= 1, f);
+  }
+  // every rework reversal targets a recorded Train G file, and a third state fails
+  for (const f of Object.keys(TRAIN_G_REWORK_SOURCES)) {
+    assert.ok(TRAIN_G.files[f], `${f}: a recorded Train G file`);
+    assert.throws(() => reverseTrainGReworkSource(f, read(f) + " "), undefined, `${f}: any third rework state fails`);
   }
   assert.equal(Object.keys(TRAIN_G.views).length, 17);
   assert.deepEqual(Object.keys(TRAIN_G.views).map((f) => f.split("/").pop().replace(/\.json$/, "")).sort(), Object.keys(N03.views).sort());

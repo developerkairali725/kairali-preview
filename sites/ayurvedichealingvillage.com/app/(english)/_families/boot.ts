@@ -5,6 +5,7 @@ import { restoreReviewedHead } from "./localized-title.mjs";
 import { repairFaqTopicTargets } from './faq-topic-targets.mjs';
 import { orderedRuntimeScripts } from './runtime-script-order.mjs';
 import { removeHomeVillaRates } from './home-villa-rates.mjs';
+import { removeCampaignPriceNotes } from './campaign-price-notes.mjs';
 import {offersFlow} from './offers-flow.mjs';
 import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, monsoonRuntimeMedia, retreatRuntimeMedia } from "./critical-media.mjs";
 import { formPostSafety } from "./form-post-safety.mjs";
@@ -1313,6 +1314,7 @@ export const BOOT_SCRIPT = `
       host.insertBefore(document.createElement("x-dc"), host.firstChild);
       // lazyImgFirst: loading="lazy" ahead of src in every template <img> (media-loading.mjs, P1a).
       view.template = (${removeHomeVillaRates.toString()})(view.template, cfg.path);
+      view.template = (${removeCampaignPriceNotes.toString()})(view.template, cfg.path);
       view.template = (${treatmentHeadingLevels.toString()})(view.template, cfg.path, view.variant);
       if (narrow && ["/all-programs/", "/wellness-programs/", "/yoga-meditation-programs/"].includes(cfg.path) && view.logic) view.logic = (${phoneCriticalMedia.toString()})(view.logic, cfg.path);
       pendingTemplate = (${lazyImgFirst.toString()})((${formPostSafety.toString()})((${descriptiveAwardLinks.toString()})(narrow ? (${phoneCriticalMedia.toString()})((${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path) : (${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path)));

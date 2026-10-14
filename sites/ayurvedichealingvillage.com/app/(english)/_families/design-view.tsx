@@ -1,7 +1,7 @@
 import { serverCanonical } from "./canonical-policy.mjs";
 import { articleContactHeadingHtml } from "./article-contact-heading.mjs";
 import { trainingSnapshotFontCss } from "./training-snapshot-fonts.mjs";
-import { reviewedTitleFor, reviewedCatalogueTitle } from "./localized-title.mjs";
+import { reviewedTitleFor, reviewedCatalogueTitle, keepsLocaleCanonical } from "./localized-title.mjs";
 import { SnapshotStyles, type SnapshotStyleAsset } from './SnapshotStyles';
 import { routeStylesFor, routeStyleHref } from "./route-styles.mjs";
 import { reviewCopyFor, applyReviewSnapshot, bookingLabelsFor } from "./content-review.mjs";
@@ -112,7 +112,7 @@ export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"
     reviewedLocaleTitle,
     reviewedShareDescription: route.path === "/panchakarma/" ? ((locale === "en" ? route.metadata.ogDescription ?? route.metadata.description : localeData(locale)?.meta[route.path]?.ogDescription ?? localeData(locale)?.meta[route.path]?.description ?? route.metadata.ogDescription ?? route.metadata.description) ?? undefined) : undefined,
     reviewedDescription: route.path === "/panchakarma/" ? ((locale === "en" ? route.metadata.description : localeData(locale)?.meta[route.path]?.description ?? route.metadata.description) ?? undefined) : undefined,
-    reviewedLocaleCanonical: (reviewedLocaleTitle || (route.path === "/karkidaka-chikitsha-or-monsoon-wellness.html" && locale !== "en")) ? ((route.path === "/panchakarma/" && locale === "en" ? serverCanonical(route) : canonicalUrl(route.path, locale)) ?? undefined) : undefined,
+    reviewedLocaleCanonical: (reviewedLocaleTitle || keepsLocaleCanonical(route.path, locale)) ? ((route.path === "/panchakarma/" && locale === "en" ? serverCanonical(route) : canonicalUrl(route.path, locale)) ?? undefined) : undefined,
     bookingCopy: bookingLabelsFor(locale),
     robots: routeRobots(route),
     desktopView: route.desktopView,
