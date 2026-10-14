@@ -35,6 +35,7 @@ export default defineCopy({
       paragraphs: [
         "At Kairali – The Ayurvedic Healing Village, Ayurveda shapes the purpose of your stay. Our NABH-accredited Ayurvedic hospital combines residential accommodation with doctor-prescribed care, vegetarian meals, yoga and meditation.",
         "You may be looking for time to focus on your wellbeing, support for an existing concern or a residential Ayurveda programme. Explain that purpose in your own words. Your doctor can discuss suitable care, how it would be reviewed and the recommended duration before you make travel plans.",
+        "What your stay gives you: therapies prescribed by your Ayurvedic doctor and carried out by trained therapists, vegetarian meals, and gardens and villa accommodation that give you room to pause between appointments.",
       ],
       points: [
         "Time set aside to focus on your wellbeing",

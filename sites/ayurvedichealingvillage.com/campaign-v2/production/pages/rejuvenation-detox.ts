@@ -37,6 +37,7 @@ export default defineCopy({
       paragraphs: [
         "Time away gives you space to focus on your daily routine and the care recommended for you. At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, your programme starts with a discussion of your health history, sleep, food, activity and goals.",
         "Your doctor assesses your needs and explains the proposed therapies, preparation and length of stay. Care, prescribed meals, yoga, meditation and time to rest then come together around that individual plan.",
+        "What your stay gives you: an individual plan from your doctor, vegetarian meals and dietary guidance planned around your programme, yoga and meditation alongside prescribed care and rest, and a recommended daily routine to discuss before you go home.",
       ],
       points: [
         "Your sleep, food or activity is not where you want it",

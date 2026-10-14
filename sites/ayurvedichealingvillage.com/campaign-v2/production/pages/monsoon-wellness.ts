@@ -38,6 +38,7 @@ export default defineCopy({
       paragraphs: [
         "Plan your Karkidaka Chikitsa stay for July–August 2027. At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, a Karkidaka Chikitsa stay begins with a conversation about your health and the care that may suit you.",
         "Bring your questions to an Ayurvedic doctor, whether you have an existing diagnosis or are simply exploring your options. Your assessment guides the proposed programme. The season alone does not determine the treatment you need.",
+        "What your stay gives you: a doctor who explains your proposed therapies, preparation and dietary guidance before you travel, a daily routine of prescribed care, meals and rest, and time in the village gardens or your villa between appointments.",
       ],
       points: [
         "Sleep, digestion or energy you would like to discuss",
