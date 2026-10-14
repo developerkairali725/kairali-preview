@@ -174,7 +174,7 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
   // element, not text, and the snapshot's font stylesheet and faces only competed with it — measured +0.8-0.9 s
   // simulated / +1.2 s throttled LCP. There the faces keep arriving with the runtime, as before. The same holds
   // for the listed routes whose first screen is a hero background image (imageLedFirstScreen).
-  const snapshotFaces = firstPaint && !firstScreenPoster(snapshot) && !imageLedFirstScreen(route.path) ? firstPaint : null;
+  const snapshotFaces = firstPaint && !firstScreenPoster(snapshot) && !imageLedFirstScreen(route.path, locale) ? firstPaint : null;
   const snapshotAssets: SnapshotStyleAsset[] = [
     ...(snapshotFaces?.fontCss.map(({ href, css }) => css && !["/panchakarma-therapy/", "/post-pregnancy-health-programme/", "/preventive-and-regenerative-treatment/", "/panchakarma/", "/ayurveda-treatment/", "/mindfulness-retreat/", "/ananda-lahari-yoga-and-ayurveda-retreat/", "/archive-yoga-retreat/", "/ashtanga-yoga-and-ayurveda-retreat/"].includes(route.path)
       ? { key: `font:${href}`, kind: 'style' as const, css: trainingSnapshotFontCss(route.path, css, snapshot) }

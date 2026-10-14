@@ -1,3 +1,4 @@
+import monsoonCompatibility from './fixtures/staff-monsoon-config-compatibility.json' with {type:'json'};
 import staffRosterIntegration from './fixtures/staff-roster-experience-integration.json' with {type:'json'};
 import staffExperienceDelta from './fixtures/staff-experience-approved-delta.json' with {type:'json'};
 import experienceCopy from '../english-candidate/staff-experience-copy.json' with {type:'json'};
@@ -34,6 +35,14 @@ test('all24 configs preserve original bytes after exact approved experience fact
   const c=JSON.parse(JSON.stringify(productionCampaign(slug)));const locale=Object.keys(byLocale).find(l=>byLocale[l]===slug);
   if(locale){c.doctors=c.doctors.filter(d=>d.id==='deepu-john');c.page.doctors.heading=originalTitles[locale];}
   for(const doctor of c.doctors){const delta=staffExperienceDelta.sourceDelta['campaign-v2/data/doctors.ts'].find(d=>JSON.parse(d.new.trim().slice(8,-1))===doctor.tenure);assert(delta,doctor.id);doctor.tenure=JSON.parse(delta.old.trim().slice(8,-1));}
+  if(slug===monsoonCompatibility.slug){
+   assert.equal(sha(fs.readFileSync(new URL('./fixtures/monsoon-2027-approved-delta.json',import.meta.url))),monsoonCompatibility.sourceDeltaFixtureSHA256);
+   for(const {path,before,after} of monsoonCompatibility.changes){
+    let obj=c;for(const key of path.slice(0,-1))obj=obj[key];const key=path.at(-1);
+    assert.deepEqual(obj[key],after,'Exact accepted Monsoon field: '+path.join('.'));
+    obj[key]=JSON.parse(JSON.stringify(before));
+   }
+  }
   assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);
  }
 });

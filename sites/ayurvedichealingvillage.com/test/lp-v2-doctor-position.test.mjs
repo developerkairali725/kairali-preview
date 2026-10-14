@@ -212,6 +212,16 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
       assert.equal(crypto.createHash("sha256").update(current).digest("hex"), localeCorrection.beforeSHA256, f);
     }
     if (f === "campaign-v2/production/production.css") {
+      // Remove only the approved desktop-card sizing delta before the existing historical checks.
+      const cardDelta = "\n/* Owner feedback, 14 Oct: size desktop D consultation cards to their existing actions. */\n@media (min-width: 768px) {\n  .lp-prod[data-variant=\"D\"] .lp-hero__form { align-self: start; }\n  .lp-prod[data-variant=\"D\"] .lp-consult--card { height: auto; }\n}\n";
+      assert.equal(current.split(cardDelta).length - 1, 1);
+      assert.ok(current.endsWith(cardDelta));
+      current = current.slice(0, -cardDelta.length);
+      // Reverse only the separately approved unpinned D desktop header delta.
+      const headerDelta = "\n/* Owner feedback, 14 Oct: align the unpinned desktop D header with its existing content grid. */\n@media (min-width: 768px) {\n  .lp-prod[data-variant=\"D\"] .lp-header:not([data-stuck]) { max-width: 1440px; margin-inline: auto; }\n}\n";
+      assert.equal(current.split(headerDelta).length - 1, 1);
+      assert.ok(current.endsWith(headerDelta));
+      current = current.slice(0, -headerDelta.length);
       // Reverse only the exact owner-approved scoped gallery correction; retain the historical style pin.
       const delta = "\n/* Owner-approved sharp corners, including the desktop gallery dialog. */\n.lp-prod .lp-gal{border-radius:0}\n";
       assert.ok(current.endsWith(delta), "Exact approved gallery correction is the final source rule");
@@ -228,6 +238,19 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
         assert.equal(current.split(line).length - 1, 1, "Exact approved yoga alt occurs once");
         current = current.replace(line, "");
       }
+    }
+    if (f === "campaign-v2/production/pages/monsoon-wellness.ts") {
+      // Two owner-adopted Monsoon clauses, exact source delta only. The original fixture/pins stay unchanged.
+      const delta = JSON.parse(read("test/fixtures/monsoon-2027-approved-delta.json"));
+      assert.equal(delta.source, f);
+      assert.equal(delta.historicalRevision, pin);
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), delta.afterSHA256);
+      for (const edit of delta.edits) {
+        assert.ok(edit.before && edit.after);
+        assert.equal(current.split(edit.after).length - 1, 1, "Each approved Monsoon replacement occurs once");
+        current = current.replace(edit.after, edit.before);
+      }
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), delta.beforeSHA256);
     }
     assert.equal(current, git("show", `${pin}:./${f}`), f);
   }

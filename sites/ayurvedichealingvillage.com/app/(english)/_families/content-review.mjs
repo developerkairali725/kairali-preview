@@ -6,6 +6,7 @@ import fs from 'node:fs';
 import crypto from 'node:crypto';
 import path from 'node:path';
 import copy from '../../../english-candidate/content-review-copy.json' with { type: 'json' };
+import monsoonSeason from '../../../english-candidate/monsoon-season-2027.json' with { type: 'json' };
 const cache = new Map();
 const bookingCatalogs = new Map();
 export function bookingLabelsFor(locale = 'en') {
@@ -22,13 +23,15 @@ export function bookingLabelsFor(locale = 'en') {
 export function reviewCopyFor(route, locale = 'en') {
   if (route === '/villa-raag/') return undefined;
   const edits = copy[route] || [];
-  if (locale === 'en') return [...edits, ...staffExperienceCopyFor(route, locale)];
+  // Owner's month-only 2027 season correction follows the same SSR/runtime text-review path.
+  const seasonEdits = route === monsoonSeason.route ? (monsoonSeason.locales[locale] || []) : [];
+  if (locale === 'en') return edits.concat(seasonEdits, staffExperienceCopyFor(route, locale));
   if (!cache.has(locale)) {
     const file = path.join(process.cwd(), 'l10n/generated', locale + '.json');
     const generated = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {};
     cache.set(locale, generated.data?.['content-review-copy'] || {});
   }
-  return [...(cache.get(locale)[route] || []), ...staffExperienceCopyFor(route, locale)];
+  return (cache.get(locale)[route] || []).concat(seasonEdits, staffExperienceCopyFor(route, locale));
 }
 const decode = s => s.replace(/&(?:amp|lt|gt|quot|apos|nbsp|ndash|mdash|rsquo|lsquo|rdquo|ldquo|#\d+|#x[\da-f]+);/gi, x => {
   const n = x.slice(1,-1); const names = {amp:'&',lt:'<',gt:'>',quot:'"',apos:"'",nbsp:' ',ndash:'–',mdash:'—',rsquo:'’',lsquo:'‘',rdquo:'”',ldquo:'“'};
