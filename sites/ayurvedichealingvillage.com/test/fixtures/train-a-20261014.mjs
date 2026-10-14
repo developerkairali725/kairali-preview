@@ -16,6 +16,7 @@ import fs from "node:fs";
 import { BATCH6, reverseBatch6Config } from "./train-a-batch6-20261014.mjs";
 import { reverseBatch8Config } from "./train-a-batch8-reverse.mjs";
 import { reverseTrainE03Source, reverseTrainE03Config } from "./train-e03-20261015.mjs";
+import { reverseTrainE04Source, reverseTrainE04Config } from "./train-e04-20261015.mjs";
 
 const json = (name) => JSON.parse(fs.readFileSync(new URL(`./${name}`, import.meta.url), "utf8"));
 const sha = (s) => createHash("sha256").update(s).digest("hex");
@@ -43,8 +44,8 @@ function strip(path, text, replacements, name) {
 
 /** The base text of `path` with every Train A candidate delta removed (unchanged for a file no candidate touched). */
 export function reverseTrainASource(path, text) {
-  // Train E03 (15 Oct) was built on the integrated Train A tree: remove its exact recorded delta first.
-  let value = reverseTrainE03Source(path, text);
+  // Trains E03 and E04 (15 Oct) were built on the integrated Train A tree: remove their exact recorded deltas first.
+  let value = reverseTrainE03Source(path, reverseTrainE04Source(path, text));
   let touching = TRAIN_A_CANDIDATES.filter((c) => c.files[path]);
   const overlap = TRAIN_A.overlaps[path];
   if (overlap) {
@@ -88,5 +89,6 @@ export function reverseOwnerDecisionsBConfig(slug, c) {
  */
 export function reverseTrainAConfig(slug, config) {
   config = reverseTrainE03Config(slug, config); // Train E03 (15 Oct), built on this tree: removed first
+  config = reverseTrainE04Config(slug, config); // Train E04 (15 Oct), built on this tree: removed first
   return reverseBatch6Config(slug, reverseBatch8Config(slug, reverseOwnerDecisionsConfig(slug, reverseOwnerDecisionsBConfig(slug, config))));
 }

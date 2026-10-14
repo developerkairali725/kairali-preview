@@ -41,6 +41,7 @@ export default defineCopy({
       heading: "Yes, this is Kairali’s Healing Village in Palakkad",
       paragraphs: [
         "Kairali – The Ayurvedic Healing Village is the Kairali Ayurvedic Group’s residential Ayurveda property in Palakkad, Kerala. It is an NABH-accredited Ayurvedic hospital with residential villas, where your assessment guides the proposed programme.",
+        "At a glance: an NABH-accredited Ayurvedic hospital in Palakkad, Kerala; 30 villas in a garden setting; Ayurvedic doctors who assess your health history, plan your care and review progress; [location and directions](/how-to-reach/).",
         "Kairali’s Ayurvedic family tradition informs its approach to care. Here, that means an individual plan in a residential setting, with doctors, therapists, meals and accommodation all part of your stay.",
         "What your stay gives you: an individual plan, sessions delivered by trained therapists as prescribed, vegetarian meals and villa accommodation in a garden setting, with time to rest around your prescribed care.",
       ],
