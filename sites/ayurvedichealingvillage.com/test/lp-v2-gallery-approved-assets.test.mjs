@@ -18,7 +18,10 @@ import { UI } from "../campaign-v2/production/ui.ts";
 import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
 import { reverseTrainBBindings, trainBGalleryAppended, trainBGalleryBefore } from "./fixtures/train-b-20261015.mjs";
 // Train F (15 Oct 2026) sits on top of Train B: its exact photograph picks are reversed first (fixtures/train-f-20261015.mjs).
-import { reverseTrainFBindings, trainFGalleryAppended, trainFGalleryBefore } from "./fixtures/train-f-20261015.mjs";
+import { reverseTrainFBindings as reverseTrainFBindingsOnly, trainFGalleryAppended, trainFGalleryBefore } from "./fixtures/train-f-20261015.mjs";
+import { reverseTrainHBindings } from "./fixtures/train-h-20261015.mjs";
+// Train H (15 Oct 2026) composes on Train F (fixtures/train-h-20261015.mjs): its delta is reversed first.
+const reverseTrainFBindings = (b) => reverseTrainFBindingsOnly(reverseTrainHBindings(b));
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const P = (...p) => path.join(SITE, ...p);

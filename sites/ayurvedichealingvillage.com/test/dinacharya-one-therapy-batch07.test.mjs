@@ -12,6 +12,7 @@ import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
+import { reverseTrainHSource } from "./fixtures/train-h-20261015.mjs";
 
 const SITE = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/%20/g, " ")), "..");
 const sha = (s) => crypto.createHash("sha256").update(s).digest("hex");
@@ -266,7 +267,8 @@ for (const [label, frozen] of [["N12.06-A", ACCEPTED_06A], ["N12.06-B", ACCEPTED
     for (const [file, hash] of Object.entries(frozen)) assert.equal(sha(fs.readFileSync(path.join(SITE, file))), hash, `${file} accepted view changed`);
   });
 
+// Train H (15 Oct 2026, AHV-M021.01) changed only the training hub's tariff link; its recorded delta is reversed first.
 test("course hours, Coming Soon, training and tariff sources are untouched", () => {
   for (const [file, hash] of Object.entries(FROZEN_COURSE_AND_TARIFF))
-    assert.equal(sha(fs.readFileSync(path.join(SITE, file))), hash, `${file} course/training/tariff source changed`);
+    assert.equal(sha(reverseTrainHSource(file, fs.readFileSync(path.join(SITE, file), "utf8"))), hash, `${file} course/training/tariff source changed`);
 });

@@ -7,7 +7,10 @@ import {PRODUCTION_SLUGS,productionCampaign} from '../campaign-v2/production/loa
 import {reverseTrainASource} from './fixtures/train-a-20261014.mjs';
 import {reverseTrainBSource} from './fixtures/train-b-20261015.mjs';
 // Train F (15 Oct 2026) sits on top of Train B: its exact photograph picks are reversed first (fixtures/train-f-20261015.mjs).
-import {reverseTrainFSource} from './fixtures/train-f-20261015.mjs';
+import {reverseTrainFSource as reverseTrainFSourceOnly} from './fixtures/train-f-20261015.mjs';
+import {reverseTrainHSource} from './fixtures/train-h-20261015.mjs';
+// Train H (15 Oct 2026) composes on Train F (fixtures/train-h-20261015.mjs): its delta is reversed first.
+const reverseTrainFSource=(p,s)=>reverseTrainFSourceOnly(p,reverseTrainHSource(p,s));
 const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const f=JSON.parse(read('test/fixtures/desktop-header-approved-delta.json'));
 const hash=s=>createHash('sha256').update(s).digest('hex');

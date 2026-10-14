@@ -24,10 +24,11 @@
       crumbs: (R.crumbs || []).slice(0, -1).map(c => ({ label: c.label, url: A + c.path })),
       crumbLast: (R.crumbs && R.crumbs.length) ? R.crumbs[R.crumbs.length - 1].label : '',
       // A source contextual-navigation component renders inside a labelled <nav>; everything else is a section.
+      // The approved in-body 'contextual-resources' links (AHV-I04) are content, not the retired sidebar: a section.
       sections: R.components.map((c, ci) => ({
         key: 'x' + ci, component: c.component, ptr: c.ptr,
-        isNav: /context|menu|navigation/i.test(c.component),
-        isSection: !/context|menu|navigation/i.test(c.component),
+        isNav: c.component !== 'contextual-resources' && /context|menu|navigation/i.test(c.component),
+        isSection: c.component === 'contextual-resources' || !/context|menu|navigation/i.test(c.component),
         navLabel: R.h1 + ' — related pages',
         el: P.sourceBlocks(groupCards(c.blocks), 'x' + ci, guard)
       }))

@@ -11,7 +11,11 @@ import {BATCH6} from './fixtures/train-a-batch6-20261014.mjs';
 import {reverseTrainAConfig,reverseTrainASource} from './fixtures/train-a-20261014.mjs';
 import {reverseTrainBConfig,reverseTrainBSource} from './fixtures/train-b-20261015.mjs';
 // Train F (15 Oct 2026) sits on top of Train B: its exact photograph picks are reversed first (fixtures/train-f-20261015.mjs).
-import {reverseTrainFConfig,reverseTrainFSource} from './fixtures/train-f-20261015.mjs';
+import {reverseTrainFConfig as reverseTrainFConfigOnly,reverseTrainFSource as reverseTrainFSourceOnly} from './fixtures/train-f-20261015.mjs';
+import {reverseTrainHConfig,reverseTrainHSource} from './fixtures/train-h-20261015.mjs';
+// Train H (15 Oct 2026) composes on Train F (fixtures/train-h-20261015.mjs): its delta is reversed first.
+const reverseTrainFSource=(p,s)=>reverseTrainFSourceOnly(p,reverseTrainHSource(p,s));
+const reverseTrainFConfig=(slug,c)=>reverseTrainFConfigOnly(slug,reverseTrainHConfig(slug,c));
 import {reverseStaffRosterConfig} from './fixtures/pr429-integration-config.mjs';
 const targets={
  'wellness-kerala':{source:'ayurveda-retreat',index:1,id:'4x01PtWfNnk'},

@@ -17,7 +17,11 @@ import { IMAGES } from "../campaign-v2/data/images.ts";
 import { APPROVED_FILM_IDS, filmIdFromHref, routeAllowed } from "../campaign-v2/production/sections/guest-video-policy.mjs";
 import fixture from "./fixtures/owner-decisions-c-20261014.json" with { type: "json" };
 import { candidateSource } from "./fixtures/train-b-20261015.mjs";
-import { reverseTrainFBindings, reverseTrainFConfig } from "./fixtures/train-f-20261015.mjs";
+import { reverseTrainFBindings as reverseTrainFBindingsOnly, reverseTrainFConfig as reverseTrainFConfigOnly } from "./fixtures/train-f-20261015.mjs";
+import { reverseTrainHBindings, reverseTrainHConfig } from "./fixtures/train-h-20261015.mjs";
+// Train H (15 Oct 2026) composes on Train F (fixtures/train-h-20261015.mjs): its delta is reversed first.
+const reverseTrainFBindings = (b) => reverseTrainFBindingsOnly(reverseTrainHBindings(b));
+const reverseTrainFConfig = (slug, c) => reverseTrainFConfigOnly(slug, reverseTrainHConfig(slug, c));
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (p) => fs.readFileSync(path.join(SITE, p), "utf8");
