@@ -7,8 +7,10 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import { createHash } from "node:crypto";
 import { TRAIN_A, TRAIN_A_CANDIDATES, reverseTrainASource } from "./fixtures/train-a-20261014.mjs";
+import { reverseTrainBSource } from "./fixtures/train-b-20261015.mjs";
 
-const read = (p) => fs.readFileSync(new URL(`../${p}`, import.meta.url), "utf8");
+// Train B (15 Oct 2026) sits on top: its exact deltas are removed first, giving the integrated Train A bytes.
+const read = (p) => reverseTrainBSource(p, fs.readFileSync(new URL(`../${p}`, import.meta.url), "utf8"));
 const sha = (s) => createHash("sha256").update(s).digest("hex");
 
 test("every recorded candidate file reverses exactly to its base bytes in the integrated tree", () => {

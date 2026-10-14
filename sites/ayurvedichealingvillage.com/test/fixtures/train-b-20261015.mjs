@@ -23,11 +23,15 @@ const plain = (v) => JSON.parse(JSON.stringify(v));
 export const TRAIN_B = json("train-b-20261015.json");
 const OWNER_DECISIONS_C = json("owner-decisions-c-20261014.json");
 const SURVIVOR_LINK = json("yoga-survivor-link-20261014.json");
+const D03 = json("d03-copy-corrections-20261014.json");
 
 /** Candidates in merge order: name and per-file entries ({beforeSHA256, afterSHA256, replacements: [{before, after}]}). */
 export const TRAIN_B_CANDIDATES = Object.freeze([
-  { name: "owner decisions C", files: OWNER_DECISIONS_C.files },
+  { name: "owner decisions C", files: { ...OWNER_DECISIONS_C.files, ...TRAIN_B.recordedDeltas["owner decisions C"].files } },
   { name: "queued batch 15", files: SURVIVOR_LINK.files },
+  { name: "train C02", files: TRAIN_B.recordedDeltas["train C02"].files },
+  { name: "trains C03/C04", files: TRAIN_B.recordedDeltas["trains C03/C04"].files },
+  { name: "train D03", files: D03.files },
 ]);
 
 function strip(path, text, replacements, name) {
@@ -48,13 +52,23 @@ function apply(path, text, replacements, name) {
   return value;
 }
 
+// Train A batch 7 (WhatsApp prefill) recorded its delta in whatsapp-prefill-delta.json, outside reverseTrainASource.
+const WHATSAPP_PREFILL = json("whatsapp-prefill-delta.json").edits;
+/** The c54e2795e bytes of `path` from its integrated Train A bytes: reverseTrainASource, then batch 7's exact delta. */
+function trainABase(path, trainA) {
+  return [...(WHATSAPP_PREFILL[path] ?? [])].reverse().reduce((x, e) => {
+    assert.equal(x.split(e.to).length - 1, 1, `${path}: approved WhatsApp delta occurs once`);
+    return x.replace(e.to, e.from);
+  }, reverseTrainASource(path, trainA));
+}
+
 /** The integrated Train A text of `path` with every Train B candidate delta removed (unchanged if none touched it). */
 export function reverseTrainBSource(path, text) {
   const touching = TRAIN_B_CANDIDATES.filter((c) => c.files[path]);
   if (!touching.length) return text;
   const trainA = [...touching].reverse().reduce((t, c) => strip(path, t, c.files[path].replacements, c.name), text);
   assert.equal(sha(trainA), TRAIN_B.trainABytesSHA256[path], `${path}: exactly the integrated Train A bytes`);
-  const base = reverseTrainASource(path, trainA);
+  const base = trainABase(path, trainA);
   for (const c of touching) {
     assert.equal(sha(base), c.files[path].beforeSHA256, `${path}: base bytes (${c.name})`);
     assert.equal(sha(apply(path, base, c.files[path].replacements, c.name)), c.files[path].afterSHA256, `${path}: exactly the ${c.name} source`);
@@ -66,7 +80,7 @@ export function reverseTrainBSource(path, text) {
 export function candidateSource(name, path, text) {
   const own = TRAIN_B_CANDIDATES.find((c) => c.name === name);
   assert.ok(own?.files[path], `${path}: ${name} recorded`);
-  const base = reverseTrainASource(path, reverseTrainBSource(path, text));
+  const base = trainABase(path, reverseTrainBSource(path, text));
   const value = apply(path, base, own.files[path].replacements, name);
   assert.equal(sha(value), own.files[path].afterSHA256, `${path}: exactly the ${name} source`);
   return value;
@@ -127,12 +141,46 @@ export function reverseBatch15Config(slug, c) {
   return c;
 }
 
+// Train C02 (AHV-WB.054.change; the same commit is in C01): the approved Pain Abhyangam description.
+export function reverseC02Config(slug, c) {
+  if (slug !== "pain-management") return c;
+  return walkReplace(slug, c, "Abhyangam, a medicated oil massage", "Abhyangam – full-body medicated oil therapy", 1, 1, "C02");
+}
+
+// Trains C03/C04 (rest photo rows): the approved rest photograph ahv-img-016 on eight more routes (bindings.ts stillness).
+export const TRAIN_B_REST_ROUTES = Object.freeze(["lp-cleansing-centre", "lp-pain-management", "lp-treatment-kerala", "lp-weight-management",
+  "lp-treatment-kerala-ru", "monsoon-wellness", "rejuvenation-detox", "lp-behandlung-kerala"]);
+export function reverseRestConfig(slug, c, { pagesOnly = false } = {}) {
+  if (pagesOnly || !TRAIN_B_REST_ROUTES.includes(slug)) return c;
+  assert.deepEqual(c.stillness.image, IMAGES["ahv-img-016"], `${slug}: approved rest photograph`);
+  c.stillness.image = plain(IMAGES["gal-post-therapy-stillness-wakem"]);
+  return c;
+}
+
+/** Replace `after` by `before` in every string of a config; the hit count must lie in [min, max]. */
+function walkReplace(slug, c, before, after, min, max, name) {
+  let hits = 0;
+  const walk = (o) => { for (const k of Object.keys(o)) { const v = o[k]; if (typeof v === "string" && v.includes(after)) { hits += v.split(after).length - 1; o[k] = v.replaceAll(after, before); } else if (v && typeof v === "object") walk(v); } };
+  walk(c);
+  assert.ok(hits >= min && hits <= max, `${slug}: exact ${name} copy correction (${hits} hits)`);
+  return c;
+}
+
+// Train D03 (accepted rows only): its exact page-copy deletions/terminology, reversed in the loaded config (a pathway step
+// is mirrored into admission.steps, so one source edit can appear twice; the callers' config hash pins are the exactness check).
+export function reverseD03Config(slug, c) {
+  const entry = D03.files[`campaign-v2/production/pages/${slug}.ts`];
+  if (!entry) return c;
+  for (const { before, after } of [...entry.replacements].reverse()) walkReplace(slug, c, before, after, 1, 2, "D03");
+  return c;
+}
+
 /**
  * A JSON copy of a production config with every Train B candidate's exact config change reversed, newest first.
  * Use the returned value: a reversal may return a new object.
  */
 export function reverseTrainBConfig(slug, config, options = {}) {
-  return reverseOwnerDecisionsCConfig(slug, reverseBatch15Config(slug, config), options);
+  return reverseOwnerDecisionsCConfig(slug, reverseBatch15Config(slug, reverseC02Config(slug, reverseRestConfig(slug, reverseD03Config(slug, config), options))), options);
 }
 
 /**

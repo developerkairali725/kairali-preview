@@ -89,7 +89,7 @@ export default defineCopy({
     },
     stay: {
       heading: "Before you leave home",
-      paragraphs: ["Prepare your medical records, current medicine details and questions for the doctor."],
+      paragraphs: ["Prepare your medical records, current medicine details and questions for the doctor. Review your personalised quotation and the booking terms before making a payment."],
       lists: [
         { heading: "Check your quotation for", items: ["The recommended programme and number of nights", "Villa category and occupancy", "The care, meals and sessions included", "Booking terms"] },
         { heading: "Ask what costs extra", items: ["Medicines and tests", "Additional services", "Travel arrangements and transfers"], extra: true },

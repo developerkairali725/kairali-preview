@@ -91,7 +91,7 @@ export default defineCopy({
     },
     stay: {
       heading: "Understand your quotation before you commit",
-      paragraphs: ["Ask for a personalised quotation for the recommended programme, dates, duration and villa occupancy."],
+      paragraphs: ["Ask for a personalised quotation for the recommended programme, dates, duration and villa occupancy. Your initial doctor consultation is free; the quotation explains the inclusions and any charges in the proposed plan."],
       lists: [
         { heading: "Confirm what is included", items: ["Your programme, dates and number of nights", "Villa category, occupancy and taxes", "Meals and doctor reviews", "Therapy sessions and activities"] },
         { heading: "Ask about separate charges", items: ["Medicines and tests", "Additional care", "Transport", "Personal services"], extra: true },

@@ -4,12 +4,104 @@
  "note": "trainABytesSHA256 = SHA-256 of each path at the Train A head; removing every Train B candidate's recorded delta from the integrated file must give exactly these bytes (fixtures/train-b-20261015.mjs). recordedDeltas holds exact deltas of candidates that recorded none themselves.",
  "candidateFixtures": [
   "owner-decisions-c-20261014.json",
-  "yoga-survivor-link-20261014.json"
+  "yoga-survivor-link-20261014.json",
+  "d03-copy-corrections-20261014.json"
  ],
- "recordedDeltas": {},
+ "recordedDeltas": {
+  "train C02": {
+   "rows": "AHV-WB.054.change (Abhyangam wording; also C01's commit) and the AHV-WB.*.phone-label header Call prefix (also C03's commit)",
+   "files": {
+    "campaign-v2/production/pages/pain-management.ts": {
+     "beforeSHA256": "2e9bbb32a33858e752080edc1b2248ac4c1057f202ce6c9772ed498918d455cd",
+     "afterSHA256": "b7b3c6bb16a8c4b9f62ab2afe62426e005f48edd5dfa0543508323c7cfdfed38",
+     "replacements": [
+      {
+       "before": "Abhyangam, a medicated oil massage",
+       "after": "Abhyangam – full-body medicated oil therapy"
+      }
+     ]
+    },
+    "campaign-v2/sections/Header.tsx": {
+     "beforeSHA256": "3eb36357835c46089a286fa2d99477d7e429efee3c80bac59d5309f5ce29842d",
+     "afterSHA256": "c2f5d9e103c7ffa2ec218dbe44dff608afd7e0535932d824a5e8d4cdbb2332ad",
+     "replacements": [
+      {
+       "before": "data-track-position=\"header\">{contact.phone.display}</a>",
+       "after": "data-track-position=\"header\">{production ? `${ui.header.call} · ` : \"\"}{contact.phone.display}</a>"
+      }
+     ]
+    }
+   }
+  },
+  "owner decisions C": {
+   "rows": "AHV-WB.005.how-image, .060, .400.how-image, .445 hero/how (decision 10 photo picks as integrated: 005.hero-image and 403 excluded, 445 keeps Train A's phone cover)",
+   "files": {
+    "campaign-v2/production/bindings.ts": {
+     "beforeSHA256": "fb718c4df061fa342972eb79f054d0b0661b36a388bfdfd4b1fe6a279510d72d",
+     "afterSHA256": "6312a0426db29b7a2183eac93e64e3125579d3a863963ad58162f4f38b9eb123",
+     "replacements": [
+      {
+       "before": "/** The 20 routes added on 8 Oct 2026, in their four review batches of five. */",
+       "after": "/**\n * Owner decision 10 (14 Oct 2026, OWNER-DECISIONS-20261014-ANSWERS.json \"10-photos\"; rows AHV-WB.005 hero/how, .060,\n * .400 how, .403, .445 hero/how): the bare-back therapy hero (desktop and phone) and \"How it works\" photographs on these\n * routes become pulse-check, reception or village photographs with no identifiable person, from the existing image\n * bank (data/images.ts). Applied after the routes are built, so every existing gallery entry and the five mosaic tiles\n * stay exactly as they were. A new steps photograph is appended once at the very end of the route's full gallery (every\n * steps photograph is one of the route's gallery photographs, outside the mosaic; category per STEP_CATEGORY); a new\n * hero is never in the gallery. On each route the hero and the steps photograph differ; sibling heroes differ\n * (/pain-management.html vs /lp/pain-management/). Reversible: delete a route's entry.\n */\nexport const PHOTO_PICKS_20261014: Readonly<Partial<Record<ProductionSlug, { hero?: string; pathway?: string; keepPhone?: true }>>> = {\n  // Train B (15 Oct 2026): AHV-WB.005.hero-image and AHV-WB.403.change are excluded (rejected by the candidate's\n  // independent REVIEW.json), so treatment-packages and lp-pain-management keep their prior heroes; their steps rows stay.\n  \"treatment-packages\": { pathway: \"ahv-img-045\" }, // AHV-WB.005.how-image\n  \"pain-management\": { hero: \"ahv-img-034\" }, // AHV-WB.060.change (partial: no person-free doctor photo left for both siblings)\n  \"lp-pain-management\": { pathway: \"ahv-img-026\" }, // AHV-WB.400.how-image\n  // Train B (15 Oct 2026): the phone cover stays Train A's AHV-WB.457.change villa photograph kt-314 (already no\n  // bare-back photograph), so the decision-10 hero applies to the desktop hero only on this route.\n  \"lp-treatment-kerala\": { hero: \"ahv-img-012\", pathway: \"ahv-img-045\", keepPhone: true }, // AHV-WB.445.hero-image, AHV-WB.445.how-image\n};\n/** Gallery category of an appended steps photograph: the pulse check with the therapies (as the approved consultation-room\n *  photo ahv-img-033), the reception lounge with the grounds (its owner-approved placement, \"The hospital and its grounds\"). */\nconst STEP_CATEGORY: Readonly<Record<string, GalleryCategory>> = { \"ahv-img-045\": \"Therapies\", \"ahv-img-026\": \"Grounds\" };\nfor (const [slug, pick] of Object.entries(PHOTO_PICKS_20261014) as [ProductionSlug, { hero?: string; pathway?: string; keepPhone?: true }][]) {\n  const r = ROUTES[slug];\n  if (pick.hero) { r.heroImage = img(pick.hero); if (!pick.keepPhone) r.mobileImage = img(pick.hero); }\n  if (pick.pathway) {\n    r.pathwayImage = img(pick.pathway);\n    const category = STEP_CATEGORY[pick.pathway];\n    if (!category) throw new Error(`production/bindings: no gallery category for steps photograph ${pick.pathway}`);\n    r.gallery = [...r.gallery, { category, image: r.pathwayImage }];\n  }\n}\n\n/** The 20 routes added on 8 Oct 2026, in their four review batches of five. */"
+      }
+     ]
+    }
+   }
+  },
+  "trains C03/C04": {
+   "rows": "C03: five rest photo rows; C04: three rest photo rows (bindings.ts stillness ahv-img-016)",
+   "files": {
+    "campaign-v2/production/bindings.ts": {
+     "beforeSHA256": "fb718c4df061fa342972eb79f054d0b0661b36a388bfdfd4b1fe6a279510d72d",
+     "afterSHA256": "52a71e9367b65c299d3220649978713f58943b0e612de27c25132d38af02db19",
+     "replacements": [
+      {
+       "before": "hero: \"kt-190\", pathway: \"kt-202\", form: enquiry(\"/lp/kairali-cleansing-centre/\")",
+       "after": "hero: \"kt-190\", stillness: \"ahv-img-016\", pathway: \"kt-202\", form: enquiry(\"/lp/kairali-cleansing-centre/\")"
+      },
+      {
+       "before": "mobile: \"kt-190\", pathway: \"kt-199\", form: enquiry(\"/lp/pain-management/\")",
+       "after": "mobile: \"kt-190\", stillness: \"ahv-img-016\", pathway: \"kt-199\", form: enquiry(\"/lp/pain-management/\")"
+      },
+      {
+       "before": "pathway: \"kt-202\", form: enquiry(\"/lp/treatment-in-kerala/\")",
+       "after": "stillness: \"ahv-img-016\", pathway: \"kt-202\", form: enquiry(\"/lp/treatment-in-kerala/\")"
+      },
+      {
+       "before": "hero: \"wx-dining\", pathway: \"kt-202\", form: enquiry(\"/lp/weight-loss/\")",
+       "after": "hero: \"wx-dining\", stillness: \"ahv-img-016\", pathway: \"kt-202\", form: enquiry(\"/lp/weight-loss/\")"
+      },
+      {
+       "before": "hero: \"kt-202\", pathway: \"kt-199\", locale: \"ru\"",
+       "after": "hero: \"kt-202\", stillness: \"ahv-img-016\", pathway: \"kt-199\", locale: \"ru\""
+      },
+      {
+       "before": "hero: \"kt-190\", pathway: \"kt-202\", form: r10(\"monsoon\")",
+       "after": "hero: \"kt-190\", stillness: \"ahv-img-016\", pathway: \"kt-202\", form: r10(\"monsoon\")"
+      },
+      {
+       "before": "hero: \"kt-202\", pathway: \"kt-199\", form: r10(\"detox\")",
+       "after": "hero: \"kt-202\", stillness: \"ahv-img-016\", pathway: \"kt-199\", form: r10(\"detox\")"
+      },
+      {
+       "before": "hero: \"kt-190\", pathway: \"kt-199\", locale: \"de\"",
+       "after": "hero: \"kt-190\", stillness: \"ahv-img-016\", pathway: \"kt-199\", locale: \"de\""
+      }
+     ]
+    }
+   }
+  }
+ },
  "trainABytesSHA256": {
+  "campaign-v2/production/bindings.ts": "04df431550c836481104ab37f85c179fb4cd588c2ef373aa28b5ddbf13ed9bff",
+  "campaign-v2/production/pages/cleansing-centre.ts": "ee9cfda4dacd74945b34927f4ab9715ae326acd5a99cebabbef04c451ac23832",
+  "campaign-v2/production/pages/family-ayurvedic-retreat.ts": "d058680767cd08ffb26fc1e513c549fc5670ab776bf988e56f7a2ce4b2e220ae",
   "campaign-v2/production/pages/lp-behandlung-kerala.ts": "d4ef5383368d11918d946701a5b27a25059426c77a51c25861ad636be4f7b330",
   "campaign-v2/production/pages/lp-treatment-kerala-ru.ts": "4c94264eb4c81d5c5cedb1f7ca5332e6c5ea314e7bb56320a558760305a87c30",
-  "campaign-v2/production/pages/treatment-packages.ts": "6e6daa604b6b010c483a22ca539f654b15de3c0ac387ed51171a098572721a06"
+  "campaign-v2/production/pages/lp-weight-management.ts": "cc180a656593f303f06414cb7baaa6944bc46ee855d5bb714fc3d6c36a345576",
+  "campaign-v2/production/pages/pain-management.ts": "2e9bbb32a33858e752080edc1b2248ac4c1057f202ce6c9772ed498918d455cd",
+  "campaign-v2/production/pages/treatment-kerala.ts": "5fdaefe18064aa9f40a7b2aeb29716d5e7739a865d568028d67bffdb9b5d3fbb",
+  "campaign-v2/production/pages/treatment-packages.ts": "6e6daa604b6b010c483a22ca539f654b15de3c0ac387ed51171a098572721a06",
+  "campaign-v2/sections/Header.tsx": "2bc87373cbcc192f6fc588c90d3e34f8882d9c4b86a25353718a26a10664e674"
  }
 }

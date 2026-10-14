@@ -13,10 +13,13 @@ const strings = (slug) => { const c = productionCampaign(slug); return [...pageT
 const slugOf = (f) => f.match(/pages\/(.+)\.ts$/)[1];
 const SUPPORT = "Your initial consultation is free. Ask for a quotation covering treatment and any later services.";
 
-test("WB.079: Family topic 14 uses 'Udhwarthanam – herbal powder therapy' and the massage wording cannot come back", () => {
+// Train B (15 Oct 2026): Train A's AHV-WB.083.change (owner decision 5, parents list) removed the Weight management topic
+// card that carried this wording, so WB.079 has no target in the integrated tree; the massage wording stays absent.
+test("WB.079 (Train B): the family page has no Udhwarthanam topic left (removed by AHV-WB.083) and no massage wording", () => {
   const all = strings("family-ayurvedic-retreat");
-  assert.deepEqual(all.filter((t) => t.includes("Udhwarthanam")), ["Talk through your goals, medicines, meals and daily routine. Discuss suitable activity and any proposed therapies, including Udhwarthanam – herbal powder therapy, with realistic individual goals and follow-up."]);
+  assert.deepEqual(all.filter((t) => t.includes("Udhwarthanam")), []);
   assert.ok(!all.some((t) => /herbal powder massage/i.test(t)));
+  assert.ok(fixture.trainBExclusions.some((x) => x.row === "AHV-WB.079.change" && x.action === "no target in the integrated tree"));
 });
 
 test("WB.484: /lp/weight-loss/ says 'oil-based or cleansing therapies', keeping 'where indicated' and assessment", () => {
@@ -29,7 +32,8 @@ test("WB.484: /lp/weight-loss/ says 'oil-based or cleansing therapies', keeping 
 
 test("quotation-box: each removed restatement is gone; the remaining sentence, the quotation box and the owner-rule line remain", () => {
   const quotation = Object.entries(fixture.files).flatMap(([f, e]) => e.replacements.filter((r) => r.row.endsWith(".quotation-box")).map((r) => [slugOf(f), r]));
-  assert.equal(new Set(quotation.map(([, r]) => r.row)).size, 10);
+  // Train B (15 Oct 2026): 4 accepted rows; the 6 rejected by train-d03/REVIEW.json are reverted (checked below).
+  assert.deepEqual([...new Set(quotation.map(([, r]) => r.row))].sort(), ["AHV-WB.057.quotation-box", "AHV-WB.082.quotation-box", "AHV-WB.191.quotation-box", "AHV-WB.217.quotation-box"]);
   for (const [slug, { before, after }] of quotation) {
     const c = productionCampaign(slug);
     const all = strings(slug);
@@ -39,5 +43,16 @@ test("quotation-box: each removed restatement is gone; the remaining sentence, t
     assert.equal(c.cta.primarySupport, SUPPORT, `${slug}: owner-rule line unchanged`);
     assert.ok(c.page.stay.lists.length >= 1, `${slug}: the enquiry-only quotation box remains`);
     assert.ok(all.some((t) => /quot/i.test(t)), `${slug}: one quotation explanation remains in page copy`);
+  }
+});
+
+test("Train B: the six quotation-box rows rejected by train-d03/REVIEW.json are reverted exactly", () => {
+  const rejected = fixture.trainBExclusions.filter((x) => x.action === "reverted");
+  assert.deepEqual(rejected.map((x) => x.row).sort(), ["AHV-WB.004.quotation-box", "AHV-WB.030.quotation-box", "AHV-WB.149.quotation-box",
+    "AHV-WB.288.quotation-box", "AHV-WB.310.quotation-box", "AHV-WB.334.quotation-box"]);
+  for (const { file, before, row } of rejected) {
+    const all = strings(slugOf(file));
+    assert.ok(all.some((t) => t.includes(before)), `${row}: the original sentence is back`);
+    assert.equal(fs.readFileSync(new URL(`../${file}`, import.meta.url), "utf8").split(before).length - 1, 1, `${row}: once in source`);
   }
 });

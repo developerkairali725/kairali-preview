@@ -55,7 +55,7 @@ export default defineCopy({
       heading: "Three steps from enquiry to admission",
       steps: [
         { title: "Start with a free consultation", body: "Tell the doctor what you would like to address, your health history and the medicines you take. Ask about programme suitability and the recommended duration." },
-        { title: "Review your plan and quotation", body: "Understand the proposed therapies and daily routine." },
+        { title: "Review your plan and quotation", body: "Understand the proposed therapies and daily routine. Then review a quotation covering your programme, accommodation and included care, with any extra charges set out." },
         { title: "Arrive for admission", body: "Settle into your villa and follow your prescribed plan, with physician reviews through the stay. Tell the team if your needs change." },
       ],
     },
