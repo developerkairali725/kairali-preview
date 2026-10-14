@@ -274,9 +274,11 @@ export const PRODUCTION_CAMPAIGN_FORM: FormSchema = {
 // shown, because this form asks that question. Selected only by a route's productionForm.profile "family-retreat".
 
 export const FAMILY_GENDERS: readonly Option[] = [{ value: "Male", label: "Male" }, { value: "Female", label: "Female" }];
+// Owner decision 22 (14 Oct 2026, OWNER-DECISIONS-20261014-ANSWERS.json "22-family-durations"; AHV-LATER-010.02/.03):
+// the choices are nights, matching the stay wording on the page; value = label, as before.
 export const FAMILY_DURATIONS: readonly Option[] = [
-  { value: "", label: "Select duration" }, { value: "7 days", label: "7 days" },
-  { value: "14 days", label: "14 days" }, { value: "21 days", label: "21 days" },
+  { value: "", label: "Select duration" }, { value: "7 nights", label: "7 nights" },
+  { value: "14 nights", label: "14 nights" }, { value: "21 nights", label: "21 nights" },
 ];
 export const FAMILY_COUNTRY_MAX = 100;
 export const FAMILY_HEALTH_MAX = 2700;
