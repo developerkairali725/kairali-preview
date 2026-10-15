@@ -226,6 +226,17 @@ id = "generic-api-key"
     regexes = ['''^ahv-consent-refusals-v1$''']
     paths = ['''^sites/ayurvedichealingvillage\.com/public/design/exit-offer\.js$''']
 
+    # Inspected 2026-10-15 with gitleaks 8.30.1 (Train N, PR for Trains G-J):
+    # commit 9d8cade60 test/train-j3-20261015.test.mjs:279 names the same public
+    # sessionStorage slot as consent-runtime.ts above (AHV-LATER-023.01 test of
+    # the visit-scoped attribution), not a credential or stored value. Exempt
+    # only this exact extracted value AND this exact test path.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexTarget = "secret"
+    regexes = ['''^ahv-paid-attribution-v1$''']
+    paths = ['''^sites/ayurvedichealingvillage\.com/test/train-j3-20261015\.test\.mjs$''']
+
 # N12 inspected 2026-10-11: historical c23200f03 test lines 112–113
 # are SHA-256 fingerprints of the released 807c535e3 consultant-course
 # desktop/mobile JSON bytes, recomputed exactly. No authentication use.
