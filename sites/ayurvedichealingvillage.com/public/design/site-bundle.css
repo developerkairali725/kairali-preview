@@ -370,7 +370,7 @@
 /* 66ch at 17.5px lands near 640px: the benchmark's measure, not the
    container's width. Applied to prose only - tables, images and the menu
    card keep the full column. */
-[data-ahv-family="article-reader"] main p,
+[data-ahv-family="article-reader"] main p:where(:not([data-ahv-outline-from])),
 [data-ahv-family="article-reader"] main li {
   max-width:66ch !important;
   font-size:17.5px !important;
@@ -378,7 +378,7 @@
   color:#2A2118 !important;
 }
 [data-ahv-family="article-reader"] main li { line-height:1.62 !important; }
-[data-ahv-family="article-reader"] main p { margin:0 0 20px !important; }
+[data-ahv-family="article-reader"] main p:where(:not([data-ahv-outline-from])) { margin:0 0 20px !important; }
 
 /* The menu card, tables and figures are exempt: they are not prose. */
 [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> ul) li, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h2 ~ ul) li, [data-ahv-family="article-reader"] main nav:not([aria-label="Breadcrumb"]):has(> h3 ~ ul) li,
@@ -390,6 +390,11 @@
 }
 
 /* ---- headings: the benchmark's voice ---------------------------------- */
+/* Reviewed outline corrections (N08; Train J batch 2, 15 Oct 2026) retag a few article headings so the outline no
+   longer skips levels, and mark each with data-ahv-outline-from="<its source tag>" (app/(english)/_families/
+   article-heading-outline.mjs). The heading, prose and editorial-grid rules of this family match a marked element as
+   its SOURCE tag, so its look is unchanged at every width; :where() keeps each selector's specificity, and an
+   unmarked element matches exactly as before. */
 [data-ahv-family="article-reader"] main h1 {
   font-family:Marcellus,Georgia,serif !important;
   font-weight:400 !important;
@@ -411,7 +416,7 @@
   color:#8F6212;
   margin:0 0 14px;
 }
-[data-ahv-family="article-reader"] main h2 {
+[data-ahv-family="article-reader"] main :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]) {
   font-family:Marcellus,Georgia,serif !important;
   font-weight:400 !important;
   font-size:clamp(24px,2.2vw,30px) !important;
@@ -422,7 +427,7 @@
   padding-top:18px !important;
   border-top:1px solid #E4DCC8 !important;
 }
-[data-ahv-family="article-reader"] main h3 {
+[data-ahv-family="article-reader"] main :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"]) {
   font-family:Marcellus,Georgia,serif !important;
   font-weight:400 !important;
   font-size:21px !important;
@@ -622,7 +627,7 @@
    (/packages/: a lone intro has nothing for the label column). A prose section joins the grid only when it carries its own direct h2/h3.
    Unheaded introductions must not inherit an empty label column from a later heading or hidden map. */
 @media (min-width:1180px) {
-  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) {
+  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p:where(:not([data-ahv-outline-from]))):not(:has(h1)):has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"]))) {
     display:grid !important;
     /* label column takes the remainder, so headings align with the H1/breadcrumb edge and the prose ends on the
        container's right edge — the composition fills the column it was given, at the same reading measure */
@@ -630,18 +635,18 @@
     column-gap:clamp(48px,5vw,88px) !important;
     align-items:start !important;
   }
-  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) > * {
+  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p:where(:not([data-ahv-outline-from]))):not(:has(h1)):has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"]))) > * {
     grid-column:2 !important; min-width:0 !important;
   }
   /* the section headings become the label column; each starts the row its section's first block sits on */
-  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) > :is(h2,h3) {
+  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p:where(:not([data-ahv-outline-from]))):not(:has(h1)):has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"]))) > :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"])) {
     grid-column:1 !important; max-width:20ch !important;
     margin:44px 0 0 !important; padding-top:18px !important;
     font-size:clamp(22px,1.7vw,28px) !important; line-height:1.25 !important;
   }
-  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) > :is(h2,h3) + * { margin-top:62px !important; }
+  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p:where(:not([data-ahv-outline-from]))):not(:has(h1)):has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"]))) > :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"])) + * { margin-top:62px !important; }
   /* not prose: full composition width */
-  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) > :is(figure, table, iframe, img, div:has(img), div:has(table), [style*="grid-template-columns"], [data-ahv-maps]) {
+  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p:where(:not([data-ahv-outline-from]))):not(:has(h1)):has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"]))) > :is(figure, table, iframe, img, div:has(img), div:has(table), [style*="grid-template-columns"], [data-ahv-maps]) {
     grid-column:1 / -1 !important;
   }
 }
@@ -722,16 +727,16 @@
    the label column, text at its measure beside them, tables/grids spanning; figures stay in the text column at their own
    inline size (bounded, never upscaled). Card-list articles (/experience/) keep their card grid (rule above). */
 @media (min-width:1180px) {
-  [data-ahv-family="article-reader"] main > div[style*="display: flex"] > article:only-child:not(:has(> div + div + div > div img)):has(> h2, > h3, > div > h2, > div > h3) {
+  [data-ahv-family="article-reader"] main > div[style*="display: flex"] > article:only-child:not(:has(> div + div + div > div img)):has(> :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]), > :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"]), > div > :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]), > div > :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"])) {
     flex:1 1 100% !important; max-width:none !important; width:100% !important;
     display:grid !important; grid-template-columns:minmax(220px,1fr) minmax(0,66ch) !important;
     column-gap:clamp(48px,5vw,88px) !important; align-items:start !important;
   }
-  [data-ahv-family="article-reader"] main > div[style*="display: flex"] > article:only-child:not(:has(> div + div + div > div img)):has(> h2, > h3, > div > h2, > div > h3) > * { grid-column:2 !important; min-width:0 !important; }
-  [data-ahv-family="article-reader"] main > div[style*="display: flex"] > article:only-child:not(:has(> div + div + div > div img)):has(> h2, > h3, > div > h2, > div > h3) > :is(div:has(> :is(h2,h3)), h2, h3) {
+  [data-ahv-family="article-reader"] main > div[style*="display: flex"] > article:only-child:not(:has(> div + div + div > div img)):has(> :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]), > :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"]), > div > :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]), > div > :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"])) > * { grid-column:2 !important; min-width:0 !important; }
+  [data-ahv-family="article-reader"] main > div[style*="display: flex"] > article:only-child:not(:has(> div + div + div > div img)):has(> :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]), > :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"]), > div > :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]), > div > :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"])) > :is(div:has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"]))), :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]), :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"])) {
     grid-column:1 !important;
   }
-  [data-ahv-family="article-reader"] main > div[style*="display: flex"] > article:only-child:not(:has(> div + div + div > div img)):has(> h2, > h3, > div > h2, > div > h3) > :is(div:has(> :is(table, [style*="grid-template-columns"])), table, [style*="grid-template-columns"]) {
+  [data-ahv-family="article-reader"] main > div[style*="display: flex"] > article:only-child:not(:has(> div + div + div > div img)):has(> :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]), > :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"]), > div > :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]), > div > :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"])) > :is(div:has(> :is(table, [style*="grid-template-columns"])), table, [style*="grid-template-columns"]) {
     grid-column:1 / -1 !important;
   }
 }
@@ -806,13 +811,13 @@
    content, same order, aligned with the prose they illustrate. Multi-image rows, galleries, tables, card grids with
    two or more cards and the maps block still span. < 1180px unchanged. */
 @media (min-width:1180px) {
-  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) > :is(img, div:has(> img:only-child), div:has(> div:only-child > img:only-child), figure:has(> img):not(:has(img ~ img, table))):not([data-ahv-maps]) {
+  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p:where(:not([data-ahv-outline-from]))):not(:has(h1)):has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"]))) > :is(img, div:has(> img:only-child), div:has(> div:only-child > img:only-child), figure:has(> img):not(:has(img ~ img, table))):not([data-ahv-maps]) {
     grid-column:2 !important; width:100% !important; max-width:100% !important; margin-left:0 !important; margin-right:0 !important;
   }
-  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) > :is(div:has(> img:only-child), div:has(> div:only-child > img:only-child)) img {
+  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p:where(:not([data-ahv-outline-from]))):not(:has(h1)):has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"]))) > :is(div:has(> img:only-child), div:has(> div:only-child > img:only-child)) img {
     width:100% !important; max-width:100% !important; height:auto !important; margin:0 !important;
   }
-  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) > ul[data-collection="cards"]:has(> li:only-child) {
+  [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p:where(:not([data-ahv-outline-from]))):not(:has(h1)):has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"]))) > ul[data-collection="cards"]:has(> li:only-child) {
     grid-column:2 !important; grid-template-columns:minmax(0,1fr) !important;
   }
 }
@@ -824,7 +829,7 @@
 /* 29 Sep: reserve a label column only when this block actually has a heading.
    An unrelated later heading (including a hidden map) must not indent introductions.
    Text-only articles use a readable column aligned with their title. */
-[data-ahv-family="article-reader"] main > div[style*="display: flex"] > article:only-child:not(:has(h2,h3,img,table)) {
+[data-ahv-family="article-reader"] main > div[style*="display: flex"] > article:only-child:not(:has(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"]),img,table)) {
   flex:1 1 100% !important; width:100% !important; max-width:900px !important;
 }
 /* The virtual-tour preview and its action form one card at every breakpoint.
@@ -858,7 +863,7 @@
 /* Introductions precede their section labels: do not reserve an empty left column
    merely because a later sibling has a subheading. Applies to every locale. */
 @media(min-width:1180px) {
- [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) > :not(h2,h3):not(h2 ~ *,h3 ~ *) {
+ [data-ahv-family="article-reader"]:not([data-ahv-route="/packages/"]) main:not([data-ahv-rail]) > section:has(> p:where(:not([data-ahv-outline-from]))):not(:has(h1)):has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"]))) > :not(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"])):not(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from="h2"]) ~ *,:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from="h3"]) ~ *) {
   grid-column:1 / -1 !important;
   max-width:900px !important;
  }
@@ -1433,7 +1438,7 @@
 /* a list item or definition that is itself a laid-out card (inline display:
    grid / flex — the about-us director rows, feature rows) is not prose: the
    cap once shrank the director rows to 673px on a 1220px column */
-#ahv-design-root[data-ahv-consistency="1"] main p,
+#ahv-design-root[data-ahv-consistency="1"] main p:where(:not([data-ahv-outline-from])),
 #ahv-design-root[data-ahv-consistency="1"] main li:not([style*="display:grid"]):not([style*="display: grid"]):not([style*="display:flex"]):not([style*="display: flex"]),
 #ahv-design-root[data-ahv-consistency="1"] main dd:not([style*="display:grid"]):not([style*="display:flex"]),
 #ahv-design-root[data-ahv-consistency="1"] main blockquote { max-width:66ch !important; }
@@ -2708,6 +2713,8 @@ html[data-ahv-fh] nav[data-ahv-section-nav] { display:none !important; }
   background:#F7F4EA; border-top:1px solid #E9E2D3; box-shadow:0 18px 40px rgba(42,33,24,.18);
 }
 .ahv-fh-panel[hidden] { display:none; }
+/* AHV-M008.02: only when no usable room is left above the compact consent notice (family-header.js place()) */
+.ahv-fh-panel[data-ahv-fh-over-consent] { z-index:1000000; }
 .ahv-fh-panel-in { width:min(1220px, 94%); margin:0 auto; padding:16px 0 28px; box-sizing:border-box; }
 .ahv-fh-head { display:flex; justify-content:space-between; align-items:flex-start; gap:16px; margin-bottom:8px; }
 .ahv-fh-kicker { display:block; font-size:11.5px; font-weight:700; letter-spacing:1.8px; text-transform:uppercase; color:#8F6212; }
@@ -2753,6 +2760,10 @@ html[data-ahv-fh] nav[data-ahv-fh-finder]:not([data-ahv-fh-open]) [role="group"]
 
 /* in-page anchors land below the ONE sticky header row (no second pinned bar on family pages) */
 html[data-ahv-fh] #ahv-design-root [id] { scroll-margin-top:84px; }
+/* AHV-I01.nav1-6: the Air India Maharaja Club sections carry the design's inline scroll-margin-top (16/20px),
+   which beat the rule above, so About/Features/Programs/Routine/Contact landed under the 64/73px sticky header in
+   WebKit. Same 84px offset as every other in-page anchor on family pages; the form keeps its own. */
+html[data-ahv-fh] #ahv-design-root .air-membership section[id] { scroll-margin-top:84px !important; }
 html[data-ahv-fh] #ahv-design-root nav[data-ahv-secondary] { position:static !important; top:auto !important; }
 
 /* native video gallery: its own fallback "Gallery" box duplicated the family menu — the header owns it */
