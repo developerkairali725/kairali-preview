@@ -113,6 +113,30 @@ function showCompactNotice() {
   // Locally authored translation HTML; href is derived from the known locale.
   footer.innerHTML=copy.consentModal.footer;
   compactNotice.append(text,actions,footer);document.body.append(compactNotice);
+  reserveCompactNoticeSpace(compactNotice);
+}
+// AHV-M024.01 (owner decision 30, 15 Oct 2026: layout only). The compact notice is a fixed layer at the viewport
+// bottom; on a first visit it hid keyboard-focused page links (390px in every locale; 1440px in ar, zh-Hans, ko).
+// While it is on screen, publish the height it covers (its top edge to the viewport bottom, plus a gap) so ahv.css
+// can keep focused links scrolled above it (scroll-padding-bottom) and let the page end scroll clear of it. Nothing
+// here reads or writes consent, storage or signals, or changes the notice's text, choices or behaviour; the values
+// are removed as soon as the notice is hidden (preferences open) or removed (a choice is saved).
+function reserveCompactNoticeSpace(notice){
+  const root=document.documentElement;
+  const sync=()=>{
+    const r=notice.isConnected&&!notice.hidden?notice.getBoundingClientRect():null;
+    const clear=r&&r.height>0&&r.top<innerHeight?Math.ceil(innerHeight-r.top+8):0;
+    if(clear){root.style.setProperty('--ahv-consent-compact-clear',clear+'px');root.setAttribute('data-ahv-consent-compact','');}
+    else{root.style.removeProperty('--ahv-consent-compact-clear');root.removeAttribute('data-ahv-consent-compact');}
+    if(!notice.isConnected){resize?.disconnect();changes.disconnect();removeEventListener('resize',sync);}
+  };
+  const resize=typeof ResizeObserver==='function'?new ResizeObserver(sync):null;
+  resize?.observe(notice);
+  const changes=new MutationObserver(sync);
+  changes.observe(notice,{attributes:true,attributeFilter:['hidden']});
+  changes.observe(document.body,{childList:true});
+  addEventListener('resize',sync);
+  sync();
 }
 // Geography controls presentation only. The legacy "passive" region response
 // selects the compact visible choice notice; it never saves consent or starts

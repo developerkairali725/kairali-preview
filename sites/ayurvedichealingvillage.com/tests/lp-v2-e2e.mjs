@@ -58,7 +58,8 @@ if (run(1)) for (const v of ["a", "b", "c", "d"]) for (const [w, h] of [[1440, 8
   if (!/noindex/.test(await page.locator('meta[name="robots"]').getAttribute("content").catch(() => "") || "")) fail.push(`${tag}: robots noindex missing`);
   // Proof area (Task 18)
   const proof = await page.locator(".lp-proof").first().innerText();
-  if (!/4\.6/.test(proof) || !/450/.test(proof) || !/as of August 2026/i.test(proof)) fail.push(`${tag}: proof area lacks Tripadvisor 4.6 / 450 / as of August 2026`);
+  // AHV-LATER-038.01 (owner decision 33, 15 Oct 2026): the figures carry their capture date in full (data/ratings.ts).
+  if (!/4\.6/.test(proof) || !/450/.test(proof) || !/as of 29 August 2026/i.test(proof)) fail.push(`${tag}: proof area lacks Tripadvisor 4.6 / 450 / as of 29 August 2026`);
   if (/google/i.test(proof)) fail.push(`${tag}: Google item present in proof area`);
   if (/\[(C\d+b?|\d(\.\d)?x?|N|\d*x+)\]/i.test(proof)) fail.push(`${tag}: bracket placeholder in proof area: ${proof.match(/\[[^\]]+\]/)}`);
   const logos = await page.evaluate(() => [...document.querySelectorAll(".lp-proof__awards img")].flatMap((i) => [i.getAttribute("src"), (i.getAttribute("srcset") || "").split(",")[0].trim().split(" ")[0]]));

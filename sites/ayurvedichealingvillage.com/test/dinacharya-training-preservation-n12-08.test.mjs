@@ -14,12 +14,15 @@ import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
 import { reverseTrainHSource } from "./fixtures/train-h-20261015.mjs";
+// Train I (15 Oct 2026): its exact recorded deltas (e.g. the AHV-N08 yoga-package description in route-manifest.json) are
+// removed first, so the frozen pins below keep their recorded hashes.
+import { peelTrainISource } from "./fixtures/train-i-20261015.mjs";
 
 const SITE = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/%20/g, " ")), "..");
 const read = (file) => fs.readFileSync(path.join(SITE, file), "utf8");
 const json = (file) => JSON.parse(read(file));
 // Train H (15 Oct 2026, AHV-M021.01) changed only the training hub's tariff link; its recorded delta is reversed first.
-const sha = (file) => crypto.createHash("sha256").update(reverseTrainHSource(file, fs.readFileSync(path.join(SITE, file), "utf8"))).digest("hex");
+const sha = (file) => crypto.createHash("sha256").update(reverseTrainHSource(file, peelTrainISource(file, fs.readFileSync(path.join(SITE, file), "utf8")))).digest("hex");
 const dataset = (file) => { const window = {}; vm.runInNewContext(read(file), { window }); return JSON.parse(JSON.stringify(window)); };
 const WORDS = { one: 1, two: 2, three: 3, four: 4, five: 5, nine: 9, ten: 10, fifteen: 15, twenty: 20, forty: 40, eighty: 80 };
 const num = (w) => { const n = /^\d+$/.test(w) ? +w : WORDS[w.toLowerCase()]; assert.ok(Number.isFinite(n), `unparsed number "${w}"`); return n; };

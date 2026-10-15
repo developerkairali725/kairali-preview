@@ -20,6 +20,8 @@
 // Russian one. Each asserts the exact value it undoes and that no other language carries it.
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
+// Train I (15 Oct 2026): its exact delta on a shared file is removed first (fixtures/train-i-20261015.mjs).
+import { peelTrainISource } from "./train-i-20261015.mjs";
 
 const sha256 = (s) => createHash("sha256").update(s).digest("hex");
 
@@ -69,7 +71,8 @@ export const TRAIN_GH_INTEGRATION = Object.freeze({
 });
 
 /** Train H's exact after-bytes of `path`: the rework's delta on a shared file removed; other paths pass through. */
-export function reverseTrainGHIntegrationSource(path, text) {
+export function reverseTrainGHIntegrationSource(path, rawText) {
+  const text = peelTrainISource(path, rawText);
   const e = TRAIN_GH_INTEGRATION.files[path];
   if (!e) return text;
   if (sha256(text) === e.trainHSHA256) return text;

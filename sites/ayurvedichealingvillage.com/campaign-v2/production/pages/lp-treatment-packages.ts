@@ -74,10 +74,10 @@ export default defineCopy({
       ],
     },
     pathway: {
-      heading: "From enquiry to a quotation you can compare",
+      heading: "From enquiry to your stay",
       steps: [
         { title: "Start with a free consultation", body: "Tell us what you hope to address, any diagnosis or ongoing treatment, and how much time you can set aside. The consultation helps establish whether a programme is appropriate for you." },
-        { title: "Review a written quotation", body: "Ask about preparation and recommended duration. Patient care then brings the programme and accommodation together in a written quotation for your dates, duration and occupancy." },
+        { title: "Agree your programme and stay", body: "Ask about preparation and recommended duration. Patient care then brings the programme and accommodation together for your dates, duration and occupancy." },
         { title: "Begin your prescribed programme", body: "Bring your records and a list of current medicines. Your doctors review your care during the stay, and you can ask what follow-up guidance may involve." },
       ],
     },
@@ -111,10 +111,10 @@ export default defineCopy({
   },
   faq: [
     { q: "Which Ayurvedic treatment package should I choose?", a: "Begin with your needs and medical history. The doctor can discuss programme suitability and the proposed duration. You do not need to select therapies or a complete schedule before enquiring." },
-    { q: "Does every package include the same treatment?", a: "No. The therapies and routine depend on the programme and your assessment. Ask the doctor to explain the recommended care, and check your quotation for the specific inclusions." },
+    { q: "Does every package include the same treatment?", a: "No. The therapies and routine depend on the programme and your assessment. Ask the doctor to explain the recommended care, and confirm the specific inclusions for your programme with the team." },
     { q: "How long should I plan to stay?", a: "Each programme has its own requirements. Share your available dates, then confirm the recommended duration and any minimum stay before arranging travel. A shorter stay should not be assumed to provide the same programme." },
-    { q: "How do I compare costs?", a: "Compare quotations for the same duration, dates and occupancy, with the care and accommodation clearly described. Check meals, doctor reviews, therapy sessions, taxes and separately charged items rather than relying only on a package name." },
+    { q: "How do I compare costs?", a: "Compare like with like: the same duration, dates and occupancy, with the care and accommodation clearly described. Check meals, doctor reviews, therapy sessions, taxes and separately charged items rather than relying only on a package name." },
     { q: "Can I arrange accommodation for a companion?", a: "Ask patient care about the occupancy and arrangements you need, including any help with access or travel. Availability and charges should be confirmed for your dates before booking." },
-    { q: "Is the initial doctor consultation free?", a: "Yes. The initial doctor consultation is free. Ask for a quotation covering your care and any later services, and review the inclusions and charges before confirming your stay." },
+    { q: "Is the initial doctor consultation free?", a: "Yes. The initial doctor consultation is free. Ask the team to set out your care and any later services, and review the inclusions and charges before confirming your stay." },
   ],
 });

@@ -16,6 +16,8 @@ import { reverseTrainFSource } from "./fixtures/train-f-20261015.mjs";
 import { reverseTrainGReworkSource, TRAIN_G_REWORK_SOURCES } from "./fixtures/train-g-rework-20261015.mjs";
 import { reverseTrainBSource } from "./fixtures/train-b-20261015.mjs";
 import { reverseTrainASource } from "./fixtures/train-a-20261014.mjs";
+// Train I (15 Oct 2026) composes on the Train G head: its exact delta is removed before these Train G pins.
+import { peelTrainISource, reverseTrainIConfig } from "./fixtures/train-i-20261015.mjs";
 import { TRAIN_E03 } from "./fixtures/train-e03-20261015.mjs";
 import { TRAIN_E04 } from "./fixtures/train-e04-20261015.mjs";
 import { N03 } from "./fixtures/n03-sanskrit-subtitle-20261015.mjs";
@@ -36,7 +38,7 @@ const CANDIDATES = [
 
 test("every recorded Train G file reverses exactly to the Train F head bytes; a Train F head text passes through", () => {
   for (const [f, e] of Object.entries(TRAIN_G.files)) {
-    const integrated = read(f);
+    const integrated = peelTrainISource(f, read(f));
     if (TRAIN_G_REWORK_SOURCES[f]) assert.equal(sha(integrated), TRAIN_G_REWORK_SOURCES[f].afterSHA256, `${f}: integrated with the rework`);
     const now = reverseTrainGReworkSource(f, integrated);
     assert.equal(sha(now), e.afterSHA256, f);
@@ -80,7 +82,7 @@ test("each Train E candidate's own after-bytes hold in isolation on its recorded
 test("configs: Train G changes exactly the recorded fields on six routes and reverses to the Train F head", () => {
   assert.deepEqual(Object.keys(TRAIN_G.configChanges).sort(), ["brand", "lp-behandlung-kerala", "lp-brand", "monsoon-wellness", "rejuvenation-detox", "wellness-kerala"]);
   for (const slug of PRODUCTION_SLUGS) {
-    const now = plain(productionCampaign(slug));
+    const now = reverseTrainIConfig(slug, plain(productionCampaign(slug)));
     const trainF = reverseTrainGConfig(slug, plain(now));
     assert.equal(JSON.stringify(reverseTrainGConfig(slug, plain(trainF))), JSON.stringify(trainF), `${slug}: Train F head passes through`);
     if (!TRAIN_G.configChanges[slug]) assert.equal(JSON.stringify(trainF), JSON.stringify(now), slug);

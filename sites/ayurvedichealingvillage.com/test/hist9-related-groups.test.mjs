@@ -38,7 +38,10 @@ test('English related links keep their accepted destination groups', () => {
   const kb = groupsOf(w, w.AHV_HIST9_FAMILY.routes.find((r) => r.path === '/karma-being-retreat/'));
   assert.deepEqual(kb.map((g) => g.label), ['Ayurveda & yoga knowledge', 'Food & cooking at Kairali', 'Products & publications']);
   assert.deepEqual(kb[1].paths, ['/ayurvedic-resturant-and-cooking-at-healing-village/']);
-  const katha = groupsOf(w, w.AHV_HIST9_FAMILY.routes.find((r) => r.path === '/katha-wellness-retreat-2019/'));
+  // Train I (15 Oct 2026, AHV-I04.M085.links): the captured sidebar is retained, unrendered, as retiredRelatedLinks; it still
+  // groups exactly as accepted. The rendered set is the three current programme hubs (train-i-20261015.test.mjs).
+  const kathaR = w.AHV_HIST9_FAMILY.routes.find((r) => r.path === '/katha-wellness-retreat-2019/');
+  const katha = groupsOf(w, { ...kathaR, relatedLinks: kathaR.retiredRelatedLinks.links });
   assert.deepEqual(katha.map((g) => g.label), ['Kairali Group & education', 'Products & publications', 'About Kairali']);
 });
 

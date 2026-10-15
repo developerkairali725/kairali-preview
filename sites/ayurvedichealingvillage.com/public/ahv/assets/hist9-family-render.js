@@ -31,6 +31,8 @@
       if (/\/(?:kairali-hospitality|arogya-kendra|arogya-shala|kairali-ayurvedic-centre|ayurvedic-franchise|kairali-institute-of-ayurveda-and-panchakarma-therapy)\//.test(path)) return 'Kairali Group & education';
       if (/\/(?:new-to-|why-|live-to-|ayurveda-retreats-for-everyone|what-is-)/.test(path)) return 'Ayurveda & yoga knowledge';
       if (path === '/ayurvedic-resturant-and-cooking-at-healing-village/') return 'Food & cooking at Kairali';
+      // AHV-I04.M085.links (Train I): current programme hubs, under the accepted 'Explore current programmes' label.
+      if (/^\/(?:yoga-meditation-programs|ayurvedic-treatments|all-programs)\/$/.test(path)) return 'Explore current programmes';
       return 'Products & publications';
     };
     links.forEach((link) => {

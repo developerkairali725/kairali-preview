@@ -16,13 +16,16 @@ import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import fs from "node:fs";
 import { reverseN03File } from "./n03-sanskrit-subtitle-20261015.mjs";
+// Train I (15 Oct 2026) composes on this head: its exact delta is removed first, so every pin below runs unchanged.
+import { peelTrainISource, reverseTrainIConfig } from "./train-i-20261015.mjs";
 
 export const TRAIN_G = JSON.parse(fs.readFileSync(new URL("./train-g-20261015.json", import.meta.url), "utf8"));
 const sha = (s) => createHash("sha256").update(s).digest("hex");
 const plain = (v) => JSON.parse(JSON.stringify(v));
 
 /** The Train F head text of `path` (unchanged when Train G did not touch it, or when it is already the Train F head). */
-export function reverseTrainGSource(path, text) {
+export function reverseTrainGSource(path, rawText) {
+  const text = peelTrainISource(path, rawText);
   const view = TRAIN_G.views[path];
   if (view) {
     if (sha(text) === view.beforeSHA256) return text;
@@ -48,7 +51,8 @@ const at = (c, path) => path.reduce((o, k) => (o == null ? undefined : o[k]), c)
 const same = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 
 /** A production config (JSON copy) with Train G's field changes reversed exactly. Mutates and returns `c`. */
-export function reverseTrainGConfig(slug, c) {
+export function reverseTrainGConfig(slug, rawConfig) {
+  const c = reverseTrainIConfig(slug, rawConfig);
   const changes = TRAIN_G.configChanges[slug];
   if (!changes) return c;
   if (changes.every(({ path, before }) => same(at(c, path), before))) return c;

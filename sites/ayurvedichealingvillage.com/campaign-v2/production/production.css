@@ -234,7 +234,9 @@ html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
 
 /* Phones: everything stacks; nothing scrolls sideways (spec decision 7). */
 @media (max-width: 767px) {
-  .lp-prod .lp-hero__note { font-size: 13px; }
+  /* AHV-LATER-043.01 (owner decision 33, 15 Oct 2026: "Hero fine print 14px on mobile"): the hero fine print keeps its
+     desktop 14px on phones too. */
+  .lp-prod .lp-hero__note { font-size: 14px; }
 
   .lp-prod .lp-plead { display: flex; flex-direction: column; gap: 20px; padding-bottom: 20px; }
   .lp-prod .lp-plead__first { font-size: 19px; }
@@ -309,6 +311,9 @@ html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
   /* B phones: the kit drops the hero body and form; here the card (what is free + the CTA) stays under the photograph. */
   .lp-prod[data-variant="B"] .lp-hero__form { display: block; margin: 12px 12px 0; }
   .lp-prod[data-variant="B"] .lp-consult--card { padding: 22px 20px; }
+  /* AHV-LATER-043.01: D phones drop the hero body (and its fine print) and the kit hides the card's own copy of it,
+     so D was the one variant with no fine print on a phone. The card's line shows instead, at the card's 15px. */
+  .lp-prod[data-variant="D"] .lp-consult--card .lp-consult__sub { display: block; }
   .lp-prod[data-variant="B"] .lp-consult--card .lp-consult__title,
   .lp-prod[data-variant="D"] .lp-consult--card .lp-consult__title { font-size: 26px; }
 }

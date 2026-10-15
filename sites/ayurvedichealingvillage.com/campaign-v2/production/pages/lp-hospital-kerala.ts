@@ -57,7 +57,7 @@ export default defineCopy({
       heading: "Three steps from enquiry to admission",
       steps: [
         { title: "Start with a free consultation", body: "Tell the doctor what you would like to address, your health history and the medicines you take. Ask about programme suitability and the recommended duration." },
-        { title: "Review your plan and quotation", body: "Understand the proposed therapies and daily routine. Then review a quotation covering your programme, accommodation and included care, with any extra charges set out." },
+        { title: "Review your plan", body: "Understand the proposed therapies and daily routine. Then review your programme, accommodation and included care, with any extra charges set out." },
         { title: "Arrive for admission", body: "Settle into your villa and follow your prescribed plan, with physician reviews through the stay. Tell the team if your needs change." },
       ],
     },
@@ -106,8 +106,8 @@ export default defineCopy({
   faq: [
     { q: "Is Kairali an Ayurvedic hospital?", a: "Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, with residential villa accommodation. Your doctor assesses your health and prescribes the programme, with care reviewed during the stay and guidance discussed before discharge." },
     { q: "What should I bring to the consultation?", a: "Be ready to discuss your symptoms, diagnoses, previous care and current medicines. Share relevant reports and ask the team whether any further information is needed for admission. Tell the doctor about your goals and practical needs for the stay." },
-    { q: "Can a companion stay with me?", a: "Discuss this with patient care before admission. Explain who will receive treatment, who will accompany them and what assistance may be needed. Confirm accommodation, meals, access arrangements and any companion charges in your quotation before booking." },
-    { q: "Is the initial doctor consultation free?", a: "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Before booking a stay, request a quotation explaining the treatment, accommodation, doctor reviews and any later services, along with separately charged items." },
-    { q: "What should I check before booking?", a: "Confirm the recommended programme, number of nights, villa category and occupancy in your quotation. Ask which care, meals and sessions are included, and which medicines, tests, additional services or travel arrangements cost extra. Review the booking terms before making a payment." },
+    { q: "Can a companion stay with me?", a: "Discuss this with patient care before admission. Explain who will receive treatment, who will accompany them and what assistance may be needed. Confirm accommodation, meals, access arrangements and any companion charges before booking." },
+    { q: "Is the initial doctor consultation free?", a: "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Before booking a stay, ask the team to explain the treatment, accommodation, doctor reviews and any later services, along with separately charged items." },
+    { q: "What should I check before booking?", a: "Confirm the recommended programme, number of nights, villa category and occupancy with the team. Ask which care, meals and sessions are included, and which medicines, tests, additional services or travel arrangements cost extra. Review the booking terms before making a payment." },
   ],
 });
