@@ -22,6 +22,7 @@ import { articleOutlineSourcesHtml, articleHeadingOutlineHtml, repairArticleOutl
 import { TRAIN_J2, reverseTrainJ2Source, peelTrainJ2Source } from "./fixtures/train-j2-20261015.mjs";
 // Train J integration: a file another Train J batch also edited is read as Train J2 left it (fixtures/train-j-integration-20261015.mjs).
 import { peelTrainJ1UnderJ2 } from "./fixtures/train-j-integration-20261015.mjs";
+import { peelTrainNTail } from "./fixtures/train-n-integration-20261015.mjs";
 
 const SITE = fileURLToPath(new URL("../", import.meta.url));
 const read = (p) => fs.readFileSync(new URL(`../${p}`, import.meta.url), "utf8");
@@ -37,7 +38,7 @@ test("every Train J2 file reverses exactly to the Train I head bytes (git 00e944
   assert.equal(TRAIN_J2.base, BASE);
   assert.equal(Object.keys(TRAIN_J2.files).length, 13);
   for (const [p, e] of Object.entries(TRAIN_J2.files)) {
-    const now = peelTrainJ1UnderJ2(p, read(p));
+    const now = peelTrainJ1UnderJ2(p, peelTrainNTail(p, read(p)));
     assert.equal(sha(now), e.afterSHA256, `${p}: current bytes are Train J2's`);
     const head = reverseTrainJ2Source(p, now);
     assert.equal(sha(head), e.beforeSHA256, p);
@@ -168,7 +169,7 @@ test("server and live wiring: design-view marks, corrects, then refines; boot in
 test("article-reader.css and consistency.css only gain zero-specificity source-tag guards; reversing them gives the head bytes", () => {
   const AS = (tag) => tag === "p" ? `p:where(:not([${MARK}]))` : `:is(h2,h3,h4,p):where(${tag}:not([${MARK}]),[${MARK}="${tag}"])`;
   for (const file of ["public/design/article-reader.css", "public/design/consistency.css"]) {
-    let text = read(file);
+    let text = peelTrainNTail(file, read(file));
     for (const tag of ["h2", "h3", "h4", "p"]) text = text.split(AS(tag)).join(tag);
     text = text.replace(/\/\* Reviewed outline corrections \(N08; Train J batch 2[\s\S]*?\*\/\n/, "");
     assert.equal(sha(text), TRAIN_J2.files[file].beforeSHA256, file);

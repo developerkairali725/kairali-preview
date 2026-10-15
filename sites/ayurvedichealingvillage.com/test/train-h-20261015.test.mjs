@@ -24,6 +24,7 @@ import { TRAIN_H, reverseTrainHBindings, reverseTrainHConfig, reverseTrainHSourc
 // Train G integration (15 Oct 2026): the Train G rework's exact delta on the shared files, and its Russian phone example
 // (AHV-WB.548), are reversed first so the Train H checks below run on exactly Train H's state.
 import { reverseTrainGHIntegrationSource, reverseTrainGReworkPhoneExample, reversePhoneTable } from "./fixtures/train-gh-integration-20261015.mjs";
+import { peelTrainNTail } from "./fixtures/train-n-integration-20261015.mjs";
 // Train J3 (15 Oct 2026): its card photographs and copy edits (AHV-WB.298/454 and others) are reversed exactly first.
 import { reverseTrainJ3Binding, reverseTrainJ3Config } from "./fixtures/train-j3-20261015.mjs";
 
@@ -68,7 +69,7 @@ function loadModule(file) {
 test("the recorded Train H delta reverses exactly to the Train F head, file by file", () => {
   assert.equal(TRAIN_H.base, "dae94e21cac638a57f715a9081b3583dc680b338");
   for (const [p, e] of Object.entries(TRAIN_H.files)) {
-    const now = reverseTrainGHIntegrationSource(p, read(p));
+    const now = reverseTrainGHIntegrationSource(p, peelTrainNTail(p, read(p)));
     assert.equal(sha256(now), e.afterSHA256, `${p}: current bytes are Train H's`);
     assert.equal(sha256(reverseTrainHSource(p, now)), e.beforeSHA256, p);
     let base = null;

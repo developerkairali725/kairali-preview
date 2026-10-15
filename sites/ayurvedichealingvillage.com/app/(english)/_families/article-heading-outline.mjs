@@ -57,8 +57,13 @@ export function repairArticleOutline(root, route, contactRepair) {
   const select = (tag, pointers) => pointers ? pointers.map(n => tag + '[data-source-pointer="/sections/3/c/3/c/' + n + '"]').join(",") : tag;
   const within = selector => { const nodes = Array.from(root.querySelectorAll(selector)); if (root.matches && root.matches(selector)) nodes.unshift(root); return nodes; };
   const rule = contactRepair ? contactRepair(null, route) : null;
-  if (rule) for (const node of within(select(rule[0], rule[2]))) if (!node.hasAttribute(mark)) node.setAttribute(mark, rule[0]);
-  if (contactRepair) contactRepair(root, route);
+  // Train N (15 Oct 2026): a marked node of the rule's source tag was already corrected and then refined back
+  // (/new-to-yoga/ h3 -> h2 -> h3). Correcting it again on a later mutation delivery made the refinement retag it
+  // back, and every replacement queued another delivery: the page's main thread never went idle. The correction
+  // therefore runs only while an unmarked (never processed) target exists; the end state is unchanged.
+  let pending = !rule;
+  if (rule) for (const node of within(select(rule[0], rule[2]))) if (!node.hasAttribute(mark)) { node.setAttribute(mark, rule[0]); pending = true; }
+  if (contactRepair && pending) contactRepair(root, route);
   if (!list) return;
   for (const step of list) {
     for (const old of within(select(step[0], step[2]))) {
