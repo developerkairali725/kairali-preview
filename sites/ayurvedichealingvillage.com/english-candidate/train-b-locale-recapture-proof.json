@@ -1,0 +1,3316 @@
+{
+  "status": "PASS",
+  "train": "B",
+  "head": "0b1832c7673b125c2b2ce4802666be5f60909977",
+  "parentArchive": "ahv-locale-prerenders-dinacharya-final-20261011.tar.gz",
+  "parentArchiveSHA256": "518c116ae23ba078f853c0959a4eba873d2157030e04fd16348a1632d3a1d1e4",
+  "archive": "ahv-locale-prerenders-train-b-20261015.tar.gz",
+  "captureInputsSHA256": "327e9c93c54c894400dc34a8103baac08be595c3a2702875ba98c92947b17105",
+  "newBodyCount": 192,
+  "changedBodyCount": 192,
+  "unchangedFreshBodyCount": 0,
+  "preservedBodyCount": 2220,
+  "sourceCommits": {
+    "9fa0df1b1": "fix(ahv): group localized past-retreat related links and correct stale labels",
+    "c8ed28232": "fix(ahv): consultation thank-you shows a real heading under the clean banner (F1)"
+  },
+  "affectedRoutes": {
+    "hist9": [
+      "/chef-retreat-food-to-wellness/",
+      "/food-sadhana/",
+      "/karma-being-retreat-2019/",
+      "/karma-being-retreat/",
+      "/katha-wellness-retreat-2019/",
+      "/lakshya-yoga-retreat-2017/",
+      "/lakshya-yoga-retreat-2018/",
+      "/prav-simona-monsoon-yoga-retreat/",
+      "/prav-simona-yoga-retreat/"
+    ],
+    "confirmation": [
+      "/book-now/",
+      "/cart/",
+      "/checkout/",
+      "/contact-us/thank-you/",
+      "/emailsubscriber/",
+      "/onlinebookingthankyou/",
+      "/onlineconsultation-thanks/",
+      "/ppc-thanks/",
+      "/thanks-old/",
+      "/thanks/"
+    ],
+    "perLocale": {
+      "hi": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/",
+        "/book-now/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ],
+      "de": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/",
+        "/book-now/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ],
+      "fr": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/",
+        "/book-now/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ],
+      "es": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/",
+        "/book-now/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ],
+      "it": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/",
+        "/book-now/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ],
+      "pt": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/",
+        "/book-now/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ],
+      "nl": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/",
+        "/book-now/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ],
+      "ru": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/",
+        "/book-now/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ],
+      "ar": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/",
+        "/book-now/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ],
+      "zh-Hans": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/",
+        "/book-now/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ],
+      "ja": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/",
+        "/book-now/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ],
+      "ko": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/",
+        "/book-now/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "retainedRedirected": {
+      "route": "/ppc-thanks/",
+      "reason": "Retired 8 Oct 2026 (3c5d84906, before the parent archive): every locale /ppc-thanks/ path 301s to the same-locale /thanks/ in next.config.ts (english-candidate/ppc-thanks-redirects.json); the strict live-runtime guard rejects the redirect (attempt-01, /hi/ppc-thanks/). The body is unreachable behind the 301, so the parent bytes are retained unchanged."
+    },
+    "failedAttempt": "deliverables/WOPS-WEBSITE-SEQUENTIAL-20261008-001/recovery-20261014/train-b/locale-recapture/attempt-01-ppc-thanks-redirect/"
+  },
+  "interactionOnlySources": {
+    "files": 24,
+    "policy": "Not recaptured; validated as inert at every build by tools/verify-interaction-only-source.mjs."
+  },
+  "changedSources": [
+    {
+      "file": "l10n/generated/ar.json",
+      "sha256": "86e4dbfb92365d39179fd03be5895662b370efc152b3c268220f78a5f439b8e4",
+      "parentSha256": "6188661f06a17a28a03bef0f1ebb26a3d1b67f175bf53be7c4f159b7e15decf7"
+    },
+    {
+      "file": "l10n/generated/de.json",
+      "sha256": "5902d3c62c1c99559359bda85d195e9c31caebb4b9210e7a0b2c147b8113e8d0",
+      "parentSha256": "a567e759a68d2be3a785a8cb84a00d05b4548ef19d59dbe2861151787eda2f5f"
+    },
+    {
+      "file": "l10n/generated/es.json",
+      "sha256": "2e6ebb6efa4b07af8b0c7af942293d7600caddba21d0cb729f9e0153705363ef",
+      "parentSha256": "07063d7aa1407022c461ab68f35bd6620ae458cce3c07dfe0c5e6ed69b957138"
+    },
+    {
+      "file": "l10n/generated/fr.json",
+      "sha256": "5c76c99582c1e2aedd8d2bdbf9fc1fef4b306d8b70fb5359595c4dafa38e7491",
+      "parentSha256": "4939589b0143928cd5fef9df7a5449c40830c6a9236370acec91855aff89778d"
+    },
+    {
+      "file": "l10n/generated/hi.json",
+      "sha256": "c3d7995e5a6e2ff75a52a64dd9b31e7b528f49b31e21883b95b6697153bf7f23",
+      "parentSha256": "a364c928d70e5d600f39e327027ae6086723d004a1c908c999277b7768d79c27"
+    },
+    {
+      "file": "l10n/generated/it.json",
+      "sha256": "ade2085fbbb57dd632add217333750e8fbb93ebb920336b14f9e5ce477a540c6",
+      "parentSha256": "2a1bf0ba2ed503c46a7e65bfff1609f24a27567201dc6b489625d9616944a09d"
+    },
+    {
+      "file": "l10n/generated/ja.json",
+      "sha256": "266f361256ea649e0bc77c32d068d9440082afda244b10f80af4713760a91fb6",
+      "parentSha256": "11bb5afe7128752874c090548490699eebc0027d453385c54a1a4d4cc00ff109"
+    },
+    {
+      "file": "l10n/generated/ko.json",
+      "sha256": "5a33cb8a951e06042f0048199eba547220c4aacb94c10a2cf122488046b96808",
+      "parentSha256": "d5acc68e41190409d91b1904283e3fb00e01731e2bec6e564ae1e9b3f913cfe5"
+    },
+    {
+      "file": "l10n/generated/nl.json",
+      "sha256": "459efb16fe93db6816481a6a4a5de80de6591b10f052b01a9f8492b0147d289e",
+      "parentSha256": "9b633296d32c4f77418eb81614e8bc87fb0de7b485a8ddf4a03bbc85db16d302"
+    },
+    {
+      "file": "l10n/generated/pt.json",
+      "sha256": "2c017016ffe1e916bd991fdf4bd6e3752990d8defad5cc8c1dd064c3367fd7de",
+      "parentSha256": "3510f0f25e03e97de143ed48d9569acd3d0e34aea004b8d872857aeda58444d4"
+    },
+    {
+      "file": "l10n/generated/ru.json",
+      "sha256": "966dc2cef06d891aedd6ad43574aabba03a2bb8878cba3d00efd87947eb17cce",
+      "parentSha256": "068e1384e0fab09c289589de2394ecf8a8c84dd423bbef3428bd791008bff6ea"
+    },
+    {
+      "file": "l10n/generated/zh-Hans.json",
+      "sha256": "061cad63ef8f5cfc8888543d3231fc1d8414724fd11edc706a2b1a5343f93958",
+      "parentSha256": "d5bcf6503a59fe8aa4446087f4b360fe7360942979c9847a22d20d3202e37840"
+    },
+    {
+      "file": "public/ahv/l10n/ar/assets/hist9-family-render.js",
+      "sha256": "0f83fb5c741a7282f0805d93605e5d0202dde2b9ab594cac88d7358aaf72f1ed",
+      "parentSha256": "b0a487f9495454bc3f8dfee99ea5993e52327e20ab75065b38ddcbe74f3a0642"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-confirmation-desktop.json",
+      "sha256": "e7f66f622581e2179c91c11c858356834ce1a494b0229560399a24f51703be34",
+      "parentSha256": "98a1767c8094888c3bc44f9806dce80a54ca86ff3c94561cdfd9dbd0e23274d1"
+    },
+    {
+      "file": "public/ahv/l10n/ar/views/ahv-page-confirmation-mobile.json",
+      "sha256": "f4760282295f09624269e27df06de7841e2e667fd2f5ee59ab4b40ef49eb3140",
+      "parentSha256": "8b4fee2990e5b6d766127eba78401bcb8a0951bed77edabca6e19d71155a06ec"
+    },
+    {
+      "file": "public/ahv/l10n/de/assets/hist9-family-render.js",
+      "sha256": "2a1f2d242d9454c36cc178f520c8ae6a51ce0b6606090119288123b85f93d021",
+      "parentSha256": "2f86e2f557f6e1b76f94b67997d7ae8a5e9465558e8783fe911dad2ffa752f99"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-confirmation-desktop.json",
+      "sha256": "4c6f2864a285c7348f9b76b05730a533a46c1729e36fe954739baa1f37c5dc7f",
+      "parentSha256": "52f7176085c91fb909e63d43614c790d73d57593ec1326f5e7893934b073181f"
+    },
+    {
+      "file": "public/ahv/l10n/de/views/ahv-page-confirmation-mobile.json",
+      "sha256": "9da28751d1f85a86ac66c70f54aa3a2d2593817a378fa128d7bc86447e74cff9",
+      "parentSha256": "6ee248be696320dbb192d51b4f0d7c0f28f4128c39bd7639ea28ff10e2ddd71b"
+    },
+    {
+      "file": "public/ahv/l10n/es/assets/hist9-family-render.js",
+      "sha256": "5891ef6e8c24949b2abd81a4b2594a8ee59fe27049318d561a9cb0c9a7967492",
+      "parentSha256": "3da43c443e6303db243ce5b4840d8c7e84a698da2dfd16992d7c0f14a8c0904f"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-confirmation-desktop.json",
+      "sha256": "876576b1a718125157ed45a7da71a83bae4398c862ff5dfc5c0fc3bf31f1f203",
+      "parentSha256": "d673dc0562fe6ccbb802d90999e40b265f1a2a0708b63b26f026c6f007494a9a"
+    },
+    {
+      "file": "public/ahv/l10n/es/views/ahv-page-confirmation-mobile.json",
+      "sha256": "d9f03af59c1ed47b9f8b57c57a6af9a769e910cc06bcfc55245e1f83b516605c",
+      "parentSha256": "fc1abce3be2a15cbbaf523fbedc1dd6942c17b0e5fc07672759b319a186c99bf"
+    },
+    {
+      "file": "public/ahv/l10n/fr/assets/hist9-family-render.js",
+      "sha256": "c5fab3f87e6668186fdd37e3637381a102c347cb1262c87db1b77a4d22551144",
+      "parentSha256": "3dc55eb699d54c0ec94c87a06f2971470b37c63cd79f0bcee1ee193c7ffb7049"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-confirmation-desktop.json",
+      "sha256": "001eebeb8f19e3d3f540ad621b3ecf356224d591be2e8ed4bcb21fed7f5fad4f",
+      "parentSha256": "b87e209384b1875608ff06e11c029fb93a1fd82c9b0e3b364ab15411c3f68967"
+    },
+    {
+      "file": "public/ahv/l10n/fr/views/ahv-page-confirmation-mobile.json",
+      "sha256": "5ce22bd0c901f22387105139fa23cc0767fc5f25a7d88edad8f9c8f81122c767",
+      "parentSha256": "63c7020d6ff398be25eb0412059ebaf2371fb4aa66bd9d45a056d97dd3310658"
+    },
+    {
+      "file": "public/ahv/l10n/hi/assets/hist9-family-render.js",
+      "sha256": "e7932f20fe8d41804c1e64207bb376d3a41a5b5d7e259d913bd7da7707256232",
+      "parentSha256": "54ee30b4f701c96d6dfe83c9cfd0f8e06a865c8b755d35745c95f5b97a278a5f"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-confirmation-desktop.json",
+      "sha256": "9e21681a77d4537705f29d12584b84d2b3ea106ca12b2a7b82b00b14252d95cb",
+      "parentSha256": "7fcbc37a2fe93dd03a6d5aba0b322f5bb24874f0f2a877b591c7014bf1b83a54"
+    },
+    {
+      "file": "public/ahv/l10n/hi/views/ahv-page-confirmation-mobile.json",
+      "sha256": "bbf7d51595959199edaaac04c94473ab1c838b8cb905f8705f3b426d1a3ea1f7",
+      "parentSha256": "13abdf306a6eb0ef5efe4187ee80a037708968d539056e7a2335634491940a99"
+    },
+    {
+      "file": "public/ahv/l10n/it/assets/hist9-family-render.js",
+      "sha256": "d1ebbf37724a9653b21cf692848c03f3972f457a17d12856d9bda69e42217845",
+      "parentSha256": "c7506d52d3f57091047e1716e0d23bd6971e32035d30ea7d2a283be131e32ec1"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-confirmation-desktop.json",
+      "sha256": "0d3f996e1edf077749e2673d3c797b45b1bc8944668d778ac00daa55f128b3c8",
+      "parentSha256": "30753e02f28e416b50395f64889aa25273610414a9556eaacfd7540e88a35536"
+    },
+    {
+      "file": "public/ahv/l10n/it/views/ahv-page-confirmation-mobile.json",
+      "sha256": "a898dd33e44c9f5b5ae6eb231b4b1368e2e156ec8fbf1db92ae55b7c05e4110a",
+      "parentSha256": "77bec19929a753c4ba29b7a30d36fc120a3139e7de8598ce9c7bd1f291829559"
+    },
+    {
+      "file": "public/ahv/l10n/ja/assets/hist9-family-render.js",
+      "sha256": "a815912a8f7b32bced217abf92f4b5cbf365f19a26536b9cb6aeb5aee2261f29",
+      "parentSha256": "765e6912532007a0c968aadfbaddc2e923ebd4575857b553ffd8dbc67f4f9f4f"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-confirmation-desktop.json",
+      "sha256": "b3781d4d6a4e0de46bdf2437c5e52cc827e938d7f7de58216b736a9a82b18e65",
+      "parentSha256": "a0f0d4b14ff50be09738e15a8bff954d00b0ee316805702bcc24b6497869ecea"
+    },
+    {
+      "file": "public/ahv/l10n/ja/views/ahv-page-confirmation-mobile.json",
+      "sha256": "bc6017eb8ffb226fe4f4ce74e2de084b7dcb3615523632986922e19099b5f2d6",
+      "parentSha256": "ba068f91077bb8c0025128c206c587e3eed301835de65232b1b5ecfc476557b6"
+    },
+    {
+      "file": "public/ahv/l10n/ko/assets/hist9-family-render.js",
+      "sha256": "c691661f99829afb7810f63651f1b974cef7245ad579bbaecc1b895d0c5b74a1",
+      "parentSha256": "206e0673204231ca03a46126efa357eddf6d72211239e8964393c1f87da6195a"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-confirmation-desktop.json",
+      "sha256": "da74f02d88e88eae45d0e5ffbc6b863040fcb0c460910994aa093c3667f7fc24",
+      "parentSha256": "b1c8caa6242701e7e4738730e1cbd556e19debbcdbff3be8fd2c2a22f1011398"
+    },
+    {
+      "file": "public/ahv/l10n/ko/views/ahv-page-confirmation-mobile.json",
+      "sha256": "6200ef74cbda85d90acc43fe618bd4bfe014f1e40ab02fdbd07432038dc7f205",
+      "parentSha256": "07d2f94fa44843cf102fd792494fb28a6a5b694870841f12c17109d21b8abc55"
+    },
+    {
+      "file": "public/ahv/l10n/nl/assets/hist9-family-render.js",
+      "sha256": "b5db02cd47114ad5eee268ca63530b16d66d21b1ecb82f580cbcad0d9a094a56",
+      "parentSha256": "5ab90a5453d7889f67d997894b8060d4689f25aa23e9d4eff26b99700b7598d5"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-confirmation-desktop.json",
+      "sha256": "ca8b23e63b520e79e97fc7dde608bc33a023fd07b8ab525394428ef07a0097a8",
+      "parentSha256": "31d3e3f0de1f01ac0b879ee009efefd7937016fed2e6be7202ba15ecedd413aa"
+    },
+    {
+      "file": "public/ahv/l10n/nl/views/ahv-page-confirmation-mobile.json",
+      "sha256": "917ed5adb8c2ea8f829acc3e5b6b545ed04e4b6630996dbe63d5ae67768a15c3",
+      "parentSha256": "439d9eaae24f6f5af608daa4b05e9b127410732ec2d4643f7a2c3768a6906aba"
+    },
+    {
+      "file": "public/ahv/l10n/pt/assets/hist9-family-render.js",
+      "sha256": "9ddbd15e9eb91ccc4d19070c16a8c95c9c2e6a12d11761b7982ca46b6e2cb420",
+      "parentSha256": "4f1fd319482048b6053623571118134e66bf61436017280383f0b9f033afbf12"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-confirmation-desktop.json",
+      "sha256": "afd0a19ba578be36cf89f6356a24e4316301288c1c06ad03124f3fc8bb15ccf4",
+      "parentSha256": "b065cea564070d9461e0430c94b4463e97245f120de2b9f1db24cb6421466341"
+    },
+    {
+      "file": "public/ahv/l10n/pt/views/ahv-page-confirmation-mobile.json",
+      "sha256": "f842bfe53e06b2080f5757e5a158a1eb493cdb2a4dd9fc2f70f919f1474e1b9a",
+      "parentSha256": "5386082d9d5c940adbffac9b062b7eb064d01f4ab6930bc2e0f4af040a87d7bc"
+    },
+    {
+      "file": "public/ahv/l10n/ru/assets/hist9-family-render.js",
+      "sha256": "2c9011971c89240a897e5eb92ea56819957db9877378d86c13c397adc43e8171",
+      "parentSha256": "6acf3e621ad0f4992b59ad60155bea7530a49796a9f3f81e0892bed24de82b3e"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-confirmation-desktop.json",
+      "sha256": "ef6a762249e358541ffd5648f2ace2979d511f654a2a9a79eaaf495b6fcbd883",
+      "parentSha256": "d2985453f7cc3331e7c8963e427466b83f96327a70dde71106d72605e8901dbb"
+    },
+    {
+      "file": "public/ahv/l10n/ru/views/ahv-page-confirmation-mobile.json",
+      "sha256": "d8fe71ff63b24b17b33ff780414c653de71710fc4ae21c030fdd61edbd37b93b",
+      "parentSha256": "dfd0e78d972c94baa5562626cd729442c7206d8566c9f2b90adb8df8c47b4023"
+    },
+    {
+      "file": "public/ahv/l10n/zh/assets/hist9-family-render.js",
+      "sha256": "5f0310dccfa5283461655187f4cc11a1e7fab4ea25b804a405a58da95f76f577",
+      "parentSha256": "7bc7dbf081ac20b4e4a25dedf7bea183c88fde49cfea7800ade2ec1fb4d23f34"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-confirmation-desktop.json",
+      "sha256": "039f639984c18d2cf29f942f0821d12a6153230fc61ae42ca4b949955c26dff0",
+      "parentSha256": "27601a0cfafa4b928f1e86deed4fc41e60eb40c06b3b856830fe97e6a903dc22"
+    },
+    {
+      "file": "public/ahv/l10n/zh/views/ahv-page-confirmation-mobile.json",
+      "sha256": "ad5c626752b9ab0487fb136121c207da9107ee70dfc9f14f0be8875cb04973ff",
+      "parentSha256": "ffc5642e8228b6016f12ec5f266c8a0b8a5c12b9bbe9cf5fb65ba141071d220e"
+    }
+  ],
+  "sourceDeltaExplanation": {
+    "l10n/generated/ar.json": {
+      "commit": "9fa0df1b1",
+      "kind": "content-review-copy link labels (AHV-M083.02/M084.02/M085.02)",
+      "routes": [
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/"
+      ],
+      "added": {
+        "/karma-being-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ],
+        "/karma-being-retreat/": [
+          {
+            "old": "عِش حتى 100 عام مع البانشاكارما",
+            "new": "البانشاكارما: التحضير والإجراءات",
+            "kind": "link"
+          },
+          {
+            "old": "المنتجات",
+            "new": "المنتجات الأيورفيدية",
+            "kind": "link"
+          }
+        ],
+        "/katha-wellness-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ]
+      },
+      "missingUnits": 0
+    },
+    "l10n/generated/de.json": {
+      "commit": "9fa0df1b1",
+      "kind": "content-review-copy link labels (AHV-M083.02/M084.02/M085.02)",
+      "routes": [
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/"
+      ],
+      "added": {
+        "/karma-being-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ],
+        "/karma-being-retreat/": [
+          {
+            "old": "Mit Panchkarma 100 Jahre alt werden",
+            "new": "Panchakarma: Vorbereitung und Verfahren",
+            "kind": "link"
+          },
+          {
+            "old": "Produkte",
+            "new": "Ayurvedische Produkte",
+            "kind": "link"
+          }
+        ],
+        "/katha-wellness-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ]
+      },
+      "missingUnits": 0
+    },
+    "l10n/generated/es.json": {
+      "commit": "9fa0df1b1",
+      "kind": "content-review-copy link labels (AHV-M083.02/M084.02/M085.02)",
+      "routes": [
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/"
+      ],
+      "added": {
+        "/karma-being-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ],
+        "/karma-being-retreat/": [
+          {
+            "old": "Vivir hasta los 100 con el Panchkarma",
+            "new": "Panchakarma: preparación y procedimientos",
+            "kind": "link"
+          },
+          {
+            "old": "Productos",
+            "new": "Productos ayurvédicos",
+            "kind": "link"
+          }
+        ],
+        "/katha-wellness-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ]
+      },
+      "missingUnits": 0
+    },
+    "l10n/generated/fr.json": {
+      "commit": "9fa0df1b1",
+      "kind": "content-review-copy link labels (AHV-M083.02/M084.02/M085.02)",
+      "routes": [
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/"
+      ],
+      "added": {
+        "/karma-being-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ],
+        "/karma-being-retreat/": [
+          {
+            "old": "Vivre jusqu’à 100 ans avec le Panchkarma",
+            "new": "Panchakarma : préparation et procédures",
+            "kind": "link"
+          },
+          {
+            "old": "Produits",
+            "new": "Produits ayurvédiques",
+            "kind": "link"
+          }
+        ],
+        "/katha-wellness-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ]
+      },
+      "missingUnits": 0
+    },
+    "l10n/generated/hi.json": {
+      "commit": "9fa0df1b1",
+      "kind": "content-review-copy link labels (AHV-M083.02/M084.02/M085.02)",
+      "routes": [
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/"
+      ],
+      "added": {
+        "/karma-being-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ],
+        "/karma-being-retreat/": [
+          {
+            "old": "पंचकर्म के साथ 100 वर्ष तक जिएँ",
+            "new": "पंचकर्म: तैयारी और प्रक्रियाएँ",
+            "kind": "link"
+          },
+          {
+            "old": "उत्पाद",
+            "new": "आयुर्वेदिक उत्पाद",
+            "kind": "link"
+          }
+        ],
+        "/katha-wellness-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ]
+      },
+      "missingUnits": 0
+    },
+    "l10n/generated/it.json": {
+      "commit": "9fa0df1b1",
+      "kind": "content-review-copy link labels (AHV-M083.02/M084.02/M085.02)",
+      "routes": [
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/"
+      ],
+      "added": {
+        "/karma-being-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ],
+        "/karma-being-retreat/": [
+          {
+            "old": "Vivere fino a 100 anni con il Panchkarma",
+            "new": "Panchakarma: preparazione e procedure",
+            "kind": "link"
+          },
+          {
+            "old": "Prodotti",
+            "new": "Prodotti ayurvedici",
+            "kind": "link"
+          }
+        ],
+        "/katha-wellness-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ]
+      },
+      "missingUnits": 0
+    },
+    "l10n/generated/ja.json": {
+      "commit": "9fa0df1b1",
+      "kind": "content-review-copy link labels (AHV-M083.02/M084.02/M085.02)",
+      "routes": [
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/"
+      ],
+      "added": {
+        "/karma-being-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ],
+        "/karma-being-retreat/": [
+          {
+            "old": "パンチャカルマで100歳まで健やかに",
+            "new": "パンチャカルマ：準備と処置",
+            "kind": "link"
+          },
+          {
+            "old": "製品",
+            "new": "アーユルヴェーダ製品",
+            "kind": "link"
+          }
+        ],
+        "/katha-wellness-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ]
+      },
+      "missingUnits": 0
+    },
+    "l10n/generated/ko.json": {
+      "commit": "9fa0df1b1",
+      "kind": "content-review-copy link labels (AHV-M083.02/M084.02/M085.02)",
+      "routes": [
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/"
+      ],
+      "added": {
+        "/karma-being-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ],
+        "/karma-being-retreat/": [
+          {
+            "old": "판차카르마와 함께 100세까지",
+            "new": "판차카르마: 준비와 시술",
+            "kind": "link"
+          },
+          {
+            "old": "제품",
+            "new": "아유르베다 제품",
+            "kind": "link"
+          }
+        ],
+        "/katha-wellness-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ]
+      },
+      "missingUnits": 0
+    },
+    "l10n/generated/nl.json": {
+      "commit": "9fa0df1b1",
+      "kind": "content-review-copy link labels (AHV-M083.02/M084.02/M085.02)",
+      "routes": [
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/"
+      ],
+      "added": {
+        "/karma-being-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ],
+        "/karma-being-retreat/": [
+          {
+            "old": "Leef tot uw 100e met Panchakarma",
+            "new": "Panchakarma: voorbereiding en procedures",
+            "kind": "link"
+          },
+          {
+            "old": "Producten",
+            "new": "Ayurvedische producten",
+            "kind": "link"
+          }
+        ],
+        "/katha-wellness-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ]
+      },
+      "missingUnits": 0
+    },
+    "l10n/generated/pt.json": {
+      "commit": "9fa0df1b1",
+      "kind": "content-review-copy link labels (AHV-M083.02/M084.02/M085.02)",
+      "routes": [
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/"
+      ],
+      "added": {
+        "/karma-being-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ],
+        "/karma-being-retreat/": [
+          {
+            "old": "Viver até aos 100 com o Panchkarma",
+            "new": "Panchakarma: preparação e procedimentos",
+            "kind": "link"
+          },
+          {
+            "old": "Produtos",
+            "new": "Produtos ayurvédicos",
+            "kind": "link"
+          }
+        ],
+        "/katha-wellness-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ]
+      },
+      "missingUnits": 0
+    },
+    "l10n/generated/ru.json": {
+      "commit": "9fa0df1b1",
+      "kind": "content-review-copy link labels (AHV-M083.02/M084.02/M085.02)",
+      "routes": [
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/"
+      ],
+      "added": {
+        "/karma-being-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ],
+        "/karma-being-retreat/": [
+          {
+            "old": "Жить до 100 лет с Панчакармой",
+            "new": "Панчакарма: подготовка и процедуры",
+            "kind": "link"
+          },
+          {
+            "old": "Продукты",
+            "new": "Аюрведические продукты",
+            "kind": "link"
+          }
+        ],
+        "/katha-wellness-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ]
+      },
+      "missingUnits": 0
+    },
+    "l10n/generated/zh-Hans.json": {
+      "commit": "9fa0df1b1",
+      "kind": "content-review-copy link labels (AHV-M083.02/M084.02/M085.02)",
+      "routes": [
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/"
+      ],
+      "added": {
+        "/karma-being-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ],
+        "/karma-being-retreat/": [
+          {
+            "old": "借助Panchakarma（五业疗法）活到100岁",
+            "new": "潘查卡玛（Panchakarma）：准备与治疗程序",
+            "kind": "link"
+          },
+          {
+            "old": "产品",
+            "new": "阿育吠陀产品",
+            "kind": "link"
+          }
+        ],
+        "/katha-wellness-retreat-2019/": [
+          {
+            "old": "Kairali Ayurvedic Center",
+            "new": "Kairali Ayurvedic Centre",
+            "kind": "link"
+          }
+        ]
+      },
+      "missingUnits": 0
+    },
+    "public/ahv/l10n/ar/assets/hist9-family-render.js": {
+      "commit": "9fa0df1b1",
+      "kind": "hist9 related-link grouping resolves the English route via AHV_LOCAL_PATHS",
+      "routes": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/"
+      ]
+    },
+    "public/ahv/l10n/ar/views/ahv-page-confirmation-desktop.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/ar/views/ahv-page-confirmation-mobile.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/de/assets/hist9-family-render.js": {
+      "commit": "9fa0df1b1",
+      "kind": "hist9 related-link grouping resolves the English route via AHV_LOCAL_PATHS",
+      "routes": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/"
+      ]
+    },
+    "public/ahv/l10n/de/views/ahv-page-confirmation-desktop.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/de/views/ahv-page-confirmation-mobile.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/es/assets/hist9-family-render.js": {
+      "commit": "9fa0df1b1",
+      "kind": "hist9 related-link grouping resolves the English route via AHV_LOCAL_PATHS",
+      "routes": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/"
+      ]
+    },
+    "public/ahv/l10n/es/views/ahv-page-confirmation-desktop.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/es/views/ahv-page-confirmation-mobile.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/fr/assets/hist9-family-render.js": {
+      "commit": "9fa0df1b1",
+      "kind": "hist9 related-link grouping resolves the English route via AHV_LOCAL_PATHS",
+      "routes": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/"
+      ]
+    },
+    "public/ahv/l10n/fr/views/ahv-page-confirmation-desktop.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/fr/views/ahv-page-confirmation-mobile.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/hi/assets/hist9-family-render.js": {
+      "commit": "9fa0df1b1",
+      "kind": "hist9 related-link grouping resolves the English route via AHV_LOCAL_PATHS",
+      "routes": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/"
+      ]
+    },
+    "public/ahv/l10n/hi/views/ahv-page-confirmation-desktop.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/hi/views/ahv-page-confirmation-mobile.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/it/assets/hist9-family-render.js": {
+      "commit": "9fa0df1b1",
+      "kind": "hist9 related-link grouping resolves the English route via AHV_LOCAL_PATHS",
+      "routes": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/"
+      ]
+    },
+    "public/ahv/l10n/it/views/ahv-page-confirmation-desktop.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/it/views/ahv-page-confirmation-mobile.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/ja/assets/hist9-family-render.js": {
+      "commit": "9fa0df1b1",
+      "kind": "hist9 related-link grouping resolves the English route via AHV_LOCAL_PATHS",
+      "routes": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/"
+      ]
+    },
+    "public/ahv/l10n/ja/views/ahv-page-confirmation-desktop.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/ja/views/ahv-page-confirmation-mobile.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/ko/assets/hist9-family-render.js": {
+      "commit": "9fa0df1b1",
+      "kind": "hist9 related-link grouping resolves the English route via AHV_LOCAL_PATHS",
+      "routes": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/"
+      ]
+    },
+    "public/ahv/l10n/ko/views/ahv-page-confirmation-desktop.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/ko/views/ahv-page-confirmation-mobile.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/nl/assets/hist9-family-render.js": {
+      "commit": "9fa0df1b1",
+      "kind": "hist9 related-link grouping resolves the English route via AHV_LOCAL_PATHS",
+      "routes": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/"
+      ]
+    },
+    "public/ahv/l10n/nl/views/ahv-page-confirmation-desktop.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/nl/views/ahv-page-confirmation-mobile.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/pt/assets/hist9-family-render.js": {
+      "commit": "9fa0df1b1",
+      "kind": "hist9 related-link grouping resolves the English route via AHV_LOCAL_PATHS",
+      "routes": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/"
+      ]
+    },
+    "public/ahv/l10n/pt/views/ahv-page-confirmation-desktop.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/pt/views/ahv-page-confirmation-mobile.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/ru/assets/hist9-family-render.js": {
+      "commit": "9fa0df1b1",
+      "kind": "hist9 related-link grouping resolves the English route via AHV_LOCAL_PATHS",
+      "routes": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/"
+      ]
+    },
+    "public/ahv/l10n/ru/views/ahv-page-confirmation-desktop.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/ru/views/ahv-page-confirmation-mobile.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/zh/assets/hist9-family-render.js": {
+      "commit": "9fa0df1b1",
+      "kind": "hist9 related-link grouping resolves the English route via AHV_LOCAL_PATHS",
+      "routes": [
+        "/chef-retreat-food-to-wellness/",
+        "/food-sadhana/",
+        "/karma-being-retreat-2019/",
+        "/karma-being-retreat/",
+        "/katha-wellness-retreat-2019/",
+        "/lakshya-yoga-retreat-2017/",
+        "/lakshya-yoga-retreat-2018/",
+        "/prav-simona-monsoon-yoga-retreat/",
+        "/prav-simona-yoga-retreat/"
+      ]
+    },
+    "public/ahv/l10n/zh/views/ahv-page-confirmation-desktop.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    },
+    "public/ahv/l10n/zh/views/ahv-page-confirmation-mobile.json": {
+      "commit": "c8ed28232",
+      "kind": "confirmation poster section gated for verified consultation receipt (posterImage === false)",
+      "routes": [
+        "/book-now/",
+        "/cart/",
+        "/checkout/",
+        "/contact-us/thank-you/",
+        "/emailsubscriber/",
+        "/onlinebookingthankyou/",
+        "/onlineconsultation-thanks/",
+        "/ppc-thanks/",
+        "/thanks-old/",
+        "/thanks/"
+      ]
+    }
+  },
+  "labelChecks": [
+    {
+      "file": "l10n/prerender/hi/karma-being-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/hi/karma-being-retreat.html.gz",
+      "new": "पंचकर्म: तैयारी और प्रक्रियाएँ",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/hi/karma-being-retreat.html.gz",
+      "new": "आयुर्वेदिक उत्पाद",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/hi/katha-wellness-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/de/karma-being-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/de/karma-being-retreat.html.gz",
+      "new": "Panchakarma: Vorbereitung und Verfahren",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/de/karma-being-retreat.html.gz",
+      "new": "Ayurvedische Produkte",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/de/katha-wellness-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/fr/karma-being-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/fr/karma-being-retreat.html.gz",
+      "new": "Panchakarma : préparation et procédures",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/fr/karma-being-retreat.html.gz",
+      "new": "Produits ayurvédiques",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/fr/katha-wellness-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/es/karma-being-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/es/karma-being-retreat.html.gz",
+      "new": "Panchakarma: preparación y procedimientos",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/es/karma-being-retreat.html.gz",
+      "new": "Productos ayurvédicos",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/es/katha-wellness-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/it/karma-being-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/it/karma-being-retreat.html.gz",
+      "new": "Panchakarma: preparazione e procedure",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/it/karma-being-retreat.html.gz",
+      "new": "Prodotti ayurvedici",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/it/katha-wellness-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/pt/karma-being-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/pt/karma-being-retreat.html.gz",
+      "new": "Panchakarma: preparação e procedimentos",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/pt/karma-being-retreat.html.gz",
+      "new": "Produtos ayurvédicos",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/pt/katha-wellness-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/nl/karma-being-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/nl/karma-being-retreat.html.gz",
+      "new": "Panchakarma: voorbereiding en procedures",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/nl/karma-being-retreat.html.gz",
+      "new": "Ayurvedische producten",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/nl/katha-wellness-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/ru/karma-being-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/ru/karma-being-retreat.html.gz",
+      "new": "Панчакарма: подготовка и процедуры",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/ru/karma-being-retreat.html.gz",
+      "new": "Аюрведические продукты",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/ru/katha-wellness-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/ar/karma-being-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/ar/karma-being-retreat.html.gz",
+      "new": "البانشاكارما: التحضير والإجراءات",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/ar/karma-being-retreat.html.gz",
+      "new": "المنتجات الأيورفيدية",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/ar/katha-wellness-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/karma-being-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/karma-being-retreat.html.gz",
+      "new": "潘查卡玛（Panchakarma）：准备与治疗程序",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/karma-being-retreat.html.gz",
+      "new": "阿育吠陀产品",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/katha-wellness-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/ja/karma-being-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/ja/karma-being-retreat.html.gz",
+      "new": "パンチャカルマ：準備と処置",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/ja/karma-being-retreat.html.gz",
+      "new": "アーユルヴェーダ製品",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/ja/katha-wellness-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/ko/karma-being-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/ko/karma-being-retreat.html.gz",
+      "new": "판차카르마: 준비와 시술",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/ko/karma-being-retreat.html.gz",
+      "new": "아유르베다 제품",
+      "present": true
+    },
+    {
+      "file": "l10n/prerender/ko/katha-wellness-retreat-2019.html.gz",
+      "new": "Kairali Ayurvedic Centre",
+      "present": true
+    }
+  ],
+  "freshBodies": [
+    {
+      "file": "l10n/prerender/hi/book-now.html.gz",
+      "route": "/book-now/",
+      "sha256": "cf2ca9d19e79d78d889f368abf345e38b06d410df96370eb00aa7c6d3d559824",
+      "parentSha256": "21fd9ed3ba21ef1f74e97bee613a3ba9c98877daa540841a80f19a325f5a1757",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/hi/chef-retreat-food-to-wellness.html.gz",
+      "route": "/chef-retreat-food-to-wellness/",
+      "sha256": "a1236d72d632fbb3cdf8d8a3d5cc5095a742760fdf69756d89d6045e852b53b5",
+      "parentSha256": "df349321997e50ede4723488d1102c995bb928eb3a43dbd94d2eec660af709de",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/hi/contact-us_thank-you.html.gz",
+      "route": "/contact-us/thank-you/",
+      "sha256": "f9edfe9da4c938a6688e458a863b0909f82c441d4423c95d7a41108b16ef4b6f",
+      "parentSha256": "6a1138863c22de371eb6a3e8663604af2a3bad5934847870e1f71ccaea154f1e",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/hi/emailsubscriber.html.gz",
+      "route": "/emailsubscriber/",
+      "sha256": "01100646ac0fb0d7fdcb4af32e7cee8c0d7fea51b4810ee61a93f172061aafc9",
+      "parentSha256": "0a337c841748a52ee1b821445ac6b33b386c80c25eb42b2336d1e43662730293",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/hi/food-sadhana.html.gz",
+      "route": "/food-sadhana/",
+      "sha256": "ce695d885450de251be1c2914263f2e81dbdcbeda124cff4002f4090cd789e24",
+      "parentSha256": "44738fc0a11a2a151cb55b84a831313f5e52e7ca392abcc5acf0004f52c8d170",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/hi/karma-being-retreat-2019.html.gz",
+      "route": "/karma-being-retreat-2019/",
+      "sha256": "549b5b89fde733cc28dd2fd3114aa6c5f41f5a8b853b23ccd16c766ed8810e30",
+      "parentSha256": "c2496cc404a90c33df21983cb963c6fa34cf2c5d3a266bc890bb7eecc5a06095",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/hi/karma-being-retreat.html.gz",
+      "route": "/karma-being-retreat/",
+      "sha256": "b88c5af4ba6ca71afcd29352feebee929b83344bec7241ca0d785ca00bf1f839",
+      "parentSha256": "63261d22c96804329ab487b1a19ec4b13346150d0ae4135b9e4f713f1b3b59a9",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 2 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/hi/katha-wellness-retreat-2019.html.gz",
+      "route": "/katha-wellness-retreat-2019/",
+      "sha256": "c20f0d3244fa55dcf956978d6962b660f694fe931a423dca57382014eee2213c",
+      "parentSha256": "80ec7aa9d8906a0995401c2b51930d05d6209c460a119b8ee89f019adb8c2d9e",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/hi/lakshya-yoga-retreat-2017.html.gz",
+      "route": "/lakshya-yoga-retreat-2017/",
+      "sha256": "93e08010f7e809f3a0b0f88879f780b298ebe2be61f10dc3e71a556d988c103d",
+      "parentSha256": "13fcbe46cd93df20abe75838347c9e60c3426afa1398eaf2f8159673de22e1db",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/hi/lakshya-yoga-retreat-2018.html.gz",
+      "route": "/lakshya-yoga-retreat-2018/",
+      "sha256": "56024590d5455c773074407d335cea1f95f343d81dd9609aac5d3a49af63d722",
+      "parentSha256": "6e0a445472f7822529e57f7145a02213166d35794906197afc3e84e090619ee7",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/hi/onlinebookingthankyou.html.gz",
+      "route": "/onlinebookingthankyou/",
+      "sha256": "9ab787390b25b33e8057e5caf9178576a23c304c2ff2597a2ecc677b29508747",
+      "parentSha256": "3568f845e87e1813bff906202515a57fb91e22ecbba568689e1d4f5ec1c02eec",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/hi/onlineconsultation-thanks.html.gz",
+      "route": "/onlineconsultation-thanks/",
+      "sha256": "7fd92706e502b0daa6662687bdab92ff1cb90ead0e295fb8107b59a7871c8000",
+      "parentSha256": "5230623ceb356c043ac3b369ac0c764321a39585ca2393e9bdced0edb7f31d83",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/hi/prav-simona-monsoon-yoga-retreat.html.gz",
+      "route": "/prav-simona-monsoon-yoga-retreat/",
+      "sha256": "aa2545fb1abcb6f451164121358b9ee1ba3d0afd0a9b8c72ce8b0d60911205b0",
+      "parentSha256": "86e942b13ae97eba06a66750c9b91df43bf65793547041615bd97782567b4a23",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/hi/prav-simona-yoga-retreat.html.gz",
+      "route": "/prav-simona-yoga-retreat/",
+      "sha256": "091a25069b27e4df330c6bc4d8bbc9b0a0ac6d261f5ffa1536cb943b0cfbc9a5",
+      "parentSha256": "33f6e74f614ca93a47bbcff44485cd3b1b6b505bb05cd7acf0fdeeb9c1698668",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/hi/thanks-old.html.gz",
+      "route": "/thanks-old/",
+      "sha256": "13973bbe0527e4e24b61bbccb3af75d37d8b6f7ca38d4c1e7fe4bb2b4c2dd743",
+      "parentSha256": "ead87414a071f9903de275e875e2fe901bdcf9c8fb848004384eca6ab90df0db",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/hi/thanks.html.gz",
+      "route": "/thanks/",
+      "sha256": "bf702082b67fa1f1c6749db633074f231cb147b7c92a8d609568212a2e73af65",
+      "parentSha256": "f013fe201622c4913bcd34d6d1331779101727f79bf039cf66ac1c7702db6960",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/de/book-now.html.gz",
+      "route": "/book-now/",
+      "sha256": "80fe51f0007ac78afd918abc5c0dd6715ad397c07dd2f729527367cc7fe6fc40",
+      "parentSha256": "c9f2d4fa5e1b2f4cb5755a63cd9eb2e608c1ab15075b5c238b4f7885301b610c",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/de/chef-retreat-food-to-wellness.html.gz",
+      "route": "/chef-retreat-food-to-wellness/",
+      "sha256": "63570a4b974eea14f00d9b3f61b11372f4871cb37e899d7212e925add98be699",
+      "parentSha256": "098d85b08eea4b686810346a4352944202414a063d2c7c0e36ee8544dc3ddd73",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/de/contact-us_thank-you.html.gz",
+      "route": "/contact-us/thank-you/",
+      "sha256": "d967b13c6234e3ba93e800b7dbf2a5366853a51a5730032c63f362ab63f4a7f4",
+      "parentSha256": "eda93fa7c4d1c73d2c3f55b3aaec5669a59df58ab527d40cf936e25ccf987c77",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/de/emailsubscriber.html.gz",
+      "route": "/emailsubscriber/",
+      "sha256": "150894248c3fad88615a4c69afbbdcba81d10ee48c4b95a5781b7b038ab0c025",
+      "parentSha256": "91ab8d48ac348f912ab97516c2236b943724c74790e9fb4e3238a11132788288",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/de/food-sadhana.html.gz",
+      "route": "/food-sadhana/",
+      "sha256": "91c19f6a60f21e64a43150ffcecbc03a4e0aec044a4beb73cdca8717c74ebd13",
+      "parentSha256": "3bb243289e9a03e7ee05a7818cc6445189dc0746406bc2b1884afc2e4feab928",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/de/karma-being-retreat-2019.html.gz",
+      "route": "/karma-being-retreat-2019/",
+      "sha256": "a5b010608c410760bd943d10268ee526b93ae8da1f09904638e87aaf78009456",
+      "parentSha256": "b8e2ca15d58e5017ef1e709eb2ef20cf0a3fdd75cf7ae9248d2369b1cb34020e",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/de/karma-being-retreat.html.gz",
+      "route": "/karma-being-retreat/",
+      "sha256": "20851d120114d283e1a7a3483d9245306dfd8237eb88251235609a3172906b0e",
+      "parentSha256": "594f9a3df6e2a0f169e822beedf444e1e0d658dda96dcf93525e6a2eb9dd2ebe",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 2 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/de/katha-wellness-retreat-2019.html.gz",
+      "route": "/katha-wellness-retreat-2019/",
+      "sha256": "1a2ac9c3a21dbfbf96040825425cdcbd85d9a5c0dee6dcc9f80fd4b213109f90",
+      "parentSha256": "95c8efc2fff5597b266238e2259b503afcb9ce6dc55ac9aa95f266b8a4486970",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/de/lakshya-yoga-retreat-2017.html.gz",
+      "route": "/lakshya-yoga-retreat-2017/",
+      "sha256": "42ec8ecbdf5db1ce25e092fb2ed6a5fd502b519b1c0fe29ee5409d24da2638fa",
+      "parentSha256": "8bdead4cecc1a2c1e86d3d1ef5722aab51f3128dcf0b8f461254e0d46e8410d9",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/de/lakshya-yoga-retreat-2018.html.gz",
+      "route": "/lakshya-yoga-retreat-2018/",
+      "sha256": "3f5cbb0ed1399d74b899f70643ff65ae4dd525876ecde22ddaa2eeff555e436c",
+      "parentSha256": "4adc3ceb5798621c38d4b84cf46e91907d6749320bd6cb7bfae8f7daca8302e6",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/de/onlinebookingthankyou.html.gz",
+      "route": "/onlinebookingthankyou/",
+      "sha256": "1aaddb91d5a52cab828bab72e8d5b371747e16dfff441f6b37387517609a8544",
+      "parentSha256": "f2c309804dc94410f4aa60c54cb48d93c4d60386522492f9d967aa0227a4ff28",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/de/onlineconsultation-thanks.html.gz",
+      "route": "/onlineconsultation-thanks/",
+      "sha256": "c030e247e93e5443779cabadc90fc37039fffce31f79539a83ff26cd2c2fad6b",
+      "parentSha256": "fe0568f803acae1d78f9631d6bcbc383e65e5046c4cf7a8758f68c2b8c78fc14",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/de/prav-simona-monsoon-yoga-retreat.html.gz",
+      "route": "/prav-simona-monsoon-yoga-retreat/",
+      "sha256": "72f75450257f5ddfb838adb15e7dd0a1a4f072275deb382bd48e3a4c88fe5d70",
+      "parentSha256": "4e8c47d606c85a0ce97e4d05ef8251d363979b85f8c1f1a51910d83e06d3e1a0",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/de/prav-simona-yoga-retreat.html.gz",
+      "route": "/prav-simona-yoga-retreat/",
+      "sha256": "9fd0374ea33db9e2b3cbcd75da3f1276e194a75289810312f5f2a024b3c03bf4",
+      "parentSha256": "4f3d9400fb6b5b1b87bcb9eb2a2a8f02babe675c47ec246b6bd6ca5e99086320",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/de/thanks-old.html.gz",
+      "route": "/thanks-old/",
+      "sha256": "b3c6e866023b5f3786037adc819804ba87070734138bc3dba223479219750709",
+      "parentSha256": "0268a40029872e8e46c54fea3e721627f7b0836a7b7bb676d992b2c60db3974e",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/de/thanks.html.gz",
+      "route": "/thanks/",
+      "sha256": "849fc1a0bdc8dd0166c6914471dbe74a59c3e988d165068bec1e78fa409e2edd",
+      "parentSha256": "587ebd95fb43bdce13900341b0964b7fb842c08fc5fa2ebff079b214aec7e5e5",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/fr/book-now.html.gz",
+      "route": "/book-now/",
+      "sha256": "9aa90aef752ec2f19b2adbb28c80461165e8230c1ea5054fe8c87f0e202841ff",
+      "parentSha256": "4f228e2bf84b9c8fb072997b339f6ed54b1b95790112a368b80ddc376527a3cb",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/fr/chef-retreat-food-to-wellness.html.gz",
+      "route": "/chef-retreat-food-to-wellness/",
+      "sha256": "0dbabfb4d25bae6a4e9ba558a33d69b4a1428c8f867b56658580ea159d173ebc",
+      "parentSha256": "f3880267fb5643c367c29d085e8d1560baf6941888ebc30980d1a07c5e73fd4d",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/fr/contact-us_thank-you.html.gz",
+      "route": "/contact-us/thank-you/",
+      "sha256": "b9275eec1c100af0ab5d63eba3a448dc19bb87eacc064e4eb1e9f9dd9a6200e1",
+      "parentSha256": "b8fb769347f1afbe3aef9937ccd44a18d0c65b645074694e57bf5c5c354c5200",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/fr/emailsubscriber.html.gz",
+      "route": "/emailsubscriber/",
+      "sha256": "148bc9b8b834f821af39f82ac0430b9f41440a856d5bc4431ed22fec13b5adb1",
+      "parentSha256": "ef7a439d7bfdd6bf2adc4fb8c1beaa2a909812bc31e2cbade2f0333682481635",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/fr/food-sadhana.html.gz",
+      "route": "/food-sadhana/",
+      "sha256": "f96be8040a05432e020a7957eadc930f281c49ef3f084b252c63052d30aae497",
+      "parentSha256": "d63d9aebcc4c4a754bb6301a2ac4974df06973e28133dd721fd1bd681f31eca2",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/fr/karma-being-retreat-2019.html.gz",
+      "route": "/karma-being-retreat-2019/",
+      "sha256": "dd908c3532618972927ec2332befd84a1942a82f863645ae56f22434e3ccf269",
+      "parentSha256": "f20b1547b468999087889c4f17aac7cdae89ed1e95d019b2cdcab275bd2d929d",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/fr/karma-being-retreat.html.gz",
+      "route": "/karma-being-retreat/",
+      "sha256": "1c0be3eb43a3c12b4233b5bcc30897de805775118a0b26bee4df23861ce721db",
+      "parentSha256": "2ade98e9f75de5c677337293b2e82df7d9cacb9e3473d9f1975561df8a2ad965",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 2 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/fr/katha-wellness-retreat-2019.html.gz",
+      "route": "/katha-wellness-retreat-2019/",
+      "sha256": "91eb1e3fcabe2a23ec8d0179227cba6e88401df8ce52a260a0749f59a9850cb3",
+      "parentSha256": "42f1dca58ae0b9960ec2f42bf561e9d097087a42c5fb8ed5aecf399838851f73",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/fr/lakshya-yoga-retreat-2017.html.gz",
+      "route": "/lakshya-yoga-retreat-2017/",
+      "sha256": "6dc1acc4d9aab589fcab6abf51b5338743a341a7da3121e4b09671f7b69bb517",
+      "parentSha256": "04adb8cccc0b9f9f6289883d0c4165c77b28288ca7ba3993012bc197983e2634",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/fr/lakshya-yoga-retreat-2018.html.gz",
+      "route": "/lakshya-yoga-retreat-2018/",
+      "sha256": "a21392fa27eb5fe13cc0eb2aeebde78afc43647fd77562d9666d0366be2036ab",
+      "parentSha256": "1a6b4181e95fcd718a2585459da27c234dfb42bdfbf47e52a92b66b10514bcef",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/fr/onlinebookingthankyou.html.gz",
+      "route": "/onlinebookingthankyou/",
+      "sha256": "ac919cd121831f0cba0657b5f0f7c8ab3e76d1f178271a81a8d9397ba81934cf",
+      "parentSha256": "27be6d7718d49fcf169473e30bf41c29c10f318afb4630ff85d26f253a41dbb2",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/fr/onlineconsultation-thanks.html.gz",
+      "route": "/onlineconsultation-thanks/",
+      "sha256": "aba447c80ab60051cf26075cc6415b688e240b030fc0f4550e587e7f075d2773",
+      "parentSha256": "d20973349478ca6bc82cb5523d174b3dff78a06c2c24a4b570fa1653e904d4fe",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/fr/prav-simona-monsoon-yoga-retreat.html.gz",
+      "route": "/prav-simona-monsoon-yoga-retreat/",
+      "sha256": "49f5acebe348404952f383bc6a0a8b17ebdc3bb4643199fb6863dd76e8412a1f",
+      "parentSha256": "ea1595b18ef4a1bad44ca492bfdf801a474da99184a7a61cc89e20129a98b598",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/fr/prav-simona-yoga-retreat.html.gz",
+      "route": "/prav-simona-yoga-retreat/",
+      "sha256": "bb035c665ebb71181b3d0d8b26a92d49c72377ccf1d50423596429aa579d0e7f",
+      "parentSha256": "d2c7643625270dabf112c485cd056516922fa788d6a2a48167c11ec5df4d4e48",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/fr/thanks-old.html.gz",
+      "route": "/thanks-old/",
+      "sha256": "1ca0f6ddca3d737afa6ef64475dfa52c3fac2f6e8e7411f4bdf5b776da649dfa",
+      "parentSha256": "135e73c79bc02985740a917cb0b360137a31e7a804673fb4ce65fc0c38107fe7",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/fr/thanks.html.gz",
+      "route": "/thanks/",
+      "sha256": "728d23a6224a7bed1e0cfae14df7a3c23e5b0357197ce7e2912445b6acf5c3e7",
+      "parentSha256": "a01b7603ee5830c7ea819630a3803d80dc34d9beef5599331addae7e5d5967bb",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/es/book-now.html.gz",
+      "route": "/book-now/",
+      "sha256": "925670696bf63b15a89b27b772f13b93777818332e4aaff32938e9efb934c40b",
+      "parentSha256": "adf2726ccbe0ca2b42278aa0796aa39845f31698a0c96e4f31e246e5360aeb43",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/es/chef-retreat-food-to-wellness.html.gz",
+      "route": "/chef-retreat-food-to-wellness/",
+      "sha256": "eb67c27b60d91069b17889a2a1dbdf0ad48237a4935fcf0791eb6ed90234c37c",
+      "parentSha256": "e3756b283bffc002bcf3e588072617add415c1b60cacb70e45b7ebdacbb78bc3",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/es/contact-us_thank-you.html.gz",
+      "route": "/contact-us/thank-you/",
+      "sha256": "76d14c8ab8b6983bd13df223ede565173b826a330240eef54b3a1ef4aa5bb8cc",
+      "parentSha256": "f2a15a5968238cfa91c90d8c133c0fd1d18296ed3cd2ee3f9f4f85d36e74ec3b",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/es/emailsubscriber.html.gz",
+      "route": "/emailsubscriber/",
+      "sha256": "fa152ea4f3e4296fa79eab491c1868a6113d4ea58bf14b553a547427e5e7733a",
+      "parentSha256": "86001a5b2278842fdd5db5f7b8379d5b8019e596d3b931c52d6b263dd11a1a6b",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/es/food-sadhana.html.gz",
+      "route": "/food-sadhana/",
+      "sha256": "b6bc1e3e362353f1cbae7658aadff1d00a1c27c24d4c4755bcb70a9efc8b4fd1",
+      "parentSha256": "a31beb772023d3f5b250a2db012689e9f8d9f1bd55fe3b3244f8b21036aa984e",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/es/karma-being-retreat-2019.html.gz",
+      "route": "/karma-being-retreat-2019/",
+      "sha256": "9d74d02b0c095451697f7ad29ee7e51a52273f6014dd2387a71fe8e7c83c99b9",
+      "parentSha256": "704d4cdcd9a488ac3c48c1e2665e1b37ee469b35894005f933063be226c81446",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/es/karma-being-retreat.html.gz",
+      "route": "/karma-being-retreat/",
+      "sha256": "d59517b15d7437b68bd28fa6387ef4356b72076cbcd1f2ab44b9a1344994b9a4",
+      "parentSha256": "5aae0805b43c54db78b0ae3432e2be4d7de54a6f2e3110437cf9ff316192cfd4",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 2 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/es/katha-wellness-retreat-2019.html.gz",
+      "route": "/katha-wellness-retreat-2019/",
+      "sha256": "15e27f8a1824cefc70a51ef4f4aad9fad8a96524c9babce0eafbfd3dd0d665ed",
+      "parentSha256": "4bac7d5d7f250690f437079efbf75562c035d3976f68d8916c9873b43a0ab576",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/es/lakshya-yoga-retreat-2017.html.gz",
+      "route": "/lakshya-yoga-retreat-2017/",
+      "sha256": "3dc05fd01cd3a13c91df05843f7a604571f524637cfe7f895d3bf419efc788a5",
+      "parentSha256": "779227da0a73e880c3bdc0f0c45ee58a8b602752fb7193637e6a65750572f956",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/es/lakshya-yoga-retreat-2018.html.gz",
+      "route": "/lakshya-yoga-retreat-2018/",
+      "sha256": "2ebebf880ba86984c12b99b94262655b95508a6b8032b50c9b1dd49980ef0f6c",
+      "parentSha256": "fe41cda9fde5e7c5bdaf0fdf0fe6ae2f8c091d5b5ed0fcb384833ce9636a2311",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/es/onlinebookingthankyou.html.gz",
+      "route": "/onlinebookingthankyou/",
+      "sha256": "5d8bba06406ff900c6aabf81b3507a450cf5f7db5a90b04e173b0562a6454291",
+      "parentSha256": "cb26af6231a435497c7c025c332b32ef84ddde0f9fac57666372a094a3ea041b",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/es/onlineconsultation-thanks.html.gz",
+      "route": "/onlineconsultation-thanks/",
+      "sha256": "250e633ee4c1f55ca7e40242de62ff1fa0a79bc33d2e510bab2532d8cd6ce0e8",
+      "parentSha256": "efac837324b536ec75406a9ef7404558dae50b3870b3b8639b60186bc8ab9447",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/es/prav-simona-monsoon-yoga-retreat.html.gz",
+      "route": "/prav-simona-monsoon-yoga-retreat/",
+      "sha256": "34021025539eec061ec655471761cfec490121ecec5f185382d26f0d9dbc1373",
+      "parentSha256": "0f24fe470c4c0496554490249cae7989c0b626254dbe770059991070da2eeff8",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/es/prav-simona-yoga-retreat.html.gz",
+      "route": "/prav-simona-yoga-retreat/",
+      "sha256": "c8d6bdf1597895d5ab43d44e68273f39fc09ab33750bc69948f819de24cf718a",
+      "parentSha256": "1745098268f1deb020e85dcbcc8c6acf8a1dcf9983110c65ac6fe3712ae74da8",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/es/thanks-old.html.gz",
+      "route": "/thanks-old/",
+      "sha256": "40f2d59cc5146b97c1a81989c0f33b215607f976c5271cfc5091e0088599b8f7",
+      "parentSha256": "d5a35bf4fe4e5413684edbd74b1334e15734fc5e625d5978acac523dc6bac9f1",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/es/thanks.html.gz",
+      "route": "/thanks/",
+      "sha256": "b1ae9d0b3b34ba87c0a6ca916ddd7c3ebe1080b83ae0c8784ec049d1b8c21727",
+      "parentSha256": "8a95e3aa6f105502884fbf97f7d0f16b28ca6a165209b2a4ad9df2a4f3b5a52e",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/it/book-now.html.gz",
+      "route": "/book-now/",
+      "sha256": "8f384f16b6bae201c439066406be31769d1f8baae61ede1ab8356dbfb9b788ee",
+      "parentSha256": "aba61de54527dc1110e4de63b7330e80634b40e9ae9342192a0b60350fb7ea51",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/it/chef-retreat-food-to-wellness.html.gz",
+      "route": "/chef-retreat-food-to-wellness/",
+      "sha256": "4aaecfd0856a38b528cfc424e35c9ef05ac029713d7e55f01db2fb5d416cc06c",
+      "parentSha256": "4b7f118ccda35bd93f53aea6f7854f22bc1e611ca5e70906bb488ad2e565d99c",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/it/contact-us_thank-you.html.gz",
+      "route": "/contact-us/thank-you/",
+      "sha256": "cab5eddaa1b404f73a0832cd34389770038cceead47e32d87db17ac12331646c",
+      "parentSha256": "824203d666ab79dc60800f22b5ce22c326e5580a604eacd6fff2ba0c81c0dd77",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/it/emailsubscriber.html.gz",
+      "route": "/emailsubscriber/",
+      "sha256": "26faf5b6ad227356b5371d5f65e6c6d843db32176e7ca5831a330f8765c7140a",
+      "parentSha256": "13e672d90eca3e506e0d469eac5b1c9f4f1143e3ed38aab777d228db604cf864",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/it/food-sadhana.html.gz",
+      "route": "/food-sadhana/",
+      "sha256": "fb0a29421ede485ca091ba65d8d4f9d0d162b06cb6634ce2f340f6e237521d64",
+      "parentSha256": "4017c6fcc785d6867c4e47f7e64bce4df07a0642890dfce54329936a6636b81d",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/it/karma-being-retreat-2019.html.gz",
+      "route": "/karma-being-retreat-2019/",
+      "sha256": "a6860534185763c2775f6f30d82a2e3338bef176bf8004a76a90cbf4fc09fd66",
+      "parentSha256": "a4de5fa86fe34f3953a8601064cd00ec003ae352fbe88fbab11defd38ef14720",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/it/karma-being-retreat.html.gz",
+      "route": "/karma-being-retreat/",
+      "sha256": "16fed66b0475c16c6ac917a3c3258ead4579f6f5f903f4c55252c26a3e7b7c6d",
+      "parentSha256": "6a4f1d0e6263f4efe936a506b0c1090f05a4c3b0e369b34b602fe3bb3591db2a",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 2 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/it/katha-wellness-retreat-2019.html.gz",
+      "route": "/katha-wellness-retreat-2019/",
+      "sha256": "f8e7b84807934977a42aa587a99ce15542b34da881b069346c5b60d5dd376c32",
+      "parentSha256": "0f17498efc544929d09b0224c2b4c17bbc0e7387828e762d2262e94e2430180a",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/it/lakshya-yoga-retreat-2017.html.gz",
+      "route": "/lakshya-yoga-retreat-2017/",
+      "sha256": "1bcc3c8ae91b07efb66d6ca43f0e783f182893529453c001fe1b30929a5da59d",
+      "parentSha256": "4746563d7d3008c97b8212a4a51660cd10ab57fe8cd506c8e0e701c2f17da2fb",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/it/lakshya-yoga-retreat-2018.html.gz",
+      "route": "/lakshya-yoga-retreat-2018/",
+      "sha256": "1c77f1b5d75587250bfadfc841e3ab8f12eb92435a867f7d49d5ffd52c0ed4d8",
+      "parentSha256": "12665e3a692fd6a594c8003d67c96470a486557bf60ee8452d435ec7096233e0",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/it/onlinebookingthankyou.html.gz",
+      "route": "/onlinebookingthankyou/",
+      "sha256": "1cba256457f9c443b8339b8d5da6c31f41f94904990c1a2999dfbc73dd1c1df9",
+      "parentSha256": "4d25d75940e8c7eee6ba7c77e679c0ef2390f949f34b096fd59968b8a7078267",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/it/onlineconsultation-thanks.html.gz",
+      "route": "/onlineconsultation-thanks/",
+      "sha256": "1647cf69db9959086cd0fa88a2e7288d9e13fd48f7bcddef74ec85504dfd2d45",
+      "parentSha256": "53a3d86ffe3be8d730c9584210841352c23d213d4329364da0beab1d5bf04894",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/it/prav-simona-monsoon-yoga-retreat.html.gz",
+      "route": "/prav-simona-monsoon-yoga-retreat/",
+      "sha256": "f3f8def8d4ce122647db41608af47980d6b000aae0023eab4fd662a0fcce19e4",
+      "parentSha256": "afba11a4d833ad273c484f6893bb3cd20296800f45a2d1397af3443671dcf60b",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/it/prav-simona-yoga-retreat.html.gz",
+      "route": "/prav-simona-yoga-retreat/",
+      "sha256": "0baf4dc1f840dc0789acd71b5dab0db1e2fe2da2048140c02c30194d785a4377",
+      "parentSha256": "94ca587937bd32035adf1c60fe147a84e28e68713d5b1f5709ad74c238a09e6b",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/it/thanks-old.html.gz",
+      "route": "/thanks-old/",
+      "sha256": "5bd2d3a3a7514a2e0c8809921318678f07fa58778a7750d8056544684f78c554",
+      "parentSha256": "32638e535fc3ae973c9ad33a1f970fd146d4512c10087b838963350e03112ece",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/it/thanks.html.gz",
+      "route": "/thanks/",
+      "sha256": "381246ad14a8e96241f739b4a04f68153f734b01849297e952827eb19966662a",
+      "parentSha256": "12776103be330ec128069f8f467dd6470edc60566976ad8045f48e8bd7bcdfcb",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/pt/book-now.html.gz",
+      "route": "/book-now/",
+      "sha256": "b700c6e225f1edff0e16ec8584cfd2018192a3c87dad5271648ce47e61318d00",
+      "parentSha256": "608d3714f2b0c547c13d079d594de1490d2749196c4097a467c8c2bc0b67b5ca",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/pt/chef-retreat-food-to-wellness.html.gz",
+      "route": "/chef-retreat-food-to-wellness/",
+      "sha256": "0584c850674674acd0c2b4c07f371a86bc2e39ee3cc6cade1781ceebd0dc46c6",
+      "parentSha256": "53bd5d88e9f4ddfce481976d094aa62a435a7af75a91e69cabfdfc0cc4449f9c",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/pt/contact-us_thank-you.html.gz",
+      "route": "/contact-us/thank-you/",
+      "sha256": "189f7bb320471dfcd3642882d2ad620fb95b3a9780624be78c6bc27fce81243b",
+      "parentSha256": "bb890e45626518dfb914c9c7cb23421cc9d4784418aa8274f0657f8463f573c8",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/pt/emailsubscriber.html.gz",
+      "route": "/emailsubscriber/",
+      "sha256": "2f5467daa8797ca8f1583407bf3eaa92a06e7a56930a9af8d3bd0b95b3d86ada",
+      "parentSha256": "794f852aad9e275d2fda2de6c0d36b52f19891aea4271c71e856bc2fc2d185b1",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/pt/food-sadhana.html.gz",
+      "route": "/food-sadhana/",
+      "sha256": "c97e0d213b26814cdabaf878ac6a2440681ea1b8cefd9dec88766d5cb8205975",
+      "parentSha256": "a81380a453ecf080f6898f279c6cf7ae0fcb2f24c6c92ec885ad5c483df26c3f",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/pt/karma-being-retreat-2019.html.gz",
+      "route": "/karma-being-retreat-2019/",
+      "sha256": "7962ecd4c229e322c4e7db8209c8a8a006bb5cb3e5726bc6e3468aae8950bc31",
+      "parentSha256": "b7e49f48c76bf988a748dd28ed0a2373d7e38911aa1d41c89e56b60cff95315c",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/pt/karma-being-retreat.html.gz",
+      "route": "/karma-being-retreat/",
+      "sha256": "f3a2e3f259d9a0a8e17b850d2a1056e7524d8cd9584f5a6c9b56b7f5486a5bd8",
+      "parentSha256": "8545de216f2d8f38c9842d4884f7f940d83d06a36461b40aea9b5546c5d3be4e",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 2 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/pt/katha-wellness-retreat-2019.html.gz",
+      "route": "/katha-wellness-retreat-2019/",
+      "sha256": "ca7ef5198cb4cee89e8b7a480306bf5ce3016a18cc3e180293199ca229fea4b1",
+      "parentSha256": "5b908e2dc1dfe9fd3b1586f6fc93bf153643440412ff3c0257b3ca958194bfb6",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/pt/lakshya-yoga-retreat-2017.html.gz",
+      "route": "/lakshya-yoga-retreat-2017/",
+      "sha256": "b48048822ee882d91d9159ddf86ef967e2f799ac2fa41e7247903799043d149f",
+      "parentSha256": "fdf569603d6ba5b69038bf49961c2b9ae4ec24bb996135d2c596435e1b825fd7",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/pt/lakshya-yoga-retreat-2018.html.gz",
+      "route": "/lakshya-yoga-retreat-2018/",
+      "sha256": "66f57404302ead127e2e70cd033c362e12aad6b5e17882599cf08dac3775da96",
+      "parentSha256": "3c5c5567a34671d3da9899602025274adcf7fea5b1661de344a335ff69dfeb83",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/pt/onlinebookingthankyou.html.gz",
+      "route": "/onlinebookingthankyou/",
+      "sha256": "d39644a7b3626d17e2179254acafa2c7e8e1faf0f6d21d9cfd7a33c9b7111eb1",
+      "parentSha256": "7f9839cc5384e2356cf1e7b8627a0418162c5bce9e7483c37310ecd696a9eb71",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/pt/onlineconsultation-thanks.html.gz",
+      "route": "/onlineconsultation-thanks/",
+      "sha256": "6dd5a321446759f05d02e545c37cafdc419176bfa19a68eaf7ea487c71cea388",
+      "parentSha256": "9ecdcd7424caac5ac8fdb8b39d01afcbb69d892220dac6c29dec2cbe4daf8c9a",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/pt/prav-simona-monsoon-yoga-retreat.html.gz",
+      "route": "/prav-simona-monsoon-yoga-retreat/",
+      "sha256": "c90a6e7b79dac09bdd31bc8406b17cf0e2ca3bd4ad7a1ee0161b96de1dc60f97",
+      "parentSha256": "f3dc2f9b6616b003ebcf7e24672b95f821bb1a895a2c4d491ea8c0ac512239d0",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/pt/prav-simona-yoga-retreat.html.gz",
+      "route": "/prav-simona-yoga-retreat/",
+      "sha256": "6f189031bcdefca7460b60a5b811c0200503fa8d6a8def66a55385c986a96054",
+      "parentSha256": "47dd17e16cdc48cfe0640eed8e60ebc5dde7ffa2b0da31b86a33b75c95e69c26",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/pt/thanks-old.html.gz",
+      "route": "/thanks-old/",
+      "sha256": "34c0abbe30c3788dff59237291291f8276ac3581143cafa0e70f41fd542b4b8c",
+      "parentSha256": "b4be16396b42df5f07b2660e2aa36f72ebe1ddac8485ebe3a71e4d44b3fdf8cc",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/pt/thanks.html.gz",
+      "route": "/thanks/",
+      "sha256": "02701b1c4fd5ae7524ac49f0ac362d6d8e16356f52173010889329dd5d5991ce",
+      "parentSha256": "f426e947226e9de89170cd987c24f18d2245f8593fabccfeef5d05b04a9f8dbb",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/nl/book-now.html.gz",
+      "route": "/book-now/",
+      "sha256": "5c45c9da9494ea2313a1cc265d288021700dbbb1fbb11d8129c4a0f8c02dd241",
+      "parentSha256": "195813295a5515a6fbcad0e9718fbf2247be31b06f79dcd1ab1ad03c57020465",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/nl/chef-retreat-food-to-wellness.html.gz",
+      "route": "/chef-retreat-food-to-wellness/",
+      "sha256": "b57c4c4de64bef262d2d0af21b19c164d5896ec56422241b64f711c41ed4f4ab",
+      "parentSha256": "f31b3dba2ac1dd1ee07adee815d5ae4609321d82664ca58cb1f57c516ca32724",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/nl/contact-us_thank-you.html.gz",
+      "route": "/contact-us/thank-you/",
+      "sha256": "b1ab724ace52ed703b37d0703c894067d83fc545e62df869d142eb5649dc4146",
+      "parentSha256": "029d37fc58ca4ba700317b8d78436940ee35cf848f78923c0f08127d90b05a07",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/nl/emailsubscriber.html.gz",
+      "route": "/emailsubscriber/",
+      "sha256": "3e0a9c6c23af6c72b3639ed3d2573926ec9bead9af0c07286fd160855433d589",
+      "parentSha256": "c0ae961d0cebc8aba7a06e3637f6cd103095856294cb820a04bad7308268b422",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/nl/food-sadhana.html.gz",
+      "route": "/food-sadhana/",
+      "sha256": "40aa4936c8733032b37915501dcca5cbd2270aa1cbb8c9cca3de9135e4a47678",
+      "parentSha256": "d39ae5aec38bb6bf080bef342880cccfe0b1e1b9f8db5573ee4f3cd7edfc7d99",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/nl/karma-being-retreat-2019.html.gz",
+      "route": "/karma-being-retreat-2019/",
+      "sha256": "042e2ab909c22c50feafdad69ba1a6038ceaa415969a9d0c3d42393869e12081",
+      "parentSha256": "d60d20a2a18fa3ef4943791116c70db4b0219755251b1d23b9d7e1e1d874d4ac",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/nl/karma-being-retreat.html.gz",
+      "route": "/karma-being-retreat/",
+      "sha256": "85dde1f1025dc9dd0a19bcfde7cb7cf31500040b9a7648b7fc2af4e14a691825",
+      "parentSha256": "110f1bc3645d0fd9d265417bab006a9c6e686a42f1b3a1cd984e6c32276b9fef",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 2 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/nl/katha-wellness-retreat-2019.html.gz",
+      "route": "/katha-wellness-retreat-2019/",
+      "sha256": "00c567112ed9af0d8234bdcb929a6148daaaec025e733e391419bcaa8db230be",
+      "parentSha256": "8d2dcc84c10469b7d3118b6ebfddb9ce2bd28f30f3f8e45c7c7c1e9367eebeb2",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/nl/lakshya-yoga-retreat-2017.html.gz",
+      "route": "/lakshya-yoga-retreat-2017/",
+      "sha256": "eacdad9a078b50de0d21360ef7c340a33e5589038f312a7fb76a3be26781bfad",
+      "parentSha256": "44efe7933f345305a5fc2a26cce59bbc7d5ec30fd2dec12f82a3fa02d06d9d0a",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/nl/lakshya-yoga-retreat-2018.html.gz",
+      "route": "/lakshya-yoga-retreat-2018/",
+      "sha256": "4b69b9b3ca20890cdffc4cbaedb7023d7acff0b2c9ea1fc6c85640e4695efe84",
+      "parentSha256": "8d97ceeff30f01ca07f4690af0e843a72b8909c3912f8c39b4657c340fe50fbc",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/nl/onlinebookingthankyou.html.gz",
+      "route": "/onlinebookingthankyou/",
+      "sha256": "e019042e602446e37ef80cec84e35d2254eb705f737c42b9eee03a89fc0e13b8",
+      "parentSha256": "a0d9a53ff75f823b96731d90da62cb32925dbf59c74b177ebb39c28d356dd2fd",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/nl/onlineconsultation-thanks.html.gz",
+      "route": "/onlineconsultation-thanks/",
+      "sha256": "2b8ba296e218bd8b3c425e9b167960072cf84f84f76651b7b874a9cfb885afe8",
+      "parentSha256": "7ae52263eefaff211d4c85a9129c439b04d54d70d94107efdc21730bdf8bd2e0",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/nl/prav-simona-monsoon-yoga-retreat.html.gz",
+      "route": "/prav-simona-monsoon-yoga-retreat/",
+      "sha256": "e13a06cec73da420dffc127586d43e0b5f245915bc0ab420014a5170da667dca",
+      "parentSha256": "0dd779d9efb90c71e28320f544b73960aa210e7a9fbb421dffc7202b84bdb7a6",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/nl/prav-simona-yoga-retreat.html.gz",
+      "route": "/prav-simona-yoga-retreat/",
+      "sha256": "690057eccddd13494a3048d753cb86b2e08d769e4c2013a5063a8c2786b19998",
+      "parentSha256": "dbb37c3ed43ec1bea95a31382200199413bf430a227fdbfd9f1ad3d464bf1c17",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/nl/thanks-old.html.gz",
+      "route": "/thanks-old/",
+      "sha256": "9320281ef54c70a05538745b27fdd5aacfa10405c9128785611e2d9e8b1d031d",
+      "parentSha256": "b036ef8c4bbdffcce9e28b5b88ffd090780aca57ae16b71957053472023888b0",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/nl/thanks.html.gz",
+      "route": "/thanks/",
+      "sha256": "d0960925be518a66af3a999e8672dfcf1e7049fb582186f24c94abdf40cb970b",
+      "parentSha256": "f66123a13ef32840daa8f6c2daae1edf08b6d4566b7edc7d2718f0adbc9da2ff",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ru/book-now.html.gz",
+      "route": "/book-now/",
+      "sha256": "8051c69b801011c8986118b95155efb6fb9b840ff2d666b046e5421a6d640ad8",
+      "parentSha256": "bedfc52625a68815dd65c35d93faa39491ef5d7ec5653e5267a97484e0adb235",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ru/chef-retreat-food-to-wellness.html.gz",
+      "route": "/chef-retreat-food-to-wellness/",
+      "sha256": "d6db97382c237173d87c00c9ba8f863d2feb84b0fb5d6997ab0eef6e25f5a03a",
+      "parentSha256": "79dd53e55eff97f61caa9fb2aab2882a2c774e87932d48ab61fe8d1d3924a57f",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ru/contact-us_thank-you.html.gz",
+      "route": "/contact-us/thank-you/",
+      "sha256": "fc6725d7087ce79c5e4f437c1ad74770a5b5018d9e06029d05cd408faa0e2bac",
+      "parentSha256": "6a48484c7aaf37d4002ae80efbd03dc009430865c907a45eb59a08aeebf52a80",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ru/emailsubscriber.html.gz",
+      "route": "/emailsubscriber/",
+      "sha256": "f9135d953e34362a1a751ac7f4a01c2dea7585946a2bdba90a5d5ea65244c2ab",
+      "parentSha256": "416ecc2486a53e7bd9b04661533db4bde534f9fcba95bc8480dc555c7ef4dd1b",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ru/food-sadhana.html.gz",
+      "route": "/food-sadhana/",
+      "sha256": "222a20245cea4f981991b95793a1598828dc743b121240f67e3eb41162834009",
+      "parentSha256": "32c9b379a5046efc26967100790ee3b18e2ee03c549d10aab05558f649c90425",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ru/karma-being-retreat-2019.html.gz",
+      "route": "/karma-being-retreat-2019/",
+      "sha256": "59386897e8469c4cef6d241f666a40227a1142a30da38c882ccb91d571b05e9a",
+      "parentSha256": "bd74f322ca112ce0b484a9454e364996976096abced9d2cb914190dac8b63fbb",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/ru/karma-being-retreat.html.gz",
+      "route": "/karma-being-retreat/",
+      "sha256": "1e0c37f3dc01c829f0a8d101a9e25cf2d2190a2d58ef72ee3d4f036323f8a1d2",
+      "parentSha256": "3a0f6a4445e029884f75cff6f07ba5f4952ae03ba14de300bc3377c0f27fb706",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 2 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/ru/katha-wellness-retreat-2019.html.gz",
+      "route": "/katha-wellness-retreat-2019/",
+      "sha256": "a229ea752f45e24bda23b8a9fe155f8c9102a2ff135e6976831641ee67a7643f",
+      "parentSha256": "56addd579aaa831c869269770d4063958aeafcc71b7d1baabd3e9be0c03c2063",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/ru/lakshya-yoga-retreat-2017.html.gz",
+      "route": "/lakshya-yoga-retreat-2017/",
+      "sha256": "ce93fdc67c7d63a9cbce2f209c72e1717b4eceecb29a28bf908e09f54046a87d",
+      "parentSha256": "100f873a7432c3db7f206bbd4d70fe23b513ccafeb345b801484c679a92c4042",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ru/lakshya-yoga-retreat-2018.html.gz",
+      "route": "/lakshya-yoga-retreat-2018/",
+      "sha256": "cb965577f0ab005b7bd4c9918346c274cda2badf44881daf0bbf851ac4a87d90",
+      "parentSha256": "6731374bd34534d02af0a0fe2bc09cde1fbccafe689c8393d4fadacc2d62a334",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ru/onlinebookingthankyou.html.gz",
+      "route": "/onlinebookingthankyou/",
+      "sha256": "186702992b48aa8caa660a7665e5ed94bf29adb64d733c82a88598071a17a943",
+      "parentSha256": "412aaf8a3a928101f54f34a4ffd838881ae09e0fc9773e525b4b27623aaf5592",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ru/onlineconsultation-thanks.html.gz",
+      "route": "/onlineconsultation-thanks/",
+      "sha256": "6e921ad3f2a96bd040425d12d9aa474ff137f6f2fbc7320ae57416de2982a6c8",
+      "parentSha256": "c912e3a0ddea2d9344c6170f91763adef2d74a418f4acd6c662cd22180c8d4b3",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ru/prav-simona-monsoon-yoga-retreat.html.gz",
+      "route": "/prav-simona-monsoon-yoga-retreat/",
+      "sha256": "001dbd5bb627c8c2bc698e05efadcfe4670da8e3d1f30ab7ec3b5c53e2ad58b5",
+      "parentSha256": "ffe678e9c332f47d483cb93de32b1f8bb09576e3b2c56a8c576ebb5b1159cfad",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ru/prav-simona-yoga-retreat.html.gz",
+      "route": "/prav-simona-yoga-retreat/",
+      "sha256": "4f4ed8d2198899190e5d9473449b6c5e01c1e788deaabf6947c61cfcaaa2c935",
+      "parentSha256": "df8727ce36e81c1c3989a43302238eddf684a3c4d47ed4bb54ad8f0bf0a0ab03",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ru/thanks-old.html.gz",
+      "route": "/thanks-old/",
+      "sha256": "f136e7e70d79b6918a4d47dafa094ec98967b1f9bd04806f00d2e8bea85440bc",
+      "parentSha256": "f45b74514278382c9aa3dd613f16c80a7f7dfb748ed749a60ceccae6eb56f8fc",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ru/thanks.html.gz",
+      "route": "/thanks/",
+      "sha256": "ee5b70f90e36342ff7f46bf90dfb1a3acc319e27535e6db818c3b284dc762e65",
+      "parentSha256": "d6c7bb50cd903ede39b344a8de361707506b66eb8283905837bbc1d57c8e43b1",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ar/book-now.html.gz",
+      "route": "/book-now/",
+      "sha256": "351c72983c09fd333f38ec3f5ba66d20c64e529948601e98565a0508d83d7237",
+      "parentSha256": "3f0c40e879c8e54a3042cde41748732b6e6f9ff2cf567903066cbd30659beb45",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ar/chef-retreat-food-to-wellness.html.gz",
+      "route": "/chef-retreat-food-to-wellness/",
+      "sha256": "8a0d8efea10abdd635b4c70ad290245a6bb2d59a74e19bc792a72a88dd9c2f44",
+      "parentSha256": "ba13f365076784615d973241792263498de1f853f2502d66b19a355899a66e14",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ar/contact-us_thank-you.html.gz",
+      "route": "/contact-us/thank-you/",
+      "sha256": "ed525cdf63d2600748399f4679ff41d451a9203288049ab0ba3c13a633682aae",
+      "parentSha256": "70b28fc26dd11b6e0d4d40a1b3be27459ff354b8e8958a43f31e8db168919f7a",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ar/emailsubscriber.html.gz",
+      "route": "/emailsubscriber/",
+      "sha256": "9db7a00cc712d793d8cc9ae9a6b2229fc076a94e6e898a8e6cdbac0bf1d9bd2b",
+      "parentSha256": "5a4199614f79c9e996b962b607366dc099b61f9b544a99bf77e5f8218c5c922c",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ar/food-sadhana.html.gz",
+      "route": "/food-sadhana/",
+      "sha256": "7c5fd56e2886d095e917a11497e030626178e9f6bffb8a52169ad7db3ce5f326",
+      "parentSha256": "59fc9dbf9c16385190a632621d76906bf4a50beb3a852f3fec63bde2b28289cf",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ar/karma-being-retreat-2019.html.gz",
+      "route": "/karma-being-retreat-2019/",
+      "sha256": "04f4608e46dac5d2d2f32b3ee9871ee66059681a95e0a7fc584775447702d19e",
+      "parentSha256": "0b6ce8d0911db79112853b01946ac557a89c684c675cfd8d422b7e164aab7970",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/ar/karma-being-retreat.html.gz",
+      "route": "/karma-being-retreat/",
+      "sha256": "01e69e4a1953b1f85e5673b325915e38a81fb0dc89536847b54208d234997b55",
+      "parentSha256": "213829bacb3dfd42a32c744947c574961859f8731edcf8aae6da1a5588c4676f",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 2 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/ar/katha-wellness-retreat-2019.html.gz",
+      "route": "/katha-wellness-retreat-2019/",
+      "sha256": "687816860fdff2d4ac8bc56512dc57ab7216b89630aa2572db23c400b6a36059",
+      "parentSha256": "5ebc21deccd22e08eb4fa6b71daea3658cee9e1b99302976c074af728929ec9f",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/ar/lakshya-yoga-retreat-2017.html.gz",
+      "route": "/lakshya-yoga-retreat-2017/",
+      "sha256": "7227c774a38a1e24fe20b4455e92883ee05428511b79dd044be7a0b744d3ec89",
+      "parentSha256": "1b1348a0bd2ed4bd96ae39e41e228f1b09c046671724b42902624541115536cf",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ar/lakshya-yoga-retreat-2018.html.gz",
+      "route": "/lakshya-yoga-retreat-2018/",
+      "sha256": "8a50fd558af4ffdaa7b6175227bbcb4fe00c9b5fb15be0194830c17d494db9e0",
+      "parentSha256": "163747867a6afad8f9d76e6406cb231c7a1e3ea5a7f2ba94eda4cdc05dd14f9d",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ar/onlinebookingthankyou.html.gz",
+      "route": "/onlinebookingthankyou/",
+      "sha256": "d71438d846bc49fe38440a06c983cbf74bb08080e2f5b0b9b45180ae1ab44067",
+      "parentSha256": "eda58f04edcef3bcff15f061a7e4766b6ce195f02c127fe07220da650b424892",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ar/onlineconsultation-thanks.html.gz",
+      "route": "/onlineconsultation-thanks/",
+      "sha256": "26594dc31f93561b30abcf44124d78854c69b3c834412624d22cc45d90844009",
+      "parentSha256": "698f55ad3270fe80f3a2740f2a01e967656a9a1bffc815e827add6bf0ff5232e",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ar/prav-simona-monsoon-yoga-retreat.html.gz",
+      "route": "/prav-simona-monsoon-yoga-retreat/",
+      "sha256": "0fec3163abd6bd55745ee64972c1ad9e4cb417c70851c3ce5737fe4a93518c5d",
+      "parentSha256": "9f7961b940ac4419016935bb36c6401625a1990d4e8bf5b41761ba5f617022f8",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ar/prav-simona-yoga-retreat.html.gz",
+      "route": "/prav-simona-yoga-retreat/",
+      "sha256": "ad9dfc36fd7f557d7aab3bbffe9314b68ee7e40898157bf34f135fe17c05eb1d",
+      "parentSha256": "900db085c8083191958e9f258f5aad432b6e07eb2ead2768eb064af490ad3256",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ar/thanks-old.html.gz",
+      "route": "/thanks-old/",
+      "sha256": "a86346a49654c1f5795be7141152e8cce42d00a38518590d14727e9dbce9019f",
+      "parentSha256": "2b622a3631e2c90f8880b8635e3f1454840e9aeefe58ce19ea7bab91e0374323",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ar/thanks.html.gz",
+      "route": "/thanks/",
+      "sha256": "d5bb810395e32b5798e87a92607d82860af43940e515feb26f73e434e870eca0",
+      "parentSha256": "0ef5eb76455d87e395b3ba5d96320493eb59f23a753008c6a86422b7176c943a",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/book-now.html.gz",
+      "route": "/book-now/",
+      "sha256": "c5a5cf315785d3327d6e5db125247c7a0a8513aea41d4c7f09c57c5ca3dbc4e5",
+      "parentSha256": "7340a5f25d3a53e785a416400b73cca7eb57b610dd5281ee5f6ae55a809d25f0",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/chef-retreat-food-to-wellness.html.gz",
+      "route": "/chef-retreat-food-to-wellness/",
+      "sha256": "eb2855a0289a1ef03b73650aed19e98124cc5e22fcd03b215540c270968aaf32",
+      "parentSha256": "17575e3dde49b041c95160b5aed463c0ac569172e829022ff7285abce91d2e5b",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/contact-us_thank-you.html.gz",
+      "route": "/contact-us/thank-you/",
+      "sha256": "03d5d03041685b772b2b8a9e3963b9826cbd9cd9899d59bf17ed0a2f8ed04f85",
+      "parentSha256": "3b5e90baf74e083fef49298250797dff2b81fe7a0bed6d985fb60a20cfe38581",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/emailsubscriber.html.gz",
+      "route": "/emailsubscriber/",
+      "sha256": "d88576b51e861d9e162a4691521bdbb1bdca48aeb37f228a01515459aee2ef3b",
+      "parentSha256": "be62d1bbc5f7d31b4a518458d168e5d167b61aad9b385cba5073daa14beb88ad",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/food-sadhana.html.gz",
+      "route": "/food-sadhana/",
+      "sha256": "9929069b8c316f9613bb8f5fda4c390245f6710a740c831e17ec629d7ba79244",
+      "parentSha256": "100321be5f9dda7722867dd92688c4cf63db30f64f0c31fa5ac063c56f5ed38c",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/karma-being-retreat-2019.html.gz",
+      "route": "/karma-being-retreat-2019/",
+      "sha256": "e02780c50eb9f59c5f24cd05694647351c2b66fa867c29b65c16f322165a5533",
+      "parentSha256": "a72a81af4371cb0983e253162613cca0f7f21dce6b11b5e0600d28ec8759ad29",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/karma-being-retreat.html.gz",
+      "route": "/karma-being-retreat/",
+      "sha256": "91bd5e2d9f3467fc46f53a179e1753bda4c3b2bf5623aefde78d15ec859b52de",
+      "parentSha256": "7338b211d41da4bd81f48ded56989d1449aac73be1d7c99dc87eb74100ae3442",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 2 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/katha-wellness-retreat-2019.html.gz",
+      "route": "/katha-wellness-retreat-2019/",
+      "sha256": "b3a9c785f5d1435cf72bbf87b693fe657e086ab9bfe13e62833549646f16e1b9",
+      "parentSha256": "af2bee9f3e0cf3fee50ba753a6a424e9f5d3c102eb7b61c33e38606202eaa852",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/lakshya-yoga-retreat-2017.html.gz",
+      "route": "/lakshya-yoga-retreat-2017/",
+      "sha256": "e7e682b5d3d884c435a3296a4cc199278560eef9b76a9e1c01e41f31f2d3bfe5",
+      "parentSha256": "5fda2bd60df8780ada1c109d28d6a4d04e62bbc6b67b58dd4df37816bbc7b989",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/lakshya-yoga-retreat-2018.html.gz",
+      "route": "/lakshya-yoga-retreat-2018/",
+      "sha256": "d24106c8f97e2608eed86f7d38fe378ed371c7a3c30f8504fa65b01a61f2d47d",
+      "parentSha256": "ddd292fb1a40b78e702caa073e1e2bc3b10e723c7273e240df92362d020d2f7b",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/onlinebookingthankyou.html.gz",
+      "route": "/onlinebookingthankyou/",
+      "sha256": "82818bcdf9383741068b08df9205cdf90eafd827417ea37fa345b4a42b772b4d",
+      "parentSha256": "98fd530ce7d363a0ddbe2e4553e961e80bed9a9db70f459aa315e667e910a5f4",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/onlineconsultation-thanks.html.gz",
+      "route": "/onlineconsultation-thanks/",
+      "sha256": "fbc4c91d3bafe7e455568a1ad9ed3f47670d923eb83b4b42fbcd7b90cf56e492",
+      "parentSha256": "2160e68b60b545868e6a509514e7c4ad3b38256ce93253e30eced7ef3a61c79c",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/prav-simona-monsoon-yoga-retreat.html.gz",
+      "route": "/prav-simona-monsoon-yoga-retreat/",
+      "sha256": "4afabd9f720cc132694714b4e4c2c07faacd0040997baed3e44b73d165e3cd49",
+      "parentSha256": "333648f305d25fa41ec57536c2c1a9a9b4fa5bd87aa5ce42fb71590adce77ebe",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/prav-simona-yoga-retreat.html.gz",
+      "route": "/prav-simona-yoga-retreat/",
+      "sha256": "09ec03ccc7226e8ce10c371027d0488bd4961dd44df7b86f6ab3d1d07cfbe5dd",
+      "parentSha256": "d7ceb916d32c3fca120315977ae2ab552c1f8184a5f00574d0df42f872f014ea",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/thanks-old.html.gz",
+      "route": "/thanks-old/",
+      "sha256": "fa5b4d51c9fb47f69e2834527bb60e16916a53fe87999f207b82fc0cb2078341",
+      "parentSha256": "b22d415c70761a80c128f6031045b92769fd1ab3a324d94ee59474b579b9540f",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/zh-Hans/thanks.html.gz",
+      "route": "/thanks/",
+      "sha256": "dbbc79c791eec77f689babd4cc9ca94ac24c88ebe18ed0b1aa8eb896ab3e4793",
+      "parentSha256": "2e5f57d1fbcabff48503bf2d47a951936539fc91e559ff35aab37ab6ea67c340",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ja/book-now.html.gz",
+      "route": "/book-now/",
+      "sha256": "d3586ac9a40dc209f9f2730d4bc467bb9ad9c1f808419bc64a9626d165f34a1f",
+      "parentSha256": "ac0ad50dd36e22cc030c6d1c43f9cd632051094d46b1abb0bccd47a0f0e13ee1",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ja/chef-retreat-food-to-wellness.html.gz",
+      "route": "/chef-retreat-food-to-wellness/",
+      "sha256": "e4d61ad63778b0634060a6be0abc381a439e73c7597820e78ccc6a13c5bd7289",
+      "parentSha256": "83cdcd59ae3a6890fc551744862eb9d27ea588f2a8264c48bbb0fde6357df4df",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ja/contact-us_thank-you.html.gz",
+      "route": "/contact-us/thank-you/",
+      "sha256": "24e1c309b716db08a7e8e8e170beffa2508e42862cc0c0c558ee2f8cd83b5bbf",
+      "parentSha256": "cb522004f894028ba1f7809caf5bc36b3eea81037b4071cf940d11f2bc2fdedc",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ja/emailsubscriber.html.gz",
+      "route": "/emailsubscriber/",
+      "sha256": "c800d75f2100512771945e32743c9868507812577a6565d60244dbf648911a67",
+      "parentSha256": "45504c7084cfd6a2c0618bf7413ad81a4d093b01f65fe1cb88e3c2a9dd523ba1",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ja/food-sadhana.html.gz",
+      "route": "/food-sadhana/",
+      "sha256": "012337bda433d3a94c350fc1d8e1734274dca36a29606412311f9572d6e8c08c",
+      "parentSha256": "9fb426020b29a6bd0418540e359d5b44b638129d24959366e3b32a3cc1839ffd",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ja/karma-being-retreat-2019.html.gz",
+      "route": "/karma-being-retreat-2019/",
+      "sha256": "833e204d8f0d2ab92af6448fed0e88848053ab1a4f7939d8857b614f8d191e59",
+      "parentSha256": "cc01251f9c290e2ec369b197243cf7a321f7a5b642491c5152b1450b794570eb",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/ja/karma-being-retreat.html.gz",
+      "route": "/karma-being-retreat/",
+      "sha256": "e5bcdbe2a0e84fa36e8b8aa68a30cc9787945834c026bf72b8cfabe1cfedb903",
+      "parentSha256": "e4c3b7e23a2d667f336e514e50e52e2d9b626cf8a0f211b0519890f153be7c85",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 2 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/ja/katha-wellness-retreat-2019.html.gz",
+      "route": "/katha-wellness-retreat-2019/",
+      "sha256": "36845e3bd2c604988f4d01385552d6b05201ecf505764e721b36f22e9d71c182",
+      "parentSha256": "41f327697a1e9a86018312095b89be80cc38564e8dc1cfbded77410941766f6a",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/ja/lakshya-yoga-retreat-2017.html.gz",
+      "route": "/lakshya-yoga-retreat-2017/",
+      "sha256": "8cb22bc357dcaabc7728a1b66937d7614ff3c8fe1cefb7c6c53ee013f993c6a5",
+      "parentSha256": "4f7ca23a25635f203344f87147315953b852e10f66e11561003e9dc697a441a2",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ja/lakshya-yoga-retreat-2018.html.gz",
+      "route": "/lakshya-yoga-retreat-2018/",
+      "sha256": "deb1af183997c62490f5026fc442f4556113780966a4e5ca622bf96bfa48cee2",
+      "parentSha256": "5f4db7519edb7e239ef57292c429a38acf4818c61043d28d92137369feb40362",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ja/onlinebookingthankyou.html.gz",
+      "route": "/onlinebookingthankyou/",
+      "sha256": "6a541aaeb915de5e8f644bd600edfa5ccf302fa3e687d6fd0f7b386d9dcbe0dc",
+      "parentSha256": "50ce34a2cbc98653e64f8844c75746269bba6706a0e6735df8b77917b34a2eb1",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ja/onlineconsultation-thanks.html.gz",
+      "route": "/onlineconsultation-thanks/",
+      "sha256": "0c3af37f75431603ccb7a615161e930f7ab6b86f30e9e308c07b2f018c741666",
+      "parentSha256": "6f7aee98fd26363914086617e80579be1ad6aaf5b3a4ab7f337c4694b1ca7d38",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ja/prav-simona-monsoon-yoga-retreat.html.gz",
+      "route": "/prav-simona-monsoon-yoga-retreat/",
+      "sha256": "47d8303fecd025b4312f1559d9f5767837fead86c4ebff8d0dbf8e48ef917763",
+      "parentSha256": "f8d37779f631a43057972297dde063d359b6e6a962a74f83d67c1557ae3f3dfa",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ja/prav-simona-yoga-retreat.html.gz",
+      "route": "/prav-simona-yoga-retreat/",
+      "sha256": "8c637c3af1c1a93bb085d14c9dc6bc660595b487e46478c9b6461206a7499dbd",
+      "parentSha256": "ad5a8785ddf3cb6802100918205520fdac3c77f0ce973bf7495ebd51b77f9a84",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ja/thanks-old.html.gz",
+      "route": "/thanks-old/",
+      "sha256": "a15ec1ed6f06abfa74d77ee9952c29857998e184cb5ef89dc54e5100b938a0dd",
+      "parentSha256": "374aadaa9d51380eb4a34b7fe90d0a3b25fd8c8136ceb874156ede9ff3526026",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ja/thanks.html.gz",
+      "route": "/thanks/",
+      "sha256": "47feb0894a2c07a9a3d76263071c415f5537623187f91f3ec63060667390c06c",
+      "parentSha256": "14e862348bd890a781824c8c88dfa668f0b1110eb0373f7fdf6e5f9c7598affe",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ko/book-now.html.gz",
+      "route": "/book-now/",
+      "sha256": "399164506b69d5652073500c3111022837b35400b8a0f6e91e8ee31a44f39347",
+      "parentSha256": "1a74bed12a98d68c9b3957b50593a46714f50a2ebef5b711c337411d2446c81d",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ko/chef-retreat-food-to-wellness.html.gz",
+      "route": "/chef-retreat-food-to-wellness/",
+      "sha256": "e81b1e19a285a785819d71a32a315bd40a42a6122381017576dd6799ddcf8635",
+      "parentSha256": "5b407870015f5bfbc84c6a8dd18d18a3783bc6d2c2e2f42ba87c3f7992b02da5",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ko/contact-us_thank-you.html.gz",
+      "route": "/contact-us/thank-you/",
+      "sha256": "b671cee2497fe91081ed4802a7c5f233fc263608f59dcc7b894f7093458454af",
+      "parentSha256": "37a2a3071861c3e72c0bac8a6324a5862ad7d3eecd0d4d197ac4ba25dbb53abb",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ko/emailsubscriber.html.gz",
+      "route": "/emailsubscriber/",
+      "sha256": "d668564102cb5ccac35a6125e2a9e1d4156c2081ed6b1aa445f8f3a1d8baf2af",
+      "parentSha256": "5c8a8ac504b908fae1a8d98c13687069daccedd19b1fa3fbfcec3bcd34b1ba84",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ko/food-sadhana.html.gz",
+      "route": "/food-sadhana/",
+      "sha256": "684b909a645bf0d4cad0ceac1770c2c50347c5783d792dc3d5eb4d2a5028fb5c",
+      "parentSha256": "06916c898b36415dcc321f51653ecf5091c9ed63e7da76979fc5c1f2a791fb72",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ko/karma-being-retreat-2019.html.gz",
+      "route": "/karma-being-retreat-2019/",
+      "sha256": "24b05249b8324bb0824e07cf83b4fd1372f380a49bc3f8481561b7264080cacc",
+      "parentSha256": "65f6bf73aad2db3149f84c36c45ed77525a33775c50155031495488c0ba9ba45",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/ko/karma-being-retreat.html.gz",
+      "route": "/karma-being-retreat/",
+      "sha256": "e0a05c9c80cb1b2fcadab221ace2ec40b92f55cc68509afe83b5a980c5c4e200",
+      "parentSha256": "b740033456b0d562cddd4a45ae0a4478b561ee75d9d33149b90fdb5123c0b793",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 2 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/ko/katha-wellness-retreat-2019.html.gz",
+      "route": "/katha-wellness-retreat-2019/",
+      "sha256": "00800b4f80ab4e04b33b6745d463a3960c99ca50f2ad32c936d1b44c5626dba7",
+      "parentSha256": "aea818a0254337d8bf41213b7951b5bc3855eaa8f8709744e874dcb6662d9e93",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; 1 corrected related-link label(s) present."
+    },
+    {
+      "file": "l10n/prerender/ko/lakshya-yoga-retreat-2017.html.gz",
+      "route": "/lakshya-yoga-retreat-2017/",
+      "sha256": "2150ca1ff8c9befc7ddb1ab2a3defe3d0886bbd02cc0ca7caf3dd86c72e5bbd3",
+      "parentSha256": "79d521dbc0c8dac47977a930f96c4054d7f982174e9a5f2d56cff97e54fb1120",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ko/lakshya-yoga-retreat-2018.html.gz",
+      "route": "/lakshya-yoga-retreat-2018/",
+      "sha256": "078f26b3ee9685409ddcc000b15b426fbc9fc840f9ebb5c823f21f77ecef883c",
+      "parentSha256": "4090c7bedd38afc16381bbbf9f2286c9d31ecc4ea5648504119c62c890aad83c",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ko/onlinebookingthankyou.html.gz",
+      "route": "/onlinebookingthankyou/",
+      "sha256": "3479a0400c19cb788f6ed593df2aa0fa0cad7bbb2f22a21f15d5e9349fff471e",
+      "parentSha256": "ea104891973129229848240cb3dae555d4ba9823f8aa2e5762eb59af53f50265",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ko/onlineconsultation-thanks.html.gz",
+      "route": "/onlineconsultation-thanks/",
+      "sha256": "d8927846b2958ee98b231603b027d2f7de2ea41bb3bc54dba2a32afc65cc3af8",
+      "parentSha256": "6cf398a8735436011f93a30bfc1531af80d007af934e9c82e3c80ae31a263fcf",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ko/prav-simona-monsoon-yoga-retreat.html.gz",
+      "route": "/prav-simona-monsoon-yoga-retreat/",
+      "sha256": "51e6eccde7da2c2665d14d975ae3f79785d193db4d1639ec024d446b14775cc5",
+      "parentSha256": "2b9b570ca793f33c2e2502bf153906895a0d3547b26bef5d131a4f8fd656d600",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ko/prav-simona-yoga-retreat.html.gz",
+      "route": "/prav-simona-yoga-retreat/",
+      "sha256": "547be809a60c9980911f75ea517c2d0291ac0d7ea6aa982d08bafa5041b0d95a",
+      "parentSha256": "031ea5e82c3f07eebc7e07d84f18c6d242ed5ad12fc81be9db3161d19c3bdb6a",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the hist9 past-retreat record; renderer grouping change only."
+    },
+    {
+      "file": "l10n/prerender/ko/thanks-old.html.gz",
+      "route": "/thanks-old/",
+      "sha256": "abe8feac71682b5c85c8cf9505a058ccb396dff37a0bbb73bd097d39ac32632a",
+      "parentSha256": "5b51c1c14e6d1b43d1a8b168b29186b5a9b02bc622b7e87b00cd16d1fb702803",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    },
+    {
+      "file": "l10n/prerender/ko/thanks.html.gz",
+      "route": "/thanks/",
+      "sha256": "043aa9561a5ac2aa736a47a74aa8fe12e7d99ba08eea92e89006b8d51b08721b",
+      "parentSha256": "9952f0203567e7b32e86d06af5e2ef6131865eb3947acd6772dc3f7dcea6fc9f",
+      "bodyChanged": true,
+      "routeProof": "Fresh live-runtime capture of the confirmation view (direct visit, neutral; no receipt, no form submission)."
+    }
+  ],
+  "capturedSourceSignature": "c0442d13afca8143b2ca94fb6a6f6fa744f1d0dfe55f5dc2cca636538124f95b",
+  "captureOrigin": "http://127.0.0.1:3218",
+  "captureReceipt": "deliverables/WOPS-WEBSITE-SEQUENTIAL-20261008-001/recovery-20261014/train-b/locale-recapture/CAPTURE.json"
+}
