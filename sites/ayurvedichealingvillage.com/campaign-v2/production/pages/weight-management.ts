@@ -54,17 +54,18 @@ export default defineCopy({
       heading: "Bring care and daily habits together",
       intro: ["Your assessment shapes the programme. The schedule is individual; a programme name does not prescribe every treatment for every patient."],
       cards: [
-        { title: "Prescribed therapies", paragraphs: ["Your doctor explains which therapies may be appropriate and how they fit into the programme. Oil therapies, steam treatments or other Ayurvedic care are considered according to your assessment."] },
-        { title: "A personalised vegetarian diet", paragraphs: ["A personalised vegetarian diet is part of the programme. Discuss your usual eating patterns, food restrictions and practical needs, so the team can explain the proposed meals and arrangements."] },
-        { title: "Activity and rest in your day", paragraphs: ["The daily routine makes time for care, appropriate activity and rest. Ask about yoga and meditation sessions that suit your assessment, and tell the doctor about any injury or limitation before taking part."] },
-        { title: "Progress and life after the stay", paragraphs: ["Discuss how progress will be reviewed and which habits you would like to continue at home. Before discharge, ask for clear guidance on your routine and any recommended follow-up, including how later consultations or services are arranged."] },
+        // AHV-WB.298.change (Train J3, staff review 9 Oct: "make the text shorter"): each card one sentence, same facts.
+        { title: "Prescribed therapies", paragraphs: ["Your doctor explains which oil therapies, steam treatments or other Ayurvedic care may suit your assessment and programme."] },
+        { title: "A personalised vegetarian diet", paragraphs: ["A personalised vegetarian diet is part of the programme; tell the team your usual eating patterns, food restrictions and practical needs."] },
+        { title: "Activity and rest in your day", paragraphs: ["Your day makes time for care, appropriate activity, rest and yoga or meditation that suit your assessment; tell the doctor about any injury or limitation first."] },
+        { title: "Progress and life after the stay", paragraphs: ["Ask how progress is reviewed, and before discharge get clear guidance on the habits to continue at home and any follow-up consultations or services."] },
       ],
     },
     pathway: {
       heading: "How your programme takes shape",
       steps: [
         { title: "Start with a free doctor consultation", body: "Tell the doctor what you have tried, what has been hard to sustain and what you would like to work towards. Share your medical history, current medicines, physical limitations and any ongoing care." },
-        { title: "Agree your plan, dates and quotation", body: "Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Your doctor discusses the duration appropriate to your needs; confirm the programme, dates and quotation before making travel arrangements." },
+        { title: "Agree your plan and dates", body: "Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Your doctor discusses the duration appropriate to your needs; confirm the programme and dates before making travel arrangements." },
         // AHV-WB.308.change (staff workbook row 311): the day plan from the programme's own approved Dinacharya and
         // inclusions (/weight-loss-programme/: two therapies a day, morning yoga, evening meditation, weekly walk). No outcome.
         { title: "Your 14-night routine", body: "Over the minimum 14-night admission, a typical day begins with group yoga at 06:30, as advised by your doctor, and a vegetarian breakfast. Your therapies are at 09:30 and 15:30, each followed by rest; therapy types, times and durations follow your doctor’s plan. Lunch is at 13:00, and a cooking demonstration, garden visit, workshop or lecture may be scheduled at 14:00. Guided meditation at 18:30 comes before dinner, and a farm, village or nature walk is arranged each week. Keep your doctor informed about how you feel, and ask how your progress will be reviewed during the stay." },
@@ -118,6 +119,6 @@ export default defineCopy({
     { q: "How long should I stay?", a: "The minimum admission for Weight Management & Metabolism Therapy is 14 nights. Your doctor will discuss the duration appropriate to your needs. Confirm the recommended duration and the programme before booking travel." },
     { q: "Can the programme take account of dietary needs or physical limitations?", a: "Explain food restrictions, injuries and any assistance you need during the consultation. Ask the team to confirm the proposed meals, suitable activities and practical arrangements before you decide on a stay." },
     { q: "What happens after I leave?", a: "Discuss discharge guidance and the routine you can continue at home. Ask about any recommended follow-up, availability and charges. Later services should be confirmed individually rather than assumed to be included indefinitely." },
-    { q: "Is the initial consultation free, and what will I pay for?", a: "Your initial doctor consultation is free. Ask for a quotation covering your programme, accommodation, care and any later services. Review what is included and any separately charged items before confirming your stay." },
+    { q: "Is the initial consultation free, and what will I pay for?", a: "Your initial doctor consultation is free. Ask our team to set out your programme, accommodation, care and any later services, then review what is included and any separately charged items before confirming your stay." },
   ],
 });

@@ -1,4 +1,6 @@
 import { repairArticleContactHeading } from '../app/(english)/_families/article-contact-heading.mjs';
+// Train J batch 2 (15 Oct 2026): the reviewed outline wrapper is injected in place of the direct heading call.
+import { repairArticleOutline } from '../app/(english)/_families/article-heading-outline.mjs';
 import { applyStaffExperienceDom } from '../app/(english)/_families/staff-experience.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
@@ -42,7 +44,9 @@ test('no slots means no readiness polling; an unavailable upgrade has a bounded 
   assert.equal(ticks, 3);
 });
 
-const mutations = source.slice(source.indexOf('  new MutationObserver(function (changes) {'), source.indexOf('  // Also normalize synchronously')).replace('${repairArticleContactHeading.toString()}', repairArticleContactHeading.toString());
+const mutations = source.slice(source.indexOf('  new MutationObserver(function (changes) {'), source.indexOf('  // Also normalize synchronously')).replace('${repairArticleContactHeading.toString()}', repairArticleContactHeading.toString())
+  // Train J batch 2 (15 Oct 2026): the heading call is wrapped by the reviewed outline repair; inject it the same way.
+  .replace('${repairArticleOutline.toString()}', repairArticleOutline.toString());
 function mutationHarness() {
   const repairs = ['localizeLinks', 'restoreSlotScrolling', 'deferSlotImages', 'deferBackgrounds', 'aliasImages', 'startIstClock', 'hideHoneypots', 'repairEmailLinks', 'upgradeLanguageControls', 'retargetSelfLinks'];
   const calls = Object.fromEntries(repairs.map(name => [name, []]));

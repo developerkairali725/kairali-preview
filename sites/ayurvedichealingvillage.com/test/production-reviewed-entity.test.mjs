@@ -12,7 +12,10 @@ import { ORGANIZATION_ROUTES } from '../campaign-v2/production/organization.ts';
 import { reverseTrainAConfig } from './fixtures/train-a-20261014.mjs';
 import { reverseTrainBConfig } from './fixtures/train-b-20261015.mjs';
 // Train F (15 Oct 2026) sits on top of Train B: its exact photograph picks are reversed first (fixtures/train-f-20261015.mjs).
-import { reverseTrainFConfig } from './fixtures/train-f-20261015.mjs';
+import { reverseTrainFConfig as reverseTrainFConfigOnly } from './fixtures/train-f-20261015.mjs';
+import { reverseTrainHConfig } from './fixtures/train-h-20261015.mjs';
+// Train H (15 Oct 2026) composes on Train F (fixtures/train-h-20261015.mjs): its delta is reversed first.
+const reverseTrainFConfig = (slug, c) => reverseTrainFConfigOnly(slug, reverseTrainHConfig(slug, c));
 
 const REVIEWED = new Set([
   'cleansing-centre', 'lp-cleansing-centre', 'lp-hospital-kerala', 'lp-pain-management', 'lp-panchakarma',

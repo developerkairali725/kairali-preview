@@ -6,6 +6,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
 import {reverseBatch6Source} from './fixtures/train-a-batch6-20261014.mjs';
+import {reverseTrainISource} from './fixtures/train-i-20261015.mjs';
 const site=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const expected={
   "../../campaign-v110/integration.css": "ab3cf7ddd7531ee958f4d9132d039b576cfe60338f34c54c68b57faf10e6f8e0",
@@ -28,6 +29,8 @@ test('campaign first-paint bundle preserves exact approved stylesheet bytes and 
    bytes=bytes.replace(legal,'');
   }
   if(name==='./production.css'){
+   // Train I (15 Oct 2026, AHV-LATER-043.01): remove only its exact hero fine-print delta first (newest layer first).
+   bytes=reverseTrainISource('campaign-v2/production/production.css',bytes);
    // Train A batch 6: remove only the exact Russian phone hero-CTA delta (AHV-WB.530) first.
    bytes=reverseBatch6Source('campaign-v2/production/production.css',bytes);
    // Reverse only the exact approved desktop-card sizing delta; preserve the prior gallery rule and hash.

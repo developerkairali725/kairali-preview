@@ -7,6 +7,10 @@ import fs from "node:fs";
 import { productionCampaign } from "../campaign-v2/production/load.ts";
 import { UI } from "../campaign-v2/production/ui.ts";
 import { candidateSource } from "./fixtures/train-b-20261015.mjs";
+// Train G (15 Oct 2026) integrates train E02's accepted rework of these six rows on top; the Train B revert is checked on
+// the Train F head bytes and configs (fixtures/train-g-20261015.mjs), and train-e02-20261015.test.mjs checks the rework.
+import { reverseTrainGSource, reverseTrainGConfig } from "./fixtures/train-g-20261015.mjs";
+const trainFCampaign = (slug) => reverseTrainGConfig(slug, JSON.parse(JSON.stringify(productionCampaign(slug))));
 
 const read = (p) => fs.readFileSync(new URL(`../${p}`, import.meta.url), "utf8");
 const sha = (s) => crypto.createHash("sha256").update(s).digest("hex");
@@ -36,7 +40,7 @@ test("Train B: the rejected quotation-box rows are reverted exactly; the stay bo
   assert.deepEqual([...new Set(rows)].sort(), ["AHV-WB.105.quotation-box", "AHV-WB.128.quotation-box", "AHV-WB.170.quotation-box",
     "AHV-WB.263.quotation-box", "AHV-WB.354.quotation-box", "AHV-WB.510.quotation-box"]);
   for (const { file, before, row } of fixture.trainBExclusions.replacements) {
-    assert.equal(read(file).split(before).length - 1, 1, `${row}: the prior wording is back once`);
+    assert.equal(reverseTrainGSource(file, read(file)).split(before).length - 1, 1, `${row}: the prior wording is back once`);
   }
   for (const slug of QUOTE_SLUGS) {
     const c = productionCampaign(slug);
@@ -47,9 +51,9 @@ test("Train B: the rejected quotation-box rows are reverted exactly; the stay bo
     assert.doesNotMatch(text(c), /₹|\bINR\b|\bRs\.?\s?\d|\bfrom \d/i, `${slug}: still enquiry-only`);
   }
   for (const slug of ["monsoon-wellness", "rejuvenation-detox"]) {
-    assert.ok(productionCampaign(slug).faq.some((f) => f.q === "What should I check in my quotation?"), slug);
+    assert.ok(trainFCampaign(slug).faq.some((f) => f.q === "What should I check in my quotation?"), slug);
   }
-  assert.ok(productionCampaign("lp-brand").faq.some((f) => f.q === "What should I check before booking?"));
+  assert.ok(trainFCampaign("lp-brand").faq.some((f) => f.q === "What should I check before booking?"));
 });
 
 test("AHV-WB.507: German Abhyanga paragraph and photo alt use Anwendung with Kräuteröl", () => {

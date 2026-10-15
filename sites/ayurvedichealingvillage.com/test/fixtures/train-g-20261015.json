@@ -1,0 +1,964 @@
+{
+ "task": "WOPS-WEBSITE-SEQUENTIAL-20261008-001 AHV Train G integration (15 Oct 2026)",
+ "base": "dae94e21cac638a57f715a9081b3583dc680b338 (Train B head with Train F, reviewed, not yet released)",
+ "note": "Train G = the reviewer-accepted Train E source rows only, composed on the Train F head. files: each source file's exact Train G delta against the Train F head bytes (beforeSHA256 = Train F head, afterSHA256 = Train G), stripped newest-first with each edit occurring exactly once. views: the 17 AHV-N03.01 package views, whose delta is the recorded style in n03-sanskrit-subtitle-20261015.json (reverseN03File); listed here with their Train F head and Train G hashes. configChanges: every production-config field Train G changes, before = Train F head, after = Train G. candidates: the Train E fixtures whose own after-bytes are checked in isolation on the cc1ddad6a base (train-g-integration-20261015.test.mjs). leadJoins: the one integration edit (brand lead kept at 3 paragraphs).",
+ "candidates": {
+  "train E03": {
+   "commits": [
+    "2b5a19d4c",
+    "99ac9c079",
+    "e4138ca59"
+   ],
+   "fixture": "train-e03-20261015.json"
+  },
+  "train E04": {
+   "commits": [
+    "c311ebcb4"
+   ],
+   "fixture": "train-e04-20261015.json",
+   "excluded": "023f563c7 (AHV-M004.01 rejected)"
+  },
+  "train E02": {
+   "commits": [
+    "b2eeb48fd (accepted rows only)"
+   ],
+   "fixture": "train-e02-20261015.json",
+   "excluded": "AHV-WB.156/452/473.benefit-copy hunks (ayurveda-retreat.ts, lp-treatment-kerala.ts, lp-treatment-packages.ts); M028.01, M043.*, Q06.*, I01.nav1/nav2 had no source change"
+  }
+ },
+ "leadJoins": {
+  "brand": {
+   "row": "AHV-WB.270.benefit-copy",
+   "reason": "E03 (AHV-WB.270) and E04 (AHV-WB.276) each added one lead paragraph to brand on the same base; together the lead had 4 paragraphs, over the lint limit (kit/lint/lengths.ts count.page.lead, 1-3). The WB.270 line is kept word for word and joined, after one space, to the end of its own recorded anchor paragraph.",
+   "anchor": "Kairali’s Ayurvedic family tradition informs its approach to care. Here, that means an individual plan in a residential setting, with doctors, therapists, meals and accommodation all part of your stay.",
+   "text": "What your stay gives you: an individual plan, sessions delivered by trained therapists as prescribed, vegetarian meals and villa accommodation in a garden setting, with time to rest around your prescribed care."
+  }
+ },
+ "files": {
+  "campaign-v110/pages/offers/olympics-and-paralympics-offer/staging.html": {
+   "rows": [
+    "AHV-M045.01"
+   ],
+   "beforeSHA256": "f8965fe18125650dcf5c78a266c2d64a27aa3aa9b0f9c780b272e76dd1e53d71",
+   "afterSHA256": "fec71ca53a6f5ddbbe7b6e2b843b0d779a03ee8df54c8495a2a6347ea289c078",
+   "replacements": [
+    {
+     "before": "<p data-dc-tpl=\"505\" style=\"margin: 0px 0px 24px; font-size: clamp(19px, 1.4vw, 21px); line-height: 1.65; border-left: 3px solid var(--gold); padding-left: 20px; max-width: 52ch; text-wrap: pretty;\"><span class=\"sc-interp\">You plan for competition. Your own health deserves a considered plan, too. Explore physician-led Ayurveda in Palakkad, with care-led programme rates for eligible Olympic and Paralympic athletes.</span></p>\n",
+     "after": "<p data-dc-tpl=\"505\" style=\"margin: 0px 0px 24px; font-size: clamp(19px, 1.4vw, 21px); line-height: 1.65; border-left: 3px solid var(--gold); padding-left: 20px; max-width: 52ch; text-wrap: pretty;\"><span class=\"sc-interp\">You plan for competition. Your own health deserves a considered plan, too. Explore physician-led Ayurveda in Palakkad, with care-led programme rates up to 20% lower for eligible Olympic and Paralympic athletes.</span></p>\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/brand.ts": {
+   "rows": [
+    "AHV-WB.263.quotation-box",
+    "AHV-WB.270.benefit-copy",
+    "AHV-WB.276.change"
+   ],
+   "beforeSHA256": "8994c9f08c4020fa96be1587ce2c2091cbd4e42114f826407bd5d52697d14c2e",
+   "afterSHA256": "d6e072322430f5d3ad61d74f3b5a5ce817355c2929b952c1ebf491741133d4d5",
+   "replacements": [
+    {
+     "before": "        \"Kairali’s Ayurvedic family tradition informs its approach to care. Here, that means an individual plan in a residential setting, with doctors, therapists, meals and accommodation all part of your stay.\",\n",
+     "after": "        \"At a glance: an NABH-accredited Ayurvedic hospital in Palakkad, Kerala; 30 villas in a garden setting; Ayurvedic doctors who assess your health history, plan your care and review progress; [location and directions](/how-to-reach/).\",\n        \"Kairali’s Ayurvedic family tradition informs its approach to care. Here, that means an individual plan in a residential setting, with doctors, therapists, meals and accommodation all part of your stay. What your stay gives you: an individual plan, sessions delivered by trained therapists as prescribed, vegetarian meals and villa accommodation in a garden setting, with time to rest around your prescribed care.\",\n"
+    },
+    {
+     "before": "        { title: \"Compare the whole stay\", paragraphs: [\"When considering a residential Ayurveda programme, compare the full proposal: care, duration, accommodation, meals, reviews and additional charges. Ask for an individual quotation so you can see what applies to your dates and needs.\"] },\n",
+     "after": "        { title: \"Compare the whole stay\", paragraphs: [\"When considering a residential Ayurveda programme, compare the full proposal: care, duration, accommodation, meals, reviews and additional charges.\"] },\n"
+    },
+    {
+     "before": "        { title: \"Review your plan and quotation\", body: \"Once the doctor has explained the proposed care, review the recommended stay and quotation with patient care, including anything charged separately.\" },\n",
+     "after": "        { title: \"Review your plan\", body: \"Once the doctor has explained the proposed care, review the recommended stay with patient care, including anything charged separately.\" },\n"
+    },
+    {
+     "before": "    { q: \"Can I enquire without choosing a programme?\", a: \"Yes. Tell the team why you are considering Ayurveda and share your current treatment and relevant health history. The initial consultation can help clarify suitable options, duration and practical next steps.\" },\n    { q: \"How do I compare the cost of a stay at Kairali?\", a: \"Ask for a quotation covering the programme, dates, villa occupancy, taxes and included care. Confirm additional charges such as medicines, tests, specialist services and travel. Compare the full arrangements rather than an isolated headline rate.\" },\n    { q: \"Can a companion stay with me?\", a: \"Explain who will travel and who needs treatment. Patient care can discuss occupancy and companion arrangements for your dates, including meals and applicable charges. Confirm those details before booking.\" },\n",
+     "after": "    { q: \"Can I enquire without choosing a programme?\", a: \"Yes. Tell the team why you are considering Ayurveda and share your current treatment and relevant health history. The initial consultation can help clarify suitable options, duration and practical next steps.\" },\n    { q: \"Can a companion stay with me?\", a: \"Explain who will travel and who needs treatment. Patient care can discuss occupancy and companion arrangements for your dates, including meals and applicable charges. Confirm those details before booking.\" },\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-behandlung-kerala.ts": {
+   "rows": [
+    "AHV-WB.510.quotation-box"
+   ],
+   "beforeSHA256": "50f01c0be0864250210718c21dff5a99ae4612b49a60c391af3dad5a6853be6f",
+   "afterSHA256": "8f5b308d9350232bcd7a57833a2d3743ee50fa2a6c261a22acbb77eab14be800",
+   "replacements": [
+    {
+     "before": "        { title: \"Programm, Dauer und Angebot klären\", body: \"Lassen Sie sich die vorgeschlagenen Therapien, die empfohlene Dauer und eine mögliche Vorbereitung erklären. Stimmen Sie danach Unterkunft und Reisedaten mit dem Team ab und prüfen Sie das Angebot, bevor Sie Ihre Reise buchen.\" },\n",
+     "after": "        { title: \"Programm und Dauer klären\", body: \"Lassen Sie sich die vorgeschlagenen Therapien, die empfohlene Dauer und eine mögliche Vorbereitung erklären. Stimmen Sie danach Unterkunft und Reisedaten mit dem Team ab, bevor Sie Ihre Reise buchen.\" },\n"
+    },
+    {
+     "before": "      after: [\"Welche Leistungen zusätzlich berechnet werden, hängt von der Vereinbarung ab. Ihre ärztliche Erstberatung ist kostenlos. Lassen Sie sich die Leistungen und Kosten des Aufenthalts sowie etwaiger späterer Leistungen im Angebot erläutern.\"],\n",
+     "after": "      after: [\"Welche Leistungen zusätzlich berechnet werden, hängt von der Vereinbarung ab.\"],\n"
+    },
+    {
+     "before": "    { q: \"Kann eine Begleitperson mitkommen?\", a: \"Besprechen Sie die gewünschte Belegung und einen möglichen Unterstützungsbedarf vor der Buchung. Der Patientenservice bestätigt die verfügbaren Unterkünfte und die jeweiligen Bedingungen und Kosten für Ihre Reisedaten.\" },\n    { q: \"Was ist bei der kostenlosen Erstberatung und dem Angebot zu beachten?\", a: \"Die erste ärztliche Beratung ist kostenlos. Bitten Sie um ein Angebot, das die vorgesehene Betreuung und etwaige spätere Leistungen umfasst. Prüfen Sie, was enthalten ist und welche zusätzlichen Kosten anfallen können.\" },\n  ],\n",
+     "after": "    { q: \"Kann eine Begleitperson mitkommen?\", a: \"Besprechen Sie die gewünschte Belegung und einen möglichen Unterstützungsbedarf vor der Buchung. Der Patientenservice bestätigt die verfügbaren Unterkünfte und die jeweiligen Bedingungen und Kosten für Ihre Reisedaten.\" },\n  ],\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-brand.ts": {
+   "rows": [
+    "AHV-WB.354.quotation-box",
+    "AHV-WB.360.benefit-copy"
+   ],
+   "beforeSHA256": "7e42a179dbf26ecc0c6eb4cf9a091dfde7017a1d1f96ccf9317418717b901470",
+   "afterSHA256": "1bbb5afb83295c651fd2b92cfc9aa346b15c1b61dae8ae9db75c525c987b2355",
+   "replacements": [
+    {
+     "before": "        \"The Healing Village brings a family tradition of Ayurveda to residential hospital care. Your programme begins with an individual assessment, so the proposed care reflects your health history and goals.\",\n      ],\n",
+     "after": "        \"The Healing Village brings a family tradition of Ayurveda to residential hospital care. Your programme begins with an individual assessment, so the proposed care reflects your health history and goals.\",\n        \"What your stay gives you: a programme planned around your health history and goals, a doctor who plans your care and reviews your progress during admission, a villa in the village gardens, and a patient care team for practical arrangements before you travel.\",\n      ],\n"
+    },
+    {
+     "before": "        { title: \"Agree your plan and quotation\", body: \"Discuss suitability, the proposed programme and its length. Treatment and accommodation are then confirmed in your care plan and a personalised quotation.\" },\n",
+     "after": "        { title: \"Agree your plan\", body: \"Discuss suitability, the proposed programme and its length. Treatment and accommodation are then confirmed in your care plan.\" },\n"
+    },
+    {
+     "before": "      paragraphs: [\"Tell us what you would like to discuss with the doctor and when you hope to visit. Your free initial doctor consultation is the starting point for discussing suitability; treatment and accommodation are confirmed separately in your care plan and quotation.\"],\n",
+     "after": "      paragraphs: [\"Tell us what you would like to discuss with the doctor and when you hope to visit. Your free initial doctor consultation is the starting point for discussing suitability; treatment and accommodation are confirmed separately in your care plan.\"],\n"
+    },
+    {
+     "before": "    { q: \"Is the initial doctor consultation free?\", a: \"Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Before booking a stay, request a quotation explaining the treatment, accommodation, doctor reviews and any later services, along with separately charged items.\" },\n    { q: \"What should I check before booking?\", a: \"Confirm the recommended programme, number of nights, villa category and occupancy in your quotation. Ask which care, meals and sessions are included, and which medicines, tests, additional services or travel arrangements cost extra. Review the booking terms before making a payment.\" },\n",
+     "after": "    { q: \"Is the initial doctor consultation free?\", a: \"Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Treatment and accommodation are confirmed separately in your care plan.\" },\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/monsoon-wellness.ts": {
+   "rows": [
+    "AHV-WB.105.quotation-box",
+    "AHV-WB.112.benefit-copy"
+   ],
+   "beforeSHA256": "98a6a085b63453303eb33e97f9c7a2268ba2e8100354ab1a38704b134100e13a",
+   "afterSHA256": "af110c5e8fcae53122ee7940f41c431fda4033bf935270798a905c1e064a18db",
+   "replacements": [
+    {
+     "before": "        \"Bring your questions to an Ayurvedic doctor, whether you have an existing diagnosis or are simply exploring your options. Your assessment guides the proposed programme. The season alone does not determine the treatment you need.\",\n      ],\n",
+     "after": "        \"Bring your questions to an Ayurvedic doctor, whether you have an existing diagnosis or are simply exploring your options. Your assessment guides the proposed programme. The season alone does not determine the treatment you need.\",\n        \"What your stay gives you: a doctor who explains your proposed therapies, preparation and dietary guidance before you travel, a daily routine of prescribed care, meals and rest, and time in the village gardens or your villa between appointments.\",\n      ],\n"
+    },
+    {
+     "before": "      intro: [\"All programmes are personalised based on individual constitution and physician assessment. Inclusions are indicative and subject to clinical evaluation.\", \"Programme durations are stated in days. Confirm the number of accommodation nights and the full quotation before booking.\"],\n",
+     "after": "      intro: [\"All programmes are personalised based on individual constitution and physician assessment. Inclusions are indicative and subject to clinical evaluation.\", \"Programme durations are stated in days. Confirm the number of accommodation nights before booking.\"],\n"
+    },
+    {
+     "before": "    { q: \"Is the initial doctor consultation free?\", a: \"Yes. Your initial doctor consultation is free. Share your health history, current treatment and questions to discuss whether a stay may suit you. Ask for a quotation covering your programme, accommodation and any later services before you book.\" },\n    { q: \"What should I check in my quotation?\", a: \"Ask for the recommended programme, number of nights, villa occupancy and the care included for your dates. Confirm which medicines, tests, specialist services or travel arrangements cost extra. Review the full quotation with our team before booking, so you understand both the stay and any additional charges.\" },\n",
+     "after": "    { q: \"Is the initial doctor consultation free?\", a: \"Yes. Your initial doctor consultation is free. Share your health history, current treatment and questions to discuss whether a stay may suit you. Treatment and accommodation are confirmed separately before you book.\" },\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/rejuvenation-detox.ts": {
+   "rows": [
+    "AHV-WB.128.quotation-box",
+    "AHV-WB.135.benefit-copy"
+   ],
+   "beforeSHA256": "7ce1700dbe520c539e2bfef207d8712eb0647fb1ab6c015355e45ab8641edb00",
+   "afterSHA256": "01dc1eebc677715bfe2ec6fb4ec12f1ee8dd009d265a5ae7b6d3904f5af3f753",
+   "replacements": [
+    {
+     "before": "        \"Your doctor assesses your needs and explains the proposed therapies, preparation and length of stay. Care, prescribed meals, yoga, meditation and time to rest then come together around that individual plan.\",\n      ],\n",
+     "after": "        \"Your doctor assesses your needs and explains the proposed therapies, preparation and length of stay. Care, prescribed meals, yoga, meditation and time to rest then come together around that individual plan.\",\n        \"What your stay gives you: an individual plan from your doctor, vegetarian meals and dietary guidance planned around your programme, yoga and meditation alongside prescribed care and rest, and a recommended daily routine to discuss before you go home.\",\n      ],\n"
+    },
+    {
+     "before": "        { title: \"Confirm programme and quotation\", body: \"Your doctor recommends a programme and length of stay. Confirm the exact programme name, number of nights and care included in your quotation before booking.\" },\n",
+     "after": "        { title: \"Confirm your programme\", body: \"Your doctor recommends a programme and length of stay. Confirm the exact programme name and number of nights before booking.\" },\n"
+    },
+    {
+     "before": "    { q: \"What is the minimum stay for rejuvenation?\", a: \"Complete Rejuvenation & Detoxification Therapy has a seven-night minimum. The separate Preventive Health & Regenerative programme has a three-night minimum. Your doctor will discuss the suitable duration for you. Confirm the exact programme and number of nights in your quotation.\" },\n",
+     "after": "    { q: \"What is the minimum stay for rejuvenation?\", a: \"Complete Rejuvenation & Detoxification Therapy has a seven-night minimum. The separate Preventive Health & Regenerative programme has a three-night minimum. Your doctor will discuss the suitable duration for you.\" },\n"
+    },
+    {
+     "before": "    { q: \"Is the initial doctor consultation free?\", a: \"Yes. Your initial doctor consultation is free. Share your health history, current treatment and questions to discuss whether a stay may suit you. Ask for a quotation covering your programme, accommodation and any later services before you book.\" },\n    { q: \"What should I check in my quotation?\", a: \"Ask for the recommended programme, number of nights, villa occupancy and the care included for your dates. Confirm which medicines, tests, specialist services or travel arrangements cost extra. Review the full quotation with our team before booking, so you understand both the stay and any additional charges.\" },\n",
+     "after": "    { q: \"Is the initial doctor consultation free?\", a: \"Yes. Your initial doctor consultation is free. Share your health history, current treatment and questions to discuss whether a stay may suit you. Treatment and accommodation are confirmed separately before you book.\" },\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/wellness-kerala.ts": {
+   "rows": [
+    "AHV-WB.170.quotation-box",
+    "AHV-WB.177.benefit-copy"
+   ],
+   "beforeSHA256": "17d586516e431c963529bbacbd9d2053f5cc26f04f3c4fadc06fa0f47ab3fae4",
+   "afterSHA256": "ffb9b32a65c0fe3e70e7caf6564f470f5afc2183869d6dd89ff94b07d2dc665b",
+   "replacements": [
+    {
+     "before": "        \"You may be looking for time to focus on your wellbeing, support for an existing concern or a residential Ayurveda programme. Explain that purpose in your own words. Your doctor can discuss suitable care, how it would be reviewed and the recommended duration before you make travel plans.\",\n      ],\n",
+     "after": "        \"You may be looking for time to focus on your wellbeing, support for an existing concern or a residential Ayurveda programme. Explain that purpose in your own words. Your doctor can discuss suitable care, how it would be reviewed and the recommended duration before you make travel plans.\",\n        \"What your stay gives you: therapies prescribed by your Ayurvedic doctor and carried out by trained therapists, vegetarian meals, and gardens and villa accommodation that give you room to pause between appointments.\",\n      ],\n"
+    },
+    {
+     "before": "        { title: \"Agree your plan and quotation\", body: \"Your doctor discusses suitable care, how it would be reviewed and the recommended duration. Confirm the programme, nights, accommodation and charges before you make travel plans.\" },\n",
+     "after": "        { title: \"Agree your plan\", body: \"Your doctor discusses suitable care, how it would be reviewed and the recommended duration. Confirm the programme, nights, accommodation and charges before you make travel plans.\" },\n"
+    },
+    {
+     "before": "      paragraphs: [\"Tell us what you would like to discuss, and our patient care team will help you take the next step. Start with a free initial doctor consultation, then review your plan and quotation before booking.\"],\n",
+     "after": "      paragraphs: [\"Tell us what you would like to discuss, and our patient care team will help you take the next step. Start with a free initial doctor consultation, then review your plan before booking.\"],\n"
+    }
+   ]
+  },
+  "l10n/source/runtime-allowlist.json": {
+   "rows": [
+    "AHV-M070.01",
+    "AHV-M071.01"
+   ],
+   "beforeSHA256": "f0b7974b0f50db39de0de37e104c28133f607a5b992940f358aac4b3e76a0770",
+   "afterSHA256": "641c5f61270a2d0f2b46909e4af45bc8b2f72f96f90490d8d3f72b056c5a480a",
+   "replacements": [
+    {
+     "before": " \"section-nav.js\": [\"Collapse\", \"Expand\", \"In this section:\", \"Home\", \"On this page\"]\n",
+     "after": " \"section-nav.js\": [\"Collapse\", \"Expand\", \"In this section:\", \"Home\", \"On this page\", \"Breadcrumb\"]\n"
+    }
+   ]
+  },
+  "public/ahv/assets/hist9-family-render.js": {
+   "rows": [
+    "AHV-M082.02"
+   ],
+   "beforeSHA256": "443a4091a585d7fc2f416b37ee00a03a5d3717b2d21d91c367048d9994877474",
+   "afterSHA256": "224f205857805390b146b99c6de94926fe6e87ad5ff4c3d3d8c9e167698dc308",
+   "replacements": [
+    {
+     "before": "    // English route the link stands for, read back from the locale's own route table.\n",
+     "after": "    // English route the link stands for, read back from the locale's own route table, else the path\n    // without its locale prefix (AHV-M082.02).\n"
+    },
+    {
+     "before": "      return path;\n",
+     "after": "      const m = path.match(/^\\/(?:hi|de|fr|es|it|pt|nl|ru|ar|zh|zh-Hans|ja|ko)(\\/.*)$/);\n      return m ? m[1] : path;\n"
+    }
+   ]
+  },
+  "public/design/family-header.css": {
+   "rows": [
+    "AHV-I01.nav3",
+    "AHV-I01.nav4",
+    "AHV-I01.nav5"
+   ],
+   "beforeSHA256": "3a10c7c229f9d1fb986b169086c852a8cac56a36da19b6e5672b8c80e2d3a03b",
+   "afterSHA256": "263d667c3a504e0ed0af3f1fa1bdfc43bef0e6d4268ae7f664eedfe6032cd192",
+   "replacements": [
+    {
+     "before": "html[data-ahv-fh] #ahv-design-root [id] { scroll-margin-top:84px; }\nhtml[data-ahv-fh] #ahv-design-root nav[data-ahv-secondary] { position:static !important; top:auto !important; }\n",
+     "after": "html[data-ahv-fh] #ahv-design-root [id] { scroll-margin-top:84px; }\n/* AHV-I01.nav1-6: the Air India Maharaja Club sections carry the design's inline scroll-margin-top (16/20px),\n   which beat the rule above, so About/Features/Programs/Routine/Contact landed under the 64/73px sticky header in\n   WebKit. Same 84px offset as every other in-page anchor on family pages; the form keeps its own. */\nhtml[data-ahv-fh] #ahv-design-root .air-membership section[id] { scroll-margin-top:84px !important; }\nhtml[data-ahv-fh] #ahv-design-root nav[data-ahv-secondary] { position:static !important; top:auto !important; }\n"
+    }
+   ]
+  },
+  "public/design/section-nav.js": {
+   "rows": [
+    "AHV-M070.01",
+    "AHV-M071.01"
+   ],
+   "beforeSHA256": "46ca6696f76c25885bf8273657140776a7d8ab650695b0da3583d08d1c47e230",
+   "afterSHA256": "413e6823bc5381eb4902b7677b5c16bf7be85b89c42e3b4c2390884f8705b65c",
+   "replacements": [
+    {
+     "before": "  })();\n  function rewriteCrumbs(main) {\n",
+     "after": "  })();\n  // The design names its breadcrumb nav \"Breadcrumb\"; a locale build translates that aria-label AND this\n  // allowlisted literal (l10n/source/runtime-allowlist.json) from the same catalogue entry, so the tree\n  // breadcrumb is also rebuilt on locale pages (AHV-M070.01/M071.01: /de/yoga-kurse-praxis/ kept its captured\n  // 'Ausbildungsprogramme' crumb while the English page and the rail say Things to do).\n  var CRUMB_LABEL = \"Breadcrumb\";\n  function rewriteCrumbs(main) {\n"
+    },
+    {
+     "before": "    var bc = root.querySelector('nav[aria-label=\"Breadcrumb\"]');\n",
+     "after": "    var bc = root.querySelector('nav[aria-label=\"' + CRUMB_LABEL + '\"]') || root.querySelector('nav[aria-label=\"Breadcrumb\"]');\n"
+    }
+   ]
+  },
+  "tools/repair-sanskrit-names.mjs": {
+   "rows": [
+    "AHV-N03.01"
+   ],
+   "beforeSHA256": "902133bc46acba921b98e3987fff7340995e0f9d0b801c5916caa13a77068ec4",
+   "afterSHA256": "3ce523b723507494385d4aedcc6915973c8d1be304669073c6770094f7684675",
+   "replacements": [
+    {
+     "before": "    // the line as the 26 views print it, in each side's own size\n",
+     "after": "    // the line as the views print it, in each side's own size (AHV-N03.01: one subtitle style per side, 24px / 20px)\n"
+    },
+    {
+     "before": "      ? `\\n      <div style=\"font-family:'Marcellus',serif;font-size:22px;color:#75695A;margin:12px 0 0\">${esc(reg.sanskrit)}</div>`\n",
+     "after": "      ? `\\n      <div style=\"font-family:'Marcellus',serif;font-size:24px;color:#75695A;margin:10px 0 0\">${esc(reg.sanskrit)}</div>`\n"
+    }
+   ]
+  }
+ },
+ "views": {
+  "public/ahv/views/ahv-page-de-addiction-rehabilitation-desktop.json": {
+   "beforeSHA256": "986dd7868d6ad85c5e0463769061092907776818c8c86affa77b18371f34cb93",
+   "afterSHA256": "a26f3691d5199eac3e30b3e99529f5dda2def90a4c1fee1441194ce1fc216def"
+  },
+  "public/ahv/views/ahv-page-diabetes-metabolic-balance-mobile.json": {
+   "beforeSHA256": "d48cf44fdd571bef4df30ad65aba01765f17775dc6783c6b4b1d5c6902d6144f",
+   "afterSHA256": "85769d89fab09e18d179ee341a722ff4316183aee370aeab2533cd351ae8a48e"
+  },
+  "public/ahv/views/ahv-page-digestive-wellness-gut-health-mobile.json": {
+   "beforeSHA256": "44564e7d7c9ec172bec3defe7bb5b9e02b6c423a6cf8015d91db6c72dd29774a",
+   "afterSHA256": "3d4ef691332508951ad553fe19a5b42b5be768bafdbf18e0e60dd3e7dc141758"
+  },
+  "public/ahv/views/ahv-page-holistic-rejuvenation-detoxification-mobile.json": {
+   "beforeSHA256": "c6859dc16b030974feacdbe73d3a969ef75b125217c6537a06dd0c449570b890",
+   "afterSHA256": "470e13a1ee6c636cf9d8f95dfb49c9967068db38abe048abb5f18942f675c5f3"
+  },
+  "public/ahv/views/ahv-page-immunity-executive-health-mobile.json": {
+   "beforeSHA256": "8a72d199a2e2db540aa021e93ee210cf1ff09919cb1ef69200c7ed71571d154a",
+   "afterSHA256": "dccd81b9372a80eb7189b85d11c7838e3def886b6b712db670c0b279f2f02096"
+  },
+  "public/ahv/views/ahv-page-joint-rehabilitation-arthritis-desktop.json": {
+   "beforeSHA256": "fb498127c4e41dbeed31b7c061062a67126e3b0f9457b3617aa6e06f73930d7c",
+   "afterSHA256": "f94f77ad7d2f428932c2aea22a7966d0a9e0dc7fe622dea5cedac124d4838a34"
+  },
+  "public/ahv/views/ahv-page-panchakarma-therapy-desktop.json": {
+   "beforeSHA256": "aed3a0a9b6e2ec7c11d2a5a3393f1f7b5284284789f2c662290f8619e2eca9dc",
+   "afterSHA256": "1d076357ef571532536df61ee10804d197ecb1367ff3f04e25e61201403ddc2d"
+  },
+  "public/ahv/views/ahv-page-personalized-customized-healing-mobile.json": {
+   "beforeSHA256": "be92dbb85cd41eb8cf3b719b39e7312128722bf0c7e34c8d18413340e7cb54b3",
+   "afterSHA256": "1d37df71e7d5df2aaf406d9d2f93f34b66f3d97e503ced0818e426ec78523437"
+  },
+  "public/ahv/views/ahv-page-post-pregnancy-health-programme-mobile.json": {
+   "beforeSHA256": "db6580134e61cdf5d4bda9caa4ddb9275f188e2568a33f20be1642e9b6348bca",
+   "afterSHA256": "969a6b5cd6a20bed5fb69705a86508e1c8eda8f9b4dc70940098f54eaceb1642"
+  },
+  "public/ahv/views/ahv-page-preventive-regenerative-mobile.json": {
+   "beforeSHA256": "994b5297dc65b90c1bee4a93f876399c6e22f21c62c2399c6cac11abe504877a",
+   "afterSHA256": "21a7b890ec75f3463e865525ea61b7b5de9ea73f4fc0cf37a58427cd05c7de76"
+  },
+  "public/ahv/views/ahv-page-sleep-restoration-mobile.json": {
+   "beforeSHA256": "eb21c40655d832334a752f2481be22d6312243573ba5980417b6676b34e4a33b",
+   "afterSHA256": "302c077c0fc24ac2f24a693dc893019add66b723282e73f2e01b064232fd2314"
+  },
+  "public/ahv/views/ahv-page-spinal-disc-nerve-restoration-mobile.json": {
+   "beforeSHA256": "7fab179c50ca563b633b803da52f61c9d76d5f6af14b75c0df550e26192ea3dc",
+   "afterSHA256": "dc424c82f587b41c5ae2d26c227b50bc2de79a76d9e383e367fd73d6f1a3b521"
+  },
+  "public/ahv/views/ahv-page-supportive-care-cancer-mobile.json": {
+   "beforeSHA256": "8ed8038f38d508ad6fab6d64a4f8428176eca9e21e7e802530609cfbf6a9ae2e",
+   "afterSHA256": "0cd5522f7fe0f30ed0dee312a3248e7833e6606b0dc22dc80e84c625e946fffa"
+  },
+  "public/ahv/views/ahv-page-vision-eye-rejuvenation-mobile.json": {
+   "beforeSHA256": "064fca97e2427cd76e8f33bd544e481350e2adc010abdb0eb90abc1f1df9a383",
+   "afterSHA256": "ae18e0faa136254ca7b3331ec26f62ceacf873da272de6442aa229c24389ca9d"
+  },
+  "public/ahv/views/ahv-page-weight-loss-programme-mobile.json": {
+   "beforeSHA256": "b74c9e096cfae70f07cca49e54aecac6a8c3b54cbd6633bbb9baae10f473637a",
+   "afterSHA256": "617e276c9238add4bb280dd4cc361500785a88dc37f63e4782912f23a52595ca"
+  },
+  "public/ahv/views/ahv-page-yoga-and-meditation-package-desktop.json": {
+   "beforeSHA256": "dc7e175fe53c18e6bf6ca7ac438a2060d96177035035b6f3db2902af6066f342",
+   "afterSHA256": "203743ede06417bb892eceae6c691b54e81183d12d7d4ed20b3c05c09f8fbce7"
+  },
+  "public/ahv/views/ahv-page-yoga-and-meditation-package-mobile.json": {
+   "beforeSHA256": "c2878fe3ea9c4a5f575eb14d9ead8b2bab516eba7da976603cbe181eb664c575",
+   "afterSHA256": "407ee3bbdcbba6004547c4041e6f1e7ebe0c8a7cb6d0faacfce44212a7b0b119"
+  }
+ },
+ "configChanges": {
+  "monsoon-wellness": [
+   {
+    "path": [
+     "faq"
+    ],
+    "before": [
+     {
+      "q": "When can I book a Karkidaka Chikitsa stay?",
+      "a": "Plan your Karkidaka Chikitsa stay for July–August 2027. Confirm your arrival date, programme suitability and accommodation availability before arranging travel. Discuss your recommended care and length of stay before making your booking."
+     },
+     {
+      "q": "Does the monsoon make this suitable for everyone?",
+      "a": "Suitability depends on your individual assessment. Share your health history, current treatment and reasons for considering a stay with the doctor. Ask what a seasonal programme would involve for you, including the therapies, meals and rest. The season alone does not determine the care you need."
+     },
+     {
+      "q": "How long should I plan to stay?",
+      "a": "The Monsoon Starter is 7 days, The Monsoon Reset is 14 days and The Monsoon Overhaul is 21 days. Your physician assesses which programme suits you. Inclusions are indicative and subject to clinical evaluation. These durations are days; confirm accommodation nights, preparation and follow-up before booking."
+     },
+     {
+      "q": "What should I prepare before travelling?",
+      "a": "Share medical reports, current prescriptions and dietary needs during the consultation. Pack light cotton clothing and ask for current pre-arrival guidance. Confirm travel or access arrangements, your villa occupancy and the cancellation or rescheduling conditions before paying for your stay."
+     },
+     {
+      "q": "Is the initial doctor consultation free?",
+      "a": "Yes. Your initial doctor consultation is free. Share your health history, current treatment and questions to discuss whether a stay may suit you. Ask for a quotation covering your programme, accommodation and any later services before you book."
+     },
+     {
+      "q": "What should I check in my quotation?",
+      "a": "Ask for the recommended programme, number of nights, villa occupancy and the care included for your dates. Confirm which medicines, tests, specialist services or travel arrangements cost extra. Review the full quotation with our team before booking, so you understand both the stay and any additional charges."
+     }
+    ],
+    "after": [
+     {
+      "q": "When can I book a Karkidaka Chikitsa stay?",
+      "a": "Plan your Karkidaka Chikitsa stay for July–August 2027. Confirm your arrival date, programme suitability and accommodation availability before arranging travel. Discuss your recommended care and length of stay before making your booking."
+     },
+     {
+      "q": "Does the monsoon make this suitable for everyone?",
+      "a": "Suitability depends on your individual assessment. Share your health history, current treatment and reasons for considering a stay with the doctor. Ask what a seasonal programme would involve for you, including the therapies, meals and rest. The season alone does not determine the care you need."
+     },
+     {
+      "q": "How long should I plan to stay?",
+      "a": "The Monsoon Starter is 7 days, The Monsoon Reset is 14 days and The Monsoon Overhaul is 21 days. Your physician assesses which programme suits you. Inclusions are indicative and subject to clinical evaluation. These durations are days; confirm accommodation nights, preparation and follow-up before booking."
+     },
+     {
+      "q": "What should I prepare before travelling?",
+      "a": "Share medical reports, current prescriptions and dietary needs during the consultation. Pack light cotton clothing and ask for current pre-arrival guidance. Confirm travel or access arrangements, your villa occupancy and the cancellation or rescheduling conditions before paying for your stay."
+     },
+     {
+      "q": "Is the initial doctor consultation free?",
+      "a": "Yes. Your initial doctor consultation is free. Share your health history, current treatment and questions to discuss whether a stay may suit you. Treatment and accommodation are confirmed separately before you book."
+     }
+    ]
+   },
+   {
+    "path": [
+     "page",
+     "lead",
+     "paragraphs"
+    ],
+    "before": [
+     "Plan your Karkidaka Chikitsa stay for July–August 2027. At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, a Karkidaka Chikitsa stay begins with a conversation about your health and the care that may suit you.",
+     "Bring your questions to an Ayurvedic doctor, whether you have an existing diagnosis or are simply exploring your options. Your assessment guides the proposed programme. The season alone does not determine the treatment you need."
+    ],
+    "after": [
+     "Plan your Karkidaka Chikitsa stay for July–August 2027. At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, a Karkidaka Chikitsa stay begins with a conversation about your health and the care that may suit you.",
+     "Bring your questions to an Ayurvedic doctor, whether you have an existing diagnosis or are simply exploring your options. Your assessment guides the proposed programme. The season alone does not determine the treatment you need.",
+     "What your stay gives you: a doctor who explains your proposed therapies, preparation and dietary guidance before you travel, a daily routine of prescribed care, meals and rest, and time in the village gardens or your villa between appointments."
+    ]
+   },
+   {
+    "path": [
+     "page",
+     "offering",
+     "intro"
+    ],
+    "before": [
+     "All programmes are personalised based on individual constitution and physician assessment. Inclusions are indicative and subject to clinical evaluation.",
+     "Programme durations are stated in days. Confirm the number of accommodation nights and the full quotation before booking."
+    ],
+    "after": [
+     "All programmes are personalised based on individual constitution and physician assessment. Inclusions are indicative and subject to clinical evaluation.",
+     "Programme durations are stated in days. Confirm the number of accommodation nights before booking."
+    ]
+   }
+  ],
+  "rejuvenation-detox": [
+   {
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Confirm programme and quotation",
+    "after": "Confirm your programme"
+   },
+   {
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "body"
+    ],
+    "before": "Your doctor recommends a programme and length of stay. Confirm the exact programme name, number of nights and care included in your quotation before booking.",
+    "after": "Your doctor recommends a programme and length of stay. Confirm the exact programme name and number of nights before booking."
+   },
+   {
+    "path": [
+     "faq"
+    ],
+    "before": [
+     {
+      "q": "How is rejuvenation different from Panchakarma?",
+      "a": "These are distinct programme choices. Ask your doctor to explain the purpose of the recommended plan, the procedures it includes and any preparation involved. A rejuvenation enquiry does not mean that every Panchakarma procedure is appropriate for you. Your assessment guides the care selected for your stay."
+     },
+     {
+      "q": "What is the minimum stay for rejuvenation?",
+      "a": "Complete Rejuvenation & Detoxification Therapy has a seven-night minimum. The separate Preventive Health & Regenerative programme has a three-night minimum. Your doctor will discuss the suitable duration for you. Confirm the exact programme and number of nights in your quotation."
+     },
+     {
+      "q": "What happens during a residential stay?",
+      "a": "Your day is arranged around the plan discussed with your Ayurvedic doctor. Ask about the proposed therapies, meals, yoga or meditation and time for rest. Confirm which sessions and amenities are included in your chosen programme, and tell the team about dietary, mobility or other practical needs."
+     },
+     {
+      "q": "What should I discuss before returning home?",
+      "a": "Ask your doctor about the routine and dietary guidance recommended after your stay. Confirm any follow-up appointments, medicines and charges before departure. Bring up questions about fitting the advice into daily life, and make sure you understand who to contact if you need further guidance."
+     },
+     {
+      "q": "Is the initial doctor consultation free?",
+      "a": "Yes. Your initial doctor consultation is free. Share your health history, current treatment and questions to discuss whether a stay may suit you. Ask for a quotation covering your programme, accommodation and any later services before you book."
+     },
+     {
+      "q": "What should I check in my quotation?",
+      "a": "Ask for the recommended programme, number of nights, villa occupancy and the care included for your dates. Confirm which medicines, tests, specialist services or travel arrangements cost extra. Review the full quotation with our team before booking, so you understand both the stay and any additional charges."
+     }
+    ],
+    "after": [
+     {
+      "q": "How is rejuvenation different from Panchakarma?",
+      "a": "These are distinct programme choices. Ask your doctor to explain the purpose of the recommended plan, the procedures it includes and any preparation involved. A rejuvenation enquiry does not mean that every Panchakarma procedure is appropriate for you. Your assessment guides the care selected for your stay."
+     },
+     {
+      "q": "What is the minimum stay for rejuvenation?",
+      "a": "Complete Rejuvenation & Detoxification Therapy has a seven-night minimum. The separate Preventive Health & Regenerative programme has a three-night minimum. Your doctor will discuss the suitable duration for you."
+     },
+     {
+      "q": "What happens during a residential stay?",
+      "a": "Your day is arranged around the plan discussed with your Ayurvedic doctor. Ask about the proposed therapies, meals, yoga or meditation and time for rest. Confirm which sessions and amenities are included in your chosen programme, and tell the team about dietary, mobility or other practical needs."
+     },
+     {
+      "q": "What should I discuss before returning home?",
+      "a": "Ask your doctor about the routine and dietary guidance recommended after your stay. Confirm any follow-up appointments, medicines and charges before departure. Bring up questions about fitting the advice into daily life, and make sure you understand who to contact if you need further guidance."
+     },
+     {
+      "q": "Is the initial doctor consultation free?",
+      "a": "Yes. Your initial doctor consultation is free. Share your health history, current treatment and questions to discuss whether a stay may suit you. Treatment and accommodation are confirmed separately before you book."
+     }
+    ]
+   },
+   {
+    "path": [
+     "page",
+     "lead",
+     "paragraphs"
+    ],
+    "before": [
+     "Time away gives you space to focus on your daily routine and the care recommended for you. At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, your programme starts with a discussion of your health history, sleep, food, activity and goals.",
+     "Your doctor assesses your needs and explains the proposed therapies, preparation and length of stay. Care, prescribed meals, yoga, meditation and time to rest then come together around that individual plan."
+    ],
+    "after": [
+     "Time away gives you space to focus on your daily routine and the care recommended for you. At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, your programme starts with a discussion of your health history, sleep, food, activity and goals.",
+     "Your doctor assesses your needs and explains the proposed therapies, preparation and length of stay. Care, prescribed meals, yoga, meditation and time to rest then come together around that individual plan.",
+     "What your stay gives you: an individual plan from your doctor, vegetarian meals and dietary guidance planned around your programme, yoga and meditation alongside prescribed care and rest, and a recommended daily routine to discuss before you go home."
+    ]
+   },
+   {
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Confirm programme and quotation",
+    "after": "Confirm your programme"
+   },
+   {
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "body"
+    ],
+    "before": "Your doctor recommends a programme and length of stay. Confirm the exact programme name, number of nights and care included in your quotation before booking.",
+    "after": "Your doctor recommends a programme and length of stay. Confirm the exact programme name and number of nights before booking."
+   }
+  ],
+  "wellness-kerala": [
+   {
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Agree your plan and quotation",
+    "after": "Agree your plan"
+   },
+   {
+    "path": [
+     "page",
+     "lead",
+     "paragraphs"
+    ],
+    "before": [
+     "At Kairali – The Ayurvedic Healing Village, Ayurveda shapes the purpose of your stay. Our NABH-accredited Ayurvedic hospital combines residential accommodation with doctor-prescribed care, vegetarian meals, yoga and meditation.",
+     "You may be looking for time to focus on your wellbeing, support for an existing concern or a residential Ayurveda programme. Explain that purpose in your own words. Your doctor can discuss suitable care, how it would be reviewed and the recommended duration before you make travel plans."
+    ],
+    "after": [
+     "At Kairali – The Ayurvedic Healing Village, Ayurveda shapes the purpose of your stay. Our NABH-accredited Ayurvedic hospital combines residential accommodation with doctor-prescribed care, vegetarian meals, yoga and meditation.",
+     "You may be looking for time to focus on your wellbeing, support for an existing concern or a residential Ayurveda programme. Explain that purpose in your own words. Your doctor can discuss suitable care, how it would be reviewed and the recommended duration before you make travel plans.",
+     "What your stay gives you: therapies prescribed by your Ayurvedic doctor and carried out by trained therapists, vegetarian meals, and gardens and villa accommodation that give you room to pause between appointments."
+    ]
+   },
+   {
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Agree your plan and quotation",
+    "after": "Agree your plan"
+   },
+   {
+    "path": [
+     "page",
+     "closing",
+     "paragraphs"
+    ],
+    "before": [
+     "Tell us what you would like to discuss, and our patient care team will help you take the next step. Start with a free initial doctor consultation, then review your plan and quotation before booking."
+    ],
+    "after": [
+     "Tell us what you would like to discuss, and our patient care team will help you take the next step. Start with a free initial doctor consultation, then review your plan before booking."
+    ]
+   }
+  ],
+  "brand": [
+   {
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Review your plan and quotation",
+    "after": "Review your plan"
+   },
+   {
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "body"
+    ],
+    "before": "Once the doctor has explained the proposed care, review the recommended stay and quotation with patient care, including anything charged separately.",
+    "after": "Once the doctor has explained the proposed care, review the recommended stay with patient care, including anything charged separately."
+   },
+   {
+    "path": [
+     "faq"
+    ],
+    "before": [
+     {
+      "q": "Is this the Kairali property in Palakkad?",
+      "a": "Yes. This page is for Kairali – The Ayurvedic Healing Village in Palakkad, Kerala. Discuss the care and accommodation at this property with our patient care team when planning your visit."
+     },
+     {
+      "q": "What kind of care setting does the Healing Village provide?",
+      "a": "It is an NABH-accredited Ayurvedic hospital with residential villas. The doctor assesses your needs and determines prescribed care. Meals, suitable activity and rest are considered alongside your treatment routine."
+     },
+     {
+      "q": "What does Kairali’s Ayurvedic heritage mean?",
+      "a": "It refers to the family’s Ayurvedic tradition. The doctors assess and plan each person’s care individually. You can ask about their qualifications, experience and availability when discussing your stay."
+     },
+     {
+      "q": "Can I enquire without choosing a programme?",
+      "a": "Yes. Tell the team why you are considering Ayurveda and share your current treatment and relevant health history. The initial consultation can help clarify suitable options, duration and practical next steps."
+     },
+     {
+      "q": "How do I compare the cost of a stay at Kairali?",
+      "a": "Ask for a quotation covering the programme, dates, villa occupancy, taxes and included care. Confirm additional charges such as medicines, tests, specialist services and travel. Compare the full arrangements rather than an isolated headline rate."
+     },
+     {
+      "q": "Can a companion stay with me?",
+      "a": "Explain who will travel and who needs treatment. Patient care can discuss occupancy and companion arrangements for your dates, including meals and applicable charges. Confirm those details before booking."
+     },
+     {
+      "q": "Is the initial doctor consultation free?",
+      "a": "Yes. The initial consultation is free and gives you an opportunity to discuss suitability and ask questions. Treatment, tests, medicines and later services are not automatically free."
+     }
+    ],
+    "after": [
+     {
+      "q": "Is this the Kairali property in Palakkad?",
+      "a": "Yes. This page is for Kairali – The Ayurvedic Healing Village in Palakkad, Kerala. Discuss the care and accommodation at this property with our patient care team when planning your visit."
+     },
+     {
+      "q": "What kind of care setting does the Healing Village provide?",
+      "a": "It is an NABH-accredited Ayurvedic hospital with residential villas. The doctor assesses your needs and determines prescribed care. Meals, suitable activity and rest are considered alongside your treatment routine."
+     },
+     {
+      "q": "What does Kairali’s Ayurvedic heritage mean?",
+      "a": "It refers to the family’s Ayurvedic tradition. The doctors assess and plan each person’s care individually. You can ask about their qualifications, experience and availability when discussing your stay."
+     },
+     {
+      "q": "Can I enquire without choosing a programme?",
+      "a": "Yes. Tell the team why you are considering Ayurveda and share your current treatment and relevant health history. The initial consultation can help clarify suitable options, duration and practical next steps."
+     },
+     {
+      "q": "Can a companion stay with me?",
+      "a": "Explain who will travel and who needs treatment. Patient care can discuss occupancy and companion arrangements for your dates, including meals and applicable charges. Confirm those details before booking."
+     },
+     {
+      "q": "Is the initial doctor consultation free?",
+      "a": "Yes. The initial consultation is free and gives you an opportunity to discuss suitability and ask questions. Treatment, tests, medicines and later services are not automatically free."
+     }
+    ]
+   },
+   {
+    "path": [
+     "page",
+     "lead",
+     "paragraphs"
+    ],
+    "before": [
+     "Kairali – The Ayurvedic Healing Village is the Kairali Ayurvedic Group’s residential Ayurveda property in Palakkad, Kerala. It is an NABH-accredited Ayurvedic hospital with residential villas, where your assessment guides the proposed programme.",
+     "Kairali’s Ayurvedic family tradition informs its approach to care. Here, that means an individual plan in a residential setting, with doctors, therapists, meals and accommodation all part of your stay."
+    ],
+    "after": [
+     "Kairali – The Ayurvedic Healing Village is the Kairali Ayurvedic Group’s residential Ayurveda property in Palakkad, Kerala. It is an NABH-accredited Ayurvedic hospital with residential villas, where your assessment guides the proposed programme.",
+     "At a glance: an NABH-accredited Ayurvedic hospital in Palakkad, Kerala; 30 villas in a garden setting; Ayurvedic doctors who assess your health history, plan your care and review progress; [location and directions](/how-to-reach/).",
+     "Kairali’s Ayurvedic family tradition informs its approach to care. Here, that means an individual plan in a residential setting, with doctors, therapists, meals and accommodation all part of your stay. What your stay gives you: an individual plan, sessions delivered by trained therapists as prescribed, vegetarian meals and villa accommodation in a garden setting, with time to rest around your prescribed care."
+    ]
+   },
+   {
+    "path": [
+     "page",
+     "offering",
+     "cards",
+     2,
+     "paragraphs"
+    ],
+    "before": [
+     "When considering a residential Ayurveda programme, compare the full proposal: care, duration, accommodation, meals, reviews and additional charges. Ask for an individual quotation so you can see what applies to your dates and needs."
+    ],
+    "after": [
+     "When considering a residential Ayurveda programme, compare the full proposal: care, duration, accommodation, meals, reviews and additional charges."
+    ]
+   },
+   {
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Review your plan and quotation",
+    "after": "Review your plan"
+   },
+   {
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "body"
+    ],
+    "before": "Once the doctor has explained the proposed care, review the recommended stay and quotation with patient care, including anything charged separately.",
+    "after": "Once the doctor has explained the proposed care, review the recommended stay with patient care, including anything charged separately."
+   }
+  ],
+  "lp-brand": [
+   {
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Agree your plan and quotation",
+    "after": "Agree your plan"
+   },
+   {
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "body"
+    ],
+    "before": "Discuss suitability, the proposed programme and its length. Treatment and accommodation are then confirmed in your care plan and a personalised quotation.",
+    "after": "Discuss suitability, the proposed programme and its length. Treatment and accommodation are then confirmed in your care plan."
+   },
+   {
+    "path": [
+     "faq"
+    ],
+    "before": [
+     {
+      "q": "Where is Kairali – The Ayurvedic Healing Village?",
+      "a": "The Healing Village is in Palakkad, Kerala. This page is for that residential Ayurvedic hospital. Tell patient care where you will travel from and discuss the admission plan, accommodation and onward travel arrangements before you book."
+     },
+     {
+      "q": "What does Kairali’s Ayurvedic heritage refer to?",
+      "a": "It refers to the family tradition of Ayurveda behind Kairali. The Healing Village is an Ayurvedic hospital of the Kairali Ayurvedic Group. For your own stay, the practical starting point is a consultation with the current medical team to discuss your health, proposed programme and arrangements for care."
+     },
+     {
+      "q": "How do I find the right programme?",
+      "a": "Begin with your health history, current treatment and goals. Ask the doctor to explain the programme being considered, its therapies, preparation and suitable duration. Confirm the exact care plan and inclusions with the team before arranging your stay."
+     },
+     {
+      "q": "Is the initial doctor consultation free?",
+      "a": "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Before booking a stay, request a quotation explaining the treatment, accommodation, doctor reviews and any later services, along with separately charged items."
+     },
+     {
+      "q": "What should I check before booking?",
+      "a": "Confirm the recommended programme, number of nights, villa category and occupancy in your quotation. Ask which care, meals and sessions are included, and which medicines, tests, additional services or travel arrangements cost extra. Review the booking terms before making a payment."
+     }
+    ],
+    "after": [
+     {
+      "q": "Where is Kairali – The Ayurvedic Healing Village?",
+      "a": "The Healing Village is in Palakkad, Kerala. This page is for that residential Ayurvedic hospital. Tell patient care where you will travel from and discuss the admission plan, accommodation and onward travel arrangements before you book."
+     },
+     {
+      "q": "What does Kairali’s Ayurvedic heritage refer to?",
+      "a": "It refers to the family tradition of Ayurveda behind Kairali. The Healing Village is an Ayurvedic hospital of the Kairali Ayurvedic Group. For your own stay, the practical starting point is a consultation with the current medical team to discuss your health, proposed programme and arrangements for care."
+     },
+     {
+      "q": "How do I find the right programme?",
+      "a": "Begin with your health history, current treatment and goals. Ask the doctor to explain the programme being considered, its therapies, preparation and suitable duration. Confirm the exact care plan and inclusions with the team before arranging your stay."
+     },
+     {
+      "q": "Is the initial doctor consultation free?",
+      "a": "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Treatment and accommodation are confirmed separately in your care plan."
+     }
+    ]
+   },
+   {
+    "path": [
+     "page",
+     "lead",
+     "paragraphs"
+    ],
+    "before": [
+     "If you searched for Kairali, you may be planning care for yourself or helping someone else plan a stay. This page is about Kairali – The Ayurvedic Healing Village: an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, with residential villas in the village gardens.",
+     "The Healing Village brings a family tradition of Ayurveda to residential hospital care. Your programme begins with an individual assessment, so the proposed care reflects your health history and goals."
+    ],
+    "after": [
+     "If you searched for Kairali, you may be planning care for yourself or helping someone else plan a stay. This page is about Kairali – The Ayurvedic Healing Village: an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, with residential villas in the village gardens.",
+     "The Healing Village brings a family tradition of Ayurveda to residential hospital care. Your programme begins with an individual assessment, so the proposed care reflects your health history and goals.",
+     "What your stay gives you: a programme planned around your health history and goals, a doctor who plans your care and reviews your progress during admission, a villa in the village gardens, and a patient care team for practical arrangements before you travel."
+    ]
+   },
+   {
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Agree your plan and quotation",
+    "after": "Agree your plan"
+   },
+   {
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "body"
+    ],
+    "before": "Discuss suitability, the proposed programme and its length. Treatment and accommodation are then confirmed in your care plan and a personalised quotation.",
+    "after": "Discuss suitability, the proposed programme and its length. Treatment and accommodation are then confirmed in your care plan."
+   },
+   {
+    "path": [
+     "page",
+     "closing",
+     "paragraphs"
+    ],
+    "before": [
+     "Tell us what you would like to discuss with the doctor and when you hope to visit. Your free initial doctor consultation is the starting point for discussing suitability; treatment and accommodation are confirmed separately in your care plan and quotation."
+    ],
+    "after": [
+     "Tell us what you would like to discuss with the doctor and when you hope to visit. Your free initial doctor consultation is the starting point for discussing suitability; treatment and accommodation are confirmed separately in your care plan."
+    ]
+   }
+  ],
+  "lp-behandlung-kerala": [
+   {
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Programm, Dauer und Angebot klären",
+    "after": "Programm und Dauer klären"
+   },
+   {
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "body"
+    ],
+    "before": "Lassen Sie sich die vorgeschlagenen Therapien, die empfohlene Dauer und eine mögliche Vorbereitung erklären. Stimmen Sie danach Unterkunft und Reisedaten mit dem Team ab und prüfen Sie das Angebot, bevor Sie Ihre Reise buchen.",
+    "after": "Lassen Sie sich die vorgeschlagenen Therapien, die empfohlene Dauer und eine mögliche Vorbereitung erklären. Stimmen Sie danach Unterkunft und Reisedaten mit dem Team ab, bevor Sie Ihre Reise buchen."
+   },
+   {
+    "path": [
+     "faq"
+    ],
+    "before": [
+     {
+      "q": "Muss ich bereits wissen, welches Programm ich möchte?",
+      "a": "Nein. Beschreiben Sie Ihre Anliegen, Krankengeschichte und Ziele. Der Arzt bespricht mit Ihnen, welche Möglichkeiten geeignet sein können. Der Patientenservice hilft Ihnen bei der Organisation der Beratung und des Aufenthalts."
+     },
+     {
+      "q": "Wie lange sollte ich bleiben?",
+      "a": "Die Dauer hängt vom Programm und Ihrer individuellen Beurteilung ab. Nennen Sie Ihre verfügbaren Termine und lassen Sie sich die empfohlene Dauer sowie einen etwaigen Mindestaufenthalt bestätigen, bevor Sie Ihre Reise buchen."
+     },
+     {
+      "q": "Sind alle Panchakarma-Verfahren im Aufenthalt enthalten?",
+      "a": "Nicht automatisch. Ihr Arzt entscheidet, welche Verfahren geeignet sind, und erläutert Vorbereitung, Ablauf und Verfügbarkeit. Die Auswahl richtet sich nach Ihrer individuellen Beurteilung. Lassen Sie sich vor Ihrer Entscheidung erklären, was die vorgeschlagenen Verfahren beinhalten."
+     },
+     {
+      "q": "Kann ich trotz einer bestehenden Erkrankung eine Anfrage stellen?",
+      "a": "Ja. Legen Sie relevante Befunde vor und informieren Sie den Arzt über Medikamente und laufende Behandlungen. So kann er beurteilen, ob ein Programm geeignet ist. Eine Beratung oder ein Aufenthalt ist keine Zusage eines bestimmten Behandlungsergebnisses."
+     },
+     {
+      "q": "Kann eine Begleitperson mitkommen?",
+      "a": "Besprechen Sie die gewünschte Belegung und einen möglichen Unterstützungsbedarf vor der Buchung. Der Patientenservice bestätigt die verfügbaren Unterkünfte und die jeweiligen Bedingungen und Kosten für Ihre Reisedaten."
+     },
+     {
+      "q": "Was ist bei der kostenlosen Erstberatung und dem Angebot zu beachten?",
+      "a": "Die erste ärztliche Beratung ist kostenlos. Bitten Sie um ein Angebot, das die vorgesehene Betreuung und etwaige spätere Leistungen umfasst. Prüfen Sie, was enthalten ist und welche zusätzlichen Kosten anfallen können."
+     }
+    ],
+    "after": [
+     {
+      "q": "Muss ich bereits wissen, welches Programm ich möchte?",
+      "a": "Nein. Beschreiben Sie Ihre Anliegen, Krankengeschichte und Ziele. Der Arzt bespricht mit Ihnen, welche Möglichkeiten geeignet sein können. Der Patientenservice hilft Ihnen bei der Organisation der Beratung und des Aufenthalts."
+     },
+     {
+      "q": "Wie lange sollte ich bleiben?",
+      "a": "Die Dauer hängt vom Programm und Ihrer individuellen Beurteilung ab. Nennen Sie Ihre verfügbaren Termine und lassen Sie sich die empfohlene Dauer sowie einen etwaigen Mindestaufenthalt bestätigen, bevor Sie Ihre Reise buchen."
+     },
+     {
+      "q": "Sind alle Panchakarma-Verfahren im Aufenthalt enthalten?",
+      "a": "Nicht automatisch. Ihr Arzt entscheidet, welche Verfahren geeignet sind, und erläutert Vorbereitung, Ablauf und Verfügbarkeit. Die Auswahl richtet sich nach Ihrer individuellen Beurteilung. Lassen Sie sich vor Ihrer Entscheidung erklären, was die vorgeschlagenen Verfahren beinhalten."
+     },
+     {
+      "q": "Kann ich trotz einer bestehenden Erkrankung eine Anfrage stellen?",
+      "a": "Ja. Legen Sie relevante Befunde vor und informieren Sie den Arzt über Medikamente und laufende Behandlungen. So kann er beurteilen, ob ein Programm geeignet ist. Eine Beratung oder ein Aufenthalt ist keine Zusage eines bestimmten Behandlungsergebnisses."
+     },
+     {
+      "q": "Kann eine Begleitperson mitkommen?",
+      "a": "Besprechen Sie die gewünschte Belegung und einen möglichen Unterstützungsbedarf vor der Buchung. Der Patientenservice bestätigt die verfügbaren Unterkünfte und die jeweiligen Bedingungen und Kosten für Ihre Reisedaten."
+     }
+    ]
+   },
+   {
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Programm, Dauer und Angebot klären",
+    "after": "Programm und Dauer klären"
+   },
+   {
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "body"
+    ],
+    "before": "Lassen Sie sich die vorgeschlagenen Therapien, die empfohlene Dauer und eine mögliche Vorbereitung erklären. Stimmen Sie danach Unterkunft und Reisedaten mit dem Team ab und prüfen Sie das Angebot, bevor Sie Ihre Reise buchen.",
+    "after": "Lassen Sie sich die vorgeschlagenen Therapien, die empfohlene Dauer und eine mögliche Vorbereitung erklären. Stimmen Sie danach Unterkunft und Reisedaten mit dem Team ab, bevor Sie Ihre Reise buchen."
+   },
+   {
+    "path": [
+     "page",
+     "stay",
+     "after"
+    ],
+    "before": [
+     "Welche Leistungen zusätzlich berechnet werden, hängt von der Vereinbarung ab. Ihre ärztliche Erstberatung ist kostenlos. Lassen Sie sich die Leistungen und Kosten des Aufenthalts sowie etwaiger späterer Leistungen im Angebot erläutern."
+    ],
+    "after": [
+     "Welche Leistungen zusätzlich berechnet werden, hängt von der Vereinbarung ab."
+    ]
+   }
+  ]
+ }
+}

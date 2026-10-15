@@ -1,0 +1,81 @@
+{
+ "task": "WOPS-WEBSITE-SEQUENTIAL-20261008-001",
+ "batch": "train-e04",
+ "base": "cc1ddad6ace2c557787d603ac7d5af2bd967a3b0",
+ "authority": "operations/AHV-ASSESSMENT-CONSUMPTION.json: AHV-WB.276.change PARTIAL_SCOPED_IMPLEMENTATION (reuse verified NABH/villa/doctor/location facts, price element separated under the 7 Oct no-price rule, no duplicate UI, styling preserved); AHV-WB.360.benefit-copy IMPLEMENT_FACT_SOURCED_COPY (non-outcome benefit line drafted from the named reviewed brief). Standing implementation authority (AGENTS.md, 10 Oct 2026).",
+ "files": {
+  "campaign-v2/production/pages/brand.ts": {
+   "row": "AHV-WB.276.change",
+   "beforeSHA256": "8994c9f08c4020fa96be1587ce2c2091cbd4e42114f826407bd5d52697d14c2e",
+   "afterSHA256": "6f3ef51ee39b34062f3b5ab9acb3cf99599f0ca885481430c24e8f7c8c8b61b3",
+   "replacements": [
+    {
+     "before": "        \"Kairali – The Ayurvedic Healing Village is the Kairali Ayurvedic Group’s residential Ayurveda property in Palakkad, Kerala. It is an NABH-accredited Ayurvedic hospital with residential villas, where your assessment guides the proposed programme.\",\n",
+     "after": "        \"Kairali – The Ayurvedic Healing Village is the Kairali Ayurvedic Group’s residential Ayurveda property in Palakkad, Kerala. It is an NABH-accredited Ayurvedic hospital with residential villas, where your assessment guides the proposed programme.\",\n        \"At a glance: an NABH-accredited Ayurvedic hospital in Palakkad, Kerala; 30 villas in a garden setting; Ayurvedic doctors who assess your health history, plan your care and review progress; [location and directions](/how-to-reach/).\",\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-brand.ts": {
+   "row": "AHV-WB.360.benefit-copy",
+   "beforeSHA256": "7e42a179dbf26ecc0c6eb4cf9a091dfde7017a1d1f96ccf9317418717b901470",
+   "afterSHA256": "61e21e4c1a1e98ef28a7556fc1ab92d6a31f1671b98c1f17dbfe670cf8c4b26b",
+   "replacements": [
+    {
+     "before": "        \"The Healing Village brings a family tradition of Ayurveda to residential hospital care. Your programme begins with an individual assessment, so the proposed care reflects your health history and goals.\",\n",
+     "after": "        \"The Healing Village brings a family tradition of Ayurveda to residential hospital care. Your programme begins with an individual assessment, so the proposed care reflects your health history and goals.\",\n        \"What your stay gives you: a programme planned around your health history and goals, a doctor who plans your care and reviews your progress during admission, a villa in the village gardens, and a patient care team for practical arrangements before you travel.\",\n"
+    }
+   ]
+  }
+ },
+ "configChanges": {
+  "brand": {
+   "row": "AHV-WB.276.change",
+   "path": [
+    "page",
+    "lead",
+    "paragraphs"
+   ],
+   "insertedAfter": "Kairali – The Ayurvedic Healing Village is the Kairali Ayurvedic Group’s residential Ayurveda property in Palakkad, Kerala. It is an NABH-accredited Ayurvedic hospital with residential villas, where your assessment guides the proposed programme.",
+   "text": "At a glance: an NABH-accredited Ayurvedic hospital in Palakkad, Kerala; 30 villas in a garden setting; Ayurvedic doctors who assess your health history, plan your care and review progress; [location and directions](/how-to-reach/)."
+  },
+  "lp-brand": {
+   "row": "AHV-WB.360.benefit-copy",
+   "path": [
+    "page",
+    "lead",
+    "paragraphs"
+   ],
+   "insertedAfter": "The Healing Village brings a family tradition of Ayurveda to residential hospital care. Your programme begins with an individual assessment, so the proposed care reflects your health history and goals.",
+   "text": "What your stay gives you: a programme planned around your health history and goals, a doctor who plans your care and reviews your progress during admission, a villa in the village gardens, and a patient care team for practical arrangements before you travel."
+  }
+ },
+ "briefs": {
+  "root": "deliverables/WOPS-AHV-FINAL-DRAFT-20260924-001/ppc-priority-release-20261007/content/native-rewrite",
+  "brand": {
+   "file": "next-five/kairali-brand.md",
+   "sha256": "37f8c65e7ce6fc325ed261f50303bc36f9d0ff0d6ef42ecfa7cdb050f81aa665",
+   "quotes": [
+    "At our NABH-accredited Ayurvedic hospital, your assessment guides the proposed programme",
+    "Kairali has 30 villas in a garden setting",
+    "Your doctors assess your health history, plan your care and review progress",
+    "This page is for Kairali – The Ayurvedic Healing Village in Palakkad, Kerala"
+   ],
+   "excluded": {
+    "price from": "owner 7 Oct no-numeric-price rule (campaign-v2/production/bindings.ts PRICING_HIDDEN); the lead already invites a full quotation",
+    "65 acres": "unresolved Family/Monsoon 65-acre versus Offers 14-acre fact conflict recorded in sites/ayurvedichealingvillage.com/LOCKED_FACTS.md (existing content-proof dependency); not restated",
+    "map": "no embedded map component in the campaign kit; an internal link to the live /how-to-reach/ directions page (200) is used, so no new outbound tracked directions click is added"
+   }
+  },
+  "lp-brand": {
+   "file": "lp-batch/kairali-brand.md",
+   "sha256": "d653a135dc561d351f233eec9b3d082e0386c599d8415b172e22cca8ec7266dc",
+   "quotes": [
+    "Your programme begins with individual assessment, so the proposed care reflects your health history and goals",
+    "Your doctor assesses your health history, plans your care and reviews your progress",
+    "Care is reviewed during admission, with next steps discussed before discharge",
+    "plan a residential stay around your care, with villas in the village gardens",
+    "Our patient care team can discuss consultation options, accommodation and the practical arrangements to confirm before you travel"
+   ]
+  }
+ }
+}

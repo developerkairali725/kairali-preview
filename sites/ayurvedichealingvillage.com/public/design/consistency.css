@@ -47,7 +47,7 @@
 /* a list item or definition that is itself a laid-out card (inline display:
    grid / flex — the about-us director rows, feature rows) is not prose: the
    cap once shrank the director rows to 673px on a 1220px column */
-#ahv-design-root[data-ahv-consistency="1"] main p,
+#ahv-design-root[data-ahv-consistency="1"] main p:where(:not([data-ahv-outline-from])),
 #ahv-design-root[data-ahv-consistency="1"] main li:not([style*="display:grid"]):not([style*="display: grid"]):not([style*="display:flex"]):not([style*="display: flex"]),
 #ahv-design-root[data-ahv-consistency="1"] main dd:not([style*="display:grid"]):not([style*="display:flex"]),
 #ahv-design-root[data-ahv-consistency="1"] main blockquote { max-width:66ch !important; }

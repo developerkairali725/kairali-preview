@@ -38,6 +38,7 @@ export default defineCopy({
       paragraphs: [
         "Plan your Karkidaka Chikitsa stay for July–August 2027. At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, a Karkidaka Chikitsa stay begins with a conversation about your health and the care that may suit you.",
         "Bring your questions to an Ayurvedic doctor, whether you have an existing diagnosis or are simply exploring your options. Your assessment guides the proposed programme. The season alone does not determine the treatment you need.",
+        "What your stay gives you: a doctor who explains your proposed therapies, preparation and dietary guidance before you travel, a daily routine of prescribed care, meals and rest, and time in the village gardens or your villa between appointments.",
       ],
       points: [
         "Sleep, digestion or energy you would like to discuss",
@@ -51,7 +52,7 @@ export default defineCopy({
       kind: "cards",
       kicker: "Your seasonal programme",
       heading: "Choose your Karkidaka Chikitsa programme",
-      intro: ["All programmes are personalised based on individual constitution and physician assessment. Inclusions are indicative and subject to clinical evaluation.", "Programme durations are stated in days. Confirm the number of accommodation nights and the full quotation before booking."],
+      intro: ["All programmes are personalised based on individual constitution and physician assessment. Inclusions are indicative and subject to clinical evaluation.", "Programme durations are stated in days. Confirm the number of accommodation nights before booking."],
       cards: [
         { title: "The Monsoon Starter · 7 days", paragraphs: ["Seven days for physician-guided care, a daily routine and rest.", "Two physician-prescribed therapy sessions daily. Oils, treatment sequence and techniques selected for you.", "Full-body medicated oil therapy and therapeutic steam, as prescribed. Physician-prescribed therapies with type, frequency and duration adjusted to your assessment.", "A daily routine of movement, meals, therapy, rest and meditation, suited to your care. A written post-programme wellness plan and personalised guidance."] },
         { title: "The Monsoon Reset · 14 days", paragraphs: ["A two-week programme planned around your constitution and clinical assessment.", "Two physician-prescribed therapy sessions daily. Five days of preparation before purification, subject to your physician’s assessment.", "Classical Panchakarma procedures selected by your physician. Rasayana therapies such as Pizhichil, Njavara Kizhi or Shirodhara, as prescribed.", "A personalised herbal decoction prepared each morning during the 14-day programme, as prescribed. Daily physician review and adjustment of your protocol."] },
@@ -116,7 +117,6 @@ export default defineCopy({
     { q: "Does the monsoon make this suitable for everyone?", a: "Suitability depends on your individual assessment. Share your health history, current treatment and reasons for considering a stay with the doctor. Ask what a seasonal programme would involve for you, including the therapies, meals and rest. The season alone does not determine the care you need." },
     { q: "How long should I plan to stay?", a: "The Monsoon Starter is 7 days, The Monsoon Reset is 14 days and The Monsoon Overhaul is 21 days. Your physician assesses which programme suits you. Inclusions are indicative and subject to clinical evaluation. These durations are days; confirm accommodation nights, preparation and follow-up before booking." },
     { q: "What should I prepare before travelling?", a: "Share medical reports, current prescriptions and dietary needs during the consultation. Pack light cotton clothing and ask for current pre-arrival guidance. Confirm travel or access arrangements, your villa occupancy and the cancellation or rescheduling conditions before paying for your stay." },
-    { q: "Is the initial doctor consultation free?", a: "Yes. Your initial doctor consultation is free. Share your health history, current treatment and questions to discuss whether a stay may suit you. Ask for a quotation covering your programme, accommodation and any later services before you book." },
-    { q: "What should I check in my quotation?", a: "Ask for the recommended programme, number of nights, villa occupancy and the care included for your dates. Confirm which medicines, tests, specialist services or travel arrangements cost extra. Review the full quotation with our team before booking, so you understand both the stay and any additional charges." },
+    { q: "Is the initial doctor consultation free?", a: "Yes. Your initial doctor consultation is free. Share your health history, current treatment and questions to discuss whether a stay may suit you. Treatment and accommodation are confirmed separately before you book." },
   ],
 });

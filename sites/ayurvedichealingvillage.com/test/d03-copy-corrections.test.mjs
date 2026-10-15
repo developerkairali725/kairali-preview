@@ -7,6 +7,9 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import { productionCampaign } from "../campaign-v2/production/load.ts";
 import { pageText } from "../campaign-v2/kit/lint/page-text.ts";
+// Train I (15 Oct 2026): owner decision 28 later consolidated these six pages (AHV-WB.*.quotation-box); the Train B revert
+// is checked on the Train G head, with Train I's exact delta reversed (fixtures/train-i-20261015.mjs).
+import { reverseTrainIConfig, reverseTrainISource } from "./fixtures/train-i-20261015.mjs";
 
 const fixture = JSON.parse(fs.readFileSync(new URL("./fixtures/d03-copy-corrections-20261014.json", import.meta.url), "utf8"));
 const strings = (slug) => { const c = productionCampaign(slug); return [...pageText(c).map(({ text }) => text), ...(c.faq ?? []).map(({ a }) => a)]; };
@@ -51,8 +54,9 @@ test("Train B: the six quotation-box rows rejected by train-d03/REVIEW.json are 
   assert.deepEqual(rejected.map((x) => x.row).sort(), ["AHV-WB.004.quotation-box", "AHV-WB.030.quotation-box", "AHV-WB.149.quotation-box",
     "AHV-WB.288.quotation-box", "AHV-WB.310.quotation-box", "AHV-WB.334.quotation-box"]);
   for (const { file, before, row } of rejected) {
-    const all = strings(slugOf(file));
+    const head = reverseTrainIConfig(slugOf(file), JSON.parse(JSON.stringify(productionCampaign(slugOf(file)))));
+    const all = [...pageText(head).map(({ text }) => text), ...(head.faq ?? []).map(({ a }) => a)];
     assert.ok(all.some((t) => t.includes(before)), `${row}: the original sentence is back`);
-    assert.equal(fs.readFileSync(new URL(`../${file}`, import.meta.url), "utf8").split(before).length - 1, 1, `${row}: once in source`);
+    assert.equal(reverseTrainISource(file, fs.readFileSync(new URL(`../${file}`, import.meta.url), "utf8")).split(before).length - 1, 1, `${row}: once in source`);
   }
 });

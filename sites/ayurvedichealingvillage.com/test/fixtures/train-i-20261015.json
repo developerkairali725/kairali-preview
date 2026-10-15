@@ -1,0 +1,880 @@
+{
+ "train": "I",
+ "base": "441c3aa5c3fb3c205545e62318318ad107dea997",
+ "branch": "codex/ahv-train-i-20261015",
+ "note": "Train I (15 Oct 2026): owner decisions 28-30, 32 and 33 of OWNER-DECISIONS-20261015-ANSWERS.json, composed on the Train G head 441c3aa5c. 'files': each source edit (exact before/after, occurring exactly once) with the file's head (beforeSHA256) and Train I (afterSHA256) bytes. 'configChanges': the exact production-config fields those page edits change (campaign-v2/production/load.ts productionCampaign).",
+ "files": {
+  "campaign-v2/production/pages/treatment-packages.ts": {
+   "beforeSHA256": "d287a540ae5e9f7bf4541ae215e7765507d977e3bb32a621e5d3939dbf6605f0",
+   "replacements": [
+    {
+     "row": "AHV-WB.004.quotation-box",
+     "before": "{ title: \"Dates, accommodation and quotation\", body: \"Once you understand the programme, confirm your dates, accommodation and quotation with our team.",
+     "after": "{ title: \"Dates and accommodation\", body: \"Once you understand the programme, confirm your dates and accommodation with our team."
+    },
+    {
+     "row": "AHV-WB.004.quotation-box",
+     "before": "then review your care plan and quotation before booking.\"],",
+     "after": "then review your care plan before booking.\"],"
+    },
+    {
+     "row": "AHV-WB.004.quotation-box",
+     "before": "Use it to discuss your needs and ask whether a programme may suit you. Request a quotation explaining the treatment, doctor reviews and any later services included in your stay, along with separately charged items.\" },",
+     "after": "Use it to discuss your needs and ask whether a programme may suit you. Before booking, ask the team to explain the treatment, doctor reviews and any later services included in your stay, along with separately charged items.\" },"
+    },
+    {
+     "row": "AHV-WB.004.quotation-box",
+     "before": "a: \"Your quotation depends on the programme, duration, dates, villa category and occupancy.",
+     "after": "a: \"The cost depends on the programme, duration, dates, villa category and occupancy."
+    },
+    {
+     "row": "AHV-WB.004.quotation-box",
+     "before": "Treatment schedules and yoga arrangements vary between programmes. Your quotation should explain the prescribed therapies, meals, doctor reviews and group or private sessions included in your stay. Ask our team to confirm the details of your chosen programme.\" },",
+     "after": "Treatment schedules and yoga arrangements vary between programmes. Ask our team which prescribed therapies, meals, doctor reviews and group or private sessions are included in your stay, and confirm the details of your chosen programme.\" },"
+    }
+   ],
+   "afterSHA256": "15296b706f83f5266f923c4560a28833c8a85092c8d6979fe714b34146186390"
+  },
+  "campaign-v2/production/pages/panchakarma.ts": {
+   "beforeSHA256": "7baf4b5430e925248e29b818a71646d8f5297e7fbe6631de0e8c6e85e974882c",
+   "replacements": [
+    {
+     "row": "AHV-WB.030.quotation-box",
+     "before": "Start with a free initial doctor consultation and review your treatment plan and quotation before you book.\"],",
+     "after": "Start with a free initial doctor consultation and review your treatment plan before you book.\"],"
+    },
+    {
+     "row": "AHV-WB.030.quotation-box",
+     "before": "{ q: \"Is the consultation free, and how is my stay quoted?\", a: \"Your initial doctor consultation is free. The stay is quoted according to your programme, duration, dates and villa occupancy.",
+     "after": "{ q: \"Is the consultation free, and what affects the cost of my stay?\", a: \"Your initial doctor consultation is free. The cost of your stay depends on your programme, duration, dates and villa occupancy."
+    }
+   ],
+   "afterSHA256": "c79748ba8e13bdab48cc66fa085daf124407afdea4a3f6d1d6797476e271067e"
+  },
+  "campaign-v2/production/pages/ayurveda-retreat.ts": {
+   "beforeSHA256": "15d7e98fa1a086fd9c62a5b8379eba4b207d975893bc552412104922c164471c",
+   "replacements": [
+    {
+     "row": "AHV-WB.149.quotation-box",
+     "before": "{ title: \"Review your plan and quotation\", body: \"Confirm the prescribed plan, recommended length of stay, villa and occupancy.",
+     "after": "{ title: \"Review your plan\", body: \"Confirm the prescribed plan, recommended length of stay, villa and occupancy."
+    },
+    {
+     "row": "AHV-WB.149.quotation-box",
+     "before": "then review your programme and quotation with our team.\"],",
+     "after": "then review your programme with our team.\"],"
+    },
+    {
+     "row": "AHV-WB.149.quotation-box",
+     "before": "Confirm the accommodation in your quotation so you know which arrangements are included before booking.\" },",
+     "after": "Confirm the accommodation with our team so you know which arrangements are included before booking.\" },"
+    },
+    {
+     "row": "AHV-WB.149.quotation-box",
+     "before": "Confirm occupancy, meals, programme dates and companion charges in the quotation.\" },",
+     "after": "Confirm occupancy, meals, programme dates and companion charges with the team.\" },"
+    },
+    {
+     "row": "AHV-WB.149.quotation-box",
+     "before": "Share your health history, current treatment and questions to discuss whether a stay may suit you. Ask for a quotation covering your programme, accommodation and any later services before you book.\" },",
+     "after": "Share your health history, current treatment and questions to discuss whether a stay may suit you. Before you book, confirm what your programme, accommodation and any later services include.\" },"
+    },
+    {
+     "row": "AHV-WB.149.quotation-box",
+     "before": "{ q: \"What should I check in my quotation?\", a: \"Ask for the recommended programme, number of nights, villa occupancy and the care included for your dates. Confirm which medicines, tests, specialist services or travel arrangements cost extra. Review the full quotation with our team before booking,",
+     "after": "{ q: \"What should I check before booking?\", a: \"Ask for the recommended programme, number of nights, villa occupancy and the care included for your dates. Confirm which medicines, tests, specialist services or travel arrangements cost extra. Review the full details with our team before booking,"
+    }
+   ],
+   "afterSHA256": "2c9be5477685c93046b31ae4db9e265f40f5c79d1d864885970682c0a3e9ad00"
+  },
+  "campaign-v2/production/pages/weight-management.ts": {
+   "beforeSHA256": "4e0a8ad0bcc5a871279c2bb76e354831d757fad4f90e816927650f95ebeefe35",
+   "replacements": [
+    {
+     "row": "AHV-WB.288.quotation-box",
+     "before": "{ title: \"Agree your plan, dates and quotation\", body: \"Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Your doctor discusses the duration appropriate to your needs; confirm the programme, dates and quotation before making travel arrangements.\" },",
+     "after": "{ title: \"Agree your plan and dates\", body: \"Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Your doctor discusses the duration appropriate to your needs; confirm the programme and dates before making travel arrangements.\" },"
+    },
+    {
+     "row": "AHV-WB.288.quotation-box",
+     "before": "a: \"Your initial doctor consultation is free. Ask for a quotation covering your programme, accommodation, care and any later services. Review what is included and any separately charged items before confirming your stay.\" },",
+     "after": "a: \"Your initial doctor consultation is free. Ask our team to set out your programme, accommodation, care and any later services, then review what is included and any separately charged items before confirming your stay.\" },"
+    }
+   ],
+   "afterSHA256": "2ad6ceac113f50d28079aa41b8ddfb3d763bde38e7f934d2fd33be7897ded70a"
+  },
+  "campaign-v2/production/pages/lp-south-india.ts": {
+   "beforeSHA256": "c91f46c28e9529201d50696e4e3377f72fef7619d8f2cafbc010813c13b63434",
+   "replacements": [
+    {
+     "row": "AHV-WB.310.quotation-box",
+     "before": "{ title: \"Confirm your plan and quotation\", body: \"Confirm your programme, villa occupancy, inclusions and booking terms in a personalised quotation.",
+     "after": "{ title: \"Confirm your plan\", body: \"Confirm your programme, villa occupancy, inclusions and booking terms."
+    },
+    {
+     "row": "AHV-WB.310.quotation-box",
+     "before": "Before booking a stay, request a quotation explaining the treatment, accommodation, doctor reviews and any later services, along with separately charged items.\" },",
+     "after": "Before booking a stay, ask the team to explain the treatment, accommodation, doctor reviews and any later services, along with separately charged items.\" },"
+    },
+    {
+     "row": "AHV-WB.310.quotation-box",
+     "before": "a: \"Confirm the recommended programme, number of nights, villa category and occupancy in your quotation.",
+     "after": "a: \"Confirm the recommended programme, number of nights, villa category and occupancy with the team."
+    }
+   ],
+   "afterSHA256": "1538cac4b2116010cf535d134df804af0efd2ed346c96d892e83f43d4ecf3726"
+  },
+  "campaign-v2/production/pages/lp-hospital-kerala.ts": {
+   "beforeSHA256": "83c65d2447d950b5f1940c32dbeeb12912c478d660f9b3a01987befb8c5bf037",
+   "replacements": [
+    {
+     "row": "AHV-WB.334.quotation-box",
+     "before": "{ title: \"Review your plan and quotation\", body: \"Understand the proposed therapies and daily routine. Then review a quotation covering your programme, accommodation and included care, with any extra charges set out.\" },",
+     "after": "{ title: \"Review your plan\", body: \"Understand the proposed therapies and daily routine. Then review your programme, accommodation and included care, with any extra charges set out.\" },"
+    },
+    {
+     "row": "AHV-WB.334.quotation-box",
+     "before": "Confirm accommodation, meals, access arrangements and any companion charges in your quotation before booking.\" },",
+     "after": "Confirm accommodation, meals, access arrangements and any companion charges before booking.\" },"
+    },
+    {
+     "row": "AHV-WB.334.quotation-box",
+     "before": "Before booking a stay, request a quotation explaining the treatment, accommodation, doctor reviews and any later services, along with separately charged items.\" },",
+     "after": "Before booking a stay, ask the team to explain the treatment, accommodation, doctor reviews and any later services, along with separately charged items.\" },"
+    },
+    {
+     "row": "AHV-WB.334.quotation-box",
+     "before": "a: \"Confirm the recommended programme, number of nights, villa category and occupancy in your quotation.",
+     "after": "a: \"Confirm the recommended programme, number of nights, villa category and occupancy with the team."
+    }
+   ],
+   "afterSHA256": "f6e3d142948b7a78866ac3c48c36cfa3aa544f5d03eac516515b9ff6b34584af"
+  },
+  "campaign-v2/production/pages/lp-treatment-packages.ts": {
+   "beforeSHA256": "a8f43a17770b5375f4dac8a2f59e0fd4d7126100fcd66f005e5708c9926e4f71",
+   "replacements": [
+    {
+     "row": "AHV-WB.465.quotation-box",
+     "before": "heading: \"From enquiry to a quotation you can compare\",",
+     "after": "heading: \"From enquiry to your stay\","
+    },
+    {
+     "row": "AHV-WB.465.quotation-box",
+     "before": "{ title: \"Review a written quotation\", body: \"Ask about preparation and recommended duration. Patient care then brings the programme and accommodation together in a written quotation for your dates, duration and occupancy.\" },",
+     "after": "{ title: \"Agree your programme and stay\", body: \"Ask about preparation and recommended duration. Patient care then brings the programme and accommodation together for your dates, duration and occupancy.\" },"
+    },
+    {
+     "row": "AHV-WB.465.quotation-box",
+     "before": "Ask the doctor to explain the recommended care, and check your quotation for the specific inclusions.\" },",
+     "after": "Ask the doctor to explain the recommended care, and confirm the specific inclusions for your programme with the team.\" },"
+    },
+    {
+     "row": "AHV-WB.465.quotation-box",
+     "before": "a: \"Compare quotations for the same duration, dates and occupancy, with the care and accommodation clearly described.",
+     "after": "a: \"Compare like with like: the same duration, dates and occupancy, with the care and accommodation clearly described."
+    },
+    {
+     "row": "AHV-WB.465.quotation-box",
+     "before": "a: \"Yes. The initial doctor consultation is free. Ask for a quotation covering your care and any later services, and review the inclusions and charges before confirming your stay.\" },",
+     "after": "a: \"Yes. The initial doctor consultation is free. Ask the team to set out your care and any later services, and review the inclusions and charges before confirming your stay.\" },"
+    }
+   ],
+   "afterSHA256": "fcb5e173b848f8db0d81cb2a9e9e6fd37bff61f82ff2294bd3bdfed076bb5649"
+  },
+  "campaign-v2/production/pages/pain-management.ts": {
+   "beforeSHA256": "653738eed6ed9a55053e73b4aad35de021909167e8680791b55f56e6951a0196",
+   "replacements": [
+    {
+     "row": "AHV-WB.054.change",
+     "before": "Discuss therapies such as Abhyangam – full-body medicated oil therapy; Kizhi,",
+     "after": "Discuss therapies such as Abhyangam, a full-body medicated oil therapy; Kizhi,"
+    }
+   ],
+   "afterSHA256": "089b8de63c8a709dc3af5f6cc0794aaecea594eb0e8369eda88fac8d277d9555"
+  },
+  "campaign-v2/production/production.css": {
+   "beforeSHA256": "d51ea8007b1f2e8f484213709eafac8e3b5ce418d180fbc4b6399adb8ea69154",
+   "replacements": [
+    {
+     "row": "AHV-LATER-043.01",
+     "before": "@media (max-width: 767px) {\n  .lp-prod .lp-hero__note { font-size: 13px; }\n",
+     "after": "@media (max-width: 767px) {\n  /* AHV-LATER-043.01 (owner decision 33, 15 Oct 2026: \"Hero fine print 14px on mobile\"): the hero fine print keeps its\n     desktop 14px on phones too. */\n  .lp-prod .lp-hero__note { font-size: 14px; }\n"
+    },
+    {
+     "row": "AHV-LATER-043.01",
+     "before": "  .lp-prod[data-variant=\"B\"] .lp-consult--card { padding: 22px 20px; }\n",
+     "after": "  .lp-prod[data-variant=\"B\"] .lp-consult--card { padding: 22px 20px; }\n  /* AHV-LATER-043.01: D phones drop the hero body (and its fine print) and the kit hides the card's own copy of it,\n     so D was the one variant with no fine print on a phone. The card's line shows instead, at the card's 15px. */\n  .lp-prod[data-variant=\"D\"] .lp-consult--card .lp-consult__sub { display: block; }\n"
+    }
+   ],
+   "afterSHA256": "2247dae62086b8287dac4e70c691d1fe184c655e9e81b3ade06460ad7b4effa9"
+  },
+  "campaign-v2/production/document.css": {
+   "beforeSHA256": "a3a659b33aa793bd4d24b1b02bfda18d8ea402142ffa1a929ab3afc0ddaab86c",
+   "replacements": [
+    {
+     "row": "AHV-LATER-043.01",
+     "before": "@media (max-width: 767px) {\n  .lp-prod .lp-hero__note { font-size: 13px; }\n",
+     "after": "@media (max-width: 767px) {\n  /* AHV-LATER-043.01 (owner decision 33, 15 Oct 2026: \"Hero fine print 14px on mobile\"): the hero fine print keeps its\n     desktop 14px on phones too. */\n  .lp-prod .lp-hero__note { font-size: 14px; }\n"
+    },
+    {
+     "row": "AHV-LATER-043.01",
+     "before": "  .lp-prod[data-variant=\"B\"] .lp-consult--card { padding: 22px 20px; }\n",
+     "after": "  .lp-prod[data-variant=\"B\"] .lp-consult--card { padding: 22px 20px; }\n  /* AHV-LATER-043.01: D phones drop the hero body (and its fine print) and the kit hides the card's own copy of it,\n     so D was the one variant with no fine print on a phone. The card's line shows instead, at the card's 15px. */\n  .lp-prod[data-variant=\"D\"] .lp-consult--card .lp-consult__sub { display: block; }\n"
+    }
+   ],
+   "afterSHA256": "33ba8479e74c7b20a97c05e8111bb9b26a5a47ea4f49ae9d31a67027681b26d6",
+   "generatedBy": "scripts/build-production-css.mjs"
+  },
+  "public/consent/bridge.mjs": {
+   "beforeSHA256": "622b4c5c4deaa7fbcb091c4e35850c6924ebcd6988ac7652b8781a19eb9849e7",
+   "replacements": [
+    {
+     "row": "AHV-M024.01",
+     "before": "  compactNotice.append(text,actions,footer);document.body.append(compactNotice);\n}\n",
+     "after": "  compactNotice.append(text,actions,footer);document.body.append(compactNotice);\n  reserveCompactNoticeSpace(compactNotice);\n}\n// AHV-M024.01 (owner decision 30, 15 Oct 2026: layout only). The compact notice is a fixed layer at the viewport\n// bottom; on a first visit it hid keyboard-focused page links (390px in every locale; 1440px in ar, zh-Hans, ko).\n// While it is on screen, publish the height it covers (its top edge to the viewport bottom, plus a gap) so ahv.css\n// can keep focused links scrolled above it (scroll-padding-bottom) and let the page end scroll clear of it. Nothing\n// here reads or writes consent, storage or signals, or changes the notice's text, choices or behaviour; the values\n// are removed as soon as the notice is hidden (preferences open) or removed (a choice is saved).\nfunction reserveCompactNoticeSpace(notice){\n  const root=document.documentElement;\n  const sync=()=>{\n    const r=notice.isConnected&&!notice.hidden?notice.getBoundingClientRect():null;\n    const clear=r&&r.height>0&&r.top<innerHeight?Math.ceil(innerHeight-r.top+8):0;\n    if(clear){root.style.setProperty('--ahv-consent-compact-clear',clear+'px');root.setAttribute('data-ahv-consent-compact','');}\n    else{root.style.removeProperty('--ahv-consent-compact-clear');root.removeAttribute('data-ahv-consent-compact');}\n    if(!notice.isConnected){resize?.disconnect();changes.disconnect();removeEventListener('resize',sync);}\n  };\n  const resize=typeof ResizeObserver==='function'?new ResizeObserver(sync):null;\n  resize?.observe(notice);\n  const changes=new MutationObserver(sync);\n  changes.observe(notice,{attributes:true,attributeFilter:['hidden']});\n  changes.observe(document.body,{childList:true});\n  addEventListener('resize',sync);\n  sync();\n}\n"
+    }
+   ],
+   "afterSHA256": "8c2330abbe5fc49acb918fd662532df08dbdb19008efff5bf26ac61f673f685d"
+  },
+  "public/consent/ahv.css": {
+   "beforeSHA256": "ff670e22f1b6698c2acb783d0c94f647fe4fa21f8653a018b09df55a05270665",
+   "replacements": [
+    {
+     "row": "AHV-M024.01",
+     "before": "@media (max-width:760px) { .ahv-consent-compact { grid-template-columns:minmax(0,1fr);gap:12px;padding:12px; } }\n",
+     "after": "@media (max-width:760px) { .ahv-consent-compact { grid-template-columns:minmax(0,1fr);gap:12px;padding:12px; } }\n/* AHV-M024.01 (layout only): while the compact notice is on screen, bridge.mjs publishes the height it covers. Focus\n   moved by Tab is scrolled above it, and the page ends with a block of the same height (body::after, as chrome.css\n   already does for the older notice; the page's own desktop clearance is kept when larger) so its last links can scroll\n   clear of it.\n   :root[...] outranks the page's own bar/consent scroll-padding rules (html[...]), whose space the value already\n   includes because it is measured from the notice's top edge to the viewport bottom. */\n:root[data-ahv-consent-compact] { scroll-padding-bottom:var(--ahv-consent-compact-clear, 0px); }\n:root[data-ahv-consent-compact] body::after { content:\"\";display:block;height:max(var(--ahv-consent-compact-clear, 0px), var(--ahv-page-clear, 0px)); }\n"
+    }
+   ],
+   "afterSHA256": "623df64323cfaf6d88e21773b262d2cb5236b0fafc11e258d94280329ae15578"
+  },
+  "public/ahv/assets/reader25a-family-data.js": {
+   "beforeSHA256": "b26a9226e3aeda061d58316c790332d564d175a13a11c776cdbc7dc6cb06045e",
+   "replacements": [
+    {
+     "row": "AHV-M067.01",
+     "before": "{\"kind\":\"para\",\"ptr\":\"/sections/3/c/3/c/4\",\"tree\":[{\"k\":\"t\",\"v\":\"One such place where the multifaceted definitions of Yoga can be analysed properly is Kairali – The Ayurvedic healing village, located in Kerala. With its impressive conglomeration of bright minds who are well-versed in the technicalities of yogic definitions, this is the perfect place if someone wants to dig deeper into the realm of yoga and its history as well as its working principles. With their workshops and intensive courses on yoga, they make sure to familiarise a person with the rudimentary idea of this art and slowly after building that foundation, they move forward with the more advanced concepts.\"}],\"text\":\"One such place where the multifaceted definitions of Yoga can be analysed properly is Kairali – The Ayurvedic healing village, located in Kerala. With its impressive conglomeration of bright minds who are well-versed in the technicalities of yogic definitions, this is the perfect place if someone wants to dig deeper into the realm of yoga and its history as well as its working principles. With their workshops and intensive courses on yoga, they make sure to familiarise a person with the rudimentary idea of this art and slowly after building that foundation, they move forward with the more advanced concepts.\",\"sourceClass\":\"has-small-font-size wp-block-paragraph\"},{\"kind\":\"para\",\"ptr\":\"/sections/3/c/3/c/6\",\"tree\":[{\"k\":\"t\",\"v\":\"One of the major things that these workshops focus on is the necessity of perceiving a human body as a whole and not in individual parts.  By employing this awareness, these workshops make it clear that learning the basics of yogic ideologies is coupled with curative as well as preventative methods of health and a united approach to lifestyle ensures true health and longevity. These workshops offer great insight into yogic principles and are a fine way to understand these methods.\"}],\"text\":\"One of the major things that these workshops focus on is the necessity of perceiving a human body as a whole and not in individual parts.  By employing this awareness, these workshops make it clear that learning the basics of yogic ideologies is coupled with curative as well as preventative methods of health and a united approach to lifestyle ensures true health and longevity. These workshops offer great insight into yogic principles and are a fine way to understand these methods.\",\"sourceClass\":\"has-small-font-size wp-block-paragraph\"}",
+     "after": "{\"kind\":\"para\",\"ptr\":\"/sections/3/c/3/c/4\",\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"/yoga-meditation-programs/\"},\"c\":[{\"k\":\"t\",\"v\":\"View the three yoga programmes and personalised yoga option.\"}]}],\"text\":\"View the three yoga programmes and personalised yoga option.\",\"sourceClass\":\"has-small-font-size wp-block-paragraph\",\"trainINote\":\"AHV-M067.01 (owner decision 32, 15 Oct 2026: reword to current). The two source paragraphs (/sections/3/c/3/c/4 and /c/6) described yoga workshops and intensive courses that are not currently offered; they are replaced by the approved catalogue line that names the current yoga programmes (catalogue-locales.json, 12 accepted translations), linked to the yoga programmes hub as on the teacher-training page.\"}"
+    }
+   ],
+   "afterSHA256": "abaf7220a41c88e8eb6ce9cddab03ce632e590ef3cf2a44db7d995f85af4e26a"
+  },
+  "english-candidate/prerender/why-get-training-in-yoga.html": {
+   "beforeSHA256": "bd07997622bfc8bc87f358f6e2d0709d6f29cc49a795b2278a9d778484060116",
+   "replacements": [
+    {
+     "row": "AHV-M067.01",
+     "before": "<p data-source-pointer=\"/sections/3/c/3/c/4\" style=\"margin: 0px 0px 14px; max-width: 76ch; font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\">One such place where the multifaceted definitions of Yoga can be analysed properly is Kairali – The Ayurvedic healing village, located in Kerala. With its impressive conglomeration of bright minds who are well-versed in the technicalities of yogic definitions, this is the perfect place if someone wants to dig deeper into the realm of yoga and its history as well as its working principles. With their workshops and intensive courses on yoga, they make sure to familiarise a person with the rudimentary idea of this art and slowly after building that foundation, they move forward with the more advanced concepts.</p><p data-source-pointer=\"/sections/3/c/3/c/6\" style=\"margin: 0px 0px 14px; max-width: 76ch; font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\">One of the major things that these workshops focus on is the necessity of perceiving a human body as a whole and not in individual parts.&nbsp; By employing this awareness, these workshops make it clear that learning the basics of yogic ideologies is coupled with curative as well as preventative methods of health and a united approach to lifestyle ensures true health and longevity. These workshops offer great insight into yogic principles and are a fine way to understand these methods.</p>",
+     "after": "<p data-source-pointer=\"/sections/3/c/3/c/4\" style=\"margin: 0px 0px 14px; max-width: 76ch; font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"/yoga-meditation-programs/\" data-source-href=\"/yoga-meditation-programs/\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">View the three yoga programmes and personalised yoga option.</a></p>"
+    }
+   ],
+   "afterSHA256": "46b0fe325ce3a4c35d0175fceda64297a95e1237bbba5cec5ec04dd43f21a906"
+  },
+  "public/ahv/assets/hist9-family-data.js": {
+   "beforeSHA256": "e6d00364b1bba7c96065787bd5ee713444012b4f450fa8bee0b19f2b8df4a25d",
+   "replacements": [
+    {
+     "row": "AHV-I04.M085.links",
+     "before": "\"relatedLinks\":[{\"label\":\"Kairali Hospitality\",\"href\":\"https://ayurvedichealingvillage.com/kairali-hospitality/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/kairali-hospitality/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Kairali Ayurvedic Products Pvt.ltd.\",\"href\":\"https://ayurvedichealingvillage.com/kairali-ayurvedic-products-pvt-ltd/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/kairali-ayurvedic-products-pvt-ltd/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Product Range\",\"href\":\"https://ayurvedichealingvillage.com/product-range/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/product-range/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Ayurvedic Herbal Tea\",\"href\":\"https://ayurvedichealingvillage.com/ayurvedic-herbal-tea/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/ayurvedic-herbal-tea/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Ayurvedic Proprietary Organics\",\"href\":\"https://ayurvedichealingvillage.com/ayurvedic-proprietary-organics/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/ayurvedic-proprietary-organics/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Kair by Kairali\",\"href\":\"https://ayurvedichealingvillage.com/kair-by-kairali/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/kair-by-kairali/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Ayurvedic Proprietary Medicines\",\"href\":\"https://ayurvedichealingvillage.com/ayurvedic-proprietary-medicines/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/ayurvedic-proprietary-medicines/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Ayurvedic Classical Medicines\",\"href\":\"https://ayurvedichealingvillage.com/ayurvedic-classical-medicines/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/ayurvedic-classical-medicines/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Books\",\"href\":\"https://ayurvedichealingvillage.com/books/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/books/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Kairali Ayurvedic Equipment\",\"href\":\"https://ayurvedichealingvillage.com/kairali-ayurvedic-equipment/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/kairali-ayurvedic-equipment/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Arogya Kendra\",\"href\":\"https://ayurvedichealingvillage.com/arogya-kendra/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/arogya-kendra/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Arogya Shala\",\"href\":\"https://ayurvedichealingvillage.com/arogya-shala/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/arogya-shala/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Kairali Ayurvedic Center\",\"href\":\"https://ayurvedichealingvillage.com/kairali-ayurvedic-centre/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/kairali-ayurvedic-centre/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Kairali Ayurveda Franchise\",\"href\":\"https://ayurvedichealingvillage.com/ayurvedic-franchise/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/ayurvedic-franchise/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Kairali Institute Of Ayurveda And Panchakarma Therapy\",\"href\":\"https://ayurvedichealingvillage.com/kairali-institute-of-ayurveda-and-panchakarma-therapy/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/kairali-institute-of-ayurveda-and-panchakarma-therapy/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Vision and Mission\",\"href\":\"https://ayurvedichealingvillage.com/vision-and-mission/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/vision-and-mission/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Social, Cultural & Environmental Commitment\",\"href\":\"https://ayurvedichealingvillage.com/social-cultural-environmental-commitment/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/social-cultural-environmental-commitment/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Awards & Accreditations\",\"href\":\"https://ayurvedichealingvillage.com/awards-and-accreditations/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/awards-and-accreditations/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Accreditations\",\"href\":\"https://ayurvedichealingvillage.com/accreditations/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/accreditations/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"}]",
+     "after": "\"relatedLinks\":[{\"label\":\"Yoga programmes\",\"href\":\"https://ayurvedichealingvillage.com/yoga-meditation-programs/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/yoga-meditation-programs/\",\"adjudicated\":false,\"note\":\"AHV-I04.M085.links (owner decision 33, 15 Oct 2026): contextual link to a current programme hub, a final served route with 13 locale routes and an accepted label in all 12 locales; replaces the source page's generic corporate sidebar, as AHV-I04.M082.links did on /food-sadhana/.\"},{\"label\":\"Ayurvedic treatment programmes\",\"href\":\"https://ayurvedichealingvillage.com/ayurvedic-treatments/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/ayurvedic-treatments/\",\"adjudicated\":false,\"note\":\"AHV-I04.M085.links (owner decision 33, 15 Oct 2026): contextual link to a current programme hub, a final served route with 13 locale routes and an accepted label in all 12 locales; replaces the source page's generic corporate sidebar, as AHV-I04.M082.links did on /food-sadhana/.\"},{\"label\":\"All programmes\",\"href\":\"https://ayurvedichealingvillage.com/all-programs/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/all-programs/\",\"adjudicated\":false,\"note\":\"AHV-I04.M085.links (owner decision 33, 15 Oct 2026): contextual link to a current programme hub, a final served route with 13 locale routes and an accepted label in all 12 locales; replaces the source page's generic corporate sidebar, as AHV-I04.M082.links did on /food-sadhana/.\"}],\"retiredRelatedLinks\":{\"note\":\"AHV-I04.M085.links (Train I, 15 Oct 2026): the 19 generic Kairali Group / products / corporate sidebar links captured from the source page are retained here for source accounting only and are not rendered, as on /food-sadhana/ (AHV-I04.M082.links).\",\"links\":[{\"label\":\"Kairali Hospitality\",\"href\":\"https://ayurvedichealingvillage.com/kairali-hospitality/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/kairali-hospitality/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Kairali Ayurvedic Products Pvt.ltd.\",\"href\":\"https://ayurvedichealingvillage.com/kairali-ayurvedic-products-pvt-ltd/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/kairali-ayurvedic-products-pvt-ltd/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Product Range\",\"href\":\"https://ayurvedichealingvillage.com/product-range/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/product-range/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Ayurvedic Herbal Tea\",\"href\":\"https://ayurvedichealingvillage.com/ayurvedic-herbal-tea/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/ayurvedic-herbal-tea/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Ayurvedic Proprietary Organics\",\"href\":\"https://ayurvedichealingvillage.com/ayurvedic-proprietary-organics/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/ayurvedic-proprietary-organics/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Kair by Kairali\",\"href\":\"https://ayurvedichealingvillage.com/kair-by-kairali/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/kair-by-kairali/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Ayurvedic Proprietary Medicines\",\"href\":\"https://ayurvedichealingvillage.com/ayurvedic-proprietary-medicines/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/ayurvedic-proprietary-medicines/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Ayurvedic Classical Medicines\",\"href\":\"https://ayurvedichealingvillage.com/ayurvedic-classical-medicines/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/ayurvedic-classical-medicines/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Books\",\"href\":\"https://ayurvedichealingvillage.com/books/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/books/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Kairali Ayurvedic Equipment\",\"href\":\"https://ayurvedichealingvillage.com/kairali-ayurvedic-equipment/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/kairali-ayurvedic-equipment/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Arogya Kendra\",\"href\":\"https://ayurvedichealingvillage.com/arogya-kendra/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/arogya-kendra/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Arogya Shala\",\"href\":\"https://ayurvedichealingvillage.com/arogya-shala/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/arogya-shala/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Kairali Ayurvedic Center\",\"href\":\"https://ayurvedichealingvillage.com/kairali-ayurvedic-centre/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/kairali-ayurvedic-centre/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Kairali Ayurveda Franchise\",\"href\":\"https://ayurvedichealingvillage.com/ayurvedic-franchise/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/ayurvedic-franchise/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Kairali Institute Of Ayurveda And Panchakarma Therapy\",\"href\":\"https://ayurvedichealingvillage.com/kairali-institute-of-ayurveda-and-panchakarma-therapy/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/kairali-institute-of-ayurveda-and-panchakarma-therapy/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Vision and Mission\",\"href\":\"https://ayurvedichealingvillage.com/vision-and-mission/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/vision-and-mission/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Social, Cultural & Environmental Commitment\",\"href\":\"https://ayurvedichealingvillage.com/social-cultural-environmental-commitment/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/social-cultural-environmental-commitment/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Awards & Accreditations\",\"href\":\"https://ayurvedichealingvillage.com/awards-and-accreditations/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/awards-and-accreditations/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"},{\"label\":\"Accreditations\",\"href\":\"https://ayurvedichealingvillage.com/accreditations/\",\"sourceHref\":\"https://ayurvedichealingvillage.com/accreditations/\",\"adjudicated\":false,\"note\":\"Exact source destination.\"}]}"
+    }
+   ],
+   "afterSHA256": "d8d756a337d0f9827142e911a46fb0c40dd0a37fc6fa8e6970a536dc507db11f"
+  },
+  "public/ahv/assets/hist9-family-render.js": {
+   "beforeSHA256": "224f205857805390b146b99c6de94926fe6e87ad5ff4c3d3d8c9e167698dc308",
+   "replacements": [
+    {
+     "row": "AHV-I04.M085.links",
+     "before": "      if (path === '/ayurvedic-resturant-and-cooking-at-healing-village/') return 'Food & cooking at Kairali';\n",
+     "after": "      if (path === '/ayurvedic-resturant-and-cooking-at-healing-village/') return 'Food & cooking at Kairali';\n      // AHV-I04.M085.links (Train I): current programme hubs, under the accepted 'Explore current programmes' label.\n      if (/^\\/(?:yoga-meditation-programs|ayurvedic-treatments|all-programs)\\/$/.test(path)) return 'Explore current programmes';\n"
+    }
+   ],
+   "afterSHA256": "b60d2b735fe0e585a8f61817c57641a489af344c7141fd77273d1ae35544cea1"
+  },
+  "english-candidate/prerender/katha-wellness-retreat-2019.html": {
+   "beforeSHA256": "23e12b204bd4f0e96ce576b9e3d81adb7402be1163aa4ae99665f07a264f6955",
+   "replacements": [
+    {
+     "row": "AHV-I04.M085.links",
+     "before": "\n          <details data-dc-tpl=\"183\" class=\"ahv-related-group\">\n            <summary data-dc-tpl=\"184\"><span class=\"sc-interp\">Kairali Group &amp; education</span></summary>\n            <ul data-dc-tpl=\"185\">\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/kairali-hospitality/\"><span class=\"sc-interp\">Kairali Hospitality</span></a></li>\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/arogya-kendra/\"><span class=\"sc-interp\">Arogya Kendra</span></a></li>\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/arogya-shala/\"><span class=\"sc-interp\">Arogya Shala</span></a></li>\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/kairali-ayurvedic-centre/\"><span class=\"sc-interp\">Kairali Ayurvedic Center</span></a></li>\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/ayurvedic-franchise/\"><span class=\"sc-interp\">Kairali Ayurveda Franchise</span></a></li>\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/kairali-institute-of-ayurveda-and-panchakarma-therapy/\"><span class=\"sc-interp\">Kairali Institute Of Ayurveda And Panchakarma Therapy</span></a></li>\n\n            </ul>\n          </details>\n\n          <details data-dc-tpl=\"183\" class=\"ahv-related-group\">\n            <summary data-dc-tpl=\"184\"><span class=\"sc-interp\">Products &amp; publications</span></summary>\n            <ul data-dc-tpl=\"185\">\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/kairali-ayurvedic-products-pvt-ltd/\"><span class=\"sc-interp\">Kairali Ayurvedic Products Pvt.ltd.</span></a></li>\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/product-range/\"><span class=\"sc-interp\">Product Range</span></a></li>\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/ayurvedic-herbal-tea/\"><span class=\"sc-interp\">Ayurvedic Herbal Tea</span></a></li>\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/ayurvedic-proprietary-organics/\"><span class=\"sc-interp\">Ayurvedic Proprietary Organics</span></a></li>\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/kair-by-kairali/\"><span class=\"sc-interp\">Kair by Kairali</span></a></li>\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/ayurvedic-proprietary-medicines/\"><span class=\"sc-interp\">Ayurvedic Proprietary Medicines</span></a></li>\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/ayurvedic-classical-medicines/\"><span class=\"sc-interp\">Ayurvedic Classical Medicines</span></a></li>\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/books/\"><span class=\"sc-interp\">Books</span></a></li>\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/kairali-ayurvedic-equipment/\"><span class=\"sc-interp\">Kairali Ayurvedic Equipment</span></a></li>\n\n            </ul>\n          </details>\n\n          <details data-dc-tpl=\"183\" class=\"ahv-related-group\">\n            <summary data-dc-tpl=\"184\"><span class=\"sc-interp\">About Kairali</span></summary>\n            <ul data-dc-tpl=\"185\">\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/vision-and-mission/\"><span class=\"sc-interp\">Vision and Mission</span></a></li>\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/social-cultural-environmental-commitment/\"><span class=\"sc-interp\">Social, Cultural &amp; Environmental Commitment</span></a></li>\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/awards-and-accreditations/\"><span class=\"sc-interp\">Awards &amp; Accreditations</span></a></li>\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/accreditations/\"><span class=\"sc-interp\">Accreditations</span></a></li>\n\n            </ul>\n          </details>\n\n",
+     "after": "\n          <details data-dc-tpl=\"183\" class=\"ahv-related-group\">\n            <summary data-dc-tpl=\"184\"><span class=\"sc-interp\">Explore current programmes</span></summary>\n            <ul data-dc-tpl=\"185\">\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/yoga-meditation-programs/\"><span class=\"sc-interp\">Yoga programmes</span></a></li>\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/ayurvedic-treatments/\"><span class=\"sc-interp\">Ayurvedic treatment programmes</span></a></li>\n\n                <li data-dc-tpl=\"187\"><a data-dc-tpl=\"188\" href=\"/all-programs/\"><span class=\"sc-interp\">All programmes</span></a></li>\n\n            </ul>\n          </details>\n\n"
+    }
+   ],
+   "afterSHA256": "60584ba9627618f9490ce68376953bd69e51e78fb3e97b12f45738c9e7c3fb2c"
+  },
+  "campaign-v2/data/ratings.ts": {
+   "beforeSHA256": "02af59bbee3bf0534cce7037327404a58c16afd0068bb043414f1e371d7f9d66",
+   "replacements": [
+    {
+     "row": "AHV-LATER-038.01",
+     "before": "  asOf: \"2026-08\", // the live homepage footnote: \"as of August 2026\"\n",
+     "after": "  // AHV-LATER-038.01 (owner decision 33, 15 Oct 2026: \"Show awards history now (Tripadvisor 4.6/450, 29 Aug 2026)\"): the\n  // dated listing capture behind these figures, Kairali-Image-Library/web-exports/exchange/from-codex/NOTES.md:144-160\n  // (location d530306, 29 August 2026: rating 4.6, reviewCount 450, #2 of 27 hotels in Palakkad). Shown with that date.\n  asOf: \"2026-08-29\",\n"
+    },
+    {
+     "row": "AHV-LATER-038.01",
+     "before": "/** First day of an \"YYYY-MM\" or \"YYYY-MM-DD\" date, in UTC. */\n",
+     "after": "/** \"2026-08-29\" -> \"29 August 2026\" (\"YYYY-MM\" keeps the month label). */\nexport function dateLabel(date: string): string {\n  const [, , d] = date.split(\"-\").map(Number);\n  return d ? `${d} ${monthLabel(date)}` : monthLabel(date);\n}\n\n/** First day of an \"YYYY-MM\" or \"YYYY-MM-DD\" date, in UTC. */\n"
+    }
+   ],
+   "afterSHA256": "796cc027c18f520cf315056eae8d2a9575ed5f8888bd5c6850e384ddb60d1640"
+  },
+  "campaign-v2/sections/ProofStrip.tsx": {
+   "beforeSHA256": "3b10624ac764b5e119970ae7af0d09c5552d1c9c21b93e233d469db524290ec3",
+   "replacements": [
+    {
+     "row": "AHV-LATER-038.01",
+     "before": "import { TRIPADVISOR, monthLabel } from \"../data/ratings.ts\";",
+     "after": "import { TRIPADVISOR, dateLabel } from \"../data/ratings.ts\";"
+    },
+    {
+     "row": "AHV-LATER-038.01",
+     "before": "const TA_AS_OF = `Tripadvisor, as of ${monthLabel(TRIPADVISOR.asOf)}`;",
+     "after": "// AHV-LATER-038.01: the capture date in full (day, month and year), as recorded in data/ratings.ts.\nconst TA_AS_OF = `Tripadvisor, as of ${dateLabel(TRIPADVISOR.asOf)}`;"
+    },
+    {
+     "row": "AHV-LATER-038.01",
+     "before": "    const [y, m] = TRIPADVISOR.asOf.split(\"-\").map(Number);\n    asOf = `${ui.proof.asOf} ${new Intl.DateTimeFormat(ui.lang, { month: \"long\", year: \"numeric\", timeZone: \"UTC\" }).format(new Date(Date.UTC(y, m - 1, 1)))}`;",
+     "after": "    const [y, m, d] = TRIPADVISOR.asOf.split(\"-\").map(Number);\n    asOf = `${ui.proof.asOf} ${new Intl.DateTimeFormat(ui.lang, { ...(d ? { day: \"numeric\" } : {}), month: \"long\", year: \"numeric\", timeZone: \"UTC\" }).format(new Date(Date.UTC(y, m - 1, d || 1)))}`;"
+    }
+   ],
+   "afterSHA256": "bd001a1dea18c70fd106de76a4138fe4b4d205c28ca14389d39711e1fc535c22"
+  },
+  "english-candidate/route-manifest.json": {
+   "beforeSHA256": "695301bf3362a6a67f1f01801a5ee151e1fa4697a1e0db5fc4975aa461276b16",
+   "replacements": [
+    {
+     "row": "AHV-N08.yoga-and-meditation-package.description",
+     "before": "\"path\": \"/yoga-and-meditation-package/\",\n      \"segments\": [\n        \"yoga-and-meditation-package\"\n      ],\n      \"desktopView\": \"ahv-page-yoga-and-meditation-package-desktop\",\n      \"mobileView\": \"ahv-page-yoga-and-meditation-package-mobile\",\n      \"dataset\": null,\n      \"metadataSource\": \"dataset\",\n      \"metadata\": {\n        \"title\": \"Yoga and Meditation Package | Kairali Healing Village\",\n        \"description\": \"Kairali has the highest honor of being conferred with the “Ayurvedic Hospital” title by the Government of Kerala. The Ayurvedic Healing Centre provides certified services and can be availed by becoming a member here.\",\n        \"canonical\": \"https://ayurvedichealingvillage.com/yoga-and-meditation-package/\",\n        \"ogTitle\": \"Yoga and Meditation Package\",\n        \"ogDescription\": \"Kairali has the highest honor of being conferred with the “Ayurvedic Hospital” title by the Government of Kerala. The Ayurvedic Healing Centre provides certified services and can be availed by becoming a member here.\",\n        \"ogImage\": \"https://ayurvedichealingvillage.com/wp-content/uploads/2025/05/immunity.webp\",\n        ",
+     "after": "\"path\": \"/yoga-and-meditation-package/\",\n      \"segments\": [\n        \"yoga-and-meditation-package\"\n      ],\n      \"desktopView\": \"ahv-page-yoga-and-meditation-package-desktop\",\n      \"mobileView\": \"ahv-page-yoga-and-meditation-package-mobile\",\n      \"dataset\": null,\n      \"metadataSource\": \"dataset\",\n      \"metadata\": {\n        \"title\": \"Yoga and Meditation Package | Kairali Healing Village\",\n        \"description\": \"Explore guided yoga and meditation alongside Ayurveda at Kairali in Kerala, with sessions led by experienced instructors.\",\n        \"canonical\": \"https://ayurvedichealingvillage.com/yoga-and-meditation-package/\",\n        \"ogTitle\": \"Yoga and Meditation Package\",\n        \"ogDescription\": \"Explore guided yoga and meditation alongside Ayurveda at Kairali in Kerala, with sessions led by experienced instructors.\",\n        \"ogImage\": \"https://ayurvedichealingvillage.com/wp-content/uploads/2025/05/immunity.webp\",\n        "
+    }
+   ],
+   "afterSHA256": "545ed3152e84b5f7cd20c3c1a107eeba7780ca22ad7ef465221948d3264d02a5"
+  }
+ },
+ "configChanges": {
+  "treatment-packages": [
+   {
+    "row": "AHV-WB.004.quotation-box",
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Dates, accommodation and quotation",
+    "after": "Dates and accommodation"
+   },
+   {
+    "row": "AHV-WB.004.quotation-box",
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "body"
+    ],
+    "before": "Once you understand the programme, confirm your dates, accommodation and quotation with our team. Review what is included, what is charged separately and any programme-specific minimum stay before arranging travel.",
+    "after": "Once you understand the programme, confirm your dates and accommodation with our team. Review what is included, what is charged separately and any programme-specific minimum stay before arranging travel."
+   },
+   {
+    "row": "AHV-WB.004.quotation-box",
+    "path": [
+     "faq",
+     1,
+     "a"
+    ],
+    "before": "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask whether a programme may suit you. Request a quotation explaining the treatment, doctor reviews and any later services included in your stay, along with separately charged items.",
+    "after": "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask whether a programme may suit you. Before booking, ask the team to explain the treatment, doctor reviews and any later services included in your stay, along with separately charged items."
+   },
+   {
+    "row": "AHV-WB.004.quotation-box",
+    "path": [
+     "faq",
+     3,
+     "a"
+    ],
+    "before": "Your quotation depends on the programme, duration, dates, villa category and occupancy. Ask for a clear breakdown of included care and any extras. Review medicines, tests, additional sessions, transport and personal services before confirming your booking.",
+    "after": "The cost depends on the programme, duration, dates, villa category and occupancy. Ask for a clear breakdown of included care and any extras. Review medicines, tests, additional sessions, transport and personal services before confirming your booking."
+   },
+   {
+    "row": "AHV-WB.004.quotation-box",
+    "path": [
+     "faq",
+     4,
+     "a"
+    ],
+    "before": "No. Treatment schedules and yoga arrangements vary between programmes. Your quotation should explain the prescribed therapies, meals, doctor reviews and group or private sessions included in your stay. Ask our team to confirm the details of your chosen programme.",
+    "after": "No. Treatment schedules and yoga arrangements vary between programmes. Ask our team which prescribed therapies, meals, doctor reviews and group or private sessions are included in your stay, and confirm the details of your chosen programme."
+   },
+   {
+    "row": "AHV-WB.004.quotation-box",
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Dates, accommodation and quotation",
+    "after": "Dates and accommodation"
+   },
+   {
+    "row": "AHV-WB.004.quotation-box",
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "body"
+    ],
+    "before": "Once you understand the programme, confirm your dates, accommodation and quotation with our team. Review what is included, what is charged separately and any programme-specific minimum stay before arranging travel.",
+    "after": "Once you understand the programme, confirm your dates and accommodation with our team. Review what is included, what is charged separately and any programme-specific minimum stay before arranging travel."
+   },
+   {
+    "row": "AHV-WB.004.quotation-box",
+    "path": [
+     "page",
+     "closing",
+     "paragraphs",
+     0
+    ],
+    "before": "Tell us what you need from your stay and when you hope to travel. Start with a free initial doctor consultation, then review your care plan and quotation before booking.",
+    "after": "Tell us what you need from your stay and when you hope to travel. Start with a free initial doctor consultation, then review your care plan before booking."
+   }
+  ],
+  "panchakarma": [
+   {
+    "row": "AHV-WB.030.quotation-box",
+    "path": [
+     "faq",
+     4,
+     "q"
+    ],
+    "before": "Is the consultation free, and how is my stay quoted?",
+    "after": "Is the consultation free, and what affects the cost of my stay?"
+   },
+   {
+    "row": "AHV-WB.030.quotation-box",
+    "path": [
+     "faq",
+     4,
+     "a"
+    ],
+    "before": "Your initial doctor consultation is free. The stay is quoted according to your programme, duration, dates and villa occupancy. Ask for a breakdown of included care, doctor reviews and any later services, with separately charged items clearly explained before booking.",
+    "after": "Your initial doctor consultation is free. The cost of your stay depends on your programme, duration, dates and villa occupancy. Ask for a breakdown of included care, doctor reviews and any later services, with separately charged items clearly explained before booking."
+   },
+   {
+    "row": "AHV-WB.030.quotation-box",
+    "path": [
+     "page",
+     "closing",
+     "paragraphs",
+     0
+    ],
+    "before": "Discuss your needs, the time you have available and what the programme may involve. Start with a free initial doctor consultation and review your treatment plan and quotation before you book.",
+    "after": "Discuss your needs, the time you have available and what the programme may involve. Start with a free initial doctor consultation and review your treatment plan before you book."
+   }
+  ],
+  "ayurveda-retreat": [
+   {
+    "row": "AHV-WB.149.quotation-box",
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Review your plan and quotation",
+    "after": "Review your plan"
+   },
+   {
+    "row": "AHV-WB.149.quotation-box",
+    "path": [
+     "faq",
+     1,
+     "a"
+    ],
+    "before": "There are several villa categories, including Deluxe, Classic and Royal Villas and the Maharaja Suite. Ask our team about availability, layout, occupancy and any access needs for your dates. Confirm the accommodation in your quotation so you know which arrangements are included before booking.",
+    "after": "There are several villa categories, including Deluxe, Classic and Royal Villas and the Maharaja Suite. Ask our team about availability, layout, occupancy and any access needs for your dates. Confirm the accommodation with our team so you know which arrangements are included before booking."
+   },
+   {
+    "row": "AHV-WB.149.quotation-box",
+    "path": [
+     "faq",
+     3,
+     "a"
+    ],
+    "before": "Discuss your plans with patient care before booking. Tell us who will receive treatment, who will accompany them and whether you prefer to share accommodation. Each person considering care needs an individual assessment. Confirm occupancy, meals, programme dates and companion charges in the quotation.",
+    "after": "Discuss your plans with patient care before booking. Tell us who will receive treatment, who will accompany them and whether you prefer to share accommodation. Each person considering care needs an individual assessment. Confirm occupancy, meals, programme dates and companion charges with the team."
+   },
+   {
+    "row": "AHV-WB.149.quotation-box",
+    "path": [
+     "faq",
+     4,
+     "a"
+    ],
+    "before": "Yes. Your initial doctor consultation is free. Share your health history, current treatment and questions to discuss whether a stay may suit you. Ask for a quotation covering your programme, accommodation and any later services before you book.",
+    "after": "Yes. Your initial doctor consultation is free. Share your health history, current treatment and questions to discuss whether a stay may suit you. Before you book, confirm what your programme, accommodation and any later services include."
+   },
+   {
+    "row": "AHV-WB.149.quotation-box",
+    "path": [
+     "faq",
+     5,
+     "q"
+    ],
+    "before": "What should I check in my quotation?",
+    "after": "What should I check before booking?"
+   },
+   {
+    "row": "AHV-WB.149.quotation-box",
+    "path": [
+     "faq",
+     5,
+     "a"
+    ],
+    "before": "Ask for the recommended programme, number of nights, villa occupancy and the care included for your dates. Confirm which medicines, tests, specialist services or travel arrangements cost extra. Review the full quotation with our team before booking, so you understand both the stay and any additional charges.",
+    "after": "Ask for the recommended programme, number of nights, villa occupancy and the care included for your dates. Confirm which medicines, tests, specialist services or travel arrangements cost extra. Review the full details with our team before booking, so you understand both the stay and any additional charges."
+   },
+   {
+    "row": "AHV-WB.149.quotation-box",
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Review your plan and quotation",
+    "after": "Review your plan"
+   },
+   {
+    "row": "AHV-WB.149.quotation-box",
+    "path": [
+     "page",
+     "closing",
+     "paragraphs",
+     0
+    ],
+    "before": "Tell us what you need from your stay, who will travel with you and when you hope to visit. Start with a free initial doctor consultation, then review your programme and quotation with our team.",
+    "after": "Tell us what you need from your stay, who will travel with you and when you hope to visit. Start with a free initial doctor consultation, then review your programme with our team."
+   }
+  ],
+  "weight-management": [
+   {
+    "row": "AHV-WB.288.quotation-box",
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Agree your plan, dates and quotation",
+    "after": "Agree your plan and dates"
+   },
+   {
+    "row": "AHV-WB.288.quotation-box",
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "body"
+    ],
+    "before": "Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Your doctor discusses the duration appropriate to your needs; confirm the programme, dates and quotation before making travel arrangements.",
+    "after": "Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Your doctor discusses the duration appropriate to your needs; confirm the programme and dates before making travel arrangements."
+   },
+   {
+    "row": "AHV-WB.288.quotation-box",
+    "path": [
+     "faq",
+     6,
+     "a"
+    ],
+    "before": "Your initial doctor consultation is free. Ask for a quotation covering your programme, accommodation, care and any later services. Review what is included and any separately charged items before confirming your stay.",
+    "after": "Your initial doctor consultation is free. Ask our team to set out your programme, accommodation, care and any later services, then review what is included and any separately charged items before confirming your stay."
+   },
+   {
+    "row": "AHV-WB.288.quotation-box",
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Agree your plan, dates and quotation",
+    "after": "Agree your plan and dates"
+   },
+   {
+    "row": "AHV-WB.288.quotation-box",
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "body"
+    ],
+    "before": "Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Your doctor discusses the duration appropriate to your needs; confirm the programme, dates and quotation before making travel arrangements.",
+    "after": "Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Your doctor discusses the duration appropriate to your needs; confirm the programme and dates before making travel arrangements."
+   }
+  ],
+  "lp-south-india": [
+   {
+    "row": "AHV-WB.310.quotation-box",
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Confirm your plan and quotation",
+    "after": "Confirm your plan"
+   },
+   {
+    "row": "AHV-WB.310.quotation-box",
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "body"
+    ],
+    "before": "Confirm your programme, villa occupancy, inclusions and booking terms in a personalised quotation. Keep your travel days separate from the time recommended for care.",
+    "after": "Confirm your programme, villa occupancy, inclusions and booking terms. Keep your travel days separate from the time recommended for care."
+   },
+   {
+    "row": "AHV-WB.310.quotation-box",
+    "path": [
+     "faq",
+     3,
+     "a"
+    ],
+    "before": "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Before booking a stay, request a quotation explaining the treatment, accommodation, doctor reviews and any later services, along with separately charged items.",
+    "after": "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Before booking a stay, ask the team to explain the treatment, accommodation, doctor reviews and any later services, along with separately charged items."
+   },
+   {
+    "row": "AHV-WB.310.quotation-box",
+    "path": [
+     "faq",
+     4,
+     "a"
+    ],
+    "before": "Confirm the recommended programme, number of nights, villa category and occupancy in your quotation. Ask which care, meals and sessions are included, and which medicines, tests, additional services or travel arrangements cost extra. Review the booking terms before making a payment.",
+    "after": "Confirm the recommended programme, number of nights, villa category and occupancy with the team. Ask which care, meals and sessions are included, and which medicines, tests, additional services or travel arrangements cost extra. Review the booking terms before making a payment."
+   },
+   {
+    "row": "AHV-WB.310.quotation-box",
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Confirm your plan and quotation",
+    "after": "Confirm your plan"
+   },
+   {
+    "row": "AHV-WB.310.quotation-box",
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "body"
+    ],
+    "before": "Confirm your programme, villa occupancy, inclusions and booking terms in a personalised quotation. Keep your travel days separate from the time recommended for care.",
+    "after": "Confirm your programme, villa occupancy, inclusions and booking terms. Keep your travel days separate from the time recommended for care."
+   }
+  ],
+  "lp-hospital-kerala": [
+   {
+    "row": "AHV-WB.334.quotation-box",
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Review your plan and quotation",
+    "after": "Review your plan"
+   },
+   {
+    "row": "AHV-WB.334.quotation-box",
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "body"
+    ],
+    "before": "Understand the proposed therapies and daily routine. Then review a quotation covering your programme, accommodation and included care, with any extra charges set out.",
+    "after": "Understand the proposed therapies and daily routine. Then review your programme, accommodation and included care, with any extra charges set out."
+   },
+   {
+    "row": "AHV-WB.334.quotation-box",
+    "path": [
+     "faq",
+     2,
+     "a"
+    ],
+    "before": "Discuss this with patient care before admission. Explain who will receive treatment, who will accompany them and what assistance may be needed. Confirm accommodation, meals, access arrangements and any companion charges in your quotation before booking.",
+    "after": "Discuss this with patient care before admission. Explain who will receive treatment, who will accompany them and what assistance may be needed. Confirm accommodation, meals, access arrangements and any companion charges before booking."
+   },
+   {
+    "row": "AHV-WB.334.quotation-box",
+    "path": [
+     "faq",
+     3,
+     "a"
+    ],
+    "before": "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Before booking a stay, request a quotation explaining the treatment, accommodation, doctor reviews and any later services, along with separately charged items.",
+    "after": "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Before booking a stay, ask the team to explain the treatment, accommodation, doctor reviews and any later services, along with separately charged items."
+   },
+   {
+    "row": "AHV-WB.334.quotation-box",
+    "path": [
+     "faq",
+     4,
+     "a"
+    ],
+    "before": "Confirm the recommended programme, number of nights, villa category and occupancy in your quotation. Ask which care, meals and sessions are included, and which medicines, tests, additional services or travel arrangements cost extra. Review the booking terms before making a payment.",
+    "after": "Confirm the recommended programme, number of nights, villa category and occupancy with the team. Ask which care, meals and sessions are included, and which medicines, tests, additional services or travel arrangements cost extra. Review the booking terms before making a payment."
+   },
+   {
+    "row": "AHV-WB.334.quotation-box",
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Review your plan and quotation",
+    "after": "Review your plan"
+   },
+   {
+    "row": "AHV-WB.334.quotation-box",
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "body"
+    ],
+    "before": "Understand the proposed therapies and daily routine. Then review a quotation covering your programme, accommodation and included care, with any extra charges set out.",
+    "after": "Understand the proposed therapies and daily routine. Then review your programme, accommodation and included care, with any extra charges set out."
+   }
+  ],
+  "lp-treatment-packages": [
+   {
+    "row": "AHV-WB.465.quotation-box",
+    "path": [
+     "admission",
+     "heading"
+    ],
+    "before": "From enquiry to a quotation you can compare",
+    "after": "From enquiry to your stay"
+   },
+   {
+    "row": "AHV-WB.465.quotation-box",
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Review a written quotation",
+    "after": "Agree your programme and stay"
+   },
+   {
+    "row": "AHV-WB.465.quotation-box",
+    "path": [
+     "admission",
+     "steps",
+     1,
+     "body"
+    ],
+    "before": "Ask about preparation and recommended duration. Patient care then brings the programme and accommodation together in a written quotation for your dates, duration and occupancy.",
+    "after": "Ask about preparation and recommended duration. Patient care then brings the programme and accommodation together for your dates, duration and occupancy."
+   },
+   {
+    "row": "AHV-WB.465.quotation-box",
+    "path": [
+     "faq",
+     1,
+     "a"
+    ],
+    "before": "No. The therapies and routine depend on the programme and your assessment. Ask the doctor to explain the recommended care, and check your quotation for the specific inclusions.",
+    "after": "No. The therapies and routine depend on the programme and your assessment. Ask the doctor to explain the recommended care, and confirm the specific inclusions for your programme with the team."
+   },
+   {
+    "row": "AHV-WB.465.quotation-box",
+    "path": [
+     "faq",
+     3,
+     "a"
+    ],
+    "before": "Compare quotations for the same duration, dates and occupancy, with the care and accommodation clearly described. Check meals, doctor reviews, therapy sessions, taxes and separately charged items rather than relying only on a package name.",
+    "after": "Compare like with like: the same duration, dates and occupancy, with the care and accommodation clearly described. Check meals, doctor reviews, therapy sessions, taxes and separately charged items rather than relying only on a package name."
+   },
+   {
+    "row": "AHV-WB.465.quotation-box",
+    "path": [
+     "faq",
+     5,
+     "a"
+    ],
+    "before": "Yes. The initial doctor consultation is free. Ask for a quotation covering your care and any later services, and review the inclusions and charges before confirming your stay.",
+    "after": "Yes. The initial doctor consultation is free. Ask the team to set out your care and any later services, and review the inclusions and charges before confirming your stay."
+   },
+   {
+    "row": "AHV-WB.465.quotation-box",
+    "path": [
+     "page",
+     "pathway",
+     "heading"
+    ],
+    "before": "From enquiry to a quotation you can compare",
+    "after": "From enquiry to your stay"
+   },
+   {
+    "row": "AHV-WB.465.quotation-box",
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "title"
+    ],
+    "before": "Review a written quotation",
+    "after": "Agree your programme and stay"
+   },
+   {
+    "row": "AHV-WB.465.quotation-box",
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     1,
+     "body"
+    ],
+    "before": "Ask about preparation and recommended duration. Patient care then brings the programme and accommodation together in a written quotation for your dates, duration and occupancy.",
+    "after": "Ask about preparation and recommended duration. Patient care then brings the programme and accommodation together for your dates, duration and occupancy."
+   }
+  ],
+  "pain-management": [
+   {
+    "row": "AHV-WB.054.change",
+    "path": [
+     "page",
+     "offering",
+     "cards",
+     0,
+     "paragraphs",
+     0
+    ],
+    "before": "Discuss therapies such as Abhyangam – full-body medicated oil therapy; Kizhi, a herbal treatment; Pizhichil, a warm oil treatment; Kati Basti, herbal oil pooling; or Nasya, nasal administration. Your doctor explains which procedures suit you and what each session involves.",
+    "after": "Discuss therapies such as Abhyangam, a full-body medicated oil therapy; Kizhi, a herbal treatment; Pizhichil, a warm oil treatment; Kati Basti, herbal oil pooling; or Nasya, nasal administration. Your doctor explains which procedures suit you and what each session involves."
+   }
+  ]
+ }
+}

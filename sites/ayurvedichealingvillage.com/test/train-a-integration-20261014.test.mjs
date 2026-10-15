@@ -8,7 +8,10 @@ import fs from "node:fs";
 import { createHash } from "node:crypto";
 import { TRAIN_A, TRAIN_A_CANDIDATES, reverseTrainASource } from "./fixtures/train-a-20261014.mjs";
 import { reverseTrainBSource } from "./fixtures/train-b-20261015.mjs";
-import { reverseTrainFSource } from "./fixtures/train-f-20261015.mjs";
+import { reverseTrainFSource as reverseTrainFSourceOnly } from "./fixtures/train-f-20261015.mjs";
+import { reverseTrainHSource } from "./fixtures/train-h-20261015.mjs";
+// Train H (15 Oct 2026) composes on Train F (fixtures/train-h-20261015.mjs): its delta is reversed first.
+const reverseTrainFSource = (p, s) => reverseTrainFSourceOnly(p, reverseTrainHSource(p, s));
 
 // Train B (15 Oct 2026) sits on top: its exact deltas are removed first, giving the integrated Train A bytes. Train F
 // (15 Oct 2026) sits on top of Train B and is removed before it.

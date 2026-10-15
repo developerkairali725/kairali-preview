@@ -44,9 +44,9 @@ for (const r of manifest.routes) {
     if (/^\s*<div[^>]*>[^<]{3,80}<\/div>/.test(after)) continue;      // already has the line
     const reg = register.get(r.path);
     if (!reg || !reg.sanskrit) { if (side === "desktop") missing.push(`${r.path} (${reg ? reg.name : "not in register"})`); continue; }
-    // the line as the 26 views print it, in each side's own size
+    // the line as the views print it, in each side's own size (AHV-N03.01: one subtitle style per side, 24px / 20px)
     const line = side === "desktop"
-      ? `\n      <div style="font-family:'Marcellus',serif;font-size:22px;color:#75695A;margin:12px 0 0">${esc(reg.sanskrit)}</div>`
+      ? `\n      <div style="font-family:'Marcellus',serif;font-size:24px;color:#75695A;margin:10px 0 0">${esc(reg.sanskrit)}</div>`
       : `\n    <div style="font-family:'Marcellus',serif;font-size:20px;color:#75695A;margin:10px 0 0">${esc(reg.sanskrit)}</div>`;
     T = T.slice(0, h1.index + h1[0].length) + line + T.slice(h1.index + h1[0].length);
     view.template = T;

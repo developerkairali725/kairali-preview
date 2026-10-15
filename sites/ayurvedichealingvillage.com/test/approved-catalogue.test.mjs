@@ -2,11 +2,15 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import vm from 'node:vm';
+import {reverseTrainHSource} from './fixtures/train-h-20261015.mjs';
 const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));
+// Train H (15 Oct 2026, AHV-M023.02) lists the two Coming Soon courses in the yoga hub's own dataset; the finder pins run
+// on the Train F head views (its recorded delta reversed). test/train-h-20261015.test.mjs pins the new yoga hub behaviour.
+const priorView=p=>JSON.parse(reverseTrainHSource(p,fs.readFileSync(p,'utf8')));
 const index=read('public/ahv/search-index.json');
 const future=['/yoga-meditation-program/','/new-to-yoga-teacher-training/'];
 const finder=(slug,side='desktop')=>{
- const view=read(`public/ahv/views/ahv-page-${slug}-${side}.json`);
+ const view=priorView(`public/ahv/views/ahv-page-${slug}-${side}.json`);
  const context={window:{},DCLogic:class{setState(s){Object.assign(this.state,s)}}};
  vm.runInNewContext(view.logic+';globalThis.Instance=Component;',context);
  return { view, instance:new context.Instance() };

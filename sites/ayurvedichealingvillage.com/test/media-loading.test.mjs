@@ -1,9 +1,12 @@
 import { applyStaffExperienceDom } from '../app/(english)/_families/staff-experience.mjs';
 import { repairArticleContactHeading } from '../app/(english)/_families/article-contact-heading.mjs';
+// Train J batch 2 (15 Oct 2026): the reviewed outline wrapper is injected in place of the direct heading call.
+import { repairArticleOutline } from '../app/(english)/_families/article-heading-outline.mjs';
 import { treatmentHeadingLevels } from '../app/(english)/_families/treatment-heading-levels.mjs';
 import { restoreReviewedHead } from '../app/(english)/_families/localized-title.mjs';
 import { repairFaqTopicTargets } from '../app/(english)/_families/faq-topic-targets.mjs';
 import { removeHomeVillaRates } from '../app/(english)/_families/home-villa-rates.mjs';
+import { removeCampaignPriceNotes } from '../app/(english)/_families/campaign-price-notes.mjs';
 import {offersFlow} from '../app/(english)/_families/offers-flow.mjs';
 // Media loading (lane P-perf): the runtime-side fixes in app/(english)/_families/media-loading.mjs.
 // They are injected into BOOT_SCRIPT with fn.toString(), so each must also be self-contained and must
@@ -205,7 +208,7 @@ test("BOOT_SCRIPT with the media-loading layer is valid JavaScript", async () =>
   const end = src.lastIndexOf("`.trim();");
   const body = src.slice(start, end);
   const env = { applyStaffExperienceDom, IS_STAGING: true, ROUTE_CONFIG_ID: "ahv-route-config", DESIGN_ROOT_ID: "ahv-design-root", LINK_ALIASES: {}, IMAGE_ALIASES: {},
-    repairArticleContactHeading, treatmentHeadingLevels, restoreReviewedHead, orderedRuntimeScripts, repairFaqTopicTargets, removeHomeVillaRates, offersFlow, phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, monsoonRuntimeMedia, retreatRuntimeMedia, EAGER_SLOTS, createBackgroundDeferral, installLazyImgOrder, installSlotLoading, lazyImgFirst, deferHeroFilm, formPostSafety, CONSENT_RUNTIME,
+    repairArticleContactHeading, repairArticleOutline, treatmentHeadingLevels, restoreReviewedHead, orderedRuntimeScripts, repairFaqTopicTargets, removeHomeVillaRates, removeCampaignPriceNotes, offersFlow, phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, monsoonRuntimeMedia, retreatRuntimeMedia, EAGER_SLOTS, createBackgroundDeferral, installLazyImgOrder, installSlotLoading, lazyImgFirst, deferHeroFilm, formPostSafety, CONSENT_RUNTIME,
     deferFarSnapshotContent, whenSnapshotPainted, snapshotFocusTarget, preserveSnapshotInputs };
   const script = new Function(...Object.keys(env), "return `" + body + "`;")(...Object.values(env));
   assert.doesNotThrow(() => new Function(script), "BOOT_SCRIPT parses");

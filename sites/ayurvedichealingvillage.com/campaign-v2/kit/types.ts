@@ -69,7 +69,7 @@ export type PageLead = { heading: string; paragraphs: RichText[]; points?: strin
 /** What the page offers, in one of three forms chosen for the content's shape. `kicker` = the section's overline. */
 export type PageOffering = { kicker?: string } & (
   /** A few families of programmes or topics as cards; `programmeLinks` = the links are programme pages (diagnostics). */
-  | { kind: "cards"; heading: string; intro?: RichText[]; cards: { title: string; links?: PageLink[]; paragraphs: RichText[] }[]; programmeLinks?: true }
+  | { kind: "cards"; heading: string; intro?: RichText[]; cards: { title: string; links?: PageLink[]; paragraphs: RichText[]; image?: ImageRef }[]; programmeLinks?: true }
   /** Named items completing a sentence, set as one numbered row (the five Panchakarma procedures). */
   | { kind: "row"; heading: string; lead: string; items: string[]; paragraphs: RichText[] }
   /** Many short topics as a numbered index of disclosures (family: each person's concern). */

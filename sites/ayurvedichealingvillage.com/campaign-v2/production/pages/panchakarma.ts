@@ -94,7 +94,7 @@ export default defineCopy({
     faqHeading: "Frequently asked questions",
     closing: {
       heading: "Plan your Panchakarma stay",
-      paragraphs: ["Discuss your needs, the time you have available and what the programme may involve. Start with a free initial doctor consultation and review your treatment plan and quotation before you book."],
+      paragraphs: ["Discuss your needs, the time you have available and what the programme may involve. Start with a free initial doctor consultation and review your treatment plan before you book."],
     },
   },
   faq: [
@@ -102,7 +102,7 @@ export default defineCopy({
     { q: "How long is the programme, and when might I notice a change?", a: "The published Panchakarma programme is a 14–28 night stay. Your doctor will confirm the recommended duration and discuss realistic goals with you. Responses and timing vary; ask how progress will be reviewed and what preparation or follow-up your plan may involve." },
     { q: "Will I have all five Panchakarma procedures?", a: "Not automatically. Your doctor decides which procedures are appropriate after assessing your health history, medicines and needs. Ask them to explain the proposed procedures, their preparation and availability before you decide on a stay." },
     { q: "What will I eat and do each day?", a: "Your programme combines prescribed therapies, vegetarian meals, yoga, meditation and rest. The doctor advises on your diet and reviews your care. Walks, lectures and garden visits are also available according to the schedule; discuss which activities fit your individual treatment plan." },
-    { q: "Is the consultation free, and how is my stay quoted?", a: "Your initial doctor consultation is free. The stay is quoted according to your programme, duration, dates and villa occupancy. Ask for a breakdown of included care, doctor reviews and any later services, with separately charged items clearly explained before booking." },
+    { q: "Is the consultation free, and what affects the cost of my stay?", a: "Your initial doctor consultation is free. The cost of your stay depends on your programme, duration, dates and villa occupancy. Ask for a breakdown of included care, doctor reviews and any later services, with separately charged items clearly explained before booking." },
     { q: "What should I arrange before travelling?", a: "Discuss your medical history, current medicines and available time with the doctor. Confirm your programme, dates and accommodation, and ask about preparation and follow-up. Tell our team about dietary or access needs and whether you need help arranging airport transfers." },
   ],
 });

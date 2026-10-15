@@ -11,6 +11,13 @@ export function reviewedCatalogueTitle(path, metadata) {
 export function reviewedTitleFor(path, locale, title) {
   return PATHS.has(path) && (LOCALES.has(locale) || (['/panchakarma/', '/archive-yoga-retreat/', '/yoga-and-meditation-package/'].includes(path) && locale === 'en')) && typeof title === 'string' && title.trim() ? title : undefined;
 }
+// AHV-M030.01 (Train G rework, 15 Oct 2026): localized routes whose imported dataset writes the ENGLISH canonical after
+// hydration although the server already emits the self-referencing locale canonical. The boot head guard restores the
+// locale's own canonical for these paths (no title or description is changed).
+export const LOCALE_SELF_CANONICAL_PATHS = new Set(["/karkidaka-chikitsha-or-monsoon-wellness.html", "/kairali-air-india-maharaja-club.html"]);
+export function keepsLocaleCanonical(path, locale) {
+  return LOCALE_SELF_CANONICAL_PATHS.has(path) && LOCALES.has(locale);
+}
 // Self-contained: boot.ts injects this function into its existing head-mutation guard.
 export function restoreReviewedHead(doc, title, canonical, description, shareDescription) {
   let changed = false;

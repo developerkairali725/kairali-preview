@@ -1,6 +1,6 @@
 import type { SectionProps } from "../LandingPage";
 import { SectionHead } from "../head";
-import { CHANNELS, LENGTHS, formSchemaFor, monthOptions, programOptions, resolveSchema } from "../../forms/schema.ts";
+import { CHANNELS, formSchemaFor, monthOptions, programOptions, resolveSchema, stayLengths } from "../../forms/schema.ts";
 import type { PrefillLabels } from "./consult-prefill.ts";
 import { contact, site } from "../../../campaign-v110/lib/site.ts";
 import { WaIcon, PhoneIcon } from "../icons";
@@ -24,7 +24,7 @@ export default function Enquiry({ c, v, req }: SectionProps) {
   const schema = resolveSchema(production && c.cta?.primary ? { ...base, submitLabel: c.cta.primary } : base, octx);
   // Labels for the ConsultBar answers, written into a textarea when the schema has no fields for them.
   const prefillLabels: PrefillLabels = {
-    program: programOptions(octx), month: monthOptions(octx), length: LENGTHS,
+    program: programOptions(octx), month: monthOptions(octx), length: stayLengths(c.route),
     channel: CHANNELS.map((x) => ({ value: x.id, label: x.label })),
   };
   // A designed production page closes with its own invitation, and says what "free" covers beside the form.

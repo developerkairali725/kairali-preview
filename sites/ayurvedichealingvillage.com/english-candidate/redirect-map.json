@@ -356,6 +356,17 @@
         "basis": "GSC Web, all countries/devices, exact apex URL, 5 July–4 October 2026; observed 7 October 2026; ranking-research-20261007/EVIDENCE.json"
       },
       "ownerApproval": "2026-10-07 owner: approved as per search data; M005/M009/M010; cb41d2e2d2c48191a3ead4fe5c267451"
+    },
+    "/the-baoli-special-deal/": {
+      "to": "/the-baoli-advert-box-deal/",
+      "reason": "M016/M017 (AHV-M016.02): owner combined the two Baoli pages ('16 and 17 combine'); the survivor is the URL with more search evidence, kept as the inactive archive/contact page. The duplicate page had only the same contact reference, so no content is lost.",
+      "gsc": {
+        "clicks": 0,
+        "impressions": 16,
+        "position": 52.56,
+        "basis": "GSC UI export 2026-07-19 Pages.csv (launches/ayurvedichealingvillage.com/baseline/raw/gsc-ui-export-2026-07-19); survivor /the-baoli-advert-box-deal/ 0 clicks, 24 impressions, position 28.79"
+      },
+      "ownerApproval": "2026-10-10 owner five answers (Sentinel_15817ab250f88191b26a3bdc9959d262, DEC-BAOLI): keep inactive Baoli as archive/contact page; 16 and 17 combine"
     }
   },
   "legacyNote": "Owner ruling, Abilash in chat, 2026-09-20: 'Build monsoon, 301 the rest'. Two entries below are marked legacy: true. They differ from the twelve of 2026-09-19 in one way that matters to the tests - they are NOT in route-manifest.json, because they were never in the rebuild to begin with. They are ad-landing destinations: absent from the live XML sitemap, linked from no page on the live site (five hubs crawled, zero internal .html links), and so invisible to both inputs the manifest was built from. Each carries the live status and the Search Console numbers that evidence it existed, so 'do not redirect a path that never existed' is still enforced - just against measurement instead of against the manifest. Working: docs/reports/2026-09-20-ahv-legacy-url-fates-what-is-left.md."

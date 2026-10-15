@@ -54,6 +54,8 @@ export type RouteBinding = {
    * Admission draws its photograph from the gallery), never the hero or one of the five mosaic photographs.
    */
   pathwayImage: ImageRef;
+  /** One photograph per programme card of a "cards" offering, in card order (Train H, AHV-WB.114/.137); absent = no card photographs. */
+  offeringImages?: ImageRef[];
   gallery: { category: GalleryCategory; image: ImageRef }[];
   /**
    * The route's existing lead identity: fields.form_variant and the guide download, as the page it replaces, plus
@@ -225,9 +227,15 @@ const enquiry = (path: string): RouteBinding["productionForm"] => ({ formVariant
 
 const SPECS: Spec[] = [
   // Review batch 1
-  { slug: "monsoon-wellness", route: "/karkidaka-chikitsha-or-monsoon-wellness.html", variant: "C", hero: "kt-190", stillness: "ahv-img-016", pathway: "kt-202", form: r10("monsoon") },
+  // AHV-WB.123.change (Train J3): its own share picture, a 1200×630 crop of the route's approved rest photograph
+  // ahv-img-016 (no person), with that photograph's registry alt. Not the hero kt-190: that is already the share picture
+  // of /pain-management.html (AHV-WB.077), so it would not be this page's own. og:locale/site name unchanged.
+  { slug: "monsoon-wellness", route: "/karkidaka-chikitsha-or-monsoon-wellness.html", variant: "C", hero: "kt-190", stillness: "ahv-img-016", pathway: "kt-202", form: r10("monsoon"), og: OG_OWN("monsoon-wellness"), ogAlt: img("ahv-img-016").alt },
   { slug: "rejuvenation-detox", route: "/preventive-rejuvenation-detoxification.html", variant: "C", hero: "kt-202", stillness: "ahv-img-016", pathway: "kt-199", form: r10("detox"), og: OG_OWN("rejuvenation-detox"), ogAlt: img("kt-202").alt },
-  { slug: "ayurveda-retreat", route: "/ayurveda-retreat-kerala.html", variant: "B", hero: "wx-hero", pathway: "kt-199", form: r10("retreat") },
+  // AHV-WB.166.change (Train J3): the page's own published share picture (public/images/og/ayurveda-retreat-kerala.html.jpg,
+  // 1200×630, already served) instead of the R10 image six other pages share. og:locale/site name unchanged; no alt
+  // is added (the file has no registry entry).
+  { slug: "ayurveda-retreat", route: "/ayurveda-retreat-kerala.html", variant: "B", hero: "wx-hero", pathway: "kt-199", form: r10("retreat"), og: { url: `${SITE_ORIGIN}/images/og/ayurveda-retreat-kerala.html.jpg`, width: 1200, height: 630, locale: "en_IN" } },
   { slug: "wellness-kerala", route: "/wellness-resort-kerala.html", variant: "B", hero: "kt-314", pathway: "kt-202", form: enquiry("/wellness-resort-kerala.html"), og: OG_EN_US("wellness-resort-kerala.html.jpg") },
   { slug: "cleansing-centre", route: "/kairali-cleansing-centre.html", variant: "A", hero: "kt-202", mobile: "kt-190", stillness: "ahv-img-016", pathway: "kt-199", form: enquiry("/kairali-cleansing-centre.html"), og: OG_EN_US("kairali-cleansing-centre.html.jpg") },
   // Review batch 2
@@ -349,6 +357,52 @@ for (const [slug, pick] of Object.entries(PHOTO_PICKS_20261015) as [ProductionSl
     if (!category) throw new Error(`production/bindings: no gallery category for steps photograph ${pick.pathway}`);
     r.gallery = [...r.gallery, { category, image: r.pathwayImage }];
   }
+}
+
+/**
+ * Train H (15 Oct 2026), owner decision 10 (pick from the image bank, old or new). AHV-WB.335.hero-image: the
+ * /lp/ayurvedic-hospital-kerala/ hero (desktop and phone) becomes the physician consultation room (ahv-pkd-111, Palakkad,
+ * IMAGE_CATALOG register_ok=yes, no person present) instead of the morning-mist photograph it shared with
+ * /Ayurveda_Treatment_Neo_S.India_Cities.html. AHV-WB.114.change / AHV-WB.137.change: each programme card of the Karkidaka
+ * and rejuvenation-detox routes carries one small photograph (production/sections/Offering.tsx), all no-person Palakkad
+ * image-bank photographs already published for other routes; none is the route's own hero, steps photograph or gallery
+ * photograph, and the card copy is unchanged. Applied after the Train F picks. Reversible: delete a route's entry.
+ */
+export const PHOTO_PICKS_20261015H: Readonly<Partial<Record<ProductionSlug, { hero?: string; cards?: readonly string[] }>>> = {
+  "lp-hospital-kerala": { hero: "ahv-pkd-111" }, // AHV-WB.335.hero-image
+  "monsoon-wellness": { cards: ["ahv-img-045", "ahv-pkd-115", "ahv-pkd-50"] }, // AHV-WB.114.change
+  "rejuvenation-detox": { cards: ["ahv-img-012", "ahv-pkd-132", "ahv-img-018"] }, // AHV-WB.137.change
+};
+for (const [slug, pick] of Object.entries(PHOTO_PICKS_20261015H) as [ProductionSlug, { hero?: string; cards?: readonly string[] }][]) {
+  const r = ROUTES[slug];
+  const own = new Set([r.heroImage.id, r.mobileImage.id, r.pathwayImage.id, ...r.gallery.map((g) => g.image.id)]);
+  if (pick.hero) {
+    if (own.has(pick.hero)) throw new Error(`production/bindings: ${slug} hero ${pick.hero} is already one of the route's photographs`);
+    r.heroImage = img(pick.hero); r.mobileImage = r.heroImage;
+  }
+  if (pick.cards) {
+    if (new Set(pick.cards).size !== pick.cards.length || pick.cards.some((id) => own.has(id))) throw new Error(`production/bindings: ${slug} card photographs must be distinct and not the route's own`);
+    r.offeringImages = pick.cards.map(img);
+  }
+}
+
+/**
+ * Train J batch 3 (15 Oct 2026), AHV-WB.298.change and AHV-WB.454.change (staff review 9 Oct 2026, phone: "only text
+ * boxes, no photos" from the top to the villa photos) under owner decision 10 (pick from the image bank, old or new):
+ * each programme card of /weight-loss.html and /lp/treatment-in-kerala/ carries one small photograph, exactly as Train H's
+ * cards (production/sections/Offering.tsx). All are no-person Palakkad photographs of the owner-approved image bank
+ * (data/images.ts); none is the route's own hero, phone hero, steps or gallery photograph, and they are distinct per route.
+ * Applied after the Train H picks. Reversible: delete a route's entry.
+ */
+export const CARD_PICKS_20261015J3: Readonly<Partial<Record<ProductionSlug, readonly string[]>>> = {
+  "weight-management": ["ahv-pkd-115", "ahv-img-012", "ahv-img-034", "ahv-pkd-111"], // AHV-WB.298.change
+  "lp-treatment-kerala": ["ahv-pkd-115", "ahv-img-018", "ahv-pkd-180", "ahv-pkd-111"], // AHV-WB.454.change
+};
+for (const [slug, cards] of Object.entries(CARD_PICKS_20261015J3) as [ProductionSlug, readonly string[]][]) {
+  const r = ROUTES[slug];
+  const own = new Set([r.heroImage.id, r.mobileImage.id, r.pathwayImage.id, ...r.gallery.map((g) => g.image.id)]);
+  if (r.offeringImages || new Set(cards).size !== cards.length || cards.some((id) => own.has(id))) throw new Error(`production/bindings: ${slug} card photographs must be new, distinct and not the route's own`);
+  r.offeringImages = cards.map(img);
 }
 
 /** The 20 routes added on 8 Oct 2026, in their four review batches of five. */

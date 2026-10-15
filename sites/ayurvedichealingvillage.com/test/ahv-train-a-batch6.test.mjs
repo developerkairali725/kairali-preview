@@ -9,10 +9,16 @@ import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/
 import { ROUTES } from "../campaign-v2/production/bindings.ts";
 import { COPY } from "../campaign-v2/production/pages/index.ts";
 import { UI } from "../campaign-v2/production/ui.ts";
-import { D_VILLAGE_AND_STORIES, ORDER, sectionOrder } from "../campaign-v2/production/section-order.ts";
+import { D_VILLAGE_AND_STORIES as CURRENT_D_VILLAGE_AND_STORIES, ORDER, sectionOrder } from "../campaign-v2/production/section-order.ts";
 import { FILMS } from "../campaign-v2/data/films.ts";
 import { APPROVED_GALLERY_ADDITIONS } from "../campaign-v2/data/gallery-images.ts";
-import { GUEST_VIDEO_ROUTES, routeAllowed, filmIdFromHref } from "../campaign-v2/production/sections/guest-video-policy.mjs";
+import { GUEST_VIDEO_ROUTES as CURRENT_GUEST_VIDEO_ROUTES, routeAllowed as currentRouteAllowed, filmIdFromHref } from "../campaign-v2/production/sections/guest-video-policy.mjs";
+// Train J3 (15 Oct 2026, AHV-WB.362): /lp/kairali-brand/ later joins the D village-and-films routes and the guest-video
+// allowlist; these pins run on the head lists, helpers and config with that exact delta reversed (fixtures/train-j3-20261015.mjs).
+import { reverseTrainJ3Config, reverseTrainJ3List, routeAllowedBeforeTrainJ3 } from "./fixtures/train-j3-20261015.mjs";
+const D_VILLAGE_AND_STORIES = reverseTrainJ3List("D_VILLAGE_AND_STORIES", CURRENT_D_VILLAGE_AND_STORIES);
+const GUEST_VIDEO_ROUTES = reverseTrainJ3List("GUEST_VIDEO_ROUTES", CURRENT_GUEST_VIDEO_ROUTES);
+const routeAllowed = routeAllowedBeforeTrainJ3(currentRouteAllowed);
 import {
   MESSAGES, PRODUCTION_CAMPAIGN_FORM, campaignEnquiryForm, monthOptions, validateStep, CONSENT_FIELD,
 } from "../campaign-v2/forms/schema.ts";
@@ -131,7 +137,7 @@ test("AHV-WB.249/320/430/272: four D routes show the existing village and consen
     assert.ok(c.gallery.every((g) => g.image.id !== ROUTES[slug].heroImage.id), `${slug}: the hero is not repeated`);
   }
   // lp-brand (no batch-6 row) keeps the shortest D path, no films and no player.
-  const lpBrand = productionCampaign("lp-brand");
+  const lpBrand = reverseTrainJ3Config("lp-brand", JSON.parse(JSON.stringify(productionCampaign("lp-brand"))));
   assert.deepEqual(sectionOrder(lpBrand, "D"), ["lead", "physicians", "offering", "pathway", "stay"]);
   assert.equal(routeAllowed(ROUTES["lp-brand"].route, "en"), false);
 });

@@ -124,4 +124,12 @@ export const IMAGES: Record<string, ImageRef> = {
     width: 1600, height: 1067, alt: "Covered colonnaded walkway with a timber roof linking brick-and-stone treatment blocks through gardens",
     decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
   },
+  // Train H (15 Oct 2026), owner decision 10: the /lp/ayurvedic-hospital-kerala/ hero (AHV-WB.335.hero-image;
+  // production/bindings.ts PHOTO_PICKS_20261015H). Built by tools/build-train-h-20261015-photos.py from the SHA-256-verified
+  // library original (ahv-edited -111.jpg, IMAGE_CATALOG register_ok=yes); no person present (framed founders' portraits only).
+  "ahv-pkd-111": {
+    id: "ahv-pkd-111", src: "/ahv/assets/img/owner-decision-20261015/ahv-pkd-111.webp",
+    width: 1600, height: 1067, alt: "Physician consultation room with a curved wooden desk, an examination couch and round windows at the Healing Village",
+    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
+  },
 };

@@ -15,6 +15,9 @@ import { createHash } from "node:crypto";
 import fs from "node:fs";
 import { IMAGES } from "../../campaign-v2/data/images.ts";
 import { reverseTrainASource } from "./train-a-20261014.mjs";
+// Train G (15 Oct 2026) sits on top of Trains B and F: its exact delta is removed first (fixtures/train-g-20261015.mjs);
+// a caller that already reversed it (through reverseTrainFSource / reverseTrainFConfig) passes the Train F head through.
+import { reverseTrainGSource, reverseTrainGConfig } from "./train-g-20261015.mjs";
 
 const json = (name) => JSON.parse(fs.readFileSync(new URL(`./${name}`, import.meta.url), "utf8"));
 const sha = (s) => createHash("sha256").update(s).digest("hex");
@@ -71,7 +74,8 @@ function trainABase(path, trainA) {
 }
 
 /** The integrated Train A text of `path` with every Train B candidate delta removed (unchanged if none touched it). */
-export function reverseTrainBSource(path, text) {
+export function reverseTrainBSource(path, rawText) {
+  const text = reverseTrainGSource(path, rawText);
   const touching = TRAIN_B_CANDIDATES.filter((c) => c.files[path]);
   if (!touching.length) return text;
   const trainA = [...touching].reverse().reduce((t, c) => strip(path, t, c.files[path].replacements, c.name), text);
@@ -225,7 +229,7 @@ export function reverseTrainBConfig(slug, config, options = {}) {
   // Newest merge first: owner decisions 23 and 22, D06, D05, D04, D03, C03/C04 rest photos, C02, queued batch 15, owner decisions C.
   const newestFirst = [reverseDecision23Config, reverseDecision22Config, reverseD06Config, reverseD05Config, reverseD04Config, reverseD03Config,
     reverseRestConfig, reverseC02Config, reverseBatch15Config, reverseOwnerDecisionsCConfig];
-  return newestFirst.reduce((c, reverse) => reverse(slug, c, options), config);
+  return newestFirst.reduce((c, reverse) => reverse(slug, c, options), reverseTrainGConfig(slug, config));
 }
 
 /**
