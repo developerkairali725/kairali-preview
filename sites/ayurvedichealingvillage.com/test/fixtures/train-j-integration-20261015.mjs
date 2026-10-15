@@ -5,7 +5,7 @@
 //   - peelTrainJ2OverJ1 removes the Train J2 delta from the integrated bytes and asserts the Train J1 after-bytes;
 //   - peelTrainJ1UnderJ2 removes the Train J1 delta from the integrated bytes and asserts the Train J2 after-bytes.
 //   Both accept exactly the integrated bytes (full SHA-256) and pass any other text through.
-//   - peelTrainJSource is the hook for every older chain: it peels the whole of Train J (integration, then J2, J1),
+//   - peelTrainJSource is the hook for every older chain: it peels the whole of Train J (integration, then J3, J2, J1),
 //     returning the Train I head bytes for a Train J file and passing any other text through, so each older layer still
 //     asserts its own states.
 import assert from "node:assert/strict";
@@ -13,6 +13,7 @@ import { createHash } from "node:crypto";
 import fs from "node:fs";
 import { peelTrainJ1Source } from "./train-j1-20261015.mjs";
 import { peelTrainJ2Source } from "./train-j2-20261015.mjs";
+import { peelTrainJ3Source } from "./train-j3-20261015.mjs";
 
 export const TRAIN_J_INTEGRATION = JSON.parse(fs.readFileSync(new URL("./train-j-integration-20261015.json", import.meta.url), "utf8"));
 const sha = (s) => createHash("sha256").update(s).digest("hex");
@@ -37,5 +38,5 @@ export function peelTrainJ1UnderJ2(path, text) { return peel(path, text, "j1Unde
 
 /** The whole of Train J peeled: a Train J file's integrated bytes become the Train I head bytes; other text passes through. */
 export function peelTrainJSource(path, text) {
-  return peelTrainJ1Source(path, peelTrainJ2Source(path, peelTrainJ2OverJ1(path, text)));
+  return peelTrainJ1Source(path, peelTrainJ2Source(path, peelTrainJ3Source(path, peelTrainJ2OverJ1(path, text))));
 }

@@ -54,10 +54,11 @@ export default defineCopy({
       heading: "Bring care and daily habits together",
       intro: ["Your assessment shapes the programme. The schedule is individual; a programme name does not prescribe every treatment for every patient."],
       cards: [
-        { title: "Prescribed therapies", paragraphs: ["Your doctor explains which therapies may be appropriate and how they fit into the programme. Oil therapies, steam treatments or other Ayurvedic care are considered according to your assessment."] },
-        { title: "A personalised vegetarian diet", paragraphs: ["A personalised vegetarian diet is part of the programme. Discuss your usual eating patterns, food restrictions and practical needs, so the team can explain the proposed meals and arrangements."] },
-        { title: "Activity and rest in your day", paragraphs: ["The daily routine makes time for care, appropriate activity and rest. Ask about yoga and meditation sessions that suit your assessment, and tell the doctor about any injury or limitation before taking part."] },
-        { title: "Progress and life after the stay", paragraphs: ["Discuss how progress will be reviewed and which habits you would like to continue at home. Before discharge, ask for clear guidance on your routine and any recommended follow-up, including how later consultations or services are arranged."] },
+        // AHV-WB.298.change (Train J3, staff review 9 Oct: "make the text shorter"): each card one sentence, same facts.
+        { title: "Prescribed therapies", paragraphs: ["Your doctor explains which oil therapies, steam treatments or other Ayurvedic care may suit your assessment and programme."] },
+        { title: "A personalised vegetarian diet", paragraphs: ["A personalised vegetarian diet is part of the programme; tell the team your usual eating patterns, food restrictions and practical needs."] },
+        { title: "Activity and rest in your day", paragraphs: ["Your day makes time for care, appropriate activity, rest and yoga or meditation that suit your assessment; tell the doctor about any injury or limitation first."] },
+        { title: "Progress and life after the stay", paragraphs: ["Ask how progress is reviewed, and before discharge get clear guidance on the habits to continue at home and any follow-up consultations or services."] },
       ],
     },
     pathway: {

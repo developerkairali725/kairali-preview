@@ -13,6 +13,8 @@ import { IMAGES } from "../../campaign-v2/data/images.ts";
 // Train G integration (15 Oct 2026): Train H is merged onto Train G. The Train G rework also edited three of Train H's files
 // (design-view.tsx, forms/schema.ts, reader25a-family-data.js); that exact delta is removed first, so Train H's pins run unchanged.
 import { reverseTrainGHIntegrationSource } from "./train-gh-integration-20261015.mjs";
+// Train J3 (15 Oct 2026) sits on top: its binding fields (og, ogImageAlt, card photographs) are removed exactly first.
+import { reverseTrainJ3Binding, reverseTrainJ3Config } from "./train-j3-20261015.mjs";
 
 export const TRAIN_H = JSON.parse(fs.readFileSync(new URL("./train-h-20261015.json", import.meta.url), "utf8"));
 const sha = (s) => createHash("sha256").update(s).digest("hex");
@@ -36,6 +38,7 @@ export function reverseTrainHSource(path, rawText) {
 
 /** A production config (JSON copy) with Train H's photographs reversed exactly. Use the returned value. */
 export function reverseTrainHConfig(slug, c) {
+  reverseTrainJ3Config(slug, c);
   const phone = TRAIN_H.phonePlaceholders[slug];
   const fields = (c.form?.schema?.steps ?? []).flatMap((s) => s.fields);
   if (phone) assert.ok(fields.some((f) => f.name === "phone"), `${slug}: phone field`);
@@ -70,6 +73,7 @@ export function reverseTrainHConfig(slug, c) {
 /** Bindings (production/bindings.ts ROUTES entries, a mutable copy): restore the Train F hero and phone hero; drop the
  *  card photographs. */
 export function reverseTrainHBindings(bindings) {
+  for (const slug of Object.keys(bindings)) bindings[slug] = reverseTrainJ3Binding(slug, bindings[slug]);
   for (const [slug, b] of Object.entries(bindings)) {
     const p = PICKS[slug];
     if (!p) { assert.equal(b.offeringImages, undefined, `${slug}: no card photographs`); continue; }

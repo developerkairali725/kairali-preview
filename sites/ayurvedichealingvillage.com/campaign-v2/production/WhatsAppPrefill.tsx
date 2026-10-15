@@ -8,7 +8,8 @@ import { isBareWhatsApp, prefillHref, type PrefillLocale } from "./whatsapp-pref
  * landing pages' LpSticky does: the links already rendered (header, hero, enquiry, footer) on mount, and any bare link
  * the shared chrome adds later (chat choices) at the moment it is pressed. Same number; nothing else on the link
  * changes, so measurement (interaction-map.ts: any wa.me link) is unaffected. Renders nothing. Without JavaScript the
- * links stay the plain WhatsApp link. Mounted only by app/(ppc-v2-ru)/lp/treatment-in-kerala-russian/page.tsx.
+ * links stay the plain WhatsApp link. Mounted only by app/(ppc-v2-ru)/lp/treatment-in-kerala-russian/page.tsx and
+ * (Train J3, AHV-WB.514.whatsapp-message) app/(ppc-v2-de)/lp/behandlung-in-kerala/page.tsx.
  */
 export default function WhatsAppPrefill({ locale }: { locale: PrefillLocale }) {
   useEffect(() => {

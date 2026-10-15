@@ -24,6 +24,8 @@ import { TRAIN_H, reverseTrainHBindings, reverseTrainHConfig, reverseTrainHSourc
 // Train G integration (15 Oct 2026): the Train G rework's exact delta on the shared files, and its Russian phone example
 // (AHV-WB.548), are reversed first so the Train H checks below run on exactly Train H's state.
 import { reverseTrainGHIntegrationSource, reverseTrainGReworkPhoneExample, reversePhoneTable } from "./fixtures/train-gh-integration-20261015.mjs";
+// Train J3 (15 Oct 2026): its card photographs and copy edits (AHV-WB.298/454 and others) are reversed exactly first.
+import { reverseTrainJ3Binding, reverseTrainJ3Config } from "./fixtures/train-j3-20261015.mjs";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const require = createRequire(path.join(SITE, "package.json"));
@@ -76,8 +78,8 @@ test("the recorded Train H delta reverses exactly to the Train F head, file by f
   // Untouched routes' bindings and configs are exactly as before; the three picked routes reverse to Train F.
   const before = reverseTrainHBindings(clone(ROUTES));
   for (const slug of PRODUCTION_SLUGS) {
-    if (!TRAIN_H.photoPicks[slug]) assert.deepEqual(before[slug], clone(ROUTES[slug]), slug);
-    const c = reverseTrainHConfig(slug, clone(productionCampaign(slug)));
+    if (!TRAIN_H.photoPicks[slug]) assert.deepEqual(before[slug], reverseTrainJ3Binding(slug, clone(ROUTES[slug])), slug);
+    const c = reverseTrainHConfig(slug, reverseTrainJ3Config(slug, clone(productionCampaign(slug))));
     if (TRAIN_H.photoPicks[slug]?.after) for (const v of ["A", "B", "C", "D"]) assert.equal(c.hero.image[v].id, "wx-hero", slug);
     if (c.page.offering.kind === "cards") assert.ok(c.page.offering.cards.every((card) => !("image" in card)), slug);
   }
@@ -289,7 +291,7 @@ test("AHV-WB.114/.137: each programme card carries one approved no-person photog
   }
   // Every other route renders no card photograph.
   for (const slug of PRODUCTION_SLUGS) if (!CARD_ROUTES[slug]) {
-    const o = productionCampaign(slug).page.offering;
+    const o = reverseTrainJ3Config(slug, clone(productionCampaign(slug))).page.offering;
     if (o.kind === "cards") assert.ok(o.cards.every((card) => card.image === undefined), slug);
   }
 });

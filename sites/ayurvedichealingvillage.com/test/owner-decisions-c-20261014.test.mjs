@@ -22,9 +22,11 @@ import { reverseTrainHBindings, reverseTrainHConfig } from "./fixtures/train-h-2
 // Train H (15 Oct 2026) composes on Train F (fixtures/train-h-20261015.mjs): its delta is reversed first.
 const reverseTrainFBindings = (b) => reverseTrainFBindingsOnly(reverseTrainHBindings(b));
 const reverseTrainFConfig = (slug, c) => reverseTrainFConfigOnly(slug, reverseTrainHConfig(slug, c));
+// Train J3 (15 Oct 2026): its exact source delta (the German WhatsApp prefill mount, AHV-WB.514) is peeled first.
+import { peelTrainJ3Source } from "./fixtures/train-j3-20261015.mjs";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const read = (p) => fs.readFileSync(path.join(SITE, p), "utf8");
+const read = (p) => peelTrainJ3Source(p, fs.readFileSync(path.join(SITE, p), "utf8"));
 const sha256 = (b) => crypto.createHash("sha256").update(b).digest("hex");
 const code = (src) => src.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|\s)\/\/.*$/gm, "$1");
 

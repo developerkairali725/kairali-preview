@@ -227,9 +227,15 @@ const enquiry = (path: string): RouteBinding["productionForm"] => ({ formVariant
 
 const SPECS: Spec[] = [
   // Review batch 1
-  { slug: "monsoon-wellness", route: "/karkidaka-chikitsha-or-monsoon-wellness.html", variant: "C", hero: "kt-190", stillness: "ahv-img-016", pathway: "kt-202", form: r10("monsoon") },
+  // AHV-WB.123.change (Train J3): its own share picture, a 1200×630 crop of the route's approved rest photograph
+  // ahv-img-016 (no person), with that photograph's registry alt. Not the hero kt-190: that is already the share picture
+  // of /pain-management.html (AHV-WB.077), so it would not be this page's own. og:locale/site name unchanged.
+  { slug: "monsoon-wellness", route: "/karkidaka-chikitsha-or-monsoon-wellness.html", variant: "C", hero: "kt-190", stillness: "ahv-img-016", pathway: "kt-202", form: r10("monsoon"), og: OG_OWN("monsoon-wellness"), ogAlt: img("ahv-img-016").alt },
   { slug: "rejuvenation-detox", route: "/preventive-rejuvenation-detoxification.html", variant: "C", hero: "kt-202", stillness: "ahv-img-016", pathway: "kt-199", form: r10("detox"), og: OG_OWN("rejuvenation-detox"), ogAlt: img("kt-202").alt },
-  { slug: "ayurveda-retreat", route: "/ayurveda-retreat-kerala.html", variant: "B", hero: "wx-hero", pathway: "kt-199", form: r10("retreat") },
+  // AHV-WB.166.change (Train J3): the page's own published share picture (public/images/og/ayurveda-retreat-kerala.html.jpg,
+  // 1200×630, already served) instead of the R10 image six other pages share. og:locale/site name unchanged; no alt
+  // is added (the file has no registry entry).
+  { slug: "ayurveda-retreat", route: "/ayurveda-retreat-kerala.html", variant: "B", hero: "wx-hero", pathway: "kt-199", form: r10("retreat"), og: { url: `${SITE_ORIGIN}/images/og/ayurveda-retreat-kerala.html.jpg`, width: 1200, height: 630, locale: "en_IN" } },
   { slug: "wellness-kerala", route: "/wellness-resort-kerala.html", variant: "B", hero: "kt-314", pathway: "kt-202", form: enquiry("/wellness-resort-kerala.html"), og: OG_EN_US("wellness-resort-kerala.html.jpg") },
   { slug: "cleansing-centre", route: "/kairali-cleansing-centre.html", variant: "A", hero: "kt-202", mobile: "kt-190", stillness: "ahv-img-016", pathway: "kt-199", form: enquiry("/kairali-cleansing-centre.html"), og: OG_EN_US("kairali-cleansing-centre.html.jpg") },
   // Review batch 2
@@ -378,6 +384,25 @@ for (const [slug, pick] of Object.entries(PHOTO_PICKS_20261015H) as [ProductionS
     if (new Set(pick.cards).size !== pick.cards.length || pick.cards.some((id) => own.has(id))) throw new Error(`production/bindings: ${slug} card photographs must be distinct and not the route's own`);
     r.offeringImages = pick.cards.map(img);
   }
+}
+
+/**
+ * Train J batch 3 (15 Oct 2026), AHV-WB.298.change and AHV-WB.454.change (staff review 9 Oct 2026, phone: "only text
+ * boxes, no photos" from the top to the villa photos) under owner decision 10 (pick from the image bank, old or new):
+ * each programme card of /weight-loss.html and /lp/treatment-in-kerala/ carries one small photograph, exactly as Train H's
+ * cards (production/sections/Offering.tsx). All are no-person Palakkad photographs of the owner-approved image bank
+ * (data/images.ts); none is the route's own hero, phone hero, steps or gallery photograph, and they are distinct per route.
+ * Applied after the Train H picks. Reversible: delete a route's entry.
+ */
+export const CARD_PICKS_20261015J3: Readonly<Partial<Record<ProductionSlug, readonly string[]>>> = {
+  "weight-management": ["ahv-pkd-115", "ahv-img-012", "ahv-img-034", "ahv-pkd-111"], // AHV-WB.298.change
+  "lp-treatment-kerala": ["ahv-pkd-115", "ahv-img-018", "ahv-pkd-180", "ahv-pkd-111"], // AHV-WB.454.change
+};
+for (const [slug, cards] of Object.entries(CARD_PICKS_20261015J3) as [ProductionSlug, readonly string[]][]) {
+  const r = ROUTES[slug];
+  const own = new Set([r.heroImage.id, r.mobileImage.id, r.pathwayImage.id, ...r.gallery.map((g) => g.image.id)]);
+  if (r.offeringImages || new Set(cards).size !== cards.length || cards.some((id) => own.has(id))) throw new Error(`production/bindings: ${slug} card photographs must be new, distinct and not the route's own`);
+  r.offeringImages = cards.map(img);
 }
 
 /** The 20 routes added on 8 Oct 2026, in their four review batches of five. */

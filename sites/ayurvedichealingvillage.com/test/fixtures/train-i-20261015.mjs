@@ -11,10 +11,12 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import fs from "node:fs";
-// Train J (batches J1, J2 and later J3) composes on Train I the same way: its whole delta is peeled first, so the
+// Train J (batches J1, J2 and J3) composes on Train I the same way: its whole delta is peeled first, so the
 // Train J bytes reach every Train I consumer (and through peelTrainISource every older chain) as the Train I bytes
 // (fixtures/train-j-integration-20261015.mjs composes the batch fixtures train-j1/j2/j3-20261015.mjs).
 import { peelTrainJSource } from "./train-j-integration-20261015.mjs";
+// Train J3 also changed production-config fields; reverseTrainJ3Config restores them first (fixtures/train-j3-20261015.mjs).
+import { reverseTrainJ3Config } from "./train-j3-20261015.mjs";
 
 export const TRAIN_I = JSON.parse(fs.readFileSync(new URL("./train-i-20261015.json", import.meta.url), "utf8"));
 const sha = (s) => createHash("sha256").update(s).digest("hex");
@@ -48,6 +50,7 @@ const at = (c, path) => path.reduce((o, k) => (o == null ? undefined : o[k]), c)
 
 /** A production config (JSON copy) with Train I's field changes reversed exactly. Mutates and returns `c`. */
 export function reverseTrainIConfig(slug, c) {
+  reverseTrainJ3Config(slug, c);
   const changes = TRAIN_I.configChanges[slug];
   if (!changes || !c) return c;
   const present = changes.filter(({ path }) => at(c, path.slice(0, -1)) != null);

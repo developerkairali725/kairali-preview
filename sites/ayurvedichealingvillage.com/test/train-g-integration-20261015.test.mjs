@@ -108,7 +108,8 @@ test("integration edit: brand keeps a 1-3 paragraph lead; the AHV-WB.270 and AHV
 test("rejected rows stay out: E02 benefit lines and E04's AHV-M004.01", () => {
   for (const slug of ["ayurveda-retreat", "lp-treatment-kerala", "lp-treatment-packages"]) {
     assert.equal(TRAIN_G.files[`campaign-v2/production/pages/${slug}.ts`], undefined, slug);
-    assert.equal(productionCampaign(slug).page.lead.paragraphs.length, 2, slug);
+    // Train J3 (AHV-WB.452.benefit-copy, a new non-repeating line) is peeled first by reverseTrainIConfig.
+    assert.equal(reverseTrainIConfig(slug, plain(productionCampaign(slug))).page.lead.paragraphs.length, 2, slug);
   }
   assert.deepEqual(Object.keys(TRAIN_E02.files).sort(), Object.keys(TRAIN_E02.configChanges).map((s) => `campaign-v2/production/pages/${s}.ts`).sort());
   assert.equal(Object.keys(TRAIN_E02.rows).every((r) => r.endsWith(".quotation-box")), true);

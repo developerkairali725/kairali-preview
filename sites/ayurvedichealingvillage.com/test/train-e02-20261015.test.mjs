@@ -13,9 +13,11 @@ import { fileURLToPath } from "node:url";
 import { productionCampaign } from "../campaign-v2/production/load.ts";
 import { UI } from "../campaign-v2/production/ui.ts";
 import { N03 } from "./fixtures/n03-sanskrit-subtitle-20261015.mjs";
+// Train J3 (15 Oct 2026) sits on top (its own AHV-WB.452 line): its exact delta is peeled first.
+import { peelTrainJ3Source, reverseTrainJ3Config } from "./fixtures/train-j3-20261015.mjs";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const read = (p) => fs.readFileSync(path.join(SITE, p), "utf8");
+const read = (p) => peelTrainJ3Source(p, fs.readFileSync(path.join(SITE, p), "utf8"));
 
 /** Every string in a config subtree, with its path. */
 function strings(value, at = [], out = []) {
@@ -74,7 +76,7 @@ const E02_REJECTED_BENEFIT = {
 
 test("Train G: the rejected E02 benefit-copy lines (AHV-WB.156/452/473) are not integrated", () => {
   for (const [slug, start] of Object.entries(E02_REJECTED_BENEFIT)) {
-    const c = productionCampaign(slug);
+    const c = reverseTrainJ3Config(slug, JSON.parse(JSON.stringify(productionCampaign(slug))));
     assert.equal(c.page.lead.paragraphs.some((p) => p.startsWith(start)), false, slug);
     assert.doesNotMatch(read(`campaign-v2/production/pages/${slug}.ts`), /AHV-WB\.(156|452|473)\.benefit-copy/, slug);
   }

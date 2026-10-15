@@ -6,14 +6,19 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
-  APPROVED_FILM_IDS, CLOSED, CLOSED_VIEW, GUEST_VIDEO_ROUTES, REQUIRED_CATEGORIES, consentGranted, createGuestVideoController,
-  dialogSupported, embedSrc, filmIdFromHref, interceptsClick, localThumb, openCookieSettings, playerSrc, reduce, routeAllowed, watchHref,
+  APPROVED_FILM_IDS, CLOSED, CLOSED_VIEW, GUEST_VIDEO_ROUTES as CURRENT_GUEST_VIDEO_ROUTES, REQUIRED_CATEGORIES, consentGranted, createGuestVideoController,
+  dialogSupported, embedSrc, filmIdFromHref, interceptsClick, localThumb, openCookieSettings, playerSrc, reduce, routeAllowed as currentRouteAllowed, watchHref,
 } from '../campaign-v2/production/sections/guest-video-policy.mjs';
 import * as policy from '../public/consent/policy.mjs';
 import * as vendor from '../public/consent/vendor/cookieconsent.esm.js';
 import { COPY } from '../campaign-v2/production/pages/index.ts';
 import { ROUTES } from '../campaign-v2/production/bindings.ts';
 import { BATCH6 } from './fixtures/train-a-batch6-20261014.mjs';
+// Train J3 (15 Oct 2026, AHV-WB.362): /lp/kairali-brand/ later joins the D village-and-films routes and the guest-video
+// allowlist; these pins run on the head lists, helpers and config with that exact delta reversed (fixtures/train-j3-20261015.mjs).
+import { reverseTrainJ3Config, reverseTrainJ3List, routeAllowedBeforeTrainJ3 } from './fixtures/train-j3-20261015.mjs';
+const GUEST_VIDEO_ROUTES = reverseTrainJ3List('GUEST_VIDEO_ROUTES', CURRENT_GUEST_VIDEO_ROUTES);
+const routeAllowed = routeAllowedBeforeTrainJ3(currentRouteAllowed);
 
 const read = (p) => readFileSync(new URL(p, import.meta.url), 'utf8');
 const dialogSrc = read('../campaign-v2/production/sections/GuestVideoDialog.tsx');
@@ -21,7 +26,7 @@ const storiesSrc = read('../campaign-v2/production/sections/Stories.tsx');
 const cssSrc = read('../campaign-v2/production/sections/GuestVideoDialog.module.css');
 const vendorSrc = read('../public/consent/vendor/cookieconsent.esm.js');
 
-const storyPages = Object.values(COPY).filter((c) => c.page?.stories);
+const storyPages = Object.values(COPY).map((c) => reverseTrainJ3Config(c.slug, JSON.parse(JSON.stringify(c)))).filter((c) => c.page?.stories);
 const locale = (slug) => ROUTES[slug].locale ?? 'en';
 
 // ---------------------------------------------------------------------------------------------------------- scope

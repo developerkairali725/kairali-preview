@@ -15,13 +15,18 @@ import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/
 import { ROUTES } from "../campaign-v2/production/bindings.ts";
 import { COPY } from "../campaign-v2/production/pages/index.ts";
 import { CURRENT_ROSTER } from "../campaign-v2/data/doctors.ts";
-import { DOCTORS_AFTER_LEAD, D_VILLAGE_AND_STORIES, ORDER, baseOrder as routeBaseOrder, sectionOrder, variantOrder } from "../campaign-v2/production/section-order.ts";
+import { DOCTORS_AFTER_LEAD, D_VILLAGE_AND_STORIES as CURRENT_D_VILLAGE_AND_STORIES, ORDER, baseOrder as currentBaseOrder, sectionOrder, variantOrder } from "../campaign-v2/production/section-order.ts";
+// Train J3 (15 Oct 2026, AHV-WB.362) adds /lp/kairali-brand/ to the D village-and-films routes; these pins run on the head
+// state with that exact delta reversed (fixtures/train-j3-20261015.mjs).
+import { baseOrderBeforeTrainJ3, reverseTrainJ3Config, reverseTrainJ3List } from "./fixtures/train-j3-20261015.mjs";
+const D_VILLAGE_AND_STORIES = reverseTrainJ3List("D_VILLAGE_AND_STORIES", CURRENT_D_VILLAGE_AND_STORIES);
+const routeBaseOrder = baseOrderBeforeTrainJ3(currentBaseOrder, ORDER);
 import { reverseTrainASource } from "./fixtures/train-a-20261014.mjs";
 import { reverseTrainBSource } from "./fixtures/train-b-20261015.mjs";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (p) => fs.readFileSync(path.join(SITE, p), "utf8");
-const C = Object.fromEntries(PRODUCTION_SLUGS.map((s) => [s, productionCampaign(s)]));
+const C = Object.fromEntries(PRODUCTION_SLUGS.map((s) => [s, reverseTrainJ3Config(s, JSON.parse(JSON.stringify(productionCampaign(s))))]));
 const FIRST4 = ["treatment-packages", "panchakarma", "pain-management", "family-ayurvedic-retreat"];
 /** Batch 2: the remaining 20 route families (deliverables batch02/SCOPE.json), with their variant and locale. */
 const REMAINING20 = {
