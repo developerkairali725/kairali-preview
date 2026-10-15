@@ -14,6 +14,8 @@ import { unitId } from "../tools/l10n/lib.mjs";
 import { LOCALES } from "../tools/l10n/locales.mjs";
 import { productionCss } from "../scripts/build-production-css.mjs";
 import { TRAIN_J1, reverseTrainJ1Source, peelTrainJ1Source, peelTrainJ1Generated } from "./fixtures/train-j1-20261015.mjs";
+// Train J integration: a file another Train J batch also edited is read as Train J1 left it (fixtures/train-j-integration-20261015.mjs).
+import { peelTrainJ2OverJ1 } from "./fixtures/train-j-integration-20261015.mjs";
 import { PLAN, snapshotFile } from "../tools/repair-contextual-links-train-j1-20261015.mjs";
 import * as WORKSHOP from "../tools/repair-workshop-past-event-train-j1-20261015.mjs";
 import * as BAOLI from "../tools/repair-baoli-archive-train-j1-20261015.mjs";
@@ -71,7 +73,7 @@ test("every Train J1 file reverses exactly to the Train I head bytes (git 00e944
   assert.equal(TRAIN_J1.base, BASE);
   assert.equal(Object.keys(TRAIN_J1.files).length, 32);
   for (const [p, e] of Object.entries(TRAIN_J1.files)) {
-    const now = read(p);
+    const now = peelTrainJ2OverJ1(p, read(p));
     assert.equal(sha(now), e.afterSHA256, `${p}: current bytes are Train J1's`);
     const head = reverseTrainJ1Source(p, now);
     assert.equal(sha(head), e.beforeSHA256, p);
