@@ -82,11 +82,13 @@
     var list = canonicalOptions[field];
     return list && index >= 0 && index < list.length ? list[index] : fallback;
   }
+  var paidLocale = { '/lp/behandlung-in-kerala/': 'de', '/lp/treatment-in-kerala-russian/': 'ru' };
   function language() {
     // Chrome Translate can rewrite <html lang>; released route prefixes are stable.
     var match = /^\/(hi|de|fr|es|it|pt|nl|ru|ar|zh|ja|ko)(?:\/|$)/.exec(location.pathname);
     if (match) return match[1];
-    return location.pathname === '/lp/behandlung-in-kerala/' ? 'de' : 'en';
+    // Paid landers in one language at an unprefixed URL (as public/design/exit-offer.js PAID_LOCALE).
+    return Object.prototype.hasOwnProperty.call(paidLocale, location.pathname) ? paidLocale[location.pathname] : 'en';
   }
   function attribution() {
     var bridge = window.AHV_MEASUREMENT;
