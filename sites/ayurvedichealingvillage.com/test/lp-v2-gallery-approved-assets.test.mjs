@@ -16,6 +16,9 @@ import { IMAGES } from "../campaign-v2/data/images.ts";
 import { APPROVED_GALLERY_IMAGES, APPROVED_GALLERY_ADDITIONS } from "../campaign-v2/data/gallery-images.ts";
 import { UI } from "../campaign-v2/production/ui.ts";
 import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
+import { reverseTrainBBindings, trainBGalleryAppended, trainBGalleryBefore } from "./fixtures/train-b-20261015.mjs";
+// Train F (15 Oct 2026) sits on top of Train B: its exact photograph picks are reversed first (fixtures/train-f-20261015.mjs).
+import { reverseTrainFBindings, trainFGalleryAppended, trainFGalleryBefore } from "./fixtures/train-f-20261015.mjs";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const P = (...p) => path.join(SITE, ...p);
@@ -115,7 +118,9 @@ test("targets: the existing gallery is kept entry for entry, then only the appro
   assert.equal(new Set([...TARGETS, ...UNTARGETED]).size, 24);
   assert.deepEqual([...TARGETS, ...UNTARGETED].sort(), [...PRODUCTION_SLUGS].sort());
   for (const slug of TARGETS) {
-    const g = ROUTES[slug].gallery;
+    // Train B (15 Oct): the steps photographs appended by owner decision 10 are removed exactly first (fixtures/train-b-20261015.mjs).
+    // Train F's appended steps photographs are removed exactly before Train B's.
+    const g = trainBGalleryBefore(slug, trainFGalleryBefore(slug, ROUTES[slug].gallery));
     const base = baseGallery(slug);
     assert.equal(g.length, base.length + APPROVED_GALLERY_ADDITIONS.length, slug);
     base.forEach(([category, id], i) => {
@@ -128,7 +133,7 @@ test("targets: the existing gallery is kept entry for entry, then only the appro
   }
 });
 
-test("targets: only the eight approved rest images change; all prior gallery and other-field preservation checks remain", () => {
+test("targets: only the sixteen approved rest images change; all prior gallery and other-field preservation checks remain", () => {
   const approvedRest = {
     id: "ahv-img-016", src: "/ahv/assets/img/owner-approved-20260928/ahv-img-016.webp",
     width: 1600, height: 1067, alt: "Cottage, garden path and water channel among palms at the Healing Village in Palakkad",
@@ -138,7 +143,9 @@ test("targets: only the eight approved rest images change; all prior gallery and
   const file = fs.readFileSync(P("public" + approvedRest.src));
   assert.equal(sha256(file), "52bb11bb871ff8b2a9e325149e79a010df5f7023294c15ee905a5621be1e49b2");
   assert.deepEqual(webpSize(file), { width: 1600, height: 1067 });
-  const first4BeforeRestChange = reverseBatch8(pick(FIRST4, true));
+  // Train B (15 Oct) first, then Train A batch 8: each candidate's exact binding delta is reversed newest first.
+  // Train F (15 Oct) is reversed before Train B.
+  const first4BeforeRestChange = reverseBatch8(reverseTrainBBindings(reverseTrainFBindings(pick(FIRST4, true))));
   for (const slug of FIRST4) {
     assert.deepEqual(ROUTES[slug].stillnessImage, approvedRest, slug);
     assert.deepEqual(productionCampaign(slug).stillness.image, approvedRest, slug);
@@ -147,16 +154,24 @@ test("targets: only the eight approved rest images change; all prior gallery and
     first4BeforeRestChange[slug].stillnessImage = IMAGES["gal-post-therapy-stillness-wakem"];
   }
   assert.equal(sha256(JSON.stringify(first4BeforeRestChange)), BASE_FIRST4_NO_GALLERY_HASH);
-  // Batch 2 adopts only these four route images; reverse them before the original historical hash check.
-  const batch2BeforeRestChange = reverseBatch8(pick(BATCH2, true));
-  for (const slug of ["cleansing-centre", "treatment-kerala", "weight-management", "lp-hospital-kerala"]) {
+  // Prior batch 2 four, reviewed batch 3 (train C03) three and final batch (train C04) two route images; reverse only rest
+  // fields before the original hash check, after the composed Train B and Train A batch 8 binding reversals.
+  const batch2BeforeRestChange = reverseBatch8(reverseTrainBBindings(reverseTrainFBindings(pick(BATCH2, true))));
+  for (const slug of ["cleansing-centre", "treatment-kerala", "weight-management", "lp-hospital-kerala", "lp-cleansing-centre", "lp-pain-management", "lp-treatment-kerala", "monsoon-wellness", "rejuvenation-detox"]) {
     assert.deepEqual(ROUTES[slug].stillnessImage, approvedRest, slug);
     assert.deepEqual(productionCampaign(slug).stillness.image, approvedRest, slug);
     assert.ok(!ROUTES[slug].gallery.some(g => g.image.id === approvedRest.id), slug);
     batch2BeforeRestChange[slug].stillnessImage = IMAGES["gal-post-therapy-stillness-wakem"];
   }
   assert.equal(sha256(JSON.stringify(batch2BeforeRestChange)), BASE_BATCH2_NO_GALLERY_HASH);
-  assert.equal(sha256(JSON.stringify(pick(BATCH3, true))), BASE_BATCH3_NO_GALLERY_HASH);
+  const batch3BeforeRestChange = pick(BATCH3, true);
+  for (const slug of ["lp-weight-management", "lp-treatment-kerala-ru", "lp-behandlung-kerala"]) {
+    assert.deepEqual(ROUTES[slug].stillnessImage, approvedRest, slug);
+    assert.deepEqual(productionCampaign(slug).stillness.image, approvedRest, slug);
+    assert.ok(!ROUTES[slug].gallery.some(g => g.image.id === approvedRest.id), slug);
+    batch3BeforeRestChange[slug].stillnessImage = IMAGES["gal-post-therapy-stillness-wakem"];
+  }
+  assert.equal(sha256(JSON.stringify(batch3BeforeRestChange)), BASE_BATCH3_NO_GALLERY_HASH);
   for (const slug of TARGETS) {
     const b = ROUTES[slug];
     const steps = b.pathwayImage.id;
@@ -170,7 +185,9 @@ test("targets: only the eight approved rest images change; all prior gallery and
 test("the five untargeted routes are unchanged and carry none of the additions", () => {
   assert.equal(UNTARGETED.length, 5);
   assert.deepEqual(Object.keys(ROUTES).filter((s) => !TARGETS.includes(s)), UNTARGETED);
-  assert.equal(sha256(JSON.stringify(pick(UNTARGETED, false))), BASE_UNTARGETED_HASH);
+  // Train F (15 Oct 2026, AHV-WB.311.hero-image) changes only the /lp/ayurveda-treatment-south-india/ hero; reversed exactly on a
+  // copy, the five routes hash to the frozen baseline. Their galleries carry none of the additions either way.
+  assert.equal(sha256(JSON.stringify(reverseTrainFBindings(JSON.parse(JSON.stringify(pick(UNTARGETED, false)))))), BASE_UNTARGETED_HASH);
   for (const slug of UNTARGETED) {
     for (const g of ROUTES[slug].gallery) assert.ok(!ADDED_IDS.includes(g.image.id), `${slug}: ${g.image.id}`);
     assert.ok(!productionCampaign(slug).gallery.some((g) => ADDED_IDS.includes(g.image.id)), slug);
@@ -188,7 +205,9 @@ test("counts: the page config carries the binding's gallery, so the mosaic chip 
     // Village.tsx Mosaic: more = pool.length - tiles.length (pool = gallery on a standard page); the dialog gets c.gallery.
     const pool = c.gallery;
     const tiles = pool.slice(0, 5);
-    assert.equal(pool.length - tiles.length, baseGallery(slug).length + APPROVED_GALLERY_ADDITIONS.length - 5, slug);
+    // Plus the one steps photograph appended by owner decision 10, where recorded (Train B, fixtures/train-b-20261015.mjs).
+    // Plus the one steps photograph appended by Train F, where recorded (fixtures/train-f-20261015.mjs).
+    assert.equal(pool.length - tiles.length, baseGallery(slug).length + APPROVED_GALLERY_ADDITIONS.length + trainBGalleryAppended(slug) + trainFGalleryAppended(slug) - 5, slug);
     assert.ok(c.gallery.length <= 24, slug); // kit lint count.gallery: 6-24
   }
 });

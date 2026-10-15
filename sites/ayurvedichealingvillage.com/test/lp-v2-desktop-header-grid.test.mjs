@@ -5,6 +5,9 @@ import {createHash} from 'node:crypto';
 import {productionCss} from '../scripts/build-production-css.mjs';
 import {PRODUCTION_SLUGS,productionCampaign} from '../campaign-v2/production/load.ts';
 import {reverseTrainASource} from './fixtures/train-a-20261014.mjs';
+import {reverseTrainBSource} from './fixtures/train-b-20261015.mjs';
+// Train F (15 Oct 2026) sits on top of Train B: its exact photograph picks are reversed first (fixtures/train-f-20261015.mjs).
+import {reverseTrainFSource} from './fixtures/train-f-20261015.mjs';
 const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const f=JSON.parse(read('test/fixtures/desktop-header-approved-delta.json'));
 const hash=s=>createHash('sha256').update(s).digest('hex');
@@ -17,7 +20,8 @@ const legal=JSON.parse(read('test/fixtures/form-legal-links-delta.json'));
 const LEGAL_CSS=['campaign-v2/production/document.css','campaign-v2/sections/sections.css'];
 const beforeLegal=(p,t)=>{if(!LEGAL_CSS.includes(p))return t;assert.equal(t.split(legal.cssAddition).length-1,1,p+' approved legal-links CSS occurs once');return t.replace(legal.cssAddition,'');};
 // Newest first: every Train A candidate delta (composed, exact), batch 7's WhatsApp delta, then the legal-links CSS.
-const prior=(p)=>beforeLegal(p,beforeLater(p,reverseTrainASource(p,read(p))));
+// Train B (15 Oct): the composed Train B reversal runs first (fixtures/train-b-20261015.mjs; C02/C03 header Call prefix).
+const prior=(p)=>beforeLegal(p,beforeLater(p,reverseTrainASource(p,reverseTrainBSource(p,reverseTrainFSource(p,read(p))))));
 const D=['south-india-cities','brand','lp-south-india','lp-brand','lp-panchakarma'];
 test('only the exact approved unpinned desktop header rule changes either stylesheet',()=>{
  for(const [p,expected] of Object.entries(f.baseline)){

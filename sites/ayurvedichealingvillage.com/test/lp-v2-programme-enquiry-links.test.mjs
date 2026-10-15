@@ -246,7 +246,8 @@ test("all 21 programme links show the complete existing overview, without disclo
 
 test("every description is copied verbatim from its existing programme source", () => {
   const refs = JSON.parse(fs.readFileSync(path.join(SITE, "test/fixtures/programme-description-sources.json"), "utf8"));
-  assert.equal(Object.keys(refs).length, 11);
+  // AHV-WB.026 adds the /yoga-therapy-individual/ survivor key, verified against the same yoga source.
+  assert.equal(Object.keys(refs).length, 12);
   for (const [route, ref] of Object.entries(refs)) {
     const source = fs.readFileSync(path.join(SITE, ref.source), "utf8");
     let expected;

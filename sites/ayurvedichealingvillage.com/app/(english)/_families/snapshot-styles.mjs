@@ -175,6 +175,19 @@ export function imageLedFirstScreen(routePath, locale = "en") {
   return IMAGE_LED_FIRST_SCREEN.has(String(routePath || ""));
 }
 
+/**
+ * Past-retreat records (the hist9 family, every locale): serve the snapshot's font stylesheet as the same <link>
+ * the runtime's helmet adds, not as an inline copy. The helmet link lands while the phone snapshot is still on
+ * screen; its @font-face rules duplicated the inline ones, so Chrome re-resolved the text to the new, not yet
+ * loaded faces and painted one frame in the fallback face. Where that frame re-wrapped a breadcrumb or heading,
+ * the snapshot moved and moved back: mobile CLS 0.636 (0.318 x 2) on /de/katha-wellness-rueckzug-2019/, up to
+ * 0.65 across the family's locales (Train B release gate, 15 Oct 2026). One shared stylesheet means one set of
+ * faces (the retreat precedent, 6281e8800).
+ */
+export function sharedFontLinkRoute(route) {
+  return Boolean(route) && route.dataset === "assets/hist9-family-data.js";
+}
+
 /** Measured text-led finder/hub: preload only the existing heading face alongside the body face. */
 export function routeFontPreloads(route, styles, readText, locale = "en") {
   const body = bodyFontFiles(styles, readText);

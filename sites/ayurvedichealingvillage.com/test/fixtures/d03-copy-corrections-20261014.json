@@ -1,0 +1,124 @@
+{
+  "task": "AHV train D03, 14 Oct 2026: source-only candidate",
+  "basis": "Workbook User Review 9 Oct rows 7/33/60/85/152/194/220/291/313/337 (quotation repetition), 82 and 487 (terminology). Assessments in operations/AHV-ASSESSMENT-CONSUMPTION.json: IMPLEMENT_SCOPED_DELTA. Quotation edits delete only restatements; the stay quotation box, the owner-rule primarySupport line, the enquiry-only no-price rule and every distinct fact remain.",
+  "files": {
+    "campaign-v2/production/pages/family-ayurvedic-retreat.ts": {
+      "beforeSHA256": "f2e4e5ad17afe672a5eaa4791884139ad242b3aa64324e8b4271cd29a459bb60",
+      "replacements": [
+        {
+          "row": "AHV-WB.082.quotation-box",
+          "before": "It does not make treatment, tests, medicines or later services free. Ask for a clear quotation before confirming the trip.",
+          "after": "It does not make treatment, tests, medicines or later services free."
+        }
+      ],
+      "afterSHA256": "3e01fede9afca288f44ae7a485db309f33de6efb33c1ce05bd06a95346ca7759"
+    },
+    "campaign-v2/production/pages/lp-weight-management.ts": {
+      "beforeSHA256": "24679b7a5d78ad17baa4afcc55b9f19555617995afbd1a2f818b72823df3044f",
+      "replacements": [
+        {
+          "row": "AHV-WB.484.change",
+          "before": "may include massage-based or cleansing therapies where indicated",
+          "after": "may include oil-based or cleansing therapies where indicated"
+        }
+      ],
+      "afterSHA256": "58f83f7d39e4c377b3d3c85aad20a1682a2d834a290757da3ac0c64a6520b9b8"
+    },
+    "campaign-v2/production/pages/pain-management.ts": {
+      "beforeSHA256": "2e9bbb32a33858e752080edc1b2248ac4c1057f202ce6c9772ed498918d455cd",
+      "replacements": [
+        {
+          "row": "AHV-WB.057.quotation-box",
+          "before": "room access and any companion or assistance needs. Review the full quotation before arranging travel.",
+          "after": "room access and any companion or assistance needs."
+        }
+      ],
+      "afterSHA256": "75977ddbe71348b680823e93dcd81c864aed5b74d07ecc39745d18365990ebf8"
+    },
+    "campaign-v2/production/pages/cleansing-centre.ts": {
+      "beforeSHA256": "ee9cfda4dacd74945b34927f4ab9715ae326acd5a99cebabbef04c451ac23832",
+      "replacements": [
+        {
+          "row": "AHV-WB.191.quotation-box",
+          "before": "Our patient care team will help you discuss the programme and practical arrangements. Start with a free initial doctor consultation, then review your plan and quotation before booking.",
+          "after": "Our patient care team will help you discuss the programme and practical arrangements."
+        },
+        {
+          "row": "AHV-WB.191.quotation-box",
+          "before": "Discuss preparation, dietary guidance and practical requirements. Review the programme name, duration, accommodation and inclusions together before arranging travel.",
+          "after": "Discuss preparation, dietary guidance and practical requirements."
+        }
+      ],
+      "afterSHA256": "42b123e619e30504ef7312da8f996ad435510af534b49ac801bc5f39b409ffd8"
+    },
+    "campaign-v2/production/pages/treatment-kerala.ts": {
+      "beforeSHA256": "5fdaefe18064aa9f40a7b2aeb29716d5e7739a865d568028d67bffdb9b5d3fbb",
+      "replacements": [
+        {
+          "row": "AHV-WB.217.quotation-box",
+          "before": "The doctor explains the proposed programme and recommended duration. Then review a quotation for the programme, nights, villa occupancy and taxes, with included meals, reviews and sessions, before you arrange travel.",
+          "after": "The doctor explains the proposed programme and recommended duration."
+        }
+      ],
+      "afterSHA256": "ebed8e84ca04917da915facf297ca3cbcdcb793856c0db36709b1d544ecd1df6"
+    }
+  },
+  "trainBExclusions": [
+    {
+      "file": "campaign-v2/production/pages/family-ayurvedic-retreat.ts",
+      "row": "AHV-WB.079.change",
+      "before": "including Udhwarthanam, a herbal powder massage, with",
+      "after": "including Udhwarthanam – herbal powder therapy, with",
+      "reason": "Train A AHV-WB.083.change (owner decision 5) removed the family page Weight management topic card that held this wording",
+      "action": "no target in the integrated tree"
+    },
+    {
+      "file": "campaign-v2/production/pages/treatment-packages.ts",
+      "row": "AHV-WB.004.quotation-box",
+      "before": "Tell us what you need from your stay and when you hope to travel. Start with a free initial doctor consultation, then review your care plan and quotation before booking.",
+      "after": "Tell us what you need from your stay and when you hope to travel.",
+      "reason": "rejected (train-d03/REVIEW.json): not consolidated",
+      "action": "reverted"
+    },
+    {
+      "file": "campaign-v2/production/pages/panchakarma.ts",
+      "row": "AHV-WB.030.quotation-box",
+      "before": "Discuss your needs, the time you have available and what the programme may involve. Start with a free initial doctor consultation and review your treatment plan and quotation before you book.",
+      "after": "Discuss your needs, the time you have available and what the programme may involve.",
+      "reason": "rejected (train-d03/REVIEW.json): not consolidated",
+      "action": "reverted"
+    },
+    {
+      "file": "campaign-v2/production/pages/ayurveda-retreat.ts",
+      "row": "AHV-WB.149.quotation-box",
+      "before": "who will travel with you and when you hope to visit. Start with a free initial doctor consultation, then review your programme and quotation with our team.",
+      "after": "who will travel with you and when you hope to visit.",
+      "reason": "rejected (train-d03/REVIEW.json): not consolidated",
+      "action": "reverted"
+    },
+    {
+      "file": "campaign-v2/production/pages/weight-management.ts",
+      "row": "AHV-WB.288.quotation-box",
+      "before": "dates, duration and villa occupancy. Your initial doctor consultation is free; the quotation explains the inclusions and any charges in the proposed plan.",
+      "after": "dates, duration and villa occupancy.",
+      "reason": "rejected (train-d03/REVIEW.json): not consolidated",
+      "action": "reverted"
+    },
+    {
+      "file": "campaign-v2/production/pages/lp-south-india.ts",
+      "row": "AHV-WB.310.quotation-box",
+      "before": "current medicine details and questions for the doctor. Review your personalised quotation and the booking terms before making a payment.",
+      "after": "current medicine details and questions for the doctor.",
+      "reason": "rejected (train-d03/REVIEW.json): not consolidated",
+      "action": "reverted"
+    },
+    {
+      "file": "campaign-v2/production/pages/lp-hospital-kerala.ts",
+      "row": "AHV-WB.334.quotation-box",
+      "before": "Understand the proposed therapies and daily routine. Then review a quotation covering your programme, accommodation and included care, with any extra charges set out.",
+      "after": "Understand the proposed therapies and daily routine.",
+      "reason": "rejected (train-d03/REVIEW.json): not consolidated",
+      "action": "reverted"
+    }
+  ]
+}

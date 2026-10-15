@@ -2,10 +2,11 @@
 // buyer: a German-speaking reader exploring assessed residential Ayurveda in Palakkad. Copy reorganised from the
 // reviewed German brief (independent linguistic + factual PASS) for sales clarity (kairali-akshar-marketing-science
 // CREATE+REVIEW); wording reused wherever possible; facts only from the brief and data/doctors.ts.
-// Owner correction, 14 Oct: present the complete current consented roster. No stories or villa cards (links are English).
+// Owner correction, 14 Oct: present the complete current consented roster. No villa cards (links are English); stories = English films, labelled (decision 11).
 // adMatch keywords = the fact audit's editorial topics (no German search-volume evidence exists).
 // "Abhyanga" kept as the brief writes it (house lint prefers "Abhyangam" — warning only).
 import { defineCopy } from "../copy.ts";
+import { story } from "../stories.ts";
 
 export default defineCopy({
   slug: "lp-behandlung-kerala",
@@ -51,7 +52,7 @@ export default defineCopy({
       intro: ["Die folgenden Behandlungen sind Themen für das Gespräch mit Ihrem Arzt. Welche davon für Sie geeignet sind, ergibt sich aus Ihrer individuellen Beurteilung."],
       cards: [
         { title: "Panchakarma", paragraphs: ["Panchakarma umfasst fünf klassische ayurvedische Verfahren. Ob und welche davon für Sie geeignet sind, entscheidet der Arzt nach der Untersuchung. Ein Aufenthalt beinhaltet nicht automatisch alle fünf Verfahren. Vorbereitung, Ernährung und Ruhe werden mit dem vorgeschlagenen Programm abgestimmt."] },
-        { title: "Abhyanga und Shirodhara", paragraphs: ["Abhyanga ist eine Ganzkörpermassage mit medizinierten Ölen. Bei Shirodhara wird ein gleichmäßiger Ölstrahl über die Stirn geführt. Beide sind mögliche, ärztlich verordnete Behandlungen; sie gehören nicht automatisch zu jedem Programm."] },
+        { title: "Abhyanga und Shirodhara", paragraphs: ["Abhyanga ist eine Ganzkörperanwendung mit medizinischen Kräuterölen. Bei Shirodhara wird ein gleichmäßiger Ölstrahl über die Stirn geführt. Beide sind mögliche, ärztlich verordnete Behandlungen; sie gehören nicht automatisch zu jedem Programm."] },
         { title: "Anwendungen nach ärztlichem Plan", paragraphs: ["Geschulte Therapeuten führen die verordneten Anwendungen nach ärztlichem Plan durch. Fragen Sie, was die einzelnen Behandlungen beinhalten und wie der Verlauf überprüft wird."] },
       ],
     },
@@ -72,6 +73,18 @@ export default defineCopy({
       paragraphs: [
         "Teilen Sie dem Patientenservice frühzeitig mit, ob Sie besondere Ernährungsbedürfnisse, Einschränkungen der Beweglichkeit oder Unterstützung im Alltag berücksichtigen müssen.",
         "Wenn Sie mit einer Begleitperson reisen, lassen Sie sich Unterkunft, Belegung und Verfügbarkeit für Ihre Termine bestätigen. Der Patientenservice nennt Ihnen die verfügbaren Unterkünfte sowie die jeweiligen Bedingungen und Kosten.",
+      ],
+    },
+    // Owner decision 11 (14 Oct 2026, AHV-WB.519): the existing consented English films, shown as English-language films
+    // (no German-subtitled film exists yet; subtitle request to the video owner is tracked separately). Same three films as
+    // the English sibling /lp/treatment-in-kerala/; YouTube links only (the on-page player stays English-route only).
+    stories: {
+      heading: "Das Dorf und Erfahrungen von Patienten im Video",
+      body: "Diese Videos sind auf Englisch. Sehen Sie einen Tag im Dorf, einen Film über Panchakarma und Michaela & Jan, die von ihrem Aufenthalt erzählen. Individuelle Erfahrungen sind unterschiedlich.",
+      films: [
+        story("iPARaMRASUs", "Ein Tag im Dorf (Video auf Englisch)"),
+        story("4x01PtWfNnk", "Michaela & Jan berichten (Video auf Englisch)"),
+        story("07tVC2oXd8g", "Film über Panchakarma (Video auf Englisch)"),
       ],
     },
     stay: {

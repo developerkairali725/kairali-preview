@@ -116,6 +116,21 @@ test("accepted API receipt emits one lead per token; retry, error and direct tha
   }
 });
 
+test("an accepted exit-intent offer lead is the same consented enquiry event (owner approval, 14/15 Oct 2026)", async () => {
+  const ctx = browser();
+  await ctx.fetch("/api/lead/", { method: "POST", body: JSON.stringify({ form: "exit-intent", submissionToken: token }) });
+  assert.equal(ctx.dataLayer.filter((entry) => entry[0] === "event" && entry[1] === "generate_lead").length, 1);
+  assert.equal(ctx.dataLayer.filter((entry) => entry[0] === "event" && entry[1] === "conversion").length, 1);
+  assert.equal(ctx.fbq.queue.filter((entry) => entry[0] === "track" && entry[1] === "Lead").length, 1);
+  assert.equal(ctx.clarity.q.filter((entry) => entry[0] === "event" && entry[1] === "lead_received").length, 1);
+  assert.equal(ctx.AHV_MEASUREMENT.recordLead("exit-intent", token), false, "one event per token");
+  // Same consent rules: declined or advertising-only choices gate it exactly as for the contact form.
+  assert.equal(browser("declined").AHV_MEASUREMENT.recordLead("exit-intent", token), false);
+  const ads = browser("advertising");
+  assert.equal(ads.AHV_MEASUREMENT.recordLead("exit-intent", token), true);
+  assert.equal(ads.dataLayer.filter((entry) => entry[0] === "event" && entry[1] === "generate_lead").length, 0);
+});
+
 test("a received careers application is not an enquiry conversion", async () => {
   const ctx = browser();
   await ctx.fetch("/api/lead/", { method: "POST", body: JSON.stringify({ form: "apply-now", submissionToken: token }) });

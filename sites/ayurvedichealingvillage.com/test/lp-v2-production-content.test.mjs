@@ -479,6 +479,52 @@ test("JSON-LD: the replaced pages' WebPage (and breadcrumb), plus FAQPage for th
   for (const slug of PRODUCTION_SLUGS) assert.ok(!JSON.stringify(productionJsonLd(slug, C[slug])).match(/"@type":"(Offer|Product|MedicalClinic|VideoObject)"/), slug);
 });
 
+test("JSON-LD: the six tracker routes carry the English graph's one Organization/Hospital entity, nothing more (AHV-WB.017/041/069/093/159/204, 14 Oct 2026)", () => {
+  const ORG_ROUTES = ["treatment-packages", "panchakarma", "pain-management", "family-ayurvedic-retreat", "ayurveda-retreat", "cleansing-centre"];
+  const ORG_ID = "https://ayurvedichealingvillage.com/#organization";
+  const orgs = (slug) => productionJsonLd(slug, C[slug]).filter((n) => [].concat(n["@type"]).includes("Hospital") || [].concat(n["@type"]).includes("Organization"));
+  // Parity: every value is the one the English graph (app/(english)/_families/schema.ts) already publishes.
+  const schema = read("app/(english)/_families/schema.ts");
+  const block = schema.slice(schema.indexOf('"@type": ["Organization", "Hospital"]'), schema.indexOf("image: { \"@id\": LOGO_ID }"));
+  assert.ok(block.length > 0, "schema.ts Organization/Hospital node");
+  assert.match(schema, /const ORG_ID = `\$\{ORIGIN\}\/#organization`;/);
+  assert.match(schema, /const ORG_NAME = "Kairali — The Ayurvedic Healing Village";/);
+  assert.match(schema, /const LOGO = \{ url: `\$\{ORIGIN\}\/ahv\/assets\/img\/kairali-colorful-logo\.png`, width: 290, height: 68 \};/);
+  for (const slug of ORG_ROUTES) {
+    const nodes = productionJsonLd(slug, C[slug]);
+    const found = orgs(slug);
+    assert.equal(found.length, 1, `${slug}: exactly one organization entity`);
+    const [org] = found;
+    assert.deepEqual(org["@type"], ["Organization", "Hospital"], slug);
+    assert.equal(org["@id"], ORG_ID, slug);
+    assert.equal(org.name, "Kairali — The Ayurvedic Healing Village", slug);
+    assert.equal(org.url, "https://ayurvedichealingvillage.com/", slug);
+    for (const [k, v] of Object.entries(org.address).filter(([k]) => k !== "@type")) assert.ok(block.includes(`${k}: ${JSON.stringify(v)}`), `${slug}: address.${k} as schema.ts`);
+    assert.ok(block.includes(`telephone: ${JSON.stringify(org.telephone)}`), `${slug}: telephone as schema.ts`);
+    assert.ok(block.includes(`email: ${JSON.stringify(org.email)}`), `${slug}: email as schema.ts`);
+    assert.equal(org.email, contact.email);
+    assert.deepEqual(org.image, { "@id": "https://ayurvedichealingvillage.com/#/schema/logo/image/" }, slug);
+    assert.equal(org.logo.url, "https://ayurvedichealingvillage.com/ahv/assets/img/kairali-colorful-logo.png", slug);
+    // Nothing invented: no MedicalClinic, ratings, founding date, sameAs, medicalSpecialty or price.
+    assert.deepEqual(Object.keys(org).sort(), ["@context", "@id", "@type", "address", "email", "image", "logo", "name", "telephone", "url"], slug);
+    // The WebPage names it as publisher; WebPage first, FAQPage (when shown) second, as before.
+    assert.equal(nodes[0]["@type"], "WebPage", slug);
+    assert.deepEqual(nodes[0].publisher, { "@id": ORG_ID }, slug);
+    if (C[slug].faq?.length) assert.equal(nodes[1]["@type"], "FAQPage", slug);
+  }
+  // Every other live ad route gets no publisher. Train B (15 Oct 2026): the reviewed-entity routes of trains C01/C02/D02
+  // (metadata.ts REVIEWED_ENTITY_ROUTES) carry the same one entity under their own rows; nowhere is it emitted twice.
+  const reviewed = new Set(["cleansing-centre", "lp-cleansing-centre", "lp-hospital-kerala", "lp-pain-management", "lp-panchakarma",
+    "lp-south-india", "lp-treatment-kerala", "lp-treatment-kerala-ru", "lp-treatment-packages", "lp-weight-management",
+    "south-india-cities", "treatment-kerala", "weight-management",
+    "monsoon-wellness", "rejuvenation-detox", "wellness-kerala", "brand", "lp-brand", "lp-behandlung-kerala"]);
+  for (const slug of PRODUCTION_SLUGS) assert.ok(orgs(slug).length <= 1, `${slug}: the entity at most once`);
+  for (const slug of PRODUCTION_SLUGS.filter((s) => !ORG_ROUTES.includes(s))) {
+    assert.equal(orgs(slug).length, reviewed.has(slug) ? 1 : 0, slug);
+    assert.equal(productionJsonLd(slug, C[slug])[0].publisher, undefined, slug);
+  }
+});
+
 // ── locked facts and owner facts ──────────────────────────────────────────────────────────────────────
 test("locked facts: WhatsApp +91 92898 38797 and info@kairali.com; the wrong …38777 appears nowhere", () => {
   assert.equal(contact.whatsapp.number, "919289838797");

@@ -104,7 +104,7 @@ const DE: ProductionUi = {
     "ahv-yoga-hall-consented-20261014": "Zwei Personen praktizieren Yoga in einer geräumigen Halle mit offenem Holzdach bei Kairali in Palakkad",
     "ahv-deluxe-bathroom": "Badezimmer der Deluxe-Villa mit Glasdusche und Waschbecken",
 
-    "kt-199": "Zwei Therapeutinnen bei einer Abhyanga-Ganzkörpermassage mit warmem medizinischem Öl",
+    "kt-199": "Zwei Therapeutinnen bei einer Abhyanga-Ganzkörperanwendung mit warmem medizinischem Kräuteröl",
     "kt-190": "Eine Therapeutin bereitet eine Patientin auf eine Kopfbehandlung mit warmem Öl vor",
     "kt-202": "Medizinisches Öl fließt aus einem Messinggefäß zur Vorbereitung von Shirodhara",
     "kt-116": "Achteckiger Villa-Innenraum unter einer Terrakotta-Kuppel im Healing Village",
@@ -158,7 +158,7 @@ const RU: ProductionUi = {
     "ahv-yoga-hall-consented-20261014": "Два человека занимаются йогой в просторном зале с открытыми деревянными стропилами в Kairali в Палаккаде",
     "ahv-deluxe-bathroom": "Ванная комната виллы Deluxe со стеклянной душевой кабиной и раковиной",
 
-    "kt-199": "Два терапевта проводят абхьянгу — массаж всего тела тёплым лечебным маслом",
+    "kt-199": "Два терапевта проводят абхьянгу — процедуру всего тела с тёплым лечебным маслом",
     "kt-190": "Терапевт готовит пациентку к процедуре для головы с тёплым маслом",
     "kt-202": "Лечебное масло льётся из латунного сосуда при подготовке к широдхаре",
     "kt-116": "Восьмиугольная вилла под терракотовым куполом в Healing Village",

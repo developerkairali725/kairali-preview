@@ -225,8 +225,8 @@ const enquiry = (path: string): RouteBinding["productionForm"] => ({ formVariant
 
 const SPECS: Spec[] = [
   // Review batch 1
-  { slug: "monsoon-wellness", route: "/karkidaka-chikitsha-or-monsoon-wellness.html", variant: "C", hero: "kt-190", pathway: "kt-202", form: r10("monsoon") },
-  { slug: "rejuvenation-detox", route: "/preventive-rejuvenation-detoxification.html", variant: "C", hero: "kt-202", pathway: "kt-199", form: r10("detox"), og: OG_OWN("rejuvenation-detox"), ogAlt: img("kt-202").alt },
+  { slug: "monsoon-wellness", route: "/karkidaka-chikitsha-or-monsoon-wellness.html", variant: "C", hero: "kt-190", stillness: "ahv-img-016", pathway: "kt-202", form: r10("monsoon") },
+  { slug: "rejuvenation-detox", route: "/preventive-rejuvenation-detoxification.html", variant: "C", hero: "kt-202", stillness: "ahv-img-016", pathway: "kt-199", form: r10("detox"), og: OG_OWN("rejuvenation-detox"), ogAlt: img("kt-202").alt },
   { slug: "ayurveda-retreat", route: "/ayurveda-retreat-kerala.html", variant: "B", hero: "wx-hero", pathway: "kt-199", form: r10("retreat") },
   { slug: "wellness-kerala", route: "/wellness-resort-kerala.html", variant: "B", hero: "kt-314", pathway: "kt-202", form: enquiry("/wellness-resort-kerala.html"), og: OG_EN_US("wellness-resort-kerala.html.jpg") },
   { slug: "cleansing-centre", route: "/kairali-cleansing-centre.html", variant: "A", hero: "kt-202", mobile: "kt-190", stillness: "ahv-img-016", pathway: "kt-199", form: enquiry("/kairali-cleansing-centre.html"), og: OG_EN_US("kairali-cleansing-centre.html.jpg") },
@@ -239,22 +239,22 @@ const SPECS: Spec[] = [
   // Review batch 3
   { slug: "lp-hospital-kerala", route: "/lp/ayurvedic-hospital-kerala/", variant: "A", hero: "wx-hero", stillness: "ahv-img-016", pathway: "kt-199", form: enquiry("/lp/ayurvedic-hospital-kerala/"), og: OG_LP("ahv/assets/img/wx-hero.webp") },
   { slug: "lp-brand", route: "/lp/kairali-brand/", variant: "D", hero: "wx-hero", pathway: "kt-202", form: enquiry("/lp/kairali-brand/"), og: OG_LP("ahv/assets/img/wx-hero.webp") },
-  { slug: "lp-cleansing-centre", route: "/lp/kairali-cleansing-centre/", variant: "A", hero: "kt-190", pathway: "kt-202", form: enquiry("/lp/kairali-cleansing-centre/"), og: OG_LP("images/therapy-panchakarma.jpg") },
+  { slug: "lp-cleansing-centre", route: "/lp/kairali-cleansing-centre/", variant: "A", hero: "kt-190", stillness: "ahv-img-016", pathway: "kt-202", form: enquiry("/lp/kairali-cleansing-centre/"), og: OG_LP("images/therapy-panchakarma.jpg") },
   // Not kt-199: /pain-management.html and /panchkarma-treatment.html already share that hero (review finding, 8 Oct).
-  { slug: "lp-pain-management", route: "/lp/pain-management/", variant: "A", hero: "kt-202", mobile: "kt-190", pathway: "kt-199", form: enquiry("/lp/pain-management/"), og: OG_LP("images/therapy-pain-management.jpg") },
+  { slug: "lp-pain-management", route: "/lp/pain-management/", variant: "A", hero: "kt-202", mobile: "kt-190", stillness: "ahv-img-016", pathway: "kt-199", form: enquiry("/lp/pain-management/"), og: OG_LP("images/therapy-pain-management.jpg") },
   { slug: "lp-panchakarma", route: "/lp/panchkarma-treatment/", variant: "D", hero: "kt-202", pathway: "kt-199", form: enquiry("/lp/panchkarma-treatment/"), og: OG_LP("images/consultation-pulse.webp") },
   // Review batch 4
   // AHV-WB.457.change: the phone's small C cover shows the registry villa photograph kt-314 (no single patient in frame)
   // instead of the therapy photograph; desktop keeps kt-199. As on every route with a phone override, the gallery omits
   // the phone hero, so the mosaic never repeats it.
-  { slug: "lp-treatment-kerala", route: "/lp/treatment-in-kerala/", variant: "C", hero: "kt-199", mobile: "kt-314", pathway: "kt-202", form: enquiry("/lp/treatment-in-kerala/"), og: OG_LP("ahv/assets/img/wx-pathway.jpg") },
+  { slug: "lp-treatment-kerala", route: "/lp/treatment-in-kerala/", variant: "C", hero: "kt-199", mobile: "kt-314", stillness: "ahv-img-016", pathway: "kt-202", form: enquiry("/lp/treatment-in-kerala/"), og: OG_LP("ahv/assets/img/wx-pathway.jpg") },
   { slug: "lp-treatment-packages", route: "/lp/treatment-packages/", variant: "B", hero: "kt-116", pathway: "kt-199", form: enquiry("/lp/treatment-packages/"), og: OG_LP("images/therapy-abhyanga.jpg") },
   // Phone LCP is the landscape wx-dining rendition (CI image-delivery: w750 q75, 53,382 bytes, est. 14,367 saveable);
   // q40 as on family-ayurvedic-retreat's landscape phone hero. Same photo and crop; desktop unchanged; q40 bytes unmeasured.
-  { slug: "lp-weight-management", route: "/lp/weight-loss/", variant: "A", hero: "wx-dining", pathway: "kt-202", form: enquiry("/lp/weight-loss/"), og: OG_LP("images/consultation-pulse.webp"), mobileQuality: 40 },
-  { slug: "lp-behandlung-kerala", route: "/lp/behandlung-in-kerala/", variant: "C", hero: "kt-190", pathway: "kt-199", locale: "de", form: enquiry("/lp/behandlung-in-kerala/"), og: OG_LP("images/patient-villa-maharaja.jpg", "de_DE") },
+  { slug: "lp-weight-management", route: "/lp/weight-loss/", variant: "A", hero: "wx-dining", stillness: "ahv-img-016", pathway: "kt-202", form: enquiry("/lp/weight-loss/"), og: OG_LP("images/consultation-pulse.webp"), mobileQuality: 40 },
+  { slug: "lp-behandlung-kerala", route: "/lp/behandlung-in-kerala/", variant: "C", hero: "kt-190", stillness: "ahv-img-016", pathway: "kt-199", locale: "de", form: enquiry("/lp/behandlung-in-kerala/"), og: OG_LP("images/patient-villa-maharaja.jpg", "de_DE") },
   // New campaign path (owner); /treatment-in-kerala-russian.html redirects here (next.config.ts), query string kept.
-  { slug: "lp-treatment-kerala-ru", route: "/lp/treatment-in-kerala-russian/", variant: "C", hero: "kt-202", pathway: "kt-199", locale: "ru", form: enquiry("/lp/treatment-in-kerala-russian/"), og: { url: `${SITE_ORIGIN}/images/og/treatment-in-kerala-russian.html.jpg`, width: 1200, height: 630, locale: "ru_RU", siteName: "Kairali Ayurvedic Healing Village" } },
+  { slug: "lp-treatment-kerala-ru", route: "/lp/treatment-in-kerala-russian/", variant: "C", hero: "kt-202", stillness: "ahv-img-016", pathway: "kt-199", locale: "ru", form: enquiry("/lp/treatment-in-kerala-russian/"), og: { url: `${SITE_ORIGIN}/images/og/treatment-in-kerala-russian.html.jpg`, width: 1200, height: 630, locale: "ru_RU", siteName: "Kairali Ayurvedic Healing Village" } },
 ];
 
 for (const sp of SPECS) {
@@ -276,6 +276,79 @@ for (const sp of SPECS) {
     ...(sp.og ? { og: sp.og } : {}),
     ...(sp.ogAlt ? { ogImageAlt: sp.ogAlt } : {}),
   };
+}
+
+/**
+ * Owner decision 10 (14 Oct 2026, OWNER-DECISIONS-20261014-ANSWERS.json "10-photos"; rows AHV-WB.005 hero/how, .060,
+ * .400 how, .403, .445 hero/how): the bare-back therapy hero (desktop and phone) and "How it works" photographs on these
+ * routes become pulse-check, reception or village photographs with no identifiable person, from the existing image
+ * bank (data/images.ts). Applied after the routes are built, so every existing gallery entry and the five mosaic tiles
+ * stay exactly as they were. A new steps photograph is appended once at the very end of the route's full gallery (every
+ * steps photograph is one of the route's gallery photographs, outside the mosaic; category per STEP_CATEGORY); a new
+ * hero is never in the gallery. On each route the hero and the steps photograph differ; sibling heroes differ
+ * (/pain-management.html vs /lp/pain-management/). Reversible: delete a route's entry.
+ */
+export const PHOTO_PICKS_20261014: Readonly<Partial<Record<ProductionSlug, { hero?: string; pathway?: string; keepPhone?: true }>>> = {
+  // Train B (15 Oct 2026): AHV-WB.005.hero-image and AHV-WB.403.change are excluded (rejected by the candidate's
+  // independent REVIEW.json), so treatment-packages and lp-pain-management keep their prior heroes; their steps rows stay.
+  "treatment-packages": { pathway: "ahv-img-045" }, // AHV-WB.005.how-image
+  "pain-management": { hero: "ahv-img-034" }, // AHV-WB.060.change (partial: no person-free doctor photo left for both siblings)
+  "lp-pain-management": { pathway: "ahv-img-026" }, // AHV-WB.400.how-image
+  // Train B (15 Oct 2026): the phone cover stays Train A's AHV-WB.457.change villa photograph kt-314 (already no
+  // bare-back photograph), so the decision-10 hero applies to the desktop hero only on this route.
+  "lp-treatment-kerala": { hero: "ahv-img-012", pathway: "ahv-img-045", keepPhone: true }, // AHV-WB.445.hero-image, AHV-WB.445.how-image
+};
+/** Gallery category of an appended steps photograph: the pulse check with the therapies (as the approved consultation-room
+ *  photo ahv-img-033), the reception lounge with the grounds (its owner-approved placement, "The hospital and its grounds"). */
+const STEP_CATEGORY: Readonly<Record<string, GalleryCategory>> = { "ahv-img-045": "Therapies", "ahv-img-026": "Grounds" };
+for (const [slug, pick] of Object.entries(PHOTO_PICKS_20261014) as [ProductionSlug, { hero?: string; pathway?: string; keepPhone?: true }][]) {
+  const r = ROUTES[slug];
+  if (pick.hero) { r.heroImage = img(pick.hero); if (!pick.keepPhone) r.mobileImage = img(pick.hero); }
+  if (pick.pathway) {
+    r.pathwayImage = img(pick.pathway);
+    const category = STEP_CATEGORY[pick.pathway];
+    if (!category) throw new Error(`production/bindings: no gallery category for steps photograph ${pick.pathway}`);
+    r.gallery = [...r.gallery, { category, image: r.pathwayImage }];
+  }
+}
+
+/**
+ * Train F (15 Oct 2026), owner decision 10 ("you have these images in the image bank check old and new and manifest ...
+ * pick one not just from new you can pick from old") and decision 15 ("let the photo be": the pulse-check photograph
+ * stays on the pain pages). Rows AHV-WB.005/.031/.058/.192/.218/.311/.377 hero-image, AHV-WB.192/.335 how-image and
+ * AHV-WB.403.change. Each hero (desktop and phone) becomes a page-specific Palakkad photograph with no bare back and no
+ * identifiable person: Panchakarma a patient villa (staff: "looks like a spa, not a hospital"; therapy imagery only on the
+ * pain page), pain a Janu Vasti knee therapy, the cleansing centre its
+ * treatment blocks and treatment-block courtyard, treatment in Kerala the coconut grove, the packages page the lawns
+ * before the treatment blocks, south India the colonnade between the treatment blocks, /lp/pain-management/ the pulse
+ * check. A steps photograph is appended once at the end of the full gallery (as PHOTO_PICKS_20261014). No hero is one of
+ * the route's gallery photographs or an approved gallery addition. Applied after the decision-10 picks; every existing
+ * gallery entry and the five mosaic tiles stay exactly as they were. Hero, steps photograph and mosaic differ on every
+ * route, and sibling routes keep different heroes. Reversible: delete a route's entry.
+ */
+export const PHOTO_PICKS_20261015: Readonly<Partial<Record<ProductionSlug, { hero?: string; pathway?: string }>>> = {
+  "treatment-packages": { hero: "ahv-img-018" }, // AHV-WB.005.hero-image
+  panchakarma: { hero: "ahv-pkd-50" }, // AHV-WB.031.hero-image
+  "pain-management": { hero: "ahv-pkd-180" }, // AHV-WB.058.hero-image
+  "cleansing-centre": { hero: "ahv-pkd-115", pathway: "ahv-img-045" }, // AHV-WB.192.hero-image, AHV-WB.192.how-image
+  "treatment-kerala": { hero: "ahv-pkd-307" }, // AHV-WB.218.hero-image
+  "lp-south-india": { hero: "ahv-img-009" }, // AHV-WB.311.hero-image
+  "lp-hospital-kerala": { pathway: "ahv-img-045" }, // AHV-WB.335.how-image
+  "lp-cleansing-centre": { hero: "ahv-pkd-132" }, // AHV-WB.377.hero-image
+  "lp-pain-management": { hero: "ahv-img-045" }, // AHV-WB.403.change (owner decision 15)
+};
+for (const [slug, pick] of Object.entries(PHOTO_PICKS_20261015) as [ProductionSlug, { hero?: string; pathway?: string }][]) {
+  const r = ROUTES[slug];
+  if (pick.hero) {
+    if (r.gallery.some((g) => g.image.id === pick.hero)) throw new Error(`production/bindings: ${slug} hero ${pick.hero} is a gallery photograph`);
+    r.heroImage = img(pick.hero); r.mobileImage = r.heroImage;
+  }
+  if (pick.pathway) {
+    r.pathwayImage = img(pick.pathway);
+    const category = STEP_CATEGORY[pick.pathway];
+    if (!category) throw new Error(`production/bindings: no gallery category for steps photograph ${pick.pathway}`);
+    r.gallery = [...r.gallery, { category, image: r.pathwayImage }];
+  }
 }
 
 /** The 20 routes added on 8 Oct 2026, in their four review batches of five. */

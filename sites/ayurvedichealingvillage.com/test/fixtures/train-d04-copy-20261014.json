@@ -1,0 +1,557 @@
+{
+  "task": "AHV train D04 (14 Oct 2026)",
+  "authority": "Standing owner authority 10 Oct 2026; settled assessments in operations/AHV-ASSESSMENT-CONSUMPTION.json (batch-011/012). Quotation repeats consolidated route by route, keeping each route's Stay box as the one full explanation and the owner-pinned CTA support line unchanged; one benefit line per old route built only from that route's existing reviewed facts. Russian change is deletion-only (no new Russian wording).",
+  "files": {
+    "campaign-v2/production/pages/lp-cleansing-centre.ts": {
+      "rows": [
+        "AHV-WB.376.quotation-box"
+      ],
+      "beforeSHA256": "5aca7d911dc4638d883f55e944c41f48a7cf0392edddf383ffd59bb145173515",
+      "afterSHA256": "d6013d6568306f34ba66d1852d7276929904cc5bbcc194b1b00b685ef07ff9b8",
+      "replacements": [
+        {
+          "before": "counting any preparation and travel days. Review a personalised quotation before you book.\" }",
+          "after": "counting any preparation and travel days.\" }"
+        },
+        {
+          "before": "then confirm the recommended nights, preparation and follow-up. Keep those requirements together when reviewing your quotation and travel plans.\" }",
+          "after": "then confirm the recommended nights, preparation and follow-up.\" }"
+        }
+      ]
+    },
+    "campaign-v2/production/pages/lp-pain-management.ts": {
+      "rows": [
+        "AHV-WB.399.quotation-box"
+      ],
+      "beforeSHA256": "bc0bba7fd2a1403a7094af276d573e7a3d520b810a6104548a6e123f5512e5a8",
+      "afterSHA256": "4f8ff07c3bed3210b409dc042a1919e751e230f4e6e0409b2124a52a29ea4b33",
+      "replacements": [
+        {
+          "before": "accommodation and any assistance you need. Ask for a quotation that sets out the included care and separate charges.\" }",
+          "after": "accommodation and any assistance you need.\" }"
+        }
+      ]
+    },
+    "campaign-v2/production/pages/lp-panchakarma.ts": {
+      "rows": [
+        "AHV-WB.422.quotation-box"
+      ],
+      "beforeSHA256": "7849ad26ea062bee6d57f0c0fd2151483c066151ca96eb05d45ad41c81ed7d52",
+      "afterSHA256": "83d95beb19b5b6902b6859aaa9bc71dafcdb624cc2314edc91760e7eaa798829",
+      "replacements": [
+        {
+          "before": "body: \"Patient care prepares a quotation for your programme, dates, duration and occupancy. Check the included care and separately charged items before booking.\" }",
+          "after": "body: \"Patient care prepares a quotation for your programme, dates, duration and occupancy.\" }"
+        },
+        {
+          "before": "rather than as a fixed package. Ask patient care for a quotation covering your care and any later services.\"]",
+          "after": "rather than as a fixed package.\"]"
+        }
+      ]
+    },
+    "campaign-v2/production/pages/lp-treatment-kerala.ts": {
+      "rows": [
+        "AHV-WB.444.quotation-box"
+      ],
+      "beforeSHA256": "02cdaab1c917ad98ae2be7ece1ab0ea3d7c9b2606a62a61fc02828beed7a8275",
+      "afterSHA256": "73496f8627eb7f65b6a6e4f45f498406f4460877e234ee73a0f655e450ac7ff1",
+      "replacements": [
+        {
+          "before": "body: \"Review the recommended duration, villa category and occupancy. Ask for a quotation that sets out what is included and what is charged separately, and ask about any preparation before admission.\" }",
+          "after": "body: \"Review the recommended duration, villa category and occupancy, and ask about any preparation before admission.\" }"
+        },
+        {
+          "before": "\"Transport\", \"Personal services\"], extra: true },\n      ],\n      after: [\"Your initial doctor consultation is free. Ask for a quotation covering your care and any later services, with the inclusions and any extra charges clearly explained.\"],\n    },",
+          "after": "\"Transport\", \"Personal services\"], extra: true },\n      ],\n    },"
+        }
+      ]
+    },
+    "campaign-v2/production/pages/lp-weight-management.ts": {
+      "rows": [
+        "AHV-WB.487.quotation-box"
+      ],
+      "beforeSHA256": "24679b7a5d78ad17baa4afcc55b9f19555617995afbd1a2f818b72823df3044f",
+      "afterSHA256": "43f12f4839a9f577c27942b0041d6b91f70adddc6035146d727a00f65639fda8",
+      "replacements": [
+        {
+          "before": "Confirm the duration recommended for you, your villa and the full quotation before arranging travel.\" }",
+          "after": "Confirm the duration recommended for you and your villa before arranging travel.\" }"
+        }
+      ]
+    },
+    "campaign-v2/production/pages/lp-treatment-kerala-ru.ts": {
+      "rows": [
+        "AHV-WB.532.quotation-box"
+      ],
+      "beforeSHA256": "4c94264eb4c81d5c5cedb1f7ca5332e6c5ea314e7bb56320a558760305a87c30",
+      "afterSHA256": "64adbc25b073da8b81d3652cf606f427e98455c8b563c00da534a341443fbea2",
+      "replacements": [
+        {
+          "before": "\"Трансфер\", \"Личные услуги\"], extra: true },\n      ],\n      after: [\"Первичная консультация врача бесплатна. Предложение на пребывание должно ясно описывать лечение, включённые и дополнительные услуги, в том числе последующие, и их стоимость.\"],\n    },",
+          "after": "\"Трансфер\", \"Личные услуги\"], extra: true },\n      ],\n    },"
+        }
+      ]
+    },
+    "campaign-v2/production/pages/treatment-packages.ts": {
+      "rows": [
+        "AHV-WB.013.benefit-copy"
+      ],
+      "beforeSHA256": "6e6daa604b6b010c483a22ca539f654b15de3c0ac387ed51171a098572721a06",
+      "afterSHA256": "6087b39604ccae32dda19249cf3832b106ba7839455038da7e6882e001190fcc",
+      "replacements": [
+        {
+          "before": "what to expect before you book.\",\n      ],",
+          "after": "what to expect before you book.\",\n        \"What your stay offers: doctor-guided care, prescribed meals and time to rest in the gardens of Kairali, with villa accommodation, doctor reviews and therapies brought together in one plan.\",\n      ],"
+        }
+      ]
+    },
+    "campaign-v2/production/pages/panchakarma.ts": {
+      "rows": [
+        "AHV-WB.037.benefit-copy"
+      ],
+      "beforeSHA256": "8418739b7bcf46776ea436c96135390a7f896dab5b507c96be56ede66caa3db4",
+      "afterSHA256": "86db0a2e753ed84bf7e0354089c8bd20f5bac972db08f85e1cc180314e4d73ba",
+      "replacements": [
+        {
+          "before": "confirm the recommended duration for your needs before arranging travel.\",\n      ],",
+          "after": "confirm the recommended duration for your needs before arranging travel.\",\n        \"What your stay offers: a programme your doctor explains before it begins and reviews during your stay, meals and activities that fit your programme, and a different daily pace, with time to sit in the gardens or rest in your villa.\",\n      ],"
+        }
+      ]
+    },
+    "campaign-v2/production/pages/pain-management.ts": {
+      "rows": [
+        "AHV-WB.066.benefit-copy"
+      ],
+      "beforeSHA256": "2e9bbb32a33858e752080edc1b2248ac4c1057f202ce6c9772ed498918d455cd",
+      "afterSHA256": "1f997123cde71f479d9fc3b70eae98dc6a0eb8c626fcc1ccd4c1b6f8a3dc460b",
+      "replacements": [
+        {
+          "before": "and the practical help you would need during a stay.\"],",
+          "after": "and the practical help you would need during a stay.\", \"What your stay offers: a doctor who starts with how pain affects walking, sitting or sleeping, practical help discussed before you travel, and a quiet garden setting with room to pause between appointments rather than rush.\"],"
+        }
+      ]
+    },
+    "campaign-v2/production/pages/family-ayurvedic-retreat.ts": {
+      "rows": [
+        "AHV-WB.090.benefit-copy"
+      ],
+      "beforeSHA256": "f2e4e5ad17afe672a5eaa4791884139ad242b3aa64324e8b4271cd29a459bb60",
+      "afterSHA256": "4164fc180eab32aa2af74ce96506c62383baf71ea82fbb7d6e373a5478ff2813",
+      "replacements": [
+        {
+          "before": "while leaving room for different therapies, routines and lengths of stay.\"],",
+          "after": "while leaving room for different therapies, routines and lengths of stay.\", \"What your stay offers: travel and accommodation planned together, care planned for each person, and space for rest and time together in the gardens.\"],"
+        }
+      ]
+    },
+    "campaign-v2/production/pages/cleansing-centre.ts": {
+      "rows": [
+        "AHV-WB.201.benefit-copy"
+      ],
+      "beforeSHA256": "ee9cfda4dacd74945b34927f4ab9715ae326acd5a99cebabbef04c451ac23832",
+      "afterSHA256": "265db4ea6a680f15f9ef3469c9f9d4df1c3a93646de0400a487db6c1d7f889e8",
+      "replacements": [
+        {
+          "before": "explain the programme that may be appropriate for you.\",\n      ],",
+          "after": "explain the programme that may be appropriate for you.\",\n        \"What your stay offers: a doctor who explains the programme that may be appropriate for you, and a slower pace in the village gardens, with prescribed care, meals and quiet time setting the rhythm of your day.\",\n      ],"
+        }
+      ]
+    },
+    "campaign-v2/production/pages/treatment-kerala.ts": {
+      "rows": [
+        "AHV-WB.226.benefit-copy"
+      ],
+      "beforeSHA256": "5fdaefe18064aa9f40a7b2aeb29716d5e7739a865d568028d67bffdb9b5d3fbb",
+      "afterSHA256": "460da52ad3d5422e1749fc0ef1cf9b8f5105ea12d4a2768d67643b76126d46ea",
+      "replacements": [
+        {
+          "before": "discuss what the proposed care requires before you commit to travel.\",\n      ],",
+          "after": "discuss what the proposed care requires before you commit to travel.\",\n        \"What your stay offers: a start with your own health history rather than a programme name, a residential villa in Palakkad, and meals, suitable yoga or meditation and quiet time planned around your treatment schedule.\",\n      ],"
+        }
+      ]
+    },
+    "campaign-v2/production/pages/south-india-cities.ts": {
+      "rows": [
+        "AHV-WB.247.benefit-copy"
+      ],
+      "beforeSHA256": "d6d2ca92d1dc5c08f9278758abcb34ef9254e0423cec3aa9aa005281a2332a98",
+      "afterSHA256": "01805d7876b998e176d5bcc22b6915211f4b86020906099d46bc78abcac0f59f",
+      "replacements": [
+        {
+          "before": "then bring the programme, villa and travel plans together.\",\n      ],",
+          "after": "then bring the programme, villa and travel plans together.\",\n        \"What your stay offers: one destination in Palakkad for your care, sessions delivered by trained therapists as prescribed by your Ayurvedic doctor, and time for suitable yoga or meditation and rest, kept separate from your travel days.\",\n      ],"
+        }
+      ]
+    },
+    "campaign-v2/production/pages/weight-management.ts": {
+      "rows": [
+        "AHV-WB.296.benefit-copy"
+      ],
+      "beforeSHA256": "e424c22f0d71947dc7c3cfddf22e456dbd1196a1f436c86f652670b065f640ca",
+      "afterSHA256": "f10bdeb71047039bf4df9a898ec4b0cbcf171c1dc94c1237b2475d93257adec8",
+      "replacements": [
+        {
+          "before": "No one can promise a set amount of weight change or a fixed result for everyone.\",\n      ],",
+          "after": "No one can promise a set amount of weight change or a fixed result for everyone.\",\n        \"What your stay offers: Ayurvedic doctors who prescribe and review your care, trained therapists for the recommended sessions, and a steady rhythm of meals, sessions and quiet time in the villas and gardens.\",\n      ],"
+        }
+      ]
+    }
+  },
+  "configChanges": {
+    "treatment-packages": [
+      {
+        "path": [
+          "page",
+          "lead",
+          "paragraphs"
+        ],
+        "before": [
+          "You may be looking into Ayurveda for a particular health concern, considering Panchakarma, or making time for yoga and a more regular daily routine. At Kairali – The Ayurvedic Healing Village, your health history and goals are the starting point for discussing a programme.",
+          "Kairali is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, with residential accommodation in the village gardens. Speak with an Ayurvedic doctor about the care that may suit you, the time it involves and what to expect before you book."
+        ],
+        "after": [
+          "You may be looking into Ayurveda for a particular health concern, considering Panchakarma, or making time for yoga and a more regular daily routine. At Kairali – The Ayurvedic Healing Village, your health history and goals are the starting point for discussing a programme.",
+          "Kairali is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, with residential accommodation in the village gardens. Speak with an Ayurvedic doctor about the care that may suit you, the time it involves and what to expect before you book.",
+          "What your stay offers: doctor-guided care, prescribed meals and time to rest in the gardens of Kairali, with villa accommodation, doctor reviews and therapies brought together in one plan."
+        ]
+      }
+    ],
+    "panchakarma": [
+      {
+        "path": [
+          "page",
+          "lead",
+          "paragraphs"
+        ],
+        "before": [
+          "Before setting aside time for Panchakarma, understand what the programme may involve for you. Your health history, current medicines, daily routine and goals all matter when discussing suitability with an Ayurvedic doctor.",
+          "At Kairali – The Ayurvedic Healing Village in Palakkad, Kerala, the programme begins with an individual assessment. Your doctor explains the proposed therapies, dietary guidance and time needed, and reviews your care during the stay. The published programme is a 14–28 night stay; confirm the recommended duration for your needs before arranging travel."
+        ],
+        "after": [
+          "Before setting aside time for Panchakarma, understand what the programme may involve for you. Your health history, current medicines, daily routine and goals all matter when discussing suitability with an Ayurvedic doctor.",
+          "At Kairali – The Ayurvedic Healing Village in Palakkad, Kerala, the programme begins with an individual assessment. Your doctor explains the proposed therapies, dietary guidance and time needed, and reviews your care during the stay. The published programme is a 14–28 night stay; confirm the recommended duration for your needs before arranging travel.",
+          "What your stay offers: a programme your doctor explains before it begins and reviews during your stay, meals and activities that fit your programme, and a different daily pace, with time to sit in the gardens or rest in your villa."
+        ]
+      }
+    ],
+    "pain-management": [
+      {
+        "path": [
+          "page",
+          "lead",
+          "paragraphs"
+        ],
+        "before": [
+          "Planning Ayurvedic pain management starts with understanding how pain affects walking, sitting or sleeping. At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, your consultation brings together your symptoms, medical history and current treatment. Discuss whether a residential Ayurveda programme is right for you, and the practical help you would need during a stay."
+        ],
+        "after": [
+          "Planning Ayurvedic pain management starts with understanding how pain affects walking, sitting or sleeping. At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, your consultation brings together your symptoms, medical history and current treatment. Discuss whether a residential Ayurveda programme is right for you, and the practical help you would need during a stay.",
+          "What your stay offers: a doctor who starts with how pain affects walking, sitting or sleeping, practical help discussed before you travel, and a quiet garden setting with room to pause between appointments rather than rush."
+        ]
+      }
+    ],
+    "family-ayurvedic-retreat": [
+      {
+        "path": [
+          "page",
+          "lead",
+          "paragraphs"
+        ],
+        "before": [
+          "A family Ayurveda retreat in Kerala can bring your own wellbeing plans together with a parent’s care, a partner’s programme or time shared as companions. At Kairali’s NABH-accredited Ayurvedic hospital in Palakkad, each person’s assessment guides their care. Plan the travel and accommodation together, while leaving room for different therapies, routines and lengths of stay."
+        ],
+        "after": [
+          "A family Ayurveda retreat in Kerala can bring your own wellbeing plans together with a parent’s care, a partner’s programme or time shared as companions. At Kairali’s NABH-accredited Ayurvedic hospital in Palakkad, each person’s assessment guides their care. Plan the travel and accommodation together, while leaving room for different therapies, routines and lengths of stay.",
+          "What your stay offers: travel and accommodation planned together, care planned for each person, and space for rest and time together in the gardens."
+        ]
+      }
+    ],
+    "cleansing-centre": [
+      {
+        "path": [
+          "page",
+          "lead",
+          "paragraphs"
+        ],
+        "before": [
+          "This is Kairali – The Ayurvedic Healing Village in Palakkad, Kerala. Our NABH-accredited Ayurvedic hospital offers residential care guided by individual assessment.",
+          "Cleansing, detoxification and rejuvenation appear in different Ayurvedic programme names, and they do not all describe the same care. Bring your health history and goals to the conversation, so your doctor can explain the programme that may be appropriate for you."
+        ],
+        "after": [
+          "This is Kairali – The Ayurvedic Healing Village in Palakkad, Kerala. Our NABH-accredited Ayurvedic hospital offers residential care guided by individual assessment.",
+          "Cleansing, detoxification and rejuvenation appear in different Ayurvedic programme names, and they do not all describe the same care. Bring your health history and goals to the conversation, so your doctor can explain the programme that may be appropriate for you.",
+          "What your stay offers: a doctor who explains the programme that may be appropriate for you, and a slower pace in the village gardens, with prescribed care, meals and quiet time setting the rhythm of your day."
+        ]
+      }
+    ],
+    "treatment-kerala": [
+      {
+        "path": [
+          "page",
+          "lead",
+          "paragraphs"
+        ],
+        "before": [
+          "You may know exactly what you want to discuss, or only that you are considering Ayurveda for a health concern or a wellbeing goal. At Kairali – The Ayurvedic Healing Village, you start with your health history, current treatment and the reason you are looking into Ayurveda. Our doctors explain the relevant options and whether a residential stay is suitable for you.",
+          "Kairali is an NABH-accredited Ayurvedic hospital with residential villas in Palakkad, Kerala. Let the programme, the recommended duration and your practical needs shape the booking. Tell us how much time you have, then leave room to discuss what the proposed care requires before you commit to travel."
+        ],
+        "after": [
+          "You may know exactly what you want to discuss, or only that you are considering Ayurveda for a health concern or a wellbeing goal. At Kairali – The Ayurvedic Healing Village, you start with your health history, current treatment and the reason you are looking into Ayurveda. Our doctors explain the relevant options and whether a residential stay is suitable for you.",
+          "Kairali is an NABH-accredited Ayurvedic hospital with residential villas in Palakkad, Kerala. Let the programme, the recommended duration and your practical needs shape the booking. Tell us how much time you have, then leave room to discuss what the proposed care requires before you commit to travel.",
+          "What your stay offers: a start with your own health history rather than a programme name, a residential villa in Palakkad, and meals, suitable yoga or meditation and quiet time planned around your treatment schedule."
+        ]
+      }
+    ],
+    "south-india-cities": [
+      {
+        "path": [
+          "page",
+          "lead",
+          "paragraphs"
+        ],
+        "before": [
+          "If you are comparing Ayurvedic treatment in South India, begin with the location and the care you need. Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Your enquiry is for a stay at this one property, wherever you are travelling from.",
+          "You can start the conversation before choosing flights, trains or other transport. Discuss your health history first, then bring the programme, villa and travel plans together."
+        ],
+        "after": [
+          "If you are comparing Ayurvedic treatment in South India, begin with the location and the care you need. Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Your enquiry is for a stay at this one property, wherever you are travelling from.",
+          "You can start the conversation before choosing flights, trains or other transport. Discuss your health history first, then bring the programme, villa and travel plans together.",
+          "What your stay offers: one destination in Palakkad for your care, sessions delivered by trained therapists as prescribed by your Ayurvedic doctor, and time for suitable yoga or meditation and rest, kept separate from your travel days."
+        ]
+      }
+    ],
+    "weight-management": [
+      {
+        "path": [
+          "page",
+          "lead",
+          "paragraphs"
+        ],
+        "before": [
+          "Weight management raises practical questions: how to plan meals, make time for activity, cope with an irregular routine and keep changes going after a stay. At Kairali – The Ayurvedic Healing Village in Palakkad, Kerala, Weight Management & Metabolism Therapy is planned around an individual assessment and realistic goals.",
+          "Kairali is an NABH-accredited Ayurvedic hospital. Ayurvedic doctors prescribe and review your care, and trained therapists carry out the recommended sessions. No one can promise a set amount of weight change or a fixed result for everyone."
+        ],
+        "after": [
+          "Weight management raises practical questions: how to plan meals, make time for activity, cope with an irregular routine and keep changes going after a stay. At Kairali – The Ayurvedic Healing Village in Palakkad, Kerala, Weight Management & Metabolism Therapy is planned around an individual assessment and realistic goals.",
+          "Kairali is an NABH-accredited Ayurvedic hospital. Ayurvedic doctors prescribe and review your care, and trained therapists carry out the recommended sessions. No one can promise a set amount of weight change or a fixed result for everyone.",
+          "What your stay offers: Ayurvedic doctors who prescribe and review your care, trained therapists for the recommended sessions, and a steady rhythm of meals, sessions and quiet time in the villas and gardens."
+        ]
+      }
+    ],
+    "lp-cleansing-centre": [
+      {
+        "path": [
+          "admission",
+          "steps",
+          1,
+          "body"
+        ],
+        "before": "Confirm the exact programme, number of nights and accommodation, counting any preparation and travel days. Review a personalised quotation before you book.",
+        "after": "Confirm the exact programme, number of nights and accommodation, counting any preparation and travel days."
+      },
+      {
+        "path": [
+          "faq",
+          2,
+          "a"
+        ],
+        "before": "The duration depends on the exact programme and your assessment. Tell the doctor how much time you have available, then confirm the recommended nights, preparation and follow-up. Keep those requirements together when reviewing your quotation and travel plans.",
+        "after": "The duration depends on the exact programme and your assessment. Tell the doctor how much time you have available, then confirm the recommended nights, preparation and follow-up."
+      },
+      {
+        "path": [
+          "page",
+          "pathway",
+          "steps",
+          1,
+          "body"
+        ],
+        "before": "Confirm the exact programme, number of nights and accommodation, counting any preparation and travel days. Review a personalised quotation before you book.",
+        "after": "Confirm the exact programme, number of nights and accommodation, counting any preparation and travel days."
+      }
+    ],
+    "lp-pain-management": [
+      {
+        "path": [
+          "admission",
+          "steps",
+          1,
+          "body"
+        ],
+        "before": "Confirm the recommended programme, number of nights, accommodation and any assistance you need. Ask for a quotation that sets out the included care and separate charges.",
+        "after": "Confirm the recommended programme, number of nights, accommodation and any assistance you need."
+      },
+      {
+        "path": [
+          "page",
+          "pathway",
+          "steps",
+          1,
+          "body"
+        ],
+        "before": "Confirm the recommended programme, number of nights, accommodation and any assistance you need. Ask for a quotation that sets out the included care and separate charges.",
+        "after": "Confirm the recommended programme, number of nights, accommodation and any assistance you need."
+      }
+    ],
+    "lp-panchakarma": [
+      {
+        "path": [
+          "admission",
+          "steps",
+          1,
+          "body"
+        ],
+        "before": "Patient care prepares a quotation for your programme, dates, duration and occupancy. Check the included care and separately charged items before booking.",
+        "after": "Patient care prepares a quotation for your programme, dates, duration and occupancy."
+      },
+      {
+        "path": [
+          "page",
+          "pathway",
+          "steps",
+          1,
+          "body"
+        ],
+        "before": "Patient care prepares a quotation for your programme, dates, duration and occupancy. Check the included care and separately charged items before booking.",
+        "after": "Patient care prepares a quotation for your programme, dates, duration and occupancy."
+      },
+      {
+        "path": [
+          "page",
+          "stay",
+          "paragraphs",
+          0
+        ],
+        "before": "Panchakarma is planned after assessment, so your quotation is prepared for your recommended programme, duration, dates and villa choice, rather than as a fixed package. Ask patient care for a quotation covering your care and any later services.",
+        "after": "Panchakarma is planned after assessment, so your quotation is prepared for your recommended programme, duration, dates and villa choice, rather than as a fixed package."
+      }
+    ],
+    "lp-treatment-kerala": [
+      {
+        "path": [
+          "admission",
+          "steps",
+          1,
+          "body"
+        ],
+        "before": "Review the recommended duration, villa category and occupancy. Ask for a quotation that sets out what is included and what is charged separately, and ask about any preparation before admission.",
+        "after": "Review the recommended duration, villa category and occupancy, and ask about any preparation before admission."
+      },
+      {
+        "path": [
+          "page",
+          "pathway",
+          "steps",
+          1,
+          "body"
+        ],
+        "before": "Review the recommended duration, villa category and occupancy. Ask for a quotation that sets out what is included and what is charged separately, and ask about any preparation before admission.",
+        "after": "Review the recommended duration, villa category and occupancy, and ask about any preparation before admission."
+      },
+      {
+        "path": [
+          "page",
+          "stay",
+          "after"
+        ],
+        "before": [
+          "Your initial doctor consultation is free. Ask for a quotation covering your care and any later services, with the inclusions and any extra charges clearly explained."
+        ],
+        "removed": true
+      }
+    ],
+    "lp-weight-management": [
+      {
+        "path": [
+          "admission",
+          "steps",
+          1,
+          "body"
+        ],
+        "before": "Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Confirm the duration recommended for you, your villa and the full quotation before arranging travel.",
+        "after": "Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Confirm the duration recommended for you and your villa before arranging travel."
+      },
+      {
+        "path": [
+          "page",
+          "pathway",
+          "steps",
+          1,
+          "body"
+        ],
+        "before": "Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Confirm the duration recommended for you, your villa and the full quotation before arranging travel.",
+        "after": "Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Confirm the duration recommended for you and your villa before arranging travel."
+      }
+    ],
+    "lp-treatment-kerala-ru": [
+      {
+        "path": [
+          "page",
+          "stay",
+          "after"
+        ],
+        "before": [
+          "Первичная консультация врача бесплатна. Предложение на пребывание должно ясно описывать лечение, включённые и дополнительные услуги, в том числе последующие, и их стоимость."
+        ],
+        "removed": true
+      }
+    ]
+  },
+  "trainBExclusions": [
+    {
+      "row": "AHV-WB.465.quotation-box",
+      "file": "campaign-v2/production/pages/lp-treatment-packages.ts",
+      "replacements": [
+        {
+          "before": "dates, duration and occupancy. When you compare, compare like with like: the same duration, dates and occupancy, with the care and accommodation clearly described.\"]",
+          "after": "dates, duration and occupancy.\"]"
+        }
+      ],
+      "configChanges": [
+        {
+          "path": [
+            "page",
+            "stay",
+            "paragraphs",
+            0
+          ],
+          "before": "Ask for a written quotation for your proposed programme, dates, duration and occupancy. When you compare, compare like with like: the same duration, dates and occupancy, with the care and accommodation clearly described.",
+          "after": "Ask for a written quotation for your proposed programme, dates, duration and occupancy."
+        }
+      ],
+      "reason": "rejected (train-d04/REVIEW.json)",
+      "action": "reverted"
+    },
+    {
+      "row": "AHV-WB.156.benefit-copy",
+      "file": "campaign-v2/production/pages/ayurveda-retreat.ts",
+      "replacements": [
+        {
+          "before": "come together around your care plan.\",\n      ],",
+          "after": "come together around your care plan.\",\n        \"What your stay offers: time away from your usual schedule, a programme discussed with your Ayurvedic doctor, and days in the village gardens where prescribed therapies, food, yoga and rest come together.\",\n      ],"
+        }
+      ],
+      "configChanges": [
+        {
+          "path": [
+            "page",
+            "lead",
+            "paragraphs"
+          ],
+          "before": [
+            "A residential stay gives you time to focus on care and daily routines away from your usual schedule. At Kairali – The Ayurvedic Healing Village in Palakkad, your Ayurvedic doctor assesses your needs and discusses a programme with you before you decide on your stay.",
+            "Kairali is an NABH-accredited Ayurvedic hospital with villas in the village gardens. Its Ayurvedic family tradition informs a place where prescribed therapies, food, yoga and rest come together around your care plan."
+          ],
+          "after": [
+            "A residential stay gives you time to focus on care and daily routines away from your usual schedule. At Kairali – The Ayurvedic Healing Village in Palakkad, your Ayurvedic doctor assesses your needs and discusses a programme with you before you decide on your stay.",
+            "Kairali is an NABH-accredited Ayurvedic hospital with villas in the village gardens. Its Ayurvedic family tradition informs a place where prescribed therapies, food, yoga and rest come together around your care plan.",
+            "What your stay offers: time away from your usual schedule, a programme discussed with your Ayurvedic doctor, and days in the village gardens where prescribed therapies, food, yoga and rest come together."
+          ]
+        }
+      ],
+      "reason": "rejected (train-d04/REVIEW.json)",
+      "action": "reverted"
+    }
+  ],
+  "trainBComposition": "Train B (15 Oct 2026): the panchakarma configChanges entry is recorded on the integrated tree, where Train A's AHV-WB.042.change (owner decision 2) already reads '14–28 night'; Train A's own reversal then restores '14–21 night'. The source replacement is unchanged (it anchors after that sentence)."
+}

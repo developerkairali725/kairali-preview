@@ -32,7 +32,7 @@ export default defineCopy({
   page: {
     lead: {
       heading: "A family Ayurveda retreat, with care planned for each person.",
-      paragraphs: ["A family Ayurveda retreat in Kerala can bring your own wellbeing plans together with a parent’s care, a partner’s programme or time shared as companions. At Kairali’s NABH-accredited Ayurvedic hospital in Palakkad, each person’s assessment guides their care. Plan the travel and accommodation together, while leaving room for different therapies, routines and lengths of stay."],
+      paragraphs: ["A family Ayurveda retreat in Kerala can bring your own wellbeing plans together with a parent’s care, a partner’s programme or time shared as companions. At Kairali’s NABH-accredited Ayurvedic hospital in Palakkad, each person’s assessment guides their care. Plan the travel and accommodation together, while leaving room for different therapies, routines and lengths of stay.", "What your stay offers: travel and accommodation planned together, care planned for each person, and space for rest and time together in the gardens."],
       points: [
         "Travel with your partner, parents or several generations",
         "Discuss each person’s health, current treatment and goals separately",
@@ -137,7 +137,7 @@ export default defineCopy({
     { q: "Will we stay together, and can you accommodate dietary needs?", a: "Discuss how many people are travelling, who will share and whether you prefer adjoining villas. Tell the team about allergies, restrictions and existing dietary advice for every family member. Confirm the actual rooms and meal arrangements before booking, including the needs of older relatives or children." },
     { q: "What kind of care setting does Kairali provide?", a: "Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital with residential villas in Palakkad, Kerala. Therapies are prescribed after medical assessment. Family travel and time together can be planned around each person’s care rather than a single treatment schedule for everyone." },
     { q: "How long should we stay, and what should we bring?", a: "Discuss the recommended duration for each person before arranging travel. The enquiry form’s preferred-duration options help explain your availability; they are not medical recommendations. Complete the advance health forms and bring current prescriptions and relevant medical reports." },
-    { q: "Is the initial doctor consultation free?", a: "Yes. Use the free initial consultation to discuss health history, current treatment and whether a stay may suit you. It does not make treatment, tests, medicines or later services free. Ask for a clear quotation before confirming the trip." },
+    { q: "Is the initial doctor consultation free?", a: "Yes. Use the free initial consultation to discuss health history, current treatment and whether a stay may suit you. It does not make treatment, tests, medicines or later services free." },
     { q: "What is included in a family Ayurveda package?", a: "Ask for a quotation for each person’s programme, villa occupancy and dates. Confirm meals, doctor reviews, prescribed therapies, yoga and meditation, activities and leisure access. Ayurveda, yoga and companion plans differ, so check which sessions are included and which medicines, tests, specialist services, travel or personal extras cost more." },
   ],
 });

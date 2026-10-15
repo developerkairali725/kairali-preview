@@ -39,6 +39,7 @@ export default defineCopy({
       paragraphs: [
         "Weight management raises practical questions: how to plan meals, make time for activity, cope with an irregular routine and keep changes going after a stay. At Kairali – The Ayurvedic Healing Village in Palakkad, Kerala, Weight Management & Metabolism Therapy is planned around an individual assessment and realistic goals.",
         "Kairali is an NABH-accredited Ayurvedic hospital. Ayurvedic doctors prescribe and review your care, and trained therapists carry out the recommended sessions. No one can promise a set amount of weight change or a fixed result for everyone.",
+        "What your stay offers: Ayurvedic doctors who prescribe and review your care, trained therapists for the recommended sessions, and a steady rhythm of meals, sessions and quiet time in the villas and gardens.",
       ],
       points: [
         "You have tried diets that were hard to keep up",
@@ -64,7 +65,9 @@ export default defineCopy({
       steps: [
         { title: "Start with a free doctor consultation", body: "Tell the doctor what you have tried, what has been hard to sustain and what you would like to work towards. Share your medical history, current medicines, physical limitations and any ongoing care." },
         { title: "Agree your plan, dates and quotation", body: "Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Your doctor discusses the duration appropriate to your needs; confirm the programme, dates and quotation before making travel arrangements." },
-        { title: "Follow your routine at Kairali", body: "Attend your prescribed sessions, meals, suitable activity and rest. Keep your doctor informed about how you feel, and ask how your progress will be reviewed during the stay." },
+        // AHV-WB.308.change (staff workbook row 311): the day plan from the programme's own approved Dinacharya and
+        // inclusions (/weight-loss-programme/: two therapies a day, morning yoga, evening meditation, weekly walk). No outcome.
+        { title: "Your 14-night routine", body: "Over the minimum 14-night admission, a typical day begins with group yoga at 06:30, as advised by your doctor, and a vegetarian breakfast. Your therapies are at 09:30 and 15:30, each followed by rest; therapy types, times and durations follow your doctor’s plan. Lunch is at 13:00, and a cooking demonstration, garden visit, workshop or lecture may be scheduled at 14:00. Guided meditation at 18:30 comes before dinner, and a farm, village or nature walk is arranged each week. Keep your doctor informed about how you feel, and ask how your progress will be reviewed during the stay." },
       ],
     },
     rest: {

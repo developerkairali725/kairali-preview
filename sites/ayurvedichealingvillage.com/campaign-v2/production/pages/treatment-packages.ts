@@ -33,6 +33,7 @@ export default defineCopy({
       paragraphs: [
         "You may be looking into Ayurveda for a particular health concern, considering Panchakarma, or making time for yoga and a more regular daily routine. At Kairali – The Ayurvedic Healing Village, your health history and goals are the starting point for discussing a programme.",
         "Kairali is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, with residential accommodation in the village gardens. Speak with an Ayurvedic doctor about the care that may suit you, the time it involves and what to expect before you book.",
+        "What your stay offers: doctor-guided care, prescribed meals and time to rest in the gardens of Kairali, with villa accommodation, doctor reviews and therapies brought together in one plan.",
       ],
     },
     // Each card's programme links are set as the card's own list of links (the same labels, capitalised as list
@@ -84,7 +85,7 @@ export default defineCopy({
         {
           title: "Yoga and meditation",
           links: [
-            { label: "Personalised yoga", href: `${SITE}/yoga-retreats/` },
+            { label: "Personalised yoga", href: `${SITE}/yoga-therapy-individual/` },
             { label: "Yoga and meditation stay", href: `${SITE}/yoga-and-meditation-package/` },
             { label: "Yoga for digestive wellbeing", href: `${SITE}/digestive-wellness-gut-health-yoga-therapy/` },
             { label: "Yoga-based stress programme", href: `${SITE}/yoga-based-stress-energy-reset-program/` },

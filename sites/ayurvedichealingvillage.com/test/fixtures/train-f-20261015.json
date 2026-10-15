@@ -1,0 +1,186 @@
+{
+ "task": "WOPS-WEBSITE-SEQUENTIAL-20261008-001 Train F photos (15 Oct 2026)",
+ "authority": "deliverables/WOPS-WEBSITE-SEQUENTIAL-20261008-001/recovery-20261014/OWNER-DECISIONS-20261014-ANSWERS.json (decisions 10 and 15)",
+ "base": "4c164f4c4272678173f7ea764fafc3cf92e727da",
+ "note": "Exact source deltas of Train F (production/bindings.ts PHOTO_PICKS_20261015, data/images.ts). Reverse each replacement (after -> before) to restore the Train B head bytes, then every earlier pin applies unchanged. photoPicks: 'before' = the Train B route's heroImage/mobileImage/pathwayImage ids; a new steps photograph is appended once as the gallery's last entry (galleryCategory); no other gallery entry changes.",
+ "files": {
+  "campaign-v2/data/images.ts": {
+   "beforeSHA256": "46f9eca5adbcf9d2de374dc665e2419dfc65b315d104e38b0d39f4326dee3e2e",
+   "afterSHA256": "3d056ccb002d5df6271a78290c2b2285e98e753e05e7ac56ef3867dcf5411c9e",
+   "replacements": [
+    {
+     "before": "    width: 1600, height: 1067, alt: \"Circular open veranda with cane chairs under a striped terracotta dome, looking out to the gardens\",\n    decorative: false, gccSafe: true, location: \"palakkad\", consent: \"not-applicable\",\n  },\n",
+     "after": "    width: 1600, height: 1067, alt: \"Circular open veranda with cane chairs under a striped terracotta dome, looking out to the gardens\",\n    decorative: false, gccSafe: true, location: \"palakkad\", consent: \"not-applicable\",\n  },\n  // Train F (15 Oct 2026), owner decision 10 (\"pick one not just from new you can pick from old\"): page-specific hero\n  // photographs (production/bindings.ts PHOTO_PICKS_20261015), all Palakkad (ahv-edited, IMAGE_CATALOG register_ok=yes;\n  // never the Delhi HO-centre shoot). ahv-pkd-*: built by tools/build-train-f-20261015-photos.py from the SHA-256-verified\n  // library originals; ahv-img-009: the owner-approved file of 28 Sep 2026 (batch 1, AHV-IMG-009, -105.jpg), unchanged.\n  \"ahv-pkd-50\": {\n    id: \"ahv-pkd-50\", src: \"/ahv/assets/img/owner-decision-20261015/ahv-pkd-50.webp\",\n    width: 1600, height: 1067, alt: \"Laterite-brick patient villa with a blue arched porch and bay windows beside a water channel\",\n    decorative: false, gccSafe: true, location: \"palakkad\", consent: \"not-applicable\",\n  },\n  \"ahv-pkd-180\": {\n    id: \"ahv-pkd-180\", src: \"/ahv/assets/img/owner-decision-20261015/ahv-pkd-180.webp\",\n    width: 1600, height: 1616, alt: \"Warm medicated oil poured from a brass bowl into a dough ring on a patient's knee during Janu Vasti\",\n    // A therapist's hand and the patient's draped leg only. Built as a near-square window of the portrait original, left\n    // edge trimmed (no face in frame) and centred on the oil stream, ring and knee for the variant-A hero cover crop.\n    decorative: false, gccSafe: true, location: \"palakkad\", consent: \"not-applicable\",\n  },\n  \"ahv-pkd-115\": {\n    id: \"ahv-pkd-115\", src: \"/ahv/assets/img/owner-decision-20261015/ahv-pkd-115.webp\",\n    width: 1600, height: 1067, alt: \"Tiled-roof treatment blocks with a colonnaded veranda among palms and lawns at the Healing Village\",\n    decorative: false, gccSafe: true, location: \"palakkad\", consent: \"not-applicable\",\n  },\n  \"ahv-pkd-132\": {\n    id: \"ahv-pkd-132\", src: \"/ahv/assets/img/owner-decision-20261015/ahv-pkd-132.webp\",\n    width: 1600, height: 1067, alt: \"Courtyard with a sculpted lotus relief wall, terracotta urns and planting between concrete columns\",\n    decorative: false, gccSafe: true, location: \"palakkad\", consent: \"not-applicable\",\n  },\n  \"ahv-pkd-307\": {\n    id: \"ahv-pkd-307\", src: \"/ahv/assets/img/owner-decision-20261015/ahv-pkd-307.webp\",\n    width: 1600, height: 1067, alt: \"Elevated view of tiled-roof buildings and lawns in a dense coconut grove at the Healing Village\",\n    decorative: false, gccSafe: true, location: \"palakkad\", consent: \"not-applicable\",\n  },\n  \"ahv-img-009\": {\n    id: \"ahv-img-009\", src: \"/ahv/assets/img/owner-approved-20260928/ahv-img-009.webp\",\n    width: 1600, height: 1067, alt: \"Covered colonnaded walkway with a timber roof linking brick-and-stone treatment blocks through gardens\",\n    decorative: false, gccSafe: true, location: \"palakkad\", consent: \"not-applicable\",\n  },\n"
+    }
+   ]
+  },
+  "campaign-v2/production/bindings.ts": {
+   "beforeSHA256": "6d290bcdcdfc16ee8e3bf5f942350cbfb3eda93940fab122cbed8408cd7e00db",
+   "afterSHA256": "0510d2162e872c1c8cda25984deb63296c578d89c1745394fd5ee175a086fbfb",
+   "replacements": [
+    {
+     "before": "    if (!category) throw new Error(`production/bindings: no gallery category for steps photograph ${pick.pathway}`);\n    r.gallery = [...r.gallery, { category, image: r.pathwayImage }];\n  }\n}\n\n/**",
+     "after": "    if (!category) throw new Error(`production/bindings: no gallery category for steps photograph ${pick.pathway}`);\n    r.gallery = [...r.gallery, { category, image: r.pathwayImage }];\n  }\n}\n\n/**\n * Train F (15 Oct 2026), owner decision 10 (\"you have these images in the image bank check old and new and manifest ...\n * pick one not just from new you can pick from old\") and decision 15 (\"let the photo be\": the pulse-check photograph\n * stays on the pain pages). Rows AHV-WB.005/.031/.058/.192/.218/.311/.377 hero-image, AHV-WB.192/.335 how-image and\n * AHV-WB.403.change. Each hero (desktop and phone) becomes a page-specific Palakkad photograph with no bare back and no\n * identifiable person: Panchakarma a patient villa (staff: \"looks like a spa, not a hospital\"; therapy imagery only on the\n * pain page), pain a Janu Vasti knee therapy, the cleansing centre its\n * treatment blocks and treatment-block courtyard, treatment in Kerala the coconut grove, the packages page the lawns\n * before the treatment blocks, south India the colonnade between the treatment blocks, /lp/pain-management/ the pulse\n * check. A steps photograph is appended once at the end of the full gallery (as PHOTO_PICKS_20261014). No hero is one of\n * the route's gallery photographs or an approved gallery addition. Applied after the decision-10 picks; every existing\n * gallery entry and the five mosaic tiles stay exactly as they were. Hero, steps photograph and mosaic differ on every\n * route, and sibling routes keep different heroes. Reversible: delete a route's entry.\n */\nexport const PHOTO_PICKS_20261015: Readonly<Partial<Record<ProductionSlug, { hero?: string; pathway?: string }>>> = {\n  \"treatment-packages\": { hero: \"ahv-img-018\" }, // AHV-WB.005.hero-image\n  panchakarma: { hero: \"ahv-pkd-50\" }, // AHV-WB.031.hero-image\n  \"pain-management\": { hero: \"ahv-pkd-180\" }, // AHV-WB.058.hero-image\n  \"cleansing-centre\": { hero: \"ahv-pkd-115\", pathway: \"ahv-img-045\" }, // AHV-WB.192.hero-image, AHV-WB.192.how-image\n  \"treatment-kerala\": { hero: \"ahv-pkd-307\" }, // AHV-WB.218.hero-image\n  \"lp-south-india\": { hero: \"ahv-img-009\" }, // AHV-WB.311.hero-image\n  \"lp-hospital-kerala\": { pathway: \"ahv-img-045\" }, // AHV-WB.335.how-image\n  \"lp-cleansing-centre\": { hero: \"ahv-pkd-132\" }, // AHV-WB.377.hero-image\n  \"lp-pain-management\": { hero: \"ahv-img-045\" }, // AHV-WB.403.change (owner decision 15)\n};\nfor (const [slug, pick] of Object.entries(PHOTO_PICKS_20261015) as [ProductionSlug, { hero?: string; pathway?: string }][]) {\n  const r = ROUTES[slug];\n  if (pick.hero) {\n    if (r.gallery.some((g) => g.image.id === pick.hero)) throw new Error(`production/bindings: ${slug} hero ${pick.hero} is a gallery photograph`);\n    r.heroImage = img(pick.hero); r.mobileImage = r.heroImage;\n  }\n  if (pick.pathway) {\n    r.pathwayImage = img(pick.pathway);\n    const category = STEP_CATEGORY[pick.pathway];\n    if (!category) throw new Error(`production/bindings: no gallery category for steps photograph ${pick.pathway}`);\n    r.gallery = [...r.gallery, { category, image: r.pathwayImage }];\n  }\n}\n\n/**"
+    }
+   ]
+  }
+ },
+ "photoPicks": {
+  "treatment-packages": {
+   "rows": [
+    "AHV-WB.005.hero-image"
+   ],
+   "route": "/ayurvedic-treatment-packages.html",
+   "before": {
+    "heroImage": "kt-202",
+    "mobileImage": "kt-190",
+    "pathwayImage": "ahv-img-045"
+   },
+   "after": {
+    "heroImage": "ahv-img-018",
+    "mobileImage": "ahv-img-018",
+    "pathwayImage": "ahv-img-045"
+   },
+   "galleryAppended": null
+  },
+  "panchakarma": {
+   "rows": [
+    "AHV-WB.031.hero-image"
+   ],
+   "route": "/panchkarma-treatment.html",
+   "before": {
+    "heroImage": "kt-199",
+    "mobileImage": "kt-190",
+    "pathwayImage": "kt-202"
+   },
+   "after": {
+    "heroImage": "ahv-pkd-50",
+    "mobileImage": "ahv-pkd-50",
+    "pathwayImage": "kt-202"
+   },
+   "galleryAppended": null
+  },
+  "pain-management": {
+   "rows": [
+    "AHV-WB.058.hero-image"
+   ],
+   "route": "/pain-management.html",
+   "before": {
+    "heroImage": "ahv-img-034",
+    "mobileImage": "ahv-img-034",
+    "pathwayImage": "kt-202"
+   },
+   "after": {
+    "heroImage": "ahv-pkd-180",
+    "mobileImage": "ahv-pkd-180",
+    "pathwayImage": "kt-202"
+   },
+   "galleryAppended": null
+  },
+  "cleansing-centre": {
+   "rows": [
+    "AHV-WB.192.hero-image",
+    "AHV-WB.192.how-image"
+   ],
+   "route": "/kairali-cleansing-centre.html",
+   "before": {
+    "heroImage": "kt-202",
+    "mobileImage": "kt-190",
+    "pathwayImage": "kt-199"
+   },
+   "after": {
+    "heroImage": "ahv-pkd-115",
+    "mobileImage": "ahv-pkd-115",
+    "pathwayImage": "ahv-img-045"
+   },
+   "galleryAppended": "ahv-img-045",
+   "galleryCategory": "Therapies"
+  },
+  "treatment-kerala": {
+   "rows": [
+    "AHV-WB.218.hero-image"
+   ],
+   "route": "/treatment-in-kerala.html",
+   "before": {
+    "heroImage": "kt-199",
+    "mobileImage": "kt-190",
+    "pathwayImage": "kt-202"
+   },
+   "after": {
+    "heroImage": "ahv-pkd-307",
+    "mobileImage": "ahv-pkd-307",
+    "pathwayImage": "kt-202"
+   },
+   "galleryAppended": null
+  },
+  "lp-south-india": {
+   "rows": [
+    "AHV-WB.311.hero-image"
+   ],
+   "route": "/lp/ayurveda-treatment-south-india/",
+   "before": {
+    "heroImage": "kt-199",
+    "mobileImage": "kt-199",
+    "pathwayImage": "kt-202"
+   },
+   "after": {
+    "heroImage": "ahv-img-009",
+    "mobileImage": "ahv-img-009",
+    "pathwayImage": "kt-202"
+   },
+   "galleryAppended": null
+  },
+  "lp-hospital-kerala": {
+   "rows": [
+    "AHV-WB.335.how-image"
+   ],
+   "route": "/lp/ayurvedic-hospital-kerala/",
+   "before": {
+    "heroImage": "wx-hero",
+    "mobileImage": "wx-hero",
+    "pathwayImage": "kt-199"
+   },
+   "after": {
+    "heroImage": "wx-hero",
+    "mobileImage": "wx-hero",
+    "pathwayImage": "ahv-img-045"
+   },
+   "galleryAppended": "ahv-img-045",
+   "galleryCategory": "Therapies"
+  },
+  "lp-cleansing-centre": {
+   "rows": [
+    "AHV-WB.377.hero-image"
+   ],
+   "route": "/lp/kairali-cleansing-centre/",
+   "before": {
+    "heroImage": "kt-190",
+    "mobileImage": "kt-190",
+    "pathwayImage": "kt-202"
+   },
+   "after": {
+    "heroImage": "ahv-pkd-132",
+    "mobileImage": "ahv-pkd-132",
+    "pathwayImage": "kt-202"
+   },
+   "galleryAppended": null
+  },
+  "lp-pain-management": {
+   "rows": [
+    "AHV-WB.403.change"
+   ],
+   "route": "/lp/pain-management/",
+   "before": {
+    "heroImage": "kt-202",
+    "mobileImage": "kt-190",
+    "pathwayImage": "ahv-img-026"
+   },
+   "after": {
+    "heroImage": "ahv-img-045",
+    "mobileImage": "ahv-img-045",
+    "pathwayImage": "ahv-img-026"
+   },
+   "galleryAppended": null
+  }
+ }
+}

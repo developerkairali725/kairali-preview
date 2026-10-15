@@ -3,7 +3,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import zlib from "node:zlib";
-import { helmetStyles, importedComponents, viewFirstPaintStyles, snapshotStylesFor, firstScreenPoster, imageLedFirstScreen, bodyFontFiles, routeFontPreloads, inlineFontStyles } from "../app/(english)/_families/snapshot-styles.mjs";
+import { helmetStyles, importedComponents, viewFirstPaintStyles, snapshotStylesFor, firstScreenPoster, imageLedFirstScreen, bodyFontFiles, routeFontPreloads, inlineFontStyles, sharedFontLinkRoute } from "../app/(english)/_families/snapshot-styles.mjs";
 import { firstCriticalImage, phoneCriticalMedia } from "../app/(english)/_families/critical-media.mjs";
 
 test("helmetStyles keeps local font stylesheets and <style> blocks only, in order", () => {
@@ -181,4 +181,15 @@ test("Arabic Monsoon keeps existing first-paint faces without changing other loc
  for(const other of ["/weight-loss-programme/","/digestive-wellness-gut-health-yoga-therapy/"])
   assert.equal(imageLedFirstScreen(other,"ar"),true,"unrelated Arabic image-led routes retain deferral");
  assert.equal(imageLedFirstScreen("/all-programs/","ar"),false,"existing text-led font path retained");
+});
+
+test("past-retreat records share the runtime's font stylesheet link instead of an inline copy (CLS 0.636 /de/katha)", () => {
+  const manifest = JSON.parse(fs.readFileSync("english-candidate/route-manifest.json", "utf8"));
+  const routes = Array.isArray(manifest) ? manifest : manifest.routes || Object.values(manifest);
+  const shared = routes.filter(sharedFontLinkRoute).map((r) => r.path).sort();
+  assert.deepEqual(shared, ["/chef-retreat-food-to-wellness/", "/food-sadhana/", "/karma-being-retreat-2019/", "/karma-being-retreat/", "/katha-wellness-retreat-2019/", "/lakshya-yoga-retreat-2017/", "/lakshya-yoga-retreat-2018/", "/prav-simona-monsoon-yoga-retreat/", "/prav-simona-yoga-retreat/"]);
+  assert.equal(sharedFontLinkRoute({ path: "/our-villas/", dataset: "assets/article-family-data.js" }), false);
+  assert.equal(sharedFontLinkRoute(null), false);
+  const view = fs.readFileSync("app/(english)/_families/design-view.tsx", "utf8");
+  assert.match(view, /\(\{ href, css \}\) => css && !sharedFontLinkRoute\(route\) && /);
 });
