@@ -14,6 +14,8 @@ import path from "node:path";
 import vm from "node:vm";
 import { reverseN03File, reverseN03View } from "./fixtures/n03-sanskrit-subtitle-20261015.mjs";
 import { reverseTrainHSource } from "./fixtures/train-h-20261015.mjs";
+// Train J batch 2 (15 Oct 2026, AHV-N08.sleep-restoration-therapy.title) changed only the sleep views' title; its recorded delta is reversed first.
+import { peelTrainJ2Source } from "./fixtures/train-j2-20261015.mjs";
 
 const SITE = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/%20/g, " ")), "..");
 const sha = (s) => crypto.createHash("sha256").update(s).digest("hex");
@@ -265,7 +267,7 @@ for (const [name, baseHash] of Object.entries(BATCH)) {
 
 for (const [label, frozen] of [["N12.06-A", ACCEPTED_06A], ["N12.06-B", ACCEPTED_06B], ["N12.06-C", ACCEPTED_06C]])
   test(`accepted ${label} two-therapy views are untouched`, () => {
-    for (const [file, hash] of Object.entries(frozen)) assert.equal(sha(reverseN03File(file, fs.readFileSync(path.join(SITE, file), "utf8"))), hash, `${file} accepted view changed`);
+    for (const [file, hash] of Object.entries(frozen)) assert.equal(sha(reverseN03File(file, peelTrainJ2Source(file, fs.readFileSync(path.join(SITE, file), "utf8")))), hash, `${file} accepted view changed`);
   });
 
 // Train H (15 Oct 2026, AHV-M021.01) changed only the training hub's tariff link; its recorded delta is reversed first.

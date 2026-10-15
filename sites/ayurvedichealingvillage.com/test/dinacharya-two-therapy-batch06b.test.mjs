@@ -12,10 +12,12 @@ import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
 import { reverseN03File, reverseN03View } from "./fixtures/n03-sanskrit-subtitle-20261015.mjs";
+// Train J batch 2 (15 Oct 2026, AHV-N08.sleep-restoration-therapy.title) changed only the sleep views' title; its recorded delta is reversed first.
+import { peelTrainJ2Source } from "./fixtures/train-j2-20261015.mjs";
 
 const SITE = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/%20/g, " ")), "..");
 const sha = (s) => crypto.createHash("sha256").update(s).digest("hex");
-const view = (name) => JSON.parse(fs.readFileSync(path.join(SITE, "public/ahv/views", name + ".json"), "utf8"));
+const view = (name) => JSON.parse(peelTrainJ2Source(`public/ahv/views/${name}.json`, fs.readFileSync(path.join(SITE, "public/ahv/views", name + ".json"), "utf8")));
 const ROUTINE = /const routine = \[[\s\S]*?\n\s*\];/;
 const SPLIT = /routineA: routine\.slice\(0, (?:\d+|Math\.ceil\(routine\.length \/ 2\))\), routineB: routine\.slice\((?:\d+|Math\.ceil\(routine\.length \/ 2\))\)/;
 const masked = (v) => sha(JSON.stringify({ ...v, logic: v.logic.replace(ROUTINE, "<<ROUTINE>>").replace(SPLIT, "<<SPLIT>>") }));
