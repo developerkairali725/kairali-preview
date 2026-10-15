@@ -12,6 +12,7 @@ import fs from "node:fs";
 import path from "node:path";
 import vm from "node:vm";
 import { reverseN03File, reverseN03View } from "./fixtures/n03-sanskrit-subtitle-20261015.mjs";
+import { reverseTrainHSource } from "./fixtures/train-h-20261015.mjs";
 
 const SITE = path.resolve(path.dirname(new URL(import.meta.url).pathname.replace(/%20/g, " ")), "..");
 const sha = (s) => crypto.createHash("sha256").update(s).digest("hex");
@@ -165,7 +166,8 @@ for (const [name, baseHash] of Object.entries(BATCH)) {
   });
 }
 
+// Train H (15 Oct 2026, AHV-M021.01) changed only the training hub's tariff link; its recorded delta is reversed first.
 test("other routine views, one-therapy programmes and course/tariff sources are untouched", () => {
   for (const [file, hash] of Object.entries({ ...FROZEN_ROUTINE_VIEWS, ...FROZEN_COURSE_AND_TARIFF }))
-    assert.equal(sha(reverseN03File(file, fs.readFileSync(path.join(SITE, file), "utf8"))), hash, `${file} changed outside this batch`);
+    assert.equal(sha(reverseN03File(file, reverseTrainHSource(file, fs.readFileSync(path.join(SITE, file), "utf8")))), hash, `${file} changed outside this batch`);
 });

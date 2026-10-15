@@ -12,7 +12,10 @@ import { LOCALES } from "../tools/l10n/locales.mjs";
 import { removeCampaignPriceNotes } from "../app/(english)/_families/campaign-price-notes.mjs";
 import { applyReviewSnapshot, reviewCopyFor } from "../app/(english)/_families/content-review.mjs";
 import { keepsLocaleCanonical, LOCALE_SELF_CANONICAL_PATHS, restoreReviewedHead } from "../app/(english)/_families/localized-title.mjs";
-import { campaignEnquiryForm, CAMPAIGN_PHONE_PLACEHOLDER, LIVE_PHONE_PATTERN } from "../campaign-v2/forms/schema.ts";
+// Train G integration (15 Oct 2026): Train H's per-language table (AHV-WB.525) carries this row's Russian example under
+// Train H's name; Train H's German example is reversed first (fixtures/train-gh-integration-20261015.mjs).
+import { campaignEnquiryForm, CAMPAIGN_ENQUIRY_PHONE_PLACEHOLDER as CAMPAIGN_PHONE_PLACEHOLDER, LIVE_PHONE_PATTERN } from "../campaign-v2/forms/schema.ts";
+import { reverseTrainHPhoneExample, reversePhoneTable } from "./fixtures/train-gh-integration-20261015.mjs";
 import { UI } from "../campaign-v2/production/ui.ts";
 import { reverseTrainGConfig, TRAIN_G_REWORK } from "./fixtures/train-g-rework-20261015.mjs";
 
@@ -242,8 +245,8 @@ test("AHV-WB.548.phone-example: the RU campaign form shows the RU example its ow
   assert.ok(UI.ru.form.errors.phone.includes(ru.placeholder), "the same example the RU validation message gives");
   assert.match(ru.placeholder, new RegExp(`^${LIVE_PHONE_PATTERN}$`), "the example satisfies the field's own pattern");
   assert.equal(ru.required, false, "phone stays optional (owner decision 14 Oct)");
-  for (const loc of ["en", "de"]) assert.equal(campaignEnquiryForm(loc).steps[0].fields.find((f) => f.name === "phone").placeholder, "+91 …", loc);
-  assert.deepEqual(CAMPAIGN_PHONE_PLACEHOLDER, { en: "+91 …", de: "+91 …", ru: "+7 900 000 00 00" });
+  for (const loc of ["en", "de"]) assert.equal(reverseTrainHPhoneExample(loc, campaignEnquiryForm(loc).steps[0].fields.find((f) => f.name === "phone").placeholder), "+91 …", loc);
+  assert.deepEqual(reversePhoneTable(CAMPAIGN_PHONE_PLACEHOLDER, reverseTrainHPhoneExample), { en: "+91 …", de: "+91 …", ru: "+7 900 000 00 00" });
   const { pattern, maxLength, mapsTo, autocomplete } = ru;
   assert.deepEqual({ pattern, maxLength, mapsTo, autocomplete }, { pattern: LIVE_PHONE_PATTERN, maxLength: 30, mapsTo: "phone", autocomplete: "tel" });
   // the reversal fixture restores exactly this one value on exactly this route

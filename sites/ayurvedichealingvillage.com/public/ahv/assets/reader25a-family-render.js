@@ -24,9 +24,7 @@
       crumbs: (R.crumbs || []).slice(0, -1).map(c => ({ label: c.label, url: A + c.path })),
       crumbLast: (R.crumbs && R.crumbs.length) ? R.crumbs[R.crumbs.length - 1].label : '',
       // A source contextual-navigation component renders inside a labelled <nav>; everything else is a section.
-      // 'contextual-resources' is the reviewed in-body related-links list, not a captured sidebar: as a <nav>
-      // it matched section-nav.js's retired-sidebar sweep (/context|menu|navigation/) and was removed, so it
-      // renders as a section like 'related-weight-management' (AHV-I04.M066.links).
+      // The approved in-body 'contextual-resources' links (AHV-I04) are content, not the retired sidebar: a section.
       sections: R.components.map((c, ci) => ({
         key: 'x' + ci, component: c.component, ptr: c.ptr,
         isNav: c.component !== 'contextual-resources' && /context|menu|navigation/i.test(c.component),

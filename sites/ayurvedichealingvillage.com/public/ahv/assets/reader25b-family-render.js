@@ -33,8 +33,9 @@
       availability: R.ownerStatusOverride ? R.ownerStatusOverride.approvedAvailability : '',
       sections: R.components.map((c, ci) => ({
         key: 'y' + ci, component: c.component, ptr: c.ptr,
-        isNav: /context|menu|navigation/i.test(c.component),
-        isSection: !/context|menu|navigation/i.test(c.component),
+        // The approved in-body 'contextual-resources' links (AHV-I04) are content, not the retired sidebar: a section.
+        isNav: c.component !== 'contextual-resources' && /context|menu|navigation/i.test(c.component),
+        isSection: c.component === 'contextual-resources' || !/context|menu|navigation/i.test(c.component),
         navLabel: R.h1 + ' \u2014 related pages',
         el: P.sourceBlocks(groupCards(c.blocks), 'y' + ci, guard).map(el => {
           // Festival article sections follow the page H1; retain the renderer's exact visual styles.

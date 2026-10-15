@@ -254,7 +254,7 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
           ))
         : null}
       <SnapshotStyles key={`${locale}:${route.path}`} assets={snapshotAssets} />
-      {["/all-programs/", "/wellness-programs/", "/yoga-meditation-programs/"].includes(route.path) ? <style data-ahv-finder-skip-link="" dangerouslySetInnerHTML={{ __html: `#ahv-design-root[data-ahv-route="${route.path}"] .scp0:not(:focus){left:0!important;top:0!important;width:1px!important;height:1px!important;padding:0!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}` }} /> : null}
+      {["/ayurvedic-treatments/", "/all-programs/", "/wellness-programs/", "/yoga-meditation-programs/"].includes(route.path) ? <style data-ahv-finder-skip-link="" dangerouslySetInnerHTML={{ __html: `#ahv-design-root[data-ahv-route="${route.path}"] .scp0:not(:focus){left:0!important;top:0!important;width:1px!important;height:1px!important;padding:0!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}` }} /> : null}
       {/* The existing finder toggle collapses these rows. Match that first paint and reserve its 44px button + 14px margins. */}
       {["/ayurvedic-treatments/", "/all-programs/", "/wellness-programs/", "/yoga-meditation-programs/"].includes(route.path) ? <style data-ahv-finder-first-paint="" dangerouslySetInnerHTML={{ __html: `@media(scripting:enabled){#ahv-design-root[data-ahv-route="${route.path}"] nav[data-ahv-finder-search]:not([data-ahv-fh-open]) [role="group"]{display:none!important}#ahv-design-root[data-ahv-route="${route.path}"] nav[data-ahv-finder-search]:not(:has(+ .ahv-fh-filterbar))::after{content:"";display:block;height:58px}}` }} /> : null}
 

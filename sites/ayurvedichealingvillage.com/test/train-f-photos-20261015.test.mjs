@@ -8,14 +8,18 @@ import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { PHOTO_PICKS_20261015, ROUTES } from "../campaign-v2/production/bindings.ts";
-import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/load.ts";
+import { PHOTO_PICKS_20261015, ROUTES as CURRENT_ROUTES } from "../campaign-v2/production/bindings.ts";
+import { productionCampaign as currentCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/load.ts";
 import { IMAGES } from "../campaign-v2/data/images.ts";
 import { APPROVED_GALLERY_IMAGES } from "../campaign-v2/data/gallery-images.ts";
 import { TRAIN_F, reverseTrainFBindings, reverseTrainFConfig, reverseTrainFSource } from "./fixtures/train-f-20261015.mjs";
+import { reverseTrainHBindings, reverseTrainHConfig, reverseTrainHSource } from "./fixtures/train-h-20261015.mjs";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const read = (p) => fs.readFileSync(path.join(SITE, p), "utf8");
+// Train H (15 Oct 2026) composes on Train F (fixtures/train-h-20261015.mjs): its delta is reversed first.
+const read = (p) => reverseTrainHSource(p, fs.readFileSync(path.join(SITE, p), "utf8"));
+const ROUTES = reverseTrainHBindings(JSON.parse(JSON.stringify(CURRENT_ROUTES)));
+const productionCampaign = (slug) => reverseTrainHConfig(slug, JSON.parse(JSON.stringify(currentCampaign(slug))));
 const sha256 = (b) => crypto.createHash("sha256").update(b).digest("hex");
 const PICKS = TRAIN_F.photoPicks;
 

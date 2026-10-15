@@ -22,6 +22,7 @@ import { uiFor } from "../campaign-v2/production/ui.ts";
 import { interactionForLink } from "../campaign-v2/production/interaction-map.ts";
 import { richText } from "../campaign-v2/kit/rich.ts";
 import { PROGRAMME_DESCRIPTIONS } from "../campaign-v2/production/programme-descriptions.ts";
+import { reverseTrainHConfig } from "./fixtures/train-h-20261015.mjs";
 
 const require = createRequire(import.meta.url);
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -210,7 +211,9 @@ test("against the pre-change Offering.tsx: untargeted routes are byte-identical,
   if (source === null) { t.skip(`baseline ${BASE_COMMIT} not available in this clone; set AHV_OFFERING_BASELINE`); return; }
   const Before = loadOffering(source);
   for (const slug of PRODUCTION_SLUGS) {
-    const c = C[slug];
+    // Train H (15 Oct 2026, AHV-WB.114/.137) later adds card photographs on two routes: compared without them
+    // (its recorded config delta reversed); test/train-h-20261015.test.mjs pins the photographs.
+    const c = reverseTrainHConfig(slug, JSON.parse(JSON.stringify(C[slug])));
     const before = render(Before, c);
     const after = withoutPackageFacts(render(Offering, c));
     assert.ok(!before.includes(ASK), `${slug}: the baseline had no Ask anchor`);

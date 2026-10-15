@@ -54,6 +54,8 @@ export type RouteBinding = {
    * Admission draws its photograph from the gallery), never the hero or one of the five mosaic photographs.
    */
   pathwayImage: ImageRef;
+  /** One photograph per programme card of a "cards" offering, in card order (Train H, AHV-WB.114/.137); absent = no card photographs. */
+  offeringImages?: ImageRef[];
   gallery: { category: GalleryCategory; image: ImageRef }[];
   /**
    * The route's existing lead identity: fields.form_variant and the guide download, as the page it replaces, plus
@@ -348,6 +350,33 @@ for (const [slug, pick] of Object.entries(PHOTO_PICKS_20261015) as [ProductionSl
     const category = STEP_CATEGORY[pick.pathway];
     if (!category) throw new Error(`production/bindings: no gallery category for steps photograph ${pick.pathway}`);
     r.gallery = [...r.gallery, { category, image: r.pathwayImage }];
+  }
+}
+
+/**
+ * Train H (15 Oct 2026), owner decision 10 (pick from the image bank, old or new). AHV-WB.335.hero-image: the
+ * /lp/ayurvedic-hospital-kerala/ hero (desktop and phone) becomes the physician consultation room (ahv-pkd-111, Palakkad,
+ * IMAGE_CATALOG register_ok=yes, no person present) instead of the morning-mist photograph it shared with
+ * /Ayurveda_Treatment_Neo_S.India_Cities.html. AHV-WB.114.change / AHV-WB.137.change: each programme card of the Karkidaka
+ * and rejuvenation-detox routes carries one small photograph (production/sections/Offering.tsx), all no-person Palakkad
+ * image-bank photographs already published for other routes; none is the route's own hero, steps photograph or gallery
+ * photograph, and the card copy is unchanged. Applied after the Train F picks. Reversible: delete a route's entry.
+ */
+export const PHOTO_PICKS_20261015H: Readonly<Partial<Record<ProductionSlug, { hero?: string; cards?: readonly string[] }>>> = {
+  "lp-hospital-kerala": { hero: "ahv-pkd-111" }, // AHV-WB.335.hero-image
+  "monsoon-wellness": { cards: ["ahv-img-045", "ahv-pkd-115", "ahv-pkd-50"] }, // AHV-WB.114.change
+  "rejuvenation-detox": { cards: ["ahv-img-012", "ahv-pkd-132", "ahv-img-018"] }, // AHV-WB.137.change
+};
+for (const [slug, pick] of Object.entries(PHOTO_PICKS_20261015H) as [ProductionSlug, { hero?: string; cards?: readonly string[] }][]) {
+  const r = ROUTES[slug];
+  const own = new Set([r.heroImage.id, r.mobileImage.id, r.pathwayImage.id, ...r.gallery.map((g) => g.image.id)]);
+  if (pick.hero) {
+    if (own.has(pick.hero)) throw new Error(`production/bindings: ${slug} hero ${pick.hero} is already one of the route's photographs`);
+    r.heroImage = img(pick.hero); r.mobileImage = r.heroImage;
+  }
+  if (pick.cards) {
+    if (new Set(pick.cards).size !== pick.cards.length || pick.cards.some((id) => own.has(id))) throw new Error(`production/bindings: ${slug} card photographs must be distinct and not the route's own`);
+    r.offeringImages = pick.cards.map(img);
   }
 }
 

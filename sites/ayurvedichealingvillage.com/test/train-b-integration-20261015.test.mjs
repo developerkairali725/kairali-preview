@@ -8,7 +8,10 @@ import fs from "node:fs";
 import { createHash } from "node:crypto";
 import { TRAIN_B, TRAIN_B_CANDIDATES, reverseTrainBSource, candidateSource } from "./fixtures/train-b-20261015.mjs";
 // Train F (15 Oct 2026) sits on top of Train B: its exact source delta is removed first (fixtures/train-f-20261015.mjs).
-import { reverseTrainFSource } from "./fixtures/train-f-20261015.mjs";
+import { reverseTrainFSource as reverseTrainFSourceOnly } from "./fixtures/train-f-20261015.mjs";
+import { reverseTrainHSource } from "./fixtures/train-h-20261015.mjs";
+// Train H (15 Oct 2026) composes on Train F (fixtures/train-h-20261015.mjs): its delta is reversed first.
+const reverseTrainFSource = (p, s) => reverseTrainFSourceOnly(p, reverseTrainHSource(p, s));
 // Train G (15 Oct 2026) sits on top of Train F; its accepted E02 rework of the six quotation-box rows edits some of the
 // prior wording checked below, so those checks read the Train F head bytes (fixtures/train-g-20261015.mjs).
 import { reverseTrainGSource } from "./fixtures/train-g-20261015.mjs";

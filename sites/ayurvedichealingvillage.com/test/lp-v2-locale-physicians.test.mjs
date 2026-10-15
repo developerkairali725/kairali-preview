@@ -13,7 +13,11 @@ import fixture from './fixtures/locale-physicians-20261014.json' with {type:'jso
 import {reverseTrainAConfig,reverseTrainASource} from './fixtures/train-a-20261014.mjs';
 import {reverseTrainBConfig,reverseTrainBSource} from './fixtures/train-b-20261015.mjs';
 // Train F (15 Oct 2026) sits on top of Train B: its exact photograph picks are reversed first (fixtures/train-f-20261015.mjs).
-import {reverseTrainFConfig,reverseTrainFSource} from './fixtures/train-f-20261015.mjs';
+import {reverseTrainFConfig as reverseTrainFConfigOnly,reverseTrainFSource as reverseTrainFSourceOnly} from './fixtures/train-f-20261015.mjs';
+import {reverseTrainHConfig,reverseTrainHSource} from './fixtures/train-h-20261015.mjs';
+// Train H (15 Oct 2026) composes on Train F (fixtures/train-h-20261015.mjs): its delta is reversed first.
+const reverseTrainFSource=(p,s)=>reverseTrainFSourceOnly(p,reverseTrainHSource(p,s));
+const reverseTrainFConfig=(slug,c)=>reverseTrainFConfigOnly(slug,reverseTrainHConfig(slug,c));
 // Train G rework (15 Oct 2026) sits on top of Train F: its exact RU phone placeholder is reversed first (fixtures/train-g-rework-20261015.mjs).
 import {reverseTrainGConfig} from './fixtures/train-g-rework-20261015.mjs';
 import {reverseThirdGuestFilmsConfig} from './fixtures/pr429-integration-config.mjs';

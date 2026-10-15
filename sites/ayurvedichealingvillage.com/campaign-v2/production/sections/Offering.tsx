@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PACKAGE_FACTS } from "../package-facts";
 import { PROGRAMME_DESCRIPTIONS } from "../programme-descriptions";
 import type { CampaignConfig, PageOffering } from "../../kit/types.ts";
@@ -53,6 +54,12 @@ function Cards({ c, o, v, ui, no }: { c: CampaignConfig; o: Of<"cards"> } & SecP
       <ol className="lp-poffer__cards" {...(o.programmeLinks ? { "data-programme-links": "" } : {})}>
         {o.cards.map((card, i) => (
           <li key={card.title} className="lp-poffer__card">
+            {/* Train H (AHV-WB.114/.137): the card's own small photograph where the route binds one (bindings.ts). */}
+            {card.image ? (
+              <Image className="lp-poffer__img" src={card.image.src} alt={ui.alt[card.image.id] ?? card.image.alt}
+                width={card.image.width} height={card.image.height} sizes="(max-width: 767px) 100vw, 40vw" loading="lazy"
+                style={{ display: "block", width: "100%", height: "auto", aspectRatio: "2 / 1", objectFit: "cover", borderRadius: "var(--lp-radius)" }} />
+            ) : null}
             <span className="lp-poffer__no" aria-hidden="true">{numeral(i)}</span>
             <h3 className="lp-poffer__title">{card.title}</h3>
             {card.links?.length ? (
