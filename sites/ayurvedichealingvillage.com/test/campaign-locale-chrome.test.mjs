@@ -5,6 +5,9 @@ import crypto from 'node:crypto';
 // Train J batch 1 regenerates the locale review chrome (route map without the retired /the-baoli-special-deal/); its
 // exact delta is peeled first, so the snapshot manifest pin is unchanged (fixtures/train-j1-20261015.mjs).
 import {peelTrainJ1Generated} from './fixtures/train-j1-20261015.mjs';
+// Train N recaptured the locale snapshots on the Train J1 chrome: from that archive on, the manifest pins the current
+// bytes directly, so the J1 peel applies only to the earlier archive (fixtures/train-n-integration-20261015.json).
+import {TRAIN_N_INTEGRATION} from './fixtures/train-n-integration-20261015.mjs';
 const read=p=>fs.readFileSync(new URL('../'+p,import.meta.url),'utf8');
 const sha=s=>crypto.createHash('sha256').update(s).digest('hex');
 const actionSlice=s=>s.slice(s.indexOf('  function ctaBar()'),s.indexOf('  window.addEventListener("resize"'));
@@ -12,7 +15,8 @@ test('all captured locale chrome remains bound to the existing snapshot manifest
  const spec=JSON.parse(read('english-candidate/locale-prerenders-release.json'));
  const rows=spec.sources.filter(x=>/^public\/ahv\/l10n\/[^/]+\/design\/review-chrome\.js$/.test(x.file));
  assert.equal(rows.length,12);
- for(const row of rows)assert.equal(sha(peelTrainJ1Generated(row.file,read(row.file))),row.sha256,row.file);
+ const recaptured=spec.asset===TRAIN_N_INTEGRATION.localeArchive;
+ for(const row of rows)assert.equal(sha(recaptured?read(row.file):peelTrainJ1Generated(row.file,read(row.file))),row.sha256,row.file);
 });
 test('DE/RU campaign bundles differ only by the current reviewed CTA actions and retain their own localized chrome',()=>{
  const routes=JSON.parse(read('l10n/routes.json')).routes;
