@@ -11,13 +11,16 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import fs from "node:fs";
+// Train J3 (15 Oct 2026) sits on top of Train I: its exact delta is peeled first (fixtures/train-j3-20261015.mjs).
+import { peelTrainJ3Source, reverseTrainJ3Config } from "./train-j3-20261015.mjs";
 
 export const TRAIN_I = JSON.parse(fs.readFileSync(new URL("./train-i-20261015.json", import.meta.url), "utf8"));
 const sha = (s) => createHash("sha256").update(s).digest("hex");
 const plain = (v) => JSON.parse(JSON.stringify(v));
 
 /** The Train G head text of `path` (unchanged when Train I did not touch it, or when it is already the head text). */
-export function reverseTrainISource(path, text) {
+export function reverseTrainISource(path, rawText) {
+  const text = peelTrainJ3Source(path, rawText);
   const e = TRAIN_I.files[path];
   if (!e || typeof text !== "string") return text;
   if (sha(text) === e.beforeSHA256) return text;
@@ -33,7 +36,8 @@ export function reverseTrainISource(path, text) {
 
 /** For older layers' chains: the Train I bytes of a Train I file are reversed exactly; any other text passes through
  *  untouched (an older layer's own bytes, which that layer then checks against its own pins). */
-export function peelTrainISource(path, text) {
+export function peelTrainISource(path, rawText) {
+  const text = peelTrainJ3Source(path, rawText);
   const e = TRAIN_I.files[path];
   return e && typeof text === "string" && sha(text) === e.afterSHA256 ? reverseTrainISource(path, text) : text;
 }
@@ -42,6 +46,7 @@ const at = (c, path) => path.reduce((o, k) => (o == null ? undefined : o[k]), c)
 
 /** A production config (JSON copy) with Train I's field changes reversed exactly. Mutates and returns `c`. */
 export function reverseTrainIConfig(slug, c) {
+  reverseTrainJ3Config(slug, c);
   const changes = TRAIN_I.configChanges[slug];
   if (!changes || !c) return c;
   const present = changes.filter(({ path }) => at(c, path.slice(0, -1)) != null);

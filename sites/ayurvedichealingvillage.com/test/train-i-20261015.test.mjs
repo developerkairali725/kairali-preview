@@ -23,9 +23,11 @@ import { lintData } from "../campaign-v2/kit/lint/data.ts";
 import { TRIPADVISOR, dateLabel, monthLabel } from "../campaign-v2/data/ratings.ts";
 import { productionCss } from "../scripts/build-production-css.mjs";
 import { TRAIN_I, reverseTrainISource, peelTrainISource, reverseTrainIConfig, reverseTrainIRatings } from "./fixtures/train-i-20261015.mjs";
+// Train J3 (15 Oct 2026) sits on top: its exact delta is peeled first, so the Train I pins below run unchanged.
+import { peelTrainJ3Source, reverseTrainJ3Config } from "./fixtures/train-j3-20261015.mjs";
 
 const SITE = fileURLToPath(new URL("../", import.meta.url));
-const read = (p) => fs.readFileSync(new URL(`../${p}`, import.meta.url), "utf8");
+const read = (p) => peelTrainJ3Source(p, fs.readFileSync(new URL(`../${p}`, import.meta.url), "utf8"));
 const json = (p) => JSON.parse(read(p));
 const sha = (s) => createHash("sha256").update(s).digest("hex");
 const plain = (v) => JSON.parse(JSON.stringify(v));
@@ -83,7 +85,7 @@ test("every Train I file reverses exactly to the Train G head bytes (git 441c3aa
 test("configs: Train I changes exactly the recorded fields on eight routes and reverses to the Train G head", () => {
   assert.deepEqual(Object.keys(TRAIN_I.configChanges).sort(), ["ayurveda-retreat", "lp-hospital-kerala", "lp-south-india", "lp-treatment-packages", "pain-management", "panchakarma", "treatment-packages", "weight-management"]);
   for (const slug of PRODUCTION_SLUGS) {
-    const now = plain(productionCampaign(slug));
+    const now = reverseTrainJ3Config(slug, plain(productionCampaign(slug)));
     const head = reverseTrainIConfig(slug, plain(now));
     assert.equal(JSON.stringify(reverseTrainIConfig(slug, plain(head))), JSON.stringify(head), `${slug}: head passes through`);
     if (!TRAIN_I.configChanges[slug]) assert.equal(JSON.stringify(head), JSON.stringify(now), slug);

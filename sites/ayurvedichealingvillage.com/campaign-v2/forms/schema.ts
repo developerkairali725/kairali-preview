@@ -345,14 +345,19 @@ export const CAMPAIGN_ENQUIRY_COPY: Record<"en" | "de" | "ru", EnquiryCopy> = {
     title: "Kostenlose ärztliche Erstberatung", intro: "Teilen Sie uns mit, wie wir Sie erreichen können. Unser Patientenservice hilft Ihnen bei der Planung Ihres Aufenthalts.",
     lede: "Ein kurzes Formular. Medizinische Angaben sind hier nicht nötig – Ihr Arzt fragt diese vertraulich in der Beratung ab.",
     name: "Ihr Name", email: "E-Mail", phone: "Telefon / WhatsApp (optional, mit Ländervorwahl)", message: "Wie können wir helfen? (optional)",
-    consent: "Ich stimme zu, zu meiner Anfrage kontaktiert zu werden.", privacy: "Datenschutzerklärung (EN)",
+    // AHV-WB.526.legal-links-layout (Train J3): the page footer's own label (production/ui.ts de.footer.privacy), so
+    // "Datenschutz (EN) · AGB (EN)" stays on one line at 360/390 px. Link target and consent wording unchanged.
+    consent: "Ich stimme zu, zu meiner Anfrage kontaktiert zu werden.", privacy: "Datenschutz (EN)",
     success: "Vielen Dank. Ihre Anfrage ist eingegangen.",
   },
   ru: {
     title: "Бесплатная консультация врача", intro: "Сообщите, как с вами связаться. Служба сопровождения пациентов поможет спланировать ваш визит.",
     lede: "Короткая форма. Медицинские сведения здесь не нужны — врач спросит о них конфиденциально во время консультации.",
     name: "Ваше имя", email: "Эл. почта", phone: "Телефон / WhatsApp (необязательно, с кодом страны)", message: "Чем мы можем помочь? (необязательно)",
-    consent: "Я согласен(на), чтобы со мной связались по поводу моего запроса.", privacy: "Политика конфиденциальности (EN)",
+    // AHV-WB.549.legal-links-layout (Train J3): the page footer's own label (production/ui.ts ru.footer.privacy). At
+    // 360/390 px the "·" now stays on the first line and "Условия (EN)" wraps aligned with the consent text, instead of
+    // the separator starting a misaligned second line. Link target and consent wording unchanged.
+    consent: "Я согласен(на), чтобы со мной связались по поводу моего запроса.", privacy: "Конфиденциальность (EN)",
     success: "Спасибо. Ваш запрос получен.",
   },
 };

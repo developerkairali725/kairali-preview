@@ -13,6 +13,9 @@ import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/
 import { ROUTES, OG_IMAGE, PRICING_HIDDEN, REVIEW_BATCHES, SITE_ORIGIN } from "../campaign-v2/production/bindings.ts";
 import { COPY } from "../campaign-v2/production/pages/index.ts";
 import { ORDER, baseOrder, sectionOrder, D_VILLAGE_AND_STORIES } from "../campaign-v2/production/section-order.ts";
+// Train J3 (15 Oct 2026): /lp/kairali-brand/ joins the D village-and-films routes (AHV-WB.362) and the monsoon route gets its
+// own share picture (AHV-WB.123); the pins below check the head list with that exact addition reversed, and the new image.
+import { TRAIN_J3, baseOrderBeforeTrainJ3, reverseTrainJ3List } from "./fixtures/train-j3-20261015.mjs";
 import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
 import { allText } from "../campaign-v2/kit/lint/claims.ts";
 import { pageLinks, pageText } from "../campaign-v2/kit/lint/page-text.ts";
@@ -221,12 +224,13 @@ test("composition: every variant in decision order; the doctors right after the 
   assert.ok(!ORDER.B.includes("rest") && !ORDER.D.includes("rest") && !ORDER.D.includes("place"), "B has no stillness band; D neither band nor village");
   // Staff review 9 Oct (AHV-WB.249/320/430/272): only the four listed D routes add the existing village and films, after the
   // steps and before the quotation; no stillness band; the fifth D route (lp-brand) keeps the shortest path.
-  assert.deepEqual([...D_VILLAGE_AND_STORIES], ["south-india-cities", "brand", "lp-south-india", "lp-panchakarma"]);
+  const headList = reverseTrainJ3List("D_VILLAGE_AND_STORIES", D_VILLAGE_AND_STORIES), headBaseOrder = baseOrderBeforeTrainJ3(baseOrder, ORDER);
+  assert.deepEqual([...headList], ["south-india-cities", "brand", "lp-south-india", "lp-panchakarma"]);
   for (const slug of PRODUCTION_SLUGS) {
     const v = ROUTES[slug].variant ?? "A";
-    const listed = D_VILLAGE_AND_STORIES.includes(slug);
+    const listed = headList.includes(slug);
     assert.equal(listed, v === "D" && slug !== "lp-brand", slug);
-    assert.deepEqual(baseOrder(slug, v), listed ? ["lead", "offering", "pathway", "place", "stories", "stay", "physicians"] : [...ORDER[v]], slug);
+    assert.deepEqual(headBaseOrder(slug, v), listed ? ["lead", "offering", "pathway", "place", "stories", "stay", "physicians"] : [...ORDER[v]], slug);
   }
   for (const gone of ["Doctors", "Body", "FeePlan", "Stillness", "Admission", "Village", "Films", "LongForm", "OfferBand", "Fees"]) {
     assert.doesNotMatch(src, new RegExp(`<${gone}\\b`), `${gone} is not part of the designed page`);
@@ -378,6 +382,8 @@ test("metadata: canonical, robots and the Open Graph image are the replaced page
   assert.equal(new Set(Object.keys(OWN).map((s) => ROUTES[s].og.url)).size, 5, "each page its own picture");
   const ogImage = (slug) => OWN[slug]
     ? { url: ROUTES[slug].og.url, width: 1200, height: 630, alt: IMAGES[OWN[slug]].alt }
+    : TRAIN_J3.bindings[slug]?.ogImageAlt
+    ? { url: TRAIN_J3.bindings[slug].og.after.url, width: 1200, height: 630, alt: TRAIN_J3.bindings[slug].ogImageAlt.after }
     : ROUTES[slug].og
     ? { url: ROUTES[slug].og.url, ...(ROUTES[slug].og.width ? { width: ROUTES[slug].og.width, height: ROUTES[slug].og.height } : {}) }
     : { url: "https://ayurvedichealingvillage.com/landing/r10/og.jpg", width: 1200, height: 630, ...(ALT[slug] ? { alt: ALT[slug] } : {}) };

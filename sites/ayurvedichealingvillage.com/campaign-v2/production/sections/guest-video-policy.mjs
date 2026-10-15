@@ -1,11 +1,11 @@
 // Pure rules for the on-page patient-film player mounted by Stories.tsx (GuestVideoDialog.tsx); node --test imports
-// this file. Owner decision DEC-GUEST-VIDEO-POPUP: play the existing films in an on-page popup on exactly the 19
+// this file. Owner decision DEC-GUEST-VIDEO-POPUP: play the existing films in an on-page popup on exactly the 20
 // English routes below, keeping each card's YouTube link as the fallback. Fail closed everywhere: an unknown route,
 // language, film, consent state or API means no player. Staff review 9 Oct 2026 (AHV-WB.249/320/430/272.guest-video),
 // under the owner's standing authority for on-page guest-video playback: four Direct routes gain the same Stories
 // section (production/section-order.ts D_VILLAGE_AND_STORIES) and are appended here, same films and consent gating.
 
-/** The 13 English routes of DEC-GUEST-VIDEO-POPUP (WOPS-AHV-GUEST-VIDEO-20261010-001 SCOPE.json), then the four D routes, then the two weight routes, exact paths. */
+/** The 13 English routes of DEC-GUEST-VIDEO-POPUP (WOPS-AHV-GUEST-VIDEO-20261010-001 SCOPE.json), then the four D routes and /lp/kairali-brand/ (Train J3), then the two weight routes, exact paths. */
 export const GUEST_VIDEO_ROUTES = Object.freeze([
   "/pain-management.html",
   "/family-ayurvedic-retreat-kerala.html",
@@ -25,6 +25,8 @@ export const GUEST_VIDEO_ROUTES = Object.freeze([
   "/lp/ayurveda-treatment-south-india/",
   "/lp/panchkarma-treatment/",
   "/Kairali_Brand_and_Competition_Neo-original.html",
+  // AHV-WB.362.guest-video (Train J3, 15 Oct 2026): the /lp/ brand page gains the same Stories section and films.
+  "/lp/kairali-brand/",
   // Owner decision, 14 Oct 2026 (AHV-WB.299.change): the two weight routes now carry the Rupak Mann guest story.
   "/weight-loss.html",
   "/lp/weight-loss/",

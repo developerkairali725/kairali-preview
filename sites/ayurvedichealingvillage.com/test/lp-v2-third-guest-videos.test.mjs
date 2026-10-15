@@ -4,7 +4,11 @@ import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {productionCampaign,PRODUCTION_SLUGS} from '../campaign-v2/production/load.ts';
 import {FILMS} from '../campaign-v2/data/films.ts';
-import {APPROVED_FILM_IDS,GUEST_VIDEO_ROUTES,filmIdFromHref,routeAllowed,reduce,CLOSED,playerSrc} from '../campaign-v2/production/sections/guest-video-policy.mjs';
+import {APPROVED_FILM_IDS,GUEST_VIDEO_ROUTES as CURRENT_GUEST_VIDEO_ROUTES,filmIdFromHref,routeAllowed,reduce,CLOSED,playerSrc} from '../campaign-v2/production/sections/guest-video-policy.mjs';
+// Train J3 (15 Oct 2026, AHV-WB.362): /lp/kairali-brand/ later joins the D village-and-films routes and the guest-video
+// allowlist; these pins run on the head lists, helpers and config with that exact delta reversed (fixtures/train-j3-20261015.mjs).
+import {reverseTrainJ3List} from './fixtures/train-j3-20261015.mjs';
+const GUEST_VIDEO_ROUTES=reverseTrainJ3List('GUEST_VIDEO_ROUTES',CURRENT_GUEST_VIDEO_ROUTES);
 import fixture from './fixtures/third-guest-videos-20261014.json' with {type:'json'};
 const sha=x=>createHash('sha256').update(x).digest('hex');
 import {BATCH6} from './fixtures/train-a-batch6-20261014.mjs';

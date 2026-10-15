@@ -47,7 +47,8 @@ export const DOCTORS_AFTER_LEAD: readonly string[] = [
  * quotation, as in variant A. Same sections, styles and props; every other D route keeps the shortest path. Reversible:
  * remove a slug to restore its D order.
  */
-export const D_VILLAGE_AND_STORIES: readonly string[] = ["south-india-cities", "brand", "lp-south-india", "lp-panchakarma"];
+// Train J3 (15 Oct 2026, AHV-WB.362.villa-gallery / .guest-video): /lp/kairali-brand/ joins, as its sibling brand page.
+export const D_VILLAGE_AND_STORIES: readonly string[] = ["south-india-cities", "brand", "lp-south-india", "lp-panchakarma", "lp-brand"];
 const D_WITH_VILLAGE_AND_STORIES: readonly Block[] = ["lead", "offering", "pathway", "place", "stories", "stay", "physicians"];
 
 /** The variant's designed sections for one route, before the doctors move (ORDER, or a listed D route's override). */

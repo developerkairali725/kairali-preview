@@ -81,6 +81,7 @@ test('Rendered package facts preserve every existing offering node, card, CTA an
 });
 test('Locale mismatch and multi-locale configs receive no extra package facts',()=>{
  for(const c of configs.filter(c=>PACKAGE_FACTS[c.route]))for(const locales of [['xx'],['en','de']]) {
-  const modified={...c,locales};assert.equal(render(Offering,modified),render(Before,modified),c.route);
+  // Train J3 (AHV-WB.298) later adds card photographs on /weight-loss.html; compared without them (its config delta reversed).
+  const modified={...reverseTrainHConfig(c.slug,JSON.parse(JSON.stringify(c))),locales};assert.equal(render(Offering,modified),render(Before,modified),c.route);
  }
 });
