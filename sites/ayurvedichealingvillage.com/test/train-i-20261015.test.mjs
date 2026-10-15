@@ -180,9 +180,19 @@ test("29 AHV-WB.054.change / AHV-LATER-016.01: the pain page says 'Abhyangam, a 
 
 // ── 30: consent notice layout ────────────────────────────────────────────────────────────────────────────────────────
 test("30 AHV-M024.01: only a layout helper is added to the bridge; consent text, choices, storage and policy are unchanged", () => {
+  // Train N: the Train G head bytes are also recorded here (SHA-256 at 441c3aa5c), so the check holds in a shallow CI
+  // checkout where the historical commit is absent; with history present both comparisons run.
+  const CONSENT_AT_BASE = {
+    "public/consent/copy.mjs": "e2aa5fee9d45a2a30d2ece51a4cad8b2d544747e73eb68ad552c44004bbebc0d",
+    "public/consent/policy.mjs": "483bb4d00982221007f89c487a5885517c4832314364951a170fffb42dcbc66c",
+    "public/consent/regions.mjs": "accd64c8daddd4b4d6ed5e479ff3f7f9d5828cccef487476eac974da3dad4f72",
+  };
   for (const f of ["public/consent/copy.mjs", "public/consent/policy.mjs", "public/consent/regions.mjs"]) {
     assert.equal(TRAIN_I.files[f], undefined, f);
-    assert.equal(sha(read(f)), sha(execFileSync("git", ["show", `${BASE}:sites/ayurvedichealingvillage.com/${f}`], { cwd: SITE, encoding: "utf8" })), `${f} unchanged`);
+    assert.equal(sha(read(f)), CONSENT_AT_BASE[f], `${f} unchanged`);
+    let base = null;
+    try { base = execFileSync("git", ["show", `${BASE}:sites/ayurvedichealingvillage.com/${f}`], { cwd: SITE, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] }); } catch {}
+    if (base !== null) assert.equal(sha(base), CONSENT_AT_BASE[f], `${f}: recorded hash is the Train G head`);
   }
   const [delta] = TRAIN_I.files["public/consent/bridge.mjs"].replacements;
   assert.ok(delta.after.startsWith(delta.before.replace(/\n}\n$/, "")), "the notice markup is built exactly as before");
