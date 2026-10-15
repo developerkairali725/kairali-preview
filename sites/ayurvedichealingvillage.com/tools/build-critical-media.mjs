@@ -125,3 +125,16 @@ for(let start=0;start<variants.length;start+=25){
  if(!fs.readFileSync(source).equals(original))throw Error('Villa hero original changed');
  console.log('Villa hero AVIF: '+output.length+' bytes; original retained');
 }
+
+// Yoga course pages (every locale): the banner and the course photo that fills the first phone screen
+// (the measured LCP element) use the established 768px / AVIF55 phone preset; originals retained.
+for (const name of ['ee7d129f97f1b7e2', '0df69b06cb6796e6']) {
+ const source=`public/ahv/assets/img/seven/${name}.webp`,dest=`public/ahv/assets/img/seven/${name}-768-phone.avif`;
+ const original=fs.readFileSync(source),before=await sharp(original).metadata();
+ const output=await sharp(original).resize({width:768,withoutEnlargement:true}).avif({quality:55}).toBuffer();
+ const after=await sharp(output).metadata();
+ if(after.width!==Math.min(768,before.width)||Math.abs(after.width/after.height-before.width/before.height)>0.005)throw Error('Yoga course image dimensions/aspect changed');
+ if(!fs.existsSync(dest)||!fs.readFileSync(dest).equals(output))fs.writeFileSync(dest,output);
+ if(!fs.readFileSync(source).equals(original))throw Error('Yoga course original changed');
+ console.log(`Yoga course ${name}: ${original.length} -> ${output.length} bytes; original retained`);
+}

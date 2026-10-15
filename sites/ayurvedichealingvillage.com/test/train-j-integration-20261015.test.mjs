@@ -12,6 +12,8 @@ import { TRAIN_J2 } from "./fixtures/train-j2-20261015.mjs";
 import { TRAIN_J3 } from "./fixtures/train-j3-20261015.mjs";
 import { TRAIN_J_INTEGRATION, peelTrainJ2OverJ1, peelTrainJ1UnderJ2, peelTrainJSource } from "./fixtures/train-j-integration-20261015.mjs";
 import { peelTrainNTail } from "./fixtures/train-n-integration-20261015.mjs";
+// Train N perf fix (16 Oct 2026): boot.ts is read as the Train N head left it (fixtures/train-n-perf-fix-20261016.mjs).
+import { peelTrainNPerfFix } from "./fixtures/train-n-perf-fix-20261016.mjs";
 
 const SITE = fileURLToPath(new URL("../", import.meta.url));
 const BASE = "00e944e4440c4b1710bffc29cc7c2bea8b385fdc";
@@ -63,6 +65,6 @@ test("every Train J batch file peels to the Train I head through the whole-Train
   for (const t of [TRAIN_J1, TRAIN_J2, TRAIN_J3])
     for (const [p, e] of Object.entries(t.files)) {
       if (!fs.existsSync(new URL(`../${p}`, import.meta.url))) continue;
-      assert.equal(sha(peelTrainJSource(p, peelTrainNTail(p, read(p)))), e.beforeSHA256, `${t.train ?? ""} ${p}`);
+      assert.equal(sha(peelTrainJSource(p, peelTrainNTail(p, peelTrainNPerfFix(p, read(p))))), e.beforeSHA256, `${t.train ?? ""} ${p}`);
     }
 });

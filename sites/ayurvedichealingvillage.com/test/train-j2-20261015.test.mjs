@@ -23,6 +23,8 @@ import { TRAIN_J2, reverseTrainJ2Source, peelTrainJ2Source } from "./fixtures/tr
 // Train J integration: a file another Train J batch also edited is read as Train J2 left it (fixtures/train-j-integration-20261015.mjs).
 import { peelTrainJ1UnderJ2 } from "./fixtures/train-j-integration-20261015.mjs";
 import { peelTrainNTail } from "./fixtures/train-n-integration-20261015.mjs";
+// Train N perf fix (16 Oct 2026): boot.ts is read as the Train N head left it (fixtures/train-n-perf-fix-20261016.mjs).
+import { peelTrainNPerfFix } from "./fixtures/train-n-perf-fix-20261016.mjs";
 
 const SITE = fileURLToPath(new URL("../", import.meta.url));
 const read = (p) => fs.readFileSync(new URL(`../${p}`, import.meta.url), "utf8");
@@ -38,7 +40,7 @@ test("every Train J2 file reverses exactly to the Train I head bytes (git 00e944
   assert.equal(TRAIN_J2.base, BASE);
   assert.equal(Object.keys(TRAIN_J2.files).length, 13);
   for (const [p, e] of Object.entries(TRAIN_J2.files)) {
-    const now = peelTrainJ1UnderJ2(p, peelTrainNTail(p, read(p)));
+    const now = peelTrainJ1UnderJ2(p, peelTrainNTail(p, peelTrainNPerfFix(p, read(p))));
     assert.equal(sha(now), e.afterSHA256, `${p}: current bytes are Train J2's`);
     const head = reverseTrainJ2Source(p, now);
     assert.equal(sha(head), e.beforeSHA256, p);

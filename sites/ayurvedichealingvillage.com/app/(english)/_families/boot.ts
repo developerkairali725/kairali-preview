@@ -949,6 +949,12 @@ export const BOOT_SCRIPT = `
     if (formLifted) return;
     var form = host.querySelector("form[id]");
     if (!form) return;
+    // A server snapshot's form is never moved. The first sweep runs before the live view exists, so
+    // this lift used to reach only the snapshot copy and then stop (formLifted): the snapshot jumped
+    // its form above the intro on screen, and the live view then replaced it in the approved order —
+    // a full-screen layout shift (CLS 0.44 on the package pages, every locale) for a placement that
+    // never survived the swap. Marking it done here keeps every page's final order exactly as before.
+    if (form.closest("[data-ahv-snapshot]")) { formLifted = true; return; }
     var column = form.parentElement;
     if (!column || column.children.length < 2) return;
     // Keep the skip link first so it still precedes what it targets; the form
