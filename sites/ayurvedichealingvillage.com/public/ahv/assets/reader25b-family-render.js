@@ -20,6 +20,23 @@
     });
     return out;
   }
+  // AHV-M004.01: an article's in-page sections. A heading block with an `anchor` gets that id (clear of the sticky
+  // header); an 'on-this-page' component lists those sections as same-page links, in the reader's list style. The
+  // collection renderer makes every link absolute, so the same-page list is drawn here instead.
+  function anchored(blocks, els) {
+    return els.map((el, i) => {
+      const a = blocks[i] && blocks[i].kind === 'heading' && blocks[i].anchor;
+      return a && el && typeof el === 'object' && el.props ? React.cloneElement(el, { id: a, style: Object.assign({}, el.props.style, { scrollMarginTop: '96px' }) }) : el;
+    });
+  }
+  function onThisPage(c, k) {
+    const P = window.AHV_COLLECTION_RENDER, e = React.createElement;
+    const head = P.sourceBlocks(c.blocks.filter(b => b.kind === 'heading'), k, () => {});
+    const list = c.blocks.find(b => b.kind === 'list');
+    return head.concat([e('ul', { key: k + '-toc', 'data-list-depth': '0', style: { margin: '0 0 16px', paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px', maxWidth: '76ch', listStyleType: 'disc' } },
+      ...(list ? list.items : []).map((it, j) => e('li', { key: k + '-toc-' + j, style: { fontSize: '17.5px', lineHeight: 1.75, textWrap: 'pretty' } },
+        e('a', { href: '#' + it.anchor, style: { textUnderlineOffset: '2px', overflowWrap: 'anywhere' } }, it.text))))]);
+  }
   function readerVals(R, guard) {
     const P = window.AHV_COLLECTION_RENDER;
     return {
@@ -37,12 +54,12 @@
         isNav: c.component !== 'contextual-resources' && /context|menu|navigation/i.test(c.component),
         isSection: c.component === 'contextual-resources' || !/context|menu|navigation/i.test(c.component),
         navLabel: R.h1 + ' \u2014 related pages',
-        el: P.sourceBlocks(groupCards(c.blocks), 'y' + ci, guard).map(el => {
+        el: c.component === 'on-this-page' ? onThisPage(c, 'y' + ci) : anchored(groupCards(c.blocks), P.sourceBlocks(groupCards(c.blocks), 'y' + ci, guard).map(el => {
           // Festival article sections follow the page H1; retain the renderer's exact visual styles.
           if (R.path !== '/festivals/' || c.component !== 'article' || !el) return el;
           const tag = el.type === 'h3' ? 'h2' : el.type === 'h4' ? 'h3' : null;
           return tag ? React.createElement(tag, { ...el.props, key: el.key }, el.props.children) : el;
-        })
+        }))
       }))
     };
   }

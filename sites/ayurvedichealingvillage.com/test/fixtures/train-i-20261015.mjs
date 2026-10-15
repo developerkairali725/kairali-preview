@@ -11,13 +11,17 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import fs from "node:fs";
+// Train J batch 1 composes on Train I the same way: its delta is peeled first, so Train J1 bytes reach every Train I
+// consumer (and through peelTrainISource every older chain) as the Train I bytes (fixtures/train-j1-20261015.mjs).
+import { peelTrainJ1Source } from "./train-j1-20261015.mjs";
 
 export const TRAIN_I = JSON.parse(fs.readFileSync(new URL("./train-i-20261015.json", import.meta.url), "utf8"));
 const sha = (s) => createHash("sha256").update(s).digest("hex");
 const plain = (v) => JSON.parse(JSON.stringify(v));
 
 /** The Train G head text of `path` (unchanged when Train I did not touch it, or when it is already the head text). */
-export function reverseTrainISource(path, text) {
+export function reverseTrainISource(path, rawText) {
+  const text = peelTrainJ1Source(path, rawText);
   const e = TRAIN_I.files[path];
   if (!e || typeof text !== "string") return text;
   if (sha(text) === e.beforeSHA256) return text;
@@ -33,7 +37,8 @@ export function reverseTrainISource(path, text) {
 
 /** For older layers' chains: the Train I bytes of a Train I file are reversed exactly; any other text passes through
  *  untouched (an older layer's own bytes, which that layer then checks against its own pins). */
-export function peelTrainISource(path, text) {
+export function peelTrainISource(path, rawText) {
+  const text = peelTrainJ1Source(path, rawText);
   const e = TRAIN_I.files[path];
   return e && typeof text === "string" && sha(text) === e.afterSHA256 ? reverseTrainISource(path, text) : text;
 }
