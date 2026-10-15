@@ -185,12 +185,27 @@ export function imageLedFirstScreen(routePath, locale = "en") {
  * faces (the retreat precedent, 6281e8800).
  */
 export function sharedFontLinkRoute(route) {
-  return Boolean(route) && route.dataset === "assets/hist9-family-data.js";
+  return Boolean(route) && (route.dataset === "assets/hist9-family-data.js" || SHARED_FONT_LINK_PATHS.has(route.path));
 }
+/**
+ * The same helmet-link duplicate, traced on two more templates in the Train N release pre-sweep (16 Oct 2026): the
+ * Sleep Restoration breadcrumb re-wrapped by 44px (two 0.193 shifts, Lighthouse mobile CLS 0.385) and the New to
+ * Yoga intro paragraph by 27px (0.102 + 0.098). Same remedy: the snapshot uses the runtime's own font stylesheet link.
+ */
+const SHARED_FONT_LINK_PATHS = new Set(["/sleep-restoration-therapy/", "/new-to-yoga/"]);
 
 /** Measured text-led finder/hub: preload only the existing heading face alongside the body face. */
 export function routeFontPreloads(route, styles, readText, locale = "en") {
   const body = bodyFontFiles(styles, readText);
+  // Air India Maharaja Club, Latin-script locales: the hero's member badge (Mulish 700, inline-flex on the first line)
+  // painted in the fallback bold sat the hero photo 1px lower on the snapshot; the live view's identical photo then
+  // registered as a second, later LCP (observed 0.1 s -> 0.6 s; Lighthouse mobile 82-86 on /de/). Its bold face is
+  // preloaded with the body face so the snapshot paints in the final metrics. Other scripts never use that subset.
+  if (route === "/kairali-air-india-maharaja-club.html") return ["en", "de", "fr", "es", "it", "pt", "nl"].includes(locale) ? [...new Set([...body, ...bodyFontFiles(styles, readText, "700")])] : body;
+  // Yoga & Meditation package (every locale): the heading painted in the fallback serif first and grew 34px when
+  // Marcellus arrived, pushing the hero photo (the phone LCP element) down (CLS 0.026 x 2, simulated LCP ~4 s).
+  // Its existing heading face is preloaded with the body face, as on the measured hub routes below.
+  if (route === "/yoga-and-meditation-package/") return [...new Set([...body, ...bodyFontFiles({ ...styles, styles: ['body{font-family:"Marcellus"}'] }, readText)])];
   if (!["/wellness-programs/", "/yoga-meditation-programs/", "/panchakarma-therapy/", "/post-pregnancy-health-programme/", "/preventive-and-regenerative-treatment/", "/panchakarma/", "/ayurveda-treatment/", "/mindfulness-retreat/", "/all-programs/", "/ayurveda-training-programme/", "/ananda-lahari-yoga-and-ayurveda-retreat/", "/archive-yoga-retreat/", "/ashtanga-yoga-and-ayurveda-retreat/"].includes(route)) return body;
   const heading = bodyFontFiles({ ...styles, styles: ['body{font-family:"Marcellus"}'] }, readText);
   const ui = (route === "/ayurveda-training-programme/" || route === "/archive-yoga-retreat/") && locale === "en" ? [...bodyFontFiles(styles, readText, "600"), ...bodyFontFiles(styles, readText, "700")] : [];

@@ -138,3 +138,17 @@ for (const name of ['ee7d129f97f1b7e2', '0df69b06cb6796e6']) {
  if(!fs.readFileSync(source).equals(original))throw Error('Yoga course original changed');
  console.log(`Yoga course ${name}: ${original.length} -> ${output.length} bytes; original retained`);
 }
+
+// Air India Maharaja Club page (every locale): the photos and partner logos below the phone hero use 768px AVIF
+// derivatives (photos at the established AVIF55 phone preset; the two transparent logos at AVIF80 so their edges stay
+// crisp). Originals retained; desktop keeps them.
+for (const [name, quality] of [['cultural', 55], ['AyurvedaPanchkarmaDetoxatKairali', 55], ['weightmanagementatKairali', 55], ['ImmunityEnhancementExecutiveHealthAssessment', 55], ['DiabetesMetabolicBalance', 55], ['WomensHormonalBalanceatkairali', 55], ['StressReliefMentalWellnessatkairali', 55], ['maha2', 80], ['MaharajaClub_CMYK_Positive', 80]]) {
+ const source=`public/ahv/assets/img/AHV-V3-${name}.webp`,dest=`public/ahv/assets/img/AHV-V3-${name}-768-phone.avif`;
+ const original=fs.readFileSync(source),before=await sharp(original).metadata();
+ const output=await sharp(original).resize({width:768,withoutEnlargement:true}).avif({quality}).toBuffer();
+ const after=await sharp(output).metadata();
+ if(after.width!==Math.min(768,before.width)||Math.abs(after.height-before.height*after.width/before.width)>1||Boolean(after.hasAlpha)!==Boolean(before.hasAlpha))throw Error('Air India image dimensions/aspect/alpha changed');
+ if(!fs.existsSync(dest)||!fs.readFileSync(dest).equals(output))fs.writeFileSync(dest,output);
+ if(!fs.readFileSync(source).equals(original))throw Error('Air India original changed');
+ console.log(`Air India ${name}: ${original.length} -> ${output.length} bytes; original retained`);
+}

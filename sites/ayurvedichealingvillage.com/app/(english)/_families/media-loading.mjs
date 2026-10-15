@@ -88,6 +88,20 @@ export function installLazyImgOrder(win, responsiveAttrs, phoneSrc) {
     if (name === "src" && this.__ahvSrc !== undefined) this.__ahvSrc = undefined;
     return setAttr.call(this, name, value);
   };
+  // react-dom re-assigns img.src as a PROPERTY when it mounts an image (commitMount), with the ORIGINAL address,
+  // after the phone mapping above already wrote the derivative as the attribute: the phone then fetched both
+  // (measured on the Air India page: the 186 KB original after its 11 KB derivative). Only that exact re-write is
+  // kept on the address already chosen for this element (attribute or held src); any other .src write passes through.
+  var I = phoneSrc && win.HTMLImageElement && win.HTMLImageElement.prototype;
+  var srcProp = I && Object.getOwnPropertyDescriptor(I, "src");
+  if (srcProp && srcProp.set && srcProp.configurable) Object.defineProperty(I, "src", {
+    configurable: true, enumerable: srcProp.enumerable, get: srcProp.get,
+    set: function (value) {
+      var chosen = this.__ahvSrc !== undefined ? this.__ahvSrc : this.getAttribute("src");
+      if (chosen && String(value) !== chosen && phoneSrc(String(value)) === chosen) value = chosen;
+      return srcProp.set.call(this, value);
+    },
+  });
 }
 
 /**
