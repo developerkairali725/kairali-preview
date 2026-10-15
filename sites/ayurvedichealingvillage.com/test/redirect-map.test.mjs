@@ -26,9 +26,14 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+import { peelTrainJ1Source } from "./fixtures/train-j1-20261015.mjs";
 
 const SITE = join(dirname(fileURLToPath(import.meta.url)), "..");
 const map = JSON.parse(readFileSync(join(SITE, "english-candidate/redirect-map.json"), "utf8"));
+// Train J batch 1 adds one owner-approved merge (AHV-M016.02, /the-baoli-special-deal/); every invariant below runs on
+// the current map including it, and the ruling count is checked on the map with that exact recorded delta peeled
+// (fixtures/train-j1-20261015.mjs), so the historical count stays as pinned.
+const priorMap = JSON.parse(peelTrainJ1Source("english-candidate/redirect-map.json", readFileSync(join(SITE, "english-candidate/redirect-map.json"), "utf8")));
 const manifest = JSON.parse(readFileSync(join(SITE, "english-candidate/route-manifest.json"), "utf8"));
 const overrides = JSON.parse(readFileSync(join(SITE, "english-candidate/route-overrides.json"), "utf8"));
 
@@ -42,7 +47,11 @@ const legacySources = sources.filter(isLegacy);
 test("both rulings are carried in full — historical rulings, ten approved catalogue/offer/archive moves and two legacy destinations", () => {
   // 18 from the 19 Sep / 24 Sep rulings + /ayurveda-gallery/ (EF-21) + the six content-duplication merges, owner
   // rulings 28 Sep 2026. /prav-simona-yoga-retreat/ is NOT here: the owner kept both retreats (AHV-DUP-012).
-  assert.equal(manifestSources.length, 27 + Object.keys(CONSOLIDATED_MERGES).length, `expected historical plus approved manifest redirects, found ${manifestSources.length}`);
+  const priorManifest = Object.keys(priorMap.redirects).filter((s) => priorMap.redirects[s].legacy !== true);
+  const priorLegacy = Object.keys(priorMap.redirects).filter((s) => priorMap.redirects[s].legacy === true);
+  assert.equal(priorManifest.length, 27 + Object.keys(CONSOLIDATED_MERGES).length, `expected historical plus approved manifest redirects, found ${priorManifest.length}`);
+  assert.equal(priorLegacy.length, 2, `expected 2 legacy redirects, found ${priorLegacy.length}`);
+  assert.deepEqual(sources.filter((s) => !(s in priorMap.redirects)), ["/the-baoli-special-deal/"], "Train J1 adds exactly the Baoli merge");
   assert.equal(legacySources.length, 2, `expected 2 legacy redirects, found ${legacySources.length}`);
 });
 

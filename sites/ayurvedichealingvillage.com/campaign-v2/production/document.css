@@ -1193,7 +1193,9 @@ html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
 .lp-prod .lp-enq__fields--enquiry { display: grid; grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr); gap: 18px 12px; }
 .lp-prod .lp-enq__fields--enquiry > * { grid-column: 1 / -1; }
 .lp-prod .lp-enq__fields--enquiry > .lp-enq__field--name-dialCode { grid-column: 1; }
-.lp-prod .lp-enq__fields--enquiry > .lp-enq__field--name-phone { grid-column: 2; }
+/* AHV-LATER-041.01: the number sits in column 2 only beside a country-code field; forms that ask for the number with its
+   code in one field (A, C and D enquiry forms) keep it full width, aligned with the fields above it. */
+.lp-prod .lp-enq__fields--enquiry > .lp-enq__field--name-dialCode + .lp-enq__field--name-phone { grid-column: 2; }
 
 /* The consultation CTA is a fragment link so it also works without JavaScript. */
 .lp-prod a.lp-consult__submit { color: var(--lp-on-primary); text-decoration: none; }
@@ -1303,6 +1305,11 @@ html[data-lp-surface="production"] :is(#cc-main, .ahv-consent-compact) {
 
 /* ── Pathway: the kit's Admission layout (sections.css .lp-adm) ── */
 .lp-prod .lp-ppath__p { color: var(--lp-muted); }
+/* AHV-LATER-053.01: from 768px Variant C sets the steps in its third column; below 1024px that column is too narrow for
+   the 48px numeral column beside the step text (6px document overflow at 768). There the numeral sits above its step. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .lp-prod[data-variant="C"] .lp-adm__step { grid-template-columns: minmax(0, 1fr); gap: 6px; }
+}
 
 /* ── Place: the kit's Village (sections.css .lp-vil) after a full-bleed band, plus the villa cards ── */
 .lp-prod .lp-pplace { padding-top: 80px; }

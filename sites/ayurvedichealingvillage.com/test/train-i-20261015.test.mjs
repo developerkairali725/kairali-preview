@@ -23,6 +23,8 @@ import { lintData } from "../campaign-v2/kit/lint/data.ts";
 import { TRIPADVISOR, dateLabel, monthLabel } from "../campaign-v2/data/ratings.ts";
 import { productionCss } from "../scripts/build-production-css.mjs";
 import { TRAIN_I, reverseTrainISource, peelTrainISource, reverseTrainIConfig, reverseTrainIRatings } from "./fixtures/train-i-20261015.mjs";
+// Train J batch 1 composes on Train I: its recorded delta is peeled first (fixtures/train-j1-20261015.mjs).
+import { peelTrainJ1Source } from "./fixtures/train-j1-20261015.mjs";
 
 const SITE = fileURLToPath(new URL("../", import.meta.url));
 const read = (p) => fs.readFileSync(new URL(`../${p}`, import.meta.url), "utf8");
@@ -66,7 +68,7 @@ test("every Train I file reverses exactly to the Train G head bytes (git 441c3aa
   assert.equal(TRAIN_I.base, BASE);
   assert.equal(Object.keys(TRAIN_I.files).length, 20);
   for (const [p, e] of Object.entries(TRAIN_I.files)) {
-    const now = read(p);
+    const now = peelTrainJ1Source(p, read(p));
     assert.equal(sha(now), e.afterSHA256, `${p}: current bytes are Train I's`);
     const head = reverseTrainISource(p, now);
     assert.equal(sha(head), e.beforeSHA256, p);
