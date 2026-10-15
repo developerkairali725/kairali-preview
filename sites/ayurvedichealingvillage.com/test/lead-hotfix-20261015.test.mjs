@@ -156,7 +156,14 @@ function html(prefix, form, route) {
 let browser;
 before(async () => {
   const { chromium } = await import("@playwright/test");
-  browser = await chromium.launch({ headless: true });
+  try {
+    browser = await chromium.launch({ headless: true });
+  } catch (bundled) {
+    // CI's site unit step runs before `playwright install`; the GitHub runner image already ships Google Chrome.
+    // Only a missing Playwright build falls back to it; any other launch failure still fails every DOM check here.
+    if (!/Executable doesn't exist/.test(String(bundled && bundled.message))) throw bundled;
+    browser = await chromium.launch({ headless: true, channel: "chrome" });
+  }
 });
 after(async () => { if (browser) await browser.close(); });
 
