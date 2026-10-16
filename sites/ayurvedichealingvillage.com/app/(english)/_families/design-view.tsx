@@ -1,7 +1,8 @@
 import { serverCanonical } from "./canonical-policy.mjs";
 import { articleContactHeadingHtml } from "./article-contact-heading.mjs";
+import { articleHeadingOutlineHtml, articleOutlineSourcesHtml } from "./article-heading-outline.mjs";
 import { trainingSnapshotFontCss } from "./training-snapshot-fonts.mjs";
-import { reviewedTitleFor, reviewedCatalogueTitle } from "./localized-title.mjs";
+import { reviewedTitleFor, reviewedCatalogueTitle, keepsLocaleCanonical } from "./localized-title.mjs";
 import { SnapshotStyles, type SnapshotStyleAsset } from './SnapshotStyles';
 import { routeStylesFor, routeStyleHref } from "./route-styles.mjs";
 import { reviewCopyFor, applyReviewSnapshot, bookingLabelsFor } from "./content-review.mjs";
@@ -112,7 +113,7 @@ export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"
     reviewedLocaleTitle,
     reviewedShareDescription: route.path === "/panchakarma/" ? ((locale === "en" ? route.metadata.ogDescription ?? route.metadata.description : localeData(locale)?.meta[route.path]?.ogDescription ?? localeData(locale)?.meta[route.path]?.description ?? route.metadata.ogDescription ?? route.metadata.description) ?? undefined) : undefined,
     reviewedDescription: route.path === "/panchakarma/" ? ((locale === "en" ? route.metadata.description : localeData(locale)?.meta[route.path]?.description ?? route.metadata.description) ?? undefined) : undefined,
-    reviewedLocaleCanonical: (reviewedLocaleTitle || (route.path === "/karkidaka-chikitsha-or-monsoon-wellness.html" && locale !== "en")) ? ((route.path === "/panchakarma/" && locale === "en" ? serverCanonical(route) : canonicalUrl(route.path, locale)) ?? undefined) : undefined,
+    reviewedLocaleCanonical: (reviewedLocaleTitle || keepsLocaleCanonical(route.path, locale)) ? ((route.path === "/panchakarma/" && locale === "en" ? serverCanonical(route) : canonicalUrl(route.path, locale)) ?? undefined) : undefined,
     bookingCopy: bookingLabelsFor(locale),
     robots: routeRobots(route),
     desktopView: route.desktopView,
@@ -145,7 +146,7 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
   // Served once, read once: the snapshot body and the "held" state that keeps
   // a desktop viewport from painting it (see the layout's third style rule).
   const body = responsiveVillaImages(phoneCriticalMedia(applyReviewSnapshot(prerenderedBody(route.path, locale), route.path, locale), route.path));
-  const snapshot = articleContactHeadingHtml(applyReviewSnapshot(descriptiveAwardLinks(route.path === "/" || route.path === "/photo-gallery/" ? deferHomeSnapshotImages(body) : body, route.path), route.path, locale), route.path);
+  const snapshot = articleHeadingOutlineHtml(articleContactHeadingHtml(articleOutlineSourcesHtml(applyReviewSnapshot(descriptiveAwardLinks(route.path === "/" || route.path === "/photo-gallery/" ? deferHomeSnapshotImages(body) : body, route.path), route.path, locale), route.path), route.path), route.path);
   const cfg = buildBootConfig(route, locale);
   // The view family, as a styling scope. Template-level corrections live in
   // public/design/<family>.css and key on this, so a rule written for one
@@ -254,7 +255,7 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
           ))
         : null}
       <SnapshotStyles key={`${locale}:${route.path}`} assets={snapshotAssets} />
-      {["/all-programs/", "/wellness-programs/", "/yoga-meditation-programs/"].includes(route.path) ? <style data-ahv-finder-skip-link="" dangerouslySetInnerHTML={{ __html: `#ahv-design-root[data-ahv-route="${route.path}"] .scp0:not(:focus){left:0!important;top:0!important;width:1px!important;height:1px!important;padding:0!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}` }} /> : null}
+      {["/ayurvedic-treatments/", "/all-programs/", "/wellness-programs/", "/yoga-meditation-programs/"].includes(route.path) ? <style data-ahv-finder-skip-link="" dangerouslySetInnerHTML={{ __html: `#ahv-design-root[data-ahv-route="${route.path}"] .scp0:not(:focus){left:0!important;top:0!important;width:1px!important;height:1px!important;padding:0!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}` }} /> : null}
       {/* The existing finder toggle collapses these rows. Match that first paint and reserve its 44px button + 14px margins. */}
       {["/ayurvedic-treatments/", "/all-programs/", "/wellness-programs/", "/yoga-meditation-programs/"].includes(route.path) ? <style data-ahv-finder-first-paint="" dangerouslySetInnerHTML={{ __html: `@media(scripting:enabled){#ahv-design-root[data-ahv-route="${route.path}"] nav[data-ahv-finder-search]:not([data-ahv-fh-open]) [role="group"]{display:none!important}#ahv-design-root[data-ahv-route="${route.path}"] nav[data-ahv-finder-search]:not(:has(+ .ahv-fh-filterbar))::after{content:"";display:block;height:58px}}` }} /> : null}
 

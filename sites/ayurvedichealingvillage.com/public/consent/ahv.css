@@ -20,3 +20,11 @@ html[data-ahv-cta-bar-on] #cc-main .cm { bottom:calc(var(--ahv-cta-bar-h, calc(5
 .ahv-consent-compact :focus-visible { outline:3px solid var(--forest-500,currentColor);outline-offset:3px; }
 html[data-ahv-cta-bar-on] .ahv-consent-compact { bottom:calc(var(--ahv-cta-bar-h, calc(52px + env(safe-area-inset-bottom,0px))) + 12px); }
 @media (max-width:760px) { .ahv-consent-compact { grid-template-columns:minmax(0,1fr);gap:12px;padding:12px; } }
+/* AHV-M024.01 (layout only): while the compact notice is on screen, bridge.mjs publishes the height it covers. Focus
+   moved by Tab is scrolled above it, and the page ends with a block of the same height (body::after, as chrome.css
+   already does for the older notice; the page's own desktop clearance is kept when larger) so its last links can scroll
+   clear of it.
+   :root[...] outranks the page's own bar/consent scroll-padding rules (html[...]), whose space the value already
+   includes because it is measured from the notice's top edge to the viewport bottom. */
+:root[data-ahv-consent-compact] { scroll-padding-bottom:var(--ahv-consent-compact-clear, 0px); }
+:root[data-ahv-consent-compact] body::after { content:"";display:block;height:max(var(--ahv-consent-compact-clear, 0px), var(--ahv-page-clear, 0px)); }

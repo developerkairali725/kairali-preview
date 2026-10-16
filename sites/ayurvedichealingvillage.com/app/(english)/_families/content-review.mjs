@@ -2,6 +2,7 @@ import { staffExperienceCopyFor, applyStaffExperienceHtml } from './staff-experi
 import { describeHomeImages } from './home-image-descriptions.mjs';
 import { withRoom209Area } from './room209-area.mjs';
 import { removeHomeVillaRates } from './home-villa-rates.mjs';
+import { removeCampaignPriceNotes } from './campaign-price-notes.mjs';
 import {offersFlow} from './offers-flow.mjs';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
@@ -43,7 +44,7 @@ const escape = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&
 export function applyReviewSnapshot(html, route, locale = 'en') {
   if (!html || route === '/villa-raag/') return html;
   if (route === "/" && locale === "en") html = describeHomeImages(html);
-  html=removeHomeVillaRates(offersFlow(html,route,locale),route);
+  html=removeCampaignPriceNotes(removeHomeVillaRates(offersFlow(html,route,locale),route),route);
   const booking = bookingLabelsFor(locale);
   html = html.replace(/<a\b[^>]*\bhref=["']https:\/\/bookings\.ayurvedichealingvillage\.com\/["'][^>]*>[\s\S]*?<\/a>/gi, anchor => anchor.replace(/[^<>]+/g, token => norm(token) === booking.old ? (token.match(/^\s*/)?.[0] || '') + escape(booking.new) + (token.match(/\s*$/)?.[0] || '') : token));
   const edits = reviewCopyFor(route, locale);

@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
+import { reverseN03File } from './fixtures/n03-sanskrit-subtitle-20261015.mjs';
 import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage, retreatRuntimeMedia } from '../app/(english)/_families/critical-media.mjs';
 import { installLazyImgOrder } from '../app/(english)/_families/media-loading.mjs';
 
@@ -75,7 +76,8 @@ test('Digestive views and English body are pinned to the approved final N12 sche
     'english-candidate/prerender/digestive-wellness-gut-health-yoga-therapy.html': /^c42f81befcccab8a379a008f4e8fc95adf0c2e72a68be71a236a529b2689af53$/,
   };
   for (const [file, pin] of Object.entries(pins)) {
-    assert.match(createHash('sha256').update(fs.readFileSync(file)).digest('hex'), pin, file);
+    // AHV-N03.01: the recorded Sanskrit-subtitle style is reversed first; every other byte stays pinned.
+    assert.match(createHash('sha256').update(reverseN03File(file, fs.readFileSync(file, 'utf8'))).digest('hex'), pin, file);
   }
 });
 

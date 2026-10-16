@@ -12,6 +12,8 @@ const rows=new Map(index.programmes.map(p=>[p.route,p]));
 // the `fw` and `action` keys as internal data, so literals written there stayed English in every locale.
 const COMING_SOON_CARD={label:'View details',purposes:{'/yoga-meditation-program/':'Personal practice','/new-to-yoga-teacher-training/':'Professional teacher training'}};
 for(const p of index.programmes) if(p.availability==='coming_soon' && !COMING_SOON_CARD.purposes[p.route]) throw new Error(`No approved Coming Soon purpose for ${p.route}`);
+const YOGA_COMING_SOON=Object.keys(COMING_SOON_CARD.purposes);
+for(const r of YOGA_COMING_SOON) if(rows.get(r)?.availability!=='coming_soon' || rows.get(r)?.bookable!==false) throw new Error(`${r} is not an unbookable Coming Soon course`);
 let changed=0;
 for(const route of ['all-programs','ayurvedic-treatments','wellness-programs','treatment-programs','training-programs','yoga-meditation-programs']) for(const side of ['desktop','mobile']) {
  const file=path.join(site,`public/ahv/views/ahv-page-${route}-${side}.json`);
@@ -19,7 +21,9 @@ for(const route of ['all-programs','ayurvedic-treatments','wellness-programs','t
  const m=view.logic.match(/const DATASET = (.*);/);
  if(!m) throw new Error(`Missing dataset: ${file}`);
  const data=[...rows.values()].filter(p => !['ayurvedic-treatments','treatment-programs'].includes(route) || p.cats.includes('T')).map(p => ({
-  r:p.route,t:p.name,s:p.sanskrit||'',c:p.cats,n:p.nights,from:p.from,vt:p.validTo,vf:p.validFrom,ps:p.priceState,basis:p.basis,fw:p.forWhat,i:p.image||"/ahv/assets/img/F-6.jpg",a:p.aliases||[],k:p.terms,av:p.availability||'current',bookable:p.bookable!==false
+  // AHV-M023.02: the yoga hub's own category ('Y') also lists the two forthcoming yoga training courses, so its
+  // "Coming Soon" availability filter shows them (as unpriced, non-bookable Coming Soon cards) instead of nothing.
+  r:p.route,t:p.name,s:p.sanskrit||'',c:route==='yoga-meditation-programs'&&YOGA_COMING_SOON.includes(p.route)&&!p.cats.includes('Y')?p.cats+'Y':p.cats,n:p.nights,from:p.from,vt:p.validTo,vf:p.validFrom,ps:p.priceState,basis:p.basis,fw:p.forWhat,i:p.image||"/ahv/assets/img/F-6.jpg",a:p.aliases||[],k:p.terms,av:p.availability||'current',bookable:p.bookable!==false
  }));
  let logic=view.logic.replace(m[0],()=>`const DATASET = ${JSON.stringify(data)};`);
  for(const [key,value] of [['CHIPS',index.chips.map(c=>({id:c.id,label:c.label,routes:c.routes}))],['BANDS',index.budgetBands]]) {

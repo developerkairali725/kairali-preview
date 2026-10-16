@@ -1,0 +1,38 @@
+{
+  "train": "J (integration of batches J1, J2, J3)",
+  "base": "00e944e4440c4b1710bffc29cc7c2bea8b385fdc",
+  "branch": "codex/ahv-train-j-20261015",
+  "note": "Files edited by more than one Train J batch. Each batch recorded its delta against the Train I head 00e944e44; the integrated bytes carry both. j2OverJ1 removes the Train J2 delta from the integrated bytes (giving exactly the Train J1 after-bytes, so the J1 -> I chain runs unchanged); j1UnderJ2 removes the Train J1 delta (giving exactly the Train J2 after-bytes, for the Train J2 batch checks). search-index.json was composed by applying Train J2s two description edits and its later generated stamp to the Train J1 bytes; tools/build-search-index.mjs --check --allow-expired reports the composed index matches current sources.",
+  "files": {
+    "public/ahv/search-index.json": {
+      "j1AfterSHA256": "467a5c743cc0d05a56b9892178a3851ddbd1e9305c7a4b93e0d4653ebe6abaa0",
+      "j2AfterSHA256": "6bec951d696f0d636863b883e7fae250f425d851b9f6ddc46266f1150a7b4166",
+      "headSHA256": "6a22b31f4c9a2be7f5bf25542d086eca754f22e134ea76c31228b2c6fd9a78c9",
+      "integratedSHA256": "ea4466d7d339c72039bf75483158aa860ea41154e47317c6f901287fd20bb50d",
+      "j2OverJ1": [
+        {
+          "row": "AHV-M087.01 / AHV-M090.01 (index generated stamp: Train J2 build time over Train J1 build time; integration)",
+          "before": "\"generated\":\"2026-10-15T07:08:37.757Z\"",
+          "after": "\"generated\":\"2026-10-15T07:24:43.226Z\""
+        },
+        {
+          "row": "AHV-M087.01 / AHV-M090.01 (search card descriptions)",
+          "before": "18\",\"desc\":\"Rejuvenate at the Lakshya Yoga Retreat 2018 at Kairali – The Ayurvedic Healing Village.…\",\"kw\":[]},",
+          "after": "18\",\"desc\":\"This page preserves the Lakshya Yoga Retreat 2018 material. Its programme, schedule and…\",\"kw\":[]},"
+        },
+        {
+          "row": "AHV-M087.01 / AHV-M090.01 (search card descriptions)",
+          "before": "at\",\"desc\":\"A five-day Mindfulness Retreat at Kairali, Kerala, with Iyengar yoga, Holotropic…\",\"kw\":[]},",
+          "after": "at\",\"desc\":\"This is a past retreat. The original description and speaker biographies below are…\",\"kw\":[]},"
+        }
+      ],
+      "j1UnderJ2": [
+        {
+          "row": "AHV-M016.02",
+          "before": "l\":\"The Baoli Advert Box Deal\",\"desc\":\"Kairali supports animal husbandry in order to rear different types of animals which is…\",\"kw\":[]},{\"route\":\"/the-baoli-special-deal/\",\"label\":\"The Baoli Special Deal\",\"desc\":\"Kairali s",
+          "after": "l\":\"The Baoli Advert Box Deal\",\"desc\":\"Kairali s"
+        }
+      ]
+    }
+  }
+}

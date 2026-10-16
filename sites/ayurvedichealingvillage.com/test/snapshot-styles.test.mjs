@@ -187,7 +187,7 @@ test("past-retreat records share the runtime's font stylesheet link instead of a
   const manifest = JSON.parse(fs.readFileSync("english-candidate/route-manifest.json", "utf8"));
   const routes = Array.isArray(manifest) ? manifest : manifest.routes || Object.values(manifest);
   const shared = routes.filter(sharedFontLinkRoute).map((r) => r.path).sort();
-  assert.deepEqual(shared, ["/chef-retreat-food-to-wellness/", "/food-sadhana/", "/karma-being-retreat-2019/", "/karma-being-retreat/", "/katha-wellness-retreat-2019/", "/lakshya-yoga-retreat-2017/", "/lakshya-yoga-retreat-2018/", "/prav-simona-monsoon-yoga-retreat/", "/prav-simona-yoga-retreat/"]);
+  assert.deepEqual(shared, ["/chef-retreat-food-to-wellness/", "/food-sadhana/", "/karma-being-retreat-2019/", "/karma-being-retreat/", "/katha-wellness-retreat-2019/", "/lakshya-yoga-retreat-2017/", "/lakshya-yoga-retreat-2018/", "/new-to-yoga/", "/prav-simona-monsoon-yoga-retreat/", "/prav-simona-yoga-retreat/", "/sleep-restoration-therapy/"]);
   assert.equal(sharedFontLinkRoute({ path: "/our-villas/", dataset: "assets/article-family-data.js" }), false);
   assert.equal(sharedFontLinkRoute(null), false);
   const view = fs.readFileSync("app/(english)/_families/design-view.tsx", "utf8");

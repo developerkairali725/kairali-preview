@@ -1,10 +1,12 @@
 import { applyStaffExperienceDom } from './staff-experience.mjs';
 import { repairArticleContactHeading } from "./article-contact-heading.mjs";
+import { repairArticleOutline } from "./article-heading-outline.mjs";
 import { treatmentHeadingLevels } from "./treatment-heading-levels.mjs";
 import { restoreReviewedHead } from "./localized-title.mjs";
 import { repairFaqTopicTargets } from './faq-topic-targets.mjs';
 import { orderedRuntimeScripts } from './runtime-script-order.mjs';
 import { removeHomeVillaRates } from './home-villa-rates.mjs';
+import { removeCampaignPriceNotes } from './campaign-price-notes.mjs';
 import {offersFlow} from './offers-flow.mjs';
 import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, monsoonRuntimeMedia, retreatRuntimeMedia } from "./critical-media.mjs";
 import { formPostSafety } from "./form-post-safety.mjs";
@@ -947,6 +949,12 @@ export const BOOT_SCRIPT = `
     if (formLifted) return;
     var form = host.querySelector("form[id]");
     if (!form) return;
+    // A server snapshot's form is never moved. The first sweep runs before the live view exists, so
+    // this lift used to reach only the snapshot copy and then stop (formLifted): the snapshot jumped
+    // its form above the intro on screen, and the live view then replaced it in the approved order —
+    // a full-screen layout shift (CLS 0.44 on the package pages, every locale) for a placement that
+    // never survived the swap. Marking it done here keeps every page's final order exactly as before.
+    if (form.closest("[data-ahv-snapshot]")) { formLifted = true; return; }
     var column = form.parentElement;
     if (!column || column.children.length < 2) return;
     // Keep the skip link first so it still precedes what it targets; the form
@@ -1022,7 +1030,7 @@ export const BOOT_SCRIPT = `
   var hpHidden = 0;
   function sweepHoneypots(tries) {
     hideHoneypots(host);
-    (${repairArticleContactHeading.toString()})(host, cfg.path);
+    (${repairArticleOutline.toString()})(host, cfg.path, (${repairArticleContactHeading.toString()}));
     repairEmailLinks(host);
     upgradeLanguageControls(host);
     applyConsent();
@@ -1072,7 +1080,7 @@ export const BOOT_SCRIPT = `
         aliasImages(node);
         startIstClock(node);
         hideHoneypots(node);
-        (${repairArticleContactHeading.toString()})(node, cfg.path);
+        (${repairArticleOutline.toString()})(node, cfg.path, (${repairArticleContactHeading.toString()}));
         repairEmailLinks(node);
         upgradeLanguageControls(node);
         retargetSelfLinks(node);
@@ -1313,6 +1321,7 @@ export const BOOT_SCRIPT = `
       host.insertBefore(document.createElement("x-dc"), host.firstChild);
       // lazyImgFirst: loading="lazy" ahead of src in every template <img> (media-loading.mjs, P1a).
       view.template = (${removeHomeVillaRates.toString()})(view.template, cfg.path);
+      view.template = (${removeCampaignPriceNotes.toString()})(view.template, cfg.path);
       view.template = (${treatmentHeadingLevels.toString()})(view.template, cfg.path, view.variant);
       if (narrow && ["/all-programs/", "/wellness-programs/", "/yoga-meditation-programs/"].includes(cfg.path) && view.logic) view.logic = (${phoneCriticalMedia.toString()})(view.logic, cfg.path);
       pendingTemplate = (${lazyImgFirst.toString()})((${formPostSafety.toString()})((${descriptiveAwardLinks.toString()})(narrow ? (${phoneCriticalMedia.toString()})((${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path) : (${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path)));

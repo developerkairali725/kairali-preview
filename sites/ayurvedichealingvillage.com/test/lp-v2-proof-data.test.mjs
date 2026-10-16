@@ -9,6 +9,8 @@ import { getGoogleRating } from "../campaign-v2/data/google-rating.ts";
 import { lintData } from "../campaign-v2/kit/lint/data.ts";
 import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
 import { validConfig } from "./fixtures/lp-v2-valid.ts";
+// Train I (15 Oct 2026, AHV-LATER-038.01) dates the figures to the 29 Aug 2026 capture; these pins run on the prior registry.
+import { reverseTrainIRatings } from "./fixtures/train-i-20261015.mjs";
 
 const pub = (src) => fileURLToPath(new URL(`../public${src}`, import.meta.url));
 
@@ -71,8 +73,8 @@ test("no logo is upscaled: natural height >= 2x the 60px row height", () => {
 test("ratings registry: Tripadvisor values as verified 2026-10-07", () => {
   assert.equal(TRIPADVISOR.rating, 4.6);
   assert.equal(TRIPADVISOR.reviewCount, 450);
-  assert.equal(TRIPADVISOR.asOf, "2026-08");
-  assert.equal(monthLabel(TRIPADVISOR.asOf), "August 2026");
+  assert.equal(reverseTrainIRatings(TRIPADVISOR).asOf, "2026-08");
+  assert.equal(monthLabel(reverseTrainIRatings(TRIPADVISOR).asOf), "August 2026");
   assert.match(TRIPADVISOR.badgeText, /Travelers' Choice/);
   assert.match(TRIPADVISOR.listingUrl, /^https:\/\/www\.tripadvisor\.in\/Hotel_Review-/);
   assert.equal(NABH_VALIDITY, "2024–2027");
@@ -94,8 +96,8 @@ test("data.stale: quiet on 2026-10-07 and in lp:check", () => {
 });
 
 test("data.stale: Tripadvisor asOf older than 120 days warns", () => {
-  assert.deepEqual(lintData(new Date("2026-11-29T00:00:00Z")), []); // Aug 1 + 120 days
-  const out = lintData(new Date("2026-12-01T00:00:00Z"));
+  assert.deepEqual(lintData(new Date("2026-11-29T00:00:00Z"), reverseTrainIRatings(TRIPADVISOR)), []); // Aug 1 + 120 days
+  const out = lintData(new Date("2026-12-01T00:00:00Z"), reverseTrainIRatings(TRIPADVISOR));
   assert.deepEqual(rules(out), ["data.stale"]);
   assert.equal(out[0].level, "warning");
   assert.match(out[0].message, /Re-verify ratings\/awards from https:\/\/ayurvedichealingvillage\.com\/ and update campaign-v2\/data\/\*\.ts/);

@@ -1,0 +1,268 @@
+{
+ "task": "Train H (15 Oct 2026): AHV-M001.01, AHV-M023.02, AHV-I04.M067/M068/M069.links, AHV-WB.525.phone-example, AHV-WB.335.hero-image, AHV-STAFF18.review, AHV-WB.114.change, AHV-WB.137.change, AHV-WB.124.change, AHV-M021.01",
+ "authority": "Owner standing implementation authority (AGENTS.md, 10 Oct 2026); owner decision 10 (OWNER-DECISIONS-20261014-ANSWERS.json \"10-photos\") for the photographs; consumption item 537 for the Karkidaka 7/14/21-day programmes",
+ "base": "dae94e21cac638a57f715a9081b3583dc680b338",
+ "note": "Composed on Train F exactly as Train F composes on Train B: reverseTrainHSource maps each recorded file from its Train H bytes (afterSHA256) back to the Train F head bytes (beforeSHA256); callers then hand the result to reverseTrainFSource. reverseTrainHConfig / reverseTrainHBindings restore lp-hospital-kerala's Train F hero (wx-hero, desktop and phone) and remove the monsoon-wellness / rejuvenation-detox card photographs, asserting each field they restore.",
+ "photoPicks": {
+  "lp-hospital-kerala": {
+   "before": {
+    "heroImage": "wx-hero",
+    "mobileImage": "wx-hero"
+   },
+   "after": {
+    "heroImage": "ahv-pkd-111",
+    "mobileImage": "ahv-pkd-111"
+   }
+  },
+  "monsoon-wellness": {
+   "cards": [
+    "ahv-img-045",
+    "ahv-pkd-115",
+    "ahv-pkd-50"
+   ]
+  },
+  "rejuvenation-detox": {
+   "cards": [
+    "ahv-img-012",
+    "ahv-pkd-132",
+    "ahv-img-018"
+   ]
+  }
+ },
+ "assets": {
+  "ahv-pkd-111": {
+   "source": "ahv-edited/kAIRALI PALAK KAD_DEPICTIONS BY PRACHI KHASGIWALA-111.jpg",
+   "sourceSha256": "f110d9a4b4d42cd00593674cd7fd5d8bbd237340c5128aa3757241603c0c4e63",
+   "files": {
+    "public/ahv/assets/img/owner-decision-20261015/ahv-pkd-111.webp": [
+     1600,
+     1067
+    ],
+    "public/ahv/assets/img/owner-decision-20261015/ahv-pkd-111-768.webp": [
+     768,
+     512
+    ]
+   }
+  }
+ },
+ "files": {
+  "app/(english)/_families/design-view.tsx": {
+   "beforeSHA256": "3161645101f19fd88dda5c25352d074b6e4604d2d2e48032b68986ac569cc37f",
+   "afterSHA256": "14b78bcad0c74f328c29418699bea9a9b7f38a13281a7730095d5281d6259976",
+   "replacements": [
+    {
+     "before": "} />\n      {[\"/all-programs/\", \"",
+     "after": "} />\n      {[\"/ayurvedic-treatments/\", \"/all-programs/\", \""
+    }
+   ]
+  },
+  "campaign-v2/data/images.ts": {
+   "beforeSHA256": "3d056ccb002d5df6271a78290c2b2285e98e753e05e7ac56ef3867dcf5411c9e",
+   "afterSHA256": "b621e6931d77088fac524a38047534293b3635da9596911f423ffa90961b6542",
+   "replacements": [
+    {
+     "before": "plicable\",\n  },\n};\n",
+     "after": "plicable\",\n  },\n  // Train H (15 Oct 2026), owner decision 10: the /lp/ayurvedic-hospital-kerala/ hero (AHV-WB.335.hero-image;\n  // production/bindings.ts PHOTO_PICKS_20261015H). Built by tools/build-train-h-20261015-photos.py from the SHA-256-verified\n  // library original (ahv-edited -111.jpg, IMAGE_CATALOG register_ok=yes); no person present (framed founders' portraits only).\n  \"ahv-pkd-111\": {\n    id: \"ahv-pkd-111\", src: \"/ahv/assets/img/owner-decision-20261015/ahv-pkd-111.webp\",\n    width: 1600, height: 1067, alt: \"Physician consultation room with a curved wooden desk, an examination couch and round windows at the Healing Village\",\n    decorative: false, gccSafe: true, location: \"palakkad\", consent: \"not-applicable\",\n  },\n};\n"
+    }
+   ]
+  },
+  "campaign-v2/forms/schema.ts": {
+   "beforeSHA256": "dc346f432368f8981782fa7f508f6c274bbad8428f52efa887970cbd5fb27d90",
+   "afterSHA256": "fbd15b965cf2e5ec54cd473dd6a84afc23e557d7fe312a52d285cdb2415f1d59",
+   "replacements": [
+    {
+     "before": "o advise\" },\n];\nexport const PAR",
+     "after": "o advise\" },\n];\n/**\n * AHV-WB.124 (staff review 9 Oct 2026; consumption item 537, owner-supported): the Karkidaka route's programmes are 7, 14\n * and 21 days (The Monsoon Starter / Reset / Overhaul, the page's own card titles), so its \"Length of stay\" options (the\n * labels its enquiry is served with, sections/interactive/Enquiry.tsx) are those, not the generic 14/21/28 nights. Same\n * key (\"length\") and \"Doctor to advise\"; only the option list differs, and only on that route.\n */\nexport const MONSOON_LENGTHS: readonly Option[] = [\n  { value: \"7\", label: \"The Monsoon Starter · 7 days\" }, { value: \"14\", label: \"The Monsoon Reset · 14 days\" },\n  { value: \"21\", label: \"The Monsoon Overhaul · 21 days\" }, { value: ADVISE, label: \"Doctor to advise\" },\n];\nconst ROUTE_LENGTHS: Readonly<Record<string, readonly Option[]>> = {\n  \"/karkidaka-chikitsha-or-monsoon-wellness.html\": MONSOON_LENGTHS,\n};\n/** The \"Length of stay\" options of a route: its own list where it has one, else the shared LENGTHS. */\nexport function stayLengths(route: string | undefined): readonly Option[] {\n  return (route ? ROUTE_LENGTHS[route] : undefined) ?? LENGTHS;\n}\nexport const PAR"
+    },
+    {
+     "before": "чен.\",\n  },\n};\n\nexport function ",
+     "after": "чен.\",\n  },\n};\n\n/**\n * The phone field's example prefix per page language. AHV-WB.525.phone-example (staff review 9 Oct 2026): the German\n * page shows a German example, the prefix of the German error message's own example (production/ui.ts, \"+49 30 123456\").\n * English and Russian keep the form's existing +91 example. Only the placeholder differs; the field is unchanged.\n */\nexport const CAMPAIGN_ENQUIRY_PHONE_PLACEHOLDER: Record<\"en\" | \"de\" | \"ru\", string> = { en: \"+91 …\", de: \"+49 …\", ru: \"+91 …\" };\n\nexport function "
+    },
+    {
+     "before": "uired: false, autocomplete: \"tel\", placeholder: \"+91 …\", maxLength: 30, pattern: LIVE_PHONE_PATTERN, ma",
+     "after": "uired: false, autocomplete: \"tel\", placeholder: CAMPAIGN_ENQUIRY_PHONE_PLACEHOLDER[k], maxLength: 30, pattern: LIVE_PHONE_PATTERN, ma"
+    }
+   ]
+  },
+  "campaign-v2/kit/types.ts": {
+   "beforeSHA256": "71997b028556870d6424dd84a5ea2c40ccb97ed5ec1c1197e1b396f6ee6c4514",
+   "afterSHA256": "5aecaa1b89455252ba8834bb307c566e96c95a713e495a6b9d941a4877d86f2e",
+   "replacements": [
+    {
+     "before": "aphs: RichText[] }[]; programmeL",
+     "after": "aphs: RichText[]; image?: ImageRef }[]; programmeL"
+    }
+   ]
+  },
+  "campaign-v2/production/bindings.ts": {
+   "beforeSHA256": "0510d2162e872c1c8cda25984deb63296c578d89c1745394fd5ee175a086fbfb",
+   "afterSHA256": "684e2d93901af22880407ed95f6416145929f0a94852d262b92c931ec58fc7dd",
+   "replacements": [
+    {
+     "before": "mage: ImageRef;\n  gallery: { cat",
+     "after": "mage: ImageRef;\n  /** One photograph per programme card of a \"cards\" offering, in card order (Train H, AHV-WB.114/.137); absent = no card photographs. */\n  offeringImages?: ImageRef[];\n  gallery: { cat"
+    },
+    {
+     "before": "mage }];\n  }\n}\n\n/** The 20 route",
+     "after": "mage }];\n  }\n}\n\n/**\n * Train H (15 Oct 2026), owner decision 10 (pick from the image bank, old or new). AHV-WB.335.hero-image: the\n * /lp/ayurvedic-hospital-kerala/ hero (desktop and phone) becomes the physician consultation room (ahv-pkd-111, Palakkad,\n * IMAGE_CATALOG register_ok=yes, no person present) instead of the morning-mist photograph it shared with\n * /Ayurveda_Treatment_Neo_S.India_Cities.html. AHV-WB.114.change / AHV-WB.137.change: each programme card of the Karkidaka\n * and rejuvenation-detox routes carries one small photograph (production/sections/Offering.tsx), all no-person Palakkad\n * image-bank photographs already published for other routes; none is the route's own hero, steps photograph or gallery\n * photograph, and the card copy is unchanged. Applied after the Train F picks. Reversible: delete a route's entry.\n */\nexport const PHOTO_PICKS_20261015H: Readonly<Partial<Record<ProductionSlug, { hero?: string; cards?: readonly string[] }>>> = {\n  \"lp-hospital-kerala\": { hero: \"ahv-pkd-111\" }, // AHV-WB.335.hero-image\n  \"monsoon-wellness\": { cards: [\"ahv-img-045\", \"ahv-pkd-115\", \"ahv-pkd-50\"] }, // AHV-WB.114.change\n  \"rejuvenation-detox\": { cards: [\"ahv-img-012\", \"ahv-pkd-132\", \"ahv-img-018\"] }, // AHV-WB.137.change\n};\nfor (const [slug, pick] of Object.entries(PHOTO_PICKS_20261015H) as [ProductionSlug, { hero?: string; cards?: readonly string[] }][]) {\n  const r = ROUTES[slug];\n  const own = new Set([r.heroImage.id, r.mobileImage.id, r.pathwayImage.id, ...r.gallery.map((g) => g.image.id)]);\n  if (pick.hero) {\n    if (own.has(pick.hero)) throw new Error(`production/bindings: ${slug} hero ${pick.hero} is already one of the route's photographs`);\n    r.heroImage = img(pick.hero); r.mobileImage = r.heroImage;\n  }\n  if (pick.cards) {\n    if (new Set(pick.cards).size !== pick.cards.length || pick.cards.some((id) => own.has(id))) throw new Error(`production/bindings: ${slug} card photographs must be distinct and not the route's own`);\n    r.offeringImages = pick.cards.map(img);\n  }\n}\n\n/** The 20 route"
+    }
+   ]
+  },
+  "campaign-v2/production/load.ts": {
+   "beforeSHA256": "ea677ba7357679a6029c6b0135bc9feb495fd70f09b5f3f409bb9e3d8321107c",
+   "afterSHA256": "52c4d898654d0421345af6691b736ba5734b34fbb5e8640239d07278bc96f8aa",
+   "replacements": [
+    {
+     "before": "ages)`);\n  }\n}\n\n/** The producti",
+     "after": "ages)`);\n  }\n}\n\n/** The route's card photographs (bindings.ts offeringImages), one per card in order; the copy is unchanged. */\nfunction withCardImages(o: ProductionCopy[\"page\"][\"offering\"], images: RouteBinding[\"offeringImages\"]): ProductionCopy[\"page\"][\"offering\"] {\n  if (!images) return o;\n  if (o.kind !== \"cards\") fail(\"offering\", \"card photographs are bound to a route without programme cards\");\n  if (images.length !== o.cards.length) fail(\"offering.cards\", `${images.length} card photographs for ${o.cards.length} cards`);\n  return { ...o, cards: o.cards.map((card, i) => ({ ...card, image: images[i] })) };\n}\n\n/** The producti"
+    },
+    {
+     "before": "g.pathwayImage } },\n    ...(bind",
+     "after": "g.pathwayImage }, offering: withCardImages(p.offering, binding.offeringImages) },\n    ...(bind"
+    }
+   ]
+  },
+  "campaign-v2/production/sections/Offering.tsx": {
+   "beforeSHA256": "ff73f3185e8950dd779f40a42afcecea4fab389dbfd68e8d48f9ac1064bf0318",
+   "afterSHA256": "ce101c5ad39fd022ba0efc8a0ce812df2ebe746b682012320f0705573535d077",
+   "replacements": [
+    {
+     "before": "import { PACKAGE",
+     "after": "import Image from \"next/image\";\nimport { PACKAGE"
+    },
+    {
+     "before": "-poffer__card\">\n            <spa",
+     "after": "-poffer__card\">\n            {/* Train H (AHV-WB.114/.137): the card's own small photograph where the route binds one (bindings.ts). */}\n            {card.image ? (\n              <Image className=\"lp-poffer__img\" src={card.image.src} alt={ui.alt[card.image.id] ?? card.image.alt}\n                width={card.image.width} height={card.image.height} sizes=\"(max-width: 767px) 100vw, 40vw\" loading=\"lazy\"\n                style={{ display: \"block\", width: \"100%\", height: \"auto\", aspectRatio: \"2 / 1\", objectFit: \"cover\", borderRadius: \"var(--lp-radius)\" }} />\n            ) : null}\n            <spa"
+    }
+   ]
+  },
+  "campaign-v2/sections/interactive/Enquiry.tsx": {
+   "beforeSHA256": "4b13fd598e37ac598d25d3a692d556df2bc08ec01bf136aae5504a4883e36139",
+   "afterSHA256": "15a672ee21b39724684643e564de5caf0c7bbab2a2f774b5a609631c520189f1",
+   "replacements": [
+    {
+     "before": "LENGTHS, formSchemaFor, monthOptions, programOptions, resolveSchema",
+     "after": "formSchemaFor, monthOptions, programOptions, resolveSchema, stayLengths"
+    },
+    {
+     "before": "(octx), length: LENGTHS,\n    channel: C",
+     "after": "(octx), length: stayLengths(c.route),\n    channel: C"
+    }
+   ]
+  },
+  "english-candidate/legacy-english-redirects.json": {
+   "beforeSHA256": "85b2c3e2ff5864facc5a0bba134dadc0d1274cb3a2a815d827555547b366977d",
+   "afterSHA256": "03fd86e3511e96e02663cb7b717a5f8b97c53fa222420cb9406dc51373c24020",
+   "replacements": [
+    {
+     "before": "/N08-aliases/.\"\n  }\n]\n",
+     "after": "/N08-aliases/.\"\n  },\n  {\n    \"source\": \"/hi/ayurvedic-treatment-packages/\",\n    \"destination\": \"/hi/ayurvedic-treatment-packages.html\",\n    \"evidence\": \"AHV-STAFF18.review (staff review 9 Oct 2026): the localized slash form returned 404 (train-e08/staff18.txt); one 301 to the same locale's existing page (l10n/routes.json), as the English /ayurvedic-treatment-packages/ rule above. Train H, 15 Oct 2026.\"\n  },\n  {\n    \"source\": \"/de/ayurvedic-treatment-packages/\",\n    \"destination\": \"/de/ayurvedic-treatment-packages.html\",\n    \"evidence\": \"AHV-STAFF18.review (staff review 9 Oct 2026): the localized slash form returned 404 (train-e08/staff18.txt); one 301 to the same locale's existing page (l10n/routes.json), as the English /ayurvedic-treatment-packages/ rule above. Train H, 15 Oct 2026.\"\n  },\n  {\n    \"source\": \"/fr/ayurvedic-treatment-packages/\",\n    \"destination\": \"/fr/ayurvedic-treatment-packages.html\",\n    \"evidence\": \"AHV-STAFF18.review (staff review 9 Oct 2026): the localized slash form returned 404 (train-e08/staff18.txt); one 301 to the same locale's existing page (l10n/routes.json), as the English /ayurvedic-treatment-packages/ rule above. Train H, 15 Oct 2026.\"\n  },\n  {\n    \"source\": \"/es/ayurvedic-treatment-packages/\",\n    \"destination\": \"/es/ayurvedic-treatment-packages.html\",\n    \"evidence\": \"AHV-STAFF18.review (staff review 9 Oct 2026): the localized slash form returned 404 (train-e08/staff18.txt); one 301 to the same locale's existing page (l10n/routes.json), as the English /ayurvedic-treatment-packages/ rule above. Train H, 15 Oct 2026.\"\n  },\n  {\n    \"source\": \"/it/ayurvedic-treatment-packages/\",\n    \"destination\": \"/it/ayurvedic-treatment-packages.html\",\n    \"evidence\": \"AHV-STAFF18.review (staff review 9 Oct 2026): the localized slash form returned 404 (train-e08/staff18.txt); one 301 to the same locale's existing page (l10n/routes.json), as the English /ayurvedic-treatment-packages/ rule above. Train H, 15 Oct 2026.\"\n  },\n  {\n    \"source\": \"/pt/ayurvedic-treatment-packages/\",\n    \"destination\": \"/pt/ayurvedic-treatment-packages.html\",\n    \"evidence\": \"AHV-STAFF18.review (staff review 9 Oct 2026): the localized slash form returned 404 (train-e08/staff18.txt); one 301 to the same locale's existing page (l10n/routes.json), as the English /ayurvedic-treatment-packages/ rule above. Train H, 15 Oct 2026.\"\n  },\n  {\n    \"source\": \"/nl/ayurvedic-treatment-packages/\",\n    \"destination\": \"/nl/ayurvedic-treatment-packages.html\",\n    \"evidence\": \"AHV-STAFF18.review (staff review 9 Oct 2026): the localized slash form returned 404 (train-e08/staff18.txt); one 301 to the same locale's existing page (l10n/routes.json), as the English /ayurvedic-treatment-packages/ rule above. Train H, 15 Oct 2026.\"\n  },\n  {\n    \"source\": \"/ru/ayurvedic-treatment-packages/\",\n    \"destination\": \"/ru/ayurvedic-treatment-packages.html\",\n    \"evidence\": \"AHV-STAFF18.review (staff review 9 Oct 2026): the localized slash form returned 404 (train-e08/staff18.txt); one 301 to the same locale's existing page (l10n/routes.json), as the English /ayurvedic-treatment-packages/ rule above. Train H, 15 Oct 2026.\"\n  },\n  {\n    \"source\": \"/ar/ayurvedic-treatment-packages/\",\n    \"destination\": \"/ar/ayurvedic-treatment-packages.html\",\n    \"evidence\": \"AHV-STAFF18.review (staff review 9 Oct 2026): the localized slash form returned 404 (train-e08/staff18.txt); one 301 to the same locale's existing page (l10n/routes.json), as the English /ayurvedic-treatment-packages/ rule above. Train H, 15 Oct 2026.\"\n  },\n  {\n    \"source\": \"/zh/ayurvedic-treatment-packages/\",\n    \"destination\": \"/zh/ayurvedic-treatment-packages.html\",\n    \"evidence\": \"AHV-STAFF18.review (staff review 9 Oct 2026): the localized slash form returned 404 (train-e08/staff18.txt); one 301 to the same locale's existing page (l10n/routes.json), as the English /ayurvedic-treatment-packages/ rule above. Train H, 15 Oct 2026.\"\n  },\n  {\n    \"source\": \"/ja/ayurvedic-treatment-packages/\",\n    \"destination\": \"/ja/ayurvedic-treatment-packages.html\",\n    \"evidence\": \"AHV-STAFF18.review (staff review 9 Oct 2026): the localized slash form returned 404 (train-e08/staff18.txt); one 301 to the same locale's existing page (l10n/routes.json), as the English /ayurvedic-treatment-packages/ rule above. Train H, 15 Oct 2026.\"\n  },\n  {\n    \"source\": \"/ko/ayurvedic-treatment-packages/\",\n    \"destination\": \"/ko/ayurvedic-treatment-packages.html\",\n    \"evidence\": \"AHV-STAFF18.review (staff review 9 Oct 2026): the localized slash form returned 404 (train-e08/staff18.txt); one 301 to the same locale's existing page (l10n/routes.json), as the English /ayurvedic-treatment-packages/ rule above. Train H, 15 Oct 2026.\"\n  }\n]\n"
+    }
+   ]
+  },
+  "english-candidate/prerender/ayurveda-training-programme.html": {
+   "beforeSHA256": "f3fe79cefe1bd4492db4465635e101f75dec46090887adb131367937534aa849",
+   "afterSHA256": "3a1be63e094fb55ae43c8d8f58e7325505a906d9bbb025a0aed48f0dd1397690",
+   "replacements": [
+    {
+     "before": "ref=\"/documents/\">published tari",
+     "after": "ref=\"/documents/pdf/ayurveda-training-courses-tariff/en/KTAHV-Ayurveda-Training-Courses-Tariff-EN-INR_20260925-R1.pdf\">published tari"
+    }
+   ]
+  },
+  "public/ahv/assets/reader25a-family-data.js": {
+   "beforeSHA256": "08525ff8b931504398c30991e71c14844864efe34e3114aca749c9356fd5b5e5",
+   "afterSHA256": "60fee6bde0cac738ad2dddbbee4f4777ab3b633816de4d6640f236016e412b01",
+   "replacements": [
+    {
+     "before": ":{\"href\":\"/yoga-retreats/\"},\"c\":[{\"k\":\"",
+     "after": ":{\"href\":\"/yoga-meditation-programs/\"},\"c\":[{\"k\":\""
+    }
+   ]
+  },
+  "public/ahv/assets/reader25a-family-render.js": {
+   "beforeSHA256": "9d0c803d372e4c97f96f0954a203d24fc3e128cd8061bb777700253a298cd7ff",
+   "afterSHA256": "0446d19aa1067febb89c58a5123a45d54feffd91c70e2778d0a55934ed43b801",
+   "replacements": [
+    {
+     "before": "e is a section.\n      sections: ",
+     "after": "e is a section.\n      // The approved in-body 'contextual-resources' links (AHV-I04) are content, not the retired sidebar: a section.\n      sections: "
+    },
+    {
+     "before": "/context|menu|navigation/i.test(c.component),\n        isSection:",
+     "after": "c.component !== 'contextual-resources' && /context|menu|navigation/i.test(c.component),\n        isSection: c.component === 'contextual-resources' ||"
+    }
+   ]
+  },
+  "public/ahv/assets/reader25b-family-render.js": {
+   "beforeSHA256": "b8eb0acbfdabdd46747eb5814df0a06a83ff68512a9ccf69e71171f243abeb04",
+   "afterSHA256": "0ea803552cab52c9c03ce593c21e4a8ae5e561575aaa18c367b6c82217a70e3e",
+   "replacements": [
+    {
+     "before": "isNav: /context|menu|navigation/i.test(c.component),\n        isSection:",
+     "after": "// The approved in-body 'contextual-resources' links (AHV-I04) are content, not the retired sidebar: a section.\n        isNav: c.component !== 'contextual-resources' && /context|menu|navigation/i.test(c.component),\n        isSection: c.component === 'contextual-resources' ||"
+    }
+   ]
+  },
+  "public/ahv/views/ahv-page-ayurveda-training-programme-desktop.json": {
+   "beforeSHA256": "1d26cbbb4ce3461e89e75e26bb8ea819ef6255da993a4b3a85e01e2072f1da2f",
+   "afterSHA256": "aa6b5dd0acdc7044ecb9753c86cc34bf16acd2688377fdc0cd9bb32b62b5d9c5",
+   "replacements": [
+    {
+     "before": "ef=\\\"/documents/\\\">published tar",
+     "after": "ef=\\\"/documents/pdf/ayurveda-training-courses-tariff/en/KTAHV-Ayurveda-Training-Courses-Tariff-EN-INR_20260925-R1.pdf\\\">published tar"
+    }
+   ]
+  },
+  "public/ahv/views/ahv-page-ayurveda-training-programme-mobile.json": {
+   "beforeSHA256": "e88754315e0c9887db5b7874aa99aad48c7908fdade2821d07a7d6c12db09738",
+   "afterSHA256": "a8f21fdc750f3dfbbd1f9005c6e125fab9f8db49d51176514a98ea668eb6bc49",
+   "replacements": [
+    {
+     "before": "ef=\\\"/documents/\\\">published tar",
+     "after": "ef=\\\"/documents/pdf/ayurveda-training-courses-tariff/en/KTAHV-Ayurveda-Training-Courses-Tariff-EN-INR_20260925-R1.pdf\\\">published tar"
+    }
+   ]
+  },
+  "public/ahv/views/ahv-page-yoga-meditation-programs-desktop.json": {
+   "beforeSHA256": "d6adcfbf4bbe4ba3b1495a8247aec331904fda9ac294ec2426a727712f61037b",
+   "afterSHA256": "5d7b8ec74181abbf9c9dedb6054d9958923a12d1ce1cede2e36325234270ea15",
+   "replacements": [
+    {
+     "before": "\\\",\\\"n\\\":null,\\\"from\\\":null,\\\"vt\\\":null,\\\"vf\\\":null,\\\"ps\\\":\\\"unpriced\\\",\\\"basis\\\":\\\"total\\\",\\\"fw\\\":\\\"Personal yoga practice — Coming Soon\\\",\\\"i\\\":\\\"/ahv/assets/img/F-6.jpg\\\",\\\"a\\\":[\\\"yoga training\\\",\\\"personal practice\\\",\\\"learn yoga\\\",\\\"coming soon\\\"],\\\"k\\\":[\\\"yoga training\\\",\\\"personal yoga practice\\\",\\\"learn yoga\\\",\\\"coming soon\\\"],\\\"av\\\":\\\"coming_soon\\\",\\\"bookable\\\":false},{\\\"r\\\":\\\"/new-to-yoga-teacher-training/\\\",\\\"t\\\":\\\"Professional Yoga Teacher Training — Coming Soon\\\",\\\"s\\\":\\\"\\\",\\\"c\\\":\\\"R",
+     "after": "Y\\\",\\\"n\\\":null,\\\"from\\\":null,\\\"vt\\\":null,\\\"vf\\\":null,\\\"ps\\\":\\\"unpriced\\\",\\\"basis\\\":\\\"total\\\",\\\"fw\\\":\\\"Personal yoga practice — Coming Soon\\\",\\\"i\\\":\\\"/ahv/assets/img/F-6.jpg\\\",\\\"a\\\":[\\\"yoga training\\\",\\\"personal practice\\\",\\\"learn yoga\\\",\\\"coming soon\\\"],\\\"k\\\":[\\\"yoga training\\\",\\\"personal yoga practice\\\",\\\"learn yoga\\\",\\\"coming soon\\\"],\\\"av\\\":\\\"coming_soon\\\",\\\"bookable\\\":false},{\\\"r\\\":\\\"/new-to-yoga-teacher-training/\\\",\\\"t\\\":\\\"Professional Yoga Teacher Training — Coming Soon\\\",\\\"s\\\":\\\"\\\",\\\"c\\\":\\\"RY"
+    }
+   ]
+  },
+  "public/ahv/views/ahv-page-yoga-meditation-programs-mobile.json": {
+   "beforeSHA256": "9e6e5609afb6e24ae990f97aafabbabd605baaa4e2d38bf5315167940c02dedf",
+   "afterSHA256": "02ab64a947a67c9d16c626544d64e44d408743592b2f9564215ca63cc5690649",
+   "replacements": [
+    {
+     "before": "\\\",\\\"n\\\":null,\\\"from\\\":null,\\\"vt\\\":null,\\\"vf\\\":null,\\\"ps\\\":\\\"unpriced\\\",\\\"basis\\\":\\\"total\\\",\\\"fw\\\":\\\"Personal yoga practice — Coming Soon\\\",\\\"i\\\":\\\"/ahv/assets/img/F-6.jpg\\\",\\\"a\\\":[\\\"yoga training\\\",\\\"personal practice\\\",\\\"learn yoga\\\",\\\"coming soon\\\"],\\\"k\\\":[\\\"yoga training\\\",\\\"personal yoga practice\\\",\\\"learn yoga\\\",\\\"coming soon\\\"],\\\"av\\\":\\\"coming_soon\\\",\\\"bookable\\\":false},{\\\"r\\\":\\\"/new-to-yoga-teacher-training/\\\",\\\"t\\\":\\\"Professional Yoga Teacher Training — Coming Soon\\\",\\\"s\\\":\\\"\\\",\\\"c\\\":\\\"R",
+     "after": "Y\\\",\\\"n\\\":null,\\\"from\\\":null,\\\"vt\\\":null,\\\"vf\\\":null,\\\"ps\\\":\\\"unpriced\\\",\\\"basis\\\":\\\"total\\\",\\\"fw\\\":\\\"Personal yoga practice — Coming Soon\\\",\\\"i\\\":\\\"/ahv/assets/img/F-6.jpg\\\",\\\"a\\\":[\\\"yoga training\\\",\\\"personal practice\\\",\\\"learn yoga\\\",\\\"coming soon\\\"],\\\"k\\\":[\\\"yoga training\\\",\\\"personal yoga practice\\\",\\\"learn yoga\\\",\\\"coming soon\\\"],\\\"av\\\":\\\"coming_soon\\\",\\\"bookable\\\":false},{\\\"r\\\":\\\"/new-to-yoga-teacher-training/\\\",\\\"t\\\":\\\"Professional Yoga Teacher Training — Coming Soon\\\",\\\"s\\\":\\\"\\\",\\\"c\\\":\\\"RY"
+    }
+   ]
+  },
+  "tools/sync-finder-search-data.mjs": {
+   "beforeSHA256": "a057e8d880a046e8a924ecaa6b286e873fd5ca85fe7b7fcc3728837fd7e1d03b",
+   "afterSHA256": "f69c54ecf56e6b5c4deb64702f1b846c6004967cc04f63d45c4e00eb7ec079fa",
+   "replacements": [
+    {
+     "before": "r ${p.route}`);\nlet changed=0;\nf",
+     "after": "r ${p.route}`);\nconst YOGA_COMING_SOON=Object.keys(COMING_SOON_CARD.purposes);\nfor(const r of YOGA_COMING_SOON) if(rows.get(r)?.availability!=='coming_soon' || rows.get(r)?.bookable!==false) throw new Error(`${r} is not an unbookable Coming Soon course`);\nlet changed=0;\nf"
+    },
+    {
+     "before": "r:p.route,t:p.name,s:p.sanskrit||'',c",
+     "after": "// AHV-M023.02: the yoga hub's own category ('Y') also lists the two forthcoming yoga training courses, so its\n  // \"Coming Soon\" availability filter shows them (as unpriced, non-bookable Coming Soon cards) instead of nothing.\n  r:p.route,t:p.name,s:p.sanskrit||'',c:route==='yoga-meditation-programs'&&YOGA_COMING_SOON.includes(p.route)&&!p.cats.includes('Y')?p.cats+'Y'"
+    }
+   ]
+  }
+ },
+ "phonePlaceholders": {
+  "lp-behandlung-kerala": {
+   "before": "+91 …",
+   "after": "+49 …"
+  }
+ }
+}

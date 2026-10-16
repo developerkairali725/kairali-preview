@@ -60,7 +60,7 @@ export default defineCopy({
       heading: "Vom ersten Gespräch bis zu Ihrem Aufenthalt",
       steps: [
         { title: "Kostenlose ärztliche Erstberatung", body: "Informieren Sie den Arzt über Ihre Krankengeschichte, aktuelle Medikamente und bisherige Behandlungen. Erläutern Sie Ihre Ziele und wie viel Zeit Sie für einen Aufenthalt einplanen können." },
-        { title: "Programm, Dauer und Angebot klären", body: "Lassen Sie sich die vorgeschlagenen Therapien, die empfohlene Dauer und eine mögliche Vorbereitung erklären. Stimmen Sie danach Unterkunft und Reisedaten mit dem Team ab und prüfen Sie das Angebot, bevor Sie Ihre Reise buchen." },
+        { title: "Programm und Dauer klären", body: "Lassen Sie sich die vorgeschlagenen Therapien, die empfohlene Dauer und eine mögliche Vorbereitung erklären. Stimmen Sie danach Unterkunft und Reisedaten mit dem Team ab, bevor Sie Ihre Reise buchen." },
         { title: "Ihr Aufenthalt in Palakkad", body: "Verordnete Behandlungen, Mahlzeiten und Ruhezeiten bestimmen Ihren Tagesablauf. Die Ärzte überprüfen den Verlauf während Ihres Aufenthalts." },
       ],
     },
@@ -94,7 +94,7 @@ export default defineCopy({
         { heading: "Klären Sie, was enthalten ist", items: ["Unterkunft in der gewählten Villa und Belegung", "Mahlzeiten", "Ärztliche Besprechungen", "Verordnete Therapien und Aktivitäten"] },
         { heading: "Fragen Sie nach zusätzlich berechneten Leistungen", items: ["Medikamente", "Untersuchungen", "Weitere Anwendungen", "Transfers", "Persönliche Dienstleistungen"], extra: true },
       ],
-      after: ["Welche Leistungen zusätzlich berechnet werden, hängt von der Vereinbarung ab. Ihre ärztliche Erstberatung ist kostenlos. Lassen Sie sich die Leistungen und Kosten des Aufenthalts sowie etwaiger späterer Leistungen im Angebot erläutern."],
+      after: ["Welche Leistungen zusätzlich berechnet werden, hängt von der Vereinbarung ab."],
     },
     doctors: {
       heading: "Ihre Ayurveda-Ärzte",
@@ -112,6 +112,5 @@ export default defineCopy({
     { q: "Sind alle Panchakarma-Verfahren im Aufenthalt enthalten?", a: "Nicht automatisch. Ihr Arzt entscheidet, welche Verfahren geeignet sind, und erläutert Vorbereitung, Ablauf und Verfügbarkeit. Die Auswahl richtet sich nach Ihrer individuellen Beurteilung. Lassen Sie sich vor Ihrer Entscheidung erklären, was die vorgeschlagenen Verfahren beinhalten." },
     { q: "Kann ich trotz einer bestehenden Erkrankung eine Anfrage stellen?", a: "Ja. Legen Sie relevante Befunde vor und informieren Sie den Arzt über Medikamente und laufende Behandlungen. So kann er beurteilen, ob ein Programm geeignet ist. Eine Beratung oder ein Aufenthalt ist keine Zusage eines bestimmten Behandlungsergebnisses." },
     { q: "Kann eine Begleitperson mitkommen?", a: "Besprechen Sie die gewünschte Belegung und einen möglichen Unterstützungsbedarf vor der Buchung. Der Patientenservice bestätigt die verfügbaren Unterkünfte und die jeweiligen Bedingungen und Kosten für Ihre Reisedaten." },
-    { q: "Was ist bei der kostenlosen Erstberatung und dem Angebot zu beachten?", a: "Die erste ärztliche Beratung ist kostenlos. Bitten Sie um ein Angebot, das die vorgesehene Betreuung und etwaige spätere Leistungen umfasst. Prüfen Sie, was enthalten ist und welche zusätzlichen Kosten anfallen können." },
   ],
 });

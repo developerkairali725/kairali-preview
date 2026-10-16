@@ -9,6 +9,8 @@ import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import fs from "node:fs";
 import { IMAGES } from "../../campaign-v2/data/images.ts";
+// Train G (15 Oct 2026) sits on top of Train F: its exact delta is removed first (fixtures/train-g-20261015.mjs).
+import { reverseTrainGSource, reverseTrainGConfig } from "./train-g-20261015.mjs";
 
 export const TRAIN_F = JSON.parse(fs.readFileSync(new URL("./train-f-20261015.json", import.meta.url), "utf8"));
 const sha = (s) => createHash("sha256").update(s).digest("hex");
@@ -16,7 +18,8 @@ const plain = (v) => JSON.parse(JSON.stringify(v));
 const PICKS = TRAIN_F.photoPicks;
 
 /** The Train B head text of `path` (unchanged when Train F did not touch it). */
-export function reverseTrainFSource(path, text) {
+export function reverseTrainFSource(path, rawText) {
+  const text = reverseTrainGSource(path, rawText);
   const e = TRAIN_F.files[path];
   if (!e) return text;
   assert.equal(sha(text), e.afterSHA256, `${path}: exactly the Train F source`);
@@ -42,7 +45,8 @@ function galleryBefore(slug, g) {
 }
 
 /** A production config (JSON copy) with Train F's photograph picks reversed exactly. Use the returned value. */
-export function reverseTrainFConfig(slug, c) {
+export function reverseTrainFConfig(slug, config) {
+  const c = reverseTrainGConfig(slug, config);
   const p = PICKS[slug];
   if (!p) return c;
   assert.equal(c.hero.mobileImage.id, p.after.mobileImage, `${slug}.mobileImage`);

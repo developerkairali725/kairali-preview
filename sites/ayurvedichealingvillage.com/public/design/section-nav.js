@@ -226,8 +226,13 @@
     var walk = function (list) { for (var i = 0; i < list.length; i++) { if (list[i].path) TITLE[list[i].path] = list[i].label; walk(list[i].children || []); } };
     walk(section.items);
   })();
+  // The design names its breadcrumb nav "Breadcrumb"; a locale build translates that aria-label AND this
+  // allowlisted literal (l10n/source/runtime-allowlist.json) from the same catalogue entry, so the tree
+  // breadcrumb is also rebuilt on locale pages (AHV-M070.01/M071.01: /de/yoga-kurse-praxis/ kept its captured
+  // 'Ausbildungsprogramme' crumb while the English page and the rail say Things to do).
+  var CRUMB_LABEL = "Breadcrumb";
   function rewriteCrumbs(main) {
-    var bc = root.querySelector('nav[aria-label="Breadcrumb"]');
+    var bc = root.querySelector('nav[aria-label="' + CRUMB_LABEL + '"]') || root.querySelector('nav[aria-label="Breadcrumb"]');
     if (!bc || bc.getAttribute("data-ahv-crumbs") === "1") return;
     var link = bc.querySelector("a"), sep = bc.querySelector('span[aria-hidden="true"]'), last = bc.querySelector('[aria-current="page"]');
     if (!link || !last) return;

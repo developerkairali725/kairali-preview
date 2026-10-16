@@ -112,6 +112,23 @@ export const LENGTHS: readonly Option[] = [
   { value: "14", label: "14 nights" }, { value: "21", label: "21 nights" },
   { value: "28", label: "28 nights" }, { value: ADVISE, label: "Doctor to advise" },
 ];
+/**
+ * AHV-WB.124 (staff review 9 Oct 2026; consumption item 537, owner-supported): the Karkidaka route's programmes are 7, 14
+ * and 21 days (The Monsoon Starter / Reset / Overhaul, the page's own card titles), so its "Length of stay" options (the
+ * labels its enquiry is served with, sections/interactive/Enquiry.tsx) are those, not the generic 14/21/28 nights. Same
+ * key ("length") and "Doctor to advise"; only the option list differs, and only on that route.
+ */
+export const MONSOON_LENGTHS: readonly Option[] = [
+  { value: "7", label: "The Monsoon Starter · 7 days" }, { value: "14", label: "The Monsoon Reset · 14 days" },
+  { value: "21", label: "The Monsoon Overhaul · 21 days" }, { value: ADVISE, label: "Doctor to advise" },
+];
+const ROUTE_LENGTHS: Readonly<Record<string, readonly Option[]>> = {
+  "/karkidaka-chikitsha-or-monsoon-wellness.html": MONSOON_LENGTHS,
+};
+/** The "Length of stay" options of a route: its own list where it has one, else the shared LENGTHS. */
+export function stayLengths(route: string | undefined): readonly Option[] {
+  return (route ? ROUTE_LENGTHS[route] : undefined) ?? LENGTHS;
+}
 export const PARTIES: readonly Option[] = [
   { value: "solo", label: "Just me" }, { value: "two", label: "Two patients" }, { value: "companion", label: "Patient + companion" },
 ];
@@ -328,17 +345,31 @@ export const CAMPAIGN_ENQUIRY_COPY: Record<"en" | "de" | "ru", EnquiryCopy> = {
     title: "Kostenlose ärztliche Erstberatung", intro: "Teilen Sie uns mit, wie wir Sie erreichen können. Unser Patientenservice hilft Ihnen bei der Planung Ihres Aufenthalts.",
     lede: "Ein kurzes Formular. Medizinische Angaben sind hier nicht nötig – Ihr Arzt fragt diese vertraulich in der Beratung ab.",
     name: "Ihr Name", email: "E-Mail", phone: "Telefon / WhatsApp (optional, mit Ländervorwahl)", message: "Wie können wir helfen? (optional)",
-    consent: "Ich stimme zu, zu meiner Anfrage kontaktiert zu werden.", privacy: "Datenschutzerklärung (EN)",
+    // AHV-WB.526.legal-links-layout (Train J3): the page footer's own label (production/ui.ts de.footer.privacy), so
+    // "Datenschutz (EN) · AGB (EN)" stays on one line at 360/390 px. Link target and consent wording unchanged.
+    consent: "Ich stimme zu, zu meiner Anfrage kontaktiert zu werden.", privacy: "Datenschutz (EN)",
     success: "Vielen Dank. Ihre Anfrage ist eingegangen.",
   },
   ru: {
     title: "Бесплатная консультация врача", intro: "Сообщите, как с вами связаться. Служба сопровождения пациентов поможет спланировать ваш визит.",
     lede: "Короткая форма. Медицинские сведения здесь не нужны — врач спросит о них конфиденциально во время консультации.",
     name: "Ваше имя", email: "Эл. почта", phone: "Телефон / WhatsApp (необязательно, с кодом страны)", message: "Чем мы можем помочь? (необязательно)",
-    consent: "Я согласен(на), чтобы со мной связались по поводу моего запроса.", privacy: "Политика конфиденциальности (EN)",
+    // AHV-WB.549.legal-links-layout (Train J3): the page footer's own label (production/ui.ts ru.footer.privacy). At
+    // 360/390 px the "·" now stays on the first line and "Условия (EN)" wraps aligned with the consent text, instead of
+    // the separator starting a misaligned second line. Link target and consent wording unchanged.
+    consent: "Я согласен(на), чтобы со мной связались по поводу моего запроса.", privacy: "Конфиденциальность (EN)",
     success: "Спасибо. Ваш запрос получен.",
   },
 };
+
+/**
+ * The phone field's example prefix per page language. AHV-WB.525.phone-example (staff review 9 Oct 2026): the German
+ * page shows a German example, the prefix of the German error message's own example (production/ui.ts, "+49 30 123456").
+ * English and Russian keep the form's existing +91 example. Only the placeholder differs; the field is unchanged.
+ * AHV-WB.548.phone-example (Train G rework, 15 Oct 2026; composed with Train H in the Train G integration): the Russian
+ * page shows the Russian example its own validation message already gives (production/ui.ts, "например +7 900 000 00 00").
+ */
+export const CAMPAIGN_ENQUIRY_PHONE_PLACEHOLDER: Record<"en" | "de" | "ru", string> = { en: "+91 …", de: "+49 …", ru: "+7 900 000 00 00" };
 
 export function campaignEnquiryForm(locale: string): FormSchema {
   const k = locale === "de" || locale === "ru" ? locale : "en";
@@ -359,7 +390,7 @@ export function campaignEnquiryForm(locale: string): FormSchema {
       fields: [
         { name: "fullName", type: "text", label: t.name, required: true, autocomplete: "name", maxLength: 120, mapsTo: "fname" },
         { name: "email", type: "email", label: t.email, required: true, autocomplete: "email", maxLength: 254, mapsTo: "email" },
-        { name: "phone", type: "tel", label: t.phone, required: false, autocomplete: "tel", placeholder: "+91 …", maxLength: 30, pattern: LIVE_PHONE_PATTERN, mapsTo: "phone" },
+        { name: "phone", type: "tel", label: t.phone, required: false, autocomplete: "tel", placeholder: CAMPAIGN_ENQUIRY_PHONE_PLACEHOLDER[k], maxLength: 30, pattern: LIVE_PHONE_PATTERN, mapsTo: "phone" },
         { name: "message", type: "textarea", label: t.message, required: false, rows: 3, maxLength: 3000, mapsTo: "message" },
       ],
     }],

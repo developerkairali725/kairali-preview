@@ -17,6 +17,7 @@ import { formSchemaFor, resolveSchema } from "../campaign-v2/forms/schema.ts";
 import { uiFor } from "../campaign-v2/production/ui.ts";
 import { productionCss } from "../scripts/build-production-css.mjs";
 import { reverseBatch6Source } from "./fixtures/train-a-batch6-20261014.mjs";
+import { reverseTrainISource } from "./fixtures/train-i-20261015.mjs";
 
 const require = createRequire(import.meta.url);
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -101,9 +102,10 @@ test("only approved form/CSS deltas change; generated CSS equals its authored so
   const digest = (s) => crypto.createHash("sha256").update(s).digest("hex");
   assert.equal(digest(beforeWhatsApp(baseline)), delta.baselineHashes["campaign-v2/sections/interactive/EnquiryForm.tsx"]);
   for (const file of ["campaign-v2/sections/sections.css", "campaign-v2/production/document.css"]) {
+    // Train I (15 Oct 2026, AHV-LATER-043.01): remove its exact hero fine-print delta from the generated bundle first.
     const css = read(file);
     // Train A batch 6: remove only the exact Russian phone hero-CTA delta (AHV-WB.530) from the generated bundle first.
-    let prior = reverse(reverseBatch6Source(file, css), delta.cssAddition, "");
+    let prior = reverse(reverseBatch6Source(file, reverseTrainISource(file, css)), delta.cssAddition, "");
     if (file === "campaign-v2/production/document.css") {
       // These independently reviewed additive styles may arrive through the future release base.
       // Remove only their exact approved blocks; the original baseline hash remains unchanged.

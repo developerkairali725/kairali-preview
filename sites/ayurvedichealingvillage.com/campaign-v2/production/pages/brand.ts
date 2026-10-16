@@ -41,7 +41,8 @@ export default defineCopy({
       heading: "Yes, this is Kairali’s Healing Village in Palakkad",
       paragraphs: [
         "Kairali – The Ayurvedic Healing Village is the Kairali Ayurvedic Group’s residential Ayurveda property in Palakkad, Kerala. It is an NABH-accredited Ayurvedic hospital with residential villas, where your assessment guides the proposed programme.",
-        "Kairali’s Ayurvedic family tradition informs its approach to care. Here, that means an individual plan in a residential setting, with doctors, therapists, meals and accommodation all part of your stay.",
+        "At a glance: an NABH-accredited Ayurvedic hospital in Palakkad, Kerala; 30 villas in a garden setting; Ayurvedic doctors who assess your health history, plan your care and review progress; [location and directions](/how-to-reach/).",
+        "Kairali’s Ayurvedic family tradition informs its approach to care. Here, that means an individual plan in a residential setting, with doctors, therapists, meals and accommodation all part of your stay. What your stay gives you: an individual plan, sessions delivered by trained therapists as prescribed, vegetarian meals and villa accommodation in a garden setting, with time to rest around your prescribed care.",
       ],
       points: [
         "You searched for Kairali and want to confirm the property",
@@ -62,14 +63,14 @@ export default defineCopy({
           paragraphs: ["You may want to discuss Panchakarma, rejuvenation, weight management, pain, sleep, stress or another health concern. Explain your goals in your own words. The doctor can help you understand which programme is relevant and what the proposed care involves."],
         },
         { title: "Know how your plan is prescribed and reviewed", paragraphs: ["Your assessment informs the procedures, dietary guidance and suitable activity. Trained therapists deliver prescribed sessions. Ask how progress will be reviewed, how to raise concerns and what follow-up may be recommended after your stay."] },
-        { title: "Compare the whole stay", paragraphs: ["When considering a residential Ayurveda programme, compare the full proposal: care, duration, accommodation, meals, reviews and additional charges. Ask for an individual quotation so you can see what applies to your dates and needs."] },
+        { title: "Compare the whole stay", paragraphs: ["When considering a residential Ayurveda programme, compare the full proposal: care, duration, accommodation, meals, reviews and additional charges."] },
       ],
     },
     pathway: {
       heading: "From your first question to your stay",
       steps: [
         { title: "Start with a free consultation", body: "Share the reason for your visit, the dates you are considering and relevant medical information, including your current treatment." },
-        { title: "Review your plan and quotation", body: "Once the doctor has explained the proposed care, review the recommended stay and quotation with patient care, including anything charged separately." },
+        { title: "Review your plan", body: "Once the doctor has explained the proposed care, review the recommended stay with patient care, including anything charged separately." },
         { title: "Begin your stay at the village", body: "Vegetarian meals, suitable yoga or meditation and time to rest fit around your prescribed care. Ask which other activities or local cultural visits are available and whether they suit your programme." },
       ],
     },
@@ -119,7 +120,6 @@ export default defineCopy({
     { q: "What kind of care setting does the Healing Village provide?", a: "It is an NABH-accredited Ayurvedic hospital with residential villas. The doctor assesses your needs and determines prescribed care. Meals, suitable activity and rest are considered alongside your treatment routine." },
     { q: "What does Kairali’s Ayurvedic heritage mean?", a: "It refers to the family’s Ayurvedic tradition. The doctors assess and plan each person’s care individually. You can ask about their qualifications, experience and availability when discussing your stay." },
     { q: "Can I enquire without choosing a programme?", a: "Yes. Tell the team why you are considering Ayurveda and share your current treatment and relevant health history. The initial consultation can help clarify suitable options, duration and practical next steps." },
-    { q: "How do I compare the cost of a stay at Kairali?", a: "Ask for a quotation covering the programme, dates, villa occupancy, taxes and included care. Confirm additional charges such as medicines, tests, specialist services and travel. Compare the full arrangements rather than an isolated headline rate." },
     { q: "Can a companion stay with me?", a: "Explain who will travel and who needs treatment. Patient care can discuss occupancy and companion arrangements for your dates, including meals and applicable charges. Confirm those details before booking." },
     { q: "Is the initial doctor consultation free?", a: "Yes. The initial consultation is free and gives you an opportunity to discuss suitability and ask questions. Treatment, tests, medicines and later services are not automatically free." },
   ],

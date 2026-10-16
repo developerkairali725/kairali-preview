@@ -28,8 +28,9 @@
       crumbLast: (R.crumbs && R.crumbs.length) ? R.crumbs[R.crumbs.length - 1].label : '',
       sections: R.components.map((c, ci) => ({
         key: 'z' + ci, component: c.component, ptr: c.ptr,
-        isNav: /context|menu|navigation/i.test(c.component),
-        isSection: !/context|menu|navigation/i.test(c.component),
+        // The approved in-body 'contextual-resources' links (AHV-I04) are content, not the retired sidebar: a section.
+        isNav: c.component !== 'contextual-resources' && /context|menu|navigation/i.test(c.component),
+        isSection: c.component === 'contextual-resources' || !/context|menu|navigation/i.test(c.component),
         navLabel: R.h1 + ' \u2014 related pages',
         el: P.sourceBlocks(groupCards(c.blocks), 'z' + ci, guard)
       }))

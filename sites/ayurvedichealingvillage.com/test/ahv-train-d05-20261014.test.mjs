@@ -12,6 +12,8 @@ import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
 import { UI } from "../campaign-v2/production/ui.ts";
 import fixture from "./fixtures/train-d05-20261014.json" with { type: "json" };
 import { candidateSource, reverseDecision23Config } from "./fixtures/train-b-20261015.mjs";
+// Train J3 (15 Oct 2026) adds its own, non-repeating AHV-WB.452 line; its exact delta is reversed first.
+import { reverseTrainJ3Config } from "./fixtures/train-j3-20261015.mjs";
 
 const NOW = new Date(Date.UTC(2026, 9, 14, 12));
 const sha = (s) => crypto.createHash("sha256").update(s).digest("hex");
@@ -62,7 +64,7 @@ test("Train B: the two rejected benefit rows are reverted exactly (the reviewed 
     const slug = EXCLUDED[x.row];
     assert.equal(x.file, `campaign-v2/production/pages/${slug}.ts`);
     const [{ before }] = x.configChanges;
-    assert.deepEqual(productionCampaign(slug).page.lead.paragraphs, before, slug);
+    assert.deepEqual(reverseTrainJ3Config(slug, JSON.parse(JSON.stringify(productionCampaign(slug)))).page.lead.paragraphs, before, slug);
   }
 });
 

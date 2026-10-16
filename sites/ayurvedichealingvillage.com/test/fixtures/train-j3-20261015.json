@@ -1,0 +1,837 @@
+{
+ "train": "J3",
+ "base": "00e944e4440c4b1710bffc29cc7c2bea8b385fdc",
+ "branch": "codex/ahv-train-j3-20261015",
+ "note": "Train J batch 3 (15 Oct 2026), composed on the Train I head 00e944e44. 'files': each source edit (exact before/after, occurring exactly once) with the file's head (beforeSHA256) and Train J3 (afterSHA256) bytes. 'configChanges': the exact production-config fields those edits change (campaign-v2/production/load.ts productionCampaign); a 'before' or 'after' of \"__absent__\" means the field does not exist on that side; arrays whose length changes are recorded whole. 'shareImages': the one new binary. 'bindings': the route-binding fields changed in bindings.ts (not part of the production config).",
+ "rows": [
+  "AHV-WB.123.change",
+  "AHV-WB.166.change",
+  "AHV-WB.253.change",
+  "AHV-WB.298.change",
+  "AHV-WB.362.guest-video",
+  "AHV-WB.362.villa-gallery",
+  "AHV-WB.372.change",
+  "AHV-WB.452.benefit-copy",
+  "AHV-WB.454.change",
+  "AHV-WB.514.whatsapp-message",
+  "AHV-WB.526.legal-links-layout",
+  "AHV-WB.549.legal-links-layout",
+  "AHV-LATER-023.01"
+ ],
+ "files": {
+  "campaign-v2/production/bindings.ts": {
+   "beforeSHA256": "684e2d93901af22880407ed95f6416145929f0a94852d262b92c931ec58fc7dd",
+   "afterSHA256": "600856ca4585e6db468e515147d55c37cd2c306c6a85d6b4b2ad2feab635ff88",
+   "replacements": [
+    {
+     "row": "AHV-WB.123.change",
+     "before": "  { slug: \"monsoon-wellness\", route: \"/karkidaka-chikitsha-or-monsoon-wellness.html\", variant: \"C\", hero: \"kt-190\", stillness: \"ahv-img-016\", pathway: \"kt-202\", form: r10(\"monsoon\") },\n",
+     "after": "  // AHV-WB.123.change (Train J3): its own share picture, a 1200×630 crop of the route's approved rest photograph\n  // ahv-img-016 (no person), with that photograph's registry alt. Not the hero kt-190: that is already the share picture\n  // of /pain-management.html (AHV-WB.077), so it would not be this page's own. og:locale/site name unchanged.\n  { slug: \"monsoon-wellness\", route: \"/karkidaka-chikitsha-or-monsoon-wellness.html\", variant: \"C\", hero: \"kt-190\", stillness: \"ahv-img-016\", pathway: \"kt-202\", form: r10(\"monsoon\"), og: OG_OWN(\"monsoon-wellness\"), ogAlt: img(\"ahv-img-016\").alt },\n"
+    },
+    {
+     "row": "AHV-WB.166.change",
+     "before": "  { slug: \"ayurveda-retreat\", route: \"/ayurveda-retreat-kerala.html\", variant: \"B\", hero: \"wx-hero\", pathway: \"kt-199\", form: r10(\"retreat\") },\n",
+     "after": "  // AHV-WB.166.change (Train J3): the page's own published share picture (public/images/og/ayurveda-retreat-kerala.html.jpg,\n  // 1200×630, already served) instead of the R10 image six other pages share. og:locale/site name unchanged; no alt\n  // is added (the file has no registry entry).\n  { slug: \"ayurveda-retreat\", route: \"/ayurveda-retreat-kerala.html\", variant: \"B\", hero: \"wx-hero\", pathway: \"kt-199\", form: r10(\"retreat\"), og: { url: `${SITE_ORIGIN}/images/og/ayurveda-retreat-kerala.html.jpg`, width: 1200, height: 630, locale: \"en_IN\" } },\n"
+    },
+    {
+     "row": "AHV-WB.298.change, AHV-WB.454.change",
+     "before": "/** The 20 routes added on 8 Oct 2026, in their four review batches of five. */\n",
+     "after": "/**\n * Train J batch 3 (15 Oct 2026), AHV-WB.298.change and AHV-WB.454.change (staff review 9 Oct 2026, phone: \"only text\n * boxes, no photos\" from the top to the villa photos) under owner decision 10 (pick from the image bank, old or new):\n * each programme card of /weight-loss.html and /lp/treatment-in-kerala/ carries one small photograph, exactly as Train H's\n * cards (production/sections/Offering.tsx). All are no-person Palakkad photographs of the owner-approved image bank\n * (data/images.ts); none is the route's own hero, phone hero, steps or gallery photograph, and they are distinct per route.\n * Applied after the Train H picks. Reversible: delete a route's entry.\n */\nexport const CARD_PICKS_20261015J3: Readonly<Partial<Record<ProductionSlug, readonly string[]>>> = {\n  \"weight-management\": [\"ahv-pkd-115\", \"ahv-img-012\", \"ahv-img-034\", \"ahv-pkd-111\"], // AHV-WB.298.change\n  \"lp-treatment-kerala\": [\"ahv-pkd-115\", \"ahv-img-018\", \"ahv-pkd-180\", \"ahv-pkd-111\"], // AHV-WB.454.change\n};\nfor (const [slug, cards] of Object.entries(CARD_PICKS_20261015J3) as [ProductionSlug, readonly string[]][]) {\n  const r = ROUTES[slug];\n  const own = new Set([r.heroImage.id, r.mobileImage.id, r.pathwayImage.id, ...r.gallery.map((g) => g.image.id)]);\n  if (r.offeringImages || new Set(cards).size !== cards.length || cards.some((id) => own.has(id))) throw new Error(`production/bindings: ${slug} card photographs must be new, distinct and not the route's own`);\n  r.offeringImages = cards.map(img);\n}\n\n/** The 20 routes added on 8 Oct 2026, in their four review batches of five. */\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/weight-management.ts": {
+   "beforeSHA256": "2ad6ceac113f50d28079aa41b8ddfb3d763bde38e7f934d2fd33be7897ded70a",
+   "afterSHA256": "f4ecad8923f121ed9289a9982dfbe8ebe77b8915f932b4ba957e203cb5ef4ccc",
+   "replacements": [
+    {
+     "row": "AHV-WB.298.change",
+     "before": "        { title: \"Prescribed therapies\", paragraphs: [\"Your doctor explains which therapies may be appropriate and how they fit into the programme. Oil therapies, steam treatments or other Ayurvedic care are considered according to your assessment.\"] },\n",
+     "after": "        // AHV-WB.298.change (Train J3, staff review 9 Oct: \"make the text shorter\"): each card one sentence, same facts.\n        { title: \"Prescribed therapies\", paragraphs: [\"Your doctor explains which oil therapies, steam treatments or other Ayurvedic care may suit your assessment and programme.\"] },\n"
+    },
+    {
+     "row": "AHV-WB.298.change",
+     "before": "        { title: \"A personalised vegetarian diet\", paragraphs: [\"A personalised vegetarian diet is part of the programme. Discuss your usual eating patterns, food restrictions and practical needs, so the team can explain the proposed meals and arrangements.\"] },\n",
+     "after": "        { title: \"A personalised vegetarian diet\", paragraphs: [\"A personalised vegetarian diet is part of the programme; tell the team your usual eating patterns, food restrictions and practical needs.\"] },\n"
+    },
+    {
+     "row": "AHV-WB.298.change",
+     "before": "        { title: \"Activity and rest in your day\", paragraphs: [\"The daily routine makes time for care, appropriate activity and rest. Ask about yoga and meditation sessions that suit your assessment, and tell the doctor about any injury or limitation before taking part.\"] },\n",
+     "after": "        { title: \"Activity and rest in your day\", paragraphs: [\"Your day makes time for care, appropriate activity, rest and yoga or meditation that suit your assessment; tell the doctor about any injury or limitation first.\"] },\n"
+    },
+    {
+     "row": "AHV-WB.298.change",
+     "before": "        { title: \"Progress and life after the stay\", paragraphs: [\"Discuss how progress will be reviewed and which habits you would like to continue at home. Before discharge, ask for clear guidance on your routine and any recommended follow-up, including how later consultations or services are arranged.\"] },\n",
+     "after": "        { title: \"Progress and life after the stay\", paragraphs: [\"Ask how progress is reviewed, and before discharge get clear guidance on the habits to continue at home and any follow-up consultations or services.\"] },\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-treatment-kerala.ts": {
+   "beforeSHA256": "73496f8627eb7f65b6a6e4f45f498406f4460877e234ee73a0f655e450ac7ff1",
+   "afterSHA256": "3641183ebe4936994651b6c98bce898f094843899fc7540d79f5e3ffa967b3e8",
+   "replacements": [
+    {
+     "row": "AHV-WB.452.benefit-copy",
+     "before": "        \"Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Residential care brings together an individual assessment, prescribed therapies, meals and time to rest, with doctors reviewing your programme during the stay.\",\n      ],\n",
+     "after": "        \"Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Residential care brings together an individual assessment, prescribed therapies, meals and time to rest, with doctors reviewing your programme during the stay.\",\n        // AHV-WB.452.benefit-copy (Train J3; the D05 line repeated the paragraph above and was rejected): one stay line that\n        // does not repeat it, every clause from this page's own approved rest and place copy. No outcome or relief claim.\n        \"What your stay gives you: a private villa in the village gardens, a patient care team for companion, access and travel arrangements, and the hours between appointments to walk in the gardens or simply rest.\",\n      ],\n"
+    },
+    {
+     "row": "AHV-WB.454.change",
+     "before": "        { title: \"Panchakarma\", paragraphs: [\"Panchakarma involves doctor-selected procedures, preparation, diet and rest. A programme does not automatically include all five classical procedures. Ask which, if any, are suitable for you.\"] },\n",
+     "after": "        // AHV-WB.454.change (Train J3, staff review 9 Oct: \"make the text shorter\"): each card one sentence, same facts and\n        // safety lines (not all five procedures; outcomes vary). Cards carry photographs (bindings.ts CARD_PICKS_20261015J3).\n        { title: \"Panchakarma\", paragraphs: [\"Panchakarma combines doctor-selected procedures, preparation, diet and rest, but a programme does not automatically include all five classical procedures; ask which, if any, suit you.\"] },\n"
+    },
+    {
+     "row": "AHV-WB.454.change",
+     "before": "        { title: \"Rejuvenation care\", paragraphs: [\"Rejuvenation care brings prescribed therapies and daily routines together. Discuss the programme in relation to your health, current treatment and available time.\"] },\n",
+     "after": "        { title: \"Rejuvenation care\", paragraphs: [\"Rejuvenation care combines prescribed therapies and daily routines, discussed in relation to your health, current treatment and available time.\"] },\n"
+    },
+    {
+     "row": "AHV-WB.454.change",
+     "before": "        { title: \"Pain management\", paragraphs: [\"Pain management begins with an assessment of your concerns, medical history and practical needs. Tell the doctor about back, neck or joint discomfort, previous treatment and any limits on movement. The assessment guides the proposed care; outcomes vary between individuals.\"] },\n",
+     "after": "        { title: \"Pain management\", paragraphs: [\"An assessment of your back, neck or joint discomfort, medical history, previous treatment and any limits on movement guides the proposed care; outcomes vary between individuals.\"] },\n"
+    },
+    {
+     "row": "AHV-WB.454.change",
+     "before": "        { title: \"Diet, daily routine and discharge guidance\", paragraphs: [\"Our doctors can also discuss dietary guidance and daily routines. For each option, ask what your days would involve, how progress is reviewed and what guidance is provided at discharge.\"] },\n",
+     "after": "        { title: \"Diet, daily routine and discharge guidance\", paragraphs: [\"Ask our doctors about dietary guidance and daily routines: what your days would involve, how progress is reviewed and what guidance is provided at discharge.\"] },\n"
+    },
+    {
+     "row": "AHV-WB.454.change",
+     "before": "        { title: \"Start with a free consultation\", body: \"Share your health history, current medicines and relevant records, and say what you hope to address. The doctor explains suitable options and the information needed to assess you.\" },\n",
+     "after": "        { title: \"Start with a free consultation\", body: \"Share your health history, current medicines, relevant records and what you hope to address; the doctor explains suitable options and the information needed to assess you.\" },\n"
+    },
+    {
+     "row": "AHV-WB.454.change",
+     "before": "        { title: \"Settle into your prescribed routine\", body: \"Your days follow prescribed therapies, meals and rest, with doctors reviewing your programme during the stay. Before discharge, ask which guidance to continue at home.\" },\n",
+     "after": "        { title: \"Settle into your prescribed routine\", body: \"Your days follow prescribed therapies, meals and rest, with doctors reviewing your programme during the stay; before discharge, ask which guidance to continue at home.\" },\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/south-india-cities.ts": {
+   "beforeSHA256": "dbd355d8b74adb671c293b33bbc1f1a019fb43d99c457b3e2dda44aa94c0a13a",
+   "afterSHA256": "45f43efdc4fc4f0aa02196f6c7a3134375b84e550aeda1497ea6e93e3a254bd3",
+   "replacements": [
+    {
+     "row": "AHV-WB.253.change",
+     "before": "    { q: \"Which airport or station should I use?\", a: \"Share your starting point and proposed itinerary with patient care. Ask about suitable arrival options and onward travel to the Healing Village. Confirm any transfer, timing and cost for your particular trip.\" },\n",
+     "after": "    // AHV-WB.253.change (Train J3): the verified road distances of the published airport facts (WOPS-AHV-CONSOLIDATED-\n    // RELEASE-20261007-001 airport-site/VERIFICATION.json PASS: CJB 66, COK 114, CCJ 116 km) and owner decision 6 (pick-up on\n    // request at an extra charge; no prices or travel times). No railway-station distance: none is verified.\n    { q: \"Which airport or station should I use?\", a: \"The nearest airport is Coimbatore International Airport (CJB), about 66 km by road; Cochin International Airport (COK) is about 114 km and Calicut International Airport (CCJ) about 116 km. Share your starting point and proposed itinerary with patient care, and ask about onward travel to the Healing Village. Airport pick-up can be arranged on request at an extra charge.\" },\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/lp-brand.ts": {
+   "beforeSHA256": "1bbb5afb83295c651fd2b92cfc9aa346b15c1b61dae8ae9db75c525c987b2355",
+   "afterSHA256": "ca08af53f16f88a25175cf6e176ffbbe23cad51a1e745482a359b0b8591c5b7d",
+   "replacements": [
+    {
+     "row": "AHV-WB.362.guest-video",
+     "before": "import { defineCopy } from \"../copy.ts\";\n",
+     "after": "import { defineCopy } from \"../copy.ts\";\nimport { story } from \"../stories.ts\";\n"
+    },
+    {
+     "row": "AHV-WB.362.villa-gallery, AHV-WB.362.guest-video",
+     "before": "    stay: {\n      heading: \"See your full plan before you commit\",\n",
+     "after": "    // AHV-WB.362.villa-gallery and .guest-video (Train J3; staff review 9 Oct 2026; owner's standing authority for approved\n    // villa photographs and on-page guest video; production/section-order.ts D_VILLAGE_AND_STORIES): the village section\n    // with the route's own approved gallery, and the consented registry films, reused verbatim from the sibling brand page\n    // (brand.ts, AHV-WB.272). No new facts, names, countries or quotes.\n    place: {\n      heading: \"Choose a villa set among the gardens\",\n      paragraphs: [\"Your villa is your base between appointments. Walk through the grounds, sit outside your villa or rest in your room. Ask our team about availability, layout, occupancy and any access needs for your dates.\"],\n      villas: [\n        { name: \"Deluxe Villa\", body: \"A king-size bed and private bathroom, with Wi-Fi, TV and air conditioning.\", link: { label: \"Explore Deluxe Villa\", href: \"/deluxe-villa/\" } },\n        { name: \"Classic Villa\", body: \"Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.\", link: { label: \"Explore Classic Villa\", href: \"/classic-villa/\" } },\n        { name: \"Royal Villa\", body: \"A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.\", link: { label: \"Explore Royal Villa\", href: \"/royal-villa/\" } },\n        { name: \"Maharaja Suite\", body: \"A king-size bed, a living area with a couch and garden access in a premium location.\", link: { label: \"Explore Maharaja Suite\", href: \"/maharaja-suite/\" } },\n      ],\n    },\n    stories: {\n      heading: \"See the village before you decide\",\n      body: \"Watch a day at the village, then hear patients describe their stays in their own words. Individual experiences vary.\",\n      films: [\n        story(\"iPARaMRASUs\", \"A day at the village\"),\n        story(\"3vWviQfW1Ug\", \"Watch Supriya’s experience\"),\n        story(\"4x01PtWfNnk\", \"Watch Michaela & Jan’s experience\"),\n      ],\n    },\n    stay: {\n      heading: \"See your full plan before you commit\",\n"
+    },
+    {
+     "row": "AHV-WB.372.change",
+     "before": "The Healing Village is an Ayurvedic hospital of the Kairali Ayurvedic Group. For your own stay",
+     "after": "The Healing Village is an NABH-accredited Ayurvedic hospital of the Kairali Ayurvedic Group. For your own stay"
+    }
+   ]
+  },
+  "campaign-v2/production/section-order.ts": {
+   "beforeSHA256": "4718d4da2f108d6f603d0bd5aa31b29dccd5c25c35218a44bb8299b9e683c2f1",
+   "afterSHA256": "a3d1e7bd2ee79503af282907fc3125203abdb8f2efc801900cd815b2192656b9",
+   "replacements": [
+    {
+     "row": "AHV-WB.362.villa-gallery, AHV-WB.362.guest-video",
+     "before": "export const D_VILLAGE_AND_STORIES: readonly string[] = [\"south-india-cities\", \"brand\", \"lp-south-india\", \"lp-panchakarma\"];\n",
+     "after": "// Train J3 (15 Oct 2026, AHV-WB.362.villa-gallery / .guest-video): /lp/kairali-brand/ joins, as its sibling brand page.\nexport const D_VILLAGE_AND_STORIES: readonly string[] = [\"south-india-cities\", \"brand\", \"lp-south-india\", \"lp-panchakarma\", \"lp-brand\"];\n"
+    }
+   ]
+  },
+  "campaign-v2/production/sections/guest-video-policy.mjs": {
+   "beforeSHA256": "d34d1d271265c71c34263fec99ba05fe8f0d8acf1cfdbab528241ff3d9033361",
+   "afterSHA256": "96484382698ab69bd126a01f25e16f7b495901c93ecde0afa1b65d056e45cb3c",
+   "replacements": [
+    {
+     "row": "AHV-WB.362.guest-video",
+     "before": "play the existing films in an on-page popup on exactly the 19\n",
+     "after": "play the existing films in an on-page popup on exactly the 20\n"
+    },
+    {
+     "row": "AHV-WB.362.guest-video",
+     "before": "then the four D routes, then the two weight routes, exact paths. */\n",
+     "after": "then the four D routes and /lp/kairali-brand/ (Train J3), then the two weight routes, exact paths. */\n"
+    },
+    {
+     "row": "AHV-WB.362.guest-video",
+     "before": "  \"/Kairali_Brand_and_Competition_Neo-original.html\",\n",
+     "after": "  \"/Kairali_Brand_and_Competition_Neo-original.html\",\n  // AHV-WB.362.guest-video (Train J3, 15 Oct 2026): the /lp/ brand page gains the same Stories section and films.\n  \"/lp/kairali-brand/\",\n"
+    }
+   ]
+  },
+  "campaign-v2/production/whatsapp-prefill.ts": {
+   "beforeSHA256": "013a301023314bf7482fb7818092098803cd9db6069f7fc55c0e388c67899ba1",
+   "afterSHA256": "4a9a231a63144fbc8bbdd329d0a787ebc6c69ab105cfbdc5c9cd59ad81eb4222",
+   "replacements": [
+    {
+     "row": "AHV-WB.514.whatsapp-message",
+     "before": "// is quoted rather than declined, so the sentence stays grammatical for any title. Same number, text parameter only.\n",
+     "after": "// is quoted rather than declined, so the sentence stays grammatical for any title. Same number, text parameter only.\n// German (Train J3, AHV-WB.514.whatsapp-message): the same simple translation for /lp/behandlung-in-kerala/, on owner\n// decision 9's precedent and owner decision 39 (15 Oct 2026, \"Skip the review\": no native review for German copy).\n"
+    },
+    {
+     "row": "AHV-WB.514.whatsapp-message",
+     "before": "export type PrefillLocale = \"en\" | \"ru\";\n",
+     "after": "export type PrefillLocale = \"en\" | \"ru\" | \"de\";\n"
+    },
+    {
+     "row": "AHV-WB.514.whatsapp-message",
+     "before": "  if (locale === \"ru\") return \"Здравствуйте! Хочу узнать подробнее: «\" + title + \"» (\" + pathname + \").\";\n",
+     "after": "  if (locale === \"ru\") return \"Здравствуйте! Хочу узнать подробнее: «\" + title + \"» (\" + pathname + \").\";\n  if (locale === \"de\") return \"Hallo, ich möchte mich nach „\" + title + \"“ erkundigen (\" + pathname + \").\";\n"
+    }
+   ]
+  },
+  "campaign-v2/production/WhatsAppPrefill.tsx": {
+   "beforeSHA256": "a5e140d429630fa5538fcc23fe819c236c0bc6a28878caf8660aaebacce8d137",
+   "afterSHA256": "04b52cd187a986c17e0fcb31075316ecc4ee91bd2eec9ce70551ad331c913889",
+   "replacements": [
+    {
+     "row": "AHV-WB.514.whatsapp-message",
+     "before": " * links stay the plain WhatsApp link. Mounted only by app/(ppc-v2-ru)/lp/treatment-in-kerala-russian/page.tsx.\n",
+     "after": " * links stay the plain WhatsApp link. Mounted only by app/(ppc-v2-ru)/lp/treatment-in-kerala-russian/page.tsx and\n * (Train J3, AHV-WB.514.whatsapp-message) app/(ppc-v2-de)/lp/behandlung-in-kerala/page.tsx.\n"
+    }
+   ]
+  },
+  "app/(ppc-v2-de)/lp/behandlung-in-kerala/page.tsx": {
+   "beforeSHA256": "df7dbf7181f452f04db04ead90817cce2b3002702ac4f295d705b72ee4045ef9",
+   "afterSHA256": "47be691b42f407f2819c4aa07b9f813867bbd52ad235558eef1651d1517364e7",
+   "replacements": [
+    {
+     "row": "AHV-WB.514.whatsapp-message",
+     "before": "import { productionJsonLdScript, productionMetadata } from \"../../../../campaign-v2/production/metadata.ts\";\n",
+     "after": "import { productionJsonLdScript, productionMetadata } from \"../../../../campaign-v2/production/metadata.ts\";\n// Train J3 (AHV-WB.514.whatsapp-message): the German page-context WhatsApp prefill (production/whatsapp-prefill.ts).\nimport WhatsAppPrefill from \"../../../../campaign-v2/production/WhatsAppPrefill\";\n"
+    },
+    {
+     "row": "AHV-WB.514.whatsapp-message",
+     "before": "      <ProductionPage c={campaign} />\n    </>\n",
+     "after": "      <ProductionPage c={campaign} />\n      <WhatsAppPrefill locale=\"de\" />\n    </>\n"
+    }
+   ]
+  },
+  "campaign-v2/forms/schema.ts": {
+   "beforeSHA256": "f5aafa2a66af7bf0cf777b7f3f139b60c752d73f12002f052711c23aeb76431b",
+   "afterSHA256": "67ae18ccec372449a2cd629feac2cfd7ded2b9d8ad90532ee1f63d77c79f964b",
+   "replacements": [
+    {
+     "row": "AHV-WB.526.legal-links-layout",
+     "before": "    consent: \"Ich stimme zu, zu meiner Anfrage kontaktiert zu werden.\", privacy: \"Datenschutzerklärung (EN)\",\n",
+     "after": "    // AHV-WB.526.legal-links-layout (Train J3): the page footer's own label (production/ui.ts de.footer.privacy), so\n    // \"Datenschutz (EN) · AGB (EN)\" stays on one line at 360/390 px. Link target and consent wording unchanged.\n    consent: \"Ich stimme zu, zu meiner Anfrage kontaktiert zu werden.\", privacy: \"Datenschutz (EN)\",\n"
+    },
+    {
+     "row": "AHV-WB.549.legal-links-layout",
+     "before": "    consent: \"Я согласен(на), чтобы со мной связались по поводу моего запроса.\", privacy: \"Политика конфиденциальности (EN)\",\n",
+     "after": "    // AHV-WB.549.legal-links-layout (Train J3): the page footer's own label (production/ui.ts ru.footer.privacy). At\n    // 360/390 px the \"·\" now stays on the first line and \"Условия (EN)\" wraps aligned with the consent text, instead of\n    // the separator starting a misaligned second line. Link target and consent wording unchanged.\n    consent: \"Я согласен(на), чтобы со мной связались по поводу моего запроса.\", privacy: \"Конфиденциальность (EN)\",\n"
+    }
+   ]
+  },
+  "app/(english)/_families/consent-runtime.ts": {
+   "beforeSHA256": "5c5645f27f855c7c3ffdbd1e3a73a71a10772d43323e76a837acbdc9ba8f34d9",
+   "afterSHA256": "37e3810c3ce55359643fb504c8427f1a9058f553d43f9d428c95b08b994426de",
+   "replacements": [
+    {
+     "row": "AHV-LATER-023.01",
+     "before": "    // Retain the paid visit across programme navigation only after consent,\n    // for this tab/session and for at most 30 minutes. Never persist private URLs.\n    if (!consentPreferences || !consentPreferences.advertising) return current;\n    try {\n      var key = \"ahv-paid-attribution-v1\", previous = JSON.parse(sessionStorage.getItem(key) || \"null\");\n      if (Object.keys(current).length) sessionStorage.setItem(key, JSON.stringify({at:Date.now(),values:current}));\n      else if (previous && Date.now()-previous.at >= 0 && Date.now()-previous.at < 1800000) {\n        allowed.forEach(function (name) {var value=previous.values && previous.values[name];if(typeof value === \"string\" && attributionValueSafe(name,value)) current[name]=value;});\n      } else sessionStorage.removeItem(key);\n    } catch(e) {}\n    return current;\n",
+     "after": "    // Retain the paid visit across programme navigation only after consent,\n    // for this tab/session and for at most 30 minutes. Never persist private URLs.\n    // Owner decision 38 (15 Oct 2026, AHV-LATER-023.01): the FIRST campaign of the visit is carried through it, so a later\n    // enquiry on another page (or after another ad click) records the original campaign. The visit ends after 30 minutes\n    // without a page reading it, or with the tab. Same consent gate, same key and values; payload fields only, no new tag.\n    if (!consentPreferences || !consentPreferences.advertising) return current;\n    try {\n      var key = \"ahv-paid-attribution-v1\", previous = JSON.parse(sessionStorage.getItem(key) || \"null\"), now = Date.now(), first = {};\n      if (previous && now-previous.at >= 0 && now-previous.at < 1800000) {\n        allowed.forEach(function (name) {var value=previous.values && previous.values[name];if(typeof value === \"string\" && attributionValueSafe(name,value)) first[name]=value;});\n      }\n      if (Object.keys(first).length) current = first;\n      if (Object.keys(current).length) sessionStorage.setItem(key, JSON.stringify({at:now,values:current}));\n      else sessionStorage.removeItem(key);\n    } catch(e) {}\n    return current;\n"
+    }
+   ]
+  }
+ },
+ "configChanges": {
+  "south-india-cities": [
+   {
+    "row": "AHV-WB.253.change",
+    "path": [
+     "faq",
+     2,
+     "a"
+    ],
+    "before": "Share your starting point and proposed itinerary with patient care. Ask about suitable arrival options and onward travel to the Healing Village. Confirm any transfer, timing and cost for your particular trip.",
+    "after": "The nearest airport is Coimbatore International Airport (CJB), about 66 km by road; Cochin International Airport (COK) is about 114 km and Calicut International Airport (CCJ) about 116 km. Share your starting point and proposed itinerary with patient care, and ask about onward travel to the Healing Village. Airport pick-up can be arranged on request at an extra charge."
+   }
+  ],
+  "weight-management": [
+   {
+    "row": "AHV-WB.298.change",
+    "path": [
+     "page",
+     "offering",
+     "cards",
+     0,
+     "paragraphs",
+     0
+    ],
+    "before": "Your doctor explains which therapies may be appropriate and how they fit into the programme. Oil therapies, steam treatments or other Ayurvedic care are considered according to your assessment.",
+    "after": "Your doctor explains which oil therapies, steam treatments or other Ayurvedic care may suit your assessment and programme."
+   },
+   {
+    "row": "AHV-WB.298.change",
+    "path": [
+     "page",
+     "offering",
+     "cards",
+     0,
+     "image"
+    ],
+    "before": "__absent__",
+    "after": {
+     "id": "ahv-pkd-115",
+     "src": "/ahv/assets/img/owner-decision-20261015/ahv-pkd-115.webp",
+     "width": 1600,
+     "height": 1067,
+     "alt": "Tiled-roof treatment blocks with a colonnaded veranda among palms and lawns at the Healing Village",
+     "decorative": false,
+     "gccSafe": true,
+     "location": "palakkad",
+     "consent": "not-applicable"
+    }
+   },
+   {
+    "row": "AHV-WB.298.change",
+    "path": [
+     "page",
+     "offering",
+     "cards",
+     1,
+     "paragraphs",
+     0
+    ],
+    "before": "A personalised vegetarian diet is part of the programme. Discuss your usual eating patterns, food restrictions and practical needs, so the team can explain the proposed meals and arrangements.",
+    "after": "A personalised vegetarian diet is part of the programme; tell the team your usual eating patterns, food restrictions and practical needs."
+   },
+   {
+    "row": "AHV-WB.298.change",
+    "path": [
+     "page",
+     "offering",
+     "cards",
+     1,
+     "image"
+    ],
+    "before": "__absent__",
+    "after": {
+     "id": "ahv-img-012",
+     "src": "/ahv/assets/img/owner-approved-20260928/ahv-img-012.webp",
+     "width": 1600,
+     "height": 1067,
+     "alt": "Circular open veranda with cane chairs under a striped terracotta dome, looking out to the gardens",
+     "decorative": false,
+     "gccSafe": true,
+     "location": "palakkad",
+     "consent": "not-applicable"
+    }
+   },
+   {
+    "row": "AHV-WB.298.change",
+    "path": [
+     "page",
+     "offering",
+     "cards",
+     2,
+     "paragraphs",
+     0
+    ],
+    "before": "The daily routine makes time for care, appropriate activity and rest. Ask about yoga and meditation sessions that suit your assessment, and tell the doctor about any injury or limitation before taking part.",
+    "after": "Your day makes time for care, appropriate activity, rest and yoga or meditation that suit your assessment; tell the doctor about any injury or limitation first."
+   },
+   {
+    "row": "AHV-WB.298.change",
+    "path": [
+     "page",
+     "offering",
+     "cards",
+     2,
+     "image"
+    ],
+    "before": "__absent__",
+    "after": {
+     "id": "ahv-img-034",
+     "src": "/ahv/assets/img/owner-approved-20260928/ahv-img-034.webp",
+     "width": 1600,
+     "height": 1067,
+     "alt": "Arched wooden footbridge with red railings over a stream among crotons and palms in the gardens",
+     "decorative": false,
+     "gccSafe": true,
+     "location": "palakkad",
+     "consent": "not-applicable"
+    }
+   },
+   {
+    "row": "AHV-WB.298.change",
+    "path": [
+     "page",
+     "offering",
+     "cards",
+     3,
+     "paragraphs",
+     0
+    ],
+    "before": "Discuss how progress will be reviewed and which habits you would like to continue at home. Before discharge, ask for clear guidance on your routine and any recommended follow-up, including how later consultations or services are arranged.",
+    "after": "Ask how progress is reviewed, and before discharge get clear guidance on the habits to continue at home and any follow-up consultations or services."
+   },
+   {
+    "row": "AHV-WB.298.change",
+    "path": [
+     "page",
+     "offering",
+     "cards",
+     3,
+     "image"
+    ],
+    "before": "__absent__",
+    "after": {
+     "id": "ahv-pkd-111",
+     "src": "/ahv/assets/img/owner-decision-20261015/ahv-pkd-111.webp",
+     "width": 1600,
+     "height": 1067,
+     "alt": "Physician consultation room with a curved wooden desk, an examination couch and round windows at the Healing Village",
+     "decorative": false,
+     "gccSafe": true,
+     "location": "palakkad",
+     "consent": "not-applicable"
+    }
+   }
+  ],
+  "lp-brand": [
+   {
+    "row": "AHV-WB.362.villa-gallery, AHV-WB.362.guest-video",
+    "path": [
+     "village",
+     "heading"
+    ],
+    "before": "The Kairali Healing Village, in Palakkad",
+    "after": "Choose a villa set among the gardens"
+   },
+   {
+    "row": "AHV-WB.362.villa-gallery, AHV-WB.362.guest-video",
+    "path": [
+     "village",
+     "body"
+    ],
+    "before": "",
+    "after": "Your villa is your base between appointments. Walk through the grounds, sit outside your villa or rest in your room. Ask our team about availability, layout, occupancy and any access needs for your dates."
+   },
+   {
+    "row": "AHV-WB.372.change",
+    "path": [
+     "faq",
+     1,
+     "a"
+    ],
+    "before": "It refers to the family tradition of Ayurveda behind Kairali. The Healing Village is an Ayurvedic hospital of the Kairali Ayurvedic Group. For your own stay, the practical starting point is a consultation with the current medical team to discuss your health, proposed programme and arrangements for care.",
+    "after": "It refers to the family tradition of Ayurveda behind Kairali. The Healing Village is an NABH-accredited Ayurvedic hospital of the Kairali Ayurvedic Group. For your own stay, the practical starting point is a consultation with the current medical team to discuss your health, proposed programme and arrangements for care."
+   },
+   {
+    "row": "AHV-WB.362.villa-gallery, AHV-WB.362.guest-video",
+    "path": [
+     "page",
+     "place"
+    ],
+    "before": "__absent__",
+    "after": {
+     "heading": "Choose a villa set among the gardens",
+     "paragraphs": [
+      "Your villa is your base between appointments. Walk through the grounds, sit outside your villa or rest in your room. Ask our team about availability, layout, occupancy and any access needs for your dates."
+     ],
+     "villas": [
+      {
+       "name": "Deluxe Villa",
+       "body": "A king-size bed and private bathroom, with Wi-Fi, TV and air conditioning.",
+       "link": {
+        "label": "Explore Deluxe Villa",
+        "href": "/deluxe-villa/"
+       }
+      },
+      {
+       "name": "Classic Villa",
+       "body": "Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.",
+       "link": {
+        "label": "Explore Classic Villa",
+        "href": "/classic-villa/"
+       }
+      },
+      {
+       "name": "Royal Villa",
+       "body": "A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.",
+       "link": {
+        "label": "Explore Royal Villa",
+        "href": "/royal-villa/"
+       }
+      },
+      {
+       "name": "Maharaja Suite",
+       "body": "A king-size bed, a living area with a couch and garden access in a premium location.",
+       "link": {
+        "label": "Explore Maharaja Suite",
+        "href": "/maharaja-suite/"
+       }
+      }
+     ]
+    }
+   },
+   {
+    "row": "AHV-WB.362.villa-gallery, AHV-WB.362.guest-video",
+    "path": [
+     "page",
+     "stories"
+    ],
+    "before": "__absent__",
+    "after": {
+     "heading": "See the village before you decide",
+     "body": "Watch a day at the village, then hear patients describe their stays in their own words. Individual experiences vary.",
+     "films": [
+      {
+       "title": "A day at the village",
+       "href": "https://www.youtube.com/watch?v=iPARaMRASUs",
+       "thumb": {
+        "src": "/lp-v2/img/yt-iPARaMRASUs.jpg",
+        "width": 480,
+        "height": 360
+       }
+      },
+      {
+       "title": "Watch Supriya’s experience",
+       "href": "https://www.youtube.com/watch?v=3vWviQfW1Ug",
+       "thumb": {
+        "src": "/lp-v2/img/yt-3vWviQfW1Ug.jpg",
+        "width": 480,
+        "height": 360
+       }
+      },
+      {
+       "title": "Watch Michaela & Jan’s experience",
+       "href": "https://www.youtube.com/watch?v=4x01PtWfNnk",
+       "thumb": {
+        "src": "/lp-v2/img/yt-4x01PtWfNnk.jpg",
+        "width": 480,
+        "height": 360
+       }
+      }
+     ]
+    }
+   }
+  ],
+  "lp-treatment-kerala": [
+   {
+    "row": "AHV-WB.454.change",
+    "path": [
+     "admission",
+     "steps",
+     0,
+     "body"
+    ],
+    "before": "Share your health history, current medicines and relevant records, and say what you hope to address. The doctor explains suitable options and the information needed to assess you.",
+    "after": "Share your health history, current medicines, relevant records and what you hope to address; the doctor explains suitable options and the information needed to assess you."
+   },
+   {
+    "row": "AHV-WB.454.change",
+    "path": [
+     "admission",
+     "steps",
+     2,
+     "body"
+    ],
+    "before": "Your days follow prescribed therapies, meals and rest, with doctors reviewing your programme during the stay. Before discharge, ask which guidance to continue at home.",
+    "after": "Your days follow prescribed therapies, meals and rest, with doctors reviewing your programme during the stay; before discharge, ask which guidance to continue at home."
+   },
+   {
+    "row": "AHV-WB.452.benefit-copy",
+    "path": [
+     "page",
+     "lead",
+     "paragraphs"
+    ],
+    "before": [
+     "You may be exploring Ayurveda for the first time, or considering a programme alongside care you already receive. You do not need a programme name before you enquire. Explain what brings you here, any diagnosis or ongoing treatment, and what you hope to address.",
+     "Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Residential care brings together an individual assessment, prescribed therapies, meals and time to rest, with doctors reviewing your programme during the stay."
+    ],
+    "after": [
+     "You may be exploring Ayurveda for the first time, or considering a programme alongside care you already receive. You do not need a programme name before you enquire. Explain what brings you here, any diagnosis or ongoing treatment, and what you hope to address.",
+     "Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Residential care brings together an individual assessment, prescribed therapies, meals and time to rest, with doctors reviewing your programme during the stay.",
+     "What your stay gives you: a private villa in the village gardens, a patient care team for companion, access and travel arrangements, and the hours between appointments to walk in the gardens or simply rest."
+    ]
+   },
+   {
+    "row": "AHV-WB.454.change",
+    "path": [
+     "page",
+     "offering",
+     "cards",
+     0,
+     "paragraphs",
+     0
+    ],
+    "before": "Panchakarma involves doctor-selected procedures, preparation, diet and rest. A programme does not automatically include all five classical procedures. Ask which, if any, are suitable for you.",
+    "after": "Panchakarma combines doctor-selected procedures, preparation, diet and rest, but a programme does not automatically include all five classical procedures; ask which, if any, suit you."
+   },
+   {
+    "row": "AHV-WB.454.change",
+    "path": [
+     "page",
+     "offering",
+     "cards",
+     0,
+     "image"
+    ],
+    "before": "__absent__",
+    "after": {
+     "id": "ahv-pkd-115",
+     "src": "/ahv/assets/img/owner-decision-20261015/ahv-pkd-115.webp",
+     "width": 1600,
+     "height": 1067,
+     "alt": "Tiled-roof treatment blocks with a colonnaded veranda among palms and lawns at the Healing Village",
+     "decorative": false,
+     "gccSafe": true,
+     "location": "palakkad",
+     "consent": "not-applicable"
+    }
+   },
+   {
+    "row": "AHV-WB.454.change",
+    "path": [
+     "page",
+     "offering",
+     "cards",
+     1,
+     "paragraphs",
+     0
+    ],
+    "before": "Rejuvenation care brings prescribed therapies and daily routines together. Discuss the programme in relation to your health, current treatment and available time.",
+    "after": "Rejuvenation care combines prescribed therapies and daily routines, discussed in relation to your health, current treatment and available time."
+   },
+   {
+    "row": "AHV-WB.454.change",
+    "path": [
+     "page",
+     "offering",
+     "cards",
+     1,
+     "image"
+    ],
+    "before": "__absent__",
+    "after": {
+     "id": "ahv-img-018",
+     "src": "/ahv/assets/img/owner-approved-20260928/ahv-img-018.webp",
+     "width": 1600,
+     "height": 1067,
+     "alt": "Lawns and a curving lily pond before stone-and-brick treatment blocks among coconut palms",
+     "decorative": false,
+     "gccSafe": true,
+     "location": "palakkad",
+     "consent": "not-applicable"
+    }
+   },
+   {
+    "row": "AHV-WB.454.change",
+    "path": [
+     "page",
+     "offering",
+     "cards",
+     2,
+     "paragraphs",
+     0
+    ],
+    "before": "Pain management begins with an assessment of your concerns, medical history and practical needs. Tell the doctor about back, neck or joint discomfort, previous treatment and any limits on movement. The assessment guides the proposed care; outcomes vary between individuals.",
+    "after": "An assessment of your back, neck or joint discomfort, medical history, previous treatment and any limits on movement guides the proposed care; outcomes vary between individuals."
+   },
+   {
+    "row": "AHV-WB.454.change",
+    "path": [
+     "page",
+     "offering",
+     "cards",
+     2,
+     "image"
+    ],
+    "before": "__absent__",
+    "after": {
+     "id": "ahv-pkd-180",
+     "src": "/ahv/assets/img/owner-decision-20261015/ahv-pkd-180.webp",
+     "width": 1600,
+     "height": 1616,
+     "alt": "Warm medicated oil poured from a brass bowl into a dough ring on a patient's knee during Janu Vasti",
+     "decorative": false,
+     "gccSafe": true,
+     "location": "palakkad",
+     "consent": "not-applicable"
+    }
+   },
+   {
+    "row": "AHV-WB.454.change",
+    "path": [
+     "page",
+     "offering",
+     "cards",
+     3,
+     "paragraphs",
+     0
+    ],
+    "before": "Our doctors can also discuss dietary guidance and daily routines. For each option, ask what your days would involve, how progress is reviewed and what guidance is provided at discharge.",
+    "after": "Ask our doctors about dietary guidance and daily routines: what your days would involve, how progress is reviewed and what guidance is provided at discharge."
+   },
+   {
+    "row": "AHV-WB.454.change",
+    "path": [
+     "page",
+     "offering",
+     "cards",
+     3,
+     "image"
+    ],
+    "before": "__absent__",
+    "after": {
+     "id": "ahv-pkd-111",
+     "src": "/ahv/assets/img/owner-decision-20261015/ahv-pkd-111.webp",
+     "width": 1600,
+     "height": 1067,
+     "alt": "Physician consultation room with a curved wooden desk, an examination couch and round windows at the Healing Village",
+     "decorative": false,
+     "gccSafe": true,
+     "location": "palakkad",
+     "consent": "not-applicable"
+    }
+   },
+   {
+    "row": "AHV-WB.454.change",
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     0,
+     "body"
+    ],
+    "before": "Share your health history, current medicines and relevant records, and say what you hope to address. The doctor explains suitable options and the information needed to assess you.",
+    "after": "Share your health history, current medicines, relevant records and what you hope to address; the doctor explains suitable options and the information needed to assess you."
+   },
+   {
+    "row": "AHV-WB.454.change",
+    "path": [
+     "page",
+     "pathway",
+     "steps",
+     2,
+     "body"
+    ],
+    "before": "Your days follow prescribed therapies, meals and rest, with doctors reviewing your programme during the stay. Before discharge, ask which guidance to continue at home.",
+    "after": "Your days follow prescribed therapies, meals and rest, with doctors reviewing your programme during the stay; before discharge, ask which guidance to continue at home."
+   }
+  ],
+  "lp-behandlung-kerala": [
+   {
+    "row": "AHV-WB.526.legal-links-layout",
+    "path": [
+     "form",
+     "schema",
+     "privacyLabel"
+    ],
+    "before": "Datenschutzerklärung (EN)",
+    "after": "Datenschutz (EN)"
+   }
+  ],
+  "lp-treatment-kerala-ru": [
+   {
+    "row": "AHV-WB.549.legal-links-layout",
+    "path": [
+     "form",
+     "schema",
+     "privacyLabel"
+    ],
+    "before": "Политика конфиденциальности (EN)",
+    "after": "Конфиденциальность (EN)"
+   }
+  ]
+ },
+ "bindings": {
+  "monsoon-wellness": {
+   "row": "AHV-WB.123.change",
+   "og": {
+    "before": "__absent__",
+    "after": {
+     "url": "https://ayurvedichealingvillage.com/images/og/share-monsoon-wellness.jpg",
+     "width": 1200,
+     "height": 630,
+     "locale": "en_IN"
+    }
+   },
+   "ogImageAlt": {
+    "before": "__absent__",
+    "after": "Cottage, garden path and water channel among palms at the Healing Village in Palakkad"
+   }
+  },
+  "ayurveda-retreat": {
+   "row": "AHV-WB.166.change",
+   "og": {
+    "before": "__absent__",
+    "after": {
+     "url": "https://ayurvedichealingvillage.com/images/og/ayurveda-retreat-kerala.html.jpg",
+     "width": 1200,
+     "height": 630,
+     "locale": "en_IN"
+    }
+   }
+  },
+  "weight-management": {
+   "row": "AHV-WB.298.change",
+   "offeringImages": {
+    "before": "__absent__",
+    "after": [
+     "ahv-pkd-115",
+     "ahv-img-012",
+     "ahv-img-034",
+     "ahv-pkd-111"
+    ]
+   }
+  },
+  "lp-treatment-kerala": {
+   "row": "AHV-WB.454.change",
+   "offeringImages": {
+    "before": "__absent__",
+    "after": [
+     "ahv-pkd-115",
+     "ahv-img-018",
+     "ahv-pkd-180",
+     "ahv-pkd-111"
+    ]
+   }
+  }
+ },
+ "shareImages": {
+  "public/images/og/share-monsoon-wellness.jpg": {
+   "row": "AHV-WB.123.change",
+   "source": "/ahv/assets/img/owner-approved-20260928/ahv-img-016.webp",
+   "sourceSHA256": "52bb11bb871ff8b2a9e325149e79a010df5f7023294c15ee905a5621be1e49b2",
+   "crop": "resize 1200x630 cover, centre; sharp 0.35.5 JPEG q82 mozjpeg; no other edit",
+   "sha256": "2ff046093977ca07f9f56851b8ec562f6bc7b1f9b54ec56cc6aa3cf3cdadf6df",
+   "width": 1200,
+   "height": 630,
+   "bytes": 195541
+  }
+ },
+ "lists": {
+  "D_VILLAGE_AND_STORIES": {
+   "row": "AHV-WB.362.villa-gallery, AHV-WB.362.guest-video",
+   "file": "campaign-v2/production/section-order.ts",
+   "appended": [
+    "lp-brand"
+   ]
+  },
+  "GUEST_VIDEO_ROUTES": {
+   "row": "AHV-WB.362.guest-video",
+   "file": "campaign-v2/production/sections/guest-video-policy.mjs",
+   "insertedAfter": "/Kairali_Brand_and_Competition_Neo-original.html",
+   "added": [
+    "/lp/kairali-brand/"
+   ]
+  }
+ }
+}

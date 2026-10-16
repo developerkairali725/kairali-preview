@@ -1,0 +1,321 @@
+{
+ "train": "J2",
+ "base": "00e944e4440c4b1710bffc29cc7c2bea8b385fdc",
+ "branch": "codex/ahv-train-j2-20261015",
+ "note": "Train J batch 2 (15 Oct 2026), composed on the Train I head 00e944e44. 'files': each source edit (exact before/after, occurring exactly once) with the file's head (beforeSHA256) and Train J2 (afterSHA256) bytes.",
+ "files": {
+  "app/(english)/_families/boot.ts": {
+   "beforeSHA256": "1592ab54aa7e060601aebda508869eadc96d81775ee0cfe5e6f0a7eb9ac2b068",
+   "afterSHA256": "ccbcaaf5563373d6140feda498e1989b6e89f3dc591cb67c30981ce00d06da89",
+   "replacements": [
+    {
+     "row": "AHV-N08 heading rows (live outline repair)",
+     "before": "ading.mjs\";\nimport { tre",
+     "after": "ading.mjs\";\nimport { repairArticleOutline } from \"./article-heading-outline.mjs\";\nimport { tre"
+    },
+    {
+     "row": "AHV-N08 heading rows (live outline repair)",
+     "before": "pots(host);\n    (${repairArticleContactHeading.toString()})(host, cfg.path);\n    repairEm",
+     "after": "pots(host);\n    (${repairArticleOutline.toString()})(host, cfg.path, (${repairArticleContactHeading.toString()}));\n    repairEm"
+    },
+    {
+     "row": "AHV-N08 heading rows (live outline repair)",
+     "before": "pots(node);\n        (${repairArticleContactHeading.toString()})(node, cfg.path);\n        repa",
+     "after": "pots(node);\n        (${repairArticleOutline.toString()})(node, cfg.path, (${repairArticleContactHeading.toString()}));\n        repa"
+    }
+   ]
+  },
+  "app/(english)/_families/design-view.tsx": {
+   "beforeSHA256": "4decf0cc647cc1b835778008251d4e5cffbfecc9ec2df046a58097f80de63e5a",
+   "afterSHA256": "00b24d1556d4d62f85bbc1151447733c6645b38af3f249955c5521fd0fc19905",
+   "replacements": [
+    {
+     "row": "AHV-N08 heading rows (server outline repair)",
+     "before": "ading.mjs\";\nimport { tra",
+     "after": "ading.mjs\";\nimport { articleHeadingOutlineHtml, articleOutlineSourcesHtml } from \"./article-heading-outline.mjs\";\nimport { tra"
+    },
+    {
+     "row": "AHV-N08 heading rows (server outline repair)",
+     "before": "ute.path));\n  const snapshot = articleContactHeadingHtml(applyReviewSnapshot(descriptiveAwardLinks(route.path === \"/\" || route.path === \"/photo-gallery/\" ? deferHomeSnapshotImages(body) : body, route.path), route.path, locale), route.path);\n  const cfg ",
+     "after": "ute.path));\n  const snapshot = articleHeadingOutlineHtml(articleContactHeadingHtml(articleOutlineSourcesHtml(applyReviewSnapshot(descriptiveAwardLinks(route.path === \"/\" || route.path === \"/photo-gallery/\" ? deferHomeSnapshotImages(body) : body, route.path), route.path, locale), route.path), route.path), route.path);\n  const cfg "
+    }
+   ]
+  },
+  "public/design/article-reader.css": {
+   "beforeSHA256": "0fddc56e96d3fb1d1ef62e0ff24f95320927229556ee2ca717ff1a1c727aefa9",
+   "afterSHA256": "387c8c884043985ee0f026504aa46d124aa48a3ffc85df7276a0433a578f60fb",
+   "replacements": [
+    {
+     "row": "AHV-N08 heading rows (retagged headings keep their source look)",
+     "before": " column. */\n[data-ahv-family=\"article-reader\"] main p,\n[data-ahv-fa",
+     "after": " column. */\n[data-ahv-family=\"article-reader\"] main p:where(:not([data-ahv-outline-from])),\n[data-ahv-fa"
+    },
+    {
+     "row": "AHV-N08 heading rows (retagged headings keep their source look)",
+     "before": "mportant; }\n[data-ahv-family=\"article-reader\"] main p { margin:0 0 20px !important; }\n\n/* The menu",
+     "after": "mportant; }\n[data-ahv-family=\"article-reader\"] main p:where(:not([data-ahv-outline-from])) { margin:0 0 20px !important; }\n\n/* The menu"
+    },
+    {
+     "row": "AHV-N08 heading rows (retagged headings keep their source look)",
+     "before": "k's voice ---------------------------------- */\n[data-ahv-family=\"article-reader\"] main h1 {\n  f",
+     "after": "k's voice ---------------------------------- */\n/* Reviewed outline corrections (N08; Train J batch 2, 15 Oct 2026) retag a few article headings so the outline no\n   longer skips levels, and mark each with data-ahv-outline-from=\"<its source tag>\" (app/(english)/_families/\n   article-heading-outline.mjs). The heading, prose and editorial-grid rules of this family match a marked element as\n   its SOURCE tag, so its look is unchanged at every width; :where() keeps each selector's specificity, and an\n   unmarked element matches exactly as before. */\n[data-ahv-family=\"article-reader\"] main h1 {\n  f"
+    },
+    {
+     "row": "AHV-N08 heading rows (retagged headings keep their source look)",
+     "before": "0 0 14px;\n}\n[data-ahv-family=\"article-reader\"] main h2 {\n  font-famil",
+     "after": "0 0 14px;\n}\n[data-ahv-family=\"article-reader\"] main :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]) {\n  font-famil"
+    },
+    {
+     "row": "AHV-N08 heading rows (retagged headings keep their source look)",
+     "before": "mportant;\n}\n[data-ahv-family=\"article-reader\"] main h3 {\n  font-famil",
+     "after": "mportant;\n}\n[data-ahv-family=\"article-reader\"] main :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"]) {\n  font-famil"
+    },
+    {
+     "row": "AHV-N08 heading rows (retagged headings keep their source look)",
+     "before": "h:1180px) {\n  [data-ahv-family=\"article-reader\"]:not([data-ahv-route=\"/packages/\"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) {\n    display:",
+     "after": "h:1180px) {\n  [data-ahv-family=\"article-reader\"]:not([data-ahv-route=\"/packages/\"]) main:not([data-ahv-rail]) > section:has(> p:where(:not([data-ahv-outline-from]))):not(:has(h1)):has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"]))) {\n    display:"
+    },
+    {
+     "row": "AHV-N08 heading rows (retagged headings keep their source look)",
+     "before": "ortant;\n  }\n  [data-ahv-family=\"article-reader\"]:not([data-ahv-route=\"/packages/\"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) > * {\n    grid-col",
+     "after": "ortant;\n  }\n  [data-ahv-family=\"article-reader\"]:not([data-ahv-route=\"/packages/\"]) main:not([data-ahv-rail]) > section:has(> p:where(:not([data-ahv-outline-from]))):not(:has(h1)):has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"]))) > * {\n    grid-col"
+    },
+    {
+     "row": "AHV-N08 heading rows (retagged headings keep their source look)",
+     "before": " sits on */\n  [data-ahv-family=\"article-reader\"]:not([data-ahv-route=\"/packages/\"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) > :is(h2,h3) {\n    grid-col",
+     "after": " sits on */\n  [data-ahv-family=\"article-reader\"]:not([data-ahv-route=\"/packages/\"]) main:not([data-ahv-rail]) > section:has(> p:where(:not([data-ahv-outline-from]))):not(:has(h1)):has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"]))) > :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"])) {\n    grid-col"
+    },
+    {
+     "row": "AHV-N08 heading rows (retagged headings keep their source look)",
+     "before": "ortant;\n  }\n  [data-ahv-family=\"article-reader\"]:not([data-ahv-route=\"/packages/\"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) > :is(h2,h3) + * { margin-top:62px !important; }\n  /* not pro",
+     "after": "ortant;\n  }\n  [data-ahv-family=\"article-reader\"]:not([data-ahv-route=\"/packages/\"]) main:not([data-ahv-rail]) > section:has(> p:where(:not([data-ahv-outline-from]))):not(:has(h1)):has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"]))) > :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"])) + * { margin-top:62px !important; }\n  /* not pro"
+    },
+    {
+     "row": "AHV-N08 heading rows (retagged headings keep their source look)",
+     "before": "on width */\n  [data-ahv-family=\"article-reader\"]:not([data-ahv-route=\"/packages/\"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) > :is(figure, table, iframe, img, div:has(img), div:has(table), [style*=\"grid-template-columns\"], [data-ahv-maps]) {\n    grid-col",
+     "after": "on width */\n  [data-ahv-family=\"article-reader\"]:not([data-ahv-route=\"/packages/\"]) main:not([data-ahv-rail]) > section:has(> p:where(:not([data-ahv-outline-from]))):not(:has(h1)):has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"]))) > :is(figure, table, iframe, img, div:has(img), div:has(table), [style*=\"grid-template-columns\"], [data-ahv-maps]) {\n    grid-col"
+    },
+    {
+     "row": "AHV-N08 heading rows (retagged headings keep their source look)",
+     "before": "h:1180px) {\n  [data-ahv-family=\"article-reader\"] main > div[style*=\"display: flex\"] > article:only-child:not(:has(> div + div + div > div img)):has(> h2, > h3, > div > h2, > div > h3) {\n    flex:1 1",
+     "after": "h:1180px) {\n  [data-ahv-family=\"article-reader\"] main > div[style*=\"display: flex\"] > article:only-child:not(:has(> div + div + div > div img)):has(> :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]), > :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"]), > div > :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]), > div > :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"])) {\n    flex:1 1"
+    },
+    {
+     "row": "AHV-N08 heading rows (retagged headings keep their source look)",
+     "before": "ortant;\n  }\n  [data-ahv-family=\"article-reader\"] main > div[style*=\"display: flex\"] > article:only-child:not(:has(> div + div + div > div img)):has(> h2, > h3, > div > h2, > div > h3) > * { grid-column:2 !important; min-width:0 !important; }\n  [data-ahv-family=\"article-reader\"] main > div[style*=\"display: flex\"] > article:only-child:not(:has(> div + div + div > div img)):has(> h2, > h3, > div > h2, > div > h3) > :is(div:has(> :is(h2,h3)), h2, h3) {\n    grid-col",
+     "after": "ortant;\n  }\n  [data-ahv-family=\"article-reader\"] main > div[style*=\"display: flex\"] > article:only-child:not(:has(> div + div + div > div img)):has(> :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]), > :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"]), > div > :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]), > div > :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"])) > * { grid-column:2 !important; min-width:0 !important; }\n  [data-ahv-family=\"article-reader\"] main > div[style*=\"display: flex\"] > article:only-child:not(:has(> div + div + div > div img)):has(> :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]), > :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"]), > div > :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]), > div > :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"])) > :is(div:has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"]))), :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]), :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"])) {\n    grid-col"
+    },
+    {
+     "row": "AHV-N08 heading rows (retagged headings keep their source look)",
+     "before": "ortant;\n  }\n  [data-ahv-family=\"article-reader\"] main > div[style*=\"display: flex\"] > article:only-child:not(:has(> div + div + div > div img)):has(> h2, > h3, > div > h2, > div > h3) > :is(div:has(> :is(table, [style*=\"grid-template-columns\"])), table, [style*=\"grid-template-columns\"]) {\n    grid-col",
+     "after": "ortant;\n  }\n  [data-ahv-family=\"article-reader\"] main > div[style*=\"display: flex\"] > article:only-child:not(:has(> div + div + div > div img)):has(> :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]), > :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"]), > div > :is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]), > div > :is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"])) > :is(div:has(> :is(table, [style*=\"grid-template-columns\"])), table, [style*=\"grid-template-columns\"]) {\n    grid-col"
+    },
+    {
+     "row": "AHV-N08 heading rows (retagged headings keep their source look)",
+     "before": "h:1180px) {\n  [data-ahv-family=\"article-reader\"]:not([data-ahv-route=\"/packages/\"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) > :is(img, div:has(> img:only-child), div:has(> div:only-child > img:only-child), figure:has(> img):not(:has(img ~ img, table))):not([data-ahv-maps]) {\n    grid-col",
+     "after": "h:1180px) {\n  [data-ahv-family=\"article-reader\"]:not([data-ahv-route=\"/packages/\"]) main:not([data-ahv-rail]) > section:has(> p:where(:not([data-ahv-outline-from]))):not(:has(h1)):has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"]))) > :is(img, div:has(> img:only-child), div:has(> div:only-child > img:only-child), figure:has(> img):not(:has(img ~ img, table))):not([data-ahv-maps]) {\n    grid-col"
+    },
+    {
+     "row": "AHV-N08 heading rows (retagged headings keep their source look)",
+     "before": "ortant;\n  }\n  [data-ahv-family=\"article-reader\"]:not([data-ahv-route=\"/packages/\"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) > :is(div:has(> img:only-child), div:has(> div:only-child > img:only-child)) img {\n    width:10",
+     "after": "ortant;\n  }\n  [data-ahv-family=\"article-reader\"]:not([data-ahv-route=\"/packages/\"]) main:not([data-ahv-rail]) > section:has(> p:where(:not([data-ahv-outline-from]))):not(:has(h1)):has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"]))) > :is(div:has(> img:only-child), div:has(> div:only-child > img:only-child)) img {\n    width:10"
+    },
+    {
+     "row": "AHV-N08 heading rows (retagged headings keep their source look)",
+     "before": "ortant;\n  }\n  [data-ahv-family=\"article-reader\"]:not([data-ahv-route=\"/packages/\"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) > ul[data-collection=\"cards\"]:has(> li:only-child) {\n    grid-col",
+     "after": "ortant;\n  }\n  [data-ahv-family=\"article-reader\"]:not([data-ahv-route=\"/packages/\"]) main:not([data-ahv-rail]) > section:has(> p:where(:not([data-ahv-outline-from]))):not(:has(h1)):has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"]))) > ul[data-collection=\"cards\"]:has(> li:only-child) {\n    grid-col"
+    },
+    {
+     "row": "AHV-N08 heading rows (retagged headings keep their source look)",
+     "before": "r title. */\n[data-ahv-family=\"article-reader\"] main > div[style*=\"display: flex\"] > article:only-child:not(:has(h2,h3,img,table)) {\n  flex:1 1 1",
+     "after": "r title. */\n[data-ahv-family=\"article-reader\"] main > div[style*=\"display: flex\"] > article:only-child:not(:has(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"]),img,table)) {\n  flex:1 1 1"
+    },
+    {
+     "row": "AHV-N08 heading rows (retagged headings keep their source look)",
+     "before": "h:1180px) {\n [data-ahv-family=\"article-reader\"]:not([data-ahv-route=\"/packages/\"]) main:not([data-ahv-rail]) > section:has(> p):not(:has(h1)):has(> :is(h2,h3)) > :not(h2,h3):not(h2 ~ *,h3 ~ *) {\n  grid-colum",
+     "after": "h:1180px) {\n [data-ahv-family=\"article-reader\"]:not([data-ahv-route=\"/packages/\"]) main:not([data-ahv-rail]) > section:has(> p:where(:not([data-ahv-outline-from]))):not(:has(h1)):has(> :is(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"]))) > :not(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]),:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"])):not(:is(h2,h3,h4,p):where(h2:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h2\"]) ~ *,:is(h2,h3,h4,p):where(h3:not([data-ahv-outline-from]),[data-ahv-outline-from=\"h3\"]) ~ *) {\n  grid-colum"
+    }
+   ]
+  },
+  "public/design/consistency.css": {
+   "beforeSHA256": "883401b2882ea66360c3c20961f6d887bf92f8cd2ead64425c16c733c3210da7",
+   "afterSHA256": "ef73e8ad69d63c09c52204421a40ce34062b7888849c90d661383e3c3946b5b1",
+   "replacements": [
+    {
+     "row": "AHV-N08.ayurveda-workshop.heading / AHV-N08.yoga-retreats-for-everyone.heading (duplicate title P keeps its look)",
+     "before": "x column */\n#ahv-design-root[data-ahv-consistency=\"1\"] main p,\n#ahv-design-",
+     "after": "x column */\n#ahv-design-root[data-ahv-consistency=\"1\"] main p:where(:not([data-ahv-outline-from])),\n#ahv-design-"
+    }
+   ]
+  },
+  "english-candidate/route-manifest.json": {
+   "beforeSHA256": "545ed3152e84b5f7cd20c3c1a107eeba7780ca22ad7ef465221948d3264d02a5",
+   "afterSHA256": "47bfd830d8f8b69bdfa693994b9f5f8f864b19dd65887e7dfe03f32c3227d830",
+   "replacements": [
+    {
+     "row": "AHV-M087.01 / AHV-M090.01 / AHV-N08.sleep-restoration-therapy.title / AHV-STAFF15.review",
+     "before": "etadata\": {\n        \"title\": \"Kairali - The Ayurvedic Healing Village\",\n        \"des",
+     "after": "etadata\": {\n        \"title\": \"About Kairali – NABH-Accredited Ayurvedic Hospital in Kerala\",\n        \"des"
+    },
+    {
+     "row": "AHV-M087.01 / AHV-M090.01 / AHV-N08.sleep-restoration-therapy.title / AHV-STAFF15.review",
+     "before": "etadata\": {\n        \"title\": \"Lakshya Yoga Retreat 2018 | Ayurveda & Yoga Retreat in Kerala\",\n        \"description\": \"Rejuvenate at the Lakshya Yoga Retreat 2018 at Kairali – The Ayurvedic Healing Village. Enjoy Ayurvedic therapies, yoga, meditation & sattvic meals in Kerala’s serene nature.\",\n        \"can",
+     "after": "etadata\": {\n        \"title\": \"Lakshya Yoga Retreat 2018 | Past Retreat | Kairali Healing Village\",\n        \"description\": \"This page preserves the Lakshya Yoga Retreat 2018 material. Its programme, schedule and inclusions are historical and are not current booking terms.\",\n        \"can"
+    },
+    {
+     "row": "AHV-M087.01 / AHV-M090.01 / AHV-N08.sleep-restoration-therapy.title / AHV-STAFF15.review",
+     "before": "reat 2018\",\n        \"ogDescription\": \"Rejuvenate at the Lakshya Yoga Retreat 2018 at Kairali – The Ayurvedic Healing Village. Enjoy Ayurvedic therapies, yoga, meditation & sattvic meals in Kerala’s serene nature.\",\n        \"ogI",
+     "after": "reat 2018\",\n        \"ogDescription\": \"This page preserves the Lakshya Yoga Retreat 2018 material. Its programme, schedule and inclusions are historical and are not current booking terms.\",\n        \"ogI"
+    },
+    {
+     "row": "AHV-M087.01 / AHV-M090.01 / AHV-N08.sleep-restoration-therapy.title / AHV-STAFF15.review",
+     "before": "etadata\": {\n        \"title\": \"Mindfulness Retreat in Kerala | Kairali Healing Village\",\n        \"description\": \"A five-day Mindfulness Retreat at Kairali, Kerala, with Iyengar yoga, Holotropic Breathwork, Tibetan and Pranic healing, and vibrational sound therapy.\",\n        \"can",
+     "after": "etadata\": {\n        \"title\": \"Mindfulness Retreat | Past Retreat | Kairali Healing Village\",\n        \"description\": \"This is a past retreat. The original description and speaker biographies below are retained as a historical record and are not a current offer. There are no current dates or bookings for this retreat.\",\n        \"can"
+    },
+    {
+     "row": "AHV-M087.01 / AHV-M090.01 / AHV-N08.sleep-restoration-therapy.title / AHV-STAFF15.review",
+     "before": "s Retreat\",\n        \"ogDescription\": \"A five-day Mindfulness Retreat at Kairali, Kerala, with Iyengar yoga, Holotropic Breathwork, Tibetan and Pranic healing, and vibrational sound therapy.\",\n        \"ogI",
+     "after": "s Retreat\",\n        \"ogDescription\": \"This is a past retreat. The original description and speaker biographies below are retained as a historical record and are not a current offer. There are no current dates or bookings for this retreat.\",\n        \"ogI"
+    },
+    {
+     "row": "AHV-M087.01 / AHV-M090.01 / AHV-N08.sleep-restoration-therapy.title / AHV-STAFF15.review",
+     "before": "etadata\": {\n        \"title\": \"Sleep Restoration Therapy at Kairali The Ayurvedic Healing Village\",\n        \"des",
+     "after": "etadata\": {\n        \"title\": \"Sleep Restoration Therapy | Kairali – The Ayurvedic Healing Village\",\n        \"des"
+    }
+   ]
+  },
+  "english-candidate/information-locales.json": {
+   "beforeSHA256": "4a49e8b31a00063872d649c1e7546af7f6aca6ee67c46f6e7f6591ae1110839a",
+   "afterSHA256": "991df0d54a03be4f2bbbe8d2aadeead3ba2957a171138e0f75362a0ed2cf7b07",
+   "replacements": [
+    {
+     "row": "locale titles and search snippets composed from accepted strings",
+     "before": "다.\"\n      }\n    }\n  ]\n}\n",
+     "after": "다.\"\n      }\n    },\n    {\n      \"source\": \"Lakshya Yoga Retreat 2018 | Past Retreat | Kairali Healing Village\",\n      \"translations\": {\n        \"hi\": \"Lakshya Yoga Retreat 2018 | पूर्व रिट्रीट | Kairali Healing Village\",\n        \"de\": \"Lakshya Yoga Retreat 2018 | Vergangenes Retreat | Kairali Healing Village\",\n        \"fr\": \"Lakshya Yoga Retreat 2018 | Retraite passée | Kairali Healing Village\",\n        \"es\": \"Lakshya Yoga Retreat 2018 | Retiro anterior | Kairali Healing Village\",\n        \"it\": \"Lakshya Yoga Retreat 2018 | Ritiro passato | Kairali Healing Village\",\n        \"pt\": \"Lakshya Yoga Retreat 2018 | Retiro Anterior | Kairali Healing Village\",\n        \"nl\": \"Lakshya Yoga Retreat 2018 | Eerder programma | Kairali Healing Village\",\n        \"ru\": \"Lakshya Yoga Retreat 2018 | Прошлый ретрит | Kairali Healing Village\",\n        \"ar\": \"Lakshya Yoga Retreat 2018 | خلوة سابقة | Kairali Healing Village\",\n        \"zh-Hans\": \"Lakshya Yoga Retreat 2018 | 往期静修营 | Kairali Healing Village\",\n        \"ja\": \"Lakshya Yoga Retreat 2018 | 過去のリトリート | Kairali Healing Village\",\n        \"ko\": \"Lakshya Yoga Retreat 2018 | 과거 리트리트 | Kairali Healing Village\"\n      },\n      \"provenance\": \"AHV-M087.01 (Train J batch 2): composed only from accepted catalogue strings — 'Lakshya Yoga Retreat 2018' and the accepted '<name> | Past Retreat | Kairali Healing Village' title of /lakshya-yoga/ (its 2nd and 3rd segments). No new translation.\"\n    },\n    {\n      \"source\": \"Mindfulness Retreat | Past Retreat | Kairali Healing Village\",\n      \"translations\": {\n        \"hi\": \"माइंडफुलनेस रिट्रीट | पूर्व रिट्रीट | Kairali Healing Village\",\n        \"de\": \"Achtsamkeits-Retreat | Vergangenes Retreat | Kairali Healing Village\",\n        \"fr\": \"Retraite de pleine conscience | Retraite passée | Kairali Healing Village\",\n        \"es\": \"Retiro de mindfulness | Retiro anterior | Kairali Healing Village\",\n        \"it\": \"Ritiro di Mindfulness | Ritiro passato | Kairali Healing Village\",\n        \"pt\": \"Retiro de Mindfulness | Retiro Anterior | Kairali Healing Village\",\n        \"nl\": \"Mindfulness Retreat | Eerder programma | Kairali Healing Village\",\n        \"ru\": \"Ретрит осознанности | Прошлый ретрит | Kairali Healing Village\",\n        \"ar\": \"خلوة اليقظة الذهنية | خلوة سابقة | Kairali Healing Village\",\n        \"zh-Hans\": \"正念静修营 | 往期静修营 | Kairali Healing Village\",\n        \"ja\": \"マインドフルネス・リトリート | 過去のリトリート | Kairali Healing Village\",\n        \"ko\": \"마인드풀니스 리트리트 | 과거 리트리트 | Kairali Healing Village\"\n      },\n      \"provenance\": \"AHV-M090.01 (Train J batch 2): composed only from accepted catalogue strings — 'Mindfulness Retreat' and the accepted '<name> | Past Retreat | Kairali Healing Village' title of /lakshya-yoga/ (its 2nd and 3rd segments). No new translation.\"\n    },\n    {\n      \"source\": \"Sleep Restoration Therapy | Kairali – The Ayurvedic Healing Village\",\n      \"translations\": {\n        \"hi\": \"स्लीप रेस्टोरेशन थेरेपी | Kairali हीलिंग विलेज\",\n        \"de\": \"Schlaftherapie bei Kairali – The Ayurvedic Healing Village\",\n        \"fr\": \"Thérapie du sommeil à Kairali – The Ayurvedic Healing Village\",\n        \"es\": \"Terapia del sueño | Kairali – The Ayurvedic Healing Village\",\n        \"it\": \"Ripristino del sonno – Kairali – The Ayurvedic Healing Village\",\n        \"pt\": \"Terapia do Sono no Kairali – The Ayurvedic Healing Village\",\n        \"nl\": \"Slaapherstel bij Kairali – The Ayurvedic Healing Village\",\n        \"ru\": \"Восстановление сна в Kairali – The Ayurvedic Healing Village\",\n        \"ar\": \"علاج استعادة النوم في Kairali – The Ayurvedic Healing Village\",\n        \"zh-Hans\": \"Kairali 阿育吠陀疗愈村的睡眠恢复疗法\",\n        \"ja\": \"Kairali – The Ayurvedic Healing Village の睡眠回復療法\",\n        \"ko\": \"Kairali – The Ayurvedic Healing Village 수면 회복 치료\"\n      },\n      \"provenance\": \"AHV-N08.sleep-restoration-therapy.title (Train J batch 2): each locale keeps its accepted title; only the brand punctuation 'Kairali The Ayurvedic Healing Village' becomes 'Kairali – The Ayurvedic Healing Village'. No new translation.\"\n    },\n    {\n      \"source\": \"About Kairali – NABH-Accredited Ayurvedic Hospital in Kerala\",\n      \"translations\": {\n        \"hi\": \"हमारे बारे में | कैरली - आयुर्वेदिक हीलिंग विलेज\",\n        \"de\": \"Über uns | Kairali - The Ayurvedic Healing Village\",\n        \"fr\": \"À propos | Kairali - The Ayurvedic Healing Village\",\n        \"es\": \"Sobre nosotros | Kairali - The Ayurvedic Healing Village\",\n        \"it\": \"Chi siamo | Kairali - The Ayurvedic Healing Village\",\n        \"pt\": \"Sobre nós | Kairali - The Ayurvedic Healing Village\",\n        \"nl\": \"Over ons | Kairali - The Ayurvedic Healing Village\",\n        \"ru\": \"О нас | Kairali - Аюрведическая лечебная деревня\",\n        \"ar\": \"من نحن | كايرالي – قرية الشفاء الأيورفيدية\",\n        \"zh-Hans\": \"关于我们 | Kairali – 阿育吠陀疗愈村\",\n        \"ja\": \"当院について | Kairali - The Ayurvedic Healing Village\",\n        \"ko\": \"저희 소개 | Kairali - The Ayurvedic Healing Village\"\n      },\n      \"provenance\": \"AHV-STAFF15.review / AHV-N08.about-us.title (Train J batch 2): the English title follows the staff wording (NABH fact from the approved about-us description); locale titles are composed only from the accepted page heading 'About Us' and each locale's accepted brand title. The English title's wording is not translated.\"\n    },\n    {\n      \"source\": \"This page preserves the Lakshya Yoga Retreat 2018 material. Its programme, schedule and…\",\n      \"translations\": {\n        \"hi\": \"यह पृष्ठ Lakshya Yoga Retreat 2018 की सामग्री को संरक्षित करता है। इसका कार्यक्रम,…\",\n        \"de\": \"Diese Seite bewahrt die Unterlagen zum Lakshya Yoga Retreat 2018. Programm, Ablauf und…\",\n        \"fr\": \"Cette page conserve les contenus de la Lakshya Yoga Retreat 2018. Son programme, son…\",\n        \"es\": \"Esta página conserva el material del Lakshya Yoga Retreat 2018. Su programa, calendario…\",\n        \"it\": \"Questa pagina conserva il materiale del Lakshya Yoga Retreat 2018. Programma, calendario…\",\n        \"pt\": \"Esta página preserva o material do Lakshya Yoga Retreat 2018. O seu programa, calendário…\",\n        \"nl\": \"Deze pagina bewaart het materiaal van de Lakshya Yoga Retreat 2018. Het programma, het…\",\n        \"ru\": \"На этой странице сохранены материалы Lakshya Yoga Retreat 2018. Её программа, расписание…\",\n        \"ar\": \"تحفظ هذه الصفحة مواد خلوة Lakshya لليوغا 2018. وبرنامجها وجدولها وما تشمله هي معلومات…\",\n        \"zh-Hans\": \"本页面保留了 Lakshya Yoga Retreat 2018 的资料。其中的项目安排、日程和所含内容均为历史信息，并非当前的预订条款。\",\n        \"ja\": \"このページは、Lakshya Yoga Retreat 2018の資料を保存した…\",\n        \"ko\": \"이 페이지는 Lakshya Yoga Retreat 2018 자료를 보존하고 있습니다. 프로그램, 일정 및 포함 사항은 과거 기록이며 현재의 예약 조건이 아닙니다.\"\n      },\n      \"provenance\": \"AHV-M087.01 / AHV-M090.01 (Train J batch 2): the site search card's clipped description. Each locale is the search index's own clip rule (tools/build-search-index.mjs, 90 characters) applied to that locale's ACCEPTED translation of the full description. No new translation.\"\n    },\n    {\n      \"source\": \"This is a past retreat. The original description and speaker biographies below are…\",\n      \"translations\": {\n        \"hi\": \"यह एक पूर्व रिट्रीट है। नीचे दिया गया मूल विवरण और वक्ताओं के परिचय ऐतिहासिक अभिलेख के…\",\n        \"de\": \"Dies ist ein vergangenes Retreat. Die ursprüngliche Beschreibung und die Biografien der…\",\n        \"fr\": \"Il s’agit d’une retraite passée. La description d’origine et les biographies des…\",\n        \"es\": \"Este es un retiro anterior. La descripción original y las biografías de los ponentes que…\",\n        \"it\": \"Questo è un ritiro passato. La descrizione originale e le biografie dei relatori…\",\n        \"pt\": \"Este é um retiro anterior. A descrição original e as biografias dos oradores,…\",\n        \"nl\": \"Dit is een eerder programma. De oorspronkelijke beschrijving en de biografieën van de…\",\n        \"ru\": \"Это прошедший ретрит. Исходное описание и биографии докладчиков ниже сохранены как…\",\n        \"ar\": \"هذه خلوة سابقة. يُحتفظ بالوصف الأصلي والسير الذاتية للمتحدثين أدناه كسجل تاريخي، وهي…\",\n        \"zh-Hans\": \"这是一期往期静修营。以下原始介绍和讲师简介作为历史记录予以保留，并非当前提供的项目。本静修营目前没有开放日期，也不接受预订。\",\n        \"ja\": \"これは過去に開催されたリトリートです。以下の元の説明と講演者の経歴は記録として保…\",\n        \"ko\": \"이 리트리트는 이미 종료된 과거 프로그램입니다. 아래의 원래 안내문과 강연자 소개는 기록 보존을 위해 남겨 둔 것이며 현재 제공되는 프로그램이 아닙니다. 이…\"\n      },\n      \"provenance\": \"AHV-M087.01 / AHV-M090.01 (Train J batch 2): the site search card's clipped description. Each locale is the search index's own clip rule (tools/build-search-index.mjs, 90 characters) applied to that locale's ACCEPTED translation of the full description. No new translation.\"\n    }\n  ]\n}\n"
+    }
+   ]
+  },
+  "public/ahv/assets/hist9-family-data.js": {
+   "beforeSHA256": "d8d756a337d0f9827142e911a46fb0c40dd0a37fc6fa8e6970a536dc507db11f",
+   "afterSHA256": "4a84a42505315b2511af29e7e77f2fe6addd1947dbc24eaaaf2228a8848ad5fb",
+   "replacements": [
+    {
+     "row": "AHV-M087.01",
+     "before": "reat 2018 | Ayurveda & Yoga Retreat in Kerala\",\"description\":\"Rejuvenate at the Lakshya Yoga Retreat 2018 at Kairali – The Ayurvedic Healing Village. Enjoy Ayurvedic therapies, yoga, meditation & sattvic meals in Kerala’s serene nature.\",\"canonica",
+     "after": "reat 2018 | Past Retreat | Kairali Healing Village\",\"description\":\"This page preserves the Lakshya Yoga Retreat 2018 material. Its programme, schedule and inclusions are historical and are not current booking terms.\",\"canonica"
+    },
+    {
+     "row": "AHV-M087.01",
+     "before": "scription\":\"Rejuvenate at the Lakshya Yoga Retreat 2018 at Kairali – The Ayurvedic Healing Village. Enjoy Ayurvedic therapies, yoga, meditation & sattvic meals in Kerala’s serene nature.\",\"url\":\"ht",
+     "after": "scription\":\"This page preserves the Lakshya Yoga Retreat 2018 material. Its programme, schedule and inclusions are historical and are not current booking terms.\",\"url\":\"ht"
+    }
+   ]
+  },
+  "public/ahv/assets/about-us-data.js": {
+   "beforeSHA256": "8cdd935971094e7553799b8000e07dcc7d59f66dcc66f9687c814065e1937a25",
+   "afterSHA256": "3825c16be9504a2ea9c5e40c6eadaa0e4654bb0e4e0895662b7739407349e92b",
+   "replacements": [
+    {
+     "row": "AHV-STAFF15.review / AHV-N08.about-us.title",
+     "before": "\":{\"title\":\"Kairali - The Ayurvedic Healing Village\",\"descripti",
+     "after": "\":{\"title\":\"About Kairali – NABH-Accredited Ayurvedic Hospital in Kerala\",\"descripti"
+    }
+   ]
+  },
+  "public/ahv/views/ahv-page-mindfulness-retreat-desktop.json": {
+   "beforeSHA256": "62fd3ef77098916864a2a155874a8a551d54c4be572abc6cb54038be78351c79",
+   "afterSHA256": "cb654ca13e52a8212e51fc8effa82670c2eba2c9210acd9b2f2fce3d0b137093",
+   "replacements": [
+    {
+     "row": "AHV-M090.01",
+     "before": "ess Retreat in Kerala | Kairali Healing Village</title>\\n<meta name=\\\"description\\\" content=\\\"A five-day Mindfulness Retreat at Kairali, Kerala, with Iyengar yoga, Holotropic Breathwork, Tibetan and Pranic healing, and vibrational sound therapy.\\\">\\n<link ",
+     "after": "ess Retreat | Past Retreat | Kairali Healing Village</title>\\n<meta name=\\\"description\\\" content=\\\"This is a past retreat. The original description and speaker biographies below are retained as a historical record and are not a current offer. There are no current dates or bookings for this retreat.\\\">\\n<link "
+    },
+    {
+     "row": "AHV-M090.01",
+     "before": "\" content=\\\"A five-day Mindfulness Retreat at Kairali, Kerala, with Iyengar yoga, Holotropic Breathwork, Tibetan and Pranic healing, and vibrational sound therapy.\\\">\\n<meta ",
+     "after": "\" content=\\\"This is a past retreat. The original description and speaker biographies below are retained as a historical record and are not a current offer. There are no current dates or bookings for this retreat.\\\">\\n<meta "
+    },
+    {
+     "row": "AHV-M090.01",
+     "before": "ess Retreat in Kerala | Kairali Healing Village\\\",\\\"description\\\":\\\"A five-day Mindfulness Retreat at Kairali, Kerala, with Iyengar yoga, Holotropic Breathwork, Tibetan and Pranic healing, and vibrational sound therapy.\\\",\\\"isPart",
+     "after": "ess Retreat | Past Retreat | Kairali Healing Village\\\",\\\"description\\\":\\\"This is a past retreat. The original description and speaker biographies below are retained as a historical record and are not a current offer. There are no current dates or bookings for this retreat.\\\",\\\"isPart"
+    }
+   ]
+  },
+  "public/ahv/views/ahv-page-mindfulness-retreat-mobile.json": {
+   "beforeSHA256": "42a253a166b8a9dc94d422319dc7bb85b5ada5bf84dfdd258672e8eb26f1fea4",
+   "afterSHA256": "d44771e111f0795afa4a6fd6dcaf5cd1e497040627364de92661948b0624323c",
+   "replacements": [
+    {
+     "row": "AHV-M090.01",
+     "before": "ess Retreat in Kerala | Kairali Healing Village</title>\\n<meta name=\\\"description\\\" content=\\\"A five-day Mindfulness Retreat at Kairali, Kerala, with Iyengar yoga, Holotropic Breathwork, Tibetan and Pranic healing, and vibrational sound therapy.\\\">\\n<link ",
+     "after": "ess Retreat | Past Retreat | Kairali Healing Village</title>\\n<meta name=\\\"description\\\" content=\\\"This is a past retreat. The original description and speaker biographies below are retained as a historical record and are not a current offer. There are no current dates or bookings for this retreat.\\\">\\n<link "
+    },
+    {
+     "row": "AHV-M090.01",
+     "before": "\" content=\\\"A five-day Mindfulness Retreat at Kairali, Kerala, with Iyengar yoga, Holotropic Breathwork, Tibetan and Pranic healing, and vibrational sound therapy.\\\">\\n<meta ",
+     "after": "\" content=\\\"This is a past retreat. The original description and speaker biographies below are retained as a historical record and are not a current offer. There are no current dates or bookings for this retreat.\\\">\\n<meta "
+    },
+    {
+     "row": "AHV-M090.01",
+     "before": "ess Retreat in Kerala | Kairali Healing Village\\\",\\\"description\\\":\\\"A five-day Mindfulness Retreat at Kairali, Kerala, with Iyengar yoga, Holotropic Breathwork, Tibetan and Pranic healing, and vibrational sound therapy.\\\",\\\"isPart",
+     "after": "ess Retreat | Past Retreat | Kairali Healing Village\\\",\\\"description\\\":\\\"This is a past retreat. The original description and speaker biographies below are retained as a historical record and are not a current offer. There are no current dates or bookings for this retreat.\\\",\\\"isPart"
+    }
+   ]
+  },
+  "public/ahv/views/ahv-page-sleep-restoration-desktop.json": {
+   "beforeSHA256": "de50af175f745e79ad4d1f5049cf32a768eca6c774d9d2207601a9a5563b0df9",
+   "afterSHA256": "9b24462a8883c980c38b103c88920c8a29dd9457b8bc605c8987d062d658c73b",
+   "replacements": [
+    {
+     "row": "AHV-N08.sleep-restoration-therapy.title",
+     "before": "t}}\\n</style>\\n<title>Sleep Restoration Therapy at Kairali The Ayurvedic Healing Village</title>\\n<meta na",
+     "after": "t}}\\n</style>\\n<title>Sleep Restoration Therapy | Kairali – The Ayurvedic Healing Village</title>\\n<meta na"
+    },
+    {
+     "row": "AHV-N08.sleep-restoration-therapy.title",
+     "before": "therapy/\\\",\\\"name\\\":\\\"Sleep Restoration Therapy at Kairali The Ayurvedic Healing Village\\\",\\\"isPartOf\\\":{\\",
+     "after": "therapy/\\\",\\\"name\\\":\\\"Sleep Restoration Therapy | Kairali – The Ayurvedic Healing Village\\\",\\\"isPartOf\\\":{\\"
+    }
+   ]
+  },
+  "public/ahv/views/ahv-page-sleep-restoration-mobile.json": {
+   "beforeSHA256": "302c077c0fc24ac2f24a693dc893019add66b723282e73f2e01b064232fd2314",
+   "afterSHA256": "9518b08a3b6d4c054120b629e7500e3725391fd68df35af19770fd57924f5027",
+   "replacements": [
+    {
+     "row": "AHV-N08.sleep-restoration-therapy.title",
+     "before": "t}}\\n</style>\\n<title>Sleep Restoration Therapy at Kairali The Ayurvedic Healing Village</title>\\n<meta na",
+     "after": "t}}\\n</style>\\n<title>Sleep Restoration Therapy | Kairali – The Ayurvedic Healing Village</title>\\n<meta na"
+    },
+    {
+     "row": "AHV-N08.sleep-restoration-therapy.title",
+     "before": "therapy/\\\",\\\"name\\\":\\\"Sleep Restoration Therapy at Kairali The Ayurvedic Healing Village\\\",\\\"isPartOf\\\":{\\",
+     "after": "therapy/\\\",\\\"name\\\":\\\"Sleep Restoration Therapy | Kairali – The Ayurvedic Healing Village\\\",\\\"isPartOf\\\":{\\"
+    }
+   ]
+  },
+  "public/ahv/search-index.json": {
+   "beforeSHA256": "6a22b31f4c9a2be7f5bf25542d086eca754f22e134ea76c31228b2c6fd9a78c9",
+   "afterSHA256": "6bec951d696f0d636863b883e7fae250f425d851b9f6ddc46266f1150a7b4166",
+   "replacements": [
+    {
+     "row": "AHV-M087.01 / AHV-M090.01 (search card descriptions)",
+     "before": "d\":\"2026-10-07T11:04:07.888Z\",\"priceVali",
+     "after": "d\":\"2026-10-15T07:24:43.226Z\",\"priceVali"
+    },
+    {
+     "row": "AHV-M087.01 / AHV-M090.01 (search card descriptions)",
+     "before": "18\",\"desc\":\"Rejuvenate at the Lakshya Yoga Retreat 2018 at Kairali – The Ayurvedic Healing Village.…\",\"kw\":[]},",
+     "after": "18\",\"desc\":\"This page preserves the Lakshya Yoga Retreat 2018 material. Its programme, schedule and…\",\"kw\":[]},"
+    },
+    {
+     "row": "AHV-M087.01 / AHV-M090.01 (search card descriptions)",
+     "before": "at\",\"desc\":\"A five-day Mindfulness Retreat at Kairali, Kerala, with Iyengar yoga, Holotropic…\",\"kw\":[]},",
+     "after": "at\",\"desc\":\"This is a past retreat. The original description and speaker biographies below are…\",\"kw\":[]},"
+    }
+   ]
+  }
+ }
+}

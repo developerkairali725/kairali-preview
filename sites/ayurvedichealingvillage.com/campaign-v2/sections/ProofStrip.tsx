@@ -2,13 +2,14 @@ import Image, { getImageProps } from "next/image";
 import type { Variant } from "../kit/types.ts";
 import type { SectionProps } from "./LandingPage";
 import { NABH_NO, FAMILY_TRADITION } from "./facts.ts";
-import { TRIPADVISOR, monthLabel } from "../data/ratings.ts";
+import { TRIPADVISOR, dateLabel } from "../data/ratings.ts";
 import { LATEST_TRAVELERS_CHOICE, awardRow, type Award } from "../data/awards.ts";
 import { getGoogleRating } from "../data/google-rating.ts";
 import { pageUi } from "../production/ui.ts";
 
 // Every rating, count and award below comes from campaign-v2/data/*.ts. Never type one here.
-const TA_AS_OF = `Tripadvisor, as of ${monthLabel(TRIPADVISOR.asOf)}`;
+// AHV-LATER-038.01: the capture date in full (day, month and year), as recorded in data/ratings.ts.
+const TA_AS_OF = `Tripadvisor, as of ${dateLabel(TRIPADVISOR.asOf)}`;
 const fmtRating = (n: number) => n.toFixed(1);
 const fmtCount = (n: number) => n.toLocaleString("en-US");
 
@@ -63,8 +64,8 @@ export default async function ProofStrip({ c, v, req }: SectionProps) {
   const en = ui.lang === "en";
   let asOf = TA_AS_OF;
   if (!en) {
-    const [y, m] = TRIPADVISOR.asOf.split("-").map(Number);
-    asOf = `${ui.proof.asOf} ${new Intl.DateTimeFormat(ui.lang, { month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(Date.UTC(y, m - 1, 1)))}`;
+    const [y, m, d] = TRIPADVISOR.asOf.split("-").map(Number);
+    asOf = `${ui.proof.asOf} ${new Intl.DateTimeFormat(ui.lang, { ...(d ? { day: "numeric" } : {}), month: "long", year: "numeric", timeZone: "UTC" }).format(new Date(Date.UTC(y, m - 1, d || 1)))}`;
   }
   const doctors = c.doctors.slice(0, show.doctors);
   const google = await getGoogleRating();

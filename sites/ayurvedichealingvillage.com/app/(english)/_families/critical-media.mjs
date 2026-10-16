@@ -29,6 +29,21 @@ export function phoneCriticalMedia(html, routePath = '') {
       return '<img loading="eager" fetchpriority="high"' + tag.slice(4).replace(/\s(?:loading|fetchpriority)=["'][^"']*["']/gi, '');
     });
   }
+  // Yoga course pages (every locale): the course photo directly under the banner fills the first phone
+  // screen and is the measured LCP element (simulated ~3.5 s against a ~1.7 s FCP: 185 KB plus the 97 KB
+  // banner on the first-screen network). Same photos, same size and place, at the established 768px
+  // AVIF55 phone preset; the course photo also gets the phone-only priority preload (firstCriticalImage).
+  if (routePath === '/yoga-classes-practical/' || routePath === '/yoga-classes-theory/') {
+    for (var name of ['ee7d129f97f1b7e2', '0df69b06cb6796e6']) html = html.split('/ahv/assets/img/seven/' + name + '.webp').join('/ahv/assets/img/seven/' + name + '-768-phone.avif');
+  }
+  // Air India Maharaja Club page (every locale): the hero photo is the phone LCP element, but the photos and logos
+  // below it (a 186 KB lossless heritage photo, two lossless partner logos, the six treatment cards) were all on the
+  // network before it settled (Lighthouse mobile 82, simulated LCP 4.8 s on /de/). Same images, same size and place,
+  // at 768px AVIF (photos at the established AVIF55 phone preset, the two transparent logos at AVIF80); desktop and the
+  // originals are untouched.
+  if (routePath === '/kairali-air-india-maharaja-club.html') {
+    for (var name of ['cultural', 'maha2', 'MaharajaClub_CMYK_Positive', 'AyurvedaPanchkarmaDetoxatKairali', 'weightmanagementatKairali', 'ImmunityEnhancementExecutiveHealthAssessment', 'DiabetesMetabolicBalance', 'WomensHormonalBalanceatkairali', 'StressReliefMentalWellnessatkairali']) html = html.split('/ahv/assets/img/AHV-V3-' + name + '.webp').join('/ahv/assets/img/AHV-V3-' + name + '-768-phone.avif');
+  }
   if (routePath === '/offers/') html = html.split('/ahv/assets/img/commercial/775c5adec97f99fbd773ee36cf4903844f79ea13635db974cf00821263818e82.webp').join('/design/offers-hub-640.avif');
   for (var name of ['weight-loss', 'weight-history']) {
     html = html.split('/ahv/assets/img/' + name + '.webp').join('/ahv/assets/img/' + name + '-768.avif');
@@ -44,6 +59,20 @@ export function phoneCriticalMedia(html, routePath = '') {
   if (routePath === '/digestive-wellness-gut-health-yoga-therapy/') html = html.replace(/<img\b[^>]*>/gi, function (tag) {
     var src = tag.match(/\ssrc\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/i);
     if (!src || (src[1] || src[2] || src[3]) !== '/ahv/assets/img/YOGA-AND-MEDITATION-benefits-min.webp') return tag;
+    var attrs = tag.slice(4, -1).replace(/\s(?:loading|fetchpriority)\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '');
+    return '<img loading="lazy" fetchpriority="low"' + attrs + '>';
+  });
+  // Yoga & Meditation package (every locale): the same snapshot repair promoted the below-fold about photo to
+  // fetchpriority=high ahead of its authored low priority, so its 45 KB competed with the hero background (the phone
+  // LCP element; Lighthouse mobile 83-86, simulated LCP ~4 s). Retain its authored lazy/low intent.
+  // Its English phone snapshot predates AHV-N03.01 (the approved Sanskrit subtitle style; the eleven locale captures
+  // and the served views already carry it): the subtitle painted at 22px Mulish with browser margins, 23px taller than
+  // the live view, so the swap moved the hero photo up and it registered as a second, later LCP. Paint the subtitle
+  // exactly as the approved view and the locale captures do.
+  if (routePath === '/yoga-and-meditation-package/') html = html.split('<p data-dc-tpl="42" style="font-size: 22px;">').join('<p data-dc-tpl="42" style="font-family: Marcellus, serif; font-size: 20px; color: rgb(117, 105, 90); margin: 10px 0px 0px;">');
+  if (routePath === '/yoga-and-meditation-package/') html = html.replace(/<img\b[^>]*>/gi, function (tag) {
+    var src = tag.match(/\ssrc\s*=\s*(?:"([^"]*)"|'([^']*)'|([^\s>]+))/i);
+    if (!src || (src[1] || src[2] || src[3]) !== '/ahv/assets/img/yoga-meditation-about-seated-meditation.webp') return tag;
     var attrs = tag.slice(4, -1).replace(/\s(?:loading|fetchpriority)\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi, '');
     return '<img loading="lazy" fetchpriority="low"' + attrs + '>';
   });
@@ -82,6 +111,8 @@ export function firstCriticalImage(html, routePath = '') {
   // N12 measured background LCPs: prioritize the existing approved hero only on its own route.
   if (routePath === '/karkidaka-chikitsha-or-monsoon-wellness.html' && html.includes('/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19-768.avif')) return '/ahv/assets/img/legacy/karkidaka-chikitsha-or-monsoon-wellness/kar5-19-768.avif';
   var programmeHeroes = {"/beauty-care-and-eye-care/":"/ahv/assets/img/vision-768-programme.avif","/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/":"/ahv/assets/img/kairali-khasgiwala-173-768-programme.avif","/immunity-enhancement-executive-health-assessment-therapy/":"/ahv/assets/img/immune-1-768-programme.avif","/revitalizing-and-strengthening/":"/ahv/assets/img/Supportive-Care-Hero-Shirodhara-768-programme.avif","/womens-hormonal-balance-endocrine-therapy/":"/ahv/assets/img/hormonal-hero-udara-abhyanga-2-768-programme.avif","/treatment-for-arthritis-and-spondylitis/":"/ahv/assets/img/ktahv-janu-vasti-2.webp","/treatment-for-cervical-spondylosis/":"/ahv/assets/img/cervical-hero-greeva-pichu-768-phone.avif","/treatment-for-chronic-back-pain/":"/ahv/assets/img/chronic-back-hero-kati-vasti.webp","/treatment-for-diabetes/":"/ahv/assets/img/ktahv-abhyanga-5.webp","/treatment-for-facial-paralysis/":"/ahv/assets/img/facial-paralysis-hero-mukha-abhyanga.webp","/treatment-for-nervous-disability/":"/ahv/assets/img/neurological-hero-shiro-abhyanga.webp","/treatment-for-psoriasis/":"/ahv/assets/img/psoriasis-hero-back-udwarthanam-768-phone.avif","/treatment-for-sinusitis-and-migraine/":"/ahv/assets/img/sinus-migraine-hero-shirodhara-6-768-phone.avif","/treatment-for-slip-disc/":"/ahv/assets/img/ktahv-kati-vasti-2025-2-768-phone.avif","/treatment-for-spondylitis/":"/ahv/assets/img/spondylitis-hero-kati-greeva-vasti-1-768-phone.avif","/treatment-to-remove-stress-and-strain/":"/ahv/assets/img/stress-hero-thalapothichil-3-768-phone.avif",'/post-pregnancy-health-programme/':'/ahv/assets/img/gen-postpartum-768-phone.avif','/preventive-and-regenerative-treatment/':'/ahv/assets/img/preventive-768-phone.avif','/treatment-for-bronchial-diseases/':'/ahv/assets/img/bronchial-hero-nasyam.webp','/holistic-treatment-for-rejuvenation-and-detoxification/':'/ahv/assets/img/ho-pizhichil.webp','/treatment-for-hypertension/':'/ahv/assets/img/hypertension-hero-thakaradhara.webp','/treatment-for-paralysis/':'/ahv/assets/img/paralysis-hero-pinda-sweda.webp','/treatment-for-skin-diseases/':'/ahv/assets/img/skin-vitality-hero-mukha-abhyanga-3.webp'};
+  if ((routePath === '/yoga-classes-practical/' || routePath === '/yoga-classes-theory/') && html.indexOf('/ahv/assets/img/seven/0df69b06cb6796e6-768-phone.avif') >= 0) return '/ahv/assets/img/seven/0df69b06cb6796e6-768-phone.avif';
+  if (routePath === '/yoga-and-meditation-package/' && html.indexOf('/ahv/assets/img/yoga-meditation-hero-namaste-greeting.webp') >= 0) return '/ahv/assets/img/yoga-meditation-hero-namaste-greeting.webp'; // measured background LCP, exact route
   var programmeHero = programmeHeroes[routePath];
   if (programmeHero && html.indexOf(programmeHero) >= 0) return programmeHero;
   var paths = ['/design/offers-hub-640.avif', '/ahv/assets/img/wx-hero-544.avif', '/ahv/assets/img/owner-approved-20260928/ahv-img-002-768.webp', '/ahv/assets/img/wx-hero-544.webp', '/ahv/assets/img/ktahv-abhyanga-oil-therapy-2025-544.webp', '/ahv/assets/img/AHV-Enquiry-Garden-Banner-768.webp', '/ahv/assets/img/weightloss-768-hero.avif', '/ahv/assets/img/digestive-768-hero.avif'];

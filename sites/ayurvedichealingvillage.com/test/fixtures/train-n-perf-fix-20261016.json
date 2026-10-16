@@ -1,0 +1,18 @@
+{
+  "train": "N perf fix",
+  "note": "Train N release-gate performance fix (16 Oct 2026) on the Train N head 6f72f2e71. peelTrainNPerfFix removes exactly this edit once from the current bytes, giving the Train N head bytes; any other state passes through unchanged. No pin is re-hashed.",
+  "base": "6f72f2e715483b0ca8fa836805fb3d940dc6d027",
+  "files": {
+    "app/(english)/_families/boot.ts": {
+      "row": "Train N perf: snapshot enquiry form is never lifted (CLS 0.44 on the package pages, every locale)",
+      "afterSHA256": "0a424304536503922abf9b161a003e88474af141dd0b2b31099c51abedd809f9",
+      "beforeSHA256": "ccbcaaf5563373d6140feda498e1989b6e89f3dc591cb67c30981ce00d06da89",
+      "replacements": [
+        {
+          "before": "    if (!form) return;\n    var column = form.parentElement;\n",
+          "after": "    if (!form) return;\n    // A server snapshot's form is never moved. The first sweep runs before the live view exists, so\n    // this lift used to reach only the snapshot copy and then stop (formLifted): the snapshot jumped\n    // its form above the intro on screen, and the live view then replaced it in the approved order —\n    // a full-screen layout shift (CLS 0.44 on the package pages, every locale) for a placement that\n    // never survived the swap. Marking it done here keeps every page's final order exactly as before.\n    if (form.closest(\"[data-ahv-snapshot]\")) { formLifted = true; return; }\n    var column = form.parentElement;\n"
+        }
+      ]
+    }
+  }
+}

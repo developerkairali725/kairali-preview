@@ -63,7 +63,7 @@ export default defineCopy({
       heading: "Getting from your city to Palakkad",
       steps: [
         { title: "Start with a free consultation", body: "Share your health history and current medicine details with the doctor. Tell patient care where you will be travelling from and your preferred dates." },
-        { title: "Confirm your plan and quotation", body: "Confirm your programme, villa occupancy, inclusions and booking terms in a personalised quotation. Keep your travel days separate from the time recommended for care." },
+        { title: "Confirm your plan", body: "Confirm your programme, villa occupancy, inclusions and booking terms. Keep your travel days separate from the time recommended for care." },
         { title: "Arrange the trip to Palakkad", body: "Discuss arrival by rail or flights via Coimbatore, then confirm the onward trip from the station or airport. Check current routes and travel times when booking. Airport pick-up can be arranged on request at an extra charge." },
       ],
     },
@@ -111,7 +111,7 @@ export default defineCopy({
     { q: "Where will my treatment take place?", a: "This programme is at Kairali – The Ayurvedic Healing Village in Palakkad, Kerala. Discuss your travel plans with patient care after the doctor has advised on a suitable programme and length of stay. Confirm admission and accommodation before travelling." },
     { q: "Can I travel from Bengaluru, Chennai or Hyderabad?", a: "Yes, you can enquire about a residential stay from these cities. Discuss rail options or flights via Coimbatore with the team, and confirm current services, travel time and onward transfers before booking. Allow time for the onward trip to Palakkad." },
     { q: "How much time should I set aside?", a: "The suitable length of stay depends on the programme and your individual assessment. Tell the doctor the dates you have available and ask about preparation and follow-up. Allow for travel separately from your recommended time at Kairali." },
-    { q: "Is the initial doctor consultation free?", a: "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Before booking a stay, request a quotation explaining the treatment, accommodation, doctor reviews and any later services, along with separately charged items." },
-    { q: "What should I check before booking?", a: "Confirm the recommended programme, number of nights, villa category and occupancy in your quotation. Ask which care, meals and sessions are included, and which medicines, tests, additional services or travel arrangements cost extra. Review the booking terms before making a payment." },
+    { q: "Is the initial doctor consultation free?", a: "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Before booking a stay, ask the team to explain the treatment, accommodation, doctor reviews and any later services, along with separately charged items." },
+    { q: "What should I check before booking?", a: "Confirm the recommended programme, number of nights, villa category and occupancy with the team. Ask which care, meals and sessions are included, and which medicines, tests, additional services or travel arrangements cost extra. Review the booking terms before making a payment." },
   ],
 });

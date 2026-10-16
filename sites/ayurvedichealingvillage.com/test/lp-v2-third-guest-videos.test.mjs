@@ -4,14 +4,24 @@ import fs from 'node:fs';
 import {createHash} from 'node:crypto';
 import {productionCampaign,PRODUCTION_SLUGS} from '../campaign-v2/production/load.ts';
 import {FILMS} from '../campaign-v2/data/films.ts';
-import {APPROVED_FILM_IDS,GUEST_VIDEO_ROUTES,filmIdFromHref,routeAllowed,reduce,CLOSED,playerSrc} from '../campaign-v2/production/sections/guest-video-policy.mjs';
+import {APPROVED_FILM_IDS,GUEST_VIDEO_ROUTES as CURRENT_GUEST_VIDEO_ROUTES,filmIdFromHref,routeAllowed,reduce,CLOSED,playerSrc} from '../campaign-v2/production/sections/guest-video-policy.mjs';
+// Train J3 (15 Oct 2026, AHV-WB.362): /lp/kairali-brand/ later joins the D village-and-films routes and the guest-video
+// allowlist; these pins run on the head lists, helpers and config with that exact delta reversed (fixtures/train-j3-20261015.mjs).
+import {reverseTrainJ3List} from './fixtures/train-j3-20261015.mjs';
+const GUEST_VIDEO_ROUTES=reverseTrainJ3List('GUEST_VIDEO_ROUTES',CURRENT_GUEST_VIDEO_ROUTES);
 import fixture from './fixtures/third-guest-videos-20261014.json' with {type:'json'};
 const sha=x=>createHash('sha256').update(x).digest('hex');
 import {BATCH6} from './fixtures/train-a-batch6-20261014.mjs';
 import {reverseTrainAConfig,reverseTrainASource} from './fixtures/train-a-20261014.mjs';
 import {reverseTrainBConfig,reverseTrainBSource} from './fixtures/train-b-20261015.mjs';
 // Train F (15 Oct 2026) sits on top of Train B: its exact photograph picks are reversed first (fixtures/train-f-20261015.mjs).
-import {reverseTrainFConfig,reverseTrainFSource} from './fixtures/train-f-20261015.mjs';
+import {reverseTrainFConfig as reverseTrainFConfigOnly,reverseTrainFSource as reverseTrainFSourceOnly} from './fixtures/train-f-20261015.mjs';
+import {reverseTrainHConfig,reverseTrainHSource} from './fixtures/train-h-20261015.mjs';
+// Train H (15 Oct 2026) composes on Train F (fixtures/train-h-20261015.mjs): its delta is reversed first.
+const reverseTrainFSource=(p,s)=>reverseTrainFSourceOnly(p,reverseTrainHSource(p,s));
+const reverseTrainFConfig=(slug,c)=>reverseTrainFConfigOnly(slug,reverseTrainHConfig(slug,c));
+// Train G rework (15 Oct 2026) sits on top of Train F: its exact RU phone placeholder is reversed first (fixtures/train-g-rework-20261015.mjs).
+import {reverseTrainGConfig} from './fixtures/train-g-rework-20261015.mjs';
 import {reverseStaffRosterConfig} from './fixtures/pr429-integration-config.mjs';
 const targets={
  'wellness-kerala':{source:'ayurveda-retreat',index:1,id:'4x01PtWfNnk'},
@@ -32,7 +42,7 @@ for(const [slug,{source,index,id}] of Object.entries(targets))test(`${slug}: thi
 test('all21 other configs unchanged; remove only appended third card to restore each target and its original two cards',()=>{
  assert.equal(PRODUCTION_SLUGS.length,24);assert.equal(Object.keys(targets).length,3);
  // PR428's staff roster/experience facts (PR429 base bf3f7ce70) were not in these pins' base; reverse them exactly as lp-v2-locale-physicians does.
- for(const slug of PRODUCTION_SLUGS){const c=reverseStaffRosterConfig(slug,reverseTrainAConfig(slug,reverseTrainBConfig(slug,reverseTrainFConfig(slug,JSON.parse(JSON.stringify(productionCampaign(slug)))))));if(targets[slug])c.page.stories.films.pop();assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);}
+ for(const slug of PRODUCTION_SLUGS){const c=reverseStaffRosterConfig(slug,reverseTrainAConfig(slug,reverseTrainBConfig(slug,reverseTrainFConfig(slug,reverseTrainGConfig(slug,JSON.parse(JSON.stringify(productionCampaign(slug))))))));if(targets[slug])c.page.stories.films.pop();assert.equal(sha(JSON.stringify(c)),fixture.configSHA256[slug],slug);}
  // Train A: batch 6 appended exactly four D routes after the original 13 (batch 8's AHV-WB.015/039 routes were rejected and
  // excluded), then the owner decision of 14 Oct 2026 (AHV-WB.299.change) the two weight routes and the Rupak Mann film.
  assert.equal(GUEST_VIDEO_ROUTES.length,13+BATCH6.guestVideoRoutesAdded.length+2);assert.deepEqual(GUEST_VIDEO_ROUTES.slice(13,17),BATCH6.guestVideoRoutesAdded);
