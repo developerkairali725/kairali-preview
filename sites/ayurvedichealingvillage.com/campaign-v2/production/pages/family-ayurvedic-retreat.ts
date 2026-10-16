@@ -31,8 +31,8 @@ export default defineCopy({
   familyFormNote: "Share any health concerns you would like to discuss with the doctor. This field is optional.",
   page: {
     lead: {
-      heading: "One family trip. Care planned for each person.",
-      paragraphs: ["A family Ayurveda retreat in Kerala can bring your own wellbeing plans together with a parent’s care, a partner’s programme or time shared as companions. At Kairali’s NABH-accredited Ayurvedic hospital in Palakkad, each person’s assessment guides their care. Plan the travel and accommodation together, while leaving room for different therapies, routines and lengths of stay."],
+      heading: "A family Ayurveda retreat, with care planned for each person.",
+      paragraphs: ["A family Ayurveda retreat in Kerala can bring your own wellbeing plans together with a parent’s care, a partner’s programme or time shared as companions. At Kairali’s NABH-accredited Ayurvedic hospital in Palakkad, each person’s assessment guides their care. Plan the travel and accommodation together, while leaving room for different therapies, routines and lengths of stay.", "What your stay offers: travel and accommodation planned together, care planned for each person, and space for rest and time together in the gardens."],
       points: [
         "Travel with your partner, parents or several generations",
         "Discuss each person’s health, current treatment and goals separately",
@@ -44,11 +44,9 @@ export default defineCopy({
       kind: "index",
       heading: "Explore the care each person wants to discuss",
       intro: ["Use these programme topics to start the conversation with your doctor. Family members may need different care, and participation is confirmed individually."],
+      // Owner decision, 14 Oct 2026 (AHV-WB.083.change): adult children bringing their parents — only the existing
+      // approved topics suited to older parents, in their reviewed order and wording; no new topic, wording or claim.
       topics: [
-        { title: "Panchakarma", body: "Explore Ayurvedic Panchakarma detoxification therapy and the preparation, procedures and time it may involve. Your assessment determines which parts, if any, are appropriate for you." },
-        { title: "Addiction recovery", body: "Discuss the person’s history and current treatment before considering an addiction recovery programme. Confirm the scope of support available and how proposed care relates to existing clinical care." },
-        { title: "Skin concerns", body: "Bring details of your skin concerns, diagnosis and current treatment. Discuss the proposed Ayurvedic skin care programme, including prescribed therapies, medicines and practical guidance for daily life." },
-        { title: "Respiratory health", body: "Share your respiratory diagnosis and current care. Ask which breathing practices, prescribed therapies or other procedures may suit you, and how any proposed medicines will be reviewed." },
         { title: "Cardiovascular health and blood pressure", body: "Discuss your diagnosis, blood-pressure history and prescriptions. Confirm assessment, monitoring, meals and suitable activity as part of planning the stay alongside your existing care." },
         { title: "Back pain and sciatica", body: "Explain how pain or stiffness affects walking, sitting and sleep. Discuss the suitability of therapies such as Kati Basti, along with room access, assistance and guidance for everyday movement." },
         { title: "Stress and mental wellbeing", body: "Give each person space to discuss stress, daily life and current mental-health care. Explore suitable meditation, breathing practices or prescribed therapies such as Shirodhara, and confirm the support available." },
@@ -56,11 +54,6 @@ export default defineCopy({
         { title: "Digestive and gut health", body: "Discuss symptoms, reports, current care and dietary needs. The doctor can explain the Ayurvedic concept of Agni and any proposed diet, therapies or yoga practice, with a plan for review." },
         { title: "Immunity and executive health assessment", body: "Talk about your wellbeing goals, fatigue or other concerns, and the assessment that would be useful. Ask what proposed Ojas or Rasayana care involves rather than assuming a particular outcome." },
         { title: "Joint care and arthritis", body: "Discuss osteoarthritis, rheumatoid arthritis or other joint concerns, including stairs, walking and daily tasks. Ask about suitable local therapies such as Janu Basti, movement and support during the stay." },
-        { title: "Neurological care needs", body: "Explain any diagnosis, current rehabilitation and needs around mobility, communication or daily living. Confirm the services and qualified support available, including whether specialist care is needed elsewhere." },
-        { title: "Women’s hormonal health", body: "Discuss menstrual, menopausal or other hormonal concerns in an individual consultation. Share relevant reports and treatment, then ask how proposed care relates to your current clinical advice." },
-        { title: "Weight management", body: "Talk through your goals, medicines, meals and daily routine. Discuss suitable activity and any proposed therapies, including Udhwarthanam, a herbal powder massage, with realistic individual goals and follow-up." },
-        { title: "Yoga and meditation", body: "Discuss experience, mobility and suitability before choosing sessions. Ask about Hatha Yoga, Vinyasa, breathing practices, meditation and yoga philosophy. Teacher training is a separate enquiry with its own requirements." },
-        { title: "Meals for the family", body: "Plan around each person’s allergies, dietary restrictions and medical advice. Discuss prescribed vegetarian or vegan meals, sattvic food and companion arrangements, with time to explore the organic garden during your stay." },
       ],
     },
     pathway: {
@@ -138,13 +131,13 @@ export default defineCopy({
   },
   faq: [
     { q: "Can family members follow different programmes?", a: "Yes. Each person’s medical history, current care and goals are assessed individually. Programmes and recommended durations may differ even when you travel together. Patient care can help coordinate dates, villas and practical arrangements once those individual plans are clear." },
-    { q: "Can I book an Ayurvedic retreat with my parents?", a: "You can discuss a shared stay with our team. Explain your parents’ health, prescriptions, mobility and any assistance needs. The doctor assesses programme suitability; patient care helps you confirm access, accommodation and travel arrangements. Panchakarma or other therapies may be modified or deferred according to medical guidance." },
+    { q: "Can I book a family Ayurveda retreat with my parents?", a: "You can discuss a shared stay with our team. Explain your parents’ health, prescriptions, mobility and any assistance needs. The doctor assesses programme suitability; patient care helps you confirm access, accommodation and travel arrangements. Panchakarma or other therapies may be modified or deferred according to medical guidance." },
     { q: "Can children and teenagers take part?", a: "Tell the team each child’s age, health needs and the reason for your enquiry. Care, yoga and other participation should be assessed individually. An adult programme is not automatically suitable for a younger family member, and age alone does not determine the right plan." },
     { q: "Can someone come as a companion without treatment?", a: "Ask patient care about companion arrangements for your dates. Explain who will receive treatment and who will accompany them, then confirm occupancy, meals, leisure access and charges. Ayurveda, yoga and companion stays can have different inclusions." },
     { q: "Will we stay together, and can you accommodate dietary needs?", a: "Discuss how many people are travelling, who will share and whether you prefer adjoining villas. Tell the team about allergies, restrictions and existing dietary advice for every family member. Confirm the actual rooms and meal arrangements before booking, including the needs of older relatives or children." },
     { q: "What kind of care setting does Kairali provide?", a: "Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital with residential villas in Palakkad, Kerala. Therapies are prescribed after medical assessment. Family travel and time together can be planned around each person’s care rather than a single treatment schedule for everyone." },
     { q: "How long should we stay, and what should we bring?", a: "Discuss the recommended duration for each person before arranging travel. The enquiry form’s preferred-duration options help explain your availability; they are not medical recommendations. Complete the advance health forms and bring current prescriptions and relevant medical reports." },
-    { q: "Is the initial doctor consultation free?", a: "Yes. Use the free initial consultation to discuss health history, current treatment and whether a stay may suit you. It does not make treatment, tests, medicines or later services free. Ask for a clear quotation before confirming the trip." },
+    { q: "Is the initial doctor consultation free?", a: "Yes. Use the free initial consultation to discuss health history, current treatment and whether a stay may suit you. It does not make treatment, tests, medicines or later services free." },
     { q: "What is included in a family Ayurveda package?", a: "Ask for a quotation for each person’s programme, villa occupancy and dates. Confirm meals, doctor reviews, prescribed therapies, yoga and meditation, activities and leisure access. Ayurveda, yoga and companion plans differ, so check which sessions are included and which medicines, tests, specialist services, travel or personal extras cost more." },
   ],
 });

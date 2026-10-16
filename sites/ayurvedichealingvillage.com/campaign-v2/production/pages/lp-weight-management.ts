@@ -2,7 +2,8 @@
 // approaches and wants a doctor-guided residential programme with realistic goals. Copy adapted from the reviewed brief
 // for sales clarity (kairali-akshar-marketing-science CREATE+REVIEW); facts only from the brief and data/doctors.ts.
 // Highest claims risk: no kilogram figures, timelines, BMI, outcome promises or body-shaming; no supplements/products.
-// No `stories`: patient films could read as weight-outcome testimonials on this route (fact audit excludes those).
+// Owner decision, 14 Oct 2026 (AHV-WB.299.change: "it needs guest film you can use rupak mann one") supersedes the
+// earlier no-`stories` rule: one guest story, the Rupak Mann film, titled with its approved attribution only.
 // /lp/ route: no outbound programme or villa links in copy.
 import { defineCopy } from "../copy.ts";
 
@@ -34,6 +35,8 @@ export default defineCopy({
       paragraphs: [
         "If you are looking for Ayurvedic weight loss treatment, the first conversation is about more than a target weight. Tell the doctor about your health history, current medicines, previous approaches and the routines you find difficult to maintain.",
         "Kairali’s Weight Management & Metabolism Therapy is planned after assessment at Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Your doctor discusses the proposed care and reviews progress during the stay. Weight change and timing vary from person to person.",
+        // AHV-WB.494.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.
+        "During your stay, prescribed therapies, a personalised vegetarian diet, suitable activity and rest share one daily routine, with time to walk through the village gardens between therapies and meals.",
       ],
       points: [
         "You have tried other approaches and want a doctor’s view",
@@ -50,7 +53,7 @@ export default defineCopy({
       intro: ["Your assessment decides your care. These are the parts of the programme to discuss with your doctor, rather than a fixed schedule for everyone."],
       cards: [
         { title: "An assessment before admission", paragraphs: ["Your assessment considers your history and relevant medical records. Explain other health conditions and any limits on movement or activity, so the doctor can discuss whether admission is appropriate."] },
-        { title: "Therapies prescribed for you", paragraphs: ["Prescribed therapies are carried out by the treatment team under physician supervision. Your programme may include massage-based or cleansing therapies where indicated; the specific care is determined by assessment."] },
+        { title: "Therapies prescribed for you", paragraphs: ["Prescribed therapies are carried out by the treatment team under physician supervision. Your programme may include oil-based or cleansing therapies where indicated; the specific care is determined by assessment."] },
         { title: "A personalised vegetarian diet and routine", paragraphs: ["Meals, suitable activity and rest share one daily schedule. Ask the doctor which yoga or meditation sessions fit your plan and how your progress will be reviewed."] },
         { title: "Guidance to continue at home", paragraphs: ["Before discharge, discuss the guidance you can continue at home. Ask what follow-up is recommended and how any later consultation or service would be arranged and charged."] },
       ],
@@ -59,7 +62,7 @@ export default defineCopy({
       heading: "Three steps from enquiry to admission",
       steps: [
         { title: "Start with a free consultation", body: "Share your health history, current medicines and previous approaches. Ask whether the programme is suitable for you and what goals are realistic." },
-        { title: "Agree the duration and quotation", body: "Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Confirm the duration recommended for you, your villa and the full quotation before arranging travel." },
+        { title: "Agree the duration and quotation", body: "Weight Management & Metabolism Therapy has a minimum admission of 14 nights. Confirm the duration recommended for you and your villa before arranging travel." },
         { title: "Settle into your daily routine", body: "Your days bring together prescribed therapies, meals, suitable activity and rest, with your doctor reviewing progress during the stay." },
       ],
     },
@@ -71,6 +74,13 @@ export default defineCopy({
       heading: "Plan the practical side early",
       paragraphs: [
         "Patient care can explain villa accommodation, occupancy and available dates. Share dietary needs, access requirements or companion arrangements before booking, so the team can confirm what is available for you.",
+      ],
+    },
+    stories: {
+      heading: "Hear from people who have stayed at Kairali",
+      body: "Watch a patient describe their stay in their own words. Individual experiences vary.",
+      films: [
+        { title: "Watch Rupak Mann’s experience", href: "https://www.youtube.com/watch?v=D3QLxKpwtJs", thumb: { src: "/ahv/assets/img/video-thumb-D3QLxKpwtJs.webp", width: 480, height: 360 } },
       ],
     },
     stay: {

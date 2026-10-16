@@ -109,7 +109,7 @@ export function inlineFontStyles(fonts, readText) {
  * Resolved against the local font stylesheets' @font-face rules; returns served URLs (at most one per
  * stylesheet), or [] when the family is not one of the local faces.
  */
-export function bodyFontFiles(styles, readText) {
+export function bodyFontFiles(styles, readText, wantedWeight = "400") {
   let family = null;
   for (const css of styles.styles) {
     const m = css.match(/(?:^|[}\s])body\s*[{][^}]*?font-family\s*:\s*([^;}]+)/i);
@@ -126,7 +126,7 @@ export function bodyFontFiles(styles, readText) {
       if (!fam || fam.trim().replace(/^["']|["']$/g, "") !== family) continue;
       const style = ((body.match(/font-style\s*:\s*([^;]+)/i) || [])[1] || "normal").trim();
       const weight = ((body.match(/font-weight\s*:\s*([^;]+)/i) || [])[1] || "400").trim();
-      if (style !== "normal" || (weight !== "400" && weight !== "normal")) continue;
+      if (style !== "normal" || (weight !== wantedWeight && !(wantedWeight === "400" && weight === "normal"))) continue;
       const src = (body.match(/url\(\s*["']?([^"')]+)["']?\s*\)/i) || [])[1];
       if (!src || /^[a-z]+:/i.test(src) || src.startsWith("//")) continue;
       const url = src.startsWith("/") ? src : href.replace(/[^/]*$/, "") + src;
@@ -165,9 +165,51 @@ export function firstScreenPoster(snapshotHtml) {
  */
 // N12: the saved 2026-10-11 mobile traces identify these two programme background heroes as LCP.
 // Monsoon: saved 2026-10-12 trace confirms the phone hero is the only LCP candidate.
-const IMAGE_LED_FIRST_SCREEN = new Set(["/karkidaka-chikitsha-or-monsoon-wellness.html", "/digestive-wellness-gut-health-yoga-therapy/", "/weight-loss-programme/", "/offers/", "/treatment-for-bronchial-diseases/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/"]);
-export function imageLedFirstScreen(routePath) {
+// Saved EN/DE traces identify programme hero DIV images as final LCP candidates for these three routes.
+const IMAGE_LED_FIRST_SCREEN = new Set(["/beauty-care-and-eye-care/", "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/", "/immunity-enhancement-executive-health-assessment-therapy/", "/revitalizing-and-strengthening/", "/womens-hormonal-balance-endocrine-therapy/", "/treatment-for-arthritis-and-spondylitis/", "/treatment-for-cervical-spondylosis/", "/treatment-for-chronic-back-pain/", "/treatment-for-diabetes/", "/treatment-for-facial-paralysis/", "/treatment-for-nervous-disability/", "/treatment-for-psoriasis/", "/treatment-for-sinusitis-and-migraine/", "/treatment-for-slip-disc/", "/treatment-for-spondylitis/", "/treatment-to-remove-stress-and-strain/", "/panchakarma-therapy/", "/post-pregnancy-health-programme/", "/preventive-and-regenerative-treatment/", "/karkidaka-chikitsha-or-monsoon-wellness.html", "/digestive-wellness-gut-health-yoga-therapy/", "/weight-loss-programme/", "/offers/", "/treatment-for-bronchial-diseases/", "/holistic-treatment-for-rejuvenation-and-detoxification/", "/treatment-for-hypertension/", "/treatment-for-paralysis/", "/treatment-for-skin-diseases/"]);
+export function imageLedFirstScreen(routePath, locale = "en") {
+  // Arabic Monsoon: the 14 Oct trace pairs late font loading with a shift above the hero,
+  // increasing its visible area and creating a later live-image LCP at snapshot retirement.
+  // Keep its existing first-paint faces; every other image-led route/locale retains deferral.
+  if (routePath === "/karkidaka-chikitsha-or-monsoon-wellness.html" && locale === "ar") return false;
   return IMAGE_LED_FIRST_SCREEN.has(String(routePath || ""));
+}
+
+/**
+ * Past-retreat records (the hist9 family, every locale): serve the snapshot's font stylesheet as the same <link>
+ * the runtime's helmet adds, not as an inline copy. The helmet link lands while the phone snapshot is still on
+ * screen; its @font-face rules duplicated the inline ones, so Chrome re-resolved the text to the new, not yet
+ * loaded faces and painted one frame in the fallback face. Where that frame re-wrapped a breadcrumb or heading,
+ * the snapshot moved and moved back: mobile CLS 0.636 (0.318 x 2) on /de/katha-wellness-rueckzug-2019/, up to
+ * 0.65 across the family's locales (Train B release gate, 15 Oct 2026). One shared stylesheet means one set of
+ * faces (the retreat precedent, 6281e8800).
+ */
+export function sharedFontLinkRoute(route) {
+  return Boolean(route) && (route.dataset === "assets/hist9-family-data.js" || SHARED_FONT_LINK_PATHS.has(route.path));
+}
+/**
+ * The same helmet-link duplicate, traced on two more templates in the Train N release pre-sweep (16 Oct 2026): the
+ * Sleep Restoration breadcrumb re-wrapped by 44px (two 0.193 shifts, Lighthouse mobile CLS 0.385) and the New to
+ * Yoga intro paragraph by 27px (0.102 + 0.098). Same remedy: the snapshot uses the runtime's own font stylesheet link.
+ */
+const SHARED_FONT_LINK_PATHS = new Set(["/sleep-restoration-therapy/", "/new-to-yoga/"]);
+
+/** Measured text-led finder/hub: preload only the existing heading face alongside the body face. */
+export function routeFontPreloads(route, styles, readText, locale = "en") {
+  const body = bodyFontFiles(styles, readText);
+  // Air India Maharaja Club, Latin-script locales: the hero's member badge (Mulish 700, inline-flex on the first line)
+  // painted in the fallback bold sat the hero photo 1px lower on the snapshot; the live view's identical photo then
+  // registered as a second, later LCP (observed 0.1 s -> 0.6 s; Lighthouse mobile 82-86 on /de/). Its bold face is
+  // preloaded with the body face so the snapshot paints in the final metrics. Other scripts never use that subset.
+  if (route === "/kairali-air-india-maharaja-club.html") return ["en", "de", "fr", "es", "it", "pt", "nl"].includes(locale) ? [...new Set([...body, ...bodyFontFiles(styles, readText, "700")])] : body;
+  // Yoga & Meditation package (every locale): the heading painted in the fallback serif first and grew 34px when
+  // Marcellus arrived, pushing the hero photo (the phone LCP element) down (CLS 0.026 x 2, simulated LCP ~4 s).
+  // Its existing heading face is preloaded with the body face, as on the measured hub routes below.
+  if (route === "/yoga-and-meditation-package/") return [...new Set([...body, ...bodyFontFiles({ ...styles, styles: ['body{font-family:"Marcellus"}'] }, readText)])];
+  if (!["/wellness-programs/", "/yoga-meditation-programs/", "/panchakarma-therapy/", "/post-pregnancy-health-programme/", "/preventive-and-regenerative-treatment/", "/panchakarma/", "/ayurveda-treatment/", "/mindfulness-retreat/", "/all-programs/", "/ayurveda-training-programme/", "/ananda-lahari-yoga-and-ayurveda-retreat/", "/archive-yoga-retreat/", "/ashtanga-yoga-and-ayurveda-retreat/"].includes(route)) return body;
+  const heading = bodyFontFiles({ ...styles, styles: ['body{font-family:"Marcellus"}'] }, readText);
+  const ui = (route === "/ayurveda-training-programme/" || route === "/archive-yoga-retreat/") && locale === "en" ? [...bodyFontFiles(styles, readText, "600"), ...bodyFontFiles(styles, readText, "700")] : [];
+  return [...new Set([...body, ...heading, ...ui])];
 }
 
 const TEXT_CACHE = new Map();
@@ -199,5 +241,5 @@ export function snapshotStylesFor(cfg, publicDir = join(process.cwd(), "public")
   if (!styles.fonts.length && !styles.styles.length) return null;
   // Only the body face is preloaded (measured: all four upright faces bought nothing on the simulated LCP and
   // cost 0.2-0.9 s under applied throttling, where 157 KB of TTF competed with the styles and the LCP image).
-  return { ...styles, fontCss: inlineFontStyles(styles.fonts, readText), preloadFonts: bodyFontFiles(styles, readText).filter((u) => { const f = fileFor(u); return !!f && existsSync(f); }) };
+  return { ...styles, fontCss: inlineFontStyles(styles.fonts, readText), preloadFonts: routeFontPreloads(cfg.path, styles, readText, cfg.locale?.code ?? "en").filter((u) => { const f = fileFor(u); return !!f && existsSync(f); }) };
 }

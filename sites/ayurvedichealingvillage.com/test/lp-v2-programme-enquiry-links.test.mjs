@@ -22,6 +22,7 @@ import { uiFor } from "../campaign-v2/production/ui.ts";
 import { interactionForLink } from "../campaign-v2/production/interaction-map.ts";
 import { richText } from "../campaign-v2/kit/rich.ts";
 import { PROGRAMME_DESCRIPTIONS } from "../campaign-v2/production/programme-descriptions.ts";
+import { reverseTrainHConfig } from "./fixtures/train-h-20261015.mjs";
 
 const require = createRequire(import.meta.url);
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -210,7 +211,9 @@ test("against the pre-change Offering.tsx: untargeted routes are byte-identical,
   if (source === null) { t.skip(`baseline ${BASE_COMMIT} not available in this clone; set AHV_OFFERING_BASELINE`); return; }
   const Before = loadOffering(source);
   for (const slug of PRODUCTION_SLUGS) {
-    const c = C[slug];
+    // Train H (15 Oct 2026, AHV-WB.114/.137) later adds card photographs on two routes: compared without them
+    // (its recorded config delta reversed); test/train-h-20261015.test.mjs pins the photographs.
+    const c = reverseTrainHConfig(slug, JSON.parse(JSON.stringify(C[slug])));
     const before = render(Before, c);
     const after = withoutPackageFacts(render(Offering, c));
     assert.ok(!before.includes(ASK), `${slug}: the baseline had no Ask anchor`);
@@ -246,7 +249,8 @@ test("all 21 programme links show the complete existing overview, without disclo
 
 test("every description is copied verbatim from its existing programme source", () => {
   const refs = JSON.parse(fs.readFileSync(path.join(SITE, "test/fixtures/programme-description-sources.json"), "utf8"));
-  assert.equal(Object.keys(refs).length, 11);
+  // AHV-WB.026 adds the /yoga-therapy-individual/ survivor key, verified against the same yoga source.
+  assert.equal(Object.keys(refs).length, 12);
   for (const [route, ref] of Object.entries(refs)) {
     const source = fs.readFileSync(path.join(SITE, ref.source), "utf8");
     let expected;

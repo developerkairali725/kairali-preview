@@ -40,9 +40,25 @@ export const DOCTORS_AFTER_LEAD: readonly string[] = [
   "lp-treatment-kerala", "lp-treatment-packages", "lp-weight-management", "lp-behandlung-kerala", "lp-treatment-kerala-ru",
 ];
 
+/**
+ * Staff review 9 Oct 2026 (AHV-WB.249/320/430/272 guest-video and villa-gallery), under the owner's standing authority
+ * for approved villa photographs and on-page guest video: on the Direct (D) routes listed here the existing village
+ * section (Place, with the route's own approved gallery) and patient films (Stories) follow the three steps, before the
+ * quotation, as in variant A. Same sections, styles and props; every other D route keeps the shortest path. Reversible:
+ * remove a slug to restore its D order.
+ */
+// Train J3 (15 Oct 2026, AHV-WB.362.villa-gallery / .guest-video): /lp/kairali-brand/ joins, as its sibling brand page.
+export const D_VILLAGE_AND_STORIES: readonly string[] = ["south-india-cities", "brand", "lp-south-india", "lp-panchakarma", "lp-brand"];
+const D_WITH_VILLAGE_AND_STORIES: readonly Block[] = ["lead", "offering", "pathway", "place", "stories", "stay", "physicians"];
+
+/** The variant's designed sections for one route, before the doctors move (ORDER, or a listed D route's override). */
+export function baseOrder(slug: string, v: Variant): Block[] {
+  return v === "D" && D_VILLAGE_AND_STORIES.includes(slug) ? [...D_WITH_VILLAGE_AND_STORIES] : [...ORDER[v]];
+}
+
 /** The variant's order for one route: the default, or (allowlisted routes) the doctors moved up to follow the lead. */
 export function variantOrder(slug: string, v: Variant): Block[] {
-  const base = [...ORDER[v]];
+  const base = baseOrder(slug, v);
   if (!DOCTORS_AFTER_LEAD.includes(slug)) return base;
   const rest = base.filter((b) => b !== "physicians");
   const at = rest.indexOf("lead") + 1;

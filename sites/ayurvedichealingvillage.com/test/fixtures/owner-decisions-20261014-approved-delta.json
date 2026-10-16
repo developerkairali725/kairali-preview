@@ -1,0 +1,110 @@
+{
+  "task": "WOPS-WEBSITE-SEQUENTIAL-20261008-001",
+  "ids": [
+    "AHV-WB.042.change",
+    "AHV-WB.299.change"
+  ],
+  "authority": "Owner decisions 14 Oct 2026, deliverables/WOPS-WEBSITE-SEQUENTIAL-20261008-001/recovery-20261014/OWNER-DECISIONS-20261014-ANSWERS.json (2-panchakarma-length: \"panchakarma has 28 as well\"; 4-weight-guest-film: \"it needs guest film you can use rupak mann one\")",
+  "base": "c54e2795ebf7f1c525313ff2ea10b1fd95881f4e",
+  "note": "Exact source delta only; reversing each edit (after -> before, in order) restores the base bytes. Historical fixtures and pins stay unchanged.",
+  "files": {
+    "campaign-v2/production/pages/panchakarma.ts": {
+      "beforeSHA256": "8418739b7bcf46776ea436c96135390a7f896dab5b507c96be56ede66caa3db4",
+      "afterSHA256": "a9a05c422085b65f7a92051f7ceff1b436c677d545c594fdd459fbe5b8f2a6fb",
+      "edits": [
+        {
+          "before": "",
+          "after": "// Owner decision, 14 Oct 2026 (AHV-WB.042.change: \"panchakarma has 28 as well\"): the stated stay reads 14–28 nights,\n// matching the Length-of-stay box (14/21/28); description, lead and FAQ changed only in that range.\n"
+        },
+        {
+          "before": "    description: \"Explore the 14–21 night Panchakarma programme at Kairali in Palakkad, Kerala, with Ayurvedic doctors, villa accommodation, vegetarian meals, yoga and meditation.\",\n",
+          "after": "    description: \"Explore the 14–28 night Panchakarma programme at Kairali in Palakkad, Kerala, with Ayurvedic doctors, villa accommodation, vegetarian meals, yoga and meditation.\",\n"
+        },
+        {
+          "before": "        \"At Kairali – The Ayurvedic Healing Village in Palakkad, Kerala, the programme begins with an individual assessment. Your doctor explains the proposed therapies, dietary guidance and time needed, and reviews your care during the stay. The published programme is a 14–21 night stay; confirm the recommended duration for your needs before arranging travel.\",\n",
+          "after": "        \"At Kairali – The Ayurvedic Healing Village in Palakkad, Kerala, the programme begins with an individual assessment. Your doctor explains the proposed therapies, dietary guidance and time needed, and reviews your care during the stay. The published programme is a 14–28 night stay; confirm the recommended duration for your needs before arranging travel.\",\n"
+        },
+        {
+          "before": "    { q: \"How long is the programme, and when might I notice a change?\", a: \"The published Panchakarma programme is a 14–21 night stay. Your doctor will confirm the recommended duration and discuss realistic goals with you. Responses and timing vary; ask how progress will be reviewed and what preparation or follow-up your plan may involve.\" },\n",
+          "after": "    { q: \"How long is the programme, and when might I notice a change?\", a: \"The published Panchakarma programme is a 14–28 night stay. Your doctor will confirm the recommended duration and discuss realistic goals with you. Responses and timing vary; ask how progress will be reviewed and what preparation or follow-up your plan may involve.\" },\n"
+        }
+      ]
+    },
+    "campaign-v2/production/pages/lp-panchakarma.ts": {
+      "beforeSHA256": "7849ad26ea062bee6d57f0c0fd2151483c066151ca96eb05d45ad41c81ed7d52",
+      "afterSHA256": "0dd67a17fc34e3505432cbb9bcca7edc075c11a7d89bd95f5b68663d2a574440",
+      "edits": [
+        {
+          "before": "",
+          "after": "// Owner decision, 14 Oct 2026 (AHV-WB.042.change: \"panchakarma has 28 as well\"): the stated stay reads 14–28 nights,\n// matching the Length-of-stay box (14/21/28); lead and FAQ changed only in that range.\n"
+        },
+        {
+          "before": "        \"Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. The published Panchakarma programme is a 14–21 night stay; discuss the time you can set aside and confirm the recommended duration before arranging travel.\",\n",
+          "after": "        \"Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. The published Panchakarma programme is a 14–28 night stay; discuss the time you can set aside and confirm the recommended duration before arranging travel.\",\n"
+        },
+        {
+          "before": "    { q: \"Can I fit Panchakarma into a short visit?\", a: \"The published programme is a 14–21 night stay. Share your available dates before choosing a programme. Ask the doctor what duration is appropriate; do not assume that a shorter visit provides the same care.\" },\n",
+          "after": "    { q: \"Can I fit Panchakarma into a short visit?\", a: \"The published programme is a 14–28 night stay. Share your available dates before choosing a programme. Ask the doctor what duration is appropriate; do not assume that a shorter visit provides the same care.\" },\n"
+        }
+      ]
+    },
+    "campaign-v2/production/pages/weight-management.ts": {
+      "beforeSHA256": "e424c22f0d71947dc7c3cfddf22e456dbd1196a1f436c86f652670b065f640ca",
+      "afterSHA256": "f38a9fae08910ffae796c3b6cb61de14cf9bcd71b02530e6a2f9f54c9e9923b0",
+      "edits": [
+        {
+          "before": "// Stories omitted deliberately: no patient film is used on a weight page (audit: no testimonial outcome reproduced).\n",
+          "after": "// Owner decision, 14 Oct 2026 (AHV-WB.299.change: \"it needs guest film you can use rupak mann one\"): one guest story,\n// the Rupak Mann film already published on the legacy weight page, with its existing local thumbnail. Title uses only\n// the approved attribution; no quote, figure or timeline is reproduced, and the caveat matches the other story bands.\n"
+        },
+        {
+          "before": "",
+          "after": "    stories: {\n      heading: \"Hear from people who have stayed at Kairali\",\n      body: \"Watch a patient describe their stay in their own words. Individual experiences vary.\",\n      films: [\n        { title: \"Watch Rupak Mann’s experience\", href: \"https://www.youtube.com/watch?v=D3QLxKpwtJs\", thumb: { src: \"/ahv/assets/img/video-thumb-D3QLxKpwtJs.webp\", width: 480, height: 360 } },\n      ],\n    },\n"
+        }
+      ]
+    },
+    "campaign-v2/production/pages/lp-weight-management.ts": {
+      "beforeSHA256": "24679b7a5d78ad17baa4afcc55b9f19555617995afbd1a2f818b72823df3044f",
+      "afterSHA256": "cc180a656593f303f06414cb7baaa6944bc46ee855d5bb714fc3d6c36a345576",
+      "edits": [
+        {
+          "before": "// No `stories`: patient films could read as weight-outcome testimonials on this route (fact audit excludes those).\n",
+          "after": "// Owner decision, 14 Oct 2026 (AHV-WB.299.change: \"it needs guest film you can use rupak mann one\") supersedes the\n// earlier no-`stories` rule: one guest story, the Rupak Mann film, titled with its approved attribution only.\n"
+        },
+        {
+          "before": "",
+          "after": "    stories: {\n      heading: \"Hear from people who have stayed at Kairali\",\n      body: \"Watch a patient describe their stay in their own words. Individual experiences vary.\",\n      films: [\n        { title: \"Watch Rupak Mann’s experience\", href: \"https://www.youtube.com/watch?v=D3QLxKpwtJs\", thumb: { src: \"/ahv/assets/img/video-thumb-D3QLxKpwtJs.webp\", width: 480, height: 360 } },\n      ],\n    },\n"
+        }
+      ]
+    },
+    "campaign-v2/production/sections/guest-video-policy.mjs": {
+      "beforeSHA256": "177ad1650b10c2826e8bf956ec3c6214eb6bc825ff394e4d3b94c921e3ee8333",
+      "afterSHA256": "8b55c376481d6fe504230ab36852714295b4f62f3619da44cbe69609c2ddf402",
+      "edits": [
+        {
+          "before": "// this file. Owner decision DEC-GUEST-VIDEO-POPUP: play the existing films in an on-page popup on exactly the 13\n",
+          "after": "// this file. Owner decision DEC-GUEST-VIDEO-POPUP: play the existing films in an on-page popup on exactly the 15\n"
+        },
+        {
+          "before": "/** The 13 English routes of DEC-GUEST-VIDEO-POPUP (WOPS-AHV-GUEST-VIDEO-20261010-001 SCOPE.json), exact paths. */\n",
+          "after": "/** The 13 English routes of DEC-GUEST-VIDEO-POPUP (WOPS-AHV-GUEST-VIDEO-20261010-001 SCOPE.json) plus the two weight routes, exact paths. */\n"
+        },
+        {
+          "before": "",
+          "after": "  // Owner decision, 14 Oct 2026 (AHV-WB.299.change): the two weight routes now carry the Rupak Mann guest story.\n  \"/weight-loss.html\",\n  \"/lp/weight-loss/\",\n"
+        },
+        {
+          "before": "/** Every film the 13 routes' reviewed copy already links (production/pages/*.ts). No other id is ever embedded. */\nexport const APPROVED_FILM_IDS = Object.freeze([\"iPARaMRASUs\", \"4x01PtWfNnk\", \"3vWviQfW1Ug\", \"07tVC2oXd8g\", \"DcTMckQD3rc\"]);\n",
+          "after": "/** Every film the 15 routes' reviewed copy already links (production/pages/*.ts). No other id is ever embedded. */\n// D3QLxKpwtJs: Rupak Mann, already published on the legacy weight page; added by owner decision AHV-WB.299.change (14 Oct 2026).\nexport const APPROVED_FILM_IDS = Object.freeze([\"iPARaMRASUs\", \"4x01PtWfNnk\", \"3vWviQfW1Ug\", \"07tVC2oXd8g\", \"DcTMckQD3rc\", \"D3QLxKpwtJs\"]);\n"
+        },
+        {
+          "before": "/** True only on one of the 13 exact paths of an English document. */\n",
+          "after": "/** True only on one of the 15 exact paths of an English document. */\n"
+        },
+        {
+          "before": " *   route   {routeOk}       — route/locale recheck; leaving the 13 routes closes\n",
+          "after": " *   route   {routeOk}       — route/locale recheck; leaving the 15 routes closes\n"
+        }
+      ]
+    }
+  }
+}

@@ -2,7 +2,8 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { createHash } from 'node:crypto';
-import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage } from '../app/(english)/_families/critical-media.mjs';
+import { reverseN03File } from './fixtures/n03-sanskrit-subtitle-20261015.mjs';
+import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage, retreatRuntimeMedia } from '../app/(english)/_families/critical-media.mjs';
 import { installLazyImgOrder } from '../app/(english)/_families/media-loading.mjs';
 
 test('Digestive candidate uses its phone hero derivative and the matching priority preload', () => {
@@ -75,7 +76,8 @@ test('Digestive views and English body are pinned to the approved final N12 sche
     'english-candidate/prerender/digestive-wellness-gut-health-yoga-therapy.html': /^c42f81befcccab8a379a008f4e8fc95adf0c2e72a68be71a236a529b2689af53$/,
   };
   for (const [file, pin] of Object.entries(pins)) {
-    assert.match(createHash('sha256').update(fs.readFileSync(file)).digest('hex'), pin, file);
+    // AHV-N03.01: the recorded Sanskrit-subtitle style is reversed first; every other byte stays pinned.
+    assert.match(createHash('sha256').update(reverseN03File(file, fs.readFileSync(file, 'utf8'))).digest('hex'), pin, file);
   }
 });
 
@@ -251,3 +253,31 @@ test('N12 programme background priorities stay route-scoped', () => {
   assert.equal(firstCriticalImage('<div></div>',route),null);
  }
 });
+
+test('Retreat phone derivatives keep photos exact-route scoped and survive runtime serialization', () => {
+  const serializable = new Function(`return (${phoneCriticalMedia.toString()})`)();
+  for (const [route,names] of [['/ananda-lahari-yoga-and-ayurveda-retreat/',['AHV-Ananda-Alcohol-Free','AHV-Ananda-Landscape','AHV-Ananda-Massage','AHV-Ananda-Village']],['/archive-yoga-retreat/',['AHV-Retreat-Archive-Landscape',...Array.from({length:7},(_,i)=>'AHV-Retreat-Archive-0'+(i+1))]]]) {
+    for (const name of names) {
+      const original='/ahv/assets/img/'+name+'.webp', derivative='/ahv/assets/img/'+name+'-768-phone.avif';
+      const html='<img src="'+original+'"><div style="background-image:url('+original+')"></div>';
+      assert.equal(serializable(html,route),html.replaceAll(original,derivative));
+      assert.equal(serializable(html,'/unrelated/'),html);
+      assert(fs.existsSync('public'+original));assert(fs.statSync('public'+derivative).size<fs.statSync('public'+original).size);
+    }
+  }
+});
+
+test('Retreat runtime image data is mapped before rendering only for the selected phone route', () => {
+ const runtime=new Function(`return (${retreatRuntimeMedia.toString()})`)();
+ for(const [route,key,collection,name] of [['/ananda-lahari-yoga-and-ayurveda-retreat/','AHV_ANANDA','sections','AHV-Ananda-Village'],['/archive-yoga-retreat/','AHV_PAST_RETREATS','cards','AHV-Retreat-Archive-01']]){
+  for(const phone of [false,true]){
+   const image='/ahv/assets/img/'+name+'.webp',row={image,text:'Unchanged'};
+   const win={matchMedia:()=>({matches:phone}),[key]:{[collection]:[row,{text:'No image'}]}};
+   runtime(win,'/unrelated/',phoneCriticalMedia);assert.equal(row.image,image);
+   runtime(win,route,phoneCriticalMedia);assert.equal(row.image,phone?image.replace('.webp','-768-phone.avif'):image);assert.equal(row.text,'Unchanged');
+   runtime(win,route,phoneCriticalMedia);assert.equal(row.image,phone?image.replace('.webp','-768-phone.avif'):image);
+  }
+ }
+});
+
+test('Panchakarma reuses the exact existing landscape derivative only on its phone route', () => { const original='/ahv/assets/img/gallery/ee7d129f97f1b7e211572def4f1bbae675da2b34eaf75e3b76df1d57f01a63bd.webp', target='/ahv/assets/img/AHV-Ananda-Landscape-768-phone.avif'; assert.equal(phoneCriticalMedia(original,'/panchakarma/'),target); assert.equal(phoneCriticalMedia(original,'/unrelated/'),original); assert.equal(phoneCriticalMedia(target,'/panchakarma/'),target); const serialized=new Function('return ('+phoneCriticalMedia.toString()+')')(); assert.equal(serialized(original,'/panchakarma/'),target); });

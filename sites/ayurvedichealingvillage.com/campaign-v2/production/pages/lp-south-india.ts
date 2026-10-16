@@ -3,7 +3,9 @@
 // brief for sales clarity (kairali-akshar-marketing-science CREATE+REVIEW); facts only from the brief, its NONPUBLIC
 // audit (LP-COPY-FACT-AUDIT.json) and data/doctors.ts. Travel: only the brief's own "rail or flights via Coimbatore"
 // as options to discuss — no distances, travel times, speed or "weekend" claims; no offers.
+// Owner decision, 14 Oct 2026 (AHV-WB.330.change): airport pick-up on request at an extra charge; no prices or travel times.
 import { defineCopy } from "../copy.ts";
+import { story } from "../stories.ts";
 
 export default defineCopy({
   slug: "lp-south-india",
@@ -36,6 +38,8 @@ export default defineCopy({
       paragraphs: [
         "If you are travelling from Bengaluru, Chennai, Hyderabad or elsewhere in South India, start with the care you need and the time you can set aside. A residential Ayurveda programme gives you one place to follow your prescribed treatment and daily routine during your stay.",
         "At Kairali – The Ayurvedic Healing Village, your doctor assesses your health history and explains the proposed programme. Confirm the recommended stay and accommodation before arranging travel to Palakkad.",
+        // AHV-WB.318.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.
+        "Once you arrive, your days follow one routine in one place: therapies your doctor plans, meals from the hospital kitchen and a villa in the village gardens where you can rest between appointments.",
       ],
       points: [
         "You live in Bengaluru, Chennai, Hyderabad or nearby",
@@ -59,8 +63,30 @@ export default defineCopy({
       heading: "Getting from your city to Palakkad",
       steps: [
         { title: "Start with a free consultation", body: "Share your health history and current medicine details with the doctor. Tell patient care where you will be travelling from and your preferred dates." },
-        { title: "Confirm your plan and quotation", body: "Confirm your programme, villa occupancy, inclusions and booking terms in a personalised quotation. Keep your travel days separate from the time recommended for care." },
-        { title: "Arrange the trip to Palakkad", body: "Discuss arrival by rail or flights via Coimbatore, then confirm the onward trip from the station or airport. Check current routes and travel times when booking, and ask about transfers and charges." },
+        { title: "Confirm your plan", body: "Confirm your programme, villa occupancy, inclusions and booking terms. Keep your travel days separate from the time recommended for care." },
+        { title: "Arrange the trip to Palakkad", body: "Discuss arrival by rail or flights via Coimbatore, then confirm the onward trip from the station or airport. Check current routes and travel times when booking. Airport pick-up can be arranged on request at an extra charge." },
+      ],
+    },
+    // AHV-WB.320.villa-gallery and .guest-video (staff review 9 Oct 2026; owner's standing authority for approved
+    // villa photographs and on-page guest video; production/section-order.ts D_VILLAGE_AND_STORIES). Reviewed copy
+    // reused verbatim: the village from lp-hospital-kerala.ts, the consented registry films from ayurveda-retreat.ts.
+    // No new facts, names, countries or quotes.
+    place: {
+      heading: "Choose a villa that suits your needs",
+      paragraphs: ["Residential accommodation is in villas within the village gardens. Tell patient care about mobility needs, dietary requirements or a companion who may travel with you, then confirm the room layout and occupancy before booking."],
+      villas: [
+        { name: "Deluxe Villa", body: "A king-size bed and private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Deluxe Villa", href: "/deluxe-villa/" } },
+        { name: "Classic Villa", body: "Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Classic Villa", href: "/classic-villa/" } },
+        { name: "Royal Villa", body: "A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.", link: { label: "Explore Royal Villa", href: "/royal-villa/" } },
+        { name: "Maharaja Suite", body: "A king-size bed, a living area with a couch and garden access in a premium location.", link: { label: "Explore Maharaja Suite", href: "/maharaja-suite/" } },
+      ],
+    },
+    stories: {
+      heading: "See the village before you travel",
+      body: "See a day at the village and hear patients describe their stays in their own words. Individual experiences vary.",
+      films: [
+        story("iPARaMRASUs", "A day at the village"),
+        story("4x01PtWfNnk", "Watch Michaela & Jan’s experience"),
       ],
     },
     stay: {
@@ -85,7 +111,7 @@ export default defineCopy({
     { q: "Where will my treatment take place?", a: "This programme is at Kairali – The Ayurvedic Healing Village in Palakkad, Kerala. Discuss your travel plans with patient care after the doctor has advised on a suitable programme and length of stay. Confirm admission and accommodation before travelling." },
     { q: "Can I travel from Bengaluru, Chennai or Hyderabad?", a: "Yes, you can enquire about a residential stay from these cities. Discuss rail options or flights via Coimbatore with the team, and confirm current services, travel time and onward transfers before booking. Allow time for the onward trip to Palakkad." },
     { q: "How much time should I set aside?", a: "The suitable length of stay depends on the programme and your individual assessment. Tell the doctor the dates you have available and ask about preparation and follow-up. Allow for travel separately from your recommended time at Kairali." },
-    { q: "Is the initial doctor consultation free?", a: "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Before booking a stay, request a quotation explaining the treatment, accommodation, doctor reviews and any later services, along with separately charged items." },
-    { q: "What should I check before booking?", a: "Confirm the recommended programme, number of nights, villa category and occupancy in your quotation. Ask which care, meals and sessions are included, and which medicines, tests, additional services or travel arrangements cost extra. Review the booking terms before making a payment." },
+    { q: "Is the initial doctor consultation free?", a: "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Before booking a stay, ask the team to explain the treatment, accommodation, doctor reviews and any later services, along with separately charged items." },
+    { q: "What should I check before booking?", a: "Confirm the recommended programme, number of nights, villa category and occupancy with the team. Ask which care, meals and sessions are included, and which medicines, tests, additional services or travel arrangements cost extra. Review the booking terms before making a payment." },
   ],
 });

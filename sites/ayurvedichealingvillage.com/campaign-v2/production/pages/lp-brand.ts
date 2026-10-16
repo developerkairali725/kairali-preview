@@ -4,6 +4,7 @@
 // No heritage year in copy (the proof strip carries the approved line). sha256 as recorded in
 // lp-batch/NONPUBLIC/LP-COPY-FACT-AUDIT.json (not recomputed in this session).
 import { defineCopy } from "../copy.ts";
+import { story } from "../stories.ts";
 
 export default defineCopy({
   slug: "lp-brand",
@@ -32,6 +33,7 @@ export default defineCopy({
       paragraphs: [
         "If you searched for Kairali, you may be planning care for yourself or helping someone else plan a stay. This page is about Kairali – The Ayurvedic Healing Village: an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, with residential villas in the village gardens.",
         "The Healing Village brings a family tradition of Ayurveda to residential hospital care. Your programme begins with an individual assessment, so the proposed care reflects your health history and goals.",
+        "What your stay gives you: a programme planned around your health history and goals, a doctor who plans your care and reviews your progress during admission, a villa in the village gardens, and a patient care team for practical arrangements before you travel.",
       ],
       points: [
         "You are planning a residential Ayurveda stay for yourself",
@@ -54,8 +56,31 @@ export default defineCopy({
       heading: "How a stay at Kairali begins",
       steps: [
         { title: "Book your free consultation", body: "Tell us what you would like to discuss with the doctor and when you hope to visit. Use the enquiry form or the available contact options." },
-        { title: "Agree your plan and quotation", body: "Discuss suitability, the proposed programme and its length. Treatment and accommodation are then confirmed in your care plan and a personalised quotation." },
+        { title: "Agree your plan", body: "Discuss suitability, the proposed programme and its length. Treatment and accommodation are then confirmed in your care plan." },
         { title: "Arrive for your stay", body: "Confirm your dates, villa occupancy and travel, then arrive for admission. Your care is reviewed through the stay." },
+      ],
+    },
+    // AHV-WB.362.villa-gallery and .guest-video (Train J3; staff review 9 Oct 2026; owner's standing authority for approved
+    // villa photographs and on-page guest video; production/section-order.ts D_VILLAGE_AND_STORIES): the village section
+    // with the route's own approved gallery, and the consented registry films, reused verbatim from the sibling brand page
+    // (brand.ts, AHV-WB.272). No new facts, names, countries or quotes.
+    place: {
+      heading: "Choose a villa set among the gardens",
+      paragraphs: ["Your villa is your base between appointments. Walk through the grounds, sit outside your villa or rest in your room. Ask our team about availability, layout, occupancy and any access needs for your dates."],
+      villas: [
+        { name: "Deluxe Villa", body: "A king-size bed and private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Deluxe Villa", href: "/deluxe-villa/" } },
+        { name: "Classic Villa", body: "Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Classic Villa", href: "/classic-villa/" } },
+        { name: "Royal Villa", body: "A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.", link: { label: "Explore Royal Villa", href: "/royal-villa/" } },
+        { name: "Maharaja Suite", body: "A king-size bed, a living area with a couch and garden access in a premium location.", link: { label: "Explore Maharaja Suite", href: "/maharaja-suite/" } },
+      ],
+    },
+    stories: {
+      heading: "See the village before you decide",
+      body: "Watch a day at the village, then hear patients describe their stays in their own words. Individual experiences vary.",
+      films: [
+        story("iPARaMRASUs", "A day at the village"),
+        story("3vWviQfW1Ug", "Watch Supriya’s experience"),
+        story("4x01PtWfNnk", "Watch Michaela & Jan’s experience"),
       ],
     },
     stay: {
@@ -74,14 +99,13 @@ export default defineCopy({
     faqHeading: "Questions about Kairali",
     closing: {
       heading: "Talk with patient care",
-      paragraphs: ["Tell us what you would like to discuss with the doctor and when you hope to visit. Your free initial doctor consultation is the starting point for discussing suitability; treatment and accommodation are confirmed separately in your care plan and quotation."],
+      paragraphs: ["Tell us what you would like to discuss with the doctor and when you hope to visit. Your free initial doctor consultation is the starting point for discussing suitability; treatment and accommodation are confirmed separately in your care plan."],
     },
   },
   faq: [
     { q: "Where is Kairali – The Ayurvedic Healing Village?", a: "The Healing Village is in Palakkad, Kerala. This page is for that residential Ayurvedic hospital. Tell patient care where you will travel from and discuss the admission plan, accommodation and onward travel arrangements before you book." },
-    { q: "What does Kairali’s Ayurvedic heritage refer to?", a: "It refers to the family tradition of Ayurveda behind Kairali. For your own stay, the practical starting point is a consultation with the current medical team to discuss your health, proposed programme and arrangements for care." },
+    { q: "What does Kairali’s Ayurvedic heritage refer to?", a: "It refers to the family tradition of Ayurveda behind Kairali. The Healing Village is an NABH-accredited Ayurvedic hospital of the Kairali Ayurvedic Group. For your own stay, the practical starting point is a consultation with the current medical team to discuss your health, proposed programme and arrangements for care." },
     { q: "How do I find the right programme?", a: "Begin with your health history, current treatment and goals. Ask the doctor to explain the programme being considered, its therapies, preparation and suitable duration. Confirm the exact care plan and inclusions with the team before arranging your stay." },
-    { q: "Is the initial doctor consultation free?", a: "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Before booking a stay, request a quotation explaining the treatment, accommodation, doctor reviews and any later services, along with separately charged items." },
-    { q: "What should I check before booking?", a: "Confirm the recommended programme, number of nights, villa category and occupancy in your quotation. Ask which care, meals and sessions are included, and which medicines, tests, additional services or travel arrangements cost extra. Review the booking terms before making a payment." },
+    { q: "Is the initial doctor consultation free?", a: "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Treatment and accommodation are confirmed separately in your care plan." },
   ],
 });

@@ -6,13 +6,13 @@ import { t, splitAccent } from "./text.ts";
 import { heroPrice } from "./price-line";
 import { PriceText } from "./interactive/Fees";
 import { ConsultForm } from "./ConsultBar";
-import { contact } from "../../campaign-v110/lib/site.ts";
 import { NABH_NO } from "./facts.ts";
 import { LATEST_TRAVELERS_CHOICE } from "../data/awards.ts";
 import { WaIcon } from "./icons";
 import AskAnythingButton from "../production/AskAnythingButton";
 import ConsultCard from "../production/ConsultCard";
 import { pageUi } from "../production/ui.ts";
+import { whatsappHref } from "../production/whatsapp.ts";
 
 // Where each artboard puts the Step-1 form and whether the hero image sits in a three-image strip.
 // Markup is shared; only these two switches differ by variant. Everything visual is in sections.css.
@@ -86,7 +86,7 @@ export default function Hero({ c, v, req, carry }: SectionProps) {
               // Opens the site's existing chat choices (Priya, WhatsApp, Instagram, Messenger); no new channel.
               <AskAnythingButton className="lp-btn lp-btn--line lp-hero__ask" label={c.cta.secondary} />
             ) : (
-              <a className="lp-btn lp-btn--wa lp-hero__wa" href={`https://wa.me/${contact.whatsapp.number}`} data-track="cta_click" data-track-cta="whatsapp" data-track-position="hero"><WaIcon size={20} />WhatsApp</a>
+              <a className="lp-btn lp-btn--wa lp-hero__wa" href={whatsappHref(c, req)} data-track="cta_click" data-track-cta="whatsapp" data-track-position="hero"><WaIcon size={20} />WhatsApp</a>
             )}
           </div>
           {/* Live ad routes: what "free" covers, right under the button that offers it (the initial consultation only). */}

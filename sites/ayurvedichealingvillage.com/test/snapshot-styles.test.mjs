@@ -3,7 +3,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import zlib from "node:zlib";
-import { helmetStyles, importedComponents, viewFirstPaintStyles, snapshotStylesFor, firstScreenPoster, imageLedFirstScreen, bodyFontFiles, inlineFontStyles } from "../app/(english)/_families/snapshot-styles.mjs";
+import { helmetStyles, importedComponents, viewFirstPaintStyles, snapshotStylesFor, firstScreenPoster, imageLedFirstScreen, bodyFontFiles, routeFontPreloads, inlineFontStyles, sharedFontLinkRoute } from "../app/(english)/_families/snapshot-styles.mjs";
 import { firstCriticalImage, phoneCriticalMedia } from "../app/(english)/_families/critical-media.mjs";
 
 test("helmetStyles keeps local font stylesheets and <style> blocks only, in order", () => {
@@ -101,9 +101,11 @@ test("imageLedFirstScreen: listed hero-background routes only; every other route
   assert.equal(imageLedFirstScreen(digestive), true);
   assert.equal(imageLedFirstScreen("/weight-loss-programme/"), true);
   assert.equal(imageLedFirstScreen("/offers/"), true);
+  assert.equal(imageLedFirstScreen("/panchakarma-therapy/"), true);
+  assert.equal(imageLedFirstScreen("/panchakarma-therapy"), false);
   assert.equal(imageLedFirstScreen("/treatment-for-bronchial-diseases/"), true);
   assert.equal(imageLedFirstScreen("/holistic-treatment-for-rejuvenation-and-detoxification/"), true);
-  for (const p of ["/", "/our-villas/", "/kairali-ayurvedic-way-of-weight-management/", "/panchakarma-therapy/", "/digestive-wellness-gut-health-yoga-therapy", "", undefined]) {
+  for (const p of ["/", "/our-villas/", "/kairali-ayurvedic-way-of-weight-management/", "/digestive-wellness-gut-health-yoga-therapy", "", undefined]) {
 
     assert.equal(imageLedFirstScreen(p), false, String(p));
   }
@@ -151,10 +153,43 @@ test("N12.06-B measured image-led loading remains exact-route scoped", () => {
   assert.equal(imageLedFirstScreen(route), true);
   assert.equal(imageLedFirstScreen(route.slice(0,-1)), false);
  }
- assert.equal(imageLedFirstScreen("/treatment-for-psoriasis/"), false);
+ assert.equal(imageLedFirstScreen("/online-consultation/"), false);
 });
 
 test("Monsoon image-led loading uses its traced exact route only", () => {
  assert.equal(imageLedFirstScreen('/karkidaka-chikitsha-or-monsoon-wellness.html'),true);
  assert.equal(imageLedFirstScreen('/karkidaka-chikitsha-or-monsoon-wellness/'),false);
+});
+
+test("finder and hub preload only body and existing heading faces; unrelated routes retain body-only", () => {
+ const css='@font-face{font-family:"Mulish";font-weight:400;src:url("body.common.woff2")}@font-face{font-family:"Marcellus";font-weight:400;src:url("heading.common.woff2")}@font-face{font-family:"Mulish";font-weight:700;src:url("bold.common.woff2")}';
+ const styles={fonts:['/ahv/fonts/test.css'],styles:['body{font-family:Mulish}']};
+ for(const route of ["/all-programs/", "/ayurveda-training-programme/", "/ananda-lahari-yoga-and-ayurveda-retreat/", "/archive-yoga-retreat/", "/ashtanga-yoga-and-ayurveda-retreat/"]) assert.deepEqual(routeFontPreloads(route,styles,()=>css,'de'),['/ahv/fonts/body.common.woff2','/ahv/fonts/heading.common.woff2']);
+ assert.deepEqual(routeFontPreloads('/all-programs/',styles,()=>css,'en'),['/ahv/fonts/body.common.woff2','/ahv/fonts/heading.common.woff2']);
+ assert.deepEqual(routeFontPreloads('/ayurveda-training-programme/',styles,()=>css,'en'),['/ahv/fonts/body.common.woff2','/ahv/fonts/heading.common.woff2','/ahv/fonts/bold.common.woff2']);
+ assert.deepEqual(routeFontPreloads('/archive-yoga-retreat/',styles,()=>css,'en'),['/ahv/fonts/body.common.woff2','/ahv/fonts/heading.common.woff2','/ahv/fonts/bold.common.woff2']);
+ assert.deepEqual(routeFontPreloads('/offers/',styles,()=>css),['/ahv/fonts/body.common.woff2']);
+ assert.deepEqual(routeFontPreloads('/all-programs/',styles,()=>null),[]);
+});
+
+
+test("Arabic Monsoon keeps existing first-paint faces without changing other locale image deferral", () => {
+ const route="/karkidaka-chikitsha-or-monsoon-wellness.html";
+ for (const locale of ["en","hi","de","fr","es","it","pt","nl","ru","ar","zh-Hans","ja","ko"])
+  assert.equal(imageLedFirstScreen(route,locale),locale!=="ar",locale);
+ assert.equal(imageLedFirstScreen(route),true,"default English remains unchanged");
+ for(const other of ["/weight-loss-programme/","/digestive-wellness-gut-health-yoga-therapy/"])
+  assert.equal(imageLedFirstScreen(other,"ar"),true,"unrelated Arabic image-led routes retain deferral");
+ assert.equal(imageLedFirstScreen("/all-programs/","ar"),false,"existing text-led font path retained");
+});
+
+test("past-retreat records share the runtime's font stylesheet link instead of an inline copy (CLS 0.636 /de/katha)", () => {
+  const manifest = JSON.parse(fs.readFileSync("english-candidate/route-manifest.json", "utf8"));
+  const routes = Array.isArray(manifest) ? manifest : manifest.routes || Object.values(manifest);
+  const shared = routes.filter(sharedFontLinkRoute).map((r) => r.path).sort();
+  assert.deepEqual(shared, ["/chef-retreat-food-to-wellness/", "/food-sadhana/", "/karma-being-retreat-2019/", "/karma-being-retreat/", "/katha-wellness-retreat-2019/", "/lakshya-yoga-retreat-2017/", "/lakshya-yoga-retreat-2018/", "/new-to-yoga/", "/prav-simona-monsoon-yoga-retreat/", "/prav-simona-yoga-retreat/", "/sleep-restoration-therapy/"]);
+  assert.equal(sharedFontLinkRoute({ path: "/our-villas/", dataset: "assets/article-family-data.js" }), false);
+  assert.equal(sharedFontLinkRoute(null), false);
+  const view = fs.readFileSync("app/(english)/_families/design-view.tsx", "utf8");
+  assert.match(view, /\(\{ href, css \}\) => css && !sharedFontLinkRoute\(route\) && /);
 });

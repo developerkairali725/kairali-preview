@@ -1,3 +1,5 @@
+import { applyStaffExperienceHtml } from './staff-experience.mjs';
+import { describeHomeImages } from './home-image-descriptions.mjs';
 import { removeHomeVillaRates } from './home-villa-rates.mjs';
 import { initializeHomeHero } from './home-hero.mjs';
 import { createBackgroundDeferral } from './media-loading.mjs';
@@ -34,7 +36,10 @@ export const STATIC_BOOT = `
     try {
       var response = await fetch(cfg.staticDesktopPath, { credentials: "same-origin" });
       if (!response.ok) throw new Error("desktop view " + response.status);
-      host.innerHTML = (${removeHomeVillaRates.toString()})(await response.text(), cfg.staticHome ? "/" : "");
+      var desktopHtml = (${removeHomeVillaRates.toString()})(await response.text(), cfg.staticHome ? "/" : "");
+      if (cfg.staticHome) desktopHtml = (${describeHomeImages.toString()})(desktopHtml);
+      if (cfg.staticHome) desktopHtml = (${applyStaffExperienceHtml.toString()})(desktopHtml, cfg.contentReviewCopy);
+      host.innerHTML = desktopHtml;
       host.setAttribute("data-ahv-variant", "desktop");
     } catch (error) {
       host.setAttribute("data-ahv-variant", "mobile-fallback");
@@ -312,13 +317,31 @@ export const STATIC_BOOT = `
       if (savedCurrency && rateCurrencies.indexOf(savedCurrency) >= 0) chooseHomeCurrency(savedCurrency);
     } catch (error) {}
     });
-    var gallerySection = host.querySelector('section[data-dc-tpl="770"]');
+    // Captured mobile/desktop template IDs differ. Use the existing gallery
+    // structure so both snapshots receive the same unchanged filter handlers.
+    var gallerySection = Array.from(host.querySelectorAll("section")).find(function (section) {
+      return section.querySelector("a[aria-description]") && section.querySelector("button");
+    });
     var galleryButtons = gallerySection ? Array.from(gallerySection.querySelectorAll("button")).filter(function (button) {
       return ["All", "Treatment", "Villa", "Yoga & Meditation", "Experience at Kairali"].indexOf(button.textContent.trim()) >= 0;
     }) : [];
     if (galleryButtons.length && gallerySection) initializeNearViewport(gallerySection, function () {
       var galleryItems = Array.from(gallerySection.querySelectorAll("a[aria-description]"));
       var galleryCategories = cfg.staticHome.galleryCategories || [];
+      // The captured homepage uses concrete colors, not the campaign token sheet.
+      // Bind the existing gallery palette locally before filters replace button colors.
+      var gallerySurface = getComputedStyle(gallerySection);
+      var galleryActive = getComputedStyle(galleryButtons[0]);
+      var galleryPalette = {
+        "--forest-800": gallerySurface.backgroundColor,
+        "--ivory": gallerySurface.color,
+        "--marigold-400": galleryActive.backgroundColor,
+        "--ink": galleryActive.color
+      };
+      function applyGalleryPalette(node) {
+        Object.keys(galleryPalette).forEach(function (name) { node.style.setProperty(name, galleryPalette[name]); });
+      }
+      applyGalleryPalette(gallerySection);
       galleryButtons.forEach(function (button) {
         button.addEventListener("click", function () {
           var category = button.textContent.trim();
@@ -335,7 +358,8 @@ export const STATIC_BOOT = `
       var photoData = cfg.staticHome.galleryPhotos || [];
     var galleryDialog = document.createElement("dialog");
     galleryDialog.setAttribute("aria-label", "Photo gallery");
-    galleryDialog.style.cssText = "border:0;padding:18px;max-width:min(96vw,1100px);max-height:94vh;background:var(--forest-800);color:var(--ivory);border-radius:6px;box-shadow:0 16px 70px color-mix(in srgb,var(--ink) 40%,transparent)";
+    galleryDialog.style.cssText = "border:0;padding:18px;max-width:min(96vw,1100px);max-height:94vh;background:var(--forest-800);color:var(--ivory);border-radius:0;box-shadow:0 16px 70px color-mix(in srgb,var(--ink) 40%,transparent)";
+    applyGalleryPalette(galleryDialog);
     var galleryClose = document.createElement("button");
     galleryClose.type = "button"; galleryClose.textContent = "Close"; galleryClose.setAttribute("aria-label", "Close photo");
     galleryClose.style.cssText = "display:block;margin:0 0 12px auto;padding:10px 14px;border:1px solid color-mix(in srgb,var(--ivory) 38%,var(--forest-800));background:var(--forest-800);color:var(--ivory);cursor:pointer";

@@ -3,6 +3,7 @@
 // (kairali-akshar-marketing-science CREATE+REVIEW); facts only from the brief and data/doctors.ts. No city branches,
 // distances, travel times or flight claims (the brief states none); no offers. "30 villas" is the brief's own fact.
 import { defineCopy } from "../copy.ts";
+import { story } from "../stories.ts";
 
 export default defineCopy({
   slug: "south-india-cities",
@@ -40,6 +41,7 @@ export default defineCopy({
       paragraphs: [
         "If you are comparing Ayurvedic treatment in South India, begin with the location and the care you need. Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Your enquiry is for a stay at this one property, wherever you are travelling from.",
         "You can start the conversation before choosing flights, trains or other transport. Discuss your health history first, then bring the programme, villa and travel plans together.",
+        "What your stay offers: one destination in Palakkad for your care, sessions delivered by trained therapists as prescribed by your Ayurvedic doctor, and time for suitable yoga or meditation and rest, kept separate from your travel days.",
       ],
       points: [
         "You are travelling from elsewhere in South India",
@@ -71,6 +73,29 @@ export default defineCopy({
         { title: "Arrange arrival and departure", body: "Share your proposed travel details and ask about transport options and charges. Confirm any transfer explicitly before relying on it, so your arrival and return fit the agreed plan." },
       ],
     },
+    // AHV-WB.249.villa-gallery and .guest-video (staff review 9 Oct 2026; owner's standing authority for approved
+    // villa photographs and on-page guest video; production/section-order.ts D_VILLAGE_AND_STORIES). Reviewed copy
+    // reused verbatim: the village from treatment-kerala.ts, the consented registry films from lp-hospital-kerala.ts.
+    // No new facts, names, countries or quotes.
+    place: {
+      heading: "Choose a villa that suits who is travelling",
+      paragraphs: ["Kairali has 30 villas across four categories. Tell patient care who is travelling with you and any room-access or occupancy preferences, then confirm the accommodation available for your dates."],
+      villas: [
+        { name: "Deluxe Villa", body: "A king-size bed and private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Deluxe Villa", href: "/deluxe-villa/" } },
+        { name: "Classic Villa", body: "Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Classic Villa", href: "/classic-villa/" } },
+        { name: "Royal Villa", body: "A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.", link: { label: "Explore Royal Villa", href: "/royal-villa/" } },
+        { name: "Maharaja Suite", body: "A king-size bed, a living area with a couch and garden access in a premium location.", link: { label: "Explore Maharaja Suite", href: "/maharaja-suite/" } },
+      ],
+    },
+    stories: {
+      heading: "See the village and hear from patients",
+      body: "Watch a day at the village and hear patients describe their stays in their own words. Individual experiences vary.",
+      films: [
+        story("iPARaMRASUs", "A day at the village"),
+        story("4x01PtWfNnk", "Watch Michaela & Jan’s experience"),
+        story("3vWviQfW1Ug", "Watch Supriya Agarwal’s experience"),
+      ],
+    },
     stay: {
       heading: "Know what to confirm before you travel",
       paragraphs: ["Kairali has 30 villas across [Classic](/classic-villa/), [Deluxe](/deluxe-villa/), [Royal](/royal-villa/) and [Maharaja Suite](/maharaja-suite/) categories. Explain who is travelling, who will receive treatment and any room-access or assistance needs."],
@@ -92,7 +117,10 @@ export default defineCopy({
   faq: [
     { q: "Is the treatment centre in my home city?", a: "This page is for Kairali – The Ayurvedic Healing Village in Palakkad, Kerala, and your enquiry is about care at that property. Tell the team where you are travelling from so the location and travel arrangements are clear from the start." },
     { q: "Can I speak with the team before making travel bookings?", a: "Yes. Begin with the initial consultation and a discussion of your needs, available time and preferred dates. Confirm the programme, accommodation and admission arrangements before committing to transport." },
-    { q: "Which airport or station should I use?", a: "Share your starting point and proposed itinerary with patient care. Ask about suitable arrival options and onward travel to the Healing Village. Confirm any transfer, timing and cost for your particular trip." },
+    // AHV-WB.253.change (Train J3): the verified road distances of the published airport facts (WOPS-AHV-CONSOLIDATED-
+    // RELEASE-20261007-001 airport-site/VERIFICATION.json PASS: CJB 66, COK 114, CCJ 116 km) and owner decision 6 (pick-up on
+    // request at an extra charge; no prices or travel times). No railway-station distance: none is verified.
+    { q: "Which airport or station should I use?", a: "The nearest airport is Coimbatore International Airport (CJB), about 66 km by road; Cochin International Airport (COK) is about 114 km and Calicut International Airport (CCJ) about 116 km. Share your starting point and proposed itinerary with patient care, and ask about onward travel to the Healing Village. Airport pick-up can be arranged on request at an extra charge." },
     { q: "How much time should I set aside?", a: "The recommended stay depends on your assessment and programme. Ask about preparation and follow-up as well as the residential duration. Allow separately for travel rather than assuming it is included in the programme length." },
     { q: "Can I bring a family member or companion?", a: "Discuss who will travel and whether each person wants treatment. Confirm the care, meals, occupancy, support and charges that apply to each traveller. A shared booking does not necessarily mean an identical programme." },
     { q: "What should I bring for the doctor?", a: "Bring relevant medical reports, prescriptions and details of supplements or earlier treatment. Tell the team about allergies, dietary advice, mobility and other practical needs before arrival." },

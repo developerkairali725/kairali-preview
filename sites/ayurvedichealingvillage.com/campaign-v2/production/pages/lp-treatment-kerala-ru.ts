@@ -2,10 +2,11 @@
 // buyer: a Russian-speaking reader exploring assessed residential Ayurveda in Palakkad. Copy reorganised from the
 // reviewed Russian brief (independent linguistic + factual PASS) for sales clarity (kairali-akshar-marketing-science
 // CREATE+REVIEW); wording reused wherever possible; facts only from the brief and data/doctors.ts.
-// `seo` kept from the brief (its canonical moves to the /lp/ route — builder). Only Dr. Deepu John is presented.
-// No stories and no villa cards (linked pages are English). adMatch keywords = the fact audit's editorial topics.
+// `seo` kept from the brief (its canonical moves to the /lp/ route — builder). Owner correction, 14 Oct: show the current roster.
+// No villa cards (linked pages are English); stories = English films, labelled (decision 11). adMatch keywords = the fact audit's editorial topics.
 // "отдых/отдыхать" is used only in the sense of rest between procedures, as in the reviewed brief.
 import { defineCopy } from "../copy.ts";
+import { story } from "../stories.ts";
 
 export default defineCopy({
   slug: "lp-treatment-kerala-ru",
@@ -28,7 +29,7 @@ export default defineCopy({
     secondary: "Задать вопрос",
   },
   programDefault: "",
-  doctors: ["deepu-john"],
+  doctors: ["deepu-john", "rahul-r", "akhila-oommen", "adhina-ub", "aashitha-ps"],
   page: {
     lead: {
       heading: "Начните со своих вопросов и потребностей",
@@ -75,6 +76,18 @@ export default defineCopy({
         "Сообщите заранее о пищевых ограничениях, потребности в помощи или особенностях передвижения. Если с вами едет сопровождающий, обсудите размещение и необходимые условия до бронирования. Команда подтвердит доступные варианты и стоимость.",
       ],
     },
+    // Owner decision 11 (14 Oct 2026, AHV-WB.541): the existing consented English films, shown as English-language films
+    // (no Russian-subtitled film exists yet; subtitle request to the video owner is tracked separately). Same three films as
+    // the English sibling /lp/treatment-in-kerala/; YouTube links only (the on-page player stays English-route only).
+    stories: {
+      heading: "Деревня и опыт пациентов в видео",
+      body: "Эти видео на английском языке. Посмотрите день в деревне, фильм о панчакарме и рассказ Михаэлы и Яна о пребывании. Индивидуальный опыт может отличаться.",
+      films: [
+        story("iPARaMRASUs", "День в деревне (видео на английском)"),
+        story("4x01PtWfNnk", "Рассказ Михаэлы и Яна (видео на английском)"),
+        story("07tVC2oXd8g", "Фильм о панчакарме (видео на английском)"),
+      ],
+    },
     stay: {
       heading: "Планируйте пребывание с понятным предложением",
       paragraphs: ["Сначала обсудите с врачом подходящую программу, рекомендуемую продолжительность и возможную подготовку. Затем запросите индивидуальное предложение для вашей программы, продолжительности пребывания и выбранного размещения."],
@@ -82,10 +95,9 @@ export default defineCopy({
         { heading: "Уточните, что включено", items: ["Проживание в выбранной вилле", "Приёмы врача", "Назначенные процедуры", "Питание и занятия"] },
         { heading: "Попросите отдельно объяснить возможные расходы", items: ["Лекарства", "Обследования", "Дополнительные процедуры", "Трансфер", "Личные услуги"], extra: true },
       ],
-      after: ["Первичная консультация врача бесплатна. Предложение на пребывание должно ясно описывать лечение, включённые и дополнительные услуги, в том числе последующие, и их стоимость."],
     },
     doctors: {
-      heading: "Ваш аюрведический врач",
+      heading: "Ваши аюрведические врачи",
       intro: "Аюрведические врачи оценивают ваши потребности, составляют план лечения и следят за его ходом во время пребывания. При обращении уточните доступность врача для консультации.",
     },
     faqHeading: "Часто задаваемые вопросы",

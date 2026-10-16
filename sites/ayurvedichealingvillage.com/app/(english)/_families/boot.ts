@@ -1,10 +1,14 @@
+import { applyStaffExperienceDom } from './staff-experience.mjs';
+import { repairArticleContactHeading } from "./article-contact-heading.mjs";
+import { repairArticleOutline } from "./article-heading-outline.mjs";
 import { treatmentHeadingLevels } from "./treatment-heading-levels.mjs";
 import { restoreReviewedHead } from "./localized-title.mjs";
 import { repairFaqTopicTargets } from './faq-topic-targets.mjs';
 import { orderedRuntimeScripts } from './runtime-script-order.mjs';
 import { removeHomeVillaRates } from './home-villa-rates.mjs';
+import { removeCampaignPriceNotes } from './campaign-price-notes.mjs';
 import {offersFlow} from './offers-flow.mjs';
-import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, monsoonRuntimeMedia } from "./critical-media.mjs";
+import { phoneCriticalMedia, descriptiveAwardLinks, villaImageAttributes, monsoonRuntimeMedia, retreatRuntimeMedia } from "./critical-media.mjs";
 import { formPostSafety } from "./form-post-safety.mjs";
 import {
   EAGER_SLOTS,
@@ -72,6 +76,8 @@ import IMAGE_ALIASES from "../../../english-candidate/image-aliases.json";
 
 export interface BootConfig {
   reviewedLocaleTitle?: string;
+  reviewedDescription?: string;
+  reviewedShareDescription?: string;
   reviewedLocaleCanonical?: string;
   bookingCopy?: {old: string; new: string};
   contentReviewCopy?: Array<{old: string; new: string; kind: string}>;
@@ -172,6 +178,7 @@ export const BOOT_SCRIPT = `
     if (!reviewByKey.has(key)) reviewByKey.set(key, e.new);
   });
   function applyContentReview(root) {
+    (${applyStaffExperienceDom.toString()})(root, cfg.contentReviewCopy);
     if (!cfg.contentReviewCopy || cfg.path === "/villa-raag/") return;
     function normal(s) { return (s || "").replace(/\\s+/g, " ").trim(); }
     function changeText(n) {
@@ -846,7 +853,20 @@ export const BOOT_SCRIPT = `
       else i = (i + (e.key === "ArrowDown" ? 1 : -1) + links.length) % links.length;
       links[i].focus();
     });
-    wrap.addEventListener("focusout", function (e) { if (!wrap.contains(e.relatedTarget)) close(false); });
+    // Safari (iOS and macOS) never focuses a link on tap/click: pressing an
+    // option blurs the focused current option with relatedTarget null, BEFORE
+    // the click. Closing then hid the list under the finger, so the click hit
+    // the page beneath and no language change happened (owner report,
+    // 14 Oct 2026: inner pages and every locale homepage on iOS). A press
+    // inside the switcher keeps it open for its own click; a real focus move
+    // elsewhere (Tab) or a press outside still closes it.
+    var pressInside = false;
+    document.addEventListener("pointerdown", function (e) { pressInside = wrap.contains(e.target); }, true);
+    wrap.addEventListener("focusout", function (e) {
+      if (wrap.contains(e.relatedTarget)) return;
+      if (!e.relatedTarget && pressInside) return;
+      close(false);
+    });
     document.addEventListener("click", function (e) { if (!wrap.contains(e.target)) close(false); });
     wrap.appendChild(btn);
     wrap.appendChild(list);
@@ -929,6 +949,12 @@ export const BOOT_SCRIPT = `
     if (formLifted) return;
     var form = host.querySelector("form[id]");
     if (!form) return;
+    // A server snapshot's form is never moved. The first sweep runs before the live view exists, so
+    // this lift used to reach only the snapshot copy and then stop (formLifted): the snapshot jumped
+    // its form above the intro on screen, and the live view then replaced it in the approved order —
+    // a full-screen layout shift (CLS 0.44 on the package pages, every locale) for a placement that
+    // never survived the swap. Marking it done here keeps every page's final order exactly as before.
+    if (form.closest("[data-ahv-snapshot]")) { formLifted = true; return; }
     var column = form.parentElement;
     if (!column || column.children.length < 2) return;
     // Keep the skip link first so it still precedes what it targets; the form
@@ -1004,6 +1030,7 @@ export const BOOT_SCRIPT = `
   var hpHidden = 0;
   function sweepHoneypots(tries) {
     hideHoneypots(host);
+    (${repairArticleOutline.toString()})(host, cfg.path, (${repairArticleContactHeading.toString()}));
     repairEmailLinks(host);
     upgradeLanguageControls(host);
     applyConsent();
@@ -1053,6 +1080,7 @@ export const BOOT_SCRIPT = `
         aliasImages(node);
         startIstClock(node);
         hideHoneypots(node);
+        (${repairArticleOutline.toString()})(node, cfg.path, (${repairArticleContactHeading.toString()}));
         repairEmailLinks(node);
         upgradeLanguageControls(node);
         retargetSelfLinks(node);
@@ -1125,7 +1153,7 @@ export const BOOT_SCRIPT = `
   function enforceStagingHead() {
     governedWins("title");
     governedWins('link[rel="canonical"]');
-    (${restoreReviewedHead.toString()})(document, cfg.reviewedLocaleTitle, cfg.reviewedLocaleCanonical);
+    (${restoreReviewedHead.toString()})(document, cfg.reviewedLocaleTitle, cfg.reviewedLocaleCanonical, cfg.reviewedDescription, cfg.reviewedShareDescription);
     governedWins('meta[name="description"]');
     // og:* and twitter:* are many slots, so they dedupe per property name.
     var tagged = document.head.querySelectorAll('meta[property^="og:"], meta[name^="twitter:"]');
@@ -1293,7 +1321,9 @@ export const BOOT_SCRIPT = `
       host.insertBefore(document.createElement("x-dc"), host.firstChild);
       // lazyImgFirst: loading="lazy" ahead of src in every template <img> (media-loading.mjs, P1a).
       view.template = (${removeHomeVillaRates.toString()})(view.template, cfg.path);
+      view.template = (${removeCampaignPriceNotes.toString()})(view.template, cfg.path);
       view.template = (${treatmentHeadingLevels.toString()})(view.template, cfg.path, view.variant);
+      if (narrow && ["/all-programs/", "/wellness-programs/", "/yoga-meditation-programs/"].includes(cfg.path) && view.logic) view.logic = (${phoneCriticalMedia.toString()})(view.logic, cfg.path);
       pendingTemplate = (${lazyImgFirst.toString()})((${formPostSafety.toString()})((${descriptiveAwardLinks.toString()})(narrow ? (${phoneCriticalMedia.toString()})((${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path) : (${offersFlow.toString()})(view.template,cfg.path,cfg.locale ? cfg.locale.code : "en"), cfg.path)));
       host.setAttribute("data-ahv-view", view.id);
       host.setAttribute("data-ahv-variant", view.variant);
@@ -1320,7 +1350,7 @@ export const BOOT_SCRIPT = `
         s.src = entry.src;
         if (entry.view) s.setAttribute("data-ahv-view", entry.view);
         s.async = false; // keeps classic-script execution in insertion order
-        s.onload = function () { if (entry.src.endsWith("/article-family-data.js")) (${monsoonRuntimeMedia.toString()})(window, cfg.path); honeypotDatasetCache = new WeakMap(); hideHoneypots(host); };
+        s.onload = function () { if (entry.src.endsWith("/article-family-data.js")) (${monsoonRuntimeMedia.toString()})(window, cfg.path); if (/(?:ananda-retreat|past-retreats)-data[.]js$/.test(entry.src)) (${retreatRuntimeMedia.toString()})(window, cfg.path, (${phoneCriticalMedia.toString()})); honeypotDatasetCache = new WeakMap(); hideHoneypots(host); };
         s.onerror = function () { fail(new Error("script " + entry.src)); };
         host.appendChild(s);
       });

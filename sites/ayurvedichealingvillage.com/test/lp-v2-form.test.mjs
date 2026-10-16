@@ -30,11 +30,15 @@ test("DEFAULT_FORM reproduces the canvas Form-Flow: 3 steps, fields in order", (
   assert.equal(S.marketingOptIn, true);
 });
 
-test("months: the next six from today, then Flexible", () => {
+test("months: six from the current month (AHV-WB.020.current-month), then Flexible", () => {
   const m = monthOptions({ locale: "en", now: NOW });
   assert.equal(m.length, 7);
-  assert.deepEqual(m[0], { value: "2026-11", label: "November 2026" });
-  assert.equal(m[5].value, "2027-04");
+  assert.deepEqual(m[0], { value: "2026-10", label: "October 2026" });
+  assert.deepEqual(m[1], { value: "2026-11", label: "November 2026" });
+  assert.equal(m[5].value, "2027-03");
+  // Last day of a month (UTC) still starts at that month; December rolls into the next year.
+  assert.equal(monthOptions({ locale: "en", now: new Date(Date.UTC(2026, 9, 31, 23, 59)) })[0].value, "2026-10");
+  assert.deepEqual(monthOptions({ locale: "en", now: new Date(Date.UTC(2026, 11, 15)) }).slice(0, 2).map((o) => o.value), ["2026-12", "2027-01"]);
   assert.deepEqual(m[6], { value: "flexible", label: "Flexible" });
   assert.doesNotThrow(() => monthOptions({ locale: "not a locale!!", now: NOW }));
 });

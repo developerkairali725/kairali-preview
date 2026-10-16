@@ -186,7 +186,9 @@ export const CONSENT_RUNTIME = `
   }
   function recordAcceptedLead(form, token) {
     // Careers are applications, not the Ads EnquirySubmission conversion.
-    if (["contact", "enquiry-form", "online-consultation", "opd", "landing-page"].indexOf(form) === -1) return false;
+    // Exit-intent offer leads count as enquiries (owner approval for HARD GATE 11, 14/15 Oct 2026, direct chat): the
+    // same consented event, no new tag.
+    if (["contact", "enquiry-form", "online-consultation", "opd", "landing-page", "exit-intent"].indexOf(form) === -1) return false;
     if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(String(token || ""))) return false;
     if (consentChoice() !== "accepted" || !measurementStarted || !cfg.measurement || !measurementUrlSafe()) return false;
     var key = "ktahv-accepted-lead-events-v1";
@@ -228,13 +230,18 @@ export const CONSENT_RUNTIME = `
     });
     // Retain the paid visit across programme navigation only after consent,
     // for this tab/session and for at most 30 minutes. Never persist private URLs.
+    // Owner decision 38 (15 Oct 2026, AHV-LATER-023.01): the FIRST campaign of the visit is carried through it, so a later
+    // enquiry on another page (or after another ad click) records the original campaign. The visit ends after 30 minutes
+    // without a page reading it, or with the tab. Same consent gate, same key and values; payload fields only, no new tag.
     if (!consentPreferences || !consentPreferences.advertising) return current;
     try {
-      var key = "ahv-paid-attribution-v1", previous = JSON.parse(sessionStorage.getItem(key) || "null");
-      if (Object.keys(current).length) sessionStorage.setItem(key, JSON.stringify({at:Date.now(),values:current}));
-      else if (previous && Date.now()-previous.at >= 0 && Date.now()-previous.at < 1800000) {
-        allowed.forEach(function (name) {var value=previous.values && previous.values[name];if(typeof value === "string" && attributionValueSafe(name,value)) current[name]=value;});
-      } else sessionStorage.removeItem(key);
+      var key = "ahv-paid-attribution-v1", previous = JSON.parse(sessionStorage.getItem(key) || "null"), now = Date.now(), first = {};
+      if (previous && now-previous.at >= 0 && now-previous.at < 1800000) {
+        allowed.forEach(function (name) {var value=previous.values && previous.values[name];if(typeof value === "string" && attributionValueSafe(name,value)) first[name]=value;});
+      }
+      if (Object.keys(first).length) current = first;
+      if (Object.keys(current).length) sessionStorage.setItem(key, JSON.stringify({at:now,values:current}));
+      else sessionStorage.removeItem(key);
     } catch(e) {}
     return current;
   }

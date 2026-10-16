@@ -1,0 +1,836 @@
+{
+ "train": "J1",
+ "base": "00e944e4440c4b1710bffc29cc7c2bea8b385fdc",
+ "branch": "codex/ahv-train-j1-20261015",
+ "note": "Train J batch 1 source delta on the Train I head: per file the exact replacements (applied last to first, each 'after' occurring exactly once) restore the Train I bytes. 'generated' records the git-ignored locale review chrome the l10n build regenerates (route map lost the retired /the-baoli-special-deal/ entry); base bytes are the Train I worktree's build.",
+ "files": {
+  "campaign-v2/production/document.css": {
+   "beforeSHA256": "33ba8479e74c7b20a97c05e8111bb9b26a5a47ea4f49ae9d31a67027681b26d6",
+   "afterSHA256": "2b16bc0267e54f9a937dd067dc09f88e659cd4a8c7bf99c7d0db40b66f2eb1e5",
+   "replacements": [
+    {
+     "row": "AHV-LATER-041.01 + AHV-LATER-053.01",
+     "before": "ode { grid-column: 1; }\n.lp-prod .lp-enq__fields",
+     "after": "ode { grid-column: 1; }\n/* AHV-LATER-041.01: the number sits in column 2 only beside a country-code field; forms that ask for the number with its\n   code in one field (A, C and D enquiry forms) keep it full width, aligned with the fields above it. */\n.lp-prod .lp-enq__fields"
+    },
+    {
+     "row": "AHV-LATER-041.01 + AHV-LATER-053.01",
+     "before": "--enquiry > .lp-enq__field--name-ph",
+     "after": "--enquiry > .lp-enq__field--name-dialCode + .lp-enq__field--name-ph"
+    },
+    {
+     "row": "AHV-LATER-041.01 + AHV-LATER-053.01",
+     "before": "color: var(--lp-muted); }\n\n/* ── Place: the kit'",
+     "after": "color: var(--lp-muted); }\n/* AHV-LATER-053.01: from 768px Variant C sets the steps in its third column; below 1024px that column is too narrow for\n   the 48px numeral column beside the step text (6px document overflow at 768). There the numeral sits above its step. */\n@media (min-width: 768px) and (max-width: 1023px) {\n  .lp-prod[data-variant=\"C\"] .lp-adm__step { grid-template-columns: minmax(0, 1fr); gap: 6px; }\n}\n\n/* ── Place: the kit'"
+    }
+   ]
+  },
+  "campaign-v2/production/production.css": {
+   "beforeSHA256": "2247dae62086b8287dac4e70c691d1fe184c655e9e81b3ade06460ad7b4effa9",
+   "afterSHA256": "5842bc7a6d2d223ee7807a75639f8b77c9f6cb431e39c3bb26b485f9845f6a0e",
+   "replacements": [
+    {
+     "row": "AHV-LATER-041.01 + AHV-LATER-053.01",
+     "before": "ode { grid-column: 1; }\n.lp-prod .lp-enq__fields",
+     "after": "ode { grid-column: 1; }\n/* AHV-LATER-041.01: the number sits in column 2 only beside a country-code field; forms that ask for the number with its\n   code in one field (A, C and D enquiry forms) keep it full width, aligned with the fields above it. */\n.lp-prod .lp-enq__fields"
+    },
+    {
+     "row": "AHV-LATER-041.01 + AHV-LATER-053.01",
+     "before": "--enquiry > .lp-enq__field--name-ph",
+     "after": "--enquiry > .lp-enq__field--name-dialCode + .lp-enq__field--name-ph"
+    },
+    {
+     "row": "AHV-LATER-041.01 + AHV-LATER-053.01",
+     "before": "color: var(--lp-muted); }\n\n/* ── Place: the kit'",
+     "after": "color: var(--lp-muted); }\n/* AHV-LATER-053.01: from 768px Variant C sets the steps in its third column; below 1024px that column is too narrow for\n   the 48px numeral column beside the step text (6px document overflow at 768). There the numeral sits above its step. */\n@media (min-width: 768px) and (max-width: 1023px) {\n  .lp-prod[data-variant=\"C\"] .lp-adm__step { grid-template-columns: minmax(0, 1fr); gap: 6px; }\n}\n\n/* ── Place: the kit'"
+    }
+   ]
+  },
+  "english-candidate/prerender/ayurveda-training-programme.html": {
+   "beforeSHA256": "3a1be63e094fb55ae43c8d8f58e7325505a906d9bbb025a0aed48f0dd1397690",
+   "afterSHA256": "28e773c4bc14b3b028efe9e97041f5d168e9677852800d128178ecf4aaf10124",
+   "replacements": [
+    {
+     "row": "AHV-M021.02",
+     "before": "hen you enquire.</p>\n  <ul data-dc-tpl=\"82\" styl",
+     "after": "hen you enquire.</p>\n  <div role=\"group\" aria-label=\"Duration\" data-ahv-course-duration=\"\" style=\"display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 0px 0px 18px;\"><span style=\"font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgb(143, 98, 18); flex: none;\">Duration</span><button type=\"button\" aria-pressed=\"true\" style=\"font-family: Mulish, sans-serif; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-sizing: border-box; padding: 0px 16px; border-radius: 4px; font-weight: 700; white-space: nowrap; flex: none; min-height: 44px; font-size: 15px; border: 1.5px solid rgb(90, 68, 32); background: rgb(90, 68, 32); color: rgb(247, 244, 234);\">Any</button><button type=\"button\" aria-pressed=\"false\" style=\"font-family: Mulish, sans-serif; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-sizing: border-box; padding: 0px 16px; border-radius: 4px; font-weight: 700; white-space: nowrap; flex: none; min-height: 44px; font-size: 15px; border: 1.5px solid rgb(201, 191, 168); background: rgb(255, 255, 255); color: rgb(42, 33, 24);\">Up to 7 nights</button><button type=\"button\" aria-pressed=\"false\" style=\"font-family: Mulish, sans-serif; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-sizing: border-box; padding: 0px 16px; border-radius: 4px; font-weight: 700; white-space: nowrap; flex: none; min-height: 44px; font-size: 15px; border: 1.5px solid rgb(201, 191, 168); background: rgb(255, 255, 255); color: rgb(42, 33, 24);\">10 nights</button><button type=\"button\" aria-pressed=\"false\" style=\"font-family: Mulish, sans-serif; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-sizing: border-box; padding: 0px 16px; border-radius: 4px; font-weight: 700; white-space: nowrap; flex: none; min-height: 44px; font-size: 15px; border: 1.5px solid rgb(201, 191, 168); background: rgb(255, 255, 255); color: rgb(42, 33, 24);\">20 nights</button></div>\n  <ul data-dc-tpl=\"82\" styl"
+    }
+   ]
+  },
+  "english-candidate/prerender/ayurveda-treatment.html": {
+   "beforeSHA256": "a1fdfc453cdbb3a0c96fbb3ac53a2eb87f096dfa9b7f628d529bafb2cf08ce37",
+   "afterSHA256": "ec32acd7cd79dbfc4ee3109fd9eb83e297c3ecdab4e9faee20c088151374d96d",
+   "replacements": [
+    {
+     "row": "AHV-I04.M054.links",
+     "before": " 156</a></h4></section>\n\n\n\n\n\n\n\n  <section data-d",
+     "after": " 156</a></h4></section>\n      <section data-dc-tpl=\"202\" data-source-component=\"contextual-resources\" style=\"width: min(1220px, 94%); margin: 0px auto; padding: 14px 0px; min-width: 0px;\"><h2 style=\"font-family: Marcellus, serif; font-weight: 400; line-height: 1.22; margin: 26px 0px 10px; font-size: clamp(24px, 2.4vw, 32px);\">Explore related resources</h2><ul data-list-depth=\"0\" style=\"margin: 0px 0px 16px; padding-left: 24px; display: flex; flex-direction: column; gap: 8px; max-width: 76ch; list-style-type: disc;\"><li style=\"font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"/ayurvedic-treatments/\" data-source-href=\"/ayurvedic-treatments/\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">Ayurvedic treatment programmes</a></li><li style=\"font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"/panchakarma-therapy/\" data-source-href=\"/panchakarma-therapy/\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">Panchakarma treatment programme</a></li><li style=\"font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"/online-consultation/\" data-source-href=\"/online-consultation/\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">Speak with an Ayurvedic physician</a></li></ul></section>\n\n\n\n\n\n\n\n  <section data-d"
+    }
+   ]
+  },
+  "english-candidate/prerender/ayurveda-workshop.html": {
+   "beforeSHA256": "3c222202da67c4ef59c2bcc77a445cfec1aa5c5ac090278ba079f51cb0da5650",
+   "afterSHA256": "e11b4a58f331a5d84bc993010dab8f5c439849d7e189d0457f4c777c3047a421",
+   "replacements": [
+    {
+     "row": "AHV-M077.01",
+     "before": "pan></h1>\n  </section>\n\n\n\n      <section data-dc",
+     "after": "pan></h1>\n  </section>\n\n      <section data-dc-tpl=\"202\" data-source-component=\"past-event-notice\" style=\"width: min(1220px, 94%); margin: 0px auto; padding: 14px 0px; min-width: 0px;\"><p data-ahv-past-status=\"\" style=\"margin: 8px 0px 0px; display: inline-flex; align-items: center; min-height: 40px; padding: 0px 16px; border: 1px solid rgb(90, 68, 32); border-radius: 4px; font-family: Mulish, sans-serif; font-weight: 700; font-size: 14.5px; letter-spacing: 1.2px; text-transform: uppercase; color: rgb(90, 68, 32);\">Past Retreat</p><p data-ahv-past-notice=\"\" role=\"note\" style=\"margin: 16px 0px 0px; padding: 14px 18px; background: rgb(244, 240, 228); border-left: 4px solid rgb(90, 68, 32); font-size: 16.5px; line-height: 1.7; max-width: 78ch; text-wrap: pretty; overflow-wrap: anywhere;\">Past retreat — preserved for historical reference. The event year has not been verified.</p></section>\n\n\n\n      <section data-dc"
+    }
+   ]
+  },
+  "english-candidate/prerender/learn-about-ayurveda.html": {
+   "beforeSHA256": "c31083b051c5b78ac9ac11b43fa03adbf4e8461a484e10b0da009ba953bbecbe",
+   "afterSHA256": "5726f4c12f0a98421b2493d871aece0ea00a5e54d87b3f656691d1856ed4f3ee",
+   "replacements": [
+    {
+     "row": "AHV-I04.M056.links",
+     "before": "nd Dutch.</p></section>\n\n\n\n\n\n\n\n  <section data-d",
+     "after": "nd Dutch.</p></section>\n      <section data-dc-tpl=\"202\" data-source-component=\"contextual-resources\" style=\"width: min(1220px, 94%); margin: 0px auto; padding: 14px 0px; min-width: 0px;\"><h2 style=\"font-family: Marcellus, serif; font-weight: 400; line-height: 1.22; margin: 26px 0px 10px; font-size: clamp(24px, 2.4vw, 32px);\">Explore related resources</h2><ul data-list-depth=\"0\" style=\"margin: 0px 0px 16px; padding-left: 24px; display: flex; flex-direction: column; gap: 8px; max-width: 76ch; list-style-type: disc;\"><li style=\"font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"/ayurvedic-treatments/\" data-source-href=\"/ayurvedic-treatments/\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">Ayurvedic treatment programmes</a></li><li style=\"font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"/panchakarma-therapy/\" data-source-href=\"/panchakarma-therapy/\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">Panchakarma treatment programme</a></li><li style=\"font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"/online-consultation/\" data-source-href=\"/online-consultation/\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">Speak with an Ayurvedic physician</a></li></ul></section>\n\n\n\n\n\n\n\n  <section data-d"
+    }
+   ]
+  },
+  "english-candidate/prerender/meditation.html": {
+   "beforeSHA256": "e6bbcb374005af87f50b238c555d82bc72ff858224589dac687034e90bc9fd47",
+   "afterSHA256": "5e98eda99815204c192c216b5a0628a3a1777e75105d0faff9b5240bc1130520",
+   "replacements": [
+    {
+     "row": "AHV-I04.M059.links",
+     "before": "on today!</p></section>\n\n\n\n\n\n\n  <section data-dc",
+     "after": "on today!</p></section>\n      <section data-dc-tpl=\"218\" data-source-component=\"contextual-resources\" style=\"width: min(1220px, 94%); margin: 0px auto; padding: 14px 0px; min-width: 0px;\"><h2 style=\"font-family: Marcellus, serif; font-weight: 400; line-height: 1.22; margin: 26px 0px 10px; font-size: clamp(24px, 2.4vw, 32px);\">Explore related resources</h2><ul data-list-depth=\"0\" style=\"margin: 0px 0px 16px; padding-left: 24px; display: flex; flex-direction: column; gap: 8px; max-width: 76ch; list-style-type: disc;\"><li style=\"font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"/yoga-classes-theory/\" data-source-href=\"/yoga-classes-theory/\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">Yoga theory at Kairali</a></li><li style=\"font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"/yoga-classes-practical/\" data-source-href=\"/yoga-classes-practical/\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">Practical yoga classes</a></li><li style=\"font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"/yoga-meditation-training/\" data-source-href=\"/yoga-meditation-training/\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">Yoga and meditation programme</a></li></ul></section>\n\n\n\n\n\n\n  <section data-dc"
+    }
+   ]
+  },
+  "english-candidate/prerender/panchakarma.html": {
+   "beforeSHA256": "fe03aa11ced119ab8564fbe2376a0432621dd9a8f48d76cdb1ae25174233c9e2",
+   "afterSHA256": "db220664ce7022addc8e77fb62633f91a3e60c4c4744ad037b39e1e4c509254a",
+   "replacements": [
+    {
+     "row": "AHV-M004.01 + AHV-M004.03",
+     "before": "’s easy to see why.</p><h2 data-source-pointer=\"",
+     "after": "’s easy to see why.</p><div style=\"margin: 0px 0px 14px; max-width: 580px; min-width: 0px;\"><div style=\"min-width: 0px;\"><img alt=\"Two Kairali therapists performing a synchronised Abhyanga oil massage on a seated patient\" width=\"580\" height=\"387\" fetchpriority=\"low\" loading=\"lazy\" src=\"/ahv/assets/img/Preventive-About-Abhyanga.webp\" style=\"display: block; width: 100%; max-width: 580px; height: auto; border-radius: 4px;\"></div></div></section>\n      <section data-dc-tpl=\"218\" data-source-component=\"on-this-page\" style=\"width: min(1220px, 94%); margin: 0px auto; padding: 14px 0px; min-width: 0px;\"><h2 style=\"font-family: Marcellus, serif; font-weight: 400; line-height: 1.22; margin: 26px 0px 10px; font-size: clamp(24px, 2.4vw, 32px);\">On this page</h2><ul data-list-depth=\"0\" style=\"margin: 0px 0px 16px; padding-left: 24px; display: flex; flex-direction: column; gap: 8px; max-width: 76ch; list-style-type: disc;\"><li style=\"font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"#what-is-panchakarma\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">What is Panchakarma?</a></li><li style=\"font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"#vamanam\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">Vamanam</a></li><li style=\"font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"#virechanam\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">Virechanam</a></li><li style=\"font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"#vasti\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">Vasti</a></li><li style=\"font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"#nasyam\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">Nasyam</a></li><li style=\"font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"#raktamokshana\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">Raktamokshana</a></li></ul></section>\n      <section data-dc-tpl=\"218\" data-source-component=\"what-is-panchakarma\" style=\"width: min(1220px, 94%); margin: 0px auto; padding: 14px 0px; min-width: 0px;\"><h2 data-source-pointer=\""
+    },
+    {
+     "row": "AHV-M004.01 + AHV-M004.03",
+     "before": "lamp(24px, 2.4vw, 32px);\">",
+     "after": "lamp(24px, 2.4vw, 32px); scroll-margin-top: 96px;\" id=\"what-is-panchakarma\">"
+    },
+    {
+     "row": "AHV-M004.01 + AHV-M004.03",
+     "before": "WHAT IS PANCHAKARMA?</h2><p data-source-poi",
+     "after": "What is Panchakarma?</h2><p data-source-poi"
+    },
+    {
+     "row": "AHV-M004.01 + AHV-M004.03",
+     "before": "ta, Pitta, and Kapha.</p><p data-source-pointer=",
+     "after": "ta, Pitta, and Kapha.</p></section>\n      <section data-dc-tpl=\"218\" data-source-component=\"the-five-therapies\" style=\"width: min(1220px, 94%); margin: 0px auto; padding: 14px 0px; min-width: 0px;\"><h3 style=\"font-family: Marcellus, serif; font-weight: 400; line-height: 1.22; margin: 26px 0px 10px; font-size: 23px; scroll-margin-top: 96px;\" id=\"vamanam\">Vamanam</h3><p data-source-pointer="
+    },
+    {
+     "row": "AHV-M004.01 + AHV-M004.03",
+     "before": "es such as psoriasis.</p><p data-source-pointer=",
+     "after": "es such as psoriasis.</p><h3 style=\"font-family: Marcellus, serif; font-weight: 400; line-height: 1.22; margin: 26px 0px 10px; font-size: 23px; scroll-margin-top: 96px;\" id=\"virechanam\">Virechanam</h3><p data-source-pointer="
+    },
+    {
+     "row": "AHV-M004.01 + AHV-M004.03",
+     "before": "ius: 4px;\"></div></div><p data-source-pointer=\"/",
+     "after": "ius: 4px;\"></div></div><h3 style=\"font-family: Marcellus, serif; font-weight: 400; line-height: 1.22; margin: 26px 0px 10px; font-size: 23px; scroll-margin-top: 96px;\" id=\"vasti\">Vasti</h3><p data-source-pointer=\"/"
+    },
+    {
+     "row": "AHV-M004.01 + AHV-M004.03",
+     "before": " is suitable for you.</p><p data-source-pointer=",
+     "after": " is suitable for you.</p><h3 style=\"font-family: Marcellus, serif; font-weight: 400; line-height: 1.22; margin: 26px 0px 10px; font-size: 23px; scroll-margin-top: 96px;\" id=\"nasyam\">Nasyam</h3><p data-source-pointer="
+    },
+    {
+     "row": "AHV-M004.01 + AHV-M004.03",
+     "before": "ated in the nostrils.</p><p data-source-pointer=",
+     "after": "ated in the nostrils.</p><div style=\"margin: 0px 0px 14px; max-width: 580px; min-width: 0px;\"><div style=\"min-width: 0px;\"><img alt=\"Therapist administering Nasyam nasal therapy to a patient during Panchakarma treatment\" width=\"580\" height=\"386\" fetchpriority=\"low\" loading=\"lazy\" src=\"/ahv/assets/img/Your-Ayurvedic-Treatment-for-Bronchial-Diseases.webp\" style=\"display: block; width: 100%; max-width: 580px; height: auto; border-radius: 4px;\"></div></div><h3 style=\"font-family: Marcellus, serif; font-weight: 400; line-height: 1.22; margin: 26px 0px 10px; font-size: 23px; scroll-margin-top: 96px;\" id=\"raktamokshana\">Raktamokshana</h3><p data-source-pointer="
+    }
+   ]
+  },
+  "english-candidate/prerender/revitalizing-and-strengthening.html": {
+   "beforeSHA256": "55c3d17936195a07a80ee6fb3085d20a56ee0ac6ff82944c8719152698e67ed4",
+   "afterSHA256": "f02af10de05398bbea40e70fb9172eede6b5133301d049e5a3285ac49f65ff8c",
+   "replacements": [
+    {
+     "row": "AHV-M005.02",
+     "before": "cer treatment.</p>\n    <a data-dc-tpl=\"99\" href=",
+     "after": "cer treatment.</p>\n    <p data-approved-merger=\"care-approach\" style=\"margin: 0px 0px 18px; max-width: 64ch;\">Our holistic approach places comfort, emotional wellbeing and individual care needs at the centre of the experience.</p>\n    <p data-approved-merger=\"care-approach\" style=\"margin: 0px 0px 18px; max-width: 64ch;\">We focus on supporting quality of life through compassionate care that considers physical comfort and emotional wellbeing.</p>\n    <p data-approved-merger=\"care-approach\" style=\"margin: 0px 0px 18px; max-width: 64ch;\">Ayurvedic therapies aim to restore the balance of the doshas in the body.</p>\n    <a data-dc-tpl=\"99\" href="
+    }
+   ]
+  },
+  "english-candidate/prerender/the-baoli-advert-box-deal.html": {
+   "beforeSHA256": "9f8711c5da3caea1c0bc4295836d7326b7a4e155ac689bcebcc229dd0bdace76",
+   "afterSHA256": "d11acb8fe3b118f3c0eb278173191fa589a2b6ff0ede4f225a3b86714c877d52",
+   "replacements": [
+    {
+     "row": "AHV-M016.01",
+     "before": "ata-dc-tpl=\"238\" href=\"/offers/\" style=\"display: inlin",
+     "after": "ata-dc-tpl=\"238\" href=\"/archive/\" style=\"display: inlin"
+    },
+    {
+     "row": "AHV-M016.01",
+     "before": "\" data-ahv-floored=\"15\">Offers</a><span data-dc-tpl=\"",
+     "after": "\" data-ahv-floored=\"15\">Past retreats &amp; events</a><span data-dc-tpl=\""
+    }
+   ]
+  },
+  "english-candidate/prerender/what-is-yoga.html": {
+   "beforeSHA256": "d386115264918915a10fc9446119397865f3c6f016fe395b345d1565996cb05a",
+   "afterSHA256": "8ae856368fe9e26a9fd29a73c11140e2637cd2e8dd2c880fadc26b334b52e5b3",
+   "replacements": [
+    {
+     "row": "AHV-I04.M065.links",
+     "before": "away now!</p></section>\n\n\n\n\n\n  <section data-dc-",
+     "after": "away now!</p></section>\n      <section data-dc-tpl=\"232\" data-source-component=\"contextual-resources\" style=\"width: min(1220px, 94%); margin: 0px auto; padding: 14px 0px; min-width: 0px;\"><h2 style=\"font-family: Marcellus, serif; font-weight: 400; line-height: 1.22; margin: 26px 0px 10px; font-size: clamp(24px, 2.4vw, 32px);\">Explore related resources</h2><ul data-list-depth=\"0\" style=\"margin: 0px 0px 16px; padding-left: 24px; display: flex; flex-direction: column; gap: 8px; max-width: 76ch; list-style-type: disc;\"><li style=\"font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"/yoga-meditation-programs/\" data-source-href=\"/yoga-meditation-programs/\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">Yoga programmes</a></li><li style=\"font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"/yoga-classes-practical/\" data-source-href=\"/yoga-classes-practical/\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">Practical yoga classes</a></li><li style=\"font-size: 17.5px; line-height: 1.75; text-wrap: pretty;\"><a href=\"/yoga-classes-theory/\" data-source-href=\"/yoga-classes-theory/\" style=\"text-underline-offset: 2px; overflow-wrap: anywhere;\">Yoga theory</a></li></ul></section>\n\n\n\n\n\n  <section data-dc-"
+    }
+   ]
+  },
+  "english-candidate/redirect-map.json": {
+   "beforeSHA256": "4937f34efcee1f41ee7c357bc41b8221c20a860496a9b170449b6a103eabcde7",
+   "afterSHA256": "3ad58bc56ff61765ccca5cfa2577e68ae57302b6834287131dc59e3364f0204f",
+   "replacements": [
+    {
+     "row": "AHV-M016.02",
+     "before": "1a3ead4fe5c267451\"\n    }\n  },\n  \"legacyNote\": \"O",
+     "after": "1a3ead4fe5c267451\"\n    },\n    \"/the-baoli-special-deal/\": {\n      \"to\": \"/the-baoli-advert-box-deal/\",\n      \"reason\": \"M016/M017 (AHV-M016.02): owner combined the two Baoli pages ('16 and 17 combine'); the survivor is the URL with more search evidence, kept as the inactive archive/contact page. The duplicate page had only the same contact reference, so no content is lost.\",\n      \"gsc\": {\n        \"clicks\": 0,\n        \"impressions\": 16,\n        \"position\": 52.56,\n        \"basis\": \"GSC UI export 2026-07-19 Pages.csv (launches/ayurvedichealingvillage.com/baseline/raw/gsc-ui-export-2026-07-19); survivor /the-baoli-advert-box-deal/ 0 clicks, 24 impressions, position 28.79\"\n      },\n      \"ownerApproval\": \"2026-10-10 owner five answers (Sentinel_15817ab250f88191b26a3bdc9959d262, DEC-BAOLI): keep inactive Baoli as archive/contact page; 16 and 17 combine\"\n    }\n  },\n  \"legacyNote\": \"O"
+    }
+   ]
+  },
+  "english-candidate/section-nav.json": {
+   "beforeSHA256": "6676c6ef38210372c35766c120760ef7039444c33b6be109af3593f90804c79f",
+   "afterSHA256": "beac54ec020dfedee2ea685001f12dbaf3640b62ddfc69026997c0cd486d0c52",
+   "replacements": [
+    {
+     "row": "AHV-M016.01 + AHV-M016.02",
+     "before": "about-ayurveda/\"\n   ],\n   \"remove\": null\n  },\n  \"/the-baoli-advert-box-deal/\": {\n   \"section\": \"offers\",\n   \"crumbs\": [\n    \"/the-baoli-advert-box",
+     "after": "about-ayurveda/\"\n   ],\n   \"remove\": null\n  },\n  \"/the-baoli-advert-box-deal/\": {\n   \"section\": \"news\",\n   \"crumbs\": [\n    \"/the-baoli-advert-box"
+    },
+    {
+     "row": "AHV-M016.01 + AHV-M016.02",
+     "before": "-deal/\"\n   ],\n   \"remove\": {\n    \"navPrefixes\": [],\n    \"blockPrefixes\": [\n     \"/sections/3/c/1\"\n    ]\n   }\n  },\n  \"/the-baoli-special-deal/\": {\n   \"section\": \"offers\",\n   \"crumbs\": [\n    \"/the-baoli-special-deal/\"\n   ],\n   \"remove",
+     "after": "-deal/\"\n   ],\n   \"remove"
+    },
+    {
+     "row": "AHV-M016.01 + AHV-M016.02",
+     "before": "[\n    \"/learn-more-about-ayurveda/\"\n   ]\n  },\n  \"/the-baoli-advert-box-deal/\": {\n   \"section\": \"offers\",\n   \"crumbs\": [\n    \"/the-baoli-advert-box",
+     "after": "[\n    \"/learn-more-about-ayurveda/\"\n   ]\n  },\n  \"/the-baoli-advert-box-deal/\": {\n   \"section\": \"news\",\n   \"crumbs\": [\n    \"/the-baoli-advert-box"
+    },
+    {
+     "row": "AHV-M016.01 + AHV-M016.02",
+     "before": "-deal/\"\n   ]\n  },\n  \"/the-baoli-special-deal/\": {\n   \"section\": \"offers\",\n   \"crumbs\": [\n    \"/the-baoli-special-deal/\"\n   ]\n  }\n },\n \"s",
+     "after": "-deal/\"\n   ]\n  }\n },\n \"s"
+    }
+   ]
+  },
+  "english-candidate/site-tree.json": {
+   "beforeSHA256": "35c87d62cc31414a4893a71ac5362eb8efdddd6617e885de263a5c6e71e7cbfc",
+   "afterSHA256": "a927945b3898a921ef3f7f8671b76f46b44d071dc0507d3c167f2f82e403e3e9",
+   "replacements": [
+    {
+     "row": "AHV-M016.01 + AHV-M016.02",
+     "before": "eal/\": {\n   \"section\": \"offers\",\n   \"ancestors\": []\n  },\n  \"/the-baoli-special-deal/\": {\n   \"section\": \"offers\",\n   \"ancestors\": []\n ",
+     "after": "eal/\": {\n   \"section\": \"news\",\n   \"ancestors\": []\n "
+    }
+   ]
+  },
+  "l10n/routes.json": {
+   "beforeSHA256": "5ce6951b602ba1f30a56884616cb2d69bb07a7d9a5536756db27c2af822e70e2",
+   "afterSHA256": "7cb5dc38ea29a8eecd5a578426c1f22b6531b1d355d5debc03ba4d35c302705c",
+   "replacements": [
+    {
+     "row": "AHV-M016.02",
+     "before": "t-box-deal/\"\n  },\n  \"/the-baoli-special-deal/\": {\n   \"en\": \"/the-baoli-special-deal/\",\n   \"hi\": \"/hi/the-baoli-special-deal/\",\n   \"de\": \"/de/the-baoli-special-deal/\",\n   \"fr\": \"/fr/the-baoli-special-deal/\",\n   \"es\": \"/es/the-baoli-special-deal/\",\n   \"it\": \"/it/the-baoli-special-deal/\",\n   \"pt\": \"/pt/the-baoli-special-deal/\",\n   \"nl\": \"/nl/the-baoli-special-deal/\",\n   \"ru\": \"/ru/the-baoli-special-deal/\",\n   \"ar\": \"/ar/the-baoli-special-deal/\",\n   \"zh-Hans\": \"/zh/the-baoli-special-deal/\",\n   \"ja\": \"/ja/the-baoli-special-deal/\",\n   \"ko\": \"/ko/the-baoli-special-deal/\"\n  },\n  \"/things-to-do-in-kerala/\": {\n  ",
+     "after": "t-box-deal/\"\n  },\n  \"/things-to-do-in-kerala/\": {\n  "
+    },
+    {
+     "row": "AHV-M016.02",
+     "before": "treats/ → /yoga-therapy-individual/\",\n   \"clicks\": null\n",
+     "after": "treats/ → /yoga-therapy-individual/\",\n   \"clicks\": null\n  },\n  \"/hi/the-baoli-special-deal/\": {\n   \"to\": \"/hi/the-baoli-advert-box-deal/\",\n   \"basis\": \"mirrors the English protection-map 301 /the-baoli-special-deal/ → /the-baoli-advert-box-deal/\",\n   \"clicks\": null\n  },\n  \"/de/the-baoli-special-deal/\": {\n   \"to\": \"/de/the-baoli-advert-box-deal/\",\n   \"basis\": \"mirrors the English protection-map 301 /the-baoli-special-deal/ → /the-baoli-advert-box-deal/\",\n   \"clicks\": null\n  },\n  \"/fr/the-baoli-special-deal/\": {\n   \"to\": \"/fr/the-baoli-advert-box-deal/\",\n   \"basis\": \"mirrors the English protection-map 301 /the-baoli-special-deal/ → /the-baoli-advert-box-deal/\",\n   \"clicks\": null\n  },\n  \"/es/the-baoli-special-deal/\": {\n   \"to\": \"/es/the-baoli-advert-box-deal/\",\n   \"basis\": \"mirrors the English protection-map 301 /the-baoli-special-deal/ → /the-baoli-advert-box-deal/\",\n   \"clicks\": null\n  },\n  \"/it/the-baoli-special-deal/\": {\n   \"to\": \"/it/the-baoli-advert-box-deal/\",\n   \"basis\": \"mirrors the English protection-map 301 /the-baoli-special-deal/ → /the-baoli-advert-box-deal/\",\n   \"clicks\": null\n  },\n  \"/pt/the-baoli-special-deal/\": {\n   \"to\": \"/pt/the-baoli-advert-box-deal/\",\n   \"basis\": \"mirrors the English protection-map 301 /the-baoli-special-deal/ → /the-baoli-advert-box-deal/\",\n   \"clicks\": null\n  },\n  \"/nl/the-baoli-special-deal/\": {\n   \"to\": \"/nl/the-baoli-advert-box-deal/\",\n   \"basis\": \"mirrors the English protection-map 301 /the-baoli-special-deal/ → /the-baoli-advert-box-deal/\",\n   \"clicks\": null\n  },\n  \"/ru/the-baoli-special-deal/\": {\n   \"to\": \"/ru/the-baoli-advert-box-deal/\",\n   \"basis\": \"mirrors the English protection-map 301 /the-baoli-special-deal/ → /the-baoli-advert-box-deal/\",\n   \"clicks\": null\n  },\n  \"/ar/the-baoli-special-deal/\": {\n   \"to\": \"/ar/the-baoli-advert-box-deal/\",\n   \"basis\": \"mirrors the English protection-map 301 /the-baoli-special-deal/ → /the-baoli-advert-box-deal/\",\n   \"clicks\": null\n  },\n  \"/zh/the-baoli-special-deal/\": {\n   \"to\": \"/zh/the-baoli-advert-box-deal/\",\n   \"basis\": \"mirrors the English protection-map 301 /the-baoli-special-deal/ → /the-baoli-advert-box-deal/\",\n   \"clicks\": null\n  },\n  \"/ja/the-baoli-special-deal/\": {\n   \"to\": \"/ja/the-baoli-advert-box-deal/\",\n   \"basis\": \"mirrors the English protection-map 301 /the-baoli-special-deal/ → /the-baoli-advert-box-deal/\",\n   \"clicks\": null\n  },\n  \"/ko/the-baoli-special-deal/\": {\n   \"to\": \"/ko/the-baoli-advert-box-deal/\",\n   \"basis\": \"mirrors the English protection-map 301 /the-baoli-special-deal/ → /the-baoli-advert-box-deal/\",\n   \"clicks\": null\n"
+    }
+   ]
+  },
+  "public/ahv/assets/commercial-family-data.js": {
+   "beforeSHA256": "f11431646026d5209ed272f8fa5941271475ab7f1666f9a2b213aa1e0a7121da",
+   "afterSHA256": "e637265e7af3f8db605ebcc1f1b98d2510daf1ee7a6575e9f26f19e7ca9257dd",
+   "replacements": [
+    {
+     "row": "AHV-M016.01",
+     "before": "abel\":\"Home\"},{\"path\":\"/offers/\",\"label\":\"",
+     "after": "abel\":\"Home\"},{\"path\":\"/archive/\",\"label\":\""
+    },
+    {
+     "row": "AHV-M016.01",
+     "before": "Offers\"},{\"path\":\"/the-baoli-a",
+     "after": "Past retreats & events\"},{\"path\":\"/the-baoli-a"
+    },
+    {
+     "row": "AHV-M016.01",
+     "before": "m\",\"position\":2,\"name\":\"Offers\",\"item\":\"https://ayurve",
+     "after": "m\",\"position\":2,\"name\":\"Past retreats & events\",\"item\":\"https://ayurve"
+    },
+    {
+     "row": "AHV-M016.01",
+     "before": "dichealingvillage.com/offers/\"},{\"@type\":\"ListItem\",",
+     "after": "dichealingvillage.com/archive/\"},{\"@type\":\"ListItem\","
+    }
+   ]
+  },
+  "public/ahv/assets/reader25a-family-data.js": {
+   "beforeSHA256": "abaf7220a41c88e8eb6ce9cddab03ce632e590ef3cf2a44db7d995f85af4e26a",
+   "afterSHA256": "254d51634d67028cba816a1033ba6aff4e694930e52b9e4b8426cdeb51b16c97",
+   "replacements": [
+    {
+     "row": "AHV-I04.M065.links",
+     "before": "e wp-block-paragraph\"}]}],\"counts\":{\"components\"",
+     "after": "e wp-block-paragraph\"}]},{\"component\":\"contextual-resources\",\"blocks\":[{\"kind\":\"heading\",\"tag\":\"h2\",\"tree\":[{\"k\":\"t\",\"v\":\"Explore related resources\"}],\"text\":\"Explore related resources\"},{\"kind\":\"list\",\"ordered\":false,\"items\":[{\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"/yoga-meditation-programs/\"},\"c\":[{\"k\":\"t\",\"v\":\"Yoga programmes\"}]}],\"text\":\"Yoga programmes\"},{\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"/yoga-classes-practical/\"},\"c\":[{\"k\":\"t\",\"v\":\"Practical yoga classes\"}]}],\"text\":\"Practical yoga classes\"},{\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"/yoga-classes-theory/\"},\"c\":[{\"k\":\"t\",\"v\":\"Yoga theory\"}]}],\"text\":\"Yoga theory\"}]}]}],\"counts\":{\"components\""
+    }
+   ]
+  },
+  "public/ahv/assets/reader25b-family-data.js": {
+   "beforeSHA256": "d8471ea656576f9090b873efa0c58b9b8f546d7d3a315775192aeae11bac493d",
+   "afterSHA256": "cb2423ed34ca3fa59e4332e30ae1213500afb1e3ff7f99fd9916bf2d78f47eec",
+   "replacements": [
+    {
+     "row": "AHV-I04.M059.links + AHV-M004.01 + AHV-M004.03",
+     "before": "e wp-block-paragraph\"}]}],\"counts\":{\"components\"",
+     "after": "e wp-block-paragraph\"}]},{\"component\":\"contextual-resources\",\"blocks\":[{\"kind\":\"heading\",\"tag\":\"h2\",\"tree\":[{\"k\":\"t\",\"v\":\"Explore related resources\"}],\"text\":\"Explore related resources\"},{\"kind\":\"list\",\"ordered\":false,\"items\":[{\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"/yoga-classes-theory/\"},\"c\":[{\"k\":\"t\",\"v\":\"Yoga theory at Kairali\"}]}],\"text\":\"Yoga theory at Kairali\"},{\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"/yoga-classes-practical/\"},\"c\":[{\"k\":\"t\",\"v\":\"Practical yoga classes\"}]}],\"text\":\"Practical yoga classes\"},{\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"/yoga-meditation-training/\"},\"c\":[{\"k\":\"t\",\"v\":\"Yoga and meditation programme\"}]}],\"text\":\"Yoga and meditation programme\"}]}]}],\"counts\":{\"components\""
+    },
+    {
+     "row": "AHV-I04.M059.links + AHV-M004.01 + AHV-M004.03",
+     "before": "ck-paragraph\"},{\"kind\":\"heading\",\"tag\":\"h2\",\"ptr",
+     "after": "ck-paragraph\"},{\"kind\":\"image\",\"src\":\"/ahv/assets/img/Preventive-About-Abhyanga.webp\",\"alt\":\"Two Kairali therapists performing a synchronised Abhyanga oil massage on a seated patient\",\"width\":580,\"height\":387,\"external\":false,\"linkHref\":null,\"linkPtr\":null,\"reuse\":\"ahv-page-preventive-regenerative (AHV-M004.03)\"}]},{\"component\":\"on-this-page\",\"blocks\":[{\"kind\":\"heading\",\"tag\":\"h2\",\"tree\":[{\"k\":\"t\",\"v\":\"On this page\"}],\"text\":\"On this page\"},{\"kind\":\"list\",\"ordered\":false,\"items\":[{\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"#what-is-panchakarma\"},\"c\":[{\"k\":\"t\",\"v\":\"What is Panchakarma?\"}]}],\"text\":\"What is Panchakarma?\",\"anchor\":\"what-is-panchakarma\"},{\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"#vamanam\"},\"c\":[{\"k\":\"t\",\"v\":\"Vamanam\"}]}],\"text\":\"Vamanam\",\"anchor\":\"vamanam\"},{\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"#virechanam\"},\"c\":[{\"k\":\"t\",\"v\":\"Virechanam\"}]}],\"text\":\"Virechanam\",\"anchor\":\"virechanam\"},{\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"#vasti\"},\"c\":[{\"k\":\"t\",\"v\":\"Vasti\"}]}],\"text\":\"Vasti\",\"anchor\":\"vasti\"},{\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"#nasyam\"},\"c\":[{\"k\":\"t\",\"v\":\"Nasyam\"}]}],\"text\":\"Nasyam\",\"anchor\":\"nasyam\"},{\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"#raktamokshana\"},\"c\":[{\"k\":\"t\",\"v\":\"Raktamokshana\"}]}],\"text\":\"Raktamokshana\",\"anchor\":\"raktamokshana\"}]}]},{\"component\":\"what-is-panchakarma\",\"blocks\":[{\"kind\":\"heading\",\"tag\":\"h2\",\"ptr"
+    },
+    {
+     "row": "AHV-I04.M059.links + AHV-M004.01 + AHV-M004.03",
+     "before": "\":\"/sections/3/c/3/c/4\",\"tree\":[{\"k\":\"t\",\"v\":\"WHAT ",
+     "after": "\":\"/sections/3/c/3/c/4\",\"tree\":[{\"k\":\"t\",\"v\":\"What "
+    },
+    {
+     "row": "AHV-I04.M059.links + AHV-M004.01 + AHV-M004.03",
+     "before": "IS PANCHAKARMA?\"}],\"text\":\"",
+     "after": "is Panchakarma?\"}],\"text\":\""
+    },
+    {
+     "row": "AHV-I04.M059.links + AHV-M004.01 + AHV-M004.03",
+     "before": "WHAT IS PANCHAKARMA?\",\"sourceClass\":\"wp-blo",
+     "after": "What is Panchakarma?\",\"sourceClass\":\"wp-blo"
+    },
+    {
+     "row": "AHV-I04.M059.links + AHV-M004.01 + AHV-M004.03",
+     "before": "ck-heading\"},{\"kind\":\"para\",\"ptr\":",
+     "after": "ck-heading\",\"anchor\":\"what-is-panchakarma\",\"sourceText\":\"WHAT IS PANCHAKARMA?\"},{\"kind\":\"para\",\"ptr\":"
+    },
+    {
+     "row": "AHV-I04.M059.links + AHV-M004.01 + AHV-M004.03",
+     "before": "-size wp-block-paragraph\"},{\"kind\":\"para\",\"ptr\":",
+     "after": "-size wp-block-paragraph\"}]},{\"component\":\"the-five-therapies\",\"blocks\":[{\"kind\":\"heading\",\"tag\":\"h3\",\"tree\":[{\"k\":\"t\",\"v\":\"Vamanam\"}],\"text\":\"Vamanam\",\"anchor\":\"vamanam\"},{\"kind\":\"para\",\"ptr\":"
+    },
+    {
+     "row": "AHV-I04.M059.links + AHV-M004.01 + AHV-M004.03",
+     "before": "ck-paragraph\"},{\"kind\":\"para\",\"ptr\":\"/sections/3",
+     "after": "ck-paragraph\"},{\"kind\":\"heading\",\"tag\":\"h3\",\"tree\":[{\"k\":\"t\",\"v\":\"Virechanam\"}],\"text\":\"Virechanam\",\"anchor\":\"virechanam\"},{\"kind\":\"para\",\"ptr\":\"/sections/3"
+    },
+    {
+     "row": "AHV-I04.M059.links + AHV-M004.01 + AHV-M004.03",
+     "before": "linkPtr\":null},{\"kind\":\"para\",\"ptr\":\"/sections/3",
+     "after": "linkPtr\":null},{\"kind\":\"heading\",\"tag\":\"h3\",\"tree\":[{\"k\":\"t\",\"v\":\"Vasti\"}],\"text\":\"Vasti\",\"anchor\":\"vasti\"},{\"kind\":\"para\",\"ptr\":\"/sections/3"
+    },
+    {
+     "row": "AHV-I04.M059.links + AHV-M004.01 + AHV-M004.03",
+     "before": "-size wp-block-paragraph\"},{\"kind\":\"para\",\"ptr\":",
+     "after": "-size wp-block-paragraph\"},{\"kind\":\"heading\",\"tag\":\"h3\",\"tree\":[{\"k\":\"t\",\"v\":\"Nasyam\"}],\"text\":\"Nasyam\",\"anchor\":\"nasyam\"},{\"kind\":\"para\",\"ptr\":"
+    },
+    {
+     "row": "AHV-I04.M059.links + AHV-M004.01 + AHV-M004.03",
+     "before": "-size wp-block-paragraph\"},{\"kind\":\"para\",\"ptr\":",
+     "after": "-size wp-block-paragraph\"},{\"kind\":\"image\",\"src\":\"/ahv/assets/img/Your-Ayurvedic-Treatment-for-Bronchial-Diseases.webp\",\"alt\":\"Therapist administering Nasyam nasal therapy to a patient during Panchakarma treatment\",\"width\":580,\"height\":386,\"external\":false,\"linkHref\":null,\"linkPtr\":null,\"reuse\":\"ahv-page-panchakarma-therapy (AHV-M004.03)\"},{\"kind\":\"heading\",\"tag\":\"h3\",\"tree\":[{\"k\":\"t\",\"v\":\"Raktamokshana\"}],\"text\":\"Raktamokshana\",\"anchor\":\"raktamokshana\"},{\"kind\":\"para\",\"ptr\":"
+    }
+   ]
+  },
+  "public/ahv/assets/reader25b-family-render.js": {
+   "beforeSHA256": "0ea803552cab52c9c03ce593c21e4a8ae5e561575aaa18c367b6c82217a70e3e",
+   "afterSHA256": "cb08afd507c5fedf72ece38f34be36111b0c5310902fabc83f75cfd63a4080a5",
+   "replacements": [
+    {
+     "row": "AHV-M004.01",
+     "before": ";\n    return out;\n  }\n  function readerVals(R, g",
+     "after": ";\n    return out;\n  }\n  // AHV-M004.01: an article's in-page sections. A heading block with an `anchor` gets that id (clear of the sticky\n  // header); an 'on-this-page' component lists those sections as same-page links, in the reader's list style. The\n  // collection renderer makes every link absolute, so the same-page list is drawn here instead.\n  function anchored(blocks, els) {\n    return els.map((el, i) => {\n      const a = blocks[i] && blocks[i].kind === 'heading' && blocks[i].anchor;\n      return a && el && typeof el === 'object' && el.props ? React.cloneElement(el, { id: a, style: Object.assign({}, el.props.style, { scrollMarginTop: '96px' }) }) : el;\n    });\n  }\n  function onThisPage(c, k) {\n    const P = window.AHV_COLLECTION_RENDER, e = React.createElement;\n    const head = P.sourceBlocks(c.blocks.filter(b => b.kind === 'heading'), k, () => {});\n    const list = c.blocks.find(b => b.kind === 'list');\n    return head.concat([e('ul', { key: k + '-toc', 'data-list-depth': '0', style: { margin: '0 0 16px', paddingLeft: '24px', display: 'flex', flexDirection: 'column', gap: '8px', maxWidth: '76ch', listStyleType: 'disc' } },\n      ...(list ? list.items : []).map((it, j) => e('li', { key: k + '-toc-' + j, style: { fontSize: '17.5px', lineHeight: 1.75, textWrap: 'pretty' } },\n        e('a', { href: '#' + it.anchor, style: { textUnderlineOffset: '2px', overflowWrap: 'anywhere' } }, it.text))))]);\n  }\n  function readerVals(R, g"
+    },
+    {
+     "row": "AHV-M004.01",
+     "before": "ted pages',\n        el: P.sourceBlocks(groupCard",
+     "after": "ted pages',\n        el: c.component === 'on-this-page' ? onThisPage(c, 'y' + ci) : anchored(groupCards(c.blocks), P.sourceBlocks(groupCard"
+    },
+    {
+     "row": "AHV-M004.01",
+     "before": "hildren) : el;\n        })\n      }))\n    };\n  }\n ",
+     "after": "hildren) : el;\n        }))\n      }))\n    };\n  }\n "
+    }
+   ]
+  },
+  "public/ahv/assets/reader6c-family-data.js": {
+   "beforeSHA256": "851849fd75ed574c379d7f3ac738e196064f7e07287c3615d5066b42a06bcb1a",
+   "afterSHA256": "4151aaeb8e783a8ec4ff33cf407beac02fe76e934248e1af04271ea96ba2366d",
+   "replacements": [
+    {
+     "row": "AHV-I04.M056.links",
+     "before": ":\"wp-block-paragraph\"}]}],\"counts\":{\"components\"",
+     "after": ":\"wp-block-paragraph\"}]},{\"component\":\"contextual-resources\",\"blocks\":[{\"kind\":\"heading\",\"tag\":\"h2\",\"tree\":[{\"k\":\"t\",\"v\":\"Explore related resources\"}],\"text\":\"Explore related resources\"},{\"kind\":\"list\",\"ordered\":false,\"items\":[{\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"/ayurvedic-treatments/\"},\"c\":[{\"k\":\"t\",\"v\":\"Ayurvedic treatment programmes\"}]}],\"text\":\"Ayurvedic treatment programmes\"},{\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"/panchakarma-therapy/\"},\"c\":[{\"k\":\"t\",\"v\":\"Panchakarma treatment programme\"}]}],\"text\":\"Panchakarma treatment programme\"},{\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"/online-consultation/\"},\"c\":[{\"k\":\"t\",\"v\":\"Speak with an Ayurvedic physician\"}]}],\"text\":\"Speak with an Ayurvedic physician\"}]}]}],\"counts\":{\"components\""
+    }
+   ]
+  },
+  "public/ahv/assets/reader6c-family-render.js": {
+   "beforeSHA256": "807c95931d8cb4d7fae17d3f026e84d2b54b7cd123d1a8ed27601d68a22a78c4",
+   "afterSHA256": "b7780001910fc32abd78f11add716329f9c216c95f47ae3c179dd9d46bfda38a",
+   "replacements": [
+    {
+     "row": "AHV-I04.M056.links",
+     "before": "nt, ptr: c.ptr,\n        isNav:",
+     "after": "nt, ptr: c.ptr,\n        // The approved in-body 'contextual-resources' links (AHV-I04) are content, not the retired sidebar: a section.\n        isNav:"
+    },
+    {
+     "row": "AHV-I04.M056.links",
+     "before": " /context|menu|navigatio",
+     "after": " c.component !== 'contextual-resources' && /context|menu|navigatio"
+    },
+    {
+     "row": "AHV-I04.M056.links",
+     "before": "ent),\n        isSection: !/context|menu|navigati",
+     "after": "ent),\n        isSection: c.component === 'contextual-resources' || !/context|menu|navigati"
+    }
+   ]
+  },
+  "public/ahv/assets/seven-informational-data.js": {
+   "beforeSHA256": "63188f2b18294f0d4403c9fbd0669e81279f2bf604c78c5b3f27021859ace51f",
+   "afterSHA256": "2e030b98cc3cda46e969633c7a47f7e8b9e280e7eee9472aa9eaff43e8833ea0",
+   "replacements": [
+    {
+     "row": "AHV-I04.M054.links",
+     "before": "+91 9555 156 156\"}]}]}]}],\"counts\":{\"sections\":2",
+     "after": "+91 9555 156 156\"}]}]}]},{\"component\":\"contextual-resources\",\"blocks\":[{\"kind\":\"heading\",\"tag\":\"h2\",\"tree\":[{\"k\":\"t\",\"v\":\"Explore related resources\"}],\"text\":\"Explore related resources\"},{\"kind\":\"list\",\"ordered\":false,\"items\":[{\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"/ayurvedic-treatments/\"},\"c\":[{\"k\":\"t\",\"v\":\"Ayurvedic treatment programmes\"}]}],\"text\":\"Ayurvedic treatment programmes\"},{\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"/panchakarma-therapy/\"},\"c\":[{\"k\":\"t\",\"v\":\"Panchakarma treatment programme\"}]}],\"text\":\"Panchakarma treatment programme\"},{\"tree\":[{\"k\":\"e\",\"tag\":\"a\",\"attrs\":{\"href\":\"/online-consultation/\"},\"c\":[{\"k\":\"t\",\"v\":\"Speak with an Ayurvedic physician\"}]}],\"text\":\"Speak with an Ayurvedic physician\"}]}]}],\"counts\":{\"sections\":2"
+    }
+   ]
+  },
+  "public/ahv/assets/training7-family-data.js": {
+   "beforeSHA256": "35c411598c2ffa53e63bf3de852981b59731fa0ac13db4824d6af9d626fed278",
+   "afterSHA256": "1e88fb6fb8a1863e18f4275b49e668167f287bc75847ca1501b485b62bde5d0e",
+   "replacements": [
+    {
+     "row": "AHV-M077.01",
+     "before": "\",\"path\":\"/\"},{\"label\":\"Training ",
+     "after": "\",\"path\":\"/\"},{\"label\":\"Past "
+    },
+    {
+     "row": "AHV-M077.01",
+     "before": "Programs\",\"path\":\"/",
+     "after": "retreats & events\",\"path\":\"/"
+    },
+    {
+     "row": "AHV-M077.01",
+     "before": "training-",
+     "after": "archive/\"},{\"label\":\"Past retreats\",\"path\":\"/archive-"
+    },
+    {
+     "row": "AHV-M077.01",
+     "before": "programs/\"},{\"label\":\"Ayurveda W",
+     "after": "yoga-retreat/\"},{\"label\":\"Ayurveda W"
+    },
+    {
+     "row": "AHV-M077.01",
+     "before": "m\",\"position\":2,\"name\":\"Training ",
+     "after": "m\",\"position\":2,\"name\":\"Past "
+    },
+    {
+     "row": "AHV-M077.01",
+     "before": "Programs\",\"item\":\"https://ayurve",
+     "after": "retreats & events\",\"item\":\"https://ayurve"
+    },
+    {
+     "row": "AHV-M077.01",
+     "before": "dichealingvillage.com/training-programs/\"},{\"@type\":\"ListItem\",",
+     "after": "dichealingvillage.com/archive/\"},{\"@type\":\"ListItem\","
+    },
+    {
+     "row": "AHV-M077.01",
+     "before": "\"position\":3,\"name\":\"Ayurveda Worksh",
+     "after": "\"position\":3,\"name\":\"Past retreats\",\"item\":\"https://ayurvedichealingvillage.com/archive-yoga-retreat/\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"Ayurveda Worksh"
+    },
+    {
+     "row": "AHV-M077.01",
+     "before": "ion, payment or backend).\"},{\"path\":\"/intensive-",
+     "after": "ion, payment or backend).\",\"statusLabel\":\"Past Retreat\",\"historicalNotice\":\"Past retreat — preserved for historical reference. The event year has not been verified.\"},{\"path\":\"/intensive-"
+    }
+   ]
+  },
+  "public/ahv/assets/training7-family-render.js": {
+   "beforeSHA256": "b2fc94bbc1dc21c896c169cc81dfc60d514fe0d52d1e2f5d7e61e5248c132e36",
+   "afterSHA256": "4ed50acb4e3ac94539af43054cd5a119f427c1fa1bb631d8195adb9ef78d2244",
+   "replacements": [
+    {
+     "row": "AHV-M077.01",
+     "before": ";\n    return out;\n  }\n  function readerVals(R, g",
+     "after": ";\n    return out;\n  }\n  // A past event (AHV-M077.01) opens with the past-retreat eyebrow and its historical notice, styled exactly as the\n  // reader view's hist9 #hist9-status / #hist9-notice.\n  function pastEvent(R) {\n    if (!R.statusLabel && !R.historicalNotice) return [];\n    const e = React.createElement;\n    return [{\n      key: 't7-past', component: 'past-event-notice', ptr: undefined, isNav: false, isSection: true,\n      navLabel: R.h1 + ' \\u2014 related pages',\n      el: [\n        R.statusLabel ? e('p', { key: 't7-past-s', 'data-ahv-past-status': '', style: { margin: '8px 0 0', display: 'inline-flex', alignItems: 'center', minHeight: '40px', padding: '0 16px', border: '1px solid #5A4420', borderRadius: '4px', fontFamily: \"'Mulish',sans-serif\", fontWeight: 700, fontSize: '14.5px', letterSpacing: '1.2px', textTransform: 'uppercase', color: '#5A4420' } }, R.statusLabel) : null,\n        R.historicalNotice ? e('p', { key: 't7-past-n', 'data-ahv-past-notice': '', role: 'note', style: { margin: '16px 0 0', padding: '14px 18px', background: '#F4F0E4', borderLeftWidth: '4px', borderLeftStyle: 'solid', borderLeftColor: '#5A4420', fontSize: '16.5px', lineHeight: 1.7, maxWidth: '78ch', textWrap: 'pretty', overflowWrap: 'anywhere' } }, R.historicalNotice) : null,\n      ].filter(Boolean)\n    }];\n  }\n  function readerVals(R, g"
+    },
+    {
+     "row": "AHV-M077.01",
+     "before": "l : '',\n      sections: R.components.map((c, ci)",
+     "after": "l : '',\n      sections: pastEvent(R).concat(R.components.map((c, ci)"
+    },
+    {
+     "row": "AHV-M077.01",
+     "before": "t7' + ci, guard)\n      }))\n    };\n  }\n  window.A",
+     "after": "t7' + ci, guard)\n      })))\n    };\n  }\n  window.A"
+    }
+   ]
+  },
+  "public/ahv/search-index.json": {
+   "beforeSHA256": "6a22b31f4c9a2be7f5bf25542d086eca754f22e134ea76c31228b2c6fd9a78c9",
+   "afterSHA256": "467a5c743cc0d05a56b9892178a3851ddbd1e9305c7a4b93e0d4653ebe6abaa0",
+   "replacements": [
+    {
+     "row": "AHV-M016.02",
+     "before": "a\",\"generated\":\"2026-10-07T11:",
+     "after": "a\",\"generated\":\"2026-10-15T07:"
+    },
+    {
+     "row": "AHV-M016.02",
+     "before": "04:",
+     "after": "08:"
+    },
+    {
+     "row": "AHV-M016.02",
+     "before": "07.",
+     "after": "37."
+    },
+    {
+     "row": "AHV-M016.02",
+     "before": "888Z\",\"priceValidTo\":\"2027-0",
+     "after": "757Z\",\"priceValidTo\":\"2027-0"
+    },
+    {
+     "row": "AHV-M016.02",
+     "before": "l\":\"The Baoli Advert Box Deal\",\"desc\":\"Kairali supports animal husbandry in order to rear different types of animals which is…\",\"kw\":[]},{\"route\":\"/the-baoli-special-deal/\",\"label\":\"The Baoli Special Deal\",\"desc\":\"Kairali s",
+     "after": "l\":\"The Baoli Advert Box Deal\",\"desc\":\"Kairali s"
+    }
+   ]
+  },
+  "public/ahv/views/ahv-page-ayurveda-training-programme-desktop.json": {
+   "beforeSHA256": "aa6b5dd0acdc7044ecb9753c86cc34bf16acd2688377fdc0cd9bb32b62b5d9c5",
+   "afterSHA256": "40de3c09e7ac9c753712bf3c6c88e95347838f4c988a73f7102f877d6ba009c1",
+   "replacements": [
+    {
+     "row": "AHV-M021.02",
+     "before": "ou enquire.</p>\\n  <div style=\\\"background:#FFFD",
+     "after": "ou enquire.</p>\\n  <div role=\\\"group\\\" aria-label=\\\"Duration\\\" data-ahv-course-duration=\\\"\\\" style=\\\"display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 22px\\\"><span style=\\\"font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#8F6212;flex:none\\\">Duration</span>\\n    <sc-for list=\\\"{{ durations }}\\\" as=\\\"c\\\" hint-placeholder-count=\\\"4\\\"><button type=\\\"button\\\" onClick=\\\"{{ c.pick }}\\\" aria-pressed=\\\"{{ c.on }}\\\" style=\\\"font-family:'Mulish',sans-serif;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;box-sizing:border-box;padding:0 18px;border-radius:4px;font-weight:700;font-size:16px;white-space:nowrap;flex:none;min-height:44px;font-size:15px;border:1.5px solid {{ c.bd }};background:{{ c.bg }};color:{{ c.fg }}\\\">{{ c.label }}</button></sc-for>\\n  </div>\\n  <div style=\\\"background:#FFFD"
+    },
+    {
+     "row": "AHV-M021.02",
+     "before": "nt extends DCLogic {\\n  componentDidMount() { do",
+     "after": "nt extends DCLogic {\\n  state = { dur: '' };\\n  componentDidMount() { do"
+    },
+    {
+     "row": "AHV-M021.02",
+     "before": "vedichealingvillage.com';\\n    // Split \\\"Label:",
+     "after": "vedichealingvillage.com';\\n    // AHV-M021.02: the retired /training-programs/ finder's duration chips, same labels and rule (course length in nights).\\n    const DURATIONS = [['','Any'],['7','Up to 7 nights'],['10','10 nights'],['14','14 nights'],['20','20 nights'],['21','21+ nights']];\\n    const dur = (this.state && this.state.dur) || '';\\n    const fits = (n, k) => !k || (k === '7' ? n <= 7 : k === '21' ? n >= 21 : n === Number(k));\\n    const sel = (on) => ({ on: on ? 'true' : 'false', bg: on ? '#5A4420' : '#fff', fg: on ? '#F7F4EA' : '#2A2118', bd: on ? '#5A4420' : '#C9BFA8' });\\n    // Split \\\"Label:"
+    },
+    {
+     "row": "AHV-M021.02",
+     "before": "ning.map(split),\\n      courses: D.courses",
+     "after": "ning.map(split),\\n      durations: DURATIONS.filter(pair => !pair[0] || D.courses.some(c => fits(c.days, pair[0]))).map(pair => Object.assign({ label: pair[1], pick: () => this.setState({ dur: pair[0] }) }, sel(dur === pair[0]))),\\n      courses: D.courses"
+    },
+    {
+     "row": "AHV-M021.02",
+     "before": ".map(c => ({ ...c, href:",
+     "after": ".filter(c => fits(c.days, dur)).map(c => ({ ...c, href:"
+    }
+   ]
+  },
+  "public/ahv/views/ahv-page-ayurveda-training-programme-mobile.json": {
+   "beforeSHA256": "a8f21fdc750f3dfbbd1f9005c6e125fab9f8db49d51176514a98ea668eb6bc49",
+   "afterSHA256": "6a51361d6a8566e58976a25eb6ed5ea5785aebf24157efa4e80552746810f7f3",
+   "replacements": [
+    {
+     "row": "AHV-M021.02",
+     "before": "en you enquire.</p>\\n  <ul style=\\\"list-style:no",
+     "after": "en you enquire.</p>\\n  <div role=\\\"group\\\" aria-label=\\\"Duration\\\" data-ahv-course-duration=\\\"\\\" style=\\\"display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:0 0 18px\\\"><span style=\\\"font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#8F6212;flex:none\\\">Duration</span>\\n    <sc-for list=\\\"{{ durations }}\\\" as=\\\"c\\\" hint-placeholder-count=\\\"4\\\"><button type=\\\"button\\\" onClick=\\\"{{ c.pick }}\\\" aria-pressed=\\\"{{ c.on }}\\\" style=\\\"font-family:'Mulish',sans-serif;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;box-sizing:border-box;padding:0 16px;border-radius:4px;font-weight:700;font-size:15.5px;white-space:nowrap;flex:none;min-height:44px;font-size:15px;border:1.5px solid {{ c.bd }};background:{{ c.bg }};color:{{ c.fg }}\\\">{{ c.label }}</button></sc-for>\\n  </div>\\n  <ul style=\\\"list-style:no"
+    },
+    {
+     "row": "AHV-M021.02",
+     "before": "  state = { barOn: false };\\n  componentDidMount",
+     "after": "  state = { barOn: false, dur: '' };\\n  componentDidMount"
+    },
+    {
+     "row": "AHV-M021.02",
+     "before": "vedichealingvillage.com';\\n    const split = (s)",
+     "after": "vedichealingvillage.com';\\n    // AHV-M021.02: the retired /training-programs/ finder's duration chips, same labels and rule (course length in nights).\\n    const DURATIONS = [['','Any'],['7','Up to 7 nights'],['10','10 nights'],['14','14 nights'],['20','20 nights'],['21','21+ nights']];\\n    const dur = (this.state && this.state.dur) || '';\\n    const fits = (n, k) => !k || (k === '7' ? n <= 7 : k === '21' ? n >= 21 : n === Number(k));\\n    const sel = (on) => ({ on: on ? 'true' : 'false', bg: on ? '#5A4420' : '#fff', fg: on ? '#F7F4EA' : '#2A2118', bd: on ? '#5A4420' : '#C9BFA8' });\\n    const split = (s)"
+    },
+    {
+     "row": "AHV-M021.02",
+     "before": "ning.map(split),\\n      courses: D.courses",
+     "after": "ning.map(split),\\n      durations: DURATIONS.filter(pair => !pair[0] || D.courses.some(c => fits(c.days, pair[0]))).map(pair => Object.assign({ label: pair[1], pick: () => this.setState({ dur: pair[0] }) }, sel(dur === pair[0]))),\\n      courses: D.courses"
+    },
+    {
+     "row": "AHV-M021.02",
+     "before": ".map(c => ({ ...c, href:",
+     "after": ".filter(c => fits(c.days, dur)).map(c => ({ ...c, href:"
+    }
+   ]
+  },
+  "public/ahv/views/ahv-page-panchkarma-treatment-desktop.json": {
+   "beforeSHA256": "762d2e707a5c7b6901356bc33e48428b352a534347bfbc590a899d1de0e23ca4",
+   "afterSHA256": "0268dfdf00bdd314260826438242ce93ee55974838cd2f7822315e62e65cb6ed",
+   "replacements": [
+    {
+     "row": "AHV-LATER-021.01",
+     "before": "g src=\\\"/ahv/assets/img/wx-",
+     "after": "g src=\\\"/ahv/assets/img/owner-"
+    },
+    {
+     "row": "AHV-LATER-021.01",
+     "before": "hero.webp\\\" alt=\\\"Kairali &m",
+     "after": "decision-20261015/ahv-pkd-50.webp\\\" alt=\\\"Kairali &m"
+    },
+    {
+     "row": "AHV-LATER-021.01",
+     "before": "age, Palakkad\\\" width=\\\"1920\\\" height=\\\"",
+     "after": "age, Palakkad\\\" width=\\\"1600\\\" height=\\\""
+    },
+    {
+     "row": "AHV-LATER-021.01",
+     "before": "900\\\" style=\\\"display:block",
+     "after": "1067\\\" style=\\\"display:block"
+    }
+   ]
+  },
+  "public/ahv/views/ahv-page-panchkarma-treatment-mobile.json": {
+   "beforeSHA256": "6848b11129a422ee1c20bed4bcdec625c32ef6edadc3e7c582a1cc993e243f57",
+   "afterSHA256": "9b31c704a78562bda6b44835fd47a267066ec06ba0e2b1af129ef2337f24e8cb",
+   "replacements": [
+    {
+     "row": "AHV-LATER-021.01",
+     "before": "g src=\\\"/ahv/assets/img/wx-",
+     "after": "g src=\\\"/ahv/assets/img/owner-"
+    },
+    {
+     "row": "AHV-LATER-021.01",
+     "before": "hero.webp\\\" alt=\\\"Kairali &m",
+     "after": "decision-20261015/ahv-pkd-50-768.webp\\\" alt=\\\"Kairali &m"
+    },
+    {
+     "row": "AHV-LATER-021.01",
+     "before": "age, Palakkad\\\" width=\\\"1920\\\" height=\\\"",
+     "after": "age, Palakkad\\\" width=\\\"768\\\" height=\\\""
+    },
+    {
+     "row": "AHV-LATER-021.01",
+     "before": "900\\\" style=\\\"display:block",
+     "after": "512\\\" style=\\\"display:block"
+    }
+   ]
+  },
+  "public/ahv/views/ahv-page-supportive-care-cancer-desktop.json": {
+   "beforeSHA256": "f779fcc42f5453f4c53af6682178ecd1fedf5a3ff18a89cfb1049369c80b5e44",
+   "afterSHA256": "d77b48590c386575b563592422cc8b15bce06c68d142eead8cf70075cbd6addf",
+   "replacements": [
+    {
+     "row": "AHV-M005.02",
+     "before": "er treatment.</p>\\n    <a href=\\\"https://ayurved",
+     "after": "er treatment.</p>\\n    <p data-approved-merger=\\\"care-approach\\\" style=\\\"margin:0 0 18px;max-width:64ch\\\">Our holistic approach places comfort, emotional wellbeing and individual care needs at the centre of the experience.</p>\\n    <p data-approved-merger=\\\"care-approach\\\" style=\\\"margin:0 0 18px;max-width:64ch\\\">We focus on supporting quality of life through compassionate care that considers physical comfort and emotional wellbeing.</p>\\n    <p data-approved-merger=\\\"care-approach\\\" style=\\\"margin:0 0 18px;max-width:64ch\\\">Ayurvedic therapies aim to restore the balance of the doshas in the body.</p>\\n    <a href=\\\"https://ayurved"
+    }
+   ]
+  },
+  "public/ahv/views/ahv-page-supportive-care-cancer-mobile.json": {
+   "beforeSHA256": "0cd5522f7fe0f30ed0dee312a3248e7833e6606b0dc22dc80e84c625e946fffa",
+   "afterSHA256": "a1908e80f68d997ab5f74e28033ca9abcb000de1d7e5ee2f45fb5c11d2532b84",
+   "replacements": [
+    {
+     "row": "AHV-M005.02",
+     "before": "er treatment.</p>\\n    <a href=\\\"https://ayurved",
+     "after": "er treatment.</p>\\n    <p data-approved-merger=\\\"care-approach\\\" style=\\\"margin:0 0 18px;max-width:64ch\\\">Our holistic approach places comfort, emotional wellbeing and individual care needs at the centre of the experience.</p>\\n    <p data-approved-merger=\\\"care-approach\\\" style=\\\"margin:0 0 18px;max-width:64ch\\\">We focus on supporting quality of life through compassionate care that considers physical comfort and emotional wellbeing.</p>\\n    <p data-approved-merger=\\\"care-approach\\\" style=\\\"margin:0 0 18px;max-width:64ch\\\">Ayurvedic therapies aim to restore the balance of the doshas in the body.</p>\\n    <a href=\\\"https://ayurved"
+    }
+   ]
+  },
+  "public/design/section-nav.data.js": {
+   "beforeSHA256": "bd522a65eb998a30bde62e743c38bb9dd69d1d4c9d392eafd03f3f7f4379de46",
+   "afterSHA256": "1c5ef3dface4c46a87214b2813262cf5b6fe3295f09c8073afd17633cadcb7fd",
+   "replacements": [
+    {
+     "row": "AHV-M016.01 + AHV-M016.02",
+     "before": "null},\"/the-baoli-advert-box-deal/\":{\"section\":\"offers\",\"crumbs\":[\"/the-baoli-advert-box",
+     "after": "null},\"/the-baoli-advert-box-deal/\":{\"section\":\"news\",\"crumbs\":[\"/the-baoli-advert-box"
+    },
+    {
+     "row": "AHV-M016.01 + AHV-M016.02",
+     "before": "-deal/\"],\"remove\":{\"navPrefixes\":[],\"blockPrefixes\":[\"/sections/3/c/1\"]}},\"/the-baoli-special-deal/\":{\"section\":\"offers\",\"crumbs\":[\"/the-baoli-special-deal/\"],\"remove\":{\"navP",
+     "after": "-deal/\"],\"remove\":{\"navP"
+    },
+    {
+     "row": "AHV-M016.01 + AHV-M016.02",
+     "before": "a/\"]},\"/the-baoli-advert-box-deal/\":{\"section\":\"offers\",\"crumbs\":[\"/the-baoli-advert-box",
+     "after": "a/\"]},\"/the-baoli-advert-box-deal/\":{\"section\":\"news\",\"crumbs\":[\"/the-baoli-advert-box"
+    },
+    {
+     "row": "AHV-M016.01 + AHV-M016.02",
+     "before": "-deal/\"]},\"/the-baoli-special-deal/\":{\"section\":\"offers\",\"crumbs\":[\"/the-baoli-special-deal/\"]}}};\n",
+     "after": "-deal/\"]}}};\n"
+    }
+   ]
+  }
+ },
+ "generated": {
+  "public/ahv/l10n/ar/design/review-chrome.js": {
+   "beforeSHA256": "f1343dfd62a85c76471df96a09cc4738105678451e3e2ce5153de0e256d298eb",
+   "afterSHA256": "f2beffdaafc44ae154fb931585a89281fe43075c9e806d6c92af7cd5cf15a02d",
+   "replacements": [
+    {
+     "row": "AHV-M016.02",
+     "before": "i-advert-box-deal/\",\"/the-baoli-special-deal/\":\"/ar/the-baoli-special-deal/\",\"/things-to-do-in-kerala/\":\"",
+     "after": "i-advert-box-deal/\",\"/things-to-do-in-kerala/\":\""
+    }
+   ]
+  },
+  "public/ahv/l10n/de/design/review-chrome.js": {
+   "beforeSHA256": "29dd62771f389046ea98d165929cd33c4287a655c8b7fe4605dc12620435dbea",
+   "afterSHA256": "cc2c570705de77eb83454706aa1e3f51ef5f877cbc7672f08b4fa7fc68a7505d",
+   "replacements": [
+    {
+     "row": "AHV-M016.02",
+     "before": "i-advert-box-deal/\",\"/the-baoli-special-deal/\":\"/de/the-baoli-special-deal/\",\"/things-to-do-in-kerala/\":\"",
+     "after": "i-advert-box-deal/\",\"/things-to-do-in-kerala/\":\""
+    }
+   ]
+  },
+  "public/ahv/l10n/de/design/campaign-review-chrome.js": {
+   "beforeSHA256": "96338e49b52a078186dd34e62267d232a19ede3fd72fff55517a5ac4a94a37d9",
+   "afterSHA256": "668708d218a18dbace80108c41bbe9b9ee49c8197bdbb6b031ccc916c0e63d41",
+   "replacements": [
+    {
+     "row": "AHV-M016.02",
+     "before": "i-advert-box-deal/\",\"/the-baoli-special-deal/\":\"/de/the-baoli-special-deal/\",\"/things-to-do-in-kerala/\":\"",
+     "after": "i-advert-box-deal/\",\"/things-to-do-in-kerala/\":\""
+    }
+   ]
+  },
+  "public/ahv/l10n/es/design/review-chrome.js": {
+   "beforeSHA256": "c26ff2926d4cc9763861a1f15438060179f1e52fb4ef0d3d9b4f30836961e0e3",
+   "afterSHA256": "09036f12deb22d2e7fc7c8b85dbe8d94c9fd0b82945e66fbc0cafe8d4f70cd11",
+   "replacements": [
+    {
+     "row": "AHV-M016.02",
+     "before": "i-advert-box-deal/\",\"/the-baoli-special-deal/\":\"/es/the-baoli-special-deal/\",\"/things-to-do-in-kerala/\":\"",
+     "after": "i-advert-box-deal/\",\"/things-to-do-in-kerala/\":\""
+    }
+   ]
+  },
+  "public/ahv/l10n/fr/design/review-chrome.js": {
+   "beforeSHA256": "98223f66e00f4709d79d2e9c3c2ded378ad0a0e70d3836053735c3628287739c",
+   "afterSHA256": "97faf1d39b25fb8c26b4c38558db04ff6b05905fa612343002937e81f10a89a1",
+   "replacements": [
+    {
+     "row": "AHV-M016.02",
+     "before": "i-advert-box-deal/\",\"/the-baoli-special-deal/\":\"/fr/the-baoli-special-deal/\",\"/things-to-do-in-kerala/\":\"",
+     "after": "i-advert-box-deal/\",\"/things-to-do-in-kerala/\":\""
+    }
+   ]
+  },
+  "public/ahv/l10n/hi/design/review-chrome.js": {
+   "beforeSHA256": "a11cc7719fabe22e890945bf9aa2360fd2cb57267be2deda0cc90c589ab6b818",
+   "afterSHA256": "56c0297c8ad4a9bab3eb151ef9635dd53396106dcbbb2f07a90c7443384e4405",
+   "replacements": [
+    {
+     "row": "AHV-M016.02",
+     "before": "i-advert-box-deal/\",\"/the-baoli-special-deal/\":\"/hi/the-baoli-special-deal/\",\"/things-to-do-in-kerala/\":\"",
+     "after": "i-advert-box-deal/\",\"/things-to-do-in-kerala/\":\""
+    }
+   ]
+  },
+  "public/ahv/l10n/it/design/review-chrome.js": {
+   "beforeSHA256": "0762c2bcea97cd41a6d43407dfe277cfb4c9772edff2064f55bfdfcb9a723c23",
+   "afterSHA256": "3991c6df04fde8070c13f28241cee2baa65010602a326af61d3d15e146fb6e41",
+   "replacements": [
+    {
+     "row": "AHV-M016.02",
+     "before": "i-advert-box-deal/\",\"/the-baoli-special-deal/\":\"/it/the-baoli-special-deal/\",\"/things-to-do-in-kerala/\":\"",
+     "after": "i-advert-box-deal/\",\"/things-to-do-in-kerala/\":\""
+    }
+   ]
+  },
+  "public/ahv/l10n/ja/design/review-chrome.js": {
+   "beforeSHA256": "708ad53fc10bff39b61418fd2284152a4b423e77515e20d754d8a573e807b0b3",
+   "afterSHA256": "c688b73ea16ca93fc74016d0b1ba1f8f5b53f12b8fdd96a21488f7420de4c3e3",
+   "replacements": [
+    {
+     "row": "AHV-M016.02",
+     "before": "i-advert-box-deal/\",\"/the-baoli-special-deal/\":\"/ja/the-baoli-special-deal/\",\"/things-to-do-in-kerala/\":\"",
+     "after": "i-advert-box-deal/\",\"/things-to-do-in-kerala/\":\""
+    }
+   ]
+  },
+  "public/ahv/l10n/ko/design/review-chrome.js": {
+   "beforeSHA256": "3ad97aa814754f16f5d5b1e33b551cb9aca216f9683dc3930e48d9e5c8017423",
+   "afterSHA256": "d9c9a5ef5af17d5fd68488202bc3b0e411086372397d8104a9ce254d60abedec",
+   "replacements": [
+    {
+     "row": "AHV-M016.02",
+     "before": "i-advert-box-deal/\",\"/the-baoli-special-deal/\":\"/ko/the-baoli-special-deal/\",\"/things-to-do-in-kerala/\":\"",
+     "after": "i-advert-box-deal/\",\"/things-to-do-in-kerala/\":\""
+    }
+   ]
+  },
+  "public/ahv/l10n/nl/design/review-chrome.js": {
+   "beforeSHA256": "2a8bf5b3fd46e7c6a9aa0d68c2e38b7fc4861ef384118eb5c6a99214f9d91b7e",
+   "afterSHA256": "177557990505b23f73954ff6e692bc0f08394ba54168fc142e41624934a0c595",
+   "replacements": [
+    {
+     "row": "AHV-M016.02",
+     "before": "i-advert-box-deal/\",\"/the-baoli-special-deal/\":\"/nl/the-baoli-special-deal/\",\"/things-to-do-in-kerala/\":\"",
+     "after": "i-advert-box-deal/\",\"/things-to-do-in-kerala/\":\""
+    }
+   ]
+  },
+  "public/ahv/l10n/pt/design/review-chrome.js": {
+   "beforeSHA256": "db53185a471046ddcfc2c64ddd0f1a093faabd033e219cfefe06cdd9c9cbac85",
+   "afterSHA256": "0ce126a41b3e84ec2cf5f264b00d0c33f4f8ba62925b5066aa6df981259ba478",
+   "replacements": [
+    {
+     "row": "AHV-M016.02",
+     "before": "i-advert-box-deal/\",\"/the-baoli-special-deal/\":\"/pt/the-baoli-special-deal/\",\"/things-to-do-in-kerala/\":\"",
+     "after": "i-advert-box-deal/\",\"/things-to-do-in-kerala/\":\""
+    }
+   ]
+  },
+  "public/ahv/l10n/ru/design/review-chrome.js": {
+   "beforeSHA256": "7f5f0b10e42823dc36b47fa983e706a9faf46ae84fa3d4975c26ebf30ad1a6dc",
+   "afterSHA256": "a81cd406353cadde226326615c56d2c167acf199afd2b4a24b8f951690d296cb",
+   "replacements": [
+    {
+     "row": "AHV-M016.02",
+     "before": "i-advert-box-deal/\",\"/the-baoli-special-deal/\":\"/ru/the-baoli-special-deal/\",\"/things-to-do-in-kerala/\":\"",
+     "after": "i-advert-box-deal/\",\"/things-to-do-in-kerala/\":\""
+    }
+   ]
+  },
+  "public/ahv/l10n/ru/design/campaign-review-chrome.js": {
+   "beforeSHA256": "59bfba25748465ea279364e70a8515ff68eac79955a32e80fb777d51e68880c4",
+   "afterSHA256": "7e418a379aff46ff1b40b1f0006bb1178bc3c584677d2ba1aaf331656b78896f",
+   "replacements": [
+    {
+     "row": "AHV-M016.02",
+     "before": "i-advert-box-deal/\",\"/the-baoli-special-deal/\":\"/ru/the-baoli-special-deal/\",\"/things-to-do-in-kerala/\":\"",
+     "after": "i-advert-box-deal/\",\"/things-to-do-in-kerala/\":\""
+    }
+   ]
+  },
+  "public/ahv/l10n/zh/design/review-chrome.js": {
+   "beforeSHA256": "bdd7f70e9658a44d527f534dcf5db57b06dafd28db471d483d5552e05c9d9d81",
+   "afterSHA256": "1afd98655db80780927cca329caf574456eeb9d13530ae910a8d95e673b49b6e",
+   "replacements": [
+    {
+     "row": "AHV-M016.02",
+     "before": "i-advert-box-deal/\",\"/the-baoli-special-deal/\":\"/zh/the-baoli-special-deal/\",\"/things-to-do-in-kerala/\":\"",
+     "after": "i-advert-box-deal/\",\"/things-to-do-in-kerala/\":\""
+    }
+   ]
+  }
+ }
+}

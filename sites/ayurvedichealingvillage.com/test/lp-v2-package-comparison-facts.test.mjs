@@ -20,6 +20,8 @@ import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { htmlToDOM, Element, Text } from "html-react-parser";
 import ts from "typescript";
+import { reverseTrainAConfig } from "./fixtures/train-a-20261014.mjs";
+import { reverseTrainBPageConfig } from "./fixtures/train-b-20261015.mjs";
 
 const require = createRequire(import.meta.url);
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -126,7 +128,9 @@ test("all four routes carry the comparison, and no other route changed", () => {
 
 test("only paragraphs were appended: every original card, heading, link, paragraph, CTA and FAQ is unchanged", () => {
   for (const slug of SLUGS) {
-    const now = plain(NOW_C[slug]);
+    // Train B (15 Oct): every merged Train B candidate's exact page-source config change is reversed first
+    // (fixtures/train-b-20261015.mjs); binding-level photo picks load into both sides of this comparison.
+    const now = reverseTrainBPageConfig(slug, plain(NOW_C[slug]));
     const was = plain(WAS_C[slug]);
     const cardsNow = now.page.offering.cards;
     const cardsWas = was.page.offering.cards;
@@ -138,7 +142,9 @@ test("only paragraphs were appended: every original card, heading, link, paragra
     });
     // With the added paragraphs removed, the whole campaign is the baseline's: CTA, form, FAQ, metadata and the rest.
     cardsNow.forEach((card, i) => { card.paragraphs = card.paragraphs.slice(0, cardsWas[i].paragraphs.length); });
-    same(now, was, `${slug}: nothing else changed`);
+    // Train A: reverse exactly every merged candidate's recorded config change (batch 8's AHV-WB.015.change Stories
+    // addition was rejected and excluded, so none remains on these routes today).
+    same(reverseTrainAConfig(slug, now), was, `${slug}: nothing else changed`);
   }
   const links = (slug) => NOW_C[slug].page.offering.cards.flatMap((c) => c.links ?? []).length;
   assert.equal(links("treatment-packages"), 11, "the 11 programme links stay");

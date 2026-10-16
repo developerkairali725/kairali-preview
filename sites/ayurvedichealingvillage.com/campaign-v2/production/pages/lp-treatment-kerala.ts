@@ -33,6 +33,9 @@ export default defineCopy({
       paragraphs: [
         "You may be exploring Ayurveda for the first time, or considering a programme alongside care you already receive. You do not need a programme name before you enquire. Explain what brings you here, any diagnosis or ongoing treatment, and what you hope to address.",
         "Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. Residential care brings together an individual assessment, prescribed therapies, meals and time to rest, with doctors reviewing your programme during the stay.",
+        // AHV-WB.452.benefit-copy (Train J3; the D05 line repeated the paragraph above and was rejected): one stay line that
+        // does not repeat it, every clause from this page's own approved rest and place copy. No outcome or relief claim.
+        "What your stay gives you: a private villa in the village gardens, a patient care team for companion, access and travel arrangements, and the hours between appointments to walk in the gardens or simply rest.",
       ],
       points: [
         "You are exploring Ayurveda for the first time",
@@ -48,18 +51,20 @@ export default defineCopy({
       heading: "Understand your options before arranging a stay",
       intro: ["A programme name is a starting point for a conversation. Your assessment determines the care and duration that may be appropriate for you."],
       cards: [
-        { title: "Panchakarma", paragraphs: ["Panchakarma involves doctor-selected procedures, preparation, diet and rest. A programme does not automatically include all five classical procedures. Ask which, if any, are suitable for you."] },
-        { title: "Rejuvenation care", paragraphs: ["Rejuvenation care brings prescribed therapies and daily routines together. Discuss the programme in relation to your health, current treatment and available time."] },
-        { title: "Pain management", paragraphs: ["Pain management begins with an assessment of your concerns, medical history and practical needs. Tell the doctor about back, neck or joint discomfort, previous treatment and any limits on movement. The assessment guides the proposed care; outcomes vary between individuals."] },
-        { title: "Diet, daily routine and discharge guidance", paragraphs: ["Our doctors can also discuss dietary guidance and daily routines. For each option, ask what your days would involve, how progress is reviewed and what guidance is provided at discharge."] },
+        // AHV-WB.454.change (Train J3, staff review 9 Oct: "make the text shorter"): each card one sentence, same facts and
+        // safety lines (not all five procedures; outcomes vary). Cards carry photographs (bindings.ts CARD_PICKS_20261015J3).
+        { title: "Panchakarma", paragraphs: ["Panchakarma combines doctor-selected procedures, preparation, diet and rest, but a programme does not automatically include all five classical procedures; ask which, if any, suit you."] },
+        { title: "Rejuvenation care", paragraphs: ["Rejuvenation care combines prescribed therapies and daily routines, discussed in relation to your health, current treatment and available time."] },
+        { title: "Pain management", paragraphs: ["An assessment of your back, neck or joint discomfort, medical history, previous treatment and any limits on movement guides the proposed care; outcomes vary between individuals."] },
+        { title: "Diet, daily routine and discharge guidance", paragraphs: ["Ask our doctors about dietary guidance and daily routines: what your days would involve, how progress is reviewed and what guidance is provided at discharge."] },
       ],
     },
     pathway: {
       heading: "From your first conversation to admission",
       steps: [
-        { title: "Start with a free consultation", body: "Share your health history, current medicines and relevant records, and say what you hope to address. The doctor explains suitable options and the information needed to assess you." },
-        { title: "Agree your plan and quotation", body: "Review the recommended duration, villa category and occupancy. Ask for a quotation that sets out what is included and what is charged separately, and ask about any preparation before admission." },
-        { title: "Settle into your prescribed routine", body: "Your days follow prescribed therapies, meals and rest, with doctors reviewing your programme during the stay. Before discharge, ask which guidance to continue at home." },
+        { title: "Start with a free consultation", body: "Share your health history, current medicines, relevant records and what you hope to address; the doctor explains suitable options and the information needed to assess you." },
+        { title: "Agree your plan and quotation", body: "Review the recommended duration, villa category and occupancy, and ask about any preparation before admission." },
+        { title: "Settle into your prescribed routine", body: "Your days follow prescribed therapies, meals and rest, with doctors reviewing your programme during the stay; before discharge, ask which guidance to continue at home." },
       ],
     },
     rest: {
@@ -89,7 +94,6 @@ export default defineCopy({
         { heading: "Ask for a quotation that explains", items: ["Your programme, recommended duration and dates", "Villa category and occupancy", "Included meals and doctor reviews", "Prescribed therapies and activities"] },
         { heading: "Ask about separately charged items", items: ["Medicines and tests", "Additional sessions", "Transport", "Personal services"], extra: true },
       ],
-      after: ["Your initial doctor consultation is free. Ask for a quotation covering your care and any later services, with the inclusions and any extra charges clearly explained."],
     },
     doctors: {
       heading: "Meet your Ayurvedic doctors",

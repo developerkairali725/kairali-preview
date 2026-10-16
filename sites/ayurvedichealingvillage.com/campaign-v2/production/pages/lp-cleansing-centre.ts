@@ -33,6 +33,8 @@ export default defineCopy({
       paragraphs: [
         "If you are looking into Ayurvedic cleansing, Panchakarma or rejuvenation, you will often see the terms used side by side. They can refer to different plans of care, and your medical history and assessment guide the choice.",
         "At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, your doctor explains the preparation, prescribed procedures and recommended duration before treatment begins.",
+        // AHV-WB.385.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.
+        "During your stay, prescribed sessions, meals and rest share one daily routine, and the time between sessions is yours to slow down, sit quietly or rest in your villa.",
       ],
       points: [
         "You are unsure whether cleansing, Panchakarma or rejuvenation fits",
@@ -56,7 +58,7 @@ export default defineCopy({
       heading: "From your first question to your programme",
       steps: [
         { title: "A free initial consultation", body: "Share your questions, current treatment and available dates. The doctor helps you understand whether a programme may suit you and what it would involve." },
-        { title: "Your plan and quotation", body: "Confirm the exact programme, number of nights and accommodation, counting any preparation and travel days. Review a personalised quotation before you book." },
+        { title: "Your plan and quotation", body: "Confirm the exact programme, number of nights and accommodation, counting any preparation and travel days." },
         { title: "Your stay at the village", body: "Follow your prescribed programme, with your care reviewed during the stay and guidance discussed before discharge." },
       ],
     },
@@ -105,7 +107,7 @@ export default defineCopy({
   faq: [
     { q: "Is every cleansing programme Panchakarma?", a: "No. Ask the doctor to identify the exact programme being considered and explain its purpose, prescribed procedures and preparation. Panchakarma and rejuvenation are distinct choices, and the suitable care and duration depend on your individual assessment." },
     { q: "Can I choose individual procedures myself?", a: "Your doctor determines which procedures are suitable after reviewing your health history and examining you. Use the consultation to ask what each proposed part of the programme involves, how it is supervised and what preparation or follow-up is needed." },
-    { q: "How long should I stay?", a: "The duration depends on the exact programme and your assessment. Tell the doctor how much time you have available, then confirm the recommended nights, preparation and follow-up. Keep those requirements together when reviewing your quotation and travel plans." },
+    { q: "How long should I stay?", a: "The duration depends on the exact programme and your assessment. Tell the doctor how much time you have available, then confirm the recommended nights, preparation and follow-up." },
     { q: "Is the initial doctor consultation free?", a: "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask about programme suitability. Before booking a stay, request a quotation explaining the treatment, accommodation, doctor reviews and any later services, along with separately charged items." },
     { q: "What should I check before booking?", a: "Confirm the recommended programme, number of nights, villa category and occupancy in your quotation. Ask which care, meals and sessions are included, and which medicines, tests, additional services or travel arrangements cost extra. Review the booking terms before making a payment." },
   ],

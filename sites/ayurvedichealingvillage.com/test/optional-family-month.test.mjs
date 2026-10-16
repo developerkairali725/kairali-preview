@@ -17,7 +17,7 @@ import { validationProblem } from "../lib/lead-validation.ts";
 import { normaliseCampaignPhone } from "../lib/campaign-phone.ts";
 
 const FAMILY = "family-ayurvedic-retreat";
-const NOW = new Date(Date.UTC(2026, 9, 10, 12)); // 10 Oct 2026 → Nov 2026 … Apr 2027, then Flexible
+const NOW = new Date(Date.UTC(2026, 9, 10, 12)); // 10 Oct 2026 → Oct 2026 … Mar 2027 (current month first, AHV-WB.020), then Flexible
 const TOKEN = "00000000-0000-4000-8000-000000000000";
 const C = productionCampaign(FAMILY);
 const FS = resolveSchema(C.form.schema, { campaign: C, locale: "en", now: NOW });
@@ -41,7 +41,7 @@ test("schema: one optional family month select, blank default, the shared six mo
   assert.ok(m, "family form has a preferredMonth field");
   assert.deepEqual([m.type, m.label, m.required, m.defaultValue, m.mapsTo], ["select", "Preferred month", false, "", "message"]);
   assert.deepEqual(m.options, [{ value: "", label: "Select month" }, ...monthOptions({ locale: "en", now: NOW })]);
-  assert.deepEqual(m.options.map((o) => o.value), ["", "2026-11", "2026-12", "2027-01", "2027-02", "2027-03", "2027-04", FLEXIBLE]);
+  assert.deepEqual(m.options.map((o) => o.value), ["", "2026-10", "2026-11", "2026-12", "2027-01", "2027-02", "2027-03", FLEXIBLE]);
   assert.equal(m.options.at(-1).label, "Flexible");
 });
 
@@ -50,7 +50,9 @@ test("schema: every existing family field, its order, requiredness, limits and t
   const d = field("duration");
   assert.deepEqual([d.type, d.label, d.required, d.defaultValue], ["select", "Preferred duration", false, ""]);
   assert.deepEqual(d.options, [...FAMILY_DURATIONS]);
-  assert.deepEqual(d.options.map((o) => o.value), ["", "7 days", "14 days", "21 days"]);
+  // Owner decision 22 (14 Oct 2026): nights, not days (AHV-LATER-010.02/.03); value = label, nothing else changes.
+  assert.deepEqual(d.options.map((o) => o.value), ["", "7 nights", "14 nights", "21 nights"]);
+  assert.deepEqual(d.options.map((o) => o.label), ["Select duration", "7 nights", "14 nights", "21 nights"]);
   assert.deepEqual([field("country").required, field("country").maxLength], [true, 100]);
   assert.deepEqual([field("message").required, field("message").maxLength, field("message").label], [false, 2700, "Any existing health conditions?"]);
   assert.equal(field("rdogender").required, false);
@@ -81,8 +83,8 @@ test("validation: blank, any listed month and Flexible pass; an unlisted value i
 test("blank month: request byte-identical to the existing family body (with or without the schema)", () => {
   const cases = [
     fam(),
-    fam({ rdogender: "Female", country: " Germany ", duration: "14 days", message: " Lower back stiffness. " }),
-    fam({ country: "x".repeat(100), duration: "21 days", message: "y".repeat(2700) }),
+    fam({ rdogender: "Female", country: " Germany ", duration: "14 nights", message: " Lower back stiffness. " }),
+    fam({ country: "x".repeat(100), duration: "21 nights", message: "y".repeat(2700) }),
   ];
   for (const values of cases) {
     const before = JSON.stringify(buildProductionLead(values, { token: TOKEN, locale: "en", production: C.productionForm, env }));
@@ -97,10 +99,10 @@ test("blank month: request byte-identical to the existing family body (with or w
 });
 
 test("picked month: one 'Preferred month' line in the message; every other key identical", () => {
-  const values = fam({ rdogender: "Male", duration: "14 days", message: "Mild asthma" });
+  const values = fam({ rdogender: "Male", duration: "14 nights", message: "Mild asthma" });
   const blank = buildProductionLead(values, ctx());
   const picked = buildProductionLead({ ...values, preferredMonth: "2027-01" }, ctx());
-  assert.equal(picked.fields.message, "Country: India\nPreferred duration: 14 days\nPreferred month: January 2027\nMild asthma");
+  assert.equal(picked.fields.message, "Country: India\nPreferred duration: 14 nights\nPreferred month: January 2027\nMild asthma");
   assert.deepEqual({ ...picked, fields: { ...picked.fields, message: blank.fields.message } }, blank);
   assert.deepEqual(Object.keys(picked), Object.keys(blank));
   assert.deepEqual(Object.keys(picked.fields), Object.keys(blank.fields));
@@ -112,7 +114,7 @@ test("picked month: one 'Preferred month' line in the message; every other key i
   assert.equal(picked.lead_source_url, "https://ayurvedichealingvillage.com/family-ayurvedic-retreat-kerala.html?gclid=Cj0_test&utm_source=google&utm_medium=cpc&utm_campaign=Family+Test&utm_term=family+ayurveda");
   assert.equal(picked.fields.phone, normaliseCampaignPhone("+91 98470 12345")); // the existing phone rule, unchanged
   const flex = buildProductionLead({ ...values, preferredMonth: FLEXIBLE }, ctx());
-  assert.equal(flex.fields.message, "Country: India\nPreferred duration: 14 days\nPreferred month: Flexible\nMild asthma");
+  assert.equal(flex.fields.message, "Country: India\nPreferred duration: 14 nights\nPreferred month: Flexible\nMild asthma");
   assert.equal(validationProblem("landing-page", { ...picked.fields }), null);
 });
 
@@ -130,11 +132,11 @@ test("synthetic receiver: the longest month label at the field maxima stays with
     for (const o of monthOptions({ locale: "en", now: new Date(Date.UTC(2026, m, 15)) })) if (o.label.length > longest.length) longest = o.label;
   }
   assert.equal(longest.length, "September 2027".length); // the longest English month label
-  const now = new Date(Date.UTC(2027, 2, 1)); // the list contains September 2027
+  const now = new Date(Date.UTC(2027, 3, 1)); // the list (April–September 2027, current month first) contains September 2027
   const S = resolveSchema(C.form.schema, { campaign: C, locale: "en", now });
   const sept = S.steps[0].fields.find((f) => f.name === "preferredMonth").options.find((o) => o.label === "September 2027");
   assert.ok(sept);
-  const values = fam({ rdogender: "Female", country: "x".repeat(100), duration: "21 days", message: "y".repeat(2700), preferredMonth: sept.value });
+  const values = fam({ rdogender: "Female", country: "x".repeat(100), duration: "21 nights", message: "y".repeat(2700), preferredMonth: sept.value });
   assert.deepEqual(validateStep(S, 0, values, "whatsapp"), []);
   const body = buildProductionLead(values, ctx({ schema: S }));
   assert.ok(body.fields.message.length <= 3000, `${body.fields.message.length}`);
@@ -150,7 +152,7 @@ test("adapter: one same-origin POST carrying the month line; a malformed month s
     pageUrl: "https://ayurvedichealingvillage.com/family-ayurvedic-retreat-kerala.html", referrer: "", fetch: ok,
     production: C.productionForm, env, timeoutMs: 200,
   });
-  const values = fam({ duration: "7 days", preferredMonth: "2026-12" });
+  const values = fam({ duration: "7 nights", preferredMonth: "2026-12" });
   assert.deepEqual(await sub(values), { status: "received", ref: "", token: TOKEN });
   assert.equal(n, 1);
   assert.equal(last.url, "/api/lead/");

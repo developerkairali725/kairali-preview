@@ -26,7 +26,7 @@ export type ProductionUi = {
   kicker: { lead: string; cards: string; row: string; index: string; pathway: string; village: string; stories: string; stay: string; doctors: string; faq: string; enquiry: string };
   village: { all: string; more: string };
   doctors: { speaks: (langs: string[]) => string; focus: string };
-  enquiry: { wa: string; call: string };
+  enquiry: { contactIntro: string; wa: string; call: string };
   footer: { brand: string; visit: string; speak: string; accreditation: string; disclaimer: string; group: string; privacy: string; terms: string; cookiePolicy: string; cookiePrefs: string; main: string; mainHref: string };
   form: FormUi;
   gallery: GalleryUi;
@@ -46,7 +46,7 @@ const EN: ProductionUi = {
   kicker: { lead: "Where to begin", cards: "Programmes", row: "In brief", index: "Care for each person", pathway: "How it works", village: "The village", stories: "In their words", stay: "Your quotation", doctors: "Your doctors", faq: "Before you decide", enquiry: "Free doctor consultation" },
   village: { all: "View all photos", more: "more" },
   doctors: { speaks: (l) => `Speaks ${list(l, "and")}`, focus: "Focus" },
-  enquiry: { wa: "Prefer to talk? WhatsApp", call: "Call" },
+  enquiry: { contactIntro: "Prefer to talk?", wa: "WhatsApp", call: "Call" },
   footer: {
     brand: "A NABH-accredited Ayurvedic hospital of the Kairali Ayurvedic Group, in Palakkad, Kerala.", visit: "Visit", speak: "Speak to us", accreditation: "Accreditation",
     disclaimer: "Ayurvedic programs at Kairali are supervised by qualified doctors and complement, not replace, the medical care you already receive. Individual experiences vary.",
@@ -54,7 +54,11 @@ const EN: ProductionUi = {
   },
   form: {
     formAria: "Free doctor consultation enquiry", stepOf: "Step {i} of {n}", back: "Back", next: "Continue", sending: "Sending…", terms: "Terms",
-    note: "No medical details needed. Your doctor asks for those privately at consultation.", honeypot: "Leave this empty", errors: {}, contactWa: "WhatsApp",
+    note: "No medical details needed. Your doctor asks for those privately at consultation.", honeypot: "Leave this empty",
+    // AHV-WB.021/459.phone-example, AHV-WB.021/161/304.checkbox-wording: the production form has one consent box and a
+    // +91 default or placeholder, so no "first box" and no UK example number. Validation, requiredness and the kit's English are unchanged.
+    errors: { phone: "Please enter your WhatsApp or phone number with the country code.", consent: "Please tick the box so we can reply to you." },
+    contactWa: "WhatsApp",
   },
   gallery: {
     title: "Gallery", count: "The village · {n} photos", filter: "Filter photos", all: "All", close: "Close gallery", closeViewer: "Close photo viewer", prev: "Previous photo", next: "Next photo",
@@ -69,10 +73,10 @@ const DE: ProductionUi = {
   header: { contact: "Kontakt", whatsapp: "WhatsApp", call: "Anrufen", callAria: "Anrufen:" },
   hero: { accredited: "akkreditiert", card: "Kostenlose ärztliche Erstberatung", cardSub: "" },
   proof: { aria: "Akkreditierung, Bewertungen und Auszeichnungen", reviews: "Tripadvisor-Bewertungen", asOf: "Tripadvisor, Stand", hospital: "Akkreditiertes Ayurveda-Krankenhaus", tradition: "Ayurvedische Familientradition seit 1908", doctors: "Qualifizierte Ayurveda-Ärzte", team: "und Team" },
-  kicker: { lead: "Der erste Schritt", cards: "Programme", row: "Im Überblick", index: "Für jeden Einzelnen", pathway: "So funktioniert es", village: "Das Dorf", stories: "Erfahrungen", stay: "Ihr Angebot", doctors: "Ihr Arzt", faq: "Vor Ihrer Entscheidung", enquiry: "Kostenlose ärztliche Erstberatung" },
+  kicker: { lead: "Der erste Schritt", cards: "Programme", row: "Im Überblick", index: "Für jeden Einzelnen", pathway: "So funktioniert es", village: "Das Dorf", stories: "Erfahrungen", stay: "Ihr Angebot", doctors: "Ihre Ärzte", faq: "Vor Ihrer Entscheidung", enquiry: "Kostenlose ärztliche Erstberatung" },
   village: { all: "Alle Fotos ansehen", more: "weitere" },
   doctors: { speaks: (l) => `Spricht ${list(l, "und")}`, focus: "Schwerpunkte" },
-  enquiry: { wa: "Lieber direkt sprechen? WhatsApp", call: "Anrufen" },
+  enquiry: { contactIntro: "Lieber direkt sprechen?", wa: "WhatsApp", call: "Anrufen" },
   footer: {
     brand: "Ein NABH-akkreditiertes Ayurveda-Krankenhaus der Kairali Ayurvedic Group in Palakkad, Kerala.", visit: "Adresse", speak: "Kontakt", accreditation: "Akkreditierung",
     disclaimer: "Ayurvedische Programme bei Kairali werden von qualifizierten Ärzten betreut und ergänzen Ihre bestehende medizinische Versorgung, ohne sie zu ersetzen. Individuelle Erfahrungen können variieren.",
@@ -97,9 +101,10 @@ const DE: ProductionUi = {
     "ahv-img-011": "Weiße Holzbrücke mit Gittergeländer zu einem Gebäude auf Stelzen zwischen tropischen Bäumen",
     "ahv-img-017": "Traditionelle hölzerne Behandlungsliege und Messing-Ölgefäß im Behandlungsraum in Palakkad",
     "ahv-img-033": "Sprechzimmer mit Untersuchungsliege und unverputzten Backsteinwänden bei Kairali in Palakkad",
+    "ahv-yoga-hall-consented-20261014": "Zwei Personen praktizieren Yoga in einer geräumigen Halle mit offenem Holzdach bei Kairali in Palakkad",
     "ahv-deluxe-bathroom": "Badezimmer der Deluxe-Villa mit Glasdusche und Waschbecken",
 
-    "kt-199": "Zwei Therapeutinnen bei einer Abhyanga-Ganzkörpermassage mit warmem medizinischem Öl",
+    "kt-199": "Zwei Therapeutinnen bei einer Abhyanga-Ganzkörperanwendung mit warmem medizinischem Kräuteröl",
     "kt-190": "Eine Therapeutin bereitet eine Patientin auf eine Kopfbehandlung mit warmem Öl vor",
     "kt-202": "Medizinisches Öl fließt aus einem Messinggefäß zur Vorbereitung von Shirodhara",
     "kt-116": "Achteckiger Villa-Innenraum unter einer Terrakotta-Kuppel im Healing Village",
@@ -109,7 +114,11 @@ const DE: ProductionUi = {
     "gal-poolside-rest-palakkad-2026": "Eine Patientin ruht auf einer Liege am Pool in den Gärten des Dorfes",
   },
   doctorFacts: {
-    "deepu-john": { role: "Chefarzt und Abteilungsleiter", tenure: "Praktiziert Ayurveda seit 2010 · Bei Kairali seit 2019", focus: "Panchakarma und Beratung zu Lebensgewohnheiten", languages: ["Malayalam", "Englisch", "Hindi", "Tamil"] },
+    "deepu-john": { role: "Chefarzt und Abteilungsleiter", tenure: "Mindestens 15 Jahre dokumentierte Berufserfahrung in Ayurveda (Stand: September 2026)", focus: "Panchakarma und Beratung zu Lebensgewohnheiten", languages: ["Malayalam", "Englisch", "Hindi", "Tamil"] },
+    "rahul-r": { role: "Ayurveda-Arzt", tenure: "Mindestens 3 Jahre dokumentierte Berufserfahrung in Ayurveda (Stand: September 2026)", languages: ["Englisch", "Malayalam", "Tamil"] },
+    "akhila-oommen": { role: "Ayurveda-Ärztin", tenure: "Mindestens 9 Jahre dokumentierte Berufserfahrung in Ayurveda (Stand: September 2026)", languages: ["Malayalam", "Hindi", "Englisch"] },
+    "adhina-ub": { role: "Stationsärztin (RMO)", tenure: "Mindestens 1 Jahr dokumentierte Berufserfahrung in Ayurveda (Stand: September 2026)", languages: ["Englisch", "Malayalam"] },
+    "aashitha-ps": { role: "Ayurveda-Ärztin", tenure: "Mindestens 9 Jahre dokumentierte klinische Ayurveda-Erfahrung (Stand: September 2026)", languages: ["Malayalam", "Englisch", "Hindi", "Tamil"] },
   },
 };
 
@@ -118,10 +127,10 @@ const RU: ProductionUi = {
   header: { contact: "Контакты", whatsapp: "WhatsApp", call: "Позвонить", callAria: "Позвонить:" },
   hero: { accredited: "аккредитация", card: "Бесплатная консультация врача", cardSub: "" },
   proof: { aria: "Аккредитация, отзывы и награды", reviews: "отзывов на Tripadvisor", asOf: "Tripadvisor, по состоянию на", hospital: "Аккредитованная аюрведическая больница", tradition: "Семейная традиция аюрведы с 1908 года", doctors: "Квалифицированные аюрведические врачи", team: "и команда" },
-  kicker: { lead: "С чего начать", cards: "Программы", row: "Коротко", index: "Для каждого", pathway: "Как это работает", village: "Деревня", stories: "Отзывы", stay: "Ваше предложение", doctors: "Ваш врач", faq: "Прежде чем решить", enquiry: "Бесплатная консультация врача" },
+  kicker: { lead: "С чего начать", cards: "Программы", row: "Коротко", index: "Для каждого", pathway: "Как это работает", village: "Деревня", stories: "Отзывы", stay: "Ваше предложение", doctors: "Ваши врачи", faq: "Прежде чем решить", enquiry: "Бесплатная консультация врача" },
   village: { all: "Все фотографии", more: "ещё" },
   doctors: { speaks: (l) => `Говорит на ${list(l, "и")} языках`, focus: "Направления" },
-  enquiry: { wa: "Удобнее поговорить? WhatsApp", call: "Позвонить" },
+  enquiry: { contactIntro: "Удобнее поговорить?", wa: "WhatsApp", call: "Позвонить" },
   footer: {
     brand: "Аюрведическая больница с аккредитацией NABH в составе Kairali Ayurvedic Group, Палаккад, Керала.", visit: "Адрес", speak: "Связаться с нами", accreditation: "Аккредитация",
     disclaimer: "Аюрведические программы в Kairali проходят под наблюдением квалифицированных врачей и дополняют, а не заменяют медицинскую помощь, которую вы уже получаете. Индивидуальный опыт может отличаться.",
@@ -146,9 +155,10 @@ const RU: ProductionUi = {
     "ahv-img-011": "Белый деревянный мост с решетчатыми перилами к зданию на сваях среди тропических деревьев",
     "ahv-img-017": "Традиционный деревянный лечебный стол и латунный сосуд для масла в процедурной в Палаккаде",
     "ahv-img-033": "Кабинет консультаций со смотровой кушеткой и открытыми кирпичными стенами в Kairali в Палаккаде",
+    "ahv-yoga-hall-consented-20261014": "Два человека занимаются йогой в просторном зале с открытыми деревянными стропилами в Kairali в Палаккаде",
     "ahv-deluxe-bathroom": "Ванная комната виллы Deluxe со стеклянной душевой кабиной и раковиной",
 
-    "kt-199": "Два терапевта проводят абхьянгу — массаж всего тела тёплым лечебным маслом",
+    "kt-199": "Два терапевта проводят абхьянгу — процедуру всего тела с тёплым лечебным маслом",
     "kt-190": "Терапевт готовит пациентку к процедуре для головы с тёплым маслом",
     "kt-202": "Лечебное масло льётся из латунного сосуда при подготовке к широдхаре",
     "kt-116": "Восьмиугольная вилла под терракотовым куполом в Healing Village",
@@ -158,7 +168,11 @@ const RU: ProductionUi = {
     "gal-poolside-rest-palakkad-2026": "Пациентка отдыхает на шезлонге у бассейна в садах деревни",
   },
   doctorFacts: {
-    "deepu-john": { role: "Главный врач и заведующий отделением", tenure: "Практикует аюрведу с 2010 года · В Kairali с 2019 года", focus: "Панчакарма и рекомендации по образу жизни", languages: ["малаялам", "английском", "хинди", "тамильском"] },
+    "deepu-john": { role: "Главный врач и заведующий отделением", tenure: "Не менее 15 лет документально подтверждённого профессионального опыта в аюрведе (по состоянию на сентябрь 2026 года)", focus: "Панчакарма и рекомендации по образу жизни", languages: ["малаялам", "английском", "хинди", "тамильском"] },
+    "rahul-r": { role: "Аюрведический врач", tenure: "Не менее 3 лет документально подтверждённого профессионального опыта в аюрведе (по состоянию на сентябрь 2026 года)", languages: ["английском", "малаялам", "тамильском"] },
+    "akhila-oommen": { role: "Аюрведический врач", tenure: "Не менее 9 лет документально подтверждённого профессионального опыта в аюрведе (по состоянию на сентябрь 2026 года)", languages: ["малаялам", "хинди", "английском"] },
+    "adhina-ub": { role: "Дежурный врач", tenure: "Не менее 1 года документально подтверждённого профессионального опыта в аюрведе (по состоянию на сентябрь 2026 года)", languages: ["английском", "малаялам"] },
+    "aashitha-ps": { role: "Аюрведический врач", tenure: "Не менее 9 лет документально подтверждённого клинического опыта в аюрведе (по состоянию на сентябрь 2026 года)", languages: ["малаялам", "английском", "хинди", "тамильском"] },
   },
 };
 

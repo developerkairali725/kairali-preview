@@ -204,6 +204,39 @@ id = "generic-api-key"
         '''^sites/ayurvedichealingvillage\.com/docs/lp-v2/PLAN\.md$''',
     ]
 
+    # Inspected 2026-10-15 with pinned gitleaks 8.30.1 (PR 431, AHV Train B):
+    # c8ed28232 consultation-receipt-banner.test.mjs:15 and 0b1832c76
+    # lead-hotfix-20261015.test.mjs:128 reuse the SAME fixed synthetic
+    # request UUID already exempted above for campaign-validation/lead-receipt
+    # tests: a payload/idempotency ID sent to mocked transports, no auth use.
+    # Exact extracted value AND these two exact test paths only.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexTarget = "secret"
+    regexes = ['''^545404ff-a177-4f93-b5ab-10b90ee90d58$''']
+    paths = ['''^sites/ayurvedichealingvillage\.com/test/(consultation-receipt-banner|lead-hotfix-20261015)\.test\.mjs$''']
+
+    # Inspected 2026-10-15 with pinned gitleaks 8.30.1 (PR 431): e0873fd85
+    # public/design/exit-offer.js:475 reads the CMP's public localStorage key
+    # NAME (the same value already exempted for public/consent/policy.mjs),
+    # not a credential or stored refusal data. Exact value AND exact file.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexTarget = "secret"
+    regexes = ['''^ahv-consent-refusals-v1$''']
+    paths = ['''^sites/ayurvedichealingvillage\.com/public/design/exit-offer\.js$''']
+
+    # Inspected 2026-10-15 with gitleaks 8.30.1 (Train N, PR for Trains G-J):
+    # commit 9d8cade60 test/train-j3-20261015.test.mjs:279 names the same public
+    # sessionStorage slot as consent-runtime.ts above (AHV-LATER-023.01 test of
+    # the visit-scoped attribution), not a credential or stored value. Exempt
+    # only this exact extracted value AND this exact test path.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexTarget = "secret"
+    regexes = ['''^ahv-paid-attribution-v1$''']
+    paths = ['''^sites/ayurvedichealingvillage\.com/test/train-j3-20261015\.test\.mjs$''']
+
 # N12 inspected 2026-10-11: historical c23200f03 test lines 112–113
 # are SHA-256 fingerprints of the released 807c535e3 consultant-course
 # desktop/mobile JSON bytes, recomputed exactly. No authentication use.

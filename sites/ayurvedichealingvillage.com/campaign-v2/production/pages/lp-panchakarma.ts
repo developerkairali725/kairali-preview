@@ -3,7 +3,10 @@
 // facts only from the brief and data/doctors.ts. The quotation is personal; no price. Distinct angle from
 // panchakarma.ts (package comparison, cards rather than the numbered row). sha256 as recorded in
 // final-batch/NONPUBLIC/AUDIENCE-KEYWORDS-FACTS.json (not recomputed in this session).
+// Owner decision, 14 Oct 2026 (AHV-WB.042.change: "panchakarma has 28 as well"): the stated stay reads 14–28 nights,
+// matching the Length-of-stay box (14/21/28); lead and FAQ changed only in that range.
 import { defineCopy } from "../copy.ts";
+import { story } from "../stories.ts";
 
 export default defineCopy({
   slug: "lp-panchakarma",
@@ -30,8 +33,10 @@ export default defineCopy({
     lead: {
       heading: "Comparing Panchakarma packages? Start with your needs",
       paragraphs: [
-        "When you compare Panchakarma packages, it is natural to look at length and cost first. At Kairali, the programme is not picked from a list: your doctor first assesses whether Panchakarma is suitable, which procedures may be considered and how long you would need.",
-        "Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. The published Panchakarma programme is a 14–21 night stay; discuss the time you can set aside and confirm the recommended duration before arranging travel.",
+        "When you compare Panchakarma packages, it is natural to look at length first. At Kairali, the programme is not picked from a list: your doctor first assesses whether Panchakarma is suitable, which procedures may be considered and how long you would need.",
+        "Kairali – The Ayurvedic Healing Village is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala. The published Panchakarma programme is a 14–28 night stay; discuss the time you can set aside and confirm the recommended duration before arranging travel.",
+        // AHV-WB.428.benefit-copy (staff workbook): one plain line on the stay itself, from this page's own reviewed facts; no outcome.
+        "During your stay, trained therapists carry out your prescribed sessions under physician supervision. Your villa and its gardens give you space to rest between appointments.",
       ],
       points: [
         "You are comparing Panchakarma packages and what they cost",
@@ -54,13 +59,36 @@ export default defineCopy({
       heading: "How your Panchakarma stay is planned",
       steps: [
         { title: "A free initial consultation", body: "Share your symptoms, diagnoses, current medicines and previous treatment. Bring relevant medical records and mention any dietary needs or practical assistance you may require." },
-        { title: "Your plan and personal quotation", body: "Patient care prepares a quotation for your programme, dates, duration and occupancy. Check the included care and separately charged items before booking." },
+        { title: "Your plan and personal quotation", body: "Patient care prepares a quotation for your programme, dates, duration and occupancy." },
         { title: "Your stay at the Healing Village", body: "Follow your prescribed programme from your villa, with gardens and space to rest between appointments." },
+      ],
+    },
+    // AHV-WB.430.villa-gallery and .guest-video (staff review 9 Oct 2026; owner's standing authority for approved
+    // villa photographs and on-page guest video; production/section-order.ts D_VILLAGE_AND_STORIES). Reviewed copy
+    // reused verbatim: the village from lp-cleansing-centre.ts, the consented registry films from lp-cleansing-centre.ts.
+    // No new facts, names, countries or quotes.
+    place: {
+      heading: "Choose your villa for the stay",
+      paragraphs: ["Explore the villa categories below, then confirm the accommodation and occupancy for your dates with patient care before booking."],
+      villas: [
+        { name: "Deluxe Villa", body: "A king-size bed and private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Deluxe Villa", href: "/deluxe-villa/" } },
+        { name: "Classic Villa", body: "Garden views and a private bathroom, with Wi-Fi, TV and air conditioning.", link: { label: "Explore Classic Villa", href: "/classic-villa/" } },
+        { name: "Royal Villa", body: "A king-size bed, living area and garden access, with Wi-Fi, TV, air conditioning, a kettle and hair dryer.", link: { label: "Explore Royal Villa", href: "/royal-villa/" } },
+        { name: "Maharaja Suite", body: "A king-size bed, a living area with a couch and garden access in a premium location.", link: { label: "Explore Maharaja Suite", href: "/maharaja-suite/" } },
+      ],
+    },
+    stories: {
+      heading: "Watch before you decide",
+      body: "Learn about Panchakarma, see the village and hear patients describe their stays in their own words. Individual experiences vary.",
+      films: [
+        story("07tVC2oXd8g", "Watch the Panchakarma film"),
+        story("iPARaMRASUs", "A day at the village"),
+        story("4x01PtWfNnk", "Watch Michaela & Jan’s experience"),
       ],
     },
     stay: {
       heading: "Your quotation is personal to you",
-      paragraphs: ["Panchakarma is planned after assessment, so your quotation is prepared for your recommended programme, duration, dates and villa choice, rather than as a fixed package. Ask patient care for a quotation covering your care and any later services."],
+      paragraphs: ["Panchakarma is planned after assessment, so your quotation is prepared for your recommended programme, duration, dates and villa choice, rather than as a fixed package."],
       lists: [
         { heading: "Confirm in your quotation", items: ["The recommended programme and duration", "Villa choice and occupancy", "Meals, doctor reviews, therapies and activities"] },
         { heading: "Ask about separately", items: ["Medicines and tests", "Additional sessions", "Transport and personal services"], extra: true },
@@ -79,7 +107,7 @@ export default defineCopy({
   faq: [
     { q: "Do I need to choose procedures before I enquire?", a: "No. Describe your needs and goals to the doctor. Assessment determines whether a Panchakarma programme is appropriate and which procedures may be considered. You do not need to select a treatment schedule yourself." },
     { q: "Will my stay include every Panchakarma procedure?", a: "Not automatically. Your doctor selects appropriate procedures and explains their preparation, suitability and availability. The programme is individual rather than a fixed list for every patient." },
-    { q: "Can I fit Panchakarma into a short visit?", a: "The published programme is a 14–21 night stay. Share your available dates before choosing a programme. Ask the doctor what duration is appropriate; do not assume that a shorter visit provides the same care." },
+    { q: "Can I fit Panchakarma into a short visit?", a: "The published programme is a 14–28 night stay. Share your available dates before choosing a programme. Ask the doctor what duration is appropriate; do not assume that a shorter visit provides the same care." },
     { q: "Can I discuss an existing health condition?", a: "Yes. Share your medical records, current medicines and previous treatment. The doctor can discuss suitability, realistic expectations and any further information needed. Individual responses vary, and a consultation cannot promise an outcome." },
     { q: "How is the programme cost confirmed?", a: "Patient care prepares a quotation for your programme, dates, duration and occupancy. Check the included care and separately charged items before booking. Your initial doctor consultation is free; ask for a quotation covering your care and any later services." },
   ],

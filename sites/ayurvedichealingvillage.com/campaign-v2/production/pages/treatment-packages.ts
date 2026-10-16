@@ -33,6 +33,7 @@ export default defineCopy({
       paragraphs: [
         "You may be looking into Ayurveda for a particular health concern, considering Panchakarma, or making time for yoga and a more regular daily routine. At Kairali – The Ayurvedic Healing Village, your health history and goals are the starting point for discussing a programme.",
         "Kairali is an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, with residential accommodation in the village gardens. Speak with an Ayurvedic doctor about the care that may suit you, the time it involves and what to expect before you book.",
+        "What your stay offers: doctor-guided care, prescribed meals and time to rest in the gardens of Kairali, with villa accommodation, doctor reviews and therapies brought together in one plan.",
       ],
     },
     // Each card's programme links are set as the card's own list of links (the same labels, capitalised as list
@@ -84,7 +85,7 @@ export default defineCopy({
         {
           title: "Yoga and meditation",
           links: [
-            { label: "Personalised yoga", href: `${SITE}/yoga-retreats/` },
+            { label: "Personalised yoga", href: `${SITE}/yoga-therapy-individual/` },
             { label: "Yoga and meditation stay", href: `${SITE}/yoga-and-meditation-package/` },
             { label: "Yoga for digestive wellbeing", href: `${SITE}/digestive-wellness-gut-health-yoga-therapy/` },
             { label: "Yoga-based stress programme", href: `${SITE}/yoga-based-stress-energy-reset-program/` },
@@ -98,7 +99,7 @@ export default defineCopy({
       heading: "A clear plan before you book",
       steps: [
         { title: "A free initial consultation", body: "Start with a free initial doctor consultation. Share your health history, current medicines and what you would like to discuss. Your doctor can explain the proposed care, diet, preparation and time needed." },
-        { title: "Dates, accommodation and quotation", body: "Once you understand the programme, confirm your dates, accommodation and quotation with our team. Review what is included, what is charged separately and any programme-specific minimum stay before arranging travel." },
+        { title: "Dates and accommodation", body: "Once you understand the programme, confirm your dates and accommodation with our team. Review what is included, what is charged separately and any programme-specific minimum stay before arranging travel." },
       ],
     },
     rest: {
@@ -133,15 +134,15 @@ export default defineCopy({
     faqHeading: "Frequently asked questions",
     closing: {
       heading: "Discuss your programme with a doctor",
-      paragraphs: ["Tell us what you need from your stay and when you hope to travel. Start with a free initial doctor consultation, then review your care plan and quotation before booking."],
+      paragraphs: ["Tell us what you need from your stay and when you hope to travel. Start with a free initial doctor consultation, then review your care plan before booking."],
     },
   },
   faq: [
     { q: "How do I choose an Ayurvedic treatment package?", a: "Start with your needs rather than a programme name. Tell the doctor about your health history, current medicines and goals. They can discuss suitable options, the proposed care and the time involved, so you can make an informed decision before booking." },
-    { q: "Is the initial doctor consultation free?", a: "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask whether a programme may suit you. Request a quotation explaining the treatment, doctor reviews and any later services included in your stay, along with separately charged items." },
+    { q: "Is the initial doctor consultation free?", a: "Yes. Your initial doctor consultation is free. Use it to discuss your needs and ask whether a programme may suit you. Before booking, ask the team to explain the treatment, doctor reviews and any later services included in your stay, along with separately charged items." },
     { q: "How long should I stay?", a: "The recommended duration varies by programme and individual assessment. Share the dates you have available, then ask the doctor about preparation, the proposed treatment period and follow-up. Confirm the programme’s minimum stay before booking flights or other travel." },
-    { q: "What determines the cost of my programme?", a: "Your quotation depends on the programme, duration, dates, villa category and occupancy. Ask for a clear breakdown of included care and any extras. Review medicines, tests, additional sessions, transport and personal services before confirming your booking." },
-    { q: "Do Ayurveda and yoga programmes have the same inclusions?", a: "No. Treatment schedules and yoga arrangements vary between programmes. Your quotation should explain the prescribed therapies, meals, doctor reviews and group or private sessions included in your stay. Ask our team to confirm the details of your chosen programme." },
+    { q: "What determines the cost of my programme?", a: "The cost depends on the programme, duration, dates, villa category and occupancy. Ask for a clear breakdown of included care and any extras. Review medicines, tests, additional sessions, transport and personal services before confirming your booking." },
+    { q: "Do Ayurveda and yoga programmes have the same inclusions?", a: "No. Treatment schedules and yoga arrangements vary between programmes. Ask our team which prescribed therapies, meals, doctor reviews and group or private sessions are included in your stay, and confirm the details of your chosen programme." },
     { q: "What should I share before travelling?", a: "Bring your medical records and a list of current medicines to the consultation. Discuss any dietary needs or access requirements, and ask about preparation and follow-up. Confirm your programme, accommodation and travel arrangements with the team before you leave." },
   ],
 });

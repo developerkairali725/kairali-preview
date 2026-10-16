@@ -1,0 +1,62 @@
+{
+  "authority": "Exact eight locale-tenure substitutions from the saved approved roster/experience integration instructions; dated documented lower bounds only. Original source fixtures remain unchanged.",
+  "base": "8d59c69d6b1919942f1163ec4807699f981bfc98",
+  "rosterHead": "8dbf07fbd03791c09e45dc46f0317d543e2a7a64",
+  "experienceHead": "4094c6136d34772616f09c7e7aea31ccee357800",
+  "files": {
+    "campaign-v2/production/ui.ts": {
+      "beforeSHA256": "68ca691268cbd4c0996910a6e8692ee758eaf814b15a476a1c9e933a11946aca",
+      "afterSHA256": "330c1582cba73535d5b1eaf5c1726cbf455eb735e6295e547e0637b48d095140",
+      "replacements": [
+        {
+          "locale": "de",
+          "doctor": "adhina-ub",
+          "before": "    \"adhina-ub\": { role: \"Stationsärztin (RMO)\", tenure: \"Bei Kairali seit 2026\", languages: [\"Englisch\", \"Malayalam\"] },\n",
+          "after": "    \"adhina-ub\": { role: \"Stationsärztin (RMO)\", tenure: \"Mindestens 1 Jahr dokumentierte Berufserfahrung in Ayurveda (Stand: September 2026)\", languages: [\"Englisch\", \"Malayalam\"] },\n"
+        },
+        {
+          "locale": "de",
+          "doctor": "aashitha-ps",
+          "before": "    \"aashitha-ps\": { role: \"Ayurveda-Ärztin\", tenure: \"Bei Kairali seit 2026\", languages: [\"Malayalam\", \"Englisch\", \"Hindi\", \"Tamil\"] },\n",
+          "after": "    \"aashitha-ps\": { role: \"Ayurveda-Ärztin\", tenure: \"Mindestens 9 Jahre dokumentierte klinische Ayurveda-Erfahrung (Stand: September 2026)\", languages: [\"Malayalam\", \"Englisch\", \"Hindi\", \"Tamil\"] },\n"
+        },
+        {
+          "locale": "de",
+          "doctor": "akhila-oommen",
+          "before": "    \"akhila-oommen\": { role: \"Ayurveda-Ärztin\", tenure: \"Bei Kairali seit 2024\", languages: [\"Malayalam\", \"Hindi\", \"Englisch\"] },\n",
+          "after": "    \"akhila-oommen\": { role: \"Ayurveda-Ärztin\", tenure: \"Mindestens 9 Jahre dokumentierte Berufserfahrung in Ayurveda (Stand: September 2026)\", languages: [\"Malayalam\", \"Hindi\", \"Englisch\"] },\n"
+        },
+        {
+          "locale": "de",
+          "doctor": "rahul-r",
+          "before": "    \"rahul-r\": { role: \"Ayurveda-Arzt\", tenure: \"Bei Kairali seit 2023\", languages: [\"Englisch\", \"Malayalam\", \"Tamil\"] },\n",
+          "after": "    \"rahul-r\": { role: \"Ayurveda-Arzt\", tenure: \"Mindestens 3 Jahre dokumentierte Berufserfahrung in Ayurveda (Stand: September 2026)\", languages: [\"Englisch\", \"Malayalam\", \"Tamil\"] },\n"
+        },
+        {
+          "locale": "ru",
+          "doctor": "adhina-ub",
+          "before": "    \"adhina-ub\": { role: \"Дежурный врач\", tenure: \"В Kairali с 2026 г.\", languages: [\"английском\", \"малаялам\"] },\n",
+          "after": "    \"adhina-ub\": { role: \"Дежурный врач\", tenure: \"Не менее 1 года документально подтверждённого профессионального опыта в аюрведе (по состоянию на сентябрь 2026 года)\", languages: [\"английском\", \"малаялам\"] },\n"
+        },
+        {
+          "locale": "ru",
+          "doctor": "aashitha-ps",
+          "before": "    \"aashitha-ps\": { role: \"Аюрведический врач\", tenure: \"В Kairali с 2026 г.\", languages: [\"малаялам\", \"английском\", \"хинди\", \"тамильском\"] },\n",
+          "after": "    \"aashitha-ps\": { role: \"Аюрведический врач\", tenure: \"Не менее 9 лет документально подтверждённого клинического опыта в аюрведе (по состоянию на сентябрь 2026 года)\", languages: [\"малаялам\", \"английском\", \"хинди\", \"тамильском\"] },\n"
+        },
+        {
+          "locale": "ru",
+          "doctor": "akhila-oommen",
+          "before": "    \"akhila-oommen\": { role: \"Аюрведический врач\", tenure: \"В Kairali с 2024 г.\", languages: [\"малаялам\", \"хинди\", \"английском\"] },\n",
+          "after": "    \"akhila-oommen\": { role: \"Аюрведический врач\", tenure: \"Не менее 9 лет документально подтверждённого профессионального опыта в аюрведе (по состоянию на сентябрь 2026 года)\", languages: [\"малаялам\", \"хинди\", \"английском\"] },\n"
+        },
+        {
+          "locale": "ru",
+          "doctor": "rahul-r",
+          "before": "    \"rahul-r\": { role: \"Аюрведический врач\", tenure: \"В Kairali с 2023 г.\", languages: [\"английском\", \"малаялам\", \"тамильском\"] },\n",
+          "after": "    \"rahul-r\": { role: \"Аюрведический врач\", tenure: \"Не менее 3 лет документально подтверждённого профессионального опыта в аюрведе (по состоянию на сентябрь 2026 года)\", languages: [\"английском\", \"малаялам\", \"тамильском\"] },\n"
+        }
+      ]
+    }
+  }
+}

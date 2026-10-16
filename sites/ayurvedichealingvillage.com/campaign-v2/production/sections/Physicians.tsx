@@ -21,8 +21,8 @@ export function speaks(d: DoctorRef, ui: ProductionUi = UI.en): string {
  * The page's one doctors section — the route's current consented physicians, once, with their own portrait — placed
  * directly before the enquiry form: the doctors a visitor can consult, then the form that starts that consultation.
  * Desktop: one row of five 4:5 portraits (three across on tablets); phones: a ruled list with the portrait beside the
- * text. A route presenting one physician (the German and Russian routes, as their reviewed copy does) shows a single
- * wide card instead. Each portrait is positioned and enlarged per doctor (DoctorRef.frame) so faces read at a similar
+ * text. A route configured with one physician shows a single wide card instead; the current live routes use the
+ * complete consented roster, including German and Russian under the owner correction of 14 October 2026. Each portrait is positioned and enlarged per doctor (DoctorRef.frame) so faces read at a similar
  * size. Every fact comes from data/doctors.ts (the German / Russian wording of the same facts from production/ui.ts);
  * years in practice are never derived.
  */
@@ -55,10 +55,13 @@ function Card({ d, ui, one }: { d: DoctorRef; ui: ProductionUi; one: boolean }) 
   const tenure = local?.tenure ?? d.tenure;
   const focus = local?.focus ?? d.focus;
   const langs = speaks(d, ui);
+  // AHV-WB.024/100/260.change: the portrait's own registry description (data/images.ts); on DE/RU the doctor's name
+  // with the reviewed localized role (production/ui.ts doctorFacts). No new fact.
+  const alt = local?.role ? `${d.name}, ${local.role}` : d.photo.alt;
   return (
     <li className="lp-pdoc">
       <div className="lp-pdoc__frame" style={frame}>
-        <Image className="lp-pdoc__img" src={d.photo.src} alt="" width={d.photo.width} height={d.photo.height} sizes={sizes} loading="lazy" />
+        <Image className="lp-pdoc__img" src={d.photo.src} alt={alt} width={d.photo.width} height={d.photo.height} sizes={sizes} loading="lazy" />
       </div>
       <div className="lp-pdoc__text">
         <h3 className="lp-pdoc__name">{d.name}</h3>

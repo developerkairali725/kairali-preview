@@ -30,7 +30,7 @@ export default defineCopy({
   page: {
     lead: {
       heading: "Care that starts with your everyday life",
-      paragraphs: ["When pain makes walking, sitting or sleeping difficult, choosing a programme starts with understanding your needs. At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, your consultation brings together your symptoms, medical history and current treatment. Discuss whether a residential Ayurveda programme is right for you, and the practical help you would need during a stay."],
+      paragraphs: ["Planning Ayurvedic pain management starts with understanding how pain affects walking, sitting or sleeping. At Kairali – The Ayurvedic Healing Village, an NABH-accredited Ayurvedic hospital in Palakkad, Kerala, your consultation brings together your symptoms, medical history and current treatment. Discuss whether a residential Ayurveda programme is right for you, and the practical help you would need during a stay.", "What your stay offers: a doctor who starts with how pain affects walking, sitting or sleeping, practical help discussed before you travel, and a quiet garden setting with room to pause between appointments rather than rush."],
       points: [
         "Back pain, slipped disc and associated discomfort",
         "Joint pain, osteoarthritis and rheumatoid arthritis",
@@ -44,7 +44,7 @@ export default defineCopy({
       heading: "What your pain management plan may involve",
       intro: ["Your assessment guides the care prescribed for you. These are topics to discuss with your doctor, rather than a fixed set of treatments for everyone."],
       cards: [
-        { title: "Ayurvedic therapies", paragraphs: ["Discuss therapies such as Abhyangam, a medicated oil massage; Kizhi, a herbal treatment; Pizhichil, a warm oil treatment; Kati Basti, herbal oil pooling; or Nasya, nasal administration. Your doctor explains which procedures suit you and what each session involves."] },
+        { title: "Ayurvedic therapies", paragraphs: ["Discuss therapies such as Abhyangam, a full-body medicated oil therapy; Kizhi, a herbal treatment; Pizhichil, a warm oil treatment; Kati Basti, herbal oil pooling; or Nasya, nasal administration. Your doctor explains which procedures suit you and what each session involves."] },
         { title: "Medicines considered alongside your current care", paragraphs: ["Bring a list of your prescriptions and supplements. If Ayurvedic medicines are proposed, discuss their purpose, ingredients and possible interactions with the clinicians involved in your treatment."] },
         { title: "Food, movement and rest", paragraphs: ["Build the daily routine around your needs. Your doctor can discuss meals, posture, suitable movement, yoga or meditation, and ways to manage stress. Tell the team about allergies, dietary advice and physical limitations."] },
         { title: "Reviews during the stay and guidance for home", paragraphs: ["Keep your doctor informed about comfort, symptoms and any concerns. Before departure, understand the routine recommended for you and how follow-up will work, including the frequency and cost of later consultations."] },
@@ -54,7 +54,7 @@ export default defineCopy({
       heading: "From your first conversation to your stay",
       steps: [
         { title: "Start with a free initial consultation", body: "Describe your pain, what has become difficult and what you would like to discuss. Share reports, your diagnosis and details of current or previous treatment." },
-        { title: "Agree the care and practical arrangements", body: "Discuss proposed therapies, the recommended stay, room access and any companion or assistance needs. Review the full quotation before arranging travel." },
+        { title: "Agree the care and practical arrangements", body: "Discuss proposed therapies, the recommended stay, room access and any companion or assistance needs." },
         { title: "Settle into your care routine", body: "Attend prescribed sessions and make time for meals and rest. Ask how your progress will be reviewed and what to do if you feel uncomfortable or your needs change." },
       ],
     },
@@ -101,7 +101,7 @@ export default defineCopy({
     },
   },
   faq: [
-    { q: "Can I enquire about Ayurvedic treatment for back or joint pain?", a: "Yes. Share where you feel pain, any diagnosis and how symptoms affect your daily routine. The doctor can discuss back pain, joint pain, arthritis, sciatica or related concerns in the context of your medical history. An individual assessment determines whether a programme is suitable." },
+    { q: "Can I enquire about Ayurvedic pain management for back or joint pain?", a: "Yes. Share where you feel pain, any diagnosis and how symptoms affect your daily routine. The doctor can discuss back pain, joint pain, arthritis, sciatica or related concerns in the context of your medical history. An individual assessment determines whether a programme is suitable." },
     { q: "What happens in the free initial doctor consultation?", a: "You can explain your health history, current treatment and questions about a stay. The doctor discusses suitability and the care that may be proposed. The initial consultation is free; treatment, tests, medicines and later services are not automatically free." },
     { q: "How long should I stay, and when might I notice a change?", a: "There is no single duration or result that applies to everyone. Discuss your available time, the recommended programme and how progress would be reviewed before booking. Ask what would prompt a change in the plan and confirm the number of nights with patient care." },
     { q: "Can I continue my existing medicines and treatment?", a: "Share all prescriptions, supplements and other care with the Ayurvedic doctor and your other treating clinicians. Ask them to review the proposed plan, including any interactions or adjustments. Decisions about combining treatments need to be made for your individual circumstances." },

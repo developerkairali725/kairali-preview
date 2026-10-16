@@ -1,0 +1,135 @@
+{
+ "task": "WOPS-WEBSITE-SEQUENTIAL-20261008-001",
+ "batch": "train-e03",
+ "base": "cc1ddad6ace2c557787d603ac7d5af2bd967a3b0",
+ "authority": "operations/AHV-ASSESSMENT-CONSUMPTION.json IMPLEMENT_FACT_SOURCED_COPY (AHV-WB.112/135/177/270.benefit-copy): non-outcome benefit lines drafted from each page's named reviewed brief under standing implementation authority",
+ "files": {
+  "campaign-v2/production/pages/monsoon-wellness.ts": {
+   "row": "AHV-WB.112.benefit-copy",
+   "beforeSHA256": "98a6a085b63453303eb33e97f9c7a2268ba2e8100354ab1a38704b134100e13a",
+   "afterSHA256": "f92b99d34511edb5c8ff613a531e61c55ff6a80977af38c13c4ab9e7b849ff6f",
+   "replacements": [
+    {
+     "before": "        \"Bring your questions to an Ayurvedic doctor, whether you have an existing diagnosis or are simply exploring your options. Your assessment guides the proposed programme. The season alone does not determine the treatment you need.\",\n",
+     "after": "        \"Bring your questions to an Ayurvedic doctor, whether you have an existing diagnosis or are simply exploring your options. Your assessment guides the proposed programme. The season alone does not determine the treatment you need.\",\n        \"What your stay gives you: a doctor who explains your proposed therapies, preparation and dietary guidance before you travel, a daily routine of prescribed care, meals and rest, and time in the village gardens or your villa between appointments.\",\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/rejuvenation-detox.ts": {
+   "row": "AHV-WB.135.benefit-copy",
+   "beforeSHA256": "7ce1700dbe520c539e2bfef207d8712eb0647fb1ab6c015355e45ab8641edb00",
+   "afterSHA256": "2eb33b3344360843c6c65eecd9b5378003d4626c825b42ff1483379adcf97b4c",
+   "replacements": [
+    {
+     "before": "        \"Your doctor assesses your needs and explains the proposed therapies, preparation and length of stay. Care, prescribed meals, yoga, meditation and time to rest then come together around that individual plan.\",\n",
+     "after": "        \"Your doctor assesses your needs and explains the proposed therapies, preparation and length of stay. Care, prescribed meals, yoga, meditation and time to rest then come together around that individual plan.\",\n        \"What your stay gives you: an individual plan from your doctor, vegetarian meals and dietary guidance planned around your programme, yoga and meditation alongside prescribed care and rest, and a recommended daily routine to discuss before you go home.\",\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/wellness-kerala.ts": {
+   "row": "AHV-WB.177.benefit-copy",
+   "beforeSHA256": "17d586516e431c963529bbacbd9d2053f5cc26f04f3c4fadc06fa0f47ab3fae4",
+   "afterSHA256": "50af639db98fc2ba7a99695c5f39bc71315063b0c295f4527218c5442fa889ca",
+   "replacements": [
+    {
+     "before": "        \"You may be looking for time to focus on your wellbeing, support for an existing concern or a residential Ayurveda programme. Explain that purpose in your own words. Your doctor can discuss suitable care, how it would be reviewed and the recommended duration before you make travel plans.\",\n",
+     "after": "        \"You may be looking for time to focus on your wellbeing, support for an existing concern or a residential Ayurveda programme. Explain that purpose in your own words. Your doctor can discuss suitable care, how it would be reviewed and the recommended duration before you make travel plans.\",\n        \"What your stay gives you: therapies prescribed by your Ayurvedic doctor and carried out by trained therapists, vegetarian meals, and gardens and villa accommodation that give you room to pause between appointments.\",\n"
+    }
+   ]
+  },
+  "campaign-v2/production/pages/brand.ts": {
+   "row": "AHV-WB.270.benefit-copy",
+   "beforeSHA256": "8994c9f08c4020fa96be1587ce2c2091cbd4e42114f826407bd5d52697d14c2e",
+   "afterSHA256": "a307eba52248ba4eecc69733625c219ad5526208b5b172429e8318d6cf05c611",
+   "replacements": [
+    {
+     "before": "        \"Kairali’s Ayurvedic family tradition informs its approach to care. Here, that means an individual plan in a residential setting, with doctors, therapists, meals and accommodation all part of your stay.\",\n",
+     "after": "        \"Kairali’s Ayurvedic family tradition informs its approach to care. Here, that means an individual plan in a residential setting, with doctors, therapists, meals and accommodation all part of your stay.\",\n        \"What your stay gives you: an individual plan, sessions delivered by trained therapists as prescribed, vegetarian meals and villa accommodation in a garden setting, with time to rest around your prescribed care.\",\n"
+    }
+   ]
+  }
+ },
+ "configChanges": {
+  "monsoon-wellness": {
+   "row": "AHV-WB.112.benefit-copy",
+   "path": [
+    "page",
+    "lead",
+    "paragraphs"
+   ],
+   "insertedAfter": "Bring your questions to an Ayurvedic doctor, whether you have an existing diagnosis or are simply exploring your options. Your assessment guides the proposed programme. The season alone does not determine the treatment you need.",
+   "text": "What your stay gives you: a doctor who explains your proposed therapies, preparation and dietary guidance before you travel, a daily routine of prescribed care, meals and rest, and time in the village gardens or your villa between appointments."
+  },
+  "rejuvenation-detox": {
+   "row": "AHV-WB.135.benefit-copy",
+   "path": [
+    "page",
+    "lead",
+    "paragraphs"
+   ],
+   "insertedAfter": "Your doctor assesses your needs and explains the proposed therapies, preparation and length of stay. Care, prescribed meals, yoga, meditation and time to rest then come together around that individual plan.",
+   "text": "What your stay gives you: an individual plan from your doctor, vegetarian meals and dietary guidance planned around your programme, yoga and meditation alongside prescribed care and rest, and a recommended daily routine to discuss before you go home."
+  },
+  "wellness-kerala": {
+   "row": "AHV-WB.177.benefit-copy",
+   "path": [
+    "page",
+    "lead",
+    "paragraphs"
+   ],
+   "insertedAfter": "You may be looking for time to focus on your wellbeing, support for an existing concern or a residential Ayurveda programme. Explain that purpose in your own words. Your doctor can discuss suitable care, how it would be reviewed and the recommended duration before you make travel plans.",
+   "text": "What your stay gives you: therapies prescribed by your Ayurvedic doctor and carried out by trained therapists, vegetarian meals, and gardens and villa accommodation that give you room to pause between appointments."
+  },
+  "brand": {
+   "row": "AHV-WB.270.benefit-copy",
+   "path": [
+    "page",
+    "lead",
+    "paragraphs"
+   ],
+   "insertedAfter": "Kairali’s Ayurvedic family tradition informs its approach to care. Here, that means an individual plan in a residential setting, with doctors, therapists, meals and accommodation all part of your stay.",
+   "text": "What your stay gives you: an individual plan, sessions delivered by trained therapists as prescribed, vegetarian meals and villa accommodation in a garden setting, with time to rest around your prescribed care."
+  }
+ },
+ "briefs": {
+  "root": "deliverables/WOPS-AHV-FINAL-DRAFT-20260924-001/ppc-priority-release-20261007/content/native-rewrite",
+  "monsoon-wellness": {
+   "file": "monsoon-wellness.md",
+   "sha256": "76eb55eae6dd122a7cacb565e8d366f312674f0ca530fa79f22a8052a7a8d334",
+   "quotes": [
+    "Your doctor can explain the proposed therapies, preparation and dietary guidance",
+    "Prescribed care, meals and quiet time form the basis of your daily routine",
+    "There is time to sit in the village gardens or rest in your villa between appointments"
+   ]
+  },
+  "rejuvenation-detox": {
+   "file": "preventive-rejuvenation-detoxification.md",
+   "sha256": "f966b9e3a9b859d076019fe45a4e2be5bff450991c8aeba413e6df06d8b6418e",
+   "quotes": [
+    "Begin with an individual assessment. Your doctor selects the therapies",
+    "Vegetarian meals and dietary guidance are planned around your programme",
+    "Yoga and meditation fit alongside prescribed care and rest",
+    "Before you return home, discuss the daily routine and dietary guidance recommended for you"
+   ]
+  },
+  "wellness-kerala": {
+   "file": "next-five/wellness-resort-kerala.md",
+   "sha256": "f6745c280da9eb5911a577c4645871e3ea6f764d99d6e993175fc416a9bdf854",
+   "quotes": [
+    "Trained therapists carry out the sessions prescribed by your Ayurvedic doctor",
+    "Vegetarian meals are part of life at the Healing Village",
+    "Gardens, villa accommodation and the quieter pace of a residential stay give you room to pause"
+   ]
+  },
+  "brand": {
+   "file": "next-five/kairali-brand.md",
+   "sha256": "37f8c65e7ce6fc325ed261f50303bc36f9d0ff0d6ef42ecfa7cdb050f81aa665",
+   "quotes": [
+    "the focus is on an individual plan within a residential setting",
+    "Trained therapists deliver prescribed sessions",
+    "Kairali has 30 villas in a garden setting",
+    "Vegetarian meals, suitable yoga or meditation and time to rest fit around prescribed care"
+   ]
+  }
+ }
+}

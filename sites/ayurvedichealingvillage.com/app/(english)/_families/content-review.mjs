@@ -1,9 +1,14 @@
+import { staffExperienceCopyFor, applyStaffExperienceHtml } from './staff-experience.mjs';
+import { describeHomeImages } from './home-image-descriptions.mjs';
+import { withRoom209Area } from './room209-area.mjs';
 import { removeHomeVillaRates } from './home-villa-rates.mjs';
+import { removeCampaignPriceNotes } from './campaign-price-notes.mjs';
 import {offersFlow} from './offers-flow.mjs';
 import fs from 'node:fs';
 import crypto from 'node:crypto';
 import path from 'node:path';
 import copy from '../../../english-candidate/content-review-copy.json' with { type: 'json' };
+import monsoonSeason from '../../../english-candidate/monsoon-season-2027.json' with { type: 'json' };
 const cache = new Map();
 const bookingCatalogs = new Map();
 export function bookingLabelsFor(locale = 'en') {
@@ -20,13 +25,15 @@ export function bookingLabelsFor(locale = 'en') {
 export function reviewCopyFor(route, locale = 'en') {
   if (route === '/villa-raag/') return undefined;
   const edits = copy[route] || [];
-  if (locale === 'en') return edits;
+  // Owner's month-only 2027 season correction follows the same SSR/runtime text-review path.
+  const seasonEdits = route === monsoonSeason.route ? (monsoonSeason.locales[locale] || []) : [];
+  if (locale === 'en') return withRoom209Area(edits.concat(seasonEdits, staffExperienceCopyFor(route, locale)), route, locale);
   if (!cache.has(locale)) {
     const file = path.join(process.cwd(), 'l10n/generated', locale + '.json');
     const generated = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf8')) : {};
     cache.set(locale, generated.data?.['content-review-copy'] || {});
   }
-  return cache.get(locale)[route] || [];
+  return withRoom209Area((cache.get(locale)[route] || []).concat(seasonEdits, staffExperienceCopyFor(route, locale)), route, locale);
 }
 const decode = s => s.replace(/&(?:amp|lt|gt|quot|apos|nbsp|ndash|mdash|rsquo|lsquo|rdquo|ldquo|#\d+|#x[\da-f]+);/gi, x => {
   const n = x.slice(1,-1); const names = {amp:'&',lt:'<',gt:'>',quot:'"',apos:"'",nbsp:' ',ndash:'–',mdash:'—',rsquo:'’',lsquo:'‘',rdquo:'”',ldquo:'“'};
@@ -36,11 +43,13 @@ const norm = s => decode(s).replace(/\s+/g, ' ').trim();
 const escape = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 export function applyReviewSnapshot(html, route, locale = 'en') {
   if (!html || route === '/villa-raag/') return html;
-  html=removeHomeVillaRates(offersFlow(html,route,locale),route);
+  if (route === "/" && locale === "en") html = describeHomeImages(html);
+  html=removeCampaignPriceNotes(removeHomeVillaRates(offersFlow(html,route,locale),route),route);
   const booking = bookingLabelsFor(locale);
   html = html.replace(/<a\b[^>]*\bhref=["']https:\/\/bookings\.ayurvedichealingvillage\.com\/["'][^>]*>[\s\S]*?<\/a>/gi, anchor => anchor.replace(/[^<>]+/g, token => norm(token) === booking.old ? (token.match(/^\s*/)?.[0] || '') + escape(booking.new) + (token.match(/\s*$/)?.[0] || '') : token));
   const edits = reviewCopyFor(route, locale);
   if (!edits?.length) return html;
+  html = applyStaffExperienceHtml(html, edits);
   const byKey = new Map(edits.map(e => [e.kind + '\0' + e.old, e.new]));
   html = html.replace(/<span\b[^>]*class=["']ahv-link-context["'][^>]*>([^<]*)<\/span>/gi, (span, text) => {
     const replacement = byKey.get('text'+'\0'+norm(text));

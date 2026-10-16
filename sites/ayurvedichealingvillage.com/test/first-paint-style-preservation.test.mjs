@@ -5,10 +5,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {fileURLToPath} from 'node:url';
+import {reverseBatch6Source} from './fixtures/train-a-batch6-20261014.mjs';
+import {reverseTrainISource} from './fixtures/train-i-20261015.mjs';
 const site=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const expected={
   "../../campaign-v110/integration.css": "ab3cf7ddd7531ee958f4d9132d039b576cfe60338f34c54c68b57faf10e6f8e0",
-  "../../public/design/campaign-bundle.css": "9dfd9a151993e9c54642182435853c121c542b576ffcc786d6493a73e21a8d56",
+  "../../public/design/campaign-bundle.css": "27ed59f20509c4e0faa1522d4ec70d18e2143c2b9a71887d279ac57b02f31e2f",
   "../styles/base.css": "e4ad7f370d9d7ac29c3987dc3b5e8a4db90cba65064e1da5e5a0d6504c85e940",
   "../sections/sections.css": "e0dba528a7476ad61aecbd070fdf8d87be2ae0f3a75c35294ced1ba469525b3b",
   "./production.css": "289084143a396ebad7b899252efc332e8f72bd96b733fe48ed06d918e7fb0bbe"
@@ -18,7 +20,36 @@ test('campaign first-paint bundle preserves exact approved stylesheet bytes and 
  const imports=Object.keys(expected);
  assert.equal(entry,productionCss());
  assert.deepEqual([...entry.matchAll(/@import "([^"]+)";/g)].map(x=>x[1]),[imports[0],imports[1],'@kairali/ui/ahv-campaign-tokens.css']);
- for(const name of imports)assert.equal(createHash('sha256').update(fs.readFileSync(path.resolve(site,'campaign-v2/production',name))).digest('hex'),expected[name],name);
+ for(const name of imports){
+  let bytes=fs.readFileSync(path.resolve(site,'campaign-v2/production',name),'utf8');
+  if(name==='../sections/sections.css'){
+   // Reverse only the 24 approved production legal-link row rules; retain the historical style hash.
+   const legal=JSON.parse(fs.readFileSync(path.join(site,'test/fixtures/form-legal-links-delta.json'),'utf8')).cssAddition;
+   assert.equal(bytes.split(legal).length-1,1);
+   bytes=bytes.replace(legal,'');
+  }
+  if(name==='./production.css'){
+   // Train I (15 Oct 2026, AHV-LATER-043.01): remove only its exact hero fine-print delta first (newest layer first).
+   bytes=reverseTrainISource('campaign-v2/production/production.css',bytes);
+   // Train A batch 6: remove only the exact Russian phone hero-CTA delta (AHV-WB.530) first.
+   bytes=reverseBatch6Source('campaign-v2/production/production.css',bytes);
+   // Reverse only the exact approved desktop-card sizing delta; preserve the prior gallery rule and hash.
+   const cardDelta="\n/* Owner feedback, 14 Oct: size desktop D consultation cards to their existing actions. */\n@media (min-width: 768px) {\n  .lp-prod[data-variant=\"D\"] .lp-hero__form { align-self: start; }\n  .lp-prod[data-variant=\"D\"] .lp-consult--card { height: auto; }\n}\n";
+   assert.equal(bytes.split(cardDelta).length-1,1);
+   assert.ok(bytes.endsWith(cardDelta));
+   bytes=bytes.slice(0,-cardDelta.length);
+   // Reverse only the separately approved unpinned D desktop header delta.
+   const headerDelta = "\n/* Owner feedback, 14 Oct: align the unpinned desktop D header with its existing content grid. */\n@media (min-width: 768px) {\n  .lp-prod[data-variant=\"D\"] .lp-header:not([data-stuck]) { max-width: 1440px; margin-inline: auto; }\n}\n";
+   assert.equal(bytes.split(headerDelta).length - 1, 1);
+   assert.ok(bytes.endsWith(headerDelta));
+   bytes = bytes.slice(0, -headerDelta.length);
+   // Reverse only the exact owner-approved desktop-gallery corner correction; retain the historical hash.
+   const delta='\n/* Owner-approved sharp corners, including the desktop gallery dialog. */\n.lp-prod .lp-gal{border-radius:0}\n';
+   assert.ok(bytes.endsWith(delta));
+   bytes=bytes.slice(0,-delta.length);
+  }
+  assert.equal(createHash('sha256').update(bytes).digest('hex'),expected[name],name);
+ }
  // Menu-font subset repair changes only unicode-range partitions, never approved design declarations.
  const bundle=fs.readFileSync(path.join(site,'public/design/campaign-bundle.css'),'utf8');
  assert.equal(createHash('sha256').update(bundle.replace(/unicode-range:[^;}]*;?/g,'').replace(/[.][a-f0-9]{12}(?=[.](?:common|extra)[.]woff2)/g,'')).digest('hex'),'45fb2b76bb019b2b89feaa1dbb505742b021f1d4d613b3515b67efdf10885333');

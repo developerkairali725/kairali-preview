@@ -1,12 +1,15 @@
+import { serverCanonical } from "./canonical-policy.mjs";
+import { articleContactHeadingHtml } from "./article-contact-heading.mjs";
+import { articleHeadingOutlineHtml, articleOutlineSourcesHtml } from "./article-heading-outline.mjs";
 import { trainingSnapshotFontCss } from "./training-snapshot-fonts.mjs";
-import { reviewedTitleFor } from "./localized-title.mjs";
+import { reviewedTitleFor, reviewedCatalogueTitle, keepsLocaleCanonical } from "./localized-title.mjs";
 import { SnapshotStyles, type SnapshotStyleAsset } from './SnapshotStyles';
 import { routeStylesFor, routeStyleHref } from "./route-styles.mjs";
 import { reviewCopyFor, applyReviewSnapshot, bookingLabelsFor } from "./content-review.mjs";
 import { measurementForEnvironment } from "../../../lib/measurement-config.mjs";
 import { phoneCriticalMedia, descriptiveAwardLinks, firstCriticalImage, deferHomeSnapshotImages, responsiveVillaImages } from "./critical-media.mjs";
 import { formPostSafety } from "./form-post-safety.mjs";
-import { snapshotStylesFor, firstScreenPoster, imageLedFirstScreen } from "./snapshot-styles.mjs";
+import { snapshotStylesFor, firstScreenPoster, imageLedFirstScreen, sharedFontLinkRoute } from "./snapshot-styles.mjs";
 import { newsletterFooters } from "./newsletter-markup.mjs";
 import { computedFooterYear } from "./computed-footer-year";
 import { routeRobots } from "./robots-policy";
@@ -96,7 +99,7 @@ const PREVIEW_SRC = "/ahv/preview/portable-preview.js";
 
 export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"): BootConfig {
   const info = LOCALE_INFO[locale];
-  const reviewedLocaleTitle = reviewedTitleFor(route.path, locale, localeData(locale)?.meta[route.path]?.title);
+  const reviewedLocaleTitle = reviewedTitleFor(route.path, locale, locale === "en" ? route.metadata.title : reviewedCatalogueTitle(route.path, localeData(locale)?.meta[route.path]));
   const base = locale === "en" ? "" : `/ahv/l10n/${info.prefix}`;
   const resources = Object.fromEntries(
     Object.entries(componentMap.resources as Record<string, string>).map(([k, v]) => [k, locale === "en" ? v : v.replace(/^\/ahv\//, `${base}/`)]),
@@ -108,7 +111,9 @@ export function buildBootConfig(route: CandidateRoute, locale: LocaleCode = "en"
     path: route.path,
     contentReviewCopy: reviewCopyFor(route.path, locale),
     reviewedLocaleTitle,
-    reviewedLocaleCanonical: (reviewedLocaleTitle || (route.path === "/karkidaka-chikitsha-or-monsoon-wellness.html" && locale !== "en")) ? canonicalUrl(route.path, locale) : undefined,
+    reviewedShareDescription: route.path === "/panchakarma/" ? ((locale === "en" ? route.metadata.ogDescription ?? route.metadata.description : localeData(locale)?.meta[route.path]?.ogDescription ?? localeData(locale)?.meta[route.path]?.description ?? route.metadata.ogDescription ?? route.metadata.description) ?? undefined) : undefined,
+    reviewedDescription: route.path === "/panchakarma/" ? ((locale === "en" ? route.metadata.description : localeData(locale)?.meta[route.path]?.description ?? route.metadata.description) ?? undefined) : undefined,
+    reviewedLocaleCanonical: (reviewedLocaleTitle || keepsLocaleCanonical(route.path, locale)) ? ((route.path === "/panchakarma/" && locale === "en" ? serverCanonical(route) : canonicalUrl(route.path, locale)) ?? undefined) : undefined,
     bookingCopy: bookingLabelsFor(locale),
     robots: routeRobots(route),
     desktopView: route.desktopView,
@@ -141,7 +146,7 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
   // Served once, read once: the snapshot body and the "held" state that keeps
   // a desktop viewport from painting it (see the layout's third style rule).
   const body = responsiveVillaImages(phoneCriticalMedia(applyReviewSnapshot(prerenderedBody(route.path, locale), route.path, locale), route.path));
-  const snapshot = applyReviewSnapshot(descriptiveAwardLinks(route.path === "/" || route.path === "/photo-gallery/" ? deferHomeSnapshotImages(body) : body, route.path), route.path, locale);
+  const snapshot = articleHeadingOutlineHtml(articleContactHeadingHtml(articleOutlineSourcesHtml(applyReviewSnapshot(descriptiveAwardLinks(route.path === "/" || route.path === "/photo-gallery/" ? deferHomeSnapshotImages(body) : body, route.path), route.path, locale), route.path), route.path), route.path);
   const cfg = buildBootConfig(route, locale);
   // The view family, as a styling scope. Template-level corrections live in
   // public/design/<family>.css and key on this, so a rule written for one
@@ -170,9 +175,9 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
   // element, not text, and the snapshot's font stylesheet and faces only competed with it — measured +0.8-0.9 s
   // simulated / +1.2 s throttled LCP. There the faces keep arriving with the runtime, as before. The same holds
   // for the listed routes whose first screen is a hero background image (imageLedFirstScreen).
-  const snapshotFaces = firstPaint && !firstScreenPoster(snapshot) && !imageLedFirstScreen(route.path) ? firstPaint : null;
+  const snapshotFaces = firstPaint && !firstScreenPoster(snapshot) && !imageLedFirstScreen(route.path, locale) ? firstPaint : null;
   const snapshotAssets: SnapshotStyleAsset[] = [
-    ...(snapshotFaces?.fontCss.map(({ href, css }) => css
+    ...(snapshotFaces?.fontCss.map(({ href, css }) => css && !sharedFontLinkRoute(route) && !["/panchakarma-therapy/", "/post-pregnancy-health-programme/", "/preventive-and-regenerative-treatment/", "/panchakarma/", "/ayurveda-treatment/", "/mindfulness-retreat/", "/ananda-lahari-yoga-and-ayurveda-retreat/", "/archive-yoga-retreat/", "/ashtanga-yoga-and-ayurveda-retreat/"].includes(route.path)
       ? { key: `font:${href}`, kind: 'style' as const, css: trainingSnapshotFontCss(route.path, css, snapshot) }
       : { key: `font:${href}`, kind: 'link' as const, href }) ?? []),
     ...(firstPaint?.styles.map((css, i) => ({ key: `view:${i}`, kind: 'style' as const, css, media: narrowMedia })) ?? []),
@@ -250,8 +255,9 @@ export async function DesignView({ route, locale = "en" }: { route: CandidateRou
           ))
         : null}
       <SnapshotStyles key={`${locale}:${route.path}`} assets={snapshotAssets} />
+      {["/ayurvedic-treatments/", "/all-programs/", "/wellness-programs/", "/yoga-meditation-programs/"].includes(route.path) ? <style data-ahv-finder-skip-link="" dangerouslySetInnerHTML={{ __html: `#ahv-design-root[data-ahv-route="${route.path}"] .scp0:not(:focus){left:0!important;top:0!important;width:1px!important;height:1px!important;padding:0!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important}` }} /> : null}
       {/* The existing finder toggle collapses these rows. Match that first paint and reserve its 44px button + 14px margins. */}
-      {route.path === "/ayurvedic-treatments/" ? <style data-ahv-finder-first-paint="" dangerouslySetInnerHTML={{ __html: `@media(scripting:enabled){#ahv-design-root[data-ahv-route="/ayurvedic-treatments/"] nav[data-ahv-finder-search]:not([data-ahv-fh-open]) [role="group"]{display:none!important}#ahv-design-root[data-ahv-route="/ayurvedic-treatments/"] nav[data-ahv-finder-search]:not(:has(+ .ahv-fh-filterbar))::after{content:"";display:block;height:58px}}` }} /> : null}
+      {["/ayurvedic-treatments/", "/all-programs/", "/wellness-programs/", "/yoga-meditation-programs/"].includes(route.path) ? <style data-ahv-finder-first-paint="" dangerouslySetInnerHTML={{ __html: `@media(scripting:enabled){#ahv-design-root[data-ahv-route="${route.path}"] nav[data-ahv-finder-search]:not([data-ahv-fh-open]) [role="group"]{display:none!important}#ahv-design-root[data-ahv-route="${route.path}"] nav[data-ahv-finder-search]:not(:has(+ .ahv-fh-filterbar))::after{content:"";display:block;height:58px}}` }} /> : null}
 
 
       {/* dangerouslySetInnerHTML with an empty string is load-bearing, not

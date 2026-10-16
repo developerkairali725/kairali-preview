@@ -1,3 +1,5 @@
+import staffRosterIntegration from './fixtures/staff-roster-experience-integration.json' with { type: 'json' };
+import staffExperienceDelta from './fixtures/staff-experience-approved-delta.json' with { type: 'json' };
 // Owner, 10 Oct 2026 (WOPS-AHV-DOCTOR-POSITION-20261010-001): on every live ad route — the first four (batch 1), then
 // the remaining 20 (batch 2) — the complete existing doctors section moves up as-is, immediately after the lead. Every
 // other section keeps its relative order. Source-level: the template is TSX and is not rendered here (no browser, no
@@ -13,11 +15,18 @@ import { productionCampaign, PRODUCTION_SLUGS } from "../campaign-v2/production/
 import { ROUTES } from "../campaign-v2/production/bindings.ts";
 import { COPY } from "../campaign-v2/production/pages/index.ts";
 import { CURRENT_ROSTER } from "../campaign-v2/data/doctors.ts";
-import { DOCTORS_AFTER_LEAD, ORDER, sectionOrder, variantOrder } from "../campaign-v2/production/section-order.ts";
+import { DOCTORS_AFTER_LEAD, D_VILLAGE_AND_STORIES as CURRENT_D_VILLAGE_AND_STORIES, ORDER, baseOrder as currentBaseOrder, sectionOrder, variantOrder } from "../campaign-v2/production/section-order.ts";
+// Train J3 (15 Oct 2026, AHV-WB.362) adds /lp/kairali-brand/ to the D village-and-films routes; these pins run on the head
+// state with that exact delta reversed (fixtures/train-j3-20261015.mjs).
+import { baseOrderBeforeTrainJ3, reverseTrainJ3Config, reverseTrainJ3List } from "./fixtures/train-j3-20261015.mjs";
+const D_VILLAGE_AND_STORIES = reverseTrainJ3List("D_VILLAGE_AND_STORIES", CURRENT_D_VILLAGE_AND_STORIES);
+const routeBaseOrder = baseOrderBeforeTrainJ3(currentBaseOrder, ORDER);
+import { reverseTrainASource } from "./fixtures/train-a-20261014.mjs";
+import { reverseTrainBSource } from "./fixtures/train-b-20261015.mjs";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const read = (p) => fs.readFileSync(path.join(SITE, p), "utf8");
-const C = Object.fromEntries(PRODUCTION_SLUGS.map((s) => [s, productionCampaign(s)]));
+const C = Object.fromEntries(PRODUCTION_SLUGS.map((s) => [s, reverseTrainJ3Config(s, JSON.parse(JSON.stringify(productionCampaign(s))))]));
 const FIRST4 = ["treatment-packages", "panchakarma", "pain-management", "family-ayurvedic-retreat"];
 /** Batch 2: the remaining 20 route families (deliverables batch02/SCOPE.json), with their variant and locale. */
 const REMAINING20 = {
@@ -35,14 +44,19 @@ const B7 = ["lead", "physicians", "place", "offering", "pathway", "stories", "st
 const C7 = ["lead", "physicians", "offering", "pathway", "rest", "place", "stay"];
 const C8 = ["lead", "physicians", "offering", "pathway", "rest", "place", "stories", "stay"];
 const D5 = ["lead", "physicians", "offering", "pathway", "stay"];
+/** Staff review 9 Oct (AHV-WB.249/320/430/272): the four listed D routes add the existing village and films after the steps. */
+const D7 = ["lead", "physicians", "offering", "pathway", "place", "stories", "stay"];
 /** Every route's new order (a route shows only the bands its copy writes). */
 const NEW_ORDER = {
   "treatment-packages": A7, "panchakarma": A7, "pain-management": A8, "family-ayurvedic-retreat": A8,
   "monsoon-wellness": C8, "rejuvenation-detox": C8, "ayurveda-retreat": B7, "wellness-kerala": B7, "cleansing-centre": A8,
-  "treatment-kerala": A8, "south-india-cities": D5, "brand": D5, "weight-management": C7, "lp-south-india": D5,
-  "lp-hospital-kerala": A8, "lp-brand": D5, "lp-cleansing-centre": A8, "lp-pain-management": A8, "lp-panchakarma": D5,
-  "lp-treatment-kerala": C8, "lp-treatment-packages": B7, "lp-weight-management": A7, "lp-behandlung-kerala": C7, "lp-treatment-kerala-ru": C7,
+  "treatment-kerala": A8, "south-india-cities": D7, "brand": D7, "weight-management": C8, "lp-south-india": D7,
+  "lp-hospital-kerala": A8, "lp-brand": D5, "lp-cleansing-centre": A8, "lp-pain-management": A8, "lp-panchakarma": D7,
+  "lp-treatment-kerala": C8, "lp-treatment-packages": B7, "lp-weight-management": A8, "lp-behandlung-kerala": C8, "lp-treatment-kerala-ru": C8,
 };
+// Owner decision, 14 Oct 2026 (AHV-WB.299.change): both weight routes gained their Stories band (weight-management C7 -> C8,
+// lp-weight-management A7 -> A8); the doctors still follow the lead and every other section keeps its variant order.
+// Owner decision 11 (14 Oct 2026, AHV-WB.519/.541; Train B): the DE/RU routes now write the English-film stories band (C7 -> C8).
 
 /** Before any move (8 Oct order), and after batch 1 (the first four moved); compared against when present. */
 const BASE = "3db79539137017885880b865b01a0ccf7823880f";
@@ -117,7 +131,7 @@ test("every route: the doctors once, immediately after the lead; every other sec
     assert.equal(order.indexOf("physicians"), order.indexOf("lead") + 1, `${slug}: right after the lead`);
     assert.equal(order.filter((b) => b === "physicians").length, 1, `${slug}: doctors once`);
     assert.equal(new Set(order).size, order.length, `${slug}: no section twice`);
-    assert.deepEqual(order.filter((b) => b !== "physicians"), ORDER[v].filter((b) => b !== "physicians" && order.includes(b)), `${slug}: other sections keep their relative order`);
+    assert.deepEqual(order.filter((b) => b !== "physicians"), routeBaseOrder(slug, v).filter((b) => b !== "physicians" && order.includes(b)), `${slug}: other sections keep their relative order`);
   }
 });
 
@@ -138,7 +152,12 @@ test("helper: the default tables are the 8 Oct ones and stay untouched; an unlis
 test("against the base template: all 24 only move the doctors from last to after the lead, nothing lost or added", { skip: !hasBase && "base commit not in this checkout" }, () => {
   for (const slug of PRODUCTION_SLUGS) {
     const before = baseOrder(slug);
-    const after = sectionOrder(C[slug], variantOf(slug));
+    let after = sectionOrder(C[slug], variantOf(slug));
+    if (D_VILLAGE_AND_STORIES.includes(slug)) {
+      // Batch 6 (staff review 9 Oct): exactly the existing village and films, after the steps; nothing else differs.
+      assert.deepEqual(after.slice(after.indexOf("pathway") + 1, after.indexOf("stay")), ["place", "stories"], slug);
+      after = after.filter((b) => b !== "place" && b !== "stories");
+    }
     assert.equal(before.at(-1), "physicians", `${slug}: was directly before the enquiry`);
     assert.deepEqual([...after].sort(), [...before].sort(), `${slug}: same sections`);
     assert.deepEqual(after.filter((b) => b !== "physicians"), before.filter((b) => b !== "physicians"), slug);
@@ -167,8 +186,8 @@ test("the doctors section is moved as-is: its props are the route's existing cop
     const c = C[slug];
     const en = (ROUTES[slug].locale ?? "en") === "en";
     assert.deepEqual(c.page.doctors, COPY[slug].page.doctors, `${slug}: heading and intro from the reviewed copy`);
-    // English routes show the roster; the German and Russian reviewed copy presents Dr. Deepu John only (unchanged).
-    assert.deepEqual(c.doctors.map((d) => d.id), en ? [...CURRENT_ROSTER] : ["deepu-john"], slug);
+    // Owner correction, 14 Oct: the complete consented roster is also presented on the DE/RU routes.
+    assert.deepEqual(c.doctors.map((d) => d.id), [...CURRENT_ROSTER], slug);
   }
 });
 
@@ -180,10 +199,89 @@ test("untouched: the doctors component, doctor data, shared locale strings, appr
     ...PRODUCTION_SLUGS.map((s) => `campaign-v2/production/pages/${s}.ts`),
   ];
   for (const f of files) {
-    // Optional selectors and the eight approved gallery alt translations changed separately.
-    // Keep exact source pins for both; all doctor text, data, props and placement checks remain.
+    // Optional selectors, gallery alt translations and AHV-LATER-050.01 contact wording changed under their own authority.
+    // AHV-LATER-026/027/028/029 changed four Family/Pain strings under standing owner authority.
+    // Keep exact source pins for every approved revision; all doctor text, data, props and placement checks remain.
     const pin = f === "campaign-v2/production/production.css" ? "0272861b8c9033add121ad9106a63f24b2b99b99"
-      : f === "campaign-v2/production/ui.ts" ? "fa1718c727e8d7660c448450dea25d44361c5e3f" : BASE;
-    assert.equal(read(f), git("show", `${pin}:./${f}`), f);
+      : f === "campaign-v2/production/ui.ts" ? "51a9637a750ca21623f4488c82b8a6592bc154d9"
+      : ["campaign-v2/production/pages/family-ayurvedic-retreat.ts", "campaign-v2/production/pages/pain-management.ts"].includes(f) ? "76e9f767a7e000f3e6789c3453c1552cbfa2ec23" : BASE;
+    // Train A (14 Oct) and Train B (15 Oct): newest first, remove exactly every merged candidate's recorded delta
+    // (fixtures/train-b-20261015.mjs, then fixtures/train-a-20261014.mjs: owner decisions B AHV-WB.083/330/167, owner
+    // decisions AHV-WB.042/299, batch 8, batch 6), each checked against its record and the shared base hash, then every
+    // earlier approved reversal and the historical pin as before.
+    let current = reverseTrainASource(f, reverseTrainBSource(f, read(f)));
+    const integrationCorrection = staffRosterIntegration.files[f];
+    if (integrationCorrection) {
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), integrationCorrection.afterSHA256, f);
+      for (const { before, after } of integrationCorrection.replacements) {
+        assert.equal(current.split(after).length - 1, 1, `${f}: exact approved integrated experience override`);
+        current = current.replace(after, before);
+      }
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), integrationCorrection.beforeSHA256, f);
+    }
+    for (const delta of staffExperienceDelta.sourceDelta[f] || []) {
+      assert.equal(current.split(delta.new).length - 1, 1, `Exact experience line: ${f}`);
+      current = current.replace(delta.new, delta.old);
+    }
+    const localeCorrection = JSON.parse(read("test/fixtures/locale-physicians-20261014.json")).files[f];
+    if (localeCorrection) {
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), localeCorrection.afterSHA256, f);
+      for (const { before, after } of localeCorrection.replacements) {
+        assert.equal(current.split(after).length - 1, 1, `${f}: exact approved locale-roster correction`);
+        current = current.replace(after, before);
+      }
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), localeCorrection.beforeSHA256, f);
+    }
+    const thirdVideo = JSON.parse(read("test/fixtures/third-guest-videos-20261014.json")).files[f];
+    if (thirdVideo) {
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), thirdVideo.afterSHA256, f);
+      assert.equal(current.split(thirdVideo.addition).length - 1, 1, `${f}: exact approved third card`);
+      current = current.replace(thirdVideo.addition, "");
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), thirdVideo.beforeSHA256, f);
+    }
+    if (f === "campaign-v2/production/production.css") {
+      // Remove only the approved desktop-card sizing delta before the existing historical checks.
+      const cardDelta = "\n/* Owner feedback, 14 Oct: size desktop D consultation cards to their existing actions. */\n@media (min-width: 768px) {\n  .lp-prod[data-variant=\"D\"] .lp-hero__form { align-self: start; }\n  .lp-prod[data-variant=\"D\"] .lp-consult--card { height: auto; }\n}\n";
+      assert.equal(current.split(cardDelta).length - 1, 1);
+      assert.ok(current.endsWith(cardDelta));
+      current = current.slice(0, -cardDelta.length);
+      // Reverse only the separately approved unpinned D desktop header delta.
+      const headerDelta = "\n/* Owner feedback, 14 Oct: align the unpinned desktop D header with its existing content grid. */\n@media (min-width: 768px) {\n  .lp-prod[data-variant=\"D\"] .lp-header:not([data-stuck]) { max-width: 1440px; margin-inline: auto; }\n}\n";
+      assert.equal(current.split(headerDelta).length - 1, 1);
+      assert.ok(current.endsWith(headerDelta));
+      current = current.slice(0, -headerDelta.length);
+      // Reverse only the exact owner-approved scoped gallery correction; retain the historical style pin.
+      const delta = "\n/* Owner-approved sharp corners, including the desktop gallery dialog. */\n.lp-prod .lp-gal{border-radius:0}\n";
+      assert.ok(current.endsWith(delta), "Exact approved gallery correction is the final source rule");
+      assert.equal(current.split(delta).length - 1, 1);
+      current = current.slice(0, -delta.length);
+    }
+    if (f === "campaign-v2/production/ui.ts") {
+      // Exact owner-consented yoga-photo alt additions; preserve every prior locale string and historical fixture.
+      const approvedYogaAltLines = [
+        "    \"ahv-yoga-hall-consented-20261014\": \"Zwei Personen praktizieren Yoga in einer geräumigen Halle mit offenem Holzdach bei Kairali in Palakkad\",\n",
+        "    \"ahv-yoga-hall-consented-20261014\": \"Два человека занимаются йогой в просторном зале с открытыми деревянными стропилами в Kairali в Палаккаде\",\n"
+];
+      for (const line of approvedYogaAltLines) {
+        assert.equal(current.split(line).length - 1, 1, "Exact approved yoga alt occurs once");
+        current = current.replace(line, "");
+      }
+    }
+    if (f === "campaign-v2/production/pages/monsoon-wellness.ts") {
+      // Two owner-adopted Monsoon clauses, exact source delta only. The original fixture/pins stay unchanged.
+      const delta = JSON.parse(read("test/fixtures/monsoon-2027-approved-delta.json"));
+      assert.equal(delta.source, f);
+      assert.equal(delta.historicalRevision, pin);
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), delta.afterSHA256);
+      for (const edit of delta.edits) {
+        assert.ok(edit.before && edit.after);
+        assert.equal(current.split(edit.after).length - 1, 1, "Each approved Monsoon replacement occurs once");
+        current = current.replace(edit.after, edit.before);
+      }
+      assert.equal(crypto.createHash("sha256").update(current).digest("hex"), delta.beforeSHA256);
+    }
+    // AHV-WB.054.change (trains C01/C02): the approved Abhyangam description is reversed exactly with the other Train B
+    // deltas at the top of this loop (fixtures/train-b-20261015.mjs, recordedDeltas "train C02").
+    assert.equal(current, git("show", `${pin}:./${f}`), f);
   }
 });

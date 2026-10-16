@@ -1,0 +1,34 @@
+{
+ "train": "N",
+ "note": "Train B production tail (main-only commits after the Train J merge base 0b1832c76) on files that Train G/H/J tests pin. peelTrainNTail removes it exactly once from the Train N bytes, giving the Train J head (a6da1070c) bytes; any other state passes through unchanged.",
+ "jHead": "a6da1070cdd2c130fabe1b94a582ea54ab696afd",
+ "files": {
+  "app/(english)/_families/design-view.tsx": {
+   "commit": "285074497",
+   "afterSHA256": "2f08b45d3338c874fd84dc560e895f1996b88b5d26ffe050367673a401aa2a11",
+   "beforeSHA256": "00b24d1556d4d62f85bbc1151447733c6645b38af3f249955c5521fd0fc19905",
+   "replacements": [
+    {
+     "before": "import { snapshotStylesFor, firstScreenPoster, imageLedFirstScreen } from \"./snapshot-styles.mjs\";",
+     "after": "import { snapshotStylesFor, firstScreenPoster, imageLedFirstScreen, sharedFontLinkRoute } from \"./snapshot-styles.mjs\";"
+    },
+    {
+     "before": "css && ![\"/panchakarma-therapy/\",",
+     "after": "css && !sharedFontLinkRoute(route) && ![\"/panchakarma-therapy/\","
+    }
+   ]
+  },
+  "public/design/consistency.css": {
+   "commit": "c33db4e6b",
+   "afterSHA256": "ae9a35195208484f2b45bdf32201689d60c82729834dd30e316468550b22d9d1",
+   "beforeSHA256": "ef73e8ad69d63c09c52204421a40ce34062b7888849c90d661383e3c3946b5b1",
+   "replacements": [
+    {
+     "before": "html:has(#ahv-design-root form:focus-within) { scroll-behavior:auto !important; }\n",
+     "after": "html:has(#ahv-design-root form:focus-within) { scroll-behavior:auto !important; }\n\n/* Past retreat record template (T7, /karma-being-retreat-2019/ and every locale copy; the family attribute is the\n   same for all of them). Its date line, \"Concluded\" note and photo captions carry #75695A on the #EFE9DA band:\n   4.41:1, under WCAG AA. #706457 is the nearest darker step of the same warm grey that clears 4.5:1 there\n   (4.75:1; 5.11:1 on #F7F4EA). Its in-text body links were colour-only (#006038 vs #2A2118 body, 2.05:1),\n   so they carry an underline. Scoped to the family: no other template's tokens change. */\n#ahv-design-root[data-ahv-family=\"ahv-template-past-retreat-record\"] :is(p,figcaption,div,span)[style*=\"color: rgb(117, 105, 90)\"],\n#ahv-design-root[data-ahv-family=\"ahv-template-past-retreat-record\"] :is(p,figcaption,div,span)[style*=\"color:#75695A\" i] { color:#706457 !important; }\n#ahv-design-root[data-ahv-family=\"ahv-template-past-retreat-record\"] main p a:not([style*=\"display\"]) { text-decoration:underline !important; text-underline-offset:.16em; }\n"
+    }
+   ]
+  }
+ },
+ "localeArchive": "ahv-locale-prerenders-train-n-20261015b.tar.gz"
+}

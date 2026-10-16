@@ -1,3 +1,7 @@
+import { repairArticleContactHeading } from '../app/(english)/_families/article-contact-heading.mjs';
+// Train J batch 2 (15 Oct 2026): the reviewed outline wrapper is injected in place of the direct heading call.
+import { repairArticleOutline } from '../app/(english)/_families/article-heading-outline.mjs';
+import { applyStaffExperienceDom } from '../app/(english)/_families/staff-experience.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
@@ -40,14 +44,16 @@ test('no slots means no readiness polling; an unavailable upgrade has a bounded 
   assert.equal(ticks, 3);
 });
 
-const mutations = source.slice(source.indexOf('  new MutationObserver(function (changes) {'), source.indexOf('  // Also normalize synchronously'));
+const mutations = source.slice(source.indexOf('  new MutationObserver(function (changes) {'), source.indexOf('  // Also normalize synchronously')).replace('${repairArticleContactHeading.toString()}', repairArticleContactHeading.toString())
+  // Train J batch 2 (15 Oct 2026): the heading call is wrapped by the reviewed outline repair; inject it the same way.
+  .replace('${repairArticleOutline.toString()}', repairArticleOutline.toString());
 function mutationHarness() {
   const repairs = ['localizeLinks', 'restoreSlotScrolling', 'deferSlotImages', 'deferBackgrounds', 'aliasImages', 'startIstClock', 'hideHoneypots', 'repairEmailLinks', 'upgradeLanguageControls', 'retargetSelfLinks'];
   const calls = Object.fromEntries(repairs.map(name => [name, []]));
   const globals = [];
   const host = {contains(node) { for (let n = node; n; n = n.parentElement) if (n === host) return true; return false; }};
   let callback;
-  const ctx = {host, lastLiveChange: 0, Set, Date,
+  const ctx = {host, cfg: {path:'/unrelated/'}, lastLiveChange: 0, Set, Date,
     MutationObserver: class {constructor(cb) {callback = cb;} observe() {}},
     enhanceDirections: node => globals.push(['directions', node]), applyConsent: () => globals.push(['consent']),
     localizeLink: node => globals.push(['link', node]), describeHomeNewsLinks: node => globals.push(['news', node])};
@@ -93,7 +99,8 @@ test('a deep insertion batch has linear repair traversal rather than repeated an
 
 const reviewSource = source.slice(source.indexOf('  var reviewByKey'), source.indexOf('  applyContentReview(host);'));
 test('translated review labels stabilize without repeatedly mutating unchanged text', () => {
-  const runtime = vm.runInNewContext('`' + reviewSource + '`');
+  // boot.ts interpolates the imported staff-experience DOM helper into this template at module load.
+  const runtime = vm.runInNewContext('`' + reviewSource + '`', {applyStaffExperienceDom});
   const parent = {closest: () => null};
   let value = '  Ayurvedic restaurant  ', writes = 0;
   const node = {nodeType: 3, parentElement: parent,

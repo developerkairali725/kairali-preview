@@ -123,8 +123,17 @@ a {
   color: var(--ink);
   padding: 14px 20px;
 }
+/* AHV-M044.01 (Train G rework, 15 Oct 2026): a focused skip link sat at top:12px inside the sticky header's band
+   (keyboard recheck: underHeader=true). It now joins the flow above the header while focused, so the header starts
+   below it and can never cover it; unfocused it stays off-screen exactly as before. */
 .skip-link:focus {
-  top: 12px;
+  position: static;
+  display: block;
+  width: max-content;
+  max-width: calc(100% - 24px);
+  margin: 8px 12px;
+  top: auto;
+  left: auto;
 }
 
 /* Overline label, as on staging (staging's uppercase styling kept). */

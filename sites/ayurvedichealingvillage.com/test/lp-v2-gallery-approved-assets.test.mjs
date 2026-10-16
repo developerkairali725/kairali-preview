@@ -1,3 +1,4 @@
+import { productionCss } from "../scripts/build-production-css.mjs";
 // Approved gallery photographs on the live ad routes (campaign-v2/data/gallery-images.ts): the first four (batch 1)
 // and the twelve English village routes of batch 2. Data-level
 // checks only: the bindings, the campaign config each page renders from, the published gallery manifest and the files
@@ -15,6 +16,12 @@ import { IMAGES } from "../campaign-v2/data/images.ts";
 import { APPROVED_GALLERY_IMAGES, APPROVED_GALLERY_ADDITIONS } from "../campaign-v2/data/gallery-images.ts";
 import { UI } from "../campaign-v2/production/ui.ts";
 import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
+import { reverseTrainBBindings, trainBGalleryAppended, trainBGalleryBefore } from "./fixtures/train-b-20261015.mjs";
+// Train F (15 Oct 2026) sits on top of Train B: its exact photograph picks are reversed first (fixtures/train-f-20261015.mjs).
+import { reverseTrainFBindings as reverseTrainFBindingsOnly, trainFGalleryAppended, trainFGalleryBefore } from "./fixtures/train-f-20261015.mjs";
+import { reverseTrainHBindings } from "./fixtures/train-h-20261015.mjs";
+// Train H (15 Oct 2026) composes on Train F (fixtures/train-h-20261015.mjs): its delta is reversed first.
+const reverseTrainFBindings = (b) => reverseTrainFBindingsOnly(reverseTrainHBindings(b));
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const P = (...p) => path.join(SITE, ...p);
@@ -69,6 +76,31 @@ const pick = (slugs, dropGallery) => Object.fromEntries(slugs.map((s) => {
 
 const ADDED_IDS = APPROVED_GALLERY_IMAGES.map((a) => a.image.id);
 
+// Train A batch 8 (14 Oct 2026), exact reviewed deltas on top of the frozen baselines above:
+// AHV-WB.457.change: /lp/treatment-in-kerala/ shows kt-314 as its phone hero, so (as on every phone-override route) its
+// gallery omits kt-314; every other entry keeps its order.
+const PHONE_HERO_DELTA = { "lp-treatment-kerala": "kt-314" };
+const baseGallery = (slug) => BASE_GALLERY[slug].filter(([, id]) => id !== PHONE_HERO_DELTA[slug]);
+// AHV-WB.025/050/077/101/147.change: these routes' own share picture (og) and its registry alt. Reverse exactly that.
+const OG_DELTA = {
+  "treatment-packages": "Kairali Ayurvedic Healing Village in Palakkad, Kerala", panchakarma: "Kairali Ayurvedic Healing Village, Palakkad",
+  "pain-management": undefined, "family-ayurvedic-retreat": undefined, "rejuvenation-detox": undefined,
+};
+function reverseBatch8(picked) {
+  for (const [slug, alt] of Object.entries(OG_DELTA)) {
+    if (!picked[slug]) continue;
+    assert.equal(picked[slug].og.url, `https://ayurvedichealingvillage.com/images/og/share-${slug}.jpg`, slug);
+    delete picked[slug].og;
+    if (alt === undefined) delete picked[slug].ogImageAlt; else picked[slug].ogImageAlt = alt;
+  }
+  for (const [slug, id] of Object.entries(PHONE_HERO_DELTA)) {
+    if (!picked[slug]) continue;
+    assert.equal(picked[slug].mobileImage.id, id, slug);
+    picked[slug].mobileImage = picked[slug].heroImage;
+  }
+  return picked;
+}
+
 /** Width and height from a WebP header (VP8X, VP8 or VP8L). */
 function webpSize(buf) {
   assert.equal(buf.toString("ascii", 0, 4), "RIFF");
@@ -89,8 +121,10 @@ test("targets: the existing gallery is kept entry for entry, then only the appro
   assert.equal(new Set([...TARGETS, ...UNTARGETED]).size, 24);
   assert.deepEqual([...TARGETS, ...UNTARGETED].sort(), [...PRODUCTION_SLUGS].sort());
   for (const slug of TARGETS) {
-    const g = ROUTES[slug].gallery;
-    const base = BASE_GALLERY[slug];
+    // Train B (15 Oct): the steps photographs appended by owner decision 10 are removed exactly first (fixtures/train-b-20261015.mjs).
+    // Train F's appended steps photographs are removed exactly before Train B's.
+    const g = trainBGalleryBefore(slug, trainFGalleryBefore(slug, ROUTES[slug].gallery));
+    const base = baseGallery(slug);
     assert.equal(g.length, base.length + APPROVED_GALLERY_ADDITIONS.length, slug);
     base.forEach(([category, id], i) => {
       assert.equal(g[i].category, category, `${slug}[${i}]`);
@@ -102,10 +136,45 @@ test("targets: the existing gallery is kept entry for entry, then only the appro
   }
 });
 
-test("targets: hero, phone hero, stillness, steps photograph and every other field are unchanged", () => {
-  assert.equal(sha256(JSON.stringify(pick(FIRST4, true))), BASE_FIRST4_NO_GALLERY_HASH);
-  assert.equal(sha256(JSON.stringify(pick(BATCH2, true))), BASE_BATCH2_NO_GALLERY_HASH);
-  assert.equal(sha256(JSON.stringify(pick(BATCH3, true))), BASE_BATCH3_NO_GALLERY_HASH);
+test("targets: only the sixteen approved rest images change; all prior gallery and other-field preservation checks remain", () => {
+  const approvedRest = {
+    id: "ahv-img-016", src: "/ahv/assets/img/owner-approved-20260928/ahv-img-016.webp",
+    width: 1600, height: 1067, alt: "Cottage, garden path and water channel among palms at the Healing Village in Palakkad",
+    decorative: false, gccSafe: true, location: "palakkad", consent: "not-applicable",
+  };
+  assert.deepEqual(IMAGES["ahv-img-016"], approvedRest);
+  const file = fs.readFileSync(P("public" + approvedRest.src));
+  assert.equal(sha256(file), "52bb11bb871ff8b2a9e325149e79a010df5f7023294c15ee905a5621be1e49b2");
+  assert.deepEqual(webpSize(file), { width: 1600, height: 1067 });
+  // Train B (15 Oct) first, then Train A batch 8: each candidate's exact binding delta is reversed newest first.
+  // Train F (15 Oct) is reversed before Train B.
+  const first4BeforeRestChange = reverseBatch8(reverseTrainBBindings(reverseTrainFBindings(pick(FIRST4, true))));
+  for (const slug of FIRST4) {
+    assert.deepEqual(ROUTES[slug].stillnessImage, approvedRest, slug);
+    assert.deepEqual(productionCampaign(slug).stillness.image, approvedRest, slug);
+    assert.ok(!ROUTES[slug].gallery.some(g => g.image.id === approvedRest.id), slug);
+    // Reverse only this reviewed delta; retain the original baseline hash and every other field.
+    first4BeforeRestChange[slug].stillnessImage = IMAGES["gal-post-therapy-stillness-wakem"];
+  }
+  assert.equal(sha256(JSON.stringify(first4BeforeRestChange)), BASE_FIRST4_NO_GALLERY_HASH);
+  // Prior batch 2 four, reviewed batch 3 (train C03) three and final batch (train C04) two route images; reverse only rest
+  // fields before the original hash check, after the composed Train B and Train A batch 8 binding reversals.
+  const batch2BeforeRestChange = reverseBatch8(reverseTrainBBindings(reverseTrainFBindings(pick(BATCH2, true))));
+  for (const slug of ["cleansing-centre", "treatment-kerala", "weight-management", "lp-hospital-kerala", "lp-cleansing-centre", "lp-pain-management", "lp-treatment-kerala", "monsoon-wellness", "rejuvenation-detox"]) {
+    assert.deepEqual(ROUTES[slug].stillnessImage, approvedRest, slug);
+    assert.deepEqual(productionCampaign(slug).stillness.image, approvedRest, slug);
+    assert.ok(!ROUTES[slug].gallery.some(g => g.image.id === approvedRest.id), slug);
+    batch2BeforeRestChange[slug].stillnessImage = IMAGES["gal-post-therapy-stillness-wakem"];
+  }
+  assert.equal(sha256(JSON.stringify(batch2BeforeRestChange)), BASE_BATCH2_NO_GALLERY_HASH);
+  const batch3BeforeRestChange = pick(BATCH3, true);
+  for (const slug of ["lp-weight-management", "lp-treatment-kerala-ru", "lp-behandlung-kerala"]) {
+    assert.deepEqual(ROUTES[slug].stillnessImage, approvedRest, slug);
+    assert.deepEqual(productionCampaign(slug).stillness.image, approvedRest, slug);
+    assert.ok(!ROUTES[slug].gallery.some(g => g.image.id === approvedRest.id), slug);
+    batch3BeforeRestChange[slug].stillnessImage = IMAGES["gal-post-therapy-stillness-wakem"];
+  }
+  assert.equal(sha256(JSON.stringify(batch3BeforeRestChange)), BASE_BATCH3_NO_GALLERY_HASH);
   for (const slug of TARGETS) {
     const b = ROUTES[slug];
     const steps = b.pathwayImage.id;
@@ -119,7 +188,9 @@ test("targets: hero, phone hero, stillness, steps photograph and every other fie
 test("the five untargeted routes are unchanged and carry none of the additions", () => {
   assert.equal(UNTARGETED.length, 5);
   assert.deepEqual(Object.keys(ROUTES).filter((s) => !TARGETS.includes(s)), UNTARGETED);
-  assert.equal(sha256(JSON.stringify(pick(UNTARGETED, false))), BASE_UNTARGETED_HASH);
+  // Train F (15 Oct 2026, AHV-WB.311.hero-image) changes only the /lp/ayurveda-treatment-south-india/ hero; reversed exactly on a
+  // copy, the five routes hash to the frozen baseline. Their galleries carry none of the additions either way.
+  assert.equal(sha256(JSON.stringify(reverseTrainFBindings(JSON.parse(JSON.stringify(pick(UNTARGETED, false)))))), BASE_UNTARGETED_HASH);
   for (const slug of UNTARGETED) {
     for (const g of ROUTES[slug].gallery) assert.ok(!ADDED_IDS.includes(g.image.id), `${slug}: ${g.image.id}`);
     assert.ok(!productionCampaign(slug).gallery.some((g) => ADDED_IDS.includes(g.image.id)), slug);
@@ -137,7 +208,9 @@ test("counts: the page config carries the binding's gallery, so the mosaic chip 
     // Village.tsx Mosaic: more = pool.length - tiles.length (pool = gallery on a standard page); the dialog gets c.gallery.
     const pool = c.gallery;
     const tiles = pool.slice(0, 5);
-    assert.equal(pool.length - tiles.length, BASE_GALLERY[slug].length + APPROVED_GALLERY_ADDITIONS.length - 5, slug);
+    // Plus the one steps photograph appended by owner decision 10, where recorded (Train B, fixtures/train-b-20261015.mjs).
+    // Plus the one steps photograph appended by Train F, where recorded (fixtures/train-f-20261015.mjs).
+    assert.equal(pool.length - tiles.length, baseGallery(slug).length + APPROVED_GALLERY_ADDITIONS.length + trainBGalleryAppended(slug) + trainFGalleryAppended(slug) - 5, slug);
     assert.ok(c.gallery.length <= 24, slug); // kit lint count.gallery: 6-24
   }
 });
@@ -191,9 +264,19 @@ test("provenance: each addition is in the named published manifest with the same
     assert.equal(entry.alt, pv.publishedAlt ?? image.alt);
     assert.equal(entry.libraryPath ?? entry.libraryPathPrivate, pv.libraryPath);
     assert.equal(pv.ownerDecision.decision, "yes");
-    // Never consent "confirmed" on a filename: the additions are frames with no identifiable person.
-    assert.equal(image.consent, "not-applicable", image.id);
-    assert.match(pv.people, /^No identifiable (person|patient or staff member)/, image.id);
+    // Consent is specific to the owner-approved photograph, never inferred from a filename.
+    if (image.id === "ahv-yoga-hall-consented-20261014") {
+      assert.equal(image.src, "/ahv/assets/img/gallery-2026/photo/yoga-large-hall-exposed-03.webp");
+      assert.equal(pv.publishedSha256, "5ea375faff82fcf26adddda817e81eced1f4a4f3eb0dcbd45f64630c319a5a81");
+      assert.equal(pv.ownerDecision.id, "AHV-YOGA-CONSENT-20261014");
+      assert.equal(pv.ownerDecision.record, "deliverables/WOPS-WEBSITE-SEQUENTIAL-20261008-001/recovery-20261014/yoga-gallery-consent/CONSENT-BINDING.json");
+      assert.equal(image.consent, "confirmed");
+      assert.match(image.alt, /^Two people practising yoga/);
+      assert.match(pv.people, /^Two people practising yoga; direct owner consent/);
+    } else {
+      assert.equal(image.consent, "not-applicable", image.id);
+      assert.match(pv.people, /^No identifiable (person|patient or staff member)/, image.id);
+    }
     assert.equal(image.decorative, false);
   }
 });
@@ -219,4 +302,22 @@ test("German and Russian additions retain localized accessible descriptions", ()
     assert.ok(UI[locale].alt[image.id]?.length > 20, `${locale}: ${image.id}`);
     assert.notEqual(UI[locale].alt[image.id], image.alt);
   }
+});
+
+// Desktop gallery dialogs must override the shared dialog token just as mobile does.
+test("gallery outer dialog has sharp corners at desktop and phone widths", () => {
+  const css = fs.readFileSync(P("campaign-v2/production/document.css"), "utf8");
+  assert.equal(css, productionCss(), "checked CSS is generated from the maintained sources");
+  const override = ".lp-prod .lp-gal{border-radius:0}";
+  const production = fs.readFileSync(P("campaign-v2/production/production.css"), "utf8");
+  assert.ok(production.includes(override), "maintained production source sets sharp gallery corners");
+  const page = fs.readFileSync(P("campaign-v2/production/ProductionPage.tsx"), "utf8");
+  assert.match(page, /className="lp lp-prod"/);
+  assert.ok(page.indexOf('<Gallery items=') > page.indexOf('className="lp lp-prod"'));
+  const gallery = fs.readFileSync(P("campaign-v2/sections/interactive/Gallery.tsx"), "utf8");
+  assert.match(gallery, /<dialog ref=\{ref\} className="lp-dlg lp-gal"/);
+  assert.doesNotMatch(gallery, /createPortal/);
+
+  assert.ok(css.lastIndexOf(override) > css.indexOf(".lp-dlg{"), "gallery override follows shared dialog radius");
+  assert.match(css, /@media \(max-width:767px\)\{\s*\.lp-gal\{[^}]*border-radius:0\}/);
 });

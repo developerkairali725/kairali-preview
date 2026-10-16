@@ -3,6 +3,7 @@ import type { SectionProps } from "./LandingPage";
 import { contact, site } from "../../campaign-v110/lib/site.ts";
 import { NABH_NO } from "./facts.ts";
 import { pageUi } from "../production/ui.ts";
+import { whatsappHref } from "../production/whatsapp.ts";
 
 // Fixed wording (task brief): never edited per campaign.
 // (production/ui.ts holds the same line, and its German and Russian wording for those routes.)
@@ -16,7 +17,7 @@ import { pageUi } from "../production/ui.ts";
  * always shows; the cookie policy is the site route; the WhatsApp link carries data-ahv-whatsapp so the shared
  * chrome does not add a second one; id="contact" is a measured anchor of the site's consent runtime.
  */
-export default function Footer({ req }: SectionProps) {
+export default function Footer({ c, req }: SectionProps) {
   const production = req.surface === "production";
   const f = pageUi(req).footer;
   const track = (cta: "call" | "whatsapp" | "email") => ({ "data-track": "cta_click", "data-track-cta": cta, "data-track-position": "footer" });
@@ -34,7 +35,7 @@ export default function Footer({ req }: SectionProps) {
         <div className="lp-foot__col">
           <p className="lp-over lp-foot__label">{f.speak}</p>
           <a className="lp-foot__link" href={contact.phone.href} {...track("call")}>{contact.phone.display}</a>
-          <a className="lp-foot__link" href={`https://wa.me/${contact.whatsapp.number}`} {...track("whatsapp")} {...(production ? { "data-ahv-whatsapp": "1" } : {})}>WhatsApp {contact.whatsapp.display}</a>
+          <a className="lp-foot__link" href={whatsappHref(c, req)} {...track("whatsapp")} {...(production ? { "data-ahv-whatsapp": "1" } : {})}>WhatsApp {contact.whatsapp.display}</a>
           <a className="lp-foot__link" href={`mailto:${contact.email}`} {...track("email")}>{contact.email}</a>
         </div>
         <div className="lp-foot__col">

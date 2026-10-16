@@ -47,7 +47,7 @@
 /* a list item or definition that is itself a laid-out card (inline display:
    grid / flex — the about-us director rows, feature rows) is not prose: the
    cap once shrank the director rows to 673px on a 1220px column */
-#ahv-design-root[data-ahv-consistency="1"] main p,
+#ahv-design-root[data-ahv-consistency="1"] main p:where(:not([data-ahv-outline-from])),
 #ahv-design-root[data-ahv-consistency="1"] main li:not([style*="display:grid"]):not([style*="display: grid"]):not([style*="display:flex"]):not([style*="display: flex"]),
 #ahv-design-root[data-ahv-consistency="1"] main dd:not([style*="display:grid"]):not([style*="display:flex"]),
 #ahv-design-root[data-ahv-consistency="1"] main blockquote { max-width:66ch !important; }
@@ -216,3 +216,12 @@ html:not([lang^="en"]) #ahv-design-root :is(h1, h2, h3, h4, h5, p, li, dt, dd, f
 /* Focus clearance must finish before a form button receives pointer release.
    Smooth native focus scrolling otherwise moves the first mobile submit tap. */
 html:has(#ahv-design-root form:focus-within) { scroll-behavior:auto !important; }
+
+/* Past retreat record template (T7, /karma-being-retreat-2019/ and every locale copy; the family attribute is the
+   same for all of them). Its date line, "Concluded" note and photo captions carry #75695A on the #EFE9DA band:
+   4.41:1, under WCAG AA. #706457 is the nearest darker step of the same warm grey that clears 4.5:1 there
+   (4.75:1; 5.11:1 on #F7F4EA). Its in-text body links were colour-only (#006038 vs #2A2118 body, 2.05:1),
+   so they carry an underline. Scoped to the family: no other template's tokens change. */
+#ahv-design-root[data-ahv-family="ahv-template-past-retreat-record"] :is(p,figcaption,div,span)[style*="color: rgb(117, 105, 90)"],
+#ahv-design-root[data-ahv-family="ahv-template-past-retreat-record"] :is(p,figcaption,div,span)[style*="color:#75695A" i] { color:#706457 !important; }
+#ahv-design-root[data-ahv-family="ahv-template-past-retreat-record"] main p a:not([style*="display"]) { text-decoration:underline !important; text-underline-offset:.16em; }

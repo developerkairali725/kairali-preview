@@ -1,12 +1,13 @@
 import type { SectionProps } from "../LandingPage";
 import { SectionHead } from "../head";
-import { CHANNELS, LENGTHS, formSchemaFor, monthOptions, programOptions, resolveSchema } from "../../forms/schema.ts";
+import { CHANNELS, formSchemaFor, monthOptions, programOptions, resolveSchema, stayLengths } from "../../forms/schema.ts";
 import type { PrefillLabels } from "./consult-prefill.ts";
 import { contact, site } from "../../../campaign-v110/lib/site.ts";
 import { WaIcon, PhoneIcon } from "../icons";
 import { Rich } from "../rich";
 import EnquiryForm from "./EnquiryForm";
 import { pageUi } from "../../production/ui.ts";
+import { whatsappHref } from "../../production/whatsapp.ts";
 
 /**
  * #enquiry — the enquiry (Main.dc.html section 11). Default: the live campaign enquiry form (one step);
@@ -23,12 +24,13 @@ export default function Enquiry({ c, v, req }: SectionProps) {
   const schema = resolveSchema(production && c.cta?.primary ? { ...base, submitLabel: c.cta.primary } : base, octx);
   // Labels for the ConsultBar answers, written into a textarea when the schema has no fields for them.
   const prefillLabels: PrefillLabels = {
-    program: programOptions(octx), month: monthOptions(octx), length: LENGTHS,
+    program: programOptions(octx), month: monthOptions(octx), length: stayLengths(c.route),
     channel: CHANNELS.map((x) => ({ value: x.id, label: x.label })),
   };
   // A designed production page closes with its own invitation, and says what "free" covers beside the form.
   const closing = production ? c.page?.closing : undefined;
   const ui = pageUi(req);
+  const wa = whatsappHref(c, req);
   return (
     <section id="enquiry" className="lp-sec lp-enq" aria-labelledby="lp-enq-h">
       <div className="lp-enq__intro">
@@ -36,9 +38,10 @@ export default function Enquiry({ c, v, req }: SectionProps) {
         {closing?.paragraphs.map((p, i) => <p key={i} className="lp-enq__lede"><Rich text={p} /></p>)}
         {closing && c.cta?.primarySupport ? <p className="lp-enq__lede lp-enq__support">{c.cta.primarySupport}</p> : null}
         {schema.lede ? <p className="lp-enq__lede">{schema.lede}</p> : null}
+        <p className="lp-enq__lede">{ui.enquiry.contactIntro}</p>
         <ul className="lp-enq__contact">
           <li>
-            <a href={`https://wa.me/${contact.whatsapp.number}`} data-track="cta_click" data-track-cta="whatsapp" data-track-position="section">
+            <a href={wa} data-track="cta_click" data-track-cta="whatsapp" data-track-position="section">
               <WaIcon size={18} />{ui.enquiry.wa} · {contact.whatsapp.display}
             </a>
           </li>
@@ -62,7 +65,7 @@ export default function Enquiry({ c, v, req }: SectionProps) {
         privacyHref={site.legal.privacy}
         prefillLabels={prefillLabels}
         prefillEnabled={c.consultBar !== false}
-        {...(production ? { production, ui: ui.form } : {})}
+        {...(production ? { production, ui: ui.form, whatsappHref: wa } : {})}
       />
     </section>
   );

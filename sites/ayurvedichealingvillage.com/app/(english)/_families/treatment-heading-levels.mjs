@@ -1,6 +1,6 @@
 /** Match the treatment finder's existing H2 snapshot without changing frozen source views. */
 export function treatmentHeadingLevels(html, route, variant) {
-  if (route !== '/ayurvedic-treatments/') return html;
+  if (route !== '/ayurvedic-treatments/' && route !== '/all-programs/' && route !== '/wellness-programs/' && route !== '/yoga-meditation-programs/') return html;
   // Desktop has programme cards and three messages; mobile cards already use H2.
   // Leave a changed or unrelated template intact until its hierarchy is reviewed.
   const expected = variant === 'desktop' ? 4 : variant === 'mobile' ? 3 : 0;

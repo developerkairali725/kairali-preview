@@ -1,0 +1,38 @@
+{
+  "asOf": "2026-09-25",
+  "base": "5bb7d4bc39b07d2dee1749c947220d665e268a19",
+  "sourceDelta": {
+    "campaign-v2/data/doctors.ts": [
+      {
+        "old": "    tenure: \"Practising Ayurveda since 2010 · At Kairali since 2019\",\n",
+        "new": "    tenure: \"15+ years of documented professional Ayurveda experience (as of September 2026)\",\n"
+      },
+      {
+        "old": "    tenure: \"At Kairali since 2023\",\n",
+        "new": "    tenure: \"3+ years of documented professional Ayurveda experience (as of September 2026)\",\n"
+      },
+      {
+        "old": "    tenure: \"At Kairali since 2024\",\n",
+        "new": "    tenure: \"9+ years of documented professional Ayurveda experience (as of September 2026)\",\n"
+      },
+      {
+        "old": "    tenure: \"At Kairali since 2026\",\n",
+        "new": "    tenure: \"1+ year of documented professional Ayurveda experience (as of September 2026)\",\n"
+      },
+      {
+        "old": "    tenure: \"At Kairali since 2026\",\n",
+        "new": "    tenure: \"9+ years of documented clinical Ayurveda experience (as of September 2026)\",\n"
+      }
+    ],
+    "campaign-v2/production/ui.ts": [
+      {
+        "old": "    \"deepu-john\": { role: \"Chefarzt und Abteilungsleiter\", tenure: \"Praktiziert Ayurveda seit 2010 · Bei Kairali seit 2019\", focus: \"Panchakarma und Beratung zu Lebensgewohnheiten\", languages: [\"Malayalam\", \"Englisch\", \"Hindi\", \"Tamil\"] },\n",
+        "new": "    \"deepu-john\": { role: \"Chefarzt und Abteilungsleiter\", tenure: \"Mindestens 15 Jahre dokumentierte Berufserfahrung in Ayurveda (Stand: September 2026)\", focus: \"Panchakarma und Beratung zu Lebensgewohnheiten\", languages: [\"Malayalam\", \"Englisch\", \"Hindi\", \"Tamil\"] },\n"
+      },
+      {
+        "old": "    \"deepu-john\": { role: \"Главный врач и заведующий отделением\", tenure: \"Практикует аюрведу с 2010 года · В Kairali с 2019 года\", focus: \"Панчакарма и рекомендации по образу жизни\", languages: [\"малаялам\", \"английском\", \"хинди\", \"тамильском\"] },\n",
+        "new": "    \"deepu-john\": { role: \"Главный врач и заведующий отделением\", tenure: \"Не менее 15 лет документально подтверждённого профессионального опыта в аюрведе (по состоянию на сентябрь 2026 года)\", focus: \"Панчакарма и рекомендации по образу жизни\", languages: [\"малаялам\", \"английском\", \"хинди\", \"тамильском\"] },\n"
+      }
+    ]
+  }
+}

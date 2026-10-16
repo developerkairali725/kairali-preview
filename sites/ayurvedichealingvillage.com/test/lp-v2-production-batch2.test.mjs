@@ -25,6 +25,7 @@ import { lintCampaign } from "../campaign-v2/kit/lint/index.ts";
 import { PRICE, RATE_LINK } from "../campaign-v2/kit/lint/pricing.ts";
 import { interactionForLink } from "../campaign-v2/production/interaction-map.ts";
 import { CURRENT_ROSTER } from "../campaign-v2/data/doctors.ts";
+import { IMAGES } from "../campaign-v2/data/images.ts";
 import { contact } from "../campaign-v110/lib/site.ts";
 
 const SITE = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -60,7 +61,7 @@ test("registration: both batch-2 routes are production slugs with their own revi
   }
 });
 
-test("routes: unchanged URLs, canonicals and robots (indexable only on the production build, as before); no OG alt or breadcrumb the replaced pages lacked", () => {
+test("routes: unchanged URLs, canonicals and robots (indexable only on the production build, as before); no OG alt the replaced pages lacked; Home > H1 breadcrumb (AHV-WB.069/093)", () => {
   const old = read("app/(campaign)/_traffic/TrafficLanding.tsx");
   assert.match(old, /robots:\{index:process\.env\.AHV_STAGING==='0',follow:true\}/); // the replaced pages' rule
   assert.match(old, /images:\[\{url:image,width:1200,height:630\}\]/); // their OG image: no alt
@@ -75,14 +76,30 @@ test("routes: unchanged URLs, canonicals and robots (indexable only on the produ
     assert.deepEqual(live.robots, { index: true, follow: true });
     assert.deepEqual(productionMetadata(slug, c, { AHV_STAGING: "1" }).robots, { index: false, follow: true });
     assert.deepEqual(productionMetadata(slug, c, {}).robots, { index: false, follow: true });
-    assert.deepEqual(live.openGraph.images, [{ url: "https://ayurvedichealingvillage.com/landing/r10/og.jpg", width: 1200, height: 630 }]);
+    // AHV-WB.077/101.change: each route's own 1200×630 crop of its approved registry photograph, with that photograph's
+    // registry alt (the replaced pages' shared R10 image carried none).
+    const own = { [PAIN]: "kt-190", [FAMILY]: "kt-314" }[slug];
+    assert.deepEqual(live.openGraph.images, [{ url: `https://ayurvedichealingvillage.com/images/og/share-${slug}.jpg`, width: 1200, height: 630, alt: IMAGES[own].alt }]);
+    assert.equal(live.openGraph.locale, "en_IN");
     assert.equal(live.openGraph.url, canonical);
     assert.equal(live.title, c.seo.title);
     assert.equal(live.description, c.seo.description);
     const [page, faq] = productionJsonLd(slug, c);
     assert.equal(page["@type"], "WebPage");
     assert.equal(page.url, canonical);
-    assert.equal(page.breadcrumb, undefined);
+    // AHV-WB.069 / AHV-WB.093 (14 Oct 2026): Home > the page's visible H1, nothing else in the WebPage node changed.
+    assert.deepEqual(page.breadcrumb, {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://ayurvedichealingvillage.com/" },
+        { "@type": "ListItem", position: 2, name: { [PAIN]: "Ayurvedic pain management in Kerala", [FAMILY]: "Family Ayurveda retreat in Kerala" }[slug], item: canonical },
+      ],
+    });
+    assert.equal(page.breadcrumb.itemListElement[1].name, c.hero.h1);
+    // Train B (15 Oct 2026): train D01 (AHV-WB.069/093 organization/hospital-schema) names the one site entity as the
+    // WebPage publisher on both routes; nothing else in the WebPage node changed.
+    assert.deepEqual(page.publisher, { "@id": "https://ayurvedichealingvillage.com/#organization" });
+    assert.deepEqual(Object.keys(page), ["@context", "@type", "@id", "url", "name", "description", "inLanguage", "isPartOf", "breadcrumb", "publisher"]);
     assert.equal(faq["@type"], "FAQPage");
     assert.equal(faq.mainEntity.length, c.faq.length);
   }
@@ -115,13 +132,15 @@ test("family form: the R10 familyFields contract — fields, order, required, li
   assert.deepEqual(f.rdogender.options, [{ value: "Male", label: "Male" }, { value: "Female", label: "Female" }]);
   assert.deepEqual([f.country.type, f.country.label, f.country.required, f.country.maxLength, f.country.autocomplete], ["text", "Country", true, 100, "country-name"]);
   assert.deepEqual([f.duration.type, f.duration.label, f.duration.required, f.duration.defaultValue], ["select", "Preferred duration", false, ""]);
+  // Owner decision 22 (14 Oct 2026, AHV-LATER-010.02/.03): the choices are nights; the replaced R10 form's day choices
+  // are still asserted on its own file below (that file is unchanged).
   assert.deepEqual(f.duration.options, [
-    { value: "", label: "Select duration" }, { value: "7 days", label: "7 days" }, { value: "14 days", label: "14 days" }, { value: "21 days", label: "21 days" },
+    { value: "", label: "Select duration" }, { value: "7 nights", label: "7 nights" }, { value: "14 nights", label: "14 nights" }, { value: "21 nights", label: "21 nights" },
   ]);
   // the month is optional and starts unanswered (no preference assumed), then the shared six months + Flexible
   assert.deepEqual([f.preferredMonth.type, f.preferredMonth.label, f.preferredMonth.required, f.preferredMonth.defaultValue, f.preferredMonth.mapsTo], ["select", "Preferred month", false, "", "message"]);
   assert.deepEqual(f.preferredMonth.options[0], { value: "", label: "Select month" });
-  assert.deepEqual(f.preferredMonth.options.slice(1).map((o) => o.value), ["2026-11", "2026-12", "2027-01", "2027-02", "2027-03", "2027-04", "flexible"]);
+  assert.deepEqual(f.preferredMonth.options.slice(1).map((o) => o.value), ["2026-10", "2026-11", "2026-12", "2027-01", "2027-02", "2027-03", "flexible"]);
   assert.deepEqual([f.message.type, f.message.label, f.message.required, f.message.maxLength], ["textarea", "Any existing health conditions?", false, 2700]);
   assert.equal(f.message.hint, FAMILY_NOTE);
   assert.equal(COPY[FAMILY].familyFormNote, FAMILY_NOTE);
@@ -150,7 +169,8 @@ test("family form validation: country required with its own message, duration an
   assert.deepEqual(validateStep(FS, 0, fam(), "whatsapp"), []);
   assert.deepEqual(validateStep(FS, 0, fam({ country: " " }), "whatsapp").map((e) => [e.field, e.message]), [["country", MESSAGES.country]]);
   assert.deepEqual(errs({ country: "x".repeat(101) }), [["country", "too_long"]]);
-  assert.deepEqual(errs({ rdogender: "Female", duration: "14 days", message: "Knee stiffness" }), []);
+  assert.deepEqual(errs({ rdogender: "Female", duration: "14 nights", message: "Knee stiffness" }), []);
+  assert.deepEqual(errs({ duration: "14 days" }), [["duration", "required"]]); // owner decision 22: days are no longer a choice
   assert.deepEqual(errs({ duration: "28 nights" }), [["duration", "required"]]);
   assert.deepEqual(errs({ preferredMonth: "" }), []); // the month stays optional
   assert.deepEqual(errs({ preferredMonth: "2026-11" }), []);
@@ -201,9 +221,9 @@ const envFor = (pathname, over = {}) => ({
 test("family request: byte-identical to the replaced R10 familyFields form (Country / Preferred duration prefix, gender, attribution)", () => {
   const route = ROUTES[FAMILY].route;
   const cases = [
-    fam({ rdogender: "Female", country: " Germany ", duration: "14 days", message: " Lower back stiffness after long drives. " }),
+    fam({ rdogender: "Female", country: " Germany ", duration: "14 nights", message: " Lower back stiffness after long drives. " }),
     fam(), // gender unanswered, no duration, no health text
-    fam({ rdogender: "Male", country: "x".repeat(100), duration: "21 days", message: "y".repeat(2700) }), // the maxima
+    fam({ rdogender: "Male", country: "x".repeat(100), duration: "21 nights", message: "y".repeat(2700) }), // the maxima
     fam({ dialCode: "+44", phone: "7700 900123", honeypot: "Acme Trading" }),
   ];
   for (const values of cases) {
@@ -216,7 +236,7 @@ test("family request: byte-identical to the replaced R10 familyFields form (Coun
     }
   }
   assert.equal(familyMessage(fam()), "Country: India\nPreferred duration: \n");
-  assert.equal(familyMessage(fam({ duration: "7 days", message: "Asthma" })), "Country: India\nPreferred duration: 7 days\nAsthma");
+  assert.equal(familyMessage(fam({ duration: "7 nights", message: "Asthma" })), "Country: India\nPreferred duration: 7 nights\nAsthma");
   assert.deepEqual(["Male", "Female", "", "other", undefined].map(familyGender), ["Male", "Female", "", "", ""]);
 });
 
@@ -308,7 +328,7 @@ test("contact details: rendered from site.ts by the kit (enquiry and footer), ne
 });
 
 // ── films, doctors, villas, topics (the reviewed copy) ────────────────────────────────────────────────────
-test("structure from the reviewed copy: 3 patient films as links, the 5 current doctors, 4 villas; pain 4 plan topics; family 16 care topics", () => {
+test("structure from the reviewed copy: 3 patient films as links, the 5 current doctors, 4 villas; pain 4 plan topics; family 7 care topics", () => {
   const VIDEOS = ["https://www.youtube.com/watch?v=3vWviQfW1Ug", "https://www.youtube.com/watch?v=4x01PtWfNnk", "https://www.youtube.com/watch?v=DcTMckQD3rc"];
   const VILLAS = ["/deluxe-villa/", "/classic-villa/", "/royal-villa/", "/maharaja-suite/"];
   for (const slug of B2) {
@@ -325,10 +345,11 @@ test("structure from the reviewed copy: 3 patient films as links, the 5 current 
   assert.deepEqual(pain.cards.map((c) => c.title), ["Ayurvedic therapies", "Medicines considered alongside your current care", "Food, movement and rest", "Reviews during the stay and guidance for home"]);
   const family = C[FAMILY].page.offering;
   assert.equal(family.kind, "index");
+  // Owner decision, 14 Oct 2026 (AHV-WB.083.change): only the existing reviewed topics suited to older parents, in
+  // their reviewed order; each kept topic's reviewed wording is pinned by the source reversal (lp-v2-doctor-position).
   assert.deepEqual(family.topics.map((t) => t.title), [
-    "Panchakarma", "Addiction recovery", "Skin concerns", "Respiratory health", "Cardiovascular health and blood pressure", "Back pain and sciatica",
-    "Stress and mental wellbeing", "Diabetes and metabolism", "Digestive and gut health", "Immunity and executive health assessment", "Joint care and arthritis",
-    "Neurological care needs", "Women’s hormonal health", "Weight management", "Yoga and meditation", "Meals for the family",
+    "Cardiovascular health and blood pressure", "Back pain and sciatica", "Stress and mental wellbeing", "Diabetes and metabolism",
+    "Digestive and gut health", "Immunity and executive health assessment", "Joint care and arthritis",
   ]);
   // The day's routine, as prose in the quiet band (the old page's routine table is not carried over).
   assert.equal(C[FAMILY].page.rest.heading, "A day with time for care and time together");

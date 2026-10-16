@@ -72,6 +72,14 @@ function checkPrices(c: CampaignConfig): void {
   }
 }
 
+/** The route's card photographs (bindings.ts offeringImages), one per card in order; the copy is unchanged. */
+function withCardImages(o: ProductionCopy["page"]["offering"], images: RouteBinding["offeringImages"]): ProductionCopy["page"]["offering"] {
+  if (!images) return o;
+  if (o.kind !== "cards") fail("offering", "card photographs are bound to a route without programme cards");
+  if (images.length !== o.cards.length) fail("offering.cards", `${images.length} card photographs for ${o.cards.length} cards`);
+  return { ...o, cards: o.cards.map((card, i) => ({ ...card, image: images[i] })) };
+}
+
 /** The production CampaignConfig of one live ad route. Throws on any content problem. */
 export function productionCampaign(slug: ProductionSlug): CampaignConfig {
   const binding: RouteBinding = ROUTES[slug] ?? fail("slug", `unknown production route ${slug}`);
@@ -123,7 +131,7 @@ export function productionCampaign(slug: ProductionSlug): CampaignConfig {
     productionForm: binding.productionForm,
     spelling: SPELLING,
     form: { schema: toForm(binding, copy), adapterId: "ahv-production" },
-    page: { ...p, pathway: { ...p.pathway, image: binding.pathwayImage } },
+    page: { ...p, pathway: { ...p.pathway, image: binding.pathwayImage }, offering: withCardImages(p.offering, binding.offeringImages) },
     ...(binding.consultBar === false ? { consultBar: false as const } : {}),
   };
   checkLinks(c);

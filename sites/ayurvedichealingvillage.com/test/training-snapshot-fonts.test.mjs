@@ -17,7 +17,7 @@ test("unknown entities, unsupported range syntax and unreviewed routes fail cons
  assert.equal(trainingSnapshotFontCss(route, css, "&unknown;"), css);
  for (const malformed of [extra.replace("U+400-4FF", "U+4??"), extra.replace("U+400-4FF", "U+4FF-400")])
   assert.equal(trainingSnapshotFontCss(route, malformed, "A"), malformed);
- assert.equal(trainingSnapshotFontCss("/ayurveda-training-programme/", css, "A"), css);
+ assert.equal(trainingSnapshotFontCss("/offers/", css, "A"), css);
  assert.equal(trainingSnapshotFontCss(route, css, ""), css);
 });
 test("existing German training snapshot needs no extra face; Russian text keeps its original face", () => {

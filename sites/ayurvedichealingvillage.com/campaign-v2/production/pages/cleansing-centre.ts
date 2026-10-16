@@ -33,10 +33,12 @@ export default defineCopy({
   doctors: ["deepu-john", "rahul-r", "akhila-oommen", "adhina-ub", "aashitha-ps"],
   page: {
     lead: {
-      heading: "Looking for Kairali Cleansing Centre?",
+      // AHV-WB.213.change (staff workbook row 216): the heading names the care, not the centre name visitors may not know.
+      heading: "Ayurvedic cleansing (detox) at an NABH hospital in Kerala",
       paragraphs: [
         "This is Kairali – The Ayurvedic Healing Village in Palakkad, Kerala. Our NABH-accredited Ayurvedic hospital offers residential care guided by individual assessment.",
         "Cleansing, detoxification and rejuvenation appear in different Ayurvedic programme names, and they do not all describe the same care. Bring your health history and goals to the conversation, so your doctor can explain the programme that may be appropriate for you.",
+        "What your stay offers: a doctor who explains the programme that may be appropriate for you, and a slower pace in the village gardens, with prescribed care, meals and quiet time setting the rhythm of your day.",
       ],
       points: [
         "You searched for a cleansing or detox programme",
@@ -71,7 +73,7 @@ export default defineCopy({
       heading: "From assessment to a planned stay",
       steps: [
         { title: "Share the full picture", body: "Start with a free initial doctor consultation. Bring diagnoses, reports, prescriptions and supplements, with your reason for considering a programme." },
-        { title: "Understand the plan and quotation", body: "Discuss preparation, dietary guidance and practical requirements. Review the programme name, duration, accommodation and inclusions together before arranging travel." },
+        { title: "Understand the plan and quotation", body: "Discuss preparation, dietary guidance and practical requirements." },
         { title: "Follow your prescribed routine", body: "Vegetarian meals, suitable yoga or meditation and time to rest fit around prescribed care. Tell the team about allergies, dietary restrictions and mobility needs." },
       ],
     },
@@ -96,6 +98,7 @@ export default defineCopy({
       films: [
         story("07tVC2oXd8g", "Watch the Panchakarma film"),
         story("iPARaMRASUs", "A day at the village"),
+        story("4x01PtWfNnk", "Watch Michaela & Jan’s experience"),
       ],
     },
     stay: {
@@ -114,7 +117,7 @@ export default defineCopy({
     faqHeading: "Your questions, answered",
     closing: {
       heading: "Begin with your questions",
-      paragraphs: ["Our patient care team will help you discuss the programme and practical arrangements. Start with a free initial doctor consultation, then review your plan and quotation before booking."],
+      paragraphs: ["Our patient care team will help you discuss the programme and practical arrangements."],
     },
   },
   faq: [

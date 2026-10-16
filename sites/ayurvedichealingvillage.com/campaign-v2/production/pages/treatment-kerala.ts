@@ -43,6 +43,7 @@ export default defineCopy({
       paragraphs: [
         "You may know exactly what you want to discuss, or only that you are considering Ayurveda for a health concern or a wellbeing goal. At Kairali – The Ayurvedic Healing Village, you start with your health history, current treatment and the reason you are looking into Ayurveda. Our doctors explain the relevant options and whether a residential stay is suitable for you.",
         "Kairali is an NABH-accredited Ayurvedic hospital with residential villas in Palakkad, Kerala. Let the programme, the recommended duration and your practical needs shape the booking. Tell us how much time you have, then leave room to discuss what the proposed care requires before you commit to travel.",
+        "What your stay offers: a start with your own health history rather than a programme name, a residential villa in Palakkad, and meals, suitable yoga or meditation and quiet time planned around your treatment schedule.",
       ],
       points: [
         "You are comparing Ayurvedic treatment centres in Kerala",
@@ -82,7 +83,7 @@ export default defineCopy({
       heading: "Three steps from first question to your stay",
       steps: [
         { title: "A free initial doctor consultation", body: "Describe your health history, current treatment and goals in your own words. Share medical reports, prescriptions and details of earlier treatment, so the doctor understands the full context." },
-        { title: "Your plan and a clear quotation", body: "The doctor explains the proposed programme and recommended duration. Then review a quotation for the programme, nights, villa occupancy and taxes, with included meals, reviews and sessions, before you arrange travel." },
+        { title: "Your plan and a clear quotation", body: "The doctor explains the proposed programme and recommended duration." },
         { title: "Settle into your treatment routine", body: "Trained therapists deliver the sessions your Ayurvedic doctor prescribes. Meals, suitable yoga or meditation and rest fit around them. Keep the care team informed and ask when your progress will be reviewed." },
       ],
     },

@@ -6,6 +6,7 @@ import vm from 'node:vm';
 import crypto from 'node:crypto';
 import {createRequire} from 'node:module';
 import {fileURLToPath} from 'node:url';
+import {reverseTrainHConfig} from './fixtures/train-h-20261015.mjs';
 const SITE=process.env.AHV_FACT_SITE_DIR||path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const require=createRequire(path.join(SITE,'package.json'));
 const ts=require('typescript'),React=require('react'),{renderToStaticMarkup}=require('react-dom/server'),{htmlToDOM,Element}=require('html-react-parser');
@@ -66,7 +67,9 @@ test('Twenty approved routes only; accepted catalogue and tariff facts are uncha
 });
 test('Rendered package facts preserve every existing offering node, card, CTA and link',()=>{
  let changed=0;
- for(const c of configs) {
+ // Train H (15 Oct 2026, AHV-WB.114/.137) later adds card photographs on two routes: compared without them (its recorded
+ // config delta reversed); test/train-h-20261015.test.mjs pins the photographs.
+ for(const c of configs.map(x=>reverseTrainHConfig(x.slug,JSON.parse(JSON.stringify(x))))) {
   const a=htmlToDOM(render(Before,c)),b=htmlToDOM(render(Offering,c));
   assert.deepEqual(normalized(b),normalized(a),c.route+' existing rendered content and attributes');
   const blocks=all(b,n=>n instanceof Element&&n.attribs['data-package-facts']);
@@ -78,6 +81,7 @@ test('Rendered package facts preserve every existing offering node, card, CTA an
 });
 test('Locale mismatch and multi-locale configs receive no extra package facts',()=>{
  for(const c of configs.filter(c=>PACKAGE_FACTS[c.route]))for(const locales of [['xx'],['en','de']]) {
-  const modified={...c,locales};assert.equal(render(Offering,modified),render(Before,modified),c.route);
+  // Train J3 (AHV-WB.298) later adds card photographs on /weight-loss.html; compared without them (its config delta reversed).
+  const modified={...reverseTrainHConfig(c.slug,JSON.parse(JSON.stringify(c))),locales};assert.equal(render(Offering,modified),render(Before,modified),c.route);
  }
 });

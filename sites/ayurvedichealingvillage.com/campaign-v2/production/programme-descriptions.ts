@@ -38,3 +38,7 @@ export const PROGRAMME_DESCRIPTIONS: Record<string, string[]> = {
     "A yoga programme designed around you. Practice, pranayama, and meditation customised to your goals after a doctor’s assessment."
   ]
 };
+// AHV-WB.026: /ayurvedic-treatment-packages.html links straight to the approved survivor (M009) of /yoga-retreats/;
+// the same existing overview, shared rather than copied.
+PROGRAMME_DESCRIPTIONS["https://ayurvedichealingvillage.com/yoga-therapy-individual/"] =
+  PROGRAMME_DESCRIPTIONS["https://ayurvedichealingvillage.com/yoga-retreats/"];

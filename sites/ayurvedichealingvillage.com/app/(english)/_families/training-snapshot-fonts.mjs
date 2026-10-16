@@ -4,7 +4,16 @@
  * visible text, so hidden menus and generated content retain their glyph coverage.
  * Unrecognised entities or ranges conservatively keep the complete stylesheet.
  */
-export const TRAINING_SNAPSHOT_ROUTES = new Set([
+export const TRAINING_SNAPSHOT_ROUTES = new Set(["/wellness-programs/", "/yoga-meditation-programs/", "/beauty-care-and-eye-care/", "/de-addiction-and-rehabilitation-from-alcohol-drugs-tobacco/", "/immunity-enhancement-executive-health-assessment-therapy/", "/revitalizing-and-strengthening/", "/womens-hormonal-balance-endocrine-therapy/", 
+  "/treatment-for-psoriasis/", "/treatment-to-remove-stress-and-strain/",
+  "/panchakarma-therapy/", "/post-pregnancy-health-programme/", "/preventive-and-regenerative-treatment/",
+  "/panchakarma/",
+  "/ananda-lahari-yoga-and-ayurveda-retreat/",
+  "/archive-yoga-retreat/",
+  "/ashtanga-yoga-and-ayurveda-retreat/",
+  "/ayurveda-treatment/", "/mindfulness-retreat/",
+  "/all-programs/",
+  "/ayurveda-training-programme/",
   "/advanced-ayurveda-lifestyle-consultant-and-therapist-training-program-kerala-aalct-hv/",
   "/intensive-ayurveda-training-program-learn-practice-ayurveda/",
   "/level-one-advance-ayurveda-training-program-for-wellness-professionals-kerala-aatp-1-hv/",
