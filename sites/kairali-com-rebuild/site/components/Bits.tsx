@@ -32,7 +32,7 @@ export function Photograph({ k, p, sizes = "100vw", priority = false, className 
   return (
     <img className={className} src={`/media/photo/${k}-${p.sizes.includes(1600) ? 1600 : largest}.webp`}
       srcSet={p.sizes.map((w) => `/media/photo/${k}-${w}.webp ${w}w`).join(", ")} sizes={sizes}
-      width={largest} height={h} alt={p.alt} loading={priority ? "eager" : "lazy"} decoding={priority ? "sync" : "async"}
+      width={largest} height={h} alt={p.alt} loading={priority ? "eager" : "lazy"} decoding={priority ? "auto" : "async"}
       fetchPriority={priority ? "high" : undefined} />
   );
 }
