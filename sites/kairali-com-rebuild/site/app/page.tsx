@@ -33,12 +33,12 @@ export default function Home() {
 
   return (
     <>
-      <link rel="preload" as="image" type="image/webp" href="/media/photo/ahv-grounds-pond-480.webp" media="(max-width: 767px)" fetchPriority="high" />
+      <link rel="preload" as="image" type="image/webp" href="/media/photo/ahv-grounds-pond-480.webp" media="(max-width: 479px)" fetchPriority="high" />
       <link rel="preload" as="image" type="image/webp" href="/media/photo/ahv-grounds-pond-1600.webp" media="(min-width: 768px)" fetchPriority="high" />
       <section className="home-hero opener" aria-labelledby="page-title">
         <div className="opener-media">
           <picture className="hero-media">
-            <source media="(max-width: 767px)" srcSet="/media/photo/ahv-grounds-pond-480.webp" />
+            <source media="(max-width: 479px)" srcSet="/media/photo/ahv-grounds-pond-480.webp" />
             <img
               src="/media/photo/ahv-grounds-pond-1600.webp"
               srcSet="/media/photo/ahv-grounds-pond-640.webp 640w, /media/photo/ahv-grounds-pond-1024.webp 1024w, /media/photo/ahv-grounds-pond-1600.webp 1600w, /media/photo/ahv-grounds-pond-2200.webp 2200w"
