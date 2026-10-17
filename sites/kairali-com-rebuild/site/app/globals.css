@@ -387,11 +387,11 @@ figcaption { font: 400 13px/1.5 var(--font-data); color: var(--muted); margin-to
 .hero-kicker span + span { position: relative; }
 .hero-kicker span + span::before { content: ""; position: absolute; left: -12px; top: 50%; width: 3px; height: 3px; border-radius: 50%; background: var(--marigold); }
 @media (max-width: 767px) {
-  .home-hero { min-height: 720px; }
-  .home-hero .opener-media { height: 720px; }
+  .home-hero { min-height: 0; background: var(--ivory); }
+  .home-hero .opener-media { height: 420px; }
   .home-hero .opener-media::after { background: linear-gradient(0deg, var(--premium-v3-tone-35), transparent 74%); }
-  .home-hero .opener-panel { bottom: 18px; }
-  .home-hero .opener-card { width: min(100%, 356px); min-height: 448px; padding: 18px; gap: 11px; background: color-mix(in srgb, var(--white) 72%, transparent); }
+  .home-hero .opener-panel { position: relative; bottom: auto; margin-top: -118px; padding-bottom: 18px; }
+  .home-hero .opener-card { width: min(100%, 520px); padding: 18px; gap: 11px; background: color-mix(in srgb, var(--white) 78%, transparent); }
   .home-hero h1 { font-size: clamp(2.4rem, 11vw, 3rem); max-width: 9ch; }
   .home-hero .lede { font-size: .94rem; line-height: 1.45; }
   .home-hero .actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
