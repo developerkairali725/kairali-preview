@@ -6,7 +6,6 @@ import { HOME_H1, SUB_BRANDS } from "@/lib/site";
 import { Photograph } from "@/components/Bits";
 import { Canopy, Divider } from "@/components/Motif";
 import Prose from "@/components/Prose";
-import HeroCarousel from "@/components/HeroCarousel";
 
 // Home: every block of the live home copy is rendered (source: kairali.com home capture, 29 Sep 2026),
 // composed in the Premium v3 home sequence. H1 per owner decision Q3.
@@ -34,10 +33,25 @@ export default function Home() {
 
   return (
     <>
-      <link rel="preload" as="image" type="image/webp" href="/media/photo/ahv-grounds-pond-1024.webp" media="(max-width: 767px)" />
-      <link rel="preload" as="image" type="image/webp" href="/media/photo/ahv-grounds-pond-1600.webp" media="(min-width: 768px)" />
+      <link rel="preload" as="image" type="image/webp" href="/media/photo/ahv-grounds-pond-480.webp" media="(max-width: 767px)" fetchPriority="high" />
+      <link rel="preload" as="image" type="image/webp" href="/media/photo/ahv-grounds-pond-1600.webp" media="(min-width: 768px)" fetchPriority="high" />
       <section className="home-hero opener" aria-labelledby="page-title">
-        <div className="opener-media"><HeroCarousel /></div>
+        <div className="opener-media">
+          <picture className="hero-media">
+            <source media="(max-width: 767px)" srcSet="/media/photo/ahv-grounds-pond-480.webp" />
+            <img
+              src="/media/photo/ahv-grounds-pond-1600.webp"
+              srcSet="/media/photo/ahv-grounds-pond-640.webp 640w, /media/photo/ahv-grounds-pond-1024.webp 1024w, /media/photo/ahv-grounds-pond-1600.webp 1600w, /media/photo/ahv-grounds-pond-2200.webp 2200w"
+              sizes="100vw"
+              width="2200"
+              height="1467"
+              alt="Lawns and a lily pond at Kairali – The Ayurvedic Healing Village, Palakkad"
+              loading="eager"
+              decoding="auto"
+              fetchPriority="high"
+            />
+          </picture>
+        </div>
         <div className="opener-panel"><div className="container">
           <div className="opener-card">
             <p className="hero-kicker"><span>Established 1908</span><span>Four generations</span></p>
