@@ -7,6 +7,7 @@ page-copy blocks, rendered media, internal links, sitemap/robots/canonical/OG/Tw
 third-party font requests. Writes evidence/verify-report.json and evidence/verify-summary.md.
 """
 import base64, concurrent.futures as cf, copy, hashlib, json, os, re, sys, unicodedata, urllib.request, urllib.error
+import xml.etree.ElementTree as ET
 from urllib.parse import urlsplit, unquote, quote
 from html import unescape
 
@@ -224,6 +225,10 @@ for t, rs in descs.items():
 
 # sitemap
 st, _, body = get("/sitemap.xml")
+try:
+    ET.fromstring(body)
+except ET.ParseError as exc:
+    fail("sitemap-invalid-xml", str(exc))
 locs = re.findall(r"<loc>(.*?)</loc>", body.decode())
 bad = []
 for u in locs:

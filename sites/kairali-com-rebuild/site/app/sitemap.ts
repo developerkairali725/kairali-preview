@@ -10,5 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return Object.keys(pages())
     .filter((r) => r !== "/kairali-blog.aspx?page=1")
     .sort()
-    .map((r) => ({ url: SITE_URL + (r === "/" ? "/" : r.replace(/&/g, "&")) }));
+    // Next's sitemap serializer writes URL strings directly into <loc>. Escape query
+    // separators so routes such as `detail.aspx?page=...&category=...` remain valid XML.
+    .map((r) => ({ url: SITE_URL + (r === "/" ? "/" : r.replace(/&/g, "&amp;")) }));
 }
