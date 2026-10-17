@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import table from "./content/route-table.json";
+import { awardSlug, cleanRoute } from "./lib/routes";
 
 // Legacy URL behaviour for the ASP.NET site (docs/ROUTING.md):
 //  - /detail.aspx?page=<value>   byte-exact value (incl. trailing "." and "&") -> award record; unknown -> 404
@@ -37,60 +38,72 @@ export function proxy(req: NextRequest) {
   }
 
   const target = T.redirects[lower];
-  if (target) { const r = req.nextUrl.clone(); r.pathname = target; r.search = ""; return NextResponse.redirect(r, 301); }
+  if (target) {
+    const publicTarget = cleanRoute(target);
+    if (publicTarget !== path || url.search) {
+      const r = req.nextUrl.clone(); r.pathname = publicTarget; r.search = ""; return NextResponse.redirect(r, 301);
+    }
+  }
 
   if (lower === "/detail.aspx") {
-    if (path !== "/detail.aspx") return redirectKeepQuery(req, "/detail.aspx");
     if (!rawQuery.toLowerCase().startsWith("page=")) return notFound(req);
     let value = safeDecode(rawQuery.slice(5));
     let key = T.awards[value];
     if (!key && value.endsWith("=")) key = T.awards[value.slice(0, -1)]; // sitemap variant "…-wellness-congress="
     if (!key) {
       const ci = Object.keys(T.awards).find((v) => v.toLowerCase() === value.toLowerCase());
-      if (ci) { const r = req.nextUrl.clone(); r.search = `?page=${encodeLegacy(ci)}`; return NextResponse.redirect(r, 301); }
+      if (ci) { const r = req.nextUrl.clone(); r.pathname = `/awards/${awardSlug(ci)}`; r.search = ""; return NextResponse.redirect(r, 301); }
       return notFound(req);
     }
-    return rewrite(req, `/x/award/${key}`);
+    const r = req.nextUrl.clone();
+    r.pathname = `/awards/${awardSlug(value.endsWith("=") && !T.awards[value] ? value.slice(0, -1) : value)}`;
+    r.search = "";
+    return NextResponse.redirect(r, 301);
   }
 
   if (lower === "/apply-now.aspx") {
-    if (path !== "/apply-now.aspx") return redirectKeepQuery(req, "/apply-now.aspx");
     const id = url.searchParams.get("id");
-    if (id && T.apply.includes(id)) return rewrite(req, `/x/apply/${id}`);
-    return NextResponse.next();
+    const r = req.nextUrl.clone();
+    r.pathname = id && T.apply.includes(id) ? `/careers/apply/${id}` : "/apply-now";
+    r.search = "";
+    return NextResponse.redirect(r, 301);
   }
 
   if (lower === "/kairali-blog.aspx") {
-    if (path !== "/kairali-blog.aspx") return redirectKeepQuery(req, "/kairali-blog.aspx");
     const n = url.searchParams.get("page");
-    if (n === null) return NextResponse.next();
-    if (T.blog.includes(n)) return rewrite(req, `/x/blog/${n}`);
+    if (n === null || n === "1") return redirectKeepQuery(req, "/kairali-blog", false);
+    if (T.blog.includes(n)) return redirectKeepQuery(req, `/kairali-blog/page/${n}`, false);
     return notFound(req);
   }
 
   // Case-insensitive legacy pages and documents: one 301 to the canonical spelling.
-  const canon = T.plain[lower] || T.docs[safeDecode(lower)];
-  if (canon && canon !== path && canon !== safeDecode(path)) return redirectKeepQuery(req, canon);
+  const docCanon = T.docs[safeDecode(lower)];
+  if (docCanon && docCanon !== safeDecode(path)) return redirectKeepQuery(req, docCanon);
+  const legacyCanon = T.plain[lower];
+  if (legacyCanon && legacyCanon.toLowerCase().endsWith(".aspx")) return redirectKeepQuery(req, cleanRoute(legacyCanon));
+
+  // IIS-style case folding also applies to the new extensionless public routes.
+  const cleanCandidate = T.plain[`${lower}.aspx`];
+  if (cleanCandidate) {
+    const publicCanon = cleanRoute(cleanCandidate);
+    if (path !== publicCanon) return redirectKeepQuery(req, publicCanon);
+  }
   return NextResponse.next();
 }
 
 function notFound(req: NextRequest) {
   return rewrite(req, NOT_FOUND, 404);
 }
-function redirectKeepQuery(req: NextRequest, to: string) {
+function redirectKeepQuery(req: NextRequest, to: string, keepQuery = true) {
   const u = new URL(req.url);
   const r = req.nextUrl.clone();
   r.pathname = to;
-  r.search = u.search;
+  r.search = keepQuery ? u.search : "";
   return NextResponse.redirect(r, 301);
 }
 function safeDecode(s: string) {
   try { return decodeURIComponent(s.replace(/\+/g, " ")); } catch { return s; }
 }
-function encodeLegacy(v: string) {
-  return v.split("&").map(encodeURIComponent).join("&");
-}
-
 export const config = {
   matcher: ["/((?!api/|_next/static|_next/image|media/|fonts/|brand/|og/|favicon|apple-touch-icon|icon-512|search-index.json|sitemap.xml|robots.txt).*)"],
 };

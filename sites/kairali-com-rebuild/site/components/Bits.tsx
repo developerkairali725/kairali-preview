@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Crumb, Photo } from "@/lib/content";
 import { SITE_URL } from "@/lib/site";
+import { cleanRoute } from "@/lib/routes";
 
 export function JsonLd({ data }: { data: unknown }) {
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, "\\u003c") }} />;
@@ -45,7 +46,7 @@ export function SubNav({ links, current }: { links: { label: string; href: strin
           {links.map((l) => (
             <li key={l.label}>{l.current || !l.href || l.href === current
               ? <span aria-current="page">{l.label}</span>
-              : <Link href={l.href}>{l.label}</Link>}</li>
+              : <Link href={cleanRoute(l.href)}>{l.label}</Link>}</li>
           ))}
         </ul>
       </div>

@@ -11,6 +11,7 @@ import DownloadCentre from "./DownloadCentre";
 import SearchPage from "./SearchPage";
 import { AwardsBrowser, BrandPillars, Certifications, LatestAwards, NewsBrowser, awardIdFor } from "./Lists";
 import { ASSET_ORIGIN, SITE_URL } from "@/lib/site";
+import { cleanRoute } from "@/lib/routes";
 
 type Ev = { title: string; url: string; published: string; start: string; end: string; place: string; summary: string; status: string };
 const fmt = (d: string) => new Date(d + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
@@ -82,7 +83,7 @@ export default function LegacyPage({ page, applyId }: { page: Page; applyId?: st
   const awardId = base.startsWith("/detail.aspx") ? awardIdFor(route) : undefined;
   const body = (
     <>
-      {awardId && <p style={{ marginBottom: 24 }}><Link className="text-link back-link" href={`/kairali-group-awards.aspx#${awardId}`}>Back to awards &amp; accreditations</Link></p>}
+      {awardId && <p style={{ marginBottom: 24 }}><Link className="text-link back-link" href={`/kairali-group-awards#${awardId}`}>Back to awards &amp; accreditations</Link></p>}
       {isProfile && <div style={{ marginBottom: 56 }}><BrandPillars /></div>}
       {page.banner?.rest && <Prose html={page.banner.rest} />}
       {secs.map((s, i) => (
@@ -94,7 +95,7 @@ export default function LegacyPage({ page, applyId }: { page: Page; applyId?: st
       {isProfile && (
         <div id="profile-awards" style={{ marginTop: 56 }} className="stack">
           <LatestAwards />
-          <p><Link className="btn secondary" href="/kairali-group-awards.aspx">Browse all awards and certifications</Link></p>
+          <p><Link className="btn secondary" href="/kairali-group-awards">Browse all awards and certifications</Link></p>
         </div>)}
     </>
   );
@@ -130,7 +131,7 @@ export default function LegacyPage({ page, applyId }: { page: Page; applyId?: st
                     <div className="card forest stack">
                       <h2 style={{ fontSize: "1.5rem" }}>Speak to a Kairali physician</h2>
                       <p style={{ fontSize: 15 }}>Ask about treatments, programmes and products. The online consultation is free.</p>
-                      <Link className="btn on-dark" href="/onlineconsultation.aspx">Free online consultation</Link>
+                      <Link className="btn on-dark" href="/onlineconsultation">Free online consultation</Link>
                       <a className="btn ghost-dark" href={PHONE.href}>Call {PHONE.label}</a>
                     </div>
                   </div>
@@ -149,9 +150,9 @@ export default function LegacyPage({ page, applyId }: { page: Page; applyId?: st
 
       {!isForm && base !== "/download-centre.aspx" && base !== "/search-results.aspx" && <ClosingBand />}
       {base.startsWith("/detail.aspx") && (
-        <JsonLd data={{ "@context": "https://schema.org", "@type": "Article", headline: heading.slice(0, 110), url: SITE_URL + route,
+        <JsonLd data={{ "@context": "https://schema.org", "@type": "Article", headline: heading.slice(0, 110), url: SITE_URL + cleanRoute(route),
           image: page.images[0] ? ASSET_ORIGIN + page.images[0].src : undefined, publisher: { "@id": `${SITE_URL}/#organization` }, author: { "@id": `${SITE_URL}/#organization` },
-          mainEntityOfPage: SITE_URL + route }} />)}
+          mainEntityOfPage: SITE_URL + cleanRoute(route) }} />)}
     </>
   );
 }
@@ -163,8 +164,8 @@ function OpenerActions({ actions }: { actions: { label: string; href: string }[]
         ? <a key={a.href} className="btn secondary" href={documentHubLink(a.href)}>{a.label}<span className="sr-only"> (maintained document library)</span></a>
         : a.href.startsWith("http")
           ? <a key={a.href} className={`btn${i ? " secondary" : ""}`} href={a.href} rel="noopener" target="_blank">{a.label} ↗<span className="sr-only"> (opens in a new tab)</span></a>
-          : <Link key={a.href} className={`btn${i ? " secondary" : ""}`} href={a.href}>{a.label}</Link>)}
-      {actions.some((a) => a.href.startsWith("/download/")) && <p className="meta" style={{ flexBasis: "100%" }}>Choose a current PDF in the maintained document library. Earlier direct URLs remain available; see the <Link href="/download-centre.aspx">Download Centre</Link> for current editions.</p>}
+          : <Link key={a.href} className={`btn${i ? " secondary" : ""}`} href={cleanRoute(a.href)}>{a.label}</Link>)}
+      {actions.some((a) => a.href.startsWith("/download/")) && <p className="meta" style={{ flexBasis: "100%" }}>Choose a current PDF in the maintained document library. Earlier direct URLs remain available; see the <Link href="/download-centre">Download Centre</Link> for current editions.</p>}
     </div>
   );
 }
@@ -188,7 +189,7 @@ function ComingSoon() {
       <span className="badge info">Coming soon</span>
       <h2>A virtual tour of Kairali is on its way</h2>
       <p>The virtual tour is being prepared. Meanwhile, explore the photo and video libraries.</p>
-      <div className="actions"><Link className="btn" href="/photo-library.aspx">Photo library</Link><Link className="btn secondary" href="/video-library.aspx">Video library</Link></div>
+      <div className="actions"><Link className="btn" href="/photo-library">Photo library</Link><Link className="btn secondary" href="/video-library">Video library</Link></div>
     </div>
   );
 }
@@ -207,14 +208,14 @@ function FormLayout({ page, body, applyId }: { page: Page; body: React.ReactNode
   return (
     <div className="split form-split" style={{ alignItems: "start" }}>
       <div className={narrow ? "stack col-wide" : "stack col-narrow"}>
-        {job && <div className="card stack"><span className="overline">Applying for</span><h2 style={{ fontSize: "1.6rem" }}>{job}</h2><p className="meta">Job reference code {preset.jobRef as string}</p><Link className="text-link" href="/current-openings.aspx">View current openings</Link></div>}
+        {job && <div className="card stack"><span className="overline">Applying for</span><h2 style={{ fontSize: "1.6rem" }}>{job}</h2><p className="meta">Job reference code {preset.jobRef as string}</p><Link className="text-link" href="/current-openings">View current openings</Link></div>}
         {body}
         <div className="card contact-routes">
           <span className="overline">Other ways to reach us</span>
           <p>Call <a href={PHONE.href}>{PHONE.label}</a> or email <a href="mailto:info@kairali.com">info@kairali.com</a>.</p>
           <p className="meta" style={{ fontSize: 14 }}>Corporate Office: Kairali Ayurvedic Group, D - 130, Block D, Ambedkar Colony, Mehrauli, New Delhi - 110030.</p>
-          {base !== "/onlineconsultation.aspx" && <Link className="text-link" href="/onlineconsultation.aspx">Free online consultation with a physician</Link>}
-          {base !== "/locations.aspx" && <Link className="text-link" href="/locations.aspx">Centre locations</Link>}
+          {base !== "/onlineconsultation.aspx" && <Link className="text-link" href="/onlineconsultation">Free online consultation with a physician</Link>}
+          {base !== "/locations.aspx" && <Link className="text-link" href="/locations">Centre locations</Link>}
         </div>
       </div>
       <div className={narrow ? "col-side" : "col-main"}>
@@ -360,7 +361,7 @@ function AwardNav({ route }: { route: string }) {
     <nav aria-label="More awards" className="split" style={{ marginTop: 56, paddingTop: 32, borderTop: "1px solid var(--line)" }}>
       <div className="s-media stack" style={{ gap: 6 }}>{prev && <><span className="meta">Previous in the awards list</span><Link href={prev.href}>{prev.title}</Link></>}</div>
       <div className="s-text stack" style={{ gap: 6 }}>{next && <><span className="meta">Next in the awards list</span><Link href={next.href}>{next.title}</Link></>}
-        <Link className="text-link" href="/kairali-group-awards.aspx">All awards &amp; accreditations</Link></div>
+        <Link className="text-link" href="/kairali-group-awards">All awards &amp; accreditations</Link></div>
     </nav>
   );
 }
@@ -405,7 +406,7 @@ function ClosingBand() {
         </div>
         <div className="s-text stack">
           <p>Contact our care team about treatments and programmes, or tell us what you are looking for.</p>
-          <div className="actions"><Link className="btn on-dark" href="/onlineconsultation.aspx">Free online consultation</Link><Link className="btn ghost-dark" href="/enquiry-form.aspx">Enquire now</Link></div>
+          <div className="actions"><Link className="btn on-dark" href="/onlineconsultation">Free online consultation</Link><Link className="btn ghost-dark" href="/enquiry-form">Enquire now</Link></div>
         </div>
       </div>
     </section>

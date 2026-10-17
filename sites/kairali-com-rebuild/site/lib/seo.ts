@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ASSET_ORIGIN, IS_PRODUCTION, SITE_NAME, SITE_URL } from "./site";
 import { absolute, excerpt, pageHeading, pages, photos, familyPhotoKey, type Page } from "./content";
+import { cleanRoute } from "./routes";
 
 // Title/description policy (docs/SEO-METADATA-DECISIONS.md):
 //  - live title/description kept verbatim where distinct across the site (search continuity);
@@ -60,7 +61,7 @@ export function pageMetadata(p: Page, opts: Partial<MetaInput> = {}): Metadata {
   const key = familyPhotoKey(p);
   const ph = photos()[key];
   return buildMetadata({
-    route: p.route, title: titleFor(p).title, description: descriptionFor(p).description,
+    route: cleanRoute(p.route), title: titleFor(p).title, description: descriptionFor(p).description,
     image: ph?.og, imageAlt: ph?.alt, type: p.route.startsWith("/detail.aspx") ? "article" : "website", ...opts,
   });
 }

@@ -36,7 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Enhance />
         <Analytics enabled={IS_PRODUCTION} ga4={MEASUREMENT.ga4} gtm={MEASUREMENT.gtm} clarity={MEASUREMENT.clarity} />
         <ChatbaseLoader consentGated />
-        <ConsentBanner privacyHref="/privacy-policy.aspx" />
+        <ConsentBanner privacyHref="/privacy-policy" />
         <JsonLd data={{
           "@context": "https://schema.org",
           "@graph": [

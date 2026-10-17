@@ -17,7 +17,7 @@ export default function NotFound() {
           <input id="nf-q" name="q" type="search" placeholder="Search kairali.com" />
           <button className="btn" type="submit">Search</button>
         </form>
-        <div className="actions"><Link className="btn secondary" href="/">Home</Link><Link className="btn secondary" href="/ayurveda.aspx">Ayurveda</Link><Link className="btn secondary" href="/sitemap.aspx">Site map</Link><Link className="btn secondary" href="/contact-us.aspx">Contact us</Link></div>
+        <div className="actions"><Link className="btn secondary" href="/">Home</Link><Link className="btn secondary" href="/ayurveda">Ayurveda</Link><Link className="btn secondary" href="/sitemap">Site map</Link><Link className="btn secondary" href="/contact-us">Contact us</Link></div>
       </div></div>
     </section>
   );

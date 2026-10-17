@@ -1,4 +1,5 @@
 import { SOCIAL_PROFILES } from "../../../../packages/social/src/config";
+import { cleanRoute } from "./routes";
 
 // Site-wide constants. Every value here is sourced; see docs/SOURCE-FACT-DECISIONS.md.
 
@@ -24,7 +25,7 @@ export type NavGroup = { label: string; href: string; intro: string; links: NavL
 
 // All 38 live mega-menu destinations (evidence/nav_footer_comparison.json) are carried, grouped
 // under the seven Premium v3 labels. Live labels are kept for the individual links.
-export const NAV: NavGroup[] = [
+const LEGACY_NAV: NavGroup[] = [
   {
     label: "Discover Ayurveda", href: "/ayurveda.aspx", intro: "Ayurveda - Science of life.",
     links: [
@@ -108,10 +109,15 @@ export const NAV: NavGroup[] = [
     ],
   },
 ];
+export const NAV: NavGroup[] = LEGACY_NAV.map((group) => ({
+  ...group,
+  href: cleanRoute(group.href),
+  links: group.links.map((link) => ({ ...link, href: link.external ? link.href : cleanRoute(link.href) })),
+}));
 
 // Live footer (32 destinations). The whyayurveda.org/topics/csr.aspx CSR link now returns 404
 // (checked 29 Sep 2026) so the CSR entry points to the on-site CSR page instead.
-export const FOOTER_COLUMNS: { title: string; links: NavLink[] }[] = [
+const LEGACY_FOOTER_COLUMNS: { title: string; links: NavLink[] }[] = [
   { title: "Kairali", links: [
     { label: "Home", href: "/" }, { label: "About Kairali", href: "/about-us.aspx" }, { label: "Our Group", href: "/kairali-group-profile.aspx" },
     { label: "Our Partners", href: "/our-partners.aspx" }, { label: "Careers", href: "/careers.aspx" }, { label: "Testimonials", href: "/testimonials.aspx" },
@@ -129,12 +135,17 @@ export const FOOTER_COLUMNS: { title: string; links: NavLink[] }[] = [
     { label: "CSR", href: "/ayurveda-csr.aspx" }, { label: "Site map", href: "/sitemap.aspx" }, { label: "XML sitemap", href: "/sitemap.xml" },
   ] },
 ];
-export const LEGAL_LINKS: NavLink[] = [
+export const FOOTER_COLUMNS = LEGACY_FOOTER_COLUMNS.map((column) => ({
+  ...column,
+  links: column.links.map((link) => ({ ...link, href: cleanRoute(link.href) })),
+}));
+const LEGACY_LEGAL_LINKS: NavLink[] = [
   { label: "Terms and conditions", href: "/terms-and-conditions.aspx" },
   { label: "Privacy policy", href: "/privacy-policy.aspx" },
   { label: "Security policy", href: "/security-policy.aspx" },
   { label: "Useful links", href: "/useful-links.aspx" },
 ];
+export const LEGAL_LINKS = LEGACY_LEGAL_LINKS.map((link) => ({ ...link, href: cleanRoute(link.href) }));
 const groupSocial = Object.fromEntries(SOCIAL_PROFILES.map((profile) => [profile.id, profile])) as Record<string, (typeof SOCIAL_PROFILES)[number]>;
 // Preserve the locally sourced Pinterest and Instagram links without labelling them as group-registry profiles.
 export const SOCIAL = [
@@ -147,7 +158,7 @@ export const SOCIAL = [
 ];
 
 // Confirmed dedicated sites (each resolved 200 on 29 Sep 2026; brand manual 2026 ch. 06).
-export const SUB_BRANDS = [
+const LEGACY_SUB_BRANDS = [
   { key: "ktahv", name: "Kairali – The Ayurvedic Healing Village", url: "https://ayurvedichealingvillage.com/", logo: "/brand/ktahv-logo.svg",
     line: "Doctor-led Ayurvedic care in Palakkad, Kerala.", page: "/ayurvedic-healing-village.aspx", cta: "Visit the Healing Village website" },
   { key: "raag", name: "Villa Raag", url: "https://www.villaraag.com/", logo: "/brand/villa-raag-logo.svg",
@@ -157,6 +168,7 @@ export const SUB_BRANDS = [
   { key: "centres", name: "Kairali Ayurvedic Centres", url: "https://kairalicenters.com/", logo: "/brand/kairali-icon.svg",
     line: "Ayurvedic treatment centres in India and abroad.", page: "/treatment-centres.aspx", cta: "Visit kairalicenters.com" },
 ] as const;
+export const SUB_BRANDS = LEGACY_SUB_BRANDS.map((brand) => ({ ...brand, page: cleanRoute(brand.page) }));
 
 export const DOCUMENT_PORTAL = "https://kairali-documents.vercel.app/";
 export const WHYAYURVEDA = "https://whyayurveda.org/";

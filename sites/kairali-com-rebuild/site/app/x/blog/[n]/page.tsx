@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { n } = await params;
   const p = getPage(`/kairali-blog.aspx?page=${n}`);
   if (!p) return {};
-  return n === "1" ? pageMetadata(getPage("/kairali-blog.aspx")!, { route: p.route, canonical: "https://www.kairali.com/kairali-blog.aspx" })
+  return n === "1" ? pageMetadata(getPage("/kairali-blog.aspx")!, { route: "/kairali-blog", canonical: "https://www.kairali.com/kairali-blog" })
     : pageMetadata(p, { title: "Kairali Blog – Page 2 | Kairali Ayurvedic Group", description: "Kairali Ayurvedic Group blog archive, page 2: earlier articles and event reports from Kairali." });
 }
 export default async function Page({ params }: Params) {

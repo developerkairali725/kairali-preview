@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import LegacyPage from "@/components/LegacyPage";
 import { getPage, plainSlugs, type Page } from "@/lib/content";
 import { buildMetadata, pageMetadata } from "@/lib/seo";
+import { cleanRoute } from "@/lib/routes";
 
 export const dynamicParams = false;
 
@@ -15,23 +16,23 @@ const SEARCH: Page = {
 };
 
 export function generateStaticParams() {
-  return [...plainSlugs(), "search-results.aspx"].map((slug) => ({ slug }));
+  return [...plainSlugs().map((slug) => slug.replace(/\.aspx$/i, "")), "search"].map((slug) => ({ slug }));
 }
 
 type Params = { params: Promise<{ slug: string }> };
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
-  if (slug === "search-results.aspx") return buildMetadata({ route: SEARCH.route, title: SEARCH.title, description: SEARCH.description, noindex: true });
-  const p = getPage("/" + decodeURIComponent(slug));
+  if (slug === "search") return buildMetadata({ route: "/search", title: SEARCH.title, description: SEARCH.description, noindex: true });
+  const p = getPage("/" + decodeURIComponent(slug) + ".aspx");
   if (!p) return {};
-  return pageMetadata(p);
+  return pageMetadata(p, { route: cleanRoute(p.route) });
 }
 
 export default async function Page({ params }: Params) {
   const { slug } = await params;
-  if (slug === "search-results.aspx") return <LegacyPage page={SEARCH} />;
-  const p = getPage("/" + decodeURIComponent(slug));
+  if (slug === "search") return <LegacyPage page={SEARCH} />;
+  const p = getPage("/" + decodeURIComponent(slug) + ".aspx");
   if (!p) notFound();
   return <LegacyPage page={p} />;
 }

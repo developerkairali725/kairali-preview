@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { cleanRoute } from "@/lib/routes";
 
 type Doc = { r: string; t: string; g: string; h: string[]; x: string; k: string };
 type Hit = { d: Doc; score: number; snippet: string };
@@ -89,12 +90,12 @@ export default function SearchPage() {
           <div className="card stack" style={{ gap: 12 }}>
             <h2 style={{ fontSize: "1.6rem" }}>No pages match “{q}”</h2>
             <p>Check the spelling, try a broader word such as “Panchakarma”, “oil” or “yoga”, or {type !== "All" ? <button type="button" onClick={() => setType("All")} style={{ all: "unset", cursor: "pointer", color: "var(--forest)", textDecoration: "underline" }}>search all sections</button> : "browse the main sections"}.</p>
-            <div className="actions"><a className="btn secondary" href="/ayurveda.aspx">Discover Ayurveda</a><a className="btn secondary" href="/sitemap.aspx">Site map</a><a className="btn secondary" href="/get-in-touch.aspx">Get in touch</a></div>
+            <div className="actions"><a className="btn secondary" href="/ayurveda">Discover Ayurveda</a><a className="btn secondary" href="/sitemap">Site map</a><a className="btn secondary" href="/get-in-touch">Get in touch</a></div>
           </div>)}
         <ul className="results" id="search-results" ref={listRef}>
           {hits.slice(0, shown).map((h, i) => (
             <li key={h.d.r}>
-              <a href={h.d.r} aria-selected={i === active} onFocus={() => setActive(i)}>
+              <a href={cleanRoute(h.d.r)} aria-selected={i === active} onFocus={() => setActive(i)}>
                 <span className="meta">{h.d.g || h.d.k}</span>
                 <span className="r-title"><Mark text={h.d.t} q={q} /></span>
                 <span style={{ fontSize: 15, color: "var(--muted)" }}><Mark text={h.snippet} q={q} /></span>

@@ -101,7 +101,7 @@ export default function Form({ schema, preset = {}, compact = false, formName }:
               {list.map((o, i) => (
                 <label className="choice" key={o}>
                   <input type={f.type === "radio" ? "radio" : "checkbox"} name={f.name} value={f.type === "consent" ? "yes" : o} id={i === 0 ? id(f.name) : undefined} defaultChecked={checked.has(o)} />
-                  <span>{f.type === "consent" ? <>I have read and agree to kairali.com <a href="/privacy-policy.aspx">privacy</a> &amp; <a href="/terms-and-conditions.aspx">terms of use</a>.{f.required && <span className="req" aria-hidden="true">*</span>}</> : o}</span>
+                  <span>{f.type === "consent" ? <>I have read and agree to kairali.com <a href="/privacy-policy">privacy</a> &amp; <a href="/terms-and-conditions">terms of use</a>.{f.required && <span className="req" aria-hidden="true">*</span>}</> : o}</span>
                 </label>))}
             </div>
             {f.hint && <p className="hint" id={id(f.name) + "-hint"}>{f.hint}</p>}

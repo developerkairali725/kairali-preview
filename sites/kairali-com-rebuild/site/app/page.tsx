@@ -37,12 +37,50 @@ export default function Home() {
         <div className="opener-media"><Photograph k="ahv-grounds-pond" p={ph["ahv-grounds-pond"]} sizes="(max-width: 767px) 50vw, 100vw" priority /></div>
         <div className="opener-panel"><div className="container">
           <div className="opener-card">
-            <span className="overline accent">Purely Ayurvedic</span>
+            <p className="hero-kicker"><span>Established 1908</span><span>Four generations</span></p>
+            <span className="overline accent">Kairali Ayurvedic Group</span>
             <h1 id="page-title">{HOME_H1}</h1>
-            <p className="lede"><strong><em>Ayur</em></strong> means <strong>Life</strong> &amp; <strong><em>Veda</em></strong> means <strong>Science</strong>. <strong><em>Ayurveda</em></strong> – Science of life.</p>
-            <div className="actions"><Link className="btn" href="/ayurveda.aspx" data-cta="explore-ayurveda">Explore Ayurveda</Link><Link className="btn secondary" href="/hospitality.aspx">Plan your Kairali experience</Link></div>
+            <p className="lede">A family tradition bringing authentic Ayurveda to doctor-led care, restorative stays, trusted products and professional learning.</p>
+            <div className="actions"><Link className="btn" href="/ayurveda" data-cta="explore-ayurveda">Discover Ayurveda</Link><Link className="btn secondary" href="/hospitality">Explore Kairali experiences</Link></div>
           </div>
         </div></div>
+      </section>
+
+      <section className="heritage-strip" aria-label="Kairali at a glance">
+        <div className="container heritage-grid">
+          <div><strong>1908</strong><span>A family tradition begins</span></div>
+          <div><strong>4</strong><span>Generations of Ayurveda</span></div>
+          <div><strong>Palakkad</strong><span>Home of the Healing Village</span></div>
+          <div><strong>One group</strong><span>Care, stays, products &amp; learning</span></div>
+        </div>
+      </section>
+
+      <section className="section home-pathways" aria-labelledby="pathways-title">
+        <div className="container stack" style={{ gap: 32 }}>
+          <header className="section-intro">
+            <span className="overline">Begin your journey</span>
+            <h2 id="pathways-title">Experience Kairali in the way that suits you</h2>
+            <p>Explore the group through four clear paths, each grounded in Kairali&apos;s Ayurvedic heritage.</p>
+          </header>
+          <div className="pathway-grid">
+            <Link className="pathway-card" href="/ayurvedic-healing-village">
+              <span className="pathway-photo"><Photograph k="ahv-treatment-room" p={ph["ahv-treatment-room"]} sizes="(min-width: 900px) 25vw, 50vw" /></span>
+              <span className="pathway-copy"><small>Doctor-led Ayurveda</small><strong>Healing &amp; wellbeing</strong><span>Explore the Ayurvedic Healing Village</span></span>
+            </Link>
+            <Link className="pathway-card" href="/hospitality">
+              <span className="pathway-photo"><Photograph k="raag-facade" p={ph["raag-facade"]} sizes="(min-width: 900px) 25vw, 50vw" /></span>
+              <span className="pathway-copy"><small>Kairali stays</small><strong>Retreats &amp; hospitality</strong><span>Find a restorative Kairali experience</span></span>
+            </Link>
+            <Link className="pathway-card" href="/ayurvedic-products">
+              <span className="pathway-photo contain"><Photograph k="products-still" p={ph["products-still"]} sizes="(min-width: 900px) 25vw, 50vw" /></span>
+              <span className="pathway-copy"><small>Ayurvedic products</small><strong>Everyday rituals</strong><span>Discover products and dedicated stores</span></span>
+            </Link>
+            <Link className="pathway-card" href="/training">
+              <span className="pathway-photo"><Photograph k="ahv-veranda" p={ph["ahv-veranda"]} sizes="(min-width: 900px) 25vw, 50vw" /></span>
+              <span className="pathway-copy"><small>Knowledge &amp; practice</small><strong>Learn Ayurveda</strong><span>Explore training and education</span></span>
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* Group introduction */}
@@ -58,7 +96,7 @@ export default function Home() {
             <h2 id="group-title">{linkText(group.html) || "Kairali: Spreading Ayurveda since 1908"}</h2>
             <Prose html={bodyOf(group.html).replace(/<p><a href="\/kairali-group-profile.aspx">Kairali: Spreading Ayurveda<br\/?>\s*since 1908<\/a><\/p>/, "").replace(/<img[^>]*history-of-kairali[^>]*>/, "").replace(/<div class="gallery">.*?<\/div>/s, "")} />
             <div className="gallery-pair grid two">{imgs(group.html).filter((i) => !i.includes("history-of-kairali")).map((i, k) => <div className="photo" key={k} style={{ aspectRatio: "4 / 3" }} dangerouslySetInnerHTML={{ __html: i }} />)}</div>
-            <Link className="text-link" href="/kairali-group-profile.aspx">Group profile</Link>
+            <Link className="text-link" href="/kairali-group-profile">Group profile</Link>
           </div>
         </div>
       </section>
@@ -72,7 +110,7 @@ export default function Home() {
             <span className="overline">The Ayurvedic Healing Village · Doctor-led Ayurvedic care</span>
             <h2 id="hv-title">{linkText(hvMosaic.html)}</h2>
             <Prose html={bodyOf(hvText.html)} />
-            <Link className="text-link" href="/ayurvedic-healing-village.aspx">The Ayurvedic Healing Village</Link>
+            <Link className="text-link" href="/ayurvedic-healing-village">The Ayurvedic Healing Village</Link>
           </div>
         </div></div>
       </section>
@@ -92,7 +130,7 @@ export default function Home() {
             <h2 id="raag-title">Villa Raag – Where Luxury Meets the Arabian Sea</h2>
             <p>Discover South Goa&apos;s most exclusive beachfront sanctuary, where contemporary elegance harmonizes with coastal tranquility.</p>
             <p className="meta">Coastal leisure · Kairali-owned and operated</p>
-            <Link className="text-link" href="/villa-raag.aspx">Villa Raag</Link>
+            <Link className="text-link" href="/villa-raag">Villa Raag</Link>
           </div>
         </div>
       </section>
@@ -102,7 +140,7 @@ export default function Home() {
         <div className="container products-grid">
           <header className="pg-head"><span className="overline">Ayurvedic products</span>
             <h2 id="prod-title">{linkText(prodMosaic.html)}</h2></header>
-          <div className="pg-text reveal"><Prose html={bodyOf(prodText.html)} /><Link className="text-link" href="/ayurvedic-products.aspx">Ayurvedic Products</Link></div>
+          <div className="pg-text reveal"><Prose html={bodyOf(prodText.html)} /><Link className="text-link" href="/ayurvedic-products">Ayurvedic Products</Link></div>
           <figure className="pg-still reveal">
             <Photograph k="products-still" p={ph["products-still"]} sizes="(min-width: 900px) 22vw, 70vw" />
             <figcaption>Kairali Ayurvedic products, oils and herbal infusions.</figcaption>
@@ -118,7 +156,7 @@ export default function Home() {
             <span className="overline">Treatment centres</span>
             <h2 id="centre-title">{linkText(centreMosaic.html)}</h2>
             <Prose html={bodyOf(centreText.html)} />
-            <Link className="text-link" href="/locations.aspx">Locations</Link>
+            <Link className="text-link" href="/locations">Locations</Link>
           </div>
           <div className="s-text col-7-13 stack reveal">
             <div className="city-list" aria-label="Cities listed on the Locations page">{cities.map((c) => <div key={c}><span>{c}</span></div>)}</div>
@@ -135,7 +173,7 @@ export default function Home() {
             <span className="overline">Ayurveda training</span>
             <h2 id="train-title">{linkText(trainMosaic.html)}</h2>
             <Prose html={bodyOf(trainText.html)} />
-            <Link className="text-link" href="/training.aspx">Training</Link>
+            <Link className="text-link" href="/training">Training</Link>
           </div>
         </div>
       </section>
@@ -168,7 +206,7 @@ export default function Home() {
                 <a href={r.url} rel="noopener" style={{ fontFamily: "var(--font-display)", fontSize: "1.3rem" }}>{r.title}</a>
               </li>))}
           </ul>
-          <Link className="text-link" href="/kairali-group-awards.aspx">Awards &amp; accreditations</Link>
+          <Link className="text-link" href="/kairali-group-awards">Awards &amp; accreditations</Link>
         </div>
       </section>
 
@@ -179,7 +217,7 @@ export default function Home() {
           <div className="s-media stack"><span className="overline on-dark">Partnerships &amp; investment</span><h2 id="partner-title">A partner is one whom you can trust and depend on</h2></div>
           <div className="s-text stack">
             <p>Kairali Ayurvedic Group along with its expertise has maintained its legacy in the hospitality sector.</p>
-            <div className="actions"><Link className="btn on-dark" href="/partnerships-and-investment.aspx">Partner with Kairali</Link><Link className="btn ghost-dark" href="/get-in-touch.aspx">Get in touch</Link></div>
+            <div className="actions"><Link className="btn on-dark" href="/partnerships-and-investment">Partner with Kairali</Link><Link className="btn ghost-dark" href="/get-in-touch">Get in touch</Link></div>
           </div>
         </div>
       </section>

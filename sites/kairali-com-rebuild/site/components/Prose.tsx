@@ -7,6 +7,7 @@ const esc = (s: string) => s.replace(/&/g, "&amp;").replace(/"/g, "&quot;").repl
 import { documentLinkHtml } from "@/lib/document-links";
 import fs from "node:fs";
 import path from "node:path";
+import { cleanRoute } from "@/lib/routes";
 let VS: Record<string, { ok: boolean; title?: string }> | null = null;
 function videoStatus() {
   if (!VS) VS = JSON.parse(fs.readFileSync(path.join(process.cwd(), "content", "videos-status.json"), "utf8")).videos;
@@ -15,6 +16,7 @@ function videoStatus() {
 
 export function transformHtml(html: string): string {
   return documentLinkHtml(html)
+    .replace(/href="(\/[^"]+)"/g, (_m, href: string) => `href="${cleanRoute(href)}"`)
     .replace(/<table>/g, '<div class="table-scroll"><table>').replace(/<\/table>/g, "</table></div>")
     .replace(/<div data-yt="([A-Za-z0-9_-]{11})" data-title="([^"]*)"><\/div>/g, (_m, id: string, title: string) => {
       const v = videoStatus()[id];

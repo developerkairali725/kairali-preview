@@ -3,6 +3,7 @@ import { extra, photos } from "@/lib/content";
 import { SUB_BRANDS } from "@/lib/site";
 import Browse, { type BrowseItem } from "./Browse";
 import { Photograph } from "./Bits";
+import { cleanRoute } from "@/lib/routes";
 
 type Rec = { id: string; title: string; summary: string; href: string | null; image: { src: string; w: number; h: number; alt?: string } | null;
   year: number | null; dateBasis: string; dateText?: string | null; type: string; entity: string; validity: string | null;
@@ -65,10 +66,10 @@ export function Certifications() {
           <ul className="cert-list">
             {g.items.map((c) => (
               <li key={c.id} id={c.id} className="cert-item">
-                {c.image && <a href={c.href ?? c.image.src} className="browse-thumb" aria-label={`View ${c.title}`}><img src={c.image.src} width={c.image.w} height={c.image.h} alt="" loading="lazy" /></a>}
+                {c.image && <a href={c.href ? cleanRoute(c.href) : c.image.src} className="browse-thumb" aria-label={`View ${c.title}`}><img src={c.image.src} width={c.image.w} height={c.image.h} alt="" loading="lazy" /></a>}
                 <div className="stack" style={{ gap: 4 }}>
                   <p className="meta">{c.entity}{c.year ? ` · ${c.year}` : " · Date not stated"}</p>
-                  <h4 className="browse-title">{c.href && !c.href.startsWith("/media/") ? <Link href={c.href}>{c.title}</Link> : c.title}</h4>
+                  <h4 className="browse-title">{c.href && !c.href.startsWith("/media/") ? <Link href={cleanRoute(c.href)}>{c.title}</Link> : c.title}</h4>
                   {c.holder && <p style={{ fontSize: 15 }}>{c.holder}</p>}
                   <p style={{ fontSize: 15 }}>{c.summary}</p>
                   {c.validFrom && <p className="meta">{c.number ? `No. ${c.number} · ` : ""}Valid <time dateTime={c.validFrom}>{fmt(c.validFrom)}</time> – <time dateTime={c.validTo}>{fmt(c.validTo!)}</time></p>}
@@ -129,7 +130,7 @@ export function BrandPillars() {
               <div className="stack" style={{ gap: 10, padding: 20 }}>
                 <h3 id={`pl-${p.photo}`}>{p.title}</h3>
                 <ul className="pillar-items">{p.items.map((i) => <li key={i}>{i}</li>)}</ul>
-                <ul className="pillar-links">{p.links.map(([l, h]) => <li key={h}><Link className="text-link" href={h}>{l}</Link></li>)}</ul>
+                <ul className="pillar-links">{p.links.map(([l, h]) => <li key={h}><Link className="text-link" href={cleanRoute(h)}>{l}</Link></li>)}</ul>
                 {b && <a className="meta" href={b.url} rel="noopener" target="_blank">{b.url.replace(/^https:\/\/(www\.)?/, "").replace(/\/$/, "")} ↗<span className="sr-only"> (opens in a new tab)</span></a>}
               </div>
             </article>);
@@ -151,7 +152,7 @@ export function LatestAwards({ count = 6 }: { count?: number }) {
         {recs.map((r) => (
           <li key={r.id}>
             {r.image ? <span className="browse-thumb" aria-hidden="true"><img src={r.image.src} width={r.image.w} height={r.image.h} alt="" loading="lazy" /></span> : <span />}
-            <span className="stack" style={{ gap: 4 }}><span className="meta">{r.year} · {r.type}</span><a href={r.href!} className="browse-title" style={{ fontSize: "1.1rem" }}>{r.title}</a></span>
+            <span className="stack" style={{ gap: 4 }}><span className="meta">{r.year} · {r.type}</span><a href={cleanRoute(r.href!)} className="browse-title" style={{ fontSize: "1.1rem" }}>{r.title}</a></span>
           </li>))}
       </ul>
     </section>

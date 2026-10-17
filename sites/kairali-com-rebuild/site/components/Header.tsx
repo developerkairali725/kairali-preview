@@ -42,9 +42,9 @@ export default function Header() {
       <div className="topbar">
         <div className="container">
           <span>Call us: <a href={PHONE.href}>{PHONE.label}</a></span>
-          <Link href="/get-in-touch.aspx">Get in touch</Link>
-          <Link href="/onlineconsultation.aspx" className="hide-sm">Online consultation</Link>
-          <Link href="/careers.aspx" className="hide-sm">Careers</Link>
+          <Link href="/get-in-touch">Get in touch</Link>
+          <Link href="/onlineconsultation" className="hide-sm">Online consultation</Link>
+          <Link href="/careers" className="hide-sm">Careers</Link>
         </div>
       </div>
       <header className="site-header">
@@ -75,10 +75,10 @@ export default function Header() {
             </ul>
           </nav>
           <div className="header-tools">
-            <Link href="/search-results.aspx" className="icon-btn" aria-label="Search the site">
+            <Link href="/search" className="icon-btn" aria-label="Search the site">
               <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" strokeWidth="2" /><path d="M20 20l-4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
             </Link>
-            <Link href="/enquiry-form.aspx" className="btn header-cta">Enquire now</Link>
+            <Link href="/enquiry-form" className="btn header-cta">Enquire now</Link>
             <button ref={toggleRef} className="icon-btn menu-toggle" aria-expanded={drawer} aria-controls="drawer" onClick={() => setDrawer(true)} aria-label="Open menu">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
             </button>
@@ -102,8 +102,8 @@ export default function Header() {
               </details>))}
           </nav>
           <div className="drawer-actions">
-            <Link href="/enquiry-form.aspx" className="btn">Enquire now</Link>
-            <Link href="/onlineconsultation.aspx" className="btn secondary">Free online consultation</Link>
+            <Link href="/enquiry-form" className="btn">Enquire now</Link>
+            <Link href="/onlineconsultation" className="btn secondary">Free online consultation</Link>
             <a href={PHONE.href} className="btn secondary">Call {PHONE.label}</a>
           </div>
         </div>

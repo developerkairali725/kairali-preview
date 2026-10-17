@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { NAV, SITE_URL } from "./site";
+import { cleanRoute } from "./routes";
 
 export type Img = { src: string; w: number; h: number; alt?: string; source?: string; sha256?: string };
 export type Section = { cls: string; id: string; html: string; hidden: boolean; form?: boolean };
@@ -59,7 +60,8 @@ export function pageHeading(p: Page): string {
 
 export function navGroupFor(route: string) {
   const base = route.split("?")[0];
-  for (const g of NAV) if (g.links.some((l) => l.href === base) || g.href === base) return g;
+  const publicBase = cleanRoute(base);
+  for (const g of NAV) if (g.links.some((l) => l.href === publicBase) || g.href === publicBase) return g;
   if (base.startsWith("/detail.aspx")) return NAV.find((g) => g.label === "Our group");
   if (base.startsWith("/apply-now.aspx") || base === "/current-openings.aspx") return NAV.find((g) => g.label === "Our group");
   if (base.includes("library") || base === "/photo-library.aspx" || base === "/virtual-tour.aspx") return NAV.find((g) => g.label === "Stories & resources");
@@ -75,13 +77,13 @@ export function breadcrumbs(route: string, current: string): Crumb[] {
   if (route === "/") return out;
   const g = navGroupFor(route);
   const base = route.split("?")[0];
-  if (g && g.href !== base) out.push({ name: g.label, href: g.href });
-  if (base.startsWith("/detail.aspx")) out.push({ name: "Awards & Accreditations", href: "/kairali-group-awards.aspx" });
-  if (base.startsWith("/apply-now.aspx") && route !== "/apply-now.aspx") out.push({ name: "Careers", href: "/careers.aspx" });
+  if (g && g.href !== cleanRoute(base)) out.push({ name: g.label, href: g.href });
+  if (base.startsWith("/detail.aspx")) out.push({ name: "Awards & Accreditations", href: "/kairali-group-awards" });
+  if (base.startsWith("/apply-now.aspx") && route !== "/apply-now.aspx") out.push({ name: "Careers", href: "/careers" });
   if (base.includes("-library.aspx") && !["/photo-library.aspx", "/video-library.aspx"].includes(base))
-    out.push({ name: base.includes("photo") ? "Photo Library" : "Video Library", href: base.includes("photo") ? "/photo-library.aspx" : "/video-library.aspx" });
-  if (route.startsWith("/kairali-blog.aspx?page=")) out.push({ name: "Kairali Blog", href: "/kairali-blog.aspx" });
-  out.push({ name: current, href: route });
+    out.push({ name: base.includes("photo") ? "Photo Library" : "Video Library", href: base.includes("photo") ? "/photo-library" : "/video-library" });
+  if (route.startsWith("/kairali-blog.aspx?page=")) out.push({ name: "Kairali Blog", href: "/kairali-blog" });
+  out.push({ name: current, href: cleanRoute(route) });
   return out;
 }
 
