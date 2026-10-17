@@ -33,6 +33,8 @@ export default function Home() {
 
   return (
     <>
+      <link rel="preload" as="image" type="image/webp" href="/media/photo/ahv-grounds-pond-480.webp" media="(max-width: 767px)" />
+      <link rel="preload" as="image" type="image/webp" href="/media/photo/ahv-grounds-pond-1600.webp" media="(min-width: 768px)" />
       <section className="home-hero opener" aria-labelledby="page-title">
         <div className="opener-media"><Photograph k="ahv-grounds-pond" p={ph["ahv-grounds-pond"]} sizes="(max-width: 767px) 50vw, 100vw" priority /></div>
         <div className="opener-panel"><div className="container">
