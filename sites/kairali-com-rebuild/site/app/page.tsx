@@ -6,6 +6,7 @@ import { HOME_H1, SUB_BRANDS } from "@/lib/site";
 import { Photograph } from "@/components/Bits";
 import { Canopy, Divider } from "@/components/Motif";
 import Prose from "@/components/Prose";
+import HeroCarousel from "@/components/HeroCarousel";
 
 // Home: every block of the live home copy is rendered (source: kairali.com home capture, 29 Sep 2026),
 // composed in the Premium v3 home sequence. H1 per owner decision Q3.
@@ -33,17 +34,17 @@ export default function Home() {
 
   return (
     <>
-      <link rel="preload" as="image" type="image/webp" href="/media/photo/ahv-grounds-pond-480.webp" media="(max-width: 767px)" />
+      <link rel="preload" as="image" type="image/webp" href="/media/photo/ahv-grounds-pond-1024.webp" media="(max-width: 767px)" />
       <link rel="preload" as="image" type="image/webp" href="/media/photo/ahv-grounds-pond-1600.webp" media="(min-width: 768px)" />
       <section className="home-hero opener" aria-labelledby="page-title">
-        <div className="opener-media"><Photograph k="ahv-grounds-pond" p={ph["ahv-grounds-pond"]} sizes="(max-width: 767px) 50vw, 100vw" priority /></div>
+        <div className="opener-media"><HeroCarousel /></div>
         <div className="opener-panel"><div className="container">
           <div className="opener-card">
             <p className="hero-kicker"><span>Established 1908</span><span>Four generations</span></p>
             <span className="overline accent">Kairali Ayurvedic Group</span>
             <h1 id="page-title">{HOME_H1}</h1>
             <p className="lede">A family tradition bringing authentic Ayurveda to doctor-led care, restorative stays, trusted products and professional learning.</p>
-            <div className="actions"><Link className="btn" href="/ayurveda" data-cta="explore-ayurveda">Discover Ayurveda</Link><Link className="btn secondary" href="/hospitality">Explore Kairali experiences</Link></div>
+            <div className="actions"><Link className="btn" href="/ayurveda" data-cta="explore-ayurveda">Discover Ayurveda</Link><Link className="btn secondary" href="/hospitality">Explore Kairali stays</Link></div>
           </div>
         </div></div>
       </section>
@@ -97,7 +98,10 @@ export default function Home() {
             <span className="overline">Kairali Group</span>
             <h2 id="group-title">{linkText(group.html) || "Kairali: Spreading Ayurveda since 1908"}</h2>
             <Prose html={bodyOf(group.html).replace(/<p><a href="\/kairali-group-profile.aspx">Kairali: Spreading Ayurveda<br\/?>\s*since 1908<\/a><\/p>/, "").replace(/<img[^>]*history-of-kairali[^>]*>/, "").replace(/<div class="gallery">.*?<\/div>/s, "")} />
-            <div className="gallery-pair grid two">{imgs(group.html).filter((i) => !i.includes("history-of-kairali")).map((i, k) => <div className="photo" key={k} style={{ aspectRatio: "4 / 3" }} dangerouslySetInnerHTML={{ __html: i }} />)}</div>
+            <div className="gallery-pair grid two">
+              <div className="photo"><Photograph k="ahv-colonnade" p={ph["ahv-colonnade"]} sizes="(min-width: 900px) 22vw, 50vw" /></div>
+              <div className="photo"><Photograph k="ahv-consultation" p={ph["ahv-consultation"]} sizes="(min-width: 900px) 22vw, 50vw" /></div>
+            </div>
             <Link className="text-link" href="/kairali-group-profile">Group profile</Link>
           </div>
         </div>
@@ -116,8 +120,10 @@ export default function Home() {
           </div>
         </div></div>
       </section>
-      <section className="section tight" aria-label="Healing Village photographs"><div className="container grid three">
-        {imgs(hvMosaic.html).map((i, k) => <div className="photo reveal" key={k} style={{ aspectRatio: "4 / 3" }} dangerouslySetInnerHTML={{ __html: i }} />)}
+      <section className="section tight" aria-label="Healing Village photographs"><div className="container grid three premium-photo-row">
+        <div className="photo reveal"><Photograph k="ahv-reception" p={ph["ahv-reception"]} sizes="(min-width: 900px) 33vw, 100vw" /></div>
+        <div className="photo reveal"><Photograph k="ahv-cottages" p={ph["ahv-cottages"]} sizes="(min-width: 900px) 33vw, 100vw" /></div>
+        <div className="photo reveal"><Photograph k="ahv-treatment-room" p={ph["ahv-treatment-room"]} sizes="(min-width: 900px) 33vw, 100vw" /></div>
       </div></section>
 
       {/* Villa Raag — owned and operated */}
@@ -162,7 +168,12 @@ export default function Home() {
           </div>
           <div className="s-text col-7-13 stack reveal">
             <div className="city-list" aria-label="Cities listed on the Locations page">{cities.map((c) => <div key={c}><span>{c}</span></div>)}</div>
-            <div className="grid three">{imgs(centreMosaic.html).map((i, k) => <div className="photo" key={k} style={{ aspectRatio: "1" }} dangerouslySetInnerHTML={{ __html: i }} />)}</div>
+            <div className="editorial-gallery centre-gallery">
+              <div className="photo"><Photograph k="centre-reception" p={ph["centre-reception"]} sizes="(min-width: 900px) 26vw, 100vw" /></div>
+              <div className="photo"><Photograph k="ahv-consultation" p={ph["ahv-consultation"]} sizes="(min-width: 900px) 26vw, 100vw" /></div>
+              <div className="photo"><Photograph k="ahv-treatment-room" p={ph["ahv-treatment-room"]} sizes="(min-width: 900px) 26vw, 100vw" /></div>
+              <div className="photo"><Photograph k="centre-emblem" p={ph["centre-emblem"]} sizes="(min-width: 900px) 26vw, 100vw" /></div>
+            </div>
           </div>
         </div>
       </section>
@@ -170,7 +181,11 @@ export default function Home() {
       {/* Training */}
       <section className="section" aria-labelledby="train-title">
         <div className="container split">
-          <div className="s-media grid two">{imgs(trainMosaic.html).map((i, k) => <div className="photo reveal" key={k} style={{ aspectRatio: "1", marginTop: k % 2 ? 64 : 0 }} dangerouslySetInnerHTML={{ __html: i }} />)}</div>
+          <div className="s-media editorial-gallery training-gallery">
+            <div className="photo reveal"><Photograph k="ahv-kati-vasti" p={ph["ahv-kati-vasti"]} sizes="(min-width: 900px) 25vw, 100vw" /></div>
+            <div className="photo reveal"><Photograph k="ahv-treatment-room" p={ph["ahv-treatment-room"]} sizes="(min-width: 900px) 25vw, 100vw" /></div>
+            <div className="photo reveal"><Photograph k="ahv-veranda" p={ph["ahv-veranda"]} sizes="(min-width: 900px) 25vw, 100vw" /></div>
+          </div>
           <div className="s-text stack reveal">
             <span className="overline">Ayurveda training</span>
             <h2 id="train-title">{linkText(trainMosaic.html)}</h2>
