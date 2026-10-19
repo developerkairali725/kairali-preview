@@ -237,6 +237,9 @@ function siteBrand(siteDir) {
 // blush = theblushlounge.com (Sneha Chowdhary's personal brand) — its OWN
 // sheet per the signed MODE B design direction (18 Jul 2026, "like raag").
 const TOKEN_SHEETS = { kairali: "brand-tokens.css", raag: "raag-tokens.css", blush: "blush-tokens.css" };
+/** Opt-in Kairali token profiles (site.config.json `brandTokenProfile`), each an
+ *  owner-approved kairali.com palette held verbatim in its own sheet. */
+const KAIRALI_PROFILE_SHEETS = { "premium-v3": "kairali-premium-v3-tokens.css", "premium-v4": "kairali-premium-v4-tokens.css" };
 
 /**
  * Lint a site directory.
@@ -264,15 +267,18 @@ export function lintBrandDir(dir, { brand } = {}) {
   // An opt-in central palette preserves the already approved Kairali.com
   // Premium v3 design. This changes only the required token import; every
   // source-color, contrast and interaction rule below still applies.
+  // Premium v4 (charcoal/ivory/bronze/gold, Abhilash's in-chat ruling of
+  // 19 Oct 2026, DIRECTIVES.md) is a second opt-in profile added the same
+  // way: a new sheet, the same rules, nothing relaxed.
   const configPath = join(dir, "site.config.json");
   let profile;
   try { profile = existsSync(configPath) ? JSON.parse(readFileSync(configPath, "utf8")).brandTokenProfile : undefined; }
   catch { return [{ file: configPath, line: 1, severity: "error", rule: "config", message: "Invalid site.config.json", excerpt: "" }]; }
   if (profile !== undefined) {
-    if (eff !== "kairali" || profile !== "premium-v3") {
+    if (eff !== "kairali" || !KAIRALI_PROFILE_SHEETS[profile]) {
       return [{ file: configPath, line: 1, severity: "error", rule: "config", message: `Unknown token profile "${profile}" for brand "${eff}"`, excerpt: "" }];
     }
-    sheet = "kairali-premium-v3-tokens.css";
+    sheet = KAIRALI_PROFILE_SHEETS[profile];
   }
   if (!sheet) {
     return [{
