@@ -28,9 +28,10 @@ const browser = await chromium.launch();
   // rendered faces
   await page.goto(BASE + "/", { waitUntil: "networkidle" });
   const faces = await page.evaluate(async () => { await document.fonts.ready; return [...document.fonts].filter((f) => f.status === "loaded").map((f) => `${f.family} ${f.weight}`); });
-  check("Kurale, Asap and Lato faces loaded", ["Kurale", "Asap", "Lato"].every((f) => faces.some((x) => x.includes(f))), [...new Set(faces)].join(", "));
+  // Premium v4 (owner approval 19 Oct 2026, D-20261019-01): the display face is Cormorant Garamond and the body face Source Sans 3.
+  check("Cormorant Garamond and Source Sans 3 faces loaded", ["Cormorant Garamond", "Source Sans 3"].every((f) => faces.some((x) => x.includes(f))), [...new Set(faces)].join(", "));
   const h1font = await page.$eval("h1", (el) => getComputedStyle(el).fontFamily);
-  check("H1 uses Kurale", h1font.includes("Kurale"), h1font);
+  check("H1 uses Cormorant Garamond", h1font.includes("Cormorant Garamond"), h1font);
   const synth = await page.$eval("h1", (el) => getComputedStyle(el).fontSynthesis || getComputedStyle(el).getPropertyValue("font-synthesis"));
   check("no synthetic bold on display face", synth === "none" || synth.includes("none"), synth);
   // CLS on home (lab)

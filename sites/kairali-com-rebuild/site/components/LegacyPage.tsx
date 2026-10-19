@@ -3,7 +3,7 @@ import { awardsIndex, breadcrumbs, excerpt, extra, familyPhotoKey, navGroupFor, 
 import { NAV, PHONE, SUB_BRANDS } from "@/lib/site";
 import { applicationSchema, CONSULTATION, CONTACT, GENERAL_ENQUIRY, NEWSLETTER, SVATA_ENQUIRY } from "@/lib/forms";
 import { Breadcrumbs, JsonLd, Photograph, SubNav } from "./Bits";
-import { Canopy, Divider } from "./Motif";
+import { Hairline, LeafSpray, Mandala, Num, Orn } from "./Ornament";
 import Prose, { videoFacade } from "./Prose";
 import Form from "./Form";
 import { documentHubLink } from "@/lib/document-links";
@@ -54,42 +54,67 @@ export default function LegacyPage({ page, applyId }: { page: Page; applyId?: st
   const withRail = RAIL_FAMILIES.has(fam) && !isForm && heads.length >= 2 && base !== "/kairali-group-awards.aspx" && !base.startsWith("/detail.aspx");
   const sub = SUBBRAND_FOR[base] ? SUB_BRANDS.find((b) => b.key === SUBBRAND_FOR[base]) : undefined;
 
-  const opener = photoOpener && ph ? (
-    <section className="opener photo" aria-labelledby="page-title">
+  // Premium v4 patterns (owner approval, 19 Oct 2026). Content is untouched — only the layout differs:
+  //  division  = pages that already open on a photograph (hubs, properties, centres, products, programmes)
+  //  editorial = corporate editorial, leadership messages, brands, policies, testimonials, award records
+  //  hub       = contact/partnership hubs, careers, listings, libraries, downloads, search, forms
+  const heroPhoto = !!(photoOpener && ph);
+  const pattern: "division" | "editorial" | "hub" =
+    heroPhoto && !isForm ? "division"
+    : (fam === "G" && base !== "/kairali-group-awards.aspx" && !isProfile) || (fam === "M" && !["/sitemap.aspx", "/useful-links.aspx", "/ayurveda-newsletter.aspx"].includes(base)) || base === "/testimonials.aspx" ? "editorial"
+    : "hub";
+  const tagline = page.banner?.tagline && !page.banner.subtitle.some((x) => x.replace(/<[^>]+>/g, "").trim() === page.banner!.tagline) ? page.banner.tagline : undefined;
+  const subtitle = page.banner?.subtitle.map((t, i) => <p key={i} className="lede" dangerouslySetInnerHTML={{ __html: t }} />);
+  const actions = page.banner?.actions && page.banner.actions.length > 0 ? page.banner.actions : undefined;
+  // Division aside: the sub-brand panel / banner actions, and the consultation card every rail page carried before.
+  const asideNeeded = pattern === "division" && (sub || actions || withRail);
+
+  const opener = heroPhoto && ph ? (
+    <section className="pagehero opener" aria-labelledby="page-title">
       <div className="opener-media"><Photograph k={photoKey} p={ph} priority /></div>
-      <div className="opener-panel"><div className="container">
-        <div className="opener-card">
-          <span className="overline accent">{overline}</span>
+      <div className="container">
+        <div className="pagehero-text">
+          <span className="overline on-dark">{overline}</span>
           <h1 id="page-title">{heading}</h1>
-          {page.banner?.tagline && !page.banner.subtitle.some((x) => x.replace(/<[^>]+>/g, "").trim() === page.banner!.tagline) && <p className="lede" style={{ fontFamily: "var(--font-display)", color: "var(--forest)" }}>{page.banner.tagline}</p>}
-          {page.banner?.subtitle.map((s, i) => <p key={i} className="lede" dangerouslySetInnerHTML={{ __html: s }} />)}
-          {page.banner?.actions && page.banner.actions.length > 0 && <OpenerActions actions={page.banner.actions} />}
+          {tagline && <p className="tagline-quote">{tagline}</p>}
+          {subtitle}
+          {!asideNeeded && actions && <OpenerActions actions={actions} />}
         </div>
-      </div></div>
+        {sub && (
+          <div className="plaque">
+            <img src={sub.logo} alt={`${sub.name} logo`} width={90} height={64} />
+            <span className="plaque-rule" aria-hidden="true" />
+            <span className="plaque-text"><strong>{sub.name}</strong><span>{sub.line}</span></span>
+          </div>)}
+      </div>
     </section>
   ) : (
-    <section className="opener plain" aria-labelledby="page-title">
-      <Canopy style={{ right: -120, top: 10, width: 520 }} />
-      <div className="container"><div className="opener-inner">
-        <span className="overline accent">{overline}</span>
+    <section className={`band tex grain${pattern === "editorial" ? " center" : ""}`} aria-labelledby="page-title">
+      <Mandala className="bronze" style={{ right: -180, top: -200, width: 560 }} />
+      {pattern === "editorial" && <LeafSpray style={{ left: 0, bottom: 0, width: 220, transform: "scaleX(-1)" }} />}
+      <div className="container">
+        <span className="overline">{overline}</span>
         <h1 id="page-title">{heading}</h1>
-        {page.banner?.tagline && !page.banner.subtitle.some((x) => x.replace(/<[^>]+>/g, "").trim() === page.banner!.tagline) && <p className="lede" style={{ fontFamily: "var(--font-display)", color: "var(--forest)" }}>{page.banner.tagline}</p>}
-        {page.banner?.subtitle.map((s, i) => <p key={i} className="lede" dangerouslySetInnerHTML={{ __html: s }} />)}
-          {page.banner?.actions && page.banner.actions.length > 0 && <OpenerActions actions={page.banner.actions} />}
-      </div></div>
+        {pattern === "editorial" && <Orn narrow />}
+        {tagline && <p className="tagline-quote">{tagline}</p>}
+        {subtitle}
+        {actions && <OpenerActions actions={actions} />}
+      </div>
     </section>
   );
 
   const awardId = base.startsWith("/detail.aspx") ? awardIdFor(route) : undefined;
+  const hasH2 = (html: string) => /^\s*<h2/.test(html);
+  const numbered = pattern === "hub" && withRail && secs.filter((x) => hasH2(x.html)).length >= 2;
   const body = (
     <>
       {awardId && <p style={{ marginBottom: 24 }}><Link className="text-link back-link" href={`/kairali-group-awards#${awardId}`}>Back to awards &amp; accreditations</Link></p>}
       {isProfile && <div style={{ marginBottom: 56 }}><BrandPillars /></div>}
       {page.banner?.rest && <Prose html={page.banner.rest} />}
-      {secs.map((s, i) => (
-        <div key={i}>
-          {i > 0 && <div style={{ margin: "48px 0" }}><Divider /></div>}
-          <Prose html={s.html} className={withRail ? "" : "wide-soft"} />
+      {secs.map((x, i) => (
+        <div key={i} className={numbered && hasH2(x.html) ? "hub-section" : undefined}>
+          {i > 0 && <Hairline style={{ margin: numbered ? "56px 0" : "48px 0" }} />}
+          <Prose html={x.html} className={withRail ? "" : "wide-soft"} />
         </div>
       ))}
       {isProfile && (
@@ -100,19 +125,94 @@ export default function LegacyPage({ page, applyId }: { page: Page; applyId?: st
     </>
   );
 
+  // Division pages: the first section becomes the intro (drop cap, charcoal aside), the rest alternate as
+  // framed story blocks. A section with exactly one picture is split; anything else stays as prose.
+  const divisionBody = pattern === "division" ? (() => {
+    // The intro is the opening prose before the first heading; what follows it joins the story blocks.
+    const [first0, ...rest0] = secs;
+    const cut = first0 ? first0.html.search(/<h[23]\b/) : -1;
+    const first = first0 && cut > 0 ? { html: first0.html.slice(0, cut) } : first0;
+    const rest = first0 && cut > 0 ? [{ html: first0.html.slice(cut) }, ...rest0] : rest0;
+    const intro = (
+      <section className="section tex" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className={`intro-grid${asideNeeded ? "" : " single"}`} style={asideNeeded ? undefined : { gridTemplateColumns: "1fr" }}>
+            <div>
+              {page.banner?.rest && <Prose html={page.banner.rest} className="dropcap" />}
+              {first && <Prose html={first.html} className={page.banner?.rest ? "" : "dropcap"} />}
+              {!first && !page.banner?.rest && subtitle}
+            </div>
+            {asideNeeded && (
+              <div className="stack" style={{ gap: 28 }}>
+                {(sub || actions) && (
+                  <aside className="aside-dark tex dark" aria-label={overline}>
+                    <span className="aside-title">{sub ? sub.name : overline}</span>
+                    {sub && <div className="fact"><span className="v">{sub.line}<small>Full details, booking and shopping are on the dedicated website.</small></span></div>}
+                    <div className="actions">
+                      {actions && <OpenerActions actions={actions} onDark />}
+                      {sub && <a className="btn" href={sub.url} rel="noopener" target="_blank">{sub.cta} ↗<span className="sr-only"> (opens in a new tab)</span></a>}
+                    </div>
+                  </aside>)}
+                {withRail && <ConsultCard />}
+              </div>)}
+          </div>
+        </div>
+      </section>
+    );
+    const picOf = (html: string) => { const pics = [...html.matchAll(/<img[^>]*>/g)].map((m) => m[0]); return pics.length === 1 && !html.includes('class="gallery"') ? pics[0] : undefined; };
+    const darkIndex = rest.map((x, i) => (picOf(x.html) ? i : -1)).filter((i) => i >= 0)[1]; // the second pictured block goes charcoal
+    const stories = rest.map((x, i) => {
+      const splitPic = picOf(x.html);
+      const dark = i === darkIndex;
+      const rev = i % 2 === 1;
+      return (
+        <section key={i} className={`story tex${dark ? " dark" : i % 2 === 0 ? " bright" : ""}${rev ? " rev" : ""}${splitPic ? "" : " story-solo"}`}>
+          <Num n={String(i + 1).padStart(2, "0")} light={dark} />
+          {dark && <Mandala full={false} />}
+          <div className="container">
+            {splitPic ? (
+              <div className={`story-grid${rev ? " rev" : ""}`}>
+                <div className="story-media"><div className="frame shadow-xl" dangerouslySetInnerHTML={{ __html: splitPic }} /></div>
+                <div className={`story-text${dark ? " on-dark" : ""}`}><Prose html={x.html.replace(splitPic, "")} /></div>
+              </div>
+            ) : <div className={dark ? "on-dark" : undefined}><Prose html={x.html} className="wide-soft" /></div>}
+          </div>
+        </section>
+      );
+    });
+    return <>{intro}{stories}</>;
+  })() : null;
+
+  const explore = group && fam === "B" ? <ExploreTiles groupLabel={group.label} current={base} /> : null;
+
   return (
     <>
       {opener}
       {page.banner?.sublinks && <SubNav links={page.banner.sublinks} current={base} />}
-      <div className="container" style={{ paddingTop: 24 }}><Breadcrumbs items={crumbs} /></div>
+      <div className="container" style={{ paddingTop: 32, paddingBottom: pattern === "division" ? 48 : 0 }}>
+        <Breadcrumbs items={crumbs} />
+        {pattern === "division" && heads.length >= 2 && (
+          <nav className="toc-inline" aria-labelledby="toc-inline-title" style={{ marginTop: 24, marginBottom: 0 }}>
+            <span className="toc-inline-title" id="toc-inline-title">On this page <span className="sr-only">({heads.length} sections)</span></span>
+            {heads.map((h) => <a key={h.id} href={`#${h.id}`}>{h.text}</a>)}</nav>)}
+      </div>
 
       {base === "/download-centre.aspx" ? <DownloadCentre page={page} /> :
-       base === "/search-results.aspx" ? <SearchPage /> : (
-      <section className="section" style={{ paddingTop: 40 }}>
+       base === "/search-results.aspx" ? <SearchPage /> :
+       pattern === "division" ? (
+        <>
+          {divisionBody}
+          {(page.videoItems?.length || explore || base === "/villa-raag.aspx" || base === "/virtual-tour.aspx") ? (
+            <section className="section tight tex"><div className="container">
+              {page.videoItems && page.videoItems.length > 0 && <VideoGrid items={page.videoItems} />}
+              {explore}
+            </div></section>) : null}
+        </>
+       ) : (
+      <section className={`section tex${pattern === "editorial" ? " surface-ivory" : ""}`} style={{ paddingTop: 40 }}>
         <div className="container">
           {sub && <SubBrandCallout b={sub} />}
           {base === "/kairali-group-awards.aspx" && <Certifications />}
-          {base === "/villa-raag.aspx" && <p className="badge" style={{ marginBottom: 24 }}>Kairali-owned and operated</p>}
           {base === "/svata-katerina-prague-czech-republic.aspx" && <p className="notice" style={{ marginBottom: 32 }}>Svata Katerina is a current partner resort of Kairali. Contact the resort directly to confirm current programmes and availability.</p>}
           {["/careers.aspx", "/current-openings.aspx", "/apply-now.aspx"].includes(base) && <p className="notice" style={{ marginBottom: 32 }}>We welcome general expressions of interest. Vacancy status is pending HR confirmation; no individual legacy role is presented as currently open, and career applications are inactive.</p>}
           {base === "/virtual-tour.aspx" && <ComingSoon />}
@@ -123,28 +223,24 @@ export default function LegacyPage({ page, applyId }: { page: Page; applyId?: st
                   <summary>On this page <span className="sr-only">({heads.length} sections)</span></summary>
                   <nav aria-label="On this page (sections)"><ol>{heads.map((h) => <li key={h.id}><a href={`#${h.id}`}>{h.text}</a></li>)}</ol></nav>
                 </details>
-                <article className={`stack${isProfile ? " profile-article" : ""}`} style={{ gap: 0 }}>{body}</article>
+                <article className={`stack${isProfile ? " profile-article" : ""}${numbered ? " hub-article" : ""}`} style={{ gap: 0 }}>{body}</article>
                 <aside className="rail" aria-label="On this page">
                   <div className="rail-inner">
                     <nav className="toc" aria-labelledby="toc-title"><p className="toc-title" id="toc-title">On this page</p>
                       {heads.map((h) => <a key={h.id} href={`#${h.id}`}>{h.text}</a>)}</nav>
-                    <div className="card forest stack">
-                      <h2 style={{ fontSize: "1.5rem" }}>Speak to a Kairali physician</h2>
-                      <p style={{ fontSize: 15 }}>Ask about treatments, programmes and products. The online consultation is free.</p>
-                      <Link className="btn on-dark" href="/onlineconsultation">Free online consultation</Link>
-                      <a className="btn ghost-dark" href={PHONE.href}>Call {PHONE.label}</a>
-                    </div>
+                    <ConsultCard />
                   </div>
                 </aside>
               </div>
-            ) : <article className="stack prose-cap" style={{ gap: 0, maxWidth: fam === "H" || fam === "I" || base === "/kairali-group-profile.aspx" ? "none" : 880 }}>{body}</article>}
+            ) : pattern === "editorial" ? <EditorialArticle page={page} secs={secs} body={body} /> :
+            <article className="stack prose-cap" style={{ gap: 0, maxWidth: fam === "H" || fam === "I" || base === "/kairali-group-profile.aspx" ? "none" : 880 }}>{body}</article>}
 
           {page.videoItems && page.videoItems.length > 0 && <VideoGrid items={page.videoItems} />}
           {base === "/kairali-group-awards.aspx" && <AwardsRecent />}
           {base === "/our-partners.aspx" && <Events />}
           {base.startsWith("/detail.aspx") && <AwardNav route={route} />}
           {base === "/contact-us.aspx" && <MapLink />}
-          {group && fam === "B" && <ExploreTiles groupLabel={group.label} current={base} />}
+          {explore}
         </div>
       </section>)}
 
@@ -157,14 +253,54 @@ export default function LegacyPage({ page, applyId }: { page: Page; applyId?: st
   );
 }
 
-function OpenerActions({ actions }: { actions: { label: string; href: string }[] }) {
+/** Editorial pattern: a leading portrait (when the first section opens with one picture) sits in a sticky
+ *  framed column; the text keeps its large serif opening paragraph and bronze-rule callouts (CSS). */
+function EditorialArticle({ page, secs, body }: { page: Page; secs: { html: string }[]; body: React.ReactNode }) {
+  const first = secs[0]?.html ?? "";
+  const lead = first.match(/^\s*(<img[^>]*>)/)?.[1];
+  const quoted = /^\s*(?:<img[^>]*>)?\s*<p>\s*[“"]/.test(first);
+  if (!lead) return <article className={`stack prose-cap editorial-article${quoted ? " quoted" : ""}`} style={{ gap: 0, maxWidth: 880 }}>{quoted && <span className="quote-mark" aria-hidden="true">“</span>}{body}</article>;
+  const rest = secs.map((x, i) => (i === 0 ? { html: x.html.replace(lead, "") } : x));
+  return (
+    <div className="editorial-grid">
+      <div className="portrait-col">
+        <div className="frame shadow-xl" dangerouslySetInnerHTML={{ __html: lead }} />
+      </div>
+      <article className="stack prose-cap editorial-article" style={{ gap: 0 }}>
+        {quoted && <span className="quote-mark" aria-hidden="true">“</span>}
+        {page.banner?.rest && <Prose html={page.banner.rest} />}
+        {rest.map((x, i) => (
+          <div key={i}>
+            {i > 0 && <Hairline style={{ margin: "48px 0" }} />}
+            <Prose html={x.html} />
+          </div>))}
+      </article>
+    </div>
+  );
+}
+
+function ConsultCard() {
+  return (
+    <div className="card charcoal stack consult-card tex dark">
+      <Mandala full={false} />
+      <span className="overline on-dark">Free online consultation</span>
+      <h2 style={{ fontSize: "2rem" }}>Speak to a Kairali physician</h2>
+      <p style={{ fontSize: 15 }}>Ask about treatments, programmes and products. The online consultation is free.</p>
+      <Link className="btn" href="/onlineconsultation">Free online consultation</Link>
+      <a className="btn ghost-dark" href={PHONE.href}>Call {PHONE.label}</a>
+    </div>
+  );
+}
+
+function OpenerActions({ actions, onDark = false }: { actions: { label: string; href: string }[]; onDark?: boolean }) {
+  const second = onDark ? "ghost-dark" : "secondary";
   return (
     <div className="actions">
       {actions.map((a, i) => a.href.startsWith("/download/")
-        ? <a key={a.href} className="btn secondary" href={documentHubLink(a.href)}>{a.label}<span className="sr-only"> (maintained document library)</span></a>
+        ? <a key={a.href} className={`btn ${second}`} href={documentHubLink(a.href)}>{a.label}<span className="sr-only"> (maintained document library)</span></a>
         : a.href.startsWith("http")
-          ? <a key={a.href} className={`btn${i ? " secondary" : ""}`} href={a.href} rel="noopener" target="_blank">{a.label} ↗<span className="sr-only"> (opens in a new tab)</span></a>
-          : <Link key={a.href} className={`btn${i ? " secondary" : ""}`} href={cleanRoute(a.href)}>{a.label}</Link>)}
+          ? <a key={a.href} className={`btn${i ? ` ${second}` : ""}`} href={a.href} rel="noopener" target="_blank">{a.label} ↗<span className="sr-only"> (opens in a new tab)</span></a>
+          : <Link key={a.href} className={`btn${i ? ` ${second}` : ""}`} href={cleanRoute(a.href)}>{a.label}</Link>)}
       {actions.some((a) => a.href.startsWith("/download/")) && <p className="meta" style={{ flexBasis: "100%" }}>Choose a current PDF in the maintained document library. Earlier direct URLs remain available; see the <Link href="/download-centre">Download Centre</Link> for current editions.</p>}
     </div>
   );
@@ -338,7 +474,7 @@ function Events() {
               <br /><span className="badge past" style={{ marginTop: 8 }}>Past event</span>
             </p>
             <div className="stack" style={{ gap: 8 }}>
-              <h4 style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "var(--forest)", fontSize: "1.3rem" }}><a href={e.url} rel="noopener">{e.title}</a></h4>
+              <h4 style={{ fontFamily: "var(--font-display)", fontWeight: 400, color: "var(--bronze)", fontSize: "1.3rem" }}><a href={e.url} rel="noopener">{e.title}</a></h4>
               {e.place && <p className="meta">{e.place}</p>}
               <p style={{ fontSize: 16 }}>{e.summary}</p>
             </div>
@@ -384,11 +520,12 @@ function ExploreTiles({ groupLabel, current }: { groupLabel: string; current: st
   return (
     <section aria-labelledby="explore" style={{ marginTop: 72 }}>
       <span className="overline">{g.label}</span>
-      <h2 id="explore" style={{ margin: "12px 0 24px" }}>Continue exploring</h2>
-      <div className="grid three">
+      <h2 id="explore" style={{ margin: "12px 0 0" }}>Continue exploring</h2>
+      <div className="explore-cards">
         {links.map((l) => (
-          <Link key={l.href} href={l.href} className="card tile" style={{ padding: 22 }}>
-            <h3 style={{ fontSize: "1.3rem" }}>{l.label}</h3><span className="text-link" aria-hidden="true">Read more</span>
+          <Link key={l.href} href={l.href} className="explore-card">
+            <small>{g.label}</small>
+            <h3>{l.label}</h3><span className="text-link" aria-hidden="true">Read more</span>
           </Link>))}
       </div>
     </section>
@@ -397,16 +534,17 @@ function ExploreTiles({ groupLabel, current }: { groupLabel: string; current: st
 
 function ClosingBand() {
   return (
-    <section className="section surface-forest" aria-labelledby="close-title" style={{ overflow: "hidden" }}>
-      <Canopy style={{ right: -160, bottom: -140, width: 620 }} />
-      <div className="container rel split">
-        <div className="s-media stack">
+    <section className="band-dark tex dark" aria-labelledby="close-title">
+      <div className="wash" aria-hidden="true"><Photograph k="ahv-grounds-pond" p={{ ...photos()["ahv-grounds-pond"], alt: "" }} sizes="60vw" /></div>
+      <Hairline />
+      <div className="container split">
+        <div className="s-media stack" style={{ gap: 22 }}>
           <span className="overline on-dark">Since 1908</span>
           <h2 id="close-title">Health through Ayurveda, four generations on.</h2>
         </div>
-        <div className="s-text stack">
-          <p>Contact our care team about treatments and programmes, or tell us what you are looking for.</p>
-          <div className="actions"><Link className="btn on-dark" href="/onlineconsultation">Free online consultation</Link><Link className="btn ghost-dark" href="/enquiry-form">Enquire now</Link></div>
+        <div className="s-text">
+          <p className="lede">Contact our care team about treatments and programmes, or tell us what you are looking for.</p>
+          <div className="actions"><Link className="btn" href="/onlineconsultation">Free online consultation</Link><Link className="btn ghost-dark" href="/enquiry-form">Enquire now</Link></div>
         </div>
       </div>
     </section>

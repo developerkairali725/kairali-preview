@@ -32,7 +32,7 @@ export default function DownloadFilters({ collections, portal, checked }: { coll
         <div className="field"><label htmlFor="dl-l">Language</label><select id="dl-l" value={lang} onChange={(e) => setLang(e.target.value)}><option value="">All languages</option>{langs.map((l) => <option key={l}>{l}</option>)}</select></div>
         <div className="field"><label htmlFor="dl-c">Currency</label><select id="dl-c" value={cur} onChange={(e) => setCur(e.target.value)}><option value="">All currencies</option>{curs.map((c) => <option key={c}>{c}</option>)}</select></div>
       </form>
-      <p role="status" className="meta" style={{ fontSize: 15 }}>{count} document {count === 1 ? "edition" : "editions"} shown{(q || prop || lang || cur) && <> · <button type="button" onClick={reset} style={{ all: "unset", cursor: "pointer", color: "var(--forest)", textDecoration: "underline", minHeight: 44 }}>Clear filters</button></>}</p>
+      <p role="status" className="meta" style={{ fontSize: 15 }}>{count} document {count === 1 ? "edition" : "editions"} shown{(q || prop || lang || cur) && <> · <button type="button" onClick={reset} style={{ all: "unset", cursor: "pointer", color: "var(--bronze)", textDecoration: "underline", minHeight: 44 }}>Clear filters</button></>}</p>
 
       {shown.length === 0 && (
         <div className="notice" role="note"><strong>No documents match these filters.</strong> Try another language, currency or search term, or <button type="button" onClick={reset} style={{ all: "unset", cursor: "pointer", textDecoration: "underline" }}>clear all filters</button>.</div>)}

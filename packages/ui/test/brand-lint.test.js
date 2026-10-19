@@ -179,3 +179,24 @@ test("Premium v3 requires its central palette and still rejects local colors", a
     assert.ok(errs(lintBrandDir(dir)).some(f => f.rule === "config"));
   } finally { rmSync(dir, { recursive: true, force: true }); }
 });
+
+test("Premium v4 is a second opt-in profile with its own sheet and the same rules", async () => {
+  const { mkdtempSync, writeFileSync, rmSync } = await import("node:fs");
+  const { tmpdir } = await import("node:os");
+  const { join } = await import("node:path");
+  const dir = mkdtempSync(join(tmpdir(), "brand-profile-v4-"));
+  try {
+    writeFileSync(join(dir, "site.config.json"), JSON.stringify({ brand: "kairali", brandTokenProfile: "premium-v4" }));
+    writeFileSync(join(dir, "site.css"), '@import "@kairali/ui/kairali-premium-v4-tokens.css";');
+    assert.equal(errs(lintBrandDir(dir)).length, 0);
+    writeFileSync(join(dir, "site.css"), '@import "@kairali/ui/kairali-premium-v4-tokens.css";\n.x{color:#ff0000}');
+    assert.ok(errs(lintBrandDir(dir)).some(f => f.rule === "rogue-hex"));
+    writeFileSync(join(dir, "site.css"), '@import "@kairali/ui/kairali-premium-v4-tokens.css";\n.x{color:rgba(0,0,0,.5)}');
+    assert.ok(errs(lintBrandDir(dir)).some(f => f.rule === "rogue-color"));
+    // the v3 sheet does not satisfy a v4 profile (and vice versa) — each profile names its own sheet
+    writeFileSync(join(dir, "site.css"), '@import "@kairali/ui/kairali-premium-v3-tokens.css";');
+    assert.ok(errs(lintBrandDir(dir)).some(f => f.rule === "tokens-import"));
+    writeFileSync(join(dir, "site.config.json"), JSON.stringify({ brand: "raag", brandTokenProfile: "premium-v4" }));
+    assert.ok(errs(lintBrandDir(dir)).some(f => f.rule === "config"));
+  } finally { rmSync(dir, { recursive: true, force: true }); }
+});

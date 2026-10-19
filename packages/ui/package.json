@@ -17,7 +17,8 @@
     "./brand-lint": "./src/brand-lint.js",
     "./ahv-campaign-tokens.css": "./ahv-campaign-tokens.css",
     "./brand-colors": "./src/brand-colors.ts",
-    "./kairali-premium-v3-tokens.css": "./kairali-premium-v3-tokens.css"
+    "./kairali-premium-v3-tokens.css": "./kairali-premium-v3-tokens.css",
+    "./kairali-premium-v4-tokens.css": "./kairali-premium-v4-tokens.css"
   },
   "bin": {
     "kairali-brand-lint": "./bin/brand-lint.js"

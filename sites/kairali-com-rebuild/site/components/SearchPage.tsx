@@ -89,7 +89,7 @@ export default function SearchPage() {
         {docs && q.trim().length >= 2 && hits.length === 0 && (
           <div className="card stack" style={{ gap: 12 }}>
             <h2 style={{ fontSize: "1.6rem" }}>No pages match “{q}”</h2>
-            <p>Check the spelling, try a broader word such as “Panchakarma”, “oil” or “yoga”, or {type !== "All" ? <button type="button" onClick={() => setType("All")} style={{ all: "unset", cursor: "pointer", color: "var(--forest)", textDecoration: "underline" }}>search all sections</button> : "browse the main sections"}.</p>
+            <p>Check the spelling, try a broader word such as “Panchakarma”, “oil” or “yoga”, or {type !== "All" ? <button type="button" onClick={() => setType("All")} style={{ all: "unset", cursor: "pointer", color: "var(--bronze)", textDecoration: "underline" }}>search all sections</button> : "browse the main sections"}.</p>
             <div className="actions"><a className="btn secondary" href="/ayurveda">Discover Ayurveda</a><a className="btn secondary" href="/sitemap">Site map</a><a className="btn secondary" href="/get-in-touch">Get in touch</a></div>
           </div>)}
         <ul className="results" id="search-results" ref={listRef}>
