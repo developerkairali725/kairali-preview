@@ -417,10 +417,12 @@ figcaption { font: 400 13px/1.5 var(--font-data); color: var(--muted); margin-to
 .pathway-photo.contain img { object-fit: contain; padding: 24px; }
 .pathway-copy { position: relative; z-index: 1; align-self: end; padding: 26px; display: grid; gap: 8px; }
 .pathway-copy small { color: var(--marigold-300); font: 600 11px/1.3 var(--font-data); text-transform: uppercase; letter-spacing: .12em; }
-.pathway-copy strong { font: 400 1.65rem/1.12 var(--font-display); }
+.pathway-copy strong { font: 400 1.65rem/1.12 var(--font-display); transition: color var(--dur) var(--ease); }
 .pathway-copy > span { font-size: 14px; color: var(--premium-v3-tone-44); }
+.pathway-card:hover, .pathway-card:focus-visible { color: var(--premium-v3-color-fff); }
+.pathway-card:hover .pathway-copy strong, .pathway-card:focus-visible .pathway-copy strong { color: var(--marigold-300); }
 .pathway-card:hover .pathway-photo img, .pathway-card:focus-visible .pathway-photo img { transform: scale(1.035); }
-.pathway-card:hover .pathway-photo::after { background: linear-gradient(0deg, var(--premium-v3-tone-35) 0%, var(--premium-v3-tone-38) 72%); }
+.pathway-card:hover .pathway-photo::after, .pathway-card:focus-visible .pathway-photo::after { background: linear-gradient(0deg, var(--premium-v3-tone-35) 0%, var(--premium-v3-tone-38) 72%); }
 .pathway-card:focus-visible { outline: 3px solid var(--marigold); outline-offset: 4px; }
 .pillar-card { background: var(--premium-v3-color-fff); border-radius: 0; padding: clamp(28px, 3vw, 44px); display: grid; gap: 14px; max-width: 580px; box-shadow: var(--shadow); }
 .story-full { position: relative; }
