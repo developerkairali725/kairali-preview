@@ -846,8 +846,102 @@ input[type="file"]::file-selector-button { border-radius: 0; border: 1px solid v
 
 /* The HTML hidden attribute must always win over component display rules (it did not on .browse-item). */
 [hidden] { display: none !important; }
-/* Group Profile: portraits and illustrations at editorial size, not full column width. */
-.profile-article .prose img { max-width: min(100%, 260px); }
+/* Group Profile — a dedicated editorial sequence keeps each person, portrait and role together. */
+.profile-story { display: grid; gap: clamp(72px, 8vw, 120px); }
+.profile-story section { scroll-margin-top: 112px; }
+.profile-section-head { display: grid; gap: 14px; max-width: 760px; margin-bottom: clamp(28px, 4vw, 48px); }
+.profile-section-head h2 { max-width: 700px; }
+.profile-section-head .lede { max-width: 720px; }
+.profile-history-visuals { display: grid; gap: 20px; align-items: start; }
+.profile-history-visuals figure { margin: 0; }
+.profile-history-main { min-height: 100%; overflow: hidden; background: var(--photo); }
+.profile-history-main img { width: 100%; height: 100%; min-height: 360px; object-fit: cover; }
+.profile-history-timeline { background: var(--ivory-bright); border: 1px solid var(--line); padding: clamp(18px, 3vw, 34px); display: grid; place-items: center; }
+.profile-history-timeline img { width: min(100%, 260px); height: auto; }
+.profile-founder { display: grid; background: var(--charcoal); color: var(--white); overflow: hidden; }
+.profile-founder-portrait { margin: 0; display: grid; align-content: start; background: var(--ivory-bright); color: var(--ink); }
+.profile-founder-portrait img { width: 100%; height: auto; aspect-ratio: 327 / 464; object-fit: cover; object-position: center top; }
+.profile-founder-portrait figcaption { display: grid; gap: 2px; padding: 18px 20px 20px; font-size: .9rem; border: 1px solid var(--line); border-top: 0; }
+.profile-founder-portrait figcaption strong { color: var(--charcoal); }
+.profile-founder-portrait figcaption span { color: var(--muted); }
+.profile-founder-copy { padding: clamp(28px, 5vw, 64px); display: grid; align-content: center; gap: 20px; }
+.profile-founder-copy .overline { color: var(--gold); }
+.profile-founder-copy h2 { color: var(--white); max-width: 660px; }
+.profile-founder-copy blockquote { margin: 0; padding: 0; border: 0; display: grid; gap: 14px; max-width: 720px; }
+.profile-founder-copy blockquote p { color: rgb(255 253 247 / .82); font-size: clamp(1rem, .95rem + .2vw, 1.12rem); line-height: 1.75; }
+.profile-signature { display: grid; gap: 1px; padding-top: 4px; color: var(--white); }
+.profile-signature strong { color: var(--gold); font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; }
+.profile-signature span { font-size: .9rem; color: rgb(255 253 247 / .72); }
+.profile-leader-list { border-top: 1px solid var(--line); }
+.profile-leader { display: grid; gap: clamp(24px, 4vw, 54px); align-items: center; padding: clamp(28px, 4vw, 52px) 0; border-bottom: 1px solid var(--line); }
+.profile-leader-photo { overflow: hidden; background: var(--photo); }
+.profile-leader-photo img { width: 100%; height: 100%; aspect-ratio: 1; object-fit: cover; }
+.profile-leader-copy { display: grid; gap: 10px; max-width: 650px; }
+.profile-leader-number { font: 600 .75rem/1 var(--font-data); letter-spacing: .14em; color: var(--bronze); }
+.profile-leader-copy h3 { font-size: clamp(1.75rem, 1.45rem + 1vw, 2.55rem); color: var(--charcoal); }
+.profile-role { font: 600 .78rem/1.4 var(--font-data); letter-spacing: .05em; color: var(--bronze); }
+.profile-purpose-grid { display: grid; gap: 24px; }
+.profile-purpose-card { border: 1px solid var(--line); background: var(--ivory-bright); display: grid; align-content: start; }
+.profile-purpose-card img { width: 100%; height: auto; aspect-ratio: 481 / 277; object-fit: cover; }
+.profile-purpose-card > div { display: grid; gap: 12px; padding: clamp(22px, 3vw, 34px); }
+.profile-purpose-card h3 { color: var(--charcoal); font-size: clamp(1.45rem, 1.25rem + .6vw, 1.9rem); }
+.profile-centres-link { margin-top: 24px; }
+@media (min-width: 760px) {
+  .profile-history-visuals { grid-template-columns: minmax(0, 2fr) minmax(220px, .72fr); }
+  .profile-founder { grid-template-columns: minmax(250px, .72fr) minmax(0, 1.6fr); }
+  .profile-purpose-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .profile-leader { grid-template-columns: minmax(200px, 320px) minmax(0, 1fr); }
+  .profile-leader:nth-child(even) { grid-template-columns: minmax(0, 1fr) minmax(200px, 320px); }
+  .profile-leader:nth-child(even) .profile-leader-photo { grid-column: 2; grid-row: 1; }
+  .profile-leader:nth-child(even) .profile-leader-copy { grid-column: 1; grid-row: 1; justify-self: end; }
+}
+@media (max-width: 759px) {
+  .profile-story { gap: 64px; }
+  .profile-history-main img { min-height: 240px; }
+  .profile-history-timeline img { width: min(100%, 220px); }
+  .profile-founder-copy { padding: 28px 22px 34px; }
+  .profile-founder-copy blockquote p { line-height: 1.65; }
+  .profile-leader { gap: 20px; }
+  .profile-leader-photo { max-width: 300px; }
+}
+/* Photo Library landing — source collections presented as purposeful visual journeys. */
+.photo-library-landing { display: grid; gap: 8px; }
+.photo-collection-grid { display: grid; gap: 24px; }
+.photo-collection-card { display: grid; border: 1px solid var(--line); background: var(--ivory-bright); min-width: 0; }
+.photo-collection-image { display: block; overflow: hidden; background: var(--photo); min-height: 260px; }
+.photo-collection-image img { width: 100%; height: 100%; min-height: 260px; object-fit: cover; transition: transform 500ms var(--ease); }
+.photo-collection-card:hover .photo-collection-image img { transform: scale(1.025); }
+.photo-collection-image:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.photo-collection-copy { display: grid; align-content: center; gap: 12px; padding: clamp(24px, 4vw, 44px); }
+.photo-collection-number { font: 600 .75rem/1 var(--font-data); letter-spacing: .14em; color: var(--bronze); }
+.photo-collection-copy h3 { color: var(--charcoal); font-size: clamp(1.65rem, 1.35rem + .8vw, 2.25rem); }
+.photo-collection-copy h3 a { color: inherit; text-decoration: none; }
+.photo-collection-copy h3 a:hover { color: var(--bronze); }
+@media (min-width: 760px) {
+  .photo-collection-card { grid-template-columns: minmax(0, 1.35fr) minmax(280px, .85fr); min-height: 360px; }
+  .photo-collection-card:nth-child(even) { grid-template-columns: minmax(280px, .85fr) minmax(0, 1.35fr); }
+  .photo-collection-card:nth-child(even) .photo-collection-image { grid-column: 2; grid-row: 1; }
+  .photo-collection-card:nth-child(even) .photo-collection-copy { grid-column: 1; grid-row: 1; }
+}
+@media (max-width: 759px) {
+  .photo-collection-image, .photo-collection-image img { min-height: 220px; }
+  .photo-collection-copy { padding: 22px; }
+}
+.photo-gallery-grid { display: grid; gap: clamp(20px, 3vw, 34px); }
+.photo-gallery-item { margin: 0; min-width: 0; background: var(--ivory-bright); border: 1px solid var(--line); }
+.photo-gallery-image { aspect-ratio: 16 / 9; overflow: hidden; background: var(--photo); }
+.photo-gallery-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms var(--ease); }
+.photo-gallery-item:hover img { transform: scale(1.02); }
+.photo-gallery-item figcaption { display: grid; gap: 8px; padding: 18px 20px 22px; }
+.photo-gallery-item figcaption span { font: 600 .72rem/1 var(--font-data); letter-spacing: .14em; color: var(--bronze); }
+.photo-gallery-item figcaption strong { font: 400 clamp(1.2rem, 1.05rem + .45vw, 1.55rem)/1.25 var(--font-display); color: var(--charcoal); }
+.photo-gallery-back { margin-top: 32px; }
+@media (min-width: 700px) {
+  .photo-gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .photo-gallery-item.featured { grid-column: 1 / -1; display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(250px, .7fr); }
+  .photo-gallery-item.featured .photo-gallery-image { aspect-ratio: 16 / 7; }
+  .photo-gallery-item.featured figcaption { align-content: center; padding: clamp(24px, 4vw, 44px); }
+}
 .latest-awards { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
 @media (min-width: 700px) { .latest-awards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 .latest-awards li { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 14px; align-items: start; border-top: 1px solid var(--line); padding-top: 14px; }

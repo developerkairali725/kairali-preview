@@ -17,7 +17,7 @@
  {
   "name": "Kurale, Asap and Lato faces loaded",
   "ok": true,
-  "detail": "Kurale 400, Asap 400 600, Lato 400, Asap Fallback normal"
+  "detail": "Kurale 400, Asap 400 600, Lato 400, Lato 700, Asap Fallback normal"
  },
  {
   "name": "H1 uses Kurale",
@@ -37,7 +37,7 @@
  {
   "name": "home LCP ≤ 2500 ms (lab, local, unthrottled)",
   "ok": true,
-  "detail": "312 ms"
+  "detail": "1156 ms"
  },
  {
   "name": "first Tab reaches skip link",
@@ -222,7 +222,7 @@
  {
   "name": "content renders without JavaScript (SSR/SSG)",
   "ok": true,
-  "detail": "4848 chars"
+  "detail": "4838 chars"
  },
  {
   "name": "reflow at 320px: no horizontal page scroll",

@@ -12,6 +12,9 @@ import SearchPage from "./SearchPage";
 import { AwardsBrowser, BrandPillars, Certifications, LatestAwards, NewsBrowser, awardIdFor } from "./Lists";
 import { ASSET_ORIGIN, SITE_URL } from "@/lib/site";
 import { cleanRoute } from "@/lib/routes";
+import ProfilePageSections from "./ProfilePageSections";
+import PhotoLibraryLanding from "./PhotoLibraryLanding";
+import PhotoCollection from "./PhotoCollection";
 
 type Ev = { title: string; url: string; published: string; start: string; end: string; place: string; summary: string; status: string };
 const fmt = (d: string) => new Date(d + "T00:00:00Z").toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric", timeZone: "UTC" });
@@ -44,13 +47,28 @@ export default function LegacyPage({ page, applyId }: { page: Page; applyId?: st
   // Sections: form bodies are rebuilt as components, so their source label text is not repeated as prose.
   const used = new Set<string>();
   const isProfile = base === "/kairali-group-profile.aspx";
+  const isPhotoLibrary = base === "/photo-library.aspx";
+  const isPhotoCollection = [
+    "/ayurvedic-hospitality-photo-library.aspx",
+    "/ayurvedic-treatment-centres-photo-library.aspx",
+    "/ayurvedic-medicines-and-remedies-photo-library.aspx",
+  ].includes(base);
   const secs = page.sections
     .filter((s) => !s.form)
     .filter((s) => !(isProfile && (s.cls.includes("ourbrands") || s.cls.includes("awardaccreditation"))))
     .map((s) => withAnchors(s.html, used));
-  const heads = secs.flatMap((s) => s.heads).filter((h) => h.level === 2);
+  let heads = secs.flatMap((s) => s.heads).filter((h) => h.level === 2);
   const isForm = ["/contact-us.aspx", "/enquiry-form.aspx", "/onlineconsultation.aspx", "/svata-katerina-prague-czech-republic.aspx", "/ayurveda-newsletter.aspx"].includes(base);
-  if (isProfile) { heads.unshift({ id: "pillars", text: "Our brands", level: 2 }); heads.push({ id: "profile-awards", text: "Awards & accreditations", level: 2 }); }
+  if (isProfile) {
+    heads = [
+      { id: "pillars", text: "Our brands", level: 2 },
+      { id: "history", text: "Our history", level: 2 },
+      { id: "founder-message", text: "Founder’s message", level: 2 },
+      { id: "management-team", text: "Management team", level: 2 },
+      { id: "mission-vision", text: "Mission & vision", level: 2 },
+      { id: "profile-awards", text: "Awards & accreditations", level: 2 },
+    ];
+  }
   const withRail = RAIL_FAMILIES.has(fam) && !isForm && heads.length >= 2 && base !== "/kairali-group-awards.aspx" && !base.startsWith("/detail.aspx");
   const sub = SUBBRAND_FOR[base] ? SUB_BRANDS.find((b) => b.key === SUBBRAND_FOR[base]) : undefined;
 
@@ -58,7 +76,10 @@ export default function LegacyPage({ page, applyId }: { page: Page; applyId?: st
   //  division  = pages that already open on a photograph (hubs, properties, centres, products, programmes)
   //  editorial = corporate editorial, leadership messages, brands, policies, testimonials, award records
   //  hub       = contact/partnership hubs, careers, listings, libraries, downloads, search, forms
-  const heroPhoto = !!(photoOpener && ph);
+  // The profile and photo-library routes have dedicated editorial renderers below.
+  // Keep them out of the generic division template even when their source family
+  // happens to provide a hero photograph.
+  const heroPhoto = !!(photoOpener && ph && !isProfile && !isPhotoLibrary && !isPhotoCollection);
   const pattern: "division" | "editorial" | "hub" =
     heroPhoto && !isForm ? "division"
     : (fam === "G" && base !== "/kairali-group-awards.aspx" && !isProfile) || (fam === "M" && !["/sitemap.aspx", "/useful-links.aspx", "/ayurveda-newsletter.aspx"].includes(base)) || base === "/testimonials.aspx" ? "editorial"
@@ -110,8 +131,9 @@ export default function LegacyPage({ page, applyId }: { page: Page; applyId?: st
     <>
       {awardId && <p style={{ marginBottom: 24 }}><Link className="text-link back-link" href={`/kairali-group-awards#${awardId}`}>Back to awards &amp; accreditations</Link></p>}
       {isProfile && <div style={{ marginBottom: 56 }}><BrandPillars /></div>}
-      {page.banner?.rest && <Prose html={page.banner.rest} />}
-      {secs.map((x, i) => (
+      {page.banner?.rest && !isPhotoCollection && <Prose html={page.banner.rest} />}
+      {page.banner?.rest && isPhotoCollection && <PhotoCollection html={page.banner.rest} />}
+      {isProfile ? <ProfilePageSections /> : isPhotoLibrary ? <PhotoLibraryLanding /> : secs.map((x, i) => (
         <div key={i} className={numbered && hasH2(x.html) ? "hub-section" : undefined}>
           {i > 0 && <Hairline style={{ margin: numbered ? "56px 0" : "48px 0" }} />}
           <Prose html={x.html} className={withRail ? "" : "wide-soft"} />

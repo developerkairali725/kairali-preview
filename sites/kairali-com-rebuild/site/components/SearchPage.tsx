@@ -40,6 +40,7 @@ function Mark({ text, q }: { text: string; q: string }) {
 export default function SearchPage() {
   const [docs, setDocs] = useState<Doc[] | null>(null);
   const [q, setQ] = useState("");
+  const [initialized, setInitialized] = useState(false);
   const [type, setType] = useState("All");
   const [active, setActive] = useState(-1);
   const [shown, setShown] = useState(20);
@@ -49,16 +50,18 @@ export default function SearchPage() {
   useEffect(() => {
     const initial = new URLSearchParams(window.location.search).get("q") || "";
     setQ(initial);
+    setInitialized(true);
     fetch("/search-index.json").then((r) => r.json()).then(setDocs).catch(() => setDocs([]));
     if (!initial) inputRef.current?.focus();
   }, []);
   useEffect(() => {
+    if (!initialized) return;
     const u = new URL(window.location.href);
     if (q) u.searchParams.set("q", q); else u.searchParams.delete("q");
     window.history.replaceState(null, "", u.toString());
     setActive(-1);
     setShown(20);
-  }, [q]);
+  }, [initialized, q]);
 
   const hits = useMemo(() => (docs ? search(docs, q).filter((h) => type === "All" || h.d.k === type) : []), [docs, q, type]);
   const onKey = (e: React.KeyboardEvent) => {
@@ -81,7 +84,7 @@ export default function SearchPage() {
         </form>
         <p id="search-help" className="meta">Searches the full text of every page on this site. Use the arrow keys to move through results.</p>
         <div className="facet" role="group" aria-label="Filter by section">
-          {TYPES.map((t) => <button key={t} type="button" aria-pressed={type === t} onClick={() => setType(t)}>{t}</button>)}
+          {TYPES.map((t) => <button key={t} type="button" aria-pressed={type === t} disabled={docs === null} onClick={() => setType(t)}>{t}</button>)}
         </div>
         <div role="status" aria-live="polite" className="meta" style={{ fontSize: 15 }}>
           {docs === null ? "Loading the search index…" : q.trim().length < 2 ? "Type at least two characters to search." : `${hits.length} ${hits.length === 1 ? "result" : "results"} for “${q}”${hits.length > shown ? ` (showing ${shown})` : ""}${type !== "All" ? ` in ${type}` : ""}`}

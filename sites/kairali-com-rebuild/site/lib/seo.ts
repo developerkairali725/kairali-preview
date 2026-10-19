@@ -23,6 +23,9 @@ function dupSets() {
 }
 
 export function titleFor(p: Page): { title: string; changed: boolean } {
+  if (p.route.split("?")[0] === "/kairali-group-profile.aspx") {
+    return { title: `Our Story & Leadership | ${SITE_NAME}`, changed: true };
+  }
   const { dupT } = dupSets();
   if (p.title && !dupT.has(p.title)) return { title: p.title, changed: false };
   return { title: `${pageHeading(p)} | ${SITE_NAME}`, changed: true };

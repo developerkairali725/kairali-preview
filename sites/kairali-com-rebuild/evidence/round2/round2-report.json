@@ -202,7 +202,7 @@
  {
   "name": "Our group submenu has no Home link",
   "ok": true,
-  "detail": "/about-us.aspx, /kairali-group-profile.aspx, /founders-message.aspx, /management-team.aspx, /mission-and-vision.aspx, /kairali-group-awards.aspx, /ayurveda-csr.aspx, /careers.aspx"
+  "detail": "/about-us, /kairali-group-profile, /founders-message, /management-team, /mission-and-vision, /kairali-group-awards, /ayurveda-csr, /careers"
  },
  {
   "name": "logo still links home",
@@ -217,7 +217,7 @@
  {
   "name": "desktop group profile height is manageable",
   "ok": true,
-  "detail": "9667px (was 57,636px at 1440)"
+  "detail": "9069px (was 57,636px at 1440)"
  },
  {
   "name": "desktop group profile brand lists appear once",
@@ -242,7 +242,7 @@
  {
   "name": "mobile group profile height is manageable",
   "ok": true,
-  "detail": "14063px (was 57,636px at 1440)"
+  "detail": "13965px (was 57,636px at 1440)"
  },
  {
   "name": "mobile group profile brand lists appear once",
@@ -307,7 +307,7 @@
  {
   "name": "detail page back link returns to the record in the list",
   "ok": true,
-  "detail": "/kairali-group-awards.aspx#award-77"
+  "detail": "/kairali-group-awards#award-77"
  },
  {
   "name": "mobile: filters collapsed into an accessible disclosure",
@@ -317,7 +317,7 @@
  {
   "name": "mobile awards page length manageable",
   "ok": true,
-  "detail": "18569px"
+  "detail": "18709px"
  },
  {
   "name": "news: Recent default = last 12 months, newest first",
@@ -357,7 +357,7 @@
  {
   "name": "desktop /: nothing left invisible (no-scroll capture after 1.5 s)",
   "ok": true,
-  "detail": "18 at load, 0 after failsafe"
+  "detail": "0 at load, 0 after failsafe"
  },
  {
   "name": "desktop /detail.aspx?page=ficci-travel-and-tourism-award-for-promoting-wellness-tourism: nothing left invisible (no-scroll capture after 1.5 s)",
@@ -372,7 +372,7 @@
  {
   "name": "mobile /: nothing left invisible (no-scroll capture after 1.5 s)",
   "ok": true,
-  "detail": "15 at load, 0 after failsafe"
+  "detail": "0 at load, 0 after failsafe"
  },
  {
   "name": "mobile /detail.aspx?page=ficci-travel-and-tourism-award-for-promoting-wellness-tourism: nothing left invisible (no-scroll capture after 1.5 s)",
