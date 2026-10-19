@@ -123,21 +123,21 @@ export default function Home() {
       <div className="surface-ivory"><div className="container"><Divider /></div></div>
 
       {/* The Ayurvedic Healing Village */}
-      <section className="story-full" aria-labelledby="hv-title">
-        <div className="opener-media"><Photograph k="ahv-footbridge" p={ph["ahv-footbridge"]} sizes="(max-width: 899px) 50vw, 100vw" /></div>
-        <div className="pillar-wrap"><div className="container" style={{ display: "flex", justifyContent: "flex-end" }}>
-          <div className="pillar-card reveal">
+      <section className="section healing-feature surface-ivory" aria-labelledby="hv-title">
+        <div className="container healing-feature-grid">
+          <div className="photo healing-feature-media reveal"><Photograph k="ahv-footbridge" p={ph["ahv-footbridge"]} sizes="(min-width: 900px) 58vw, 100vw" /></div>
+          <div className="pillar-card healing-feature-copy reveal">
             <span className="overline">The Ayurvedic Healing Village · Doctor-led Ayurvedic care</span>
             <h2 id="hv-title">{linkText(hvMosaic.html)}</h2>
             <Prose html={bodyOf(hvText.html)} />
             <Link className="text-link" href="/ayurvedic-healing-village">The Ayurvedic Healing Village</Link>
           </div>
-        </div></div>
+        </div>
       </section>
-      <section className="section tight" aria-label="Healing Village photographs"><div className="container grid three premium-photo-row">
-        <div className="photo reveal"><Photograph k="ahv-reception" p={ph["ahv-reception"]} sizes="(min-width: 900px) 33vw, 100vw" /></div>
-        <div className="photo reveal"><Photograph k="ahv-cottages" p={ph["ahv-cottages"]} sizes="(min-width: 900px) 33vw, 100vw" /></div>
-        <div className="photo reveal"><Photograph k="ahv-treatment-room" p={ph["ahv-treatment-room"]} sizes="(min-width: 900px) 33vw, 100vw" /></div>
+      <section className="section tight healing-gallery-section" aria-label="Healing Village photographs"><div className="container healing-gallery">
+        <div className="photo healing-gallery-main reveal"><Photograph k="ahv-reception" p={ph["ahv-reception"]} sizes="(min-width: 900px) 64vw, 100vw" /></div>
+        <div className="photo reveal"><Photograph k="ahv-cottages" p={ph["ahv-cottages"]} sizes="(min-width: 900px) 32vw, 100vw" /></div>
+        <div className="photo reveal"><Photograph k="ahv-treatment-room" p={ph["ahv-treatment-room"]} sizes="(min-width: 900px) 32vw, 100vw" /></div>
       </div></section>
 
       {/* Villa Raag — owned and operated */}
