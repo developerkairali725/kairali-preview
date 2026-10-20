@@ -200,34 +200,34 @@
   "detail": "0px"
  },
  {
-  "name": "desktop /villa-raag.aspx: desktop rail beside content, mobile toc hidden",
+  "name": "desktop /villa-raag.aspx: desktop section navigation is visible",
   "ok": true,
-  "detail": "{\"artTop\":1331,\"navTop\":1331,\"desktopRailVisible\":true,\"mobileTocVisible\":false,\"dividers\":6}"
+  "detail": "{\"mode\":\"inline\",\"artTop\":1179,\"navTop\":1009,\"desktopRailVisible\":false,\"mobileTocVisible\":false,\"inlineVisible\":true,\"dividers\":0}"
  },
  {
-  "name": "desktop /ayurveda-treatments.aspx: desktop rail beside content, mobile toc hidden",
+  "name": "desktop /ayurveda-treatments.aspx: desktop section navigation is visible",
   "ok": true,
-  "detail": "{\"artTop\":1138,\"navTop\":1138,\"desktopRailVisible\":true,\"mobileTocVisible\":false,\"dividers\":5}"
+  "detail": "{\"mode\":\"inline\",\"artTop\":1131,\"navTop\":1009,\"desktopRailVisible\":false,\"mobileTocVisible\":false,\"inlineVisible\":true,\"dividers\":0}"
  },
  {
-  "name": "desktop /ayurvedic-medicine.aspx: desktop rail beside content, mobile toc hidden",
+  "name": "desktop /ayurvedic-medicine.aspx: desktop section navigation is visible",
   "ok": true,
-  "detail": "{\"artTop\":1243,\"navTop\":1243,\"desktopRailVisible\":true,\"mobileTocVisible\":false,\"dividers\":3}"
+  "detail": "{\"mode\":\"inline\",\"artTop\":1131,\"navTop\":1009,\"desktopRailVisible\":false,\"mobileTocVisible\":false,\"inlineVisible\":true,\"dividers\":0}"
  },
  {
-  "name": "desktop /partnerships-and-investment.aspx: desktop rail beside content, mobile toc hidden",
+  "name": "desktop /partnerships-and-investment.aspx: desktop section navigation is visible",
   "ok": true,
-  "detail": "{\"artTop\":1065,\"navTop\":1065,\"desktopRailVisible\":true,\"mobileTocVisible\":false,\"dividers\":2}"
+  "detail": "{\"mode\":\"inline\",\"artTop\":1058,\"navTop\":936,\"desktopRailVisible\":false,\"mobileTocVisible\":false,\"inlineVisible\":true,\"dividers\":0}"
  },
  {
-  "name": "desktop /ayurvedic-healing-village.aspx: desktop rail beside content, mobile toc hidden",
+  "name": "desktop /ayurvedic-healing-village.aspx: desktop section navigation is visible",
   "ok": true,
-  "detail": "{\"artTop\":1548,\"navTop\":1548,\"desktopRailVisible\":true,\"mobileTocVisible\":false,\"dividers\":3}"
+  "detail": "{\"mode\":\"inline\",\"artTop\":1131,\"navTop\":1009,\"desktopRailVisible\":false,\"mobileTocVisible\":false,\"inlineVisible\":true,\"dividers\":0}"
  },
  {
-  "name": "desktop /locations.aspx: desktop rail beside content, mobile toc hidden",
+  "name": "desktop /locations.aspx: desktop section navigation is visible",
   "ok": true,
-  "detail": "{\"artTop\":1164,\"navTop\":1164,\"desktopRailVisible\":true,\"mobileTocVisible\":false,\"dividers\":2}"
+  "detail": "{\"mode\":\"inline\",\"artTop\":1058,\"navTop\":936,\"desktopRailVisible\":false,\"mobileTocVisible\":false,\"inlineVisible\":true,\"dividers\":0}"
  },
  {
   "name": "mobile /: no uppercase CSS",
@@ -432,62 +432,62 @@
  {
   "name": "mobile /villa-raag.aspx: section nav is before the content",
   "ok": true,
-  "detail": "{\"artTop\":1491,\"navTop\":1357,\"desktopRailVisible\":false,\"mobileTocVisible\":true,\"dividers\":6}"
+  "detail": "{\"mode\":\"inline\",\"artTop\":1088,\"navTop\":774,\"desktopRailVisible\":false,\"mobileTocVisible\":false,\"inlineVisible\":true,\"dividers\":0}"
  },
  {
   "name": "mobile /villa-raag.aspx: anchor target clears sticky header",
   "ok": true,
-  "detail": "{\"top\":208,\"header\":81}"
+  "detail": "{\"top\":56,\"header\":-5044}"
  },
  {
   "name": "mobile /ayurveda-treatments.aspx: section nav is before the content",
   "ok": true,
-  "detail": "{\"artTop\":1021,\"navTop\":887,\"desktopRailVisible\":false,\"mobileTocVisible\":true,\"dividers\":5}"
+  "detail": "{\"mode\":\"inline\",\"artTop\":883,\"navTop\":713,\"desktopRailVisible\":false,\"mobileTocVisible\":false,\"inlineVisible\":true,\"dividers\":0}"
  },
  {
   "name": "mobile /ayurveda-treatments.aspx: anchor target clears sticky header",
   "ok": true,
-  "detail": "{\"top\":208,\"header\":81}"
+  "detail": "{\"top\":56,\"header\":-3817}"
  },
  {
   "name": "mobile /ayurvedic-medicine.aspx: section nav is before the content",
   "ok": true,
-  "detail": "{\"artTop\":1361,\"navTop\":1227,\"desktopRailVisible\":false,\"mobileTocVisible\":true,\"dividers\":3}"
+  "detail": "{\"mode\":\"inline\",\"artTop\":883,\"navTop\":713,\"desktopRailVisible\":false,\"mobileTocVisible\":false,\"inlineVisible\":true,\"dividers\":0}"
  },
  {
   "name": "mobile /ayurvedic-medicine.aspx: anchor target clears sticky header",
   "ok": true,
-  "detail": "{\"top\":208,\"header\":81}"
+  "detail": "{\"top\":56,\"header\":-3853}"
  },
  {
   "name": "mobile /partnerships-and-investment.aspx: section nav is before the content",
   "ok": true,
-  "detail": "{\"artTop\":948,\"navTop\":814,\"desktopRailVisible\":false,\"mobileTocVisible\":true,\"dividers\":2}"
+  "detail": "{\"mode\":\"inline\",\"artTop\":810,\"navTop\":640,\"desktopRailVisible\":false,\"mobileTocVisible\":false,\"inlineVisible\":true,\"dividers\":0}"
  },
  {
   "name": "mobile /partnerships-and-investment.aspx: anchor target clears sticky header",
   "ok": true,
-  "detail": "{\"top\":208,\"header\":81}"
+  "detail": "{\"top\":56,\"header\":-3265}"
  },
  {
   "name": "mobile /ayurvedic-healing-village.aspx: section nav is before the content",
   "ok": true,
-  "detail": "{\"artTop\":1666,\"navTop\":1532,\"desktopRailVisible\":false,\"mobileTocVisible\":true,\"dividers\":3}"
+  "detail": "{\"mode\":\"inline\",\"artTop\":1165,\"navTop\":995,\"desktopRailVisible\":false,\"mobileTocVisible\":false,\"inlineVisible\":true,\"dividers\":0}"
  },
  {
   "name": "mobile /ayurvedic-healing-village.aspx: anchor target clears sticky header",
   "ok": true,
-  "detail": "{\"top\":208,\"header\":81}"
+  "detail": "{\"top\":56,\"header\":-5671}"
  },
  {
   "name": "mobile /locations.aspx: section nav is before the content",
   "ok": true,
-  "detail": "{\"artTop\":1233,\"navTop\":1099,\"desktopRailVisible\":false,\"mobileTocVisible\":true,\"dividers\":2}"
+  "detail": "{\"mode\":\"inline\",\"artTop\":981,\"navTop\":763,\"desktopRailVisible\":false,\"mobileTocVisible\":false,\"inlineVisible\":true,\"dividers\":0}"
  },
  {
   "name": "mobile /locations.aspx: anchor target clears sticky header",
   "ok": true,
-  "detail": "{\"top\":208,\"header\":81}"
+  "detail": "{\"top\":56,\"header\":-2535}"
  },
  {
   "name": "mobile-360 /: no uppercase CSS",
@@ -692,61 +692,61 @@
  {
   "name": "mobile-360 /villa-raag.aspx: section nav is before the content",
   "ok": true,
-  "detail": "{\"artTop\":1533,\"navTop\":1399,\"desktopRailVisible\":false,\"mobileTocVisible\":true,\"dividers\":6}"
+  "detail": "{\"mode\":\"inline\",\"artTop\":1136,\"navTop\":774,\"desktopRailVisible\":false,\"mobileTocVisible\":false,\"inlineVisible\":true,\"dividers\":0}"
  },
  {
   "name": "mobile-360 /villa-raag.aspx: anchor target clears sticky header",
   "ok": true,
-  "detail": "{\"top\":208,\"header\":81}"
+  "detail": "{\"top\":56,\"header\":-5269}"
  },
  {
   "name": "mobile-360 /ayurveda-treatments.aspx: section nav is before the content",
   "ok": true,
-  "detail": "{\"artTop\":1021,\"navTop\":887,\"desktopRailVisible\":false,\"mobileTocVisible\":true,\"dividers\":5}"
+  "detail": "{\"mode\":\"inline\",\"artTop\":912,\"navTop\":742,\"desktopRailVisible\":false,\"mobileTocVisible\":false,\"inlineVisible\":true,\"dividers\":0}"
  },
  {
   "name": "mobile-360 /ayurveda-treatments.aspx: anchor target clears sticky header",
   "ok": true,
-  "detail": "{\"top\":208,\"header\":81}"
+  "detail": "{\"top\":56,\"header\":-3973}"
  },
  {
   "name": "mobile-360 /ayurvedic-medicine.aspx: section nav is before the content",
   "ok": true,
-  "detail": "{\"artTop\":1381,\"navTop\":1247,\"desktopRailVisible\":false,\"mobileTocVisible\":true,\"dividers\":3}"
+  "detail": "{\"mode\":\"inline\",\"artTop\":942,\"navTop\":772,\"desktopRailVisible\":false,\"mobileTocVisible\":false,\"inlineVisible\":true,\"dividers\":0}"
  },
  {
   "name": "mobile-360 /ayurvedic-medicine.aspx: anchor target clears sticky header",
   "ok": true,
-  "detail": "{\"top\":208,\"header\":81}"
+  "detail": "{\"top\":56,\"header\":-4096}"
  },
  {
   "name": "mobile-360 /partnerships-and-investment.aspx: section nav is before the content",
   "ok": true,
-  "detail": "{\"artTop\":948,\"navTop\":814,\"desktopRailVisible\":false,\"mobileTocVisible\":true,\"dividers\":2}"
+  "detail": "{\"mode\":\"inline\",\"artTop\":810,\"navTop\":640,\"desktopRailVisible\":false,\"mobileTocVisible\":false,\"inlineVisible\":true,\"dividers\":0}"
  },
  {
   "name": "mobile-360 /partnerships-and-investment.aspx: anchor target clears sticky header",
   "ok": true,
-  "detail": "{\"top\":208,\"header\":81}"
+  "detail": "{\"top\":56,\"header\":-3379}"
  },
  {
   "name": "mobile-360 /ayurvedic-healing-village.aspx: section nav is before the content",
   "ok": true,
-  "detail": "{\"artTop\":1741,\"navTop\":1607,\"desktopRailVisible\":false,\"mobileTocVisible\":true,\"dividers\":3}"
+  "detail": "{\"mode\":\"inline\",\"artTop\":1196,\"navTop\":1026,\"desktopRailVisible\":false,\"mobileTocVisible\":false,\"inlineVisible\":true,\"dividers\":0}"
  },
  {
   "name": "mobile-360 /ayurvedic-healing-village.aspx: anchor target clears sticky header",
   "ok": true,
-  "detail": "{\"top\":208,\"header\":81}"
+  "detail": "{\"top\":56,\"header\":-5971}"
  },
  {
   "name": "mobile-360 /locations.aspx: section nav is before the content",
   "ok": true,
-  "detail": "{\"artTop\":1261,\"navTop\":1127,\"desktopRailVisible\":false,\"mobileTocVisible\":true,\"dividers\":2}"
+  "detail": "{\"mode\":\"inline\",\"artTop\":981,\"navTop\":763,\"desktopRailVisible\":false,\"mobileTocVisible\":false,\"inlineVisible\":true,\"dividers\":0}"
  },
  {
   "name": "mobile-360 /locations.aspx: anchor target clears sticky header",
   "ok": true,
-  "detail": "{\"top\":208,\"header\":81}"
+  "detail": "{\"top\":56,\"header\":-2559}"
  }
 ]

@@ -15,14 +15,14 @@
   "detail": ""
  },
  {
-  "name": "Kurale, Asap and Lato faces loaded",
+  "name": "Cormorant Garamond and Source Sans 3 faces loaded",
   "ok": true,
-  "detail": "Kurale 400, Asap 400 600, Lato 400, Lato 700, Asap Fallback normal"
+  "detail": "Cormorant Garamond 300, Cormorant Garamond 400, Cormorant Garamond 600, Source Sans 3 400, Source Sans 3 600, Cormorant Garamond Fallback normal, Source Sans 3 Fallback normal"
  },
  {
-  "name": "H1 uses Kurale",
+  "name": "H1 uses Cormorant Garamond",
   "ok": true,
-  "detail": "Kurale, \"Kurale Fallback\", Georgia, serif"
+  "detail": "\"Cormorant Garamond\", \"Cormorant Garamond Fallback\", \"Times New Roman\", serif"
  },
  {
   "name": "no synthetic bold on display face",
@@ -37,7 +37,7 @@
  {
   "name": "home LCP ≤ 2500 ms (lab, local, unthrottled)",
   "ok": true,
-  "detail": "1156 ms"
+  "detail": "788 ms"
  },
  {
   "name": "first Tab reaches skip link",
@@ -77,7 +77,7 @@
  {
   "name": "touch targets ≥ 44px (buttons)",
   "ok": true,
-  "detail": "min 48px"
+  "detail": "min 44px"
  },
  {
   "name": "/contact-us.aspx: all form controls inactive",
@@ -222,7 +222,7 @@
  {
   "name": "content renders without JavaScript (SSR/SSG)",
   "ok": true,
-  "detail": "4838 chars"
+  "detail": "4810 chars"
  },
  {
   "name": "reflow at 320px: no horizontal page scroll",
