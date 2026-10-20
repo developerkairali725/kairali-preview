@@ -48,7 +48,7 @@ Scope: homepage and shared header/footer/consent UI on `codex/kairali-premium-cl
 - Removed unsupported medical language from the shortened founder presentation while retaining the documented Ayurveda-and-hospitality purpose.
 - Rebuilt the Photo Library landing as three responsive collection cards and removed the source’s blank olive placeholder asset.
 - Rebuilt all three linked photo collections as responsive editorial grids. Source photography and captions remain; outdated promotional paragraphs and unsupported treatment claims are not promoted.
-- Corrected the Group Profile visible heading and unique metadata title, and added a unique description for blog pagination.
+- Corrected the Group Profile visible heading and distinct metadata title, and added a page-specific description for blog pagination.
 - Made award/news browsing deterministic in server HTML: all records remain crawlable, while only the applicable first 12 are visible before and after hydration.
 - Stabilised search facet availability until the index is loaded and made award-detail back links reveal their exact record after clean-route navigation.
 - Removed remaining forced-uppercase CSS from the homepage and leadership roles in line with the owner feedback gate.
