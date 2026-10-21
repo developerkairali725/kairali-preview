@@ -15,6 +15,7 @@ const UNDATED = "Date not stated";
 export default function Browse({ items, facets, pageSize = 12, label, recentSince, withImages = true, idPrefix }: {
   items: BrowseItem[]; facets: Facet[]; pageSize?: number; label: string; recentSince?: string; withImages?: boolean; idPrefix: string;
 }) {
+  const [mounted, setMounted] = useState(false);
   const [q, setQ] = useState("");
   const [sel, setSel] = useState<Record<string, string>>({});
   const [year, setYear] = useState("");
@@ -24,27 +25,18 @@ export default function Browse({ items, facets, pageSize = 12, label, recentSinc
   const [panelOpen, setPanelOpen] = useState(true);
 
   useEffect(() => {
+    setMounted(true);
     setPanelOpen(window.matchMedia("(min-width: 900px)").matches);
     // Back-navigation from a detail page: /…#<item-id> reveals and scrolls to that item.
-    const revealHash = () => {
-      const id = decodeURIComponent(window.location.hash.slice(1));
-      if (!id) return;
+    const id = decodeURIComponent(window.location.hash.slice(1));
+    if (id) {
       const idx = sorted(items, "new").findIndex((x) => x.id === id);
       if (idx >= 0) {
         setScope("all");
         setShown(Math.max(pageSize, Math.ceil((idx + 1) / pageSize) * pageSize));
-        setTimeout(() => document.getElementById(id)?.scrollIntoView({ block: "center" }), 0);
+        requestAnimationFrame(() => document.getElementById(id)?.scrollIntoView({ block: "center" }));
       }
-    };
-    revealHash();
-    const retry = window.setTimeout(revealHash, 150);
-    window.addEventListener("hashchange", revealHash);
-    window.addEventListener("popstate", revealHash);
-    return () => {
-      window.clearTimeout(retry);
-      window.removeEventListener("hashchange", revealHash);
-      window.removeEventListener("popstate", revealHash);
-    };
+    }
   }, [items, pageSize]);
 
   const years = useMemo(() => {
@@ -63,7 +55,7 @@ export default function Browse({ items, facets, pageSize = 12, label, recentSinc
   // Paging resets only when the visitor changes a filter (not on mount or hash-based back navigation).
   const change = <T,>(set: (v: T) => void) => (v: T) => { set(v); setShown(pageSize); };
   const visible = new Set(filtered.slice(0, shown).map((i) => i.id));
-  const list = sorted(items, order);
+  const list = mounted ? sorted(items, order) : items;
   const active = !!(q || year || Object.values(sel).some(Boolean));
   const reset = () => { setQ(""); setSel({}); setYear(""); setShown(pageSize); };
 
@@ -86,14 +78,14 @@ export default function Browse({ items, facets, pageSize = 12, label, recentSinc
         </form>
       </details>
       <p role="status" className="meta" style={{ fontSize: 15 }}>
-        Showing {Math.min(shown, filtered.length)} of {filtered.length} {filtered.length === 1 ? "item" : "items"}{scope === "recent" && recentSince ? " from the last 12 months" : ""}
+        {mounted ? <>Showing {Math.min(shown, filtered.length)} of {filtered.length} {filtered.length === 1 ? "item" : "items"}{scope === "recent" && recentSince ? " from the last 12 months" : ""}</> : <>{items.length} items</>}
         {active && <> · <button type="button" className="link-btn" onClick={reset}>Clear filters</button></>}
       </p>
-      {filtered.length === 0 && (
+      {mounted && filtered.length === 0 && (
         <div className="notice" role="note"><strong>Nothing matches these filters.</strong> Try another year or keyword, or <button type="button" className="link-btn" onClick={() => { reset(); setScope("all"); }}>show everything</button>.</div>)}
       <ol className="browse-list">
         {list.map((i) => (
-          <li key={i.id} id={i.id} hidden={!visible.has(i.id)} className="browse-item">
+          <li key={i.id} id={i.id} hidden={mounted && !visible.has(i.id)} className="browse-item">
             {withImages && i.image && (
               <div className="browse-thumb" aria-hidden="true"><img src={i.image.src} width={i.image.w} height={i.image.h} alt="" loading="lazy" decoding="async" /></div>)}
             <div className="stack" style={{ gap: 6 }}>
@@ -104,7 +96,7 @@ export default function Browse({ items, facets, pageSize = 12, label, recentSinc
             </div>
           </li>))}
       </ol>
-      {shown < filtered.length && (
+      {mounted && shown < filtered.length && (
         <div><button type="button" className="btn secondary" onClick={() => setShown(shown + pageSize)}>Show {Math.min(pageSize, filtered.length - shown)} more <span className="sr-only">{label.toLowerCase()}</span> ({filtered.length - shown} remaining)</button></div>)}
     </div>
   );

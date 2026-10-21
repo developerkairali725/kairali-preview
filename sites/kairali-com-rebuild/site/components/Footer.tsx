@@ -1,24 +1,21 @@
 import Link from "next/link";
-import { FOOTER_COLUMNS, LEGAL_LINKS, PHONE, SUB_BRANDS, TAGLINE } from "@/lib/site";
+import { FOOTER_COLUMNS, LEGAL_LINKS, PHONE, SUB_BRANDS } from "@/lib/site";
 import { SocialLinks } from "@kairali/social";
-import { Mandala, Orn } from "./Ornament";
+import { Canopy } from "./Motif";
 import Form from "./Form";
 import { NEWSLETTER } from "@/lib/forms";
 
-// Premium v4 footer: charcoal-deep ground, inverted logo, gold column headings, ornament divider,
-// faint mandala line-art. Columns, links and the newsletter block are unchanged from Premium v3.
 export default function Footer() {
   return (
     <footer className="site-footer">
-      <Mandala />
+      <Canopy style={{ left: -140, bottom: -120, width: 720 }} />
       <div className="container footer-top">
-        <div className="stack" style={{ gap: 18 }}>
-          <Link href="/" className="footer-brand" aria-label="Kairali Ayurvedic Group — home"><img src="/brand/kairali-logo-white.svg" alt="Kairali — health through ayurveda, since 1908" width={105} height={92} /></Link>
-          <span className="footer-tag">{TAGLINE}</span>
+        <div className="stack" style={{ gap: 20 }}>
+          <Link href="/" className="footer-brand" aria-label="Kairali Ayurvedic Group — home"><img src="/brand/kairali-logo-white.svg" alt="Kairali — health through ayurveda, since 1908" width={109} height={96} /></Link>
           <p>Corporate Office: Kairali Ayurvedic Group, D - 130, Block D, Ambedkar Colony, Mehrauli, New Delhi - 110030.</p>
           <p>Ph: <a href={PHONE.href}>{PHONE.label}</a> · Email: <a href="mailto:info@kairali.com">info@kairali.com</a></p>
           <div className="newsletter">
-            <h2 className="overline on-dark">Subscribe to our Newsletter</h2>
+            <h2 className="overline on-dark" style={{ fontFamily: "var(--font-body)" }}>Subscribe to our Newsletter</h2>
             <p style={{ fontSize: 14 }}>Subscribe to Receive Latest News and Updates.</p>
             <Form schema={NEWSLETTER} compact formName="Newsletter subscription" />
           </div>
@@ -38,7 +35,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      <div className="container footer-orn"><Orn /></div>
       <div className="container footer-bottom">
         <p>© Kairali Ayurvedic Group · A family tradition since 1908.</p>
         <ul>{LEGAL_LINKS.map((l) => <li key={l.href}><Link href={l.href} prefetch={false}>{l.label}</Link></li>)}</ul>

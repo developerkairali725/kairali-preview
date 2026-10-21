@@ -17,17 +17,16 @@ export const metadata: Metadata = {
   formatDetection: { telephone: false },
   verification: MEASUREMENT.googleSiteVerification ? { google: MEASUREMENT.googleSiteVerification } : undefined,
 };
-// Serialized browser metadata requires a literal; matches the Premium v4 charcoal token (no green in the UI). brand-allow: rogue-hex
-export const viewport: Viewport = { themeColor: "#1A1915", width: "device-width", initialScale: 1 }; // brand-allow: rogue-hex
+// Serialized browser metadata requires a literal; matches the approved forest token. brand-allow: rogue-hex
+export const viewport: Viewport = { themeColor: "#006038", width: "device-width", initialScale: 1 }; // brand-allow: rogue-hex
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
         <ConsentScripts />
-        <link rel="preload" href="/fonts/cormorant-garamond-latin-300-normal.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/cormorant-garamond-latin-400-normal.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-        <link rel="preload" href="/fonts/source-sans-3-latin-400-normal.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/kurale-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/asap-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
       <body>
         <a className="skip" href="#main">Skip to content</a>

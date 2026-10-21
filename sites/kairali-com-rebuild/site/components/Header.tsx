@@ -2,12 +2,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import { NAV, PHONE, TAGLINE } from "@/lib/site";
+import { NAV, PHONE } from "@/lib/site";
 
-const Chev = () => (<svg className="chev" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5l3 3 3-3" fill="none" stroke="currentColor" strokeWidth="1.3" /></svg>);
+const Chev = () => (<svg className="chev" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" strokeWidth="1.6" /></svg>);
 
-// Premium v4 header: charcoal utility strip → ivory masthead (search · centred logo · Enquire) → hairlined
-// primary-nav row. Links, groups and the mega-menu / drawer behaviour are unchanged from Premium v3.
 export default function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState<number | null>(null);
@@ -41,35 +39,19 @@ export default function Header() {
 
   return (
     <>
-      <div className="util">
+      <div className="topbar">
         <div className="container">
-          <span className="util-tag">{TAGLINE}</span>
-          <span className="util-links">
-            <a href={PHONE.href}>Call us: {PHONE.label}</a>
-            <Link href="/get-in-touch">Get in touch</Link>
-            <Link href="/onlineconsultation">Online consultation</Link>
-            <Link href="/careers">Careers</Link>
-          </span>
+          <span>Call us: <a href={PHONE.href}>{PHONE.label}</a></span>
+          <Link href="/get-in-touch">Get in touch</Link>
+          <Link href="/onlineconsultation" className="hide-sm">Online consultation</Link>
+          <Link href="/careers" className="hide-sm">Careers</Link>
         </div>
       </div>
       <header className="site-header">
-        <div className="container masthead">
-          <div className="masthead-tools">
-            <button ref={toggleRef} className="icon-btn menu-toggle" aria-expanded={drawer} aria-controls="drawer" onClick={() => setDrawer(true)} aria-label="Open menu">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
-            </button>
-            <Link href="/search" className="icon-btn search-btn" aria-label="Search the site">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" strokeWidth="1.6" /><path d="M20 20l-3.5-3.5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
-            </Link>
-          </div>
+        <div className="container header-row">
           <Link href="/" className="brand" aria-label="Kairali Ayurvedic Group — home">
-            <img src="/brand/kairali-logo.svg" alt="Kairali — health through ayurveda, since 1908" width={96} height={84} />
+            <img src="/brand/kairali-logo.svg" alt="Kairali — health through ayurveda, since 1908" width={82} height={72} />
           </Link>
-          <div className="masthead-cta">
-            <Link href="/enquiry-form" className="btn header-cta">Enquire now</Link>
-          </div>
-        </div>
-        <div className="container navrow">
           <nav className="primary-nav" aria-label="Main" ref={navRef}>
             <ul>
               {NAV.map((g, i) => (
@@ -92,6 +74,15 @@ export default function Header() {
                 </li>))}
             </ul>
           </nav>
+          <div className="header-tools">
+            <Link href="/search" className="icon-btn" aria-label="Search the site">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" strokeWidth="2" /><path d="M20 20l-4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
+            </Link>
+            <Link href="/enquiry-form" className="btn header-cta">Enquire now</Link>
+            <button ref={toggleRef} className="icon-btn menu-toggle" aria-expanded={drawer} aria-controls="drawer" onClick={() => setDrawer(true)} aria-label="Open menu">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
+            </button>
+          </div>
         </div>
       </header>
       <div className={`drawer${drawer ? " open" : ""}`} id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden={!drawer}
@@ -100,10 +91,9 @@ export default function Header() {
           <div className="drawer-head">
             <img src="/brand/kairali-logo.svg" alt="" width={73} height={64} />
             <button ref={closeRef} className="icon-btn" onClick={() => { setDrawer(false); toggleRef.current?.focus(); }} aria-label="Close menu">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" /></svg>
             </button>
           </div>
-          <div className="drawer-search"><Link href="/search" className="text-link">Search the site</Link></div>
           <nav aria-label="Main (mobile)">
             {NAV.map((g) => (
               <details key={g.label} open={g.links.some((l) => l.href === pathname)}>
@@ -115,8 +105,6 @@ export default function Header() {
             <Link href="/enquiry-form" className="btn">Enquire now</Link>
             <Link href="/onlineconsultation" className="btn secondary">Free online consultation</Link>
             <a href={PHONE.href} className="btn secondary">Call {PHONE.label}</a>
-            <Link href="/get-in-touch" className="btn secondary">Get in touch</Link>
-            <Link href="/careers" className="btn secondary">Careers</Link>
           </div>
         </div>
       </div>

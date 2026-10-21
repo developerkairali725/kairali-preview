@@ -55,7 +55,6 @@ export function absolute(route: string): string {
 
 /** Visible title for a page: source banner H1, else captured H1, else mapping title. */
 export function pageHeading(p: Page): string {
-  if (p.route.split("?")[0] === "/kairali-group-profile.aspx") return "Kairali Ayurvedic Group";
   return p.banner?.h1 || p.sourceH1 || p.mapTitle || p.title;
 }
 

@@ -12,11 +12,7 @@ type Params = { params: Promise<{ n: string }> };
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { n } = await params;
   const p = getPage(`/kairali-blog.aspx?page=${n}`);
-  return p ? pageMetadata(p, {
-    route: `/kairali-blog/page/${n}`,
-    title: `Kairali Blog – Page ${n} | Kairali Ayurvedic Group`,
-    description: `Browse page ${n} of the Kairali Blog archive, including company news, Ayurveda articles, awards and group updates.`,
-  }) : {};
+  return p ? pageMetadata(p, { route: `/kairali-blog/page/${n}`, title: `Kairali Blog – Page ${n} | Kairali Ayurvedic Group` }) : {};
 }
 export default async function Page({ params }: Params) {
   const { n } = await params;

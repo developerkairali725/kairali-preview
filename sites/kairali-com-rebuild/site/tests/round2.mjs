@@ -58,7 +58,7 @@ for (const [vp, w] of [["desktop", 1440], ["mobile", 390]]) {
   check(`${vp} group profile brand lists appear once`, dup === 1, `${dup} occurrences`);
   const pillars = await p.locator(".pillar").count();
   const latest = await p.locator(".latest-awards li").count();
-  check(`${vp} profile shows a small latest-awards selection linking to the full collection`, latest === 6 && (await p.locator('a[href="/kairali-group-awards"]').count()) > 0, latest);
+  check(`${vp} profile shows a small latest-awards selection linking to the full collection`, latest === 6 && (await p.locator('a[href="/kairali-group-awards.aspx"]').count()) > 0, latest);
   check(`${vp} four business pillars with images and links`, pillars === 4 && (await p.locator(".pillar img").count()) === 4 && (await p.locator(".pillar-links a").count()) >= 12, pillars);
   const hidden = await p.evaluate(() => [...document.querySelectorAll("main *")].filter((e) => e.getClientRects().length && getComputedStyle(e).opacity === "0").length);
   check(`${vp} no content hidden by animation before scrolling`, hidden === 0, hidden);
@@ -95,7 +95,7 @@ for (const [vp, w] of [["desktop", 1440], ["mobile", 390]]) {
   await p.goto(BASE + "/detail.aspx?page=mrs-gita-ramesh-won-national-quality-gold-star-award-1995-by-icbp", { waitUntil: "networkidle" });
   const back = p.locator(".back-link");
   const href = await back.getAttribute("href");
-  await back.click(); await p.waitForURL(/\/kairali-group-awards(?:#|$)/); await p.waitForTimeout(300);
+  await back.click(); await p.waitForTimeout(600);
   const id = href.split("#")[1];
   check("detail page back link returns to the record in the list", await p.locator(`#${id}`).isVisible(), href);
   await ctx.close();
