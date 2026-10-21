@@ -53,7 +53,7 @@ export default function Home() {
               height="1467"
               alt="Lawns and a lily pond at Kairali – The Ayurvedic Healing Village, Palakkad"
               loading="eager"
-              decoding="auto"
+              decoding="sync"
               fetchPriority="high"
             />
           </picture>

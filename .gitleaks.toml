@@ -237,6 +237,28 @@ id = "generic-api-key"
     regexes = ['''^ahv-paid-attribution-v1$''']
     paths = ['''^sites/ayurvedichealingvillage\.com/test/train-j3-20261015\.test\.mjs$''']
 
+    # Inspected 2026-10-20 with pinned gitleaks 8.30.1: historical commit
+    # 0fdebf789 consent-option-d-20261016.test.mjs:25 uses a fixed synthetic
+    # UUID as a mocked consent-receipt token. It is test data, never an
+    # authentication credential. Match only the extracted value AND exact
+    # test path; a different value in the same file remains detectable.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexTarget = "secret"
+    regexes = ['''^0b5a2c1e\-7d3f\-4a8b\-9c6d\-2e1f3a4b5c6d$''']
+    paths = ['''^sites/ayurvedichealingvillage\.com/test/consent-option-d-20261016\.test\.mjs$''']
+
+    # Inspected 2026-10-20 with pinned gitleaks 8.30.1: historical commit
+    # 644904052 thankyou-locale-chrome-20261016.test.mjs:17 reuses the fixed
+    # synthetic request UUID already documented above. The transport and
+    # storage are mocked. Extend the same exact-value exception to this exact
+    # test path without suppressing any other finding.
+    [[rules.allowlists]]
+    condition = "AND"
+    regexTarget = "secret"
+    regexes = ['''^545404ff\-a177\-4f93\-b5ab\-10b90ee90d58$''']
+    paths = ['''^sites/ayurvedichealingvillage\.com/test/thankyou-locale-chrome-20261016\.test\.mjs$''']
+
 # N12 inspected 2026-10-11: historical c23200f03 test lines 112–113
 # are SHA-256 fingerprints of the released 807c535e3 consultant-course
 # desktop/mobile JSON bytes, recomputed exactly. No authentication use.
