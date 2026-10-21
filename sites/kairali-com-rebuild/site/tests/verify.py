@@ -51,6 +51,7 @@ for r in mapping["routes"]:
         continue
     if rt == "/default.aspx": expect.append((rt, 301, "/", "mapped"))
     elif rt.startswith("/namastedwaar"): expect.append((rt, 301, "/our-partner-resorts", "mapped"))
+    elif rt.endswith(".aspx"): expect.append((rt, 301, rt[:-5], "mapped"))
     else: expect.append((rt, 200, None, "mapped"))
 for o in mapping["observations_not_in_215"]:
     rt, tri = o["route"], o["triage"]

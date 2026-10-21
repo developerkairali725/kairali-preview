@@ -983,3 +983,6 @@ input.date-control { -webkit-appearance: none; appearance: none; border-radius: 
   .heritage-grid strong { font-size: 2rem; }
   .frame::after { transform: translate(12px, 12px); }
 }
+
+/* Suppress Chatbase stacked promotional message bubbles sitewide (Abhilash ruling D-20261019-01 / MID-20293) */
+#chatbase-message-bubbles { display: none !important; }
