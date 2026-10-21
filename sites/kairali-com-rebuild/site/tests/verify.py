@@ -50,7 +50,7 @@ for r in mapping["routes"]:
     if r["classification"] == "Document":
         continue
     if rt == "/default.aspx": expect.append((rt, 301, "/", "mapped"))
-    elif rt.startswith("/namastedwaar"): expect.append((rt, 301, "/our-partner-resorts.aspx", "mapped"))
+    elif rt.startswith("/namastedwaar"): expect.append((rt, 301, "/our-partner-resorts", "mapped"))
     else: expect.append((rt, 200, None, "mapped"))
 for o in mapping["observations_not_in_215"]:
     rt, tri = o["route"], o["triage"]
@@ -58,7 +58,7 @@ for o in mapping["observations_not_in_215"]:
     elif rt in ("/kairali-blog.aspx?page=1", "/apply-now.aspx?id=999", "/search-results.aspx", "/search-results.aspx?q=ayurveda"): expect.append((rt, 200, None, "observation"))
     elif rt == "/sitemap.xml": expect.append((rt, 200, None, "observation"))
     else: expect.append((rt, 404, None, "observation"))
-expect += [("/Default.aspx", 301, "/", "case"), ("/ABOUT-US.aspx", 301, "/about-us.aspx", "case"), ("/kairali-blog.aspx?page=3", 404, None, "pagination-out-of-range"),
+expect += [("/Default.aspx", 301, "/", "case"), ("/ABOUT-US.aspx", 301, "/about-us", "case"), ("/kairali-blog.aspx?page=3", 404, None, "pagination-out-of-range"),
            ("/x/award/abc", 404, None, "internal-guard"), ("/robots.txt", 200, None, "utility")]
 
 pages_html = {}
@@ -67,12 +67,20 @@ def check_route(item):
     st, hd, body = get(enc(rt))
     ok = st == want
     location = hd.get("Location") or hd.get("location") or ""
+    followed_body = body if st == 200 else None
+    # Public URLs are extensionless. A legacy route that used to render directly is accepted only
+    # when it performs one permanent redirect to an extensionless 200 target.
+    clean_redirect = want == 200 and st in (301, 308) and location and ".aspx" not in urlsplit(location).path.lower()
+    if clean_redirect:
+        target = urlsplit(location).path + (("?" + urlsplit(location).query) if urlsplit(location).query else "")
+        st2, _, followed_body = get(target)
+        ok = st2 == 200
     if ok and loc:
         ok = urlsplit(location).path == loc
         if ok:  # single hop: the target itself must be 200
             st2, _, _ = get(urlsplit(location).path, body=False)
             ok = st2 == 200
-    return {"route": rt, "origin": origin, "status": st, "expected": want, "location": location, "ok": ok}, (rt, body if st == 200 else None)
+    return {"route": rt, "origin": origin, "status": st, "expected": want, "location": location, "clean_redirect": bool(clean_redirect), "ok": ok}, (rt, followed_body)
 
 with cf.ThreadPoolExecutor(8) as ex:
     for res, (rt, body) in ex.map(check_route, expect):
@@ -213,7 +221,12 @@ for r in results["seo"]:
     if "Organization" not in r["jsonld"]: fail("seo-no-organization", rt)
     if "noindex" not in (r["robots"] or ""): fail("seo-local-not-noindex", rt)
     if utility: continue
-    exp = PROD + ("/" if rt == "/" else rt)
+    route_check = next((x for x in results["routes"] if x["route"] == rt), None)
+    public_rt = rt
+    if route_check and route_check.get("clean_redirect") and route_check.get("location"):
+        parsed_location = urlsplit(route_check["location"])
+        public_rt = parsed_location.path + (("?" + parsed_location.query) if parsed_location.query else "")
+    exp = PROD + ("/" if public_rt == "/" else public_rt)
     if rt == "/" and r["canonical"] == PROD: exp = PROD  # live canonical form, no trailing slash
     if rt.endswith("congress="): continue  # alias of the sitemap URL; canonicalises to it
     if r["canonical"] != exp and r["route"] != "/kairali-blog.aspx?page=1": fail("seo-canonical", {"route": rt, "canonical": r["canonical"], "expected": exp})

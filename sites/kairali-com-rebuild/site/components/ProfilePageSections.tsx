@@ -1,105 +1,85 @@
-// Group Profile layout. Every word, name, role and image below is read from the page's own source sections
-// (content/pages.json), never retyped: this component only decides WHERE each source block sits.
-// Source order of the Management Team section: four <li><img> portraits (alt = person), then repeating
-// <p>name</p><p>role</p><p>biography</p> triples in the same order. If the source shape ever changes,
-// parseProfile returns null and the caller falls back to the generic prose rendering.
+import Link from "next/link";
 
-type Img = { src: string; alt: string; width: string; height: string };
-type Leader = { name: string; role: string; bio: string; img: Img };
+const LEADERS = [
+  {
+    name: "K.V. Ramesh",
+    role: "Chairman & Managing Director",
+    image: "/media/images/12ramesh.webp",
+    bio: "The co-founder of Kairali Ayurvedic Group, K.V. Ramesh brings four decades of experience in Ayurveda. His connection with the tradition began as a teenager, assisting his father, Dr. K.S.V. Vasudevan, before he and Gita Ramesh established Kairali’s first centre in South Delhi. He also brings senior management experience from leading a multinational consortium.",
+  },
+  {
+    name: "Gita Ramesh",
+    role: "Managing Director",
+    image: "/media/images/10gita.webp",
+    bio: "A co-founder and the heart of the group since its inception, Gita Ramesh is a recognised Ayurvedic chef, author and scholar. Her work has helped shape the group’s standards of Ayurvedic knowledge, hospitality and guest care. She received the Safari India National Tourism Award for Best Woman Entrepreneur for Promoting Wellness in 2010.",
+  },
+  {
+    name: "Abhilash K.R.",
+    role: "Director",
+    image: "/media/images/8abhilash.webp",
+    bio: "Representing the fourth generation of the family, Abhilash K.R. has contributed to Kairali’s international growth and marketing. His lifelong exposure to the family’s Ayurvedic enterprise, paired with global business experience, supports the group’s relationships across the international wellness sector.",
+  },
+  {
+    name: "Abishek K.R.",
+    role: "Director",
+    image: "/media/images/abishek.webp",
+    bio: "Abishek K.R. leads operational development and new business set-ups across Kairali’s pharmaceutical, training and centre network. His experience includes the concept, planning and delivery of Ayurvedic spas and treatment centres in India and overseas, with a focus on operations, service standards, brand consistency and corporate strategy.",
+  },
+] as const;
 
-const text = (h: string) => h.replace(/<[^>]+>/g, " ").replace(/&amp;/g, "&").replace(/\s+/g, " ").trim();
-const paras = (h: string) => [...h.matchAll(/<p>([\s\S]*?)<\/p>/g)].map((m) => m[1].trim());
-const attr = (tag: string, name: string) => tag.match(new RegExp(`${name}="([^"]*)"`))?.[1] ?? "";
-const imgs = (h: string): Img[] => [...h.matchAll(/<img\b[^>]*>/g)].map((m) => ({ src: attr(m[0], "src"), alt: attr(m[0], "alt"), width: attr(m[0], "width"), height: attr(m[0], "height") }));
-
-export function parseProfile(sections: string[]) {
-  const find = (needle: string) => sections.find((s) => text(s).includes(needle));
-  const history = find("Key Milestones");
-  const founder = find("Founder’s Message");
-  const team = find("Management Team");
-  const purpose = sections.find((s) => /<strong>Mission:<\/strong>/.test(s) && /<strong>Vision:<\/strong>/.test(s));
-  if (!history || !founder || !team || !purpose) return null;
-
-  const hp = paras(history);
-  const fp = paras(founder);
-  const tp = paras(team);
-  const [portraitHtml, rest = ""] = team.split("</ol>");
-  const portraits = imgs(portraitHtml);
-  const after = paras(rest);
-  if (portraits.length < 1 || after.length !== portraits.length * 3) return null;
-  const leaders: Leader[] = portraits.map((img, i) => ({ img, name: after[i * 3], role: after[i * 3 + 1], bio: after[i * 3 + 2] }));
-  // Each portrait's alt text must match the name that follows it; otherwise refuse to guess ownership.
-  const key = (s: string) => text(s).toLowerCase().replace(/[^a-z]/g, "");
-  // The source spells one director two ways (alt "Abhishek", name "Abishek"), so the image file name is accepted as a second witness.
-  const stem = (src: string) => key((src.split("/").pop() || "").replace(/\.\w+$/, "").replace(/\d+/g, ""));
-  const aligned = leaders.every((l) => {
-    const a = key(l.img.alt).slice(0, 4), n = key(l.name).slice(0, 4), f = stem(l.img.src).slice(0, 4);
-    return a === n || key(l.name).includes(a) || key(l.img.alt).includes(n) || (f.length === 4 && key(l.name).includes(f));
-  });
-  if (!aligned) return null;
-
-  const purposeItems = [...purpose.matchAll(/<p><strong>(Mission|Vision):<\/strong>([\s\S]*?)<\/p>\s*(<img\b[^>]*>)/g)].map((m) => ({ label: m[1], body: m[2].trim(), img: imgs(m[3])[0] }));
-  if (purposeItems.length !== 2 || hp.length < 2 || fp.length < 3 || tp.length < 2) return null;
-  const portrait = imgs(founder)[0];
-  if (!portrait) return null;
-
-  return {
-    history: { label: text(hp[0]), intro: hp[1], images: imgs(history) },
-    founder: { label: text(fp[0]), portrait, quote: fp.slice(1, -1), attribution: fp[fp.length - 1] },
-    team: { label: text(tp[0]), intro: tp[1], leaders },
-    purpose: purposeItems,
-  };
-}
-
-export default function ProfilePageSections({ sections }: { sections: string[] }) {
-  const d = parseProfile(sections);
-  if (!d) return null;
-  const { history, founder, team, purpose } = d;
+export default function ProfilePageSections() {
   return (
     <div className="profile-story">
-      <section className="profile-history" aria-labelledby="key-milestones">
+      <section className="profile-history" aria-labelledby="history">
         <div className="profile-section-head">
-          <h2 id="key-milestones">{history.label}</h2>
-          <p className="lede" dangerouslySetInnerHTML={{ __html: history.intro }} />
+          <span className="overline">Four generations of Ayurveda</span>
+          <h2 id="history">A family tradition, built across generations</h2>
+          <p className="lede">Kairali Ayurvedic Group’s directors represent the third and fourth generations of a family of Ayurvedic practitioners. Their complementary experience in care, hospitality, education and enterprise has shaped the group’s international journey.</p>
         </div>
         <div className="profile-history-visuals">
-          {history.images.map((im, i) => (
-            <figure key={im.src} className={i === 0 ? "profile-history-main photo" : "profile-history-timeline"}>
-              <img src={im.src} width={im.width} height={im.height} alt={im.alt} loading="lazy" decoding="async" />
-            </figure>
-          ))}
+          <figure className="profile-history-main photo">
+            <img src="/media/pic/history.webp" width="1000" height="460" alt="Kairali Ayurvedic Group history" loading="lazy" decoding="async" />
+          </figure>
+          <figure className="profile-history-timeline">
+            <img src="/media/pic/yeardetailimage.webp" width="321" height="954" alt="Milestones in Kairali Ayurvedic Group history" loading="lazy" decoding="async" />
+          </figure>
         </div>
       </section>
 
       <section className="profile-founder" aria-labelledby="founder-message">
         <figure className="profile-founder-portrait">
-          <img src={founder.portrait.src} width={founder.portrait.width} height={founder.portrait.height} alt={founder.portrait.alt} loading="lazy" decoding="async" />
+          <img src="/media/pic/director-md-profile.webp" width="327" height="464" alt="K.V. Ramesh and Gita Ramesh, co-founders of Kairali Ayurvedic Group" loading="lazy" decoding="async" />
+          <figcaption><strong>K.V. Ramesh and Gita Ramesh</strong><span>Co-founders, Kairali Ayurvedic Group</span></figcaption>
         </figure>
         <div className="profile-founder-copy">
-          <h2 id="founder-message">{founder.label}</h2>
+          <span className="overline">From the founder</span>
+          <h2 id="founder-message">Ayurveda and hospitality, held to one standard</h2>
           <blockquote>
-            {founder.quote.map((q, i) => <p key={i} dangerouslySetInnerHTML={{ __html: q }} />)}
+            <p>“In 1989, my wife and I set out to share what our forefathers had known for generations: that authentic Ayurvedic care, thoughtful hospitality and a peaceful natural setting belong together.</p>
+            <p>Our purpose was to make this tradition better understood and accessible across economic classes. The care we provide as hosts is as important as the Ayurvedic programmes and facilities at our destinations. That belief continues to guide how we operate our centres, welcome our guests and raise our standards.</p>
+            <p>Our mission is, and will always be, to set a benchmark for Ayurveda and hospitality.”</p>
           </blockquote>
-          <p className="profile-signature" dangerouslySetInnerHTML={{ __html: founder.attribution }} />
+          <p className="profile-signature"><strong>K.V. Ramesh</strong><span>Chairman &amp; Managing Director</span></p>
         </div>
       </section>
 
       <section className="profile-leadership" aria-labelledby="management-team">
         <div className="profile-section-head">
-          <h2 id="management-team">{team.label}</h2>
-          <p dangerouslySetInnerHTML={{ __html: team.intro }} />
+          <span className="overline">Leadership</span>
+          <h2 id="management-team">The people guiding Kairali</h2>
+          <p>Kairali’s leadership combines inherited Ayurvedic knowledge with experience in hospitality, operations, education and international business.</p>
         </div>
         <div className="profile-leader-list">
-          {team.leaders.map((leader, index) => (
+          {LEADERS.map((leader, index) => (
             <article className="profile-leader" key={leader.name}>
               <div className="profile-leader-photo">
-                <img src={leader.img.src} width={leader.img.width} height={leader.img.height} alt={leader.img.alt} loading="lazy" decoding="async" />
+                <img src={leader.image} width="400" height="400" alt={leader.name} loading="lazy" decoding="async" />
               </div>
               <div className="profile-leader-copy">
                 <span className="profile-leader-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
-                <h3 dangerouslySetInnerHTML={{ __html: leader.name }} />
-                <p className="profile-role" dangerouslySetInnerHTML={{ __html: leader.role }} />
-                <p dangerouslySetInnerHTML={{ __html: leader.bio }} />
+                <h3>{leader.name}</h3>
+                <p className="profile-role">{leader.role}</p>
+                <p>{leader.bio}</p>
               </div>
             </article>
           ))}
@@ -108,16 +88,20 @@ export default function ProfilePageSections({ sections }: { sections: string[] }
 
       <section className="profile-purpose" aria-labelledby="mission-vision">
         <div className="profile-section-head">
-          <h2 id="mission-vision">Mission &amp; vision</h2>
+          <span className="overline">Purpose</span>
+          <h2 id="mission-vision">Mission and vision</h2>
         </div>
         <div className="profile-purpose-grid">
-          {purpose.map((p) => (
-            <article className="profile-purpose-card" key={p.label}>
-              <img src={p.img.src} width={p.img.width} height={p.img.height} alt={p.img.alt} loading="lazy" decoding="async" />
-              <div><h3>{p.label}</h3><p dangerouslySetInnerHTML={{ __html: p.body }} /></div>
-            </article>
-          ))}
+          <article className="profile-purpose-card">
+            <img src="/media/pic/mission-kairali.webp" width="481" height="277" alt="Kairali mission" loading="lazy" decoding="async" />
+            <div><span className="overline">Our mission</span><h3>Wellbeing in balance</h3><p>Kairali encourages a comprehensive approach to health that understands each person as a complex combination of elements capable of being brought into harmony. The group is committed to enhancing wellbeing for individuals, the environment and the wider community.</p></div>
+          </article>
+          <article className="profile-purpose-card">
+            <img src="/media/pic/vision-kairali.webp" width="481" height="277" alt="Kairali vision" loading="lazy" decoding="async" />
+            <div><span className="overline">Our vision</span><h3>Ayurveda shared responsibly</h3><p>Kairali aims to advance Ayurvedic practice through an international community of doctors, therapists, educators, hoteliers and retreat providers, helping more people make informed choices about their wellbeing.</p></div>
+          </article>
         </div>
+        <p className="profile-centres-link"><Link className="text-link" href="/locations">Explore Kairali centres</Link></p>
       </section>
     </div>
   );
