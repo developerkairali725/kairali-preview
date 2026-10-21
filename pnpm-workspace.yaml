@@ -6,8 +6,9 @@ allowBuilds:
   sharp: true
   unrs-resolver: true
 overrides:
-  # GHSA-6qxp-vccf-f47h: patched SDK for the shadcn development CLI.
-  "shadcn>@modelcontextprotocol/sdk": "1.31.0"
+  # GHSA-6qxp-vccf-f47h, GHSA-22jm-h49p-29qw and GHSA-46jr-4wx8-v453:
+  # patched SDK for the shadcn development CLI.
+  "shadcn>@modelcontextprotocol/sdk": "1.32.0"
   # Patch both undici 7.29.0 advisories; published 4 September 2026.
   undici: "7.29.1"
   postcss: ">=8.5.10"
