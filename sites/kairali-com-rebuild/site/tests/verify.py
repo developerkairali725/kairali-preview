@@ -71,11 +71,16 @@ def check_route(item):
     followed_body = body if st == 200 else None
     # Public URLs are extensionless. A legacy route that used to render directly is accepted only
     # when it performs one permanent redirect to an extensionless 200 target.
-    clean_redirect = want == 200 and st in (301, 308) and location and ".aspx" not in urlsplit(location).path.lower()
+    clean_redirect = st in (301, 308) and location and ".aspx" not in urlsplit(location).path.lower()
     if clean_redirect:
         target = urlsplit(location).path + (("?" + urlsplit(location).query) if urlsplit(location).query else "")
-        st2, _, followed_body = get(target)
-        ok = st2 == 200
+        should_capture = origin != "case" and rt != "/default.aspx" and not rt.startswith("/namastedwaar")
+        if should_capture or want == 200:
+            st2, _, followed_body = get(target)
+            if want == 200:
+                ok = st2 == 200
+        else:
+            followed_body = None
     if ok and loc:
         ok = urlsplit(location).path == loc
         if ok:  # single hop: the target itself must be 200

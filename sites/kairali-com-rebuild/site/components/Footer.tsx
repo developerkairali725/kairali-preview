@@ -13,7 +13,7 @@ export default function Footer() {
       <Mandala />
       <div className="container footer-top">
         <div className="stack" style={{ gap: 18 }}>
-          <Link href="/" className="footer-brand" aria-label="Kairali Ayurvedic Group — home"><img src="/brand/kairali-logo-white.svg" alt="Kairali — health through ayurveda, since 1908" width={105} height={92} /></Link>
+          <Link href="/" className="footer-brand" aria-label="Kairali Ayurvedic Group — home"><img src="/brand/kairali-logo-white.svg" alt="Kairali — health through ayurveda, since 1908" width={105} height={92} loading="lazy" decoding="async" /></Link>
           <span className="footer-tag">{TAGLINE}</span>
           <p>Corporate Office: Kairali Ayurvedic Group, D - 130, Block D, Ambedkar Colony, Mehrauli, New Delhi - 110030.</p>
           <p>Ph: <a href={PHONE.href}>{PHONE.label}</a> · Email: <a href="mailto:info@kairali.com">info@kairali.com</a></p>

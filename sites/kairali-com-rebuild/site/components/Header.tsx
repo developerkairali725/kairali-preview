@@ -98,7 +98,7 @@ export default function Header() {
         onClick={(e) => { if (e.target === e.currentTarget) setDrawer(false); }}>
         <div className="drawer-panel">
           <div className="drawer-head">
-            <img src="/brand/kairali-logo.svg" alt="" width={73} height={64} />
+            <img src="/brand/kairali-logo.svg" alt="" width={73} height={64} loading="lazy" decoding="async" />
             <button ref={closeRef} className="icon-btn" onClick={() => { setDrawer(false); toggleRef.current?.focus(); }} aria-label="Close menu">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
             </button>

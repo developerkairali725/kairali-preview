@@ -39,14 +39,14 @@ export default function Home() {
 
   return (
     <>
-      <link rel="preload" as="image" type="image/webp" href="/media/photo/ahv-grounds-pond-480.webp" media="(max-width: 479px)" fetchPriority="high" />
+      <link rel="preload" as="image" type="image/webp" href="/media/photo/ahv-grounds-pond-480.webp" media="(max-width: 767px)" fetchPriority="high" />
       <link rel="preload" as="image" type="image/webp" href="/media/photo/ahv-grounds-pond-1600.webp" media="(min-width: 768px)" fetchPriority="high" />
       <section className="home-hero opener" aria-labelledby="page-title">
         <div className="opener-media">
           <picture className="hero-media">
-            <source media="(max-width: 479px)" srcSet="/media/photo/ahv-grounds-pond-480.webp" />
+            <source media="(max-width: 767px)" srcSet="/media/photo/ahv-grounds-pond-480.webp" />
             <img
-              src="/media/photo/ahv-grounds-pond-1600.webp"
+              src="/media/photo/ahv-grounds-pond-480.webp"
               srcSet="/media/photo/ahv-grounds-pond-640.webp 640w, /media/photo/ahv-grounds-pond-1024.webp 1024w, /media/photo/ahv-grounds-pond-1600.webp 1600w, /media/photo/ahv-grounds-pond-2200.webp 2200w"
               sizes="100vw"
               width="2200"
@@ -94,19 +94,19 @@ export default function Home() {
           </header>
           <div className="pathway-grid">
             <Link className="pathway-card" href="/ayurvedic-healing-village">
-              <span className="pathway-photo"><Photograph k="ahv-treatment-room" p={ph["ahv-treatment-room"]} sizes="(min-width: 900px) 25vw, 50vw" /></span>
+              <span className="pathway-photo"><Photograph k="ahv-treatment-room" p={ph["ahv-treatment-room"]} sizes="(min-width: 1180px) 25vw, (min-width: 700px) 50vw, 360px" /></span>
               <span className="pathway-copy"><small>Doctor-led Ayurveda</small><strong>Healing &amp; wellbeing</strong><span>Explore the Ayurvedic Healing Village</span></span>
             </Link>
             <Link className="pathway-card" href="/hospitality">
-              <span className="pathway-photo"><Photograph k="raag-facade" p={ph["raag-facade"]} sizes="(min-width: 900px) 25vw, 50vw" /></span>
+              <span className="pathway-photo"><Photograph k="raag-facade" p={ph["raag-facade"]} sizes="(min-width: 1180px) 25vw, (min-width: 700px) 50vw, 360px" /></span>
               <span className="pathway-copy"><small>Kairali stays</small><strong>Retreats &amp; hospitality</strong><span>Find a restorative Kairali experience</span></span>
             </Link>
             <Link className="pathway-card" href="/ayurvedic-products">
-              <span className="pathway-photo contain"><Photograph k="products-still" p={ph["products-still"]} sizes="(min-width: 900px) 25vw, 50vw" /></span>
+              <span className="pathway-photo contain"><Photograph k="products-still" p={ph["products-still"]} sizes="(min-width: 1180px) 25vw, (min-width: 700px) 50vw, 360px" /></span>
               <span className="pathway-copy"><small>Ayurvedic products</small><strong>Everyday rituals</strong><span>Discover products and dedicated stores</span></span>
             </Link>
             <Link className="pathway-card" href="/training">
-              <span className="pathway-photo"><Photograph k="ahv-veranda" p={ph["ahv-veranda"]} sizes="(min-width: 900px) 25vw, 50vw" /></span>
+              <span className="pathway-photo"><Photograph k="ahv-veranda" p={ph["ahv-veranda"]} sizes="(min-width: 1180px) 25vw, (min-width: 700px) 50vw, 360px" /></span>
               <span className="pathway-copy"><small>Knowledge &amp; practice</small><strong>Learn Ayurveda</strong><span>Explore training and education</span></span>
             </Link>
           </div>
@@ -118,7 +118,7 @@ export default function Home() {
         <Num n="02" />
         <div className="container split">
           <figure className="s-media reveal founders-figure">
-            <div className="frame bw shadow-xl founders-frame"><Photograph k="ahv-founders-wall" p={ph["ahv-founders-wall"]} sizes="(min-width: 900px) 45vw, 90vw" /></div>
+            <div className="frame bw shadow-xl founders-frame"><Photograph k="ahv-founders-wall" p={ph["ahv-founders-wall"]} sizes="(min-width: 900px) 45vw, (min-width: 700px) 70vw, 360px" /></div>
             <div className="founders-plaque"><span className="year" aria-hidden="true">1908</span><figcaption>Founders’ portraits in the reception lounge, The Ayurvedic Healing Village, Palakkad.</figcaption></div>
           </figure>
           <div className="s-text stack reveal" style={{ gap: 26 }}>
@@ -137,7 +137,7 @@ export default function Home() {
       {/* The Ayurvedic Healing Village — half-bleed charcoal section, 3-image strip inside the text column */}
       <section className="healing-feature tex dark" aria-labelledby="hv-title">
         <div className="healing-feature-grid">
-          <div className="healing-feature-media reveal"><Photograph k="ahv-footbridge" p={ph["ahv-footbridge"]} sizes="(min-width: 961px) 50vw, 100vw" /></div>
+          <div className="healing-feature-media reveal"><Photograph k="ahv-footbridge" p={ph["ahv-footbridge"]} sizes="(min-width: 961px) 50vw, (min-width: 600px) 70vw, 360px" /></div>
           <div className="healing-feature-copy reveal on-dark">
             <Num n="03" light />
             <Mandala />
@@ -159,7 +159,7 @@ export default function Home() {
         <Num n="04" />
         <div className="container split rev">
           <div className="s-media raag-media">
-            <div className="frame shadow-xl reveal"><Photograph k="raag-facade" p={ph["raag-facade"]} sizes="(min-width: 900px) 30vw, 60vw" /></div>
+            <div className="frame shadow-xl reveal"><Photograph k="raag-facade" p={ph["raag-facade"]} sizes="(min-width: 900px) 30vw, (min-width: 600px) 60vw, 360px" /></div>
             <div className="photo second reveal"><Photograph k="raag-rooftop" p={ph["raag-rooftop"]} sizes="(min-width: 900px) 20vw, 40vw" /></div>
           </div>
           <div className="s-text stack reveal" style={{ gap: 24 }}>
@@ -180,7 +180,7 @@ export default function Home() {
           <div className="pg-media">
             <div className="pg-mosaic reveal">{imgs(prodMosaic.html).map((i, k) => <div className="tile-img" key={k} dangerouslySetInnerHTML={{ __html: i }} />)}</div>
             <figure className="pg-still reveal">
-              <div className="frame shadow-xl"><Photograph k="products-still" p={ph["products-still"]} sizes="(min-width: 900px) 30vw, 70vw" /></div>
+              <div className="frame shadow-xl"><Photograph k="products-still" p={ph["products-still"]} sizes="(min-width: 900px) 30vw, (min-width: 600px) 60vw, 360px" /></div>
               <figcaption>Kairali Ayurvedic products, oils and herbal infusions.</figcaption>
             </figure>
           </div>
@@ -224,7 +224,7 @@ export default function Home() {
           <div className="s-media training-gallery">
             <div className="photo shadow-md reveal"><Photograph k="ahv-kati-vasti" p={ph["ahv-kati-vasti"]} sizes="(min-width: 900px) 25vw, 50vw" /></div>
             <div className="photo shadow-md reveal"><Photograph k="ahv-treatment-room" p={ph["ahv-treatment-room"]} sizes="(min-width: 900px) 25vw, 50vw" /></div>
-            <div className="frame shadow-xl reveal"><Photograph k="ahv-veranda" p={ph["ahv-veranda"]} sizes="(min-width: 900px) 50vw, 100vw" /></div>
+            <div className="frame shadow-xl reveal"><Photograph k="ahv-veranda" p={ph["ahv-veranda"]} sizes="(min-width: 900px) 50vw, (min-width: 600px) 70vw, 360px" /></div>
           </div>
           <div className="s-text stack reveal" style={{ gap: 24 }}>
             <span className="overline">Ayurveda training</span>
@@ -246,7 +246,7 @@ export default function Home() {
           <div className="brand-row">
             {SUB_BRANDS.map((b) => (
               <a key={b.key} className="brand-tile" href={b.url} rel="noopener" target="_blank">
-                <img src={b.logo} alt="" width={70} height={56} />
+                <img src={b.logo} alt="" width={70} height={56} loading="lazy" decoding="async" />
                 <strong>{b.name}</strong>
                 <span className="rule" aria-hidden="true" />
                 <span className="meta">{b.line}</span>

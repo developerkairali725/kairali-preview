@@ -4,7 +4,7 @@
    "route": "/ayurvedic-medicine.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurvedic-medicine",
    "clean_redirect": true,
    "ok": true
@@ -13,7 +13,7 @@
    "route": "/patented-ayurvedic-remedies.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/patented-ayurvedic-remedies",
    "clean_redirect": true,
    "ok": true
@@ -22,7 +22,7 @@
    "route": "/ayurvedic-pharmacy-brands.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurvedic-pharmacy-brands",
    "clean_redirect": true,
    "ok": true
@@ -31,7 +31,7 @@
    "route": "/ayurvedic-products.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurvedic-products",
    "clean_redirect": true,
    "ok": true
@@ -40,7 +40,7 @@
    "route": "/skin-care-and-body-products.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/skin-care-and-body-products",
    "clean_redirect": true,
    "ok": true
@@ -49,7 +49,7 @@
    "route": "/ayurvedic-spa-equipment.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurvedic-spa-equipment",
    "clean_redirect": true,
    "ok": true
@@ -103,7 +103,7 @@
    "route": "/apply-now.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/apply-now",
    "clean_redirect": true,
    "ok": true
@@ -112,7 +112,7 @@
    "route": "/careers.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/careers",
    "clean_redirect": true,
    "ok": true
@@ -121,7 +121,7 @@
    "route": "/contact-us.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/contact-us",
    "clean_redirect": true,
    "ok": true
@@ -130,7 +130,7 @@
    "route": "/current-openings.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/current-openings",
    "clean_redirect": true,
    "ok": true
@@ -139,7 +139,7 @@
    "route": "/enquiry-form.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/enquiry-form",
    "clean_redirect": true,
    "ok": true
@@ -148,7 +148,7 @@
    "route": "/get-in-touch.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/get-in-touch",
    "clean_redirect": true,
    "ok": true
@@ -157,7 +157,7 @@
    "route": "/onlineconsultation.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/onlineconsultation",
    "clean_redirect": true,
    "ok": true
@@ -166,7 +166,7 @@
    "route": "/ayurveda.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurveda",
    "clean_redirect": true,
    "ok": true
@@ -175,7 +175,7 @@
    "route": "/ayurvedic-diet.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurvedic-diet",
    "clean_redirect": true,
    "ok": true
@@ -184,7 +184,7 @@
    "route": "/ayurveda-treatments.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurveda-treatments",
    "clean_redirect": true,
    "ok": true
@@ -193,7 +193,7 @@
    "route": "/discover-ayurveda.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/discover-ayurveda",
    "clean_redirect": true,
    "ok": true
@@ -202,7 +202,7 @@
    "route": "/vedic-knowledge.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/vedic-knowledge",
    "clean_redirect": true,
    "ok": true
@@ -211,7 +211,7 @@
    "route": "/why-ayurveda.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/why-ayurveda",
    "clean_redirect": true,
    "ok": true
@@ -220,7 +220,7 @@
    "route": "/ayurveda-treatment-centres.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurveda-treatment-centres",
    "clean_redirect": true,
    "ok": true
@@ -229,7 +229,7 @@
    "route": "/hospitality.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/hospitality",
    "clean_redirect": true,
    "ok": true
@@ -238,7 +238,7 @@
    "route": "/locations.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/locations",
    "clean_redirect": true,
    "ok": true
@@ -249,14 +249,14 @@
    "status": 301,
    "expected": 301,
    "location": "/our-partner-resorts",
-   "clean_redirect": false,
+   "clean_redirect": true,
    "ok": true
   },
   {
    "route": "/our-partner-resorts.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/our-partner-resorts",
    "clean_redirect": true,
    "ok": true
@@ -265,7 +265,7 @@
    "route": "/svata-katerina-prague-czech-republic.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/svata-katerina-prague-czech-republic",
    "clean_redirect": true,
    "ok": true
@@ -274,7 +274,7 @@
    "route": "/ayurvedic-healing-village.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurvedic-healing-village",
    "clean_redirect": true,
    "ok": true
@@ -283,7 +283,7 @@
    "route": "/treatment-centres.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/treatment-centres",
    "clean_redirect": true,
    "ok": true
@@ -292,7 +292,7 @@
    "route": "/villa-raag.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/villa-raag",
    "clean_redirect": true,
    "ok": true
@@ -303,7 +303,7 @@
    "status": 301,
    "expected": 301,
    "location": "/",
-   "clean_redirect": false,
+   "clean_redirect": true,
    "ok": true
   },
   {
@@ -319,7 +319,7 @@
    "route": "/ayurveda-college.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurveda-college",
    "clean_redirect": true,
    "ok": true
@@ -328,7 +328,7 @@
    "route": "/training.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/training",
    "clean_redirect": true,
    "ok": true
@@ -337,7 +337,7 @@
    "route": "/yoga-ayurveda-retreats.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/yoga-ayurveda-retreats",
    "clean_redirect": true,
    "ok": true
@@ -346,7 +346,7 @@
    "route": "/yoga-teacher-training.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/yoga-teacher-training",
    "clean_redirect": true,
    "ok": true
@@ -985,7 +985,7 @@
    "route": "/about-us.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/about-us",
    "clean_redirect": true,
    "ok": true
@@ -994,7 +994,7 @@
    "route": "/kairali-group-awards.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/kairali-group-awards",
    "clean_redirect": true,
    "ok": true
@@ -1003,7 +1003,7 @@
    "route": "/founders-message.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/founders-message",
    "clean_redirect": true,
    "ok": true
@@ -1012,7 +1012,7 @@
    "route": "/kairali-group-profile.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/kairali-group-profile",
    "clean_redirect": true,
    "ok": true
@@ -1021,7 +1021,7 @@
    "route": "/kairali-ayurveda-brands.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/kairali-ayurveda-brands",
    "clean_redirect": true,
    "ok": true
@@ -1030,7 +1030,7 @@
    "route": "/management-team.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/management-team",
    "clean_redirect": true,
    "ok": true
@@ -1039,7 +1039,7 @@
    "route": "/mission-and-vision.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/mission-and-vision",
    "clean_redirect": true,
    "ok": true
@@ -1048,7 +1048,7 @@
    "route": "/ayurveda-csr.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurveda-csr",
    "clean_redirect": true,
    "ok": true
@@ -1057,7 +1057,7 @@
    "route": "/ayurveda-spa-franchise.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurveda-spa-franchise",
    "clean_redirect": true,
    "ok": true
@@ -1066,7 +1066,7 @@
    "route": "/hotel-and-spa-management.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/hotel-and-spa-management",
    "clean_redirect": true,
    "ok": true
@@ -1075,7 +1075,7 @@
    "route": "/our-partners.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/our-partners",
    "clean_redirect": true,
    "ok": true
@@ -1084,7 +1084,7 @@
    "route": "/partnerships-and-investment.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/partnerships-and-investment",
    "clean_redirect": true,
    "ok": true
@@ -1093,7 +1093,7 @@
    "route": "/sitemap.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/sitemap",
    "clean_redirect": true,
    "ok": true
@@ -1102,7 +1102,7 @@
    "route": "/privacy-policy.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/privacy-policy",
    "clean_redirect": true,
    "ok": true
@@ -1111,7 +1111,7 @@
    "route": "/security-policy.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/security-policy",
    "clean_redirect": true,
    "ok": true
@@ -1120,7 +1120,7 @@
    "route": "/terms-and-conditions.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/terms-and-conditions",
    "clean_redirect": true,
    "ok": true
@@ -1138,7 +1138,7 @@
    "route": "/download-centre.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/download-centre",
    "clean_redirect": true,
    "ok": true
@@ -1147,7 +1147,7 @@
    "route": "/archive.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/archive",
    "clean_redirect": true,
    "ok": true
@@ -1156,7 +1156,7 @@
    "route": "/ayurvedic-hospitality-video-library.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurvedic-hospitality-video-library",
    "clean_redirect": true,
    "ok": true
@@ -1165,7 +1165,7 @@
    "route": "/ayurvedic-hospitality-photo-library.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurvedic-hospitality-photo-library",
    "clean_redirect": true,
    "ok": true
@@ -1174,7 +1174,7 @@
    "route": "/kairali-blog.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/kairali-blog",
    "clean_redirect": true,
    "ok": true
@@ -1183,7 +1183,7 @@
    "route": "/media-gallery.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/media-gallery",
    "clean_redirect": true,
    "ok": true
@@ -1192,7 +1192,7 @@
    "route": "/media-centre.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/media-centre",
    "clean_redirect": true,
    "ok": true
@@ -1201,7 +1201,7 @@
    "route": "/kairali-news.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/kairali-news",
    "clean_redirect": true,
    "ok": true
@@ -1210,7 +1210,7 @@
    "route": "/ayurveda-newsletter.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurveda-newsletter",
    "clean_redirect": true,
    "ok": true
@@ -1219,7 +1219,7 @@
    "route": "/photo-library.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/photo-library",
    "clean_redirect": true,
    "ok": true
@@ -1228,7 +1228,7 @@
    "route": "/ayurvedic-medicines-and-remedies-video-library.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurvedic-medicines-and-remedies-video-library",
    "clean_redirect": true,
    "ok": true
@@ -1237,7 +1237,7 @@
    "route": "/ayurvedic-medicines-and-remedies-photo-library.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurvedic-medicines-and-remedies-photo-library",
    "clean_redirect": true,
    "ok": true
@@ -1246,7 +1246,7 @@
    "route": "/testimonials.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/testimonials",
    "clean_redirect": true,
    "ok": true
@@ -1255,7 +1255,7 @@
    "route": "/ayurvedic-treatment-centres-video-library.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurvedic-treatment-centres-video-library",
    "clean_redirect": true,
    "ok": true
@@ -1264,7 +1264,7 @@
    "route": "/ayurvedic-treatment-centres-photo-library.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/ayurvedic-treatment-centres-photo-library",
    "clean_redirect": true,
    "ok": true
@@ -1273,7 +1273,7 @@
    "route": "/useful-links.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/useful-links",
    "clean_redirect": true,
    "ok": true
@@ -1282,7 +1282,7 @@
    "route": "/video-library.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/video-library",
    "clean_redirect": true,
    "ok": true
@@ -1291,7 +1291,7 @@
    "route": "/virtual-tour.aspx",
    "origin": "mapped",
    "status": 301,
-   "expected": 200,
+   "expected": 301,
    "location": "/virtual-tour",
    "clean_redirect": true,
    "ok": true
@@ -1572,7 +1572,7 @@
    "status": 301,
    "expected": 301,
    "location": "/",
-   "clean_redirect": false,
+   "clean_redirect": true,
    "ok": true
   },
   {
@@ -1581,7 +1581,7 @@
    "status": 301,
    "expected": 301,
    "location": "/about-us",
-   "clean_redirect": false,
+   "clean_redirect": true,
    "ok": true
   },
   {
@@ -11903,7 +11903,7 @@
   }
  ],
  "media": {
-  "/media/photo/products-still-1600.webp": {
+  "/media/photo/products-still-640.webp": {
    "status": 200,
    "uses": 9,
    "missing_alt_attr": 0,
@@ -11933,7 +11933,7 @@
    "missing_alt_attr": 0,
    "missing_dims": 0
   },
-  "/media/photo/ahv-grounds-pond-1600.webp": {
+  "/media/photo/ahv-grounds-pond-480.webp": {
    "status": 200,
    "uses": 146,
    "missing_alt_attr": 0,
@@ -12095,13 +12095,13 @@
    "missing_alt_attr": 0,
    "missing_dims": 0
   },
-  "/media/photo/ahv-consultation-1600.webp": {
+  "/media/photo/ahv-consultation-640.webp": {
    "status": 200,
    "uses": 3,
    "missing_alt_attr": 0,
    "missing_dims": 0
   },
-  "/media/photo/ahv-veranda-1600.webp": {
+  "/media/photo/ahv-veranda-640.webp": {
    "status": 200,
    "uses": 8,
    "missing_alt_attr": 0,
@@ -12155,7 +12155,7 @@
    "missing_alt_attr": 0,
    "missing_dims": 0
   },
-  "/media/photo/ahv-kati-vasti-1600.webp": {
+  "/media/photo/ahv-kati-vasti-640.webp": {
    "status": 200,
    "uses": 3,
    "missing_alt_attr": 0,
@@ -12233,7 +12233,7 @@
    "missing_alt_attr": 0,
    "missing_dims": 0
   },
-  "/media/photo/centre-emblem-1600.webp": {
+  "/media/photo/centre-emblem-640.webp": {
    "status": 200,
    "uses": 5,
    "missing_alt_attr": 0,
@@ -12269,7 +12269,7 @@
    "missing_alt_attr": 0,
    "missing_dims": 0
   },
-  "/media/photo/ahv-footbridge-1600.webp": {
+  "/media/photo/ahv-footbridge-480.webp": {
    "status": 200,
    "uses": 4,
    "missing_alt_attr": 0,
@@ -12455,7 +12455,7 @@
    "missing_alt_attr": 0,
    "missing_dims": 0
   },
-  "/media/photo/raag-facade-1600.webp": {
+  "/media/photo/raag-facade-640.webp": {
    "status": 200,
    "uses": 3,
    "missing_alt_attr": 0,
@@ -12485,37 +12485,37 @@
    "missing_alt_attr": 0,
    "missing_dims": 0
   },
-  "/media/photo/ahv-treatment-room-1600.webp": {
+  "/media/photo/ahv-treatment-room-640.webp": {
    "status": 200,
    "uses": 9,
    "missing_alt_attr": 0,
    "missing_dims": 0
   },
-  "/media/photo/ahv-founders-wall-1600.webp": {
+  "/media/photo/ahv-founders-wall-480.webp": {
    "status": 200,
    "uses": 2,
    "missing_alt_attr": 0,
    "missing_dims": 0
   },
-  "/media/photo/ahv-colonnade-1600.webp": {
+  "/media/photo/ahv-colonnade-640.webp": {
    "status": 200,
    "uses": 5,
    "missing_alt_attr": 0,
    "missing_dims": 0
   },
-  "/media/photo/ahv-reception-1600.webp": {
+  "/media/photo/ahv-reception-640.webp": {
    "status": 200,
    "uses": 1,
    "missing_alt_attr": 0,
    "missing_dims": 0
   },
-  "/media/photo/ahv-cottages-1600.webp": {
+  "/media/photo/ahv-cottages-640.webp": {
    "status": 200,
    "uses": 1,
    "missing_alt_attr": 0,
    "missing_dims": 0
   },
-  "/media/photo/raag-rooftop-1600.webp": {
+  "/media/photo/raag-rooftop-640.webp": {
    "status": 200,
    "uses": 1,
    "missing_alt_attr": 0,
@@ -12545,7 +12545,7 @@
    "missing_alt_attr": 0,
    "missing_dims": 0
   },
-  "/media/photo/centre-reception-1600.webp": {
+  "/media/photo/centre-reception-640.webp": {
    "status": 200,
    "uses": 1,
    "missing_alt_attr": 0,

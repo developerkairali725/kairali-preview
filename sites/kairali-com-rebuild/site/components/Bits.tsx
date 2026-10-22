@@ -28,9 +28,10 @@ export function Breadcrumbs({ items }: { items: Crumb[] }) {
 /** Responsive selected company photograph. `priority` marks the LCP image. */
 export function Photograph({ k, p, sizes = "100vw", priority = false, className = "" }: { k: string; p: Photo; sizes?: string; priority?: boolean; className?: string }) {
   const largest = p.sizes[p.sizes.length - 1];
+  const smallest = p.sizes[0];
   const h = Math.round(largest / p.ratio);
   return (
-    <img className={className} src={`/media/photo/${k}-${p.sizes.includes(1600) ? 1600 : largest}.webp`}
+    <img className={className} src={`/media/photo/${k}-${smallest}.webp`}
       srcSet={p.sizes.map((w) => `/media/photo/${k}-${w}.webp ${w}w`).join(", ")} sizes={sizes}
       width={largest} height={h} alt={p.alt} loading={priority ? "eager" : "lazy"} decoding={priority ? "auto" : "async"}
       fetchPriority={priority ? "high" : "low"} />
