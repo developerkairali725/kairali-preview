@@ -37,11 +37,12 @@ export function proxy(req: NextRequest) {
     return notFound(req);
   }
 
-  const target = T.redirects[lower];
+  const norm = lower.length > 1 && lower.endsWith("/") ? lower.slice(0, -1) : lower;
+  const target = T.redirects[norm] || T.redirects[lower];
   if (target) {
     const publicTarget = cleanRoute(target);
-    if (publicTarget !== path || url.search) {
-      const r = req.nextUrl.clone(); r.pathname = publicTarget; r.search = ""; return NextResponse.redirect(r, 301);
+    if (publicTarget !== path) {
+      return redirectKeepQuery(req, publicTarget, true);
     }
   }
 

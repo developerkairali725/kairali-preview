@@ -11132,13 +11132,43 @@
   {
    "route": "/svata-katerina-prague-czech-republic.aspx",
    "blocks": 149,
-   "missing_blocks": 111,
+   "missing_blocks": 116,
    "missing": [
     {
      "words": 3,
      "hidden_in_source": false,
      "section": "Enquiry Now",
      "text_base64": "RW50ZXIgU2VjdXJpdHkgQ29kZQ=="
+    },
+    {
+     "words": 5,
+     "hidden_in_source": false,
+     "section": "Svata Katerina - Prague, Czech Republic",
+     "text_base64": "U3ZhdGEgS2F0ZXJpbmEgLSBQcmFndWUsIEN6ZWNoIFJlcHVibGlj"
+    },
+    {
+     "words": 9,
+     "hidden_in_source": false,
+     "section": "Svata Katerina - Prague, Czech Republic",
+     "text_base64": "UmVzb3J0IFN0LiBDYXRoZXJpbmUsIFN0LiBDYXRoZXJpbmUgMzI3LCAzOTQgNjQgUG/EjcOhdGt5"
+    },
+    {
+     "words": 9,
+     "hidden_in_source": false,
+     "section": "",
+     "text_base64": "Tm8gb2YgUm9vbXM6IDc5IHwgTm8gb2YgVHJlYXJtZW50cyBSb29tczogNg=="
+    },
+    {
+     "words": 1,
+     "hidden_in_source": false,
+     "section": "Standard Room (Shiraz)",
+     "text_base64": "QWNjb21vZGF0aW9u"
+    },
+    {
+     "words": 42,
+     "hidden_in_source": false,
+     "section": "Standard Room (Shiraz)",
+     "text_base64": "TG9hZGVkIHdpdGggdGhlIGJlc3QgYWNjb21tb2RhdGlvbiBmYWNpbGl0aWVzLCBTdmF0YSBLYXRlcmluYSBmZWF0dXJlcyA3OSBkb3VibGUgYmVkcm9vbXMgaW4gMyBidWlsZGluZ3MuIERlY29yYXRlZCB3aXRoIHByZW1pdW0gcXVhbGl0eSBpbnRlcmlvcnMsIHRoZXNlIGFjY29tbW9kYXRpdmUgcm9vbXMgbWFrZXMgeW91IGZlZWwgbGlrZSBoZWF2ZW4="
     },
     {
      "words": 4,
@@ -11841,8 +11871,14 @@
   {
    "route": "/video-library.aspx",
    "blocks": 9,
-   "missing_blocks": 1,
+   "missing_blocks": 2,
    "missing": [
+    {
+     "words": 29,
+     "hidden_in_source": false,
+     "section": "Ayurvedic Medicines And Remedies",
+     "text_base64": "S2FpcmFsaSBBeXVydmVkaWMgUHJvZHVjdHMgd2l0aCB0aGUgaGVscCBvZiBpdHMgcHJvZmVzc2lvbmFscyBhbmQgZXhwZXJ0IFJlc2VhcmNoICYgRGV2ZWxvcG1lbnQgKFImRCkgdGVhbSwgY3JlYXRlcyBuZXcgaW5ub3ZhdGlvbnMgaW4gb3JkZXIgdG8gaGVscCBwZW9wbGUgZmFsbCBwcmV5IHRvIGFueSBhaWxtZW50Lg=="
+    },
     {
      "words": 92,
      "hidden_in_source": false,
@@ -16167,12 +16203,12 @@
   },
   {
    "route": "/ayurvedic-pharmacy-brands.aspx",
-   "title": "Kairali Ayurvedic Group | Ayurvedic Wholesale Medicine | Ayurvedic Retail Brands | Herbal Medicine For Aurvedic Doctors",
+   "title": "Kairali Ayurvedic Group | Ayurvedic Wholesale Medicine | Ayurvedic Retail Brands | Herbal Medicine For Ayurvedic Doctors",
    "description": "Kairali Group produces over a hundred Ayurvedic Medicines, Remedies, Skin Care and Body Products available for wholesale or retail purposes. Retail brands can be purchased at our online store; distributors and Ayurvedic doctors are invited to contact us for more information",
    "canonical": "https://www.kairali.com/ayurvedic-pharmacy-brands",
    "h1": 1,
    "robots": "noindex, follow",
-   "og_title": "Kairali Ayurvedic Group | Ayurvedic Wholesale Medicine | Ayurvedic Retail Brands | Herbal Medicine For Aurvedic Doctors",
+   "og_title": "Kairali Ayurvedic Group | Ayurvedic Wholesale Medicine | Ayurvedic Retail Brands | Herbal Medicine For Ayurvedic Doctors",
    "og_image": "https://www.kairali.com/og/products-still.jpg",
    "og_image_alt": "An arrangement of Kairali Ayurvedic products, oils and herbal infusion tea boxes",
    "og_url": "https://www.kairali.com/ayurvedic-pharmacy-brands",
@@ -16357,7 +16393,7 @@
   {
    "route": "/apply-now.aspx",
    "title": "Careers and expressions of interest | Kairali Ayurvedic Group",
-   "description": "We welcome everyone with open arms Fill up the form to be a part of Kairali Ayurvedic Group. Industry* First Name* Please enter first name Last Name* Please\u2026",
+   "description": "Careers at Kairali Ayurvedic Group. General expressions of interest are welcome; active vacancy applications are currently paused pending HR confirmation.",
    "canonical": "https://www.kairali.com/apply-now",
    "h1": 1,
    "robots": "noindex, follow",
@@ -18441,12 +18477,12 @@
   },
   {
    "route": "/about-us.aspx",
-   "title": "Kairali Ayurvedic Group | Ayurveda brand | Partnerships & Investment",
+   "title": "About Us | Kairali Ayurvedic Group \u2014 Authentic Ayurveda Since 1908",
    "description": "Kairali Ayurvedic Group\u2019s About Us page is where you will find all the information about our leading ayurvedic business worldwide, our mission and vision and our rapidly growing ayurvedic retreats spa, ayurvedic medicine and skin care brands.",
    "canonical": "https://www.kairali.com/about-us",
    "h1": 1,
    "robots": "noindex, follow",
-   "og_title": "Kairali Ayurvedic Group | Ayurveda brand | Partnerships & Investment",
+   "og_title": "About Us | Kairali Ayurvedic Group \u2014 Authentic Ayurveda Since 1908",
    "og_image": "https://www.kairali.com/og/ahv-founders-wall.jpg",
    "og_image_alt": "Reception lounge at the Healing Village with the founders' portraits on the wall",
    "og_url": "https://www.kairali.com/about-us",
@@ -18589,7 +18625,7 @@
   {
    "route": "/ayurveda-csr.aspx",
    "title": "Kairali Ayurvedic Group | Ethical Ayurveda | Ayurvedic Organic Herbs | Charitable Work",
-   "description": "Kairali Ayurvedic Group\u2019s has charitable interests and ethical business practices. The company promotes ethical ayurveda, the cultivation of organic herbs, sustainability projects and charitable work.",
+   "description": "Kairali Ayurvedic Group has dedicated charitable interests and ethical business practices, promoting sustainable herb cultivation and community health initiatives.",
    "canonical": "https://www.kairali.com/ayurveda-csr",
    "h1": 1,
    "robots": "noindex, follow",
@@ -18609,12 +18645,12 @@
   },
   {
    "route": "/ayurveda-spa-franchise.aspx",
-   "title": "Kairali Ayurvedic Group | Spa Franchise | Spa Designers | Dpa Franchise Opportunities",
+   "title": "Kairali Ayurvedic Group | Spa Franchise | Spa Designers | Spa Franchise Opportunities",
    "description": "Kairali Ayurvedic Group offers spa franchise opportunities, as well as hotel and spa management consultancy to hospitality businesses. Our spa designers, therapists and marketing experts can help you grow or transform your business.",
    "canonical": "https://www.kairali.com/ayurveda-spa-franchise",
    "h1": 1,
    "robots": "noindex, follow",
-   "og_title": "Kairali Ayurvedic Group | Spa Franchise | Spa Designers | Dpa Franchise Opportunities",
+   "og_title": "Kairali Ayurvedic Group | Spa Franchise | Spa Designers | Spa Franchise Opportunities",
    "og_image": "https://www.kairali.com/og/ahv-colonnade.jpg",
    "og_image_alt": "Covered colonnaded walkway connecting the brick-and-stone treatment blocks",
    "og_url": "https://www.kairali.com/ayurveda-spa-franchise",
@@ -18820,12 +18856,12 @@
   },
   {
    "route": "/archive.aspx",
-   "title": "Kairali Ayurveda Group | Archive",
-   "description": "To know about the company browse here To know more about our company structure, please click on the arrow below. Partnerships & Investment A long lineage of\u2026",
+   "title": "Archive | Kairali Ayurvedic Group",
+   "description": "Historical publications, news releases, health articles and archived resources from Kairali Ayurvedic Group.",
    "canonical": "https://www.kairali.com/archive",
    "h1": 1,
    "robots": "noindex, follow",
-   "og_title": "Kairali Ayurveda Group | Archive",
+   "og_title": "Archive | Kairali Ayurvedic Group",
    "og_image": "https://www.kairali.com/og/ahv-reception.jpg",
    "og_image_alt": "Reception lounge under a beamed conical ceiling with founder portraits",
    "og_url": "https://www.kairali.com/archive",
@@ -19417,7 +19453,7 @@
   {
    "route": "/apply-now.aspx?id=999",
    "title": "Careers and expressions of interest | Kairali Ayurvedic Group",
-   "description": "We welcome everyone with open arms Fill up the form to be a part of Kairali Ayurvedic Group. Industry* First Name* Please enter first name Last Name* Please\u2026",
+   "description": "Careers at Kairali Ayurvedic Group. General expressions of interest are welcome; active vacancy applications are currently paused pending HR confirmation.",
    "canonical": "https://www.kairali.com/apply-now",
    "h1": 1,
    "robots": "noindex, follow",

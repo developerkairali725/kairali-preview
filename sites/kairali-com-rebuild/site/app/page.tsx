@@ -200,7 +200,7 @@ export default function Home() {
         <div className="container centres-grid">
           <div className="centres-text reveal">
             <span className="overline">Treatment centres</span>
-            <h2 id="centre-title">{linkText(centreMosaic.html)}</h2>
+            <h2 id="centre-title">{linkText(centreMosaic.html) || "Treatment Centres"}</h2>
             <Prose html={bodyOf(centreText.html)} />
             <div className="city-list tex dark" aria-label="Cities listed on the Locations page">
               <span className="city-title">Locations</span>

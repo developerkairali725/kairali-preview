@@ -7,7 +7,7 @@ export const SITE_URL = "https://www.kairali.com"; // production canonical host 
 export const SITE_NAME = "Kairali Ayurvedic Group";
 export const IS_PRODUCTION = process.env.SITE_ENV === "production";
 // Public origin that actually serves /og, /media and /brand files. Canonicals stay on SITE_URL; share images must
-// resolve wherever the build is deployed (e.g. https://kairali-web-factory.vercel.app for staging).
+// resolve wherever the build is deployed (e.g. override via NEXT_PUBLIC_ASSET_ORIGIN for preview/staging).
 export const ASSET_ORIGIN = (process.env.NEXT_PUBLIC_ASSET_ORIGIN || SITE_URL).replace(/\/$/, "");
 const id = (v: string | undefined, re: RegExp) => (v && re.test(v.trim()) ? v.trim() : undefined);
 export const MEASUREMENT = {

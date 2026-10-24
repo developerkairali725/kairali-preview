@@ -24,7 +24,24 @@ export function ConsentBanner({ privacyHref }: { privacyHref?: string }) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setVisible(readStoredChoice(window.localStorage) === null);
+    const stored = readStoredChoice(window.localStorage);
+    if (stored === null) {
+      const gpc = typeof navigator !== "undefined" && (navigator as unknown as { globalPrivacyControl?: boolean }).globalPrivacyControl === true;
+      if (gpc) {
+        applyChoice(false, { storage: window.localStorage, gtagFn: window.gtag });
+        setVisible(false);
+        return;
+      }
+      setVisible(true);
+    } else {
+      setVisible(false);
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleReopen = () => setVisible(true);
+    window.addEventListener("kairali:reopen-consent", handleReopen);
+    return () => window.removeEventListener("kairali:reopen-consent", handleReopen);
   }, []);
 
   // Signal other floating UI (chat bubble, sticky bars) to yield while the
