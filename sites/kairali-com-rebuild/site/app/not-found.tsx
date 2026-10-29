@@ -12,7 +12,7 @@ export default function NotFound() {
         <span className="overline accent">Error 404</span>
         <h1 id="nf-title">We could not find that page.</h1>
         <p className="lede">The address may be mistyped, or the page may have moved. Search the site or start from one of these sections.</p>
-        <form action="/search-results.aspx" className="search-box" role="search" style={{ maxWidth: 640 }}>
+        <form action="/search" className="search-box" role="search" style={{ maxWidth: 640 }}>
           <label htmlFor="nf-q" className="sr-only">Search kairali.com</label>
           <input id="nf-q" name="q" type="search" placeholder="Search kairali.com" />
           <button className="btn" type="submit">Search</button>

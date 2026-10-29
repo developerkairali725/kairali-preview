@@ -6,6 +6,6 @@ import { IS_PRODUCTION, SITE_URL } from "@/lib/site";
 export const dynamic = "force-static";
 export default function robots(): MetadataRoute.Robots {
   return IS_PRODUCTION
-    ? { rules: [{ userAgent: "*", allow: "/", disallow: ["/x/", "/search-results.aspx"] }], sitemap: `${SITE_URL}/sitemap.xml`, host: SITE_URL }
+    ? { rules: [{ userAgent: "*", allow: "/", disallow: ["/x/", "/search-results.aspx", "/search"] }], sitemap: `${SITE_URL}/sitemap.xml`, host: SITE_URL }
     : { rules: [{ userAgent: "*", disallow: "/" }] };
 }
