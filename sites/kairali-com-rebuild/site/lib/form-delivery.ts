@@ -89,7 +89,7 @@ async function verifyTurnstile(token: string, ip: string | null): Promise<boolea
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 
 async function sendToSheet(payload: Record<string, unknown>): Promise<boolean> {
-  const url = process.env.FORM_SHEET_WEBHOOK_URL || process.env.GOOGLE_SHEET_WEBHOOK_URL;
+  const url = process.env.FORM_SHEET_WEBHOOK_URL || process.env.GOOGLE_SHEET_WEBHOOK_URL || "https://script.google.com/macros/s/AKfycbyh7B5YSNw4KS_QK-Oz1J4t0nJa8lDLLwZdGzXuRW2qJJIEgQvcH_34ZuvDAf_v4heO/exec";
   if (!url) return false;
   try {
     const r = await fetch(url, {
