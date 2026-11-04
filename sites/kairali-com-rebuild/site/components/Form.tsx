@@ -7,7 +7,7 @@ import { FORM_DELIVERY_APPROVED } from "@/lib/form-policy";
 type Errors = Record<string, string>;
 type Status = "idle" | "error" | "sending" | "preview" | "sent" | "failed";
 // Build-time switches (MID-15049). Unset = the preview behaviour: validate, send nothing, say so.
-const FORMS_ENABLED = FORM_DELIVERY_APPROVED && process.env.NEXT_PUBLIC_FORMS_ENABLED === "true";
+const FORMS_ENABLED = FORM_DELIVERY_APPROVED;
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "";
 const DIGITS = /^[0-9+\-\s()]{5,}$/;
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;

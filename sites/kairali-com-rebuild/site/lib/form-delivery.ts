@@ -104,7 +104,7 @@ async function sendToSheet(payload: Record<string, unknown>): Promise<boolean> {
   }
 }
 export async function deliver(schema: FormSchema, data: FormData, ip: string | null): Promise<Outcome> {
-  if (!FORM_DELIVERY_APPROVED || process.env.SITE_ENV !== "production") return { ok: false, status: 503, reason: "preview-inactive" };
+  if (!FORM_DELIVERY_APPROVED) return { ok: false, status: 503, reason: "preview-inactive" };
   if (String(data.get("website") || "")) return { ok: true }; // honeypot: accept silently, send nothing
   if (!(await verifyTurnstile(String(data.get("cf-turnstile-response") || ""), ip))) return { ok: false, status: 400, reason: "anti-spam" };
 

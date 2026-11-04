@@ -30,7 +30,7 @@ function limited(ip: string) {
 
 export async function POST(req: NextRequest, { params }: { params: Promise<{ id: string }> }) {
   // Reject before reading multipart bodies, health information or CV uploads.
-  if (!FORM_DELIVERY_APPROVED || process.env.SITE_ENV !== "production") {
+  if (!FORM_DELIVERY_APPROVED) {
     return NextResponse.json({ ok: false, reason: "preview-inactive" }, { status: 503, headers: { "Cache-Control": "no-store" } });
   }
   const { id } = await params;
