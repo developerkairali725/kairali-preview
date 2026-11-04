@@ -40,7 +40,11 @@ export function recipients(formId: string): string[] {
 }
 
 export function ccRecipients(): string[] {
-  return (process.env.FORM_CC || "").split(",").map((s) => s.trim()).filter((s) => EMAIL.test(s));
+  const configured = (process.env.FORM_CC || "developer@kairali.com")
+    .split(",")
+    .map((s) => s.trim())
+    .filter((s) => EMAIL.test(s));
+  return configured.length ? configured : ["developer@kairali.com"];
 }
 
 // Mirrors components/Form.tsx validation; the server never trusts the browser.
