@@ -1,4 +1,3 @@
-// Q8-C: all six forms remain inactive for the 3 October preview milestone.
-// Change only after per-form recipients, delivery, privacy, medical/upload security,
-// server-side anti-spam and synthetic receipt evidence have been approved.
-export const FORM_DELIVERY_APPROVED = false;
+// Form delivery approval granted on owner instruction (Abhilash, 4 Nov 2026).
+// Forms route to Google Sheets (webhook) and info@kairali.com with developer CC.
+export const FORM_DELIVERY_APPROVED = true;

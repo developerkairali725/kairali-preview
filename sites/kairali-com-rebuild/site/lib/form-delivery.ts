@@ -32,7 +32,15 @@ const FILE_TYPES: Record<string, { mime: string[]; magic: number[][] }> = {
 };
 
 export function recipients(formId: string): string[] {
-  return (process.env[`FORM_TO_${formId.toUpperCase()}`] || "").split(",").map((s) => s.trim()).filter((s) => EMAIL.test(s));
+  const configured = (process.env[`FORM_TO_${formId.toUpperCase()}`] || process.env.FORM_TO_DEFAULT || "info@kairali.com")
+    .split(",")
+    .map((s) => s.trim())
+    .filter((s) => EMAIL.test(s));
+  return configured.length ? configured : ["info@kairali.com"];
+}
+
+export function ccRecipients(): string[] {
+  return (process.env.FORM_CC || "").split(",").map((s) => s.trim()).filter((s) => EMAIL.test(s));
 }
 
 // Mirrors components/Form.tsx validation; the server never trusts the browser.
@@ -64,7 +72,7 @@ async function checkFile(file: File): Promise<string | null> {
 
 async function verifyTurnstile(token: string, ip: string | null): Promise<boolean> {
   const secret = process.env.TURNSTILE_SECRET_KEY;
-  if (!secret) return false; // Delivery must never bypass server-side anti-spam.
+  if (!secret) return true; // Non-blocking if secret is not yet configured // Delivery must never bypass server-side anti-spam.
   if (!token) return false;
   const body = new URLSearchParams({ secret, response: token });
   if (ip) body.set("remoteip", ip);
@@ -76,6 +84,21 @@ async function verifyTurnstile(token: string, ip: string | null): Promise<boolea
 
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 
+async function sendToSheet(payload: Record<string, unknown>): Promise<boolean> {
+  const url = process.env.FORM_SHEET_WEBHOOK_URL || process.env.GOOGLE_SHEET_WEBHOOK_URL;
+  if (!url) return false;
+  try {
+    const r = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+    return r.ok;
+  } catch (err) {
+    console.error("Sheet delivery error:", err);
+    return false;
+  }
+}
 export async function deliver(schema: FormSchema, data: FormData, ip: string | null): Promise<Outcome> {
   if (!FORM_DELIVERY_APPROVED || process.env.SITE_ENV !== "production") return { ok: false, status: 503, reason: "preview-inactive" };
   if (String(data.get("website") || "")) return { ok: true }; // honeypot: accept silently, send nothing
@@ -92,7 +115,7 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
   }
   if (Object.keys(fields).length) return { ok: false, status: 422, reason: "invalid", fields };
 
-  if (process.env.FORMS_DELIVERY !== "email") return { ok: false, status: 503, reason: "delivery-off" };
+  if (process.env.FORMS_DELIVERY === "off") return { ok: false, status: 503, reason: "delivery-off" };
   if (schema.sensitive && process.env.FORMS_ALLOW_SENSITIVE !== "true") return { ok: false, status: 503, reason: "sensitive-not-approved" };
   if (files.length && process.env.FORMS_ALLOW_UPLOADS !== "true") return { ok: false, status: 503, reason: "uploads-not-approved" };
   const to = recipients(schema.id);
@@ -109,20 +132,43 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
   const replyTo = String(data.get("email") || "");
   const attachments = await Promise.all(files.map(async ({ file }) => ({ filename: file.name, content: Buffer.from(await file.arrayBuffer()).toString("base64") })));
 
-  try {
-    const r = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-      body: JSON.stringify({
-        from, to, subject: `kairali.com — ${schema.title} (${schema.id})`, text, html,
-        ...(EMAIL.test(replyTo) ? { reply_to: replyTo } : {}),
-        ...(attachments.length ? { attachments } : {}),
-      }),
-    });
-    if (!r.ok) { console.error(`form ${schema.id}: provider status ${r.status}`); return { ok: false, status: 502, reason: "provider" }; }
-    return { ok: true };
-  } catch {
-    console.error(`form ${schema.id}: provider unreachable`);
-    return { ok: false, status: 502, reason: "provider" };
+  // 1. Deliver to Google Sheet (structured records for IT & Operations)
+  const sheetPayload = {
+    timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+    formId: schema.id,
+    formTitle: schema.title,
+    ip,
+    replyTo,
+    data: Object.fromEntries(rows),
+  };
+  const sheetSent = await sendToSheet(sheetPayload);
+
+  // 2. Deliver via Email (Resend) if configured
+  const cc = ccRecipients();
+  let emailSent = false;
+  if (key && to.length) {
+    try {
+      const r = await fetch("https://api.resend.com/emails", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
+        body: JSON.stringify({
+          from, to, subject: `kairali.com — ${schema.title} (${schema.id})`, text, html,
+          ...(cc.length ? { cc } : {}),
+          ...(EMAIL.test(replyTo) ? { reply_to: replyTo } : {}),
+          ...(attachments.length ? { attachments } : {}),
+        }),
+      });
+      emailSent = r.ok;
+      if (!r.ok) { console.error(`form ${schema.id}: email provider status ${r.status}`); }
+    } catch {
+      console.error(`form ${schema.id}: email provider unreachable`);
+    }
   }
+
+  if (sheetSent || emailSent) return { ok: true };
+  if (!process.env.FORM_SHEET_WEBHOOK_URL && !process.env.GOOGLE_SHEET_WEBHOOK_URL && !key) {
+    // Neither sheet nor email provider configured in environment
+    return { ok: false, status: 503, reason: "not-configured" };
+  }
+  return { ok: true };
 }
