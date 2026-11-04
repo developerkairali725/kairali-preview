@@ -26,12 +26,13 @@ function validate(fields: Field[], data: FormData): Errors {
   return e;
 }
 
-export default function Form({ schema, preset = {}, compact = false, formName }: { schema: FormSchema; preset?: Record<string, string | string[]>; compact?: boolean; formName?: string }) {
+export default function Form({ schema, preset = {}, compact = false, formName, idPrefix }: { schema: FormSchema; preset?: Record<string, string | string[]>; compact?: boolean; formName?: string; idPrefix?: string }) {
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<Status>("idle");
   const summaryRef = useRef<HTMLDivElement>(null);
   const statusRef = useRef<HTMLDivElement>(null);
-  const id = (n: string) => `${schema.id}-${n}`;
+  const prefix = idPrefix || schema.id;
+  const id = (n: string) => `${prefix}-${n}`;
   const [focusTick, setFocusTick] = useState(0);
   useEffect(() => {
     if (!focusTick) return;

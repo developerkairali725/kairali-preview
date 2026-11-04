@@ -3,6 +3,7 @@ import { FOOTER_COLUMNS, LEGAL_LINKS, PHONE, SUB_BRANDS, TAGLINE } from "@/lib/s
 import { SocialLinks } from "@kairali/social";
 import { Mandala, Orn } from "./Ornament";
 import Form from "./Form";
+import CookiePreferences from "./CookiePreferences";
 import { NEWSLETTER } from "@/lib/forms";
 
 // Premium v4 footer: charcoal-deep ground, inverted logo, gold column headings, ornament divider,
@@ -20,7 +21,7 @@ export default function Footer() {
           <div className="newsletter">
             <h2 className="overline on-dark">Subscribe to our Newsletter</h2>
             <p style={{ fontSize: 14 }}>Subscribe to Receive Latest News and Updates.</p>
-            <Form schema={NEWSLETTER} compact formName="Newsletter subscription" />
+            <Form schema={NEWSLETTER} compact formName="Newsletter subscription" idPrefix="footer-newsletter" />
           </div>
           <SocialLinks className="social" />
         </div>
@@ -41,7 +42,10 @@ export default function Footer() {
       <div className="container footer-orn"><Orn /></div>
       <div className="container footer-bottom">
         <p>© Kairali Ayurvedic Group · A family tradition since 1908.</p>
-        <ul>{LEGAL_LINKS.map((l) => <li key={l.href}><Link href={l.href} prefetch={false}>{l.label}</Link></li>)}</ul>
+        <ul>
+          {LEGAL_LINKS.map((l) => <li key={l.href}><Link href={l.href} prefetch={false}>{l.label}</Link></li>)}
+          <li><CookiePreferences /></li>
+        </ul>
       </div>
     </footer>
   );

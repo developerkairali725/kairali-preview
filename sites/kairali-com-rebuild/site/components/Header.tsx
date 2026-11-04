@@ -15,15 +15,57 @@ export default function Header() {
   const navRef = useRef<HTMLElement>(null);
   const toggleRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+  const drawerRef = useRef<HTMLDivElement>(null);
+
+  const prevDrawerRef = useRef(false);
+
+  const closeDrawer = () => {
+    const main = document.getElementById("main");
+    const footer = document.querySelector(".site-footer");
+    const masthead = document.querySelector(".masthead");
+    const util = document.querySelector(".util");
+    const navrow = document.querySelector(".navrow");
+    [main, footer, masthead, util, navrow].forEach((el) => el?.removeAttribute("inert"));
+    setDrawer(false);
+    toggleRef.current?.focus();
+  };
 
   useEffect(() => { setOpen(null); setDrawer(false); }, [pathname]);
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key !== "Escape") return;
-      if (drawer) { setDrawer(false); toggleRef.current?.focus(); }
-      if (open !== null) {
-        const btn = navRef.current?.querySelectorAll<HTMLButtonElement>(".nav-trigger")[open];
-        setOpen(null); btn?.focus();
+      if (e.key === "Escape") {
+        if (drawer) {
+          e.preventDefault();
+          closeDrawer();
+          return;
+        }
+        if (open !== null) {
+          const btn = navRef.current?.querySelectorAll<HTMLButtonElement>(".nav-trigger")[open];
+          setOpen(null); btn?.focus(); return;
+        }
+      }
+      if (e.key === "Tab" && drawer && drawerRef.current) {
+        const focusable = Array.from(
+          drawerRef.current.querySelectorAll<HTMLElement>(
+            'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), summary, [tabindex]:not([tabindex="-1"])'
+          )
+        ).filter((el) => el.offsetParent !== null || el.getClientRects().length > 0);
+
+        if (focusable.length > 0) {
+          const first = focusable[0];
+          const last = focusable[focusable.length - 1];
+          if (e.shiftKey) {
+            if (document.activeElement === first || !drawerRef.current.contains(document.activeElement)) {
+              e.preventDefault();
+              last.focus();
+            }
+          } else {
+            if (document.activeElement === last) {
+              e.preventDefault();
+              first.focus();
+            }
+          }
+        }
       }
     };
     const onClick = (e: MouseEvent) => { if (navRef.current && !navRef.current.contains(e.target as Node)) setOpen(null); };
@@ -33,7 +75,25 @@ export default function Header() {
   }, [drawer, open]);
   useEffect(() => {
     document.documentElement.style.overflow = drawer ? "hidden" : "";
-    if (drawer) closeRef.current?.focus();
+    const main = document.getElementById("main");
+    const footer = document.querySelector(".site-footer");
+    const masthead = document.querySelector(".masthead");
+    const util = document.querySelector(".util");
+    const navrow = document.querySelector(".navrow");
+    const bgElements = [main, footer, masthead, util, navrow].filter(Boolean) as HTMLElement[];
+    if (drawer) {
+      bgElements.forEach((el) => el.setAttribute("inert", ""));
+      closeRef.current?.focus();
+    } else {
+      bgElements.forEach((el) => el.removeAttribute("inert"));
+      if (prevDrawerRef.current) {
+        toggleRef.current?.focus();
+      }
+    }
+    prevDrawerRef.current = drawer;
+    return () => {
+      bgElements.forEach((el) => el.removeAttribute("inert"));
+    };
   }, [drawer]);
 
   const current = (href: string) => (href === pathname ? "page" : undefined);
@@ -94,12 +154,12 @@ export default function Header() {
           </nav>
         </div>
       </header>
-      <div className={`drawer${drawer ? " open" : ""}`} id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden={!drawer}
-        onClick={(e) => { if (e.target === e.currentTarget) setDrawer(false); }}>
+      <div ref={drawerRef} className={`drawer${drawer ? " open" : ""}`} id="drawer" role="dialog" aria-modal="true" aria-label="Menu" hidden={!drawer}
+        onClick={(e) => { if (e.target === e.currentTarget) closeDrawer(); }}>
         <div className="drawer-panel">
           <div className="drawer-head">
             <img src="/brand/kairali-logo.svg" alt="" width={73} height={64} loading="lazy" decoding="async" />
-            <button ref={closeRef} className="icon-btn" onClick={() => { setDrawer(false); toggleRef.current?.focus(); }} aria-label="Close menu">
+            <button ref={closeRef} className="icon-btn" onClick={closeDrawer} aria-label="Close menu">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" /></svg>
             </button>
           </div>

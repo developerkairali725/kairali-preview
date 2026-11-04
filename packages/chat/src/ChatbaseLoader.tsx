@@ -106,21 +106,28 @@ export function ChatbaseLoader({
       idle = window.setTimeout(load, 6000);
     }
 
+    const stored = readStoredChoice(window.localStorage);
+    const gpcDenied = typeof navigator !== "undefined" && (navigator as unknown as { globalPrivacyControl?: boolean }).globalPrivacyControl === true;
+
     if (!consentGated) {
       arm();
-    } else if (readStoredChoice(window.localStorage) !== null) {
-      // Returning visitor with a recorded choice: normal mechanics.
+    } else if (gpcDenied && stored === null) {
+      // GPC active on first visit: stay denied
+      return;
+    } else if (stored?.granted === true) {
+      // Explicit affirmative grant: load chat embed
       arm();
+    } else if (stored !== null && !stored.granted) {
+      // Explicit refusal (Essential only): do NOT load chat embed
+      return;
     } else {
-      // No choice yet: wait for the banner to close (it removes the
-      // data-consent-open attribute on choice — the @kairali/consent yield
-      // contract), then confirm a choice was actually stored before arming.
+      // No choice yet: wait for banner decision
       observer = new MutationObserver(() => {
-        if (
-          !document.documentElement.hasAttribute("data-consent-open") &&
-          readStoredChoice(window.localStorage) !== null
-        ) {
-          arm();
+        if (!document.documentElement.hasAttribute("data-consent-open")) {
+          const choice = readStoredChoice(window.localStorage);
+          if (choice?.granted === true) {
+            arm();
+          }
         }
       });
       observer.observe(document.documentElement, {
