@@ -136,14 +136,81 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
   const replyTo = String(data.get("email") || "");
   const attachments = await Promise.all(files.map(async ({ file }) => ({ filename: file.name, content: Buffer.from(await file.arrayBuffer()).toString("base64") })));
 
+  const rawFormEntries: Record<string, string> = {};
+  for (const [k, v] of data.entries()) {
+    if (typeof v === "string") rawFormEntries[k] = v;
+  }
+
+  const byName: Record<string, string> = {};
+  const byLabel: Record<string, string> = {};
+  for (const f of schema.fields) {
+    if (f.type === "heading" || f.type === "file") continue;
+    const val = data.getAll(f.name).map(String).filter(Boolean).join(", ");
+    if (val) {
+      byName[f.name] = val;
+      byLabel[f.label] = val;
+    }
+  }
+
+  const fname = String(data.get("fname") || data.get("firstName") || "").trim();
+  const lname = String(data.get("lname") || data.get("lastName") || "").trim();
+  const fullName = String(
+    data.get("full_name") ||
+    data.get("name") ||
+    [fname, lname].filter(Boolean).join(" ") ||
+    ""
+  ).trim();
+
+  const phone = String(data.get("phone") || data.get("mobile") || data.get("contact") || "").trim();
+  const email = String(data.get("email") || replyTo || "").trim();
+  const country = String(data.get("country") || "").trim();
+  const state = String(data.get("state") || "").trim();
+  const city = String(data.get("city") || "").trim();
+  const subject = String(data.get("subject") || schema.title || "").trim();
+  const message = String(
+    data.get("message") ||
+    data.get("presentProblems") ||
+    data.get("health_concern") ||
+    data.get("otherInfo") ||
+    ""
+  ).trim();
+
   // 1. Deliver to Google Sheet (structured records for IT & Operations)
   const sheetPayload = {
     timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
     formId: schema.id,
     formTitle: schema.title,
     ip,
-    replyTo,
-    data: Object.fromEntries(rows),
+    replyTo: email,
+    full_name: fullName,
+    name: fullName,
+    fname,
+    lname,
+    phone,
+    mobile: phone,
+    email,
+    country,
+    state,
+    city,
+    subject,
+    message,
+    data: {
+      ...byName,
+      ...byLabel,
+      ...rawFormEntries,
+      full_name: fullName,
+      name: fullName,
+      fname,
+      lname,
+      phone,
+      mobile: phone,
+      email,
+      country,
+      state,
+      city,
+      subject,
+      message,
+    },
   };
   const sheetSent = await sendToSheet(sheetPayload);
 

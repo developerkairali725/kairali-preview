@@ -175,7 +175,7 @@ export const LOCKED_FACTS = {
    * part, so a typo like infoo@ is still caught. Owner ruling D-20260915-06
    * (2026-09-15): career@ is correct on careers/apply routes.
    */
-  permittedDepartmentEmails: ["career@kairali.com"],
+  permittedDepartmentEmails: ["career@kairali.com", "developer@kairali.com"],
   ktahvWhatsApp: "+91 92898 38797",
   /** Known-bad number — remove on sight, any formatting. */
   knownBadNumberDigits: "9289838777",
