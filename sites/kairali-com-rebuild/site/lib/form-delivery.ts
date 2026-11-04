@@ -125,7 +125,7 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
   const to = recipients(schema.id);
   const key = process.env.FORMS_EMAIL_API_KEY;
   const from = process.env.FORMS_FROM;
-  if (!to.length || !key || !from) return { ok: false, status: 503, reason: "not-configured" };
+  if (!to.length) return { ok: false, status: 503, reason: "not-configured" };
 
   const rows = schema.fields
     .filter((f) => f.type !== "heading" && f.type !== "file")
