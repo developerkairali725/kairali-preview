@@ -100,7 +100,9 @@ function alreadyPresent(sheet, headers, tokenColumnName, token) {
   return finder.findNext() !== null;
 }
 
-function isRecentDuplicate(sheet, headers, token, formId, name, email, phone) {
+var TRUSTED_AUTH_TOKEN = "kairali-webhook-secret-auth-2026";
+
+function isRecentDuplicate(sheet, headers, token, formId, name, email, phone, subject, message, incomingMs) {
   if (!sheet || sheet.getLastRow() < 2) return false;
 
   // 1. Direct token search if token is present
@@ -110,13 +112,15 @@ function isRecentDuplicate(sheet, headers, token, formId, name, email, phone) {
   }
 
   // 2. Identify relevant column indices for cross-session deduplication
-  var colEmail = -1, colPhone = -1, colName = -1, colForm = -1, colTime = -1, colToken = -1;
+  var colEmail = -1, colPhone = -1, colName = -1, colForm = -1, colSubj = -1, colMsg = -1, colTime = -1, colToken = -1;
   for (var i = 0; i < headers.length; i++) {
     var h = norm(headers[i]);
     if (h === "email") colEmail = i;
     else if (h === "phone" || h === "mobile" || h === "phonemobile") colPhone = i;
     else if (h === "fullname" || h === "name") colName = i;
     else if (h === "formtype" || h === "site") colForm = i;
+    else if (h === "subject" || h === "subjectprogramme" || h === "programme") colSubj = i;
+    else if (h === "message" || h === "subjectmessage" || h === "enquiry") colMsg = i;
     else if (h.indexOf("time") !== -1) colTime = i;
     else if (h === "submissiontoken") colToken = i;
   }
@@ -128,9 +132,10 @@ function isRecentDuplicate(sheet, headers, token, formId, name, email, phone) {
 
   var cleanEmail = norm(email);
   var cleanPhone = norm(phone);
-  var cleanName = norm(name);
   var cleanForm = norm(formId);
-  var now = Date.now();
+  var cleanSubj = norm(subject).slice(0, 50);
+  var cleanMsg = norm(message).slice(0, 150);
+  var now = (incomingMs && !isNaN(Number(incomingMs))) ? Number(incomingMs) : Date.now();
 
   for (var r = rows.length - 1; r >= 0; r--) {
     var row = rows[r];
@@ -141,30 +146,38 @@ function isRecentDuplicate(sheet, headers, token, formId, name, email, phone) {
 
     var rEmail = colEmail !== -1 ? norm(row[colEmail]) : "";
     var rPhone = colPhone !== -1 ? norm(row[colPhone]) : "";
-    var rName = colName !== -1 ? norm(row[colName]) : "";
     var rForm = colForm !== -1 ? norm(row[colForm]) : "";
+    var rSubj = colSubj !== -1 ? norm(row[colSubj]).slice(0, 50) : "";
+    var rMsg = colMsg !== -1 ? norm(row[colMsg]).slice(0, 150) : "";
 
-    var isClinical = (cleanForm.indexOf("consult") !== -1 || rForm.indexOf("consult") !== -1);
-    var formMatch = isClinical || (cleanForm === rForm);
+    var matchIdentity = false;
+    if (cleanEmail && cleanEmail !== "-" && rEmail === cleanEmail) {
+      matchIdentity = true;
+    } else if (cleanPhone && cleanPhone !== "-" && rPhone === cleanPhone) {
+      matchIdentity = true;
+    }
 
-    if (formMatch) {
-      var matchIdentity = false;
-      if (cleanEmail && cleanEmail !== "-" && rEmail === cleanEmail) {
-        if (!cleanPhone || cleanPhone === "-" || rPhone === cleanPhone || rName === cleanName) {
-          matchIdentity = true;
+    if (matchIdentity) {
+      // CRITICAL: Two DIFFERENT requests from the same person (different subject or message) MUST both get through!
+      // Only identical repeated content within the 15-minute window is blocked as a duplicate.
+      var isSameForm = (cleanForm === rForm) || (cleanForm.indexOf("consult") !== -1 && rForm.indexOf("consult") !== -1);
+      var contentMatches = isSameForm && (cleanMsg === rMsg && (cleanSubj === "" || rSubj === "" || cleanSubj === rSubj));
+
+      if (contentMatches) {
+        // Robust timestamp comparison: handles ISO string, Date object, or numeric milliseconds
+        var rowVal = colTime !== -1 ? row[colTime] : null;
+        var entryTime = 0;
+        if (rowVal instanceof Date) {
+          entryTime = rowVal.getTime();
+        } else if (typeof rowVal === "number" && !isNaN(rowVal)) {
+          entryTime = rowVal;
+        } else if (rowVal) {
+          var parsed = Date.parse(String(rowVal));
+          if (!isNaN(parsed)) entryTime = parsed;
         }
-      } else if (cleanPhone && cleanPhone !== "-" && rPhone === cleanPhone && rName === cleanName) {
-        matchIdentity = true;
-      }
 
-      if (matchIdentity) {
-        if (colTime !== -1 && row[colTime]) {
-          var entryTime = new Date(row[colTime]).getTime();
-          if (!isNaN(entryTime)) {
-            if (Math.abs(now - entryTime) < 15 * 60 * 1000) {
-              return true;
-            }
-          } else {
+        if (entryTime > 0) {
+          if (Math.abs(now - entryTime) < 15 * 60 * 1000) {
             return true;
           }
         } else {
@@ -244,11 +257,22 @@ function doPost(e) {
     var d = payload.data || {};
     var ss = SpreadsheetApp.getActiveSpreadsheet();
 
-    var timestamp = payload.timestamp || Utilities.formatDate(new Date(), "Asia/Kolkata", "yyyy-MM-dd HH:mm:ss");
+    var timestamp = payload.timestamp || Utilities.formatDate(new Date(), "Asia/Kolkata", "yyyy-MM-dd'T'HH:mm:ssXXX");
+    var incomingMs = Number(payload.timestamp_ms || d["timestamp_ms"] || 0);
     var formId = (payload.formId || "contact").toLowerCase();
     var formTitle = payload.formTitle || formId;
     var ip = payload.ip || "-";
     var submissionToken = getVal(d, payload, ["submission_token", "submissionToken", "token", "nonce"], "-");
+
+    // GUARD 0: Verify request originates from trusted server (rejects direct external submissions)
+    var incomingAuth = getVal(d, payload, ["auth_token", "authToken", "secret", "webhook_secret"], "");
+    if (!incomingAuth || incomingAuth !== TRUSTED_AUTH_TOKEN) {
+      return ContentService.createTextOutput(JSON.stringify({
+        ok: false,
+        error: "unauthorized_server_verification_failed",
+        reason: "unauthorized"
+      })).setMimeType(ContentService.MimeType.JSON);
+    }
 
     var consent = getVal(d, payload, ["consent", "agree", "privacy_consent", "terms_agreed"], "no").toLowerCase();
     var isConsented = (consent === "yes" || consent === "true" || consent === "on" || consent === "1");
@@ -303,10 +327,10 @@ function doPost(e) {
     var referrer = getVal(d, payload, ["referrer", "ref", "Referrer"]);
 
     // =========================================================================
-    // GUARD 2: Reject duplicate replay submissions (by token or patient/lead identity within 15 min window)
+    // GUARD 2: Content-Aware Duplicate & Replay Rejection
     // =========================================================================
     var masterSheet = alignHeadersAndGetSheet(ss, "All Enquiries", ALL_CANONICAL_HEADERS["All Enquiries"]);
-    if (isRecentDuplicate(masterSheet, ALL_CANONICAL_HEADERS["All Enquiries"], submissionToken, formId, name, email, phone)) {
+    if (isRecentDuplicate(masterSheet, ALL_CANONICAL_HEADERS["All Enquiries"], submissionToken, formId, name, email, phone, subject, message, incomingMs)) {
       return ContentService.createTextOutput(JSON.stringify({
         ok: false,
         error: "duplicate_replay_rejected",

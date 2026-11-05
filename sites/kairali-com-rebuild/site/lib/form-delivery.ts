@@ -88,13 +88,18 @@ async function verifyTurnstile(token: string, ip: string | null): Promise<boolea
 
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 
+const FORM_WEBHOOK_SECRET = process.env.FORM_WEBHOOK_SECRET || process.env.WEBHOOK_SECRET || "kairali-webhook-secret-auth-2026";
+
 async function sendToSheet(payload: Record<string, unknown>): Promise<{ ok: boolean; duplicate?: boolean }> {
   const url = process.env.FORM_SHEET_WEBHOOK_URL || process.env.GOOGLE_SHEET_WEBHOOK_URL || "https://script.google.com/macros/s/AKfycbyh7B5YSNw4KS_QK-Oz1J4t0nJa8lDLLwZdGzXuRW2qJJIEgQvcH_34ZuvDAf_v4heO/exec";
   if (!url) return { ok: false };
   try {
     const r = await fetch(url, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "x-webhook-secret": FORM_WEBHOOK_SECRET,
+      },
       body: JSON.stringify(payload),
     });
     if (!r.ok) return { ok: false };
@@ -178,8 +183,13 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
   ).trim();
 
   // Guard 2: Reject duplicate replay submissions BEFORE attempting any delivery (Sheet or Email)
+  // Content-Aware Fingerprint: incorporates formId, contact identity, AND normalized content/message.
+  // This ensures different enquiries from the same person (e.g. enquiry A vs enquiry B) produce distinct
+  // fingerprints and both get delivered, while retrying the exact same enquiry is rejected.
   const submissionToken = String(data.get("submission_token") || data.get("token") || data.get("nonce") || "").trim();
-  const fingerprint = `${schema.id}:${fullName}:${phone}:${email}:${message}`;
+  const normMessage = message.toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 150);
+  const normSubject = subject.toLowerCase().replace(/[^a-z0-9]/g, "").slice(0, 50);
+  const fingerprint = `${schema.id}:${fullName.toLowerCase()}:${phone}:${email.toLowerCase()}:${normSubject}:${normMessage}`;
   if (isReplay(submissionToken, fingerprint)) {
     return { ok: false, status: 409, reason: "duplicate" };
   }
@@ -225,12 +235,17 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
   const referrer = String(data.get("referrer") || "").trim();
 
   // 1. Deliver to Google Sheet (structured records for IT & Operations)
+  const nowMs = Date.now();
+  const nowIso = new Date(nowMs).toISOString();
   const sheetPayload = {
-    timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
+    timestamp: nowIso,
+    timestamp_ms: nowMs,
+    auth_token: FORM_WEBHOOK_SECRET,
     formId: schema.id,
     formTitle: schema.title,
     ip,
     submission_token: submissionToken,
+    fingerprint,
     replyTo: email,
     full_name: fullName,
     name: fullName,
@@ -255,7 +270,10 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
       ...byName,
       ...byLabel,
       ...rawFormEntries,
+      auth_token: FORM_WEBHOOK_SECRET,
+      timestamp_ms: nowMs,
       submission_token: submissionToken,
+      fingerprint,
       full_name: fullName,
       name: fullName,
       fname,
