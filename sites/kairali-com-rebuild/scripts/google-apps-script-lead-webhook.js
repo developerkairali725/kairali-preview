@@ -1,18 +1,21 @@
 /**
- * Kairali.com Lead Receiver & Google Sheet Database Bridge
+ * Kairali.com Lead Receiver & Google Sheet Bridge
  *
- * Database: spalabsdomain_kairali_com
- * Host: 165.22.220.165
- *
- * Automatically creates and organizes leads across 7 dedicated tabs matching database tables:
+ * Dedicated Tabs:
  * 1. All Enquiries (Master Overview)
  * 2. contact (Contact Form)
  * 3. enquiry-form (General Enquiries)
  * 4. online-consultation (Clinical & Ayurvedic Consultations)
  * 5. apply-now (Job & Career Applications)
  * 6. opd (OPD Clinic Appointments)
- * 7. landing-page (Campaign Landing Pages)
- * 8. exit-intent (Exit Popups & Surveys)
+ *
+ * Captures all standard fields PLUS attribution & tracking:
+ * - utm_source
+ * - utm_medium
+ * - utm_campaign
+ * - utm_content
+ * - lead_source_url
+ * - referrer
  *
  * Recipient: info@kairali.com
  * CC: developer@kairali.com
@@ -33,18 +36,40 @@ function getVal(d, payload, keys, def) {
   return def;
 }
 
-function getOrCreateSheet(ss, name, headers) {
+function syncHeadersAndGetSheet(ss, name, requiredHeaders) {
   var sheet = ss.getSheetByName(name);
   if (!sheet) {
     sheet = ss.insertSheet(name);
-    sheet.appendRow(headers);
-    sheet.getRange(1, 1, 1, headers.length).setFontWeight("bold").setBackground("#EDE8DD"); /* brand-allow: rogue-hex */
+    sheet.appendRow(requiredHeaders);
+    sheet.getRange(1, 1, 1, requiredHeaders.length).setFontWeight("bold").setBackground("#EDE8DD"); /* brand-allow: rogue-hex */
     sheet.setFrozenRows(1);
-  } else if (sheet.getLastRow() === 0) {
-    sheet.appendRow(headers);
-    sheet.getRange(1, 1, 1, headers.length).setFontWeight("bold").setBackground("#EDE8DD"); /* brand-allow: rogue-hex */
-    sheet.setFrozenRows(1);
+    return sheet;
   }
+
+  if (sheet.getLastRow() === 0) {
+    sheet.appendRow(requiredHeaders);
+    sheet.getRange(1, 1, 1, requiredHeaders.length).setFontWeight("bold").setBackground("#EDE8DD"); /* brand-allow: rogue-hex */
+    sheet.setFrozenRows(1);
+    return sheet;
+  }
+
+  // Ensure any newly added columns (like UTMs / lead_source_url) are added to existing sheets
+  var existingLastCol = sheet.getLastColumn();
+  if (existingLastCol > 0) {
+    var existingHeaders = sheet.getRange(1, 1, 1, existingLastCol).getValues()[0];
+    var missing = [];
+    for (var i = 0; i < requiredHeaders.length; i++) {
+      if (existingHeaders.indexOf(requiredHeaders[i]) === -1) {
+        missing.push(requiredHeaders[i]);
+      }
+    }
+    if (missing.length > 0) {
+      for (var m = 0; m < missing.length; m++) {
+        sheet.getRange(1, existingLastCol + 1 + m).setValue(missing[m]).setFontWeight("bold").setBackground("#EDE8DD"); /* brand-allow: rogue-hex */
+      }
+    }
+  }
+
   return sheet;
 }
 
@@ -65,7 +90,6 @@ function doPost(e) {
     var formTitle = payload.formTitle || formId;
     var ip = payload.ip || "-";
 
-    // Standard Universal Field Resolution (Case-Insensitive & Schema-Aware)
     var firstName = getVal(d, payload, ["firstName", "fname", "First Name", "first_name"]);
     var lastName = getVal(d, payload, ["lastName", "lname", "Last Name", "last_name"]);
     var name = getVal(d, payload, [
@@ -98,42 +122,40 @@ function doPost(e) {
     ]);
 
     var consent = getVal(d, payload, ["consent", "agree", "privacy_consent"], "yes");
-    var leadUrl = getVal(d, payload, ["lead_source_url", "source_url", "url", "page"], "-");
-    var referrer = getVal(d, payload, ["referrer", "ref"], "-");
+
+    // Marketing & Attribution Parameters
+    var utmSource = getVal(d, payload, ["utm_source", "source", "UTM Source"]);
+    var utmMedium = getVal(d, payload, ["utm_medium", "medium", "UTM Medium"]);
+    var utmCampaign = getVal(d, payload, ["utm_campaign", "campaign", "UTM Campaign"]);
+    var utmContent = getVal(d, payload, ["utm_content", "content", "UTM Content"]);
+    var utmTerm = getVal(d, payload, ["utm_term", "term", "UTM Term"]);
+    var leadSourceUrl = getVal(d, payload, ["lead_source_url", "source_url", "url", "page", "Lead Source URL"]);
+    var referrer = getVal(d, payload, ["referrer", "ref", "Referrer"]);
 
     // =========================================================================
-    // 1. MASTER SHEET: "All Enquiries" (Unified Live Overview)
+    // 1. MASTER SHEET: "All Enquiries"
     // =========================================================================
-    var masterSheet = ss.getSheetByName("All Enquiries") || ss.getActiveSheet();
-    if (masterSheet.getName() !== "All Enquiries" && ss.getSheets().length === 1) {
-      masterSheet.setName("All Enquiries");
-    } else {
-      masterSheet = getOrCreateSheet(ss, "All Enquiries", [
-        "ID", "Timestamp (IST)", "Form Type", "Form Title", "Full Name",
-        "Phone / Mobile", "Email", "Country", "State", "City",
-        "Subject / Programme", "Message", "IP Address", "All Fields (JSON)"
-      ]);
-    }
+    var masterHeaders = [
+      "ID", "Timestamp (IST)", "Form Type", "Form Title", "Full Name",
+      "Phone / Mobile", "Email", "Country", "State", "City",
+      "Subject / Programme", "Message",
+      "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content", "Lead Source URL", "Referrer",
+      "IP Address", "All Fields (JSON)"
+    ];
 
-    if (masterSheet.getLastRow() === 0) {
-      masterSheet.appendRow([
-        "ID", "Timestamp (IST)", "Form Type", "Form Title", "Full Name",
-        "Phone / Mobile", "Email", "Country", "State", "City",
-        "Subject / Programme", "Message", "IP Address", "All Fields (JSON)"
-      ]);
-      masterSheet.getRange(1, 1, 1, 14).setFontWeight("bold").setBackground("#EDE8DD"); /* brand-allow: rogue-hex */
-      masterSheet.setFrozenRows(1);
-    }
-
+    var masterSheet = syncHeadersAndGetSheet(ss, "All Enquiries", masterHeaders);
     var masterId = Math.max(1, masterSheet.getLastRow());
+
     masterSheet.appendRow([
       masterId, timestamp, formId, formTitle, name,
       phone, email, country, state, city,
-      subject, message, ip, JSON.stringify(d)
+      subject, message,
+      utmSource, utmMedium, utmCampaign, utmContent, leadSourceUrl, referrer,
+      ip, JSON.stringify(d)
     ]);
 
     // =========================================================================
-    // 2. DEDICATED TABLE TABS (100% Aligned with MySQL Database: spalabsdomain_kairali_com)
+    // 2. DEDICATED TABS
     // =========================================================================
     var targetTab = "contact";
     if (formId === "consultation" || formId.indexOf("consult") !== -1) {
@@ -144,29 +166,31 @@ function doPost(e) {
       targetTab = "enquiry-form";
     } else if (formId === "opd") {
       targetTab = "opd";
-    } else if (formId === "landing" || formId.indexOf("landing") !== -1) {
-      targetTab = "landing-page";
-    } else if (formId === "exit" || formId.indexOf("exit") !== -1) {
-      targetTab = "exit-intent";
     }
 
     if (targetTab === "contact") {
-      var sheetContact = getOrCreateSheet(ss, "contact", [
+      var contactHeaders = [
         "ID", "Timestamp", "Site", "Full Name", "Phone", "Email", "Subject",
-        "Country", "State", "City", "Message", "Consent", "Source URL", "Referrer", "IP Address"
-      ]);
+        "Country", "State", "City", "Message",
+        "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content", "Lead Source URL", "Referrer", "IP Address"
+      ];
+      var sheetContact = syncHeadersAndGetSheet(ss, "contact", contactHeaders);
       sheetContact.appendRow([
         Math.max(1, sheetContact.getLastRow()), timestamp, "kairali.com", name, phone, email, subject,
-        country, state, city, message, consent, leadUrl, referrer, ip
+        country, state, city, message,
+        utmSource, utmMedium, utmCampaign, utmContent, leadSourceUrl, referrer, ip
       ]);
     } else if (targetTab === "enquiry-form") {
-      var sheetEnquiry = getOrCreateSheet(ss, "enquiry-form", [
+      var enquiryHeaders = [
         "ID", "Timestamp", "Site", "Form Type", "Full Name", "Phone", "Email", "Programme / Subject",
-        "Country", "State", "City", "Message", "Consent", "Source URL", "Referrer", "IP Address"
-      ]);
+        "Country", "State", "City", "Message",
+        "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content", "Lead Source URL", "Referrer", "IP Address"
+      ];
+      var sheetEnquiry = syncHeadersAndGetSheet(ss, "enquiry-form", enquiryHeaders);
       sheetEnquiry.appendRow([
         Math.max(1, sheetEnquiry.getLastRow()), timestamp, "kairali.com", formId, name, phone, email, subject,
-        country, state, city, message, consent, leadUrl, referrer, ip
+        country, state, city, message,
+        utmSource, utmMedium, utmCampaign, utmContent, leadSourceUrl, referrer, ip
       ]);
     } else if (targetTab === "online-consultation") {
       var age = getVal(d, payload, ["age", "Age"]);
@@ -180,17 +204,22 @@ function doPost(e) {
       var mainComplaint = getVal(d, payload, ["mainComplaint", "Main Complaint"]);
       var medication = getVal(d, payload, ["medication", "Medication"]);
 
-      var sheetConsult = getOrCreateSheet(ss, "online-consultation", [
+      var consultHeaders = [
         "ID", "Timestamp", "First Name", "Last Name", "Full Name", "Email", "Phone", "Mobile",
         "Country", "State", "City", "Age", "Gender", "Marital Status", "Blood Pressure",
         "Weight", "Height", "Vegetarian", "Present Health Problems", "Main Complaint",
-        "Medication", "IP Address", "Clinical Details (JSON)"
-      ]);
+        "Medication",
+        "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content", "Lead Source URL", "Referrer",
+        "IP Address", "Clinical Details (JSON)"
+      ];
+      var sheetConsult = syncHeadersAndGetSheet(ss, "online-consultation", consultHeaders);
       sheetConsult.appendRow([
         Math.max(1, sheetConsult.getLastRow()), timestamp, firstName, lastName, name, email, phone, phone,
         country, state, city, age, gender, maritalStatus, bloodPressure,
         weight, height, vegetarian, presentProblems, mainComplaint,
-        medication, ip, JSON.stringify(d)
+        medication,
+        utmSource, utmMedium, utmCampaign, utmContent, leadSourceUrl, referrer,
+        ip, JSON.stringify(d)
       ]);
     } else if (targetTab === "apply-now") {
       var post = getVal(d, payload, ["post", "post_applied_for", "Post Applied for"]);
@@ -203,32 +232,38 @@ function doPost(e) {
       var currentLocation = getVal(d, payload, ["currentLocation", "current_location"]);
       var resume = getVal(d, payload, ["cv", "resume", "resume_url", "cv_file"]);
 
-      var sheetApply = getOrCreateSheet(ss, "apply-now", [
+      var applyHeaders = [
         "ID", "Timestamp", "First Name", "Last Name", "Full Name", "Email", "Phone", "Mobile",
         "Post Applied For", "Job Reference Code", "Country", "State", "City",
         "Highest Qualification", "Experience (Years)", "Experience (Months)",
         "Current Organization", "Current Designation", "Current Location",
-        "Resume / CV", "Cover Letter / Message", "IP Address"
-      ]);
+        "Resume / CV", "Cover Letter / Message",
+        "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content", "Lead Source URL", "Referrer", "IP Address"
+      ];
+      var sheetApply = syncHeadersAndGetSheet(ss, "apply-now", applyHeaders);
       sheetApply.appendRow([
         Math.max(1, sheetApply.getLastRow()), timestamp, firstName, lastName, name, email, phone, phone,
         post, jobRef, country, state, city,
         qualification, expYears, expMonths,
         currentOrg, currentDesig, currentLocation,
-        resume, message, ip
+        resume, message,
+        utmSource, utmMedium, utmCampaign, utmContent, leadSourceUrl, referrer, ip
       ]);
     } else if (targetTab === "opd") {
       var visitDate = getVal(d, payload, ["preferred_visit_date", "visitDate", "date"]);
       var symptoms = getVal(d, payload, ["symptoms", "Symptoms"]);
       var doctor = getVal(d, payload, ["preferred_doctor", "doctor", "Doctor"]);
 
-      var sheetOpd = getOrCreateSheet(ss, "opd", [
+      var opdHeaders = [
         "ID", "Timestamp", "Full Name", "Phone", "Email", "Country", "State", "City",
-        "Preferred Visit Date", "Symptoms", "Preferred Doctor", "Message", "IP Address"
-      ]);
+        "Preferred Visit Date", "Symptoms", "Preferred Doctor", "Message",
+        "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content", "Lead Source URL", "Referrer", "IP Address"
+      ];
+      var sheetOpd = syncHeadersAndGetSheet(ss, "opd", opdHeaders);
       sheetOpd.appendRow([
         Math.max(1, sheetOpd.getLastRow()), timestamp, name, phone, email, country, state, city,
-        visitDate, symptoms, doctor, message, ip
+        visitDate, symptoms, doctor, message,
+        utmSource, utmMedium, utmCampaign, utmContent, leadSourceUrl, referrer, ip
       ]);
     }
 
@@ -246,6 +281,13 @@ function doPost(e) {
         "Location: " + locationStr + "\n" +
         "Subject / Programme: " + subject + "\n" +
         "Message / Enquiry:\n" + message + "\n\n" +
+        "--- Attribution & Marketing Details ---\n" +
+        "Lead Source URL: " + leadSourceUrl + "\n" +
+        "UTM Source: " + utmSource + "\n" +
+        "UTM Medium: " + utmMedium + "\n" +
+        "UTM Campaign: " + utmCampaign + "\n" +
+        "UTM Content: " + utmContent + "\n" +
+        "Referrer: " + referrer + "\n\n" +
         "---\n" +
         "View in Google Sheet:\n" + ss.getUrl() + "\n";
 

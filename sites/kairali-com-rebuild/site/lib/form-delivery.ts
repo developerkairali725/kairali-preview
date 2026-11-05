@@ -175,6 +175,14 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
     ""
   ).trim();
 
+  const utmSource = String(data.get("utm_source") || "").trim();
+  const utmMedium = String(data.get("utm_medium") || "").trim();
+  const utmCampaign = String(data.get("utm_campaign") || "").trim();
+  const utmContent = String(data.get("utm_content") || "").trim();
+  const utmTerm = String(data.get("utm_term") || "").trim();
+  const leadSourceUrl = String(data.get("lead_source_url") || "").trim();
+  const referrer = String(data.get("referrer") || "").trim();
+
   // 1. Deliver to Google Sheet (structured records for IT & Operations)
   const sheetPayload = {
     timestamp: new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" }),
@@ -194,6 +202,13 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
     city,
     subject,
     message,
+    utm_source: utmSource,
+    utm_medium: utmMedium,
+    utm_campaign: utmCampaign,
+    utm_content: utmContent,
+    utm_term: utmTerm,
+    lead_source_url: leadSourceUrl,
+    referrer,
     data: {
       ...byName,
       ...byLabel,
@@ -210,6 +225,13 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
       city,
       subject,
       message,
+      utm_source: utmSource,
+      utm_medium: utmMedium,
+      utm_campaign: utmCampaign,
+      utm_content: utmContent,
+      utm_term: utmTerm,
+      lead_source_url: leadSourceUrl,
+      referrer,
     },
   };
   const sheetSent = await sendToSheet(sheetPayload);

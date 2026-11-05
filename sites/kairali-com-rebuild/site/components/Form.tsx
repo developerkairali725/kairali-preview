@@ -53,6 +53,19 @@ export default function Form({ schema, preset = {}, compact = false, formName, i
     if (!FORMS_ENABLED) return; // Never read personal data or files from an inactive preview.
     const data = new FormData(ev.currentTarget);
     if (String(data.get("website") || "")) return; // honeypot: silently ignore automated fills
+
+    if (typeof window !== "undefined") {
+      try {
+        const sp = new URLSearchParams(window.location.search);
+        if (!data.has("lead_source_url")) data.set("lead_source_url", window.location.href);
+        if (!data.has("referrer") && document.referrer) data.set("referrer", document.referrer);
+        const utmKeys = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "gclid", "fbclid"];
+        for (const k of utmKeys) {
+          const val = sp.get(k);
+          if (val && !data.has(k)) data.set(k, val);
+        }
+      } catch {}
+    }
     const e = validate(schema.fields, data);
     setErrors(e);
     if (Object.keys(e).length) {

@@ -47,6 +47,18 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ id:
   let data: FormData;
   try { data = await req.formData(); } catch { return NextResponse.json({ ok: false, reason: "bad-request" }, { status: 400 }); }
 
+  const referer = req.headers.get("referer") || "";
+  if (!data.has("lead_source_url") && referer) {
+    data.set("lead_source_url", referer);
+    try {
+      const u = new URL(referer);
+      for (const k of ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term", "gclid", "fbclid"]) {
+        const val = u.searchParams.get(k);
+        if (val && !data.has(k)) data.set(k, val);
+      }
+    } catch {}
+  }
+
   const out = await deliver(schema, data, ip);
   if (out.ok) return NextResponse.json({ ok: true }, { headers: { "Cache-Control": "no-store" } });
   return NextResponse.json({ ok: false, reason: out.reason, fields: out.fields }, { status: out.status, headers: { "Cache-Control": "no-store" } });
