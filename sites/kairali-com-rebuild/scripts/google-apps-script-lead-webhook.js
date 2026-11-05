@@ -100,6 +100,83 @@ function alreadyPresent(sheet, headers, tokenColumnName, token) {
   return finder.findNext() !== null;
 }
 
+function isRecentDuplicate(sheet, headers, token, formId, name, email, phone) {
+  if (!sheet || sheet.getLastRow() < 2) return false;
+
+  // 1. Direct token search if token is present
+  if (token && token !== "-" && token.trim() !== "") {
+    if (alreadyPresent(sheet, headers, "submission_token", token)) return true;
+    if (alreadyPresent(sheet, headers, "Submission Token", token)) return true;
+  }
+
+  // 2. Identify relevant column indices for cross-session deduplication
+  var colEmail = -1, colPhone = -1, colName = -1, colForm = -1, colTime = -1, colToken = -1;
+  for (var i = 0; i < headers.length; i++) {
+    var h = norm(headers[i]);
+    if (h === "email") colEmail = i;
+    else if (h === "phone" || h === "mobile" || h === "phonemobile") colPhone = i;
+    else if (h === "fullname" || h === "name") colName = i;
+    else if (h === "formtype" || h === "site") colForm = i;
+    else if (h.indexOf("time") !== -1) colTime = i;
+    else if (h === "submissiontoken") colToken = i;
+  }
+
+  var lastRow = sheet.getLastRow();
+  var checkRows = Math.min(50, lastRow - 1);
+  var startRow = lastRow - checkRows + 1;
+  var rows = sheet.getRange(startRow, 1, checkRows, headers.length).getValues();
+
+  var cleanEmail = norm(email);
+  var cleanPhone = norm(phone);
+  var cleanName = norm(name);
+  var cleanForm = norm(formId);
+  var now = Date.now();
+
+  for (var r = rows.length - 1; r >= 0; r--) {
+    var row = rows[r];
+
+    if (token && token !== "-" && colToken !== -1 && String(row[colToken]).trim() === String(token).trim()) {
+      return true;
+    }
+
+    var rEmail = colEmail !== -1 ? norm(row[colEmail]) : "";
+    var rPhone = colPhone !== -1 ? norm(row[colPhone]) : "";
+    var rName = colName !== -1 ? norm(row[colName]) : "";
+    var rForm = colForm !== -1 ? norm(row[colForm]) : "";
+
+    var isClinical = (cleanForm.indexOf("consult") !== -1 || rForm.indexOf("consult") !== -1);
+    var formMatch = isClinical || (cleanForm === rForm);
+
+    if (formMatch) {
+      var matchIdentity = false;
+      if (cleanEmail && cleanEmail !== "-" && rEmail === cleanEmail) {
+        if (!cleanPhone || cleanPhone === "-" || rPhone === cleanPhone || rName === cleanName) {
+          matchIdentity = true;
+        }
+      } else if (cleanPhone && cleanPhone !== "-" && rPhone === cleanPhone && rName === cleanName) {
+        matchIdentity = true;
+      }
+
+      if (matchIdentity) {
+        if (colTime !== -1 && row[colTime]) {
+          var entryTime = new Date(row[colTime]).getTime();
+          if (!isNaN(entryTime)) {
+            if (Math.abs(now - entryTime) < 15 * 60 * 1000) {
+              return true;
+            }
+          } else {
+            return true;
+          }
+        } else {
+          return true;
+        }
+      }
+    }
+  }
+
+  return false;
+}
+
 function alignHeadersAndGetSheet(ss, name, canonicalHeaders) {
   var sheet = ss.getSheetByName(name);
   if (!sheet) {
@@ -173,13 +250,14 @@ function doPost(e) {
     var ip = payload.ip || "-";
     var submissionToken = getVal(d, payload, ["submission_token", "submissionToken", "token", "nonce"], "-");
 
-    var consent = getVal(d, payload, ["consent", "agree", "privacy_consent"], "no").toLowerCase();
+    var consent = getVal(d, payload, ["consent", "agree", "privacy_consent", "terms_agreed"], "no").toLowerCase();
+    var isConsented = (consent === "yes" || consent === "true" || consent === "on" || consent === "1");
 
-    // GUARD 1: Reject unsigned consultation requests
-    if ((formId === "consultation" || formId.indexOf("consult") !== -1) && (consent !== "yes" && consent !== "true" && consent !== "on")) {
+    // GUARD 1: Reject ANY unsigned request across all forms
+    if (!isConsented) {
       return ContentService.createTextOutput(JSON.stringify({
         ok: false,
-        error: "unsigned_consultation_rejected",
+        error: "unsigned_request_rejected",
         reason: "unsigned"
       })).setMimeType(ContentService.MimeType.JSON);
     }
@@ -225,10 +303,10 @@ function doPost(e) {
     var referrer = getVal(d, payload, ["referrer", "ref", "Referrer"]);
 
     // =========================================================================
-    // GUARD 2: Reject duplicate replay submissions
+    // GUARD 2: Reject duplicate replay submissions (by token or patient/lead identity within 15 min window)
     // =========================================================================
     var masterSheet = alignHeadersAndGetSheet(ss, "All Enquiries", ALL_CANONICAL_HEADERS["All Enquiries"]);
-    if (submissionToken !== "-" && alreadyPresent(masterSheet, ALL_CANONICAL_HEADERS["All Enquiries"], "submission_token", submissionToken)) {
+    if (isRecentDuplicate(masterSheet, ALL_CANONICAL_HEADERS["All Enquiries"], submissionToken, formId, name, email, phone)) {
       return ContentService.createTextOutput(JSON.stringify({
         ok: false,
         error: "duplicate_replay_rejected",

@@ -120,10 +120,14 @@ function isReplay(token: string, fingerprint: string): boolean {
   if (token && token !== "-" && seenSubmissions.has(token)) return true;
   const hasContent = fingerprint && !fingerprint.endsWith(":::::");
   if (hasContent && seenSubmissions.has(fingerprint)) return true;
-
-  if (token && token !== "-") seenSubmissions.set(token, now);
-  if (hasContent) seenSubmissions.set(fingerprint, now);
   return false;
+}
+
+function markSeen(token: string, fingerprint: string): void {
+  const now = Date.now();
+  if (token && token !== "-") seenSubmissions.set(token, now);
+  const hasContent = fingerprint && !fingerprint.endsWith(":::::");
+  if (hasContent) seenSubmissions.set(fingerprint, now);
 }
 
 export async function deliver(schema: FormSchema, data: FormData, ip: string | null): Promise<Outcome> {
@@ -142,9 +146,10 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
   }
   if (Object.keys(fields).length) return { ok: false, status: 422, reason: "invalid", fields };
 
-  // Guard 1: Reject unsigned consultation requests
+  // Guard 1: Reject ANY unsigned request across all forms
   const consent = String(data.get("agree") || data.get("consent") || data.get("privacy_consent") || "").toLowerCase();
-  if ((schema.id === "consultation" || schema.sensitive) && consent !== "yes" && consent !== "true" && consent !== "on") {
+  const isConsented = consent === "yes" || consent === "true" || consent === "on" || consent === "1";
+  if (!isConsented) {
     return { ok: false, status: 422, reason: "unsigned" };
   }
 
@@ -300,7 +305,10 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
     }
   }
 
-  if (sheetSent || emailSent) return { ok: true };
+  if (sheetSent || emailSent) {
+    markSeen(submissionToken, fingerprint);
+    return { ok: true };
+  }
   if (!process.env.FORM_SHEET_WEBHOOK_URL && !process.env.GOOGLE_SHEET_WEBHOOK_URL && !key) {
     // Neither sheet nor email provider configured in environment
     return { ok: false, status: 503, reason: "not-configured" };
