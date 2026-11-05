@@ -335,45 +335,31 @@ function doPost(e) {
     try {
       var locationStr = [city, state, country].filter(function(x) { return x && x !== "-"; }).join(", ") || "-";
       var emailSubject = "New Website Lead: " + formTitle + " (" + name + ")";
-      var emailBody = "New enquiry received on Kairali.com:
-
-" +
-        "Form: " + formTitle + " (" + formId + ")
-" +
-        "Name: " + name + "
-" +
-        "Phone: " + phone + "
-" +
-        "Email: " + email + "
-" +
-        "Location: " + locationStr + "
-" +
-        "Subject / Programme: " + subject + "
-" +
-        "Message / Enquiry:
-" + message + "
-
-" +
-        "--- Attribution & Marketing Details ---
-" +
-        "Lead Source URL: " + leadSourceUrl + "
-" +
-        "UTM Source: " + utmSource + "
-" +
-        "UTM Medium: " + utmMedium + "
-" +
-        "UTM Campaign: " + utmCampaign + "
-" +
-        "UTM Content: " + utmContent + "
-" +
-        "Referrer: " + referrer + "
-
-" +
-        "---
-" +
-        "View in Google Sheet:
-" + ss.getUrl() + "
-";
+      var emailLines = [
+        "New enquiry received on Kairali.com:",
+        "",
+        "Form: " + formTitle + " (" + formId + ")",
+        "Name: " + name,
+        "Phone: " + phone,
+        "Email: " + email,
+        "Location: " + locationStr,
+        "Subject / Programme: " + subject,
+        "Message / Enquiry:",
+        message,
+        "",
+        "--- Attribution & Marketing Details ---",
+        "Lead Source URL: " + leadSourceUrl,
+        "UTM Source: " + utmSource,
+        "UTM Medium: " + utmMedium,
+        "UTM Campaign: " + utmCampaign,
+        "UTM Content: " + utmContent,
+        "Referrer: " + referrer,
+        "",
+        "---",
+        "View in Google Sheet:",
+        ss.getUrl()
+      ];
+      var emailBody = emailLines.join("\n");
 
       MailApp.sendEmail({
         to: "info@kairali.com",

@@ -88,21 +88,27 @@ async function verifyTurnstile(token: string, ip: string | null): Promise<boolea
 
 const esc = (s: string) => s.replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 
-async function sendToSheet(payload: Record<string, unknown>): Promise<boolean> {
+async function sendToSheet(payload: Record<string, unknown>): Promise<{ ok: boolean; duplicate?: boolean }> {
   const url = process.env.FORM_SHEET_WEBHOOK_URL || process.env.GOOGLE_SHEET_WEBHOOK_URL || "https://script.google.com/macros/s/AKfycbyh7B5YSNw4KS_QK-Oz1J4t0nJa8lDLLwZdGzXuRW2qJJIEgQvcH_34ZuvDAf_v4heO/exec";
-  if (!url) return false;
+  if (!url) return { ok: false };
   try {
     const r = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     });
-    return r.ok;
+    if (!r.ok) return { ok: false };
+    const json = (await r.json().catch(() => ({}))) as { ok?: boolean; duplicate?: boolean; reason?: string };
+    if (json.duplicate || json.reason === "duplicate") {
+      return { ok: false, duplicate: true };
+    }
+    return { ok: Boolean(json.ok) };
   } catch (err) {
     console.error("Sheet delivery error:", err);
-    return false;
+    return { ok: false };
   }
 }
+
 const seenSubmissions = new Map<string, number>();
 const REPLAY_WINDOW_MS = 15 * 60 * 1000;
 
@@ -111,10 +117,12 @@ function isReplay(token: string, fingerprint: string): boolean {
   for (const [k, timestamp] of seenSubmissions.entries()) {
     if (now - timestamp > REPLAY_WINDOW_MS) seenSubmissions.delete(k);
   }
-  if (token && seenSubmissions.has(token)) return true;
-  if (fingerprint && seenSubmissions.has(fingerprint)) return true;
-  if (token) seenSubmissions.set(token, now);
-  if (fingerprint) seenSubmissions.set(fingerprint, now);
+  if (token && token !== "-" && seenSubmissions.has(token)) return true;
+  const hasContent = fingerprint && !fingerprint.endsWith(":::::");
+  if (hasContent && seenSubmissions.has(fingerprint)) return true;
+
+  if (token && token !== "-") seenSubmissions.set(token, now);
+  if (hasContent) seenSubmissions.set(fingerprint, now);
   return false;
 }
 
@@ -134,6 +142,43 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
   }
   if (Object.keys(fields).length) return { ok: false, status: 422, reason: "invalid", fields };
 
+  // Guard 1: Reject unsigned consultation requests
+  const consent = String(data.get("agree") || data.get("consent") || data.get("privacy_consent") || "").toLowerCase();
+  if ((schema.id === "consultation" || schema.sensitive) && consent !== "yes" && consent !== "true" && consent !== "on") {
+    return { ok: false, status: 422, reason: "unsigned" };
+  }
+
+  const fname = String(data.get("fname") || data.get("firstName") || "").trim();
+  const lname = String(data.get("lname") || data.get("lastName") || "").trim();
+  const fullName = String(
+    data.get("full_name") ||
+    data.get("name") ||
+    [fname, lname].filter(Boolean).join(" ") ||
+    ""
+  ).trim();
+
+  const phone = String(data.get("phone") || data.get("mobile") || data.get("contact") || "").trim();
+  const replyTo = String(data.get("email") || "").trim();
+  const email = replyTo;
+  const country = String(data.get("country") || "").trim();
+  const state = String(data.get("state") || "").trim();
+  const city = String(data.get("city") || "").trim();
+  const subject = String(data.get("subject") || schema.title || "").trim();
+  const message = String(
+    data.get("message") ||
+    data.get("presentProblems") ||
+    data.get("health_concern") ||
+    data.get("otherInfo") ||
+    ""
+  ).trim();
+
+  // Guard 2: Reject duplicate replay submissions BEFORE attempting any delivery (Sheet or Email)
+  const submissionToken = String(data.get("submission_token") || data.get("token") || data.get("nonce") || "").trim();
+  const fingerprint = `${schema.id}:${fullName}:${phone}:${email}:${message}`;
+  if (isReplay(submissionToken, fingerprint)) {
+    return { ok: false, status: 409, reason: "duplicate" };
+  }
+
   if (process.env.FORMS_DELIVERY === "off") return { ok: false, status: 503, reason: "delivery-off" };
   if (schema.sensitive && process.env.FORMS_ALLOW_SENSITIVE !== "true") return { ok: false, status: 503, reason: "sensitive-not-approved" };
   if (files.length && process.env.FORMS_ALLOW_UPLOADS !== "true") return { ok: false, status: 503, reason: "uploads-not-approved" };
@@ -148,7 +193,6 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
     .filter(([, v]) => v);
   const text = rows.map(([k, v]) => `${k}: ${v}`).join("\n");
   const html = `<table cellpadding="6">${rows.map(([k, v]) => `<tr><th align="left" valign="top">${esc(k)}</th><td>${esc(v).replace(/\n/g, "<br>")}</td></tr>`).join("")}</table>`;
-  const replyTo = String(data.get("email") || "");
   const attachments = await Promise.all(files.map(async ({ file }) => ({ filename: file.name, content: Buffer.from(await file.arrayBuffer()).toString("base64") })));
 
   const rawFormEntries: Record<string, string> = {};
@@ -167,29 +211,6 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
     }
   }
 
-  const fname = String(data.get("fname") || data.get("firstName") || "").trim();
-  const lname = String(data.get("lname") || data.get("lastName") || "").trim();
-  const fullName = String(
-    data.get("full_name") ||
-    data.get("name") ||
-    [fname, lname].filter(Boolean).join(" ") ||
-    ""
-  ).trim();
-
-  const phone = String(data.get("phone") || data.get("mobile") || data.get("contact") || "").trim();
-  const email = String(data.get("email") || replyTo || "").trim();
-  const country = String(data.get("country") || "").trim();
-  const state = String(data.get("state") || "").trim();
-  const city = String(data.get("city") || "").trim();
-  const subject = String(data.get("subject") || schema.title || "").trim();
-  const message = String(
-    data.get("message") ||
-    data.get("presentProblems") ||
-    data.get("health_concern") ||
-    data.get("otherInfo") ||
-    ""
-  ).trim();
-
   const utmSource = String(data.get("utm_source") || "").trim();
   const utmMedium = String(data.get("utm_medium") || "").trim();
   const utmCampaign = String(data.get("utm_campaign") || "").trim();
@@ -204,6 +225,7 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
     formId: schema.id,
     formTitle: schema.title,
     ip,
+    submission_token: submissionToken,
     replyTo: email,
     full_name: fullName,
     name: fullName,
@@ -228,6 +250,7 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
       ...byName,
       ...byLabel,
       ...rawFormEntries,
+      submission_token: submissionToken,
       full_name: fullName,
       name: fullName,
       fname,
@@ -249,7 +272,11 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
       referrer,
     },
   };
-  const sheetSent = await sendToSheet(sheetPayload);
+  const sheetRes = await sendToSheet(sheetPayload);
+  if (sheetRes.duplicate) {
+    return { ok: false, status: 409, reason: "duplicate" };
+  }
+  const sheetSent = sheetRes.ok;
 
   // 2. Deliver via Email (Resend) if configured
   const cc = ccRecipients();
@@ -278,5 +305,5 @@ export async function deliver(schema: FormSchema, data: FormData, ip: string | n
     // Neither sheet nor email provider configured in environment
     return { ok: false, status: 503, reason: "not-configured" };
   }
-  return { ok: true };
+  return { ok: false, status: 502, reason: "delivery-failed" };
 }
