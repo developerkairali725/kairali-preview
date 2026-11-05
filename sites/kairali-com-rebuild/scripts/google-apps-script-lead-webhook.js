@@ -1,7 +1,7 @@
 /**
  * Kairali.com Lead Receiver & Google Sheet Bridge
  *
- * Dedicated Tabs:
+ * Dedicated Tabs & Column Setup:
  * 1. All Enquiries (Master Overview)
  * 2. contact (Contact Form)
  * 3. enquiry-form (General Enquiries)
@@ -9,7 +9,7 @@
  * 5. apply-now (Job & Career Applications)
  * 6. opd (OPD Clinic Appointments)
  *
- * Captures all standard fields PLUS attribution & tracking:
+ * Captures all standard fields PLUS attribution & marketing:
  * - utm_source
  * - utm_medium
  * - utm_campaign
@@ -20,6 +20,51 @@
  * Recipient: info@kairali.com
  * CC: developer@kairali.com
  */
+
+var ALL_CANONICAL_HEADERS = {
+  "All Enquiries": [
+    "ID", "Timestamp (IST)", "Form Type", "Full Name",
+    "Phone / Mobile", "Email", "Country", "State", "City",
+    "Subject / Programme", "Message",
+    "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content",
+    "Lead Source URL", "Referrer", "IP Address", "All Fields (JSON)"
+  ],
+  "contact": [
+    "ID", "Timestamp", "Site", "Full Name", "Phone", "Email", "Subject",
+    "Country", "State", "City", "Message",
+    "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content",
+    "Lead Source URL", "Referrer", "IP Address"
+  ],
+  "enquiry-form": [
+    "ID", "Timestamp", "Site", "Form Type", "Full Name", "Phone", "Email", "Programme / Subject",
+    "Country", "State", "City", "Message",
+    "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content",
+    "Lead Source URL", "Referrer", "IP Address"
+  ],
+  "online-consultation": [
+    "ID", "Timestamp", "First Name", "Last Name", "Full Name", "Email", "Phone", "Mobile",
+    "Country", "State", "City", "Age", "Gender", "Marital Status", "Blood Pressure",
+    "Weight", "Height", "Vegetarian", "Present Health Problems", "Main Complaint",
+    "Medication",
+    "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content",
+    "Lead Source URL", "Referrer", "IP Address", "Clinical Details (JSON)"
+  ],
+  "apply-now": [
+    "ID", "Timestamp", "First Name", "Last Name", "Full Name", "Email", "Phone", "Mobile",
+    "Post Applied For", "Job Reference Code", "Country", "State", "City",
+    "Highest Qualification", "Experience (Years)", "Experience (Months)",
+    "Current Organization", "Current Designation", "Current Location",
+    "Resume / CV", "Cover Letter / Message",
+    "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content",
+    "Lead Source URL", "Referrer", "IP Address"
+  ],
+  "opd": [
+    "ID", "Timestamp", "Full Name", "Phone", "Email", "Country", "State", "City",
+    "Preferred Visit Date", "Symptoms", "Preferred Doctor", "Message",
+    "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content",
+    "Lead Source URL", "Referrer", "IP Address"
+  ]
+};
 
 function getVal(d, payload, keys, def) {
   def = def || "-";
@@ -36,41 +81,56 @@ function getVal(d, payload, keys, def) {
   return def;
 }
 
-function syncHeadersAndGetSheet(ss, name, requiredHeaders) {
+function alignHeadersAndGetSheet(ss, name, canonicalHeaders) {
   var sheet = ss.getSheetByName(name);
   if (!sheet) {
     sheet = ss.insertSheet(name);
-    sheet.appendRow(requiredHeaders);
-    sheet.getRange(1, 1, 1, requiredHeaders.length).setFontWeight("bold").setBackground("#EDE8DD"); /* brand-allow: rogue-hex */
+    sheet.getRange(1, 1, 1, canonicalHeaders.length).setValues([canonicalHeaders]);
+    sheet.getRange(1, 1, 1, canonicalHeaders.length).setFontWeight("bold").setBackground("#EDE8DD"); /* brand-allow: rogue-hex */
     sheet.setFrozenRows(1);
     return sheet;
   }
 
-  if (sheet.getLastRow() === 0) {
-    sheet.appendRow(requiredHeaders);
-    sheet.getRange(1, 1, 1, requiredHeaders.length).setFontWeight("bold").setBackground("#EDE8DD"); /* brand-allow: rogue-hex */
-    sheet.setFrozenRows(1);
-    return sheet;
+  // Check if Row 1 headers need update/alignment
+  var currentLastCol = sheet.getLastColumn();
+  var needsUpdate = false;
+  if (currentLastCol < canonicalHeaders.length) {
+    needsUpdate = true;
+  } else {
+    var currentHeaders = sheet.getRange(1, 1, 1, canonicalHeaders.length).getValues()[0];
+    for (var i = 0; i < canonicalHeaders.length; i++) {
+      if (currentHeaders[i] !== canonicalHeaders[i]) {
+        needsUpdate = true;
+        break;
+      }
+    }
   }
 
-  // Ensure any newly added columns (like UTMs / lead_source_url) are added to existing sheets
-  var existingLastCol = sheet.getLastColumn();
-  if (existingLastCol > 0) {
-    var existingHeaders = sheet.getRange(1, 1, 1, existingLastCol).getValues()[0];
-    var missing = [];
-    for (var i = 0; i < requiredHeaders.length; i++) {
-      if (existingHeaders.indexOf(requiredHeaders[i]) === -1) {
-        missing.push(requiredHeaders[i]);
-      }
-    }
-    if (missing.length > 0) {
-      for (var m = 0; m < missing.length; m++) {
-        sheet.getRange(1, existingLastCol + 1 + m).setValue(missing[m]).setFontWeight("bold").setBackground("#EDE8DD"); /* brand-allow: rogue-hex */
-      }
-    }
+  if (needsUpdate) {
+    sheet.getRange(1, 1, 1, canonicalHeaders.length).setValues([canonicalHeaders]);
+    sheet.getRange(1, 1, 1, canonicalHeaders.length).setFontWeight("bold").setBackground("#EDE8DD"); /* brand-allow: rogue-hex */
+    sheet.setFrozenRows(1);
   }
 
   return sheet;
+}
+
+/**
+ * 1-Click Function to instantly format and repair Row 1 headers across ALL tabs.
+ * Run this function from the Apps Script editor menu to immediately see all new columns!
+ */
+function REPAIR_ALL_SHEET_HEADERS() {
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  for (var tabName in ALL_CANONICAL_HEADERS) {
+    var headers = ALL_CANONICAL_HEADERS[tabName];
+    var sheet = ss.getSheetByName(tabName);
+    if (!sheet) {
+      sheet = ss.insertSheet(tabName);
+    }
+    sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
+    sheet.getRange(1, 1, 1, headers.length).setFontWeight("bold").setBackground("#EDE8DD"); /* brand-allow: rogue-hex */
+    sheet.setFrozenRows(1);
+  }
 }
 
 function doPost(e) {
@@ -121,8 +181,6 @@ function doPost(e) {
       "presentProblems", "health_concern", "otherInfo", "cover_letter"
     ]);
 
-    var consent = getVal(d, payload, ["consent", "agree", "privacy_consent"], "yes");
-
     // Marketing & Attribution Parameters
     var utmSource = getVal(d, payload, ["utm_source", "source", "UTM Source"]);
     var utmMedium = getVal(d, payload, ["utm_medium", "medium", "UTM Medium"]);
@@ -133,29 +191,21 @@ function doPost(e) {
     var referrer = getVal(d, payload, ["referrer", "ref", "Referrer"]);
 
     // =========================================================================
-    // 1. MASTER SHEET: "All Enquiries"
+    // 1. MASTER SHEET: "All Enquiries" (Exactly aligned to 19 columns)
     // =========================================================================
-    var masterHeaders = [
-      "ID", "Timestamp (IST)", "Form Type", "Form Title", "Full Name",
-      "Phone / Mobile", "Email", "Country", "State", "City",
-      "Subject / Programme", "Message",
-      "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content", "Lead Source URL", "Referrer",
-      "IP Address", "All Fields (JSON)"
-    ];
-
-    var masterSheet = syncHeadersAndGetSheet(ss, "All Enquiries", masterHeaders);
+    var masterSheet = alignHeadersAndGetSheet(ss, "All Enquiries", ALL_CANONICAL_HEADERS["All Enquiries"]);
     var masterId = Math.max(1, masterSheet.getLastRow());
 
     masterSheet.appendRow([
-      masterId, timestamp, formId, formTitle, name,
+      masterId, timestamp, formId, name,
       phone, email, country, state, city,
       subject, message,
-      utmSource, utmMedium, utmCampaign, utmContent, leadSourceUrl, referrer,
-      ip, JSON.stringify(d)
+      utmSource, utmMedium, utmCampaign, utmContent,
+      leadSourceUrl, referrer, ip, JSON.stringify(d)
     ]);
 
     // =========================================================================
-    // 2. DEDICATED TABS
+    // 2. DEDICATED TABS (Matching form type)
     // =========================================================================
     var targetTab = "contact";
     if (formId === "consultation" || formId.indexOf("consult") !== -1) {
@@ -169,24 +219,14 @@ function doPost(e) {
     }
 
     if (targetTab === "contact") {
-      var contactHeaders = [
-        "ID", "Timestamp", "Site", "Full Name", "Phone", "Email", "Subject",
-        "Country", "State", "City", "Message",
-        "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content", "Lead Source URL", "Referrer", "IP Address"
-      ];
-      var sheetContact = syncHeadersAndGetSheet(ss, "contact", contactHeaders);
+      var sheetContact = alignHeadersAndGetSheet(ss, "contact", ALL_CANONICAL_HEADERS["contact"]);
       sheetContact.appendRow([
         Math.max(1, sheetContact.getLastRow()), timestamp, "kairali.com", name, phone, email, subject,
         country, state, city, message,
         utmSource, utmMedium, utmCampaign, utmContent, leadSourceUrl, referrer, ip
       ]);
     } else if (targetTab === "enquiry-form") {
-      var enquiryHeaders = [
-        "ID", "Timestamp", "Site", "Form Type", "Full Name", "Phone", "Email", "Programme / Subject",
-        "Country", "State", "City", "Message",
-        "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content", "Lead Source URL", "Referrer", "IP Address"
-      ];
-      var sheetEnquiry = syncHeadersAndGetSheet(ss, "enquiry-form", enquiryHeaders);
+      var sheetEnquiry = alignHeadersAndGetSheet(ss, "enquiry-form", ALL_CANONICAL_HEADERS["enquiry-form"]);
       sheetEnquiry.appendRow([
         Math.max(1, sheetEnquiry.getLastRow()), timestamp, "kairali.com", formId, name, phone, email, subject,
         country, state, city, message,
@@ -204,15 +244,7 @@ function doPost(e) {
       var mainComplaint = getVal(d, payload, ["mainComplaint", "Main Complaint"]);
       var medication = getVal(d, payload, ["medication", "Medication"]);
 
-      var consultHeaders = [
-        "ID", "Timestamp", "First Name", "Last Name", "Full Name", "Email", "Phone", "Mobile",
-        "Country", "State", "City", "Age", "Gender", "Marital Status", "Blood Pressure",
-        "Weight", "Height", "Vegetarian", "Present Health Problems", "Main Complaint",
-        "Medication",
-        "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content", "Lead Source URL", "Referrer",
-        "IP Address", "Clinical Details (JSON)"
-      ];
-      var sheetConsult = syncHeadersAndGetSheet(ss, "online-consultation", consultHeaders);
+      var sheetConsult = alignHeadersAndGetSheet(ss, "online-consultation", ALL_CANONICAL_HEADERS["online-consultation"]);
       sheetConsult.appendRow([
         Math.max(1, sheetConsult.getLastRow()), timestamp, firstName, lastName, name, email, phone, phone,
         country, state, city, age, gender, maritalStatus, bloodPressure,
@@ -232,15 +264,7 @@ function doPost(e) {
       var currentLocation = getVal(d, payload, ["currentLocation", "current_location"]);
       var resume = getVal(d, payload, ["cv", "resume", "resume_url", "cv_file"]);
 
-      var applyHeaders = [
-        "ID", "Timestamp", "First Name", "Last Name", "Full Name", "Email", "Phone", "Mobile",
-        "Post Applied For", "Job Reference Code", "Country", "State", "City",
-        "Highest Qualification", "Experience (Years)", "Experience (Months)",
-        "Current Organization", "Current Designation", "Current Location",
-        "Resume / CV", "Cover Letter / Message",
-        "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content", "Lead Source URL", "Referrer", "IP Address"
-      ];
-      var sheetApply = syncHeadersAndGetSheet(ss, "apply-now", applyHeaders);
+      var sheetApply = alignHeadersAndGetSheet(ss, "apply-now", ALL_CANONICAL_HEADERS["apply-now"]);
       sheetApply.appendRow([
         Math.max(1, sheetApply.getLastRow()), timestamp, firstName, lastName, name, email, phone, phone,
         post, jobRef, country, state, city,
@@ -254,12 +278,7 @@ function doPost(e) {
       var symptoms = getVal(d, payload, ["symptoms", "Symptoms"]);
       var doctor = getVal(d, payload, ["preferred_doctor", "doctor", "Doctor"]);
 
-      var opdHeaders = [
-        "ID", "Timestamp", "Full Name", "Phone", "Email", "Country", "State", "City",
-        "Preferred Visit Date", "Symptoms", "Preferred Doctor", "Message",
-        "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content", "Lead Source URL", "Referrer", "IP Address"
-      ];
-      var sheetOpd = syncHeadersAndGetSheet(ss, "opd", opdHeaders);
+      var sheetOpd = alignHeadersAndGetSheet(ss, "opd", ALL_CANONICAL_HEADERS["opd"]);
       sheetOpd.appendRow([
         Math.max(1, sheetOpd.getLastRow()), timestamp, name, phone, email, country, state, city,
         visitDate, symptoms, doctor, message,
