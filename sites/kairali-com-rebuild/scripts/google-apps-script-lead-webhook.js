@@ -9,13 +9,10 @@
  * 5. apply-now (Job & Career Applications)
  * 6. opd (OPD Clinic Appointments)
  *
- * Captures all standard fields PLUS attribution & marketing:
- * - utm_source
- * - utm_medium
- * - utm_campaign
- * - utm_content
- * - lead_source_url
- * - referrer
+ * Includes:
+ * - Duplicate Replay Rejection (Idempotency by submission_token)
+ * - Consent Verification for Consultation Requests
+ * - Accurate Delivery & Attribution Tracking
  *
  * Recipient: info@kairali.com
  * CC: developer@kairali.com
@@ -27,19 +24,19 @@ var ALL_CANONICAL_HEADERS = {
     "Phone / Mobile", "Email", "Country", "State", "City",
     "Subject / Programme", "Message",
     "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content",
-    "Lead Source URL", "Referrer", "IP Address", "All Fields (JSON)"
+    "Lead Source URL", "Referrer", "IP Address", "Submission Token", "All Fields (JSON)"
   ],
   "contact": [
     "ID", "Timestamp", "Site", "Full Name", "Phone", "Email", "Subject",
     "Country", "State", "City", "Message",
     "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content",
-    "Lead Source URL", "Referrer", "IP Address"
+    "Lead Source URL", "Referrer", "IP Address", "Submission Token"
   ],
   "enquiry-form": [
     "ID", "Timestamp", "Site", "Form Type", "Full Name", "Phone", "Email", "Programme / Subject",
     "Country", "State", "City", "Message",
     "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content",
-    "Lead Source URL", "Referrer", "IP Address"
+    "Lead Source URL", "Referrer", "IP Address", "Submission Token"
   ],
   "online-consultation": [
     "ID", "Timestamp", "First Name", "Last Name", "Full Name", "Email", "Phone", "Mobile",
@@ -47,7 +44,7 @@ var ALL_CANONICAL_HEADERS = {
     "Weight", "Height", "Vegetarian", "Present Health Problems", "Main Complaint",
     "Medication",
     "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content",
-    "Lead Source URL", "Referrer", "IP Address", "Clinical Details (JSON)"
+    "Lead Source URL", "Referrer", "IP Address", "Submission Token", "Clinical Details (JSON)"
   ],
   "apply-now": [
     "ID", "Timestamp", "First Name", "Last Name", "Full Name", "Email", "Phone", "Mobile",
@@ -56,13 +53,13 @@ var ALL_CANONICAL_HEADERS = {
     "Current Organization", "Current Designation", "Current Location",
     "Resume / CV", "Cover Letter / Message",
     "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content",
-    "Lead Source URL", "Referrer", "IP Address"
+    "Lead Source URL", "Referrer", "IP Address", "Submission Token"
   ],
   "opd": [
     "ID", "Timestamp", "Full Name", "Phone", "Email", "Country", "State", "City",
     "Preferred Visit Date", "Symptoms", "Preferred Doctor", "Message",
     "UTM Source", "UTM Medium", "UTM Campaign", "UTM Content",
-    "Lead Source URL", "Referrer", "IP Address"
+    "Lead Source URL", "Referrer", "IP Address", "Submission Token"
   ]
 };
 
@@ -81,6 +78,28 @@ function getVal(d, payload, keys, def) {
   return def;
 }
 
+function norm(s) {
+  return String(s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+}
+
+function alreadyPresent(sheet, headers, tokenColumnName, token) {
+  if (!token || token === "-" || sheet.getLastRow() < 2) return false;
+  var colIndex = -1;
+  var targetNorm = norm(tokenColumnName);
+  for (var i = 0; i < headers.length; i++) {
+    if (norm(headers[i]) === targetNorm) {
+      colIndex = i + 1;
+      break;
+    }
+  }
+  if (colIndex < 1) return false;
+  var finder = sheet.getRange(2, colIndex, sheet.getLastRow() - 1, 1)
+    .createTextFinder(String(token))
+    .matchEntireCell(true)
+    .matchCase(false);
+  return finder.findNext() !== null;
+}
+
 function alignHeadersAndGetSheet(ss, name, canonicalHeaders) {
   var sheet = ss.getSheetByName(name);
   if (!sheet) {
@@ -91,7 +110,6 @@ function alignHeadersAndGetSheet(ss, name, canonicalHeaders) {
     return sheet;
   }
 
-  // Check if Row 1 headers need update/alignment
   var currentLastCol = sheet.getLastColumn();
   var needsUpdate = false;
   if (currentLastCol < canonicalHeaders.length) {
@@ -117,7 +135,6 @@ function alignHeadersAndGetSheet(ss, name, canonicalHeaders) {
 
 /**
  * 1-Click Function to instantly format and repair Row 1 headers across ALL tabs.
- * Run this function from the Apps Script editor menu to immediately see all new columns!
  */
 function REPAIR_ALL_SHEET_HEADERS() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
@@ -134,6 +151,11 @@ function REPAIR_ALL_SHEET_HEADERS() {
 }
 
 function doPost(e) {
+  var lock = LockService.getScriptLock();
+  try {
+    lock.waitLock(15000);
+  } catch (lockErr) {}
+
   try {
     var raw = e.postData ? e.postData.contents : null;
     if (!raw) {
@@ -149,6 +171,18 @@ function doPost(e) {
     var formId = (payload.formId || "contact").toLowerCase();
     var formTitle = payload.formTitle || formId;
     var ip = payload.ip || "-";
+    var submissionToken = getVal(d, payload, ["submission_token", "submissionToken", "token", "nonce"], "-");
+
+    var consent = getVal(d, payload, ["consent", "agree", "privacy_consent"], "no").toLowerCase();
+
+    // GUARD 1: Reject unsigned consultation requests
+    if ((formId === "consultation" || formId.indexOf("consult") !== -1) && (consent !== "yes" && consent !== "true" && consent !== "on")) {
+      return ContentService.createTextOutput(JSON.stringify({
+        ok: false,
+        error: "unsigned_consultation_rejected",
+        reason: "unsigned"
+      })).setMimeType(ContentService.MimeType.JSON);
+    }
 
     var firstName = getVal(d, payload, ["firstName", "fname", "First Name", "first_name"]);
     var lastName = getVal(d, payload, ["lastName", "lname", "Last Name", "last_name"]);
@@ -191,9 +225,18 @@ function doPost(e) {
     var referrer = getVal(d, payload, ["referrer", "ref", "Referrer"]);
 
     // =========================================================================
-    // 1. MASTER SHEET: "All Enquiries" (Exactly aligned to 19 columns)
+    // GUARD 2: Reject duplicate replay submissions
     // =========================================================================
     var masterSheet = alignHeadersAndGetSheet(ss, "All Enquiries", ALL_CANONICAL_HEADERS["All Enquiries"]);
+    if (submissionToken !== "-" && alreadyPresent(masterSheet, ALL_CANONICAL_HEADERS["All Enquiries"], "submission_token", submissionToken)) {
+      return ContentService.createTextOutput(JSON.stringify({
+        ok: false,
+        error: "duplicate_replay_rejected",
+        reason: "duplicate",
+        duplicate: true
+      })).setMimeType(ContentService.MimeType.JSON);
+    }
+
     var masterId = Math.max(1, masterSheet.getLastRow());
 
     masterSheet.appendRow([
@@ -201,11 +244,11 @@ function doPost(e) {
       phone, email, country, state, city,
       subject, message,
       utmSource, utmMedium, utmCampaign, utmContent,
-      leadSourceUrl, referrer, ip, JSON.stringify(d)
+      leadSourceUrl, referrer, ip, submissionToken, JSON.stringify(d)
     ]);
 
     // =========================================================================
-    // 2. DEDICATED TABS (Matching form type)
+    // 2. DEDICATED TABS
     // =========================================================================
     var targetTab = "contact";
     if (formId === "consultation" || formId.indexOf("consult") !== -1) {
@@ -223,14 +266,14 @@ function doPost(e) {
       sheetContact.appendRow([
         Math.max(1, sheetContact.getLastRow()), timestamp, "kairali.com", name, phone, email, subject,
         country, state, city, message,
-        utmSource, utmMedium, utmCampaign, utmContent, leadSourceUrl, referrer, ip
+        utmSource, utmMedium, utmCampaign, utmContent, leadSourceUrl, referrer, ip, submissionToken
       ]);
     } else if (targetTab === "enquiry-form") {
       var sheetEnquiry = alignHeadersAndGetSheet(ss, "enquiry-form", ALL_CANONICAL_HEADERS["enquiry-form"]);
       sheetEnquiry.appendRow([
         Math.max(1, sheetEnquiry.getLastRow()), timestamp, "kairali.com", formId, name, phone, email, subject,
         country, state, city, message,
-        utmSource, utmMedium, utmCampaign, utmContent, leadSourceUrl, referrer, ip
+        utmSource, utmMedium, utmCampaign, utmContent, leadSourceUrl, referrer, ip, submissionToken
       ]);
     } else if (targetTab === "online-consultation") {
       var age = getVal(d, payload, ["age", "Age"]);
@@ -251,7 +294,7 @@ function doPost(e) {
         weight, height, vegetarian, presentProblems, mainComplaint,
         medication,
         utmSource, utmMedium, utmCampaign, utmContent, leadSourceUrl, referrer,
-        ip, JSON.stringify(d)
+        ip, submissionToken, JSON.stringify(d)
       ]);
     } else if (targetTab === "apply-now") {
       var post = getVal(d, payload, ["post", "post_applied_for", "Post Applied for"]);
@@ -271,7 +314,7 @@ function doPost(e) {
         qualification, expYears, expMonths,
         currentOrg, currentDesig, currentLocation,
         resume, message,
-        utmSource, utmMedium, utmCampaign, utmContent, leadSourceUrl, referrer, ip
+        utmSource, utmMedium, utmCampaign, utmContent, leadSourceUrl, referrer, ip, submissionToken
       ]);
     } else if (targetTab === "opd") {
       var visitDate = getVal(d, payload, ["preferred_visit_date", "visitDate", "date"]);
@@ -282,7 +325,7 @@ function doPost(e) {
       sheetOpd.appendRow([
         Math.max(1, sheetOpd.getLastRow()), timestamp, name, phone, email, country, state, city,
         visitDate, symptoms, doctor, message,
-        utmSource, utmMedium, utmCampaign, utmContent, leadSourceUrl, referrer, ip
+        utmSource, utmMedium, utmCampaign, utmContent, leadSourceUrl, referrer, ip, submissionToken
       ]);
     }
 
@@ -292,23 +335,45 @@ function doPost(e) {
     try {
       var locationStr = [city, state, country].filter(function(x) { return x && x !== "-"; }).join(", ") || "-";
       var emailSubject = "New Website Lead: " + formTitle + " (" + name + ")";
-      var emailBody = "New enquiry received on Kairali.com:\n\n" +
-        "Form: " + formTitle + " (" + formId + ")\n" +
-        "Name: " + name + "\n" +
-        "Phone: " + phone + "\n" +
-        "Email: " + email + "\n" +
-        "Location: " + locationStr + "\n" +
-        "Subject / Programme: " + subject + "\n" +
-        "Message / Enquiry:\n" + message + "\n\n" +
-        "--- Attribution & Marketing Details ---\n" +
-        "Lead Source URL: " + leadSourceUrl + "\n" +
-        "UTM Source: " + utmSource + "\n" +
-        "UTM Medium: " + utmMedium + "\n" +
-        "UTM Campaign: " + utmCampaign + "\n" +
-        "UTM Content: " + utmContent + "\n" +
-        "Referrer: " + referrer + "\n\n" +
-        "---\n" +
-        "View in Google Sheet:\n" + ss.getUrl() + "\n";
+      var emailBody = "New enquiry received on Kairali.com:
+
+" +
+        "Form: " + formTitle + " (" + formId + ")
+" +
+        "Name: " + name + "
+" +
+        "Phone: " + phone + "
+" +
+        "Email: " + email + "
+" +
+        "Location: " + locationStr + "
+" +
+        "Subject / Programme: " + subject + "
+" +
+        "Message / Enquiry:
+" + message + "
+
+" +
+        "--- Attribution & Marketing Details ---
+" +
+        "Lead Source URL: " + leadSourceUrl + "
+" +
+        "UTM Source: " + utmSource + "
+" +
+        "UTM Medium: " + utmMedium + "
+" +
+        "UTM Campaign: " + utmCampaign + "
+" +
+        "UTM Content: " + utmContent + "
+" +
+        "Referrer: " + referrer + "
+
+" +
+        "---
+" +
+        "View in Google Sheet:
+" + ss.getUrl() + "
+";
 
       MailApp.sendEmail({
         to: "info@kairali.com",
@@ -325,7 +390,8 @@ function doPost(e) {
       status: "appended_database_aligned",
       tab: targetTab,
       name: name,
-      email: email
+      email: email,
+      token: submissionToken
     })).setMimeType(ContentService.MimeType.JSON);
 
   } catch (err) {
@@ -333,5 +399,7 @@ function doPost(e) {
       ok: false,
       error: String(err)
     })).setMimeType(ContentService.MimeType.JSON);
+  } finally {
+    try { lock.releaseLock(); } catch (e) {}
   }
 }

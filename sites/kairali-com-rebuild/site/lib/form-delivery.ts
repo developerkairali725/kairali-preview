@@ -103,6 +103,21 @@ async function sendToSheet(payload: Record<string, unknown>): Promise<boolean> {
     return false;
   }
 }
+const seenSubmissions = new Map<string, number>();
+const REPLAY_WINDOW_MS = 15 * 60 * 1000;
+
+function isReplay(token: string, fingerprint: string): boolean {
+  const now = Date.now();
+  for (const [k, timestamp] of seenSubmissions.entries()) {
+    if (now - timestamp > REPLAY_WINDOW_MS) seenSubmissions.delete(k);
+  }
+  if (token && seenSubmissions.has(token)) return true;
+  if (fingerprint && seenSubmissions.has(fingerprint)) return true;
+  if (token) seenSubmissions.set(token, now);
+  if (fingerprint) seenSubmissions.set(fingerprint, now);
+  return false;
+}
+
 export async function deliver(schema: FormSchema, data: FormData, ip: string | null): Promise<Outcome> {
   if (!FORM_DELIVERY_APPROVED) return { ok: false, status: 503, reason: "preview-inactive" };
   if (String(data.get("website") || "")) return { ok: true }; // honeypot: accept silently, send nothing

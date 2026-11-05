@@ -56,6 +56,10 @@ export default function Form({ schema, preset = {}, compact = false, formName, i
 
     if (typeof window !== "undefined") {
       try {
+        if (!data.has("submission_token")) {
+          const token = typeof crypto !== "undefined" && crypto.randomUUID ? crypto.randomUUID() : (Date.now().toString(36) + "-" + Math.random().toString(36).slice(2));
+          data.set("submission_token", token);
+        }
         const sp = new URLSearchParams(window.location.search);
         if (!data.has("lead_source_url")) data.set("lead_source_url", window.location.href);
         if (!data.has("referrer") && document.referrer) data.set("referrer", document.referrer);
